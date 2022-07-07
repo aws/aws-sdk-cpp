@@ -83,6 +83,7 @@
 #include <aws/dms/model/StartReplicationTaskAssessmentRunRequest.h>
 #include <aws/dms/model/StopReplicationTaskRequest.h>
 #include <aws/dms/model/TestConnectionRequest.h>
+#include <aws/dms/model/UpdateSubscriptionsToEventBridgeRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1692,5 +1693,29 @@ void DatabaseMigrationServiceClient::TestConnectionAsync(const TestConnectionReq
 void DatabaseMigrationServiceClient::TestConnectionAsyncHelper(const TestConnectionRequest& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TestConnection(request), context);
+}
+
+UpdateSubscriptionsToEventBridgeOutcome DatabaseMigrationServiceClient::UpdateSubscriptionsToEventBridge(const UpdateSubscriptionsToEventBridgeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateSubscriptionsToEventBridgeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSubscriptionsToEventBridgeOutcomeCallable DatabaseMigrationServiceClient::UpdateSubscriptionsToEventBridgeCallable(const UpdateSubscriptionsToEventBridgeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSubscriptionsToEventBridgeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSubscriptionsToEventBridge(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::UpdateSubscriptionsToEventBridgeAsync(const UpdateSubscriptionsToEventBridgeRequest& request, const UpdateSubscriptionsToEventBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSubscriptionsToEventBridgeAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::UpdateSubscriptionsToEventBridgeAsyncHelper(const UpdateSubscriptionsToEventBridgeRequest& request, const UpdateSubscriptionsToEventBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSubscriptionsToEventBridge(request), context);
 }
 

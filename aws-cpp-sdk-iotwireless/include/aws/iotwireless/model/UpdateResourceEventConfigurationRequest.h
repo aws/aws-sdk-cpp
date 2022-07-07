@@ -123,156 +123,162 @@ namespace Model
 
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline const EventNotificationPartnerType& GetPartnerType() const{ return m_partnerType; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline bool PartnerTypeHasBeenSet() const { return m_partnerTypeHasBeenSet; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline void SetPartnerType(const EventNotificationPartnerType& value) { m_partnerTypeHasBeenSet = true; m_partnerType = value; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline void SetPartnerType(EventNotificationPartnerType&& value) { m_partnerTypeHasBeenSet = true; m_partnerType = std::move(value); }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline UpdateResourceEventConfigurationRequest& WithPartnerType(const EventNotificationPartnerType& value) { SetPartnerType(value); return *this;}
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code> </p>
      */
     inline UpdateResourceEventConfigurationRequest& WithPartnerType(EventNotificationPartnerType&& value) { SetPartnerType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline const DeviceRegistrationStateEventConfiguration& GetDeviceRegistrationState() const{ return m_deviceRegistrationState; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline bool DeviceRegistrationStateHasBeenSet() const { return m_deviceRegistrationStateHasBeenSet; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline void SetDeviceRegistrationState(const DeviceRegistrationStateEventConfiguration& value) { m_deviceRegistrationStateHasBeenSet = true; m_deviceRegistrationState = value; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline void SetDeviceRegistrationState(DeviceRegistrationStateEventConfiguration&& value) { m_deviceRegistrationStateHasBeenSet = true; m_deviceRegistrationState = std::move(value); }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithDeviceRegistrationState(const DeviceRegistrationStateEventConfiguration& value) { SetDeviceRegistrationState(value); return *this;}
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithDeviceRegistrationState(DeviceRegistrationStateEventConfiguration&& value) { SetDeviceRegistrationState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline const ProximityEventConfiguration& GetProximity() const{ return m_proximity; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline bool ProximityHasBeenSet() const { return m_proximityHasBeenSet; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline void SetProximity(const ProximityEventConfiguration& value) { m_proximityHasBeenSet = true; m_proximity = value; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline void SetProximity(ProximityEventConfiguration&& value) { m_proximityHasBeenSet = true; m_proximity = std::move(value); }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithProximity(const ProximityEventConfiguration& value) { SetProximity(value); return *this;}
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithProximity(ProximityEventConfiguration&& value) { SetProximity(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline const JoinEventConfiguration& GetJoin() const{ return m_join; }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline bool JoinHasBeenSet() const { return m_joinHasBeenSet; }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline void SetJoin(const JoinEventConfiguration& value) { m_joinHasBeenSet = true; m_join = value; }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline void SetJoin(JoinEventConfiguration&& value) { m_joinHasBeenSet = true; m_join = std::move(value); }
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithJoin(const JoinEventConfiguration& value) { SetJoin(value); return *this;}
 
     /**
-     * <p>Event configuration for the join event</p>
+     * <p>Event configuration for the join event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithJoin(JoinEventConfiguration&& value) { SetJoin(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline const ConnectionStatusEventConfiguration& GetConnectionStatus() const{ return m_connectionStatus; }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline void SetConnectionStatus(const ConnectionStatusEventConfiguration& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline void SetConnectionStatus(ConnectionStatusEventConfiguration&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithConnectionStatus(const ConnectionStatusEventConfiguration& value) { SetConnectionStatus(value); return *this;}
 
     /**
-     * <p>Event configuration for the connection status event</p>
+     * <p>Event configuration for the connection status event.</p>
      */
     inline UpdateResourceEventConfigurationRequest& WithConnectionStatus(ConnectionStatusEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
 

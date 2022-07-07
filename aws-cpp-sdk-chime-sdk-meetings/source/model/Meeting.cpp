@@ -25,7 +25,8 @@ Meeting::Meeting() :
     m_mediaRegionHasBeenSet(false),
     m_mediaPlacementHasBeenSet(false),
     m_meetingFeaturesHasBeenSet(false),
-    m_primaryMeetingIdHasBeenSet(false)
+    m_primaryMeetingIdHasBeenSet(false),
+    m_tenantIdsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ Meeting::Meeting(JsonView jsonValue) :
     m_mediaRegionHasBeenSet(false),
     m_mediaPlacementHasBeenSet(false),
     m_meetingFeaturesHasBeenSet(false),
-    m_primaryMeetingIdHasBeenSet(false)
+    m_primaryMeetingIdHasBeenSet(false),
+    m_tenantIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,16 @@ Meeting& Meeting::operator =(JsonView jsonValue)
     m_primaryMeetingIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TenantIds"))
+  {
+    Array<JsonView> tenantIdsJsonList = jsonValue.GetArray("TenantIds");
+    for(unsigned tenantIdsIndex = 0; tenantIdsIndex < tenantIdsJsonList.GetLength(); ++tenantIdsIndex)
+    {
+      m_tenantIds.push_back(tenantIdsJsonList[tenantIdsIndex].AsString());
+    }
+    m_tenantIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +150,17 @@ JsonValue Meeting::Jsonize() const
   if(m_primaryMeetingIdHasBeenSet)
   {
    payload.WithString("PrimaryMeetingId", m_primaryMeetingId);
+
+  }
+
+  if(m_tenantIdsHasBeenSet)
+  {
+   Array<JsonValue> tenantIdsJsonList(m_tenantIds.size());
+   for(unsigned tenantIdsIndex = 0; tenantIdsIndex < tenantIdsJsonList.GetLength(); ++tenantIdsIndex)
+   {
+     tenantIdsJsonList[tenantIdsIndex].AsString(m_tenantIds[tenantIdsIndex]);
+   }
+   payload.WithArray("TenantIds", std::move(tenantIdsJsonList));
 
   }
 

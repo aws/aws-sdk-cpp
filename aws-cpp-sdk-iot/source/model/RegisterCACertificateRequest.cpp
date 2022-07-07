@@ -23,7 +23,9 @@ RegisterCACertificateRequest::RegisterCACertificateRequest() :
     m_allowAutoRegistration(false),
     m_allowAutoRegistrationHasBeenSet(false),
     m_registrationConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_certificateMode(CertificateMode::NOT_SET),
+    m_certificateModeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,11 @@ Aws::String RegisterCACertificateRequest::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_certificateModeHasBeenSet)
+  {
+   payload.WithString("certificateMode", CertificateModeMapper::GetNameForCertificateMode(m_certificateMode));
   }
 
   return payload.View().WriteReadable();

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The service is currently unavailable.</p><p><h3>See Also:</h3>   <a
+   * <p>The service encountered an unexpected error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ServiceFailureException">AWS
    * API Reference</a></p>
    */

@@ -41,10 +41,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>
@@ -60,10 +60,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>
@@ -79,10 +79,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>
@@ -98,10 +98,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>
@@ -117,10 +117,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>
@@ -136,10 +136,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>
@@ -155,10 +155,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>
@@ -174,10 +174,10 @@ namespace Model
      * for only those schemas that meet the filter criteria:</p> <ul> <li> <p>
      * <code>complexity</code> – The schema's complexity, for example
      * <code>Simple</code>.</p> </li> <li> <p> <code>database-id</code> – The ID of the
-     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> ��� The
-     * IP address of the schema's database.</p> </li> <li> <p>
-     * <code>database-name</code> – The name of the schema's database.</p> </li> <li>
-     * <p> <code>database-engine</code> – The name of the schema database's engine.</p>
+     * schema's database.</p> </li> <li> <p> <code>database-ip-address</code> – The IP
+     * address of the schema's database.</p> </li> <li> <p> <code>database-name</code>
+     * – The name of the schema's database.</p> </li> <li> <p>
+     * <code>database-engine</code> – The name of the schema database's engine.</p>
      * </li> <li> <p> <code>original-schema-name</code> – The name of the schema's
      * database's main schema.</p> </li> <li> <p> <code>schema-id</code> – The ID of
      * the schema, for example <code>15</code>.</p> </li> <li> <p>

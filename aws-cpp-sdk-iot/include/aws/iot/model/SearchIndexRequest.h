@@ -74,42 +74,66 @@ namespace Model
 
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline SearchIndexRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline SearchIndexRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
-     * <p>The search query string.</p>
+     * <p>The search query string. For more information about the search query syntax,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * syntax</a>.</p>
      */
     inline SearchIndexRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
 

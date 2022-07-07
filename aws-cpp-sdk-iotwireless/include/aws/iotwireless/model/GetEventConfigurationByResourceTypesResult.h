@@ -36,105 +36,110 @@ namespace Model
 
 
     /**
-     * <p>Resource type event configuration for the device registration state event</p>
+     * <p>Resource type event configuration for the device registration state
+     * event.</p>
      */
     inline const DeviceRegistrationStateResourceTypeEventConfiguration& GetDeviceRegistrationState() const{ return m_deviceRegistrationState; }
 
     /**
-     * <p>Resource type event configuration for the device registration state event</p>
+     * <p>Resource type event configuration for the device registration state
+     * event.</p>
      */
     inline void SetDeviceRegistrationState(const DeviceRegistrationStateResourceTypeEventConfiguration& value) { m_deviceRegistrationState = value; }
 
     /**
-     * <p>Resource type event configuration for the device registration state event</p>
+     * <p>Resource type event configuration for the device registration state
+     * event.</p>
      */
     inline void SetDeviceRegistrationState(DeviceRegistrationStateResourceTypeEventConfiguration&& value) { m_deviceRegistrationState = std::move(value); }
 
     /**
-     * <p>Resource type event configuration for the device registration state event</p>
+     * <p>Resource type event configuration for the device registration state
+     * event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithDeviceRegistrationState(const DeviceRegistrationStateResourceTypeEventConfiguration& value) { SetDeviceRegistrationState(value); return *this;}
 
     /**
-     * <p>Resource type event configuration for the device registration state event</p>
+     * <p>Resource type event configuration for the device registration state
+     * event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithDeviceRegistrationState(DeviceRegistrationStateResourceTypeEventConfiguration&& value) { SetDeviceRegistrationState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Resource type event configuration for the proximity event</p>
+     * <p>Resource type event configuration for the proximity event.</p>
      */
     inline const ProximityResourceTypeEventConfiguration& GetProximity() const{ return m_proximity; }
 
     /**
-     * <p>Resource type event configuration for the proximity event</p>
+     * <p>Resource type event configuration for the proximity event.</p>
      */
     inline void SetProximity(const ProximityResourceTypeEventConfiguration& value) { m_proximity = value; }
 
     /**
-     * <p>Resource type event configuration for the proximity event</p>
+     * <p>Resource type event configuration for the proximity event.</p>
      */
     inline void SetProximity(ProximityResourceTypeEventConfiguration&& value) { m_proximity = std::move(value); }
 
     /**
-     * <p>Resource type event configuration for the proximity event</p>
+     * <p>Resource type event configuration for the proximity event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithProximity(const ProximityResourceTypeEventConfiguration& value) { SetProximity(value); return *this;}
 
     /**
-     * <p>Resource type event configuration for the proximity event</p>
+     * <p>Resource type event configuration for the proximity event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithProximity(ProximityResourceTypeEventConfiguration&& value) { SetProximity(std::move(value)); return *this;}
 
 
     /**
-     * <p>Resource type event configuration for the join event</p>
+     * <p>Resource type event configuration for the join event.</p>
      */
     inline const JoinResourceTypeEventConfiguration& GetJoin() const{ return m_join; }
 
     /**
-     * <p>Resource type event configuration for the join event</p>
+     * <p>Resource type event configuration for the join event.</p>
      */
     inline void SetJoin(const JoinResourceTypeEventConfiguration& value) { m_join = value; }
 
     /**
-     * <p>Resource type event configuration for the join event</p>
+     * <p>Resource type event configuration for the join event.</p>
      */
     inline void SetJoin(JoinResourceTypeEventConfiguration&& value) { m_join = std::move(value); }
 
     /**
-     * <p>Resource type event configuration for the join event</p>
+     * <p>Resource type event configuration for the join event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithJoin(const JoinResourceTypeEventConfiguration& value) { SetJoin(value); return *this;}
 
     /**
-     * <p>Resource type event configuration for the join event</p>
+     * <p>Resource type event configuration for the join event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithJoin(JoinResourceTypeEventConfiguration&& value) { SetJoin(std::move(value)); return *this;}
 
 
     /**
-     * <p>Resource type event configuration for the connection status event</p>
+     * <p>Resource type event configuration for the connection status event.</p>
      */
     inline const ConnectionStatusResourceTypeEventConfiguration& GetConnectionStatus() const{ return m_connectionStatus; }
 
     /**
-     * <p>Resource type event configuration for the connection status event</p>
+     * <p>Resource type event configuration for the connection status event.</p>
      */
     inline void SetConnectionStatus(const ConnectionStatusResourceTypeEventConfiguration& value) { m_connectionStatus = value; }
 
     /**
-     * <p>Resource type event configuration for the connection status event</p>
+     * <p>Resource type event configuration for the connection status event.</p>
      */
     inline void SetConnectionStatus(ConnectionStatusResourceTypeEventConfiguration&& value) { m_connectionStatus = std::move(value); }
 
     /**
-     * <p>Resource type event configuration for the connection status event</p>
+     * <p>Resource type event configuration for the connection status event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithConnectionStatus(const ConnectionStatusResourceTypeEventConfiguration& value) { SetConnectionStatus(value); return *this;}
 
     /**
-     * <p>Resource type event configuration for the connection status event</p>
+     * <p>Resource type event configuration for the connection status event.</p>
      */
     inline GetEventConfigurationByResourceTypesResult& WithConnectionStatus(ConnectionStatusResourceTypeEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
 

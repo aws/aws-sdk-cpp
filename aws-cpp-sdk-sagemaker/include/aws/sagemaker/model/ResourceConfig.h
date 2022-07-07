@@ -7,6 +7,8 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/TrainingInstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/InstanceGroup.h>
 #include <utility>
 
 namespace Aws
@@ -340,6 +342,47 @@ namespace Model
      */
     inline ResourceConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline const Aws::Vector<InstanceGroup>& GetInstanceGroups() const{ return m_instanceGroups; }
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline void SetInstanceGroups(const Aws::Vector<InstanceGroup>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline void SetInstanceGroups(Aws::Vector<InstanceGroup>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline ResourceConfig& WithInstanceGroups(const Aws::Vector<InstanceGroup>& value) { SetInstanceGroups(value); return *this;}
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline ResourceConfig& WithInstanceGroups(Aws::Vector<InstanceGroup>&& value) { SetInstanceGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline ResourceConfig& AddInstanceGroups(const InstanceGroup& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
+
+    /**
+     * <p>The configuration of a heterogeneous cluster in JSON format.</p>
+     */
+    inline ResourceConfig& AddInstanceGroups(InstanceGroup&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
+
   private:
 
     TrainingInstanceType m_instanceType;
@@ -353,6 +396,9 @@ namespace Model
 
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet;
+
+    Aws::Vector<InstanceGroup> m_instanceGroups;
+    bool m_instanceGroupsHasBeenSet;
   };
 
 } // namespace Model

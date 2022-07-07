@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> SidewalkEventNotificationConfigurations object Event configuration object
-   * for Sidewalk related event topics.</p><p><h3>See Also:</h3>   <a
+   * <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the
+   * event configuration object for Sidewalk-related event topics.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkEventNotificationConfigurations">AWS
    * API Reference</a></p>
    */

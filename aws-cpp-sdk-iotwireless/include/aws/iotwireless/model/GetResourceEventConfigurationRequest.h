@@ -119,32 +119,38 @@ namespace Model
 
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline const EventNotificationPartnerType& GetPartnerType() const{ return m_partnerType; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline bool PartnerTypeHasBeenSet() const { return m_partnerTypeHasBeenSet; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline void SetPartnerType(const EventNotificationPartnerType& value) { m_partnerTypeHasBeenSet = true; m_partnerType = value; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline void SetPartnerType(EventNotificationPartnerType&& value) { m_partnerTypeHasBeenSet = true; m_partnerType = std::move(value); }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline GetResourceEventConfigurationRequest& WithPartnerType(const EventNotificationPartnerType& value) { SetPartnerType(value); return *this;}
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline GetResourceEventConfigurationRequest& WithPartnerType(EventNotificationPartnerType&& value) { SetPartnerType(std::move(value)); return *this;}
 
