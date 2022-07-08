@@ -48,7 +48,7 @@ static const char DEFAULT_CREDENTIALS_FILE[] = "credentials";
 extern const char DEFAULT_CONFIG_FILE[] = "config";
 
 
-static const int EXPIRATION_GRACE_PERIOD = 5 * 1000;
+static const int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
 
 void AWSCredentialsProvider::Reload()
 {
@@ -306,7 +306,7 @@ AWSCredentials TaskRoleCredentialsProvider::GetAWSCredentials()
 
 bool TaskRoleCredentialsProvider::ExpiresSoon() const
 {
-    return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < EXPIRATION_GRACE_PERIOD);
+    return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
 }
 
 void TaskRoleCredentialsProvider::Reload()
