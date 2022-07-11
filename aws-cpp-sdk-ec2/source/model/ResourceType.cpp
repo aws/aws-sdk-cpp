@@ -79,7 +79,9 @@ namespace Aws
         static const int transit_gateway_attachment_HASH = HashingUtils::HashString("transit-gateway-attachment");
         static const int transit_gateway_connect_peer_HASH = HashingUtils::HashString("transit-gateway-connect-peer");
         static const int transit_gateway_multicast_domain_HASH = HashingUtils::HashString("transit-gateway-multicast-domain");
+        static const int transit_gateway_policy_table_HASH = HashingUtils::HashString("transit-gateway-policy-table");
         static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
+        static const int transit_gateway_route_table_announcement_HASH = HashingUtils::HashString("transit-gateway-route-table-announcement");
         static const int volume_HASH = HashingUtils::HashString("volume");
         static const int vpc_HASH = HashingUtils::HashString("vpc");
         static const int vpc_endpoint_HASH = HashingUtils::HashString("vpc-endpoint");
@@ -329,9 +331,17 @@ namespace Aws
           {
             return ResourceType::transit_gateway_multicast_domain;
           }
+          else if (hashCode == transit_gateway_policy_table_HASH)
+          {
+            return ResourceType::transit_gateway_policy_table;
+          }
           else if (hashCode == transit_gateway_route_table_HASH)
           {
             return ResourceType::transit_gateway_route_table;
+          }
+          else if (hashCode == transit_gateway_route_table_announcement_HASH)
+          {
+            return ResourceType::transit_gateway_route_table_announcement;
           }
           else if (hashCode == volume_HASH)
           {
@@ -497,8 +507,12 @@ namespace Aws
             return "transit-gateway-connect-peer";
           case ResourceType::transit_gateway_multicast_domain:
             return "transit-gateway-multicast-domain";
+          case ResourceType::transit_gateway_policy_table:
+            return "transit-gateway-policy-table";
           case ResourceType::transit_gateway_route_table:
             return "transit-gateway-route-table";
+          case ResourceType::transit_gateway_route_table_announcement:
+            return "transit-gateway-route-table-announcement";
           case ResourceType::volume:
             return "volume";
           case ResourceType::vpc:

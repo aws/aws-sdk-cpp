@@ -190,6 +190,47 @@ namespace Model
      */
     inline TransitGatewayRouteTablePropagation& WithState(TransitGatewayPropagationState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline const Aws::String& GetTransitGatewayRouteTableAnnouncementId() const{ return m_transitGatewayRouteTableAnnouncementId; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline bool TransitGatewayRouteTableAnnouncementIdHasBeenSet() const { return m_transitGatewayRouteTableAnnouncementIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = value; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const char* value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline TransitGatewayRouteTablePropagation& WithTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline TransitGatewayRouteTablePropagation& WithTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { SetTransitGatewayRouteTableAnnouncementId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline TransitGatewayRouteTablePropagation& WithTransitGatewayRouteTableAnnouncementId(const char* value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
   private:
 
     Aws::String m_transitGatewayAttachmentId;
@@ -203,6 +244,9 @@ namespace Model
 
     TransitGatewayPropagationState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_transitGatewayRouteTableAnnouncementId;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet;
   };
 
 } // namespace Model

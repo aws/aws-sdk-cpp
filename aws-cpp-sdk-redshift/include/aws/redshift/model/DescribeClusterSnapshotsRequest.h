@@ -133,6 +133,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * describe cluster snapshots.</p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+
+
+    /**
      * <p>The type of snapshots for which you are requesting information. By default,
      * snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code>
      * | <code>manual</code> </p>
@@ -776,6 +825,9 @@ namespace Model
 
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
+    Aws::String m_snapshotArn;
+    bool m_snapshotArnHasBeenSet;
 
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;

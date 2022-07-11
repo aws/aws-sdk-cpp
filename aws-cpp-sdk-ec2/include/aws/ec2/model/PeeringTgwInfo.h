@@ -81,6 +81,31 @@ namespace Model
     inline PeeringTgwInfo& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
 
 
+    
+    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+
+    
+    inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
+
+    
+    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
+
+    
+    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
+
+    
+    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
+
+    
+    inline PeeringTgwInfo& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
+
+    
+    inline PeeringTgwInfo& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
+
+    
+    inline PeeringTgwInfo& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+
+
     /**
      * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
@@ -166,6 +191,9 @@ namespace Model
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    Aws::String m_coreNetworkId;
+    bool m_coreNetworkIdHasBeenSet;
 
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;

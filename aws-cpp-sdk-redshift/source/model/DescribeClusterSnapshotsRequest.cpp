@@ -13,6 +13,7 @@ using namespace Aws::Utils;
 DescribeClusterSnapshotsRequest::DescribeClusterSnapshotsRequest() : 
     m_clusterIdentifierHasBeenSet(false),
     m_snapshotIdentifierHasBeenSet(false),
+    m_snapshotArnHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -40,6 +41,11 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
   if(m_snapshotIdentifierHasBeenSet)
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_snapshotArnHasBeenSet)
+  {
+    ss << "SnapshotArn=" << StringUtils::URLEncode(m_snapshotArn.c_str()) << "&";
   }
 
   if(m_snapshotTypeHasBeenSet)

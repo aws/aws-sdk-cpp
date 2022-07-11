@@ -394,6 +394,35 @@ namespace Model
      */
     inline ModifyTransitGatewayOptions& WithPropagationDefaultRouteTableId(const char* value) { SetPropagationDefaultRouteTableId(value); return *this;}
 
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p>
+     */
+    inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p>
+     */
+    inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p>
+     */
+    inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p>
+     */
+    inline ModifyTransitGatewayOptions& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_addTransitGatewayCidrBlocks;
@@ -422,6 +451,9 @@ namespace Model
 
     Aws::String m_propagationDefaultRouteTableId;
     bool m_propagationDefaultRouteTableIdHasBeenSet;
+
+    long long m_amazonSideAsn;
+    bool m_amazonSideAsnHasBeenSet;
   };
 
 } // namespace Model

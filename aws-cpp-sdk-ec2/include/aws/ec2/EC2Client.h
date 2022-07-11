@@ -33,6 +33,7 @@
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/AssociateTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/AssociateTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/AssociateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/AssociateTrunkInterfaceResponse.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockResponse.h>
@@ -110,9 +111,11 @@
 #include <aws/ec2/model/CreateTransitGatewayConnectPeerResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayRouteResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayRouteTableResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayRouteTableAnnouncementResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayVpcAttachmentResponse.h>
 #include <aws/ec2/model/CreateVolumeResponse.h>
 #include <aws/ec2/model/CreateVpcResponse.h>
@@ -156,9 +159,11 @@
 #include <aws/ec2/model/DeleteTransitGatewayConnectPeerResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayRouteResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayRouteTableResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayRouteTableAnnouncementResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayVpcAttachmentResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointConnectionNotificationsResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointServiceConfigurationsResponse.h>
@@ -282,6 +287,8 @@
 #include <aws/ec2/model/DescribeTransitGatewayConnectsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsResponse.h>
+#include <aws/ec2/model/DescribeTransitGatewayPolicyTablesResponse.h>
+#include <aws/ec2/model/DescribeTransitGatewayRouteTableAnnouncementsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayRouteTablesResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayVpcAttachmentsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewaysResponse.h>
@@ -320,6 +327,7 @@
 #include <aws/ec2/model/DisassociateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/DisassociateTransitGatewayPolicyTableResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/DisassociateTrunkInterfaceResponse.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
@@ -366,6 +374,8 @@
 #include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayPolicyTableAssociationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayPolicyTableEntriesResponse.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesResponse.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsResponse.h>
@@ -547,6 +557,7 @@ namespace Model
         class AssociateRouteTableRequest;
         class AssociateSubnetCidrBlockRequest;
         class AssociateTransitGatewayMulticastDomainRequest;
+        class AssociateTransitGatewayPolicyTableRequest;
         class AssociateTransitGatewayRouteTableRequest;
         class AssociateTrunkInterfaceRequest;
         class AssociateVpcCidrBlockRequest;
@@ -629,9 +640,11 @@ namespace Model
         class CreateTransitGatewayConnectPeerRequest;
         class CreateTransitGatewayMulticastDomainRequest;
         class CreateTransitGatewayPeeringAttachmentRequest;
+        class CreateTransitGatewayPolicyTableRequest;
         class CreateTransitGatewayPrefixListReferenceRequest;
         class CreateTransitGatewayRouteRequest;
         class CreateTransitGatewayRouteTableRequest;
+        class CreateTransitGatewayRouteTableAnnouncementRequest;
         class CreateTransitGatewayVpcAttachmentRequest;
         class CreateVolumeRequest;
         class CreateVpcRequest;
@@ -691,9 +704,11 @@ namespace Model
         class DeleteTransitGatewayConnectPeerRequest;
         class DeleteTransitGatewayMulticastDomainRequest;
         class DeleteTransitGatewayPeeringAttachmentRequest;
+        class DeleteTransitGatewayPolicyTableRequest;
         class DeleteTransitGatewayPrefixListReferenceRequest;
         class DeleteTransitGatewayRouteRequest;
         class DeleteTransitGatewayRouteTableRequest;
+        class DeleteTransitGatewayRouteTableAnnouncementRequest;
         class DeleteTransitGatewayVpcAttachmentRequest;
         class DeleteVolumeRequest;
         class DeleteVpcRequest;
@@ -823,6 +838,8 @@ namespace Model
         class DescribeTransitGatewayConnectsRequest;
         class DescribeTransitGatewayMulticastDomainsRequest;
         class DescribeTransitGatewayPeeringAttachmentsRequest;
+        class DescribeTransitGatewayPolicyTablesRequest;
+        class DescribeTransitGatewayRouteTableAnnouncementsRequest;
         class DescribeTransitGatewayRouteTablesRequest;
         class DescribeTransitGatewayVpcAttachmentsRequest;
         class DescribeTransitGatewaysRequest;
@@ -867,6 +884,7 @@ namespace Model
         class DisassociateRouteTableRequest;
         class DisassociateSubnetCidrBlockRequest;
         class DisassociateTransitGatewayMulticastDomainRequest;
+        class DisassociateTransitGatewayPolicyTableRequest;
         class DisassociateTransitGatewayRouteTableRequest;
         class DisassociateTrunkInterfaceRequest;
         class DisassociateVpcCidrBlockRequest;
@@ -915,6 +933,8 @@ namespace Model
         class GetSubnetCidrReservationsRequest;
         class GetTransitGatewayAttachmentPropagationsRequest;
         class GetTransitGatewayMulticastDomainAssociationsRequest;
+        class GetTransitGatewayPolicyTableAssociationsRequest;
+        class GetTransitGatewayPolicyTableEntriesRequest;
         class GetTransitGatewayPrefixListReferencesRequest;
         class GetTransitGatewayRouteTableAssociationsRequest;
         class GetTransitGatewayRouteTablePropagationsRequest;
@@ -1071,6 +1091,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateRouteTableResponse, EC2Error> AssociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, EC2Error> AssociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<AssociateTransitGatewayMulticastDomainResponse, EC2Error> AssociateTransitGatewayMulticastDomainOutcome;
+        typedef Aws::Utils::Outcome<AssociateTransitGatewayPolicyTableResponse, EC2Error> AssociateTransitGatewayPolicyTableOutcome;
         typedef Aws::Utils::Outcome<AssociateTransitGatewayRouteTableResponse, EC2Error> AssociateTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateTrunkInterfaceResponse, EC2Error> AssociateTrunkInterfaceOutcome;
         typedef Aws::Utils::Outcome<AssociateVpcCidrBlockResponse, EC2Error> AssociateVpcCidrBlockOutcome;
@@ -1153,9 +1174,11 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTransitGatewayConnectPeerResponse, EC2Error> CreateTransitGatewayConnectPeerOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayMulticastDomainResponse, EC2Error> CreateTransitGatewayMulticastDomainOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayPeeringAttachmentResponse, EC2Error> CreateTransitGatewayPeeringAttachmentOutcome;
+        typedef Aws::Utils::Outcome<CreateTransitGatewayPolicyTableResponse, EC2Error> CreateTransitGatewayPolicyTableOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayPrefixListReferenceResponse, EC2Error> CreateTransitGatewayPrefixListReferenceOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayRouteResponse, EC2Error> CreateTransitGatewayRouteOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayRouteTableResponse, EC2Error> CreateTransitGatewayRouteTableOutcome;
+        typedef Aws::Utils::Outcome<CreateTransitGatewayRouteTableAnnouncementResponse, EC2Error> CreateTransitGatewayRouteTableAnnouncementOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayVpcAttachmentResponse, EC2Error> CreateTransitGatewayVpcAttachmentOutcome;
         typedef Aws::Utils::Outcome<CreateVolumeResponse, EC2Error> CreateVolumeOutcome;
         typedef Aws::Utils::Outcome<CreateVpcResponse, EC2Error> CreateVpcOutcome;
@@ -1215,9 +1238,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTransitGatewayConnectPeerResponse, EC2Error> DeleteTransitGatewayConnectPeerOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayMulticastDomainResponse, EC2Error> DeleteTransitGatewayMulticastDomainOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayPeeringAttachmentResponse, EC2Error> DeleteTransitGatewayPeeringAttachmentOutcome;
+        typedef Aws::Utils::Outcome<DeleteTransitGatewayPolicyTableResponse, EC2Error> DeleteTransitGatewayPolicyTableOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayPrefixListReferenceResponse, EC2Error> DeleteTransitGatewayPrefixListReferenceOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayRouteResponse, EC2Error> DeleteTransitGatewayRouteOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayRouteTableResponse, EC2Error> DeleteTransitGatewayRouteTableOutcome;
+        typedef Aws::Utils::Outcome<DeleteTransitGatewayRouteTableAnnouncementResponse, EC2Error> DeleteTransitGatewayRouteTableAnnouncementOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayVpcAttachmentResponse, EC2Error> DeleteTransitGatewayVpcAttachmentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVolumeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVpcOutcome;
@@ -1347,6 +1372,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTransitGatewayConnectsResponse, EC2Error> DescribeTransitGatewayConnectsOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewayMulticastDomainsResponse, EC2Error> DescribeTransitGatewayMulticastDomainsOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewayPeeringAttachmentsResponse, EC2Error> DescribeTransitGatewayPeeringAttachmentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTransitGatewayPolicyTablesResponse, EC2Error> DescribeTransitGatewayPolicyTablesOutcome;
+        typedef Aws::Utils::Outcome<DescribeTransitGatewayRouteTableAnnouncementsResponse, EC2Error> DescribeTransitGatewayRouteTableAnnouncementsOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewayRouteTablesResponse, EC2Error> DescribeTransitGatewayRouteTablesOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewayVpcAttachmentsResponse, EC2Error> DescribeTransitGatewayVpcAttachmentsOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewaysResponse, EC2Error> DescribeTransitGatewaysOutcome;
@@ -1391,6 +1418,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisassociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, EC2Error> DisassociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<DisassociateTransitGatewayMulticastDomainResponse, EC2Error> DisassociateTransitGatewayMulticastDomainOutcome;
+        typedef Aws::Utils::Outcome<DisassociateTransitGatewayPolicyTableResponse, EC2Error> DisassociateTransitGatewayPolicyTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateTransitGatewayRouteTableResponse, EC2Error> DisassociateTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateTrunkInterfaceResponse, EC2Error> DisassociateTrunkInterfaceOutcome;
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, EC2Error> DisassociateVpcCidrBlockOutcome;
@@ -1439,6 +1467,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSubnetCidrReservationsResponse, EC2Error> GetSubnetCidrReservationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, EC2Error> GetTransitGatewayMulticastDomainAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetTransitGatewayPolicyTableAssociationsResponse, EC2Error> GetTransitGatewayPolicyTableAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetTransitGatewayPolicyTableEntriesResponse, EC2Error> GetTransitGatewayPolicyTableEntriesOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayPrefixListReferencesResponse, EC2Error> GetTransitGatewayPrefixListReferencesOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayRouteTableAssociationsResponse, EC2Error> GetTransitGatewayRouteTableAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayRouteTablePropagationsResponse, EC2Error> GetTransitGatewayRouteTablePropagationsOutcome;
@@ -1595,6 +1625,7 @@ namespace Model
         typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
         typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
         typedef std::future<AssociateTransitGatewayMulticastDomainOutcome> AssociateTransitGatewayMulticastDomainOutcomeCallable;
+        typedef std::future<AssociateTransitGatewayPolicyTableOutcome> AssociateTransitGatewayPolicyTableOutcomeCallable;
         typedef std::future<AssociateTransitGatewayRouteTableOutcome> AssociateTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<AssociateTrunkInterfaceOutcome> AssociateTrunkInterfaceOutcomeCallable;
         typedef std::future<AssociateVpcCidrBlockOutcome> AssociateVpcCidrBlockOutcomeCallable;
@@ -1677,9 +1708,11 @@ namespace Model
         typedef std::future<CreateTransitGatewayConnectPeerOutcome> CreateTransitGatewayConnectPeerOutcomeCallable;
         typedef std::future<CreateTransitGatewayMulticastDomainOutcome> CreateTransitGatewayMulticastDomainOutcomeCallable;
         typedef std::future<CreateTransitGatewayPeeringAttachmentOutcome> CreateTransitGatewayPeeringAttachmentOutcomeCallable;
+        typedef std::future<CreateTransitGatewayPolicyTableOutcome> CreateTransitGatewayPolicyTableOutcomeCallable;
         typedef std::future<CreateTransitGatewayPrefixListReferenceOutcome> CreateTransitGatewayPrefixListReferenceOutcomeCallable;
         typedef std::future<CreateTransitGatewayRouteOutcome> CreateTransitGatewayRouteOutcomeCallable;
         typedef std::future<CreateTransitGatewayRouteTableOutcome> CreateTransitGatewayRouteTableOutcomeCallable;
+        typedef std::future<CreateTransitGatewayRouteTableAnnouncementOutcome> CreateTransitGatewayRouteTableAnnouncementOutcomeCallable;
         typedef std::future<CreateTransitGatewayVpcAttachmentOutcome> CreateTransitGatewayVpcAttachmentOutcomeCallable;
         typedef std::future<CreateVolumeOutcome> CreateVolumeOutcomeCallable;
         typedef std::future<CreateVpcOutcome> CreateVpcOutcomeCallable;
@@ -1739,9 +1772,11 @@ namespace Model
         typedef std::future<DeleteTransitGatewayConnectPeerOutcome> DeleteTransitGatewayConnectPeerOutcomeCallable;
         typedef std::future<DeleteTransitGatewayMulticastDomainOutcome> DeleteTransitGatewayMulticastDomainOutcomeCallable;
         typedef std::future<DeleteTransitGatewayPeeringAttachmentOutcome> DeleteTransitGatewayPeeringAttachmentOutcomeCallable;
+        typedef std::future<DeleteTransitGatewayPolicyTableOutcome> DeleteTransitGatewayPolicyTableOutcomeCallable;
         typedef std::future<DeleteTransitGatewayPrefixListReferenceOutcome> DeleteTransitGatewayPrefixListReferenceOutcomeCallable;
         typedef std::future<DeleteTransitGatewayRouteOutcome> DeleteTransitGatewayRouteOutcomeCallable;
         typedef std::future<DeleteTransitGatewayRouteTableOutcome> DeleteTransitGatewayRouteTableOutcomeCallable;
+        typedef std::future<DeleteTransitGatewayRouteTableAnnouncementOutcome> DeleteTransitGatewayRouteTableAnnouncementOutcomeCallable;
         typedef std::future<DeleteTransitGatewayVpcAttachmentOutcome> DeleteTransitGatewayVpcAttachmentOutcomeCallable;
         typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
         typedef std::future<DeleteVpcOutcome> DeleteVpcOutcomeCallable;
@@ -1871,6 +1906,8 @@ namespace Model
         typedef std::future<DescribeTransitGatewayConnectsOutcome> DescribeTransitGatewayConnectsOutcomeCallable;
         typedef std::future<DescribeTransitGatewayMulticastDomainsOutcome> DescribeTransitGatewayMulticastDomainsOutcomeCallable;
         typedef std::future<DescribeTransitGatewayPeeringAttachmentsOutcome> DescribeTransitGatewayPeeringAttachmentsOutcomeCallable;
+        typedef std::future<DescribeTransitGatewayPolicyTablesOutcome> DescribeTransitGatewayPolicyTablesOutcomeCallable;
+        typedef std::future<DescribeTransitGatewayRouteTableAnnouncementsOutcome> DescribeTransitGatewayRouteTableAnnouncementsOutcomeCallable;
         typedef std::future<DescribeTransitGatewayRouteTablesOutcome> DescribeTransitGatewayRouteTablesOutcomeCallable;
         typedef std::future<DescribeTransitGatewayVpcAttachmentsOutcome> DescribeTransitGatewayVpcAttachmentsOutcomeCallable;
         typedef std::future<DescribeTransitGatewaysOutcome> DescribeTransitGatewaysOutcomeCallable;
@@ -1915,6 +1952,7 @@ namespace Model
         typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
         typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
         typedef std::future<DisassociateTransitGatewayMulticastDomainOutcome> DisassociateTransitGatewayMulticastDomainOutcomeCallable;
+        typedef std::future<DisassociateTransitGatewayPolicyTableOutcome> DisassociateTransitGatewayPolicyTableOutcomeCallable;
         typedef std::future<DisassociateTransitGatewayRouteTableOutcome> DisassociateTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<DisassociateTrunkInterfaceOutcome> DisassociateTrunkInterfaceOutcomeCallable;
         typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
@@ -1963,6 +2001,8 @@ namespace Model
         typedef std::future<GetSubnetCidrReservationsOutcome> GetSubnetCidrReservationsOutcomeCallable;
         typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
         typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
+        typedef std::future<GetTransitGatewayPolicyTableAssociationsOutcome> GetTransitGatewayPolicyTableAssociationsOutcomeCallable;
+        typedef std::future<GetTransitGatewayPolicyTableEntriesOutcome> GetTransitGatewayPolicyTableEntriesOutcomeCallable;
         typedef std::future<GetTransitGatewayPrefixListReferencesOutcome> GetTransitGatewayPrefixListReferencesOutcomeCallable;
         typedef std::future<GetTransitGatewayRouteTableAssociationsOutcome> GetTransitGatewayRouteTableAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayRouteTablePropagationsOutcome> GetTransitGatewayRouteTablePropagationsOutcomeCallable;
@@ -2122,6 +2162,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayMulticastDomainRequest&, const Model::AssociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayMulticastDomainResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayPolicyTableRequest&, const Model::AssociateTransitGatewayPolicyTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayPolicyTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayRouteTableRequest&, const Model::AssociateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTrunkInterfaceRequest&, const Model::AssociateTrunkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrunkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateVpcCidrBlockRequest&, const Model::AssociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVpcCidrBlockResponseReceivedHandler;
@@ -2204,9 +2245,11 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayConnectPeerRequest&, const Model::CreateTransitGatewayConnectPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayConnectPeerResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayMulticastDomainRequest&, const Model::CreateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayMulticastDomainResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPeeringAttachmentRequest&, const Model::CreateTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayPeeringAttachmentResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPolicyTableRequest&, const Model::CreateTransitGatewayPolicyTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayPolicyTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPrefixListReferenceRequest&, const Model::CreateTransitGatewayPrefixListReferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayPrefixListReferenceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayRouteRequest&, const Model::CreateTransitGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayRouteTableRequest&, const Model::CreateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayRouteTableAnnouncementRequest&, const Model::CreateTransitGatewayRouteTableAnnouncementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayVpcAttachmentRequest&, const Model::CreateTransitGatewayVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayVpcAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateVolumeRequest&, const Model::CreateVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateVpcRequest&, const Model::CreateVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcResponseReceivedHandler;
@@ -2266,9 +2309,11 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayConnectPeerRequest&, const Model::DeleteTransitGatewayConnectPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayConnectPeerResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayMulticastDomainRequest&, const Model::DeleteTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayMulticastDomainResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPeeringAttachmentRequest&, const Model::DeleteTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPolicyTableRequest&, const Model::DeleteTransitGatewayPolicyTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayPolicyTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPrefixListReferenceRequest&, const Model::DeleteTransitGatewayPrefixListReferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayPrefixListReferenceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayRouteRequest&, const Model::DeleteTransitGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayRouteTableRequest&, const Model::DeleteTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayRouteTableAnnouncementRequest&, const Model::DeleteTransitGatewayRouteTableAnnouncementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayVpcAttachmentRequest&, const Model::DeleteTransitGatewayVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayVpcAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteVpcRequest&, const Model::DeleteVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcResponseReceivedHandler;
@@ -2398,6 +2443,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayConnectsRequest&, const Model::DescribeTransitGatewayConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayConnectsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayMulticastDomainsRequest&, const Model::DescribeTransitGatewayMulticastDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayMulticastDomainsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayPeeringAttachmentsRequest&, const Model::DescribeTransitGatewayPeeringAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayPolicyTablesRequest&, const Model::DescribeTransitGatewayPolicyTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayPolicyTablesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest&, const Model::DescribeTransitGatewayRouteTableAnnouncementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayRouteTablesRequest&, const Model::DescribeTransitGatewayRouteTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayRouteTablesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayVpcAttachmentsRequest&, const Model::DescribeTransitGatewayVpcAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewaysRequest&, const Model::DescribeTransitGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewaysResponseReceivedHandler;
@@ -2442,6 +2489,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayMulticastDomainRequest&, const Model::DisassociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayMulticastDomainResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayPolicyTableRequest&, const Model::DisassociateTransitGatewayPolicyTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayPolicyTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayRouteTableRequest&, const Model::DisassociateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTrunkInterfaceRequest&, const Model::DisassociateTrunkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrunkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
@@ -2490,6 +2538,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetSubnetCidrReservationsRequest&, const Model::GetSubnetCidrReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubnetCidrReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&, const Model::GetTransitGatewayAttachmentPropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayMulticastDomainAssociationsRequest&, const Model::GetTransitGatewayMulticastDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayPolicyTableAssociationsRequest&, const Model::GetTransitGatewayPolicyTableAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayPolicyTableEntriesRequest&, const Model::GetTransitGatewayPolicyTableEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayPolicyTableEntriesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayPrefixListReferencesRequest&, const Model::GetTransitGatewayPrefixListReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayPrefixListReferencesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayRouteTableAssociationsRequest&, const Model::GetTransitGatewayRouteTableAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRouteTableAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayRouteTablePropagationsRequest&, const Model::GetTransitGatewayRouteTablePropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRouteTablePropagationsResponseReceivedHandler;
@@ -3227,6 +3277,24 @@ namespace Model
          * An Async wrapper for AssociateTransitGatewayMulticastDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateTransitGatewayMulticastDomainAsync(const Model::AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates the specified transit gateway attachment with a transit gateway
+         * policy table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateTransitGatewayPolicyTableOutcome AssociateTransitGatewayPolicyTable(const Model::AssociateTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateTransitGatewayPolicyTableOutcomeCallable AssociateTransitGatewayPolicyTableCallable(const Model::AssociateTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * An Async wrapper for AssociateTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateTransitGatewayPolicyTableAsync(const Model::AssociateTransitGatewayPolicyTableRequest& request, const AssociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified attachment with the specified transit gateway route
@@ -5284,10 +5352,11 @@ namespace Model
 
         /**
          * <p>Requests a transit gateway peering attachment between the specified transit
-         * gateway (requester) and a peer transit gateway (accepter). The peer transit
-         * gateway can be in your account or a different Amazon Web Services account.</p>
-         * <p>After you create the peering attachment, the owner of the accepter transit
-         * gateway must accept the attachment request.</p><p><h3>See Also:</h3>   <a
+         * gateway (requester) and a peer transit gateway (accepter). The transit gateways
+         * must be in different Regions. The peer transit gateway can be in your account or
+         * a different Amazon Web Services account.</p> <p>After you create the peering
+         * attachment, the owner of the accepter transit gateway must accept the attachment
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">AWS
          * API Reference</a></p>
          */
@@ -5302,6 +5371,23 @@ namespace Model
          * An Async wrapper for CreateTransitGatewayPeeringAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTransitGatewayPeeringAttachmentAsync(const Model::CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a transit gateway policy table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTransitGatewayPolicyTableOutcome CreateTransitGatewayPolicyTable(const Model::CreateTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTransitGatewayPolicyTableOutcomeCallable CreateTransitGatewayPolicyTableCallable(const Model::CreateTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTransitGatewayPolicyTableAsync(const Model::CreateTransitGatewayPolicyTableRequest& request, const CreateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a reference (route) to a prefix list in a specified transit gateway
@@ -5356,6 +5442,23 @@ namespace Model
          * An Async wrapper for CreateTransitGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTransitGatewayRouteTableAsync(const Model::CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Advertises a new transit gateway route table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTransitGatewayRouteTableAnnouncementOutcome CreateTransitGatewayRouteTableAnnouncement(const Model::CreateTransitGatewayRouteTableAnnouncementRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTransitGatewayRouteTableAnnouncement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTransitGatewayRouteTableAnnouncementOutcomeCallable CreateTransitGatewayRouteTableAnnouncementCallable(const Model::CreateTransitGatewayRouteTableAnnouncementRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateTransitGatewayRouteTableAnnouncement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTransitGatewayRouteTableAnnouncementAsync(const Model::CreateTransitGatewayRouteTableAnnouncementRequest& request, const CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches the specified VPC to the specified transit gateway.</p> <p>If you
@@ -6570,6 +6673,24 @@ namespace Model
         virtual void DeleteTransitGatewayPeeringAttachmentAsync(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified transit gateway policy table.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTransitGatewayPolicyTableOutcome DeleteTransitGatewayPolicyTable(const Model::DeleteTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTransitGatewayPolicyTableOutcomeCallable DeleteTransitGatewayPolicyTableCallable(const Model::DeleteTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTransitGatewayPolicyTableAsync(const Model::DeleteTransitGatewayPolicyTableRequest& request, const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a reference (route) to a prefix list in a specified transit gateway
          * route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference">AWS
@@ -6623,6 +6744,24 @@ namespace Model
          * An Async wrapper for DeleteTransitGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTransitGatewayRouteTableAsync(const Model::DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Advertises to the transit gateway that a transit gateway route table is
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTransitGatewayRouteTableAnnouncementOutcome DeleteTransitGatewayRouteTableAnnouncement(const Model::DeleteTransitGatewayRouteTableAnnouncementRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTransitGatewayRouteTableAnnouncement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTransitGatewayRouteTableAnnouncementOutcomeCallable DeleteTransitGatewayRouteTableAnnouncementCallable(const Model::DeleteTransitGatewayRouteTableAnnouncementRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteTransitGatewayRouteTableAnnouncement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTransitGatewayRouteTableAnnouncementAsync(const Model::DeleteTransitGatewayRouteTableAnnouncementRequest& request, const DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified VPC attachment.</p><p><h3>See Also:</h3>   <a
@@ -9389,6 +9528,42 @@ namespace Model
         virtual void DescribeTransitGatewayPeeringAttachmentsAsync(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes one or more transit gateway route policy tables. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTransitGatewayPolicyTablesOutcome DescribeTransitGatewayPolicyTables(const Model::DescribeTransitGatewayPolicyTablesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTransitGatewayPolicyTables that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTransitGatewayPolicyTablesOutcomeCallable DescribeTransitGatewayPolicyTablesCallable(const Model::DescribeTransitGatewayPolicyTablesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeTransitGatewayPolicyTables that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTransitGatewayPolicyTablesAsync(const Model::DescribeTransitGatewayPolicyTablesRequest& request, const DescribeTransitGatewayPolicyTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more transit gateway route table
+         * advertisements.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTransitGatewayRouteTableAnnouncementsOutcome DescribeTransitGatewayRouteTableAnnouncements(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTransitGatewayRouteTableAnnouncements that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTransitGatewayRouteTableAnnouncementsOutcomeCallable DescribeTransitGatewayRouteTableAnnouncementsCallable(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeTransitGatewayRouteTableAnnouncements that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTransitGatewayRouteTableAnnouncementsAsync(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request, const DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes one or more transit gateway route tables. By default, all transit
          * gateway route tables are described. Alternatively, you can filter the
          * results.</p><p><h3>See Also:</h3>   <a
@@ -10320,6 +10495,24 @@ namespace Model
          * An Async wrapper for DisassociateTransitGatewayMulticastDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateTransitGatewayMulticastDomainAsync(const Model::DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the association between an an attachment and a policy
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateTransitGatewayPolicyTableOutcome DisassociateTransitGatewayPolicyTable(const Model::DisassociateTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateTransitGatewayPolicyTableOutcomeCallable DisassociateTransitGatewayPolicyTableCallable(const Model::DisassociateTransitGatewayPolicyTableRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateTransitGatewayPolicyTableAsync(const Model::DisassociateTransitGatewayPolicyTableRequest& request, const DisassociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a resource attachment from a transit gateway route
@@ -11355,6 +11548,42 @@ namespace Model
          * An Async wrapper for GetTransitGatewayMulticastDomainAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTransitGatewayMulticastDomainAssociationsAsync(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of the transit gateway policy table associations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTransitGatewayPolicyTableAssociationsOutcome GetTransitGatewayPolicyTableAssociations(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTransitGatewayPolicyTableAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTransitGatewayPolicyTableAssociationsOutcomeCallable GetTransitGatewayPolicyTableAssociationsCallable(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTransitGatewayPolicyTableAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTransitGatewayPolicyTableAssociationsAsync(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request, const GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of transit gateway policy table entries.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTransitGatewayPolicyTableEntriesOutcome GetTransitGatewayPolicyTableEntries(const Model::GetTransitGatewayPolicyTableEntriesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTransitGatewayPolicyTableEntries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTransitGatewayPolicyTableEntriesOutcomeCallable GetTransitGatewayPolicyTableEntriesCallable(const Model::GetTransitGatewayPolicyTableEntriesRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTransitGatewayPolicyTableEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTransitGatewayPolicyTableEntriesAsync(const Model::GetTransitGatewayPolicyTableEntriesRequest& request, const GetTransitGatewayPolicyTableEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the prefix list references in a specified transit
@@ -14607,6 +14836,7 @@ namespace Model
         void AssociateRouteTableAsyncHelper(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSubnetCidrBlockAsyncHelper(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateTransitGatewayMulticastDomainAsyncHelper(const Model::AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateTransitGatewayPolicyTableAsyncHelper(const Model::AssociateTransitGatewayPolicyTableRequest& request, const AssociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateTransitGatewayRouteTableAsyncHelper(const Model::AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateTrunkInterfaceAsyncHelper(const Model::AssociateTrunkInterfaceRequest& request, const AssociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVpcCidrBlockAsyncHelper(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14689,9 +14919,11 @@ namespace Model
         void CreateTransitGatewayConnectPeerAsyncHelper(const Model::CreateTransitGatewayConnectPeerRequest& request, const CreateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayMulticastDomainAsyncHelper(const Model::CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayPeeringAttachmentAsyncHelper(const Model::CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTransitGatewayPolicyTableAsyncHelper(const Model::CreateTransitGatewayPolicyTableRequest& request, const CreateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayPrefixListReferenceAsyncHelper(const Model::CreateTransitGatewayPrefixListReferenceRequest& request, const CreateTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayRouteAsyncHelper(const Model::CreateTransitGatewayRouteRequest& request, const CreateTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayRouteTableAsyncHelper(const Model::CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTransitGatewayRouteTableAnnouncementAsyncHelper(const Model::CreateTransitGatewayRouteTableAnnouncementRequest& request, const CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayVpcAttachmentAsyncHelper(const Model::CreateTransitGatewayVpcAttachmentRequest& request, const CreateTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVolumeAsyncHelper(const Model::CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVpcAsyncHelper(const Model::CreateVpcRequest& request, const CreateVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14751,9 +14983,11 @@ namespace Model
         void DeleteTransitGatewayConnectPeerAsyncHelper(const Model::DeleteTransitGatewayConnectPeerRequest& request, const DeleteTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayMulticastDomainAsyncHelper(const Model::DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayPeeringAttachmentAsyncHelper(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTransitGatewayPolicyTableAsyncHelper(const Model::DeleteTransitGatewayPolicyTableRequest& request, const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayPrefixListReferenceAsyncHelper(const Model::DeleteTransitGatewayPrefixListReferenceRequest& request, const DeleteTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayRouteAsyncHelper(const Model::DeleteTransitGatewayRouteRequest& request, const DeleteTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayRouteTableAsyncHelper(const Model::DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTransitGatewayRouteTableAnnouncementAsyncHelper(const Model::DeleteTransitGatewayRouteTableAnnouncementRequest& request, const DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayVpcAttachmentAsyncHelper(const Model::DeleteTransitGatewayVpcAttachmentRequest& request, const DeleteTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVolumeAsyncHelper(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcAsyncHelper(const Model::DeleteVpcRequest& request, const DeleteVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14883,6 +15117,8 @@ namespace Model
         void DescribeTransitGatewayConnectsAsyncHelper(const Model::DescribeTransitGatewayConnectsRequest& request, const DescribeTransitGatewayConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewayMulticastDomainsAsyncHelper(const Model::DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewayPeeringAttachmentsAsyncHelper(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTransitGatewayPolicyTablesAsyncHelper(const Model::DescribeTransitGatewayPolicyTablesRequest& request, const DescribeTransitGatewayPolicyTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTransitGatewayRouteTableAnnouncementsAsyncHelper(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request, const DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewayRouteTablesAsyncHelper(const Model::DescribeTransitGatewayRouteTablesRequest& request, const DescribeTransitGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewayVpcAttachmentsAsyncHelper(const Model::DescribeTransitGatewayVpcAttachmentsRequest& request, const DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewaysAsyncHelper(const Model::DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14927,6 +15163,7 @@ namespace Model
         void DisassociateRouteTableAsyncHelper(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSubnetCidrBlockAsyncHelper(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTransitGatewayMulticastDomainAsyncHelper(const Model::DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateTransitGatewayPolicyTableAsyncHelper(const Model::DisassociateTransitGatewayPolicyTableRequest& request, const DisassociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTransitGatewayRouteTableAsyncHelper(const Model::DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTrunkInterfaceAsyncHelper(const Model::DisassociateTrunkInterfaceRequest& request, const DisassociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14975,6 +15212,8 @@ namespace Model
         void GetSubnetCidrReservationsAsyncHelper(const Model::GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayAttachmentPropagationsAsyncHelper(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayMulticastDomainAssociationsAsyncHelper(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTransitGatewayPolicyTableAssociationsAsyncHelper(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request, const GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTransitGatewayPolicyTableEntriesAsyncHelper(const Model::GetTransitGatewayPolicyTableEntriesRequest& request, const GetTransitGatewayPolicyTableEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayPrefixListReferencesAsyncHelper(const Model::GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRouteTableAssociationsAsyncHelper(const Model::GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRouteTablePropagationsAsyncHelper(const Model::GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

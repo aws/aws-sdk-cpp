@@ -81,6 +81,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline RevokeSnapshotAccessRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline RevokeSnapshotAccessRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * revoke access.</p>
+     */
+    inline RevokeSnapshotAccessRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+
+
+    /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
      * that specifies anything other than * for the cluster name.</p>
@@ -189,6 +238,9 @@ namespace Model
 
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
+    Aws::String m_snapshotArn;
+    bool m_snapshotArnHasBeenSet;
 
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
