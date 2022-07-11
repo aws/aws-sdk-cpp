@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PeeringTgwInfo.h>
+#include <aws/ec2/model/TransitGatewayPeeringAttachmentOptions.h>
 #include <aws/ec2/model/PeeringAttachmentStatus.h>
 #include <aws/ec2/model/TransitGatewayAttachmentState.h>
 #include <aws/core/utils/DateTime.h>
@@ -88,6 +89,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline const Aws::String& GetAccepterTransitGatewayAttachmentId() const{ return m_accepterTransitGatewayAttachmentId; }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline bool AccepterTransitGatewayAttachmentIdHasBeenSet() const { return m_accepterTransitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline void SetAccepterTransitGatewayAttachmentId(const Aws::String& value) { m_accepterTransitGatewayAttachmentIdHasBeenSet = true; m_accepterTransitGatewayAttachmentId = value; }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline void SetAccepterTransitGatewayAttachmentId(Aws::String&& value) { m_accepterTransitGatewayAttachmentIdHasBeenSet = true; m_accepterTransitGatewayAttachmentId = std::move(value); }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline void SetAccepterTransitGatewayAttachmentId(const char* value) { m_accepterTransitGatewayAttachmentIdHasBeenSet = true; m_accepterTransitGatewayAttachmentId.assign(value); }
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithAccepterTransitGatewayAttachmentId(const Aws::String& value) { SetAccepterTransitGatewayAttachmentId(value); return *this;}
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithAccepterTransitGatewayAttachmentId(Aws::String&& value) { SetAccepterTransitGatewayAttachmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the accepter transit gateway attachment.</p>
+     */
+    inline TransitGatewayPeeringAttachment& WithAccepterTransitGatewayAttachmentId(const char* value) { SetAccepterTransitGatewayAttachmentId(value); return *this;}
+
+
+    /**
      * <p>Information about the requester transit gateway.</p>
      */
     inline const PeeringTgwInfo& GetRequesterTgwInfo() const{ return m_requesterTgwInfo; }
@@ -147,6 +189,25 @@ namespace Model
      * <p>Information about the accepter transit gateway.</p>
      */
     inline TransitGatewayPeeringAttachment& WithAccepterTgwInfo(PeeringTgwInfo&& value) { SetAccepterTgwInfo(std::move(value)); return *this;}
+
+
+    
+    inline const TransitGatewayPeeringAttachmentOptions& GetOptions() const{ return m_options; }
+
+    
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    
+    inline void SetOptions(const TransitGatewayPeeringAttachmentOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    
+    inline void SetOptions(TransitGatewayPeeringAttachmentOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    
+    inline TransitGatewayPeeringAttachment& WithOptions(const TransitGatewayPeeringAttachmentOptions& value) { SetOptions(value); return *this;}
+
+    
+    inline TransitGatewayPeeringAttachment& WithOptions(TransitGatewayPeeringAttachmentOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
@@ -293,11 +354,17 @@ namespace Model
     Aws::String m_transitGatewayAttachmentId;
     bool m_transitGatewayAttachmentIdHasBeenSet;
 
+    Aws::String m_accepterTransitGatewayAttachmentId;
+    bool m_accepterTransitGatewayAttachmentIdHasBeenSet;
+
     PeeringTgwInfo m_requesterTgwInfo;
     bool m_requesterTgwInfoHasBeenSet;
 
     PeeringTgwInfo m_accepterTgwInfo;
     bool m_accepterTgwInfoHasBeenSet;
+
+    TransitGatewayPeeringAttachmentOptions m_options;
+    bool m_optionsHasBeenSet;
 
     PeeringAttachmentStatus m_status;
     bool m_statusHasBeenSet;

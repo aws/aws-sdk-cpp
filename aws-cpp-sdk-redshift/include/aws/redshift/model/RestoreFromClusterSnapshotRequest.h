@@ -180,6 +180,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+
+
+    /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
      * that specifies anything other than * for the cluster name.</p>
@@ -585,42 +634,58 @@ namespace Model
 
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
-     * <p>The elastic IP (EIP) address for the cluster.</p>
+     * <p>The elastic IP (EIP) address for the cluster. You don't have to specify the
+     * EIP for a publicly accessible cluster with AvailabilityZoneRelocation turned
+     * on.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
@@ -1836,6 +1901,9 @@ namespace Model
 
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
+    Aws::String m_snapshotArn;
+    bool m_snapshotArnHasBeenSet;
 
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;

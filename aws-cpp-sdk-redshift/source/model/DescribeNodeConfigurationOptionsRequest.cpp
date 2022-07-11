@@ -15,6 +15,7 @@ DescribeNodeConfigurationOptionsRequest::DescribeNodeConfigurationOptionsRequest
     m_actionTypeHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
     m_snapshotIdentifierHasBeenSet(false),
+    m_snapshotArnHasBeenSet(false),
     m_ownerAccountHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_markerHasBeenSet(false),
@@ -40,6 +41,11 @@ Aws::String DescribeNodeConfigurationOptionsRequest::SerializePayload() const
   if(m_snapshotIdentifierHasBeenSet)
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_snapshotArnHasBeenSet)
+  {
+    ss << "SnapshotArn=" << StringUtils::URLEncode(m_snapshotArn.c_str()) << "&";
   }
 
   if(m_ownerAccountHasBeenSet)

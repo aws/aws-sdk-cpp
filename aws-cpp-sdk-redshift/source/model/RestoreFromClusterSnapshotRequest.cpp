@@ -13,6 +13,7 @@ using namespace Aws::Utils;
 RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() : 
     m_clusterIdentifierHasBeenSet(false),
     m_snapshotIdentifierHasBeenSet(false),
+    m_snapshotArnHasBeenSet(false),
     m_snapshotClusterIdentifierHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -68,6 +69,11 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_snapshotIdentifierHasBeenSet)
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_snapshotArnHasBeenSet)
+  {
+    ss << "SnapshotArn=" << StringUtils::URLEncode(m_snapshotArn.c_str()) << "&";
   }
 
   if(m_snapshotClusterIdentifierHasBeenSet)

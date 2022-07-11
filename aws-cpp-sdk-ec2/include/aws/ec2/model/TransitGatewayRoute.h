@@ -126,6 +126,31 @@ namespace Model
     inline TransitGatewayRoute& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
 
 
+    
+    inline const Aws::String& GetTransitGatewayRouteTableAnnouncementId() const{ return m_transitGatewayRouteTableAnnouncementId; }
+
+    
+    inline bool TransitGatewayRouteTableAnnouncementIdHasBeenSet() const { return m_transitGatewayRouteTableAnnouncementIdHasBeenSet; }
+
+    
+    inline void SetTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = value; }
+
+    
+    inline void SetTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = std::move(value); }
+
+    
+    inline void SetTransitGatewayRouteTableAnnouncementId(const char* value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId.assign(value); }
+
+    
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
+    
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { SetTransitGatewayRouteTableAnnouncementId(std::move(value)); return *this;}
+
+    
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(const char* value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
+
     /**
      * <p>The attachments.</p>
      */
@@ -235,6 +260,9 @@ namespace Model
 
     Aws::String m_prefixListId;
     bool m_prefixListIdHasBeenSet;
+
+    Aws::String m_transitGatewayRouteTableAnnouncementId;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet;
 
     Aws::Vector<TransitGatewayRouteAttachment> m_transitGatewayAttachments;
     bool m_transitGatewayAttachmentsHasBeenSet;

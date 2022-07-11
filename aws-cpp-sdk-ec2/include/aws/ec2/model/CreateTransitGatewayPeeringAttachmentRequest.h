@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequestOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -218,6 +219,25 @@ namespace Model
     inline CreateTransitGatewayPeeringAttachmentRequest& WithPeerRegion(const char* value) { SetPeerRegion(value); return *this;}
 
 
+    
+    inline const CreateTransitGatewayPeeringAttachmentRequestOptions& GetOptions() const{ return m_options; }
+
+    
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    
+    inline void SetOptions(const CreateTransitGatewayPeeringAttachmentRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    
+    inline void SetOptions(CreateTransitGatewayPeeringAttachmentRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    
+    inline CreateTransitGatewayPeeringAttachmentRequest& WithOptions(const CreateTransitGatewayPeeringAttachmentRequestOptions& value) { SetOptions(value); return *this;}
+
+    
+    inline CreateTransitGatewayPeeringAttachmentRequest& WithOptions(CreateTransitGatewayPeeringAttachmentRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
+
+
     /**
      * <p>The tags to apply to the transit gateway peering attachment.</p>
      */
@@ -304,6 +324,9 @@ namespace Model
 
     Aws::String m_peerRegion;
     bool m_peerRegionHasBeenSet;
+
+    CreateTransitGatewayPeeringAttachmentRequestOptions m_options;
+    bool m_optionsHasBeenSet;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;

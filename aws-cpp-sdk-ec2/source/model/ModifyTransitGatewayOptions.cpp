@@ -34,7 +34,9 @@ ModifyTransitGatewayOptions::ModifyTransitGatewayOptions() :
     m_associationDefaultRouteTableIdHasBeenSet(false),
     m_defaultRouteTablePropagation(DefaultRouteTablePropagationValue::NOT_SET),
     m_defaultRouteTablePropagationHasBeenSet(false),
-    m_propagationDefaultRouteTableIdHasBeenSet(false)
+    m_propagationDefaultRouteTableIdHasBeenSet(false),
+    m_amazonSideAsn(0),
+    m_amazonSideAsnHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ ModifyTransitGatewayOptions::ModifyTransitGatewayOptions(const XmlNode& xmlNode)
     m_associationDefaultRouteTableIdHasBeenSet(false),
     m_defaultRouteTablePropagation(DefaultRouteTablePropagationValue::NOT_SET),
     m_defaultRouteTablePropagationHasBeenSet(false),
-    m_propagationDefaultRouteTableIdHasBeenSet(false)
+    m_propagationDefaultRouteTableIdHasBeenSet(false),
+    m_amazonSideAsn(0),
+    m_amazonSideAsnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -129,6 +133,12 @@ ModifyTransitGatewayOptions& ModifyTransitGatewayOptions::operator =(const XmlNo
       m_propagationDefaultRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(propagationDefaultRouteTableIdNode.GetText());
       m_propagationDefaultRouteTableIdHasBeenSet = true;
     }
+    XmlNode amazonSideAsnNode = resultNode.FirstChild("AmazonSideAsn");
+    if(!amazonSideAsnNode.IsNull())
+    {
+      m_amazonSideAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amazonSideAsnNode.GetText()).c_str()).c_str());
+      m_amazonSideAsnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -189,6 +199,11 @@ void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".PropagationDefaultRouteTableId=" << StringUtils::URLEncode(m_propagationDefaultRouteTableId.c_str()) << "&";
   }
 
+  if(m_amazonSideAsnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
+  }
+
 }
 
 void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -236,6 +251,10 @@ void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const ch
   if(m_propagationDefaultRouteTableIdHasBeenSet)
   {
       oStream << location << ".PropagationDefaultRouteTableId=" << StringUtils::URLEncode(m_propagationDefaultRouteTableId.c_str()) << "&";
+  }
+  if(m_amazonSideAsnHasBeenSet)
+  {
+      oStream << location << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
   }
 }
 

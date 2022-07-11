@@ -22,6 +22,7 @@ namespace Model
 
 PeeringTgwInfo::PeeringTgwInfo() : 
     m_transitGatewayIdHasBeenSet(false),
+    m_coreNetworkIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_regionHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ PeeringTgwInfo::PeeringTgwInfo() :
 
 PeeringTgwInfo::PeeringTgwInfo(const XmlNode& xmlNode) : 
     m_transitGatewayIdHasBeenSet(false),
+    m_coreNetworkIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_regionHasBeenSet(false)
 {
@@ -46,6 +48,12 @@ PeeringTgwInfo& PeeringTgwInfo::operator =(const XmlNode& xmlNode)
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+    }
+    XmlNode coreNetworkIdNode = resultNode.FirstChild("coreNetworkId");
+    if(!coreNetworkIdNode.IsNull())
+    {
+      m_coreNetworkId = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkIdNode.GetText());
+      m_coreNetworkIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
@@ -71,6 +79,11 @@ void PeeringTgwInfo::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
+  if(m_coreNetworkIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoreNetworkId=" << StringUtils::URLEncode(m_coreNetworkId.c_str()) << "&";
+  }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
@@ -88,6 +101,10 @@ void PeeringTgwInfo::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_transitGatewayIdHasBeenSet)
   {
       oStream << location << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+  if(m_coreNetworkIdHasBeenSet)
+  {
+      oStream << location << ".CoreNetworkId=" << StringUtils::URLEncode(m_coreNetworkId.c_str()) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {
