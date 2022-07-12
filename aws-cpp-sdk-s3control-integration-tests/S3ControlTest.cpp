@@ -25,6 +25,7 @@
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/PutBucketTaggingRequest.h>
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/CreateBucketRequest.h>
@@ -62,6 +63,7 @@ namespace
     static const char PRESIGNED_URLS_ACCESS_POINT[] = "presignedaccesspoint";
     static const char TEST_OBJECT_KEY[] = "TestObjectKey";
     static const char CUSTOM_ENDPOINT_OVERRIDE[] = "beta.example.com";
+    static const char TEST_BUCKET_TAG[] = "IntegrationTestResource";
     static const int TIMEOUT_MAX = 20;
 
     class S3ControlTest : public ::testing::Test
@@ -141,6 +143,23 @@ namespace
             return {configuration};
         }
 
+        static void TagTestBucket(const Aws::String& bucketName, const S3::S3Client& client) {
+            ASSERT_TRUE(!bucketName.empty());
+
+            Aws::S3::Model::PutBucketTaggingRequest taggingRequest;
+            taggingRequest.SetBucket(bucketName);
+            Aws::S3::Model::Tag tag;
+            tag.SetKey(TEST_BUCKET_TAG);
+            tag.SetValue(TEST_BUCKET_TAG);
+            Aws::S3::Model::Tagging tagging;
+            tagging.AddTagSet(tag);
+            taggingRequest.SetTagging(tagging);
+
+            auto taggingOutcome = client.PutBucketTagging(taggingRequest);
+
+            ASSERT_TRUE(taggingOutcome.IsSuccess());
+        }
+
         static bool WaitForBucketToPropagate(const Aws::String& bucketName, const S3::S3Client& client)
         {
             unsigned timeoutCount = 0;
@@ -193,6 +212,7 @@ namespace
             auto createBucketOutcome = m_s3Client.CreateBucket(createBucketRequest);
             ASSERT_TRUE(createBucketOutcome.IsSuccess());
             ASSERT_TRUE(WaitForBucketToPropagate(bucketName, m_s3Client));
+            TagTestBucket(bucketName, m_s3Client);
 
             CreateAccessPointRequest createAccessPointRequest;
             createAccessPointRequest.SetName(accessPointName);
@@ -249,6 +269,7 @@ namespace
                 auto createBucketOutcome = s3Client.CreateBucket(createBucketRequest);
                 ASSERT_TRUE(createBucketOutcome.IsSuccess());
                 ASSERT_TRUE(WaitForBucketToPropagate(regionalBucketName, s3Client));
+                TagTestBucket(regionalBucketName, s3Client);
 
                 S3Control::Model::Region regionalBucket;
                 regionalBucket.SetBucket(regionalBucketName);
@@ -696,7 +717,7 @@ namespace
     TEST_F(S3ControlTest, TestMultiRegionAccessPoint)
     {
         Aws::String bucketName = BuildResourceName(BASE_MRAP_BUCKET_NAME);
-        Aws::String accessPointName = BuildResourceName(BASE_MRAP);
+        Aws::String accessPointName = BuildResourceName(BASE_MRAP) + "integrationtest";
 
         Aws::Vector<Aws::String> multiRegions;
         multiRegions.push_back(Aws::Region::US_EAST_2);
