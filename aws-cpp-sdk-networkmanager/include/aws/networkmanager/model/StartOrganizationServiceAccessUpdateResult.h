@@ -32,19 +32,34 @@ namespace Model
     StartOrganizationServiceAccessUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The status of the service access update request for an Amazon Web Services
+     * Organization.</p>
+     */
     inline const OrganizationStatus& GetOrganizationStatus() const{ return m_organizationStatus; }
 
-    
+    /**
+     * <p>The status of the service access update request for an Amazon Web Services
+     * Organization.</p>
+     */
     inline void SetOrganizationStatus(const OrganizationStatus& value) { m_organizationStatus = value; }
 
-    
+    /**
+     * <p>The status of the service access update request for an Amazon Web Services
+     * Organization.</p>
+     */
     inline void SetOrganizationStatus(OrganizationStatus&& value) { m_organizationStatus = std::move(value); }
 
-    
+    /**
+     * <p>The status of the service access update request for an Amazon Web Services
+     * Organization.</p>
+     */
     inline StartOrganizationServiceAccessUpdateResult& WithOrganizationStatus(const OrganizationStatus& value) { SetOrganizationStatus(value); return *this;}
 
-    
+    /**
+     * <p>The status of the service access update request for an Amazon Web Services
+     * Organization.</p>
+     */
     inline StartOrganizationServiceAccessUpdateResult& WithOrganizationStatus(OrganizationStatus&& value) { SetOrganizationStatus(std::move(value)); return *this;}
 
   private:

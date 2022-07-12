@@ -13,21 +13,21 @@ namespace NetworkManager
 {
 namespace Model
 {
-  enum class AttachmentType
+  enum class ChangeStatus
   {
     NOT_SET,
-    CONNECT,
-    SITE_TO_SITE_VPN,
-    VPC,
-    TRANSIT_GATEWAY_ROUTE_TABLE
+    NOT_STARTED,
+    IN_PROGRESS,
+    COMPLETE,
+    FAILED
   };
 
-namespace AttachmentTypeMapper
+namespace ChangeStatusMapper
 {
-AWS_NETWORKMANAGER_API AttachmentType GetAttachmentTypeForName(const Aws::String& name);
+AWS_NETWORKMANAGER_API ChangeStatus GetChangeStatusForName(const Aws::String& name);
 
-AWS_NETWORKMANAGER_API Aws::String GetNameForAttachmentType(AttachmentType value);
-} // namespace AttachmentTypeMapper
+AWS_NETWORKMANAGER_API Aws::String GetNameForChangeStatus(ChangeStatus value);
+} // namespace ChangeStatusMapper
 } // namespace Model
 } // namespace NetworkManager
 } // namespace Aws
