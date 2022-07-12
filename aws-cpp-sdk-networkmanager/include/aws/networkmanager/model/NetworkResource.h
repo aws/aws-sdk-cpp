@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline NetworkResource& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline NetworkResource& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
 
     /**
-     * <p>a core network ID.</p>
+     * <p>The ID of a core network.</p>
      */
     inline NetworkResource& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
 

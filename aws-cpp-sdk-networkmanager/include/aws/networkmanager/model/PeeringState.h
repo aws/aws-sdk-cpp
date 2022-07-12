@@ -13,21 +13,21 @@ namespace NetworkManager
 {
 namespace Model
 {
-  enum class AttachmentType
+  enum class PeeringState
   {
     NOT_SET,
-    CONNECT,
-    SITE_TO_SITE_VPN,
-    VPC,
-    TRANSIT_GATEWAY_ROUTE_TABLE
+    CREATING,
+    FAILED,
+    AVAILABLE,
+    DELETING
   };
 
-namespace AttachmentTypeMapper
+namespace PeeringStateMapper
 {
-AWS_NETWORKMANAGER_API AttachmentType GetAttachmentTypeForName(const Aws::String& name);
+AWS_NETWORKMANAGER_API PeeringState GetPeeringStateForName(const Aws::String& name);
 
-AWS_NETWORKMANAGER_API Aws::String GetNameForAttachmentType(AttachmentType value);
-} // namespace AttachmentTypeMapper
+AWS_NETWORKMANAGER_API Aws::String GetNameForPeeringState(PeeringState value);
+} // namespace PeeringStateMapper
 } // namespace Model
 } // namespace NetworkManager
 } // namespace Aws

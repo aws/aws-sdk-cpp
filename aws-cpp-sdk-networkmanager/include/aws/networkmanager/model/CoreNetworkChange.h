@@ -204,6 +204,63 @@ namespace Model
      */
     inline CoreNetworkChange& WithNewValues(CoreNetworkChangeValues&& value) { SetNewValues(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline const Aws::String& GetIdentifierPath() const{ return m_identifierPath; }
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline bool IdentifierPathHasBeenSet() const { return m_identifierPathHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline void SetIdentifierPath(const Aws::String& value) { m_identifierPathHasBeenSet = true; m_identifierPath = value; }
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline void SetIdentifierPath(Aws::String&& value) { m_identifierPathHasBeenSet = true; m_identifierPath = std::move(value); }
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline void SetIdentifierPath(const char* value) { m_identifierPathHasBeenSet = true; m_identifierPath.assign(value); }
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline CoreNetworkChange& WithIdentifierPath(const Aws::String& value) { SetIdentifierPath(value); return *this;}
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline CoreNetworkChange& WithIdentifierPath(Aws::String&& value) { SetIdentifierPath(std::move(value)); return *this;}
+
+    /**
+     * <p>Uniquely identifies the path for a change within the changeset. For example,
+     * the <code>IdentifierPath</code> for a core network segment change might be
+     * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+     */
+    inline CoreNetworkChange& WithIdentifierPath(const char* value) { SetIdentifierPath(value); return *this;}
+
   private:
 
     ChangeType m_type;
@@ -220,6 +277,9 @@ namespace Model
 
     CoreNetworkChangeValues m_newValues;
     bool m_newValuesHasBeenSet;
+
+    Aws::String m_identifierPath;
+    bool m_identifierPathHasBeenSet;
   };
 
 } // namespace Model

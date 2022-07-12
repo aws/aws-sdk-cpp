@@ -13,21 +13,18 @@ namespace NetworkManager
 {
 namespace Model
 {
-  enum class AttachmentType
+  enum class PeeringType
   {
     NOT_SET,
-    CONNECT,
-    SITE_TO_SITE_VPN,
-    VPC,
-    TRANSIT_GATEWAY_ROUTE_TABLE
+    TRANSIT_GATEWAY
   };
 
-namespace AttachmentTypeMapper
+namespace PeeringTypeMapper
 {
-AWS_NETWORKMANAGER_API AttachmentType GetAttachmentTypeForName(const Aws::String& name);
+AWS_NETWORKMANAGER_API PeeringType GetPeeringTypeForName(const Aws::String& name);
 
-AWS_NETWORKMANAGER_API Aws::String GetNameForAttachmentType(AttachmentType value);
-} // namespace AttachmentTypeMapper
+AWS_NETWORKMANAGER_API Aws::String GetNameForPeeringType(PeeringType value);
+} // namespace PeeringTypeMapper
 } // namespace Model
 } // namespace NetworkManager
 } // namespace Aws

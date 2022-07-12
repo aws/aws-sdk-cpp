@@ -34,6 +34,8 @@
 #include <aws/networkmanager/model/CreateLinkRequest.h>
 #include <aws/networkmanager/model/CreateSiteRequest.h>
 #include <aws/networkmanager/model/CreateSiteToSiteVpnAttachmentRequest.h>
+#include <aws/networkmanager/model/CreateTransitGatewayPeeringRequest.h>
+#include <aws/networkmanager/model/CreateTransitGatewayRouteTableAttachmentRequest.h>
 #include <aws/networkmanager/model/CreateVpcAttachmentRequest.h>
 #include <aws/networkmanager/model/DeleteAttachmentRequest.h>
 #include <aws/networkmanager/model/DeleteConnectPeerRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/networkmanager/model/DeleteDeviceRequest.h>
 #include <aws/networkmanager/model/DeleteGlobalNetworkRequest.h>
 #include <aws/networkmanager/model/DeleteLinkRequest.h>
+#include <aws/networkmanager/model/DeletePeeringRequest.h>
 #include <aws/networkmanager/model/DeleteResourcePolicyRequest.h>
 #include <aws/networkmanager/model/DeleteSiteRequest.h>
 #include <aws/networkmanager/model/DeregisterTransitGatewayRequest.h>
@@ -57,6 +60,7 @@
 #include <aws/networkmanager/model/GetConnectPeerAssociationsRequest.h>
 #include <aws/networkmanager/model/GetConnectionsRequest.h>
 #include <aws/networkmanager/model/GetCoreNetworkRequest.h>
+#include <aws/networkmanager/model/GetCoreNetworkChangeEventsRequest.h>
 #include <aws/networkmanager/model/GetCoreNetworkChangeSetRequest.h>
 #include <aws/networkmanager/model/GetCoreNetworkPolicyRequest.h>
 #include <aws/networkmanager/model/GetCustomerGatewayAssociationsRequest.h>
@@ -73,13 +77,16 @@
 #include <aws/networkmanager/model/GetSiteToSiteVpnAttachmentRequest.h>
 #include <aws/networkmanager/model/GetSitesRequest.h>
 #include <aws/networkmanager/model/GetTransitGatewayConnectPeerAssociationsRequest.h>
+#include <aws/networkmanager/model/GetTransitGatewayPeeringRequest.h>
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsRequest.h>
+#include <aws/networkmanager/model/GetTransitGatewayRouteTableAttachmentRequest.h>
 #include <aws/networkmanager/model/GetVpcAttachmentRequest.h>
 #include <aws/networkmanager/model/ListAttachmentsRequest.h>
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworksRequest.h>
 #include <aws/networkmanager/model/ListOrganizationServiceAccessStatusRequest.h>
+#include <aws/networkmanager/model/ListPeeringsRequest.h>
 #include <aws/networkmanager/model/ListTagsForResourceRequest.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyRequest.h>
 #include <aws/networkmanager/model/PutResourcePolicyRequest.h>
@@ -585,6 +592,56 @@ void NetworkManagerClient::CreateSiteToSiteVpnAttachmentAsyncHelper(const Create
   handler(this, request, CreateSiteToSiteVpnAttachment(request), context);
 }
 
+CreateTransitGatewayPeeringOutcome NetworkManagerClient::CreateTransitGatewayPeering(const CreateTransitGatewayPeeringRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/transit-gateway-peerings");
+  return CreateTransitGatewayPeeringOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateTransitGatewayPeeringOutcomeCallable NetworkManagerClient::CreateTransitGatewayPeeringCallable(const CreateTransitGatewayPeeringRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTransitGatewayPeeringOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTransitGatewayPeering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::CreateTransitGatewayPeeringAsync(const CreateTransitGatewayPeeringRequest& request, const CreateTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayPeeringAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::CreateTransitGatewayPeeringAsyncHelper(const CreateTransitGatewayPeeringRequest& request, const CreateTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTransitGatewayPeering(request), context);
+}
+
+CreateTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::CreateTransitGatewayRouteTableAttachment(const CreateTransitGatewayRouteTableAttachmentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/transit-gateway-route-table-attachments");
+  return CreateTransitGatewayRouteTableAttachmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateTransitGatewayRouteTableAttachmentOutcomeCallable NetworkManagerClient::CreateTransitGatewayRouteTableAttachmentCallable(const CreateTransitGatewayRouteTableAttachmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTransitGatewayRouteTableAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTransitGatewayRouteTableAttachment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::CreateTransitGatewayRouteTableAttachmentAsync(const CreateTransitGatewayRouteTableAttachmentRequest& request, const CreateTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayRouteTableAttachmentAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::CreateTransitGatewayRouteTableAttachmentAsyncHelper(const CreateTransitGatewayRouteTableAttachmentRequest& request, const CreateTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTransitGatewayRouteTableAttachment(request), context);
+}
+
 CreateVpcAttachmentOutcome NetworkManagerClient::CreateVpcAttachment(const CreateVpcAttachmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -884,6 +941,37 @@ void NetworkManagerClient::DeleteLinkAsync(const DeleteLinkRequest& request, con
 void NetworkManagerClient::DeleteLinkAsyncHelper(const DeleteLinkRequest& request, const DeleteLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteLink(request), context);
+}
+
+DeletePeeringOutcome NetworkManagerClient::DeletePeering(const DeletePeeringRequest& request) const
+{
+  if (!request.PeeringIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePeering", "Required field: PeeringId, is not set");
+    return DeletePeeringOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PeeringId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/peerings/");
+  uri.AddPathSegment(request.GetPeeringId());
+  return DeletePeeringOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePeeringOutcomeCallable NetworkManagerClient::DeletePeeringCallable(const DeletePeeringRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePeeringOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePeering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::DeletePeeringAsync(const DeletePeeringRequest& request, const DeletePeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePeeringAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::DeletePeeringAsyncHelper(const DeletePeeringRequest& request, const DeletePeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePeering(request), context);
 }
 
 DeleteResourcePolicyOutcome NetworkManagerClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
@@ -1368,6 +1456,44 @@ void NetworkManagerClient::GetCoreNetworkAsync(const GetCoreNetworkRequest& requ
 void NetworkManagerClient::GetCoreNetworkAsyncHelper(const GetCoreNetworkRequest& request, const GetCoreNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCoreNetwork(request), context);
+}
+
+GetCoreNetworkChangeEventsOutcome NetworkManagerClient::GetCoreNetworkChangeEvents(const GetCoreNetworkChangeEventsRequest& request) const
+{
+  if (!request.CoreNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCoreNetworkChangeEvents", "Required field: CoreNetworkId, is not set");
+    return GetCoreNetworkChangeEventsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreNetworkId]", false));
+  }
+  if (!request.PolicyVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCoreNetworkChangeEvents", "Required field: PolicyVersionId, is not set");
+    return GetCoreNetworkChangeEventsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyVersionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/core-networks/");
+  uri.AddPathSegment(request.GetCoreNetworkId());
+  uri.AddPathSegments("/core-network-change-events/");
+  uri.AddPathSegment(request.GetPolicyVersionId());
+  return GetCoreNetworkChangeEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCoreNetworkChangeEventsOutcomeCallable NetworkManagerClient::GetCoreNetworkChangeEventsCallable(const GetCoreNetworkChangeEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCoreNetworkChangeEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCoreNetworkChangeEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetCoreNetworkChangeEventsAsync(const GetCoreNetworkChangeEventsRequest& request, const GetCoreNetworkChangeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCoreNetworkChangeEventsAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetCoreNetworkChangeEventsAsyncHelper(const GetCoreNetworkChangeEventsRequest& request, const GetCoreNetworkChangeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCoreNetworkChangeEvents(request), context);
 }
 
 GetCoreNetworkChangeSetOutcome NetworkManagerClient::GetCoreNetworkChangeSet(const GetCoreNetworkChangeSetRequest& request) const
@@ -1892,6 +2018,37 @@ void NetworkManagerClient::GetTransitGatewayConnectPeerAssociationsAsyncHelper(c
   handler(this, request, GetTransitGatewayConnectPeerAssociations(request), context);
 }
 
+GetTransitGatewayPeeringOutcome NetworkManagerClient::GetTransitGatewayPeering(const GetTransitGatewayPeeringRequest& request) const
+{
+  if (!request.PeeringIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTransitGatewayPeering", "Required field: PeeringId, is not set");
+    return GetTransitGatewayPeeringOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PeeringId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/transit-gateway-peerings/");
+  uri.AddPathSegment(request.GetPeeringId());
+  return GetTransitGatewayPeeringOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTransitGatewayPeeringOutcomeCallable NetworkManagerClient::GetTransitGatewayPeeringCallable(const GetTransitGatewayPeeringRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTransitGatewayPeeringOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTransitGatewayPeering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetTransitGatewayPeeringAsync(const GetTransitGatewayPeeringRequest& request, const GetTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayPeeringAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetTransitGatewayPeeringAsyncHelper(const GetTransitGatewayPeeringRequest& request, const GetTransitGatewayPeeringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTransitGatewayPeering(request), context);
+}
+
 GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayRegistrations(const GetTransitGatewayRegistrationsRequest& request) const
 {
   if (!request.GlobalNetworkIdHasBeenSet())
@@ -1922,6 +2079,37 @@ void NetworkManagerClient::GetTransitGatewayRegistrationsAsync(const GetTransitG
 void NetworkManagerClient::GetTransitGatewayRegistrationsAsyncHelper(const GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTransitGatewayRegistrations(request), context);
+}
+
+GetTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::GetTransitGatewayRouteTableAttachment(const GetTransitGatewayRouteTableAttachmentRequest& request) const
+{
+  if (!request.AttachmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTransitGatewayRouteTableAttachment", "Required field: AttachmentId, is not set");
+    return GetTransitGatewayRouteTableAttachmentOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/transit-gateway-route-table-attachments/");
+  uri.AddPathSegment(request.GetAttachmentId());
+  return GetTransitGatewayRouteTableAttachmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTransitGatewayRouteTableAttachmentOutcomeCallable NetworkManagerClient::GetTransitGatewayRouteTableAttachmentCallable(const GetTransitGatewayRouteTableAttachmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTransitGatewayRouteTableAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTransitGatewayRouteTableAttachment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetTransitGatewayRouteTableAttachmentAsync(const GetTransitGatewayRouteTableAttachmentRequest& request, const GetTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayRouteTableAttachmentAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetTransitGatewayRouteTableAttachmentAsyncHelper(const GetTransitGatewayRouteTableAttachmentRequest& request, const GetTransitGatewayRouteTableAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTransitGatewayRouteTableAttachment(request), context);
 }
 
 GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttachmentRequest& request) const
@@ -2085,6 +2273,31 @@ void NetworkManagerClient::ListOrganizationServiceAccessStatusAsync(const ListOr
 void NetworkManagerClient::ListOrganizationServiceAccessStatusAsyncHelper(const ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListOrganizationServiceAccessStatus(request), context);
+}
+
+ListPeeringsOutcome NetworkManagerClient::ListPeerings(const ListPeeringsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/peerings");
+  return ListPeeringsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPeeringsOutcomeCallable NetworkManagerClient::ListPeeringsCallable(const ListPeeringsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPeeringsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPeerings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::ListPeeringsAsync(const ListPeeringsRequest& request, const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPeeringsAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::ListPeeringsAsyncHelper(const ListPeeringsRequest& request, const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPeerings(request), context);
 }
 
 ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

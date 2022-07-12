@@ -25,7 +25,8 @@ CoreNetworkChange::CoreNetworkChange() :
     m_actionHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_previousValuesHasBeenSet(false),
-    m_newValuesHasBeenSet(false)
+    m_newValuesHasBeenSet(false),
+    m_identifierPathHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ CoreNetworkChange::CoreNetworkChange(JsonView jsonValue) :
     m_actionHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_previousValuesHasBeenSet(false),
-    m_newValuesHasBeenSet(false)
+    m_newValuesHasBeenSet(false),
+    m_identifierPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +80,13 @@ CoreNetworkChange& CoreNetworkChange::operator =(JsonView jsonValue)
     m_newValuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentifierPath"))
+  {
+    m_identifierPath = jsonValue.GetString("IdentifierPath");
+
+    m_identifierPathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +119,12 @@ JsonValue CoreNetworkChange::Jsonize() const
   if(m_newValuesHasBeenSet)
   {
    payload.WithObject("NewValues", m_newValues.Jsonize());
+
+  }
+
+  if(m_identifierPathHasBeenSet)
+  {
+   payload.WithString("IdentifierPath", m_identifierPath);
 
   }
 
