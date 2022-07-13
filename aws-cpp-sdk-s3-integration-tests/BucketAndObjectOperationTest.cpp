@@ -42,6 +42,7 @@
 #include <aws/s3/model/GetBucketLocationRequest.h>
 #include <aws/s3/model/SelectObjectContentRequest.h>
 #include <aws/s3/model/WriteGetObjectResponseRequest.h>
+#include <aws/s3/model/PutBucketTaggingRequest.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
@@ -100,6 +101,7 @@ namespace
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
     static const char* URIESCAPE_KEY = "Esc ape+Me$";
     static const char* CUSTOM_ENDPOINT_OVERRIDE = "beta.example.com";
+    static const char* TEST_BUCKET_TAG = "IntegrationTestResource";
 
     static const int TIMEOUT_MAX = 20;
 
@@ -279,6 +281,24 @@ namespace
             ASSERT_STREQ(ss.str().c_str(), outcome.GetResult().GetETag().c_str());
         }
 
+        static void TagTestBucket(const Aws::String& bucketName, const std::shared_ptr<Aws::S3::S3Client>& client) {
+            ASSERT_TRUE(!bucketName.empty());
+            ASSERT_TRUE(client);
+
+            PutBucketTaggingRequest taggingRequest;
+            taggingRequest.SetBucket(bucketName);
+            Tag tag;
+            tag.SetKey(TEST_BUCKET_TAG);
+            tag.SetValue(TEST_BUCKET_TAG);
+            Tagging tagging;
+            tagging.AddTagSet(tag);
+            taggingRequest.SetTagging(tagging);
+
+            auto taggingOutcome = client->PutBucketTagging(taggingRequest);
+
+            ASSERT_TRUE(taggingOutcome.IsSuccess());
+        }
+
         static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client>& client = Client)
         {
             unsigned timeoutCount = 0;
@@ -418,6 +438,7 @@ namespace
             const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
             EXPECT_TRUE(!createBucketResult.GetLocation().empty());
             EXPECT_TRUE(WaitForBucketToPropagate(fullBucketName));
+            TagTestBucket(fullBucketName, Client);
             return fullBucketName;
         }
 
@@ -642,8 +663,8 @@ namespace
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -711,6 +732,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         ListBucketsOutcome listBucketsOutcome = Client->ListBuckets();
         ASSERT_TRUE(listBucketsOutcome.IsSuccess());
@@ -749,6 +771,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, oregonClient));
+        TagTestBucket(fullBucketName, oregonClient);
 
         GetBucketLocationRequest locationRequest;
         locationRequest.SetBucket(fullBucketName);
@@ -774,8 +797,8 @@ namespace
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -800,8 +823,8 @@ namespace
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         Aws::Vector<Aws::String> objectKeysWithNewlineCharacter;
         objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-\n-LF");
@@ -868,8 +891,8 @@ namespace
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -955,8 +978,8 @@ namespace
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         //test unicode
         {
@@ -1119,8 +1142,8 @@ namespace
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         CreateMultipartUploadRequest createMultipartUploadRequest;
         createMultipartUploadRequest.SetBucket(fullBucketName);
@@ -1354,6 +1377,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
@@ -1376,6 +1400,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1410,6 +1435,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1437,8 +1463,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
-
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         auto objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
         *objectStream << "Test Japanese & Chinese Unicode keys";
@@ -1473,6 +1499,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1517,6 +1544,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1593,6 +1621,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1666,6 +1695,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1770,6 +1800,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1840,6 +1871,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         WaitForBucketToPropagate(fullBucketName, Client);
+        TagTestBucket(fullBucketName, Client);
 
         // Checksums in request body using aws-chunked trailer
         std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
@@ -1921,6 +1953,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
 
         CreateMultipartUploadRequest createMultipartUploadRequest;
         createMultipartUploadRequest.SetBucket(fullBucketName);
@@ -2007,6 +2040,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         WaitForBucketToPropagate(fullBucketName, oregonClient);
+        TagTestBucket(fullBucketName, oregonClient);
 
         ListObjectsRequest listObjectsRequest;
         listObjectsRequest.SetBucket(fullBucketName);

@@ -12,6 +12,8 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/PutBucketTaggingRequest.h>
+#include <aws/s3/model/Tagging.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/DateTime.h>
@@ -51,6 +53,8 @@ static const char RANGE_GET_TEST_STRING[] = "test AES CBC, AES CTR, and AES GCM 
 static const char* OVERFLOW_RANGE_GET_STR = "bytes=38-1000000000";
 static const char OVERFLOW_RANGE_GET_TEST_STRING[] = "test AES CBC, AES CTR, and AES GCM modes of operation with the Aws S3 Encryption Client";
 
+static const char* TEST_BUCKET_TAG = "IntegrationTestResource";
+
 class LiveClientTest : public ::testing::Test
 {
 public:
@@ -72,6 +76,21 @@ public:
 
         auto createBucketOutcome = StandardClient->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
+    }
+
+    static void TagTestBucket(const Aws::String& bucketName) {
+        Aws::S3::Model::PutBucketTaggingRequest taggingRequest;
+        taggingRequest.SetBucket(bucketName);
+        Aws::S3::Model::Tag tag;
+        tag.SetKey(TEST_BUCKET_TAG);
+        tag.SetValue(TEST_BUCKET_TAG);
+        Aws::S3::Model::Tagging tagging;
+        tagging.AddTagSet(tag);
+        taggingRequest.SetTagging(tagging);
+
+        auto taggingOutcome = StandardClient->PutBucketTagging(taggingRequest);
+
+        ASSERT_TRUE(taggingOutcome.IsSuccess());
     }
 
     static void TearDownTestCase()
