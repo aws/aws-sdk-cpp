@@ -24,6 +24,7 @@ DeploymentEvent::DeploymentEvent() :
     m_triggeredBy(TriggeredBy::NOT_SET),
     m_triggeredByHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_actionInvocationsHasBeenSet(false),
     m_occurredAtHasBeenSet(false)
 {
 }
@@ -34,6 +35,7 @@ DeploymentEvent::DeploymentEvent(JsonView jsonValue) :
     m_triggeredBy(TriggeredBy::NOT_SET),
     m_triggeredByHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_actionInvocationsHasBeenSet(false),
     m_occurredAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -60,6 +62,16 @@ DeploymentEvent& DeploymentEvent::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActionInvocations"))
+  {
+    Array<JsonView> actionInvocationsJsonList = jsonValue.GetArray("ActionInvocations");
+    for(unsigned actionInvocationsIndex = 0; actionInvocationsIndex < actionInvocationsJsonList.GetLength(); ++actionInvocationsIndex)
+    {
+      m_actionInvocations.push_back(actionInvocationsJsonList[actionInvocationsIndex].AsObject());
+    }
+    m_actionInvocationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("OccurredAt"))
@@ -89,6 +101,17 @@ JsonValue DeploymentEvent::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_actionInvocationsHasBeenSet)
+  {
+   Array<JsonValue> actionInvocationsJsonList(m_actionInvocations.size());
+   for(unsigned actionInvocationsIndex = 0; actionInvocationsIndex < actionInvocationsJsonList.GetLength(); ++actionInvocationsIndex)
+   {
+     actionInvocationsJsonList[actionInvocationsIndex].AsObject(m_actionInvocations[actionInvocationsIndex].Jsonize());
+   }
+   payload.WithArray("ActionInvocations", std::move(actionInvocationsJsonList));
 
   }
 

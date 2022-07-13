@@ -217,6 +217,55 @@ namespace Model
      */
     inline InvalidConfigurationDetail& WithType(const char* value) { SetType(value); return *this;}
 
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline InvalidConfigurationDetail& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline InvalidConfigurationDetail& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about an error with Lambda when a synchronous extension experiences
+     * an error during an invocation.</p>
+     */
+    inline InvalidConfigurationDetail& WithValue(const char* value) { SetValue(value); return *this;}
+
   private:
 
     Aws::String m_constraint;
@@ -230,6 +279,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    Aws::String m_value;
+    bool m_valueHasBeenSet;
   };
 
 } // namespace Model

@@ -24,23 +24,31 @@
 #include <aws/appconfig/model/CreateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/CreateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/CreateEnvironmentRequest.h>
+#include <aws/appconfig/model/CreateExtensionRequest.h>
+#include <aws/appconfig/model/CreateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/CreateHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/DeleteApplicationRequest.h>
 #include <aws/appconfig/model/DeleteConfigurationProfileRequest.h>
 #include <aws/appconfig/model/DeleteDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
+#include <aws/appconfig/model/DeleteExtensionRequest.h>
+#include <aws/appconfig/model/DeleteExtensionAssociationRequest.h>
 #include <aws/appconfig/model/DeleteHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/GetApplicationRequest.h>
 #include <aws/appconfig/model/GetConfigurationProfileRequest.h>
 #include <aws/appconfig/model/GetDeploymentRequest.h>
 #include <aws/appconfig/model/GetDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/GetEnvironmentRequest.h>
+#include <aws/appconfig/model/GetExtensionRequest.h>
+#include <aws/appconfig/model/GetExtensionAssociationRequest.h>
 #include <aws/appconfig/model/GetHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/ListApplicationsRequest.h>
 #include <aws/appconfig/model/ListConfigurationProfilesRequest.h>
 #include <aws/appconfig/model/ListDeploymentStrategiesRequest.h>
 #include <aws/appconfig/model/ListDeploymentsRequest.h>
 #include <aws/appconfig/model/ListEnvironmentsRequest.h>
+#include <aws/appconfig/model/ListExtensionAssociationsRequest.h>
+#include <aws/appconfig/model/ListExtensionsRequest.h>
 #include <aws/appconfig/model/ListHostedConfigurationVersionsRequest.h>
 #include <aws/appconfig/model/ListTagsForResourceRequest.h>
 #include <aws/appconfig/model/StartDeploymentRequest.h>
@@ -51,6 +59,8 @@
 #include <aws/appconfig/model/UpdateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/UpdateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/UpdateEnvironmentRequest.h>
+#include <aws/appconfig/model/UpdateExtensionRequest.h>
+#include <aws/appconfig/model/UpdateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/ValidateConfigurationRequest.h>
 
 using namespace Aws;
@@ -240,6 +250,56 @@ void AppConfigClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentReques
   handler(this, request, CreateEnvironment(request), context);
 }
 
+CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions");
+  return CreateExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExtensionOutcomeCallable AppConfigClient::CreateExtensionCallable(const CreateExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::CreateExtensionAsync(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExtensionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::CreateExtensionAsyncHelper(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExtension(request), context);
+}
+
+CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(const CreateExtensionAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations");
+  return CreateExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExtensionAssociationOutcomeCallable AppConfigClient::CreateExtensionAssociationCallable(const CreateExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::CreateExtensionAssociationAsync(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExtensionAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::CreateExtensionAssociationAsyncHelper(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExtensionAssociation(request), context);
+}
+
 CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(const CreateHostedConfigurationVersionRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -415,6 +475,68 @@ void AppConfigClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& req
 void AppConfigClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEnvironment(request), context);
+}
+
+DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionRequest& request) const
+{
+  if (!request.ExtensionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteExtension", "Required field: ExtensionIdentifier, is not set");
+    return DeleteExtensionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions/");
+  uri.AddPathSegment(request.GetExtensionIdentifier());
+  return DeleteExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExtensionOutcomeCallable AppConfigClient::DeleteExtensionCallable(const DeleteExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::DeleteExtensionAsync(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteExtensionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::DeleteExtensionAsyncHelper(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteExtension(request), context);
+}
+
+DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(const DeleteExtensionAssociationRequest& request) const
+{
+  if (!request.ExtensionAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteExtensionAssociation", "Required field: ExtensionAssociationId, is not set");
+    return DeleteExtensionAssociationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionAssociationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations/");
+  uri.AddPathSegment(request.GetExtensionAssociationId());
+  return DeleteExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExtensionAssociationOutcomeCallable AppConfigClient::DeleteExtensionAssociationCallable(const DeleteExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::DeleteExtensionAssociationAsync(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteExtensionAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::DeleteExtensionAssociationAsyncHelper(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteExtensionAssociation(request), context);
 }
 
 DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(const DeleteHostedConfigurationVersionRequest& request) const
@@ -645,6 +767,68 @@ void AppConfigClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& req
   handler(this, request, GetEnvironment(request), context);
 }
 
+GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& request) const
+{
+  if (!request.ExtensionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExtension", "Required field: ExtensionIdentifier, is not set");
+    return GetExtensionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions/");
+  uri.AddPathSegment(request.GetExtensionIdentifier());
+  return GetExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetExtensionOutcomeCallable AppConfigClient::GetExtensionCallable(const GetExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::GetExtensionAsync(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExtensionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::GetExtensionAsyncHelper(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExtension(request), context);
+}
+
+GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const GetExtensionAssociationRequest& request) const
+{
+  if (!request.ExtensionAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExtensionAssociation", "Required field: ExtensionAssociationId, is not set");
+    return GetExtensionAssociationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionAssociationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations/");
+  uri.AddPathSegment(request.GetExtensionAssociationId());
+  return GetExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetExtensionAssociationOutcomeCallable AppConfigClient::GetExtensionAssociationCallable(const GetExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::GetExtensionAssociationAsync(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExtensionAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::GetExtensionAssociationAsyncHelper(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExtensionAssociation(request), context);
+}
+
 GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(const GetHostedConfigurationVersionRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -841,6 +1025,56 @@ void AppConfigClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& reque
 void AppConfigClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEnvironments(request), context);
+}
+
+ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(const ListExtensionAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations");
+  return ListExtensionAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExtensionAssociationsOutcomeCallable AppConfigClient::ListExtensionAssociationsCallable(const ListExtensionAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensionAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensionAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::ListExtensionAssociationsAsync(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExtensionAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::ListExtensionAssociationsAsyncHelper(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExtensionAssociations(request), context);
+}
+
+ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions");
+  return ListExtensionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExtensionsOutcomeCallable AppConfigClient::ListExtensionsCallable(const ListExtensionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::ListExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExtensionsAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::ListExtensionsAsyncHelper(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExtensions(request), context);
 }
 
 ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(const ListHostedConfigurationVersionsRequest& request) const
@@ -1200,6 +1434,68 @@ void AppConfigClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& req
 void AppConfigClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateEnvironment(request), context);
+}
+
+UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionRequest& request) const
+{
+  if (!request.ExtensionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateExtension", "Required field: ExtensionIdentifier, is not set");
+    return UpdateExtensionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions/");
+  uri.AddPathSegment(request.GetExtensionIdentifier());
+  return UpdateExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateExtensionOutcomeCallable AppConfigClient::UpdateExtensionCallable(const UpdateExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::UpdateExtensionAsync(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateExtensionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::UpdateExtensionAsyncHelper(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateExtension(request), context);
+}
+
+UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(const UpdateExtensionAssociationRequest& request) const
+{
+  if (!request.ExtensionAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateExtensionAssociation", "Required field: ExtensionAssociationId, is not set");
+    return UpdateExtensionAssociationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionAssociationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations/");
+  uri.AddPathSegment(request.GetExtensionAssociationId());
+  return UpdateExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateExtensionAssociationOutcomeCallable AppConfigClient::UpdateExtensionAssociationCallable(const UpdateExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::UpdateExtensionAssociationAsync(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateExtensionAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::UpdateExtensionAssociationAsyncHelper(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateExtensionAssociation(request), context);
 }
 
 ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const ValidateConfigurationRequest& request) const
