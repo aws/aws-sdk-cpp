@@ -153,6 +153,15 @@ GetDeploymentResult& GetDeploymentResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("AppliedExtensions"))
+  {
+    Array<JsonView> appliedExtensionsJsonList = jsonValue.GetArray("AppliedExtensions");
+    for(unsigned appliedExtensionsIndex = 0; appliedExtensionsIndex < appliedExtensionsJsonList.GetLength(); ++appliedExtensionsIndex)
+    {
+      m_appliedExtensions.push_back(appliedExtensionsJsonList[appliedExtensionsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/appconfig/model/DeploymentEvent.h>
+#include <aws/appconfig/model/AppliedExtension.h>
 #include <utility>
 
 namespace Aws
@@ -557,6 +558,63 @@ namespace Model
      */
     inline StopDeploymentResult& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of extensions that were processed as part of the deployment. The
+     * extensions that were previously associated to the configuration profile,
+     * environment, or the application when <code>StartDeployment</code> was
+     * called.</p>
+     */
+    inline const Aws::Vector<AppliedExtension>& GetAppliedExtensions() const{ return m_appliedExtensions; }
+
+    /**
+     * <p>A list of extensions that were processed as part of the deployment. The
+     * extensions that were previously associated to the configuration profile,
+     * environment, or the application when <code>StartDeployment</code> was
+     * called.</p>
+     */
+    inline void SetAppliedExtensions(const Aws::Vector<AppliedExtension>& value) { m_appliedExtensions = value; }
+
+    /**
+     * <p>A list of extensions that were processed as part of the deployment. The
+     * extensions that were previously associated to the configuration profile,
+     * environment, or the application when <code>StartDeployment</code> was
+     * called.</p>
+     */
+    inline void SetAppliedExtensions(Aws::Vector<AppliedExtension>&& value) { m_appliedExtensions = std::move(value); }
+
+    /**
+     * <p>A list of extensions that were processed as part of the deployment. The
+     * extensions that were previously associated to the configuration profile,
+     * environment, or the application when <code>StartDeployment</code> was
+     * called.</p>
+     */
+    inline StopDeploymentResult& WithAppliedExtensions(const Aws::Vector<AppliedExtension>& value) { SetAppliedExtensions(value); return *this;}
+
+    /**
+     * <p>A list of extensions that were processed as part of the deployment. The
+     * extensions that were previously associated to the configuration profile,
+     * environment, or the application when <code>StartDeployment</code> was
+     * called.</p>
+     */
+    inline StopDeploymentResult& WithAppliedExtensions(Aws::Vector<AppliedExtension>&& value) { SetAppliedExtensions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of extensions that were processed as part of the deployment. The
+     * extensions that were previously associated to the configuration profile,
+     * environment, or the application when <code>StartDeployment</code> was
+     * called.</p>
+     */
+    inline StopDeploymentResult& AddAppliedExtensions(const AppliedExtension& value) { m_appliedExtensions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of extensions that were processed as part of the deployment. The
+     * extensions that were previously associated to the configuration profile,
+     * environment, or the application when <code>StartDeployment</code> was
+     * called.</p>
+     */
+    inline StopDeploymentResult& AddAppliedExtensions(AppliedExtension&& value) { m_appliedExtensions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_applicationId;
@@ -594,6 +652,8 @@ namespace Model
     Aws::Utils::DateTime m_startedAt;
 
     Aws::Utils::DateTime m_completedAt;
+
+    Aws::Vector<AppliedExtension> m_appliedExtensions;
   };
 
 } // namespace Model
