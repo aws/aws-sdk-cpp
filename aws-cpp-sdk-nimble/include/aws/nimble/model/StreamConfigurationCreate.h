@@ -168,12 +168,12 @@ namespace Model
      * be stopped. If you then call <code>StopStreamingSession</code>, the session
      * fails. If the time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * terminated by AWS (instead of stopped).</p> <p>If the value is set to a positive
+     * terminated (instead of stopped).</p> <p>If the value is set to a positive
      * number, the session can be stopped. You can call
      * <code>StopStreamingSession</code> to stop sessions in the READY state. If the
      * time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * stopped by AWS (instead of terminated).</p>
+     * stopped (instead of terminated).</p>
      */
     inline int GetMaxStoppedSessionLengthInMinutes() const{ return m_maxStoppedSessionLengthInMinutes; }
 
@@ -184,12 +184,12 @@ namespace Model
      * be stopped. If you then call <code>StopStreamingSession</code>, the session
      * fails. If the time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * terminated by AWS (instead of stopped).</p> <p>If the value is set to a positive
+     * terminated (instead of stopped).</p> <p>If the value is set to a positive
      * number, the session can be stopped. You can call
      * <code>StopStreamingSession</code> to stop sessions in the READY state. If the
      * time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * stopped by AWS (instead of terminated).</p>
+     * stopped (instead of terminated).</p>
      */
     inline bool MaxStoppedSessionLengthInMinutesHasBeenSet() const { return m_maxStoppedSessionLengthInMinutesHasBeenSet; }
 
@@ -200,12 +200,12 @@ namespace Model
      * be stopped. If you then call <code>StopStreamingSession</code>, the session
      * fails. If the time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * terminated by AWS (instead of stopped).</p> <p>If the value is set to a positive
+     * terminated (instead of stopped).</p> <p>If the value is set to a positive
      * number, the session can be stopped. You can call
      * <code>StopStreamingSession</code> to stop sessions in the READY state. If the
      * time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * stopped by AWS (instead of terminated).</p>
+     * stopped (instead of terminated).</p>
      */
     inline void SetMaxStoppedSessionLengthInMinutes(int value) { m_maxStoppedSessionLengthInMinutesHasBeenSet = true; m_maxStoppedSessionLengthInMinutes = value; }
 
@@ -216,12 +216,12 @@ namespace Model
      * be stopped. If you then call <code>StopStreamingSession</code>, the session
      * fails. If the time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * terminated by AWS (instead of stopped).</p> <p>If the value is set to a positive
+     * terminated (instead of stopped).</p> <p>If the value is set to a positive
      * number, the session can be stopped. You can call
      * <code>StopStreamingSession</code> to stop sessions in the READY state. If the
      * time that a session stays in the READY state exceeds the
      * <code>maxSessionLengthInMinutes</code> value, the session will automatically be
-     * stopped by AWS (instead of terminated).</p>
+     * stopped (instead of terminated).</p>
      */
     inline StreamConfigurationCreate& WithMaxStoppedSessionLengthInMinutes(int value) { SetMaxStoppedSessionLengthInMinutes(value); return *this;}
 

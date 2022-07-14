@@ -115,72 +115,72 @@ namespace Model
 
 
     /**
-     * <p>The status for subscribing to the third-party firewall vendor in the AWS
-     * Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall
-     * Manager policy administrator isn't subscribed to the third-party firewall
-     * service in the AWS Marketplace.</p> </li> <li> <p> <code>NOT_COMPLETE</code> -
-     * The Firewall Manager policy administrator is in the process of subscribing to
-     * the third-party firewall service in the Amazon Web Services Marketplace, but
-     * doesn't yet have an active subscription.</p> </li> <li> <p>
-     * <code>COMPLETE</code> - The Firewall Manager policy administrator has an active
-     * subscription to the third-party firewall service in the Amazon Web Services
-     * Marketplace.</p> </li> </ul>
+     * <p>The status for subscribing to the third-party firewall vendor in the Amazon
+     * Web Services Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The
+     * Firewall Manager policy administrator isn't subscribed to the third-party
+     * firewall service in the Amazon Web Services Marketplace.</p> </li> <li> <p>
+     * <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the
+     * process of subscribing to the third-party firewall service in the Amazon Web
+     * Services Marketplace, but doesn't yet have an active subscription.</p> </li>
+     * <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has
+     * an active subscription to the third-party firewall service in the Amazon Web
+     * Services Marketplace.</p> </li> </ul>
      */
     inline const MarketplaceSubscriptionOnboardingStatus& GetMarketplaceOnboardingStatus() const{ return m_marketplaceOnboardingStatus; }
 
     /**
-     * <p>The status for subscribing to the third-party firewall vendor in the AWS
-     * Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall
-     * Manager policy administrator isn't subscribed to the third-party firewall
-     * service in the AWS Marketplace.</p> </li> <li> <p> <code>NOT_COMPLETE</code> -
-     * The Firewall Manager policy administrator is in the process of subscribing to
-     * the third-party firewall service in the Amazon Web Services Marketplace, but
-     * doesn't yet have an active subscription.</p> </li> <li> <p>
-     * <code>COMPLETE</code> - The Firewall Manager policy administrator has an active
-     * subscription to the third-party firewall service in the Amazon Web Services
-     * Marketplace.</p> </li> </ul>
+     * <p>The status for subscribing to the third-party firewall vendor in the Amazon
+     * Web Services Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The
+     * Firewall Manager policy administrator isn't subscribed to the third-party
+     * firewall service in the Amazon Web Services Marketplace.</p> </li> <li> <p>
+     * <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the
+     * process of subscribing to the third-party firewall service in the Amazon Web
+     * Services Marketplace, but doesn't yet have an active subscription.</p> </li>
+     * <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has
+     * an active subscription to the third-party firewall service in the Amazon Web
+     * Services Marketplace.</p> </li> </ul>
      */
     inline void SetMarketplaceOnboardingStatus(const MarketplaceSubscriptionOnboardingStatus& value) { m_marketplaceOnboardingStatus = value; }
 
     /**
-     * <p>The status for subscribing to the third-party firewall vendor in the AWS
-     * Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall
-     * Manager policy administrator isn't subscribed to the third-party firewall
-     * service in the AWS Marketplace.</p> </li> <li> <p> <code>NOT_COMPLETE</code> -
-     * The Firewall Manager policy administrator is in the process of subscribing to
-     * the third-party firewall service in the Amazon Web Services Marketplace, but
-     * doesn't yet have an active subscription.</p> </li> <li> <p>
-     * <code>COMPLETE</code> - The Firewall Manager policy administrator has an active
-     * subscription to the third-party firewall service in the Amazon Web Services
-     * Marketplace.</p> </li> </ul>
+     * <p>The status for subscribing to the third-party firewall vendor in the Amazon
+     * Web Services Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The
+     * Firewall Manager policy administrator isn't subscribed to the third-party
+     * firewall service in the Amazon Web Services Marketplace.</p> </li> <li> <p>
+     * <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the
+     * process of subscribing to the third-party firewall service in the Amazon Web
+     * Services Marketplace, but doesn't yet have an active subscription.</p> </li>
+     * <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has
+     * an active subscription to the third-party firewall service in the Amazon Web
+     * Services Marketplace.</p> </li> </ul>
      */
     inline void SetMarketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus&& value) { m_marketplaceOnboardingStatus = std::move(value); }
 
     /**
-     * <p>The status for subscribing to the third-party firewall vendor in the AWS
-     * Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall
-     * Manager policy administrator isn't subscribed to the third-party firewall
-     * service in the AWS Marketplace.</p> </li> <li> <p> <code>NOT_COMPLETE</code> -
-     * The Firewall Manager policy administrator is in the process of subscribing to
-     * the third-party firewall service in the Amazon Web Services Marketplace, but
-     * doesn't yet have an active subscription.</p> </li> <li> <p>
-     * <code>COMPLETE</code> - The Firewall Manager policy administrator has an active
-     * subscription to the third-party firewall service in the Amazon Web Services
-     * Marketplace.</p> </li> </ul>
+     * <p>The status for subscribing to the third-party firewall vendor in the Amazon
+     * Web Services Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The
+     * Firewall Manager policy administrator isn't subscribed to the third-party
+     * firewall service in the Amazon Web Services Marketplace.</p> </li> <li> <p>
+     * <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the
+     * process of subscribing to the third-party firewall service in the Amazon Web
+     * Services Marketplace, but doesn't yet have an active subscription.</p> </li>
+     * <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has
+     * an active subscription to the third-party firewall service in the Amazon Web
+     * Services Marketplace.</p> </li> </ul>
      */
     inline GetThirdPartyFirewallAssociationStatusResult& WithMarketplaceOnboardingStatus(const MarketplaceSubscriptionOnboardingStatus& value) { SetMarketplaceOnboardingStatus(value); return *this;}
 
     /**
-     * <p>The status for subscribing to the third-party firewall vendor in the AWS
-     * Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall
-     * Manager policy administrator isn't subscribed to the third-party firewall
-     * service in the AWS Marketplace.</p> </li> <li> <p> <code>NOT_COMPLETE</code> -
-     * The Firewall Manager policy administrator is in the process of subscribing to
-     * the third-party firewall service in the Amazon Web Services Marketplace, but
-     * doesn't yet have an active subscription.</p> </li> <li> <p>
-     * <code>COMPLETE</code> - The Firewall Manager policy administrator has an active
-     * subscription to the third-party firewall service in the Amazon Web Services
-     * Marketplace.</p> </li> </ul>
+     * <p>The status for subscribing to the third-party firewall vendor in the Amazon
+     * Web Services Marketplace.</p> <ul> <li> <p> <code>NO_SUBSCRIPTION</code> - The
+     * Firewall Manager policy administrator isn't subscribed to the third-party
+     * firewall service in the Amazon Web Services Marketplace.</p> </li> <li> <p>
+     * <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the
+     * process of subscribing to the third-party firewall service in the Amazon Web
+     * Services Marketplace, but doesn't yet have an active subscription.</p> </li>
+     * <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has
+     * an active subscription to the third-party firewall service in the Amazon Web
+     * Services Marketplace.</p> </li> </ul>
      */
     inline GetThirdPartyFirewallAssociationStatusResult& WithMarketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus&& value) { SetMarketplaceOnboardingStatus(std::move(value)); return *this;}
 

@@ -30,7 +30,11 @@ namespace Model
 
   /**
    * <p>Provides the configuration information to connect to Alfresco as your data
-   * source.</p><p><h3>See Also:</h3>   <a
+   * source.</p>  <p>Alfresco data source connector is currently in preview
+   * mode. Basic authentication is currently supported. If you would like to use
+   * Alfresco connector in production, contact <a
+   * href="http://aws.amazon.com/contact-us/">Support</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AlfrescoConfiguration">AWS
    * API Reference</a></p>
    */
@@ -257,22 +261,22 @@ namespace Model
 
 
     /**
-     * <p> <code>TRUE</code> to index comments of wikis and blogs.</p>
+     * <p> <code>TRUE</code> to index comments of blogs and other content.</p>
      */
     inline bool GetCrawlComments() const{ return m_crawlComments; }
 
     /**
-     * <p> <code>TRUE</code> to index comments of wikis and blogs.</p>
+     * <p> <code>TRUE</code> to index comments of blogs and other content.</p>
      */
     inline bool CrawlCommentsHasBeenSet() const { return m_crawlCommentsHasBeenSet; }
 
     /**
-     * <p> <code>TRUE</code> to index comments of wikis and blogs.</p>
+     * <p> <code>TRUE</code> to index comments of blogs and other content.</p>
      */
     inline void SetCrawlComments(bool value) { m_crawlCommentsHasBeenSet = true; m_crawlComments = value; }
 
     /**
-     * <p> <code>TRUE</code> to index comments of wikis and blogs.</p>
+     * <p> <code>TRUE</code> to index comments of blogs and other content.</p>
      */
     inline AlfrescoConfiguration& WithCrawlComments(bool value) { SetCrawlComments(value); return *this;}
 

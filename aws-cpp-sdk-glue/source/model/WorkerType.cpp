@@ -23,6 +23,7 @@ namespace Aws
         static const int Standard_HASH = HashingUtils::HashString("Standard");
         static const int G_1X_HASH = HashingUtils::HashString("G.1X");
         static const int G_2X_HASH = HashingUtils::HashString("G.2X");
+        static const int G_025X_HASH = HashingUtils::HashString("G.025X");
 
 
         WorkerType GetWorkerTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == G_2X_HASH)
           {
             return WorkerType::G_2X;
+          }
+          else if (hashCode == G_025X_HASH)
+          {
+            return WorkerType::G_025X;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "G.1X";
           case WorkerType::G_2X:
             return "G.2X";
+          case WorkerType::G_025X:
+            return "G.025X";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

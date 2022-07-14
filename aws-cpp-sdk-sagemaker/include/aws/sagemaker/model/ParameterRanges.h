@@ -32,9 +32,11 @@ namespace Model
    * training jobs with hyperparameter values within these ranges to find the
    * combination of values that result in the training job with the best performance
    * as measured by the objective metric of the hyperparameter tuning job.</p> 
-   * <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning
-   * job can search over. Every possible value of a categorical parameter range
-   * counts against this limit.</p> <p><h3>See Also:</h3>   <a
+   * <p>The maximum number of items specified for <code>Array Members</code> refers
+   * to the maximum number of hyperparameters for each range and also the maximum for
+   * the hyperparameter tuning job itself. That is, the sum of the number of
+   * hyperparameters for all the ranges can't exceed the maximum number
+   * specified.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParameterRanges">AWS
    * API Reference</a></p>
    */

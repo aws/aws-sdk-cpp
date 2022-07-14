@@ -350,44 +350,51 @@ namespace Model
 
 
     /**
-     * <p>Configuration settings for any metadata applied to the documents in the
-     * index.</p>
+     * <p>Configuration information for document metadata or fields. Document metadata
+     * are fields or attributes associated with your documents. For example, the
+     * company department name associated with each document.</p>
      */
     inline const Aws::Vector<DocumentMetadataConfiguration>& GetDocumentMetadataConfigurations() const{ return m_documentMetadataConfigurations; }
 
     /**
-     * <p>Configuration settings for any metadata applied to the documents in the
-     * index.</p>
+     * <p>Configuration information for document metadata or fields. Document metadata
+     * are fields or attributes associated with your documents. For example, the
+     * company department name associated with each document.</p>
      */
     inline void SetDocumentMetadataConfigurations(const Aws::Vector<DocumentMetadataConfiguration>& value) { m_documentMetadataConfigurations = value; }
 
     /**
-     * <p>Configuration settings for any metadata applied to the documents in the
-     * index.</p>
+     * <p>Configuration information for document metadata or fields. Document metadata
+     * are fields or attributes associated with your documents. For example, the
+     * company department name associated with each document.</p>
      */
     inline void SetDocumentMetadataConfigurations(Aws::Vector<DocumentMetadataConfiguration>&& value) { m_documentMetadataConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration settings for any metadata applied to the documents in the
-     * index.</p>
+     * <p>Configuration information for document metadata or fields. Document metadata
+     * are fields or attributes associated with your documents. For example, the
+     * company department name associated with each document.</p>
      */
     inline DescribeIndexResult& WithDocumentMetadataConfigurations(const Aws::Vector<DocumentMetadataConfiguration>& value) { SetDocumentMetadataConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration settings for any metadata applied to the documents in the
-     * index.</p>
+     * <p>Configuration information for document metadata or fields. Document metadata
+     * are fields or attributes associated with your documents. For example, the
+     * company department name associated with each document.</p>
      */
     inline DescribeIndexResult& WithDocumentMetadataConfigurations(Aws::Vector<DocumentMetadataConfiguration>&& value) { SetDocumentMetadataConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration settings for any metadata applied to the documents in the
-     * index.</p>
+     * <p>Configuration information for document metadata or fields. Document metadata
+     * are fields or attributes associated with your documents. For example, the
+     * company department name associated with each document.</p>
      */
     inline DescribeIndexResult& AddDocumentMetadataConfigurations(const DocumentMetadataConfiguration& value) { m_documentMetadataConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration settings for any metadata applied to the documents in the
-     * index.</p>
+     * <p>Configuration information for document metadata or fields. Document metadata
+     * are fields or attributes associated with your documents. For example, the
+     * company department name associated with each document.</p>
      */
     inline DescribeIndexResult& AddDocumentMetadataConfigurations(DocumentMetadataConfiguration&& value) { m_documentMetadataConfigurations.push_back(std::move(value)); return *this; }
 
@@ -585,37 +592,32 @@ namespace Model
 
 
     /**
-     * <p>Shows whether you have enabled the configuration for fetching access levels
-     * of groups and users from an Amazon Web Services Single Sign On identity
-     * source.</p>
+     * <p>Whether you have enabled the configuration for fetching access levels of
+     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Shows whether you have enabled the configuration for fetching access levels
-     * of groups and users from an Amazon Web Services Single Sign On identity
-     * source.</p>
+     * <p>Whether you have enabled the configuration for fetching access levels of
+     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Shows whether you have enabled the configuration for fetching access levels
-     * of groups and users from an Amazon Web Services Single Sign On identity
-     * source.</p>
+     * <p>Whether you have enabled the configuration for fetching access levels of
+     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Shows whether you have enabled the configuration for fetching access levels
-     * of groups and users from an Amazon Web Services Single Sign On identity
-     * source.</p>
+     * <p>Whether you have enabled the configuration for fetching access levels of
+     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
      */
     inline DescribeIndexResult& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Shows whether you have enabled the configuration for fetching access levels
-     * of groups and users from an Amazon Web Services Single Sign On identity
-     * source.</p>
+     * <p>Whether you have enabled the configuration for fetching access levels of
+     * groups and users from an Amazon Web Services Single Sign On identity source.</p>
      */
     inline DescribeIndexResult& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 

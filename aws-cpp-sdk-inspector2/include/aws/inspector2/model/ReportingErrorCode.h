@@ -17,7 +17,11 @@ namespace Model
   {
     NOT_SET,
     INTERNAL_ERROR,
-    INVALID_PERMISSIONS
+    INVALID_PERMISSIONS,
+    NO_FINDINGS_FOUND,
+    BUCKET_NOT_FOUND,
+    INCOMPATIBLE_BUCKET_REGION,
+    MALFORMED_KMS_KEY
   };
 
 namespace ReportingErrorCodeMapper

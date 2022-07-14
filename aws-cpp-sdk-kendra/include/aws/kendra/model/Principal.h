@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides user and group information for document access
-   * filtering.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides user and group information for <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user
+   * context filtering</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Principal">AWS
    * API Reference</a></p>
    */
@@ -113,32 +114,32 @@ namespace Model
 
 
     /**
-     * <p>Whether to allow or deny access to the principal.</p>
+     * <p>Whether to allow or deny document access to the principal.</p>
      */
     inline const ReadAccessType& GetAccess() const{ return m_access; }
 
     /**
-     * <p>Whether to allow or deny access to the principal.</p>
+     * <p>Whether to allow or deny document access to the principal.</p>
      */
     inline bool AccessHasBeenSet() const { return m_accessHasBeenSet; }
 
     /**
-     * <p>Whether to allow or deny access to the principal.</p>
+     * <p>Whether to allow or deny document access to the principal.</p>
      */
     inline void SetAccess(const ReadAccessType& value) { m_accessHasBeenSet = true; m_access = value; }
 
     /**
-     * <p>Whether to allow or deny access to the principal.</p>
+     * <p>Whether to allow or deny document access to the principal.</p>
      */
     inline void SetAccess(ReadAccessType&& value) { m_accessHasBeenSet = true; m_access = std::move(value); }
 
     /**
-     * <p>Whether to allow or deny access to the principal.</p>
+     * <p>Whether to allow or deny document access to the principal.</p>
      */
     inline Principal& WithAccess(const ReadAccessType& value) { SetAccess(value); return *this;}
 
     /**
-     * <p>Whether to allow or deny access to the principal.</p>
+     * <p>Whether to allow or deny document access to the principal.</p>
      */
     inline Principal& WithAccess(ReadAccessType&& value) { SetAccess(std::move(value)); return *this;}
 

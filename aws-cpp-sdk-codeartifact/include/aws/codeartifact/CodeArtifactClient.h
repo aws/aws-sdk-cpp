@@ -21,6 +21,7 @@
 #include <aws/codeartifact/model/DeleteRepositoryResult.h>
 #include <aws/codeartifact/model/DeleteRepositoryPermissionsPolicyResult.h>
 #include <aws/codeartifact/model/DescribeDomainResult.h>
+#include <aws/codeartifact/model/DescribePackageResult.h>
 #include <aws/codeartifact/model/DescribePackageVersionResult.h>
 #include <aws/codeartifact/model/DescribeRepositoryResult.h>
 #include <aws/codeartifact/model/DisassociateExternalConnectionResult.h>
@@ -40,6 +41,7 @@
 #include <aws/codeartifact/model/ListRepositoriesInDomainResult.h>
 #include <aws/codeartifact/model/ListTagsForResourceResult.h>
 #include <aws/codeartifact/model/PutDomainPermissionsPolicyResult.h>
+#include <aws/codeartifact/model/PutPackageOriginConfigurationResult.h>
 #include <aws/codeartifact/model/PutRepositoryPermissionsPolicyResult.h>
 #include <aws/codeartifact/model/TagResourceResult.h>
 #include <aws/codeartifact/model/UntagResourceResult.h>
@@ -94,6 +96,7 @@ namespace Model
         class DeleteRepositoryRequest;
         class DeleteRepositoryPermissionsPolicyRequest;
         class DescribeDomainRequest;
+        class DescribePackageRequest;
         class DescribePackageVersionRequest;
         class DescribeRepositoryRequest;
         class DisassociateExternalConnectionRequest;
@@ -113,6 +116,7 @@ namespace Model
         class ListRepositoriesInDomainRequest;
         class ListTagsForResourceRequest;
         class PutDomainPermissionsPolicyRequest;
+        class PutPackageOriginConfigurationRequest;
         class PutRepositoryPermissionsPolicyRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -129,6 +133,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteRepositoryResult, CodeArtifactError> DeleteRepositoryOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryPermissionsPolicyResult, CodeArtifactError> DeleteRepositoryPermissionsPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainResult, CodeArtifactError> DescribeDomainOutcome;
+        typedef Aws::Utils::Outcome<DescribePackageResult, CodeArtifactError> DescribePackageOutcome;
         typedef Aws::Utils::Outcome<DescribePackageVersionResult, CodeArtifactError> DescribePackageVersionOutcome;
         typedef Aws::Utils::Outcome<DescribeRepositoryResult, CodeArtifactError> DescribeRepositoryOutcome;
         typedef Aws::Utils::Outcome<DisassociateExternalConnectionResult, CodeArtifactError> DisassociateExternalConnectionOutcome;
@@ -148,6 +153,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRepositoriesInDomainResult, CodeArtifactError> ListRepositoriesInDomainOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeArtifactError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutDomainPermissionsPolicyResult, CodeArtifactError> PutDomainPermissionsPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutPackageOriginConfigurationResult, CodeArtifactError> PutPackageOriginConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutRepositoryPermissionsPolicyResult, CodeArtifactError> PutRepositoryPermissionsPolicyOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, CodeArtifactError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, CodeArtifactError> UntagResourceOutcome;
@@ -164,6 +170,7 @@ namespace Model
         typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
         typedef std::future<DeleteRepositoryPermissionsPolicyOutcome> DeleteRepositoryPermissionsPolicyOutcomeCallable;
         typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
+        typedef std::future<DescribePackageOutcome> DescribePackageOutcomeCallable;
         typedef std::future<DescribePackageVersionOutcome> DescribePackageVersionOutcomeCallable;
         typedef std::future<DescribeRepositoryOutcome> DescribeRepositoryOutcomeCallable;
         typedef std::future<DisassociateExternalConnectionOutcome> DisassociateExternalConnectionOutcomeCallable;
@@ -183,6 +190,7 @@ namespace Model
         typedef std::future<ListRepositoriesInDomainOutcome> ListRepositoriesInDomainOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutDomainPermissionsPolicyOutcome> PutDomainPermissionsPolicyOutcomeCallable;
+        typedef std::future<PutPackageOriginConfigurationOutcome> PutPackageOriginConfigurationOutcomeCallable;
         typedef std::future<PutRepositoryPermissionsPolicyOutcome> PutRepositoryPermissionsPolicyOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -202,6 +210,7 @@ namespace Model
     typedef std::function<void(const CodeArtifactClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DeleteRepositoryPermissionsPolicyRequest&, const Model::DeleteRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPermissionsPolicyResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
+    typedef std::function<void(const CodeArtifactClient*, const Model::DescribePackageRequest&, const Model::DescribePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePackageResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DescribePackageVersionRequest&, const Model::DescribePackageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePackageVersionResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DescribeRepositoryRequest&, const Model::DescribeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DisassociateExternalConnectionRequest&, const Model::DisassociateExternalConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateExternalConnectionResponseReceivedHandler;
@@ -221,6 +230,7 @@ namespace Model
     typedef std::function<void(const CodeArtifactClient*, const Model::ListRepositoriesInDomainRequest&, const Model::ListRepositoriesInDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesInDomainResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::PutDomainPermissionsPolicyRequest&, const Model::PutDomainPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDomainPermissionsPolicyResponseReceivedHandler;
+    typedef std::function<void(const CodeArtifactClient*, const Model::PutPackageOriginConfigurationRequest&, const Model::PutPackageOriginConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPackageOriginConfigurationResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::PutRepositoryPermissionsPolicyRequest&, const Model::PutRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryPermissionsPolicyResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -305,8 +315,10 @@ namespace Model
    * <code>DeleteRepositoryPermissionsPolicy</code>: Deletes the resource policy that
    * is set on a repository.</p> </li> <li> <p> <code>DescribeDomain</code>: Returns
    * a <code>DomainDescription</code> object that contains information about the
-   * requested domain.</p> </li> <li> <p> <code>DescribePackageVersion</code>:
-   * Returns a <a
+   * requested domain.</p> </li> <li> <p> <code>DescribePackage</code>: Returns a <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+   * object that contains details about a package. </p> </li> <li> <p>
+   * <code>DescribePackageVersion</code>: Returns a <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
    * object that contains details about a package version. </p> </li> <li> <p>
    * <code>DescribeRepository</code>: Returns a <code>RepositoryDescription</code>
@@ -346,6 +358,9 @@ namespace Model
    * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a
    * domain.</p> </li> <li> <p> <code>PutDomainPermissionsPolicy</code>: Attaches a
    * resource policy to a domain.</p> </li> <li> <p>
+   * <code>PutPackageOriginConfiguration</code>: Sets the package origin
+   * configuration for a package, which determine how new versions of the package can
+   * be added to a specific repository.</p> </li> <li> <p>
    * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a
    * repository that specifies permissions to access it. </p> </li> <li> <p>
    * <code>UpdatePackageVersionsStatus</code>: Updates the status of one or more
@@ -584,6 +599,26 @@ namespace Model
 
         /**
          * <p> Returns a <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+         * object that contains information about the requested package.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePackageOutcome DescribePackage(const Model::DescribePackageRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePackage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePackageOutcomeCallable DescribePackageCallable(const Model::DescribePackageRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePackageAsync(const Model::DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
          * object that contains information about the requested package version.
          * </p><p><h3>See Also:</h3>   <a
@@ -745,9 +780,12 @@ namespace Model
         virtual void GetPackageVersionAssetAsync(const Model::GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets the readme file or descriptive text for a package version. </p> <p> The
-         * returned text might contain formatting. For example, it might contain formatting
-         * for Markdown or reStructuredText. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets the readme file or descriptive text for a package version. For packages
+         * that do not contain a readme file, CodeArtifact extracts a description from a
+         * metadata file. For example, from the <code>&lt;description&gt;</code> element in
+         * the <code>pom.xml</code> file of a Maven package. </p> <p> The returned text
+         * might contain formatting. For example, it might contain formatting for Markdown
+         * or reStructuredText. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetPackageVersionReadme">AWS
          * API Reference</a></p>
          */
@@ -989,6 +1027,38 @@ namespace Model
         virtual void PutDomainPermissionsPolicyAsync(const Model::PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the package origin configuration for a package.</p> <p>The package
+         * origin configuration determines how new versions of a package can be added to a
+         * repository. You can allow or block direct publishing of new package versions, or
+         * ingestion and retaining of new package versions from an external connection or
+         * upstream source. For more information about package origin controls and
+         * configuration, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing
+         * package origin controls</a> in the <i>CodeArtifact User Guide</i>.</p> <p>
+         * <code>PutPackageOriginConfiguration</code> can be called on a package that
+         * doesn't yet exist in the repository. When called on a package that does not
+         * exist, a package is created in the repository with no versions and the requested
+         * restrictions are set on the package. This can be used to preemptively block
+         * ingesting or retaining any versions from external connections or upstream
+         * repositories, or to block publishing any versions of the package into the
+         * repository before connecting any package managers or publishers to the
+         * repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPackageOriginConfigurationOutcome PutPackageOriginConfiguration(const Model::PutPackageOriginConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutPackageOriginConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPackageOriginConfigurationOutcomeCallable PutPackageOriginConfigurationCallable(const Model::PutPackageOriginConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for PutPackageOriginConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPackageOriginConfigurationAsync(const Model::PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Sets the resource policy on a repository that specifies permissions to
          * access it. </p> <p> When you call <code>PutRepositoryPermissionsPolicy</code>,
          * the resource policy on the repository is ignored when evaluting permissions.
@@ -1099,6 +1169,7 @@ namespace Model
         void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryPermissionsPolicyAsyncHelper(const Model::DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePackageAsyncHelper(const Model::DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePackageVersionAsyncHelper(const Model::DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRepositoryAsyncHelper(const Model::DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateExternalConnectionAsyncHelper(const Model::DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1118,6 +1189,7 @@ namespace Model
         void ListRepositoriesInDomainAsyncHelper(const Model::ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDomainPermissionsPolicyAsyncHelper(const Model::PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPackageOriginConfigurationAsyncHelper(const Model::PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRepositoryPermissionsPolicyAsyncHelper(const Model::PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

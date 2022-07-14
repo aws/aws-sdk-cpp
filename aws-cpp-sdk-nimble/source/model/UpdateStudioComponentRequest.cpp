@@ -21,7 +21,9 @@ UpdateStudioComponentRequest::UpdateStudioComponentRequest() :
     m_ec2SecurityGroupIdsHasBeenSet(false),
     m_initializationScriptsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptParametersHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_studioComponentIdHasBeenSet(false),
     m_studioIdHasBeenSet(false),
     m_subtype(StudioComponentSubtype::NOT_SET),
@@ -75,6 +77,12 @@ Aws::String UpdateStudioComponentRequest::SerializePayload() const
 
   }
 
+  if(m_runtimeRoleArnHasBeenSet)
+  {
+   payload.WithString("runtimeRoleArn", m_runtimeRoleArn);
+
+  }
+
   if(m_scriptParametersHasBeenSet)
   {
    Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
@@ -83,6 +91,12 @@ Aws::String UpdateStudioComponentRequest::SerializePayload() const
      scriptParametersJsonList[scriptParametersIndex].AsObject(m_scriptParameters[scriptParametersIndex].Jsonize());
    }
    payload.WithArray("scriptParameters", std::move(scriptParametersJsonList));
+
+  }
+
+  if(m_secureInitializationRoleArnHasBeenSet)
+  {
+   payload.WithString("secureInitializationRoleArn", m_secureInitializationRoleArn);
 
   }
 

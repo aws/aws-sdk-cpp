@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fms/model/StatefulEngineOptions.h>
 #include <aws/fms/model/StatelessRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/model/StatefulRuleGroup.h>
@@ -303,6 +304,131 @@ namespace Model
      */
     inline NetworkFirewallPolicyDescription& AddStatefulRuleGroups(StatefulRuleGroup&& value) { m_statefulRuleGroupsHasBeenSet = true; m_statefulRuleGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetStatefulDefaultActions() const{ return m_statefulDefaultActions; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline bool StatefulDefaultActionsHasBeenSet() const { return m_statefulDefaultActionsHasBeenSet; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline void SetStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = value; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline void SetStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = std::move(value); }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline NetworkFirewallPolicyDescription& WithStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { SetStatefulDefaultActions(value); return *this;}
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline NetworkFirewallPolicyDescription& WithStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { SetStatefulDefaultActions(std::move(value)); return *this;}
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline NetworkFirewallPolicyDescription& AddStatefulDefaultActions(const Aws::String& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline NetworkFirewallPolicyDescription& AddStatefulDefaultActions(Aws::String&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The default actions to take on a packet that doesn't match any stateful
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p> Valid values of the stateful default action: </p>
+     * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
+     * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     */
+    inline NetworkFirewallPolicyDescription& AddStatefulDefaultActions(const char* value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
+
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline const StatefulEngineOptions& GetStatefulEngineOptions() const{ return m_statefulEngineOptions; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline bool StatefulEngineOptionsHasBeenSet() const { return m_statefulEngineOptionsHasBeenSet; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline void SetStatefulEngineOptions(const StatefulEngineOptions& value) { m_statefulEngineOptionsHasBeenSet = true; m_statefulEngineOptions = value; }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline void SetStatefulEngineOptions(StatefulEngineOptions&& value) { m_statefulEngineOptionsHasBeenSet = true; m_statefulEngineOptions = std::move(value); }
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline NetworkFirewallPolicyDescription& WithStatefulEngineOptions(const StatefulEngineOptions& value) { SetStatefulEngineOptions(value); return *this;}
+
+    /**
+     * <p>Additional options governing how Network Firewall handles stateful rules. The
+     * stateful rule groups that you use in your policy must have stateful rule options
+     * settings that are compatible with these settings.</p>
+     */
+    inline NetworkFirewallPolicyDescription& WithStatefulEngineOptions(StatefulEngineOptions&& value) { SetStatefulEngineOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<StatelessRuleGroup> m_statelessRuleGroups;
@@ -319,6 +445,12 @@ namespace Model
 
     Aws::Vector<StatefulRuleGroup> m_statefulRuleGroups;
     bool m_statefulRuleGroupsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_statefulDefaultActions;
+    bool m_statefulDefaultActionsHasBeenSet;
+
+    StatefulEngineOptions m_statefulEngineOptions;
+    bool m_statefulEngineOptionsHasBeenSet;
   };
 
 } // namespace Model

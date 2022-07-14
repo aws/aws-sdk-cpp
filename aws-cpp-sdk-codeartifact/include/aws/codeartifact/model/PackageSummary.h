@@ -7,6 +7,7 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/codeartifact/model/PackageFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codeartifact/model/PackageOriginConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -73,82 +74,82 @@ namespace Model
 
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline PackageSummary& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline PackageSummary& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package. The package component that specifies its
+     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
+     * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
+     * packages do not contain a corresponding component, packages of those formats do
+     * not have a namespace. </p> </li> </ul>
      */
     inline PackageSummary& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
@@ -193,6 +194,67 @@ namespace Model
      */
     inline PackageSummary& WithPackage(const char* value) { SetPackage(value); return *this;}
 
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a>
+     * object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+     * object that contains information about the upstream and publish package origin
+     * restrictions.</p>
+     */
+    inline const PackageOriginConfiguration& GetOriginConfiguration() const{ return m_originConfiguration; }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a>
+     * object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+     * object that contains information about the upstream and publish package origin
+     * restrictions.</p>
+     */
+    inline bool OriginConfigurationHasBeenSet() const { return m_originConfigurationHasBeenSet; }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a>
+     * object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+     * object that contains information about the upstream and publish package origin
+     * restrictions.</p>
+     */
+    inline void SetOriginConfiguration(const PackageOriginConfiguration& value) { m_originConfigurationHasBeenSet = true; m_originConfiguration = value; }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a>
+     * object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+     * object that contains information about the upstream and publish package origin
+     * restrictions.</p>
+     */
+    inline void SetOriginConfiguration(PackageOriginConfiguration&& value) { m_originConfigurationHasBeenSet = true; m_originConfiguration = std::move(value); }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a>
+     * object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+     * object that contains information about the upstream and publish package origin
+     * restrictions.</p>
+     */
+    inline PackageSummary& WithOriginConfiguration(const PackageOriginConfiguration& value) { SetOriginConfiguration(value); return *this;}
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a>
+     * object that contains a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+     * object that contains information about the upstream and publish package origin
+     * restrictions.</p>
+     */
+    inline PackageSummary& WithOriginConfiguration(PackageOriginConfiguration&& value) { SetOriginConfiguration(std::move(value)); return *this;}
+
   private:
 
     PackageFormat m_format;
@@ -203,6 +265,9 @@ namespace Model
 
     Aws::String m_package;
     bool m_packageHasBeenSet;
+
+    PackageOriginConfiguration m_originConfiguration;
+    bool m_originConfigurationHasBeenSet;
   };
 
 } // namespace Model

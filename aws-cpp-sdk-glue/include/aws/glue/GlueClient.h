@@ -1322,7 +1322,7 @@ namespace Model
         virtual void CancelMLTaskRunAsync(const Model::CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels the statement..</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels the statement.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelStatement">AWS
          * API Reference</a></p>
          */
@@ -3537,7 +3537,7 @@ namespace Model
         virtual void ListSchemasAsync(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve a session..</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve a list of sessions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">AWS
          * API Reference</a></p>
          */
@@ -4348,7 +4348,8 @@ namespace Model
         virtual void UpdateDevEndpointAsync(const Model::UpdateDevEndpointRequest& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing job definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing job definition. The previous job definition is completely
+         * overwritten by this information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">AWS API
          * Reference</a></p>
          */

@@ -39,124 +39,124 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the index for the new thesaurus. </p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the new thesaurus.</p>
+     * <p>A name for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for the new thesaurus.</p>
+     * <p>A description for the thesaurus.</p>
      */
     inline CreateThesaurusRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -260,32 +260,32 @@ namespace Model
 
 
     /**
-     * <p>The thesaurus file Amazon S3 source path. </p>
+     * <p>The path to the thesaurus file in S3.</p>
      */
     inline const S3Path& GetSourceS3Path() const{ return m_sourceS3Path; }
 
     /**
-     * <p>The thesaurus file Amazon S3 source path. </p>
+     * <p>The path to the thesaurus file in S3.</p>
      */
     inline bool SourceS3PathHasBeenSet() const { return m_sourceS3PathHasBeenSet; }
 
     /**
-     * <p>The thesaurus file Amazon S3 source path. </p>
+     * <p>The path to the thesaurus file in S3.</p>
      */
     inline void SetSourceS3Path(const S3Path& value) { m_sourceS3PathHasBeenSet = true; m_sourceS3Path = value; }
 
     /**
-     * <p>The thesaurus file Amazon S3 source path. </p>
+     * <p>The path to the thesaurus file in S3.</p>
      */
     inline void SetSourceS3Path(S3Path&& value) { m_sourceS3PathHasBeenSet = true; m_sourceS3Path = std::move(value); }
 
     /**
-     * <p>The thesaurus file Amazon S3 source path. </p>
+     * <p>The path to the thesaurus file in S3.</p>
      */
     inline CreateThesaurusRequest& WithSourceS3Path(const S3Path& value) { SetSourceS3Path(value); return *this;}
 
     /**
-     * <p>The thesaurus file Amazon S3 source path. </p>
+     * <p>The path to the thesaurus file in S3.</p>
      */
     inline CreateThesaurusRequest& WithSourceS3Path(S3Path&& value) { SetSourceS3Path(std::move(value)); return *this;}
 

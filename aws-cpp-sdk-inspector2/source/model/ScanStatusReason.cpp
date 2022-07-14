@@ -33,6 +33,7 @@ namespace Aws
         static const int SCAN_FREQUENCY_MANUAL_HASH = HashingUtils::HashString("SCAN_FREQUENCY_MANUAL");
         static const int SCAN_FREQUENCY_SCAN_ON_PUSH_HASH = HashingUtils::HashString("SCAN_FREQUENCY_SCAN_ON_PUSH");
         static const int EC2_INSTANCE_STOPPED_HASH = HashingUtils::HashString("EC2_INSTANCE_STOPPED");
+        static const int PENDING_DISABLE_HASH = HashingUtils::HashString("PENDING_DISABLE");
 
 
         ScanStatusReason GetScanStatusReasonForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return ScanStatusReason::EC2_INSTANCE_STOPPED;
           }
+          else if (hashCode == PENDING_DISABLE_HASH)
+          {
+            return ScanStatusReason::PENDING_DISABLE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +135,8 @@ namespace Aws
             return "SCAN_FREQUENCY_SCAN_ON_PUSH";
           case ScanStatusReason::EC2_INSTANCE_STOPPED:
             return "EC2_INSTANCE_STOPPED";
+          case ScanStatusReason::PENDING_DISABLE:
+            return "PENDING_DISABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
