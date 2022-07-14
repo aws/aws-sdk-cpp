@@ -30,6 +30,7 @@
 #include <aws/codeartifact/model/DeleteRepositoryRequest.h>
 #include <aws/codeartifact/model/DeleteRepositoryPermissionsPolicyRequest.h>
 #include <aws/codeartifact/model/DescribeDomainRequest.h>
+#include <aws/codeartifact/model/DescribePackageRequest.h>
 #include <aws/codeartifact/model/DescribePackageVersionRequest.h>
 #include <aws/codeartifact/model/DescribeRepositoryRequest.h>
 #include <aws/codeartifact/model/DisassociateExternalConnectionRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/codeartifact/model/ListRepositoriesInDomainRequest.h>
 #include <aws/codeartifact/model/ListTagsForResourceRequest.h>
 #include <aws/codeartifact/model/PutDomainPermissionsPolicyRequest.h>
+#include <aws/codeartifact/model/PutPackageOriginConfigurationRequest.h>
 #include <aws/codeartifact/model/PutRepositoryPermissionsPolicyRequest.h>
 #include <aws/codeartifact/model/TagResourceRequest.h>
 #include <aws/codeartifact/model/UntagResourceRequest.h>
@@ -486,6 +488,51 @@ void CodeArtifactClient::DescribeDomainAsync(const DescribeDomainRequest& reques
 void CodeArtifactClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDomain(request), context);
+}
+
+DescribePackageOutcome CodeArtifactClient::DescribePackage(const DescribePackageRequest& request) const
+{
+  if (!request.DomainHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePackage", "Required field: Domain, is not set");
+    return DescribePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
+  }
+  if (!request.RepositoryHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePackage", "Required field: Repository, is not set");
+    return DescribePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
+  }
+  if (!request.FormatHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePackage", "Required field: Format, is not set");
+    return DescribePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
+  }
+  if (!request.PackageHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePackage", "Required field: Package, is not set");
+    return DescribePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/package");
+  return DescribePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribePackageOutcomeCallable CodeArtifactClient::DescribePackageCallable(const DescribePackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeArtifactClient::DescribePackageAsync(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePackageAsyncHelper( request, handler, context ); } );
+}
+
+void CodeArtifactClient::DescribePackageAsyncHelper(const DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePackage(request), context);
 }
 
 DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const DescribePackageVersionRequest& request) const
@@ -1211,6 +1258,51 @@ void CodeArtifactClient::PutDomainPermissionsPolicyAsync(const PutDomainPermissi
 void CodeArtifactClient::PutDomainPermissionsPolicyAsyncHelper(const PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutDomainPermissionsPolicy(request), context);
+}
+
+PutPackageOriginConfigurationOutcome CodeArtifactClient::PutPackageOriginConfiguration(const PutPackageOriginConfigurationRequest& request) const
+{
+  if (!request.DomainHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPackageOriginConfiguration", "Required field: Domain, is not set");
+    return PutPackageOriginConfigurationOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
+  }
+  if (!request.RepositoryHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPackageOriginConfiguration", "Required field: Repository, is not set");
+    return PutPackageOriginConfigurationOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
+  }
+  if (!request.FormatHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPackageOriginConfiguration", "Required field: Format, is not set");
+    return PutPackageOriginConfigurationOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
+  }
+  if (!request.PackageHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPackageOriginConfiguration", "Required field: Package, is not set");
+    return PutPackageOriginConfigurationOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/package");
+  return PutPackageOriginConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutPackageOriginConfigurationOutcomeCallable CodeArtifactClient::PutPackageOriginConfigurationCallable(const PutPackageOriginConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPackageOriginConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPackageOriginConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeArtifactClient::PutPackageOriginConfigurationAsync(const PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPackageOriginConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void CodeArtifactClient::PutPackageOriginConfigurationAsyncHelper(const PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPackageOriginConfiguration(request), context);
 }
 
 PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissionsPolicy(const PutRepositoryPermissionsPolicyRequest& request) const

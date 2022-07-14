@@ -36,165 +36,165 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index for a block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of a block list.</p>
+     * <p>The identifier of the block list you want to update.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a block list.</p>
+     * <p>A new name for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for a block list.</p>
+     * <p>A new description for the block list.</p>
      */
     inline UpdateQuerySuggestionsBlockListRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

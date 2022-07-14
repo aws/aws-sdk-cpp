@@ -76,96 +76,96 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */
     inline DeletePrincipalMappingRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */
     inline DeletePrincipalMappingRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the data source you want to delete a group from.</p>
-     * <p>This is useful if a group is tied to multiple data sources and you want to
-     * delete a group from accessing documents in a certain data source. For example,
-     * the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
-     * the company's documents stored in the data sources Confluence and Salesforce.
-     * You want to delete "Research" and "Engineering" groups from Salesforce, so that
+     * <p>The identifier of the data source you want to delete a group from.</p> <p>A
+     * group can be tied to multiple data sources. You can delete a group from
+     * accessing documents in a certain data source. For example, the groups
+     * "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce. You
+     * want to delete "Research" and "Engineering" groups from Salesforce, so that
      * these groups cannot access customer-related documents stored in Salesforce. Only
      * "Sales and Marketing" should access documents in the Salesforce data source.</p>
      */

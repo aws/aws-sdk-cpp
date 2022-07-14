@@ -36,271 +36,271 @@ namespace Model
 
 
     /**
-     * <p>Shows the identifier of the index for the block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>Shows the identifier of the index for the block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexId = value; }
 
     /**
-     * <p>Shows the identifier of the index for the block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexId = std::move(value); }
 
     /**
-     * <p>Shows the identifier of the index for the block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline void SetIndexId(const char* value) { m_indexId.assign(value); }
 
     /**
-     * <p>Shows the identifier of the index for the block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>Shows the identifier of the index for the block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>Shows the identifier of the index for the block list.</p>
+     * <p>The identifier of the index for the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
-     * <p>Shows the unique identifier of the block list.</p>
+     * <p>The identifier of the block list.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Shows the unique identifier of the block list.</p>
+     * <p>The identifier of the block list.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>Shows the unique identifier of the block list.</p>
+     * <p>The identifier of the block list.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>Shows the unique identifier of the block list.</p>
+     * <p>The identifier of the block list.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>Shows the unique identifier of the block list.</p>
+     * <p>The identifier of the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>Shows the unique identifier of the block list.</p>
+     * <p>The identifier of the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>Shows the unique identifier of the block list.</p>
+     * <p>The identifier of the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>Shows the name of the block list.</p>
+     * <p>The name of the block list.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Shows the name of the block list.</p>
+     * <p>The name of the block list.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Shows the name of the block list.</p>
+     * <p>The name of the block list.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Shows the name of the block list.</p>
+     * <p>The name of the block list.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Shows the name of the block list.</p>
+     * <p>The name of the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Shows the name of the block list.</p>
+     * <p>The name of the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Shows the name of the block list.</p>
+     * <p>The name of the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Shows the description for the block list.</p>
+     * <p>The description for the block list.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Shows the description for the block list.</p>
+     * <p>The description for the block list.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>Shows the description for the block list.</p>
+     * <p>The description for the block list.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>Shows the description for the block list.</p>
+     * <p>The description for the block list.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>Shows the description for the block list.</p>
+     * <p>The description for the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Shows the description for the block list.</p>
+     * <p>The description for the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Shows the description for the block list.</p>
+     * <p>The description for the block list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Shows whether the current status of the block list is <code>ACTIVE</code> or
-     * <code>INACTIVE</code>.</p>
+     * <p>The current status of the block list. When the value is <code>ACTIVE</code>,
+     * the block list is ready for use.</p>
      */
     inline const QuerySuggestionsBlockListStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Shows whether the current status of the block list is <code>ACTIVE</code> or
-     * <code>INACTIVE</code>.</p>
+     * <p>The current status of the block list. When the value is <code>ACTIVE</code>,
+     * the block list is ready for use.</p>
      */
     inline void SetStatus(const QuerySuggestionsBlockListStatus& value) { m_status = value; }
 
     /**
-     * <p>Shows whether the current status of the block list is <code>ACTIVE</code> or
-     * <code>INACTIVE</code>.</p>
+     * <p>The current status of the block list. When the value is <code>ACTIVE</code>,
+     * the block list is ready for use.</p>
      */
     inline void SetStatus(QuerySuggestionsBlockListStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>Shows whether the current status of the block list is <code>ACTIVE</code> or
-     * <code>INACTIVE</code>.</p>
+     * <p>The current status of the block list. When the value is <code>ACTIVE</code>,
+     * the block list is ready for use.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithStatus(const QuerySuggestionsBlockListStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Shows whether the current status of the block list is <code>ACTIVE</code> or
-     * <code>INACTIVE</code>.</p>
+     * <p>The current status of the block list. When the value is <code>ACTIVE</code>,
+     * the block list is ready for use.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithStatus(QuerySuggestionsBlockListStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>Shows the error message with details when there are issues in processing the
-     * block list.</p>
+     * <p>The error message containing details if there are issues processing the block
+     * list.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>Shows the error message with details when there are issues in processing the
-     * block list.</p>
+     * <p>The error message containing details if there are issues processing the block
+     * list.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
 
     /**
-     * <p>Shows the error message with details when there are issues in processing the
-     * block list.</p>
+     * <p>The error message containing details if there are issues processing the block
+     * list.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
-     * <p>Shows the error message with details when there are issues in processing the
-     * block list.</p>
+     * <p>The error message containing details if there are issues processing the block
+     * list.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
 
     /**
-     * <p>Shows the error message with details when there are issues in processing the
-     * block list.</p>
+     * <p>The error message containing details if there are issues processing the block
+     * list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>Shows the error message with details when there are issues in processing the
-     * block list.</p>
+     * <p>The error message containing details if there are issues processing the block
+     * list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Shows the error message with details when there are issues in processing the
-     * block list.</p>
+     * <p>The error message containing details if there are issues processing the block
+     * list.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was created.</p>
+     * <p>The date-time a block list for query suggestions was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was created.</p>
+     * <p>The date-time a block list for query suggestions was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was created.</p>
+     * <p>The date-time a block list for query suggestions was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was created.</p>
+     * <p>The date-time a block list for query suggestions was created.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was created.</p>
+     * <p>The date-time a block list for query suggestions was created.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last updated.</p>
+     * <p>The date-time a block list for query suggestions was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last updated.</p>
+     * <p>The date-time a block list for query suggestions was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last updated.</p>
+     * <p>The date-time a block list for query suggestions was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last updated.</p>
+     * <p>The date-time a block list for query suggestions was last updated.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>Shows the date-time a block list for query suggestions was last updated.</p>
+     * <p>The date-time a block list for query suggestions was last updated.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
@@ -352,93 +352,93 @@ namespace Model
 
 
     /**
-     * <p>Shows the current number of valid, non-empty words or phrases in the block
-     * list text file.</p>
+     * <p>The current number of valid, non-empty words or phrases in the block list
+     * text file.</p>
      */
     inline int GetItemCount() const{ return m_itemCount; }
 
     /**
-     * <p>Shows the current number of valid, non-empty words or phrases in the block
-     * list text file.</p>
+     * <p>The current number of valid, non-empty words or phrases in the block list
+     * text file.</p>
      */
     inline void SetItemCount(int value) { m_itemCount = value; }
 
     /**
-     * <p>Shows the current number of valid, non-empty words or phrases in the block
-     * list text file.</p>
+     * <p>The current number of valid, non-empty words or phrases in the block list
+     * text file.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithItemCount(int value) { SetItemCount(value); return *this;}
 
 
     /**
-     * <p>Shows the current size of the block list text file in S3.</p>
+     * <p>The current size of the block list text file in S3.</p>
      */
     inline long long GetFileSizeBytes() const{ return m_fileSizeBytes; }
 
     /**
-     * <p>Shows the current size of the block list text file in S3.</p>
+     * <p>The current size of the block list text file in S3.</p>
      */
     inline void SetFileSizeBytes(long long value) { m_fileSizeBytes = value; }
 
     /**
-     * <p>Shows the current size of the block list text file in S3.</p>
+     * <p>The current size of the block list text file in S3.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithFileSizeBytes(long long value) { SetFileSizeBytes(value); return *this;}
 
 
     /**
-     * <p>Shows the current IAM (Identity and Access Management) role used by Amazon
-     * Kendra to access the block list text file in S3.</p> <p>The role needs S3 read
-     * permissions to your file in S3 and needs to give STS (Security Token Service)
-     * assume role permissions to Amazon Kendra.</p>
+     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
+     * the block list text file in S3.</p> <p>The role needs S3 read permissions to
+     * your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>Shows the current IAM (Identity and Access Management) role used by Amazon
-     * Kendra to access the block list text file in S3.</p> <p>The role needs S3 read
-     * permissions to your file in S3 and needs to give STS (Security Token Service)
-     * assume role permissions to Amazon Kendra.</p>
+     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
+     * the block list text file in S3.</p> <p>The role needs S3 read permissions to
+     * your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>Shows the current IAM (Identity and Access Management) role used by Amazon
-     * Kendra to access the block list text file in S3.</p> <p>The role needs S3 read
-     * permissions to your file in S3 and needs to give STS (Security Token Service)
-     * assume role permissions to Amazon Kendra.</p>
+     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
+     * the block list text file in S3.</p> <p>The role needs S3 read permissions to
+     * your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>Shows the current IAM (Identity and Access Management) role used by Amazon
-     * Kendra to access the block list text file in S3.</p> <p>The role needs S3 read
-     * permissions to your file in S3 and needs to give STS (Security Token Service)
-     * assume role permissions to Amazon Kendra.</p>
+     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
+     * the block list text file in S3.</p> <p>The role needs S3 read permissions to
+     * your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>Shows the current IAM (Identity and Access Management) role used by Amazon
-     * Kendra to access the block list text file in S3.</p> <p>The role needs S3 read
-     * permissions to your file in S3 and needs to give STS (Security Token Service)
-     * assume role permissions to Amazon Kendra.</p>
+     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
+     * the block list text file in S3.</p> <p>The role needs S3 read permissions to
+     * your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>Shows the current IAM (Identity and Access Management) role used by Amazon
-     * Kendra to access the block list text file in S3.</p> <p>The role needs S3 read
-     * permissions to your file in S3 and needs to give STS (Security Token Service)
-     * assume role permissions to Amazon Kendra.</p>
+     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
+     * the block list text file in S3.</p> <p>The role needs S3 read permissions to
+     * your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Shows the current IAM (Identity and Access Management) role used by Amazon
-     * Kendra to access the block list text file in S3.</p> <p>The role needs S3 read
-     * permissions to your file in S3 and needs to give STS (Security Token Service)
-     * assume role permissions to Amazon Kendra.</p>
+     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
+     * the block list text file in S3.</p> <p>The role needs S3 read permissions to
+     * your file in S3 and needs to give STS (Security Token Service) assume role
+     * permissions to Amazon Kendra.</p>
      */
     inline DescribeQuerySuggestionsBlockListResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

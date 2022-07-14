@@ -108,7 +108,7 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -118,7 +118,7 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -128,7 +128,7 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -138,7 +138,7 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -148,7 +148,7 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -158,7 +158,7 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -168,7 +168,7 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -178,38 +178,38 @@ namespace Model
      * use Confluence cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluemce data source</a>.</p>
+     * a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
 
     /**
-     * <p>The version or the type of the Confluence installation to connect to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline const ConfluenceVersion& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version or the type of the Confluence installation to connect to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version or the type of the Confluence installation to connect to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline void SetVersion(const ConfluenceVersion& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version or the type of the Confluence installation to connect to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline void SetVersion(ConfluenceVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version or the type of the Confluence installation to connect to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline ConfluenceConfiguration& WithVersion(const ConfluenceVersion& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version or the type of the Confluence installation to connect to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline ConfluenceConfiguration& WithVersion(ConfluenceVersion&& value) { SetVersion(std::move(value)); return *this;}
 

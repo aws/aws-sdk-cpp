@@ -28,8 +28,7 @@ namespace Model
    * <p>Defines an instance group for heterogeneous cluster training. When requesting
    * a training job using the <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
-   * API, you can configure up to 5 different ML training instance
-   * groups.</p><p><h3>See Also:</h3>   <a
+   * API, you can configure multiple instance groups .</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InstanceGroup">AWS
    * API Reference</a></p>
    */

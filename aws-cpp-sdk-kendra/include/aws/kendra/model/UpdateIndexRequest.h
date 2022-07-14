@@ -41,132 +41,132 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline UpdateIndexRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline UpdateIndexRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index to update.</p>
+     * <p>The identifier of the index you want to update.</p>
      */
     inline UpdateIndexRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline UpdateIndexRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline UpdateIndexRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the index to update.</p>
+     * <p>The name of the index you want to update.</p>
      */
     inline UpdateIndexRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline UpdateIndexRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline UpdateIndexRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>A new IAM role that gives Amazon Kendra permission to access your Amazon
-     * CloudWatch logs.</p>
+     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
+     * permission to access Amazon CloudWatch logs and metrics.</p>
      */
     inline UpdateIndexRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -213,42 +213,58 @@ namespace Model
 
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline const Aws::Vector<DocumentMetadataConfiguration>& GetDocumentMetadataConfigurationUpdates() const{ return m_documentMetadataConfigurationUpdates; }
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline bool DocumentMetadataConfigurationUpdatesHasBeenSet() const { return m_documentMetadataConfigurationUpdatesHasBeenSet; }
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline void SetDocumentMetadataConfigurationUpdates(const Aws::Vector<DocumentMetadataConfiguration>& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates = value; }
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline void SetDocumentMetadataConfigurationUpdates(Aws::Vector<DocumentMetadataConfiguration>&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates = std::move(value); }
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline UpdateIndexRequest& WithDocumentMetadataConfigurationUpdates(const Aws::Vector<DocumentMetadataConfiguration>& value) { SetDocumentMetadataConfigurationUpdates(value); return *this;}
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline UpdateIndexRequest& WithDocumentMetadataConfigurationUpdates(Aws::Vector<DocumentMetadataConfiguration>&& value) { SetDocumentMetadataConfigurationUpdates(std::move(value)); return *this;}
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(const DocumentMetadataConfiguration& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(value); return *this; }
 
     /**
-     * <p>The document metadata you want to update.</p>
+     * <p>The document metadata configuration you want to update for the index.
+     * Document metadata are fields or attributes associated with your documents. For
+     * example, the company department name associated with each document.</p>
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(DocumentMetadataConfiguration&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(std::move(value)); return *this; }
 

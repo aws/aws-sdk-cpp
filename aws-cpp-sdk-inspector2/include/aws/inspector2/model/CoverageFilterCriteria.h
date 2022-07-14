@@ -263,49 +263,57 @@ namespace Model
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline const Aws::Vector<CoverageStringFilter>& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(const Aws::Vector<CoverageStringFilter>& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(Aws::Vector<CoverageStringFilter>&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(const Aws::Vector<CoverageStringFilter>& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(Aws::Vector<CoverageStringFilter>&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(const CoverageStringFilter& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(value); return *this; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(CoverageStringFilter&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(std::move(value)); return *this; }
 

@@ -33,6 +33,7 @@ namespace Aws
         static const int EVENTBRIDGE_THROTTLED_HASH = HashingUtils::HashString("EVENTBRIDGE_THROTTLED");
         static const int RESOURCE_SCAN_NOT_DISABLED_HASH = HashingUtils::HashString("RESOURCE_SCAN_NOT_DISABLED");
         static const int DISASSOCIATE_ALL_MEMBERS_HASH = HashingUtils::HashString("DISASSOCIATE_ALL_MEMBERS");
+        static const int ACCOUNT_IS_ISOLATED_HASH = HashingUtils::HashString("ACCOUNT_IS_ISOLATED");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return ErrorCode::DISASSOCIATE_ALL_MEMBERS;
           }
+          else if (hashCode == ACCOUNT_IS_ISOLATED_HASH)
+          {
+            return ErrorCode::ACCOUNT_IS_ISOLATED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +135,8 @@ namespace Aws
             return "RESOURCE_SCAN_NOT_DISABLED";
           case ErrorCode::DISASSOCIATE_ALL_MEMBERS:
             return "DISASSOCIATE_ALL_MEMBERS";
+          case ErrorCode::ACCOUNT_IS_ISOLATED:
+            return "ACCOUNT_IS_ISOLATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

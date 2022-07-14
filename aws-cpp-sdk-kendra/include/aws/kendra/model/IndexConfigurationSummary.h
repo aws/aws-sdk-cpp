@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of information on the configuration of an index.</p><p><h3>See
+   * <p>Summary information on the configuration of an index.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/IndexConfigurationSummary">AWS
    * API Reference</a></p>

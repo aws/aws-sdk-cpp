@@ -35,83 +35,83 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline DescribeFaqRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline DescribeFaqRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the FAQ.</p>
+     * <p>The identifier of the FAQ you want to get information on.</p>
      */
     inline DescribeFaqRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

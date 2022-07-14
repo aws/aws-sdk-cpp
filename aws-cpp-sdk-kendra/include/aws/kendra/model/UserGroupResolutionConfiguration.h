@@ -26,12 +26,12 @@ namespace Model
   /**
    * <p>Provides the configuration information to fetch access levels of groups and
    * users from an Amazon Web Services Single Sign On identity source. This is useful
-   * for setting up user context filtering, where Amazon Kendra filters search
-   * results for different users based on their group's access to documents. You can
-   * also map your users to their groups for user context filtering using the <a
-   * href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping
-   * API</a>.</p> <p>To set up an Amazon Web Services SSO identity source in the
-   * console to use with Amazon Kendra, see <a
+   * for user context filtering, where search results are filtered based on the user
+   * or their group access to documents. You can also use the <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a>
+   * API to map users to their groups so that you only need to provide the user ID
+   * when you issue the query.</p> <p>To set up an Amazon Web Services SSO identity
+   * source in the console to use with Amazon Kendra, see <a
    * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting
    * started with an Amazon Web Services SSO identity source</a>. You must also grant
    * the required permissions to use Amazon Web Services SSO with Amazon Kendra. For

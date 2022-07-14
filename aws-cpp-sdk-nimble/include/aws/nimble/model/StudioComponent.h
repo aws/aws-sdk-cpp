@@ -370,6 +370,55 @@ namespace Model
 
 
     /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline const Aws::String& GetRuntimeRoleArn() const{ return m_runtimeRoleArn; }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline bool RuntimeRoleArnHasBeenSet() const { return m_runtimeRoleArnHasBeenSet; }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline void SetRuntimeRoleArn(const Aws::String& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = value; }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline void SetRuntimeRoleArn(Aws::String&& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = std::move(value); }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline void SetRuntimeRoleArn(const char* value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn.assign(value); }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline StudioComponent& WithRuntimeRoleArn(const Aws::String& value) { SetRuntimeRoleArn(value); return *this;}
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline StudioComponent& WithRuntimeRoleArn(Aws::String&& value) { SetRuntimeRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to AWS resources at anytime while the instance is running. </p>
+     */
+    inline StudioComponent& WithRuntimeRoleArn(const char* value) { SetRuntimeRoleArn(value); return *this;}
+
+
+    /**
      * <p>Parameters for the studio component scripts.</p>
      */
     inline const Aws::Vector<ScriptParameterKeyValue>& GetScriptParameters() const{ return m_scriptParameters; }
@@ -408,6 +457,63 @@ namespace Model
      * <p>Parameters for the studio component scripts.</p>
      */
     inline StudioComponent& AddScriptParameters(ScriptParameterKeyValue&& value) { m_scriptParametersHasBeenSet = true; m_scriptParameters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline const Aws::String& GetSecureInitializationRoleArn() const{ return m_secureInitializationRoleArn; }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline bool SecureInitializationRoleArnHasBeenSet() const { return m_secureInitializationRoleArnHasBeenSet; }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline void SetSecureInitializationRoleArn(const Aws::String& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = value; }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline void SetSecureInitializationRoleArn(Aws::String&& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = std::move(value); }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline void SetSecureInitializationRoleArn(const char* value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn.assign(value); }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline StudioComponent& WithSecureInitializationRoleArn(const Aws::String& value) { SetSecureInitializationRoleArn(value); return *this;}
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline StudioComponent& WithSecureInitializationRoleArn(Aws::String&& value) { SetSecureInitializationRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to AWS resources when the
+     * system initialization script runs.</p>
+     */
+    inline StudioComponent& WithSecureInitializationRoleArn(const char* value) { SetSecureInitializationRoleArn(value); return *this;}
 
 
     /**
@@ -792,8 +898,14 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    Aws::String m_runtimeRoleArn;
+    bool m_runtimeRoleArnHasBeenSet;
+
     Aws::Vector<ScriptParameterKeyValue> m_scriptParameters;
     bool m_scriptParametersHasBeenSet;
+
+    Aws::String m_secureInitializationRoleArn;
+    bool m_secureInitializationRoleArnHasBeenSet;
 
     StudioComponentState m_state;
     bool m_stateHasBeenSet;

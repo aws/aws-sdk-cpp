@@ -24,7 +24,9 @@ LineItem::LineItem() :
     m_quantity(0),
     m_quantityHasBeenSet(false),
     m_status(LineItemStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_shipmentInformationHasBeenSet(false),
+    m_assetInformationListHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ LineItem::LineItem(JsonView jsonValue) :
     m_quantity(0),
     m_quantityHasBeenSet(false),
     m_status(LineItemStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_shipmentInformationHasBeenSet(false),
+    m_assetInformationListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,23 @@ LineItem& LineItem::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShipmentInformation"))
+  {
+    m_shipmentInformation = jsonValue.GetObject("ShipmentInformation");
+
+    m_shipmentInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssetInformationList"))
+  {
+    Array<JsonView> assetInformationListJsonList = jsonValue.GetArray("AssetInformationList");
+    for(unsigned assetInformationListIndex = 0; assetInformationListIndex < assetInformationListJsonList.GetLength(); ++assetInformationListIndex)
+    {
+      m_assetInformationList.push_back(assetInformationListJsonList[assetInformationListIndex].AsObject());
+    }
+    m_assetInformationListHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +118,23 @@ JsonValue LineItem::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", LineItemStatusMapper::GetNameForLineItemStatus(m_status));
+  }
+
+  if(m_shipmentInformationHasBeenSet)
+  {
+   payload.WithObject("ShipmentInformation", m_shipmentInformation.Jsonize());
+
+  }
+
+  if(m_assetInformationListHasBeenSet)
+  {
+   Array<JsonValue> assetInformationListJsonList(m_assetInformationList.size());
+   for(unsigned assetInformationListIndex = 0; assetInformationListIndex < assetInformationListJsonList.GetLength(); ++assetInformationListIndex)
+   {
+     assetInformationListJsonList[assetInformationListIndex].AsObject(m_assetInformationList[assetInformationListIndex].Jsonize());
+   }
+   payload.WithArray("AssetInformationList", std::move(assetInformationListJsonList));
+
   }
 
   return payload;

@@ -20,13 +20,17 @@ namespace Model
 
 StatefulRuleGroup::StatefulRuleGroup() : 
     m_ruleGroupNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
 StatefulRuleGroup::StatefulRuleGroup(JsonView jsonValue) : 
     m_ruleGroupNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ StatefulRuleGroup& StatefulRuleGroup::operator =(JsonView jsonValue)
     m_resourceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetInteger("Priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue StatefulRuleGroup::Jsonize() const
   if(m_resourceIdHasBeenSet)
   {
    payload.WithString("ResourceId", m_resourceId);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("Priority", m_priority);
 
   }
 

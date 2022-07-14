@@ -227,47 +227,47 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFolderIds() const{ return m_folderIds; }
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline bool FolderIdsHasBeenSet() const { return m_folderIdsHasBeenSet; }
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline void SetFolderIds(const Aws::Vector<Aws::String>& value) { m_folderIdsHasBeenSet = true; m_folderIds = value; }
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline void SetFolderIds(Aws::Vector<Aws::String>&& value) { m_folderIdsHasBeenSet = true; m_folderIds = std::move(value); }
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& WithFolderIds(const Aws::Vector<Aws::String>& value) { SetFolderIds(value); return *this;}
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& WithFolderIds(Aws::Vector<Aws::String>&& value) { SetFolderIds(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& AddFolderIds(const Aws::String& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& AddFolderIds(Aws::String&& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identifier of the Quip folders you want to index.</p>
+     * <p>The identifiers of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& AddFolderIds(const char* value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 

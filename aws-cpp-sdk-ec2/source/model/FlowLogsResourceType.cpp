@@ -23,6 +23,8 @@ namespace Aws
         static const int VPC_HASH = HashingUtils::HashString("VPC");
         static const int Subnet_HASH = HashingUtils::HashString("Subnet");
         static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterface");
+        static const int TransitGateway_HASH = HashingUtils::HashString("TransitGateway");
+        static const int TransitGatewayAttachment_HASH = HashingUtils::HashString("TransitGatewayAttachment");
 
 
         FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == NetworkInterface_HASH)
           {
             return FlowLogsResourceType::NetworkInterface;
+          }
+          else if (hashCode == TransitGateway_HASH)
+          {
+            return FlowLogsResourceType::TransitGateway;
+          }
+          else if (hashCode == TransitGatewayAttachment_HASH)
+          {
+            return FlowLogsResourceType::TransitGatewayAttachment;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "Subnet";
           case FlowLogsResourceType::NetworkInterface:
             return "NetworkInterface";
+          case FlowLogsResourceType::TransitGateway:
+            return "TransitGateway";
+          case FlowLogsResourceType::TransitGatewayAttachment:
+            return "TransitGatewayAttachment";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

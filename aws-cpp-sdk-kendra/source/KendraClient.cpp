@@ -26,12 +26,14 @@
 #include <aws/kendra/model/BatchGetDocumentStatusRequest.h>
 #include <aws/kendra/model/BatchPutDocumentRequest.h>
 #include <aws/kendra/model/ClearQuerySuggestionsRequest.h>
+#include <aws/kendra/model/CreateAccessControlConfigurationRequest.h>
 #include <aws/kendra/model/CreateDataSourceRequest.h>
 #include <aws/kendra/model/CreateExperienceRequest.h>
 #include <aws/kendra/model/CreateFaqRequest.h>
 #include <aws/kendra/model/CreateIndexRequest.h>
 #include <aws/kendra/model/CreateQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/CreateThesaurusRequest.h>
+#include <aws/kendra/model/DeleteAccessControlConfigurationRequest.h>
 #include <aws/kendra/model/DeleteDataSourceRequest.h>
 #include <aws/kendra/model/DeleteExperienceRequest.h>
 #include <aws/kendra/model/DeleteFaqRequest.h>
@@ -39,6 +41,7 @@
 #include <aws/kendra/model/DeletePrincipalMappingRequest.h>
 #include <aws/kendra/model/DeleteQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/DeleteThesaurusRequest.h>
+#include <aws/kendra/model/DescribeAccessControlConfigurationRequest.h>
 #include <aws/kendra/model/DescribeDataSourceRequest.h>
 #include <aws/kendra/model/DescribeExperienceRequest.h>
 #include <aws/kendra/model/DescribeFaqRequest.h>
@@ -51,6 +54,7 @@
 #include <aws/kendra/model/DisassociatePersonasFromEntitiesRequest.h>
 #include <aws/kendra/model/GetQuerySuggestionsRequest.h>
 #include <aws/kendra/model/GetSnapshotsRequest.h>
+#include <aws/kendra/model/ListAccessControlConfigurationsRequest.h>
 #include <aws/kendra/model/ListDataSourceSyncJobsRequest.h>
 #include <aws/kendra/model/ListDataSourcesRequest.h>
 #include <aws/kendra/model/ListEntityPersonasRequest.h>
@@ -69,6 +73,7 @@
 #include <aws/kendra/model/SubmitFeedbackRequest.h>
 #include <aws/kendra/model/TagResourceRequest.h>
 #include <aws/kendra/model/UntagResourceRequest.h>
+#include <aws/kendra/model/UpdateAccessControlConfigurationRequest.h>
 #include <aws/kendra/model/UpdateDataSourceRequest.h>
 #include <aws/kendra/model/UpdateExperienceRequest.h>
 #include <aws/kendra/model/UpdateIndexRequest.h>
@@ -293,6 +298,30 @@ void KendraClient::ClearQuerySuggestionsAsyncHelper(const ClearQuerySuggestionsR
   handler(this, request, ClearQuerySuggestions(request), context);
 }
 
+CreateAccessControlConfigurationOutcome KendraClient::CreateAccessControlConfiguration(const CreateAccessControlConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateAccessControlConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAccessControlConfigurationOutcomeCallable KendraClient::CreateAccessControlConfigurationCallable(const CreateAccessControlConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessControlConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::CreateAccessControlConfigurationAsync(const CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::CreateAccessControlConfigurationAsyncHelper(const CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAccessControlConfiguration(request), context);
+}
+
 CreateDataSourceOutcome KendraClient::CreateDataSource(const CreateDataSourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -435,6 +464,30 @@ void KendraClient::CreateThesaurusAsync(const CreateThesaurusRequest& request, c
 void KendraClient::CreateThesaurusAsyncHelper(const CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateThesaurus(request), context);
+}
+
+DeleteAccessControlConfigurationOutcome KendraClient::DeleteAccessControlConfiguration(const DeleteAccessControlConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteAccessControlConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAccessControlConfigurationOutcomeCallable KendraClient::DeleteAccessControlConfigurationCallable(const DeleteAccessControlConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessControlConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DeleteAccessControlConfigurationAsync(const DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DeleteAccessControlConfigurationAsyncHelper(const DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAccessControlConfiguration(request), context);
 }
 
 DeleteDataSourceOutcome KendraClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
@@ -603,6 +656,30 @@ void KendraClient::DeleteThesaurusAsync(const DeleteThesaurusRequest& request, c
 void KendraClient::DeleteThesaurusAsyncHelper(const DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteThesaurus(request), context);
+}
+
+DescribeAccessControlConfigurationOutcome KendraClient::DescribeAccessControlConfiguration(const DescribeAccessControlConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeAccessControlConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAccessControlConfigurationOutcomeCallable KendraClient::DescribeAccessControlConfigurationCallable(const DescribeAccessControlConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccessControlConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DescribeAccessControlConfigurationAsync(const DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DescribeAccessControlConfigurationAsyncHelper(const DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccessControlConfiguration(request), context);
 }
 
 DescribeDataSourceOutcome KendraClient::DescribeDataSource(const DescribeDataSourceRequest& request) const
@@ -891,6 +968,30 @@ void KendraClient::GetSnapshotsAsync(const GetSnapshotsRequest& request, const G
 void KendraClient::GetSnapshotsAsyncHelper(const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSnapshots(request), context);
+}
+
+ListAccessControlConfigurationsOutcome KendraClient::ListAccessControlConfigurations(const ListAccessControlConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListAccessControlConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAccessControlConfigurationsOutcomeCallable KendraClient::ListAccessControlConfigurationsCallable(const ListAccessControlConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessControlConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessControlConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::ListAccessControlConfigurationsAsync(const ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessControlConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::ListAccessControlConfigurationsAsyncHelper(const ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccessControlConfigurations(request), context);
 }
 
 ListDataSourceSyncJobsOutcome KendraClient::ListDataSourceSyncJobs(const ListDataSourceSyncJobsRequest& request) const
@@ -1323,6 +1424,30 @@ void KendraClient::UntagResourceAsync(const UntagResourceRequest& request, const
 void KendraClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAccessControlConfigurationOutcome KendraClient::UpdateAccessControlConfiguration(const UpdateAccessControlConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateAccessControlConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAccessControlConfigurationOutcomeCallable KendraClient::UpdateAccessControlConfigurationCallable(const UpdateAccessControlConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAccessControlConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAccessControlConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::UpdateAccessControlConfigurationAsync(const UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccessControlConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::UpdateAccessControlConfigurationAsyncHelper(const UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAccessControlConfiguration(request), context);
 }
 
 UpdateDataSourceOutcome KendraClient::UpdateDataSource(const UpdateDataSourceRequest& request) const

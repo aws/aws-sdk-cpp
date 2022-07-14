@@ -7,6 +7,9 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/model/LineItemStatus.h>
+#include <aws/outposts/model/ShipmentInformation.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/outposts/model/LineItemAssetInformation.h>
 #include <utility>
 
 namespace Aws
@@ -171,6 +174,78 @@ namespace Model
      */
     inline LineItem& WithStatus(LineItemStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Information about a line item shipment. </p>
+     */
+    inline const ShipmentInformation& GetShipmentInformation() const{ return m_shipmentInformation; }
+
+    /**
+     * <p> Information about a line item shipment. </p>
+     */
+    inline bool ShipmentInformationHasBeenSet() const { return m_shipmentInformationHasBeenSet; }
+
+    /**
+     * <p> Information about a line item shipment. </p>
+     */
+    inline void SetShipmentInformation(const ShipmentInformation& value) { m_shipmentInformationHasBeenSet = true; m_shipmentInformation = value; }
+
+    /**
+     * <p> Information about a line item shipment. </p>
+     */
+    inline void SetShipmentInformation(ShipmentInformation&& value) { m_shipmentInformationHasBeenSet = true; m_shipmentInformation = std::move(value); }
+
+    /**
+     * <p> Information about a line item shipment. </p>
+     */
+    inline LineItem& WithShipmentInformation(const ShipmentInformation& value) { SetShipmentInformation(value); return *this;}
+
+    /**
+     * <p> Information about a line item shipment. </p>
+     */
+    inline LineItem& WithShipmentInformation(ShipmentInformation&& value) { SetShipmentInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline const Aws::Vector<LineItemAssetInformation>& GetAssetInformationList() const{ return m_assetInformationList; }
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline bool AssetInformationListHasBeenSet() const { return m_assetInformationListHasBeenSet; }
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline void SetAssetInformationList(const Aws::Vector<LineItemAssetInformation>& value) { m_assetInformationListHasBeenSet = true; m_assetInformationList = value; }
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline void SetAssetInformationList(Aws::Vector<LineItemAssetInformation>&& value) { m_assetInformationListHasBeenSet = true; m_assetInformationList = std::move(value); }
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline LineItem& WithAssetInformationList(const Aws::Vector<LineItemAssetInformation>& value) { SetAssetInformationList(value); return *this;}
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline LineItem& WithAssetInformationList(Aws::Vector<LineItemAssetInformation>&& value) { SetAssetInformationList(std::move(value)); return *this;}
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline LineItem& AddAssetInformationList(const LineItemAssetInformation& value) { m_assetInformationListHasBeenSet = true; m_assetInformationList.push_back(value); return *this; }
+
+    /**
+     * <p> Information about assets. </p>
+     */
+    inline LineItem& AddAssetInformationList(LineItemAssetInformation&& value) { m_assetInformationListHasBeenSet = true; m_assetInformationList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_catalogItemId;
@@ -184,6 +259,12 @@ namespace Model
 
     LineItemStatus m_status;
     bool m_statusHasBeenSet;
+
+    ShipmentInformation m_shipmentInformation;
+    bool m_shipmentInformationHasBeenSet;
+
+    Aws::Vector<LineItemAssetInformation> m_assetInformationList;
+    bool m_assetInformationListHasBeenSet;
   };
 
 } // namespace Model

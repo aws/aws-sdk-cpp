@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a frequently asked questions and answer contained
-   * in an index.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information for frequently asked questions and answers included in an
+   * index.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FaqSummary">AWS
    * API Reference</a></p>
    */

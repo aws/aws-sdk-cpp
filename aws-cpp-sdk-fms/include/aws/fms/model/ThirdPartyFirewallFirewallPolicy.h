@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Configures the firewall policy deployment model for a third-party firewall.
-   * The deployment model can either be distributed or centralized.</p><p><h3>See
+   * <p>Configures the third-party firewall's firewall policy.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallFirewallPolicy">AWS
    * API Reference</a></p>

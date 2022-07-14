@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Information on the processing of <code>PUT</code> and <code>DELETE</code>
-   * actions for mapping users to their groups.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information on the processing of <code>PUT</code> and
+   * <code>DELETE</code> actions for mapping users to their groups.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupOrderingIdSummary">AWS
    * API Reference</a></p>
    */

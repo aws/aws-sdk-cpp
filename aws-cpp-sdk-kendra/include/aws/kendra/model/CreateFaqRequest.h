@@ -40,155 +40,155 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline CreateFaqRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline CreateFaqRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline CreateFaqRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline CreateFaqRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline CreateFaqRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name that should be associated with the FAQ.</p>
+     * <p>A name for the FAQ.</p>
      */
     inline CreateFaqRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline CreateFaqRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline CreateFaqRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the FAQ.</p>
+     * <p>A description for the FAQ.</p>
      */
     inline CreateFaqRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The S3 location of the FAQ input data.</p>
+     * <p>The path to the FAQ file in S3.</p>
      */
     inline const S3Path& GetS3Path() const{ return m_s3Path; }
 
     /**
-     * <p>The S3 location of the FAQ input data.</p>
+     * <p>The path to the FAQ file in S3.</p>
      */
     inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
 
     /**
-     * <p>The S3 location of the FAQ input data.</p>
+     * <p>The path to the FAQ file in S3.</p>
      */
     inline void SetS3Path(const S3Path& value) { m_s3PathHasBeenSet = true; m_s3Path = value; }
 
     /**
-     * <p>The S3 location of the FAQ input data.</p>
+     * <p>The path to the FAQ file in S3.</p>
      */
     inline void SetS3Path(S3Path&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::move(value); }
 
     /**
-     * <p>The S3 location of the FAQ input data.</p>
+     * <p>The path to the FAQ file in S3.</p>
      */
     inline CreateFaqRequest& WithS3Path(const S3Path& value) { SetS3Path(value); return *this;}
 
     /**
-     * <p>The S3 location of the FAQ input data.</p>
+     * <p>The path to the FAQ file in S3.</p>
      */
     inline CreateFaqRequest& WithS3Path(S3Path&& value) { SetS3Path(std::move(value)); return *this;}
 
@@ -308,66 +308,66 @@ namespace Model
 
 
     /**
-     * <p>The format of the input file. You can choose between a basic CSV format, a
-     * CSV format that includes customs attributes in a header, and a JSON format that
-     * includes custom attributes.</p> <p>The format must match the format of the file
-     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
-     * <p>For more information, see <a
+     * <p>The format of the FAQ input file. You can choose between a basic CSV format,
+     * a CSV format that includes customs attributes in a header, and a JSON format
+     * that includes custom attributes.</p> <p>The format must match the format of the
+     * file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
     inline const FaqFileFormat& GetFileFormat() const{ return m_fileFormat; }
 
     /**
-     * <p>The format of the input file. You can choose between a basic CSV format, a
-     * CSV format that includes customs attributes in a header, and a JSON format that
-     * includes custom attributes.</p> <p>The format must match the format of the file
-     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
-     * <p>For more information, see <a
+     * <p>The format of the FAQ input file. You can choose between a basic CSV format,
+     * a CSV format that includes customs attributes in a header, and a JSON format
+     * that includes custom attributes.</p> <p>The format must match the format of the
+     * file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
 
     /**
-     * <p>The format of the input file. You can choose between a basic CSV format, a
-     * CSV format that includes customs attributes in a header, and a JSON format that
-     * includes custom attributes.</p> <p>The format must match the format of the file
-     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
-     * <p>For more information, see <a
+     * <p>The format of the FAQ input file. You can choose between a basic CSV format,
+     * a CSV format that includes customs attributes in a header, and a JSON format
+     * that includes custom attributes.</p> <p>The format must match the format of the
+     * file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
     inline void SetFileFormat(const FaqFileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
 
     /**
-     * <p>The format of the input file. You can choose between a basic CSV format, a
-     * CSV format that includes customs attributes in a header, and a JSON format that
-     * includes custom attributes.</p> <p>The format must match the format of the file
-     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
-     * <p>For more information, see <a
+     * <p>The format of the FAQ input file. You can choose between a basic CSV format,
+     * a CSV format that includes customs attributes in a header, and a JSON format
+     * that includes custom attributes.</p> <p>The format must match the format of the
+     * file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
     inline void SetFileFormat(FaqFileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
 
     /**
-     * <p>The format of the input file. You can choose between a basic CSV format, a
-     * CSV format that includes customs attributes in a header, and a JSON format that
-     * includes custom attributes.</p> <p>The format must match the format of the file
-     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
-     * <p>For more information, see <a
+     * <p>The format of the FAQ input file. You can choose between a basic CSV format,
+     * a CSV format that includes customs attributes in a header, and a JSON format
+     * that includes custom attributes.</p> <p>The format must match the format of the
+     * file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */
     inline CreateFaqRequest& WithFileFormat(const FaqFileFormat& value) { SetFileFormat(value); return *this;}
 
     /**
-     * <p>The format of the input file. You can choose between a basic CSV format, a
-     * CSV format that includes customs attributes in a header, and a JSON format that
-     * includes custom attributes.</p> <p>The format must match the format of the file
-     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
-     * <p>For more information, see <a
+     * <p>The format of the FAQ input file. You can choose between a basic CSV format,
+     * a CSV format that includes customs attributes in a header, and a JSON format
+     * that includes custom attributes.</p> <p>The format must match the format of the
+     * file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
      * questions and answers</a>.</p>
      */

@@ -18,7 +18,8 @@ UpdateFilterRequest::UpdateFilterRequest() :
     m_descriptionHasBeenSet(false),
     m_filterArnHasBeenSet(false),
     m_filterCriteriaHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String UpdateFilterRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", m_reason);
 
   }
 

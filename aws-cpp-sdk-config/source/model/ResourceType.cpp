@@ -140,490 +140,1144 @@ namespace Aws
         static const int AWS_GuardDuty_Detector_HASH = HashingUtils::HashString("AWS::GuardDuty::Detector");
         static const int AWS_EMR_SecurityConfiguration_HASH = HashingUtils::HashString("AWS::EMR::SecurityConfiguration");
         static const int AWS_SageMaker_CodeRepository_HASH = HashingUtils::HashString("AWS::SageMaker::CodeRepository");
+        static const int AWS_Route53Resolver_ResolverEndpoint_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverEndpoint");
+        static const int AWS_Route53Resolver_ResolverRule_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverRule");
+        static const int AWS_Route53Resolver_ResolverRuleAssociation_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverRuleAssociation");
+        static const int AWS_DMS_ReplicationSubnetGroup_HASH = HashingUtils::HashString("AWS::DMS::ReplicationSubnetGroup");
+        static const int AWS_DMS_EventSubscription_HASH = HashingUtils::HashString("AWS::DMS::EventSubscription");
+        static const int AWS_MSK_Cluster_HASH = HashingUtils::HashString("AWS::MSK::Cluster");
+        static const int AWS_StepFunctions_Activity_HASH = HashingUtils::HashString("AWS::StepFunctions::Activity");
+        static const int AWS_WorkSpaces_Workspace_HASH = HashingUtils::HashString("AWS::WorkSpaces::Workspace");
+        static const int AWS_WorkSpaces_ConnectionAlias_HASH = HashingUtils::HashString("AWS::WorkSpaces::ConnectionAlias");
+        static const int AWS_SageMaker_Model_HASH = HashingUtils::HashString("AWS::SageMaker::Model");
+        static const int AWS_ElasticLoadBalancingV2_Listener_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancingV2::Listener");
+        static const int AWS_StepFunctions_StateMachine_HASH = HashingUtils::HashString("AWS::StepFunctions::StateMachine");
+        static const int AWS_Batch_JobQueue_HASH = HashingUtils::HashString("AWS::Batch::JobQueue");
+        static const int AWS_Batch_ComputeEnvironment_HASH = HashingUtils::HashString("AWS::Batch::ComputeEnvironment");
+        static const int AWS_AccessAnalyzer_Analyzer_HASH = HashingUtils::HashString("AWS::AccessAnalyzer::Analyzer");
 
+        /*
+        The if-else chains in this file are converted into a jump table by the compiler,
+        which allows constant time lookup. The chain has been broken into helper functions
+        because MSVC has a maximum of 122 chained if-else blocks.
+        */
+        static bool GetEnumForNameHelper0(int hashCode, ResourceType& enumValue)
+        {
+          if (hashCode == AWS_EC2_CustomerGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_CustomerGateway;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_EIP_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_EIP;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_Host_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_Host;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_Instance_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_Instance;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_InternetGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_InternetGateway;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkAcl_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkAcl;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkInterface_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkInterface;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_RouteTable_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_RouteTable;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_SecurityGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_SecurityGroup;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_Subnet_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_Subnet;
+            return true;
+          }
+          else if (hashCode == AWS_CloudTrail_Trail_HASH)
+          {
+            enumValue = ResourceType::AWS_CloudTrail_Trail;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_Volume_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_Volume;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPC_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPC;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPNConnection_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPNConnection;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPNGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPNGateway;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_RegisteredHAInstance_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_RegisteredHAInstance;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NatGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NatGateway;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_EgressOnlyInternetGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_EgressOnlyInternetGateway;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPCEndpoint_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPCEndpoint;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPCEndpointService_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPCEndpointService;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_FlowLog_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_FlowLog;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_VPCPeeringConnection_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_VPCPeeringConnection;
+            return true;
+          }
+          else if (hashCode == AWS_Elasticsearch_Domain_HASH)
+          {
+            enumValue = ResourceType::AWS_Elasticsearch_Domain;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_Group_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_Group;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_Policy_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_Policy;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_Role_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_Role;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_User_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_User;
+            return true;
+          }
+          else if (hashCode == AWS_ElasticLoadBalancingV2_LoadBalancer_HASH)
+          {
+            enumValue = ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer;
+            return true;
+          }
+          else if (hashCode == AWS_ACM_Certificate_HASH)
+          {
+            enumValue = ResourceType::AWS_ACM_Certificate;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_DBInstance_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_DBInstance;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_DBSubnetGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_DBSubnetGroup;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_DBSecurityGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_DBSecurityGroup;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_DBSnapshot_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_DBSnapshot;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_DBCluster_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_DBCluster;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_DBClusterSnapshot_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_DBClusterSnapshot;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_EventSubscription_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_EventSubscription;
+            return true;
+          }
+          else if (hashCode == AWS_S3_Bucket_HASH)
+          {
+            enumValue = ResourceType::AWS_S3_Bucket;
+            return true;
+          }
+          else if (hashCode == AWS_S3_AccountPublicAccessBlock_HASH)
+          {
+            enumValue = ResourceType::AWS_S3_AccountPublicAccessBlock;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_Cluster_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_Cluster;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_ClusterSnapshot_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_ClusterSnapshot;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_ClusterParameterGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_ClusterParameterGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_ClusterSecurityGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_ClusterSecurityGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_ClusterSubnetGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_ClusterSubnetGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_EventSubscription_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_EventSubscription;
+            return true;
+          }
+          else if (hashCode == AWS_SSM_ManagedInstanceInventory_HASH)
+          {
+            enumValue = ResourceType::AWS_SSM_ManagedInstanceInventory;
+            return true;
+          }
+          else if (hashCode == AWS_CloudWatch_Alarm_HASH)
+          {
+            enumValue = ResourceType::AWS_CloudWatch_Alarm;
+            return true;
+          }
+          else if (hashCode == AWS_CloudFormation_Stack_HASH)
+          {
+            enumValue = ResourceType::AWS_CloudFormation_Stack;
+            return true;
+          }
+          else if (hashCode == AWS_ElasticLoadBalancing_LoadBalancer_HASH)
+          {
+            enumValue = ResourceType::AWS_ElasticLoadBalancing_LoadBalancer;
+            return true;
+          }
+          else if (hashCode == AWS_AutoScaling_AutoScalingGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_AutoScaling_AutoScalingGroup;
+            return true;
+          }
+          else if (hashCode == AWS_AutoScaling_LaunchConfiguration_HASH)
+          {
+            enumValue = ResourceType::AWS_AutoScaling_LaunchConfiguration;
+            return true;
+          }
+          else if (hashCode == AWS_AutoScaling_ScalingPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_AutoScaling_ScalingPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_AutoScaling_ScheduledAction_HASH)
+          {
+            enumValue = ResourceType::AWS_AutoScaling_ScheduledAction;
+            return true;
+          }
+          else if (hashCode == AWS_DynamoDB_Table_HASH)
+          {
+            enumValue = ResourceType::AWS_DynamoDB_Table;
+            return true;
+          }
+          else if (hashCode == AWS_CodeBuild_Project_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeBuild_Project;
+            return true;
+          }
+          else if (hashCode == AWS_WAF_RateBasedRule_HASH)
+          {
+            enumValue = ResourceType::AWS_WAF_RateBasedRule;
+            return true;
+          }
+          else if (hashCode == AWS_WAF_Rule_HASH)
+          {
+            enumValue = ResourceType::AWS_WAF_Rule;
+            return true;
+          }
+          else if (hashCode == AWS_WAF_RuleGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_WAF_RuleGroup;
+            return true;
+          }
+          else if (hashCode == AWS_WAF_WebACL_HASH)
+          {
+            enumValue = ResourceType::AWS_WAF_WebACL;
+            return true;
+          }
+          else if (hashCode == AWS_WAFRegional_RateBasedRule_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFRegional_RateBasedRule;
+            return true;
+          }
+          else if (hashCode == AWS_WAFRegional_Rule_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFRegional_Rule;
+            return true;
+          }
+          else if (hashCode == AWS_WAFRegional_RuleGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFRegional_RuleGroup;
+            return true;
+          }
+          else if (hashCode == AWS_WAFRegional_WebACL_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFRegional_WebACL;
+            return true;
+          }
+          else if (hashCode == AWS_CloudFront_Distribution_HASH)
+          {
+            enumValue = ResourceType::AWS_CloudFront_Distribution;
+            return true;
+          }
+          else if (hashCode == AWS_CloudFront_StreamingDistribution_HASH)
+          {
+            enumValue = ResourceType::AWS_CloudFront_StreamingDistribution;
+            return true;
+          }
+          else if (hashCode == AWS_Lambda_Function_HASH)
+          {
+            enumValue = ResourceType::AWS_Lambda_Function;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkFirewall_Firewall_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkFirewall_Firewall;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkFirewall_FirewallPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkFirewall_FirewallPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkFirewall_RuleGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkFirewall_RuleGroup;
+            return true;
+          }
+          else if (hashCode == AWS_ElasticBeanstalk_Application_HASH)
+          {
+            enumValue = ResourceType::AWS_ElasticBeanstalk_Application;
+            return true;
+          }
+          else if (hashCode == AWS_ElasticBeanstalk_ApplicationVersion_HASH)
+          {
+            enumValue = ResourceType::AWS_ElasticBeanstalk_ApplicationVersion;
+            return true;
+          }
+          else if (hashCode == AWS_ElasticBeanstalk_Environment_HASH)
+          {
+            enumValue = ResourceType::AWS_ElasticBeanstalk_Environment;
+            return true;
+          }
+          else if (hashCode == AWS_WAFv2_WebACL_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFv2_WebACL;
+            return true;
+          }
+          else if (hashCode == AWS_WAFv2_RuleGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFv2_RuleGroup;
+            return true;
+          }
+          else if (hashCode == AWS_WAFv2_IPSet_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFv2_IPSet;
+            return true;
+          }
+          else if (hashCode == AWS_WAFv2_RegexPatternSet_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFv2_RegexPatternSet;
+            return true;
+          }
+          else if (hashCode == AWS_WAFv2_ManagedRuleSet_HASH)
+          {
+            enumValue = ResourceType::AWS_WAFv2_ManagedRuleSet;
+            return true;
+          }
+          else if (hashCode == AWS_XRay_EncryptionConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_XRay_EncryptionConfig;
+            return true;
+          }
+          else if (hashCode == AWS_SSM_AssociationCompliance_HASH)
+          {
+            enumValue = ResourceType::AWS_SSM_AssociationCompliance;
+            return true;
+          }
+          else if (hashCode == AWS_SSM_PatchCompliance_HASH)
+          {
+            enumValue = ResourceType::AWS_SSM_PatchCompliance;
+            return true;
+          }
+          else if (hashCode == AWS_Shield_Protection_HASH)
+          {
+            enumValue = ResourceType::AWS_Shield_Protection;
+            return true;
+          }
+          else if (hashCode == AWS_ShieldRegional_Protection_HASH)
+          {
+            enumValue = ResourceType::AWS_ShieldRegional_Protection;
+            return true;
+          }
+          else if (hashCode == AWS_Config_ConformancePackCompliance_HASH)
+          {
+            enumValue = ResourceType::AWS_Config_ConformancePackCompliance;
+            return true;
+          }
+          else if (hashCode == AWS_Config_ResourceCompliance_HASH)
+          {
+            enumValue = ResourceType::AWS_Config_ResourceCompliance;
+            return true;
+          }
+          else if (hashCode == AWS_ApiGateway_Stage_HASH)
+          {
+            enumValue = ResourceType::AWS_ApiGateway_Stage;
+            return true;
+          }
+          else if (hashCode == AWS_ApiGateway_RestApi_HASH)
+          {
+            enumValue = ResourceType::AWS_ApiGateway_RestApi;
+            return true;
+          }
+          else if (hashCode == AWS_ApiGatewayV2_Stage_HASH)
+          {
+            enumValue = ResourceType::AWS_ApiGatewayV2_Stage;
+            return true;
+          }
+          else if (hashCode == AWS_ApiGatewayV2_Api_HASH)
+          {
+            enumValue = ResourceType::AWS_ApiGatewayV2_Api;
+            return true;
+          }
+          else if (hashCode == AWS_CodePipeline_Pipeline_HASH)
+          {
+            enumValue = ResourceType::AWS_CodePipeline_Pipeline;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceCatalog_CloudFormationProvisionedProduct_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceCatalog_CloudFormationProvisionedProduct;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceCatalog_CloudFormationProduct_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceCatalog_CloudFormationProduct;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceCatalog_Portfolio_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceCatalog_Portfolio;
+            return true;
+          }
+          else if (hashCode == AWS_SQS_Queue_HASH)
+          {
+            enumValue = ResourceType::AWS_SQS_Queue;
+            return true;
+          }
+          else if (hashCode == AWS_KMS_Key_HASH)
+          {
+            enumValue = ResourceType::AWS_KMS_Key;
+            return true;
+          }
+          else if (hashCode == AWS_QLDB_Ledger_HASH)
+          {
+            enumValue = ResourceType::AWS_QLDB_Ledger;
+            return true;
+          }
+          else if (hashCode == AWS_SecretsManager_Secret_HASH)
+          {
+            enumValue = ResourceType::AWS_SecretsManager_Secret;
+            return true;
+          }
+          else if (hashCode == AWS_SNS_Topic_HASH)
+          {
+            enumValue = ResourceType::AWS_SNS_Topic;
+            return true;
+          }
+          else if (hashCode == AWS_SSM_FileData_HASH)
+          {
+            enumValue = ResourceType::AWS_SSM_FileData;
+            return true;
+          }
+          else if (hashCode == AWS_Backup_BackupPlan_HASH)
+          {
+            enumValue = ResourceType::AWS_Backup_BackupPlan;
+            return true;
+          }
+          else if (hashCode == AWS_Backup_BackupSelection_HASH)
+          {
+            enumValue = ResourceType::AWS_Backup_BackupSelection;
+            return true;
+          }
+          else if (hashCode == AWS_Backup_BackupVault_HASH)
+          {
+            enumValue = ResourceType::AWS_Backup_BackupVault;
+            return true;
+          }
+          else if (hashCode == AWS_Backup_RecoveryPoint_HASH)
+          {
+            enumValue = ResourceType::AWS_Backup_RecoveryPoint;
+            return true;
+          }
+          else if (hashCode == AWS_ECR_Repository_HASH)
+          {
+            enumValue = ResourceType::AWS_ECR_Repository;
+            return true;
+          }
+          else if (hashCode == AWS_ECS_Cluster_HASH)
+          {
+            enumValue = ResourceType::AWS_ECS_Cluster;
+            return true;
+          }
+          else if (hashCode == AWS_ECS_Service_HASH)
+          {
+            enumValue = ResourceType::AWS_ECS_Service;
+            return true;
+          }
+          else if (hashCode == AWS_ECS_TaskDefinition_HASH)
+          {
+            enumValue = ResourceType::AWS_ECS_TaskDefinition;
+            return true;
+          }
+          else if (hashCode == AWS_EFS_AccessPoint_HASH)
+          {
+            enumValue = ResourceType::AWS_EFS_AccessPoint;
+            return true;
+          }
+          else if (hashCode == AWS_EFS_FileSystem_HASH)
+          {
+            enumValue = ResourceType::AWS_EFS_FileSystem;
+            return true;
+          }
+          else if (hashCode == AWS_EKS_Cluster_HASH)
+          {
+            enumValue = ResourceType::AWS_EKS_Cluster;
+            return true;
+          }
+          else if (hashCode == AWS_OpenSearch_Domain_HASH)
+          {
+            enumValue = ResourceType::AWS_OpenSearch_Domain;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TransitGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TransitGateway;
+            return true;
+          }
+          else if (hashCode == AWS_Kinesis_Stream_HASH)
+          {
+            enumValue = ResourceType::AWS_Kinesis_Stream;
+            return true;
+          }
+          else if (hashCode == AWS_Kinesis_StreamConsumer_HASH)
+          {
+            enumValue = ResourceType::AWS_Kinesis_StreamConsumer;
+            return true;
+          }
+          else if (hashCode == AWS_CodeDeploy_Application_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeDeploy_Application;
+            return true;
+          }
+          else if (hashCode == AWS_CodeDeploy_DeploymentConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeDeploy_DeploymentConfig;
+            return true;
+          }
+          else if (hashCode == AWS_CodeDeploy_DeploymentGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeDeploy_DeploymentGroup;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_LaunchTemplate_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_LaunchTemplate;
+            return true;
+          }
+          else if (hashCode == AWS_ECR_PublicRepository_HASH)
+          {
+            enumValue = ResourceType::AWS_ECR_PublicRepository;
+            return true;
+          }
+          else if (hashCode == AWS_GuardDuty_Detector_HASH)
+          {
+            enumValue = ResourceType::AWS_GuardDuty_Detector;
+            return true;
+          }
+          else if (hashCode == AWS_EMR_SecurityConfiguration_HASH)
+          {
+            enumValue = ResourceType::AWS_EMR_SecurityConfiguration;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_CodeRepository_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_CodeRepository;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_ResolverEndpoint_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_ResolverEndpoint;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_ResolverRule_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_ResolverRule;
+            return true;
+          }
+          return false;
+        }
+        static bool GetEnumForNameHelper1(int hashCode, ResourceType& enumValue)
+        {
+          if (hashCode == AWS_Route53Resolver_ResolverRuleAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_ResolverRuleAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_DMS_ReplicationSubnetGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_DMS_ReplicationSubnetGroup;
+            return true;
+          }
+          else if (hashCode == AWS_DMS_EventSubscription_HASH)
+          {
+            enumValue = ResourceType::AWS_DMS_EventSubscription;
+            return true;
+          }
+          else if (hashCode == AWS_MSK_Cluster_HASH)
+          {
+            enumValue = ResourceType::AWS_MSK_Cluster;
+            return true;
+          }
+          else if (hashCode == AWS_StepFunctions_Activity_HASH)
+          {
+            enumValue = ResourceType::AWS_StepFunctions_Activity;
+            return true;
+          }
+          else if (hashCode == AWS_WorkSpaces_Workspace_HASH)
+          {
+            enumValue = ResourceType::AWS_WorkSpaces_Workspace;
+            return true;
+          }
+          else if (hashCode == AWS_WorkSpaces_ConnectionAlias_HASH)
+          {
+            enumValue = ResourceType::AWS_WorkSpaces_ConnectionAlias;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_Model_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_Model;
+            return true;
+          }
+          else if (hashCode == AWS_ElasticLoadBalancingV2_Listener_HASH)
+          {
+            enumValue = ResourceType::AWS_ElasticLoadBalancingV2_Listener;
+            return true;
+          }
+          else if (hashCode == AWS_StepFunctions_StateMachine_HASH)
+          {
+            enumValue = ResourceType::AWS_StepFunctions_StateMachine;
+            return true;
+          }
+          else if (hashCode == AWS_Batch_JobQueue_HASH)
+          {
+            enumValue = ResourceType::AWS_Batch_JobQueue;
+            return true;
+          }
+          else if (hashCode == AWS_Batch_ComputeEnvironment_HASH)
+          {
+            enumValue = ResourceType::AWS_Batch_ComputeEnvironment;
+            return true;
+          }
+          else if (hashCode == AWS_AccessAnalyzer_Analyzer_HASH)
+          {
+            enumValue = ResourceType::AWS_AccessAnalyzer_Analyzer;
+            return true;
+          }
+          return false;
+        }
+
+        static bool GetNameForEnumHelper0(ResourceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
+          case ResourceType::AWS_EC2_CustomerGateway:
+            value = "AWS::EC2::CustomerGateway";
+            return true;
+          case ResourceType::AWS_EC2_EIP:
+            value = "AWS::EC2::EIP";
+            return true;
+          case ResourceType::AWS_EC2_Host:
+            value = "AWS::EC2::Host";
+            return true;
+          case ResourceType::AWS_EC2_Instance:
+            value = "AWS::EC2::Instance";
+            return true;
+          case ResourceType::AWS_EC2_InternetGateway:
+            value = "AWS::EC2::InternetGateway";
+            return true;
+          case ResourceType::AWS_EC2_NetworkAcl:
+            value = "AWS::EC2::NetworkAcl";
+            return true;
+          case ResourceType::AWS_EC2_NetworkInterface:
+            value = "AWS::EC2::NetworkInterface";
+            return true;
+          case ResourceType::AWS_EC2_RouteTable:
+            value = "AWS::EC2::RouteTable";
+            return true;
+          case ResourceType::AWS_EC2_SecurityGroup:
+            value = "AWS::EC2::SecurityGroup";
+            return true;
+          case ResourceType::AWS_EC2_Subnet:
+            value = "AWS::EC2::Subnet";
+            return true;
+          case ResourceType::AWS_CloudTrail_Trail:
+            value = "AWS::CloudTrail::Trail";
+            return true;
+          case ResourceType::AWS_EC2_Volume:
+            value = "AWS::EC2::Volume";
+            return true;
+          case ResourceType::AWS_EC2_VPC:
+            value = "AWS::EC2::VPC";
+            return true;
+          case ResourceType::AWS_EC2_VPNConnection:
+            value = "AWS::EC2::VPNConnection";
+            return true;
+          case ResourceType::AWS_EC2_VPNGateway:
+            value = "AWS::EC2::VPNGateway";
+            return true;
+          case ResourceType::AWS_EC2_RegisteredHAInstance:
+            value = "AWS::EC2::RegisteredHAInstance";
+            return true;
+          case ResourceType::AWS_EC2_NatGateway:
+            value = "AWS::EC2::NatGateway";
+            return true;
+          case ResourceType::AWS_EC2_EgressOnlyInternetGateway:
+            value = "AWS::EC2::EgressOnlyInternetGateway";
+            return true;
+          case ResourceType::AWS_EC2_VPCEndpoint:
+            value = "AWS::EC2::VPCEndpoint";
+            return true;
+          case ResourceType::AWS_EC2_VPCEndpointService:
+            value = "AWS::EC2::VPCEndpointService";
+            return true;
+          case ResourceType::AWS_EC2_FlowLog:
+            value = "AWS::EC2::FlowLog";
+            return true;
+          case ResourceType::AWS_EC2_VPCPeeringConnection:
+            value = "AWS::EC2::VPCPeeringConnection";
+            return true;
+          case ResourceType::AWS_Elasticsearch_Domain:
+            value = "AWS::Elasticsearch::Domain";
+            return true;
+          case ResourceType::AWS_IAM_Group:
+            value = "AWS::IAM::Group";
+            return true;
+          case ResourceType::AWS_IAM_Policy:
+            value = "AWS::IAM::Policy";
+            return true;
+          case ResourceType::AWS_IAM_Role:
+            value = "AWS::IAM::Role";
+            return true;
+          case ResourceType::AWS_IAM_User:
+            value = "AWS::IAM::User";
+            return true;
+          case ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer:
+            value = "AWS::ElasticLoadBalancingV2::LoadBalancer";
+            return true;
+          case ResourceType::AWS_ACM_Certificate:
+            value = "AWS::ACM::Certificate";
+            return true;
+          case ResourceType::AWS_RDS_DBInstance:
+            value = "AWS::RDS::DBInstance";
+            return true;
+          case ResourceType::AWS_RDS_DBSubnetGroup:
+            value = "AWS::RDS::DBSubnetGroup";
+            return true;
+          case ResourceType::AWS_RDS_DBSecurityGroup:
+            value = "AWS::RDS::DBSecurityGroup";
+            return true;
+          case ResourceType::AWS_RDS_DBSnapshot:
+            value = "AWS::RDS::DBSnapshot";
+            return true;
+          case ResourceType::AWS_RDS_DBCluster:
+            value = "AWS::RDS::DBCluster";
+            return true;
+          case ResourceType::AWS_RDS_DBClusterSnapshot:
+            value = "AWS::RDS::DBClusterSnapshot";
+            return true;
+          case ResourceType::AWS_RDS_EventSubscription:
+            value = "AWS::RDS::EventSubscription";
+            return true;
+          case ResourceType::AWS_S3_Bucket:
+            value = "AWS::S3::Bucket";
+            return true;
+          case ResourceType::AWS_S3_AccountPublicAccessBlock:
+            value = "AWS::S3::AccountPublicAccessBlock";
+            return true;
+          case ResourceType::AWS_Redshift_Cluster:
+            value = "AWS::Redshift::Cluster";
+            return true;
+          case ResourceType::AWS_Redshift_ClusterSnapshot:
+            value = "AWS::Redshift::ClusterSnapshot";
+            return true;
+          case ResourceType::AWS_Redshift_ClusterParameterGroup:
+            value = "AWS::Redshift::ClusterParameterGroup";
+            return true;
+          case ResourceType::AWS_Redshift_ClusterSecurityGroup:
+            value = "AWS::Redshift::ClusterSecurityGroup";
+            return true;
+          case ResourceType::AWS_Redshift_ClusterSubnetGroup:
+            value = "AWS::Redshift::ClusterSubnetGroup";
+            return true;
+          case ResourceType::AWS_Redshift_EventSubscription:
+            value = "AWS::Redshift::EventSubscription";
+            return true;
+          case ResourceType::AWS_SSM_ManagedInstanceInventory:
+            value = "AWS::SSM::ManagedInstanceInventory";
+            return true;
+          case ResourceType::AWS_CloudWatch_Alarm:
+            value = "AWS::CloudWatch::Alarm";
+            return true;
+          case ResourceType::AWS_CloudFormation_Stack:
+            value = "AWS::CloudFormation::Stack";
+            return true;
+          case ResourceType::AWS_ElasticLoadBalancing_LoadBalancer:
+            value = "AWS::ElasticLoadBalancing::LoadBalancer";
+            return true;
+          case ResourceType::AWS_AutoScaling_AutoScalingGroup:
+            value = "AWS::AutoScaling::AutoScalingGroup";
+            return true;
+          case ResourceType::AWS_AutoScaling_LaunchConfiguration:
+            value = "AWS::AutoScaling::LaunchConfiguration";
+            return true;
+          case ResourceType::AWS_AutoScaling_ScalingPolicy:
+            value = "AWS::AutoScaling::ScalingPolicy";
+            return true;
+          case ResourceType::AWS_AutoScaling_ScheduledAction:
+            value = "AWS::AutoScaling::ScheduledAction";
+            return true;
+          case ResourceType::AWS_DynamoDB_Table:
+            value = "AWS::DynamoDB::Table";
+            return true;
+          case ResourceType::AWS_CodeBuild_Project:
+            value = "AWS::CodeBuild::Project";
+            return true;
+          case ResourceType::AWS_WAF_RateBasedRule:
+            value = "AWS::WAF::RateBasedRule";
+            return true;
+          case ResourceType::AWS_WAF_Rule:
+            value = "AWS::WAF::Rule";
+            return true;
+          case ResourceType::AWS_WAF_RuleGroup:
+            value = "AWS::WAF::RuleGroup";
+            return true;
+          case ResourceType::AWS_WAF_WebACL:
+            value = "AWS::WAF::WebACL";
+            return true;
+          case ResourceType::AWS_WAFRegional_RateBasedRule:
+            value = "AWS::WAFRegional::RateBasedRule";
+            return true;
+          case ResourceType::AWS_WAFRegional_Rule:
+            value = "AWS::WAFRegional::Rule";
+            return true;
+          case ResourceType::AWS_WAFRegional_RuleGroup:
+            value = "AWS::WAFRegional::RuleGroup";
+            return true;
+          case ResourceType::AWS_WAFRegional_WebACL:
+            value = "AWS::WAFRegional::WebACL";
+            return true;
+          case ResourceType::AWS_CloudFront_Distribution:
+            value = "AWS::CloudFront::Distribution";
+            return true;
+          case ResourceType::AWS_CloudFront_StreamingDistribution:
+            value = "AWS::CloudFront::StreamingDistribution";
+            return true;
+          case ResourceType::AWS_Lambda_Function:
+            value = "AWS::Lambda::Function";
+            return true;
+          case ResourceType::AWS_NetworkFirewall_Firewall:
+            value = "AWS::NetworkFirewall::Firewall";
+            return true;
+          case ResourceType::AWS_NetworkFirewall_FirewallPolicy:
+            value = "AWS::NetworkFirewall::FirewallPolicy";
+            return true;
+          case ResourceType::AWS_NetworkFirewall_RuleGroup:
+            value = "AWS::NetworkFirewall::RuleGroup";
+            return true;
+          case ResourceType::AWS_ElasticBeanstalk_Application:
+            value = "AWS::ElasticBeanstalk::Application";
+            return true;
+          case ResourceType::AWS_ElasticBeanstalk_ApplicationVersion:
+            value = "AWS::ElasticBeanstalk::ApplicationVersion";
+            return true;
+          case ResourceType::AWS_ElasticBeanstalk_Environment:
+            value = "AWS::ElasticBeanstalk::Environment";
+            return true;
+          case ResourceType::AWS_WAFv2_WebACL:
+            value = "AWS::WAFv2::WebACL";
+            return true;
+          case ResourceType::AWS_WAFv2_RuleGroup:
+            value = "AWS::WAFv2::RuleGroup";
+            return true;
+          case ResourceType::AWS_WAFv2_IPSet:
+            value = "AWS::WAFv2::IPSet";
+            return true;
+          case ResourceType::AWS_WAFv2_RegexPatternSet:
+            value = "AWS::WAFv2::RegexPatternSet";
+            return true;
+          case ResourceType::AWS_WAFv2_ManagedRuleSet:
+            value = "AWS::WAFv2::ManagedRuleSet";
+            return true;
+          case ResourceType::AWS_XRay_EncryptionConfig:
+            value = "AWS::XRay::EncryptionConfig";
+            return true;
+          case ResourceType::AWS_SSM_AssociationCompliance:
+            value = "AWS::SSM::AssociationCompliance";
+            return true;
+          case ResourceType::AWS_SSM_PatchCompliance:
+            value = "AWS::SSM::PatchCompliance";
+            return true;
+          case ResourceType::AWS_Shield_Protection:
+            value = "AWS::Shield::Protection";
+            return true;
+          case ResourceType::AWS_ShieldRegional_Protection:
+            value = "AWS::ShieldRegional::Protection";
+            return true;
+          case ResourceType::AWS_Config_ConformancePackCompliance:
+            value = "AWS::Config::ConformancePackCompliance";
+            return true;
+          case ResourceType::AWS_Config_ResourceCompliance:
+            value = "AWS::Config::ResourceCompliance";
+            return true;
+          case ResourceType::AWS_ApiGateway_Stage:
+            value = "AWS::ApiGateway::Stage";
+            return true;
+          case ResourceType::AWS_ApiGateway_RestApi:
+            value = "AWS::ApiGateway::RestApi";
+            return true;
+          case ResourceType::AWS_ApiGatewayV2_Stage:
+            value = "AWS::ApiGatewayV2::Stage";
+            return true;
+          case ResourceType::AWS_ApiGatewayV2_Api:
+            value = "AWS::ApiGatewayV2::Api";
+            return true;
+          case ResourceType::AWS_CodePipeline_Pipeline:
+            value = "AWS::CodePipeline::Pipeline";
+            return true;
+          case ResourceType::AWS_ServiceCatalog_CloudFormationProvisionedProduct:
+            value = "AWS::ServiceCatalog::CloudFormationProvisionedProduct";
+            return true;
+          case ResourceType::AWS_ServiceCatalog_CloudFormationProduct:
+            value = "AWS::ServiceCatalog::CloudFormationProduct";
+            return true;
+          case ResourceType::AWS_ServiceCatalog_Portfolio:
+            value = "AWS::ServiceCatalog::Portfolio";
+            return true;
+          case ResourceType::AWS_SQS_Queue:
+            value = "AWS::SQS::Queue";
+            return true;
+          case ResourceType::AWS_KMS_Key:
+            value = "AWS::KMS::Key";
+            return true;
+          case ResourceType::AWS_QLDB_Ledger:
+            value = "AWS::QLDB::Ledger";
+            return true;
+          case ResourceType::AWS_SecretsManager_Secret:
+            value = "AWS::SecretsManager::Secret";
+            return true;
+          case ResourceType::AWS_SNS_Topic:
+            value = "AWS::SNS::Topic";
+            return true;
+          case ResourceType::AWS_SSM_FileData:
+            value = "AWS::SSM::FileData";
+            return true;
+          case ResourceType::AWS_Backup_BackupPlan:
+            value = "AWS::Backup::BackupPlan";
+            return true;
+          case ResourceType::AWS_Backup_BackupSelection:
+            value = "AWS::Backup::BackupSelection";
+            return true;
+          case ResourceType::AWS_Backup_BackupVault:
+            value = "AWS::Backup::BackupVault";
+            return true;
+          case ResourceType::AWS_Backup_RecoveryPoint:
+            value = "AWS::Backup::RecoveryPoint";
+            return true;
+          case ResourceType::AWS_ECR_Repository:
+            value = "AWS::ECR::Repository";
+            return true;
+          case ResourceType::AWS_ECS_Cluster:
+            value = "AWS::ECS::Cluster";
+            return true;
+          case ResourceType::AWS_ECS_Service:
+            value = "AWS::ECS::Service";
+            return true;
+          case ResourceType::AWS_ECS_TaskDefinition:
+            value = "AWS::ECS::TaskDefinition";
+            return true;
+          case ResourceType::AWS_EFS_AccessPoint:
+            value = "AWS::EFS::AccessPoint";
+            return true;
+          case ResourceType::AWS_EFS_FileSystem:
+            value = "AWS::EFS::FileSystem";
+            return true;
+          case ResourceType::AWS_EKS_Cluster:
+            value = "AWS::EKS::Cluster";
+            return true;
+          case ResourceType::AWS_OpenSearch_Domain:
+            value = "AWS::OpenSearch::Domain";
+            return true;
+          case ResourceType::AWS_EC2_TransitGateway:
+            value = "AWS::EC2::TransitGateway";
+            return true;
+          case ResourceType::AWS_Kinesis_Stream:
+            value = "AWS::Kinesis::Stream";
+            return true;
+          case ResourceType::AWS_Kinesis_StreamConsumer:
+            value = "AWS::Kinesis::StreamConsumer";
+            return true;
+          case ResourceType::AWS_CodeDeploy_Application:
+            value = "AWS::CodeDeploy::Application";
+            return true;
+          case ResourceType::AWS_CodeDeploy_DeploymentConfig:
+            value = "AWS::CodeDeploy::DeploymentConfig";
+            return true;
+          case ResourceType::AWS_CodeDeploy_DeploymentGroup:
+            value = "AWS::CodeDeploy::DeploymentGroup";
+            return true;
+          case ResourceType::AWS_EC2_LaunchTemplate:
+            value = "AWS::EC2::LaunchTemplate";
+            return true;
+          case ResourceType::AWS_ECR_PublicRepository:
+            value = "AWS::ECR::PublicRepository";
+            return true;
+          case ResourceType::AWS_GuardDuty_Detector:
+            value = "AWS::GuardDuty::Detector";
+            return true;
+          case ResourceType::AWS_EMR_SecurityConfiguration:
+            value = "AWS::EMR::SecurityConfiguration";
+            return true;
+          case ResourceType::AWS_SageMaker_CodeRepository:
+            value = "AWS::SageMaker::CodeRepository";
+            return true;
+          case ResourceType::AWS_Route53Resolver_ResolverEndpoint:
+            value = "AWS::Route53Resolver::ResolverEndpoint";
+            return true;
+          case ResourceType::AWS_Route53Resolver_ResolverRule:
+            value = "AWS::Route53Resolver::ResolverRule";
+            return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper1(ResourceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
+          case ResourceType::AWS_Route53Resolver_ResolverRuleAssociation:
+            value = "AWS::Route53Resolver::ResolverRuleAssociation";
+            return true;
+          case ResourceType::AWS_DMS_ReplicationSubnetGroup:
+            value = "AWS::DMS::ReplicationSubnetGroup";
+            return true;
+          case ResourceType::AWS_DMS_EventSubscription:
+            value = "AWS::DMS::EventSubscription";
+            return true;
+          case ResourceType::AWS_MSK_Cluster:
+            value = "AWS::MSK::Cluster";
+            return true;
+          case ResourceType::AWS_StepFunctions_Activity:
+            value = "AWS::StepFunctions::Activity";
+            return true;
+          case ResourceType::AWS_WorkSpaces_Workspace:
+            value = "AWS::WorkSpaces::Workspace";
+            return true;
+          case ResourceType::AWS_WorkSpaces_ConnectionAlias:
+            value = "AWS::WorkSpaces::ConnectionAlias";
+            return true;
+          case ResourceType::AWS_SageMaker_Model:
+            value = "AWS::SageMaker::Model";
+            return true;
+          case ResourceType::AWS_ElasticLoadBalancingV2_Listener:
+            value = "AWS::ElasticLoadBalancingV2::Listener";
+            return true;
+          case ResourceType::AWS_StepFunctions_StateMachine:
+            value = "AWS::StepFunctions::StateMachine";
+            return true;
+          case ResourceType::AWS_Batch_JobQueue:
+            value = "AWS::Batch::JobQueue";
+            return true;
+          case ResourceType::AWS_Batch_ComputeEnvironment:
+            value = "AWS::Batch::ComputeEnvironment";
+            return true;
+          case ResourceType::AWS_AccessAnalyzer_Analyzer:
+            value = "AWS::AccessAnalyzer::Analyzer";
+            return true;
+          default:
+            return false;
+          }
+        }
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AWS_EC2_CustomerGateway_HASH)
+          ResourceType enumValue;
+          if (GetEnumForNameHelper0(hashCode, enumValue))
           {
-            return ResourceType::AWS_EC2_CustomerGateway;
+             return enumValue;
           }
-          else if (hashCode == AWS_EC2_EIP_HASH)
+          else if (GetEnumForNameHelper1(hashCode, enumValue))
           {
-            return ResourceType::AWS_EC2_EIP;
-          }
-          else if (hashCode == AWS_EC2_Host_HASH)
-          {
-            return ResourceType::AWS_EC2_Host;
-          }
-          else if (hashCode == AWS_EC2_Instance_HASH)
-          {
-            return ResourceType::AWS_EC2_Instance;
-          }
-          else if (hashCode == AWS_EC2_InternetGateway_HASH)
-          {
-            return ResourceType::AWS_EC2_InternetGateway;
-          }
-          else if (hashCode == AWS_EC2_NetworkAcl_HASH)
-          {
-            return ResourceType::AWS_EC2_NetworkAcl;
-          }
-          else if (hashCode == AWS_EC2_NetworkInterface_HASH)
-          {
-            return ResourceType::AWS_EC2_NetworkInterface;
-          }
-          else if (hashCode == AWS_EC2_RouteTable_HASH)
-          {
-            return ResourceType::AWS_EC2_RouteTable;
-          }
-          else if (hashCode == AWS_EC2_SecurityGroup_HASH)
-          {
-            return ResourceType::AWS_EC2_SecurityGroup;
-          }
-          else if (hashCode == AWS_EC2_Subnet_HASH)
-          {
-            return ResourceType::AWS_EC2_Subnet;
-          }
-          else if (hashCode == AWS_CloudTrail_Trail_HASH)
-          {
-            return ResourceType::AWS_CloudTrail_Trail;
-          }
-          else if (hashCode == AWS_EC2_Volume_HASH)
-          {
-            return ResourceType::AWS_EC2_Volume;
-          }
-          else if (hashCode == AWS_EC2_VPC_HASH)
-          {
-            return ResourceType::AWS_EC2_VPC;
-          }
-          else if (hashCode == AWS_EC2_VPNConnection_HASH)
-          {
-            return ResourceType::AWS_EC2_VPNConnection;
-          }
-          else if (hashCode == AWS_EC2_VPNGateway_HASH)
-          {
-            return ResourceType::AWS_EC2_VPNGateway;
-          }
-          else if (hashCode == AWS_EC2_RegisteredHAInstance_HASH)
-          {
-            return ResourceType::AWS_EC2_RegisteredHAInstance;
-          }
-          else if (hashCode == AWS_EC2_NatGateway_HASH)
-          {
-            return ResourceType::AWS_EC2_NatGateway;
-          }
-          else if (hashCode == AWS_EC2_EgressOnlyInternetGateway_HASH)
-          {
-            return ResourceType::AWS_EC2_EgressOnlyInternetGateway;
-          }
-          else if (hashCode == AWS_EC2_VPCEndpoint_HASH)
-          {
-            return ResourceType::AWS_EC2_VPCEndpoint;
-          }
-          else if (hashCode == AWS_EC2_VPCEndpointService_HASH)
-          {
-            return ResourceType::AWS_EC2_VPCEndpointService;
-          }
-          else if (hashCode == AWS_EC2_FlowLog_HASH)
-          {
-            return ResourceType::AWS_EC2_FlowLog;
-          }
-          else if (hashCode == AWS_EC2_VPCPeeringConnection_HASH)
-          {
-            return ResourceType::AWS_EC2_VPCPeeringConnection;
-          }
-          else if (hashCode == AWS_Elasticsearch_Domain_HASH)
-          {
-            return ResourceType::AWS_Elasticsearch_Domain;
-          }
-          else if (hashCode == AWS_IAM_Group_HASH)
-          {
-            return ResourceType::AWS_IAM_Group;
-          }
-          else if (hashCode == AWS_IAM_Policy_HASH)
-          {
-            return ResourceType::AWS_IAM_Policy;
-          }
-          else if (hashCode == AWS_IAM_Role_HASH)
-          {
-            return ResourceType::AWS_IAM_Role;
-          }
-          else if (hashCode == AWS_IAM_User_HASH)
-          {
-            return ResourceType::AWS_IAM_User;
-          }
-          else if (hashCode == AWS_ElasticLoadBalancingV2_LoadBalancer_HASH)
-          {
-            return ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer;
-          }
-          else if (hashCode == AWS_ACM_Certificate_HASH)
-          {
-            return ResourceType::AWS_ACM_Certificate;
-          }
-          else if (hashCode == AWS_RDS_DBInstance_HASH)
-          {
-            return ResourceType::AWS_RDS_DBInstance;
-          }
-          else if (hashCode == AWS_RDS_DBSubnetGroup_HASH)
-          {
-            return ResourceType::AWS_RDS_DBSubnetGroup;
-          }
-          else if (hashCode == AWS_RDS_DBSecurityGroup_HASH)
-          {
-            return ResourceType::AWS_RDS_DBSecurityGroup;
-          }
-          else if (hashCode == AWS_RDS_DBSnapshot_HASH)
-          {
-            return ResourceType::AWS_RDS_DBSnapshot;
-          }
-          else if (hashCode == AWS_RDS_DBCluster_HASH)
-          {
-            return ResourceType::AWS_RDS_DBCluster;
-          }
-          else if (hashCode == AWS_RDS_DBClusterSnapshot_HASH)
-          {
-            return ResourceType::AWS_RDS_DBClusterSnapshot;
-          }
-          else if (hashCode == AWS_RDS_EventSubscription_HASH)
-          {
-            return ResourceType::AWS_RDS_EventSubscription;
-          }
-          else if (hashCode == AWS_S3_Bucket_HASH)
-          {
-            return ResourceType::AWS_S3_Bucket;
-          }
-          else if (hashCode == AWS_S3_AccountPublicAccessBlock_HASH)
-          {
-            return ResourceType::AWS_S3_AccountPublicAccessBlock;
-          }
-          else if (hashCode == AWS_Redshift_Cluster_HASH)
-          {
-            return ResourceType::AWS_Redshift_Cluster;
-          }
-          else if (hashCode == AWS_Redshift_ClusterSnapshot_HASH)
-          {
-            return ResourceType::AWS_Redshift_ClusterSnapshot;
-          }
-          else if (hashCode == AWS_Redshift_ClusterParameterGroup_HASH)
-          {
-            return ResourceType::AWS_Redshift_ClusterParameterGroup;
-          }
-          else if (hashCode == AWS_Redshift_ClusterSecurityGroup_HASH)
-          {
-            return ResourceType::AWS_Redshift_ClusterSecurityGroup;
-          }
-          else if (hashCode == AWS_Redshift_ClusterSubnetGroup_HASH)
-          {
-            return ResourceType::AWS_Redshift_ClusterSubnetGroup;
-          }
-          else if (hashCode == AWS_Redshift_EventSubscription_HASH)
-          {
-            return ResourceType::AWS_Redshift_EventSubscription;
-          }
-          else if (hashCode == AWS_SSM_ManagedInstanceInventory_HASH)
-          {
-            return ResourceType::AWS_SSM_ManagedInstanceInventory;
-          }
-          else if (hashCode == AWS_CloudWatch_Alarm_HASH)
-          {
-            return ResourceType::AWS_CloudWatch_Alarm;
-          }
-          else if (hashCode == AWS_CloudFormation_Stack_HASH)
-          {
-            return ResourceType::AWS_CloudFormation_Stack;
-          }
-          else if (hashCode == AWS_ElasticLoadBalancing_LoadBalancer_HASH)
-          {
-            return ResourceType::AWS_ElasticLoadBalancing_LoadBalancer;
-          }
-          else if (hashCode == AWS_AutoScaling_AutoScalingGroup_HASH)
-          {
-            return ResourceType::AWS_AutoScaling_AutoScalingGroup;
-          }
-          else if (hashCode == AWS_AutoScaling_LaunchConfiguration_HASH)
-          {
-            return ResourceType::AWS_AutoScaling_LaunchConfiguration;
-          }
-          else if (hashCode == AWS_AutoScaling_ScalingPolicy_HASH)
-          {
-            return ResourceType::AWS_AutoScaling_ScalingPolicy;
-          }
-          else if (hashCode == AWS_AutoScaling_ScheduledAction_HASH)
-          {
-            return ResourceType::AWS_AutoScaling_ScheduledAction;
-          }
-          else if (hashCode == AWS_DynamoDB_Table_HASH)
-          {
-            return ResourceType::AWS_DynamoDB_Table;
-          }
-          else if (hashCode == AWS_CodeBuild_Project_HASH)
-          {
-            return ResourceType::AWS_CodeBuild_Project;
-          }
-          else if (hashCode == AWS_WAF_RateBasedRule_HASH)
-          {
-            return ResourceType::AWS_WAF_RateBasedRule;
-          }
-          else if (hashCode == AWS_WAF_Rule_HASH)
-          {
-            return ResourceType::AWS_WAF_Rule;
-          }
-          else if (hashCode == AWS_WAF_RuleGroup_HASH)
-          {
-            return ResourceType::AWS_WAF_RuleGroup;
-          }
-          else if (hashCode == AWS_WAF_WebACL_HASH)
-          {
-            return ResourceType::AWS_WAF_WebACL;
-          }
-          else if (hashCode == AWS_WAFRegional_RateBasedRule_HASH)
-          {
-            return ResourceType::AWS_WAFRegional_RateBasedRule;
-          }
-          else if (hashCode == AWS_WAFRegional_Rule_HASH)
-          {
-            return ResourceType::AWS_WAFRegional_Rule;
-          }
-          else if (hashCode == AWS_WAFRegional_RuleGroup_HASH)
-          {
-            return ResourceType::AWS_WAFRegional_RuleGroup;
-          }
-          else if (hashCode == AWS_WAFRegional_WebACL_HASH)
-          {
-            return ResourceType::AWS_WAFRegional_WebACL;
-          }
-          else if (hashCode == AWS_CloudFront_Distribution_HASH)
-          {
-            return ResourceType::AWS_CloudFront_Distribution;
-          }
-          else if (hashCode == AWS_CloudFront_StreamingDistribution_HASH)
-          {
-            return ResourceType::AWS_CloudFront_StreamingDistribution;
-          }
-          else if (hashCode == AWS_Lambda_Function_HASH)
-          {
-            return ResourceType::AWS_Lambda_Function;
-          }
-          else if (hashCode == AWS_NetworkFirewall_Firewall_HASH)
-          {
-            return ResourceType::AWS_NetworkFirewall_Firewall;
-          }
-          else if (hashCode == AWS_NetworkFirewall_FirewallPolicy_HASH)
-          {
-            return ResourceType::AWS_NetworkFirewall_FirewallPolicy;
-          }
-          else if (hashCode == AWS_NetworkFirewall_RuleGroup_HASH)
-          {
-            return ResourceType::AWS_NetworkFirewall_RuleGroup;
-          }
-          else if (hashCode == AWS_ElasticBeanstalk_Application_HASH)
-          {
-            return ResourceType::AWS_ElasticBeanstalk_Application;
-          }
-          else if (hashCode == AWS_ElasticBeanstalk_ApplicationVersion_HASH)
-          {
-            return ResourceType::AWS_ElasticBeanstalk_ApplicationVersion;
-          }
-          else if (hashCode == AWS_ElasticBeanstalk_Environment_HASH)
-          {
-            return ResourceType::AWS_ElasticBeanstalk_Environment;
-          }
-          else if (hashCode == AWS_WAFv2_WebACL_HASH)
-          {
-            return ResourceType::AWS_WAFv2_WebACL;
-          }
-          else if (hashCode == AWS_WAFv2_RuleGroup_HASH)
-          {
-            return ResourceType::AWS_WAFv2_RuleGroup;
-          }
-          else if (hashCode == AWS_WAFv2_IPSet_HASH)
-          {
-            return ResourceType::AWS_WAFv2_IPSet;
-          }
-          else if (hashCode == AWS_WAFv2_RegexPatternSet_HASH)
-          {
-            return ResourceType::AWS_WAFv2_RegexPatternSet;
-          }
-          else if (hashCode == AWS_WAFv2_ManagedRuleSet_HASH)
-          {
-            return ResourceType::AWS_WAFv2_ManagedRuleSet;
-          }
-          else if (hashCode == AWS_XRay_EncryptionConfig_HASH)
-          {
-            return ResourceType::AWS_XRay_EncryptionConfig;
-          }
-          else if (hashCode == AWS_SSM_AssociationCompliance_HASH)
-          {
-            return ResourceType::AWS_SSM_AssociationCompliance;
-          }
-          else if (hashCode == AWS_SSM_PatchCompliance_HASH)
-          {
-            return ResourceType::AWS_SSM_PatchCompliance;
-          }
-          else if (hashCode == AWS_Shield_Protection_HASH)
-          {
-            return ResourceType::AWS_Shield_Protection;
-          }
-          else if (hashCode == AWS_ShieldRegional_Protection_HASH)
-          {
-            return ResourceType::AWS_ShieldRegional_Protection;
-          }
-          else if (hashCode == AWS_Config_ConformancePackCompliance_HASH)
-          {
-            return ResourceType::AWS_Config_ConformancePackCompliance;
-          }
-          else if (hashCode == AWS_Config_ResourceCompliance_HASH)
-          {
-            return ResourceType::AWS_Config_ResourceCompliance;
-          }
-          else if (hashCode == AWS_ApiGateway_Stage_HASH)
-          {
-            return ResourceType::AWS_ApiGateway_Stage;
-          }
-          else if (hashCode == AWS_ApiGateway_RestApi_HASH)
-          {
-            return ResourceType::AWS_ApiGateway_RestApi;
-          }
-          else if (hashCode == AWS_ApiGatewayV2_Stage_HASH)
-          {
-            return ResourceType::AWS_ApiGatewayV2_Stage;
-          }
-          else if (hashCode == AWS_ApiGatewayV2_Api_HASH)
-          {
-            return ResourceType::AWS_ApiGatewayV2_Api;
-          }
-          else if (hashCode == AWS_CodePipeline_Pipeline_HASH)
-          {
-            return ResourceType::AWS_CodePipeline_Pipeline;
-          }
-          else if (hashCode == AWS_ServiceCatalog_CloudFormationProvisionedProduct_HASH)
-          {
-            return ResourceType::AWS_ServiceCatalog_CloudFormationProvisionedProduct;
-          }
-          else if (hashCode == AWS_ServiceCatalog_CloudFormationProduct_HASH)
-          {
-            return ResourceType::AWS_ServiceCatalog_CloudFormationProduct;
-          }
-          else if (hashCode == AWS_ServiceCatalog_Portfolio_HASH)
-          {
-            return ResourceType::AWS_ServiceCatalog_Portfolio;
-          }
-          else if (hashCode == AWS_SQS_Queue_HASH)
-          {
-            return ResourceType::AWS_SQS_Queue;
-          }
-          else if (hashCode == AWS_KMS_Key_HASH)
-          {
-            return ResourceType::AWS_KMS_Key;
-          }
-          else if (hashCode == AWS_QLDB_Ledger_HASH)
-          {
-            return ResourceType::AWS_QLDB_Ledger;
-          }
-          else if (hashCode == AWS_SecretsManager_Secret_HASH)
-          {
-            return ResourceType::AWS_SecretsManager_Secret;
-          }
-          else if (hashCode == AWS_SNS_Topic_HASH)
-          {
-            return ResourceType::AWS_SNS_Topic;
-          }
-          else if (hashCode == AWS_SSM_FileData_HASH)
-          {
-            return ResourceType::AWS_SSM_FileData;
-          }
-          else if (hashCode == AWS_Backup_BackupPlan_HASH)
-          {
-            return ResourceType::AWS_Backup_BackupPlan;
-          }
-          else if (hashCode == AWS_Backup_BackupSelection_HASH)
-          {
-            return ResourceType::AWS_Backup_BackupSelection;
-          }
-          else if (hashCode == AWS_Backup_BackupVault_HASH)
-          {
-            return ResourceType::AWS_Backup_BackupVault;
-          }
-          else if (hashCode == AWS_Backup_RecoveryPoint_HASH)
-          {
-            return ResourceType::AWS_Backup_RecoveryPoint;
-          }
-          else if (hashCode == AWS_ECR_Repository_HASH)
-          {
-            return ResourceType::AWS_ECR_Repository;
-          }
-          else if (hashCode == AWS_ECS_Cluster_HASH)
-          {
-            return ResourceType::AWS_ECS_Cluster;
-          }
-          else if (hashCode == AWS_ECS_Service_HASH)
-          {
-            return ResourceType::AWS_ECS_Service;
-          }
-          else if (hashCode == AWS_ECS_TaskDefinition_HASH)
-          {
-            return ResourceType::AWS_ECS_TaskDefinition;
-          }
-          else if (hashCode == AWS_EFS_AccessPoint_HASH)
-          {
-            return ResourceType::AWS_EFS_AccessPoint;
-          }
-          else if (hashCode == AWS_EFS_FileSystem_HASH)
-          {
-            return ResourceType::AWS_EFS_FileSystem;
-          }
-          else if (hashCode == AWS_EKS_Cluster_HASH)
-          {
-            return ResourceType::AWS_EKS_Cluster;
-          }
-          else if (hashCode == AWS_OpenSearch_Domain_HASH)
-          {
-            return ResourceType::AWS_OpenSearch_Domain;
-          }
-          else if (hashCode == AWS_EC2_TransitGateway_HASH)
-          {
-            return ResourceType::AWS_EC2_TransitGateway;
-          }
-          else if (hashCode == AWS_Kinesis_Stream_HASH)
-          {
-            return ResourceType::AWS_Kinesis_Stream;
-          }
-          else if (hashCode == AWS_Kinesis_StreamConsumer_HASH)
-          {
-            return ResourceType::AWS_Kinesis_StreamConsumer;
-          }
-          else if (hashCode == AWS_CodeDeploy_Application_HASH)
-          {
-            return ResourceType::AWS_CodeDeploy_Application;
-          }
-          else if (hashCode == AWS_CodeDeploy_DeploymentConfig_HASH)
-          {
-            return ResourceType::AWS_CodeDeploy_DeploymentConfig;
-          }
-          else if (hashCode == AWS_CodeDeploy_DeploymentGroup_HASH)
-          {
-            return ResourceType::AWS_CodeDeploy_DeploymentGroup;
-          }
-          else if (hashCode == AWS_EC2_LaunchTemplate_HASH)
-          {
-            return ResourceType::AWS_EC2_LaunchTemplate;
-          }
-          else if (hashCode == AWS_ECR_PublicRepository_HASH)
-          {
-            return ResourceType::AWS_ECR_PublicRepository;
-          }
-          else if (hashCode == AWS_GuardDuty_Detector_HASH)
-          {
-            return ResourceType::AWS_GuardDuty_Detector;
-          }
-          else if (hashCode == AWS_EMR_SecurityConfiguration_HASH)
-          {
-            return ResourceType::AWS_EMR_SecurityConfiguration;
-          }
-          else if (hashCode == AWS_SageMaker_CodeRepository_HASH)
-          {
-            return ResourceType::AWS_SageMaker_CodeRepository;
+             return enumValue;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -637,257 +1291,22 @@ namespace Aws
 
         Aws::String GetNameForResourceType(ResourceType enumValue)
         {
-          switch(enumValue)
+          Aws::String value;
+          if (GetNameForEnumHelper0(enumValue, value))
           {
-          case ResourceType::AWS_EC2_CustomerGateway:
-            return "AWS::EC2::CustomerGateway";
-          case ResourceType::AWS_EC2_EIP:
-            return "AWS::EC2::EIP";
-          case ResourceType::AWS_EC2_Host:
-            return "AWS::EC2::Host";
-          case ResourceType::AWS_EC2_Instance:
-            return "AWS::EC2::Instance";
-          case ResourceType::AWS_EC2_InternetGateway:
-            return "AWS::EC2::InternetGateway";
-          case ResourceType::AWS_EC2_NetworkAcl:
-            return "AWS::EC2::NetworkAcl";
-          case ResourceType::AWS_EC2_NetworkInterface:
-            return "AWS::EC2::NetworkInterface";
-          case ResourceType::AWS_EC2_RouteTable:
-            return "AWS::EC2::RouteTable";
-          case ResourceType::AWS_EC2_SecurityGroup:
-            return "AWS::EC2::SecurityGroup";
-          case ResourceType::AWS_EC2_Subnet:
-            return "AWS::EC2::Subnet";
-          case ResourceType::AWS_CloudTrail_Trail:
-            return "AWS::CloudTrail::Trail";
-          case ResourceType::AWS_EC2_Volume:
-            return "AWS::EC2::Volume";
-          case ResourceType::AWS_EC2_VPC:
-            return "AWS::EC2::VPC";
-          case ResourceType::AWS_EC2_VPNConnection:
-            return "AWS::EC2::VPNConnection";
-          case ResourceType::AWS_EC2_VPNGateway:
-            return "AWS::EC2::VPNGateway";
-          case ResourceType::AWS_EC2_RegisteredHAInstance:
-            return "AWS::EC2::RegisteredHAInstance";
-          case ResourceType::AWS_EC2_NatGateway:
-            return "AWS::EC2::NatGateway";
-          case ResourceType::AWS_EC2_EgressOnlyInternetGateway:
-            return "AWS::EC2::EgressOnlyInternetGateway";
-          case ResourceType::AWS_EC2_VPCEndpoint:
-            return "AWS::EC2::VPCEndpoint";
-          case ResourceType::AWS_EC2_VPCEndpointService:
-            return "AWS::EC2::VPCEndpointService";
-          case ResourceType::AWS_EC2_FlowLog:
-            return "AWS::EC2::FlowLog";
-          case ResourceType::AWS_EC2_VPCPeeringConnection:
-            return "AWS::EC2::VPCPeeringConnection";
-          case ResourceType::AWS_Elasticsearch_Domain:
-            return "AWS::Elasticsearch::Domain";
-          case ResourceType::AWS_IAM_Group:
-            return "AWS::IAM::Group";
-          case ResourceType::AWS_IAM_Policy:
-            return "AWS::IAM::Policy";
-          case ResourceType::AWS_IAM_Role:
-            return "AWS::IAM::Role";
-          case ResourceType::AWS_IAM_User:
-            return "AWS::IAM::User";
-          case ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer:
-            return "AWS::ElasticLoadBalancingV2::LoadBalancer";
-          case ResourceType::AWS_ACM_Certificate:
-            return "AWS::ACM::Certificate";
-          case ResourceType::AWS_RDS_DBInstance:
-            return "AWS::RDS::DBInstance";
-          case ResourceType::AWS_RDS_DBSubnetGroup:
-            return "AWS::RDS::DBSubnetGroup";
-          case ResourceType::AWS_RDS_DBSecurityGroup:
-            return "AWS::RDS::DBSecurityGroup";
-          case ResourceType::AWS_RDS_DBSnapshot:
-            return "AWS::RDS::DBSnapshot";
-          case ResourceType::AWS_RDS_DBCluster:
-            return "AWS::RDS::DBCluster";
-          case ResourceType::AWS_RDS_DBClusterSnapshot:
-            return "AWS::RDS::DBClusterSnapshot";
-          case ResourceType::AWS_RDS_EventSubscription:
-            return "AWS::RDS::EventSubscription";
-          case ResourceType::AWS_S3_Bucket:
-            return "AWS::S3::Bucket";
-          case ResourceType::AWS_S3_AccountPublicAccessBlock:
-            return "AWS::S3::AccountPublicAccessBlock";
-          case ResourceType::AWS_Redshift_Cluster:
-            return "AWS::Redshift::Cluster";
-          case ResourceType::AWS_Redshift_ClusterSnapshot:
-            return "AWS::Redshift::ClusterSnapshot";
-          case ResourceType::AWS_Redshift_ClusterParameterGroup:
-            return "AWS::Redshift::ClusterParameterGroup";
-          case ResourceType::AWS_Redshift_ClusterSecurityGroup:
-            return "AWS::Redshift::ClusterSecurityGroup";
-          case ResourceType::AWS_Redshift_ClusterSubnetGroup:
-            return "AWS::Redshift::ClusterSubnetGroup";
-          case ResourceType::AWS_Redshift_EventSubscription:
-            return "AWS::Redshift::EventSubscription";
-          case ResourceType::AWS_SSM_ManagedInstanceInventory:
-            return "AWS::SSM::ManagedInstanceInventory";
-          case ResourceType::AWS_CloudWatch_Alarm:
-            return "AWS::CloudWatch::Alarm";
-          case ResourceType::AWS_CloudFormation_Stack:
-            return "AWS::CloudFormation::Stack";
-          case ResourceType::AWS_ElasticLoadBalancing_LoadBalancer:
-            return "AWS::ElasticLoadBalancing::LoadBalancer";
-          case ResourceType::AWS_AutoScaling_AutoScalingGroup:
-            return "AWS::AutoScaling::AutoScalingGroup";
-          case ResourceType::AWS_AutoScaling_LaunchConfiguration:
-            return "AWS::AutoScaling::LaunchConfiguration";
-          case ResourceType::AWS_AutoScaling_ScalingPolicy:
-            return "AWS::AutoScaling::ScalingPolicy";
-          case ResourceType::AWS_AutoScaling_ScheduledAction:
-            return "AWS::AutoScaling::ScheduledAction";
-          case ResourceType::AWS_DynamoDB_Table:
-            return "AWS::DynamoDB::Table";
-          case ResourceType::AWS_CodeBuild_Project:
-            return "AWS::CodeBuild::Project";
-          case ResourceType::AWS_WAF_RateBasedRule:
-            return "AWS::WAF::RateBasedRule";
-          case ResourceType::AWS_WAF_Rule:
-            return "AWS::WAF::Rule";
-          case ResourceType::AWS_WAF_RuleGroup:
-            return "AWS::WAF::RuleGroup";
-          case ResourceType::AWS_WAF_WebACL:
-            return "AWS::WAF::WebACL";
-          case ResourceType::AWS_WAFRegional_RateBasedRule:
-            return "AWS::WAFRegional::RateBasedRule";
-          case ResourceType::AWS_WAFRegional_Rule:
-            return "AWS::WAFRegional::Rule";
-          case ResourceType::AWS_WAFRegional_RuleGroup:
-            return "AWS::WAFRegional::RuleGroup";
-          case ResourceType::AWS_WAFRegional_WebACL:
-            return "AWS::WAFRegional::WebACL";
-          case ResourceType::AWS_CloudFront_Distribution:
-            return "AWS::CloudFront::Distribution";
-          case ResourceType::AWS_CloudFront_StreamingDistribution:
-            return "AWS::CloudFront::StreamingDistribution";
-          case ResourceType::AWS_Lambda_Function:
-            return "AWS::Lambda::Function";
-          case ResourceType::AWS_NetworkFirewall_Firewall:
-            return "AWS::NetworkFirewall::Firewall";
-          case ResourceType::AWS_NetworkFirewall_FirewallPolicy:
-            return "AWS::NetworkFirewall::FirewallPolicy";
-          case ResourceType::AWS_NetworkFirewall_RuleGroup:
-            return "AWS::NetworkFirewall::RuleGroup";
-          case ResourceType::AWS_ElasticBeanstalk_Application:
-            return "AWS::ElasticBeanstalk::Application";
-          case ResourceType::AWS_ElasticBeanstalk_ApplicationVersion:
-            return "AWS::ElasticBeanstalk::ApplicationVersion";
-          case ResourceType::AWS_ElasticBeanstalk_Environment:
-            return "AWS::ElasticBeanstalk::Environment";
-          case ResourceType::AWS_WAFv2_WebACL:
-            return "AWS::WAFv2::WebACL";
-          case ResourceType::AWS_WAFv2_RuleGroup:
-            return "AWS::WAFv2::RuleGroup";
-          case ResourceType::AWS_WAFv2_IPSet:
-            return "AWS::WAFv2::IPSet";
-          case ResourceType::AWS_WAFv2_RegexPatternSet:
-            return "AWS::WAFv2::RegexPatternSet";
-          case ResourceType::AWS_WAFv2_ManagedRuleSet:
-            return "AWS::WAFv2::ManagedRuleSet";
-          case ResourceType::AWS_XRay_EncryptionConfig:
-            return "AWS::XRay::EncryptionConfig";
-          case ResourceType::AWS_SSM_AssociationCompliance:
-            return "AWS::SSM::AssociationCompliance";
-          case ResourceType::AWS_SSM_PatchCompliance:
-            return "AWS::SSM::PatchCompliance";
-          case ResourceType::AWS_Shield_Protection:
-            return "AWS::Shield::Protection";
-          case ResourceType::AWS_ShieldRegional_Protection:
-            return "AWS::ShieldRegional::Protection";
-          case ResourceType::AWS_Config_ConformancePackCompliance:
-            return "AWS::Config::ConformancePackCompliance";
-          case ResourceType::AWS_Config_ResourceCompliance:
-            return "AWS::Config::ResourceCompliance";
-          case ResourceType::AWS_ApiGateway_Stage:
-            return "AWS::ApiGateway::Stage";
-          case ResourceType::AWS_ApiGateway_RestApi:
-            return "AWS::ApiGateway::RestApi";
-          case ResourceType::AWS_ApiGatewayV2_Stage:
-            return "AWS::ApiGatewayV2::Stage";
-          case ResourceType::AWS_ApiGatewayV2_Api:
-            return "AWS::ApiGatewayV2::Api";
-          case ResourceType::AWS_CodePipeline_Pipeline:
-            return "AWS::CodePipeline::Pipeline";
-          case ResourceType::AWS_ServiceCatalog_CloudFormationProvisionedProduct:
-            return "AWS::ServiceCatalog::CloudFormationProvisionedProduct";
-          case ResourceType::AWS_ServiceCatalog_CloudFormationProduct:
-            return "AWS::ServiceCatalog::CloudFormationProduct";
-          case ResourceType::AWS_ServiceCatalog_Portfolio:
-            return "AWS::ServiceCatalog::Portfolio";
-          case ResourceType::AWS_SQS_Queue:
-            return "AWS::SQS::Queue";
-          case ResourceType::AWS_KMS_Key:
-            return "AWS::KMS::Key";
-          case ResourceType::AWS_QLDB_Ledger:
-            return "AWS::QLDB::Ledger";
-          case ResourceType::AWS_SecretsManager_Secret:
-            return "AWS::SecretsManager::Secret";
-          case ResourceType::AWS_SNS_Topic:
-            return "AWS::SNS::Topic";
-          case ResourceType::AWS_SSM_FileData:
-            return "AWS::SSM::FileData";
-          case ResourceType::AWS_Backup_BackupPlan:
-            return "AWS::Backup::BackupPlan";
-          case ResourceType::AWS_Backup_BackupSelection:
-            return "AWS::Backup::BackupSelection";
-          case ResourceType::AWS_Backup_BackupVault:
-            return "AWS::Backup::BackupVault";
-          case ResourceType::AWS_Backup_RecoveryPoint:
-            return "AWS::Backup::RecoveryPoint";
-          case ResourceType::AWS_ECR_Repository:
-            return "AWS::ECR::Repository";
-          case ResourceType::AWS_ECS_Cluster:
-            return "AWS::ECS::Cluster";
-          case ResourceType::AWS_ECS_Service:
-            return "AWS::ECS::Service";
-          case ResourceType::AWS_ECS_TaskDefinition:
-            return "AWS::ECS::TaskDefinition";
-          case ResourceType::AWS_EFS_AccessPoint:
-            return "AWS::EFS::AccessPoint";
-          case ResourceType::AWS_EFS_FileSystem:
-            return "AWS::EFS::FileSystem";
-          case ResourceType::AWS_EKS_Cluster:
-            return "AWS::EKS::Cluster";
-          case ResourceType::AWS_OpenSearch_Domain:
-            return "AWS::OpenSearch::Domain";
-          case ResourceType::AWS_EC2_TransitGateway:
-            return "AWS::EC2::TransitGateway";
-          case ResourceType::AWS_Kinesis_Stream:
-            return "AWS::Kinesis::Stream";
-          case ResourceType::AWS_Kinesis_StreamConsumer:
-            return "AWS::Kinesis::StreamConsumer";
-          case ResourceType::AWS_CodeDeploy_Application:
-            return "AWS::CodeDeploy::Application";
-          case ResourceType::AWS_CodeDeploy_DeploymentConfig:
-            return "AWS::CodeDeploy::DeploymentConfig";
-          case ResourceType::AWS_CodeDeploy_DeploymentGroup:
-            return "AWS::CodeDeploy::DeploymentGroup";
-          case ResourceType::AWS_EC2_LaunchTemplate:
-            return "AWS::EC2::LaunchTemplate";
-          case ResourceType::AWS_ECR_PublicRepository:
-            return "AWS::ECR::PublicRepository";
-          case ResourceType::AWS_GuardDuty_Detector:
-            return "AWS::GuardDuty::Detector";
-          case ResourceType::AWS_EMR_SecurityConfiguration:
-            return "AWS::EMR::SecurityConfiguration";
-          case ResourceType::AWS_SageMaker_CodeRepository:
-            return "AWS::SageMaker::CodeRepository";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
+            return value;
           }
+          else if (GetNameForEnumHelper1(enumValue, value))
+          {
+            return value;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+          }
+
+          return {};
         }
 
       } // namespace ResourceTypeMapper

@@ -123,8 +123,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -137,8 +140,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -151,8 +157,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -165,8 +174,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -179,8 +191,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -193,8 +208,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -207,8 +225,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -221,8 +242,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -235,8 +259,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -249,8 +276,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -263,8 +293,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -277,8 +310,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -291,8 +327,11 @@ namespace Model
      * <p>The job arguments specifically for this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that Glue itself consumes.</p> <p>For information about how to specify and
-     * consume your own Job arguments, see the <a
+     * that Glue itself consumes.</p> <p>Job arguments may be logged. Do not pass
+     * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets
+     * Manager or other secret management mechanism if you intend to keep them within
+     * the Job. </p> <p>For information about how to specify and consume your own Job
+     * arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that Glue consumes to set up your job, see the <a
@@ -346,9 +385,9 @@ namespace Model
      * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul>
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
@@ -363,9 +402,9 @@ namespace Model
      * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul>
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
@@ -380,9 +419,9 @@ namespace Model
      * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul>
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
@@ -397,9 +436,9 @@ namespace Model
      * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul>
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul>
      */
     inline StartJobRunRequest& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
@@ -486,102 +525,122 @@ namespace Model
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
+     * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
+     * a 128GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
+     * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
+     * a 128GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
+     * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
+     * a 128GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
+     * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
+     * a 128GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
+     * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
+     * a 128GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline StartJobRunRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
+     * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
+     * a 128GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline StartJobRunRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline StartJobRunRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
 

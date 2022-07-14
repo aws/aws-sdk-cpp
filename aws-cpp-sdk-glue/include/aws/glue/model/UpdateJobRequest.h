@@ -77,32 +77,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the values with which to update the job definition.</p>
+     * <p>Specifies the values with which to update the job definition. Unspecified
+     * configuration is removed or reset to default values.</p>
      */
     inline const JobUpdate& GetJobUpdate() const{ return m_jobUpdate; }
 
     /**
-     * <p>Specifies the values with which to update the job definition.</p>
+     * <p>Specifies the values with which to update the job definition. Unspecified
+     * configuration is removed or reset to default values.</p>
      */
     inline bool JobUpdateHasBeenSet() const { return m_jobUpdateHasBeenSet; }
 
     /**
-     * <p>Specifies the values with which to update the job definition.</p>
+     * <p>Specifies the values with which to update the job definition. Unspecified
+     * configuration is removed or reset to default values.</p>
      */
     inline void SetJobUpdate(const JobUpdate& value) { m_jobUpdateHasBeenSet = true; m_jobUpdate = value; }
 
     /**
-     * <p>Specifies the values with which to update the job definition.</p>
+     * <p>Specifies the values with which to update the job definition. Unspecified
+     * configuration is removed or reset to default values.</p>
      */
     inline void SetJobUpdate(JobUpdate&& value) { m_jobUpdateHasBeenSet = true; m_jobUpdate = std::move(value); }
 
     /**
-     * <p>Specifies the values with which to update the job definition.</p>
+     * <p>Specifies the values with which to update the job definition. Unspecified
+     * configuration is removed or reset to default values.</p>
      */
     inline UpdateJobRequest& WithJobUpdate(const JobUpdate& value) { SetJobUpdate(value); return *this;}
 
     /**
-     * <p>Specifies the values with which to update the job definition.</p>
+     * <p>Specifies the values with which to update the job definition. Unspecified
+     * configuration is removed or reset to default values.</p>
      */
     inline UpdateJobRequest& WithJobUpdate(JobUpdate&& value) { SetJobUpdate(std::move(value)); return *this;}
 

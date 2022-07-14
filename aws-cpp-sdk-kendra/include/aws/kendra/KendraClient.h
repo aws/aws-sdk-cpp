@@ -16,13 +16,16 @@
 #include <aws/kendra/model/BatchDeleteDocumentResult.h>
 #include <aws/kendra/model/BatchGetDocumentStatusResult.h>
 #include <aws/kendra/model/BatchPutDocumentResult.h>
+#include <aws/kendra/model/CreateAccessControlConfigurationResult.h>
 #include <aws/kendra/model/CreateDataSourceResult.h>
 #include <aws/kendra/model/CreateExperienceResult.h>
 #include <aws/kendra/model/CreateFaqResult.h>
 #include <aws/kendra/model/CreateIndexResult.h>
 #include <aws/kendra/model/CreateQuerySuggestionsBlockListResult.h>
 #include <aws/kendra/model/CreateThesaurusResult.h>
+#include <aws/kendra/model/DeleteAccessControlConfigurationResult.h>
 #include <aws/kendra/model/DeleteExperienceResult.h>
+#include <aws/kendra/model/DescribeAccessControlConfigurationResult.h>
 #include <aws/kendra/model/DescribeDataSourceResult.h>
 #include <aws/kendra/model/DescribeExperienceResult.h>
 #include <aws/kendra/model/DescribeFaqResult.h>
@@ -35,6 +38,7 @@
 #include <aws/kendra/model/DisassociatePersonasFromEntitiesResult.h>
 #include <aws/kendra/model/GetQuerySuggestionsResult.h>
 #include <aws/kendra/model/GetSnapshotsResult.h>
+#include <aws/kendra/model/ListAccessControlConfigurationsResult.h>
 #include <aws/kendra/model/ListDataSourceSyncJobsResult.h>
 #include <aws/kendra/model/ListDataSourcesResult.h>
 #include <aws/kendra/model/ListEntityPersonasResult.h>
@@ -50,6 +54,7 @@
 #include <aws/kendra/model/StartDataSourceSyncJobResult.h>
 #include <aws/kendra/model/TagResourceResult.h>
 #include <aws/kendra/model/UntagResourceResult.h>
+#include <aws/kendra/model/UpdateAccessControlConfigurationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -96,12 +101,14 @@ namespace Model
         class BatchGetDocumentStatusRequest;
         class BatchPutDocumentRequest;
         class ClearQuerySuggestionsRequest;
+        class CreateAccessControlConfigurationRequest;
         class CreateDataSourceRequest;
         class CreateExperienceRequest;
         class CreateFaqRequest;
         class CreateIndexRequest;
         class CreateQuerySuggestionsBlockListRequest;
         class CreateThesaurusRequest;
+        class DeleteAccessControlConfigurationRequest;
         class DeleteDataSourceRequest;
         class DeleteExperienceRequest;
         class DeleteFaqRequest;
@@ -109,6 +116,7 @@ namespace Model
         class DeletePrincipalMappingRequest;
         class DeleteQuerySuggestionsBlockListRequest;
         class DeleteThesaurusRequest;
+        class DescribeAccessControlConfigurationRequest;
         class DescribeDataSourceRequest;
         class DescribeExperienceRequest;
         class DescribeFaqRequest;
@@ -121,6 +129,7 @@ namespace Model
         class DisassociatePersonasFromEntitiesRequest;
         class GetQuerySuggestionsRequest;
         class GetSnapshotsRequest;
+        class ListAccessControlConfigurationsRequest;
         class ListDataSourceSyncJobsRequest;
         class ListDataSourcesRequest;
         class ListEntityPersonasRequest;
@@ -139,6 +148,7 @@ namespace Model
         class SubmitFeedbackRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateAccessControlConfigurationRequest;
         class UpdateDataSourceRequest;
         class UpdateExperienceRequest;
         class UpdateIndexRequest;
@@ -152,12 +162,14 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchGetDocumentStatusResult, KendraError> BatchGetDocumentStatusOutcome;
         typedef Aws::Utils::Outcome<BatchPutDocumentResult, KendraError> BatchPutDocumentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> ClearQuerySuggestionsOutcome;
+        typedef Aws::Utils::Outcome<CreateAccessControlConfigurationResult, KendraError> CreateAccessControlConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceResult, KendraError> CreateDataSourceOutcome;
         typedef Aws::Utils::Outcome<CreateExperienceResult, KendraError> CreateExperienceOutcome;
         typedef Aws::Utils::Outcome<CreateFaqResult, KendraError> CreateFaqOutcome;
         typedef Aws::Utils::Outcome<CreateIndexResult, KendraError> CreateIndexOutcome;
         typedef Aws::Utils::Outcome<CreateQuerySuggestionsBlockListResult, KendraError> CreateQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<CreateThesaurusResult, KendraError> CreateThesaurusOutcome;
+        typedef Aws::Utils::Outcome<DeleteAccessControlConfigurationResult, KendraError> DeleteAccessControlConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteDataSourceOutcome;
         typedef Aws::Utils::Outcome<DeleteExperienceResult, KendraError> DeleteExperienceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteFaqOutcome;
@@ -165,6 +177,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeletePrincipalMappingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteThesaurusOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccessControlConfigurationResult, KendraError> DescribeAccessControlConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeDataSourceResult, KendraError> DescribeDataSourceOutcome;
         typedef Aws::Utils::Outcome<DescribeExperienceResult, KendraError> DescribeExperienceOutcome;
         typedef Aws::Utils::Outcome<DescribeFaqResult, KendraError> DescribeFaqOutcome;
@@ -177,6 +190,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociatePersonasFromEntitiesResult, KendraError> DisassociatePersonasFromEntitiesOutcome;
         typedef Aws::Utils::Outcome<GetQuerySuggestionsResult, KendraError> GetQuerySuggestionsOutcome;
         typedef Aws::Utils::Outcome<GetSnapshotsResult, KendraError> GetSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<ListAccessControlConfigurationsResult, KendraError> ListAccessControlConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListDataSourceSyncJobsResult, KendraError> ListDataSourceSyncJobsOutcome;
         typedef Aws::Utils::Outcome<ListDataSourcesResult, KendraError> ListDataSourcesOutcome;
         typedef Aws::Utils::Outcome<ListEntityPersonasResult, KendraError> ListEntityPersonasOutcome;
@@ -195,6 +209,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> SubmitFeedbackOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, KendraError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, KendraError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAccessControlConfigurationResult, KendraError> UpdateAccessControlConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateDataSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateExperienceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateIndexOutcome;
@@ -208,12 +223,14 @@ namespace Model
         typedef std::future<BatchGetDocumentStatusOutcome> BatchGetDocumentStatusOutcomeCallable;
         typedef std::future<BatchPutDocumentOutcome> BatchPutDocumentOutcomeCallable;
         typedef std::future<ClearQuerySuggestionsOutcome> ClearQuerySuggestionsOutcomeCallable;
+        typedef std::future<CreateAccessControlConfigurationOutcome> CreateAccessControlConfigurationOutcomeCallable;
         typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
         typedef std::future<CreateExperienceOutcome> CreateExperienceOutcomeCallable;
         typedef std::future<CreateFaqOutcome> CreateFaqOutcomeCallable;
         typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
         typedef std::future<CreateQuerySuggestionsBlockListOutcome> CreateQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<CreateThesaurusOutcome> CreateThesaurusOutcomeCallable;
+        typedef std::future<DeleteAccessControlConfigurationOutcome> DeleteAccessControlConfigurationOutcomeCallable;
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
         typedef std::future<DeleteExperienceOutcome> DeleteExperienceOutcomeCallable;
         typedef std::future<DeleteFaqOutcome> DeleteFaqOutcomeCallable;
@@ -221,6 +238,7 @@ namespace Model
         typedef std::future<DeletePrincipalMappingOutcome> DeletePrincipalMappingOutcomeCallable;
         typedef std::future<DeleteQuerySuggestionsBlockListOutcome> DeleteQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<DeleteThesaurusOutcome> DeleteThesaurusOutcomeCallable;
+        typedef std::future<DescribeAccessControlConfigurationOutcome> DescribeAccessControlConfigurationOutcomeCallable;
         typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
         typedef std::future<DescribeExperienceOutcome> DescribeExperienceOutcomeCallable;
         typedef std::future<DescribeFaqOutcome> DescribeFaqOutcomeCallable;
@@ -233,6 +251,7 @@ namespace Model
         typedef std::future<DisassociatePersonasFromEntitiesOutcome> DisassociatePersonasFromEntitiesOutcomeCallable;
         typedef std::future<GetQuerySuggestionsOutcome> GetQuerySuggestionsOutcomeCallable;
         typedef std::future<GetSnapshotsOutcome> GetSnapshotsOutcomeCallable;
+        typedef std::future<ListAccessControlConfigurationsOutcome> ListAccessControlConfigurationsOutcomeCallable;
         typedef std::future<ListDataSourceSyncJobsOutcome> ListDataSourceSyncJobsOutcomeCallable;
         typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
         typedef std::future<ListEntityPersonasOutcome> ListEntityPersonasOutcomeCallable;
@@ -251,6 +270,7 @@ namespace Model
         typedef std::future<SubmitFeedbackOutcome> SubmitFeedbackOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateAccessControlConfigurationOutcome> UpdateAccessControlConfigurationOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
         typedef std::future<UpdateExperienceOutcome> UpdateExperienceOutcomeCallable;
         typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
@@ -267,12 +287,14 @@ namespace Model
     typedef std::function<void(const KendraClient*, const Model::BatchGetDocumentStatusRequest&, const Model::BatchGetDocumentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDocumentStatusResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchPutDocumentRequest&, const Model::BatchPutDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutDocumentResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ClearQuerySuggestionsRequest&, const Model::ClearQuerySuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClearQuerySuggestionsResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::CreateAccessControlConfigurationRequest&, const Model::CreateAccessControlConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessControlConfigurationResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateExperienceRequest&, const Model::CreateExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateFaqRequest&, const Model::CreateFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFaqResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateQuerySuggestionsBlockListRequest&, const Model::CreateQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateThesaurusRequest&, const Model::CreateThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThesaurusResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DeleteAccessControlConfigurationRequest&, const Model::DeleteAccessControlConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessControlConfigurationResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteExperienceRequest&, const Model::DeleteExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteFaqRequest&, const Model::DeleteFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFaqResponseReceivedHandler;
@@ -280,6 +302,7 @@ namespace Model
     typedef std::function<void(const KendraClient*, const Model::DeletePrincipalMappingRequest&, const Model::DeletePrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteQuerySuggestionsBlockListRequest&, const Model::DeleteQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteThesaurusRequest&, const Model::DeleteThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThesaurusResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DescribeAccessControlConfigurationRequest&, const Model::DescribeAccessControlConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessControlConfigurationResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeDataSourceRequest&, const Model::DescribeDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeExperienceRequest&, const Model::DescribeExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeFaqRequest&, const Model::DescribeFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFaqResponseReceivedHandler;
@@ -292,6 +315,7 @@ namespace Model
     typedef std::function<void(const KendraClient*, const Model::DisassociatePersonasFromEntitiesRequest&, const Model::DisassociatePersonasFromEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePersonasFromEntitiesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::GetQuerySuggestionsRequest&, const Model::GetQuerySuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQuerySuggestionsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::GetSnapshotsRequest&, const Model::GetSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotsResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::ListAccessControlConfigurationsRequest&, const Model::ListAccessControlConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessControlConfigurationsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListDataSourceSyncJobsRequest&, const Model::ListDataSourceSyncJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceSyncJobsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListEntityPersonasRequest&, const Model::ListEntityPersonasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntityPersonasResponseReceivedHandler;
@@ -310,6 +334,7 @@ namespace Model
     typedef std::function<void(const KendraClient*, const Model::SubmitFeedbackRequest&, const Model::SubmitFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitFeedbackResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::UpdateAccessControlConfigurationRequest&, const Model::UpdateAccessControlConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccessControlConfigurationResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateExperienceRequest&, const Model::UpdateExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateIndexRequest&, const Model::UpdateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexResponseReceivedHandler;
@@ -492,6 +517,45 @@ namespace Model
         virtual void ClearQuerySuggestionsAsync(const Model::ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an access configuration for your documents. This includes user and
+         * group access information for your documents. This is useful for user context
+         * filtering, where search results are filtered based on the user or their group
+         * access to documents.</p> <p>You can use this to re-configure your existing
+         * document level access control without indexing all of your documents again. For
+         * example, your index contains top-secret company documents that only certain
+         * employees or users should access. One of these users leaves the company or
+         * switches to a team that should be blocked from access to top-secret documents.
+         * Your documents in your index still give this user access to top-secret documents
+         * due to the user having access at the time your documents were indexed. You can
+         * create a specific access control configuration for this user with deny access.
+         * You can later update the access control configuration to allow access in the
+         * case the user returns to the company and re-joins the 'top-secret' team. You can
+         * re-configure access control for your documents circumstances change.</p> <p>To
+         * apply your access control configuration to certain documents, you call the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>
+         * API with the <code>AccessControlConfigurationId</code> included in the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a>
+         * object. If you use an S3 bucket as a data source, you update the
+         * <code>.metadata.json</code> with the <code>AccessControlConfigurationId</code>
+         * and synchronize your data source. Amazon Kendra currently only supports access
+         * control configuration for S3 data sources and documents indexed using the
+         * <code>BatchPutDocument</code> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccessControlConfigurationOutcome CreateAccessControlConfiguration(const Model::CreateAccessControlConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAccessControlConfigurationOutcomeCallable CreateAccessControlConfigurationCallable(const Model::CreateAccessControlConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAccessControlConfigurationAsync(const Model::CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a data source that you want to use with an Amazon Kendra index. </p>
          * <p>You specify a name, data source connector type and description for your data
          * source. You also specify configuration information for the data source
@@ -548,7 +612,7 @@ namespace Model
          * answers.</p> <p>Adding FAQs to an index is an asynchronous operation.</p> <p>For
          * an example of adding an FAQ to an index using Python and Java SDKs, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using
-         * you FAQ file</a>.</p><p><h3>See Also:</h3>   <a
+         * your FAQ file</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">AWS
          * API Reference</a></p>
          */
@@ -565,7 +629,7 @@ namespace Model
         virtual void CreateFaqAsync(const Model::CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon Kendra index. Index creation is an asynchronous API. To
+         * <p>Creates an Amazon Kendra index. Index creation is an asynchronous API. To
          * determine if index creation has completed, check the <code>Status</code> field
          * returned from a call to <code>DescribeIndex</code>. The <code>Status</code>
          * field is set to <code>ACTIVE</code> when the index is ready to use.</p> <p>Once
@@ -642,6 +706,27 @@ namespace Model
          * An Async wrapper for CreateThesaurus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateThesaurusAsync(const Model::CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an access control configuration that you created for your documents
+         * in an index. This includes user and group access information for your documents.
+         * This is useful for user context filtering, where search results are filtered
+         * based on the user or their group access to documents.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccessControlConfigurationOutcome DeleteAccessControlConfiguration(const Model::DeleteAccessControlConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccessControlConfigurationOutcomeCallable DeleteAccessControlConfigurationCallable(const Model::DeleteAccessControlConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccessControlConfigurationAsync(const Model::DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Kendra data source. An exception is not thrown if the data
@@ -792,6 +877,27 @@ namespace Model
         virtual void DeleteThesaurusAsync(const Model::DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about an access control configuration that you created for
+         * your documents in an index. This includes user and group access information for
+         * your documents. This is useful for user context filtering, where search results
+         * are filtered based on the user or their group access to documents.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccessControlConfigurationOutcome DescribeAccessControlConfiguration(const Model::DescribeAccessControlConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAccessControlConfigurationOutcomeCallable DescribeAccessControlConfigurationCallable(const Model::DescribeAccessControlConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAccessControlConfigurationAsync(const Model::DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about an Amazon Kendra data source.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeDataSource">AWS
@@ -848,7 +954,8 @@ namespace Model
         virtual void DescribeFaqAsync(const Model::DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about an existing Amazon Kendra index.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">AWS
          * API Reference</a></p>
          */
@@ -889,10 +996,11 @@ namespace Model
         virtual void DescribePrincipalMappingAsync(const Model::DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a block list used for query suggestions for an index.</p> <p>This
-         * is used to check the current settings that are applied to a block list.</p> <p>
-         * <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
-         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a block list used for query suggestions for an
+         * index.</p> <p>This is used to check the current settings that are applied to a
+         * block list.</p> <p> <code>DescribeQuerySuggestionsBlockList</code> is currently
+         * not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          */
@@ -909,10 +1017,10 @@ namespace Model
         virtual void DescribeQuerySuggestionsBlockListAsync(const Model::DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the settings of query suggestions for an index.</p> <p>This is used
-         * to check the current settings applied to query suggestions.</p> <p>
-         * <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the
-         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information on the settings of query suggestions for an index.</p>
+         * <p>This is used to check the current settings applied to query suggestions.</p>
+         * <p> <code>DescribeQuerySuggestionsConfig</code> is currently not supported in
+         * the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          */
@@ -929,7 +1037,8 @@ namespace Model
         virtual void DescribeQuerySuggestionsConfigAsync(const Model::DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing Amazon Kendra thesaurus.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about an existing Amazon Kendra thesaurus.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">AWS
          * API Reference</a></p>
          */
@@ -1026,6 +1135,26 @@ namespace Model
          * An Async wrapper for GetSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSnapshotsAsync(const Model::GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists one or more access control configurations for an index. This includes
+         * user and group access information for your documents. This is useful for user
+         * context filtering, where search results are filtered based on the user or their
+         * group access to documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccessControlConfigurationsOutcome ListAccessControlConfigurations(const Model::ListAccessControlConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccessControlConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAccessControlConfigurationsOutcomeCallable ListAccessControlConfigurationsCallable(const Model::ListAccessControlConfigurationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAccessControlConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAccessControlConfigurationsAsync(const Model::ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets statistics about synchronizing Amazon Kendra with a data
@@ -1219,8 +1348,7 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Amazon Kendra thesauri associated with an index.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the thesauri for an index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">AWS
          * API Reference</a></p>
          */
@@ -1243,10 +1371,9 @@ namespace Model
          * and "Engineering". These sub groups include their own list of users or people
          * who work in these teams. Only users who work in research and engineering, and
          * therefore belong in the intellectual property group, can see top-secret company
-         * documents in their search results.</p> <p>You map users to their groups when you
-         * want to filter search results for different users based on their group’s access
-         * to documents. For more information on filtering search results for different
-         * users, see <a
+         * documents in their search results.</p> <p>This is useful for user context
+         * filtering, where search results are filtered based on the user or their group
+         * access to documents. For more information, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
          * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
          * group are currently processing, a validation exception is thrown.</p> <p>
@@ -1388,6 +1515,44 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an access control configuration for your documents in an index. This
+         * includes user and group access information for your documents. This is useful
+         * for user context filtering, where search results are filtered based on the user
+         * or their group access to documents.</p> <p>You can update an access control
+         * configuration you created without indexing all of your documents again. For
+         * example, your index contains top-secret company documents that only certain
+         * employees or users should access. You created an 'allow' access control
+         * configuration for one user who recently joined the 'top-secret' team, switching
+         * from a team with 'deny' access to top-secret documents. However, the user
+         * suddenly returns to their previous team and should no longer have access to top
+         * secret documents. You can update the access control configuration to
+         * re-configure access control for your documents as circumstances change.</p>
+         * <p>You call the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>
+         * API to apply the updated access control configuration, with the
+         * <code>AccessControlConfigurationId</code> included in the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a>
+         * object. If you use an S3 bucket as a data source, you synchronize your data
+         * source to apply the the <code>AccessControlConfigurationId</code> in the
+         * <code>.metadata.json</code> file. Amazon Kendra currently only supports access
+         * control configuration for S3 data sources and documents indexed using the
+         * <code>BatchPutDocument</code> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccessControlConfigurationOutcome UpdateAccessControlConfiguration(const Model::UpdateAccessControlConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAccessControlConfigurationOutcomeCallable UpdateAccessControlConfigurationCallable(const Model::UpdateAccessControlConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAccessControlConfigurationAsync(const Model::UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing Amazon Kendra data source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">AWS
          * API Reference</a></p>
@@ -1493,8 +1658,7 @@ namespace Model
         virtual void UpdateQuerySuggestionsConfigAsync(const Model::UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a thesaurus file associated with an index.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates a thesaurus for an index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">AWS
          * API Reference</a></p>
          */
@@ -1520,12 +1684,14 @@ namespace Model
         void BatchGetDocumentStatusAsyncHelper(const Model::BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchPutDocumentAsyncHelper(const Model::BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ClearQuerySuggestionsAsyncHelper(const Model::ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAccessControlConfigurationAsyncHelper(const Model::CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceAsyncHelper(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateExperienceAsyncHelper(const Model::CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFaqAsyncHelper(const Model::CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIndexAsyncHelper(const Model::CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateQuerySuggestionsBlockListAsyncHelper(const Model::CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateThesaurusAsyncHelper(const Model::CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAccessControlConfigurationAsyncHelper(const Model::DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteExperienceAsyncHelper(const Model::DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFaqAsyncHelper(const Model::DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1533,6 +1699,7 @@ namespace Model
         void DeletePrincipalMappingAsyncHelper(const Model::DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQuerySuggestionsBlockListAsyncHelper(const Model::DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteThesaurusAsyncHelper(const Model::DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAccessControlConfigurationAsyncHelper(const Model::DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataSourceAsyncHelper(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExperienceAsyncHelper(const Model::DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFaqAsyncHelper(const Model::DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1545,6 +1712,7 @@ namespace Model
         void DisassociatePersonasFromEntitiesAsyncHelper(const Model::DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQuerySuggestionsAsyncHelper(const Model::GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSnapshotsAsyncHelper(const Model::GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAccessControlConfigurationsAsyncHelper(const Model::ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourceSyncJobsAsyncHelper(const Model::ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourcesAsyncHelper(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEntityPersonasAsyncHelper(const Model::ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1563,6 +1731,7 @@ namespace Model
         void SubmitFeedbackAsyncHelper(const Model::SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAccessControlConfigurationAsyncHelper(const Model::UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateExperienceAsyncHelper(const Model::UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIndexAsyncHelper(const Model::UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

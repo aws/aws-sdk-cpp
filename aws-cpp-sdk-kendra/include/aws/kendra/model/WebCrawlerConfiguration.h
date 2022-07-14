@@ -505,72 +505,72 @@ namespace Model
     /**
      * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
-     * user name and password.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a
+     * user name and password. You use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     * Manager</a> to store your authentication credentials.</p>
+     * Manager</a> to store your authentication credentials.</p> <p>You must provide
+     * the website host name and port number. For example, the host name of
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the
+     * standard port for HTTPS.</p>
      */
     inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
 
     /**
      * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
-     * user name and password.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a
+     * user name and password. You use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     * Manager</a> to store your authentication credentials.</p>
+     * Manager</a> to store your authentication credentials.</p> <p>You must provide
+     * the website host name and port number. For example, the host name of
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the
+     * standard port for HTTPS.</p>
      */
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
 
     /**
      * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
-     * user name and password.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a
+     * user name and password. You use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     * Manager</a> to store your authentication credentials.</p>
+     * Manager</a> to store your authentication credentials.</p> <p>You must provide
+     * the website host name and port number. For example, the host name of
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the
+     * standard port for HTTPS.</p>
      */
     inline void SetAuthenticationConfiguration(const AuthenticationConfiguration& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
 
     /**
      * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
-     * user name and password.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a
+     * user name and password. You use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     * Manager</a> to store your authentication credentials.</p>
+     * Manager</a> to store your authentication credentials.</p> <p>You must provide
+     * the website host name and port number. For example, the host name of
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the
+     * standard port for HTTPS.</p>
      */
     inline void SetAuthenticationConfiguration(AuthenticationConfiguration&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
 
     /**
      * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
-     * user name and password.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a
+     * user name and password. You use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     * Manager</a> to store your authentication credentials.</p>
+     * Manager</a> to store your authentication credentials.</p> <p>You must provide
+     * the website host name and port number. For example, the host name of
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the
+     * standard port for HTTPS.</p>
      */
     inline WebCrawlerConfiguration& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
 
     /**
      * <p>Configuration information required to connect to websites using
      * authentication.</p> <p>You can connect to websites using basic authentication of
-     * user name and password.</p> <p>You must provide the website host name and port
-     * number. For example, the host name of https://a.example.com/page1.html is
-     * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
-     * secret in <a
+     * user name and password. You use a secret in <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-     * Manager</a> to store your authentication credentials.</p>
+     * Manager</a> to store your authentication credentials.</p> <p>You must provide
+     * the website host name and port number. For example, the host name of
+     * https://a.example.com/page1.html is "a.example.com" and the port is 443, the
+     * standard port for HTTPS.</p>
      */
     inline WebCrawlerConfiguration& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
 

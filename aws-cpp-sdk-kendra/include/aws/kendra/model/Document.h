@@ -330,50 +330,58 @@ namespace Model
 
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline const Aws::Vector<Principal>& GetAccessControlList() const{ return m_accessControlList; }
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline void SetAccessControlList(const Aws::Vector<Principal>& value) { m_accessControlListHasBeenSet = true; m_accessControlList = value; }
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline void SetAccessControlList(Aws::Vector<Principal>&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::move(value); }
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline Document& WithAccessControlList(const Aws::Vector<Principal>& value) { SetAccessControlList(value); return *this;}
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline Document& WithAccessControlList(Aws::Vector<Principal>&& value) { SetAccessControlList(std::move(value)); return *this;}
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline Document& AddAccessControlList(const Principal& value) { m_accessControlListHasBeenSet = true; m_accessControlList.push_back(value); return *this; }
 
     /**
-     * <p>Information on user and group access rights, which is used for user context
-     * filtering.</p>
+     * <p>Information on principals (users and/or groups) and which documents they
+     * should have access to. This is useful for user context filtering, where search
+     * results are filtered based on the user or their group access to documents.</p>
      */
     inline Document& AddAccessControlList(Principal&& value) { m_accessControlListHasBeenSet = true; m_accessControlList.push_back(std::move(value)); return *this; }
 
@@ -473,6 +481,55 @@ namespace Model
      */
     inline Document& WithContentType(ContentType&& value) { SetContentType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline const Aws::String& GetAccessControlConfigurationId() const{ return m_accessControlConfigurationId; }
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline bool AccessControlConfigurationIdHasBeenSet() const { return m_accessControlConfigurationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline void SetAccessControlConfigurationId(const Aws::String& value) { m_accessControlConfigurationIdHasBeenSet = true; m_accessControlConfigurationId = value; }
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline void SetAccessControlConfigurationId(Aws::String&& value) { m_accessControlConfigurationIdHasBeenSet = true; m_accessControlConfigurationId = std::move(value); }
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline void SetAccessControlConfigurationId(const char* value) { m_accessControlConfigurationIdHasBeenSet = true; m_accessControlConfigurationId.assign(value); }
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline Document& WithAccessControlConfigurationId(const Aws::String& value) { SetAccessControlConfigurationId(value); return *this;}
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline Document& WithAccessControlConfigurationId(Aws::String&& value) { SetAccessControlConfigurationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the access control configuration that you want to apply to
+     * the document.</p>
+     */
+    inline Document& WithAccessControlConfigurationId(const char* value) { SetAccessControlConfigurationId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -498,6 +555,9 @@ namespace Model
 
     ContentType m_contentType;
     bool m_contentTypeHasBeenSet;
+
+    Aws::String m_accessControlConfigurationId;
+    bool m_accessControlConfigurationIdHasBeenSet;
   };
 
 } // namespace Model

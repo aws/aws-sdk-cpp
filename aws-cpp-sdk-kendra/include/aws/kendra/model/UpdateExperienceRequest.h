@@ -77,91 +77,83 @@ namespace Model
 
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your Amazon Kendra experience you want to update.</p>
+     * <p>A new name for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index for your Amazon Kendra experience you want to
-     * update.</p>
+     * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
@@ -248,73 +240,79 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for your Amazon Kendra you want to update.</p>
+     * <p>Configuration information you want to update for your Amazon Kendra
+     * experience.</p>
      */
     inline const ExperienceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Configuration information for your Amazon Kendra you want to update.</p>
+     * <p>Configuration information you want to update for your Amazon Kendra
+     * experience.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Configuration information for your Amazon Kendra you want to update.</p>
+     * <p>Configuration information you want to update for your Amazon Kendra
+     * experience.</p>
      */
     inline void SetConfiguration(const ExperienceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Configuration information for your Amazon Kendra you want to update.</p>
+     * <p>Configuration information you want to update for your Amazon Kendra
+     * experience.</p>
      */
     inline void SetConfiguration(ExperienceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Configuration information for your Amazon Kendra you want to update.</p>
+     * <p>Configuration information you want to update for your Amazon Kendra
+     * experience.</p>
      */
     inline UpdateExperienceRequest& WithConfiguration(const ExperienceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration information for your Amazon Kendra you want to update.</p>
+     * <p>Configuration information you want to update for your Amazon Kendra
+     * experience.</p>
      */
     inline UpdateExperienceRequest& WithConfiguration(ExperienceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of your Amazon Kendra experience you want to update.</p>
+     * <p>A new description for your Amazon Kendra experience.</p>
      */
     inline UpdateExperienceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

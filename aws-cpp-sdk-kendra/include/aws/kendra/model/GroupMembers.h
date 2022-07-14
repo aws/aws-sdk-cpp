@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>A list of users or sub groups that belong to a group. Users and groups are
-   * useful for filtering search results to different users based on their group's
-   * access to documents.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of users or sub groups that belong to a group. This is useful for user
+   * context filtering, where search results are filtered based on the user or their
+   * group access to documents.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupMembers">AWS
    * API Reference</a></p>
    */

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Standard,
     G_1X,
-    G_2X
+    G_2X,
+    G_025X
   };
 
 namespace WorkerTypeMapper

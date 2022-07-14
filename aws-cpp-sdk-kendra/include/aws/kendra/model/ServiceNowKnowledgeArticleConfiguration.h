@@ -41,26 +41,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
 
     /**
-     * <p>Indicates whether Amazon Kendra should index attachments to knowledge
-     * articles.</p>
+     * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 

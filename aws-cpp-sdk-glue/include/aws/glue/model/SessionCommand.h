@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline SessionCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline SessionCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline SessionCommand& WithName(const char* value) { SetName(value); return *this;}

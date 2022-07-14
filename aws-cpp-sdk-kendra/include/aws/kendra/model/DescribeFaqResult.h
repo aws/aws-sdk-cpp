@@ -73,37 +73,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexId = value; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const char* value) { m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqResult& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqResult& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

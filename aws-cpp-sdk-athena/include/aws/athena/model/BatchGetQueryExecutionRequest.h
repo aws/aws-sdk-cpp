@@ -18,6 +18,9 @@ namespace Model
 {
 
   /**
+   * <p>Contains an array of query execution IDs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecutionInput">AWS
+   * API Reference</a></p>
    */
   class AWS_ATHENA_API BatchGetQueryExecutionRequest : public AthenaRequest
   {

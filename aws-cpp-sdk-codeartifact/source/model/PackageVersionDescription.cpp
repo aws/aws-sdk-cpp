@@ -32,7 +32,8 @@ PackageVersionDescription::PackageVersionDescription() :
     m_licensesHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_originHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ PackageVersionDescription::PackageVersionDescription(JsonView jsonValue) :
     m_licensesHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_originHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +146,13 @@ PackageVersionDescription& PackageVersionDescription::operator =(JsonView jsonVa
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("origin"))
+  {
+    m_origin = jsonValue.GetObject("origin");
+
+    m_originHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +232,12 @@ JsonValue PackageVersionDescription::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", PackageVersionStatusMapper::GetNameForPackageVersionStatus(m_status));
+  }
+
+  if(m_originHasBeenSet)
+  {
+   payload.WithObject("origin", m_origin.Jsonize());
+
   }
 
   return payload;

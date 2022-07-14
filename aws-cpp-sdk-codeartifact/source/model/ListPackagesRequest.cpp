@@ -25,7 +25,11 @@ ListPackagesRequest::ListPackagesRequest() :
     m_packagePrefixHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_publish(AllowPublish::NOT_SET),
+    m_publishHasBeenSet(false),
+    m_upstream(AllowUpstream::NOT_SET),
+    m_upstreamHasBeenSet(false)
 {
 }
 
@@ -90,6 +94,20 @@ void ListPackagesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("next-token", ss.str());
+      ss.str("");
+    }
+
+    if(m_publishHasBeenSet)
+    {
+      ss << AllowPublishMapper::GetNameForAllowPublish(m_publish);
+      uri.AddQueryStringParameter("publish", ss.str());
+      ss.str("");
+    }
+
+    if(m_upstreamHasBeenSet)
+    {
+      ss << AllowUpstreamMapper::GetNameForAllowUpstream(m_upstream);
+      uri.AddQueryStringParameter("upstream", ss.str());
       ss.str("");
     }
 

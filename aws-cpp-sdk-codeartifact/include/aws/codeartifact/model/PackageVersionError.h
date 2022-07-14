@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> An error associated with package. </p><p><h3>See Also:</h3>   <a
+   * <p>l An error associated with package. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageVersionError">AWS
    * API Reference</a></p>
    */

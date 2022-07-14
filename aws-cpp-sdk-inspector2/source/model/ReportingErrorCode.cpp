@@ -22,6 +22,10 @@ namespace Aws
 
         static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
         static const int INVALID_PERMISSIONS_HASH = HashingUtils::HashString("INVALID_PERMISSIONS");
+        static const int NO_FINDINGS_FOUND_HASH = HashingUtils::HashString("NO_FINDINGS_FOUND");
+        static const int BUCKET_NOT_FOUND_HASH = HashingUtils::HashString("BUCKET_NOT_FOUND");
+        static const int INCOMPATIBLE_BUCKET_REGION_HASH = HashingUtils::HashString("INCOMPATIBLE_BUCKET_REGION");
+        static const int MALFORMED_KMS_KEY_HASH = HashingUtils::HashString("MALFORMED_KMS_KEY");
 
 
         ReportingErrorCode GetReportingErrorCodeForName(const Aws::String& name)
@@ -34,6 +38,22 @@ namespace Aws
           else if (hashCode == INVALID_PERMISSIONS_HASH)
           {
             return ReportingErrorCode::INVALID_PERMISSIONS;
+          }
+          else if (hashCode == NO_FINDINGS_FOUND_HASH)
+          {
+            return ReportingErrorCode::NO_FINDINGS_FOUND;
+          }
+          else if (hashCode == BUCKET_NOT_FOUND_HASH)
+          {
+            return ReportingErrorCode::BUCKET_NOT_FOUND;
+          }
+          else if (hashCode == INCOMPATIBLE_BUCKET_REGION_HASH)
+          {
+            return ReportingErrorCode::INCOMPATIBLE_BUCKET_REGION;
+          }
+          else if (hashCode == MALFORMED_KMS_KEY_HASH)
+          {
+            return ReportingErrorCode::MALFORMED_KMS_KEY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +73,14 @@ namespace Aws
             return "INTERNAL_ERROR";
           case ReportingErrorCode::INVALID_PERMISSIONS:
             return "INVALID_PERMISSIONS";
+          case ReportingErrorCode::NO_FINDINGS_FOUND:
+            return "NO_FINDINGS_FOUND";
+          case ReportingErrorCode::BUCKET_NOT_FOUND:
+            return "BUCKET_NOT_FOUND";
+          case ReportingErrorCode::INCOMPATIBLE_BUCKET_REGION:
+            return "INCOMPATIBLE_BUCKET_REGION";
+          case ReportingErrorCode::MALFORMED_KMS_KEY:
+            return "MALFORMED_KMS_KEY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
