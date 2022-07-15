@@ -32,6 +32,7 @@ Experiment::Experiment() :
     m_samplingRate(0),
     m_samplingRateHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_segmentHasBeenSet(false),
     m_status(ExperimentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -56,6 +57,7 @@ Experiment::Experiment(JsonView jsonValue) :
     m_samplingRate(0),
     m_samplingRateHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_segmentHasBeenSet(false),
     m_status(ExperimentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -154,6 +156,13 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     m_schedule = jsonValue.GetObject("schedule");
 
     m_scheduleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segment"))
+  {
+    m_segment = jsonValue.GetString("segment");
+
+    m_segmentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -276,6 +285,12 @@ JsonValue Experiment::Jsonize() const
   if(m_scheduleHasBeenSet)
   {
    payload.WithObject("schedule", m_schedule.Jsonize());
+
+  }
+
+  if(m_segmentHasBeenSet)
+  {
+   payload.WithString("segment", m_segment);
 
   }
 

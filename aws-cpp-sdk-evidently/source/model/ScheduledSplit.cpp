@@ -20,12 +20,14 @@ namespace Model
 
 ScheduledSplit::ScheduledSplit() : 
     m_groupWeightsHasBeenSet(false),
+    m_segmentOverridesHasBeenSet(false),
     m_startTimeHasBeenSet(false)
 {
 }
 
 ScheduledSplit::ScheduledSplit(JsonView jsonValue) : 
     m_groupWeightsHasBeenSet(false),
+    m_segmentOverridesHasBeenSet(false),
     m_startTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +43,16 @@ ScheduledSplit& ScheduledSplit::operator =(JsonView jsonValue)
       m_groupWeights[groupWeightsItem.first] = groupWeightsItem.second.AsInt64();
     }
     m_groupWeightsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentOverrides"))
+  {
+    Array<JsonView> segmentOverridesJsonList = jsonValue.GetArray("segmentOverrides");
+    for(unsigned segmentOverridesIndex = 0; segmentOverridesIndex < segmentOverridesJsonList.GetLength(); ++segmentOverridesIndex)
+    {
+      m_segmentOverrides.push_back(segmentOverridesJsonList[segmentOverridesIndex].AsObject());
+    }
+    m_segmentOverridesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startTime"))
@@ -65,6 +77,17 @@ JsonValue ScheduledSplit::Jsonize() const
      groupWeightsJsonMap.WithInt64(groupWeightsItem.first, groupWeightsItem.second);
    }
    payload.WithObject("groupWeights", std::move(groupWeightsJsonMap));
+
+  }
+
+  if(m_segmentOverridesHasBeenSet)
+  {
+   Array<JsonValue> segmentOverridesJsonList(m_segmentOverrides.size());
+   for(unsigned segmentOverridesIndex = 0; segmentOverridesIndex < segmentOverridesJsonList.GetLength(); ++segmentOverridesIndex)
+   {
+     segmentOverridesJsonList[segmentOverridesIndex].AsObject(m_segmentOverrides[segmentOverridesIndex].Jsonize());
+   }
+   payload.WithArray("segmentOverrides", std::move(segmentOverridesJsonList));
 
   }
 

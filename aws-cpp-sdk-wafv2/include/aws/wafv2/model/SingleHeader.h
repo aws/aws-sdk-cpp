@@ -28,9 +28,9 @@ namespace Model
    * example, <code>User-Agent</code> or <code>Referer</code>. The name isn't case
    * sensitive.</p> <p>You can filter and inspect all headers with the
    * <code>FieldToMatch</code> setting <code>Headers</code>.</p> <p>This is used to
-   * indicate the web request component for WAF to inspect, in the
-   * <a>FieldToMatch</a> specification. </p> <p>Example JSON: <code>"SingleHeader": {
-   * "Name": "haystack" }</code> </p><p><h3>See Also:</h3>   <a
+   * indicate the web request component to inspect, in the <a>FieldToMatch</a>
+   * specification. </p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+   * }</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleHeader">AWS
    * API Reference</a></p>
    */

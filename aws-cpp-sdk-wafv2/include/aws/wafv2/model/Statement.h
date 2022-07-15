@@ -58,7 +58,7 @@ namespace Model
      * requests. The byte match statement provides the bytes to search for, the
      * location in requests that you want WAF to search, and other settings. The bytes
      * to search for are typically a string that corresponds with ASCII characters. In
-     * the WAF console and the developer guide, this is refered to as a string match
+     * the WAF console and the developer guide, this is called a string match
      * statement.</p>
      */
     inline const ByteMatchStatement& GetByteMatchStatement() const{ return m_byteMatchStatement; }
@@ -68,7 +68,7 @@ namespace Model
      * requests. The byte match statement provides the bytes to search for, the
      * location in requests that you want WAF to search, and other settings. The bytes
      * to search for are typically a string that corresponds with ASCII characters. In
-     * the WAF console and the developer guide, this is refered to as a string match
+     * the WAF console and the developer guide, this is called a string match
      * statement.</p>
      */
     inline bool ByteMatchStatementHasBeenSet() const { return m_byteMatchStatementHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
      * requests. The byte match statement provides the bytes to search for, the
      * location in requests that you want WAF to search, and other settings. The bytes
      * to search for are typically a string that corresponds with ASCII characters. In
-     * the WAF console and the developer guide, this is refered to as a string match
+     * the WAF console and the developer guide, this is called a string match
      * statement.</p>
      */
     inline void SetByteMatchStatement(const ByteMatchStatement& value) { m_byteMatchStatementHasBeenSet = true; m_byteMatchStatement = value; }
@@ -88,7 +88,7 @@ namespace Model
      * requests. The byte match statement provides the bytes to search for, the
      * location in requests that you want WAF to search, and other settings. The bytes
      * to search for are typically a string that corresponds with ASCII characters. In
-     * the WAF console and the developer guide, this is refered to as a string match
+     * the WAF console and the developer guide, this is called a string match
      * statement.</p>
      */
     inline void SetByteMatchStatement(ByteMatchStatement&& value) { m_byteMatchStatementHasBeenSet = true; m_byteMatchStatement = std::move(value); }
@@ -98,7 +98,7 @@ namespace Model
      * requests. The byte match statement provides the bytes to search for, the
      * location in requests that you want WAF to search, and other settings. The bytes
      * to search for are typically a string that corresponds with ASCII characters. In
-     * the WAF console and the developer guide, this is refered to as a string match
+     * the WAF console and the developer guide, this is called a string match
      * statement.</p>
      */
     inline Statement& WithByteMatchStatement(const ByteMatchStatement& value) { SetByteMatchStatement(value); return *this;}
@@ -108,142 +108,94 @@ namespace Model
      * requests. The byte match statement provides the bytes to search for, the
      * location in requests that you want WAF to search, and other settings. The bytes
      * to search for are typically a string that corresponds with ASCII characters. In
-     * the WAF console and the developer guide, this is refered to as a string match
+     * the WAF console and the developer guide, this is called a string match
      * statement.</p>
      */
     inline Statement& WithByteMatchStatement(ByteMatchStatement&& value) { SetByteMatchStatement(std::move(value)); return *this;}
 
 
     /**
-     * <p>Attackers sometimes insert malicious SQL code into web requests in an effort
-     * to extract data from your database. To allow or block web requests that appear
-     * to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want WAF to inspect.
-     * Later in the process, when you create a web ACL, you specify whether to allow or
-     * block requests that appear to contain malicious SQL code.</p>
+     * <p>A rule statement that inspects for malicious SQL code. Attackers insert
+     * malicious SQL code into web requests to do things like modify your database or
+     * extract data from it. </p>
      */
     inline const SqliMatchStatement& GetSqliMatchStatement() const{ return m_sqliMatchStatement; }
 
     /**
-     * <p>Attackers sometimes insert malicious SQL code into web requests in an effort
-     * to extract data from your database. To allow or block web requests that appear
-     * to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want WAF to inspect.
-     * Later in the process, when you create a web ACL, you specify whether to allow or
-     * block requests that appear to contain malicious SQL code.</p>
+     * <p>A rule statement that inspects for malicious SQL code. Attackers insert
+     * malicious SQL code into web requests to do things like modify your database or
+     * extract data from it. </p>
      */
     inline bool SqliMatchStatementHasBeenSet() const { return m_sqliMatchStatementHasBeenSet; }
 
     /**
-     * <p>Attackers sometimes insert malicious SQL code into web requests in an effort
-     * to extract data from your database. To allow or block web requests that appear
-     * to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want WAF to inspect.
-     * Later in the process, when you create a web ACL, you specify whether to allow or
-     * block requests that appear to contain malicious SQL code.</p>
+     * <p>A rule statement that inspects for malicious SQL code. Attackers insert
+     * malicious SQL code into web requests to do things like modify your database or
+     * extract data from it. </p>
      */
     inline void SetSqliMatchStatement(const SqliMatchStatement& value) { m_sqliMatchStatementHasBeenSet = true; m_sqliMatchStatement = value; }
 
     /**
-     * <p>Attackers sometimes insert malicious SQL code into web requests in an effort
-     * to extract data from your database. To allow or block web requests that appear
-     * to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want WAF to inspect.
-     * Later in the process, when you create a web ACL, you specify whether to allow or
-     * block requests that appear to contain malicious SQL code.</p>
+     * <p>A rule statement that inspects for malicious SQL code. Attackers insert
+     * malicious SQL code into web requests to do things like modify your database or
+     * extract data from it. </p>
      */
     inline void SetSqliMatchStatement(SqliMatchStatement&& value) { m_sqliMatchStatementHasBeenSet = true; m_sqliMatchStatement = std::move(value); }
 
     /**
-     * <p>Attackers sometimes insert malicious SQL code into web requests in an effort
-     * to extract data from your database. To allow or block web requests that appear
-     * to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want WAF to inspect.
-     * Later in the process, when you create a web ACL, you specify whether to allow or
-     * block requests that appear to contain malicious SQL code.</p>
+     * <p>A rule statement that inspects for malicious SQL code. Attackers insert
+     * malicious SQL code into web requests to do things like modify your database or
+     * extract data from it. </p>
      */
     inline Statement& WithSqliMatchStatement(const SqliMatchStatement& value) { SetSqliMatchStatement(value); return *this;}
 
     /**
-     * <p>Attackers sometimes insert malicious SQL code into web requests in an effort
-     * to extract data from your database. To allow or block web requests that appear
-     * to contain malicious SQL code, create one or more SQL injection match
-     * conditions. An SQL injection match condition identifies the part of web
-     * requests, such as the URI or the query string, that you want WAF to inspect.
-     * Later in the process, when you create a web ACL, you specify whether to allow or
-     * block requests that appear to contain malicious SQL code.</p>
+     * <p>A rule statement that inspects for malicious SQL code. Attackers insert
+     * malicious SQL code into web requests to do things like modify your database or
+     * extract data from it. </p>
      */
     inline Statement& WithSqliMatchStatement(SqliMatchStatement&& value) { SetSqliMatchStatement(std::move(value)); return *this;}
 
 
     /**
-     * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * WAF to apply to web requests. XSS attacks are those where the attacker uses
-     * vulnerabilities in a benign website as a vehicle to inject malicious client-site
-     * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want WAF to search and text transformations to use
-     * on the search area before WAF searches for character sequences that are likely
-     * to be malicious strings. </p>
+     * <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS
+     * attacks, the attacker uses vulnerabilities in a benign website as a vehicle to
+     * inject malicious client-site scripts into other legitimate web browsers. </p>
      */
     inline const XssMatchStatement& GetXssMatchStatement() const{ return m_xssMatchStatement; }
 
     /**
-     * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * WAF to apply to web requests. XSS attacks are those where the attacker uses
-     * vulnerabilities in a benign website as a vehicle to inject malicious client-site
-     * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want WAF to search and text transformations to use
-     * on the search area before WAF searches for character sequences that are likely
-     * to be malicious strings. </p>
+     * <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS
+     * attacks, the attacker uses vulnerabilities in a benign website as a vehicle to
+     * inject malicious client-site scripts into other legitimate web browsers. </p>
      */
     inline bool XssMatchStatementHasBeenSet() const { return m_xssMatchStatementHasBeenSet; }
 
     /**
-     * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * WAF to apply to web requests. XSS attacks are those where the attacker uses
-     * vulnerabilities in a benign website as a vehicle to inject malicious client-site
-     * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want WAF to search and text transformations to use
-     * on the search area before WAF searches for character sequences that are likely
-     * to be malicious strings. </p>
+     * <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS
+     * attacks, the attacker uses vulnerabilities in a benign website as a vehicle to
+     * inject malicious client-site scripts into other legitimate web browsers. </p>
      */
     inline void SetXssMatchStatement(const XssMatchStatement& value) { m_xssMatchStatementHasBeenSet = true; m_xssMatchStatement = value; }
 
     /**
-     * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * WAF to apply to web requests. XSS attacks are those where the attacker uses
-     * vulnerabilities in a benign website as a vehicle to inject malicious client-site
-     * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want WAF to search and text transformations to use
-     * on the search area before WAF searches for character sequences that are likely
-     * to be malicious strings. </p>
+     * <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS
+     * attacks, the attacker uses vulnerabilities in a benign website as a vehicle to
+     * inject malicious client-site scripts into other legitimate web browsers. </p>
      */
     inline void SetXssMatchStatement(XssMatchStatement&& value) { m_xssMatchStatementHasBeenSet = true; m_xssMatchStatement = std::move(value); }
 
     /**
-     * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * WAF to apply to web requests. XSS attacks are those where the attacker uses
-     * vulnerabilities in a benign website as a vehicle to inject malicious client-site
-     * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want WAF to search and text transformations to use
-     * on the search area before WAF searches for character sequences that are likely
-     * to be malicious strings. </p>
+     * <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS
+     * attacks, the attacker uses vulnerabilities in a benign website as a vehicle to
+     * inject malicious client-site scripts into other legitimate web browsers. </p>
      */
     inline Statement& WithXssMatchStatement(const XssMatchStatement& value) { SetXssMatchStatement(value); return *this;}
 
     /**
-     * <p>A rule statement that defines a cross-site scripting (XSS) match search for
-     * WAF to apply to web requests. XSS attacks are those where the attacker uses
-     * vulnerabilities in a benign website as a vehicle to inject malicious client-site
-     * scripts into other legitimate web browsers. The XSS match statement provides the
-     * location in requests that you want WAF to search and text transformations to use
-     * on the search area before WAF searches for character sequences that are likely
-     * to be malicious strings. </p>
+     * <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS
+     * attacks, the attacker uses vulnerabilities in a benign website as a vehicle to
+     * inject malicious client-site scripts into other legitimate web browsers. </p>
      */
     inline Statement& WithXssMatchStatement(XssMatchStatement&& value) { SetXssMatchStatement(std::move(value)); return *this;}
 
@@ -254,8 +206,8 @@ namespace Model
      * less than (&lt;). For example, you can use a size constraint statement to look
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-     * the request body for your web requests never exceeds 8192 bytes, you can create
-     * a size constraint condition and block requests that have a request body greater
+     * the request body for your web requests never exceeds 8192 bytes, you could use a
+     * size constraint statement to block requests that have a request body greater
      * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -268,8 +220,8 @@ namespace Model
      * less than (&lt;). For example, you can use a size constraint statement to look
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-     * the request body for your web requests never exceeds 8192 bytes, you can create
-     * a size constraint condition and block requests that have a request body greater
+     * the request body for your web requests never exceeds 8192 bytes, you could use a
+     * size constraint statement to block requests that have a request body greater
      * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -282,8 +234,8 @@ namespace Model
      * less than (&lt;). For example, you can use a size constraint statement to look
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-     * the request body for your web requests never exceeds 8192 bytes, you can create
-     * a size constraint condition and block requests that have a request body greater
+     * the request body for your web requests never exceeds 8192 bytes, you could use a
+     * size constraint statement to block requests that have a request body greater
      * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -296,8 +248,8 @@ namespace Model
      * less than (&lt;). For example, you can use a size constraint statement to look
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-     * the request body for your web requests never exceeds 8192 bytes, you can create
-     * a size constraint condition and block requests that have a request body greater
+     * the request body for your web requests never exceeds 8192 bytes, you could use a
+     * size constraint statement to block requests that have a request body greater
      * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -310,8 +262,8 @@ namespace Model
      * less than (&lt;). For example, you can use a size constraint statement to look
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-     * the request body for your web requests never exceeds 8192 bytes, you can create
-     * a size constraint condition and block requests that have a request body greater
+     * the request body for your web requests never exceeds 8192 bytes, you could use a
+     * size constraint statement to block requests that have a request body greater
      * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -324,8 +276,8 @@ namespace Model
      * less than (&lt;). For example, you can use a size constraint statement to look
      * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
      * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-     * the request body for your web requests never exceeds 8192 bytes, you can create
-     * a size constraint condition and block requests that have a request body greater
+     * the request body for your web requests never exceeds 8192 bytes, you could use a
+     * size constraint statement to block requests that have a request body greater
      * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
      * to filter on, the slash (/) in the URI counts as one character. For example, the
      * URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -611,14 +563,14 @@ namespace Model
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
      * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet both
-     * of the conditions in the statements are counted. If the count exceeds 1,000
-     * requests per five minutes, the rule action triggers. Requests that do not meet
-     * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-     * another statement, for example inside a <code>NotStatement</code> or
-     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-     * inside a web ACL and inside a rule group. </p>
+     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
+     * criteria of both of the nested statements are counted. If the count exceeds
+     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
+     * meet the criteria of both of the nested statements are not counted towards the
+     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
+     * <code>RateBasedStatement</code> inside another statement, for example inside a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
     const RateBasedStatement& GetRateBasedStatement() const;
 
@@ -644,14 +596,14 @@ namespace Model
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
      * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet both
-     * of the conditions in the statements are counted. If the count exceeds 1,000
-     * requests per five minutes, the rule action triggers. Requests that do not meet
-     * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-     * another statement, for example inside a <code>NotStatement</code> or
-     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-     * inside a web ACL and inside a rule group. </p>
+     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
+     * criteria of both of the nested statements are counted. If the count exceeds
+     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
+     * meet the criteria of both of the nested statements are not counted towards the
+     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
+     * <code>RateBasedStatement</code> inside another statement, for example inside a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
     bool RateBasedStatementHasBeenSet() const;
 
@@ -677,14 +629,14 @@ namespace Model
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
      * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet both
-     * of the conditions in the statements are counted. If the count exceeds 1,000
-     * requests per five minutes, the rule action triggers. Requests that do not meet
-     * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-     * another statement, for example inside a <code>NotStatement</code> or
-     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-     * inside a web ACL and inside a rule group. </p>
+     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
+     * criteria of both of the nested statements are counted. If the count exceeds
+     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
+     * meet the criteria of both of the nested statements are not counted towards the
+     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
+     * <code>RateBasedStatement</code> inside another statement, for example inside a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
     void SetRateBasedStatement(const RateBasedStatement& value);
 
@@ -710,14 +662,14 @@ namespace Model
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
      * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet both
-     * of the conditions in the statements are counted. If the count exceeds 1,000
-     * requests per five minutes, the rule action triggers. Requests that do not meet
-     * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-     * another statement, for example inside a <code>NotStatement</code> or
-     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-     * inside a web ACL and inside a rule group. </p>
+     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
+     * criteria of both of the nested statements are counted. If the count exceeds
+     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
+     * meet the criteria of both of the nested statements are not counted towards the
+     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
+     * <code>RateBasedStatement</code> inside another statement, for example inside a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
     void SetRateBasedStatement(RateBasedStatement&& value);
 
@@ -743,14 +695,14 @@ namespace Model
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
      * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet both
-     * of the conditions in the statements are counted. If the count exceeds 1,000
-     * requests per five minutes, the rule action triggers. Requests that do not meet
-     * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-     * another statement, for example inside a <code>NotStatement</code> or
-     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-     * inside a web ACL and inside a rule group. </p>
+     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
+     * criteria of both of the nested statements are counted. If the count exceeds
+     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
+     * meet the criteria of both of the nested statements are not counted towards the
+     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
+     * <code>RateBasedStatement</code> inside another statement, for example inside a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
     Statement& WithRateBasedStatement(const RateBasedStatement& value);
 
@@ -776,14 +728,14 @@ namespace Model
      * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
      * <p>A string match statement that searches in the User-Agent header for the
      * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
-     * rate limit. For this example, the rate limit is 1,000. Requests that meet both
-     * of the conditions in the statements are counted. If the count exceeds 1,000
-     * requests per five minutes, the rule action triggers. Requests that do not meet
-     * both conditions are not counted towards the rate limit and are not affected by
-     * this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code> inside
-     * another statement, for example inside a <code>NotStatement</code> or
-     * <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
-     * inside a web ACL and inside a rule group. </p>
+     * rate limit. For this example, the rate limit is 1,000. Requests that meet the
+     * criteria of both of the nested statements are counted. If the count exceeds
+     * 1,000 requests per five minutes, the rule action triggers. Requests that do not
+     * meet the criteria of both of the nested statements are not counted towards the
+     * rate limit and are not affected by this rule.</p> <p>You cannot nest a
+     * <code>RateBasedStatement</code> inside another statement, for example inside a
+     * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
+     * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
     Statement& WithRateBasedStatement(RateBasedStatement&& value);
 

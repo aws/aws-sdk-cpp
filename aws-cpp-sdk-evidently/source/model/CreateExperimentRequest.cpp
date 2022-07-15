@@ -21,6 +21,7 @@ CreateExperimentRequest::CreateExperimentRequest() :
     m_randomizationSaltHasBeenSet(false),
     m_samplingRate(0),
     m_samplingRateHasBeenSet(false),
+    m_segmentHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_treatmentsHasBeenSet(false)
 {
@@ -68,6 +69,12 @@ Aws::String CreateExperimentRequest::SerializePayload() const
   if(m_samplingRateHasBeenSet)
   {
    payload.WithInt64("samplingRate", m_samplingRate);
+
+  }
+
+  if(m_segmentHasBeenSet)
+  {
+   payload.WithString("segment", m_segment);
 
   }
 

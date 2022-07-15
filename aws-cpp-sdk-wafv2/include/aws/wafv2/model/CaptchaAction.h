@@ -40,9 +40,7 @@ namespace Model
    * <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code> setting at the rule
    * and web ACL level. The rule setting overrides the web ACL setting. </p> <p>This
    * action option is available for rules. It isn't available for web ACL default
-   * actions. </p> <p>This is used in the context of other settings, for example to
-   * specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * actions. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CaptchaAction">AWS
    * API Reference</a></p>
    */

@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>Inspect one query argument in the web request, identified by name, for
    * example <i>UserName</i> or <i>SalesRegion</i>. The name isn't case sensitive.
-   * </p> <p>This is used to indicate the web request component for WAF to inspect,
-   * in the <a>FieldToMatch</a> specification. </p> <p>Example JSON:
+   * </p> <p>This is used to indicate the web request component to inspect, in the
+   * <a>FieldToMatch</a> specification. </p> <p>Example JSON:
    * <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleQueryArgument">AWS

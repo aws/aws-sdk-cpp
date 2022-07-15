@@ -20,13 +20,17 @@ namespace Model
 
 SqliMatchStatement::SqliMatchStatement() : 
     m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+    m_textTransformationsHasBeenSet(false),
+    m_sensitivityLevel(SensitivityLevel::NOT_SET),
+    m_sensitivityLevelHasBeenSet(false)
 {
 }
 
 SqliMatchStatement::SqliMatchStatement(JsonView jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+    m_textTransformationsHasBeenSet(false),
+    m_sensitivityLevel(SensitivityLevel::NOT_SET),
+    m_sensitivityLevelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ SqliMatchStatement& SqliMatchStatement::operator =(JsonView jsonValue)
       m_textTransformations.push_back(textTransformationsJsonList[textTransformationsIndex].AsObject());
     }
     m_textTransformationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SensitivityLevel"))
+  {
+    m_sensitivityLevel = SensitivityLevelMapper::GetSensitivityLevelForName(jsonValue.GetString("SensitivityLevel"));
+
+    m_sensitivityLevelHasBeenSet = true;
   }
 
   return *this;
@@ -72,6 +83,11 @@ JsonValue SqliMatchStatement::Jsonize() const
    }
    payload.WithArray("TextTransformations", std::move(textTransformationsJsonList));
 
+  }
+
+  if(m_sensitivityLevelHasBeenSet)
+  {
+   payload.WithString("SensitivityLevel", SensitivityLevelMapper::GetNameForSensitivityLevel(m_sensitivityLevel));
   }
 
   return payload;

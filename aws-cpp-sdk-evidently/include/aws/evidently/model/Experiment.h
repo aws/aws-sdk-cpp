@@ -549,6 +549,55 @@ namespace Model
 
 
     /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline const Aws::String& GetSegment() const{ return m_segment; }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline Experiment& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline Experiment& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
+
+    /**
+     * <p>The audience segment being used for the experiment, if a segment is being
+     * used.</p>
+     */
+    inline Experiment& WithSegment(const char* value) { SetSegment(value); return *this;}
+
+
+    /**
      * <p>The current state of the experiment.</p>
      */
     inline const ExperimentStatus& GetStatus() const{ return m_status; }
@@ -816,6 +865,9 @@ namespace Model
 
     ExperimentSchedule m_schedule;
     bool m_scheduleHasBeenSet;
+
+    Aws::String m_segment;
+    bool m_segmentHasBeenSet;
 
     ExperimentStatus m_status;
     bool m_statusHasBeenSet;

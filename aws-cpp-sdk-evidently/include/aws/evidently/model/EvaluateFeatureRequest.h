@@ -90,58 +90,98 @@ namespace Model
 
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline const Aws::String& GetEvaluationContext() const{ return m_evaluationContext; }
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline bool EvaluationContextHasBeenSet() const { return m_evaluationContextHasBeenSet; }
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline void SetEvaluationContext(const Aws::String& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = value; }
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline void SetEvaluationContext(Aws::String&& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = std::move(value); }
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline void SetEvaluationContext(const char* value) { m_evaluationContextHasBeenSet = true; m_evaluationContext.assign(value); }
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline EvaluateFeatureRequest& WithEvaluationContext(const Aws::String& value) { SetEvaluationContext(value); return *this;}
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline EvaluateFeatureRequest& WithEvaluationContext(Aws::String&& value) { SetEvaluationContext(std::move(value)); return *this;}
 
     /**
-     * <p>A JSON block of attributes that you can optionally pass in. This JSON block
-     * is included in the evaluation events sent to Evidently from the user session.
-     * </p>
+     * <p>A JSON object of attributes that you can optionally pass in as part of the
+     * evaluation event sent to Evidently from the user session. Evidently can use this
+     * value to match user sessions with defined audience segments. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
+     * this parameter, the value must be a JSON object. A JSON array is not
+     * supported.&lt;/p&gt; </code></pre>
      */
     inline EvaluateFeatureRequest& WithEvaluationContext(const char* value) { SetEvaluationContext(value); return *this;}
 
