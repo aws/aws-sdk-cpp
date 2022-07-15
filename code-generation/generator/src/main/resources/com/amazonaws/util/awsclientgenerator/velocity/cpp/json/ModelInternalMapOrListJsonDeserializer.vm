@@ -14,7 +14,7 @@
 #end
 #if($template.recursionDepth > 1)
 #set($template.containerVar = ${template.lowerCaseVarName} + "Map")
-  ${template.currentSpaces}Aws::Map<Aws::String, ${CppViewHelper.computeCppType($template.currentShape.mapValue.shape)}> ${template.lowerCaseVarName}Map;
+  ${template.currentSpaces}Aws::Map<${CppViewHelper.computeCppType($template.currentShape.mapKey.shape)}, ${CppViewHelper.computeCppType($template.currentShape.mapValue.shape)}> ${template.lowerCaseVarName}Map;
 #end
   ${template.currentSpaces}for(auto& ${template.lowerCaseVarName}Item : ${template.lowerCaseVarName}JsonMap)
   ${template.currentSpaces}{
