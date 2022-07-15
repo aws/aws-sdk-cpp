@@ -25,20 +25,25 @@
 #include <aws/evidently/model/CreateFeatureRequest.h>
 #include <aws/evidently/model/CreateLaunchRequest.h>
 #include <aws/evidently/model/CreateProjectRequest.h>
+#include <aws/evidently/model/CreateSegmentRequest.h>
 #include <aws/evidently/model/DeleteExperimentRequest.h>
 #include <aws/evidently/model/DeleteFeatureRequest.h>
 #include <aws/evidently/model/DeleteLaunchRequest.h>
 #include <aws/evidently/model/DeleteProjectRequest.h>
+#include <aws/evidently/model/DeleteSegmentRequest.h>
 #include <aws/evidently/model/EvaluateFeatureRequest.h>
 #include <aws/evidently/model/GetExperimentRequest.h>
 #include <aws/evidently/model/GetExperimentResultsRequest.h>
 #include <aws/evidently/model/GetFeatureRequest.h>
 #include <aws/evidently/model/GetLaunchRequest.h>
 #include <aws/evidently/model/GetProjectRequest.h>
+#include <aws/evidently/model/GetSegmentRequest.h>
 #include <aws/evidently/model/ListExperimentsRequest.h>
 #include <aws/evidently/model/ListFeaturesRequest.h>
 #include <aws/evidently/model/ListLaunchesRequest.h>
 #include <aws/evidently/model/ListProjectsRequest.h>
+#include <aws/evidently/model/ListSegmentReferencesRequest.h>
+#include <aws/evidently/model/ListSegmentsRequest.h>
 #include <aws/evidently/model/ListTagsForResourceRequest.h>
 #include <aws/evidently/model/PutProjectEventsRequest.h>
 #include <aws/evidently/model/StartExperimentRequest.h>
@@ -46,6 +51,7 @@
 #include <aws/evidently/model/StopExperimentRequest.h>
 #include <aws/evidently/model/StopLaunchRequest.h>
 #include <aws/evidently/model/TagResourceRequest.h>
+#include <aws/evidently/model/TestSegmentPatternRequest.h>
 #include <aws/evidently/model/UntagResourceRequest.h>
 #include <aws/evidently/model/UpdateExperimentRequest.h>
 #include <aws/evidently/model/UpdateFeatureRequest.h>
@@ -297,6 +303,31 @@ void CloudWatchEvidentlyClient::CreateProjectAsyncHelper(const CreateProjectRequ
   handler(this, request, CreateProject(request), context);
 }
 
+CreateSegmentOutcome CloudWatchEvidentlyClient::CreateSegment(const CreateSegmentRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/segments");
+  return CreateSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSegmentOutcomeCallable CloudWatchEvidentlyClient::CreateSegmentCallable(const CreateSegmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSegmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSegment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEvidentlyClient::CreateSegmentAsync(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSegmentAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEvidentlyClient::CreateSegmentAsyncHelper(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSegment(request), context);
+}
+
 DeleteExperimentOutcome CloudWatchEvidentlyClient::DeleteExperiment(const DeleteExperimentRequest& request) const
 {
   if (!request.ExperimentHasBeenSet())
@@ -440,6 +471,37 @@ void CloudWatchEvidentlyClient::DeleteProjectAsync(const DeleteProjectRequest& r
 void CloudWatchEvidentlyClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteProject(request), context);
+}
+
+DeleteSegmentOutcome CloudWatchEvidentlyClient::DeleteSegment(const DeleteSegmentRequest& request) const
+{
+  if (!request.SegmentHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSegment", "Required field: Segment, is not set");
+    return DeleteSegmentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Segment]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/segments/");
+  uri.AddPathSegment(request.GetSegment());
+  return DeleteSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSegmentOutcomeCallable CloudWatchEvidentlyClient::DeleteSegmentCallable(const DeleteSegmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSegmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSegment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEvidentlyClient::DeleteSegmentAsync(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSegmentAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEvidentlyClient::DeleteSegmentAsyncHelper(const DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSegment(request), context);
 }
 
 EvaluateFeatureOutcome CloudWatchEvidentlyClient::EvaluateFeature(const EvaluateFeatureRequest& request) const
@@ -673,6 +735,37 @@ void CloudWatchEvidentlyClient::GetProjectAsyncHelper(const GetProjectRequest& r
   handler(this, request, GetProject(request), context);
 }
 
+GetSegmentOutcome CloudWatchEvidentlyClient::GetSegment(const GetSegmentRequest& request) const
+{
+  if (!request.SegmentHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegment", "Required field: Segment, is not set");
+    return GetSegmentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Segment]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/segments/");
+  uri.AddPathSegment(request.GetSegment());
+  return GetSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSegmentOutcomeCallable CloudWatchEvidentlyClient::GetSegmentCallable(const GetSegmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSegmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSegment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEvidentlyClient::GetSegmentAsync(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEvidentlyClient::GetSegmentAsyncHelper(const GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSegment(request), context);
+}
+
 ListExperimentsOutcome CloudWatchEvidentlyClient::ListExperiments(const ListExperimentsRequest& request) const
 {
   if (!request.ProjectHasBeenSet())
@@ -792,6 +885,68 @@ void CloudWatchEvidentlyClient::ListProjectsAsync(const ListProjectsRequest& req
 void CloudWatchEvidentlyClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListProjects(request), context);
+}
+
+ListSegmentReferencesOutcome CloudWatchEvidentlyClient::ListSegmentReferences(const ListSegmentReferencesRequest& request) const
+{
+  if (!request.SegmentHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSegmentReferences", "Required field: Segment, is not set");
+    return ListSegmentReferencesOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Segment]", false));
+  }
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSegmentReferences", "Required field: Type, is not set");
+    return ListSegmentReferencesOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/segments/");
+  uri.AddPathSegment(request.GetSegment());
+  uri.AddPathSegments("/references");
+  return ListSegmentReferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSegmentReferencesOutcomeCallable CloudWatchEvidentlyClient::ListSegmentReferencesCallable(const ListSegmentReferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSegmentReferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSegmentReferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEvidentlyClient::ListSegmentReferencesAsync(const ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSegmentReferencesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEvidentlyClient::ListSegmentReferencesAsyncHelper(const ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSegmentReferences(request), context);
+}
+
+ListSegmentsOutcome CloudWatchEvidentlyClient::ListSegments(const ListSegmentsRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/segments");
+  return ListSegmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSegmentsOutcomeCallable CloudWatchEvidentlyClient::ListSegmentsCallable(const ListSegmentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSegmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSegments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEvidentlyClient::ListSegmentsAsync(const ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSegmentsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEvidentlyClient::ListSegmentsAsyncHelper(const ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSegments(request), context);
 }
 
 ListTagsForResourceOutcome CloudWatchEvidentlyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1050,6 +1205,31 @@ void CloudWatchEvidentlyClient::TagResourceAsync(const TagResourceRequest& reque
 void CloudWatchEvidentlyClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagResource(request), context);
+}
+
+TestSegmentPatternOutcome CloudWatchEvidentlyClient::TestSegmentPattern(const TestSegmentPatternRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/test-segment-pattern");
+  return TestSegmentPatternOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TestSegmentPatternOutcomeCallable CloudWatchEvidentlyClient::TestSegmentPatternCallable(const TestSegmentPatternRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestSegmentPatternOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestSegmentPattern(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEvidentlyClient::TestSegmentPatternAsync(const TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestSegmentPatternAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEvidentlyClient::TestSegmentPatternAsyncHelper(const TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestSegmentPattern(request), context);
 }
 
 UntagResourceOutcome CloudWatchEvidentlyClient::UntagResource(const UntagResourceRequest& request) const

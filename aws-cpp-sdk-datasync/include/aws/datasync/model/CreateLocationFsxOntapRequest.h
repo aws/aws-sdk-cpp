@@ -57,101 +57,101 @@ namespace Model
 
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline CreateLocationFsxOntapRequest& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline CreateLocationFsxOntapRequest& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline CreateLocationFsxOntapRequest& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline CreateLocationFsxOntapRequest& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the security groups that DataSync can use to access your FSx for
-     * ONTAP file system. You must configure the security groups to allow outbound
-     * traffic on the following ports (depending on the protocol that you're
-     * using):</p> <ul> <li> <p> <b>Network File System (NFS)</b>: TCP port 2049</p>
+     * <p>Specifies the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>The security groups must allow outbound
+     * traffic on the following ports (depending on the protocol you use):</p> <ul>
+     * <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p>
      * </li> <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li> </ul>
      * <p>Your file system's security groups must also allow inbound traffic on the
-     * same port.</p>
+     * same ports.</p>
      */
     inline CreateLocationFsxOntapRequest& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 

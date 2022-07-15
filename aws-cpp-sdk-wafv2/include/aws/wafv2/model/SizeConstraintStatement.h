@@ -32,8 +32,8 @@ namespace Model
    * less than (&lt;). For example, you can use a size constraint statement to look
    * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
    * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-   * the request body for your web requests never exceeds 8192 bytes, you can create
-   * a size constraint condition and block requests that have a request body greater
+   * the request body for your web requests never exceeds 8192 bytes, you could use a
+   * size constraint statement to block requests that have a request body greater
    * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
    * to filter on, the slash (/) in the URI counts as one character. For example, the
    * URI <code>/logo.jpg</code> is nine characters long.</p><p><h3>See Also:</h3>  
@@ -51,38 +51,32 @@ namespace Model
 
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline SizeConstraintStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline SizeConstraintStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 

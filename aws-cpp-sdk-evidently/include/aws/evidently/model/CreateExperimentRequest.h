@@ -381,6 +381,63 @@ namespace Model
 
 
     /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline const Aws::String& GetSegment() const{ return m_segment; }
+
+    /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
+
+    /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
+
+    /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
+
+    /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
+
+    /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline CreateExperimentRequest& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
+
+    /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline CreateExperimentRequest& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment
+     * is used in an experiment, only user sessions that match the segment pattern are
+     * used in the experiment.</p>
+     */
+    inline CreateExperimentRequest& WithSegment(const char* value) { SetSegment(value); return *this;}
+
+
+    /**
      * <p>Assigns one or more tags (key-value pairs) to the experiment.</p> <p>Tags can
      * help you organize and categorize your resources. You can also use them to scope
      * user permissions by granting a user permission to access or change only
@@ -620,6 +677,9 @@ namespace Model
 
     long long m_samplingRate;
     bool m_samplingRateHasBeenSet;
+
+    Aws::String m_segment;
+    bool m_segmentHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

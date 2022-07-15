@@ -47,7 +47,7 @@ namespace Model
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -67,7 +67,7 @@ namespace Model
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF

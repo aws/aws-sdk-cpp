@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>Inspect the body of the web request. The body immediately follows the request
-   * headers.</p> <p>This is used to indicate the web request component for WAF to
-   * inspect, in the <a>FieldToMatch</a> specification. </p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Body">AWS API
+   * headers.</p> <p>This is used to indicate the web request component to inspect,
+   * in the <a>FieldToMatch</a> specification. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Body">AWS API
    * Reference</a></p>
    */
   class AWS_WAFV2_API Body
