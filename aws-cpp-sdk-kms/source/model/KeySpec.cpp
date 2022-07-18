@@ -32,6 +32,7 @@ namespace Aws
         static const int HMAC_256_HASH = HashingUtils::HashString("HMAC_256");
         static const int HMAC_384_HASH = HashingUtils::HashString("HMAC_384");
         static const int HMAC_512_HASH = HashingUtils::HashString("HMAC_512");
+        static const int SM2_HASH = HashingUtils::HashString("SM2");
 
 
         KeySpec GetKeySpecForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return KeySpec::HMAC_512;
           }
+          else if (hashCode == SM2_HASH)
+          {
+            return KeySpec::SM2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +128,8 @@ namespace Aws
             return "HMAC_384";
           case KeySpec::HMAC_512:
             return "HMAC_512";
+          case KeySpec::SM2:
+            return "SM2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

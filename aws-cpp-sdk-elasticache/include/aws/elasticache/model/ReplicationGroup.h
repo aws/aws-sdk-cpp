@@ -1193,6 +1193,35 @@ namespace Model
      */
     inline ReplicationGroup& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
 
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline ReplicationGroup& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1272,6 +1301,9 @@ namespace Model
 
     DataTieringStatus m_dataTiering;
     bool m_dataTieringHasBeenSet;
+
+    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgradeHasBeenSet;
   };
 
 } // namespace Model

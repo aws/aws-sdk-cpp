@@ -157,42 +157,50 @@ namespace Model
 
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline const Aws::String& GetManagedPolicyArn() const{ return m_managedPolicyArn; }
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline bool ManagedPolicyArnHasBeenSet() const { return m_managedPolicyArnHasBeenSet; }
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline void SetManagedPolicyArn(const Aws::String& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = value; }
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline void SetManagedPolicyArn(Aws::String&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::move(value); }
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline void SetManagedPolicyArn(const char* value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn.assign(value); }
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(const Aws::String& value) { SetManagedPolicyArn(value); return *this;}
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(Aws::String&& value) { SetManagedPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM managed policy ARN to be attached to a permission set.</p>
+     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
+     * set.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(const char* value) { SetManagedPolicyArn(value); return *this;}
 

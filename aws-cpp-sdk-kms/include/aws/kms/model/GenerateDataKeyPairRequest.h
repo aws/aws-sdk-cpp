@@ -375,55 +375,61 @@ namespace Model
 
     /**
      * <p>Determines the type of data key pair that is generated. </p> <p>The KMS rule
-     * that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to
-     * sign and verify (but not both), and the rule that permits you to use ECC KMS
-     * keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS.</p>
+     * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
+     * or to sign and verify (but not both), and the rule that permits you to use ECC
+     * KMS keys only to sign and verify, are not effective on data key pairs, which are
+     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
+     * and ECC asymmetric key pairs are also available in China Regions.</p>
      */
     inline const DataKeyPairSpec& GetKeyPairSpec() const{ return m_keyPairSpec; }
 
     /**
      * <p>Determines the type of data key pair that is generated. </p> <p>The KMS rule
-     * that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to
-     * sign and verify (but not both), and the rule that permits you to use ECC KMS
-     * keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS.</p>
+     * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
+     * or to sign and verify (but not both), and the rule that permits you to use ECC
+     * KMS keys only to sign and verify, are not effective on data key pairs, which are
+     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
+     * and ECC asymmetric key pairs are also available in China Regions.</p>
      */
     inline bool KeyPairSpecHasBeenSet() const { return m_keyPairSpecHasBeenSet; }
 
     /**
      * <p>Determines the type of data key pair that is generated. </p> <p>The KMS rule
-     * that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to
-     * sign and verify (but not both), and the rule that permits you to use ECC KMS
-     * keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS.</p>
+     * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
+     * or to sign and verify (but not both), and the rule that permits you to use ECC
+     * KMS keys only to sign and verify, are not effective on data key pairs, which are
+     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
+     * and ECC asymmetric key pairs are also available in China Regions.</p>
      */
     inline void SetKeyPairSpec(const DataKeyPairSpec& value) { m_keyPairSpecHasBeenSet = true; m_keyPairSpec = value; }
 
     /**
      * <p>Determines the type of data key pair that is generated. </p> <p>The KMS rule
-     * that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to
-     * sign and verify (but not both), and the rule that permits you to use ECC KMS
-     * keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS.</p>
+     * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
+     * or to sign and verify (but not both), and the rule that permits you to use ECC
+     * KMS keys only to sign and verify, are not effective on data key pairs, which are
+     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
+     * and ECC asymmetric key pairs are also available in China Regions.</p>
      */
     inline void SetKeyPairSpec(DataKeyPairSpec&& value) { m_keyPairSpecHasBeenSet = true; m_keyPairSpec = std::move(value); }
 
     /**
      * <p>Determines the type of data key pair that is generated. </p> <p>The KMS rule
-     * that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to
-     * sign and verify (but not both), and the rule that permits you to use ECC KMS
-     * keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS.</p>
+     * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
+     * or to sign and verify (but not both), and the rule that permits you to use ECC
+     * KMS keys only to sign and verify, are not effective on data key pairs, which are
+     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
+     * and ECC asymmetric key pairs are also available in China Regions.</p>
      */
     inline GenerateDataKeyPairRequest& WithKeyPairSpec(const DataKeyPairSpec& value) { SetKeyPairSpec(value); return *this;}
 
     /**
      * <p>Determines the type of data key pair that is generated. </p> <p>The KMS rule
-     * that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to
-     * sign and verify (but not both), and the rule that permits you to use ECC KMS
-     * keys only to sign and verify, are not effective on data key pairs, which are
-     * used outside of KMS.</p>
+     * that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt
+     * or to sign and verify (but not both), and the rule that permits you to use ECC
+     * KMS keys only to sign and verify, are not effective on data key pairs, which are
+     * used outside of KMS. The SM2 key spec is only available in China Regions. RSA
+     * and ECC asymmetric key pairs are also available in China Regions.</p>
      */
     inline GenerateDataKeyPairRequest& WithKeyPairSpec(DataKeyPairSpec&& value) { SetKeyPairSpec(std::move(value)); return *this;}
 

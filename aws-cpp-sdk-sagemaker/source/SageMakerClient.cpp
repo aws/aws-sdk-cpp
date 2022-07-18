@@ -36,6 +36,8 @@
 #include <aws/sagemaker/model/CreateDataQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/CreateDeviceFleetRequest.h>
 #include <aws/sagemaker/model/CreateDomainRequest.h>
+#include <aws/sagemaker/model/CreateEdgeDeploymentPlanRequest.h>
+#include <aws/sagemaker/model/CreateEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/CreateEdgePackagingJobRequest.h>
 #include <aws/sagemaker/model/CreateEndpointRequest.h>
 #include <aws/sagemaker/model/CreateEndpointConfigRequest.h>
@@ -81,6 +83,8 @@
 #include <aws/sagemaker/model/DeleteDataQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
+#include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
+#include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
 #include <aws/sagemaker/model/DeleteExperimentRequest.h>
@@ -122,6 +126,7 @@
 #include <aws/sagemaker/model/DescribeDeviceRequest.h>
 #include <aws/sagemaker/model/DescribeDeviceFleetRequest.h>
 #include <aws/sagemaker/model/DescribeDomainRequest.h>
+#include <aws/sagemaker/model/DescribeEdgeDeploymentPlanRequest.h>
 #include <aws/sagemaker/model/DescribeEdgePackagingJobRequest.h>
 #include <aws/sagemaker/model/DescribeEndpointRequest.h>
 #include <aws/sagemaker/model/DescribeEndpointConfigRequest.h>
@@ -182,6 +187,7 @@
 #include <aws/sagemaker/model/ListDeviceFleetsRequest.h>
 #include <aws/sagemaker/model/ListDevicesRequest.h>
 #include <aws/sagemaker/model/ListDomainsRequest.h>
+#include <aws/sagemaker/model/ListEdgeDeploymentPlansRequest.h>
 #include <aws/sagemaker/model/ListEdgePackagingJobsRequest.h>
 #include <aws/sagemaker/model/ListEndpointConfigsRequest.h>
 #include <aws/sagemaker/model/ListEndpointsRequest.h>
@@ -213,6 +219,7 @@
 #include <aws/sagemaker/model/ListPipelinesRequest.h>
 #include <aws/sagemaker/model/ListProcessingJobsRequest.h>
 #include <aws/sagemaker/model/ListProjectsRequest.h>
+#include <aws/sagemaker/model/ListStageDevicesRequest.h>
 #include <aws/sagemaker/model/ListStudioLifecycleConfigsRequest.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsRequest.h>
 #include <aws/sagemaker/model/ListTagsRequest.h>
@@ -232,11 +239,13 @@
 #include <aws/sagemaker/model/SearchRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessRequest.h>
+#include <aws/sagemaker/model/StartEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/StartMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/StartNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/StartPipelineExecutionRequest.h>
 #include <aws/sagemaker/model/StopAutoMLJobRequest.h>
 #include <aws/sagemaker/model/StopCompilationJobRequest.h>
+#include <aws/sagemaker/model/StopEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/StopEdgePackagingJobRequest.h>
 #include <aws/sagemaker/model/StopHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/StopInferenceRecommendationsJobRequest.h>
@@ -730,6 +739,54 @@ void SageMakerClient::CreateDomainAsync(const CreateDomainRequest& request, cons
 void SageMakerClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDomain(request), context);
+}
+
+CreateEdgeDeploymentPlanOutcome SageMakerClient::CreateEdgeDeploymentPlan(const CreateEdgeDeploymentPlanRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateEdgeDeploymentPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEdgeDeploymentPlanOutcomeCallable SageMakerClient::CreateEdgeDeploymentPlanCallable(const CreateEdgeDeploymentPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEdgeDeploymentPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEdgeDeploymentPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateEdgeDeploymentPlanAsync(const CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEdgeDeploymentPlanAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateEdgeDeploymentPlanAsyncHelper(const CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEdgeDeploymentPlan(request), context);
+}
+
+CreateEdgeDeploymentStageOutcome SageMakerClient::CreateEdgeDeploymentStage(const CreateEdgeDeploymentStageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateEdgeDeploymentStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEdgeDeploymentStageOutcomeCallable SageMakerClient::CreateEdgeDeploymentStageCallable(const CreateEdgeDeploymentStageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEdgeDeploymentStage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateEdgeDeploymentStageAsync(const CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateEdgeDeploymentStageAsyncHelper(const CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEdgeDeploymentStage(request), context);
 }
 
 CreateEdgePackagingJobOutcome SageMakerClient::CreateEdgePackagingJob(const CreateEdgePackagingJobRequest& request) const
@@ -1812,6 +1869,54 @@ void SageMakerClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request
   handler(this, request, DeleteDomain(request), context);
 }
 
+DeleteEdgeDeploymentPlanOutcome SageMakerClient::DeleteEdgeDeploymentPlan(const DeleteEdgeDeploymentPlanRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEdgeDeploymentPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEdgeDeploymentPlanOutcomeCallable SageMakerClient::DeleteEdgeDeploymentPlanCallable(const DeleteEdgeDeploymentPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEdgeDeploymentPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEdgeDeploymentPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteEdgeDeploymentPlanAsync(const DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEdgeDeploymentPlanAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteEdgeDeploymentPlanAsyncHelper(const DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEdgeDeploymentPlan(request), context);
+}
+
+DeleteEdgeDeploymentStageOutcome SageMakerClient::DeleteEdgeDeploymentStage(const DeleteEdgeDeploymentStageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEdgeDeploymentStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEdgeDeploymentStageOutcomeCallable SageMakerClient::DeleteEdgeDeploymentStageCallable(const DeleteEdgeDeploymentStageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEdgeDeploymentStage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteEdgeDeploymentStageAsync(const DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteEdgeDeploymentStageAsyncHelper(const DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEdgeDeploymentStage(request), context);
+}
+
 DeleteEndpointOutcome SageMakerClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2794,6 +2899,30 @@ void SageMakerClient::DescribeDomainAsync(const DescribeDomainRequest& request, 
 void SageMakerClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDomain(request), context);
+}
+
+DescribeEdgeDeploymentPlanOutcome SageMakerClient::DescribeEdgeDeploymentPlan(const DescribeEdgeDeploymentPlanRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeEdgeDeploymentPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEdgeDeploymentPlanOutcomeCallable SageMakerClient::DescribeEdgeDeploymentPlanCallable(const DescribeEdgeDeploymentPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEdgeDeploymentPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEdgeDeploymentPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeEdgeDeploymentPlanAsync(const DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEdgeDeploymentPlanAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeEdgeDeploymentPlanAsyncHelper(const DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEdgeDeploymentPlan(request), context);
 }
 
 DescribeEdgePackagingJobOutcome SageMakerClient::DescribeEdgePackagingJob(const DescribeEdgePackagingJobRequest& request) const
@@ -4236,6 +4365,30 @@ void SageMakerClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, 
   handler(this, request, ListDomains(request), context);
 }
 
+ListEdgeDeploymentPlansOutcome SageMakerClient::ListEdgeDeploymentPlans(const ListEdgeDeploymentPlansRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListEdgeDeploymentPlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEdgeDeploymentPlansOutcomeCallable SageMakerClient::ListEdgeDeploymentPlansCallable(const ListEdgeDeploymentPlansRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEdgeDeploymentPlansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEdgeDeploymentPlans(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListEdgeDeploymentPlansAsync(const ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEdgeDeploymentPlansAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListEdgeDeploymentPlansAsyncHelper(const ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEdgeDeploymentPlans(request), context);
+}
+
 ListEdgePackagingJobsOutcome SageMakerClient::ListEdgePackagingJobs(const ListEdgePackagingJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4980,6 +5133,30 @@ void SageMakerClient::ListProjectsAsyncHelper(const ListProjectsRequest& request
   handler(this, request, ListProjects(request), context);
 }
 
+ListStageDevicesOutcome SageMakerClient::ListStageDevices(const ListStageDevicesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListStageDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStageDevicesOutcomeCallable SageMakerClient::ListStageDevicesCallable(const ListStageDevicesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStageDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStageDevices(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListStageDevicesAsync(const ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStageDevicesAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListStageDevicesAsyncHelper(const ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStageDevices(request), context);
+}
+
 ListStudioLifecycleConfigsOutcome SageMakerClient::ListStudioLifecycleConfigs(const ListStudioLifecycleConfigsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -5436,6 +5613,30 @@ void SageMakerClient::SendPipelineExecutionStepSuccessAsyncHelper(const SendPipe
   handler(this, request, SendPipelineExecutionStepSuccess(request), context);
 }
 
+StartEdgeDeploymentStageOutcome SageMakerClient::StartEdgeDeploymentStage(const StartEdgeDeploymentStageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartEdgeDeploymentStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartEdgeDeploymentStageOutcomeCallable SageMakerClient::StartEdgeDeploymentStageCallable(const StartEdgeDeploymentStageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartEdgeDeploymentStage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::StartEdgeDeploymentStageAsync(const StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::StartEdgeDeploymentStageAsyncHelper(const StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartEdgeDeploymentStage(request), context);
+}
+
 StartMonitoringScheduleOutcome SageMakerClient::StartMonitoringSchedule(const StartMonitoringScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -5554,6 +5755,30 @@ void SageMakerClient::StopCompilationJobAsync(const StopCompilationJobRequest& r
 void SageMakerClient::StopCompilationJobAsyncHelper(const StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopCompilationJob(request), context);
+}
+
+StopEdgeDeploymentStageOutcome SageMakerClient::StopEdgeDeploymentStage(const StopEdgeDeploymentStageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopEdgeDeploymentStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopEdgeDeploymentStageOutcomeCallable SageMakerClient::StopEdgeDeploymentStageCallable(const StopEdgeDeploymentStageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopEdgeDeploymentStageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopEdgeDeploymentStage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::StopEdgeDeploymentStageAsync(const StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopEdgeDeploymentStageAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::StopEdgeDeploymentStageAsyncHelper(const StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopEdgeDeploymentStage(request), context);
 }
 
 StopEdgePackagingJobOutcome SageMakerClient::StopEdgePackagingJob(const StopEdgePackagingJobRequest& request) const

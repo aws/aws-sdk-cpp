@@ -446,26 +446,62 @@ namespace Model
 
 
     /**
-     * <p>The IP address space in the IPAM pool that is allocated to this resource. To
-     * convert the decimal to a percentage, multiply the decimal by 100.</p>
+     * <p>The percentage of IP address space in use. To convert the decimal to a
+     * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
+     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
+     * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
+     * percentage of IPv4 address space in the subnet that's in use. If the subnet has
+     * an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is
+     * not represented. The percentage of IPv6 address space in use cannot currently be
+     * calculated. </p> </li> <li> <p>For resources that are public IPv4 pools, this is
+     * the percentage of IP address space in the pool that's been allocated to Elastic
+     * IP addresses (EIPs). </p> </li> </ul>
      */
     inline double GetIpUsage() const{ return m_ipUsage; }
 
     /**
-     * <p>The IP address space in the IPAM pool that is allocated to this resource. To
-     * convert the decimal to a percentage, multiply the decimal by 100.</p>
+     * <p>The percentage of IP address space in use. To convert the decimal to a
+     * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
+     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
+     * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
+     * percentage of IPv4 address space in the subnet that's in use. If the subnet has
+     * an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is
+     * not represented. The percentage of IPv6 address space in use cannot currently be
+     * calculated. </p> </li> <li> <p>For resources that are public IPv4 pools, this is
+     * the percentage of IP address space in the pool that's been allocated to Elastic
+     * IP addresses (EIPs). </p> </li> </ul>
      */
     inline bool IpUsageHasBeenSet() const { return m_ipUsageHasBeenSet; }
 
     /**
-     * <p>The IP address space in the IPAM pool that is allocated to this resource. To
-     * convert the decimal to a percentage, multiply the decimal by 100.</p>
+     * <p>The percentage of IP address space in use. To convert the decimal to a
+     * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
+     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
+     * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
+     * percentage of IPv4 address space in the subnet that's in use. If the subnet has
+     * an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is
+     * not represented. The percentage of IPv6 address space in use cannot currently be
+     * calculated. </p> </li> <li> <p>For resources that are public IPv4 pools, this is
+     * the percentage of IP address space in the pool that's been allocated to Elastic
+     * IP addresses (EIPs). </p> </li> </ul>
      */
     inline void SetIpUsage(double value) { m_ipUsageHasBeenSet = true; m_ipUsage = value; }
 
     /**
-     * <p>The IP address space in the IPAM pool that is allocated to this resource. To
-     * convert the decimal to a percentage, multiply the decimal by 100.</p>
+     * <p>The percentage of IP address space in use. To convert the decimal to a
+     * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
+     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
+     * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
+     * percentage of IPv4 address space in the subnet that's in use. If the subnet has
+     * an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is
+     * not represented. The percentage of IPv6 address space in use cannot currently be
+     * calculated. </p> </li> <li> <p>For resources that are public IPv4 pools, this is
+     * the percentage of IP address space in the pool that's been allocated to Elastic
+     * IP addresses (EIPs). </p> </li> </ul>
      */
     inline IpamResourceCidr& WithIpUsage(double value) { SetIpUsage(value); return *this;}
 
@@ -473,90 +509,96 @@ namespace Model
     /**
      * <p>The compliance status of the IPAM resource. For more information on
      * compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const IpamComplianceStatus& GetComplianceStatus() const{ return m_complianceStatus; }
 
     /**
      * <p>The compliance status of the IPAM resource. For more information on
      * compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
 
     /**
      * <p>The compliance status of the IPAM resource. For more information on
      * compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetComplianceStatus(const IpamComplianceStatus& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
 
     /**
      * <p>The compliance status of the IPAM resource. For more information on
      * compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetComplianceStatus(IpamComplianceStatus&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
 
     /**
      * <p>The compliance status of the IPAM resource. For more information on
      * compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamResourceCidr& WithComplianceStatus(const IpamComplianceStatus& value) { SetComplianceStatus(value); return *this;}
 
     /**
      * <p>The compliance status of the IPAM resource. For more information on
      * compliance statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamResourceCidr& WithComplianceStatus(IpamComplianceStatus&& value) { SetComplianceStatus(std::move(value)); return *this;}
 
 
     /**
      * <p>The management state of the resource. For more information about management
-     * states, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * states, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const IpamManagementState& GetManagementState() const{ return m_managementState; }
 
     /**
      * <p>The management state of the resource. For more information about management
-     * states, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * states, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline bool ManagementStateHasBeenSet() const { return m_managementStateHasBeenSet; }
 
     /**
      * <p>The management state of the resource. For more information about management
-     * states, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * states, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetManagementState(const IpamManagementState& value) { m_managementStateHasBeenSet = true; m_managementState = value; }
 
     /**
      * <p>The management state of the resource. For more information about management
-     * states, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * states, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetManagementState(IpamManagementState&& value) { m_managementStateHasBeenSet = true; m_managementState = std::move(value); }
 
     /**
      * <p>The management state of the resource. For more information about management
-     * states, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * states, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamResourceCidr& WithManagementState(const IpamManagementState& value) { SetManagementState(value); return *this;}
 
     /**
      * <p>The management state of the resource. For more information about management
-     * states, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * states, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamResourceCidr& WithManagementState(IpamManagementState&& value) { SetManagementState(std::move(value)); return *this;}
@@ -566,8 +608,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const IpamOverlapStatus& GetOverlapStatus() const{ return m_overlapStatus; }
 
@@ -575,8 +617,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline bool OverlapStatusHasBeenSet() const { return m_overlapStatusHasBeenSet; }
 
@@ -584,8 +626,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetOverlapStatus(const IpamOverlapStatus& value) { m_overlapStatusHasBeenSet = true; m_overlapStatus = value; }
 
@@ -593,8 +635,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetOverlapStatus(IpamOverlapStatus&& value) { m_overlapStatusHasBeenSet = true; m_overlapStatus = std::move(value); }
 
@@ -602,8 +644,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamResourceCidr& WithOverlapStatus(const IpamOverlapStatus& value) { SetOverlapStatus(value); return *this;}
 
@@ -611,8 +653,8 @@ namespace Model
      * <p>The overlap status of an IPAM resource. The overlap status tells you if the
      * CIDR for a resource overlaps with another CIDR in the scope. For more
      * information on overlap statuses, see <a
-     * href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by
-     * resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+     * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline IpamResourceCidr& WithOverlapStatus(IpamOverlapStatus&& value) { SetOverlapStatus(std::move(value)); return *this;}
 

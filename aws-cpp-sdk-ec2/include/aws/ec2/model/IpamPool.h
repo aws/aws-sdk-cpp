@@ -505,29 +505,33 @@ namespace Model
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline int GetPoolDepth() const{ return m_poolDepth; }
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline bool PoolDepthHasBeenSet() const { return m_poolDepthHasBeenSet; }
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline void SetPoolDepth(int value) { m_poolDepthHasBeenSet = true; m_poolDepth = value; }
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline IpamPool& WithPoolDepth(int value) { SetPoolDepth(value); return *this;}
 

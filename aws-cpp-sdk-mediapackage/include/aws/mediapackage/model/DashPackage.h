@@ -112,6 +112,27 @@ namespace Model
 
 
     /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline bool GetIncludeIframeOnlyStream() const{ return m_includeIframeOnlyStream; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline bool IncludeIframeOnlyStreamHasBeenSet() const { return m_includeIframeOnlyStreamHasBeenSet; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline void SetIncludeIframeOnlyStream(bool value) { m_includeIframeOnlyStreamHasBeenSet = true; m_includeIframeOnlyStream = value; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline DashPackage& WithIncludeIframeOnlyStream(bool value) { SetIncludeIframeOnlyStream(value); return *this;}
+
+
+    /**
      * Determines the position of some tags in the Media Presentation Description
      * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
      * are included in each Representation.  When set to COMPACT, duplicate elements
@@ -608,6 +629,9 @@ rounded to the
 
     DashEncryption m_encryption;
     bool m_encryptionHasBeenSet;
+
+    bool m_includeIframeOnlyStream;
+    bool m_includeIframeOnlyStreamHasBeenSet;
 
     ManifestLayout m_manifestLayout;
     bool m_manifestLayoutHasBeenSet;

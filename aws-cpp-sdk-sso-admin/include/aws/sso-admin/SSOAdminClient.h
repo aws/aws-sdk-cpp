@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/AttachCustomerManagedPolicyReferenceToPermissionSetResult.h>
 #include <aws/sso-admin/model/AttachManagedPolicyToPermissionSetResult.h>
 #include <aws/sso-admin/model/CreateAccountAssignmentResult.h>
 #include <aws/sso-admin/model/CreateInstanceAccessControlAttributeConfigurationResult.h>
@@ -19,17 +20,21 @@
 #include <aws/sso-admin/model/DeleteInlinePolicyFromPermissionSetResult.h>
 #include <aws/sso-admin/model/DeleteInstanceAccessControlAttributeConfigurationResult.h>
 #include <aws/sso-admin/model/DeletePermissionSetResult.h>
+#include <aws/sso-admin/model/DeletePermissionsBoundaryFromPermissionSetResult.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentCreationStatusResult.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentDeletionStatusResult.h>
 #include <aws/sso-admin/model/DescribeInstanceAccessControlAttributeConfigurationResult.h>
 #include <aws/sso-admin/model/DescribePermissionSetResult.h>
 #include <aws/sso-admin/model/DescribePermissionSetProvisioningStatusResult.h>
+#include <aws/sso-admin/model/DetachCustomerManagedPolicyReferenceFromPermissionSetResult.h>
 #include <aws/sso-admin/model/DetachManagedPolicyFromPermissionSetResult.h>
 #include <aws/sso-admin/model/GetInlinePolicyForPermissionSetResult.h>
+#include <aws/sso-admin/model/GetPermissionsBoundaryForPermissionSetResult.h>
 #include <aws/sso-admin/model/ListAccountAssignmentCreationStatusResult.h>
 #include <aws/sso-admin/model/ListAccountAssignmentDeletionStatusResult.h>
 #include <aws/sso-admin/model/ListAccountAssignmentsResult.h>
 #include <aws/sso-admin/model/ListAccountsForProvisionedPermissionSetResult.h>
+#include <aws/sso-admin/model/ListCustomerManagedPolicyReferencesInPermissionSetResult.h>
 #include <aws/sso-admin/model/ListInstancesResult.h>
 #include <aws/sso-admin/model/ListManagedPoliciesInPermissionSetResult.h>
 #include <aws/sso-admin/model/ListPermissionSetProvisioningStatusResult.h>
@@ -38,6 +43,7 @@
 #include <aws/sso-admin/model/ListTagsForResourceResult.h>
 #include <aws/sso-admin/model/ProvisionPermissionSetResult.h>
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetResult.h>
+#include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetResult.h>
 #include <aws/sso-admin/model/TagResourceResult.h>
 #include <aws/sso-admin/model/UntagResourceResult.h>
 #include <aws/sso-admin/model/UpdateInstanceAccessControlAttributeConfigurationResult.h>
@@ -81,6 +87,7 @@ namespace SSOAdmin
 
 namespace Model
 {
+        class AttachCustomerManagedPolicyReferenceToPermissionSetRequest;
         class AttachManagedPolicyToPermissionSetRequest;
         class CreateAccountAssignmentRequest;
         class CreateInstanceAccessControlAttributeConfigurationRequest;
@@ -89,17 +96,21 @@ namespace Model
         class DeleteInlinePolicyFromPermissionSetRequest;
         class DeleteInstanceAccessControlAttributeConfigurationRequest;
         class DeletePermissionSetRequest;
+        class DeletePermissionsBoundaryFromPermissionSetRequest;
         class DescribeAccountAssignmentCreationStatusRequest;
         class DescribeAccountAssignmentDeletionStatusRequest;
         class DescribeInstanceAccessControlAttributeConfigurationRequest;
         class DescribePermissionSetRequest;
         class DescribePermissionSetProvisioningStatusRequest;
+        class DetachCustomerManagedPolicyReferenceFromPermissionSetRequest;
         class DetachManagedPolicyFromPermissionSetRequest;
         class GetInlinePolicyForPermissionSetRequest;
+        class GetPermissionsBoundaryForPermissionSetRequest;
         class ListAccountAssignmentCreationStatusRequest;
         class ListAccountAssignmentDeletionStatusRequest;
         class ListAccountAssignmentsRequest;
         class ListAccountsForProvisionedPermissionSetRequest;
+        class ListCustomerManagedPolicyReferencesInPermissionSetRequest;
         class ListInstancesRequest;
         class ListManagedPoliciesInPermissionSetRequest;
         class ListPermissionSetProvisioningStatusRequest;
@@ -108,11 +119,13 @@ namespace Model
         class ListTagsForResourceRequest;
         class ProvisionPermissionSetRequest;
         class PutInlinePolicyToPermissionSetRequest;
+        class PutPermissionsBoundaryToPermissionSetRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateInstanceAccessControlAttributeConfigurationRequest;
         class UpdatePermissionSetRequest;
 
+        typedef Aws::Utils::Outcome<AttachCustomerManagedPolicyReferenceToPermissionSetResult, SSOAdminError> AttachCustomerManagedPolicyReferenceToPermissionSetOutcome;
         typedef Aws::Utils::Outcome<AttachManagedPolicyToPermissionSetResult, SSOAdminError> AttachManagedPolicyToPermissionSetOutcome;
         typedef Aws::Utils::Outcome<CreateAccountAssignmentResult, SSOAdminError> CreateAccountAssignmentOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceAccessControlAttributeConfigurationResult, SSOAdminError> CreateInstanceAccessControlAttributeConfigurationOutcome;
@@ -121,17 +134,21 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteInlinePolicyFromPermissionSetResult, SSOAdminError> DeleteInlinePolicyFromPermissionSetOutcome;
         typedef Aws::Utils::Outcome<DeleteInstanceAccessControlAttributeConfigurationResult, SSOAdminError> DeleteInstanceAccessControlAttributeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeletePermissionSetResult, SSOAdminError> DeletePermissionSetOutcome;
+        typedef Aws::Utils::Outcome<DeletePermissionsBoundaryFromPermissionSetResult, SSOAdminError> DeletePermissionsBoundaryFromPermissionSetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAssignmentCreationStatusResult, SSOAdminError> DescribeAccountAssignmentCreationStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAssignmentDeletionStatusResult, SSOAdminError> DescribeAccountAssignmentDeletionStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceAccessControlAttributeConfigurationResult, SSOAdminError> DescribeInstanceAccessControlAttributeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribePermissionSetResult, SSOAdminError> DescribePermissionSetOutcome;
         typedef Aws::Utils::Outcome<DescribePermissionSetProvisioningStatusResult, SSOAdminError> DescribePermissionSetProvisioningStatusOutcome;
+        typedef Aws::Utils::Outcome<DetachCustomerManagedPolicyReferenceFromPermissionSetResult, SSOAdminError> DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome;
         typedef Aws::Utils::Outcome<DetachManagedPolicyFromPermissionSetResult, SSOAdminError> DetachManagedPolicyFromPermissionSetOutcome;
         typedef Aws::Utils::Outcome<GetInlinePolicyForPermissionSetResult, SSOAdminError> GetInlinePolicyForPermissionSetOutcome;
+        typedef Aws::Utils::Outcome<GetPermissionsBoundaryForPermissionSetResult, SSOAdminError> GetPermissionsBoundaryForPermissionSetOutcome;
         typedef Aws::Utils::Outcome<ListAccountAssignmentCreationStatusResult, SSOAdminError> ListAccountAssignmentCreationStatusOutcome;
         typedef Aws::Utils::Outcome<ListAccountAssignmentDeletionStatusResult, SSOAdminError> ListAccountAssignmentDeletionStatusOutcome;
         typedef Aws::Utils::Outcome<ListAccountAssignmentsResult, SSOAdminError> ListAccountAssignmentsOutcome;
         typedef Aws::Utils::Outcome<ListAccountsForProvisionedPermissionSetResult, SSOAdminError> ListAccountsForProvisionedPermissionSetOutcome;
+        typedef Aws::Utils::Outcome<ListCustomerManagedPolicyReferencesInPermissionSetResult, SSOAdminError> ListCustomerManagedPolicyReferencesInPermissionSetOutcome;
         typedef Aws::Utils::Outcome<ListInstancesResult, SSOAdminError> ListInstancesOutcome;
         typedef Aws::Utils::Outcome<ListManagedPoliciesInPermissionSetResult, SSOAdminError> ListManagedPoliciesInPermissionSetOutcome;
         typedef Aws::Utils::Outcome<ListPermissionSetProvisioningStatusResult, SSOAdminError> ListPermissionSetProvisioningStatusOutcome;
@@ -140,11 +157,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, SSOAdminError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ProvisionPermissionSetResult, SSOAdminError> ProvisionPermissionSetOutcome;
         typedef Aws::Utils::Outcome<PutInlinePolicyToPermissionSetResult, SSOAdminError> PutInlinePolicyToPermissionSetOutcome;
+        typedef Aws::Utils::Outcome<PutPermissionsBoundaryToPermissionSetResult, SSOAdminError> PutPermissionsBoundaryToPermissionSetOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, SSOAdminError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, SSOAdminError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateInstanceAccessControlAttributeConfigurationResult, SSOAdminError> UpdateInstanceAccessControlAttributeConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdatePermissionSetResult, SSOAdminError> UpdatePermissionSetOutcome;
 
+        typedef std::future<AttachCustomerManagedPolicyReferenceToPermissionSetOutcome> AttachCustomerManagedPolicyReferenceToPermissionSetOutcomeCallable;
         typedef std::future<AttachManagedPolicyToPermissionSetOutcome> AttachManagedPolicyToPermissionSetOutcomeCallable;
         typedef std::future<CreateAccountAssignmentOutcome> CreateAccountAssignmentOutcomeCallable;
         typedef std::future<CreateInstanceAccessControlAttributeConfigurationOutcome> CreateInstanceAccessControlAttributeConfigurationOutcomeCallable;
@@ -153,17 +172,21 @@ namespace Model
         typedef std::future<DeleteInlinePolicyFromPermissionSetOutcome> DeleteInlinePolicyFromPermissionSetOutcomeCallable;
         typedef std::future<DeleteInstanceAccessControlAttributeConfigurationOutcome> DeleteInstanceAccessControlAttributeConfigurationOutcomeCallable;
         typedef std::future<DeletePermissionSetOutcome> DeletePermissionSetOutcomeCallable;
+        typedef std::future<DeletePermissionsBoundaryFromPermissionSetOutcome> DeletePermissionsBoundaryFromPermissionSetOutcomeCallable;
         typedef std::future<DescribeAccountAssignmentCreationStatusOutcome> DescribeAccountAssignmentCreationStatusOutcomeCallable;
         typedef std::future<DescribeAccountAssignmentDeletionStatusOutcome> DescribeAccountAssignmentDeletionStatusOutcomeCallable;
         typedef std::future<DescribeInstanceAccessControlAttributeConfigurationOutcome> DescribeInstanceAccessControlAttributeConfigurationOutcomeCallable;
         typedef std::future<DescribePermissionSetOutcome> DescribePermissionSetOutcomeCallable;
         typedef std::future<DescribePermissionSetProvisioningStatusOutcome> DescribePermissionSetProvisioningStatusOutcomeCallable;
+        typedef std::future<DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome> DetachCustomerManagedPolicyReferenceFromPermissionSetOutcomeCallable;
         typedef std::future<DetachManagedPolicyFromPermissionSetOutcome> DetachManagedPolicyFromPermissionSetOutcomeCallable;
         typedef std::future<GetInlinePolicyForPermissionSetOutcome> GetInlinePolicyForPermissionSetOutcomeCallable;
+        typedef std::future<GetPermissionsBoundaryForPermissionSetOutcome> GetPermissionsBoundaryForPermissionSetOutcomeCallable;
         typedef std::future<ListAccountAssignmentCreationStatusOutcome> ListAccountAssignmentCreationStatusOutcomeCallable;
         typedef std::future<ListAccountAssignmentDeletionStatusOutcome> ListAccountAssignmentDeletionStatusOutcomeCallable;
         typedef std::future<ListAccountAssignmentsOutcome> ListAccountAssignmentsOutcomeCallable;
         typedef std::future<ListAccountsForProvisionedPermissionSetOutcome> ListAccountsForProvisionedPermissionSetOutcomeCallable;
+        typedef std::future<ListCustomerManagedPolicyReferencesInPermissionSetOutcome> ListCustomerManagedPolicyReferencesInPermissionSetOutcomeCallable;
         typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
         typedef std::future<ListManagedPoliciesInPermissionSetOutcome> ListManagedPoliciesInPermissionSetOutcomeCallable;
         typedef std::future<ListPermissionSetProvisioningStatusOutcome> ListPermissionSetProvisioningStatusOutcomeCallable;
@@ -172,6 +195,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ProvisionPermissionSetOutcome> ProvisionPermissionSetOutcomeCallable;
         typedef std::future<PutInlinePolicyToPermissionSetOutcome> PutInlinePolicyToPermissionSetOutcomeCallable;
+        typedef std::future<PutPermissionsBoundaryToPermissionSetOutcome> PutPermissionsBoundaryToPermissionSetOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateInstanceAccessControlAttributeConfigurationOutcome> UpdateInstanceAccessControlAttributeConfigurationOutcomeCallable;
@@ -180,6 +204,7 @@ namespace Model
 
   class SSOAdminClient;
 
+    typedef std::function<void(const SSOAdminClient*, const Model::AttachCustomerManagedPolicyReferenceToPermissionSetRequest&, const Model::AttachCustomerManagedPolicyReferenceToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::AttachManagedPolicyToPermissionSetRequest&, const Model::AttachManagedPolicyToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachManagedPolicyToPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::CreateAccountAssignmentRequest&, const Model::CreateAccountAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountAssignmentResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::CreateInstanceAccessControlAttributeConfigurationRequest&, const Model::CreateInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
@@ -188,17 +213,21 @@ namespace Model
     typedef std::function<void(const SSOAdminClient*, const Model::DeleteInlinePolicyFromPermissionSetRequest&, const Model::DeleteInlinePolicyFromPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInlinePolicyFromPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DeleteInstanceAccessControlAttributeConfigurationRequest&, const Model::DeleteInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DeletePermissionSetRequest&, const Model::DeletePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionSetResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::DeletePermissionsBoundaryFromPermissionSetRequest&, const Model::DeletePermissionsBoundaryFromPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribeAccountAssignmentCreationStatusRequest&, const Model::DescribeAccountAssignmentCreationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAssignmentCreationStatusResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribeAccountAssignmentDeletionStatusRequest&, const Model::DescribeAccountAssignmentDeletionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAssignmentDeletionStatusResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribeInstanceAccessControlAttributeConfigurationRequest&, const Model::DescribeInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribePermissionSetRequest&, const Model::DescribePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DescribePermissionSetProvisioningStatusRequest&, const Model::DescribePermissionSetProvisioningStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionSetProvisioningStatusResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest&, const Model::DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::DetachManagedPolicyFromPermissionSetRequest&, const Model::DetachManagedPolicyFromPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachManagedPolicyFromPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::GetInlinePolicyForPermissionSetRequest&, const Model::GetInlinePolicyForPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInlinePolicyForPermissionSetResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::GetPermissionsBoundaryForPermissionSetRequest&, const Model::GetPermissionsBoundaryForPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionsBoundaryForPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListAccountAssignmentCreationStatusRequest&, const Model::ListAccountAssignmentCreationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountAssignmentCreationStatusResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListAccountAssignmentDeletionStatusRequest&, const Model::ListAccountAssignmentDeletionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountAssignmentDeletionStatusResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListAccountAssignmentsRequest&, const Model::ListAccountAssignmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountAssignmentsResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListAccountsForProvisionedPermissionSetRequest&, const Model::ListAccountsForProvisionedPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsForProvisionedPermissionSetResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::ListCustomerManagedPolicyReferencesInPermissionSetRequest&, const Model::ListCustomerManagedPolicyReferencesInPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstancesResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListManagedPoliciesInPermissionSetRequest&, const Model::ListManagedPoliciesInPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedPoliciesInPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListPermissionSetProvisioningStatusRequest&, const Model::ListPermissionSetProvisioningStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionSetProvisioningStatusResponseReceivedHandler;
@@ -207,24 +236,14 @@ namespace Model
     typedef std::function<void(const SSOAdminClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ProvisionPermissionSetRequest&, const Model::ProvisionPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::PutInlinePolicyToPermissionSetRequest&, const Model::PutInlinePolicyToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInlinePolicyToPermissionSetResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::PutPermissionsBoundaryToPermissionSetRequest&, const Model::PutPermissionsBoundaryToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionsBoundaryToPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::UpdateInstanceAccessControlAttributeConfigurationRequest&, const Model::UpdateInstanceAccessControlAttributeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::UpdatePermissionSetRequest&, const Model::UpdatePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePermissionSetResponseReceivedHandler;
 
   /**
-   * <p>Amazon Web Services Single Sign On (SSO) is a cloud SSO service that makes it
-   * easy to centrally manage SSO access to multiple Amazon Web Services accounts and
-   * business applications. This guide provides information on SSO operations which
-   * could be used for access management of Amazon Web Services accounts. For
-   * information about Amazon Web Services SSO features, see the <a
-   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
-   * Web Services Single Sign-On User Guide</a>.</p> <p>Many operations in the SSO
-   * APIs rely on identifiers for users and groups, known as principals. For more
-   * information about how to work with principals and principal IDs in Amazon Web
-   * Services SSO, see the <a
-   * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon
-   * Web Services SSO Identity Store API Reference</a>.</p>
+   * <p/>
    */
   class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient
   {
@@ -254,12 +273,30 @@ namespace Model
 
 
         /**
-         * <p>Attaches an IAM managed policy ARN to a permission set.</p>  <p>If the
-         * permission set is already referenced by one or more account assignments, you
-         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this
-         * operation. Calling <code>ProvisionPermissionSet</code> applies the corresponding
-         * IAM policy updates to all assigned accounts.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Attaches the specified IAM customer managed policy to the specified
+         * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AttachCustomerManagedPolicyReferenceToPermissionSetOutcome AttachCustomerManagedPolicyReferenceToPermissionSet(const Model::AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for AttachCustomerManagedPolicyReferenceToPermissionSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AttachCustomerManagedPolicyReferenceToPermissionSetOutcomeCallable AttachCustomerManagedPolicyReferenceToPermissionSetCallable(const Model::AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request) const;
+
+        /**
+         * An Async wrapper for AttachCustomerManagedPolicyReferenceToPermissionSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AttachCustomerManagedPolicyReferenceToPermissionSetAsync(const Model::AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches an Amazon Web Services managed IAM policy ARN to a permission
+         * set.</p>  <p>If the permission set is already referenced by one or more
+         * account assignments, you will need to call <code> <a>ProvisionPermissionSet</a>
+         * </code> after this operation. Calling <code>ProvisionPermissionSet</code>
+         * applies the corresponding IAM policy updates to all assigned accounts.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -421,6 +458,24 @@ namespace Model
         virtual void DeletePermissionSetAsync(const Model::DeletePermissionSetRequest& request, const DeletePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the permissions boundary from a specified
+         * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePermissionsBoundaryFromPermissionSetOutcome DeletePermissionsBoundaryFromPermissionSet(const Model::DeletePermissionsBoundaryFromPermissionSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePermissionsBoundaryFromPermissionSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePermissionsBoundaryFromPermissionSetOutcomeCallable DeletePermissionsBoundaryFromPermissionSetCallable(const Model::DeletePermissionsBoundaryFromPermissionSetRequest& request) const;
+
+        /**
+         * An Async wrapper for DeletePermissionsBoundaryFromPermissionSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePermissionsBoundaryFromPermissionSetAsync(const Model::DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the status of the assignment creation request.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentCreationStatus">AWS
@@ -515,8 +570,26 @@ namespace Model
         virtual void DescribePermissionSetProvisioningStatusAsync(const Model::DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches the attached IAM managed policy ARN from the specified permission
-         * set.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches the specified IAM customer managed policy from the specified
+         * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome DetachCustomerManagedPolicyReferenceFromPermissionSet(const Model::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetachCustomerManagedPolicyReferenceFromPermissionSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetachCustomerManagedPolicyReferenceFromPermissionSetOutcomeCallable DetachCustomerManagedPolicyReferenceFromPermissionSetCallable(const Model::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request) const;
+
+        /**
+         * An Async wrapper for DetachCustomerManagedPolicyReferenceFromPermissionSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetachCustomerManagedPolicyReferenceFromPermissionSetAsync(const Model::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detaches the attached Amazon Web Services managed IAM policy ARN from the
+         * specified permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachManagedPolicyFromPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -549,6 +622,24 @@ namespace Model
          * An Async wrapper for GetInlinePolicyForPermissionSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInlinePolicyForPermissionSetAsync(const Model::GetInlinePolicyForPermissionSetRequest& request, const GetInlinePolicyForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Obtains the permissions boundary for a specified
+         * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPermissionsBoundaryForPermissionSetOutcome GetPermissionsBoundaryForPermissionSet(const Model::GetPermissionsBoundaryForPermissionSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPermissionsBoundaryForPermissionSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPermissionsBoundaryForPermissionSetOutcomeCallable GetPermissionsBoundaryForPermissionSetCallable(const Model::GetPermissionsBoundaryForPermissionSetRequest& request) const;
+
+        /**
+         * An Async wrapper for GetPermissionsBoundaryForPermissionSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPermissionsBoundaryForPermissionSetAsync(const Model::GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the status of the Amazon Web Services account assignment creation
@@ -623,6 +714,24 @@ namespace Model
         virtual void ListAccountsForProvisionedPermissionSetAsync(const Model::ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all IAM customer managed policies attached to a specified
+         * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCustomerManagedPolicyReferencesInPermissionSetOutcome ListCustomerManagedPolicyReferencesInPermissionSet(const Model::ListCustomerManagedPolicyReferencesInPermissionSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCustomerManagedPolicyReferencesInPermissionSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCustomerManagedPolicyReferencesInPermissionSetOutcomeCallable ListCustomerManagedPolicyReferencesInPermissionSetCallable(const Model::ListCustomerManagedPolicyReferencesInPermissionSetRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCustomerManagedPolicyReferencesInPermissionSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCustomerManagedPolicyReferencesInPermissionSetAsync(const Model::ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the SSO instances that the caller has access to.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListInstances">AWS
@@ -641,8 +750,8 @@ namespace Model
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the IAM managed policy that is attached to a specified permission
-         * set.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon Web Services managed IAM policy that is attached to a
+         * specified permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListManagedPoliciesInPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -770,6 +879,25 @@ namespace Model
         virtual void PutInlinePolicyToPermissionSetAsync(const Model::PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Attaches an Amazon Web Services managed or customer managed IAM policy to the
+         * specified <a>PermissionSet</a> as a permissions boundary.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPermissionsBoundaryToPermissionSetOutcome PutPermissionsBoundaryToPermissionSet(const Model::PutPermissionsBoundaryToPermissionSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutPermissionsBoundaryToPermissionSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPermissionsBoundaryToPermissionSetOutcomeCallable PutPermissionsBoundaryToPermissionSetCallable(const Model::PutPermissionsBoundaryToPermissionSetRequest& request) const;
+
+        /**
+         * An Async wrapper for PutPermissionsBoundaryToPermissionSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPermissionsBoundaryToPermissionSetAsync(const Model::PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Associates a set of tags with a specified resource.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/TagResource">AWS
@@ -853,6 +981,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AttachCustomerManagedPolicyReferenceToPermissionSetAsyncHelper(const Model::AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachManagedPolicyToPermissionSetAsyncHelper(const Model::AttachManagedPolicyToPermissionSetRequest& request, const AttachManagedPolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAccountAssignmentAsyncHelper(const Model::CreateAccountAssignmentRequest& request, const CreateAccountAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -861,17 +990,21 @@ namespace Model
         void DeleteInlinePolicyFromPermissionSetAsyncHelper(const Model::DeleteInlinePolicyFromPermissionSetRequest& request, const DeleteInlinePolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::DeleteInstanceAccessControlAttributeConfigurationRequest& request, const DeleteInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePermissionSetAsyncHelper(const Model::DeletePermissionSetRequest& request, const DeletePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePermissionsBoundaryFromPermissionSetAsyncHelper(const Model::DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAssignmentCreationStatusAsyncHelper(const Model::DescribeAccountAssignmentCreationStatusRequest& request, const DescribeAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAssignmentDeletionStatusAsyncHelper(const Model::DescribeAccountAssignmentDeletionStatusRequest& request, const DescribeAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::DescribeInstanceAccessControlAttributeConfigurationRequest& request, const DescribeInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePermissionSetAsyncHelper(const Model::DescribePermissionSetRequest& request, const DescribePermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePermissionSetProvisioningStatusAsyncHelper(const Model::DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetachCustomerManagedPolicyReferenceFromPermissionSetAsyncHelper(const Model::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachManagedPolicyFromPermissionSetAsyncHelper(const Model::DetachManagedPolicyFromPermissionSetRequest& request, const DetachManagedPolicyFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInlinePolicyForPermissionSetAsyncHelper(const Model::GetInlinePolicyForPermissionSetRequest& request, const GetInlinePolicyForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPermissionsBoundaryForPermissionSetAsyncHelper(const Model::GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountAssignmentCreationStatusAsyncHelper(const Model::ListAccountAssignmentCreationStatusRequest& request, const ListAccountAssignmentCreationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountAssignmentDeletionStatusAsyncHelper(const Model::ListAccountAssignmentDeletionStatusRequest& request, const ListAccountAssignmentDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountAssignmentsAsyncHelper(const Model::ListAccountAssignmentsRequest& request, const ListAccountAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountsForProvisionedPermissionSetAsyncHelper(const Model::ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCustomerManagedPolicyReferencesInPermissionSetAsyncHelper(const Model::ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstancesAsyncHelper(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListManagedPoliciesInPermissionSetAsyncHelper(const Model::ListManagedPoliciesInPermissionSetRequest& request, const ListManagedPoliciesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPermissionSetProvisioningStatusAsyncHelper(const Model::ListPermissionSetProvisioningStatusRequest& request, const ListPermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -880,6 +1013,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ProvisionPermissionSetAsyncHelper(const Model::ProvisionPermissionSetRequest& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutInlinePolicyToPermissionSetAsyncHelper(const Model::PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPermissionsBoundaryToPermissionSetAsyncHelper(const Model::PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceAccessControlAttributeConfigurationAsyncHelper(const Model::UpdateInstanceAccessControlAttributeConfigurationRequest& request, const UpdateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

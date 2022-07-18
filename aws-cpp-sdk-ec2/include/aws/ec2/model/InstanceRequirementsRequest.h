@@ -492,12 +492,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -510,12 +511,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -528,12 +530,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -546,12 +549,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -565,13 +569,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -584,13 +588,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -603,13 +607,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -622,13 +626,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>

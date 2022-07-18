@@ -25,8 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>The value used for mapping a specified attribute to an identity
-   * source.</p><p><h3>See Also:</h3>   <a
+   * <p>The value used for mapping a specified attribute to an identity source. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute
+   * mappings</a> in the Amazon Web Services Single Sign-On User Guide.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccessControlAttributeValue">AWS
    * API Reference</a></p>
    */

@@ -24,7 +24,8 @@ namespace Model
     USER_LOCKED_OUT,
     USER_NOT_FOUND,
     USER_LOGGED_IN,
-    SUBNET_NOT_FOUND
+    SUBNET_NOT_FOUND,
+    INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET
   };
 
 namespace ConnectionErrorCodeTypeMapper

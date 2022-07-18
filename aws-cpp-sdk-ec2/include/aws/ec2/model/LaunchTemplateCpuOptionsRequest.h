@@ -61,25 +61,29 @@ namespace Model
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline LaunchTemplateCpuOptionsRequest& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
 

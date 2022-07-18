@@ -16,7 +16,16 @@ namespace Model
   enum class PresetSpeke20Video
   {
     NOT_SET,
-    PRESET_VIDEO_1
+    PRESET_VIDEO_1,
+    PRESET_VIDEO_2,
+    PRESET_VIDEO_3,
+    PRESET_VIDEO_4,
+    PRESET_VIDEO_5,
+    PRESET_VIDEO_6,
+    PRESET_VIDEO_7,
+    PRESET_VIDEO_8,
+    SHARED,
+    UNENCRYPTED
   };
 
 namespace PresetSpeke20VideoMapper

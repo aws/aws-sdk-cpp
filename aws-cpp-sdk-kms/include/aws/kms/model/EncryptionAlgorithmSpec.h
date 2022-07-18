@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SYMMETRIC_DEFAULT,
     RSAES_OAEP_SHA_1,
-    RSAES_OAEP_SHA_256
+    RSAES_OAEP_SHA_256,
+    SM2PKE
   };
 
 namespace EncryptionAlgorithmSpecMapper

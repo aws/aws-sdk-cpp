@@ -127,28 +127,52 @@ namespace Model
     inline TransitGatewayRouteTableAnnouncement& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline TransitGatewayRouteTableAnnouncement& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline TransitGatewayRouteTableAnnouncement& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the core network for the transit gateway route table
+     * announcement.</p>
+     */
     inline TransitGatewayRouteTableAnnouncement& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
 
 
@@ -193,28 +217,44 @@ namespace Model
     inline TransitGatewayRouteTableAnnouncement& WithPeerTransitGatewayId(const char* value) { SetPeerTransitGatewayId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline const Aws::String& GetPeerCoreNetworkId() const{ return m_peerCoreNetworkId; }
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline bool PeerCoreNetworkIdHasBeenSet() const { return m_peerCoreNetworkIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline void SetPeerCoreNetworkId(const Aws::String& value) { m_peerCoreNetworkIdHasBeenSet = true; m_peerCoreNetworkId = value; }
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline void SetPeerCoreNetworkId(Aws::String&& value) { m_peerCoreNetworkIdHasBeenSet = true; m_peerCoreNetworkId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline void SetPeerCoreNetworkId(const char* value) { m_peerCoreNetworkIdHasBeenSet = true; m_peerCoreNetworkId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline TransitGatewayRouteTableAnnouncement& WithPeerCoreNetworkId(const Aws::String& value) { SetPeerCoreNetworkId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline TransitGatewayRouteTableAnnouncement& WithPeerCoreNetworkId(Aws::String&& value) { SetPeerCoreNetworkId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the core network ID for the peer.</p>
+     */
     inline TransitGatewayRouteTableAnnouncement& WithPeerCoreNetworkId(const char* value) { SetPeerCoreNetworkId(value); return *this;}
 
 

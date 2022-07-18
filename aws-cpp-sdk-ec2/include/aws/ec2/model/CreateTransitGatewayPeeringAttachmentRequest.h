@@ -219,22 +219,34 @@ namespace Model
     inline CreateTransitGatewayPeeringAttachmentRequest& WithPeerRegion(const char* value) { SetPeerRegion(value); return *this;}
 
 
-    
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
     inline const CreateTransitGatewayPeeringAttachmentRequestOptions& GetOptions() const{ return m_options; }
 
-    
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
-    
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
     inline void SetOptions(const CreateTransitGatewayPeeringAttachmentRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
-    
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
     inline void SetOptions(CreateTransitGatewayPeeringAttachmentRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
-    
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
     inline CreateTransitGatewayPeeringAttachmentRequest& WithOptions(const CreateTransitGatewayPeeringAttachmentRequestOptions& value) { SetOptions(value); return *this;}
 
-    
+    /**
+     * <p>Requests a transit gateway peering attachment.</p>
+     */
     inline CreateTransitGatewayPeeringAttachmentRequest& WithOptions(CreateTransitGatewayPeeringAttachmentRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 

@@ -24,7 +24,8 @@ namespace Model
     RSASSA_PKCS1_V1_5_SHA_512,
     ECDSA_SHA_256,
     ECDSA_SHA_384,
-    ECDSA_SHA_512
+    ECDSA_SHA_512,
+    SM2DSA
   };
 
 namespace SigningAlgorithmSpecMapper

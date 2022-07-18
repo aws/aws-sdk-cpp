@@ -30,7 +30,7 @@ namespace Model
   /**
    * <p>The metadata options for the instance. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-   * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+   * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMetadataOptions">AWS
    * API Reference</a></p>

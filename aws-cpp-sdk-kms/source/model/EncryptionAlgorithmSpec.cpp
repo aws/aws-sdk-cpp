@@ -23,6 +23,7 @@ namespace Aws
         static const int SYMMETRIC_DEFAULT_HASH = HashingUtils::HashString("SYMMETRIC_DEFAULT");
         static const int RSAES_OAEP_SHA_1_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_1");
         static const int RSAES_OAEP_SHA_256_HASH = HashingUtils::HashString("RSAES_OAEP_SHA_256");
+        static const int SM2PKE_HASH = HashingUtils::HashString("SM2PKE");
 
 
         EncryptionAlgorithmSpec GetEncryptionAlgorithmSpecForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == RSAES_OAEP_SHA_256_HASH)
           {
             return EncryptionAlgorithmSpec::RSAES_OAEP_SHA_256;
+          }
+          else if (hashCode == SM2PKE_HASH)
+          {
+            return EncryptionAlgorithmSpec::SM2PKE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "RSAES_OAEP_SHA_1";
           case EncryptionAlgorithmSpec::RSAES_OAEP_SHA_256:
             return "RSAES_OAEP_SHA_256";
+          case EncryptionAlgorithmSpec::SM2PKE:
+            return "SM2PKE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

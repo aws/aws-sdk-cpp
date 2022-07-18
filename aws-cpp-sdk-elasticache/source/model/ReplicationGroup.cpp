@@ -54,7 +54,9 @@ ReplicationGroup::ReplicationGroup() :
     m_logDeliveryConfigurationsHasBeenSet(false),
     m_replicationGroupCreateTimeHasBeenSet(false),
     m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
+    m_dataTieringHasBeenSet(false),
+    m_autoMinorVersionUpgrade(false),
+    m_autoMinorVersionUpgradeHasBeenSet(false)
 {
 }
 
@@ -92,7 +94,9 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_logDeliveryConfigurationsHasBeenSet(false),
     m_replicationGroupCreateTimeHasBeenSet(false),
     m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
+    m_dataTieringHasBeenSet(false),
+    m_autoMinorVersionUpgrade(false),
+    m_autoMinorVersionUpgradeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -289,6 +293,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()).c_str());
       m_dataTieringHasBeenSet = true;
     }
+    XmlNode autoMinorVersionUpgradeNode = resultNode.FirstChild("AutoMinorVersionUpgrade");
+    if(!autoMinorVersionUpgradeNode.IsNull())
+    {
+      m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoMinorVersionUpgradeNode.GetText()).c_str()).c_str());
+      m_autoMinorVersionUpgradeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -456,6 +466,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
   }
 
+  if(m_autoMinorVersionUpgradeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -593,6 +608,10 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_dataTieringHasBeenSet)
   {
       oStream << location << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+  }
+  if(m_autoMinorVersionUpgradeHasBeenSet)
+  {
+      oStream << location << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 }
 

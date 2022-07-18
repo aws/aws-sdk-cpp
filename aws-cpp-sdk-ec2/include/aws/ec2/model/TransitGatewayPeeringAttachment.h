@@ -191,22 +191,34 @@ namespace Model
     inline TransitGatewayPeeringAttachment& WithAccepterTgwInfo(PeeringTgwInfo&& value) { SetAccepterTgwInfo(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
     inline const TransitGatewayPeeringAttachmentOptions& GetOptions() const{ return m_options; }
 
-    
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
-    
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
     inline void SetOptions(const TransitGatewayPeeringAttachmentOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
-    
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
     inline void SetOptions(TransitGatewayPeeringAttachmentOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
-    
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
     inline TransitGatewayPeeringAttachment& WithOptions(const TransitGatewayPeeringAttachmentOptions& value) { SetOptions(value); return *this;}
 
-    
+    /**
+     * <p>Details about the transit gateway peering attachment.</p>
+     */
     inline TransitGatewayPeeringAttachment& WithOptions(TransitGatewayPeeringAttachmentOptions&& value) { SetOptions(std::move(value)); return *this;}
 
 

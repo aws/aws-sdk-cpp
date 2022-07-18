@@ -78,6 +78,12 @@ GetDiscoverySummaryResult& GetDiscoverySummaryResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("agentlessCollectorSummary"))
+  {
+    m_agentlessCollectorSummary = jsonValue.GetObject("agentlessCollectorSummary");
+
+  }
+
 
 
   return *this;

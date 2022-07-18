@@ -405,50 +405,82 @@ namespace Model
 
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetMaxTotalPrice(const Aws::String& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = value; }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetMaxTotalPrice(Aws::String&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::move(value); }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetMaxTotalPrice(const char* value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice.assign(value); }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotOptions& WithMaxTotalPrice(const Aws::String& value) { SetMaxTotalPrice(value); return *this;}
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotOptions& WithMaxTotalPrice(Aws::String&& value) { SetMaxTotalPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotOptions& WithMaxTotalPrice(const char* value) { SetMaxTotalPrice(value); return *this;}
 
