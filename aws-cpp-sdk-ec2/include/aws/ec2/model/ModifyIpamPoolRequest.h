@@ -328,57 +328,65 @@ namespace Model
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const Aws::Vector<RequestIpamResourceTag>& GetAddAllocationResourceTags() const{ return m_addAllocationResourceTags; }
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline bool AddAllocationResourceTagsHasBeenSet() const { return m_addAllocationResourceTagsHasBeenSet; }
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetAddAllocationResourceTags(const Aws::Vector<RequestIpamResourceTag>& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags = value; }
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetAddAllocationResourceTags(Aws::Vector<RequestIpamResourceTag>&& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags = std::move(value); }
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline ModifyIpamPoolRequest& WithAddAllocationResourceTags(const Aws::Vector<RequestIpamResourceTag>& value) { SetAddAllocationResourceTags(value); return *this;}
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline ModifyIpamPoolRequest& WithAddAllocationResourceTags(Aws::Vector<RequestIpamResourceTag>&& value) { SetAddAllocationResourceTags(std::move(value)); return *this;}
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline ModifyIpamPoolRequest& AddAddAllocationResourceTags(const RequestIpamResourceTag& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags.push_back(value); return *this; }
 
     /**
      * <p>Add tag allocation rules to a pool. For more information about allocation
-     * rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level
-     * pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * rules, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
+     * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline ModifyIpamPoolRequest& AddAddAllocationResourceTags(RequestIpamResourceTag&& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags.push_back(std::move(value)); return *this; }
 

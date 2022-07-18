@@ -23,6 +23,8 @@ DashPackage::DashPackage() :
     m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
     m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_includeIframeOnlyStream(false),
+    m_includeIframeOnlyStreamHasBeenSet(false),
     m_manifestLayout(ManifestLayout::NOT_SET),
     m_manifestLayoutHasBeenSet(false),
     m_manifestWindowSeconds(0),
@@ -52,6 +54,8 @@ DashPackage::DashPackage(JsonView jsonValue) :
     m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
     m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_includeIframeOnlyStream(false),
+    m_includeIframeOnlyStreamHasBeenSet(false),
     m_manifestLayout(ManifestLayout::NOT_SET),
     m_manifestLayoutHasBeenSet(false),
     m_manifestWindowSeconds(0),
@@ -101,6 +105,13 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_encryption = jsonValue.GetObject("encryption");
 
     m_encryptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("includeIframeOnlyStream"))
+  {
+    m_includeIframeOnlyStream = jsonValue.GetBool("includeIframeOnlyStream");
+
+    m_includeIframeOnlyStreamHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manifestLayout"))
@@ -216,6 +227,12 @@ JsonValue DashPackage::Jsonize() const
   if(m_encryptionHasBeenSet)
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
+
+  }
+
+  if(m_includeIframeOnlyStreamHasBeenSet)
+  {
+   payload.WithBool("includeIframeOnlyStream", m_includeIframeOnlyStream);
 
   }
 

@@ -1652,73 +1652,89 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
@@ -2271,7 +2287,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline bool GetDisableApiStop() const{ return m_disableApiStop; }
 
@@ -2279,7 +2295,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
 
@@ -2287,7 +2303,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
 
@@ -2295,7 +2311,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline RunInstancesRequest& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
 

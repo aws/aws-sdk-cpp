@@ -41,83 +41,115 @@ namespace Model
 
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the launch template.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
+     * both.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch template.</p>
+     * <p>The name of the launch template.</p> <p>You must specify the
+     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
+     * both.</p>
      */
     inline LaunchTemplateSpecification& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 

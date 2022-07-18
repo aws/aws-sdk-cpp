@@ -29,6 +29,7 @@ namespace Aws
         static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("USER_NOT_FOUND");
         static const int USER_LOGGED_IN_HASH = HashingUtils::HashString("USER_LOGGED_IN");
         static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
+        static const int INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET");
 
 
         ConnectionErrorCodeType GetConnectionErrorCodeTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return ConnectionErrorCodeType::SUBNET_NOT_FOUND;
           }
+          else if (hashCode == INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET_HASH)
+          {
+            return ConnectionErrorCodeType::INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "USER_LOGGED_IN";
           case ConnectionErrorCodeType::SUBNET_NOT_FOUND:
             return "SUBNET_NOT_FOUND";
+          case ConnectionErrorCodeType::INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET:
+            return "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

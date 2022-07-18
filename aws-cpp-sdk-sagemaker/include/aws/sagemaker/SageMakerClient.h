@@ -26,6 +26,7 @@
 #include <aws/sagemaker/model/CreateContextResult.h>
 #include <aws/sagemaker/model/CreateDataQualityJobDefinitionResult.h>
 #include <aws/sagemaker/model/CreateDomainResult.h>
+#include <aws/sagemaker/model/CreateEdgeDeploymentPlanResult.h>
 #include <aws/sagemaker/model/CreateEndpointResult.h>
 #include <aws/sagemaker/model/CreateEndpointConfigResult.h>
 #include <aws/sagemaker/model/CreateExperimentResult.h>
@@ -87,6 +88,7 @@
 #include <aws/sagemaker/model/DescribeDeviceResult.h>
 #include <aws/sagemaker/model/DescribeDeviceFleetResult.h>
 #include <aws/sagemaker/model/DescribeDomainResult.h>
+#include <aws/sagemaker/model/DescribeEdgeDeploymentPlanResult.h>
 #include <aws/sagemaker/model/DescribeEdgePackagingJobResult.h>
 #include <aws/sagemaker/model/DescribeEndpointResult.h>
 #include <aws/sagemaker/model/DescribeEndpointConfigResult.h>
@@ -147,6 +149,7 @@
 #include <aws/sagemaker/model/ListDeviceFleetsResult.h>
 #include <aws/sagemaker/model/ListDevicesResult.h>
 #include <aws/sagemaker/model/ListDomainsResult.h>
+#include <aws/sagemaker/model/ListEdgeDeploymentPlansResult.h>
 #include <aws/sagemaker/model/ListEdgePackagingJobsResult.h>
 #include <aws/sagemaker/model/ListEndpointConfigsResult.h>
 #include <aws/sagemaker/model/ListEndpointsResult.h>
@@ -178,6 +181,7 @@
 #include <aws/sagemaker/model/ListPipelinesResult.h>
 #include <aws/sagemaker/model/ListProcessingJobsResult.h>
 #include <aws/sagemaker/model/ListProjectsResult.h>
+#include <aws/sagemaker/model/ListStageDevicesResult.h>
 #include <aws/sagemaker/model/ListStudioLifecycleConfigsResult.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsResult.h>
 #include <aws/sagemaker/model/ListTagsResult.h>
@@ -278,6 +282,8 @@ namespace Model
         class CreateDataQualityJobDefinitionRequest;
         class CreateDeviceFleetRequest;
         class CreateDomainRequest;
+        class CreateEdgeDeploymentPlanRequest;
+        class CreateEdgeDeploymentStageRequest;
         class CreateEdgePackagingJobRequest;
         class CreateEndpointRequest;
         class CreateEndpointConfigRequest;
@@ -323,6 +329,8 @@ namespace Model
         class DeleteDataQualityJobDefinitionRequest;
         class DeleteDeviceFleetRequest;
         class DeleteDomainRequest;
+        class DeleteEdgeDeploymentPlanRequest;
+        class DeleteEdgeDeploymentStageRequest;
         class DeleteEndpointRequest;
         class DeleteEndpointConfigRequest;
         class DeleteExperimentRequest;
@@ -364,6 +372,7 @@ namespace Model
         class DescribeDeviceRequest;
         class DescribeDeviceFleetRequest;
         class DescribeDomainRequest;
+        class DescribeEdgeDeploymentPlanRequest;
         class DescribeEdgePackagingJobRequest;
         class DescribeEndpointRequest;
         class DescribeEndpointConfigRequest;
@@ -424,6 +433,7 @@ namespace Model
         class ListDeviceFleetsRequest;
         class ListDevicesRequest;
         class ListDomainsRequest;
+        class ListEdgeDeploymentPlansRequest;
         class ListEdgePackagingJobsRequest;
         class ListEndpointConfigsRequest;
         class ListEndpointsRequest;
@@ -455,6 +465,7 @@ namespace Model
         class ListPipelinesRequest;
         class ListProcessingJobsRequest;
         class ListProjectsRequest;
+        class ListStageDevicesRequest;
         class ListStudioLifecycleConfigsRequest;
         class ListSubscribedWorkteamsRequest;
         class ListTagsRequest;
@@ -474,11 +485,13 @@ namespace Model
         class SearchRequest;
         class SendPipelineExecutionStepFailureRequest;
         class SendPipelineExecutionStepSuccessRequest;
+        class StartEdgeDeploymentStageRequest;
         class StartMonitoringScheduleRequest;
         class StartNotebookInstanceRequest;
         class StartPipelineExecutionRequest;
         class StopAutoMLJobRequest;
         class StopCompilationJobRequest;
+        class StopEdgeDeploymentStageRequest;
         class StopEdgePackagingJobRequest;
         class StopHyperParameterTuningJobRequest;
         class StopInferenceRecommendationsJobRequest;
@@ -533,6 +546,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDataQualityJobDefinitionResult, SageMakerError> CreateDataQualityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> CreateDeviceFleetOutcome;
         typedef Aws::Utils::Outcome<CreateDomainResult, SageMakerError> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<CreateEdgeDeploymentPlanResult, SageMakerError> CreateEdgeDeploymentPlanOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> CreateEdgeDeploymentStageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> CreateEdgePackagingJobOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointResult, SageMakerError> CreateEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointConfigResult, SageMakerError> CreateEndpointConfigOutcome;
@@ -578,6 +593,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDataQualityJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDeviceFleetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEdgeDeploymentPlanOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEdgeDeploymentStageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteExperimentResult, SageMakerError> DeleteExperimentOutcome;
@@ -619,6 +636,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDeviceResult, SageMakerError> DescribeDeviceOutcome;
         typedef Aws::Utils::Outcome<DescribeDeviceFleetResult, SageMakerError> DescribeDeviceFleetOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainResult, SageMakerError> DescribeDomainOutcome;
+        typedef Aws::Utils::Outcome<DescribeEdgeDeploymentPlanResult, SageMakerError> DescribeEdgeDeploymentPlanOutcome;
         typedef Aws::Utils::Outcome<DescribeEdgePackagingJobResult, SageMakerError> DescribeEdgePackagingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointResult, SageMakerError> DescribeEndpointOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointConfigResult, SageMakerError> DescribeEndpointConfigOutcome;
@@ -679,6 +697,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDeviceFleetsResult, SageMakerError> ListDeviceFleetsOutcome;
         typedef Aws::Utils::Outcome<ListDevicesResult, SageMakerError> ListDevicesOutcome;
         typedef Aws::Utils::Outcome<ListDomainsResult, SageMakerError> ListDomainsOutcome;
+        typedef Aws::Utils::Outcome<ListEdgeDeploymentPlansResult, SageMakerError> ListEdgeDeploymentPlansOutcome;
         typedef Aws::Utils::Outcome<ListEdgePackagingJobsResult, SageMakerError> ListEdgePackagingJobsOutcome;
         typedef Aws::Utils::Outcome<ListEndpointConfigsResult, SageMakerError> ListEndpointConfigsOutcome;
         typedef Aws::Utils::Outcome<ListEndpointsResult, SageMakerError> ListEndpointsOutcome;
@@ -710,6 +729,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPipelinesResult, SageMakerError> ListPipelinesOutcome;
         typedef Aws::Utils::Outcome<ListProcessingJobsResult, SageMakerError> ListProcessingJobsOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, SageMakerError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListStageDevicesResult, SageMakerError> ListStageDevicesOutcome;
         typedef Aws::Utils::Outcome<ListStudioLifecycleConfigsResult, SageMakerError> ListStudioLifecycleConfigsOutcome;
         typedef Aws::Utils::Outcome<ListSubscribedWorkteamsResult, SageMakerError> ListSubscribedWorkteamsOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, SageMakerError> ListTagsOutcome;
@@ -729,11 +749,13 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchResult, SageMakerError> SearchOutcome;
         typedef Aws::Utils::Outcome<SendPipelineExecutionStepFailureResult, SageMakerError> SendPipelineExecutionStepFailureOutcome;
         typedef Aws::Utils::Outcome<SendPipelineExecutionStepSuccessResult, SageMakerError> SendPipelineExecutionStepSuccessOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartEdgeDeploymentStageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<StartPipelineExecutionResult, SageMakerError> StartPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopCompilationJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgeDeploymentStageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgePackagingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopInferenceRecommendationsJobOutcome;
@@ -788,6 +810,8 @@ namespace Model
         typedef std::future<CreateDataQualityJobDefinitionOutcome> CreateDataQualityJobDefinitionOutcomeCallable;
         typedef std::future<CreateDeviceFleetOutcome> CreateDeviceFleetOutcomeCallable;
         typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
+        typedef std::future<CreateEdgeDeploymentPlanOutcome> CreateEdgeDeploymentPlanOutcomeCallable;
+        typedef std::future<CreateEdgeDeploymentStageOutcome> CreateEdgeDeploymentStageOutcomeCallable;
         typedef std::future<CreateEdgePackagingJobOutcome> CreateEdgePackagingJobOutcomeCallable;
         typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
         typedef std::future<CreateEndpointConfigOutcome> CreateEndpointConfigOutcomeCallable;
@@ -833,6 +857,8 @@ namespace Model
         typedef std::future<DeleteDataQualityJobDefinitionOutcome> DeleteDataQualityJobDefinitionOutcomeCallable;
         typedef std::future<DeleteDeviceFleetOutcome> DeleteDeviceFleetOutcomeCallable;
         typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
+        typedef std::future<DeleteEdgeDeploymentPlanOutcome> DeleteEdgeDeploymentPlanOutcomeCallable;
+        typedef std::future<DeleteEdgeDeploymentStageOutcome> DeleteEdgeDeploymentStageOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEndpointConfigOutcome> DeleteEndpointConfigOutcomeCallable;
         typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
@@ -874,6 +900,7 @@ namespace Model
         typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
         typedef std::future<DescribeDeviceFleetOutcome> DescribeDeviceFleetOutcomeCallable;
         typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
+        typedef std::future<DescribeEdgeDeploymentPlanOutcome> DescribeEdgeDeploymentPlanOutcomeCallable;
         typedef std::future<DescribeEdgePackagingJobOutcome> DescribeEdgePackagingJobOutcomeCallable;
         typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
         typedef std::future<DescribeEndpointConfigOutcome> DescribeEndpointConfigOutcomeCallable;
@@ -934,6 +961,7 @@ namespace Model
         typedef std::future<ListDeviceFleetsOutcome> ListDeviceFleetsOutcomeCallable;
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
         typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
+        typedef std::future<ListEdgeDeploymentPlansOutcome> ListEdgeDeploymentPlansOutcomeCallable;
         typedef std::future<ListEdgePackagingJobsOutcome> ListEdgePackagingJobsOutcomeCallable;
         typedef std::future<ListEndpointConfigsOutcome> ListEndpointConfigsOutcomeCallable;
         typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
@@ -965,6 +993,7 @@ namespace Model
         typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
         typedef std::future<ListProcessingJobsOutcome> ListProcessingJobsOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+        typedef std::future<ListStageDevicesOutcome> ListStageDevicesOutcomeCallable;
         typedef std::future<ListStudioLifecycleConfigsOutcome> ListStudioLifecycleConfigsOutcomeCallable;
         typedef std::future<ListSubscribedWorkteamsOutcome> ListSubscribedWorkteamsOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
@@ -984,11 +1013,13 @@ namespace Model
         typedef std::future<SearchOutcome> SearchOutcomeCallable;
         typedef std::future<SendPipelineExecutionStepFailureOutcome> SendPipelineExecutionStepFailureOutcomeCallable;
         typedef std::future<SendPipelineExecutionStepSuccessOutcome> SendPipelineExecutionStepSuccessOutcomeCallable;
+        typedef std::future<StartEdgeDeploymentStageOutcome> StartEdgeDeploymentStageOutcomeCallable;
         typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutcomeCallable;
         typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
         typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
         typedef std::future<StopAutoMLJobOutcome> StopAutoMLJobOutcomeCallable;
         typedef std::future<StopCompilationJobOutcome> StopCompilationJobOutcomeCallable;
+        typedef std::future<StopEdgeDeploymentStageOutcome> StopEdgeDeploymentStageOutcomeCallable;
         typedef std::future<StopEdgePackagingJobOutcome> StopEdgePackagingJobOutcomeCallable;
         typedef std::future<StopHyperParameterTuningJobOutcome> StopHyperParameterTuningJobOutcomeCallable;
         typedef std::future<StopInferenceRecommendationsJobOutcome> StopInferenceRecommendationsJobOutcomeCallable;
@@ -1046,6 +1077,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateDataQualityJobDefinitionRequest&, const Model::CreateDataQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataQualityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateDeviceFleetRequest&, const Model::CreateDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeviceFleetResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateEdgeDeploymentPlanRequest&, const Model::CreateEdgeDeploymentPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEdgeDeploymentPlanResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateEdgeDeploymentStageRequest&, const Model::CreateEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEdgeDeploymentStageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateEdgePackagingJobRequest&, const Model::CreateEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateEndpointConfigRequest&, const Model::CreateEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointConfigResponseReceivedHandler;
@@ -1091,6 +1124,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteDataQualityJobDefinitionRequest&, const Model::DeleteDataQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataQualityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteDeviceFleetRequest&, const Model::DeleteDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceFleetResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteEdgeDeploymentPlanRequest&, const Model::DeleteEdgeDeploymentPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEdgeDeploymentPlanResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteEdgeDeploymentStageRequest&, const Model::DeleteEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEdgeDeploymentStageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointConfigRequest&, const Model::DeleteEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteExperimentRequest&, const Model::DeleteExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperimentResponseReceivedHandler;
@@ -1132,6 +1167,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribeDeviceRequest&, const Model::DescribeDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeviceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeDeviceFleetRequest&, const Model::DescribeDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeviceFleetResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeEdgeDeploymentPlanRequest&, const Model::DescribeEdgeDeploymentPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEdgeDeploymentPlanResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEdgePackagingJobRequest&, const Model::DescribeEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointConfigRequest&, const Model::DescribeEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointConfigResponseReceivedHandler;
@@ -1192,6 +1228,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListDeviceFleetsRequest&, const Model::ListDeviceFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceFleetsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListEdgeDeploymentPlansRequest&, const Model::ListEdgeDeploymentPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEdgeDeploymentPlansResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEdgePackagingJobsRequest&, const Model::ListEdgePackagingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEdgePackagingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointConfigsRequest&, const Model::ListEndpointConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
@@ -1223,6 +1260,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProcessingJobsRequest&, const Model::ListProcessingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProcessingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListStageDevicesRequest&, const Model::ListStageDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStageDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListStudioLifecycleConfigsRequest&, const Model::ListStudioLifecycleConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioLifecycleConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListSubscribedWorkteamsRequest&, const Model::ListSubscribedWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedWorkteamsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
@@ -1242,11 +1280,13 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepFailureRequest&, const Model::SendPipelineExecutionStepFailureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepFailureResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepSuccessRequest&, const Model::SendPipelineExecutionStepSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepSuccessResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StartEdgeDeploymentStageRequest&, const Model::StartEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEdgeDeploymentStageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartMonitoringScheduleRequest&, const Model::StartMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartNotebookInstanceRequest&, const Model::StartNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopAutoMLJobRequest&, const Model::StopAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopCompilationJobRequest&, const Model::StopCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCompilationJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopEdgeDeploymentStageRequest&, const Model::StopEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEdgeDeploymentStageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopEdgePackagingJobRequest&, const Model::StopEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopHyperParameterTuningJobRequest&, const Model::StopHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopInferenceRecommendationsJobRequest&, const Model::StopInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInferenceRecommendationsJobResponseReceivedHandler;
@@ -1709,6 +1749,43 @@ namespace Model
          * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an edge deployment plan, consisting of multiple stages. Each stage
+         * may have a different deployment configuration and devices.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEdgeDeploymentPlanOutcome CreateEdgeDeploymentPlan(const Model::CreateEdgeDeploymentPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEdgeDeploymentPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEdgeDeploymentPlanOutcomeCallable CreateEdgeDeploymentPlanCallable(const Model::CreateEdgeDeploymentPlanRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateEdgeDeploymentPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEdgeDeploymentPlanAsync(const Model::CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new stage in an existing edge deployment plan.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEdgeDeploymentStageOutcome CreateEdgeDeploymentStage(const Model::CreateEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEdgeDeploymentStageOutcomeCallable CreateEdgeDeploymentStageCallable(const Model::CreateEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEdgeDeploymentStageAsync(const Model::CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use
@@ -2869,6 +2946,42 @@ namespace Model
         virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an edge deployment plan if (and only if) all the stages in the plan
+         * are inactive or there are no stages in the plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEdgeDeploymentPlanOutcome DeleteEdgeDeploymentPlan(const Model::DeleteEdgeDeploymentPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEdgeDeploymentPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEdgeDeploymentPlanOutcomeCallable DeleteEdgeDeploymentPlanCallable(const Model::DeleteEdgeDeploymentPlanRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteEdgeDeploymentPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEdgeDeploymentPlanAsync(const Model::DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete a stage in an edge deployment plan if (and only if) the stage is
+         * inactive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEdgeDeploymentStageOutcome DeleteEdgeDeploymentStage(const Model::DeleteEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEdgeDeploymentStageOutcomeCallable DeleteEdgeDeploymentStageCallable(const Model::DeleteEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEdgeDeploymentStageAsync(const Model::DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an endpoint. SageMaker frees up all of the resources that were
          * deployed when the endpoint was created. </p> <p>SageMaker retires any custom KMS
          * key grants associated with the endpoint, meaning you don't need to use the <a
@@ -3650,6 +3763,24 @@ namespace Model
          * An Async wrapper for DescribeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes an edge deployment plan with deployment status per
+         * stage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEdgeDeploymentPlanOutcome DescribeEdgeDeploymentPlan(const Model::DescribeEdgeDeploymentPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEdgeDeploymentPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEdgeDeploymentPlanOutcomeCallable DescribeEdgeDeploymentPlanCallable(const Model::DescribeEdgeDeploymentPlanRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeEdgeDeploymentPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEdgeDeploymentPlanAsync(const Model::DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A description of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
@@ -4745,6 +4876,23 @@ namespace Model
         virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all edge deployment plans.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEdgeDeploymentPlansOutcome ListEdgeDeploymentPlans(const Model::ListEdgeDeploymentPlansRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEdgeDeploymentPlans that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEdgeDeploymentPlansOutcomeCallable ListEdgeDeploymentPlansCallable(const Model::ListEdgeDeploymentPlansRequest& request) const;
+
+        /**
+         * An Async wrapper for ListEdgeDeploymentPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEdgeDeploymentPlansAsync(const Model::ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs">AWS
          * API Reference</a></p>
@@ -5301,6 +5449,24 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists devices allocated to the stage, containing detailed device information
+         * and deployment status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStageDevicesOutcome ListStageDevices(const Model::ListStageDevicesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStageDevices that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStageDevicesOutcomeCallable ListStageDevicesCallable(const Model::ListStageDevicesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListStageDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStageDevicesAsync(const Model::ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services
          * Account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">AWS
@@ -5676,6 +5842,23 @@ namespace Model
         virtual void SendPipelineExecutionStepSuccessAsync(const Model::SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts a stage in an edge deployment plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartEdgeDeploymentStageOutcome StartEdgeDeploymentStage(const Model::StartEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartEdgeDeploymentStageOutcomeCallable StartEdgeDeploymentStageCallable(const Model::StartEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * An Async wrapper for StartEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartEdgeDeploymentStageAsync(const Model::StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
          * when you successfully create a new schedule, the status of a monitoring schedule
          * is <code>scheduled</code>.</p> <p><h3>See Also:</h3>   <a
@@ -5773,6 +5956,23 @@ namespace Model
          * An Async wrapper for StopCompilationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopCompilationJobAsync(const Model::StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a stage in an edge deployment plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopEdgeDeploymentStageOutcome StopEdgeDeploymentStage(const Model::StopEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopEdgeDeploymentStageOutcomeCallable StopEdgeDeploymentStageCallable(const Model::StopEdgeDeploymentStageRequest& request) const;
+
+        /**
+         * An Async wrapper for StopEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopEdgeDeploymentStageAsync(const Model::StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Request to stop an edge packaging job.</p><p><h3>See Also:</h3>   <a
@@ -6523,6 +6723,8 @@ namespace Model
         void CreateDataQualityJobDefinitionAsyncHelper(const Model::CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeviceFleetAsyncHelper(const Model::CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEdgeDeploymentPlanAsyncHelper(const Model::CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEdgeDeploymentStageAsyncHelper(const Model::CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEdgePackagingJobAsyncHelper(const Model::CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointAsyncHelper(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointConfigAsyncHelper(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6568,6 +6770,8 @@ namespace Model
         void DeleteDataQualityJobDefinitionAsyncHelper(const Model::DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeviceFleetAsyncHelper(const Model::DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEdgeDeploymentPlanAsyncHelper(const Model::DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEdgeDeploymentStageAsyncHelper(const Model::DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointConfigAsyncHelper(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteExperimentAsyncHelper(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6609,6 +6813,7 @@ namespace Model
         void DescribeDeviceAsyncHelper(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDeviceFleetAsyncHelper(const Model::DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEdgeDeploymentPlanAsyncHelper(const Model::DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEdgePackagingJobAsyncHelper(const Model::DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointAsyncHelper(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointConfigAsyncHelper(const Model::DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6669,6 +6874,7 @@ namespace Model
         void ListDeviceFleetsAsyncHelper(const Model::ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEdgeDeploymentPlansAsyncHelper(const Model::ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEdgePackagingJobsAsyncHelper(const Model::ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointConfigsAsyncHelper(const Model::ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointsAsyncHelper(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6700,6 +6906,7 @@ namespace Model
         void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProcessingJobsAsyncHelper(const Model::ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStageDevicesAsyncHelper(const Model::ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStudioLifecycleConfigsAsyncHelper(const Model::ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscribedWorkteamsAsyncHelper(const Model::ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6719,11 +6926,13 @@ namespace Model
         void SearchAsyncHelper(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendPipelineExecutionStepFailureAsyncHelper(const Model::SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendPipelineExecutionStepSuccessAsyncHelper(const Model::SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartEdgeDeploymentStageAsyncHelper(const Model::StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMonitoringScheduleAsyncHelper(const Model::StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartNotebookInstanceAsyncHelper(const Model::StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartPipelineExecutionAsyncHelper(const Model::StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAutoMLJobAsyncHelper(const Model::StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopCompilationJobAsyncHelper(const Model::StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopEdgeDeploymentStageAsyncHelper(const Model::StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopEdgePackagingJobAsyncHelper(const Model::StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopHyperParameterTuningJobAsyncHelper(const Model::StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInferenceRecommendationsJobAsyncHelper(const Model::StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

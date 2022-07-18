@@ -535,8 +535,8 @@ namespace Model
          * key store</a> that is associated with an <a
          * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">CloudHSM
          * cluster</a> that you own and manage.</p> <p>This operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p>Before you create the custom key store, you must assemble the
          * required elements, including an CloudHSM cluster that fulfills the requirements
@@ -645,25 +645,28 @@ namespace Model
          * aren't required to specify any parameters. The default value for
          * <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, and the default value for
          * <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, create a symmetric
-         * encryption KMS key.</p> <p>If you need a key for basic encryption and decryption
-         * or you are creating a KMS key to protect your resources in an Amazon Web
-         * Services service, create a symmetric encryption KMS key. The key material in a
-         * symmetric encryption key never leaves KMS unencrypted. You can use a symmetric
-         * encryption KMS key to encrypt and decrypt data up to 4,096 bytes, but they are
-         * typically used to generate data keys and data keys pairs. For details, see
+         * encryption KMS key. For technical details, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+         * SYMMETRIC_DEFAULT key spec</a> in the <i>Key Management Service Developer
+         * Guide</i>.</p> <p>If you need a key for basic encryption and decryption or you
+         * are creating a KMS key to protect your resources in an Amazon Web Services
+         * service, create a symmetric encryption KMS key. The key material in a symmetric
+         * encryption key never leaves KMS unencrypted. You can use a symmetric encryption
+         * KMS key to encrypt and decrypt data up to 4,096 bytes, but they are typically
+         * used to generate data keys and data keys pairs. For details, see
          * <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.</p> <p> </p> </dd>
          * <dt>Asymmetric KMS keys</dt> <dd> <p>To create an asymmetric KMS key, use the
          * <code>KeySpec</code> parameter to specify the type of key material in the KMS
          * key. Then, use the <code>KeyUsage</code> parameter to determine whether the KMS
          * key will be used to encrypt and decrypt or sign and verify. You can't change
          * these properties after the KMS key is created.</p> <p>Asymmetric KMS keys
-         * contain an RSA key pair or an Elliptic Curve (ECC) key pair. The private key in
-         * an asymmetric KMS key never leaves KMS unencrypted. However, you can use the
-         * <a>GetPublicKey</a> operation to download the public key so it can be used
-         * outside of KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt
-         * data or sign and verify messages (but not both). KMS keys with ECC key pairs can
-         * be used only to sign and verify messages. For information about asymmetric KMS
-         * keys, see <a
+         * contain an RSA key pair, Elliptic Curve (ECC) key pair, or an SM2 key pair
+         * (China Regions only). The private key in an asymmetric KMS key never leaves KMS
+         * unencrypted. However, you can use the <a>GetPublicKey</a> operation to download
+         * the public key so it can be used outside of KMS. KMS keys with RSA or SM2 key
+         * pairs can be used to encrypt or decrypt data or sign and verify messages (but
+         * not both). KMS keys with ECC key pairs can be used only to sign and verify
+         * messages. For information about asymmetric KMS keys, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
          * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p> </p>
          * </dd> <dt>HMAC KMS key</dt> <dd> <p>To create an HMAC KMS key, set the
@@ -879,7 +882,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key store</a>. This operation does not delete the CloudHSM cluster that is
          * associated with the custom key store, or affect any users or keys in the
-         * cluster.</p> <p>The custom key store that you delete cannot contain any KMS <a
+         * cluster.</p> <p>The custom key store that you delete cannot contain any <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
          * keys</a>. Before deleting the key store, verify that you will never need to use
          * any of the KMS keys in the key store for any <a
@@ -899,8 +902,8 @@ namespace Model
          * you do not need to delete KMS keys and you can reconnect a disconnected custom
          * key store at any time.</p> <p>If the operation succeeds, it returns a JSON
          * object with no properties.</p> <p>This operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p> <b>Cross-account use</b>: No. You cannot perform this
          * operation on a custom key store in a different Amazon Web Services account.</p>
@@ -967,8 +970,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key stores</a> in the account and Region.</p> <p>This operation is part of the
          * <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p>By default, this operation returns information about all
          * custom key stores in the account and Region. To get only information about a
@@ -1034,7 +1037,7 @@ namespace Model
          * information, use <a>GetKeyRotationStatus</a>. Also, some key states prevent a
          * KMS key from being automatically rotated. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-         * Automatic Key Rotation Works</a> in <i>Key Management Service Developer
+         * Automatic Key Rotation Works</a> in the <i>Key Management Service Developer
          * Guide</i>.</p> </li> <li> <p>Tags on the KMS key. To get this information, use
          * <a>ListResourceTags</a>.</p> </li> <li> <p>Key policies and grants on the KMS
          * key. To get this information, use <a>GetKeyPolicy</a> and <a>ListGrants</a>.</p>
@@ -1172,8 +1175,8 @@ namespace Model
          * a custom key store, use the <a>ConnectCustomKeyStore</a> operation.</p> <p>If
          * the operation succeeds, it returns a JSON object with no properties.</p> <p>This
          * operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p> <b>Cross-account use</b>: No. You cannot perform this
          * operation on a custom key store in a different Amazon Web Services account.</p>
@@ -1309,7 +1312,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If you
          * specify an asymmetric KMS key, you must also specify the encryption algorithm.
-         * The algorithm must be compatible with the KMS key type.</p>  <p>When
+         * The algorithm must be compatible with the KMS key spec.</p>  <p>When
          * you use an asymmetric KMS key to encrypt or reencrypt data, be sure to record
          * the KMS key and encryption algorithm that you choose. You will be required to
          * provide the same KMS key and encryption algorithm when you decrypt the data. If
@@ -1329,8 +1332,9 @@ namespace Model
          * bytes</p> </li> <li> <p> <code>RSAES_OAEP_SHA_256</code>: 318 bytes</p> </li>
          * </ul> </li> <li> <p> <code>RSA_4096</code> </p> <ul> <li> <p>
          * <code>RSAES_OAEP_SHA_1</code>: 470 bytes</p> </li> <li> <p>
-         * <code>RSAES_OAEP_SHA_256</code>: 446 bytes</p> </li> </ul> </li> </ul> <p>The
-         * KMS key that you use for this operation must be in a compatible key state. For
+         * <code>RSAES_OAEP_SHA_256</code>: 446 bytes</p> </li> </ul> </li> <li> <p>
+         * <code>SM2PKE</code>: 1024 bytes (China Regions only)</p> </li> </ul> <p>The KMS
+         * key that you use for this operation must be in a compatible key state. For
          * details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -1366,19 +1370,23 @@ namespace Model
          * key with the encrypted data.</p> <p>To generate a data key, specify the
          * symmetric encryption KMS key that will be used to encrypt the data key. You
          * cannot use an asymmetric KMS key to encrypt data keys. To get the type of your
-         * KMS key, use the <a>DescribeKey</a> operation. You must also specify the length
-         * of the data key. Use either the <code>KeySpec</code> or
+         * KMS key, use the <a>DescribeKey</a> operation.</p> <p>You must also specify the
+         * length of the data key. Use either the <code>KeySpec</code> or
          * <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit
-         * data keys, use the <code>KeySpec</code> parameter. </p> <p>To get only an
-         * encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To
-         * generate an asymmetric data key pair, use the <a>GenerateDataKeyPair</a> or
-         * <a>GenerateDataKeyPairWithoutPlaintext</a> operation. To get a cryptographically
-         * secure random byte string, use <a>GenerateRandom</a>.</p> <p>You can use an
-         * optional encryption context to add additional security to the encryption
-         * operation. If you specify an <code>EncryptionContext</code>, you must specify
-         * the same encryption context (a case-sensitive exact match) when decrypting the
-         * encrypted data key. Otherwise, the request to decrypt fails with an
-         * <code>InvalidCiphertextException</code>. For more information, see <a
+         * data keys, use the <code>KeySpec</code> parameter.</p> <p>To generate an SM4
+         * data key (China Regions only), specify a <code>KeySpec</code> value of
+         * <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>.
+         * The symmetric encryption key used in China Regions to encrypt your data key is
+         * an SM4 encryption key.</p> <p>To get only an encrypted copy of the data key, use
+         * <a>GenerateDataKeyWithoutPlaintext</a>. To generate an asymmetric data key pair,
+         * use the <a>GenerateDataKeyPair</a> or <a>GenerateDataKeyPairWithoutPlaintext</a>
+         * operation. To get a cryptographically secure random byte string, use
+         * <a>GenerateRandom</a>.</p> <p>You can use an optional encryption context to add
+         * additional security to the encryption operation. If you specify an
+         * <code>EncryptionContext</code>, you must specify the same encryption context (a
+         * case-sensitive exact match) when decrypting the encrypted data key. Otherwise,
+         * the request to decrypt fails with an <code>InvalidCiphertextException</code>.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
          * <p>Applications in Amazon Web Services Nitro Enclaves can call this operation by
@@ -1451,12 +1459,13 @@ namespace Model
          * in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a
          * custom key store. To get the type and origin of your KMS key, use the
          * <a>DescribeKey</a> operation. </p> <p>Use the <code>KeyPairSpec</code> parameter
-         * to choose an RSA or Elliptic Curve (ECC) data key pair. KMS recommends that your
-         * use ECC key pairs for signing, and use RSA key pairs for either encryption or
-         * signing, but not both. However, KMS cannot enforce any restrictions on the use
-         * of data key pairs outside of KMS.</p> <p>If you are using the data key pair to
-         * encrypt data, or for any operation where you don't immediately need a private
-         * key, consider using the <a>GenerateDataKeyPairWithoutPlaintext</a> operation.
+         * to choose an RSA or Elliptic Curve (ECC) data key pair. In China Regions, you
+         * can also choose an SM2 data key pair. KMS recommends that you use ECC key pairs
+         * for signing, and use RSA and SM2 key pairs for either encryption or signing, but
+         * not both. However, KMS cannot enforce any restrictions on the use of data key
+         * pairs outside of KMS.</p> <p>If you are using the data key pair to encrypt data,
+         * or for any operation where you don't immediately need a private key, consider
+         * using the <a>GenerateDataKeyPairWithoutPlaintext</a> operation.
          * <code>GenerateDataKeyPairWithoutPlaintext</code> returns a plaintext public key
          * and an encrypted private key, but omits the plaintext private key that you need
          * only to decrypt ciphertext or sign a message. Later, when you need to decrypt
@@ -1522,9 +1531,10 @@ namespace Model
          * asymmetric KMS key or a KMS key in a custom key store. To get the type and
          * origin of your KMS key, use the <a>DescribeKey</a> operation. </p> <p>Use the
          * <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC) data
-         * key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-         * key pairs for either encryption or signing, but not both. However, KMS cannot
-         * enforce any restrictions on the use of data key pairs outside of KMS.</p> <p>
+         * key pair. In China Regions, you can also choose an SM2 data key pair. KMS
+         * recommends that you use ECC key pairs for signing, and use RSA and SM2 key pairs
+         * for either encryption or signing, but not both. However, KMS cannot enforce any
+         * restrictions on the use of data key pairs outside of KMS.</p> <p>
          * <code>GenerateDataKeyPairWithoutPlaintext</code> returns a unique data key pair
          * for each request. The bytes in the key are not related to the caller or KMS key
          * that is used to encrypt the private key. The public key is a DER-encoded X.509
@@ -1670,7 +1680,9 @@ namespace Model
         virtual void GenerateMacAsync(const Model::GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a random byte string that is cryptographically secure.</p> <p>By
+         * <p>Returns a random byte string that is cryptographically secure.</p> <p>You
+         * must use the <code>NumberOfBytes</code> parameter to specify the length of the
+         * random byte string. There is no default value for string length.</p> <p>By
          * default, the random byte string is generated in KMS. To generate the byte string
          * in the CloudHSM cluster that is associated with a <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -1684,8 +1696,9 @@ namespace Model
          * Developer Guide</i>.</p> <p>For more information about entropy and random number
          * generation, see <a
          * href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key
-         * Management Service Cryptographic Details</a>.</p> <p> <b>Required
-         * permissions</b>: <a
+         * Management Service Cryptographic Details</a>.</p> <p> <b>Cross-account use</b>:
+         * Not applicable. <code>GenerateRandom</code> does not use any account-specific
+         * resources, such as KMS keys.</p> <p> <b>Required permissions</b>: <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
          * (IAM policy)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">AWS
@@ -1852,13 +1865,15 @@ namespace Model
          * with the identifier of an asymmetric KMS key. When you use the public key within
          * KMS, you benefit from the authentication, authorization, and logging that are
          * part of every KMS operation. You also reduce of risk of encrypting data that
-         * cannot be decrypted. These features are not effective outside of KMS. For
-         * details, see <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
-         * Considerations for Downloading Public Keys</a>.</p> <p>To help you use the
-         * public key safely outside of KMS, <code>GetPublicKey</code> returns important
-         * information about the public key in the response, including:</p> <ul> <li> <p>
-         * <a
+         * cannot be decrypted. These features are not effective outside of KMS.</p> <p>To
+         * verify a signature outside of KMS with an SM2 public key (China Regions only),
+         * you must specify the distinguishing ID. By default, KMS uses
+         * <code>1234567812345678</code> as the distinguishing ID. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+         * verification with SM2 key pairs</a>.</p> <p>To help you use the public key
+         * safely outside of KMS, <code>GetPublicKey</code> returns important information
+         * about the public key in the response, including:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-KeySpec">KeySpec</a>:
          * The type of key material in the public key, such as <code>RSA_4096</code> or
          * <code>ECC_NIST_P521</code>.</p> </li> <li> <p> <a
@@ -2762,8 +2777,8 @@ namespace Model
          * deleted, or when you need to create or restore a cluster from a backup. </p>
          * </li> </ul> <p>If the operation succeeds, it returns a JSON object with no
          * properties.</p> <p>This operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p> <b>Cross-account use</b>: No. You cannot perform this
          * operation on a custom key store in a different Amazon Web Services account. </p>
@@ -2914,13 +2929,18 @@ namespace Model
          * used to produce the signature.</p> <p>You can also verify the digital signature
          * by using the public key of the KMS key outside of KMS. Use the
          * <a>GetPublicKey</a> operation to download the public key in the asymmetric KMS
-         * key and then use the public key to verify the signature outside of KMS. The
-         * advantage of using the <code>Verify</code> operation is that it is performed
-         * within KMS. As a result, it's easy to call, the operation is performed within
-         * the FIPS boundary, it is logged in CloudTrail, and you can use key policy and
-         * IAM policy to determine who is authorized to use the KMS key to verify
-         * signatures.</p> <p>The KMS key that you use for this operation must be in a
-         * compatible key state. For details, see <a
+         * key and then use the public key to verify the signature outside of KMS. To
+         * verify a signature outside of KMS with an SM2 public key, you must specify the
+         * distinguishing ID. By default, KMS uses <code>1234567812345678</code> as the
+         * distinguishing ID. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+         * verification with SM2 key pairs</a> in <i>Key Management Service Developer
+         * Guide</i>. The advantage of using the <code>Verify</code> operation is that it
+         * is performed within KMS. As a result, it's easy to call, the operation is
+         * performed within the FIPS boundary, it is logged in CloudTrail, and you can use
+         * key policy and IAM policy to determine who is authorized to use the KMS key to
+         * verify signatures.</p> <p>The KMS key that you use for this operation must be in
+         * a compatible key state. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
          * <p> <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a

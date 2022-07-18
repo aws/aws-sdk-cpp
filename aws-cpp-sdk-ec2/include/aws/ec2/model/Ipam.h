@@ -32,9 +32,9 @@ namespace Model
    * workflows including assigning, tracking, troubleshooting, and auditing IP
    * addresses across Amazon Web Services Regions and accounts throughout your Amazon
    * Web Services Organization. For more information, see <a
-   * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
-   * VPC IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipam">AWS API
+   * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is
+   * IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipam">AWS API
    * Reference</a></p>
    */
   class AWS_EC2_API Ipam
@@ -296,29 +296,33 @@ namespace Model
 
     /**
      * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
-     * on quotas, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * on quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline int GetScopeCount() const{ return m_scopeCount; }
 
     /**
      * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
-     * on quotas, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * on quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline bool ScopeCountHasBeenSet() const { return m_scopeCountHasBeenSet; }
 
     /**
      * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
-     * on quotas, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * on quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline void SetScopeCount(int value) { m_scopeCountHasBeenSet = true; m_scopeCount = value; }
 
     /**
      * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
-     * on quotas, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in
-     * the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * on quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline Ipam& WithScopeCount(int value) { SetScopeCount(value); return *this;}
 
@@ -369,8 +373,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const Aws::Vector<IpamOperatingRegion>& GetOperatingRegions() const{ return m_operatingRegions; }
 
@@ -379,8 +383,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline bool OperatingRegionsHasBeenSet() const { return m_operatingRegionsHasBeenSet; }
 
@@ -389,8 +393,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetOperatingRegions(const Aws::Vector<IpamOperatingRegion>& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = value; }
 
@@ -399,8 +403,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline void SetOperatingRegions(Aws::Vector<IpamOperatingRegion>&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = std::move(value); }
 
@@ -409,8 +413,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline Ipam& WithOperatingRegions(const Aws::Vector<IpamOperatingRegion>& value) { SetOperatingRegions(value); return *this;}
 
@@ -419,8 +423,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline Ipam& WithOperatingRegions(Aws::Vector<IpamOperatingRegion>&& value) { SetOperatingRegions(std::move(value)); return *this;}
 
@@ -429,8 +433,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline Ipam& AddOperatingRegions(const IpamOperatingRegion& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(value); return *this; }
 
@@ -439,8 +443,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.</p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline Ipam& AddOperatingRegions(IpamOperatingRegion&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(std::move(value)); return *this; }
 

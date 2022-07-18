@@ -444,50 +444,82 @@ namespace Model
 
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline RequestSpotInstancesRequest& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline RequestSpotInstancesRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
-     * The default is the On-Demand price.</p>
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline RequestSpotInstancesRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 

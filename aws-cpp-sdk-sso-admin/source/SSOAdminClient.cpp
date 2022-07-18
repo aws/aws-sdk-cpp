@@ -20,6 +20,7 @@
 #include <aws/sso-admin/SSOAdminClient.h>
 #include <aws/sso-admin/SSOAdminEndpoint.h>
 #include <aws/sso-admin/SSOAdminErrorMarshaller.h>
+#include <aws/sso-admin/model/AttachCustomerManagedPolicyReferenceToPermissionSetRequest.h>
 #include <aws/sso-admin/model/AttachManagedPolicyToPermissionSetRequest.h>
 #include <aws/sso-admin/model/CreateAccountAssignmentRequest.h>
 #include <aws/sso-admin/model/CreateInstanceAccessControlAttributeConfigurationRequest.h>
@@ -28,17 +29,21 @@
 #include <aws/sso-admin/model/DeleteInlinePolicyFromPermissionSetRequest.h>
 #include <aws/sso-admin/model/DeleteInstanceAccessControlAttributeConfigurationRequest.h>
 #include <aws/sso-admin/model/DeletePermissionSetRequest.h>
+#include <aws/sso-admin/model/DeletePermissionsBoundaryFromPermissionSetRequest.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentCreationStatusRequest.h>
 #include <aws/sso-admin/model/DescribeAccountAssignmentDeletionStatusRequest.h>
 #include <aws/sso-admin/model/DescribeInstanceAccessControlAttributeConfigurationRequest.h>
 #include <aws/sso-admin/model/DescribePermissionSetRequest.h>
 #include <aws/sso-admin/model/DescribePermissionSetProvisioningStatusRequest.h>
+#include <aws/sso-admin/model/DetachCustomerManagedPolicyReferenceFromPermissionSetRequest.h>
 #include <aws/sso-admin/model/DetachManagedPolicyFromPermissionSetRequest.h>
 #include <aws/sso-admin/model/GetInlinePolicyForPermissionSetRequest.h>
+#include <aws/sso-admin/model/GetPermissionsBoundaryForPermissionSetRequest.h>
 #include <aws/sso-admin/model/ListAccountAssignmentCreationStatusRequest.h>
 #include <aws/sso-admin/model/ListAccountAssignmentDeletionStatusRequest.h>
 #include <aws/sso-admin/model/ListAccountAssignmentsRequest.h>
 #include <aws/sso-admin/model/ListAccountsForProvisionedPermissionSetRequest.h>
+#include <aws/sso-admin/model/ListCustomerManagedPolicyReferencesInPermissionSetRequest.h>
 #include <aws/sso-admin/model/ListInstancesRequest.h>
 #include <aws/sso-admin/model/ListManagedPoliciesInPermissionSetRequest.h>
 #include <aws/sso-admin/model/ListPermissionSetProvisioningStatusRequest.h>
@@ -47,6 +52,7 @@
 #include <aws/sso-admin/model/ListTagsForResourceRequest.h>
 #include <aws/sso-admin/model/ProvisionPermissionSetRequest.h>
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetRequest.h>
+#include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetRequest.h>
 #include <aws/sso-admin/model/TagResourceRequest.h>
 #include <aws/sso-admin/model/UntagResourceRequest.h>
 #include <aws/sso-admin/model/UpdateInstanceAccessControlAttributeConfigurationRequest.h>
@@ -123,6 +129,30 @@ void SSOAdminClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AttachCustomerManagedPolicyReferenceToPermissionSetOutcome SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSet(const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AttachCustomerManagedPolicyReferenceToPermissionSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AttachCustomerManagedPolicyReferenceToPermissionSetOutcomeCallable SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSetCallable(const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AttachCustomerManagedPolicyReferenceToPermissionSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachCustomerManagedPolicyReferenceToPermissionSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSetAsync(const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AttachCustomerManagedPolicyReferenceToPermissionSetAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSetAsyncHelper(const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AttachCustomerManagedPolicyReferenceToPermissionSet(request), context);
 }
 
 AttachManagedPolicyToPermissionSetOutcome SSOAdminClient::AttachManagedPolicyToPermissionSet(const AttachManagedPolicyToPermissionSetRequest& request) const
@@ -317,6 +347,30 @@ void SSOAdminClient::DeletePermissionSetAsyncHelper(const DeletePermissionSetReq
   handler(this, request, DeletePermissionSet(request), context);
 }
 
+DeletePermissionsBoundaryFromPermissionSetOutcome SSOAdminClient::DeletePermissionsBoundaryFromPermissionSet(const DeletePermissionsBoundaryFromPermissionSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeletePermissionsBoundaryFromPermissionSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePermissionsBoundaryFromPermissionSetOutcomeCallable SSOAdminClient::DeletePermissionsBoundaryFromPermissionSetCallable(const DeletePermissionsBoundaryFromPermissionSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionsBoundaryFromPermissionSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermissionsBoundaryFromPermissionSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::DeletePermissionsBoundaryFromPermissionSetAsync(const DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionsBoundaryFromPermissionSetAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::DeletePermissionsBoundaryFromPermissionSetAsyncHelper(const DeletePermissionsBoundaryFromPermissionSetRequest& request, const DeletePermissionsBoundaryFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePermissionsBoundaryFromPermissionSet(request), context);
+}
+
 DescribeAccountAssignmentCreationStatusOutcome SSOAdminClient::DescribeAccountAssignmentCreationStatus(const DescribeAccountAssignmentCreationStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -437,6 +491,30 @@ void SSOAdminClient::DescribePermissionSetProvisioningStatusAsyncHelper(const De
   handler(this, request, DescribePermissionSetProvisioningStatus(request), context);
 }
 
+DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSet(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DetachCustomerManagedPolicyReferenceFromPermissionSetOutcomeCallable SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSetCallable(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachCustomerManagedPolicyReferenceFromPermissionSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSetAsync(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetachCustomerManagedPolicyReferenceFromPermissionSetAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSetAsyncHelper(const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetachCustomerManagedPolicyReferenceFromPermissionSet(request), context);
+}
+
 DetachManagedPolicyFromPermissionSetOutcome SSOAdminClient::DetachManagedPolicyFromPermissionSet(const DetachManagedPolicyFromPermissionSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -483,6 +561,30 @@ void SSOAdminClient::GetInlinePolicyForPermissionSetAsync(const GetInlinePolicyF
 void SSOAdminClient::GetInlinePolicyForPermissionSetAsyncHelper(const GetInlinePolicyForPermissionSetRequest& request, const GetInlinePolicyForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetInlinePolicyForPermissionSet(request), context);
+}
+
+GetPermissionsBoundaryForPermissionSetOutcome SSOAdminClient::GetPermissionsBoundaryForPermissionSet(const GetPermissionsBoundaryForPermissionSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetPermissionsBoundaryForPermissionSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPermissionsBoundaryForPermissionSetOutcomeCallable SSOAdminClient::GetPermissionsBoundaryForPermissionSetCallable(const GetPermissionsBoundaryForPermissionSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPermissionsBoundaryForPermissionSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPermissionsBoundaryForPermissionSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::GetPermissionsBoundaryForPermissionSetAsync(const GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionsBoundaryForPermissionSetAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::GetPermissionsBoundaryForPermissionSetAsyncHelper(const GetPermissionsBoundaryForPermissionSetRequest& request, const GetPermissionsBoundaryForPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPermissionsBoundaryForPermissionSet(request), context);
 }
 
 ListAccountAssignmentCreationStatusOutcome SSOAdminClient::ListAccountAssignmentCreationStatus(const ListAccountAssignmentCreationStatusRequest& request) const
@@ -579,6 +681,30 @@ void SSOAdminClient::ListAccountsForProvisionedPermissionSetAsync(const ListAcco
 void SSOAdminClient::ListAccountsForProvisionedPermissionSetAsyncHelper(const ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAccountsForProvisionedPermissionSet(request), context);
+}
+
+ListCustomerManagedPolicyReferencesInPermissionSetOutcome SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSet(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListCustomerManagedPolicyReferencesInPermissionSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCustomerManagedPolicyReferencesInPermissionSetOutcomeCallable SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSetCallable(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCustomerManagedPolicyReferencesInPermissionSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomerManagedPolicyReferencesInPermissionSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSetAsync(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCustomerManagedPolicyReferencesInPermissionSetAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSetAsyncHelper(const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCustomerManagedPolicyReferencesInPermissionSet(request), context);
 }
 
 ListInstancesOutcome SSOAdminClient::ListInstances(const ListInstancesRequest& request) const
@@ -771,6 +897,30 @@ void SSOAdminClient::PutInlinePolicyToPermissionSetAsync(const PutInlinePolicyTo
 void SSOAdminClient::PutInlinePolicyToPermissionSetAsyncHelper(const PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutInlinePolicyToPermissionSet(request), context);
+}
+
+PutPermissionsBoundaryToPermissionSetOutcome SSOAdminClient::PutPermissionsBoundaryToPermissionSet(const PutPermissionsBoundaryToPermissionSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutPermissionsBoundaryToPermissionSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutPermissionsBoundaryToPermissionSetOutcomeCallable SSOAdminClient::PutPermissionsBoundaryToPermissionSetCallable(const PutPermissionsBoundaryToPermissionSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPermissionsBoundaryToPermissionSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPermissionsBoundaryToPermissionSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSOAdminClient::PutPermissionsBoundaryToPermissionSetAsync(const PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionsBoundaryToPermissionSetAsyncHelper( request, handler, context ); } );
+}
+
+void SSOAdminClient::PutPermissionsBoundaryToPermissionSetAsyncHelper(const PutPermissionsBoundaryToPermissionSetRequest& request, const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPermissionsBoundaryToPermissionSet(request), context);
 }
 
 TagResourceOutcome SSOAdminClient::TagResource(const TagResourceRequest& request) const
