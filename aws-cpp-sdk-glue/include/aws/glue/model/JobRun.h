@@ -668,32 +668,36 @@ namespace Model
     /**
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
-     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
-     * overrides the timeout value set in the parent job.</p>
+     * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
+     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
+     * non-streaming jobs is 2,880 minutes (48 hours).</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
-     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
-     * overrides the timeout value set in the parent job.</p>
+     * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
+     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
+     * non-streaming jobs is 2,880 minutes (48 hours).</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
-     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
-     * overrides the timeout value set in the parent job.</p>
+     * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
+     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
+     * non-streaming jobs is 2,880 minutes (48 hours).</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
-     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
-     * overrides the timeout value set in the parent job.</p>
+     * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
+     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
+     * non-streaming jobs is 2,880 minutes (48 hours).</p>
      */
     inline JobRun& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -1148,10 +1152,10 @@ namespace Model
 
 
     /**
-     * <p>This field populates only when an Auto Scaling job run completes, and
-     * represents the total time each executor ran during the lifecycle of a job run in
-     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
-     * <code>G.2X</code> workers). This value may be different than the
+     * <p>This field populates only for Auto Scaling job runs, and represents the total
+     * time each executor ran during the lifecycle of a job run in seconds, multiplied
+     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
      * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
@@ -1161,10 +1165,10 @@ namespace Model
     inline double GetDPUSeconds() const{ return m_dPUSeconds; }
 
     /**
-     * <p>This field populates only when an Auto Scaling job run completes, and
-     * represents the total time each executor ran during the lifecycle of a job run in
-     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
-     * <code>G.2X</code> workers). This value may be different than the
+     * <p>This field populates only for Auto Scaling job runs, and represents the total
+     * time each executor ran during the lifecycle of a job run in seconds, multiplied
+     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
      * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
@@ -1174,10 +1178,10 @@ namespace Model
     inline bool DPUSecondsHasBeenSet() const { return m_dPUSecondsHasBeenSet; }
 
     /**
-     * <p>This field populates only when an Auto Scaling job run completes, and
-     * represents the total time each executor ran during the lifecycle of a job run in
-     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
-     * <code>G.2X</code> workers). This value may be different than the
+     * <p>This field populates only for Auto Scaling job runs, and represents the total
+     * time each executor ran during the lifecycle of a job run in seconds, multiplied
+     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
      * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
@@ -1187,10 +1191,10 @@ namespace Model
     inline void SetDPUSeconds(double value) { m_dPUSecondsHasBeenSet = true; m_dPUSeconds = value; }
 
     /**
-     * <p>This field populates only when an Auto Scaling job run completes, and
-     * represents the total time each executor ran during the lifecycle of a job run in
-     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
-     * <code>G.2X</code> workers). This value may be different than the
+     * <p>This field populates only for Auto Scaling job runs, and represents the total
+     * time each executor ran during the lifecycle of a job run in seconds, multiplied
+     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
      * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value

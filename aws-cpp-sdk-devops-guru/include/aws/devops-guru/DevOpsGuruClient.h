@@ -27,8 +27,10 @@
 #include <aws/devops-guru/model/GetCostEstimationResult.h>
 #include <aws/devops-guru/model/GetResourceCollectionResult.h>
 #include <aws/devops-guru/model/ListAnomaliesForInsightResult.h>
+#include <aws/devops-guru/model/ListAnomalousLogGroupsResult.h>
 #include <aws/devops-guru/model/ListEventsResult.h>
 #include <aws/devops-guru/model/ListInsightsResult.h>
+#include <aws/devops-guru/model/ListMonitoredResourcesResult.h>
 #include <aws/devops-guru/model/ListNotificationChannelsResult.h>
 #include <aws/devops-guru/model/ListOrganizationInsightsResult.h>
 #include <aws/devops-guru/model/ListRecommendationsResult.h>
@@ -95,8 +97,10 @@ namespace Model
         class GetCostEstimationRequest;
         class GetResourceCollectionRequest;
         class ListAnomaliesForInsightRequest;
+        class ListAnomalousLogGroupsRequest;
         class ListEventsRequest;
         class ListInsightsRequest;
+        class ListMonitoredResourcesRequest;
         class ListNotificationChannelsRequest;
         class ListOrganizationInsightsRequest;
         class ListRecommendationsRequest;
@@ -125,8 +129,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCostEstimationResult, DevOpsGuruError> GetCostEstimationOutcome;
         typedef Aws::Utils::Outcome<GetResourceCollectionResult, DevOpsGuruError> GetResourceCollectionOutcome;
         typedef Aws::Utils::Outcome<ListAnomaliesForInsightResult, DevOpsGuruError> ListAnomaliesForInsightOutcome;
+        typedef Aws::Utils::Outcome<ListAnomalousLogGroupsResult, DevOpsGuruError> ListAnomalousLogGroupsOutcome;
         typedef Aws::Utils::Outcome<ListEventsResult, DevOpsGuruError> ListEventsOutcome;
         typedef Aws::Utils::Outcome<ListInsightsResult, DevOpsGuruError> ListInsightsOutcome;
+        typedef Aws::Utils::Outcome<ListMonitoredResourcesResult, DevOpsGuruError> ListMonitoredResourcesOutcome;
         typedef Aws::Utils::Outcome<ListNotificationChannelsResult, DevOpsGuruError> ListNotificationChannelsOutcome;
         typedef Aws::Utils::Outcome<ListOrganizationInsightsResult, DevOpsGuruError> ListOrganizationInsightsOutcome;
         typedef Aws::Utils::Outcome<ListRecommendationsResult, DevOpsGuruError> ListRecommendationsOutcome;
@@ -155,8 +161,10 @@ namespace Model
         typedef std::future<GetCostEstimationOutcome> GetCostEstimationOutcomeCallable;
         typedef std::future<GetResourceCollectionOutcome> GetResourceCollectionOutcomeCallable;
         typedef std::future<ListAnomaliesForInsightOutcome> ListAnomaliesForInsightOutcomeCallable;
+        typedef std::future<ListAnomalousLogGroupsOutcome> ListAnomalousLogGroupsOutcomeCallable;
         typedef std::future<ListEventsOutcome> ListEventsOutcomeCallable;
         typedef std::future<ListInsightsOutcome> ListInsightsOutcomeCallable;
+        typedef std::future<ListMonitoredResourcesOutcome> ListMonitoredResourcesOutcomeCallable;
         typedef std::future<ListNotificationChannelsOutcome> ListNotificationChannelsOutcomeCallable;
         typedef std::future<ListOrganizationInsightsOutcome> ListOrganizationInsightsOutcomeCallable;
         typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
@@ -188,8 +196,10 @@ namespace Model
     typedef std::function<void(const DevOpsGuruClient*, const Model::GetCostEstimationRequest&, const Model::GetCostEstimationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostEstimationResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::GetResourceCollectionRequest&, const Model::GetResourceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceCollectionResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListAnomaliesForInsightRequest&, const Model::ListAnomaliesForInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomaliesForInsightResponseReceivedHandler;
+    typedef std::function<void(const DevOpsGuruClient*, const Model::ListAnomalousLogGroupsRequest&, const Model::ListAnomalousLogGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalousLogGroupsResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListEventsRequest&, const Model::ListEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventsResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListInsightsRequest&, const Model::ListInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInsightsResponseReceivedHandler;
+    typedef std::function<void(const DevOpsGuruClient*, const Model::ListMonitoredResourcesRequest&, const Model::ListMonitoredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoredResourcesResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListNotificationChannelsRequest&, const Model::ListNotificationChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotificationChannelsResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListOrganizationInsightsRequest&, const Model::ListOrganizationInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationInsightsResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListRecommendationsRequest&, const Model::ListRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationsResponseReceivedHandler;
@@ -583,6 +593,24 @@ namespace Model
         virtual void ListAnomaliesForInsightAsync(const Model::ListAnomaliesForInsightRequest& request, const ListAnomaliesForInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns the list of log groups that contain log anomalies. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnomalousLogGroupsOutcome ListAnomalousLogGroups(const Model::ListAnomalousLogGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAnomalousLogGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAnomalousLogGroupsOutcomeCallable ListAnomalousLogGroupsCallable(const Model::ListAnomalousLogGroupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAnomalousLogGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAnomalousLogGroupsAsync(const Model::ListAnomalousLogGroupsRequest& request, const ListAnomalousLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns a list of the events emitted by the resources that are evaluated by
          * DevOps Guru. You can use filters to specify which events are returned.
          * </p><p><h3>See Also:</h3>   <a
@@ -620,6 +648,24 @@ namespace Model
          * An Async wrapper for ListInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInsightsAsync(const Model::ListInsightsRequest& request, const ListInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns the list of all log groups that are being monitored and tagged by
+         * DevOps Guru. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMonitoredResourcesOutcome ListMonitoredResources(const Model::ListMonitoredResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMonitoredResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMonitoredResourcesOutcomeCallable ListMonitoredResourcesCallable(const Model::ListMonitoredResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListMonitoredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMonitoredResourcesAsync(const Model::ListMonitoredResourcesRequest& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of notification channels configured for DevOps Guru. Each
@@ -866,8 +912,10 @@ namespace Model
         void GetCostEstimationAsyncHelper(const Model::GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceCollectionAsyncHelper(const Model::GetResourceCollectionRequest& request, const GetResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAnomaliesForInsightAsyncHelper(const Model::ListAnomaliesForInsightRequest& request, const ListAnomaliesForInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAnomalousLogGroupsAsyncHelper(const Model::ListAnomalousLogGroupsRequest& request, const ListAnomalousLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventsAsyncHelper(const Model::ListEventsRequest& request, const ListEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInsightsAsyncHelper(const Model::ListInsightsRequest& request, const ListInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMonitoredResourcesAsyncHelper(const Model::ListMonitoredResourcesRequest& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNotificationChannelsAsyncHelper(const Model::ListNotificationChannelsRequest& request, const ListNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOrganizationInsightsAsyncHelper(const Model::ListOrganizationInsightsRequest& request, const ListOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRecommendationsAsyncHelper(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

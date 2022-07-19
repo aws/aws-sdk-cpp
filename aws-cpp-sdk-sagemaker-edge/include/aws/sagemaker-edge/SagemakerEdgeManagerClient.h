@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-edge/model/GetDeploymentsResult.h>
 #include <aws/sagemaker-edge/model/GetDeviceRegistrationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -52,18 +53,22 @@ namespace SagemakerEdgeManager
 
 namespace Model
 {
+        class GetDeploymentsRequest;
         class GetDeviceRegistrationRequest;
         class SendHeartbeatRequest;
 
+        typedef Aws::Utils::Outcome<GetDeploymentsResult, SagemakerEdgeManagerError> GetDeploymentsOutcome;
         typedef Aws::Utils::Outcome<GetDeviceRegistrationResult, SagemakerEdgeManagerError> GetDeviceRegistrationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SagemakerEdgeManagerError> SendHeartbeatOutcome;
 
+        typedef std::future<GetDeploymentsOutcome> GetDeploymentsOutcomeCallable;
         typedef std::future<GetDeviceRegistrationOutcome> GetDeviceRegistrationOutcomeCallable;
         typedef std::future<SendHeartbeatOutcome> SendHeartbeatOutcomeCallable;
 } // namespace Model
 
   class SagemakerEdgeManagerClient;
 
+    typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::GetDeploymentsRequest&, const Model::GetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentsResponseReceivedHandler;
     typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::GetDeviceRegistrationRequest&, const Model::GetDeviceRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceRegistrationResponseReceivedHandler;
     typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::SendHeartbeatRequest&, const Model::SendHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendHeartbeatResponseReceivedHandler;
 
@@ -97,6 +102,24 @@ namespace Model
 
         virtual ~SagemakerEdgeManagerClient();
 
+
+        /**
+         * <p>Use to get the active deployments from a device.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeploymentsOutcome GetDeployments(const Model::GetDeploymentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDeploymentsOutcomeCallable GetDeploymentsCallable(const Model::GetDeploymentsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDeploymentsAsync(const Model::GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use to check if a device is registered with SageMaker Edge
@@ -138,6 +161,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void GetDeploymentsAsyncHelper(const Model::GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceRegistrationAsyncHelper(const Model::GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendHeartbeatAsyncHelper(const Model::SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

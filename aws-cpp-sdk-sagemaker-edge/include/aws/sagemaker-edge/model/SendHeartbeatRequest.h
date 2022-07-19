@@ -8,6 +8,7 @@
 #include <aws/sagemaker-edge/SagemakerEdgeManagerRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-edge/model/DeploymentResult.h>
 #include <aws/sagemaker-edge/model/EdgeMetric.h>
 #include <aws/sagemaker-edge/model/Model.h>
 #include <utility>
@@ -247,6 +248,37 @@ namespace Model
      */
     inline SendHeartbeatRequest& WithDeviceFleetName(const char* value) { SetDeviceFleetName(value); return *this;}
 
+
+    /**
+     * <p>Returns the result of a deployment on the device.</p>
+     */
+    inline const DeploymentResult& GetDeploymentResult() const{ return m_deploymentResult; }
+
+    /**
+     * <p>Returns the result of a deployment on the device.</p>
+     */
+    inline bool DeploymentResultHasBeenSet() const { return m_deploymentResultHasBeenSet; }
+
+    /**
+     * <p>Returns the result of a deployment on the device.</p>
+     */
+    inline void SetDeploymentResult(const DeploymentResult& value) { m_deploymentResultHasBeenSet = true; m_deploymentResult = value; }
+
+    /**
+     * <p>Returns the result of a deployment on the device.</p>
+     */
+    inline void SetDeploymentResult(DeploymentResult&& value) { m_deploymentResultHasBeenSet = true; m_deploymentResult = std::move(value); }
+
+    /**
+     * <p>Returns the result of a deployment on the device.</p>
+     */
+    inline SendHeartbeatRequest& WithDeploymentResult(const DeploymentResult& value) { SetDeploymentResult(value); return *this;}
+
+    /**
+     * <p>Returns the result of a deployment on the device.</p>
+     */
+    inline SendHeartbeatRequest& WithDeploymentResult(DeploymentResult&& value) { SetDeploymentResult(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<EdgeMetric> m_agentMetrics;
@@ -263,6 +295,9 @@ namespace Model
 
     Aws::String m_deviceFleetName;
     bool m_deviceFleetNameHasBeenSet;
+
+    DeploymentResult m_deploymentResult;
+    bool m_deploymentResultHasBeenSet;
   };
 
 } // namespace Model
