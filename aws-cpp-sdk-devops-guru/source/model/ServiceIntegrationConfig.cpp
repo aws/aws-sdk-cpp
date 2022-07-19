@@ -19,12 +19,14 @@ namespace Model
 {
 
 ServiceIntegrationConfig::ServiceIntegrationConfig() : 
-    m_opsCenterHasBeenSet(false)
+    m_opsCenterHasBeenSet(false),
+    m_logsAnomalyDetectionHasBeenSet(false)
 {
 }
 
 ServiceIntegrationConfig::ServiceIntegrationConfig(JsonView jsonValue) : 
-    m_opsCenterHasBeenSet(false)
+    m_opsCenterHasBeenSet(false),
+    m_logsAnomalyDetectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ ServiceIntegrationConfig& ServiceIntegrationConfig::operator =(JsonView jsonValu
     m_opsCenterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogsAnomalyDetection"))
+  {
+    m_logsAnomalyDetection = jsonValue.GetObject("LogsAnomalyDetection");
+
+    m_logsAnomalyDetectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue ServiceIntegrationConfig::Jsonize() const
   if(m_opsCenterHasBeenSet)
   {
    payload.WithObject("OpsCenter", m_opsCenter.Jsonize());
+
+  }
+
+  if(m_logsAnomalyDetectionHasBeenSet)
+  {
+   payload.WithObject("LogsAnomalyDetection", m_logsAnomalyDetection.Jsonize());
 
   }
 

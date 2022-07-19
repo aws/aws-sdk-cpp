@@ -36,8 +36,10 @@
 #include <aws/devops-guru/model/GetCostEstimationRequest.h>
 #include <aws/devops-guru/model/GetResourceCollectionRequest.h>
 #include <aws/devops-guru/model/ListAnomaliesForInsightRequest.h>
+#include <aws/devops-guru/model/ListAnomalousLogGroupsRequest.h>
 #include <aws/devops-guru/model/ListEventsRequest.h>
 #include <aws/devops-guru/model/ListInsightsRequest.h>
+#include <aws/devops-guru/model/ListMonitoredResourcesRequest.h>
 #include <aws/devops-guru/model/ListNotificationChannelsRequest.h>
 #include <aws/devops-guru/model/ListOrganizationInsightsRequest.h>
 #include <aws/devops-guru/model/ListRecommendationsRequest.h>
@@ -559,6 +561,31 @@ void DevOpsGuruClient::ListAnomaliesForInsightAsyncHelper(const ListAnomaliesFor
   handler(this, request, ListAnomaliesForInsight(request), context);
 }
 
+ListAnomalousLogGroupsOutcome DevOpsGuruClient::ListAnomalousLogGroups(const ListAnomalousLogGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/list-log-anomalies");
+  return ListAnomalousLogGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAnomalousLogGroupsOutcomeCallable DevOpsGuruClient::ListAnomalousLogGroupsCallable(const ListAnomalousLogGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAnomalousLogGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalousLogGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::ListAnomalousLogGroupsAsync(const ListAnomalousLogGroupsRequest& request, const ListAnomalousLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAnomalousLogGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::ListAnomalousLogGroupsAsyncHelper(const ListAnomalousLogGroupsRequest& request, const ListAnomalousLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAnomalousLogGroups(request), context);
+}
+
 ListEventsOutcome DevOpsGuruClient::ListEvents(const ListEventsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -607,6 +634,31 @@ void DevOpsGuruClient::ListInsightsAsync(const ListInsightsRequest& request, con
 void DevOpsGuruClient::ListInsightsAsyncHelper(const ListInsightsRequest& request, const ListInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInsights(request), context);
+}
+
+ListMonitoredResourcesOutcome DevOpsGuruClient::ListMonitoredResources(const ListMonitoredResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/monitoredResources");
+  return ListMonitoredResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMonitoredResourcesOutcomeCallable DevOpsGuruClient::ListMonitoredResourcesCallable(const ListMonitoredResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMonitoredResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMonitoredResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::ListMonitoredResourcesAsync(const ListMonitoredResourcesRequest& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMonitoredResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::ListMonitoredResourcesAsyncHelper(const ListMonitoredResourcesRequest& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMonitoredResources(request), context);
 }
 
 ListNotificationChannelsOutcome DevOpsGuruClient::ListNotificationChannels(const ListNotificationChannelsRequest& request) const

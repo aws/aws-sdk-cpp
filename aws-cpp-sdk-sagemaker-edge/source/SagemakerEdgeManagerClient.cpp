@@ -20,6 +20,7 @@
 #include <aws/sagemaker-edge/SagemakerEdgeManagerClient.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerEndpoint.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerErrorMarshaller.h>
+#include <aws/sagemaker-edge/model/GetDeploymentsRequest.h>
 #include <aws/sagemaker-edge/model/GetDeviceRegistrationRequest.h>
 #include <aws/sagemaker-edge/model/SendHeartbeatRequest.h>
 
@@ -94,6 +95,31 @@ void SagemakerEdgeManagerClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+GetDeploymentsOutcome SagemakerEdgeManagerClient::GetDeployments(const GetDeploymentsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/GetDeployments");
+  return GetDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDeploymentsOutcomeCallable SagemakerEdgeManagerClient::GetDeploymentsCallable(const GetDeploymentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeployments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SagemakerEdgeManagerClient::GetDeploymentsAsync(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentsAsyncHelper( request, handler, context ); } );
+}
+
+void SagemakerEdgeManagerClient::GetDeploymentsAsyncHelper(const GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDeployments(request), context);
 }
 
 GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(const GetDeviceRegistrationRequest& request) const

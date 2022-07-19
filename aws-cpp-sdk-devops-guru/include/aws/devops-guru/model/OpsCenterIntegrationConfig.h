@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p> Information about whether DevOps Guru is configured to create an OpsItem in
-   * Amazon Web Services Systems Manager OpsCenter for each created insight.
-   * </p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services Systems Manager OpsCenter for each created insight. You can
+   * use this to update the configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/OpsCenterIntegrationConfig">AWS
    * API Reference</a></p>
    */
