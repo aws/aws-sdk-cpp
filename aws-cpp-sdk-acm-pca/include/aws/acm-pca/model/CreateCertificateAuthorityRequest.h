@@ -280,10 +280,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -292,10 +293,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -304,10 +306,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -316,10 +319,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -328,10 +332,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -340,10 +345,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>

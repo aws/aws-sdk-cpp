@@ -10,6 +10,7 @@
 #include <aws/iot/model/DeviceDefenderIndexingMode.h>
 #include <aws/iot/model/NamedShadowIndexingMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/IndexingFilter.h>
 #include <aws/iot/model/Field.h>
 #include <utility>
 
@@ -365,6 +366,61 @@ namespace Model
      */
     inline ThingIndexingConfiguration& AddCustomFields(Field&& value) { m_customFieldsHasBeenSet = true; m_customFields.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline const IndexingFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline void SetFilter(const IndexingFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline void SetFilter(IndexingFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline ThingIndexingConfiguration& WithFilter(const IndexingFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline ThingIndexingConfiguration& WithFilter(IndexingFilter&& value) { SetFilter(std::move(value)); return *this;}
+
   private:
 
     ThingIndexingMode m_thingIndexingMode;
@@ -384,6 +440,9 @@ namespace Model
 
     Aws::Vector<Field> m_customFields;
     bool m_customFieldsHasBeenSet;
+
+    IndexingFilter m_filter;
+    bool m_filterHasBeenSet;
   };
 
 } // namespace Model
