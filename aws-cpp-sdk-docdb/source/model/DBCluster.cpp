@@ -53,6 +53,7 @@ DBCluster::DBCluster() :
     m_dbClusterResourceIdHasBeenSet(false),
     m_dBClusterArnHasBeenSet(false),
     m_associatedRolesHasBeenSet(false),
+    m_cloneGroupIdHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
@@ -93,6 +94,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_dbClusterResourceIdHasBeenSet(false),
     m_dBClusterArnHasBeenSet(false),
     m_associatedRolesHasBeenSet(false),
+    m_cloneGroupIdHasBeenSet(false),
     m_clusterCreateTimeHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
@@ -305,6 +307,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_associatedRolesHasBeenSet = true;
     }
+    XmlNode cloneGroupIdNode = resultNode.FirstChild("CloneGroupId");
+    if(!cloneGroupIdNode.IsNull())
+    {
+      m_cloneGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(cloneGroupIdNode.GetText());
+      m_cloneGroupIdHasBeenSet = true;
+    }
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
@@ -502,6 +510,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_cloneGroupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CloneGroupId=" << StringUtils::URLEncode(m_cloneGroupId.c_str()) << "&";
+  }
+
   if(m_clusterCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -662,6 +675,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         associatedRolesSs << location <<  ".DBClusterRole." << associatedRolesIdx++;
         item.OutputToStream(oStream, associatedRolesSs.str().c_str());
       }
+  }
+  if(m_cloneGroupIdHasBeenSet)
+  {
+      oStream << location << ".CloneGroupId=" << StringUtils::URLEncode(m_cloneGroupId.c_str()) << "&";
   }
   if(m_clusterCreateTimeHasBeenSet)
   {

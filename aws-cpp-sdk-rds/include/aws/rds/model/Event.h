@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>This data type is used as a response element in the
-   * <code>DescribeEvents</code> action.</p><p><h3>See Also:</h3>   <a
+   * <p>This data type is used as a response element in the <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Event">AWS API
    * Reference</a></p>
    */

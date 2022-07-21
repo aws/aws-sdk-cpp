@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/DataSourceVpcConfiguration.h>
 #include <aws/kendra/model/S3Path.h>
+#include <aws/kendra/model/SharePointOnlineAuthenticationType.h>
 #include <aws/kendra/model/DataSourceToIndexFieldMapping.h>
 #include <utility>
 
@@ -126,7 +127,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -136,7 +141,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -146,7 +155,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -156,7 +169,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -166,7 +183,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -176,7 +197,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -186,7 +211,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -196,7 +225,11 @@ namespace Model
      * use SharePoint Server, you also need to provide the sever domain name as part of
      * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p>
+     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
+     * authentication credentials of user name, password, client ID, and client secret.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+     * for a SharePoint data source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -681,6 +714,49 @@ namespace Model
      */
     inline SharePointConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether you want to connect to SharePoint using basic authentication of user
+     * name and password, or OAuth authentication of user name, password, client ID,
+     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     */
+    inline const SharePointOnlineAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>Whether you want to connect to SharePoint using basic authentication of user
+     * name and password, or OAuth authentication of user name, password, client ID,
+     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+
+    /**
+     * <p>Whether you want to connect to SharePoint using basic authentication of user
+     * name and password, or OAuth authentication of user name, password, client ID,
+     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     */
+    inline void SetAuthenticationType(const SharePointOnlineAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+
+    /**
+     * <p>Whether you want to connect to SharePoint using basic authentication of user
+     * name and password, or OAuth authentication of user name, password, client ID,
+     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     */
+    inline void SetAuthenticationType(SharePointOnlineAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
+
+    /**
+     * <p>Whether you want to connect to SharePoint using basic authentication of user
+     * name and password, or OAuth authentication of user name, password, client ID,
+     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     */
+    inline SharePointConfiguration& WithAuthenticationType(const SharePointOnlineAuthenticationType& value) { SetAuthenticationType(value); return *this;}
+
+    /**
+     * <p>Whether you want to connect to SharePoint using basic authentication of user
+     * name and password, or OAuth authentication of user name, password, client ID,
+     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     */
+    inline SharePointConfiguration& WithAuthenticationType(SharePointOnlineAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+
   private:
 
     SharePointVersion m_sharePointVersion;
@@ -718,6 +794,9 @@ namespace Model
 
     S3Path m_sslCertificateS3Path;
     bool m_sslCertificateS3PathHasBeenSet;
+
+    SharePointOnlineAuthenticationType m_authenticationType;
+    bool m_authenticationTypeHasBeenSet;
   };
 
 } // namespace Model

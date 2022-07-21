@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleVariables.h>
+#include <aws/network-firewall/model/ReferenceSets.h>
 #include <aws/network-firewall/model/RulesSource.h>
 #include <aws/network-firewall/model/StatefulRuleOptions.h>
 #include <utility>
@@ -86,6 +87,37 @@ namespace Model
 
 
     /**
+     * <p>The list of a rule group's reference sets.</p>
+     */
+    inline const ReferenceSets& GetReferenceSets() const{ return m_referenceSets; }
+
+    /**
+     * <p>The list of a rule group's reference sets.</p>
+     */
+    inline bool ReferenceSetsHasBeenSet() const { return m_referenceSetsHasBeenSet; }
+
+    /**
+     * <p>The list of a rule group's reference sets.</p>
+     */
+    inline void SetReferenceSets(const ReferenceSets& value) { m_referenceSetsHasBeenSet = true; m_referenceSets = value; }
+
+    /**
+     * <p>The list of a rule group's reference sets.</p>
+     */
+    inline void SetReferenceSets(ReferenceSets&& value) { m_referenceSetsHasBeenSet = true; m_referenceSets = std::move(value); }
+
+    /**
+     * <p>The list of a rule group's reference sets.</p>
+     */
+    inline RuleGroup& WithReferenceSets(const ReferenceSets& value) { SetReferenceSets(value); return *this;}
+
+    /**
+     * <p>The list of a rule group's reference sets.</p>
+     */
+    inline RuleGroup& WithReferenceSets(ReferenceSets&& value) { SetReferenceSets(std::move(value)); return *this;}
+
+
+    /**
      * <p>The stateful rules or stateless rules for the rule group. </p>
      */
     inline const RulesSource& GetRulesSource() const{ return m_rulesSource; }
@@ -162,6 +194,9 @@ namespace Model
 
     RuleVariables m_ruleVariables;
     bool m_ruleVariablesHasBeenSet;
+
+    ReferenceSets m_referenceSets;
+    bool m_referenceSetsHasBeenSet;
 
     RulesSource m_rulesSource;
     bool m_rulesSourceHasBeenSet;

@@ -35,7 +35,16 @@ CompositeAlarm::CompositeAlarm() :
     m_stateReasonDataHasBeenSet(false),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false)
+    m_stateValueHasBeenSet(false),
+    m_stateTransitionedTimestampHasBeenSet(false),
+    m_actionsSuppressedBy(ActionsSuppressedBy::NOT_SET),
+    m_actionsSuppressedByHasBeenSet(false),
+    m_actionsSuppressedReasonHasBeenSet(false),
+    m_actionsSuppressorHasBeenSet(false),
+    m_actionsSuppressorWaitPeriod(0),
+    m_actionsSuppressorWaitPeriodHasBeenSet(false),
+    m_actionsSuppressorExtensionPeriod(0),
+    m_actionsSuppressorExtensionPeriodHasBeenSet(false)
 {
 }
 
@@ -54,7 +63,16 @@ CompositeAlarm::CompositeAlarm(const XmlNode& xmlNode) :
     m_stateReasonDataHasBeenSet(false),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false)
+    m_stateValueHasBeenSet(false),
+    m_stateTransitionedTimestampHasBeenSet(false),
+    m_actionsSuppressedBy(ActionsSuppressedBy::NOT_SET),
+    m_actionsSuppressedByHasBeenSet(false),
+    m_actionsSuppressedReasonHasBeenSet(false),
+    m_actionsSuppressorHasBeenSet(false),
+    m_actionsSuppressorWaitPeriod(0),
+    m_actionsSuppressorWaitPeriodHasBeenSet(false),
+    m_actionsSuppressorExtensionPeriod(0),
+    m_actionsSuppressorExtensionPeriodHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -161,6 +179,42 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
       m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
       m_stateValueHasBeenSet = true;
     }
+    XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");
+    if(!stateTransitionedTimestampNode.IsNull())
+    {
+      m_stateTransitionedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_stateTransitionedTimestampHasBeenSet = true;
+    }
+    XmlNode actionsSuppressedByNode = resultNode.FirstChild("ActionsSuppressedBy");
+    if(!actionsSuppressedByNode.IsNull())
+    {
+      m_actionsSuppressedBy = ActionsSuppressedByMapper::GetActionsSuppressedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsSuppressedByNode.GetText()).c_str()).c_str());
+      m_actionsSuppressedByHasBeenSet = true;
+    }
+    XmlNode actionsSuppressedReasonNode = resultNode.FirstChild("ActionsSuppressedReason");
+    if(!actionsSuppressedReasonNode.IsNull())
+    {
+      m_actionsSuppressedReason = Aws::Utils::Xml::DecodeEscapedXmlText(actionsSuppressedReasonNode.GetText());
+      m_actionsSuppressedReasonHasBeenSet = true;
+    }
+    XmlNode actionsSuppressorNode = resultNode.FirstChild("ActionsSuppressor");
+    if(!actionsSuppressorNode.IsNull())
+    {
+      m_actionsSuppressor = Aws::Utils::Xml::DecodeEscapedXmlText(actionsSuppressorNode.GetText());
+      m_actionsSuppressorHasBeenSet = true;
+    }
+    XmlNode actionsSuppressorWaitPeriodNode = resultNode.FirstChild("ActionsSuppressorWaitPeriod");
+    if(!actionsSuppressorWaitPeriodNode.IsNull())
+    {
+      m_actionsSuppressorWaitPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsSuppressorWaitPeriodNode.GetText()).c_str()).c_str());
+      m_actionsSuppressorWaitPeriodHasBeenSet = true;
+    }
+    XmlNode actionsSuppressorExtensionPeriodNode = resultNode.FirstChild("ActionsSuppressorExtensionPeriod");
+    if(!actionsSuppressorExtensionPeriodNode.IsNull())
+    {
+      m_actionsSuppressorExtensionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsSuppressorExtensionPeriodNode.GetText()).c_str()).c_str());
+      m_actionsSuppressorExtensionPeriodHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -245,6 +299,36 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
   }
 
+  if(m_stateTransitionedTimestampHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_actionsSuppressedByHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActionsSuppressedBy=" << ActionsSuppressedByMapper::GetNameForActionsSuppressedBy(m_actionsSuppressedBy) << "&";
+  }
+
+  if(m_actionsSuppressedReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActionsSuppressedReason=" << StringUtils::URLEncode(m_actionsSuppressedReason.c_str()) << "&";
+  }
+
+  if(m_actionsSuppressorHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActionsSuppressor=" << StringUtils::URLEncode(m_actionsSuppressor.c_str()) << "&";
+  }
+
+  if(m_actionsSuppressorWaitPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActionsSuppressorWaitPeriod=" << m_actionsSuppressorWaitPeriod << "&";
+  }
+
+  if(m_actionsSuppressorExtensionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActionsSuppressorExtensionPeriod=" << m_actionsSuppressorExtensionPeriod << "&";
+  }
+
 }
 
 void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -312,6 +396,30 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_stateValueHasBeenSet)
   {
       oStream << location << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
+  }
+  if(m_stateTransitionedTimestampHasBeenSet)
+  {
+      oStream << location << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_actionsSuppressedByHasBeenSet)
+  {
+      oStream << location << ".ActionsSuppressedBy=" << ActionsSuppressedByMapper::GetNameForActionsSuppressedBy(m_actionsSuppressedBy) << "&";
+  }
+  if(m_actionsSuppressedReasonHasBeenSet)
+  {
+      oStream << location << ".ActionsSuppressedReason=" << StringUtils::URLEncode(m_actionsSuppressedReason.c_str()) << "&";
+  }
+  if(m_actionsSuppressorHasBeenSet)
+  {
+      oStream << location << ".ActionsSuppressor=" << StringUtils::URLEncode(m_actionsSuppressor.c_str()) << "&";
+  }
+  if(m_actionsSuppressorWaitPeriodHasBeenSet)
+  {
+      oStream << location << ".ActionsSuppressorWaitPeriod=" << m_actionsSuppressorWaitPeriod << "&";
+  }
+  if(m_actionsSuppressorExtensionPeriodHasBeenSet)
+  {
+      oStream << location << ".ActionsSuppressorExtensionPeriod=" << m_actionsSuppressorExtensionPeriod << "&";
   }
 }
 

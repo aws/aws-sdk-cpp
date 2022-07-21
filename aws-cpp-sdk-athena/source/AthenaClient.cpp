@@ -37,6 +37,7 @@
 #include <aws/athena/model/GetPreparedStatementRequest.h>
 #include <aws/athena/model/GetQueryExecutionRequest.h>
 #include <aws/athena/model/GetQueryResultsRequest.h>
+#include <aws/athena/model/GetQueryRuntimeStatisticsRequest.h>
 #include <aws/athena/model/GetTableMetadataRequest.h>
 #include <aws/athena/model/GetWorkGroupRequest.h>
 #include <aws/athena/model/ListDataCatalogsRequest.h>
@@ -536,6 +537,30 @@ void AthenaClient::GetQueryResultsAsync(const GetQueryResultsRequest& request, c
 void AthenaClient::GetQueryResultsAsyncHelper(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetQueryResults(request), context);
+}
+
+GetQueryRuntimeStatisticsOutcome AthenaClient::GetQueryRuntimeStatistics(const GetQueryRuntimeStatisticsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetQueryRuntimeStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetQueryRuntimeStatisticsOutcomeCallable AthenaClient::GetQueryRuntimeStatisticsCallable(const GetQueryRuntimeStatisticsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetQueryRuntimeStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQueryRuntimeStatistics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetQueryRuntimeStatisticsAsync(const GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetQueryRuntimeStatisticsAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::GetQueryRuntimeStatisticsAsyncHelper(const GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetQueryRuntimeStatistics(request), context);
 }
 
 GetTableMetadataOutcome AthenaClient::GetTableMetadata(const GetTableMetadataRequest& request) const

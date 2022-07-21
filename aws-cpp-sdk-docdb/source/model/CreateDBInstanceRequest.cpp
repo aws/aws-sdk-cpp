@@ -20,6 +20,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dBClusterIdentifierHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_enablePerformanceInsights(false),
@@ -75,6 +77,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_dBClusterIdentifierHasBeenSet)
   {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_promotionTierHasBeenSet)

@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() : 
     m_dBClusterIdentifierHasBeenSet(false),
+    m_restoreTypeHasBeenSet(false),
     m_sourceDBClusterIdentifierHasBeenSet(false),
     m_restoreToTimeHasBeenSet(false),
     m_useLatestRestorableTime(false),
@@ -35,6 +36,11 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_dBClusterIdentifierHasBeenSet)
   {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_restoreTypeHasBeenSet)
+  {
+    ss << "RestoreType=" << StringUtils::URLEncode(m_restoreType.c_str()) << "&";
   }
 
   if(m_sourceDBClusterIdentifierHasBeenSet)

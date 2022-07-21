@@ -512,6 +512,31 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
+
+    /**
      * <p>A value that specifies the order in which an Amazon DocumentDB replica is
      * promoted to the primary instance after a failure of the existing primary
      * instance.</p> <p>Default: 1</p> <p>Valid values: 0-15</p>
@@ -683,6 +708,9 @@ namespace Model
 
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
 
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;

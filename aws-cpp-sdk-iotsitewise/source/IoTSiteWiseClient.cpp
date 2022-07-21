@@ -31,6 +31,7 @@
 #include <aws/iotsitewise/model/CreateAccessPolicyRequest.h>
 #include <aws/iotsitewise/model/CreateAssetRequest.h>
 #include <aws/iotsitewise/model/CreateAssetModelRequest.h>
+#include <aws/iotsitewise/model/CreateBulkImportJobRequest.h>
 #include <aws/iotsitewise/model/CreateDashboardRequest.h>
 #include <aws/iotsitewise/model/CreateGatewayRequest.h>
 #include <aws/iotsitewise/model/CreatePortalRequest.h>
@@ -47,6 +48,7 @@
 #include <aws/iotsitewise/model/DescribeAssetRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetPropertyRequest.h>
+#include <aws/iotsitewise/model/DescribeBulkImportJobRequest.h>
 #include <aws/iotsitewise/model/DescribeDashboardRequest.h>
 #include <aws/iotsitewise/model/DescribeDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/DescribeGatewayRequest.h>
@@ -67,6 +69,7 @@
 #include <aws/iotsitewise/model/ListAssetRelationshipsRequest.h>
 #include <aws/iotsitewise/model/ListAssetsRequest.h>
 #include <aws/iotsitewise/model/ListAssociatedAssetsRequest.h>
+#include <aws/iotsitewise/model/ListBulkImportJobsRequest.h>
 #include <aws/iotsitewise/model/ListDashboardsRequest.h>
 #include <aws/iotsitewise/model/ListGatewaysRequest.h>
 #include <aws/iotsitewise/model/ListPortalsRequest.h>
@@ -579,6 +582,40 @@ void IoTSiteWiseClient::CreateAssetModelAsync(const CreateAssetModelRequest& req
 void IoTSiteWiseClient::CreateAssetModelAsyncHelper(const CreateAssetModelRequest& request, const CreateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateAssetModel(request), context);
+}
+
+CreateBulkImportJobOutcome IoTSiteWiseClient::CreateBulkImportJob(const CreateBulkImportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("data." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateBulkImportJob", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateBulkImportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/jobs");
+  return CreateBulkImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBulkImportJobOutcomeCallable IoTSiteWiseClient::CreateBulkImportJobCallable(const CreateBulkImportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBulkImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBulkImportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::CreateBulkImportJobAsync(const CreateBulkImportJobRequest& request, const CreateBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBulkImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::CreateBulkImportJobAsyncHelper(const CreateBulkImportJobRequest& request, const CreateBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBulkImportJob(request), context);
 }
 
 CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardRequest& request) const
@@ -1196,6 +1233,46 @@ void IoTSiteWiseClient::DescribeAssetPropertyAsync(const DescribeAssetPropertyRe
 void IoTSiteWiseClient::DescribeAssetPropertyAsyncHelper(const DescribeAssetPropertyRequest& request, const DescribeAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAssetProperty(request), context);
+}
+
+DescribeBulkImportJobOutcome IoTSiteWiseClient::DescribeBulkImportJob(const DescribeBulkImportJobRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBulkImportJob", "Required field: JobId, is not set");
+    return DescribeBulkImportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("data." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeBulkImportJob", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeBulkImportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  return DescribeBulkImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBulkImportJobOutcomeCallable IoTSiteWiseClient::DescribeBulkImportJobCallable(const DescribeBulkImportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBulkImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBulkImportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::DescribeBulkImportJobAsync(const DescribeBulkImportJobRequest& request, const DescribeBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBulkImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::DescribeBulkImportJobAsyncHelper(const DescribeBulkImportJobRequest& request, const DescribeBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBulkImportJob(request), context);
 }
 
 DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDashboardRequest& request) const
@@ -1999,6 +2076,40 @@ void IoTSiteWiseClient::ListAssociatedAssetsAsync(const ListAssociatedAssetsRequ
 void IoTSiteWiseClient::ListAssociatedAssetsAsyncHelper(const ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAssociatedAssets(request), context);
+}
+
+ListBulkImportJobsOutcome IoTSiteWiseClient::ListBulkImportJobs(const ListBulkImportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("data." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListBulkImportJobs", "Invalid DNS host: " << uri.GetAuthority());
+      return ListBulkImportJobsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/jobs");
+  return ListBulkImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBulkImportJobsOutcomeCallable IoTSiteWiseClient::ListBulkImportJobsCallable(const ListBulkImportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBulkImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBulkImportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::ListBulkImportJobsAsync(const ListBulkImportJobsRequest& request, const ListBulkImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBulkImportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::ListBulkImportJobsAsyncHelper(const ListBulkImportJobsRequest& request, const ListBulkImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBulkImportJobs(request), context);
 }
 
 ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequest& request) const

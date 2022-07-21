@@ -38,83 +38,83 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline void SetTargetGroupName(const Aws::String& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = value; }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline void SetTargetGroupName(Aws::String&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::move(value); }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline void SetTargetGroupName(const char* value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName.assign(value); }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithTargetGroupName(const Aws::String& value) { SetTargetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithTargetGroupName(Aws::String&& value) { SetTargetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
 
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
 

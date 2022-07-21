@@ -44,25 +44,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
-     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
     inline ScalingConfigurationInfo& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
