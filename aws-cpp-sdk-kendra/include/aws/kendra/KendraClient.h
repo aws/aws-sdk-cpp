@@ -524,14 +524,14 @@ namespace Model
          * document level access control without indexing all of your documents again. For
          * example, your index contains top-secret company documents that only certain
          * employees or users should access. One of these users leaves the company or
-         * switches to a team that should be blocked from access to top-secret documents.
-         * Your documents in your index still give this user access to top-secret documents
-         * due to the user having access at the time your documents were indexed. You can
-         * create a specific access control configuration for this user with deny access.
-         * You can later update the access control configuration to allow access in the
-         * case the user returns to the company and re-joins the 'top-secret' team. You can
-         * re-configure access control for your documents circumstances change.</p> <p>To
-         * apply your access control configuration to certain documents, you call the <a
+         * switches to a team that should be blocked from accessing top-secret documents.
+         * The user still has access to top-secret documents because the user had access
+         * when your documents were previously indexed. You can create a specific access
+         * control configuration for the user with deny access. You can later update the
+         * access control configuration to allow access if the user returns to the company
+         * and re-joins the 'top-secret' team. You can re-configure access control for your
+         * documents as circumstances change.</p> <p>To apply your access control
+         * configuration to certain documents, you call the <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>
          * API with the <code>AccessControlConfigurationId</code> included in the <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a>
@@ -1533,7 +1533,7 @@ namespace Model
          * <code>AccessControlConfigurationId</code> included in the <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a>
          * object. If you use an S3 bucket as a data source, you synchronize your data
-         * source to apply the the <code>AccessControlConfigurationId</code> in the
+         * source to apply the <code>AccessControlConfigurationId</code> in the
          * <code>.metadata.json</code> file. Amazon Kendra currently only supports access
          * control configuration for S3 data sources and documents indexed using the
          * <code>BatchPutDocument</code> API.</p><p><h3>See Also:</h3>   <a

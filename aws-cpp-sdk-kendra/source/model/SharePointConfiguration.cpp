@@ -34,7 +34,9 @@ SharePointConfiguration::SharePointConfiguration() :
     m_documentTitleFieldNameHasBeenSet(false),
     m_disableLocalGroups(false),
     m_disableLocalGroupsHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false)
+    m_sslCertificateS3PathHasBeenSet(false),
+    m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_documentTitleFieldNameHasBeenSet(false),
     m_disableLocalGroups(false),
     m_disableLocalGroupsHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false)
+    m_sslCertificateS3PathHasBeenSet(false),
+    m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +161,13 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_sslCertificateS3PathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = SharePointOnlineAuthenticationTypeMapper::GetSharePointOnlineAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +264,11 @@ JsonValue SharePointConfiguration::Jsonize() const
   {
    payload.WithObject("SslCertificateS3Path", m_sslCertificateS3Path.Jsonize());
 
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", SharePointOnlineAuthenticationTypeMapper::GetNameForSharePointOnlineAuthenticationType(m_authenticationType));
   }
 
   return payload;

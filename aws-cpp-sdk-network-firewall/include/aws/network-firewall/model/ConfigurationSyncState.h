@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     PENDING,
-    IN_SYNC
+    IN_SYNC,
+    CAPACITY_CONSTRAINED
   };
 
 namespace ConfigurationSyncStateMapper

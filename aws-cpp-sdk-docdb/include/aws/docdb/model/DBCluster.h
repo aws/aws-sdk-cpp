@@ -1329,6 +1329,47 @@ namespace Model
 
 
     /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline const Aws::String& GetCloneGroupId() const{ return m_cloneGroupId; }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline bool CloneGroupIdHasBeenSet() const { return m_cloneGroupIdHasBeenSet; }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline void SetCloneGroupId(const Aws::String& value) { m_cloneGroupIdHasBeenSet = true; m_cloneGroupId = value; }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline void SetCloneGroupId(Aws::String&& value) { m_cloneGroupIdHasBeenSet = true; m_cloneGroupId = std::move(value); }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline void SetCloneGroupId(const char* value) { m_cloneGroupIdHasBeenSet = true; m_cloneGroupId.assign(value); }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline DBCluster& WithCloneGroupId(const Aws::String& value) { SetCloneGroupId(value); return *this;}
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline DBCluster& WithCloneGroupId(Aws::String&& value) { SetCloneGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline DBCluster& WithCloneGroupId(const char* value) { SetCloneGroupId(value); return *this;}
+
+
+    /**
      * <p>Specifies the time when the cluster was created, in Universal Coordinated
      * Time (UTC).</p>
      */
@@ -1541,6 +1582,9 @@ namespace Model
 
     Aws::Vector<DBClusterRole> m_associatedRoles;
     bool m_associatedRolesHasBeenSet;
+
+    Aws::String m_cloneGroupId;
+    bool m_cloneGroupIdHasBeenSet;
 
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;

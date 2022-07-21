@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ONLINE_FRAUD_INSIGHTS,
-    TRANSACTION_FRAUD_INSIGHTS
+    TRANSACTION_FRAUD_INSIGHTS,
+    ACCOUNT_TAKEOVER_INSIGHTS
   };
 
 namespace ModelTypeEnumMapper

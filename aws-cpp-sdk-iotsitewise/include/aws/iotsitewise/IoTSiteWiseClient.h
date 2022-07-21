@@ -20,6 +20,7 @@
 #include <aws/iotsitewise/model/CreateAccessPolicyResult.h>
 #include <aws/iotsitewise/model/CreateAssetResult.h>
 #include <aws/iotsitewise/model/CreateAssetModelResult.h>
+#include <aws/iotsitewise/model/CreateBulkImportJobResult.h>
 #include <aws/iotsitewise/model/CreateDashboardResult.h>
 #include <aws/iotsitewise/model/CreateGatewayResult.h>
 #include <aws/iotsitewise/model/CreatePortalResult.h>
@@ -34,6 +35,7 @@
 #include <aws/iotsitewise/model/DescribeAssetResult.h>
 #include <aws/iotsitewise/model/DescribeAssetModelResult.h>
 #include <aws/iotsitewise/model/DescribeAssetPropertyResult.h>
+#include <aws/iotsitewise/model/DescribeBulkImportJobResult.h>
 #include <aws/iotsitewise/model/DescribeDashboardResult.h>
 #include <aws/iotsitewise/model/DescribeDefaultEncryptionConfigurationResult.h>
 #include <aws/iotsitewise/model/DescribeGatewayResult.h>
@@ -52,6 +54,7 @@
 #include <aws/iotsitewise/model/ListAssetRelationshipsResult.h>
 #include <aws/iotsitewise/model/ListAssetsResult.h>
 #include <aws/iotsitewise/model/ListAssociatedAssetsResult.h>
+#include <aws/iotsitewise/model/ListBulkImportJobsResult.h>
 #include <aws/iotsitewise/model/ListDashboardsResult.h>
 #include <aws/iotsitewise/model/ListGatewaysResult.h>
 #include <aws/iotsitewise/model/ListPortalsResult.h>
@@ -122,6 +125,7 @@ namespace Model
         class CreateAccessPolicyRequest;
         class CreateAssetRequest;
         class CreateAssetModelRequest;
+        class CreateBulkImportJobRequest;
         class CreateDashboardRequest;
         class CreateGatewayRequest;
         class CreatePortalRequest;
@@ -138,6 +142,7 @@ namespace Model
         class DescribeAssetRequest;
         class DescribeAssetModelRequest;
         class DescribeAssetPropertyRequest;
+        class DescribeBulkImportJobRequest;
         class DescribeDashboardRequest;
         class DescribeDefaultEncryptionConfigurationRequest;
         class DescribeGatewayRequest;
@@ -158,6 +163,7 @@ namespace Model
         class ListAssetRelationshipsRequest;
         class ListAssetsRequest;
         class ListAssociatedAssetsRequest;
+        class ListBulkImportJobsRequest;
         class ListDashboardsRequest;
         class ListGatewaysRequest;
         class ListPortalsRequest;
@@ -191,6 +197,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAccessPolicyResult, IoTSiteWiseError> CreateAccessPolicyOutcome;
         typedef Aws::Utils::Outcome<CreateAssetResult, IoTSiteWiseError> CreateAssetOutcome;
         typedef Aws::Utils::Outcome<CreateAssetModelResult, IoTSiteWiseError> CreateAssetModelOutcome;
+        typedef Aws::Utils::Outcome<CreateBulkImportJobResult, IoTSiteWiseError> CreateBulkImportJobOutcome;
         typedef Aws::Utils::Outcome<CreateDashboardResult, IoTSiteWiseError> CreateDashboardOutcome;
         typedef Aws::Utils::Outcome<CreateGatewayResult, IoTSiteWiseError> CreateGatewayOutcome;
         typedef Aws::Utils::Outcome<CreatePortalResult, IoTSiteWiseError> CreatePortalOutcome;
@@ -207,6 +214,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAssetResult, IoTSiteWiseError> DescribeAssetOutcome;
         typedef Aws::Utils::Outcome<DescribeAssetModelResult, IoTSiteWiseError> DescribeAssetModelOutcome;
         typedef Aws::Utils::Outcome<DescribeAssetPropertyResult, IoTSiteWiseError> DescribeAssetPropertyOutcome;
+        typedef Aws::Utils::Outcome<DescribeBulkImportJobResult, IoTSiteWiseError> DescribeBulkImportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeDashboardResult, IoTSiteWiseError> DescribeDashboardOutcome;
         typedef Aws::Utils::Outcome<DescribeDefaultEncryptionConfigurationResult, IoTSiteWiseError> DescribeDefaultEncryptionConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeGatewayResult, IoTSiteWiseError> DescribeGatewayOutcome;
@@ -227,6 +235,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAssetRelationshipsResult, IoTSiteWiseError> ListAssetRelationshipsOutcome;
         typedef Aws::Utils::Outcome<ListAssetsResult, IoTSiteWiseError> ListAssetsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedAssetsResult, IoTSiteWiseError> ListAssociatedAssetsOutcome;
+        typedef Aws::Utils::Outcome<ListBulkImportJobsResult, IoTSiteWiseError> ListBulkImportJobsOutcome;
         typedef Aws::Utils::Outcome<ListDashboardsResult, IoTSiteWiseError> ListDashboardsOutcome;
         typedef Aws::Utils::Outcome<ListGatewaysResult, IoTSiteWiseError> ListGatewaysOutcome;
         typedef Aws::Utils::Outcome<ListPortalsResult, IoTSiteWiseError> ListPortalsOutcome;
@@ -260,6 +269,7 @@ namespace Model
         typedef std::future<CreateAccessPolicyOutcome> CreateAccessPolicyOutcomeCallable;
         typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
         typedef std::future<CreateAssetModelOutcome> CreateAssetModelOutcomeCallable;
+        typedef std::future<CreateBulkImportJobOutcome> CreateBulkImportJobOutcomeCallable;
         typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
         typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
         typedef std::future<CreatePortalOutcome> CreatePortalOutcomeCallable;
@@ -276,6 +286,7 @@ namespace Model
         typedef std::future<DescribeAssetOutcome> DescribeAssetOutcomeCallable;
         typedef std::future<DescribeAssetModelOutcome> DescribeAssetModelOutcomeCallable;
         typedef std::future<DescribeAssetPropertyOutcome> DescribeAssetPropertyOutcomeCallable;
+        typedef std::future<DescribeBulkImportJobOutcome> DescribeBulkImportJobOutcomeCallable;
         typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
         typedef std::future<DescribeDefaultEncryptionConfigurationOutcome> DescribeDefaultEncryptionConfigurationOutcomeCallable;
         typedef std::future<DescribeGatewayOutcome> DescribeGatewayOutcomeCallable;
@@ -296,6 +307,7 @@ namespace Model
         typedef std::future<ListAssetRelationshipsOutcome> ListAssetRelationshipsOutcomeCallable;
         typedef std::future<ListAssetsOutcome> ListAssetsOutcomeCallable;
         typedef std::future<ListAssociatedAssetsOutcome> ListAssociatedAssetsOutcomeCallable;
+        typedef std::future<ListBulkImportJobsOutcome> ListBulkImportJobsOutcomeCallable;
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
         typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
         typedef std::future<ListPortalsOutcome> ListPortalsOutcomeCallable;
@@ -332,6 +344,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateAccessPolicyRequest&, const Model::CreateAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateAssetRequest&, const Model::CreateAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateAssetModelRequest&, const Model::CreateAssetModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetModelResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateBulkImportJobRequest&, const Model::CreateBulkImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBulkImportJobResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateDashboardRequest&, const Model::CreateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDashboardResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGatewayResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::CreatePortalRequest&, const Model::CreatePortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePortalResponseReceivedHandler;
@@ -348,6 +361,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetRequest&, const Model::DescribeAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetModelRequest&, const Model::DescribeAssetModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetModelResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetPropertyRequest&, const Model::DescribeAssetPropertyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetPropertyResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeBulkImportJobRequest&, const Model::DescribeBulkImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBulkImportJobResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeDashboardRequest&, const Model::DescribeDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeDefaultEncryptionConfigurationRequest&, const Model::DescribeDefaultEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDefaultEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeGatewayRequest&, const Model::DescribeGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGatewayResponseReceivedHandler;
@@ -368,6 +382,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetRelationshipsRequest&, const Model::ListAssetRelationshipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetRelationshipsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetsRequest&, const Model::ListAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssociatedAssetsRequest&, const Model::ListAssociatedAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAssetsResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::ListBulkImportJobsRequest&, const Model::ListBulkImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBulkImportJobsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListPortalsRequest&, const Model::ListPortalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPortalsResponseReceivedHandler;
@@ -667,6 +682,33 @@ namespace Model
          * An Async wrapper for CreateAssetModel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAssetModelAsync(const Model::CreateAssetModelRequest& request, const CreateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         *  <p>This API operation is in preview release for IoT SiteWise and is
+         * subject to change. We recommend that you use this operation only with test data,
+         * and not in production environments.</p>  <p>Defines a job to ingest data
+         * to IoT SiteWise from Amazon S3. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create
+         * a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p>  <p>You must enable IoT SiteWise to export data to
+         * Amazon S3 before you create a bulk import job. For more information about how to
+         * configure storage settings, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBulkImportJobOutcome CreateBulkImportJob(const Model::CreateBulkImportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateBulkImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBulkImportJobOutcomeCallable CreateBulkImportJobCallable(const Model::CreateBulkImportJobRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateBulkImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBulkImportJobAsync(const Model::CreateBulkImportJobRequest& request, const CreateBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a dashboard in an IoT SiteWise Monitor project.</p><p><h3>See
@@ -986,6 +1028,29 @@ namespace Model
          * An Async wrapper for DescribeAssetProperty that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAssetPropertyAsync(const Model::DescribeAssetPropertyRequest& request, const DescribeAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         *  <p>This API operation is in preview release for IoT SiteWise and is
+         * subject to change. We recommend that you use this operation only with test data,
+         * and not in production environments.</p>  <p>Retrieves information about a
+         * bulk import job request. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe
+         * a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBulkImportJobOutcome DescribeBulkImportJob(const Model::DescribeBulkImportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBulkImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBulkImportJobOutcomeCallable DescribeBulkImportJobCallable(const Model::DescribeBulkImportJobRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeBulkImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBulkImportJobAsync(const Model::DescribeBulkImportJobRequest& request, const DescribeBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a dashboard.</p><p><h3>See Also:</h3>   <a
@@ -1405,6 +1470,29 @@ namespace Model
         virtual void ListAssociatedAssetsAsync(const Model::ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>This API operation is in preview release for IoT SiteWise and is
+         * subject to change. We recommend that you use this operation only with test data,
+         * and not in production environments.</p>  <p>Retrieves a paginated list of
+         * bulk import job requests. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List
+         * bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBulkImportJobsOutcome ListBulkImportJobs(const Model::ListBulkImportJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBulkImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBulkImportJobsOutcomeCallable ListBulkImportJobsCallable(const Model::ListBulkImportJobsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListBulkImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBulkImportJobsAsync(const Model::ListBulkImportJobsRequest& request, const ListBulkImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a paginated list of dashboards for an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">AWS
@@ -1818,6 +1906,7 @@ namespace Model
         void CreateAccessPolicyAsyncHelper(const Model::CreateAccessPolicyRequest& request, const CreateAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssetAsyncHelper(const Model::CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssetModelAsyncHelper(const Model::CreateAssetModelRequest& request, const CreateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBulkImportJobAsyncHelper(const Model::CreateBulkImportJobRequest& request, const CreateBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDashboardAsyncHelper(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGatewayAsyncHelper(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePortalAsyncHelper(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1834,6 +1923,7 @@ namespace Model
         void DescribeAssetAsyncHelper(const Model::DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAssetModelAsyncHelper(const Model::DescribeAssetModelRequest& request, const DescribeAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAssetPropertyAsyncHelper(const Model::DescribeAssetPropertyRequest& request, const DescribeAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBulkImportJobAsyncHelper(const Model::DescribeBulkImportJobRequest& request, const DescribeBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDashboardAsyncHelper(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDefaultEncryptionConfigurationAsyncHelper(const Model::DescribeDefaultEncryptionConfigurationRequest& request, const DescribeDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGatewayAsyncHelper(const Model::DescribeGatewayRequest& request, const DescribeGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1854,6 +1944,7 @@ namespace Model
         void ListAssetRelationshipsAsyncHelper(const Model::ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssetsAsyncHelper(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedAssetsAsyncHelper(const Model::ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBulkImportJobsAsyncHelper(const Model::ListBulkImportJobsRequest& request, const ListBulkImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGatewaysAsyncHelper(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPortalsAsyncHelper(const Model::ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

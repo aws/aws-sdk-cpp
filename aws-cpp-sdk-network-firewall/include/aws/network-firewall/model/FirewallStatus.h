@@ -8,6 +8,7 @@
 #include <aws/network-firewall/model/FirewallStatusValue.h>
 #include <aws/network-firewall/model/ConfigurationSyncState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/network-firewall/model/CapacityUsageSummary.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/model/SyncState.h>
 #include <utility>
@@ -297,6 +298,55 @@ namespace Model
      */
     inline FirewallStatus& AddSyncStates(const char* key, const SyncState& value) { m_syncStatesHasBeenSet = true; m_syncStates.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Describes the capacity usage of the resources contained in a firewall's
+     * reference sets. Network Firewall calclulates the capacity usage by taking an
+     * aggregated count of all of the resources used by all of the reference sets in a
+     * firewall.</p>
+     */
+    inline const CapacityUsageSummary& GetCapacityUsageSummary() const{ return m_capacityUsageSummary; }
+
+    /**
+     * <p>Describes the capacity usage of the resources contained in a firewall's
+     * reference sets. Network Firewall calclulates the capacity usage by taking an
+     * aggregated count of all of the resources used by all of the reference sets in a
+     * firewall.</p>
+     */
+    inline bool CapacityUsageSummaryHasBeenSet() const { return m_capacityUsageSummaryHasBeenSet; }
+
+    /**
+     * <p>Describes the capacity usage of the resources contained in a firewall's
+     * reference sets. Network Firewall calclulates the capacity usage by taking an
+     * aggregated count of all of the resources used by all of the reference sets in a
+     * firewall.</p>
+     */
+    inline void SetCapacityUsageSummary(const CapacityUsageSummary& value) { m_capacityUsageSummaryHasBeenSet = true; m_capacityUsageSummary = value; }
+
+    /**
+     * <p>Describes the capacity usage of the resources contained in a firewall's
+     * reference sets. Network Firewall calclulates the capacity usage by taking an
+     * aggregated count of all of the resources used by all of the reference sets in a
+     * firewall.</p>
+     */
+    inline void SetCapacityUsageSummary(CapacityUsageSummary&& value) { m_capacityUsageSummaryHasBeenSet = true; m_capacityUsageSummary = std::move(value); }
+
+    /**
+     * <p>Describes the capacity usage of the resources contained in a firewall's
+     * reference sets. Network Firewall calclulates the capacity usage by taking an
+     * aggregated count of all of the resources used by all of the reference sets in a
+     * firewall.</p>
+     */
+    inline FirewallStatus& WithCapacityUsageSummary(const CapacityUsageSummary& value) { SetCapacityUsageSummary(value); return *this;}
+
+    /**
+     * <p>Describes the capacity usage of the resources contained in a firewall's
+     * reference sets. Network Firewall calclulates the capacity usage by taking an
+     * aggregated count of all of the resources used by all of the reference sets in a
+     * firewall.</p>
+     */
+    inline FirewallStatus& WithCapacityUsageSummary(CapacityUsageSummary&& value) { SetCapacityUsageSummary(std::move(value)); return *this;}
+
   private:
 
     FirewallStatusValue m_status;
@@ -307,6 +357,9 @@ namespace Model
 
     Aws::Map<Aws::String, SyncState> m_syncStates;
     bool m_syncStatesHasBeenSet;
+
+    CapacityUsageSummary m_capacityUsageSummary;
+    bool m_capacityUsageSummaryHasBeenSet;
   };
 
 } // namespace Model

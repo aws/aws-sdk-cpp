@@ -28,6 +28,7 @@
 #include <aws/athena/model/GetPreparedStatementResult.h>
 #include <aws/athena/model/GetQueryExecutionResult.h>
 #include <aws/athena/model/GetQueryResultsResult.h>
+#include <aws/athena/model/GetQueryRuntimeStatisticsResult.h>
 #include <aws/athena/model/GetTableMetadataResult.h>
 #include <aws/athena/model/GetWorkGroupResult.h>
 #include <aws/athena/model/ListDataCatalogsResult.h>
@@ -103,6 +104,7 @@ namespace Model
         class GetPreparedStatementRequest;
         class GetQueryExecutionRequest;
         class GetQueryResultsRequest;
+        class GetQueryRuntimeStatisticsRequest;
         class GetTableMetadataRequest;
         class GetWorkGroupRequest;
         class ListDataCatalogsRequest;
@@ -140,6 +142,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPreparedStatementResult, Aws::Athena::AthenaError> GetPreparedStatementOutcome;
         typedef Aws::Utils::Outcome<GetQueryExecutionResult, Aws::Athena::AthenaError> GetQueryExecutionOutcome;
         typedef Aws::Utils::Outcome<GetQueryResultsResult, Aws::Athena::AthenaError> GetQueryResultsOutcome;
+        typedef Aws::Utils::Outcome<GetQueryRuntimeStatisticsResult, Aws::Athena::AthenaError> GetQueryRuntimeStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetTableMetadataResult, Aws::Athena::AthenaError> GetTableMetadataOutcome;
         typedef Aws::Utils::Outcome<GetWorkGroupResult, Aws::Athena::AthenaError> GetWorkGroupOutcome;
         typedef Aws::Utils::Outcome<ListDataCatalogsResult, Aws::Athena::AthenaError> ListDataCatalogsOutcome;
@@ -177,6 +180,7 @@ namespace Model
         typedef std::future<GetPreparedStatementOutcome> GetPreparedStatementOutcomeCallable;
         typedef std::future<GetQueryExecutionOutcome> GetQueryExecutionOutcomeCallable;
         typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
+        typedef std::future<GetQueryRuntimeStatisticsOutcome> GetQueryRuntimeStatisticsOutcomeCallable;
         typedef std::future<GetTableMetadataOutcome> GetTableMetadataOutcomeCallable;
         typedef std::future<GetWorkGroupOutcome> GetWorkGroupOutcomeCallable;
         typedef std::future<ListDataCatalogsOutcome> ListDataCatalogsOutcomeCallable;
@@ -217,6 +221,7 @@ namespace Model
     typedef std::function<void(const AthenaClient*, const Model::GetPreparedStatementRequest&, const Model::GetPreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetQueryExecutionRequest&, const Model::GetQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::GetQueryRuntimeStatisticsRequest&, const Model::GetQueryRuntimeStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryRuntimeStatisticsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetTableMetadataRequest&, const Model::GetTableMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableMetadataResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetWorkGroupRequest&, const Model::GetWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkGroupResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListDataCatalogsRequest&, const Model::ListDataCatalogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataCatalogsResponseReceivedHandler;
@@ -628,6 +633,27 @@ namespace Model
         virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns query execution runtime statistics related to a single execution of a
+         * query if you have access to the workgroup in which the query ran. The query
+         * execution runtime statistics is returned only when
+         * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueryRuntimeStatisticsOutcome GetQueryRuntimeStatistics(const Model::GetQueryRuntimeStatisticsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetQueryRuntimeStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetQueryRuntimeStatisticsOutcomeCallable GetQueryRuntimeStatisticsCallable(const Model::GetQueryRuntimeStatisticsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetQueryRuntimeStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetQueryRuntimeStatisticsAsync(const Model::GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns table metadata for the specified catalog, database, and
          * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">AWS
@@ -1021,6 +1047,7 @@ namespace Model
         void GetPreparedStatementAsyncHelper(const Model::GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQueryExecutionAsyncHelper(const Model::GetQueryExecutionRequest& request, const GetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQueryResultsAsyncHelper(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetQueryRuntimeStatisticsAsyncHelper(const Model::GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTableMetadataAsyncHelper(const Model::GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWorkGroupAsyncHelper(const Model::GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataCatalogsAsyncHelper(const Model::ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

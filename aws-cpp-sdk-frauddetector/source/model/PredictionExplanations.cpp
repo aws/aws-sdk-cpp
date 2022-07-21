@@ -19,12 +19,14 @@ namespace Model
 {
 
 PredictionExplanations::PredictionExplanations() : 
-    m_variableImpactExplanationsHasBeenSet(false)
+    m_variableImpactExplanationsHasBeenSet(false),
+    m_aggregatedVariablesImpactExplanationsHasBeenSet(false)
 {
 }
 
 PredictionExplanations::PredictionExplanations(JsonView jsonValue) : 
-    m_variableImpactExplanationsHasBeenSet(false)
+    m_variableImpactExplanationsHasBeenSet(false),
+    m_aggregatedVariablesImpactExplanationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ PredictionExplanations& PredictionExplanations::operator =(JsonView jsonValue)
       m_variableImpactExplanations.push_back(variableImpactExplanationsJsonList[variableImpactExplanationsIndex].AsObject());
     }
     m_variableImpactExplanationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("aggregatedVariablesImpactExplanations"))
+  {
+    Array<JsonView> aggregatedVariablesImpactExplanationsJsonList = jsonValue.GetArray("aggregatedVariablesImpactExplanations");
+    for(unsigned aggregatedVariablesImpactExplanationsIndex = 0; aggregatedVariablesImpactExplanationsIndex < aggregatedVariablesImpactExplanationsJsonList.GetLength(); ++aggregatedVariablesImpactExplanationsIndex)
+    {
+      m_aggregatedVariablesImpactExplanations.push_back(aggregatedVariablesImpactExplanationsJsonList[aggregatedVariablesImpactExplanationsIndex].AsObject());
+    }
+    m_aggregatedVariablesImpactExplanationsHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue PredictionExplanations::Jsonize() const
      variableImpactExplanationsJsonList[variableImpactExplanationsIndex].AsObject(m_variableImpactExplanations[variableImpactExplanationsIndex].Jsonize());
    }
    payload.WithArray("variableImpactExplanations", std::move(variableImpactExplanationsJsonList));
+
+  }
+
+  if(m_aggregatedVariablesImpactExplanationsHasBeenSet)
+  {
+   Array<JsonValue> aggregatedVariablesImpactExplanationsJsonList(m_aggregatedVariablesImpactExplanations.size());
+   for(unsigned aggregatedVariablesImpactExplanationsIndex = 0; aggregatedVariablesImpactExplanationsIndex < aggregatedVariablesImpactExplanationsJsonList.GetLength(); ++aggregatedVariablesImpactExplanationsIndex)
+   {
+     aggregatedVariablesImpactExplanationsJsonList[aggregatedVariablesImpactExplanationsIndex].AsObject(m_aggregatedVariablesImpactExplanations[aggregatedVariablesImpactExplanationsIndex].Jsonize());
+   }
+   payload.WithArray("aggregatedVariablesImpactExplanations", std::move(aggregatedVariablesImpactExplanationsJsonList));
 
   }
 

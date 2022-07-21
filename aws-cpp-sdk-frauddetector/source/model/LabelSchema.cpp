@@ -40,14 +40,14 @@ LabelSchema& LabelSchema::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> labelMapperJsonMap = jsonValue.GetObject("labelMapper").GetAllObjects();
     for(auto& labelMapperItem : labelMapperJsonMap)
     {
-      Array<JsonView> nonEmptyListOfStringsJsonList = labelMapperItem.second.AsArray();
-      Aws::Vector<Aws::String> nonEmptyListOfStringsList;
-      nonEmptyListOfStringsList.reserve((size_t)nonEmptyListOfStringsJsonList.GetLength());
-      for(unsigned nonEmptyListOfStringsIndex = 0; nonEmptyListOfStringsIndex < nonEmptyListOfStringsJsonList.GetLength(); ++nonEmptyListOfStringsIndex)
+      Array<JsonView> listOfStringsJsonList = labelMapperItem.second.AsArray();
+      Aws::Vector<Aws::String> listOfStringsList;
+      listOfStringsList.reserve((size_t)listOfStringsJsonList.GetLength());
+      for(unsigned listOfStringsIndex = 0; listOfStringsIndex < listOfStringsJsonList.GetLength(); ++listOfStringsIndex)
       {
-        nonEmptyListOfStringsList.push_back(nonEmptyListOfStringsJsonList[nonEmptyListOfStringsIndex].AsString());
+        listOfStringsList.push_back(listOfStringsJsonList[listOfStringsIndex].AsString());
       }
-      m_labelMapper[labelMapperItem.first] = std::move(nonEmptyListOfStringsList);
+      m_labelMapper[labelMapperItem.first] = std::move(listOfStringsList);
     }
     m_labelMapperHasBeenSet = true;
   }
@@ -71,12 +71,12 @@ JsonValue LabelSchema::Jsonize() const
    JsonValue labelMapperJsonMap;
    for(auto& labelMapperItem : m_labelMapper)
    {
-     Array<JsonValue> nonEmptyListOfStringsJsonList(labelMapperItem.second.size());
-     for(unsigned nonEmptyListOfStringsIndex = 0; nonEmptyListOfStringsIndex < nonEmptyListOfStringsJsonList.GetLength(); ++nonEmptyListOfStringsIndex)
+     Array<JsonValue> listOfStringsJsonList(labelMapperItem.second.size());
+     for(unsigned listOfStringsIndex = 0; listOfStringsIndex < listOfStringsJsonList.GetLength(); ++listOfStringsIndex)
      {
-       nonEmptyListOfStringsJsonList[nonEmptyListOfStringsIndex].AsString(labelMapperItem.second[nonEmptyListOfStringsIndex]);
+       listOfStringsJsonList[listOfStringsIndex].AsString(labelMapperItem.second[listOfStringsIndex]);
      }
-     labelMapperJsonMap.WithArray(labelMapperItem.first, std::move(nonEmptyListOfStringsJsonList));
+     labelMapperJsonMap.WithArray(labelMapperItem.first, std::move(listOfStringsJsonList));
    }
    payload.WithObject("labelMapper", std::move(labelMapperJsonMap));
 

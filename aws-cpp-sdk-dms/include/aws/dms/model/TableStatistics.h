@@ -401,56 +401,56 @@ namespace Model
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline const Aws::String& GetTableState() const{ return m_tableState; }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline bool TableStateHasBeenSet() const { return m_tableStateHasBeenSet; }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline void SetTableState(const Aws::String& value) { m_tableStateHasBeenSet = true; m_tableState = value; }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline void SetTableState(Aws::String&& value) { m_tableStateHasBeenSet = true; m_tableState = std::move(value); }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline void SetTableState(const char* value) { m_tableStateHasBeenSet = true; m_tableState.assign(value); }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline TableStatistics& WithTableState(const Aws::String& value) { SetTableState(value); return *this;}
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline TableStatistics& WithTableState(Aws::String&& value) { SetTableState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline TableStatistics& WithTableState(const char* value) { SetTableState(value); return *this;}
 

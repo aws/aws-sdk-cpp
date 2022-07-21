@@ -801,6 +801,137 @@ namespace Model
      */
     inline PutCompositeAlarmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline const Aws::String& GetActionsSuppressor() const{ return m_actionsSuppressor; }
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline bool ActionsSuppressorHasBeenSet() const { return m_actionsSuppressorHasBeenSet; }
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline void SetActionsSuppressor(const Aws::String& value) { m_actionsSuppressorHasBeenSet = true; m_actionsSuppressor = value; }
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline void SetActionsSuppressor(Aws::String&& value) { m_actionsSuppressorHasBeenSet = true; m_actionsSuppressor = std::move(value); }
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline void SetActionsSuppressor(const char* value) { m_actionsSuppressorHasBeenSet = true; m_actionsSuppressor.assign(value); }
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline PutCompositeAlarmRequest& WithActionsSuppressor(const Aws::String& value) { SetActionsSuppressor(value); return *this;}
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline PutCompositeAlarmRequest& WithActionsSuppressor(Aws::String&& value) { SetActionsSuppressor(std::move(value)); return *this;}
+
+    /**
+     * <p> Actions will be suppressed if the suppressor alarm is in the
+     * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
+     * an Amazon Resource Name (ARN) from an existing alarm. </p>
+     */
+    inline PutCompositeAlarmRequest& WithActionsSuppressor(const char* value) { SetActionsSuppressor(value); return *this;}
+
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits for the
+     * suppressor alarm to go into the <code>ALARM</code> state. After this time, the
+     * composite alarm performs its actions. </p>  <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is
+     * specified. </p> 
+     */
+    inline int GetActionsSuppressorWaitPeriod() const{ return m_actionsSuppressorWaitPeriod; }
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits for the
+     * suppressor alarm to go into the <code>ALARM</code> state. After this time, the
+     * composite alarm performs its actions. </p>  <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is
+     * specified. </p> 
+     */
+    inline bool ActionsSuppressorWaitPeriodHasBeenSet() const { return m_actionsSuppressorWaitPeriodHasBeenSet; }
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits for the
+     * suppressor alarm to go into the <code>ALARM</code> state. After this time, the
+     * composite alarm performs its actions. </p>  <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is
+     * specified. </p> 
+     */
+    inline void SetActionsSuppressorWaitPeriod(int value) { m_actionsSuppressorWaitPeriodHasBeenSet = true; m_actionsSuppressorWaitPeriod = value; }
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits for the
+     * suppressor alarm to go into the <code>ALARM</code> state. After this time, the
+     * composite alarm performs its actions. </p>  <p>
+     * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is
+     * specified. </p> 
+     */
+    inline PutCompositeAlarmRequest& WithActionsSuppressorWaitPeriod(int value) { SetActionsSuppressorWaitPeriod(value); return *this;}
+
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits after suppressor
+     * alarm goes out of the <code>ALARM</code> state. After this time, the composite
+     * alarm performs its actions. </p>  <p> <code>ExtensionPeriod</code> is
+     * required only when <code>ActionsSuppressor</code> is specified. </p>
+     * 
+     */
+    inline int GetActionsSuppressorExtensionPeriod() const{ return m_actionsSuppressorExtensionPeriod; }
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits after suppressor
+     * alarm goes out of the <code>ALARM</code> state. After this time, the composite
+     * alarm performs its actions. </p>  <p> <code>ExtensionPeriod</code> is
+     * required only when <code>ActionsSuppressor</code> is specified. </p>
+     * 
+     */
+    inline bool ActionsSuppressorExtensionPeriodHasBeenSet() const { return m_actionsSuppressorExtensionPeriodHasBeenSet; }
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits after suppressor
+     * alarm goes out of the <code>ALARM</code> state. After this time, the composite
+     * alarm performs its actions. </p>  <p> <code>ExtensionPeriod</code> is
+     * required only when <code>ActionsSuppressor</code> is specified. </p>
+     * 
+     */
+    inline void SetActionsSuppressorExtensionPeriod(int value) { m_actionsSuppressorExtensionPeriodHasBeenSet = true; m_actionsSuppressorExtensionPeriod = value; }
+
+    /**
+     * <p> The maximum time in seconds that the composite alarm waits after suppressor
+     * alarm goes out of the <code>ALARM</code> state. After this time, the composite
+     * alarm performs its actions. </p>  <p> <code>ExtensionPeriod</code> is
+     * required only when <code>ActionsSuppressor</code> is specified. </p>
+     * 
+     */
+    inline PutCompositeAlarmRequest& WithActionsSuppressorExtensionPeriod(int value) { SetActionsSuppressorExtensionPeriod(value); return *this;}
+
   private:
 
     bool m_actionsEnabled;
@@ -826,6 +957,15 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_actionsSuppressor;
+    bool m_actionsSuppressorHasBeenSet;
+
+    int m_actionsSuppressorWaitPeriod;
+    bool m_actionsSuppressorWaitPeriodHasBeenSet;
+
+    int m_actionsSuppressorExtensionPeriod;
+    bool m_actionsSuppressorExtensionPeriodHasBeenSet;
   };
 
 } // namespace Model

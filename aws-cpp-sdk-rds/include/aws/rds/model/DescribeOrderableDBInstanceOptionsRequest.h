@@ -469,7 +469,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -478,7 +478,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -487,7 +487,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -496,7 +496,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 100.</p>
+     * 10000.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

@@ -216,32 +216,32 @@ namespace Model
 
 
     /**
-     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
      */
     inline const ModelEndpointStatus& GetModelEndpointStatus() const{ return m_modelEndpointStatus; }
 
     /**
-     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
      */
     inline bool ModelEndpointStatusHasBeenSet() const { return m_modelEndpointStatusHasBeenSet; }
 
     /**
-     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
      */
     inline void SetModelEndpointStatus(const ModelEndpointStatus& value) { m_modelEndpointStatusHasBeenSet = true; m_modelEndpointStatus = value; }
 
     /**
-     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
      */
     inline void SetModelEndpointStatus(ModelEndpointStatus&& value) { m_modelEndpointStatusHasBeenSet = true; m_modelEndpointStatus = std::move(value); }
 
     /**
-     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
      */
     inline PutExternalModelRequest& WithModelEndpointStatus(const ModelEndpointStatus& value) { SetModelEndpointStatus(value); return *this;}
 
     /**
-     * <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+     * <p>The model endpoint��s status in Amazon Fraud Detector.</p>
      */
     inline PutExternalModelRequest& WithModelEndpointStatus(ModelEndpointStatus&& value) { SetModelEndpointStatus(std::move(value)); return *this;}
 

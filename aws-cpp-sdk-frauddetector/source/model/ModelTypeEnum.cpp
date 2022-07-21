@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ONLINE_FRAUD_INSIGHTS_HASH = HashingUtils::HashString("ONLINE_FRAUD_INSIGHTS");
         static const int TRANSACTION_FRAUD_INSIGHTS_HASH = HashingUtils::HashString("TRANSACTION_FRAUD_INSIGHTS");
+        static const int ACCOUNT_TAKEOVER_INSIGHTS_HASH = HashingUtils::HashString("ACCOUNT_TAKEOVER_INSIGHTS");
 
 
         ModelTypeEnum GetModelTypeEnumForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == TRANSACTION_FRAUD_INSIGHTS_HASH)
           {
             return ModelTypeEnum::TRANSACTION_FRAUD_INSIGHTS;
+          }
+          else if (hashCode == ACCOUNT_TAKEOVER_INSIGHTS_HASH)
+          {
+            return ModelTypeEnum::ACCOUNT_TAKEOVER_INSIGHTS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ONLINE_FRAUD_INSIGHTS";
           case ModelTypeEnum::TRANSACTION_FRAUD_INSIGHTS:
             return "TRANSACTION_FRAUD_INSIGHTS";
+          case ModelTypeEnum::ACCOUNT_TAKEOVER_INSIGHTS:
+            return "ACCOUNT_TAKEOVER_INSIGHTS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

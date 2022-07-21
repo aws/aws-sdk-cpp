@@ -23,6 +23,7 @@ static const int E_C2_INSTANCE_STATE_INVALID_HASH = HashingUtils::HashString("EC
 static const int SERIAL_CONSOLE_SESSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SerialConsoleSessionLimitExceededException");
 static const int SERIAL_CONSOLE_SESSION_UNAVAILABLE_HASH = HashingUtils::HashString("SerialConsoleSessionUnavailableException");
 static const int SERIAL_CONSOLE_ACCESS_DISABLED_HASH = HashingUtils::HashString("SerialConsoleAccessDisabledException");
+static const int E_C2_INSTANCE_UNAVAILABLE_HASH = HashingUtils::HashString("EC2InstanceUnavailableException");
 static const int E_C2_INSTANCE_TYPE_INVALID_HASH = HashingUtils::HashString("EC2InstanceTypeInvalidException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int AUTH_HASH = HashingUtils::HashString("AuthException");
@@ -52,6 +53,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SERIAL_CONSOLE_ACCESS_DISABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EC2InstanceConnectErrors::SERIAL_CONSOLE_ACCESS_DISABLED), false);
+  }
+  else if (hashCode == E_C2_INSTANCE_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EC2InstanceConnectErrors::E_C2_INSTANCE_UNAVAILABLE), false);
   }
   else if (hashCode == E_C2_INSTANCE_TYPE_INVALID_HASH)
   {
