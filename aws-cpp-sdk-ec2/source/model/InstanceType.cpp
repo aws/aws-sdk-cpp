@@ -545,6 +545,7 @@ namespace Aws
         static const int c7g_8xlarge_HASH = HashingUtils::HashString("c7g.8xlarge");
         static const int c7g_12xlarge_HASH = HashingUtils::HashString("c7g.12xlarge");
         static const int c7g_16xlarge_HASH = HashingUtils::HashString("c7g.16xlarge");
+        static const int mac2_metal_HASH = HashingUtils::HashString("mac2.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3194,6 +3195,11 @@ namespace Aws
             enumValue = InstanceType::c7g_16xlarge;
             return true;
           }
+          else if (hashCode == mac2_metal_HASH)
+          {
+            enumValue = InstanceType::mac2_metal;
+            return true;
+          }
           return false;
         }
 
@@ -4807,6 +4813,9 @@ namespace Aws
             return true;
           case InstanceType::c7g_16xlarge:
             value = "c7g.16xlarge";
+            return true;
+          case InstanceType::mac2_metal:
+            value = "mac2.metal";
             return true;
           default:
             return false;

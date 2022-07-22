@@ -108,6 +108,7 @@
 #include <aws/rds/model/FailoverDBClusterRequest.h>
 #include <aws/rds/model/FailoverGlobalClusterRequest.h>
 #include <aws/rds/model/ListTagsForResourceRequest.h>
+#include <aws/rds/model/ModifyActivityStreamRequest.h>
 #include <aws/rds/model/ModifyCertificatesRequest.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityRequest.h>
 #include <aws/rds/model/ModifyCustomDBEngineVersionRequest.h>
@@ -2375,6 +2376,30 @@ void RDSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& reque
 void RDSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ModifyActivityStreamOutcome RDSClient::ModifyActivityStream(const ModifyActivityStreamRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyActivityStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyActivityStreamOutcomeCallable RDSClient::ModifyActivityStreamCallable(const ModifyActivityStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyActivityStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyActivityStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::ModifyActivityStreamAsync(const ModifyActivityStreamRequest& request, const ModifyActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyActivityStreamAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::ModifyActivityStreamAsyncHelper(const ModifyActivityStreamRequest& request, const ModifyActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyActivityStream(request), context);
 }
 
 ModifyCertificatesOutcome RDSClient::ModifyCertificates(const ModifyCertificatesRequest& request) const

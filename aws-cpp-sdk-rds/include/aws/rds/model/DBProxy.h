@@ -189,72 +189,72 @@ namespace Model
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline const Aws::String& GetEngineFamily() const{ return m_engineFamily; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline bool EngineFamilyHasBeenSet() const { return m_engineFamilyHasBeenSet; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline void SetEngineFamily(const Aws::String& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline void SetEngineFamily(Aws::String&& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = std::move(value); }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline void SetEngineFamily(const char* value) { m_engineFamilyHasBeenSet = true; m_engineFamily.assign(value); }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline DBProxy& WithEngineFamily(const Aws::String& value) { SetEngineFamily(value); return *this;}
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline DBProxy& WithEngineFamily(Aws::String&& value) { SetEngineFamily(std::move(value)); return *this;}
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
-     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
-     * Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL and
+     * RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+     * RDS for PostgreSQL databases.</p>
      */
     inline DBProxy& WithEngineFamily(const char* value) { SetEngineFamily(value); return *this;}
 

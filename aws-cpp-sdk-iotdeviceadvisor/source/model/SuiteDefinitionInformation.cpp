@@ -24,6 +24,10 @@ SuiteDefinitionInformation::SuiteDefinitionInformation() :
     m_defaultDevicesHasBeenSet(false),
     m_intendedForQualification(false),
     m_intendedForQualificationHasBeenSet(false),
+    m_isLongDurationTest(false),
+    m_isLongDurationTestHasBeenSet(false),
+    m_protocol(Protocol::NOT_SET),
+    m_protocolHasBeenSet(false),
     m_createdAtHasBeenSet(false)
 {
 }
@@ -34,6 +38,10 @@ SuiteDefinitionInformation::SuiteDefinitionInformation(JsonView jsonValue) :
     m_defaultDevicesHasBeenSet(false),
     m_intendedForQualification(false),
     m_intendedForQualificationHasBeenSet(false),
+    m_isLongDurationTest(false),
+    m_isLongDurationTestHasBeenSet(false),
+    m_protocol(Protocol::NOT_SET),
+    m_protocolHasBeenSet(false),
     m_createdAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -70,6 +78,20 @@ SuiteDefinitionInformation& SuiteDefinitionInformation::operator =(JsonView json
     m_intendedForQualification = jsonValue.GetBool("intendedForQualification");
 
     m_intendedForQualificationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isLongDurationTest"))
+  {
+    m_isLongDurationTest = jsonValue.GetBool("isLongDurationTest");
+
+    m_isLongDurationTestHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("protocol"))
+  {
+    m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
+
+    m_protocolHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -113,6 +135,17 @@ JsonValue SuiteDefinitionInformation::Jsonize() const
   {
    payload.WithBool("intendedForQualification", m_intendedForQualification);
 
+  }
+
+  if(m_isLongDurationTestHasBeenSet)
+  {
+   payload.WithBool("isLongDurationTest", m_isLongDurationTest);
+
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
   }
 
   if(m_createdAtHasBeenSet)

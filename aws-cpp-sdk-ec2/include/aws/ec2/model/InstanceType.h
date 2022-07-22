@@ -540,7 +540,8 @@ namespace Model
     c7g_4xlarge,
     c7g_8xlarge,
     c7g_12xlarge,
-    c7g_16xlarge
+    c7g_16xlarge,
+    mac2_metal
   };
 
 namespace InstanceTypeMapper

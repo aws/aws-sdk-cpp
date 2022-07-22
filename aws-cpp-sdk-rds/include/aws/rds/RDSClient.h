@@ -92,6 +92,7 @@
 #include <aws/rds/model/FailoverDBClusterResult.h>
 #include <aws/rds/model/FailoverGlobalClusterResult.h>
 #include <aws/rds/model/ListTagsForResourceResult.h>
+#include <aws/rds/model/ModifyActivityStreamResult.h>
 #include <aws/rds/model/ModifyCertificatesResult.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityResult.h>
 #include <aws/rds/model/ModifyCustomDBEngineVersionResult.h>
@@ -268,6 +269,7 @@ namespace Aws
         class FailoverDBClusterRequest;
         class FailoverGlobalClusterRequest;
         class ListTagsForResourceRequest;
+        class ModifyActivityStreamRequest;
         class ModifyCertificatesRequest;
         class ModifyCurrentDBClusterCapacityRequest;
         class ModifyCustomDBEngineVersionRequest;
@@ -404,6 +406,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<FailoverDBClusterResult, RDSError> FailoverDBClusterOutcome;
         typedef Aws::Utils::Outcome<FailoverGlobalClusterResult, RDSError> FailoverGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, RDSError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ModifyActivityStreamResult, RDSError> ModifyActivityStreamOutcome;
         typedef Aws::Utils::Outcome<ModifyCertificatesResult, RDSError> ModifyCertificatesOutcome;
         typedef Aws::Utils::Outcome<ModifyCurrentDBClusterCapacityResult, RDSError> ModifyCurrentDBClusterCapacityOutcome;
         typedef Aws::Utils::Outcome<ModifyCustomDBEngineVersionResult, RDSError> ModifyCustomDBEngineVersionOutcome;
@@ -540,6 +543,7 @@ namespace Aws
         typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
         typedef std::future<FailoverGlobalClusterOutcome> FailoverGlobalClusterOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ModifyActivityStreamOutcome> ModifyActivityStreamOutcomeCallable;
         typedef std::future<ModifyCertificatesOutcome> ModifyCertificatesOutcomeCallable;
         typedef std::future<ModifyCurrentDBClusterCapacityOutcome> ModifyCurrentDBClusterCapacityOutcomeCallable;
         typedef std::future<ModifyCustomDBEngineVersionOutcome> ModifyCustomDBEngineVersionOutcomeCallable;
@@ -679,6 +683,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::FailoverGlobalClusterRequest&, const Model::FailoverGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::ModifyActivityStreamRequest&, const Model::ModifyActivityStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyActivityStreamResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyCertificatesRequest&, const Model::ModifyCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCertificatesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyCurrentDBClusterCapacityRequest&, const Model::ModifyCurrentDBClusterCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCurrentDBClusterCapacityResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyCustomDBEngineVersionRequest&, const Model::ModifyCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCustomDBEngineVersionResponseReceivedHandler;
@@ -2777,6 +2782,31 @@ namespace Aws
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Changes the audit policy state of a database activity stream to either locked
+         * (default) or unlocked. A locked policy is read-only, whereas an unlocked policy
+         * is read/write. If your activity stream is started and locked, you can unlock it,
+         * customize your audit policy, and then lock your activity stream. Restarting the
+         * activity stream isn't required. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html">
+         * Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>.
+         * </p> <p>This operation is supported for RDS for Oracle only.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyActivityStreamOutcome ModifyActivityStream(const Model::ModifyActivityStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyActivityStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyActivityStreamOutcomeCallable ModifyActivityStreamCallable(const Model::ModifyActivityStreamRequest& request) const;
+
+        /**
+         * An Async wrapper for ModifyActivityStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyActivityStreamAsync(const Model::ModifyActivityStreamRequest& request, const ModifyActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Override the system-default Secure Sockets Layer/Transport Layer Security
          * (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
          * override.</p> <p>By using this operation, you can specify an RDS-approved
@@ -4039,6 +4069,7 @@ namespace Aws
         void FailoverDBClusterAsyncHelper(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FailoverGlobalClusterAsyncHelper(const Model::FailoverGlobalClusterRequest& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyActivityStreamAsyncHelper(const Model::ModifyActivityStreamRequest& request, const ModifyActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCertificatesAsyncHelper(const Model::ModifyCertificatesRequest& request, const ModifyCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCurrentDBClusterCapacityAsyncHelper(const Model::ModifyCurrentDBClusterCapacityRequest& request, const ModifyCurrentDBClusterCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCustomDBEngineVersionAsyncHelper(const Model::ModifyCustomDBEngineVersionRequest& request, const ModifyCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

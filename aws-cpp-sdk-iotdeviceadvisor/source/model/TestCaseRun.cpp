@@ -28,7 +28,8 @@ TestCaseRun::TestCaseRun() :
     m_endTimeHasBeenSet(false),
     m_logUrlHasBeenSet(false),
     m_warningsHasBeenSet(false),
-    m_failureHasBeenSet(false)
+    m_failureHasBeenSet(false),
+    m_testScenariosHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ TestCaseRun::TestCaseRun(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_logUrlHasBeenSet(false),
     m_warningsHasBeenSet(false),
-    m_failureHasBeenSet(false)
+    m_failureHasBeenSet(false),
+    m_testScenariosHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,16 @@ TestCaseRun& TestCaseRun::operator =(JsonView jsonValue)
     m_failureHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("testScenarios"))
+  {
+    Array<JsonView> testScenariosJsonList = jsonValue.GetArray("testScenarios");
+    for(unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex)
+    {
+      m_testScenarios.push_back(testScenariosJsonList[testScenariosIndex].AsObject());
+    }
+    m_testScenariosHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -167,6 +179,17 @@ JsonValue TestCaseRun::Jsonize() const
   if(m_failureHasBeenSet)
   {
    payload.WithString("failure", m_failure);
+
+  }
+
+  if(m_testScenariosHasBeenSet)
+  {
+   Array<JsonValue> testScenariosJsonList(m_testScenarios.size());
+   for(unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex)
+   {
+     testScenariosJsonList[testScenariosIndex].AsObject(m_testScenarios[testScenariosIndex].Jsonize());
+   }
+   payload.WithArray("testScenarios", std::move(testScenariosJsonList));
 
   }
 

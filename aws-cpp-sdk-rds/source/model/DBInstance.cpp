@@ -117,7 +117,9 @@ DBInstance::DBInstance() :
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_customIamInstanceProfileHasBeenSet(false),
     m_backupTargetHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_activityStreamPolicyStatus(ActivityStreamPolicyStatus::NOT_SET),
+    m_activityStreamPolicyStatusHasBeenSet(false)
 {
 }
 
@@ -218,7 +220,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_customIamInstanceProfileHasBeenSet(false),
     m_backupTargetHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_activityStreamPolicyStatus(ActivityStreamPolicyStatus::NOT_SET),
+    m_activityStreamPolicyStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -757,6 +761,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
       m_networkTypeHasBeenSet = true;
     }
+    XmlNode activityStreamPolicyStatusNode = resultNode.FirstChild("ActivityStreamPolicyStatus");
+    if(!activityStreamPolicyStatusNode.IsNull())
+    {
+      m_activityStreamPolicyStatus = ActivityStreamPolicyStatusMapper::GetActivityStreamPolicyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamPolicyStatusNode.GetText()).c_str()).c_str());
+      m_activityStreamPolicyStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1219,6 +1229,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
+  if(m_activityStreamPolicyStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamPolicyStatus=" << ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1602,6 +1617,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_networkTypeHasBeenSet)
   {
       oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+  if(m_activityStreamPolicyStatusHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamPolicyStatus=" << ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus) << "&";
   }
 }
 
