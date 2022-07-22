@@ -63,8 +63,10 @@
 #include <aws/medialive/model/ListReservationsRequest.h>
 #include <aws/medialive/model/ListTagsForResourceRequest.h>
 #include <aws/medialive/model/PurchaseOfferingRequest.h>
+#include <aws/medialive/model/RebootInputDeviceRequest.h>
 #include <aws/medialive/model/RejectInputDeviceTransferRequest.h>
 #include <aws/medialive/model/StartChannelRequest.h>
+#include <aws/medialive/model/StartInputDeviceMaintenanceWindowRequest.h>
 #include <aws/medialive/model/StartMultiplexRequest.h>
 #include <aws/medialive/model/StopChannelRequest.h>
 #include <aws/medialive/model/StopMultiplexRequest.h>
@@ -1427,6 +1429,38 @@ void MediaLiveClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest&
   handler(this, request, PurchaseOffering(request), context);
 }
 
+RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDeviceRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RebootInputDevice", "Required field: InputDeviceId, is not set");
+    return RebootInputDeviceOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/prod/inputDevices/");
+  uri.AddPathSegment(request.GetInputDeviceId());
+  uri.AddPathSegments("/reboot");
+  return RebootInputDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RebootInputDeviceOutcomeCallable MediaLiveClient::RebootInputDeviceCallable(const RebootInputDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RebootInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RebootInputDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::RebootInputDeviceAsync(const RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RebootInputDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::RebootInputDeviceAsyncHelper(const RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RebootInputDevice(request), context);
+}
+
 RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(const RejectInputDeviceTransferRequest& request) const
 {
   if (!request.InputDeviceIdHasBeenSet())
@@ -1489,6 +1523,38 @@ void MediaLiveClient::StartChannelAsync(const StartChannelRequest& request, cons
 void MediaLiveClient::StartChannelAsyncHelper(const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartChannel(request), context);
+}
+
+StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMaintenanceWindow(const StartInputDeviceMaintenanceWindowRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartInputDeviceMaintenanceWindow", "Required field: InputDeviceId, is not set");
+    return StartInputDeviceMaintenanceWindowOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/prod/inputDevices/");
+  uri.AddPathSegment(request.GetInputDeviceId());
+  uri.AddPathSegments("/startInputDeviceMaintenanceWindow");
+  return StartInputDeviceMaintenanceWindowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartInputDeviceMaintenanceWindowOutcomeCallable MediaLiveClient::StartInputDeviceMaintenanceWindowCallable(const StartInputDeviceMaintenanceWindowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartInputDeviceMaintenanceWindowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInputDeviceMaintenanceWindow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::StartInputDeviceMaintenanceWindowAsync(const StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartInputDeviceMaintenanceWindowAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::StartInputDeviceMaintenanceWindowAsyncHelper(const StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartInputDeviceMaintenanceWindow(request), context);
 }
 
 StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexRequest& request) const

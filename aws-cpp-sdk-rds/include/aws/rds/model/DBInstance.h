@@ -16,6 +16,7 @@
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/AutomationMode.h>
+#include <aws/rds/model/ActivityStreamPolicyStatus.h>
 #include <aws/rds/model/DBSecurityGroupMembership.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
@@ -3581,6 +3582,37 @@ namespace Model
      */
     inline DBInstance& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
+
+    /**
+     * <p>The status of the policy state of the activity stream.</p>
+     */
+    inline const ActivityStreamPolicyStatus& GetActivityStreamPolicyStatus() const{ return m_activityStreamPolicyStatus; }
+
+    /**
+     * <p>The status of the policy state of the activity stream.</p>
+     */
+    inline bool ActivityStreamPolicyStatusHasBeenSet() const { return m_activityStreamPolicyStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the policy state of the activity stream.</p>
+     */
+    inline void SetActivityStreamPolicyStatus(const ActivityStreamPolicyStatus& value) { m_activityStreamPolicyStatusHasBeenSet = true; m_activityStreamPolicyStatus = value; }
+
+    /**
+     * <p>The status of the policy state of the activity stream.</p>
+     */
+    inline void SetActivityStreamPolicyStatus(ActivityStreamPolicyStatus&& value) { m_activityStreamPolicyStatusHasBeenSet = true; m_activityStreamPolicyStatus = std::move(value); }
+
+    /**
+     * <p>The status of the policy state of the activity stream.</p>
+     */
+    inline DBInstance& WithActivityStreamPolicyStatus(const ActivityStreamPolicyStatus& value) { SetActivityStreamPolicyStatus(value); return *this;}
+
+    /**
+     * <p>The status of the policy state of the activity stream.</p>
+     */
+    inline DBInstance& WithActivityStreamPolicyStatus(ActivityStreamPolicyStatus&& value) { SetActivityStreamPolicyStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3807,6 +3839,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet;
+
+    ActivityStreamPolicyStatus m_activityStreamPolicyStatus;
+    bool m_activityStreamPolicyStatusHasBeenSet;
   };
 
 } // namespace Model

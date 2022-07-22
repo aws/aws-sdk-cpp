@@ -52,8 +52,10 @@
 #include <aws/medialive/model/ListReservationsResult.h>
 #include <aws/medialive/model/ListTagsForResourceResult.h>
 #include <aws/medialive/model/PurchaseOfferingResult.h>
+#include <aws/medialive/model/RebootInputDeviceResult.h>
 #include <aws/medialive/model/RejectInputDeviceTransferResult.h>
 #include <aws/medialive/model/StartChannelResult.h>
+#include <aws/medialive/model/StartInputDeviceMaintenanceWindowResult.h>
 #include <aws/medialive/model/StartMultiplexResult.h>
 #include <aws/medialive/model/StopChannelResult.h>
 #include <aws/medialive/model/StopMultiplexResult.h>
@@ -149,8 +151,10 @@ namespace Model
         class ListReservationsRequest;
         class ListTagsForResourceRequest;
         class PurchaseOfferingRequest;
+        class RebootInputDeviceRequest;
         class RejectInputDeviceTransferRequest;
         class StartChannelRequest;
+        class StartInputDeviceMaintenanceWindowRequest;
         class StartMultiplexRequest;
         class StopChannelRequest;
         class StopMultiplexRequest;
@@ -207,8 +211,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListReservationsResult, MediaLiveError> ListReservationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaLiveError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaLiveError> PurchaseOfferingOutcome;
+        typedef Aws::Utils::Outcome<RebootInputDeviceResult, MediaLiveError> RebootInputDeviceOutcome;
         typedef Aws::Utils::Outcome<RejectInputDeviceTransferResult, MediaLiveError> RejectInputDeviceTransferOutcome;
         typedef Aws::Utils::Outcome<StartChannelResult, MediaLiveError> StartChannelOutcome;
+        typedef Aws::Utils::Outcome<StartInputDeviceMaintenanceWindowResult, MediaLiveError> StartInputDeviceMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<StartMultiplexResult, MediaLiveError> StartMultiplexOutcome;
         typedef Aws::Utils::Outcome<StopChannelResult, MediaLiveError> StopChannelOutcome;
         typedef Aws::Utils::Outcome<StopMultiplexResult, MediaLiveError> StopMultiplexOutcome;
@@ -265,8 +271,10 @@ namespace Model
         typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
+        typedef std::future<RebootInputDeviceOutcome> RebootInputDeviceOutcomeCallable;
         typedef std::future<RejectInputDeviceTransferOutcome> RejectInputDeviceTransferOutcomeCallable;
         typedef std::future<StartChannelOutcome> StartChannelOutcomeCallable;
+        typedef std::future<StartInputDeviceMaintenanceWindowOutcome> StartInputDeviceMaintenanceWindowOutcomeCallable;
         typedef std::future<StartMultiplexOutcome> StartMultiplexOutcomeCallable;
         typedef std::future<StopChannelOutcome> StopChannelOutcomeCallable;
         typedef std::future<StopMultiplexOutcome> StopMultiplexOutcomeCallable;
@@ -326,8 +334,10 @@ namespace Model
     typedef std::function<void(const MediaLiveClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReservationsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::RebootInputDeviceRequest&, const Model::RebootInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::RejectInputDeviceTransferRequest&, const Model::RejectInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInputDeviceTransferResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartChannelRequest&, const Model::StartChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChannelResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::StartInputDeviceMaintenanceWindowRequest&, const Model::StartInputDeviceMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInputDeviceMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartMultiplexRequest&, const Model::StartMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMultiplexResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StopChannelRequest&, const Model::StopChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StopMultiplexRequest&, const Model::StopMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMultiplexResponseReceivedHandler;
@@ -1113,6 +1123,26 @@ namespace Model
         virtual void PurchaseOfferingAsync(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Send a reboot command to the specified input device. The device will begin
+         * rebooting within a few seconds of sending the command. When the reboot is
+         * complete, the device’s connection status will change to connected.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RebootInputDeviceOutcome RebootInputDevice(const Model::RebootInputDeviceRequest& request) const;
+
+        /**
+         * A Callable wrapper for RebootInputDevice that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RebootInputDeviceOutcomeCallable RebootInputDeviceCallable(const Model::RebootInputDeviceRequest& request) const;
+
+        /**
+         * An Async wrapper for RebootInputDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RebootInputDeviceAsync(const Model::RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Reject the transfer of the specified input device to your AWS account.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer">AWS
@@ -1146,6 +1176,30 @@ namespace Model
          * An Async wrapper for StartChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartChannelAsync(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Start a maintenance window for the specified input device. Starting a
+         * maintenance window will give the device up to two hours to install software. If
+         * the device was streaming prior to the maintenance, it will resume streaming when
+         * the software is fully installed. Devices automatically install updates while
+         * they are powered on and their MediaLive channels are stopped. A maintenance
+         * window allows you to update a device without having to stop MediaLive channels
+         * that use the device. The device must remain powered on and connected to the
+         * internet for the duration of the maintenance.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartInputDeviceMaintenanceWindowOutcome StartInputDeviceMaintenanceWindow(const Model::StartInputDeviceMaintenanceWindowRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartInputDeviceMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartInputDeviceMaintenanceWindowOutcomeCallable StartInputDeviceMaintenanceWindowCallable(const Model::StartInputDeviceMaintenanceWindowRequest& request) const;
+
+        /**
+         * An Async wrapper for StartInputDeviceMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartInputDeviceMaintenanceWindowAsync(const Model::StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Start (run) the multiplex. Starting the multiplex does not start the channels.
@@ -1402,8 +1456,10 @@ namespace Model
         void ListReservationsAsyncHelper(const Model::ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RebootInputDeviceAsyncHelper(const Model::RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectInputDeviceTransferAsyncHelper(const Model::RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChannelAsyncHelper(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartInputDeviceMaintenanceWindowAsyncHelper(const Model::StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMultiplexAsyncHelper(const Model::StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopChannelAsyncHelper(const Model::StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMultiplexAsyncHelper(const Model::StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

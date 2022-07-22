@@ -23,7 +23,6 @@ namespace Aws
         static const int af_ZA_HASH = HashingUtils::HashString("af-ZA");
         static const int ar_AE_HASH = HashingUtils::HashString("ar-AE");
         static const int ar_SA_HASH = HashingUtils::HashString("ar-SA");
-        static const int cy_GB_HASH = HashingUtils::HashString("cy-GB");
         static const int da_DK_HASH = HashingUtils::HashString("da-DK");
         static const int de_CH_HASH = HashingUtils::HashString("de-CH");
         static const int de_DE_HASH = HashingUtils::HashString("de-DE");
@@ -39,8 +38,6 @@ namespace Aws
         static const int fa_IR_HASH = HashingUtils::HashString("fa-IR");
         static const int fr_CA_HASH = HashingUtils::HashString("fr-CA");
         static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
-        static const int ga_IE_HASH = HashingUtils::HashString("ga-IE");
-        static const int gd_GB_HASH = HashingUtils::HashString("gd-GB");
         static const int he_IL_HASH = HashingUtils::HashString("he-IL");
         static const int hi_IN_HASH = HashingUtils::HashString("hi-IN");
         static const int id_ID_HASH = HashingUtils::HashString("id-ID");
@@ -76,10 +73,6 @@ namespace Aws
           else if (hashCode == ar_SA_HASH)
           {
             return LanguageCode::ar_SA;
-          }
-          else if (hashCode == cy_GB_HASH)
-          {
-            return LanguageCode::cy_GB;
           }
           else if (hashCode == da_DK_HASH)
           {
@@ -140,14 +133,6 @@ namespace Aws
           else if (hashCode == fr_FR_HASH)
           {
             return LanguageCode::fr_FR;
-          }
-          else if (hashCode == ga_IE_HASH)
-          {
-            return LanguageCode::ga_IE;
-          }
-          else if (hashCode == gd_GB_HASH)
-          {
-            return LanguageCode::gd_GB;
           }
           else if (hashCode == he_IL_HASH)
           {
@@ -245,8 +230,6 @@ namespace Aws
             return "ar-AE";
           case LanguageCode::ar_SA:
             return "ar-SA";
-          case LanguageCode::cy_GB:
-            return "cy-GB";
           case LanguageCode::da_DK:
             return "da-DK";
           case LanguageCode::de_CH:
@@ -277,10 +260,6 @@ namespace Aws
             return "fr-CA";
           case LanguageCode::fr_FR:
             return "fr-FR";
-          case LanguageCode::ga_IE:
-            return "ga-IE";
-          case LanguageCode::gd_GB:
-            return "gd-GB";
           case LanguageCode::he_IL:
             return "he-IL";
           case LanguageCode::hi_IN:
