@@ -20,6 +20,7 @@ namespace KMSEndpoint
   static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
   static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
   static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
+  static const int US_ISO_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-west-1");
 
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
@@ -33,6 +34,10 @@ namespace KMSEndpoint
       if(hash == US_ISO_EAST_1_HASH)
       {
         return "kms-fips.us-iso-east-1.c2s.ic.gov";
+      }
+      if(hash == US_ISO_WEST_1_HASH)
+      {
+        return "kms-fips.us-iso-west-1.c2s.ic.gov";
       }
       if(hash == US_ISOB_EAST_1_HASH)
       {
@@ -53,7 +58,7 @@ namespace KMSEndpoint
     {
       ss << ".amazonaws.com.cn";
     }
-    else if (hash == US_ISO_EAST_1_HASH)
+    else if (hash == US_ISO_EAST_1_HASH || hash == US_ISO_WEST_1_HASH)
     {
       ss << ".c2s.ic.gov";
     }

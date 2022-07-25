@@ -402,6 +402,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         } else if (serviceModel.getServiceName().equals("kms")) {
             endpoints.put("us-iso-east-1", "kms-fips.us-iso-east-1.c2s.ic.gov");
             endpoints.put("us-isob-east-1", "kms-fips.us-isob-east-1.sc2s.sgov.gov");
+            endpoints.put("us-iso-west-1", "kms-fips.us-iso-west-1.c2s.ic.gov");
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");

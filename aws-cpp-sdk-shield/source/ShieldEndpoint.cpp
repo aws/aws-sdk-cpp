@@ -20,6 +20,7 @@ namespace ShieldEndpoint
   static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
   static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
   static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
+  static const int US_ISO_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-west-1");
 
   static const int FIPS_AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("fips-aws-global");
 
@@ -50,7 +51,7 @@ namespace ShieldEndpoint
     {
       ss << ".amazonaws.com.cn";
     }
-    else if (hash == US_ISO_EAST_1_HASH)
+    else if (hash == US_ISO_EAST_1_HASH || hash == US_ISO_WEST_1_HASH)
     {
       ss << ".c2s.ic.gov";
     }

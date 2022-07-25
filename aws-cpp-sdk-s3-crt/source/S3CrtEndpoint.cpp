@@ -20,6 +20,7 @@ namespace S3CrtEndpoint
   static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
   static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
   static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
+  static const int US_ISO_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-west-1");
 
   static const int FIPS_US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("fips-us-gov-west-1");
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
@@ -189,7 +190,7 @@ namespace S3CrtEndpoint
     {
       ss << ".amazonaws.com.cn";
     }
-    else if (hash == US_ISO_EAST_1_HASH)
+    else if (hash == US_ISO_EAST_1_HASH || hash == US_ISO_WEST_1_HASH)
     {
       ss << ".c2s.ic.gov";
     }
