@@ -9,6 +9,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 
 #include <aws/kinesis/KinesisClient.h>
+#include <aws/kinesis/model/AddTagsToStreamRequest.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
@@ -30,6 +31,7 @@ using namespace Aws::Kinesis::Model;
 
 namespace {
 const char ALLOC_TAG[]   = "KinesisIntegrationTest";
+const char TEST_TAG[] = "INTEGRATION_TEST";
 
 class KinesisTest : public ::testing::Test
 {
@@ -57,6 +59,12 @@ protected:
             describeStream = m_client->DescribeStream(DescribeStreamRequest().WithStreamName(streamName));
         }
         ASSERT_TRUE(describeStream.GetResult().GetStreamDescription().GetStreamStatus() == StreamStatus::ACTIVE);
+
+        // Tag stream as test
+        auto tagStreamOutcome =m_client->AddTagsToStream(AddTagsToStreamRequest()
+                .WithStreamName(streamName)
+                .WithTags({{TEST_TAG, TEST_TAG}}));
+        ASSERT_TRUE(describeStream.IsSuccess());
     }
 
     void TearDown() override {
