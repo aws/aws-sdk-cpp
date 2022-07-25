@@ -129,64 +129,64 @@ namespace Model
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
-     * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
+     * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithImageId(const char* value) { SetImageId(value); return *this;}
 
@@ -331,56 +331,56 @@ namespace Model
 
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
      * EC2-Classic instances to.</p>
      */
@@ -388,63 +388,63 @@ namespace Model
 
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported
      * after that date.</i> </p> <p>The IDs of one or more security groups for the VPC
      * specified in <code>ClassicLinkVPCId</code>.</p>
      */
@@ -557,66 +557,66 @@ namespace Model
 
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type for the instances.</p> <p>For information about available
-     * instance types, see <a
+     * <p>The instance type for the instances. For information about available instance
+     * types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -704,64 +704,72 @@ namespace Model
 
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>A block device mapping, which specifies the block devices for the instance.
-     * For more information, see <a
+     * <p>The block device mapping entries that define the block devices to attach to
+     * the instances at launch. By default, the block devices specified in the block
+     * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
@@ -1052,9 +1060,12 @@ namespace Model
 
 
     /**
-     * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. For more information, see
-     * <a
+     * <p>Specifies whether to assign a public IPv4 address to the group's instances.
+     * If the instance is launched into a default subnet, the default is to assign a
+     * public IPv4 address, unless you disabled the option to assign a public IPv4
+     * address on the subnet. If the instance is launched into a nondefault subnet, the
+     * default is not to assign a public IPv4 address, unless you enabled the option to
+     * assign a public IPv4 address on the subnet. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
@@ -1062,9 +1073,12 @@ namespace Model
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
     /**
-     * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. For more information, see
-     * <a
+     * <p>Specifies whether to assign a public IPv4 address to the group's instances.
+     * If the instance is launched into a default subnet, the default is to assign a
+     * public IPv4 address, unless you disabled the option to assign a public IPv4
+     * address on the subnet. If the instance is launched into a nondefault subnet, the
+     * default is not to assign a public IPv4 address, unless you enabled the option to
+     * assign a public IPv4 address on the subnet. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
@@ -1072,9 +1086,12 @@ namespace Model
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
 
     /**
-     * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. For more information, see
-     * <a
+     * <p>Specifies whether to assign a public IPv4 address to the group's instances.
+     * If the instance is launched into a default subnet, the default is to assign a
+     * public IPv4 address, unless you disabled the option to assign a public IPv4
+     * address on the subnet. If the instance is launched into a nondefault subnet, the
+     * default is not to assign a public IPv4 address, unless you enabled the option to
+     * assign a public IPv4 address on the subnet. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
@@ -1082,9 +1099,12 @@ namespace Model
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
-     * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. For more information, see
-     * <a
+     * <p>Specifies whether to assign a public IPv4 address to the group's instances.
+     * If the instance is launched into a default subnet, the default is to assign a
+     * public IPv4 address, unless you disabled the option to assign a public IPv4
+     * address on the subnet. If the instance is launched into a nondefault subnet, the
+     * default is not to assign a public IPv4 address, unless you enabled the option to
+     * assign a public IPv4 address on the subnet. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>

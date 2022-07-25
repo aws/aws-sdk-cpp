@@ -499,61 +499,61 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline int GetSpotMaxPricePercentageOverLowestPrice() const{ return m_spotMaxPricePercentageOverLowestPrice; }
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline bool SpotMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_spotMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline void SetSpotMaxPricePercentageOverLowestPrice(int value) { m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true; m_spotMaxPricePercentageOverLowestPrice = value; }
 
     /**
      * <p>The price protection threshold for Spot Instances. This is the maximum you’ll
-     * pay for a Spot Instance, expressed as a percentage higher than the cheapest M,
-     * C, or R instance type with your specified attributes. When Amazon EC2 Auto
-     * Scaling selects instance types with your attributes, we will exclude instance
-     * types whose price is higher than your threshold. The parameter accepts an
-     * integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off
-     * price protection, specify a high value, such as <code>999999</code>. </p> <p>If
-     * you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>100</code> </p>
+     * pay for a Spot Instance, expressed as a percentage higher than the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>100</code> </p>
      */
     inline InstanceRequirements& WithSpotMaxPricePercentageOverLowestPrice(int value) { SetSpotMaxPricePercentageOverLowestPrice(value); return *this;}
 
@@ -561,60 +561,60 @@ namespace Model
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline int GetOnDemandMaxPricePercentageOverLowestPrice() const{ return m_onDemandMaxPricePercentageOverLowestPrice; }
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline bool OnDemandMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline void SetOnDemandMaxPricePercentageOverLowestPrice(int value) { m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true; m_onDemandMaxPricePercentageOverLowestPrice = value; }
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
      * you’ll pay for an On-Demand Instance, expressed as a percentage higher than the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 Auto Scaling selects instance types with your attributes, we will exclude
-     * instance types whose price is higher than your threshold. The parameter accepts
-     * an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn
-     * off price protection, specify a high value, such as <code>999999</code>. </p>
-     * <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per vCPU or per memory price instead of the per instance price. </p> <p>Default:
-     * <code>20</code> </p>
+     * least expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 Auto Scaling selects instance types with your
+     * attributes, we will exclude instance types whose price is higher than your
+     * threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling
+     * interprets as a percentage. To turn off price protection, specify a high value,
+     * such as <code>999999</code>. </p> <p>If you set <code>DesiredCapacityType</code>
+     * to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold
+     * is applied based on the per vCPU or per memory price instead of the per instance
+     * price. </p> <p>Default: <code>20</code> </p>
      */
     inline InstanceRequirements& WithOnDemandMaxPricePercentageOverLowestPrice(int value) { SetOnDemandMaxPricePercentageOverLowestPrice(value); return *this;}
 
@@ -832,7 +832,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline const Aws::Vector<LocalStorageType>& GetLocalStorageTypes() const{ return m_localStorageTypes; }
 
@@ -840,7 +840,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline bool LocalStorageTypesHasBeenSet() const { return m_localStorageTypesHasBeenSet; }
 
@@ -848,7 +848,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline void SetLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = value; }
 
@@ -856,7 +856,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline void SetLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = std::move(value); }
 
@@ -864,7 +864,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& WithLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { SetLocalStorageTypes(value); return *this;}
 
@@ -872,7 +872,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& WithLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { SetLocalStorageTypes(std::move(value)); return *this;}
 
@@ -880,7 +880,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& AddLocalStorageTypes(const LocalStorageType& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(value); return *this; }
 
@@ -888,7 +888,7 @@ namespace Model
      * <p>Indicates the type of local storage that is required.</p> <ul> <li> <p>For
      * instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p>
      * </li> <li> <p>For instance types with solid state drive (SSD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: Any local storage type</p>
      */
     inline InstanceRequirements& AddLocalStorageTypes(LocalStorageType&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(std::move(value)); return *this; }
 

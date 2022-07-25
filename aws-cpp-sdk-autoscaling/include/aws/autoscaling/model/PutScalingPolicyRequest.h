@@ -643,7 +643,7 @@ namespace Model
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
      * <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the
+     * <code>ResourceLabel</code> property with the
      * <code>PredefinedMetricSpecification</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
@@ -659,7 +659,7 @@ namespace Model
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
      * <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the
+     * <code>ResourceLabel</code> property with the
      * <code>PredefinedMetricSpecification</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
@@ -675,7 +675,7 @@ namespace Model
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
      * <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the
+     * <code>ResourceLabel</code> property with the
      * <code>PredefinedMetricSpecification</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
@@ -691,7 +691,7 @@ namespace Model
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
      * <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the
+     * <code>ResourceLabel</code> property with the
      * <code>PredefinedMetricSpecification</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
@@ -707,7 +707,7 @@ namespace Model
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
      * <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the
+     * <code>ResourceLabel</code> property with the
      * <code>PredefinedMetricSpecification</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
@@ -723,7 +723,7 @@ namespace Model
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
      * <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
-     * <code>ResourceLabel</code> parameter with the
+     * <code>ResourceLabel</code> property with the
      * <code>PredefinedMetricSpecification</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the

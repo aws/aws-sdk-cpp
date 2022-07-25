@@ -39,7 +39,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
-     * parameter, all activities for the past six weeks are described. If unknown
+     * property, all activities for the past six weeks are described. If unknown
      * activities are requested, they are ignored with no error. If you specify an Auto
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>

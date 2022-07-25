@@ -80,7 +80,7 @@ namespace Model
 
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -88,7 +88,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -96,7 +96,7 @@ namespace Model
     inline bool ScheduledActionNamesHasBeenSet() const { return m_scheduledActionNamesHasBeenSet; }
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -104,7 +104,7 @@ namespace Model
     inline void SetScheduledActionNames(const Aws::Vector<Aws::String>& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -112,7 +112,7 @@ namespace Model
     inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::move(value); }
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -120,7 +120,7 @@ namespace Model
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -128,7 +128,7 @@ namespace Model
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -136,7 +136,7 @@ namespace Model
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -144,7 +144,7 @@ namespace Model
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * <p>The names of one or more scheduled actions. If you omit this property, all
      * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>Array Members: Maximum number of 50
      * actions.</p>
@@ -154,74 +154,74 @@ namespace Model
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline DescribeScheduledActionsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline DescribeScheduledActionsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline DescribeScheduledActionsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
-     * provided, this parameter is ignored.</p>
+     * provided, this property is ignored.</p>
      */
     inline DescribeScheduledActionsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

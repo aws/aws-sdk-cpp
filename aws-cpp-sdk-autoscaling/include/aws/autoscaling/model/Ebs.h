@@ -142,7 +142,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
@@ -151,7 +151,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
@@ -160,7 +160,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
@@ -169,7 +169,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
@@ -178,7 +178,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
@@ -187,7 +187,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline Ebs& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
@@ -196,7 +196,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline Ebs& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
@@ -205,7 +205,7 @@ namespace Model
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline Ebs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
@@ -326,7 +326,7 @@ namespace Model
      * always encrypted, either using the Amazon Web Services managed KMS key or a
      * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
      * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p> 
      */
@@ -345,7 +345,7 @@ namespace Model
      * always encrypted, either using the Amazon Web Services managed KMS key or a
      * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
      * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p> 
      */
@@ -364,7 +364,7 @@ namespace Model
      * always encrypted, either using the Amazon Web Services managed KMS key or a
      * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
      * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p> 
      */
@@ -383,7 +383,7 @@ namespace Model
      * always encrypted, either using the Amazon Web Services managed KMS key or a
      * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
      * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p> 
      */

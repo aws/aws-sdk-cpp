@@ -140,28 +140,44 @@ namespace Model
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity.</p>
+     * the current capacity.</p> <p>The amount by which to scale. The adjustment is
+     * based on the value that you specified in the <code>AdjustmentType</code>
+     * property (either an absolute number or a percentage). A positive value adds to
+     * the current capacity and a negative number subtracts from the current capacity.
+     * </p>
      */
     inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity.</p>
+     * the current capacity.</p> <p>The amount by which to scale. The adjustment is
+     * based on the value that you specified in the <code>AdjustmentType</code>
+     * property (either an absolute number or a percentage). A positive value adds to
+     * the current capacity and a negative number subtracts from the current capacity.
+     * </p>
      */
     inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity.</p>
+     * the current capacity.</p> <p>The amount by which to scale. The adjustment is
+     * based on the value that you specified in the <code>AdjustmentType</code>
+     * property (either an absolute number or a percentage). A positive value adds to
+     * the current capacity and a negative number subtracts from the current capacity.
+     * </p>
      */
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity.</p>
+     * the current capacity.</p> <p>The amount by which to scale. The adjustment is
+     * based on the value that you specified in the <code>AdjustmentType</code>
+     * property (either an absolute number or a percentage). A positive value adds to
+     * the current capacity and a negative number subtracts from the current capacity.
+     * </p>
      */
     inline StepAdjustment& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
