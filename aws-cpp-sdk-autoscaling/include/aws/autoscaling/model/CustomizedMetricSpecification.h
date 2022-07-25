@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>Represents a CloudWatch metric of your choosing for a target tracking scaling
    * policy to use with Amazon EC2 Auto Scaling.</p> <p>To create your customized
-   * metric specification:</p> <ul> <li> <p>Add values for each required parameter
+   * metric specification:</p> <ul> <li> <p>Add values for each required property
    * from CloudWatch. You can use an existing metric, or a new metric that you
    * create. To use your own metric, you must first publish the metric to CloudWatch.
    * For more information, see <a
