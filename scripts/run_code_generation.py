@@ -87,8 +87,10 @@ def build_generator(generator_dir: str, max_workers: int) -> None:
     :param max_workers: number of threads to use to build generator
     :return: None
     """
+
+    mvn_cmd = shutil.which("mvn")  # subprocess.run does expand Path by default
     max_workers = min(int(max_workers), 8)
-    process = subprocess.run(["mvn", "package", "-T", str(max_workers)], cwd=generator_dir, timeout=5*60, check=True)
+    process = subprocess.run([mvn_cmd, "package", "-T", str(max_workers)], cwd=generator_dir, timeout=5*60, check=True)
     process.check_returncode()
 
 
