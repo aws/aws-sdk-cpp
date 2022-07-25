@@ -10,15 +10,16 @@
 
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
+#include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/kinesis/model/RegisterStreamConsumerRequest.h>
 #include <aws/kinesis/model/DeregisterStreamConsumerRequest.h>
 #include <aws/kinesis/model/SubscribeToShardRequest.h>
 #include <aws/kinesis/model/SubscribeToShardHandler.h>
+#include <aws/kinesis/model/StreamStatus.h>
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
 #include <aws/kinesis/model/ListShardsRequest.h>
 #include <aws/testing/TestingEnvironment.h>
-#include <aws/core/utils/Outcome.h>
 
 #include <thread>
 #include <chrono>
@@ -29,24 +30,39 @@ using namespace Aws::Kinesis::Model;
 
 namespace {
 const char ALLOC_TAG[]   = "KinesisIntegrationTest";
-// Creating the stream at the beginning of the test takes a long time (~ 1 minute)
-// Since we're relying on pre-created Kinesis streams for Lambda's integration tests, we can use the same stream in this
-// test.
-// TODO: Create the streams as part of the setup and delete them during teardown. Needs to be done here and in Lambda's
-// integration tests.
-const char STREAM_NAME[] =  "AWSNativeSDKIntegrationTest";
 
 class KinesisTest : public ::testing::Test
 {
 
 protected:
 
-    void SetUp()
-    {
+    void SetUp() override {
+        // Create client
         m_UUID = Aws::Utils::UUID::RandomUUID();
         Client::ClientConfiguration config;
         config.region = Aws::Region::US_EAST_1;
         m_client.reset(Aws::New<KinesisClient>(ALLOC_TAG, config));
+
+        // Create stream
+        auto createStream = m_client->CreateStream(CreateStreamRequest().WithStreamName(streamName));
+        ASSERT_TRUE(createStream.IsSuccess());
+
+        // Wait 2 minutes for stream to be ready
+        auto describeStream = m_client->DescribeStream(DescribeStreamRequest().WithStreamName(streamName));
+        auto start = Aws::Utils::DateTime::CurrentTimeMillis();
+        while (describeStream.GetResult().GetStreamDescription().GetStreamStatus() != StreamStatus::ACTIVE &&
+                Aws::Utils::DateTime::CurrentTimeMillis() - start < 120000) {
+            AWS_LOGSTREAM_INFO(ALLOC_TAG, "Waiting for kinesis to create stream");
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            describeStream = m_client->DescribeStream(DescribeStreamRequest().WithStreamName(streamName));
+        }
+        ASSERT_TRUE(describeStream.GetResult().GetStreamDescription().GetStreamStatus() == StreamStatus::ACTIVE);
+    }
+
+    void TearDown() override {
+        // Delete stream
+        auto deleteStream = m_client->DeleteStream(DeleteStreamRequest().WithStreamName(streamName));
+        ASSERT_TRUE(deleteStream.IsSuccess());
     }
 
     Aws::String BuildResourceName(const char* name)
@@ -81,13 +97,14 @@ protected:
 
     Aws::UniquePtr<KinesisClient> m_client;
     Aws::String m_UUID;
+    Aws::String streamName = BuildResourceName("stream");
 };
 
 TEST_F(KinesisTest, EnhancedFanOut)
 {
     // Get the Stream ARN (different between accounts)
     DescribeStreamRequest describeStreamRequest;
-    describeStreamRequest.SetStreamName(STREAM_NAME);
+    describeStreamRequest.SetStreamName(streamName);
     auto describeStreamOutcome = m_client->DescribeStream(describeStreamRequest);
     ASSERT_TRUE(describeStreamOutcome.IsSuccess());
     const auto streamARN = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamARN();
@@ -103,7 +120,7 @@ TEST_F(KinesisTest, EnhancedFanOut)
 
     // Get the shard id
     ListShardsRequest listShardRequest;
-    listShardRequest.SetStreamName(STREAM_NAME);
+    listShardRequest.SetStreamName(streamName);
     auto listShardsOutcome = m_client->ListShards(listShardRequest);
     ASSERT_TRUE(listShardsOutcome.IsSuccess());
     const auto& shards = listShardsOutcome.GetResult().GetShards();
