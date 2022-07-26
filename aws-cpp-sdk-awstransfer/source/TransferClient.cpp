@@ -21,35 +21,56 @@
 #include <aws/awstransfer/TransferEndpoint.h>
 #include <aws/awstransfer/TransferErrorMarshaller.h>
 #include <aws/awstransfer/model/CreateAccessRequest.h>
+#include <aws/awstransfer/model/CreateAgreementRequest.h>
+#include <aws/awstransfer/model/CreateConnectorRequest.h>
+#include <aws/awstransfer/model/CreateProfileRequest.h>
 #include <aws/awstransfer/model/CreateServerRequest.h>
 #include <aws/awstransfer/model/CreateUserRequest.h>
 #include <aws/awstransfer/model/CreateWorkflowRequest.h>
 #include <aws/awstransfer/model/DeleteAccessRequest.h>
+#include <aws/awstransfer/model/DeleteAgreementRequest.h>
+#include <aws/awstransfer/model/DeleteCertificateRequest.h>
+#include <aws/awstransfer/model/DeleteConnectorRequest.h>
+#include <aws/awstransfer/model/DeleteProfileRequest.h>
 #include <aws/awstransfer/model/DeleteServerRequest.h>
 #include <aws/awstransfer/model/DeleteSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/DeleteUserRequest.h>
 #include <aws/awstransfer/model/DeleteWorkflowRequest.h>
 #include <aws/awstransfer/model/DescribeAccessRequest.h>
+#include <aws/awstransfer/model/DescribeAgreementRequest.h>
+#include <aws/awstransfer/model/DescribeCertificateRequest.h>
+#include <aws/awstransfer/model/DescribeConnectorRequest.h>
 #include <aws/awstransfer/model/DescribeExecutionRequest.h>
+#include <aws/awstransfer/model/DescribeProfileRequest.h>
 #include <aws/awstransfer/model/DescribeSecurityPolicyRequest.h>
 #include <aws/awstransfer/model/DescribeServerRequest.h>
 #include <aws/awstransfer/model/DescribeUserRequest.h>
 #include <aws/awstransfer/model/DescribeWorkflowRequest.h>
+#include <aws/awstransfer/model/ImportCertificateRequest.h>
 #include <aws/awstransfer/model/ImportSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/ListAccessesRequest.h>
+#include <aws/awstransfer/model/ListAgreementsRequest.h>
+#include <aws/awstransfer/model/ListCertificatesRequest.h>
+#include <aws/awstransfer/model/ListConnectorsRequest.h>
 #include <aws/awstransfer/model/ListExecutionsRequest.h>
+#include <aws/awstransfer/model/ListProfilesRequest.h>
 #include <aws/awstransfer/model/ListSecurityPoliciesRequest.h>
 #include <aws/awstransfer/model/ListServersRequest.h>
 #include <aws/awstransfer/model/ListTagsForResourceRequest.h>
 #include <aws/awstransfer/model/ListUsersRequest.h>
 #include <aws/awstransfer/model/ListWorkflowsRequest.h>
 #include <aws/awstransfer/model/SendWorkflowStepStateRequest.h>
+#include <aws/awstransfer/model/StartFileTransferRequest.h>
 #include <aws/awstransfer/model/StartServerRequest.h>
 #include <aws/awstransfer/model/StopServerRequest.h>
 #include <aws/awstransfer/model/TagResourceRequest.h>
 #include <aws/awstransfer/model/TestIdentityProviderRequest.h>
 #include <aws/awstransfer/model/UntagResourceRequest.h>
 #include <aws/awstransfer/model/UpdateAccessRequest.h>
+#include <aws/awstransfer/model/UpdateAgreementRequest.h>
+#include <aws/awstransfer/model/UpdateCertificateRequest.h>
+#include <aws/awstransfer/model/UpdateConnectorRequest.h>
+#include <aws/awstransfer/model/UpdateProfileRequest.h>
 #include <aws/awstransfer/model/UpdateServerRequest.h>
 #include <aws/awstransfer/model/UpdateUserRequest.h>
 
@@ -150,6 +171,78 @@ void TransferClient::CreateAccessAsyncHelper(const CreateAccessRequest& request,
   handler(this, request, CreateAccess(request), context);
 }
 
+CreateAgreementOutcome TransferClient::CreateAgreement(const CreateAgreementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateAgreementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAgreementOutcomeCallable TransferClient::CreateAgreementCallable(const CreateAgreementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAgreementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAgreement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::CreateAgreementAsync(const CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAgreementAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::CreateAgreementAsyncHelper(const CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAgreement(request), context);
+}
+
+CreateConnectorOutcome TransferClient::CreateConnector(const CreateConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateConnectorOutcomeCallable TransferClient::CreateConnectorCallable(const CreateConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::CreateConnectorAsync(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::CreateConnectorAsyncHelper(const CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnector(request), context);
+}
+
+CreateProfileOutcome TransferClient::CreateProfile(const CreateProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateProfileOutcomeCallable TransferClient::CreateProfileCallable(const CreateProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::CreateProfileAsync(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateProfileAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::CreateProfileAsyncHelper(const CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateProfile(request), context);
+}
+
 CreateServerOutcome TransferClient::CreateServer(const CreateServerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -244,6 +337,102 @@ void TransferClient::DeleteAccessAsync(const DeleteAccessRequest& request, const
 void TransferClient::DeleteAccessAsyncHelper(const DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAccess(request), context);
+}
+
+DeleteAgreementOutcome TransferClient::DeleteAgreement(const DeleteAgreementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteAgreementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAgreementOutcomeCallable TransferClient::DeleteAgreementCallable(const DeleteAgreementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAgreementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAgreement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DeleteAgreementAsync(const DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAgreementAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DeleteAgreementAsyncHelper(const DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAgreement(request), context);
+}
+
+DeleteCertificateOutcome TransferClient::DeleteCertificate(const DeleteCertificateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCertificateOutcomeCallable TransferClient::DeleteCertificateCallable(const DeleteCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCertificate(request), context);
+}
+
+DeleteConnectorOutcome TransferClient::DeleteConnector(const DeleteConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteConnectorOutcomeCallable TransferClient::DeleteConnectorCallable(const DeleteConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DeleteConnectorAsync(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DeleteConnectorAsyncHelper(const DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnector(request), context);
+}
+
+DeleteProfileOutcome TransferClient::DeleteProfile(const DeleteProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteProfileOutcomeCallable TransferClient::DeleteProfileCallable(const DeleteProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DeleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProfileAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DeleteProfileAsyncHelper(const DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProfile(request), context);
 }
 
 DeleteServerOutcome TransferClient::DeleteServer(const DeleteServerRequest& request) const
@@ -366,6 +555,78 @@ void TransferClient::DescribeAccessAsyncHelper(const DescribeAccessRequest& requ
   handler(this, request, DescribeAccess(request), context);
 }
 
+DescribeAgreementOutcome TransferClient::DescribeAgreement(const DescribeAgreementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeAgreementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAgreementOutcomeCallable TransferClient::DescribeAgreementCallable(const DescribeAgreementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAgreementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAgreement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeAgreementAsync(const DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAgreementAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeAgreementAsyncHelper(const DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAgreement(request), context);
+}
+
+DescribeCertificateOutcome TransferClient::DescribeCertificate(const DescribeCertificateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeCertificateOutcomeCallable TransferClient::DescribeCertificateCallable(const DescribeCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeCertificateAsync(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCertificate(request), context);
+}
+
+DescribeConnectorOutcome TransferClient::DescribeConnector(const DescribeConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeConnectorOutcomeCallable TransferClient::DescribeConnectorCallable(const DescribeConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeConnectorAsyncHelper(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnector(request), context);
+}
+
 DescribeExecutionOutcome TransferClient::DescribeExecution(const DescribeExecutionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -388,6 +649,30 @@ void TransferClient::DescribeExecutionAsync(const DescribeExecutionRequest& requ
 void TransferClient::DescribeExecutionAsyncHelper(const DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeExecution(request), context);
+}
+
+DescribeProfileOutcome TransferClient::DescribeProfile(const DescribeProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeProfileOutcomeCallable TransferClient::DescribeProfileCallable(const DescribeProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeProfileAsync(const DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProfileAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeProfileAsyncHelper(const DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeProfile(request), context);
 }
 
 DescribeSecurityPolicyOutcome TransferClient::DescribeSecurityPolicy(const DescribeSecurityPolicyRequest& request) const
@@ -486,6 +771,30 @@ void TransferClient::DescribeWorkflowAsyncHelper(const DescribeWorkflowRequest& 
   handler(this, request, DescribeWorkflow(request), context);
 }
 
+ImportCertificateOutcome TransferClient::ImportCertificate(const ImportCertificateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ImportCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportCertificateOutcomeCallable TransferClient::ImportCertificateCallable(const ImportCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ImportCertificateAsync(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ImportCertificateAsyncHelper(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportCertificate(request), context);
+}
+
 ImportSshPublicKeyOutcome TransferClient::ImportSshPublicKey(const ImportSshPublicKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -534,6 +843,78 @@ void TransferClient::ListAccessesAsyncHelper(const ListAccessesRequest& request,
   handler(this, request, ListAccesses(request), context);
 }
 
+ListAgreementsOutcome TransferClient::ListAgreements(const ListAgreementsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListAgreementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAgreementsOutcomeCallable TransferClient::ListAgreementsCallable(const ListAgreementsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAgreementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAgreements(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListAgreementsAsync(const ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAgreementsAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListAgreementsAsyncHelper(const ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAgreements(request), context);
+}
+
+ListCertificatesOutcome TransferClient::ListCertificates(const ListCertificatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListCertificatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCertificatesOutcomeCallable TransferClient::ListCertificatesCallable(const ListCertificatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCertificatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCertificates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListCertificatesAsync(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCertificatesAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCertificates(request), context);
+}
+
+ListConnectorsOutcome TransferClient::ListConnectors(const ListConnectorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListConnectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListConnectorsOutcomeCallable TransferClient::ListConnectorsCallable(const ListConnectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorsAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListConnectorsAsyncHelper(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConnectors(request), context);
+}
+
 ListExecutionsOutcome TransferClient::ListExecutions(const ListExecutionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -556,6 +937,30 @@ void TransferClient::ListExecutionsAsync(const ListExecutionsRequest& request, c
 void TransferClient::ListExecutionsAsyncHelper(const ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListExecutions(request), context);
+}
+
+ListProfilesOutcome TransferClient::ListProfiles(const ListProfilesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListProfilesOutcomeCallable TransferClient::ListProfilesCallable(const ListProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListProfilesAsync(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListProfilesAsyncHelper(const ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProfiles(request), context);
 }
 
 ListSecurityPoliciesOutcome TransferClient::ListSecurityPolicies(const ListSecurityPoliciesRequest& request) const
@@ -702,6 +1107,30 @@ void TransferClient::SendWorkflowStepStateAsyncHelper(const SendWorkflowStepStat
   handler(this, request, SendWorkflowStepState(request), context);
 }
 
+StartFileTransferOutcome TransferClient::StartFileTransfer(const StartFileTransferRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartFileTransferOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartFileTransferOutcomeCallable TransferClient::StartFileTransferCallable(const StartFileTransferRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartFileTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFileTransfer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::StartFileTransferAsync(const StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartFileTransferAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::StartFileTransferAsyncHelper(const StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartFileTransfer(request), context);
+}
+
 StartServerOutcome TransferClient::StartServer(const StartServerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -844,6 +1273,102 @@ void TransferClient::UpdateAccessAsync(const UpdateAccessRequest& request, const
 void TransferClient::UpdateAccessAsyncHelper(const UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAccess(request), context);
+}
+
+UpdateAgreementOutcome TransferClient::UpdateAgreement(const UpdateAgreementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateAgreementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAgreementOutcomeCallable TransferClient::UpdateAgreementCallable(const UpdateAgreementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAgreementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAgreement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::UpdateAgreementAsync(const UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAgreementAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::UpdateAgreementAsyncHelper(const UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAgreement(request), context);
+}
+
+UpdateCertificateOutcome TransferClient::UpdateCertificate(const UpdateCertificateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateCertificateOutcomeCallable TransferClient::UpdateCertificateCallable(const UpdateCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::UpdateCertificateAsync(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCertificate(request), context);
+}
+
+UpdateConnectorOutcome TransferClient::UpdateConnector(const UpdateConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectorOutcomeCallable TransferClient::UpdateConnectorCallable(const UpdateConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::UpdateConnectorAsync(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::UpdateConnectorAsyncHelper(const UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnector(request), context);
+}
+
+UpdateProfileOutcome TransferClient::UpdateProfile(const UpdateProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateProfileOutcomeCallable TransferClient::UpdateProfileCallable(const UpdateProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::UpdateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateProfileAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::UpdateProfileAsyncHelper(const UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateProfile(request), context);
 }
 
 UpdateServerOutcome TransferClient::UpdateServer(const UpdateServerRequest& request) const

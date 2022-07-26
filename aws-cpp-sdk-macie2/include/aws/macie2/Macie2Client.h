@@ -46,6 +46,9 @@
 #include <aws/macie2/model/GetMacieSessionResult.h>
 #include <aws/macie2/model/GetMasterAccountResult.h>
 #include <aws/macie2/model/GetMemberResult.h>
+#include <aws/macie2/model/GetRevealConfigurationResult.h>
+#include <aws/macie2/model/GetSensitiveDataOccurrencesResult.h>
+#include <aws/macie2/model/GetSensitiveDataOccurrencesAvailabilityResult.h>
 #include <aws/macie2/model/GetUsageStatisticsResult.h>
 #include <aws/macie2/model/GetUsageTotalsResult.h>
 #include <aws/macie2/model/ListClassificationJobsResult.h>
@@ -68,6 +71,7 @@
 #include <aws/macie2/model/UpdateMacieSessionResult.h>
 #include <aws/macie2/model/UpdateMemberSessionResult.h>
 #include <aws/macie2/model/UpdateOrganizationConfigurationResult.h>
+#include <aws/macie2/model/UpdateRevealConfigurationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -142,6 +146,9 @@ namespace Model
         class GetMacieSessionRequest;
         class GetMasterAccountRequest;
         class GetMemberRequest;
+        class GetRevealConfigurationRequest;
+        class GetSensitiveDataOccurrencesRequest;
+        class GetSensitiveDataOccurrencesAvailabilityRequest;
         class GetUsageStatisticsRequest;
         class GetUsageTotalsRequest;
         class ListClassificationJobsRequest;
@@ -164,6 +171,7 @@ namespace Model
         class UpdateMacieSessionRequest;
         class UpdateMemberSessionRequest;
         class UpdateOrganizationConfigurationRequest;
+        class UpdateRevealConfigurationRequest;
 
         typedef Aws::Utils::Outcome<AcceptInvitationResult, Macie2Error> AcceptInvitationOutcome;
         typedef Aws::Utils::Outcome<BatchGetCustomDataIdentifiersResult, Macie2Error> BatchGetCustomDataIdentifiersOutcome;
@@ -200,6 +208,9 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMacieSessionResult, Macie2Error> GetMacieSessionOutcome;
         typedef Aws::Utils::Outcome<GetMasterAccountResult, Macie2Error> GetMasterAccountOutcome;
         typedef Aws::Utils::Outcome<GetMemberResult, Macie2Error> GetMemberOutcome;
+        typedef Aws::Utils::Outcome<GetRevealConfigurationResult, Macie2Error> GetRevealConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetSensitiveDataOccurrencesResult, Macie2Error> GetSensitiveDataOccurrencesOutcome;
+        typedef Aws::Utils::Outcome<GetSensitiveDataOccurrencesAvailabilityResult, Macie2Error> GetSensitiveDataOccurrencesAvailabilityOutcome;
         typedef Aws::Utils::Outcome<GetUsageStatisticsResult, Macie2Error> GetUsageStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetUsageTotalsResult, Macie2Error> GetUsageTotalsOutcome;
         typedef Aws::Utils::Outcome<ListClassificationJobsResult, Macie2Error> ListClassificationJobsOutcome;
@@ -222,6 +233,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMacieSessionResult, Macie2Error> UpdateMacieSessionOutcome;
         typedef Aws::Utils::Outcome<UpdateMemberSessionResult, Macie2Error> UpdateMemberSessionOutcome;
         typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, Macie2Error> UpdateOrganizationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateRevealConfigurationResult, Macie2Error> UpdateRevealConfigurationOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
         typedef std::future<BatchGetCustomDataIdentifiersOutcome> BatchGetCustomDataIdentifiersOutcomeCallable;
@@ -258,6 +270,9 @@ namespace Model
         typedef std::future<GetMacieSessionOutcome> GetMacieSessionOutcomeCallable;
         typedef std::future<GetMasterAccountOutcome> GetMasterAccountOutcomeCallable;
         typedef std::future<GetMemberOutcome> GetMemberOutcomeCallable;
+        typedef std::future<GetRevealConfigurationOutcome> GetRevealConfigurationOutcomeCallable;
+        typedef std::future<GetSensitiveDataOccurrencesOutcome> GetSensitiveDataOccurrencesOutcomeCallable;
+        typedef std::future<GetSensitiveDataOccurrencesAvailabilityOutcome> GetSensitiveDataOccurrencesAvailabilityOutcomeCallable;
         typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
         typedef std::future<GetUsageTotalsOutcome> GetUsageTotalsOutcomeCallable;
         typedef std::future<ListClassificationJobsOutcome> ListClassificationJobsOutcomeCallable;
@@ -280,6 +295,7 @@ namespace Model
         typedef std::future<UpdateMacieSessionOutcome> UpdateMacieSessionOutcomeCallable;
         typedef std::future<UpdateMemberSessionOutcome> UpdateMemberSessionOutcomeCallable;
         typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
+        typedef std::future<UpdateRevealConfigurationOutcome> UpdateRevealConfigurationOutcomeCallable;
 } // namespace Model
 
   class Macie2Client;
@@ -319,6 +335,9 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::GetMacieSessionRequest&, const Model::GetMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMacieSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMasterAccountRequest&, const Model::GetMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMasterAccountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMemberRequest&, const Model::GetMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetRevealConfigurationRequest&, const Model::GetRevealConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRevealConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetSensitiveDataOccurrencesRequest&, const Model::GetSensitiveDataOccurrencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSensitiveDataOccurrencesResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetSensitiveDataOccurrencesAvailabilityRequest&, const Model::GetSensitiveDataOccurrencesAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetUsageTotalsRequest&, const Model::GetUsageTotalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageTotalsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListClassificationJobsRequest&, const Model::ListClassificationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClassificationJobsResponseReceivedHandler;
@@ -341,6 +360,7 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::UpdateMacieSessionRequest&, const Model::UpdateMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMacieSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateMemberSessionRequest&, const Model::UpdateMemberSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::UpdateRevealConfigurationRequest&, const Model::UpdateRevealConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRevealConfigurationResponseReceivedHandler;
 
   /**
    * <p>Amazon Macie is a fully managed data security and data privacy service that
@@ -1011,6 +1031,61 @@ namespace Model
         virtual void GetMemberAsync(const Model::GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the status and configuration settings for retrieving (revealing)
+         * occurrences of sensitive data reported by findings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRevealConfigurationOutcome GetRevealConfiguration(const Model::GetRevealConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRevealConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRevealConfigurationOutcomeCallable GetRevealConfigurationCallable(const Model::GetRevealConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for GetRevealConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRevealConfigurationAsync(const Model::GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves (reveals) occurrences of sensitive data reported by a
+         * finding.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSensitiveDataOccurrencesOutcome GetSensitiveDataOccurrences(const Model::GetSensitiveDataOccurrencesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSensitiveDataOccurrences that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSensitiveDataOccurrencesOutcomeCallable GetSensitiveDataOccurrencesCallable(const Model::GetSensitiveDataOccurrencesRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSensitiveDataOccurrences that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSensitiveDataOccurrencesAsync(const Model::GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Checks whether occurrences of sensitive data can be retrieved (revealed) for
+         * a finding.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSensitiveDataOccurrencesAvailabilityOutcome GetSensitiveDataOccurrencesAvailability(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSensitiveDataOccurrencesAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSensitiveDataOccurrencesAvailabilityOutcomeCallable GetSensitiveDataOccurrencesAvailabilityCallable(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSensitiveDataOccurrencesAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSensitiveDataOccurrencesAvailabilityAsync(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves (queries) quotas and aggregated usage data for one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">AWS
@@ -1408,6 +1483,25 @@ namespace Model
          */
         virtual void UpdateOrganizationConfigurationAsync(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the status and configuration settings for retrieving (revealing)
+         * occurrences of sensitive data reported by findings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRevealConfigurationOutcome UpdateRevealConfiguration(const Model::UpdateRevealConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRevealConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRevealConfigurationOutcomeCallable UpdateRevealConfigurationCallable(const Model::UpdateRevealConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateRevealConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRevealConfigurationAsync(const Model::UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1447,6 +1541,9 @@ namespace Model
         void GetMacieSessionAsyncHelper(const Model::GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMasterAccountAsyncHelper(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMemberAsyncHelper(const Model::GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRevealConfigurationAsyncHelper(const Model::GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSensitiveDataOccurrencesAsyncHelper(const Model::GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSensitiveDataOccurrencesAvailabilityAsyncHelper(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageStatisticsAsyncHelper(const Model::GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageTotalsAsyncHelper(const Model::GetUsageTotalsRequest& request, const GetUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClassificationJobsAsyncHelper(const Model::ListClassificationJobsRequest& request, const ListClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1469,6 +1566,7 @@ namespace Model
         void UpdateMacieSessionAsyncHelper(const Model::UpdateMacieSessionRequest& request, const UpdateMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMemberSessionAsyncHelper(const Model::UpdateMemberSessionRequest& request, const UpdateMemberSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateOrganizationConfigurationAsyncHelper(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRevealConfigurationAsyncHelper(const Model::UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

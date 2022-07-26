@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the action that AWS WAF should take on a web request when it
-   * matches the criteria defined in the rule. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes the action that WAF should take on a web request when it matches
+   * the criteria defined in the rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalRuleGroupRulesActionDetails">AWS
    * API Reference</a></p>
    */

@@ -29,11 +29,10 @@ MemberDetail::MemberDetail() :
     m_disabledReasonHasBeenSet(false),
     m_invitedTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_volumeUsageInBytes(0),
-    m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeUsageUpdatedTimeHasBeenSet(false),
     m_invitationType(InvitationType::NOT_SET),
-    m_invitationTypeHasBeenSet(false)
+    m_invitationTypeHasBeenSet(false),
+    m_volumeUsageByDatasourcePackageHasBeenSet(false),
+    m_datasourcePackageIngestStatesHasBeenSet(false)
 {
 }
 
@@ -48,11 +47,10 @@ MemberDetail::MemberDetail(JsonView jsonValue) :
     m_disabledReasonHasBeenSet(false),
     m_invitedTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_volumeUsageInBytes(0),
-    m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeUsageUpdatedTimeHasBeenSet(false),
     m_invitationType(InvitationType::NOT_SET),
-    m_invitationTypeHasBeenSet(false)
+    m_invitationTypeHasBeenSet(false),
+    m_volumeUsageByDatasourcePackageHasBeenSet(false),
+    m_datasourcePackageIngestStatesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,25 +113,31 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
     m_updatedTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("VolumeUsageInBytes"))
-  {
-    m_volumeUsageInBytes = jsonValue.GetInt64("VolumeUsageInBytes");
-
-    m_volumeUsageInBytesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("VolumeUsageUpdatedTime"))
-  {
-    m_volumeUsageUpdatedTime = jsonValue.GetString("VolumeUsageUpdatedTime");
-
-    m_volumeUsageUpdatedTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("InvitationType"))
   {
     m_invitationType = InvitationTypeMapper::GetInvitationTypeForName(jsonValue.GetString("InvitationType"));
 
     m_invitationTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VolumeUsageByDatasourcePackage"))
+  {
+    Aws::Map<Aws::String, JsonView> volumeUsageByDatasourcePackageJsonMap = jsonValue.GetObject("VolumeUsageByDatasourcePackage").GetAllObjects();
+    for(auto& volumeUsageByDatasourcePackageItem : volumeUsageByDatasourcePackageJsonMap)
+    {
+      m_volumeUsageByDatasourcePackage[DatasourcePackageMapper::GetDatasourcePackageForName(volumeUsageByDatasourcePackageItem.first)] = volumeUsageByDatasourcePackageItem.second.AsObject();
+    }
+    m_volumeUsageByDatasourcePackageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatasourcePackageIngestStates"))
+  {
+    Aws::Map<Aws::String, JsonView> datasourcePackageIngestStatesJsonMap = jsonValue.GetObject("DatasourcePackageIngestStates").GetAllObjects();
+    for(auto& datasourcePackageIngestStatesItem : datasourcePackageIngestStatesJsonMap)
+    {
+      m_datasourcePackageIngestStates[DatasourcePackageMapper::GetDatasourcePackageForName(datasourcePackageIngestStatesItem.first)] = DatasourcePackageIngestStateMapper::GetDatasourcePackageIngestStateForName(datasourcePackageIngestStatesItem.second.AsString());
+    }
+    m_datasourcePackageIngestStatesHasBeenSet = true;
   }
 
   return *this;
@@ -187,20 +191,31 @@ JsonValue MemberDetail::Jsonize() const
    payload.WithString("UpdatedTime", m_updatedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
-  if(m_volumeUsageInBytesHasBeenSet)
-  {
-   payload.WithInt64("VolumeUsageInBytes", m_volumeUsageInBytes);
-
-  }
-
-  if(m_volumeUsageUpdatedTimeHasBeenSet)
-  {
-   payload.WithString("VolumeUsageUpdatedTime", m_volumeUsageUpdatedTime.ToGmtString(DateFormat::ISO_8601));
-  }
-
   if(m_invitationTypeHasBeenSet)
   {
    payload.WithString("InvitationType", InvitationTypeMapper::GetNameForInvitationType(m_invitationType));
+  }
+
+  if(m_volumeUsageByDatasourcePackageHasBeenSet)
+  {
+   JsonValue volumeUsageByDatasourcePackageJsonMap;
+   for(auto& volumeUsageByDatasourcePackageItem : m_volumeUsageByDatasourcePackage)
+   {
+     volumeUsageByDatasourcePackageJsonMap.WithObject(DatasourcePackageMapper::GetNameForDatasourcePackage(volumeUsageByDatasourcePackageItem.first), volumeUsageByDatasourcePackageItem.second.Jsonize());
+   }
+   payload.WithObject("VolumeUsageByDatasourcePackage", std::move(volumeUsageByDatasourcePackageJsonMap));
+
+  }
+
+  if(m_datasourcePackageIngestStatesHasBeenSet)
+  {
+   JsonValue datasourcePackageIngestStatesJsonMap;
+   for(auto& datasourcePackageIngestStatesItem : m_datasourcePackageIngestStates)
+   {
+     datasourcePackageIngestStatesJsonMap.WithString(DatasourcePackageMapper::GetNameForDatasourcePackage(datasourcePackageIngestStatesItem.first), DatasourcePackageIngestStateMapper::GetNameForDatasourcePackageIngestState(datasourcePackageIngestStatesItem.second));
+   }
+   payload.WithObject("DatasourcePackageIngestStates", std::move(datasourcePackageIngestStatesJsonMap));
+
   }
 
   return payload;

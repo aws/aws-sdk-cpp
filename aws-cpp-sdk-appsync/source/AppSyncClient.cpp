@@ -38,6 +38,7 @@
 #include <aws/appsync/model/DeleteResolverRequest.h>
 #include <aws/appsync/model/DeleteTypeRequest.h>
 #include <aws/appsync/model/DisassociateApiRequest.h>
+#include <aws/appsync/model/EvaluateMappingTemplateRequest.h>
 #include <aws/appsync/model/FlushApiCacheRequest.h>
 #include <aws/appsync/model/GetApiAssociationRequest.h>
 #include <aws/appsync/model/GetApiCacheRequest.h>
@@ -745,6 +746,31 @@ void AppSyncClient::DisassociateApiAsync(const DisassociateApiRequest& request, 
 void AppSyncClient::DisassociateApiAsyncHelper(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateApi(request), context);
+}
+
+EvaluateMappingTemplateOutcome AppSyncClient::EvaluateMappingTemplate(const EvaluateMappingTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/dataplane-evaluatetemplate");
+  return EvaluateMappingTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EvaluateMappingTemplateOutcomeCallable AppSyncClient::EvaluateMappingTemplateCallable(const EvaluateMappingTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EvaluateMappingTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EvaluateMappingTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::EvaluateMappingTemplateAsync(const EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EvaluateMappingTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::EvaluateMappingTemplateAsyncHelper(const EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EvaluateMappingTemplate(request), context);
 }
 
 FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& request) const

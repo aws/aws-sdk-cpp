@@ -524,65 +524,73 @@ namespace Model
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const{ return m_regionsOfInterest; }
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline bool RegionsOfInterestHasBeenSet() const { return m_regionsOfInterestHasBeenSet; }
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline void SetRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = value; }
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline void SetRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = std::move(value); }
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline CreateStreamProcessorRequest& WithRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { SetRegionsOfInterest(value); return *this;}
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline CreateStreamProcessorRequest& WithRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { SetRegionsOfInterest(std::move(value)); return *this;}
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline CreateStreamProcessorRequest& AddRegionsOfInterest(const RegionOfInterest& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(value); return *this; }
 
     /**
      * <p> Specifies locations in the frames where Amazon Rekognition checks for
-     * objects or people. You can specify up to 10 regions of interest. This is an
-     * optional parameter for label detection stream processors and should not be used
-     * to create a face search stream processor. </p>
+     * objects or people. You can specify up to 10 regions of interest, and each region
+     * has either a polygon or a bounding box. This is an optional parameter for label
+     * detection stream processors and should not be used to create a face search
+     * stream processor. </p>
      */
     inline CreateStreamProcessorRequest& AddRegionsOfInterest(RegionOfInterest&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(std::move(value)); return *this; }
 

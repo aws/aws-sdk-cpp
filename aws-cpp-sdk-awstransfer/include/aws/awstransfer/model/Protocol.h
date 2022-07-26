@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SFTP,
     FTP,
-    FTPS
+    FTPS,
+    AS2
   };
 
 namespace ProtocolMapper

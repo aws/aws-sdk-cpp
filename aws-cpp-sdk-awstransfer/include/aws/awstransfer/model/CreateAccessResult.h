@@ -70,50 +70,43 @@ namespace Model
 
     /**
      * <p>The external ID of the group whose users have access to your Amazon S3 or
-     * Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family.</p>
+     * Amazon EFS resources over the enabled protocols using Transfer Family.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
      * <p>The external ID of the group whose users have access to your Amazon S3 or
-     * Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family.</p>
+     * Amazon EFS resources over the enabled protocols using Transfer Family.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalId = value; }
 
     /**
      * <p>The external ID of the group whose users have access to your Amazon S3 or
-     * Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family.</p>
+     * Amazon EFS resources over the enabled protocols using Transfer Family.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalId = std::move(value); }
 
     /**
      * <p>The external ID of the group whose users have access to your Amazon S3 or
-     * Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family.</p>
+     * Amazon EFS resources over the enabled protocols using Transfer Family.</p>
      */
     inline void SetExternalId(const char* value) { m_externalId.assign(value); }
 
     /**
      * <p>The external ID of the group whose users have access to your Amazon S3 or
-     * Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family.</p>
+     * Amazon EFS resources over the enabled protocols using Transfer Family.</p>
      */
     inline CreateAccessResult& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
      * <p>The external ID of the group whose users have access to your Amazon S3 or
-     * Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family.</p>
+     * Amazon EFS resources over the enabled protocols using Transfer Family.</p>
      */
     inline CreateAccessResult& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
      * <p>The external ID of the group whose users have access to your Amazon S3 or
-     * Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family.</p>
+     * Amazon EFS resources over the enabled protocols using Transfer Family.</p>
      */
     inline CreateAccessResult& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

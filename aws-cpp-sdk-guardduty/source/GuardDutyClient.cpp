@@ -37,6 +37,7 @@
 #include <aws/guardduty/model/DeleteMembersRequest.h>
 #include <aws/guardduty/model/DeletePublishingDestinationRequest.h>
 #include <aws/guardduty/model/DeleteThreatIntelSetRequest.h>
+#include <aws/guardduty/model/DescribeMalwareScansRequest.h>
 #include <aws/guardduty/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/guardduty/model/DescribePublishingDestinationRequest.h>
 #include <aws/guardduty/model/DisableOrganizationAdminAccountRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/guardduty/model/GetFindingsStatisticsRequest.h>
 #include <aws/guardduty/model/GetIPSetRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
+#include <aws/guardduty/model/GetMalwareScanSettingsRequest.h>
 #include <aws/guardduty/model/GetMemberDetectorsRequest.h>
 #include <aws/guardduty/model/GetMembersRequest.h>
 #include <aws/guardduty/model/GetRemainingFreeTrialDaysRequest.h>
@@ -75,6 +77,7 @@
 #include <aws/guardduty/model/UpdateFilterRequest.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackRequest.h>
 #include <aws/guardduty/model/UpdateIPSetRequest.h>
+#include <aws/guardduty/model/UpdateMalwareScanSettingsRequest.h>
 #include <aws/guardduty/model/UpdateMemberDetectorsRequest.h>
 #include <aws/guardduty/model/UpdateOrganizationConfigurationRequest.h>
 #include <aws/guardduty/model/UpdatePublishingDestinationRequest.h>
@@ -699,6 +702,38 @@ void GuardDutyClient::DeleteThreatIntelSetAsyncHelper(const DeleteThreatIntelSet
   handler(this, request, DeleteThreatIntelSet(request), context);
 }
 
+DescribeMalwareScansOutcome GuardDutyClient::DescribeMalwareScans(const DescribeMalwareScansRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMalwareScans", "Required field: DetectorId, is not set");
+    return DescribeMalwareScansOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/malware-scans");
+  return DescribeMalwareScansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeMalwareScansOutcomeCallable GuardDutyClient::DescribeMalwareScansCallable(const DescribeMalwareScansRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMalwareScansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMalwareScans(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::DescribeMalwareScansAsync(const DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMalwareScansAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::DescribeMalwareScansAsyncHelper(const DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMalwareScans(request), context);
+}
+
 DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
 {
   if (!request.DetectorIdHasBeenSet())
@@ -1109,6 +1144,38 @@ void GuardDutyClient::GetInvitationsCountAsync(const GetInvitationsCountRequest&
 void GuardDutyClient::GetInvitationsCountAsyncHelper(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetInvitationsCount(request), context);
+}
+
+GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetMalwareScanSettingsRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMalwareScanSettings", "Required field: DetectorId, is not set");
+    return GetMalwareScanSettingsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/malware-scan-settings");
+  return GetMalwareScanSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMalwareScanSettingsOutcomeCallable GuardDutyClient::GetMalwareScanSettingsCallable(const GetMalwareScanSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMalwareScanSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMalwareScanSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::GetMalwareScanSettingsAsync(const GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMalwareScanSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::GetMalwareScanSettingsAsyncHelper(const GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMalwareScanSettings(request), context);
 }
 
 GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDetectorsRequest& request) const
@@ -1907,6 +1974,38 @@ void GuardDutyClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, const 
 void GuardDutyClient::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIPSet(request), context);
+}
+
+UpdateMalwareScanSettingsOutcome GuardDutyClient::UpdateMalwareScanSettings(const UpdateMalwareScanSettingsRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMalwareScanSettings", "Required field: DetectorId, is not set");
+    return UpdateMalwareScanSettingsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/detector/");
+  uri.AddPathSegment(request.GetDetectorId());
+  uri.AddPathSegments("/malware-scan-settings");
+  return UpdateMalwareScanSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMalwareScanSettingsOutcomeCallable GuardDutyClient::UpdateMalwareScanSettingsCallable(const UpdateMalwareScanSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMalwareScanSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMalwareScanSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::UpdateMalwareScanSettingsAsync(const UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMalwareScanSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::UpdateMalwareScanSettingsAsyncHelper(const UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMalwareScanSettings(request), context);
 }
 
 UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const UpdateMemberDetectorsRequest& request) const

@@ -24,7 +24,10 @@ Resource::Resource() :
     m_instanceDetailsHasBeenSet(false),
     m_eksClusterDetailsHasBeenSet(false),
     m_kubernetesDetailsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_ebsVolumeDetailsHasBeenSet(false),
+    m_ecsClusterDetailsHasBeenSet(false),
+    m_containerDetailsHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ Resource::Resource(JsonView jsonValue) :
     m_instanceDetailsHasBeenSet(false),
     m_eksClusterDetailsHasBeenSet(false),
     m_kubernetesDetailsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_ebsVolumeDetailsHasBeenSet(false),
+    m_ecsClusterDetailsHasBeenSet(false),
+    m_containerDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +92,27 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ebsVolumeDetails"))
+  {
+    m_ebsVolumeDetails = jsonValue.GetObject("ebsVolumeDetails");
+
+    m_ebsVolumeDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ecsClusterDetails"))
+  {
+    m_ecsClusterDetails = jsonValue.GetObject("ecsClusterDetails");
+
+    m_ecsClusterDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerDetails"))
+  {
+    m_containerDetails = jsonValue.GetObject("containerDetails");
+
+    m_containerDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +158,24 @@ JsonValue Resource::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", m_resourceType);
+
+  }
+
+  if(m_ebsVolumeDetailsHasBeenSet)
+  {
+   payload.WithObject("ebsVolumeDetails", m_ebsVolumeDetails.Jsonize());
+
+  }
+
+  if(m_ecsClusterDetailsHasBeenSet)
+  {
+   payload.WithObject("ecsClusterDetails", m_ecsClusterDetails.Jsonize());
+
+  }
+
+  if(m_containerDetailsHasBeenSet)
+  {
+   payload.WithObject("containerDetails", m_containerDetails.Jsonize());
 
   }
 

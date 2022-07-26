@@ -28,11 +28,11 @@ namespace Model
   /**
    * <p>Specifies a location within the frame that Rekognition checks for objects of
    * interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or
-   * object or <code>Polygon</code> to set a region of the screen.</p> <p>A word,
-   * face, or label is included in the region if it is more than half in that region.
-   * If there is more than one region, the word, face, or label is compared with all
-   * regions of the screen. Any object of interest that is more than half in a region
-   * is kept in the results.</p><p><h3>See Also:</h3>   <a
+   * <code>Polygon</code> to set a region of the screen.</p> <p>A word, face, or
+   * label is included in the region if it is more than half in that region. If there
+   * is more than one region, the word, face, or label is compared with all regions
+   * of the screen. Any object of interest that is more than half in a region is kept
+   * in the results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RegionOfInterest">AWS
    * API Reference</a></p>
    */

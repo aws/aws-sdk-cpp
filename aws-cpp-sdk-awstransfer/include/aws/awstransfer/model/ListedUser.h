@@ -146,191 +146,197 @@ namespace Model
 
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline ListedUser& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline ListedUser& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline ListedUser& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline ListedUser& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>  <p>The IAM role that controls your users' access to your
-     * Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file
-     * system for servers with <code>Domain=EFS</code>. </p> <p>The policies attached
-     * to this role determine the level of access you want to provide your users when
-     * transferring files into and out of your S3 buckets or EFS file systems.</p>
-     * 
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>  <p>The IAM role that
+     * controls your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline ListedUser& WithRole(const char* value) { SetRole(value); return *this;}
 

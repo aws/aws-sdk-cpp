@@ -28,6 +28,7 @@
 #include <aws/guardduty/model/DeleteMembersResult.h>
 #include <aws/guardduty/model/DeletePublishingDestinationResult.h>
 #include <aws/guardduty/model/DeleteThreatIntelSetResult.h>
+#include <aws/guardduty/model/DescribeMalwareScansResult.h>
 #include <aws/guardduty/model/DescribeOrganizationConfigurationResult.h>
 #include <aws/guardduty/model/DescribePublishingDestinationResult.h>
 #include <aws/guardduty/model/DisableOrganizationAdminAccountResult.h>
@@ -41,6 +42,7 @@
 #include <aws/guardduty/model/GetFindingsStatisticsResult.h>
 #include <aws/guardduty/model/GetIPSetResult.h>
 #include <aws/guardduty/model/GetInvitationsCountResult.h>
+#include <aws/guardduty/model/GetMalwareScanSettingsResult.h>
 #include <aws/guardduty/model/GetMemberDetectorsResult.h>
 #include <aws/guardduty/model/GetMembersResult.h>
 #include <aws/guardduty/model/GetRemainingFreeTrialDaysResult.h>
@@ -66,6 +68,7 @@
 #include <aws/guardduty/model/UpdateFilterResult.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackResult.h>
 #include <aws/guardduty/model/UpdateIPSetResult.h>
+#include <aws/guardduty/model/UpdateMalwareScanSettingsResult.h>
 #include <aws/guardduty/model/UpdateMemberDetectorsResult.h>
 #include <aws/guardduty/model/UpdateOrganizationConfigurationResult.h>
 #include <aws/guardduty/model/UpdatePublishingDestinationResult.h>
@@ -126,6 +129,7 @@ namespace Model
         class DeleteMembersRequest;
         class DeletePublishingDestinationRequest;
         class DeleteThreatIntelSetRequest;
+        class DescribeMalwareScansRequest;
         class DescribeOrganizationConfigurationRequest;
         class DescribePublishingDestinationRequest;
         class DisableOrganizationAdminAccountRequest;
@@ -139,6 +143,7 @@ namespace Model
         class GetFindingsStatisticsRequest;
         class GetIPSetRequest;
         class GetInvitationsCountRequest;
+        class GetMalwareScanSettingsRequest;
         class GetMemberDetectorsRequest;
         class GetMembersRequest;
         class GetRemainingFreeTrialDaysRequest;
@@ -164,6 +169,7 @@ namespace Model
         class UpdateFilterRequest;
         class UpdateFindingsFeedbackRequest;
         class UpdateIPSetRequest;
+        class UpdateMalwareScanSettingsRequest;
         class UpdateMemberDetectorsRequest;
         class UpdateOrganizationConfigurationRequest;
         class UpdatePublishingDestinationRequest;
@@ -186,6 +192,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteMembersResult, GuardDutyError> DeleteMembersOutcome;
         typedef Aws::Utils::Outcome<DeletePublishingDestinationResult, GuardDutyError> DeletePublishingDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteThreatIntelSetResult, GuardDutyError> DeleteThreatIntelSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeMalwareScansResult, GuardDutyError> DescribeMalwareScansOutcome;
         typedef Aws::Utils::Outcome<DescribeOrganizationConfigurationResult, GuardDutyError> DescribeOrganizationConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribePublishingDestinationResult, GuardDutyError> DescribePublishingDestinationOutcome;
         typedef Aws::Utils::Outcome<DisableOrganizationAdminAccountResult, GuardDutyError> DisableOrganizationAdminAccountOutcome;
@@ -199,6 +206,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFindingsStatisticsResult, GuardDutyError> GetFindingsStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, GuardDutyError> GetIPSetOutcome;
         typedef Aws::Utils::Outcome<GetInvitationsCountResult, GuardDutyError> GetInvitationsCountOutcome;
+        typedef Aws::Utils::Outcome<GetMalwareScanSettingsResult, GuardDutyError> GetMalwareScanSettingsOutcome;
         typedef Aws::Utils::Outcome<GetMemberDetectorsResult, GuardDutyError> GetMemberDetectorsOutcome;
         typedef Aws::Utils::Outcome<GetMembersResult, GuardDutyError> GetMembersOutcome;
         typedef Aws::Utils::Outcome<GetRemainingFreeTrialDaysResult, GuardDutyError> GetRemainingFreeTrialDaysOutcome;
@@ -224,6 +232,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFilterResult, GuardDutyError> UpdateFilterOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsFeedbackResult, GuardDutyError> UpdateFindingsFeedbackOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, GuardDutyError> UpdateIPSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateMalwareScanSettingsResult, GuardDutyError> UpdateMalwareScanSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateMemberDetectorsResult, GuardDutyError> UpdateMemberDetectorsOutcome;
         typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, GuardDutyError> UpdateOrganizationConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdatePublishingDestinationResult, GuardDutyError> UpdatePublishingDestinationOutcome;
@@ -246,6 +255,7 @@ namespace Model
         typedef std::future<DeleteMembersOutcome> DeleteMembersOutcomeCallable;
         typedef std::future<DeletePublishingDestinationOutcome> DeletePublishingDestinationOutcomeCallable;
         typedef std::future<DeleteThreatIntelSetOutcome> DeleteThreatIntelSetOutcomeCallable;
+        typedef std::future<DescribeMalwareScansOutcome> DescribeMalwareScansOutcomeCallable;
         typedef std::future<DescribeOrganizationConfigurationOutcome> DescribeOrganizationConfigurationOutcomeCallable;
         typedef std::future<DescribePublishingDestinationOutcome> DescribePublishingDestinationOutcomeCallable;
         typedef std::future<DisableOrganizationAdminAccountOutcome> DisableOrganizationAdminAccountOutcomeCallable;
@@ -259,6 +269,7 @@ namespace Model
         typedef std::future<GetFindingsStatisticsOutcome> GetFindingsStatisticsOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
         typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
+        typedef std::future<GetMalwareScanSettingsOutcome> GetMalwareScanSettingsOutcomeCallable;
         typedef std::future<GetMemberDetectorsOutcome> GetMemberDetectorsOutcomeCallable;
         typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
         typedef std::future<GetRemainingFreeTrialDaysOutcome> GetRemainingFreeTrialDaysOutcomeCallable;
@@ -284,6 +295,7 @@ namespace Model
         typedef std::future<UpdateFilterOutcome> UpdateFilterOutcomeCallable;
         typedef std::future<UpdateFindingsFeedbackOutcome> UpdateFindingsFeedbackOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
+        typedef std::future<UpdateMalwareScanSettingsOutcome> UpdateMalwareScanSettingsOutcomeCallable;
         typedef std::future<UpdateMemberDetectorsOutcome> UpdateMemberDetectorsOutcomeCallable;
         typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
         typedef std::future<UpdatePublishingDestinationOutcome> UpdatePublishingDestinationOutcomeCallable;
@@ -309,6 +321,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeletePublishingDestinationRequest&, const Model::DeletePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublishingDestinationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteThreatIntelSetRequest&, const Model::DeleteThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThreatIntelSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::DescribeMalwareScansRequest&, const Model::DescribeMalwareScansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMalwareScansResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DescribePublishingDestinationRequest&, const Model::DescribePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePublishingDestinationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DisableOrganizationAdminAccountRequest&, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
@@ -322,6 +335,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::GetFindingsStatisticsRequest&, const Model::GetFindingsStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetInvitationsCountRequest&, const Model::GetInvitationsCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationsCountResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::GetMalwareScanSettingsRequest&, const Model::GetMalwareScanSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMalwareScanSettingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetMemberDetectorsRequest&, const Model::GetMemberDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberDetectorsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetRemainingFreeTrialDaysRequest&, const Model::GetRemainingFreeTrialDaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRemainingFreeTrialDaysResponseReceivedHandler;
@@ -347,6 +361,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateFilterRequest&, const Model::UpdateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateFindingsFeedbackRequest&, const Model::UpdateFindingsFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsFeedbackResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::UpdateMalwareScanSettingsRequest&, const Model::UpdateMalwareScanSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMalwareScanSettingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateMemberDetectorsRequest&, const Model::UpdateMemberDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberDetectorsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdatePublishingDestinationRequest&, const Model::UpdatePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublishingDestinationResponseReceivedHandler;
@@ -728,6 +743,23 @@ namespace Model
         virtual void DeleteThreatIntelSetAsync(const Model::DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of malware scans.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMalwareScansOutcome DescribeMalwareScans(const Model::DescribeMalwareScansRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMalwareScans that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMalwareScansOutcomeCallable DescribeMalwareScansCallable(const Model::DescribeMalwareScansRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMalwareScans that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMalwareScansAsync(const Model::DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about the account selected as the delegated administrator
          * for GuardDuty.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeOrganizationConfiguration">AWS
@@ -962,6 +994,24 @@ namespace Model
          * An Async wrapper for GetInvitationsCount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the details of the malware scan settings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMalwareScanSettingsOutcome GetMalwareScanSettings(const Model::GetMalwareScanSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMalwareScanSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMalwareScanSettingsOutcomeCallable GetMalwareScanSettingsCallable(const Model::GetMalwareScanSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetMalwareScanSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMalwareScanSettingsAsync(const Model::GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes which data sources are enabled for the member account's
@@ -1426,6 +1476,23 @@ namespace Model
         virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the malware scan settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMalwareScanSettingsOutcome UpdateMalwareScanSettings(const Model::UpdateMalwareScanSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMalwareScanSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMalwareScanSettingsOutcomeCallable UpdateMalwareScanSettingsCallable(const Model::UpdateMalwareScanSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateMalwareScanSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMalwareScanSettingsAsync(const Model::UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Contains information on member accounts to be updated.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors">AWS
@@ -1518,6 +1585,7 @@ namespace Model
         void DeleteMembersAsyncHelper(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePublishingDestinationAsyncHelper(const Model::DeletePublishingDestinationRequest& request, const DeletePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteThreatIntelSetAsyncHelper(const Model::DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMalwareScansAsyncHelper(const Model::DescribeMalwareScansRequest& request, const DescribeMalwareScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrganizationConfigurationAsyncHelper(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePublishingDestinationAsyncHelper(const Model::DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableOrganizationAdminAccountAsyncHelper(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1531,6 +1599,7 @@ namespace Model
         void GetFindingsStatisticsAsyncHelper(const Model::GetFindingsStatisticsRequest& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInvitationsCountAsyncHelper(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMalwareScanSettingsAsyncHelper(const Model::GetMalwareScanSettingsRequest& request, const GetMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMemberDetectorsAsyncHelper(const Model::GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMembersAsyncHelper(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRemainingFreeTrialDaysAsyncHelper(const Model::GetRemainingFreeTrialDaysRequest& request, const GetRemainingFreeTrialDaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1556,6 +1625,7 @@ namespace Model
         void UpdateFilterAsyncHelper(const Model::UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsFeedbackAsyncHelper(const Model::UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMalwareScanSettingsAsyncHelper(const Model::UpdateMalwareScanSettingsRequest& request, const UpdateMalwareScanSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMemberDetectorsAsyncHelper(const Model::UpdateMemberDetectorsRequest& request, const UpdateMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateOrganizationConfigurationAsyncHelper(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePublishingDestinationAsyncHelper(const Model::UpdatePublishingDestinationRequest& request, const UpdatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

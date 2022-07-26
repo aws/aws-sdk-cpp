@@ -128,32 +128,38 @@ namespace Model
 
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline const ServiceMetadata& GetServiceMetadata() const{ return m_serviceMetadata; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline bool ServiceMetadataHasBeenSet() const { return m_serviceMetadataHasBeenSet; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline void SetServiceMetadata(const ServiceMetadata& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = value; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline void SetServiceMetadata(ServiceMetadata&& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = std::move(value); }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline DescribedExecution& WithServiceMetadata(const ServiceMetadata& value) { SetServiceMetadata(value); return *this;}
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline DescribedExecution& WithServiceMetadata(ServiceMetadata&& value) { SetServiceMetadata(std::move(value)); return *this;}
 

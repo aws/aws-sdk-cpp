@@ -54,7 +54,7 @@ namespace Model
      * status of CANCELLED, or the bucket didn't match the bucket criteria
      * (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
      * <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve
-     * job data for the bucket.</p></li></ul> <p></p>
+     * job data for the bucket.</p></li></ul>
      */
     inline const IsDefinedInJob& GetIsDefinedInJob() const{ return m_isDefinedInJob; }
 
@@ -70,7 +70,7 @@ namespace Model
      * status of CANCELLED, or the bucket didn't match the bucket criteria
      * (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
      * <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve
-     * job data for the bucket.</p></li></ul> <p></p>
+     * job data for the bucket.</p></li></ul>
      */
     inline bool IsDefinedInJobHasBeenSet() const { return m_isDefinedInJobHasBeenSet; }
 
@@ -86,7 +86,7 @@ namespace Model
      * status of CANCELLED, or the bucket didn't match the bucket criteria
      * (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
      * <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve
-     * job data for the bucket.</p></li></ul> <p></p>
+     * job data for the bucket.</p></li></ul>
      */
     inline void SetIsDefinedInJob(const IsDefinedInJob& value) { m_isDefinedInJobHasBeenSet = true; m_isDefinedInJob = value; }
 
@@ -102,7 +102,7 @@ namespace Model
      * status of CANCELLED, or the bucket didn't match the bucket criteria
      * (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
      * <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve
-     * job data for the bucket.</p></li></ul> <p></p>
+     * job data for the bucket.</p></li></ul>
      */
     inline void SetIsDefinedInJob(IsDefinedInJob&& value) { m_isDefinedInJobHasBeenSet = true; m_isDefinedInJob = std::move(value); }
 
@@ -118,7 +118,7 @@ namespace Model
      * status of CANCELLED, or the bucket didn't match the bucket criteria
      * (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
      * <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve
-     * job data for the bucket.</p></li></ul> <p></p>
+     * job data for the bucket.</p></li></ul>
      */
     inline JobDetails& WithIsDefinedInJob(const IsDefinedInJob& value) { SetIsDefinedInJob(value); return *this;}
 
@@ -134,7 +134,7 @@ namespace Model
      * status of CANCELLED, or the bucket didn't match the bucket criteria
      * (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
      * <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve
-     * job data for the bucket.</p></li></ul> <p></p>
+     * job data for the bucket.</p></li></ul>
      */
     inline JobDetails& WithIsDefinedInJob(IsDefinedInJob&& value) { SetIsDefinedInJob(std::move(value)); return *this;}
 

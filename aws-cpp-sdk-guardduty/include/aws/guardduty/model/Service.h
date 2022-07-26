@@ -9,6 +9,7 @@
 #include <aws/guardduty/model/Evidence.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/ServiceAdditionalInfo.h>
+#include <aws/guardduty/model/EbsVolumeScanDetails.h>
 #include <utility>
 
 namespace Aws
@@ -445,6 +446,78 @@ namespace Model
      */
     inline Service& WithAdditionalInfo(ServiceAdditionalInfo&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline Service& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline Service& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the feature that generated a finding.</p>
+     */
+    inline Service& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
+
+
+    /**
+     * <p>Returns details from the malware scan that created a finding.</p>
+     */
+    inline const EbsVolumeScanDetails& GetEbsVolumeScanDetails() const{ return m_ebsVolumeScanDetails; }
+
+    /**
+     * <p>Returns details from the malware scan that created a finding.</p>
+     */
+    inline bool EbsVolumeScanDetailsHasBeenSet() const { return m_ebsVolumeScanDetailsHasBeenSet; }
+
+    /**
+     * <p>Returns details from the malware scan that created a finding.</p>
+     */
+    inline void SetEbsVolumeScanDetails(const EbsVolumeScanDetails& value) { m_ebsVolumeScanDetailsHasBeenSet = true; m_ebsVolumeScanDetails = value; }
+
+    /**
+     * <p>Returns details from the malware scan that created a finding.</p>
+     */
+    inline void SetEbsVolumeScanDetails(EbsVolumeScanDetails&& value) { m_ebsVolumeScanDetailsHasBeenSet = true; m_ebsVolumeScanDetails = std::move(value); }
+
+    /**
+     * <p>Returns details from the malware scan that created a finding.</p>
+     */
+    inline Service& WithEbsVolumeScanDetails(const EbsVolumeScanDetails& value) { SetEbsVolumeScanDetails(value); return *this;}
+
+    /**
+     * <p>Returns details from the malware scan that created a finding.</p>
+     */
+    inline Service& WithEbsVolumeScanDetails(EbsVolumeScanDetails&& value) { SetEbsVolumeScanDetails(std::move(value)); return *this;}
+
   private:
 
     Action m_action;
@@ -479,6 +552,12 @@ namespace Model
 
     ServiceAdditionalInfo m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+
+    Aws::String m_featureName;
+    bool m_featureNameHasBeenSet;
+
+    EbsVolumeScanDetails m_ebsVolumeScanDetails;
+    bool m_ebsVolumeScanDetailsHasBeenSet;
   };
 
 } // namespace Model

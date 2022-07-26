@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A container object for the session details associated with a
+   * <p>A container object for the session details that are associated with a
    * workflow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ServiceMetadata">AWS
    * API Reference</a></p>
