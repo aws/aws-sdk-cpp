@@ -30,7 +30,7 @@ namespace Aws
          * A Document type represents open content that is serialized using the same format as its surroundings and requires no additional encoding or escaping.
          * Document types provide a JSON "view" of data regardless of the underlying protocol. This normalized JSON interface makes document types protocol-agnostic.
          * Clients can use the data stored in a document without prior knowledge of the protocol by interacting with the normalized JSON view of the data.
-         * Document types are only initially supported in JSON protocal, so it's identical to Aws::Utils::Json::JsonValue and Aws::Utils::Json::JsonView at this moment.
+         * Document types are only initially supported in JSON protocol, so it's identical to Aws::Utils::Json::JsonValue and Aws::Utils::Json::JsonView at this moment.
          */
         class AWS_CORE_API Document
         {

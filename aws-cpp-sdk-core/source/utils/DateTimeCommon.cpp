@@ -176,7 +176,7 @@ static int GetWeekDayNumberFromStr(const char* timeString, size_t startIndex, si
     }
 }
 
-//Get the 0-11 monthy number from a string representing Month. Case insensitive and will stop on abbreviation
+//Get the 0-11 monthly number from a string representing Month. Case insensitive and will stop on abbreviation
 static int GetMonthNumberFromStr(const char* timeString, size_t startIndex, size_t stopIndex)
 {
     if (stopIndex - startIndex < 3)

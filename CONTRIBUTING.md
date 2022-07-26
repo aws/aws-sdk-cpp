@@ -85,8 +85,8 @@ If your branch has more than one commit when it's approved, you will also be ask
 * Use RAII, Aws::New and Aws::Delete should only appear in constructors and destructors.
 * Be sure to follow the rule of 5.
 * Use the C++ 11 standard where possible.
-* Use UpperCamelCase for custom type names and function names. Use m_* for member variables. Don't use statics. If you must, use UpperCammelCase for static variables
-* Always be const correct, and be mindful of when you need to support r-values. We don't trust compilers to optimize this uniformly accross builds so please be explicit.
+* Use UpperCamelCase for custom type names and function names. Use m_* for member variables. Don't use statics. If you must, use UpperCamelCase for static variables
+* Always be const correct, and be mindful of when you need to support r-values. We don't trust compilers to optimize this uniformly across builds so please be explicit.
 * Namespace names should be UpperCammelCase. Never put a using namespace statement in a header file unless it is scoped by a class. It is fine to use a using namespace statement in a cpp file.
 * Use enum class, not enum
 * Prefer `#pragma once` for include guards.
