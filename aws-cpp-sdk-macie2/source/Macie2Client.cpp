@@ -55,6 +55,9 @@
 #include <aws/macie2/model/GetMacieSessionRequest.h>
 #include <aws/macie2/model/GetMasterAccountRequest.h>
 #include <aws/macie2/model/GetMemberRequest.h>
+#include <aws/macie2/model/GetRevealConfigurationRequest.h>
+#include <aws/macie2/model/GetSensitiveDataOccurrencesRequest.h>
+#include <aws/macie2/model/GetSensitiveDataOccurrencesAvailabilityRequest.h>
 #include <aws/macie2/model/GetUsageStatisticsRequest.h>
 #include <aws/macie2/model/GetUsageTotalsRequest.h>
 #include <aws/macie2/model/ListClassificationJobsRequest.h>
@@ -77,6 +80,7 @@
 #include <aws/macie2/model/UpdateMacieSessionRequest.h>
 #include <aws/macie2/model/UpdateMemberSessionRequest.h>
 #include <aws/macie2/model/UpdateOrganizationConfigurationRequest.h>
+#include <aws/macie2/model/UpdateRevealConfigurationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1079,6 +1083,95 @@ void Macie2Client::GetMemberAsyncHelper(const GetMemberRequest& request, const G
   handler(this, request, GetMember(request), context);
 }
 
+GetRevealConfigurationOutcome Macie2Client::GetRevealConfiguration(const GetRevealConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/reveal-configuration");
+  return GetRevealConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRevealConfigurationOutcomeCallable Macie2Client::GetRevealConfigurationCallable(const GetRevealConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRevealConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRevealConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetRevealConfigurationAsync(const GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRevealConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::GetRevealConfigurationAsyncHelper(const GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRevealConfiguration(request), context);
+}
+
+GetSensitiveDataOccurrencesOutcome Macie2Client::GetSensitiveDataOccurrences(const GetSensitiveDataOccurrencesRequest& request) const
+{
+  if (!request.FindingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSensitiveDataOccurrences", "Required field: FindingId, is not set");
+    return GetSensitiveDataOccurrencesOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FindingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/findings/");
+  uri.AddPathSegment(request.GetFindingId());
+  uri.AddPathSegments("/reveal");
+  return GetSensitiveDataOccurrencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSensitiveDataOccurrencesOutcomeCallable Macie2Client::GetSensitiveDataOccurrencesCallable(const GetSensitiveDataOccurrencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSensitiveDataOccurrencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSensitiveDataOccurrences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetSensitiveDataOccurrencesAsync(const GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSensitiveDataOccurrencesAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::GetSensitiveDataOccurrencesAsyncHelper(const GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSensitiveDataOccurrences(request), context);
+}
+
+GetSensitiveDataOccurrencesAvailabilityOutcome Macie2Client::GetSensitiveDataOccurrencesAvailability(const GetSensitiveDataOccurrencesAvailabilityRequest& request) const
+{
+  if (!request.FindingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSensitiveDataOccurrencesAvailability", "Required field: FindingId, is not set");
+    return GetSensitiveDataOccurrencesAvailabilityOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FindingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/findings/");
+  uri.AddPathSegment(request.GetFindingId());
+  uri.AddPathSegments("/reveal/availability");
+  return GetSensitiveDataOccurrencesAvailabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSensitiveDataOccurrencesAvailabilityOutcomeCallable Macie2Client::GetSensitiveDataOccurrencesAvailabilityCallable(const GetSensitiveDataOccurrencesAvailabilityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSensitiveDataOccurrencesAvailabilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSensitiveDataOccurrencesAvailability(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetSensitiveDataOccurrencesAvailabilityAsync(const GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSensitiveDataOccurrencesAvailabilityAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::GetSensitiveDataOccurrencesAvailabilityAsyncHelper(const GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSensitiveDataOccurrencesAvailability(request), context);
+}
+
 GetUsageStatisticsOutcome Macie2Client::GetUsageStatistics(const GetUsageStatisticsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1668,5 +1761,30 @@ void Macie2Client::UpdateOrganizationConfigurationAsync(const UpdateOrganization
 void Macie2Client::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateOrganizationConfiguration(request), context);
+}
+
+UpdateRevealConfigurationOutcome Macie2Client::UpdateRevealConfiguration(const UpdateRevealConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/reveal-configuration");
+  return UpdateRevealConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRevealConfigurationOutcomeCallable Macie2Client::UpdateRevealConfigurationCallable(const UpdateRevealConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRevealConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRevealConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::UpdateRevealConfigurationAsync(const UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRevealConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::UpdateRevealConfigurationAsyncHelper(const UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRevealConfiguration(request), context);
 }
 

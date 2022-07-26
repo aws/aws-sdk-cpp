@@ -489,6 +489,56 @@ namespace Model
      */
     inline ModelDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline int GetMinInferenceUnits() const{ return m_minInferenceUnits; }
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline bool MinInferenceUnitsHasBeenSet() const { return m_minInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline void SetMinInferenceUnits(int value) { m_minInferenceUnitsHasBeenSet = true; m_minInferenceUnits = value; }
+
+    /**
+     * <p>The minimum number of inference units used by the model. For more
+     * information, see <a>StartModel</a> </p>
+     */
+    inline ModelDescription& WithMinInferenceUnits(int value) { SetMinInferenceUnits(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Lookout for Vision uses to
+     * auto-scale the model. For more information, see <a>StartModel</a>.</p>
+     */
+    inline ModelDescription& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
+
   private:
 
     Aws::String m_modelVersion;
@@ -526,6 +576,12 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    int m_minInferenceUnits;
+    bool m_minInferenceUnitsHasBeenSet;
+
+    int m_maxInferenceUnits;
+    bool m_maxInferenceUnitsHasBeenSet;
   };
 
 } // namespace Model

@@ -21,6 +21,8 @@
 #include <aws/detective/DetectiveEndpoint.h>
 #include <aws/detective/DetectiveErrorMarshaller.h>
 #include <aws/detective/model/AcceptInvitationRequest.h>
+#include <aws/detective/model/BatchGetGraphMemberDatasourcesRequest.h>
+#include <aws/detective/model/BatchGetMembershipDatasourcesRequest.h>
 #include <aws/detective/model/CreateGraphRequest.h>
 #include <aws/detective/model/CreateMembersRequest.h>
 #include <aws/detective/model/DeleteGraphRequest.h>
@@ -29,6 +31,7 @@
 #include <aws/detective/model/DisassociateMembershipRequest.h>
 #include <aws/detective/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/detective/model/GetMembersRequest.h>
+#include <aws/detective/model/ListDatasourcePackagesRequest.h>
 #include <aws/detective/model/ListGraphsRequest.h>
 #include <aws/detective/model/ListInvitationsRequest.h>
 #include <aws/detective/model/ListMembersRequest.h>
@@ -38,6 +41,7 @@
 #include <aws/detective/model/StartMonitoringMemberRequest.h>
 #include <aws/detective/model/TagResourceRequest.h>
 #include <aws/detective/model/UntagResourceRequest.h>
+#include <aws/detective/model/UpdateDatasourcePackagesRequest.h>
 #include <aws/detective/model/UpdateOrganizationConfigurationRequest.h>
 
 using namespace Aws;
@@ -136,6 +140,56 @@ void DetectiveClient::AcceptInvitationAsync(const AcceptInvitationRequest& reque
 void DetectiveClient::AcceptInvitationAsyncHelper(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AcceptInvitation(request), context);
+}
+
+BatchGetGraphMemberDatasourcesOutcome DetectiveClient::BatchGetGraphMemberDatasources(const BatchGetGraphMemberDatasourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/graph/datasources/get");
+  return BatchGetGraphMemberDatasourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetGraphMemberDatasourcesOutcomeCallable DetectiveClient::BatchGetGraphMemberDatasourcesCallable(const BatchGetGraphMemberDatasourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetGraphMemberDatasourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetGraphMemberDatasources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::BatchGetGraphMemberDatasourcesAsync(const BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetGraphMemberDatasourcesAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::BatchGetGraphMemberDatasourcesAsyncHelper(const BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetGraphMemberDatasources(request), context);
+}
+
+BatchGetMembershipDatasourcesOutcome DetectiveClient::BatchGetMembershipDatasources(const BatchGetMembershipDatasourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/membership/datasources/get");
+  return BatchGetMembershipDatasourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetMembershipDatasourcesOutcomeCallable DetectiveClient::BatchGetMembershipDatasourcesCallable(const BatchGetMembershipDatasourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetMembershipDatasourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetMembershipDatasources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::BatchGetMembershipDatasourcesAsync(const BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetMembershipDatasourcesAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::BatchGetMembershipDatasourcesAsyncHelper(const BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetMembershipDatasources(request), context);
 }
 
 CreateGraphOutcome DetectiveClient::CreateGraph(const CreateGraphRequest& request) const
@@ -361,6 +415,31 @@ void DetectiveClient::GetMembersAsync(const GetMembersRequest& request, const Ge
 void DetectiveClient::GetMembersAsyncHelper(const GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetMembers(request), context);
+}
+
+ListDatasourcePackagesOutcome DetectiveClient::ListDatasourcePackages(const ListDatasourcePackagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/graph/datasources/list");
+  return ListDatasourcePackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDatasourcePackagesOutcomeCallable DetectiveClient::ListDatasourcePackagesCallable(const ListDatasourcePackagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDatasourcePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasourcePackages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::ListDatasourcePackagesAsync(const ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDatasourcePackagesAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::ListDatasourcePackagesAsyncHelper(const ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDatasourcePackages(request), context);
 }
 
 ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) const
@@ -609,6 +688,31 @@ void DetectiveClient::UntagResourceAsync(const UntagResourceRequest& request, co
 void DetectiveClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateDatasourcePackagesOutcome DetectiveClient::UpdateDatasourcePackages(const UpdateDatasourcePackagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/graph/datasources/update");
+  return UpdateDatasourcePackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDatasourcePackagesOutcomeCallable DetectiveClient::UpdateDatasourcePackagesCallable(const UpdateDatasourcePackagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasourcePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatasourcePackages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::UpdateDatasourcePackagesAsync(const UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasourcePackagesAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::UpdateDatasourcePackagesAsyncHelper(const UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDatasourcePackages(request), context);
 }
 
 UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const

@@ -489,6 +489,35 @@ namespace Model
      */
     inline ProjectVersionDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
+
+    /**
+     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
+     * to auto-scale the model. For more information, see
+     * <a>StartProjectVersion</a>.</p>
+     */
+    inline ProjectVersionDescription& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
+
   private:
 
     Aws::String m_projectVersionArn;
@@ -529,6 +558,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    int m_maxInferenceUnits;
+    bool m_maxInferenceUnitsHasBeenSet;
   };
 
 } // namespace Model

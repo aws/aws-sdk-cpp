@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/DataSourceFreeTrial.h>
 #include <aws/guardduty/model/KubernetesDataSourceFreeTrial.h>
+#include <aws/guardduty/model/MalwareProtectionDataSourceFreeTrial.h>
 #include <utility>
 
 namespace Aws
@@ -199,6 +200,37 @@ namespace Model
      */
     inline DataSourcesFreeTrial& WithKubernetes(KubernetesDataSourceFreeTrial&& value) { SetKubernetes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline const MalwareProtectionDataSourceFreeTrial& GetMalwareProtection() const{ return m_malwareProtection; }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline bool MalwareProtectionHasBeenSet() const { return m_malwareProtectionHasBeenSet; }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline void SetMalwareProtection(const MalwareProtectionDataSourceFreeTrial& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = value; }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline void SetMalwareProtection(MalwareProtectionDataSourceFreeTrial&& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = std::move(value); }
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline DataSourcesFreeTrial& WithMalwareProtection(const MalwareProtectionDataSourceFreeTrial& value) { SetMalwareProtection(value); return *this;}
+
+    /**
+     * <p>Describes whether Malware Protection is enabled as a data source.</p>
+     */
+    inline DataSourcesFreeTrial& WithMalwareProtection(MalwareProtectionDataSourceFreeTrial&& value) { SetMalwareProtection(std::move(value)); return *this;}
+
   private:
 
     DataSourceFreeTrial m_cloudTrail;
@@ -215,6 +247,9 @@ namespace Model
 
     KubernetesDataSourceFreeTrial m_kubernetes;
     bool m_kubernetesHasBeenSet;
+
+    MalwareProtectionDataSourceFreeTrial m_malwareProtection;
+    bool m_malwareProtectionHasBeenSet;
   };
 
 } // namespace Model

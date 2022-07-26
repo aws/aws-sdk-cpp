@@ -2163,8 +2163,10 @@ namespace Model
          * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
          * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> 
          * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopProjectVersion</a>.</p>  <p>This operation
-         * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
+         * running model, call <a>StopProjectVersion</a>.</p>  <p>For more
+         * information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
+         * in the Amazon Rekognition Custom Labels Guide.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:StartProjectVersion</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
          * API Reference</a></p>

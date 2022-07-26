@@ -29,6 +29,7 @@
 #include <aws/appsync/model/DeleteResolverResult.h>
 #include <aws/appsync/model/DeleteTypeResult.h>
 #include <aws/appsync/model/DisassociateApiResult.h>
+#include <aws/appsync/model/EvaluateMappingTemplateResult.h>
 #include <aws/appsync/model/FlushApiCacheResult.h>
 #include <aws/appsync/model/GetApiAssociationResult.h>
 #include <aws/appsync/model/GetApiCacheResult.h>
@@ -117,6 +118,7 @@ namespace Model
         class DeleteResolverRequest;
         class DeleteTypeRequest;
         class DisassociateApiRequest;
+        class EvaluateMappingTemplateRequest;
         class FlushApiCacheRequest;
         class GetApiAssociationRequest;
         class GetApiCacheRequest;
@@ -167,6 +169,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteResolverResult, AppSyncError> DeleteResolverOutcome;
         typedef Aws::Utils::Outcome<DeleteTypeResult, AppSyncError> DeleteTypeOutcome;
         typedef Aws::Utils::Outcome<DisassociateApiResult, AppSyncError> DisassociateApiOutcome;
+        typedef Aws::Utils::Outcome<EvaluateMappingTemplateResult, AppSyncError> EvaluateMappingTemplateOutcome;
         typedef Aws::Utils::Outcome<FlushApiCacheResult, AppSyncError> FlushApiCacheOutcome;
         typedef Aws::Utils::Outcome<GetApiAssociationResult, AppSyncError> GetApiAssociationOutcome;
         typedef Aws::Utils::Outcome<GetApiCacheResult, AppSyncError> GetApiCacheOutcome;
@@ -217,6 +220,7 @@ namespace Model
         typedef std::future<DeleteResolverOutcome> DeleteResolverOutcomeCallable;
         typedef std::future<DeleteTypeOutcome> DeleteTypeOutcomeCallable;
         typedef std::future<DisassociateApiOutcome> DisassociateApiOutcomeCallable;
+        typedef std::future<EvaluateMappingTemplateOutcome> EvaluateMappingTemplateOutcomeCallable;
         typedef std::future<FlushApiCacheOutcome> FlushApiCacheOutcomeCallable;
         typedef std::future<GetApiAssociationOutcome> GetApiAssociationOutcomeCallable;
         typedef std::future<GetApiCacheOutcome> GetApiCacheOutcomeCallable;
@@ -270,6 +274,7 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::DeleteResolverRequest&, const Model::DeleteResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteTypeRequest&, const Model::DeleteTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTypeResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DisassociateApiRequest&, const Model::DisassociateApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApiResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::EvaluateMappingTemplateRequest&, const Model::EvaluateMappingTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EvaluateMappingTemplateResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::FlushApiCacheRequest&, const Model::FlushApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FlushApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetApiAssociationRequest&, const Model::GetApiAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiAssociationResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetApiCacheRequest&, const Model::GetApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiCacheResponseReceivedHandler;
@@ -646,6 +651,29 @@ namespace Model
          * An Async wrapper for DisassociateApi that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateApiAsync(const Model::DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Evaluates a given template and returns the response. The mapping template can
+         * be a request or response template.</p> <p>Request templates take the incoming
+         * request after a GraphQL operation is parsed and convert it into a request
+         * configuration for the selected data source operation. Response templates
+         * interpret responses from the data source and map it to the shape of the GraphQL
+         * field output type.</p> <p>Mapping templates are written in the Apache Velocity
+         * Template Language (VTL).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EvaluateMappingTemplateOutcome EvaluateMappingTemplate(const Model::EvaluateMappingTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for EvaluateMappingTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EvaluateMappingTemplateOutcomeCallable EvaluateMappingTemplateCallable(const Model::EvaluateMappingTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for EvaluateMappingTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EvaluateMappingTemplateAsync(const Model::EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Flushes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
@@ -1208,6 +1236,7 @@ namespace Model
         void DeleteResolverAsyncHelper(const Model::DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTypeAsyncHelper(const Model::DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateApiAsyncHelper(const Model::DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EvaluateMappingTemplateAsyncHelper(const Model::EvaluateMappingTemplateRequest& request, const EvaluateMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FlushApiCacheAsyncHelper(const Model::FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiAssociationAsyncHelper(const Model::GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiCacheAsyncHelper(const Model::GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

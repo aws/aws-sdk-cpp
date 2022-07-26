@@ -166,49 +166,49 @@ namespace Model
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline const Aws::String& GetAppIdClientRegex() const{ return m_appIdClientRegex; }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline bool AppIdClientRegexHasBeenSet() const { return m_appIdClientRegexHasBeenSet; }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline void SetAppIdClientRegex(const Aws::String& value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex = value; }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline void SetAppIdClientRegex(Aws::String&& value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex = std::move(value); }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline void SetAppIdClientRegex(const char* value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex.assign(value); }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline UserPoolConfig& WithAppIdClientRegex(const Aws::String& value) { SetAppIdClientRegex(value); return *this;}
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline UserPoolConfig& WithAppIdClientRegex(Aws::String&& value) { SetAppIdClientRegex(std::move(value)); return *this;}
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline UserPoolConfig& WithAppIdClientRegex(const char* value) { SetAppIdClientRegex(value); return *this;}
 

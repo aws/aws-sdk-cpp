@@ -492,35 +492,35 @@ namespace Model
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job started.
      * If the job is a recurring job, this value indicates when the most recent run
-     * started.</p>
+     * started or, if the job hasn't run yet, when the job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRunTime() const{ return m_lastRunTime; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job started.
      * If the job is a recurring job, this value indicates when the most recent run
-     * started.</p>
+     * started or, if the job hasn't run yet, when the job was created.</p>
      */
     inline void SetLastRunTime(const Aws::Utils::DateTime& value) { m_lastRunTime = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job started.
      * If the job is a recurring job, this value indicates when the most recent run
-     * started.</p>
+     * started or, if the job hasn't run yet, when the job was created.</p>
      */
     inline void SetLastRunTime(Aws::Utils::DateTime&& value) { m_lastRunTime = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job started.
      * If the job is a recurring job, this value indicates when the most recent run
-     * started.</p>
+     * started or, if the job hasn't run yet, when the job was created.</p>
      */
     inline DescribeClassificationJobResult& WithLastRunTime(const Aws::Utils::DateTime& value) { SetLastRunTime(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job started.
      * If the job is a recurring job, this value indicates when the most recent run
-     * started.</p>
+     * started or, if the job hasn't run yet, when the job was created.</p>
      */
     inline DescribeClassificationJobResult& WithLastRunTime(Aws::Utils::DateTime&& value) { SetLastRunTime(std::move(value)); return *this;}
 

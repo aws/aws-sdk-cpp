@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/OrganizationS3LogsConfiguration.h>
 #include <aws/guardduty/model/OrganizationKubernetesConfiguration.h>
+#include <aws/guardduty/model/OrganizationMalwareProtectionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +114,43 @@ namespace Model
      */
     inline OrganizationDataSourceConfigurations& WithKubernetes(OrganizationKubernetesConfiguration&& value) { SetKubernetes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the configuration of Malware Protection for new members of the
+     * organization.</p>
+     */
+    inline const OrganizationMalwareProtectionConfiguration& GetMalwareProtection() const{ return m_malwareProtection; }
+
+    /**
+     * <p>Describes the configuration of Malware Protection for new members of the
+     * organization.</p>
+     */
+    inline bool MalwareProtectionHasBeenSet() const { return m_malwareProtectionHasBeenSet; }
+
+    /**
+     * <p>Describes the configuration of Malware Protection for new members of the
+     * organization.</p>
+     */
+    inline void SetMalwareProtection(const OrganizationMalwareProtectionConfiguration& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = value; }
+
+    /**
+     * <p>Describes the configuration of Malware Protection for new members of the
+     * organization.</p>
+     */
+    inline void SetMalwareProtection(OrganizationMalwareProtectionConfiguration&& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = std::move(value); }
+
+    /**
+     * <p>Describes the configuration of Malware Protection for new members of the
+     * organization.</p>
+     */
+    inline OrganizationDataSourceConfigurations& WithMalwareProtection(const OrganizationMalwareProtectionConfiguration& value) { SetMalwareProtection(value); return *this;}
+
+    /**
+     * <p>Describes the configuration of Malware Protection for new members of the
+     * organization.</p>
+     */
+    inline OrganizationDataSourceConfigurations& WithMalwareProtection(OrganizationMalwareProtectionConfiguration&& value) { SetMalwareProtection(std::move(value)); return *this;}
+
   private:
 
     OrganizationS3LogsConfiguration m_s3Logs;
@@ -120,6 +158,9 @@ namespace Model
 
     OrganizationKubernetesConfiguration m_kubernetes;
     bool m_kubernetesHasBeenSet;
+
+    OrganizationMalwareProtectionConfiguration m_malwareProtection;
+    bool m_malwareProtectionHasBeenSet;
   };
 
 } // namespace Model

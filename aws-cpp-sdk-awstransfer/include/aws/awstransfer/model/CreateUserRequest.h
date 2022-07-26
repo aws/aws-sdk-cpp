@@ -97,62 +97,68 @@ namespace Model
 
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline CreateUserRequest& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
 
     /**
-     * <p>The type of landing directory (folder) you want your users' home directory to
-     * be when they log into the server. If you set it to <code>PATH</code>, the user
-     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
-     * protocol clients. If you set it <code>LOGICAL</code>, you need to provide
-     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     * Amazon S3 or EFS paths visible to your users.</p>
+     * <p>The type of landing directory (folder) that you want your users' home
+     * directory to be when they log in to the server. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     * as is in their file transfer protocol clients. If you set it
+     * <code>LOGICAL</code>, you need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
+     * EFS paths visible to your users.</p>
      */
     inline CreateUserRequest& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
@@ -163,13 +169,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -184,13 +190,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -205,13 +211,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -226,13 +232,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -247,13 +253,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -268,13 +274,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -289,13 +295,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -310,13 +316,13 @@ namespace Model
      * You must specify the <code>Entry</code> and <code>Target</code> pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
-     * displayed as is. You also must ensure that your Amazon Web Services Identity and
-     * Access Management (IAM) role provides access to paths in <code>Target</code>.
-     * This value can only be set when <code>HomeDirectoryType</code> is set to
-     * <i>LOGICAL</i>.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example.</p> <p> <code>[ { "Entry": "/directory1",
-     * "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you
-     * can use this value instead of the session policy to lock your user down to the
+     * displayed as is. You also must ensure that your Identity and Access Management
+     * (IAM) role provides access to paths in <code>Target</code>. This value can be
+     * set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+     * <p>The following is an <code>Entry</code> and <code>Target</code> pair
+     * example.</p> <p> <code>[ { "Entry": "/directory1", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
+     * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
      * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
      * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
@@ -327,13 +333,14 @@ namespace Model
 
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -346,13 +353,14 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -365,13 +373,14 @@ namespace Model
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -384,13 +393,14 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -403,13 +413,14 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -422,13 +433,14 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -441,13 +453,14 @@ namespace Model
     inline CreateUserRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -460,13 +473,14 @@ namespace Model
     inline CreateUserRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>A session policy for your user so that you can use the same IAM role across
-     * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables that you can use inside this policy include
-     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when the
-     * domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-     * <p>For session policies, Amazon Web Services Transfer Family stores the policy
+     * <p>A session policy for your user so that you can use the same Identity and
+     * Access Management (IAM) role across multiple users. This policy scopes down a
+     * user's access to portions of their Amazon S3 bucket. Variables that you can use
+     * inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This policy applies only when
+     * the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use
+     * session policies.</p> <p>For session policies, Transfer Family stores the policy
      * as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You
      * save the policy as a JSON blob and pass it in the <code>Policy</code>
      * argument.</p> <p>For an example of a session policy, see <a
@@ -541,90 +555,90 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline CreateUserRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline CreateUserRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
-     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
-     * to this role determine the level of access that you want to provide your users
-     * when transferring files into and out of your Amazon S3 bucket or EFS file
-     * system. The IAM role should also contain a trust relationship that allows the
-     * server to access your resources when servicing your users' transfer
-     * requests.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that controls your users' access to your Amazon S3 bucket or Amazon EFS
+     * file system. The policies attached to this role determine the level of access
+     * that you want to provide your users when transferring files into and out of your
+     * Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a
+     * trust relationship that allows the server to access your resources when
+     * servicing your users' transfer requests.</p>
      */
     inline CreateUserRequest& WithRole(const char* value) { SetRole(value); return *this;}
 

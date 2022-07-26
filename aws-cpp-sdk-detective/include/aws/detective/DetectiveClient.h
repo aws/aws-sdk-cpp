@@ -11,11 +11,14 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/model/BatchGetGraphMemberDatasourcesResult.h>
+#include <aws/detective/model/BatchGetMembershipDatasourcesResult.h>
 #include <aws/detective/model/CreateGraphResult.h>
 #include <aws/detective/model/CreateMembersResult.h>
 #include <aws/detective/model/DeleteMembersResult.h>
 #include <aws/detective/model/DescribeOrganizationConfigurationResult.h>
 #include <aws/detective/model/GetMembersResult.h>
+#include <aws/detective/model/ListDatasourcePackagesResult.h>
 #include <aws/detective/model/ListGraphsResult.h>
 #include <aws/detective/model/ListInvitationsResult.h>
 #include <aws/detective/model/ListMembersResult.h>
@@ -64,6 +67,8 @@ namespace Detective
 namespace Model
 {
         class AcceptInvitationRequest;
+        class BatchGetGraphMemberDatasourcesRequest;
+        class BatchGetMembershipDatasourcesRequest;
         class CreateGraphRequest;
         class CreateMembersRequest;
         class DeleteGraphRequest;
@@ -72,6 +77,7 @@ namespace Model
         class DisassociateMembershipRequest;
         class EnableOrganizationAdminAccountRequest;
         class GetMembersRequest;
+        class ListDatasourcePackagesRequest;
         class ListGraphsRequest;
         class ListInvitationsRequest;
         class ListMembersRequest;
@@ -81,9 +87,12 @@ namespace Model
         class StartMonitoringMemberRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateDatasourcePackagesRequest;
         class UpdateOrganizationConfigurationRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> AcceptInvitationOutcome;
+        typedef Aws::Utils::Outcome<BatchGetGraphMemberDatasourcesResult, DetectiveError> BatchGetGraphMemberDatasourcesOutcome;
+        typedef Aws::Utils::Outcome<BatchGetMembershipDatasourcesResult, DetectiveError> BatchGetMembershipDatasourcesOutcome;
         typedef Aws::Utils::Outcome<CreateGraphResult, DetectiveError> CreateGraphOutcome;
         typedef Aws::Utils::Outcome<CreateMembersResult, DetectiveError> CreateMembersOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DeleteGraphOutcome;
@@ -93,6 +102,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DisassociateMembershipOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> EnableOrganizationAdminAccountOutcome;
         typedef Aws::Utils::Outcome<GetMembersResult, DetectiveError> GetMembersOutcome;
+        typedef Aws::Utils::Outcome<ListDatasourcePackagesResult, DetectiveError> ListDatasourcePackagesOutcome;
         typedef Aws::Utils::Outcome<ListGraphsResult, DetectiveError> ListGraphsOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, DetectiveError> ListInvitationsOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, DetectiveError> ListMembersOutcome;
@@ -102,9 +112,12 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> StartMonitoringMemberOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, DetectiveError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, DetectiveError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> UpdateDatasourcePackagesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> UpdateOrganizationConfigurationOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
+        typedef std::future<BatchGetGraphMemberDatasourcesOutcome> BatchGetGraphMemberDatasourcesOutcomeCallable;
+        typedef std::future<BatchGetMembershipDatasourcesOutcome> BatchGetMembershipDatasourcesOutcomeCallable;
         typedef std::future<CreateGraphOutcome> CreateGraphOutcomeCallable;
         typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
         typedef std::future<DeleteGraphOutcome> DeleteGraphOutcomeCallable;
@@ -114,6 +127,7 @@ namespace Model
         typedef std::future<DisassociateMembershipOutcome> DisassociateMembershipOutcomeCallable;
         typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
         typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
+        typedef std::future<ListDatasourcePackagesOutcome> ListDatasourcePackagesOutcomeCallable;
         typedef std::future<ListGraphsOutcome> ListGraphsOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
@@ -123,12 +137,15 @@ namespace Model
         typedef std::future<StartMonitoringMemberOutcome> StartMonitoringMemberOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateDatasourcePackagesOutcome> UpdateDatasourcePackagesOutcomeCallable;
         typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
 } // namespace Model
 
   class DetectiveClient;
 
     typedef std::function<void(const DetectiveClient*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::BatchGetGraphMemberDatasourcesRequest&, const Model::BatchGetGraphMemberDatasourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetGraphMemberDatasourcesResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::BatchGetMembershipDatasourcesRequest&, const Model::BatchGetMembershipDatasourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetMembershipDatasourcesResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::CreateGraphRequest&, const Model::CreateGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGraphResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DeleteGraphRequest&, const Model::DeleteGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphResponseReceivedHandler;
@@ -138,6 +155,7 @@ namespace Model
     typedef std::function<void(const DetectiveClient*, const Model::DisassociateMembershipRequest&, const Model::DisassociateMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembershipResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::ListDatasourcePackagesRequest&, const Model::ListDatasourcePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasourcePackagesResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListGraphsRequest&, const Model::ListGraphsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGraphsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
@@ -147,6 +165,7 @@ namespace Model
     typedef std::function<void(const DetectiveClient*, const Model::StartMonitoringMemberRequest&, const Model::StartMonitoringMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMemberResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::UpdateDatasourcePackagesRequest&, const Model::UpdateDatasourcePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasourcePackagesResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
 
   /**
@@ -164,31 +183,32 @@ namespace Model
    * behavior graph.</p> <p>Detective is also integrated with Organizations. The
    * organization management account designates the Detective administrator account
    * for the organization. That account becomes the administrator account for the
-   * organization behavior graph. The Detective administrator account can enable any
-   * organization account as a member account in the organization behavior graph. The
-   * organization accounts do not receive invitations. The Detective administrator
-   * account can also invite other accounts to the organization behavior graph.</p>
-   * <p>Every behavior graph is specific to a Region. You can only use the API to
-   * manage behavior graphs that belong to the Region that is associated with the
-   * currently selected endpoint.</p> <p>The administrator account for a behavior
-   * graph can use the Detective API to do the following:</p> <ul> <li> <p>Enable and
-   * disable Detective. Enabling Detective creates a new behavior graph.</p> </li>
-   * <li> <p>View the list of member accounts in a behavior graph.</p> </li> <li>
-   * <p>Add member accounts to a behavior graph.</p> </li> <li> <p>Remove member
-   * accounts from a behavior graph.</p> </li> <li> <p>Apply tags to a behavior
-   * graph.</p> </li> </ul> <p>The organization management account can use the
-   * Detective API to select the delegated administrator for Detective.</p> <p>The
-   * Detective administrator account for an organization can use the Detective API to
-   * do the following:</p> <ul> <li> <p>Perform all of the functions of an
-   * administrator account.</p> </li> <li> <p>Determine whether to automatically
-   * enable new organization accounts as member accounts in the organization behavior
-   * graph.</p> </li> </ul> <p>An invited member account can use the Detective API to
-   * do the following:</p> <ul> <li> <p>View the list of behavior graphs that they
-   * are invited to.</p> </li> <li> <p>Accept an invitation to contribute to a
-   * behavior graph.</p> </li> <li> <p>Decline an invitation to contribute to a
-   * behavior graph.</p> </li> <li> <p>Remove their account from a behavior
-   * graph.</p> </li> </ul> <p>All API actions are logged as CloudTrail events. See
-   * <a
+   * organization behavior graph. The Detective administrator account is also the
+   * delegated administrator account for Detective in Organizations.</p> <p>The
+   * Detective administrator account can enable any organization account as a member
+   * account in the organization behavior graph. The organization accounts do not
+   * receive invitations. The Detective administrator account can also invite other
+   * accounts to the organization behavior graph.</p> <p>Every behavior graph is
+   * specific to a Region. You can only use the API to manage behavior graphs that
+   * belong to the Region that is associated with the currently selected
+   * endpoint.</p> <p>The administrator account for a behavior graph can use the
+   * Detective API to do the following:</p> <ul> <li> <p>Enable and disable
+   * Detective. Enabling Detective creates a new behavior graph.</p> </li> <li>
+   * <p>View the list of member accounts in a behavior graph.</p> </li> <li> <p>Add
+   * member accounts to a behavior graph.</p> </li> <li> <p>Remove member accounts
+   * from a behavior graph.</p> </li> <li> <p>Apply tags to a behavior graph.</p>
+   * </li> </ul> <p>The organization management account can use the Detective API to
+   * select the delegated administrator for Detective.</p> <p>The Detective
+   * administrator account for an organization can use the Detective API to do the
+   * following:</p> <ul> <li> <p>Perform all of the functions of an administrator
+   * account.</p> </li> <li> <p>Determine whether to automatically enable new
+   * organization accounts as member accounts in the organization behavior graph.</p>
+   * </li> </ul> <p>An invited member account can use the Detective API to do the
+   * following:</p> <ul> <li> <p>View the list of behavior graphs that they are
+   * invited to.</p> </li> <li> <p>Accept an invitation to contribute to a behavior
+   * graph.</p> </li> <li> <p>Decline an invitation to contribute to a behavior
+   * graph.</p> </li> <li> <p>Remove their account from a behavior graph.</p> </li>
+   * </ul> <p>All API actions are logged as CloudTrail events. See <a
    * href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging
    * Detective API Calls with CloudTrail</a>.</p>  <p>We replaced the term
    * "master account" with the term "administrator account." An administrator account
@@ -241,6 +261,42 @@ namespace Model
          * An Async wrapper for AcceptInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptInvitationAsync(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets data source package information for the behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetGraphMemberDatasourcesOutcome BatchGetGraphMemberDatasources(const Model::BatchGetGraphMemberDatasourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetGraphMemberDatasources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetGraphMemberDatasourcesOutcomeCallable BatchGetGraphMemberDatasourcesCallable(const Model::BatchGetGraphMemberDatasourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchGetGraphMemberDatasources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetGraphMemberDatasourcesAsync(const Model::BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information on the data source package history for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetMembershipDatasourcesOutcome BatchGetMembershipDatasources(const Model::BatchGetMembershipDatasourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetMembershipDatasources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetMembershipDatasourcesOutcomeCallable BatchGetMembershipDatasourcesCallable(const Model::BatchGetMembershipDatasourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchGetMembershipDatasources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetMembershipDatasourcesAsync(const Model::BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
@@ -382,11 +438,15 @@ namespace Model
         virtual void DescribeOrganizationConfigurationAsync(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the Detective administrator account for the organization in the
-         * current Region. Deletes the behavior graph for that account.</p> <p>Can only be
-         * called by the organization management account. Before you can select a different
-         * Detective administrator account, you must remove the Detective administrator
-         * account in all Regions.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the Detective administrator account in the current Region. Deletes
+         * the organization behavior graph.</p> <p>Can only be called by the organization
+         * management account.</p> <p>Removing the Detective administrator account does not
+         * affect the delegated administrator account for Detective in Organizations.</p>
+         * <p>To remove the delegated administrator account in Organizations, use the
+         * Organizations API. Removing the delegated administrator account also removes the
+         * Detective administrator account in all Regions, except for Regions where the
+         * Detective administrator account is the organization management
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -428,10 +488,16 @@ namespace Model
          * <p>Designates the Detective administrator account for the organization in the
          * current Region.</p> <p>If the account does not have Detective enabled, then
          * enables Detective for that account and creates a new behavior graph.</p> <p>Can
-         * only be called by the organization management account.</p> <p>The Detective
-         * administrator account for an organization must be the same in all Regions. If
-         * you already designated a Detective administrator account in another Region, then
-         * you must designate the same account.</p><p><h3>See Also:</h3>   <a
+         * only be called by the organization management account.</p> <p>If the
+         * organization has a delegated administrator account in Organizations, then the
+         * Detective administrator account must be either the delegated administrator
+         * account or the organization management account.</p> <p>If the organization does
+         * not have a delegated administrator account in Organizations, then you can choose
+         * any account in the organization. If you choose an account other than the
+         * organization management account, Detective calls Organizations to make that
+         * account the delegated administrator account for Detective. The organization
+         * management account cannot be the delegated administrator account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -464,6 +530,24 @@ namespace Model
          * An Async wrapper for GetMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMembersAsync(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists data source packages in the behavior graph.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDatasourcePackagesOutcome ListDatasourcePackages(const Model::ListDatasourcePackagesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDatasourcePackages that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDatasourcePackagesOutcomeCallable ListDatasourcePackagesCallable(const Model::ListDatasourcePackagesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListDatasourcePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDatasourcePackagesAsync(const Model::ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of behavior graphs that the calling account is an
@@ -646,6 +730,24 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts a data source packages for the behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDatasourcePackagesOutcome UpdateDatasourcePackages(const Model::UpdateDatasourcePackagesRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDatasourcePackages that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDatasourcePackagesOutcomeCallable UpdateDatasourcePackagesCallable(const Model::UpdateDatasourcePackagesRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateDatasourcePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDatasourcePackagesAsync(const Model::UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the configuration for the Organizations integration in the current
          * Region. Can only be called by the Detective administrator account for the
          * organization.</p><p><h3>See Also:</h3>   <a
@@ -669,6 +771,8 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptInvitationAsyncHelper(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetGraphMemberDatasourcesAsyncHelper(const Model::BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetMembershipDatasourcesAsyncHelper(const Model::BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGraphAsyncHelper(const Model::CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMembersAsyncHelper(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGraphAsyncHelper(const Model::DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -678,6 +782,7 @@ namespace Model
         void DisassociateMembershipAsyncHelper(const Model::DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableOrganizationAdminAccountAsyncHelper(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMembersAsyncHelper(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDatasourcePackagesAsyncHelper(const Model::ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGraphsAsyncHelper(const Model::ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -687,6 +792,7 @@ namespace Model
         void StartMonitoringMemberAsyncHelper(const Model::StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDatasourcePackagesAsyncHelper(const Model::UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateOrganizationConfigurationAsyncHelper(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

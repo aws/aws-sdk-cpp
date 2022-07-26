@@ -129,121 +129,121 @@ namespace Model
 
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline ListedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline ListedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
@@ -293,66 +293,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline ListedServer& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline ListedServer& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline ListedServer& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
@@ -407,10 +407,10 @@ namespace Model
 
 
     /**
-     * <p>Specifies the condition of a server for the server that was described. A
-     * value of <code>ONLINE</code> indicates that the server can accept jobs and
-     * transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.</p> <p>The states of
+     * <p>The condition of the server that was described. A value of
+     * <code>ONLINE</code> indicates that the server can accept jobs and transfer
+     * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
+     * cannot perform file transfer operations.</p> <p>The states of
      * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
@@ -419,10 +419,10 @@ namespace Model
     inline const State& GetState() const{ return m_state; }
 
     /**
-     * <p>Specifies the condition of a server for the server that was described. A
-     * value of <code>ONLINE</code> indicates that the server can accept jobs and
-     * transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.</p> <p>The states of
+     * <p>The condition of the server that was described. A value of
+     * <code>ONLINE</code> indicates that the server can accept jobs and transfer
+     * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
+     * cannot perform file transfer operations.</p> <p>The states of
      * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
@@ -431,10 +431,10 @@ namespace Model
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>Specifies the condition of a server for the server that was described. A
-     * value of <code>ONLINE</code> indicates that the server can accept jobs and
-     * transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.</p> <p>The states of
+     * <p>The condition of the server that was described. A value of
+     * <code>ONLINE</code> indicates that the server can accept jobs and transfer
+     * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
+     * cannot perform file transfer operations.</p> <p>The states of
      * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
@@ -443,10 +443,10 @@ namespace Model
     inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>Specifies the condition of a server for the server that was described. A
-     * value of <code>ONLINE</code> indicates that the server can accept jobs and
-     * transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.</p> <p>The states of
+     * <p>The condition of the server that was described. A value of
+     * <code>ONLINE</code> indicates that the server can accept jobs and transfer
+     * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
+     * cannot perform file transfer operations.</p> <p>The states of
      * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
@@ -455,10 +455,10 @@ namespace Model
     inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>Specifies the condition of a server for the server that was described. A
-     * value of <code>ONLINE</code> indicates that the server can accept jobs and
-     * transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.</p> <p>The states of
+     * <p>The condition of the server that was described. A value of
+     * <code>ONLINE</code> indicates that the server can accept jobs and transfer
+     * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
+     * cannot perform file transfer operations.</p> <p>The states of
      * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
@@ -467,10 +467,10 @@ namespace Model
     inline ListedServer& WithState(const State& value) { SetState(value); return *this;}
 
     /**
-     * <p>Specifies the condition of a server for the server that was described. A
-     * value of <code>ONLINE</code> indicates that the server can accept jobs and
-     * transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
-     * the server cannot perform file transfer operations.</p> <p>The states of
+     * <p>The condition of the server that was described. A value of
+     * <code>ONLINE</code> indicates that the server can accept jobs and transfer
+     * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
+     * cannot perform file transfer operations.</p> <p>The states of
      * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate

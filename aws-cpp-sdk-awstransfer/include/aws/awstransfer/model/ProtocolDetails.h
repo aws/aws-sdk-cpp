@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/awstransfer/model/TlsSessionResumptionMode.h>
 #include <aws/awstransfer/model/SetStatOption.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/As2Transport.h>
 #include <utility>
 
 namespace Aws
@@ -436,6 +438,55 @@ namespace Model
      */
     inline ProtocolDetails& WithSetStatOption(SetStatOption&& value) { SetSetStatOption(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline const Aws::Vector<As2Transport>& GetAs2Transports() const{ return m_as2Transports; }
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline bool As2TransportsHasBeenSet() const { return m_as2TransportsHasBeenSet; }
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline void SetAs2Transports(const Aws::Vector<As2Transport>& value) { m_as2TransportsHasBeenSet = true; m_as2Transports = value; }
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline void SetAs2Transports(Aws::Vector<As2Transport>&& value) { m_as2TransportsHasBeenSet = true; m_as2Transports = std::move(value); }
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline ProtocolDetails& WithAs2Transports(const Aws::Vector<As2Transport>& value) { SetAs2Transports(value); return *this;}
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline ProtocolDetails& WithAs2Transports(Aws::Vector<As2Transport>&& value) { SetAs2Transports(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline ProtocolDetails& AddAs2Transports(const As2Transport& value) { m_as2TransportsHasBeenSet = true; m_as2Transports.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
+     * supported.</p>
+     */
+    inline ProtocolDetails& AddAs2Transports(As2Transport&& value) { m_as2TransportsHasBeenSet = true; m_as2Transports.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_passiveIp;
@@ -446,6 +497,9 @@ namespace Model
 
     SetStatOption m_setStatOption;
     bool m_setStatOptionHasBeenSet;
+
+    Aws::Vector<As2Transport> m_as2Transports;
+    bool m_as2TransportsHasBeenSet;
   };
 
 } // namespace Model

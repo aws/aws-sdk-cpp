@@ -236,164 +236,188 @@ namespace Model
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline UpdateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline UpdateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline UpdateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline UpdateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
@@ -541,10 +565,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -554,8 +578,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetHostKey() const{ return m_hostKey; }
 
@@ -563,10 +587,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -576,8 +600,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
 
@@ -585,10 +609,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -598,8 +622,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
 
@@ -607,10 +631,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -620,8 +644,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
 
@@ -629,10 +653,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -642,8 +666,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
 
@@ -651,10 +675,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -664,8 +688,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
 
@@ -673,10 +697,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -686,8 +710,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
 
@@ -695,10 +719,10 @@ namespace Model
      * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
      * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
      * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-     * <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a
-     * stronger key using 3072 or 4096.</p> <p>Use the following command to generate an
-     * ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b 256
-     * -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
      * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
      * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
      * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
@@ -708,8 +732,8 @@ namespace Model
      * changing a server's host key can be disruptive.</p>  <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
 
@@ -752,121 +776,121 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline const Aws::String& GetPostAuthenticationLoginBanner() const{ return m_postAuthenticationLoginBanner; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline bool PostAuthenticationLoginBannerHasBeenSet() const { return m_postAuthenticationLoginBannerHasBeenSet; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline void SetPostAuthenticationLoginBanner(const Aws::String& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = value; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline void SetPostAuthenticationLoginBanner(Aws::String&& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = std::move(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline void SetPostAuthenticationLoginBanner(const char* value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner.assign(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline UpdateServerRequest& WithPostAuthenticationLoginBanner(const Aws::String& value) { SetPostAuthenticationLoginBanner(value); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline UpdateServerRequest& WithPostAuthenticationLoginBanner(Aws::String&& value) { SetPostAuthenticationLoginBanner(std::move(value)); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
@@ -874,9 +898,9 @@ namespace Model
 
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -885,9 +909,9 @@ namespace Model
     inline const Aws::String& GetPreAuthenticationLoginBanner() const{ return m_preAuthenticationLoginBanner; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -896,9 +920,9 @@ namespace Model
     inline bool PreAuthenticationLoginBannerHasBeenSet() const { return m_preAuthenticationLoginBannerHasBeenSet; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -907,9 +931,9 @@ namespace Model
     inline void SetPreAuthenticationLoginBanner(const Aws::String& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = value; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -918,9 +942,9 @@ namespace Model
     inline void SetPreAuthenticationLoginBanner(Aws::String&& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = std::move(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -929,9 +953,9 @@ namespace Model
     inline void SetPreAuthenticationLoginBanner(const char* value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner.assign(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -940,9 +964,9 @@ namespace Model
     inline UpdateServerRequest& WithPreAuthenticationLoginBanner(const Aws::String& value) { SetPreAuthenticationLoginBanner(value); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -951,9 +975,9 @@ namespace Model
     inline UpdateServerRequest& WithPreAuthenticationLoginBanner(Aws::String&& value) { SetPreAuthenticationLoginBanner(std::move(value)); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -1231,8 +1255,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p> <p>To remove an associated workflow from a
-     * server, you can provide an empty <code>OnUpload</code> object, as in the
+     * that's used for executing the workflow.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.</p> <p> <code>aws transfer update-server --server-id
      * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
@@ -1240,8 +1264,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p> <p>To remove an associated workflow from a
-     * server, you can provide an empty <code>OnUpload</code> object, as in the
+     * that's used for executing the workflow.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.</p> <p> <code>aws transfer update-server --server-id
      * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
@@ -1249,8 +1273,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p> <p>To remove an associated workflow from a
-     * server, you can provide an empty <code>OnUpload</code> object, as in the
+     * that's used for executing the workflow.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.</p> <p> <code>aws transfer update-server --server-id
      * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
@@ -1258,8 +1282,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p> <p>To remove an associated workflow from a
-     * server, you can provide an empty <code>OnUpload</code> object, as in the
+     * that's used for executing the workflow.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.</p> <p> <code>aws transfer update-server --server-id
      * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
@@ -1267,8 +1291,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p> <p>To remove an associated workflow from a
-     * server, you can provide an empty <code>OnUpload</code> object, as in the
+     * that's used for executing the workflow.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.</p> <p> <code>aws transfer update-server --server-id
      * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
@@ -1276,8 +1300,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p> <p>To remove an associated workflow from a
-     * server, you can provide an empty <code>OnUpload</code> object, as in the
+     * that's used for executing the workflow.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.</p> <p> <code>aws transfer update-server --server-id
      * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */

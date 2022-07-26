@@ -42,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>The action that AWS WAF takes when a web request matches all conditions in
-     * the rule, such as allow, block, or count the request. </p>
+     * <p>The action that WAF takes when a web request matches all conditions in the
+     * rule, such as allow, block, or count the request. </p>
      */
     inline const AwsWafRegionalWebAclRulesListActionDetails& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that AWS WAF takes when a web request matches all conditions in
-     * the rule, such as allow, block, or count the request. </p>
+     * <p>The action that WAF takes when a web request matches all conditions in the
+     * rule, such as allow, block, or count the request. </p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that AWS WAF takes when a web request matches all conditions in
-     * the rule, such as allow, block, or count the request. </p>
+     * <p>The action that WAF takes when a web request matches all conditions in the
+     * rule, such as allow, block, or count the request. </p>
      */
     inline void SetAction(const AwsWafRegionalWebAclRulesListActionDetails& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that AWS WAF takes when a web request matches all conditions in
-     * the rule, such as allow, block, or count the request. </p>
+     * <p>The action that WAF takes when a web request matches all conditions in the
+     * rule, such as allow, block, or count the request. </p>
      */
     inline void SetAction(AwsWafRegionalWebAclRulesListActionDetails&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that AWS WAF takes when a web request matches all conditions in
-     * the rule, such as allow, block, or count the request. </p>
+     * <p>The action that WAF takes when a web request matches all conditions in the
+     * rule, such as allow, block, or count the request. </p>
      */
     inline AwsWafRegionalWebAclRulesListDetails& WithAction(const AwsWafRegionalWebAclRulesListActionDetails& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that AWS WAF takes when a web request matches all conditions in
-     * the rule, such as allow, block, or count the request. </p>
+     * <p>The action that WAF takes when a web request matches all conditions in the
+     * rule, such as allow, block, or count the request. </p>
      */
     inline AwsWafRegionalWebAclRulesListDetails& WithAction(AwsWafRegionalWebAclRulesListActionDetails&& value) { SetAction(std::move(value)); return *this;}
 

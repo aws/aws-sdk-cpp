@@ -23,6 +23,7 @@ namespace Aws
         static const int SFTP_HASH = HashingUtils::HashString("SFTP");
         static const int FTP_HASH = HashingUtils::HashString("FTP");
         static const int FTPS_HASH = HashingUtils::HashString("FTPS");
+        static const int AS2_HASH = HashingUtils::HashString("AS2");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == FTPS_HASH)
           {
             return Protocol::FTPS;
+          }
+          else if (hashCode == AS2_HASH)
+          {
+            return Protocol::AS2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "FTP";
           case Protocol::FTPS:
             return "FTPS";
+          case Protocol::AS2:
+            return "AS2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
