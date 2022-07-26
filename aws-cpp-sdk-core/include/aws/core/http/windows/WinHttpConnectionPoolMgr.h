@@ -22,7 +22,7 @@ namespace Aws
         {
         public:
             /**
-             * Initializes the connection pool with the passedin iOpen handle from earlier winHttp init calls.
+             * Initializes the connection pool with the passed in iOpen handle from earlier winHttp init calls.
              * configures connect calls with the timeouts. MaxConnectionsPerHost sets the queue sizes for each endpoint.
              */
             WinHttpConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout);

@@ -261,7 +261,7 @@ namespace Aws
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Waiting for request to finish.");
                     std::unique_lock<std::mutex> completionLock(m_completionMutex);
                     m_completionSignal.wait(completionLock, [this]() { return m_isFinished.load(); });
-                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request completed, continueing thread.");
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request completed, continuing thread.");
                 }
 
 

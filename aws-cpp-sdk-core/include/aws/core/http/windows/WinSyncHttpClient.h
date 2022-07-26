@@ -60,7 +60,7 @@ namespace Aws
              */
             void SetConnectionPoolManager(WinConnectionPoolMgr* connectionMgr);
             /**
-             * Gets the connection pool manager the client is ussing.
+             * Gets the connection pool manager the client is using.
              */
             WinConnectionPoolMgr* GetConnectionPoolManager() const { return m_connectionPoolMgr; }
             /**

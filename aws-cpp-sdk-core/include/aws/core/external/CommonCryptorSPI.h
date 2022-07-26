@@ -461,7 +461,7 @@ CCCryptorStatus CCCryptorAddParameter(
 /*
     Gets value of output cryptor parameter.  According to the cryptor
     type state, the request can be either accepted or refused with
-    kCCUnimplemented (when given parameteris not supported for this
+    kCCUnimplemented (when given parameter is not supported for this
     type of cryptor) or kCCBufferTooSmall (in this case, *dataSize
     argument is set to the requested size of data).
 */

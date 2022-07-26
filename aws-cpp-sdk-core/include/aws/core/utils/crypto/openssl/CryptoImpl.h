@@ -39,7 +39,7 @@ namespace Aws
              * OpenSSL implementation for SecureRandomBytes.
              * Incidentally, this implementation is thread safe, though it is not
              * on other platforms. You should treat an instance of SecureRandomBytes
-             * as needed to be memory fenced if you will be using accross multiple threads
+             * as needed to be memory fenced if you will be using across multiple threads
              */
             class SecureRandomBytes_OpenSSLImpl : public SecureRandomBytes
             {

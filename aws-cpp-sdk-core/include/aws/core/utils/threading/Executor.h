@@ -71,7 +71,7 @@ namespace Aws
 
             enum class OverflowPolicy
             {
-                QUEUE_TASKS_EVENLY_ACCROSS_THREADS,
+                QUEUE_TASKS_EVENLY_ACROSS_THREADS,
                 REJECT_IMMEDIATELY
             };
 
@@ -81,7 +81,7 @@ namespace Aws
             class AWS_CORE_API PooledThreadExecutor : public Executor
             {
             public:
-                PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy = OverflowPolicy::QUEUE_TASKS_EVENLY_ACCROSS_THREADS);
+                PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy = OverflowPolicy::QUEUE_TASKS_EVENLY_ACROSS_THREADS);
                 ~PooledThreadExecutor();
 
                 /**

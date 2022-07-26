@@ -68,7 +68,7 @@ namespace Aws
 
             auto credentialsView = credentialsDoc.View();
             DateTime expirationTime(credentialsView.GetString(expiration), Aws::Utils::DateFormat::ISO_8601);
-            // re-use old credentials and not block if the IMDS call failed or if the lastest credential is in the past
+            // re-use old credentials and not block if the IMDS call failed or if the latest credential is in the past
             if (expirationTime.WasParseSuccessful() && DateTime::Now() > expirationTime) {
                 AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG,
                                     "Expiration Time of Credentials in the past, refusing to update credentials");

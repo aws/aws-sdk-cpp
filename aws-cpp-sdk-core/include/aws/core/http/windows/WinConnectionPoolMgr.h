@@ -51,7 +51,7 @@ namespace Aws
             void ReleaseConnectionForHost(const Aws::String& host, unsigned port, void* connection);
 
             /**
-             * Gets the tag for use for the logging system accross the various implementations of this class.
+             * Gets the tag for use for the logging system across the various implementations of this class.
              */
             virtual const char* GetLogTag() const { return "ConnectionPoolMgr"; }
             /**

@@ -82,14 +82,14 @@ namespace Aws
             /**
              * @brief Splits a string on a delimiter (empty items are excluded).
              * @param toSplit, the original string to split
-             * @param splitOn, the delemiter you want to use.
+             * @param splitOn, the delimiter you want to use.
              */
             static Aws::Vector<Aws::String> Split(const Aws::String& toSplit, char splitOn);
 
             /**
              * @brief Splits a string on a delimiter.
              * @param toSplit, the original string to split
-             * @param splitOn, the delemiter you want to use.
+             * @param splitOn, the delimiter you want to use.
              * @param option, if INCLUDE_EMPTY_ENTRIES, includes empty entries in the result, otherwise removes empty entries.
              */
             static Aws::Vector<Aws::String> Split(const Aws::String& toSplit, char splitOn, SplitOptions option);
@@ -97,7 +97,7 @@ namespace Aws
             /**
              * @brief Splits a string on a delimiter (empty items are excluded).
              * @param toSplit, the original string to split
-             * @param splitOn, the delemiter you want to use.
+             * @param splitOn, the delimiter you want to use.
              * @param numOfTargetParts, how many target parts you want to get, if it is 0, as many as possible.
              */
             static Aws::Vector<Aws::String> Split(const Aws::String& toSplit, char splitOn, size_t numOfTargetParts);
@@ -105,7 +105,7 @@ namespace Aws
             /**
              * @brief Splits a string on a delimiter.
              * @param toSplit, the original string to split
-             * @param splitOn, the delemiter you want to use.
+             * @param splitOn, the delimiter you want to use.
              * @param numOfTargetParts, how many target parts you want to get, if it is 0, as many as possible.
              * @param option, if INCLUDE_EMPTY_ENTRIES, includes empty entries in the result, otherwise removes empty entries.
              */

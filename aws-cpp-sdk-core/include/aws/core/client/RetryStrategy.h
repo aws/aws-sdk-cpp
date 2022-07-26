@@ -56,12 +56,12 @@ namespace Aws
             virtual long GetMaxAttempts() const { return 0; }
 
             /**
-             * Retrives send tokens from the bucket. Throws an exception if not available.
+             * Retrieves send tokens from the bucket. Throws an exception if not available.
              */
             virtual void GetSendToken() {}
 
             /**
-             * Retrives send tokens from the bucket. Returns true is send token is retrieved.
+             * Retrieves send tokens from the bucket. Returns true is send token is retrieved.
              */
             virtual bool HasSendToken()
             {

@@ -251,7 +251,7 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 
 void InstanceProfileCredentialsProvider::Reload()
 {
-    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to repull from EC2 Metadata Service.");
+    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to re-pull from EC2 Metadata Service.");
     m_ec2MetadataConfigLoader->Load();
     AWSCredentialsProvider::Reload();
 }
@@ -311,7 +311,7 @@ bool TaskRoleCredentialsProvider::ExpiresSoon() const
 
 void TaskRoleCredentialsProvider::Reload()
 {
-    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Credentials have expired or will expire, attempting to repull from ECS IAM Service.");
+    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
 
     auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
     if (credentialsStr.empty()) return;

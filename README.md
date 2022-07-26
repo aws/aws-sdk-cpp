@@ -101,7 +101,7 @@ To build for Docker, ensure your container meets the [minimum requirements](#min
 
 
 ### Building and running an app on EC2
-Checkout this walkthrough on how to set up an enviroment and build the [AWS SDK for C++ on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2).
+Checkout this walk through on how to set up an environment and build the [AWS SDK for C++ on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2).
 
 # Issues and Contributions
 We welcome all kinds of contributions, check [this guideline](./CONTRIBUTING.md) to learn how you can contribute or report issues.
