@@ -88,7 +88,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline bool GetFlowLogsEnabled() const{ return m_flowLogsEnabled; }
 
@@ -97,7 +97,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline bool FlowLogsEnabledHasBeenSet() const { return m_flowLogsEnabledHasBeenSet; }
 
@@ -106,7 +106,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline void SetFlowLogsEnabled(bool value) { m_flowLogsEnabledHasBeenSet = true; m_flowLogsEnabled = value; }
 
@@ -115,7 +115,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * Logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsEnabled(bool value) { SetFlowLogsEnabled(value); return *this;}
 
@@ -123,64 +123,64 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline const Aws::String& GetFlowLogsS3Bucket() const{ return m_flowLogsS3Bucket; }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline bool FlowLogsS3BucketHasBeenSet() const { return m_flowLogsS3BucketHasBeenSet; }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(const Aws::String& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = value; }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(Aws::String&& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(const char* value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket.assign(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Bucket(const Aws::String& value) { SetFlowLogsS3Bucket(value); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Bucket(Aws::String&& value) { SetFlowLogsS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Bucket(const char* value) { SetFlowLogsS3Bucket(value); return *this;}
 
@@ -188,9 +188,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline const Aws::String& GetFlowLogsS3Prefix() const{ return m_flowLogsS3Prefix; }
@@ -198,9 +197,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline bool FlowLogsS3PrefixHasBeenSet() const { return m_flowLogsS3PrefixHasBeenSet; }
@@ -208,9 +206,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline void SetFlowLogsS3Prefix(const Aws::String& value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix = value; }
@@ -218,9 +215,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline void SetFlowLogsS3Prefix(Aws::String&& value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix = std::move(value); }
@@ -228,9 +224,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline void SetFlowLogsS3Prefix(const char* value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix.assign(value); }
@@ -238,9 +233,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Prefix(const Aws::String& value) { SetFlowLogsS3Prefix(value); return *this;}
@@ -248,9 +242,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Prefix(Aws::String&& value) { SetFlowLogsS3Prefix(std::move(value)); return *this;}
@@ -258,9 +251,8 @@ namespace Model
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
      * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-     * <p>If you don’t specify a prefix, the flow logs are stored in the root of the
-     * bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket
-     * folder structure will include a double slash (//), like the following:</p>
+     * <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder
+     * structure will include a double slash (//), like the following:</p>
      * <p>s3-bucket_name//AWSLogs/aws_account_id</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Prefix(const char* value) { SetFlowLogsS3Prefix(value); return *this;}

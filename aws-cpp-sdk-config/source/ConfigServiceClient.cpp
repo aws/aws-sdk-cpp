@@ -81,6 +81,7 @@
 #include <aws/config/model/GetResourceConfigHistoryRequest.h>
 #include <aws/config/model/GetStoredQueryRequest.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesRequest.h>
+#include <aws/config/model/ListConformancePackComplianceScoresRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
 #include <aws/config/model/ListStoredQueriesRequest.h>
 #include <aws/config/model/ListTagsForResourceRequest.h>
@@ -1668,6 +1669,30 @@ void ConfigServiceClient::ListAggregateDiscoveredResourcesAsync(const ListAggreg
 void ConfigServiceClient::ListAggregateDiscoveredResourcesAsyncHelper(const ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAggregateDiscoveredResources(request), context);
+}
+
+ListConformancePackComplianceScoresOutcome ConfigServiceClient::ListConformancePackComplianceScores(const ListConformancePackComplianceScoresRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListConformancePackComplianceScoresOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListConformancePackComplianceScoresOutcomeCallable ConfigServiceClient::ListConformancePackComplianceScoresCallable(const ListConformancePackComplianceScoresRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConformancePackComplianceScoresOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConformancePackComplianceScores(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::ListConformancePackComplianceScoresAsync(const ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConformancePackComplianceScoresAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::ListConformancePackComplianceScoresAsyncHelper(const ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConformancePackComplianceScores(request), context);
 }
 
 ListDiscoveredResourcesOutcome ConfigServiceClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const

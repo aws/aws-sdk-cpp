@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/model/Change.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

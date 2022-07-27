@@ -11,6 +11,7 @@
 #include <aws/globalaccelerator/model/AcceleratorStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/globalaccelerator/model/IpSet.h>
+#include <aws/globalaccelerator/model/AcceleratorEvent.h>
 #include <utility>
 
 namespace Aws
@@ -136,32 +137,38 @@ namespace Model
 
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The IP address type that an accelerator supports. For a standard accelerator,
+     * the value can be IPV4 or DUAL_STACK.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The IP address type that an accelerator supports. For a standard accelerator,
+     * the value can be IPV4 or DUAL_STACK.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The IP address type that an accelerator supports. For a standard accelerator,
+     * the value can be IPV4 or DUAL_STACK.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The IP address type that an accelerator supports. For a standard accelerator,
+     * the value can be IPV4 or DUAL_STACK.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The IP address type that an accelerator supports. For a standard accelerator,
+     * the value can be IPV4 or DUAL_STACK.</p>
      */
     inline Accelerator& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>The value for the address type must be IPv4. </p>
+     * <p>The IP address type that an accelerator supports. For a standard accelerator,
+     * the value can be IPV4 or DUAL_STACK.</p>
      */
     inline Accelerator& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
@@ -246,104 +253,128 @@ namespace Model
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline Accelerator& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline Accelerator& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
     /**
      * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
-     * to your accelerator's static IP addresses. </p> <p>The naming convention for the
-     * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-     * string, followed by .awsglobalaccelerator.com. For example:
-     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>For more information about
-     * the default DNS name, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-     * Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global
+     * to an accelerator's static IPv4 addresses.</p> <p>The naming convention for the
+     * DNS name for an accelerator is the following: A lowercase letter a, followed by
+     * a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
+     * accelerator, you also have a second DNS name, DualStackDnsName, that points to
+     * both the A record and the AAAA record for all four static addresses for the
+     * accelerator (two IPv4 addresses and two IPv6 addresses).</p> <p>For more
+     * information about the default DNS name, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline Accelerator& WithDnsName(const char* value) { SetDnsName(value); return *this;}
@@ -441,6 +472,176 @@ namespace Model
      */
     inline Accelerator& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetDualStackDnsName() const{ return m_dualStackDnsName; }
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline bool DualStackDnsNameHasBeenSet() const { return m_dualStackDnsNameHasBeenSet; }
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetDualStackDnsName(const Aws::String& value) { m_dualStackDnsNameHasBeenSet = true; m_dualStackDnsName = value; }
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetDualStackDnsName(Aws::String&& value) { m_dualStackDnsNameHasBeenSet = true; m_dualStackDnsName = std::move(value); }
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetDualStackDnsName(const char* value) { m_dualStackDnsNameHasBeenSet = true; m_dualStackDnsName.assign(value); }
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline Accelerator& WithDualStackDnsName(const Aws::String& value) { SetDualStackDnsName(value); return *this;}
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline Accelerator& WithDualStackDnsName(Aws::String&& value) { SetDualStackDnsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
+     * to a dual-stack accelerator's four static IP addresses: two IPv4 addresses and
+     * two IPv6 addresses.</p> <p>The naming convention for the dual-stack DNS name is
+     * the following: A lowercase letter a, followed by a 16-bit random hex string,
+     * followed by .dualstack.awsglobalaccelerator.com. For example:
+     * a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p> <p>Note: Global
+     * Accelerator also assigns a default DNS name, DnsName, to your accelerator that
+     * points just to the static IPv4 addresses. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+     * Support for DNS Addressing in Global Accelerator</a> in the <i>Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline Accelerator& WithDualStackDnsName(const char* value) { SetDualStackDnsName(value); return *this;}
+
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline const Aws::Vector<AcceleratorEvent>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline void SetEvents(const Aws::Vector<AcceleratorEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline void SetEvents(Aws::Vector<AcceleratorEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline Accelerator& WithEvents(const Aws::Vector<AcceleratorEvent>& value) { SetEvents(value); return *this;}
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline Accelerator& WithEvents(Aws::Vector<AcceleratorEvent>&& value) { SetEvents(std::move(value)); return *this;}
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline Accelerator& AddEvents(const AcceleratorEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+
+    /**
+     * <p>A history of changes that you make to an accelerator in Global
+     * Accelerator.</p>
+     */
+    inline Accelerator& AddEvents(AcceleratorEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_acceleratorArn;
@@ -469,6 +670,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
+    Aws::String m_dualStackDnsName;
+    bool m_dualStackDnsNameHasBeenSet;
+
+    Aws::Vector<AcceleratorEvent> m_events;
+    bool m_eventsHasBeenSet;
   };
 
 } // namespace Model

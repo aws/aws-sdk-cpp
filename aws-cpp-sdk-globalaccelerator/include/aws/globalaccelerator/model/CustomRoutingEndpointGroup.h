@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>A complex type for the endpoint group for a custom routing accelerator. An
-   * AWS Region can have only one endpoint group for a specific listener.
-   * </p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services Region can have only one endpoint group for a specific
+   * listener. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CustomRoutingEndpointGroup">AWS
    * API Reference</a></p>
    */
@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline CustomRoutingEndpointGroup& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline CustomRoutingEndpointGroup& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the endpoint group is located.</p>
+     * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
     inline CustomRoutingEndpointGroup& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
 

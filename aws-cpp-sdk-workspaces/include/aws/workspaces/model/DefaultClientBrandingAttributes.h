@@ -42,49 +42,49 @@ namespace Model
 
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline const Aws::String& GetLogoUrl() const{ return m_logoUrl; }
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline bool LogoUrlHasBeenSet() const { return m_logoUrlHasBeenSet; }
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogoUrl(const Aws::String& value) { m_logoUrlHasBeenSet = true; m_logoUrl = value; }
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogoUrl(Aws::String&& value) { m_logoUrlHasBeenSet = true; m_logoUrl = std::move(value); }
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogoUrl(const char* value) { m_logoUrlHasBeenSet = true; m_logoUrl.assign(value); }
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline DefaultClientBrandingAttributes& WithLogoUrl(const Aws::String& value) { SetLogoUrl(value); return *this;}
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline DefaultClientBrandingAttributes& WithLogoUrl(Aws::String&& value) { SetLogoUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
     inline DefaultClientBrandingAttributes& WithLogoUrl(const char* value) { SetLogoUrl(value); return *this;}
@@ -296,91 +296,117 @@ namespace Model
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLoginMessage() const{ return m_loginMessage; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline bool LoginMessageHasBeenSet() const { return m_loginMessageHasBeenSet; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline void SetLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { m_loginMessageHasBeenSet = true; m_loginMessage = value; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline void SetLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { m_loginMessageHasBeenSet = true; m_loginMessage = std::move(value); }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& WithLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { SetLoginMessage(value); return *this;}
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& WithLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { SetLoginMessage(std::move(value)); return *this;}
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& AddLoginMessage(const Aws::String& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& AddLoginMessage(const Aws::String& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& AddLoginMessage(Aws::String&& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& AddLoginMessage(const char* key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline DefaultClientBrandingAttributes& AddLoginMessage(const char* key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
 

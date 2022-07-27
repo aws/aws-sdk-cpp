@@ -62,6 +62,7 @@
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
 #include <aws/config/model/GetStoredQueryResult.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesResult.h>
+#include <aws/config/model/ListConformancePackComplianceScoresResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
 #include <aws/config/model/ListStoredQueriesResult.h>
 #include <aws/config/model/ListTagsForResourceResult.h>
@@ -181,6 +182,7 @@ namespace Model
         class GetResourceConfigHistoryRequest;
         class GetStoredQueryRequest;
         class ListAggregateDiscoveredResourcesRequest;
+        class ListConformancePackComplianceScoresRequest;
         class ListDiscoveredResourcesRequest;
         class ListStoredQueriesRequest;
         class ListTagsForResourceRequest;
@@ -270,6 +272,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, ConfigServiceError> GetResourceConfigHistoryOutcome;
         typedef Aws::Utils::Outcome<GetStoredQueryResult, ConfigServiceError> GetStoredQueryOutcome;
         typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, ConfigServiceError> ListAggregateDiscoveredResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListConformancePackComplianceScoresResult, ConfigServiceError> ListConformancePackComplianceScoresOutcome;
         typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, ConfigServiceError> ListDiscoveredResourcesOutcome;
         typedef Aws::Utils::Outcome<ListStoredQueriesResult, ConfigServiceError> ListStoredQueriesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConfigServiceError> ListTagsForResourceOutcome;
@@ -359,6 +362,7 @@ namespace Model
         typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
         typedef std::future<GetStoredQueryOutcome> GetStoredQueryOutcomeCallable;
         typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
+        typedef std::future<ListConformancePackComplianceScoresOutcome> ListConformancePackComplianceScoresOutcomeCallable;
         typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
         typedef std::future<ListStoredQueriesOutcome> ListStoredQueriesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -451,6 +455,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetStoredQueryRequest&, const Model::GetStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const Model::ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregateDiscoveredResourcesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::ListConformancePackComplianceScoresRequest&, const Model::ListConformancePackComplianceScoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConformancePackComplianceScoresResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListStoredQueriesRequest&, const Model::ListStoredQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStoredQueriesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -1871,6 +1876,29 @@ namespace Model
         virtual void ListAggregateDiscoveredResourcesAsync(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of conformance pack compliance scores. A compliance score is
+         * the percentage of the number of compliant rule-resource combinations in a
+         * conformance pack compared to the number of total possible rule-resource
+         * combinations in the conformance pack. This metric provides you with a high-level
+         * view of the compliance state of your conformance packs, and can be used to
+         * identify, investigate, and understand compliance deviations in your conformance
+         * packs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConformancePackComplianceScoresOutcome ListConformancePackComplianceScores(const Model::ListConformancePackComplianceScoresRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConformancePackComplianceScores that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListConformancePackComplianceScoresOutcomeCallable ListConformancePackComplianceScoresCallable(const Model::ListConformancePackComplianceScoresRequest& request) const;
+
+        /**
+         * An Async wrapper for ListConformancePackComplianceScores that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListConformancePackComplianceScoresAsync(const Model::ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Accepts a resource type and returns a list of resource identifiers for the
          * resources of that type. A resource identifier includes the resource type, ID,
          * and (if available) the custom resource name. The results consist of resources
@@ -2626,6 +2654,7 @@ namespace Model
         void GetResourceConfigHistoryAsyncHelper(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStoredQueryAsyncHelper(const Model::GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAggregateDiscoveredResourcesAsyncHelper(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListConformancePackComplianceScoresAsyncHelper(const Model::ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDiscoveredResourcesAsyncHelper(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStoredQueriesAsyncHelper(const Model::ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

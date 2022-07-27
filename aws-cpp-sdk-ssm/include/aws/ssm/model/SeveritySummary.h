@@ -38,29 +38,29 @@ namespace Model
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
-     * of critical. Critical severity is determined by the organization that published
-     * the compliance items.</p>
+     * of <code>Critical</code>. Critical severity is determined by the organization
+     * that published the compliance items.</p>
      */
     inline int GetCriticalCount() const{ return m_criticalCount; }
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
-     * of critical. Critical severity is determined by the organization that published
-     * the compliance items.</p>
+     * of <code>Critical</code>. Critical severity is determined by the organization
+     * that published the compliance items.</p>
      */
     inline bool CriticalCountHasBeenSet() const { return m_criticalCountHasBeenSet; }
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
-     * of critical. Critical severity is determined by the organization that published
-     * the compliance items.</p>
+     * of <code>Critical</code>. Critical severity is determined by the organization
+     * that published the compliance items.</p>
      */
     inline void SetCriticalCount(int value) { m_criticalCountHasBeenSet = true; m_criticalCount = value; }
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
-     * of critical. Critical severity is determined by the organization that published
-     * the compliance items.</p>
+     * of <code>Critical</code>. Critical severity is determined by the organization
+     * that published the compliance items.</p>
      */
     inline SeveritySummary& WithCriticalCount(int value) { SetCriticalCount(value); return *this;}
 

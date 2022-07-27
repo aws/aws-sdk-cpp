@@ -397,7 +397,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
@@ -434,7 +436,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
@@ -471,7 +475,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
@@ -508,7 +514,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
@@ -545,7 +553,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
@@ -582,7 +592,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline CommandInvocation& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
@@ -619,7 +631,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline CommandInvocation& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
@@ -656,7 +670,9 @@ namespace Model
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
      * subsequent command invocations were canceled by the system. This is a terminal
-     * state.</p> </li> </ul>
+     * state.</p> </li> <li> <p>Delayed: The system attempted to send the command to
+     * the managed node but wasn't successful. The system retries again.</p> </li>
+     * </ul>
      */
     inline CommandInvocation& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 

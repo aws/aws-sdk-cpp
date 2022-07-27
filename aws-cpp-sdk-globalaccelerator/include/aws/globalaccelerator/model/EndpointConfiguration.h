@@ -121,101 +121,109 @@ namespace Model
 
     /**
      * <p>The weight associated with the endpoint. When you add weights to endpoints,
-     * you configure AWS Global Accelerator to route traffic based on proportions that
-     * you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
+     * you configure Global Accelerator to route traffic based on proportions that you
+     * specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
      * (sum=20). The result is that 4/20 of your traffic, on average, is routed to the
      * first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20
      * is routed to the last endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
-     * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline int GetWeight() const{ return m_weight; }
 
     /**
      * <p>The weight associated with the endpoint. When you add weights to endpoints,
-     * you configure AWS Global Accelerator to route traffic based on proportions that
-     * you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
+     * you configure Global Accelerator to route traffic based on proportions that you
+     * specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
      * (sum=20). The result is that 4/20 of your traffic, on average, is routed to the
      * first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20
      * is routed to the last endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
-     * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
      * <p>The weight associated with the endpoint. When you add weights to endpoints,
-     * you configure AWS Global Accelerator to route traffic based on proportions that
-     * you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
+     * you configure Global Accelerator to route traffic based on proportions that you
+     * specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
      * (sum=20). The result is that 4/20 of your traffic, on average, is routed to the
      * first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20
      * is routed to the last endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
-     * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
      * <p>The weight associated with the endpoint. When you add weights to endpoints,
-     * you configure AWS Global Accelerator to route traffic based on proportions that
-     * you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
+     * you configure Global Accelerator to route traffic based on proportions that you
+     * specify. For example, you might specify endpoint weights of 4, 5, 5, and 6
      * (sum=20). The result is that 4/20 of your traffic, on average, is routed to the
      * first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20
      * is routed to the last endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
-     * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline EndpointConfiguration& WithWeight(int value) { SetWeight(value); return *this;}
 
 
     /**
-     * <p>Indicates whether client IP address preservation is enabled for an
-     * Application Load Balancer endpoint. The value is true or false. The default
-     * value is true for new accelerators. </p> <p>If the value is set to true, the
-     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
-     * header as traffic travels to applications on the Application Load Balancer
-     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * <p>Indicates whether client IP address preservation is enabled for an endpoint.
+     * The value is true or false. The default value is true for new accelerators. </p>
+     * <p>If the value is set to true, the client's IP address is preserved in the
+     * <code>X-Forwarded-For</code> request header as traffic travels to applications
+     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
+     * preservation is supported, in specific Amazon Web Services Regions, for
+     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
-     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline bool GetClientIPPreservationEnabled() const{ return m_clientIPPreservationEnabled; }
 
     /**
-     * <p>Indicates whether client IP address preservation is enabled for an
-     * Application Load Balancer endpoint. The value is true or false. The default
-     * value is true for new accelerators. </p> <p>If the value is set to true, the
-     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
-     * header as traffic travels to applications on the Application Load Balancer
-     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * <p>Indicates whether client IP address preservation is enabled for an endpoint.
+     * The value is true or false. The default value is true for new accelerators. </p>
+     * <p>If the value is set to true, the client's IP address is preserved in the
+     * <code>X-Forwarded-For</code> request header as traffic travels to applications
+     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
+     * preservation is supported, in specific Amazon Web Services Regions, for
+     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
-     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline bool ClientIPPreservationEnabledHasBeenSet() const { return m_clientIPPreservationEnabledHasBeenSet; }
 
     /**
-     * <p>Indicates whether client IP address preservation is enabled for an
-     * Application Load Balancer endpoint. The value is true or false. The default
-     * value is true for new accelerators. </p> <p>If the value is set to true, the
-     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
-     * header as traffic travels to applications on the Application Load Balancer
-     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * <p>Indicates whether client IP address preservation is enabled for an endpoint.
+     * The value is true or false. The default value is true for new accelerators. </p>
+     * <p>If the value is set to true, the client's IP address is preserved in the
+     * <code>X-Forwarded-For</code> request header as traffic travels to applications
+     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
+     * preservation is supported, in specific Amazon Web Services Regions, for
+     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
-     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline void SetClientIPPreservationEnabled(bool value) { m_clientIPPreservationEnabledHasBeenSet = true; m_clientIPPreservationEnabled = value; }
 
     /**
-     * <p>Indicates whether client IP address preservation is enabled for an
-     * Application Load Balancer endpoint. The value is true or false. The default
-     * value is true for new accelerators. </p> <p>If the value is set to true, the
-     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
-     * header as traffic travels to applications on the Application Load Balancer
-     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * <p>Indicates whether client IP address preservation is enabled for an endpoint.
+     * The value is true or false. The default value is true for new accelerators. </p>
+     * <p>If the value is set to true, the client's IP address is preserved in the
+     * <code>X-Forwarded-For</code> request header as traffic travels to applications
+     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
+     * preservation is supported, in specific Amazon Web Services Regions, for
+     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
-     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline EndpointConfiguration& WithClientIPPreservationEnabled(bool value) { SetClientIPPreservationEnabled(value); return *this;}

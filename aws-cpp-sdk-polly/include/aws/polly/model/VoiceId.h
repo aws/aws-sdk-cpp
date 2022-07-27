@@ -86,7 +86,8 @@ namespace Model
     Arthur,
     Daniel,
     Liam,
-    Pedro
+    Pedro,
+    Kajal
   };
 
 namespace VoiceIdMapper

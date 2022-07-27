@@ -208,6 +208,7 @@
 #include <aws/chime/model/UpdateUserSettingsRequest.h>
 #include <aws/chime/model/UpdateVoiceConnectorRequest.h>
 #include <aws/chime/model/UpdateVoiceConnectorGroupRequest.h>
+#include <aws/chime/model/ValidateE911AddressRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -6935,5 +6936,30 @@ void ChimeClient::UpdateVoiceConnectorGroupAsync(const UpdateVoiceConnectorGroup
 void ChimeClient::UpdateVoiceConnectorGroupAsyncHelper(const UpdateVoiceConnectorGroupRequest& request, const UpdateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateVoiceConnectorGroup(request), context);
+}
+
+ValidateE911AddressOutcome ChimeClient::ValidateE911Address(const ValidateE911AddressRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/emergency-calling/address");
+  return ValidateE911AddressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ValidateE911AddressOutcomeCallable ChimeClient::ValidateE911AddressCallable(const ValidateE911AddressRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ValidateE911AddressOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidateE911Address(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ValidateE911AddressAsync(const ValidateE911AddressRequest& request, const ValidateE911AddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ValidateE911AddressAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ValidateE911AddressAsyncHelper(const ValidateE911AddressRequest& request, const ValidateE911AddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ValidateE911Address(request), context);
 }
 

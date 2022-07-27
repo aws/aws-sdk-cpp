@@ -217,44 +217,74 @@ namespace Model
 
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiresAfter() const{ return m_expiresAfter; }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool ExpiresAfterHasBeenSet() const { return m_expiresAfterHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetExpiresAfter(const Aws::Utils::DateTime& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetExpiresAfter(Aws::Utils::DateTime&& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = std::move(value); }
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline Command& WithExpiresAfter(const Aws::Utils::DateTime& value) { SetExpiresAfter(value); return *this;}
 
     /**
-     * <p>If this time is reached and the command hasn't already started running, it
-     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
-     * as part of the <code>SendCommand</code> API operation.</p>
+     * <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for
+     * all invocations that have the status <code>InProgress</code>,
+     * <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is
+     * calculated based on the total timeout for the overall command. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+     * command timeout values</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline Command& WithExpiresAfter(Aws::Utils::DateTime&& value) { SetExpiresAfter(std::move(value)); return *this;}
 
@@ -522,7 +552,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
@@ -551,7 +583,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
@@ -580,7 +614,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
@@ -609,7 +645,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
@@ -638,7 +676,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
@@ -667,7 +707,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
@@ -696,7 +738,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
@@ -725,7 +769,9 @@ namespace Model
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
-     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
+     * before running it on any managed node. This is a terminal state.</p> </li> <li>
+     * <p>Delayed: The system attempted to send the command to the managed node but
+     * wasn't successful. The system retries again.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
