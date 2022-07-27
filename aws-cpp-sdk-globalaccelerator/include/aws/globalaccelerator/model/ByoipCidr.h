@@ -28,36 +28,36 @@ namespace Model
 
   /**
    * <p>Information about an IP address range that is provisioned for use with your
-   * AWS resources through bring your own IP address (BYOIP).</p> <p>The following
-   * describes each BYOIP <code>State</code> that your IP address range can be
-   * in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request
-   * to provision an IP address range but it is not yet provisioned with AWS Global
-   * Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned
-   * with AWS Global Accelerator and can be advertised.</p> </li> <li> <p>
-   * <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global
-   * Accelerator to advertise an address range but it is not yet being
+   * Amazon Web Services resources through bring your own IP address (BYOIP).</p>
+   * <p>The following describes each BYOIP <code>State</code> that your IP address
+   * range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve
+   * submitted a request to provision an IP address range but it is not yet
+   * provisioned with Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The
+   * address range is provisioned with Global Accelerator and can be advertised.</p>
+   * </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for
+   * Global Accelerator to advertise an address range but it is not yet being
    * advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being
-   * advertised by AWS Global Accelerator.</p> </li> <li> <p>
-   * <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address
-   * range from being advertised but it is still being advertised by AWS Global
-   * Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted
-   * a request to deprovision an address range from AWS Global Accelerator but it is
-   * still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range
-   * is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p>
-   * <b>FAILED_PROVISION </b> — The request to provision the address range from AWS
-   * Global Accelerator was not successful. Please make sure that you provide all of
+   * advertised by Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b>
+   * — You’ve submitted a request to withdraw an address range from being advertised
+   * but it is still being advertised by Global Accelerator.</p> </li> <li> <p>
+   * <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an
+   * address range from Global Accelerator but it is still provisioned.</p> </li>
+   * <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from Global
+   * Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to
+   * provision the address range from Global Accelerator was not successful. Please
+   * make sure that you provide all of the correct information, and try again. If the
+   * request fails a second time, contact Amazon Web Services support.</p> </li> <li>
+   * <p> <b>FAILED_ADVERTISING</b> — The request for Global Accelerator to advertise
+   * the address range was not successful. Please make sure that you provide all of
    * the correct information, and try again. If the request fails a second time,
-   * contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request
-   * for AWS Global Accelerator to advertise the address range was not successful.
-   * Please make sure that you provide all of the correct information, and try again.
-   * If the request fails a second time, contact AWS support.</p> </li> <li> <p>
-   * <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from
-   * advertising by AWS Global Accelerator was not successful. Please make sure that
-   * you provide all of the correct information, and try again. If the request fails
-   * a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION
-   * </b> — The request to deprovision the address range from AWS Global Accelerator
+   * contact Amazon Web Services support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> —
+   * The request to withdraw the address range from advertising by Global Accelerator
    * was not successful. Please make sure that you provide all of the correct
-   * information, and try again. If the request fails a second time, contact AWS
+   * information, and try again. If the request fails a second time, contact Amazon
+   * Web Services support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The
+   * request to deprovision the address range from Global Accelerator was not
+   * successful. Please make sure that you provide all of the correct information,
+   * and try again. If the request fails a second time, contact Amazon Web Services
    * support.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ByoipCidr">AWS
    * API Reference</a></p>
@@ -144,50 +144,50 @@ namespace Model
 
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline const Aws::Vector<ByoipCidrEvent>& GetEvents() const{ return m_events; }
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline void SetEvents(const Aws::Vector<ByoipCidrEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline void SetEvents(Aws::Vector<ByoipCidrEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& WithEvents(const Aws::Vector<ByoipCidrEvent>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& WithEvents(Aws::Vector<ByoipCidrEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& AddEvents(const ByoipCidrEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p>A history of status changes for an IP address range that you bring to AWS
-     * Global Accelerator through bring your own IP address (BYOIP).</p>
+     * <p>A history of status changes for an IP address range that you bring to Global
+     * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline ByoipCidr& AddEvents(ByoipCidrEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 

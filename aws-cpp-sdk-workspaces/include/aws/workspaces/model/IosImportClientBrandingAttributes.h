@@ -431,91 +431,117 @@ namespace Model
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLoginMessage() const{ return m_loginMessage; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline bool LoginMessageHasBeenSet() const { return m_loginMessageHasBeenSet; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline void SetLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { m_loginMessageHasBeenSet = true; m_loginMessage = value; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline void SetLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { m_loginMessageHasBeenSet = true; m_loginMessage = std::move(value); }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& WithLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { SetLoginMessage(value); return *this;}
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& WithLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { SetLoginMessage(std::move(value)); return *this;}
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const Aws::String& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const Aws::String& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const char* key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The login message. Specified as a key value pair, in which the key is a
      * locale and the value is the localized message for that locale. The only key
-     * supported is <code>en_US</code>. </p>
+     * supported is <code>en_US</code>. The HTML tags supported include the following:
+     * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
+     * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
     inline IosImportClientBrandingAttributes& AddLoginMessage(const char* key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
 

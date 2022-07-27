@@ -164,6 +164,7 @@
 #include <aws/chime/model/UpdateUserResult.h>
 #include <aws/chime/model/UpdateVoiceConnectorResult.h>
 #include <aws/chime/model/UpdateVoiceConnectorGroupResult.h>
+#include <aws/chime/model/ValidateE911AddressResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -392,6 +393,7 @@ namespace Model
         class UpdateUserSettingsRequest;
         class UpdateVoiceConnectorRequest;
         class UpdateVoiceConnectorGroupRequest;
+        class ValidateE911AddressRequest;
 
         typedef Aws::Utils::Outcome<AssociatePhoneNumberWithUserResult, ChimeError> AssociatePhoneNumberWithUserOutcome;
         typedef Aws::Utils::Outcome<AssociatePhoneNumbersWithVoiceConnectorResult, ChimeError> AssociatePhoneNumbersWithVoiceConnectorOutcome;
@@ -583,6 +585,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> UpdateUserSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceConnectorResult, ChimeError> UpdateVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceConnectorGroupResult, ChimeError> UpdateVoiceConnectorGroupOutcome;
+        typedef Aws::Utils::Outcome<ValidateE911AddressResult, ChimeError> ValidateE911AddressOutcome;
 
         typedef std::future<AssociatePhoneNumberWithUserOutcome> AssociatePhoneNumberWithUserOutcomeCallable;
         typedef std::future<AssociatePhoneNumbersWithVoiceConnectorOutcome> AssociatePhoneNumbersWithVoiceConnectorOutcomeCallable;
@@ -774,6 +777,7 @@ namespace Model
         typedef std::future<UpdateUserSettingsOutcome> UpdateUserSettingsOutcomeCallable;
         typedef std::future<UpdateVoiceConnectorOutcome> UpdateVoiceConnectorOutcomeCallable;
         typedef std::future<UpdateVoiceConnectorGroupOutcome> UpdateVoiceConnectorGroupOutcomeCallable;
+        typedef std::future<ValidateE911AddressOutcome> ValidateE911AddressOutcomeCallable;
 } // namespace Model
 
   class ChimeClient;
@@ -968,6 +972,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserSettingsRequest&, const Model::UpdateUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateVoiceConnectorRequest&, const Model::UpdateVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateVoiceConnectorGroupRequest&, const Model::UpdateVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceConnectorGroupResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ValidateE911AddressRequest&, const Model::ValidateE911AddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateE911AddressResponseReceivedHandler;
 
   /**
    * <p>The Amazon Chime API (application programming interface) is designed for
@@ -3966,8 +3971,8 @@ namespace Model
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
          * Connector. The streaming configuration specifies whether media streaming is
-         * enabled for sending to Indonesians. It also sets the retention period, in hours,
-         * for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
+         * enabled for sending to Kinesis. It also sets the retention period, in hours, for
+         * the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -4723,6 +4728,27 @@ namespace Model
          */
         virtual void UpdateVoiceConnectorGroupAsync(const Model::UpdateVoiceConnectorGroupRequest& request, const UpdateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Validates an address to be used for 911 calls made with Amazon Chime Voice
+         * Connectors. You can use validated addresses in a Presence Information Data
+         * Format Location Object file that you include in SIP requests. That helps ensure
+         * that addresses are routed to the appropriate Public Safety Answering
+         * Point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ValidateE911AddressOutcome ValidateE911Address(const Model::ValidateE911AddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for ValidateE911Address that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ValidateE911AddressOutcomeCallable ValidateE911AddressCallable(const Model::ValidateE911AddressRequest& request) const;
+
+        /**
+         * An Async wrapper for ValidateE911Address that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ValidateE911AddressAsync(const Model::ValidateE911AddressRequest& request, const ValidateE911AddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -4917,6 +4943,7 @@ namespace Model
         void UpdateUserSettingsAsyncHelper(const Model::UpdateUserSettingsRequest& request, const UpdateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceConnectorAsyncHelper(const Model::UpdateVoiceConnectorRequest& request, const UpdateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceConnectorGroupAsyncHelper(const Model::UpdateVoiceConnectorGroupRequest& request, const UpdateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ValidateE911AddressAsyncHelper(const Model::ValidateE911AddressRequest& request, const ValidateE911AddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_baseUri;
       Aws::String m_scheme;

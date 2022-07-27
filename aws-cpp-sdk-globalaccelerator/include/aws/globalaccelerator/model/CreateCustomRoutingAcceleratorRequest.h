@@ -96,185 +96,227 @@ namespace Model
 
 
     /**
-     * <p>The value for the address type must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>The value for the address type must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
-     * <p>The value for the address type must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
-     * <p>The value for the address type must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
-     * <p>The value for the address type must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>The value for the address type must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpAddresses() const{ return m_ipAddresses; }
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline void SetIpAddresses(const Aws::Vector<Aws::String>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline void SetIpAddresses(Aws::Vector<Aws::String>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& WithIpAddresses(const Aws::Vector<Aws::String>& value) { SetIpAddresses(value); return *this;}
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& WithIpAddresses(Aws::Vector<Aws::String>&& value) { SetIpAddresses(std::move(value)); return *this;}
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& AddIpAddresses(const Aws::String& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& AddIpAddresses(Aws::String&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Optionally, if you've added your own IP address pool to Global Accelerator
-     * (BYOIP), you can choose IP addresses from your own pool to use for the
-     * accelerator's static IP addresses when you create an accelerator. You can
-     * specify one or two addresses, separated by a space. Do not include the /32
-     * suffix.</p> <p>Only one IP address from each of your IP address ranges can be
-     * used for each accelerator. If you specify only one IP address from your IP
-     * address range, Global Accelerator assigns a second static IP address for the
-     * accelerator from the AWS IP address pool.</p> <p>Note that you can't update IP
-     * addresses for an existing accelerator. To change them, you must create a new
-     * accelerator with the new addresses.</p> <p>For more information, see <a
+     * (BYOIP), you can choose an IPv4 address from your own pool to use for the
+     * accelerator's static IPv4 address when you create an accelerator. </p> <p>After
+     * you bring an address range to Amazon Web Services, it appears in your account as
+     * an address pool. When you create an accelerator, you can assign one IPv4 address
+     * from your range to it. Global Accelerator assigns you a second static IPv4
+     * address from an Amazon IP address range. If you bring two IPv4 address ranges to
+     * Amazon Web Services, you can assign one IPv4 address from each range to your
+     * accelerator. This restriction is because Global Accelerator assigns each address
+     * range to a different network zone, for high availability.</p> <p>You can specify
+     * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+     * <p>Note that you can't update IP addresses for an existing accelerator. To
+     * change them, you must create a new accelerator with the new addresses.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-     * your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& AddIpAddresses(const char* value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
@@ -361,64 +403,56 @@ namespace Model
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>Create tags for an accelerator.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     * Guide</i>.</p>
+     * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline CreateCustomRoutingAcceleratorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

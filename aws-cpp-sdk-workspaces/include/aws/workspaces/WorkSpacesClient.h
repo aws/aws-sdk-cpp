@@ -21,6 +21,7 @@
 #include <aws/workspaces/model/CreateTagsResult.h>
 #include <aws/workspaces/model/CreateUpdatedWorkspaceImageResult.h>
 #include <aws/workspaces/model/CreateWorkspaceBundleResult.h>
+#include <aws/workspaces/model/CreateWorkspaceImageResult.h>
 #include <aws/workspaces/model/CreateWorkspacesResult.h>
 #include <aws/workspaces/model/DeleteClientBrandingResult.h>
 #include <aws/workspaces/model/DeleteConnectClientAddInResult.h>
@@ -121,6 +122,7 @@ namespace Model
         class CreateTagsRequest;
         class CreateUpdatedWorkspaceImageRequest;
         class CreateWorkspaceBundleRequest;
+        class CreateWorkspaceImageRequest;
         class CreateWorkspacesRequest;
         class DeleteClientBrandingRequest;
         class DeleteConnectClientAddInRequest;
@@ -183,6 +185,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTagsResult, WorkSpacesError> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<CreateUpdatedWorkspaceImageResult, WorkSpacesError> CreateUpdatedWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<CreateWorkspaceBundleResult, WorkSpacesError> CreateWorkspaceBundleOutcome;
+        typedef Aws::Utils::Outcome<CreateWorkspaceImageResult, WorkSpacesError> CreateWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<CreateWorkspacesResult, WorkSpacesError> CreateWorkspacesOutcome;
         typedef Aws::Utils::Outcome<DeleteClientBrandingResult, WorkSpacesError> DeleteClientBrandingOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectClientAddInResult, WorkSpacesError> DeleteConnectClientAddInOutcome;
@@ -245,6 +248,7 @@ namespace Model
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<CreateUpdatedWorkspaceImageOutcome> CreateUpdatedWorkspaceImageOutcomeCallable;
         typedef std::future<CreateWorkspaceBundleOutcome> CreateWorkspaceBundleOutcomeCallable;
+        typedef std::future<CreateWorkspaceImageOutcome> CreateWorkspaceImageOutcomeCallable;
         typedef std::future<CreateWorkspacesOutcome> CreateWorkspacesOutcomeCallable;
         typedef std::future<DeleteClientBrandingOutcome> DeleteClientBrandingOutcomeCallable;
         typedef std::future<DeleteConnectClientAddInOutcome> DeleteConnectClientAddInOutcomeCallable;
@@ -310,6 +314,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateUpdatedWorkspaceImageRequest&, const Model::CreateUpdatedWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUpdatedWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspaceBundleRequest&, const Model::CreateWorkspaceBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceBundleResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspaceImageRequest&, const Model::CreateWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateWorkspacesRequest&, const Model::CreateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteClientBrandingRequest&, const Model::DeleteClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientBrandingResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteConnectClientAddInRequest&, const Model::DeleteConnectClientAddInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectClientAddInResponseReceivedHandler;
@@ -639,6 +644,24 @@ namespace Model
          * An Async wrapper for CreateWorkspaceBundle that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateWorkspaceBundleAsync(const Model::CreateWorkspaceBundleRequest& request, const CreateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new WorkSpace image from an existing WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWorkspaceImageOutcome CreateWorkspaceImage(const Model::CreateWorkspaceImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWorkspaceImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWorkspaceImageOutcomeCallable CreateWorkspaceImageCallable(const Model::CreateWorkspaceImageRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateWorkspaceImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWorkspaceImageAsync(const Model::CreateWorkspaceImageRequest& request, const CreateWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and
@@ -1748,6 +1771,7 @@ namespace Model
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUpdatedWorkspaceImageAsyncHelper(const Model::CreateUpdatedWorkspaceImageRequest& request, const CreateUpdatedWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkspaceBundleAsyncHelper(const Model::CreateWorkspaceBundleRequest& request, const CreateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateWorkspaceImageAsyncHelper(const Model::CreateWorkspaceImageRequest& request, const CreateWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkspacesAsyncHelper(const Model::CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClientBrandingAsyncHelper(const Model::DeleteClientBrandingRequest& request, const DeleteClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectClientAddInAsyncHelper(const Model::DeleteConnectClientAddInRequest& request, const DeleteConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

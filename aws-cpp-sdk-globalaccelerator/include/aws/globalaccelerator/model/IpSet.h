@@ -5,8 +5,9 @@
 
 #pragma once
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/globalaccelerator/model/IpAddressFamily.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,47 +38,6 @@ namespace Model
     IpSet(Aws::Utils::Json::JsonView jsonValue);
     IpSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline const Aws::String& GetIpFamily() const{ return m_ipFamily; }
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline bool IpFamilyHasBeenSet() const { return m_ipFamilyHasBeenSet; }
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline void SetIpFamily(const Aws::String& value) { m_ipFamilyHasBeenSet = true; m_ipFamily = value; }
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline void SetIpFamily(Aws::String&& value) { m_ipFamilyHasBeenSet = true; m_ipFamily = std::move(value); }
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline void SetIpFamily(const char* value) { m_ipFamilyHasBeenSet = true; m_ipFamily.assign(value); }
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline IpSet& WithIpFamily(const Aws::String& value) { SetIpFamily(value); return *this;}
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline IpSet& WithIpFamily(Aws::String&& value) { SetIpFamily(std::move(value)); return *this;}
-
-    /**
-     * <p>The types of IP addresses included in this IP set.</p>
-     */
-    inline IpSet& WithIpFamily(const char* value) { SetIpFamily(value); return *this;}
 
 
     /**
@@ -134,13 +94,44 @@ namespace Model
      */
     inline IpSet& AddIpAddresses(const char* value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
 
-  private:
 
-    Aws::String m_ipFamily;
-    bool m_ipFamilyHasBeenSet;
+    /**
+     * <p>The types of IP addresses included in this IP set. </p>
+     */
+    inline const IpAddressFamily& GetIpAddressFamily() const{ return m_ipAddressFamily; }
+
+    /**
+     * <p>The types of IP addresses included in this IP set. </p>
+     */
+    inline bool IpAddressFamilyHasBeenSet() const { return m_ipAddressFamilyHasBeenSet; }
+
+    /**
+     * <p>The types of IP addresses included in this IP set. </p>
+     */
+    inline void SetIpAddressFamily(const IpAddressFamily& value) { m_ipAddressFamilyHasBeenSet = true; m_ipAddressFamily = value; }
+
+    /**
+     * <p>The types of IP addresses included in this IP set. </p>
+     */
+    inline void SetIpAddressFamily(IpAddressFamily&& value) { m_ipAddressFamilyHasBeenSet = true; m_ipAddressFamily = std::move(value); }
+
+    /**
+     * <p>The types of IP addresses included in this IP set. </p>
+     */
+    inline IpSet& WithIpAddressFamily(const IpAddressFamily& value) { SetIpAddressFamily(value); return *this;}
+
+    /**
+     * <p>The types of IP addresses included in this IP set. </p>
+     */
+    inline IpSet& WithIpAddressFamily(IpAddressFamily&& value) { SetIpAddressFamily(std::move(value)); return *this;}
+
+  private:
 
     Aws::Vector<Aws::String> m_ipAddresses;
     bool m_ipAddressesHasBeenSet;
+
+    IpAddressFamily m_ipAddressFamily;
+    bool m_ipAddressFamilyHasBeenSet;
   };
 
 } // namespace Model

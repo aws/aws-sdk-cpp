@@ -30,6 +30,7 @@
 #include <aws/workspaces/model/CreateTagsRequest.h>
 #include <aws/workspaces/model/CreateUpdatedWorkspaceImageRequest.h>
 #include <aws/workspaces/model/CreateWorkspaceBundleRequest.h>
+#include <aws/workspaces/model/CreateWorkspaceImageRequest.h>
 #include <aws/workspaces/model/CreateWorkspacesRequest.h>
 #include <aws/workspaces/model/DeleteClientBrandingRequest.h>
 #include <aws/workspaces/model/DeleteConnectClientAddInRequest.h>
@@ -393,6 +394,30 @@ void WorkSpacesClient::CreateWorkspaceBundleAsync(const CreateWorkspaceBundleReq
 void WorkSpacesClient::CreateWorkspaceBundleAsyncHelper(const CreateWorkspaceBundleRequest& request, const CreateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateWorkspaceBundle(request), context);
+}
+
+CreateWorkspaceImageOutcome WorkSpacesClient::CreateWorkspaceImage(const CreateWorkspaceImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateWorkspaceImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWorkspaceImageOutcomeCallable WorkSpacesClient::CreateWorkspaceImageCallable(const CreateWorkspaceImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkspaceImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkspaceImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::CreateWorkspaceImageAsync(const CreateWorkspaceImageRequest& request, const CreateWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkspaceImageAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::CreateWorkspaceImageAsyncHelper(const CreateWorkspaceImageRequest& request, const CreateWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorkspaceImage(request), context);
 }
 
 CreateWorkspacesOutcome WorkSpacesClient::CreateWorkspaces(const CreateWorkspacesRequest& request) const
