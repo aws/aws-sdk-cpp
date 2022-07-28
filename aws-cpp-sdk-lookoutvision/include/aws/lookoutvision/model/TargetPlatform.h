@@ -121,50 +121,92 @@ namespace Model
 
 
     /**
-     * <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing
-     * unit) is the only accelerator that is currently supported. You must also specify
-     * the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code>
-     * compiler options. </p>
+     * <p>The target accelerator for the model. Currently, Amazon Lookout for Vision
+     * only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If
+     * you specify NVIDIA as an accelerator, you must also specify the
+     * <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler
+     * options. If you don't specify an accelerator, Lookout for Vision uses the CPU
+     * for compilation and we highly recommend that you use the
+     * <a>GreengrassConfiguration$CompilerOptions</a> field. For example, you can use
+     * the following compiler options for CPU: </p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul>
      */
     inline const TargetPlatformAccelerator& GetAccelerator() const{ return m_accelerator; }
 
     /**
-     * <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing
-     * unit) is the only accelerator that is currently supported. You must also specify
-     * the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code>
-     * compiler options. </p>
+     * <p>The target accelerator for the model. Currently, Amazon Lookout for Vision
+     * only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If
+     * you specify NVIDIA as an accelerator, you must also specify the
+     * <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler
+     * options. If you don't specify an accelerator, Lookout for Vision uses the CPU
+     * for compilation and we highly recommend that you use the
+     * <a>GreengrassConfiguration$CompilerOptions</a> field. For example, you can use
+     * the following compiler options for CPU: </p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul>
      */
     inline bool AcceleratorHasBeenSet() const { return m_acceleratorHasBeenSet; }
 
     /**
-     * <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing
-     * unit) is the only accelerator that is currently supported. You must also specify
-     * the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code>
-     * compiler options. </p>
+     * <p>The target accelerator for the model. Currently, Amazon Lookout for Vision
+     * only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If
+     * you specify NVIDIA as an accelerator, you must also specify the
+     * <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler
+     * options. If you don't specify an accelerator, Lookout for Vision uses the CPU
+     * for compilation and we highly recommend that you use the
+     * <a>GreengrassConfiguration$CompilerOptions</a> field. For example, you can use
+     * the following compiler options for CPU: </p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul>
      */
     inline void SetAccelerator(const TargetPlatformAccelerator& value) { m_acceleratorHasBeenSet = true; m_accelerator = value; }
 
     /**
-     * <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing
-     * unit) is the only accelerator that is currently supported. You must also specify
-     * the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code>
-     * compiler options. </p>
+     * <p>The target accelerator for the model. Currently, Amazon Lookout for Vision
+     * only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If
+     * you specify NVIDIA as an accelerator, you must also specify the
+     * <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler
+     * options. If you don't specify an accelerator, Lookout for Vision uses the CPU
+     * for compilation and we highly recommend that you use the
+     * <a>GreengrassConfiguration$CompilerOptions</a> field. For example, you can use
+     * the following compiler options for CPU: </p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul>
      */
     inline void SetAccelerator(TargetPlatformAccelerator&& value) { m_acceleratorHasBeenSet = true; m_accelerator = std::move(value); }
 
     /**
-     * <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing
-     * unit) is the only accelerator that is currently supported. You must also specify
-     * the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code>
-     * compiler options. </p>
+     * <p>The target accelerator for the model. Currently, Amazon Lookout for Vision
+     * only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If
+     * you specify NVIDIA as an accelerator, you must also specify the
+     * <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler
+     * options. If you don't specify an accelerator, Lookout for Vision uses the CPU
+     * for compilation and we highly recommend that you use the
+     * <a>GreengrassConfiguration$CompilerOptions</a> field. For example, you can use
+     * the following compiler options for CPU: </p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul>
      */
     inline TargetPlatform& WithAccelerator(const TargetPlatformAccelerator& value) { SetAccelerator(value); return *this;}
 
     /**
-     * <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing
-     * unit) is the only accelerator that is currently supported. You must also specify
-     * the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code>
-     * compiler options. </p>
+     * <p>The target accelerator for the model. Currently, Amazon Lookout for Vision
+     * only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If
+     * you specify NVIDIA as an accelerator, you must also specify the
+     * <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler
+     * options. If you don't specify an accelerator, Lookout for Vision uses the CPU
+     * for compilation and we highly recommend that you use the
+     * <a>GreengrassConfiguration$CompilerOptions</a> field. For example, you can use
+     * the following compiler options for CPU: </p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul>
      */
     inline TargetPlatform& WithAccelerator(TargetPlatformAccelerator&& value) { SetAccelerator(std::move(value)); return *this;}
 

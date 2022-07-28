@@ -48,8 +48,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline const Aws::String& GetLimitName() const{ return m_limitName; }
 
@@ -62,8 +65,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline bool LimitNameHasBeenSet() const { return m_limitNameHasBeenSet; }
 
@@ -76,8 +82,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline void SetLimitName(const Aws::String& value) { m_limitNameHasBeenSet = true; m_limitName = value; }
 
@@ -90,8 +99,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline void SetLimitName(Aws::String&& value) { m_limitNameHasBeenSet = true; m_limitName = std::move(value); }
 
@@ -104,8 +116,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline void SetLimitName(const char* value) { m_limitNameHasBeenSet = true; m_limitName.assign(value); }
 
@@ -118,8 +133,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline StorageTypeLimit& WithLimitName(const Aws::String& value) { SetLimitName(value); return *this;}
 
@@ -132,8 +150,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline StorageTypeLimit& WithLimitName(Aws::String&& value) { SetLimitName(std::move(value)); return *this;}
 
@@ -146,8 +167,11 @@ namespace Model
      * given storage type.It can be empty if it is not applicable. <li>MaximumIops</li>
      * Maximum amount of Iops that is applicable for given storage type.It can be empty
      * if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is
-     * applicable for given storage type.It can be empty if it is not applicable. </ol>
-     * </p>
+     * applicable for given storage type.It can be empty if it is not applicable.
+     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable.
+     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for
+     * given storage type.It can be empty if it is not applicable. </ol> </p>
      */
     inline StorageTypeLimit& WithLimitName(const char* value) { SetLimitName(value); return *this;}
 
