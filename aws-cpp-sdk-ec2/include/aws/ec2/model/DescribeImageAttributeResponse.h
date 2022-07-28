@@ -417,45 +417,45 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline const AttributeValue& GetLastLaunchedTime() const{ return m_lastLaunchedTime; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline void SetLastLaunchedTime(const AttributeValue& value) { m_lastLaunchedTime = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline void SetLastLaunchedTime(AttributeValue&& value) { m_lastLaunchedTime = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline DescribeImageAttributeResponse& WithLastLaunchedTime(const AttributeValue& value) { SetLastLaunchedTime(value); return *this;}
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
-     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
-     *  <p> <code>lastLaunchedTime</code> data is available starting April
-     * 2017.</p> 
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
      */
     inline DescribeImageAttributeResponse& WithLastLaunchedTime(AttributeValue&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
 

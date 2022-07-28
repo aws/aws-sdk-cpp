@@ -1100,65 +1100,65 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead. You cannot specify both a security
-     * group ID and security name in the same request.</p>
+     * <p>One or more security group names. For a nondefault VPC, you must use security
+     * group IDs instead. You cannot specify both a security group ID and security name
+     * in the same request.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

@@ -237,44 +237,38 @@ namespace Model
 
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline const ExportTaskS3LocationRequest& GetS3ExportLocation() const{ return m_s3ExportLocation; }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline bool S3ExportLocationHasBeenSet() const { return m_s3ExportLocationHasBeenSet; }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline void SetS3ExportLocation(const ExportTaskS3LocationRequest& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = value; }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline void SetS3ExportLocation(ExportTaskS3LocationRequest&& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = std::move(value); }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(const ExportTaskS3LocationRequest& value) { SetS3ExportLocation(value); return *this;}
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(ExportTaskS3LocationRequest&& value) { SetS3ExportLocation(std::move(value)); return *this;}
 

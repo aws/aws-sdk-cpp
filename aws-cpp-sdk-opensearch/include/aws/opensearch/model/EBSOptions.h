@@ -112,24 +112,45 @@ namespace Model
 
 
     /**
-     * <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     * <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
      */
     inline EBSOptions& WithIops(int value) { SetIops(value); return *this;}
+
+
+    /**
+     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline int GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p>The Throughput for GP3 EBS volume (SSD).</p>
+     */
+    inline EBSOptions& WithThroughput(int value) { SetThroughput(value); return *this;}
 
   private:
 
@@ -144,6 +165,9 @@ namespace Model
 
     int m_iops;
     bool m_iopsHasBeenSet;
+
+    int m_throughput;
+    bool m_throughputHasBeenSet;
   };
 
 } // namespace Model

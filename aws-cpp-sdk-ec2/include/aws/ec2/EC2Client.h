@@ -3512,13 +3512,15 @@ namespace Model
          * <p>[VPC only] Adds the specified outbound (egress) rules to a security group for
          * use with a VPC.</p> <p>An outbound rule permits instances to send traffic to the
          * specified IPv4 or IPv6 CIDR address ranges, or to the instances that are
-         * associated with the specified source security groups.</p> <p>You specify a
-         * protocol for each rule (for example, TCP). For the TCP and UDP protocols, you
-         * must also specify the destination port or port range. For the ICMP protocol, you
-         * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
-         * instances as quickly as possible. However, a small delay might occur.</p> <p>For
-         * information about VPC security group quotas, see <a
+         * associated with the specified source security groups. When specifying an
+         * outbound rule for your security group in a VPC, the <code>IpPermissions</code>
+         * must include a destination for the traffic.</p> <p>You specify a protocol for
+         * each rule (for example, TCP). For the TCP and UDP protocols, you must also
+         * specify the destination port or port range. For the ICMP protocol, you must also
+         * specify the ICMP type and code. You can use -1 for the type or code to mean all
+         * types or all codes.</p> <p>Rule changes are propagated to affected instances as
+         * quickly as possible. However, a small delay might occur.</p> <p>For information
+         * about VPC security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
@@ -3540,15 +3542,21 @@ namespace Model
          * <p>Adds the specified inbound (ingress) rules to a security group.</p> <p>An
          * inbound rule permits instances to receive traffic from the specified IPv4 or
          * IPv6 CIDR address range, or from the instances that are associated with the
-         * specified destination security groups.</p> <p>You specify a protocol for each
-         * rule (for example, TCP). For TCP and UDP, you must also specify the destination
-         * port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type
-         * and code. You can use -1 to mean all types or all codes.</p> <p>Rule changes are
-         * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p> <p>For more information about VPC
-         * security group quotas, see <a
+         * specified destination security groups. When specifying an inbound rule for your
+         * security group in a VPC, the <code>IpPermissions</code> must include a source
+         * for the traffic.</p> <p>You specify a protocol for each rule (for example, TCP).
+         * For TCP and UDP, you must also specify the destination port or port range. For
+         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
+         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
+         * within the security group as quickly as possible. However, a small delay might
+         * occur.</p> <p>For more information about VPC security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC quotas</a>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -4944,7 +4952,12 @@ namespace Model
          * <a>RevokeSecurityGroupIngress</a>, and <a>RevokeSecurityGroupEgress</a>.</p>
          * <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC Limits</a>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">AWS
          * API Reference</a></p>
          */
@@ -6400,7 +6413,12 @@ namespace Model
          * <p>Deletes a security group.</p> <p>If you attempt to delete a security group
          * that is associated with an instance, or is referenced by another security group,
          * the operation fails with <code>InvalidGroup.InUse</code> in EC2-Classic or
-         * <code>DependencyViolation</code> in EC2-VPC.</p><p><h3>See Also:</h3>   <a
+         * <code>DependencyViolation</code> in EC2-VPC.</p>  <p>We are retiring
+         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
+         * to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">AWS
          * API Reference</a></p>
          */
@@ -7146,8 +7164,12 @@ namespace Model
          * <li> <p> <code>max-elastic-ips</code>: The maximum number of Elastic IP
          * addresses that you can allocate for use with EC2-Classic. </p> </li> <li> <p>
          * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
-         * that you can allocate for use with EC2-VPC.</p> </li> </ul><p><h3>See Also:</h3>
-         * <a
+         * that you can allocate for use with EC2-VPC.</p> </li> </ul>  <p>We are
+         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          */
@@ -9049,7 +9071,12 @@ namespace Model
          * and <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">AWS
          * API Reference</a></p>
          */
@@ -14297,7 +14324,12 @@ namespace Model
          * revoked.</p> <p>Amazon Web Services recommends that you describe the security
          * group to verify that the rules were removed.</p> <p>Rule changes are propagated
          * to instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * delay might occur.</p>  <p>We are retiring EC2-Classic on August 15, 2022.
+         * We recommend that you migrate from EC2-Classic to a VPC. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
