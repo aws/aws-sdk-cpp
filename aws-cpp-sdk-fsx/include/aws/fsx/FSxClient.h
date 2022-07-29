@@ -1067,12 +1067,11 @@ namespace Model
         virtual void DisassociateFileSystemAliasesAsync(const Model::DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists tags for an Amazon FSx file systems and backups in the case of Amazon
-         * FSx for Windows File Server.</p> <p>When retrieving all tags, you can optionally
-         * specify the <code>MaxResults</code> parameter to limit the number of tags in a
-         * response. If more tags remain, Amazon FSx returns a <code>NextToken</code> value
-         * in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * <p>Lists tags for Amazon FSx resources.</p> <p>When retrieving all tags, you can
+         * optionally specify the <code>MaxResults</code> parameter to limit the number of
+         * tags in a response. If more tags remain, Amazon FSx returns a
+         * <code>NextToken</code> value in the response. In this case, send a later request
+         * with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your tags.
          * <code>ListTagsForResource</code> is called first without a

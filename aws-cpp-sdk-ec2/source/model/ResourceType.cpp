@@ -90,6 +90,9 @@ namespace Aws
         static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
         static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
         static const int vpc_flow_log_HASH = HashingUtils::HashString("vpc-flow-log");
+        static const int capacity_reservation_fleet_HASH = HashingUtils::HashString("capacity-reservation-fleet");
+        static const int traffic_mirror_filter_rule_HASH = HashingUtils::HashString("traffic-mirror-filter-rule");
+        static const int vpc_endpoint_connection_device_type_HASH = HashingUtils::HashString("vpc-endpoint-connection-device-type");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -375,6 +378,18 @@ namespace Aws
           {
             return ResourceType::vpc_flow_log;
           }
+          else if (hashCode == capacity_reservation_fleet_HASH)
+          {
+            return ResourceType::capacity_reservation_fleet;
+          }
+          else if (hashCode == traffic_mirror_filter_rule_HASH)
+          {
+            return ResourceType::traffic_mirror_filter_rule;
+          }
+          else if (hashCode == vpc_endpoint_connection_device_type_HASH)
+          {
+            return ResourceType::vpc_endpoint_connection_device_type;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -529,6 +544,12 @@ namespace Aws
             return "vpn-gateway";
           case ResourceType::vpc_flow_log:
             return "vpc-flow-log";
+          case ResourceType::capacity_reservation_fleet:
+            return "capacity-reservation-fleet";
+          case ResourceType::traffic_mirror_filter_rule:
+            return "traffic-mirror-filter-rule";
+          case ResourceType::vpc_endpoint_connection_device_type:
+            return "vpc-endpoint-connection-device-type";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

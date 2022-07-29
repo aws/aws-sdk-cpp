@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 ListProtectionGroupsRequest::ListProtectionGroupsRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_inclusionFiltersHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String ListProtectionGroupsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_inclusionFiltersHasBeenSet)
+  {
+   payload.WithObject("InclusionFilters", m_inclusionFilters.Jsonize());
 
   }
 

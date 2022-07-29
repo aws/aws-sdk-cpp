@@ -85,7 +85,10 @@ namespace Model
     vpc_peering_connection,
     vpn_connection,
     vpn_gateway,
-    vpc_flow_log
+    vpc_flow_log,
+    capacity_reservation_fleet,
+    traffic_mirror_filter_rule,
+    vpc_endpoint_connection_device_type
   };
 
 namespace ResourceTypeMapper
