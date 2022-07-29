@@ -194,7 +194,7 @@ namespace Model
     /**
      * <p>The criteria to use to choose the protected resources for inclusion in the
      * group. You can include all resources that have protections, provide a list of
-     * resource Amazon Resource Names (ARNs), or include all resources of a specified
+     * resource ARNs (Amazon Resource Names), or include all resources of a specified
      * resource type.</p>
      */
     inline const ProtectionGroupPattern& GetPattern() const{ return m_pattern; }
@@ -202,7 +202,7 @@ namespace Model
     /**
      * <p>The criteria to use to choose the protected resources for inclusion in the
      * group. You can include all resources that have protections, provide a list of
-     * resource Amazon Resource Names (ARNs), or include all resources of a specified
+     * resource ARNs (Amazon Resource Names), or include all resources of a specified
      * resource type.</p>
      */
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
@@ -210,7 +210,7 @@ namespace Model
     /**
      * <p>The criteria to use to choose the protected resources for inclusion in the
      * group. You can include all resources that have protections, provide a list of
-     * resource Amazon Resource Names (ARNs), or include all resources of a specified
+     * resource ARNs (Amazon Resource Names), or include all resources of a specified
      * resource type.</p>
      */
     inline void SetPattern(const ProtectionGroupPattern& value) { m_patternHasBeenSet = true; m_pattern = value; }
@@ -218,7 +218,7 @@ namespace Model
     /**
      * <p>The criteria to use to choose the protected resources for inclusion in the
      * group. You can include all resources that have protections, provide a list of
-     * resource Amazon Resource Names (ARNs), or include all resources of a specified
+     * resource ARNs (Amazon Resource Names), or include all resources of a specified
      * resource type.</p>
      */
     inline void SetPattern(ProtectionGroupPattern&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
@@ -226,7 +226,7 @@ namespace Model
     /**
      * <p>The criteria to use to choose the protected resources for inclusion in the
      * group. You can include all resources that have protections, provide a list of
-     * resource Amazon Resource Names (ARNs), or include all resources of a specified
+     * resource ARNs (Amazon Resource Names), or include all resources of a specified
      * resource type.</p>
      */
     inline ProtectionGroup& WithPattern(const ProtectionGroupPattern& value) { SetPattern(value); return *this;}
@@ -234,7 +234,7 @@ namespace Model
     /**
      * <p>The criteria to use to choose the protected resources for inclusion in the
      * group. You can include all resources that have protections, provide a list of
-     * resource Amazon Resource Names (ARNs), or include all resources of a specified
+     * resource ARNs (Amazon Resource Names), or include all resources of a specified
      * resource type.</p>
      */
     inline ProtectionGroup& WithPattern(ProtectionGroupPattern&& value) { SetPattern(std::move(value)); return *this;}
@@ -290,7 +290,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -298,7 +298,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetMembers() const{ return m_members; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -306,7 +306,7 @@ namespace Model
     inline bool MembersHasBeenSet() const { return m_membersHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -314,7 +314,7 @@ namespace Model
     inline void SetMembers(const Aws::Vector<Aws::String>& value) { m_membersHasBeenSet = true; m_members = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -322,7 +322,7 @@ namespace Model
     inline void SetMembers(Aws::Vector<Aws::String>&& value) { m_membersHasBeenSet = true; m_members = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -330,7 +330,7 @@ namespace Model
     inline ProtectionGroup& WithMembers(const Aws::Vector<Aws::String>& value) { SetMembers(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -338,7 +338,7 @@ namespace Model
     inline ProtectionGroup& WithMembers(Aws::Vector<Aws::String>&& value) { SetMembers(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -346,7 +346,7 @@ namespace Model
     inline ProtectionGroup& AddMembers(const Aws::String& value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
@@ -354,7 +354,7 @@ namespace Model
     inline ProtectionGroup& AddMembers(Aws::String&& value) { m_membersHasBeenSet = true; m_members.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the resources to include in the
+     * <p>The ARNs (Amazon Resource Names) of the resources to include in the
      * protection group. You must set this when you set <code>Pattern</code> to
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>

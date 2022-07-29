@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline DisableApplicationLayerAutomaticResponseRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline DisableApplicationLayerAutomaticResponseRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource.</p>
+     * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
     inline DisableApplicationLayerAutomaticResponseRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

@@ -38,8 +38,12 @@ namespace Model
    * include On-Demand capacity in your fleet request or want to specify an EFA
    * network device, you can't use <code>SpotFleetLaunchSpecification</code>; you
    * must use <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+   *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+   * migrate from EC2-Classic to a VPC. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+   * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux
+   * Instances</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification">AWS
    * API Reference</a></p>
    */

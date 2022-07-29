@@ -2894,7 +2894,12 @@ namespace Model
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can allocate a carrier IP address which is a public IP address from a
          * telecommunication carrier, to a network interface which resides in a subnet in a
-         * Wavelength Zone (for example an EC2 instance). </p><p><h3>See Also:</h3>   <a
+         * Wavelength Zone (for example an EC2 instance). </p>  <p>We are retiring
+         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
+         * to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
          * API Reference</a></p>
          */
@@ -3070,7 +3075,12 @@ namespace Model
          * each time the Elastic IP address is remapped to the same instance. For more
          * information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         *   <p>We are retiring EC2-Classic on August 15, 2022. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
          * API Reference</a></p>
          */
@@ -3368,16 +3378,20 @@ namespace Model
         virtual void AssociateVpcCidrBlockAsync(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or
-         * more of the VPC's security groups. You cannot link an EC2-Classic instance to
-         * more than one VPC at a time. You can only link an instance that's in the
-         * <code>running</code> state. An instance is automatically unlinked from a VPC
-         * when it's stopped - you can link it to the VPC again when you restart it.</p>
-         * <p>After you've linked an instance, you cannot change the VPC security groups
-         * that are associated with it. To change the security groups, you must first
-         * unlink the instance, and then link it again.</p> <p>Linking your instance to a
-         * VPC is sometimes referred to as <i>attaching</i> your instance.</p><p><h3>See
-         * Also:</h3>   <a
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>Links an EC2-Classic instance to a ClassicLink-enabled
+         * VPC through one or more of the VPC's security groups. You cannot link an
+         * EC2-Classic instance to more than one VPC at a time. You can only link an
+         * instance that's in the <code>running</code> state. An instance is automatically
+         * unlinked from a VPC when it's stopped - you can link it to the VPC again when
+         * you restart it.</p> <p>After you've linked an instance, you cannot change the
+         * VPC security groups that are associated with it. To change the security groups,
+         * you must first unlink the instance, and then link it again.</p> <p>Linking your
+         * instance to a VPC is sometimes referred to as <i>attaching</i> your
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">AWS
          * API Reference</a></p>
          */
@@ -4085,8 +4099,12 @@ namespace Model
          * Region that supports EC2-Classic. If you want a default VPC in a Region that
          * supports EC2-Classic, see "I really want a default VPC for my existing EC2
          * account. Is that possible?" in the <a
-         * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs
-         * FAQ</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs FAQ</a>.</p>
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">AWS
          * API Reference</a></p>
          */
@@ -7190,8 +7208,12 @@ namespace Model
          * addresses.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">AWS
          * API Reference</a></p>
          */
@@ -7387,7 +7409,12 @@ namespace Model
          * <p>Describes one or more of your linked EC2-Classic instances. This request only
          * returns information about EC2-Classic instances linked to a VPC through
          * ClassicLink. You cannot use this request to return information about other
-         * instances.</p><p><h3>See Also:</h3>   <a
+         * instances.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">AWS
          * API Reference</a></p>
          */
@@ -8246,7 +8273,12 @@ namespace Model
          * experiencing a service disruption and you specify instance IDs that are in the
          * affected zone, or do not specify any instance IDs at all, the call fails. If you
          * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p><p><h3>See Also:</h3>   <a
+         * the call works normally.</p>  <p>We are retiring EC2-Classic on August 15,
+         * 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */
@@ -8861,7 +8893,12 @@ namespace Model
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are retiring
+         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
+         * to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -8916,8 +8953,12 @@ namespace Model
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are
+         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
          * API Reference</a></p>
          */
@@ -8943,8 +8984,12 @@ namespace Model
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
+         * are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
          * API Reference</a></p>
          */
@@ -8991,7 +9036,12 @@ namespace Model
          * daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the
          * minimum monthly schedule is 100 hours.</p> <p>After you find a schedule that
          * meets your needs, call <a>PurchaseScheduledInstances</a> to purchase Scheduled
-         * Instances with that schedule.</p><p><h3>See Also:</h3>   <a
+         * Instances with that schedule.</p>  <p>We are retiring EC2-Classic on
+         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">AWS
          * API Reference</a></p>
          */
@@ -9009,7 +9059,12 @@ namespace Model
 
         /**
          * <p>Describes the specified Scheduled Instances or all your Scheduled
-         * Instances.</p><p><h3>See Also:</h3>   <a
+         * Instances.</p>  <p>We are retiring EC2-Classic on August 15, 2022. We
+         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">AWS
          * API Reference</a></p>
          */
@@ -9818,8 +9873,12 @@ namespace Model
         virtual void DescribeVpcAttributeAsync(const Model::DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the ClassicLink status of one or more VPCs.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the ClassicLink status of one or more VPCs.</p>  <p>We are
+         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">AWS
          * API Reference</a></p>
          */
@@ -9836,12 +9895,16 @@ namespace Model
         virtual void DescribeVpcClassicLinkAsync(const Model::DescribeVpcClassicLinkRequest& request, const DescribeVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the ClassicLink DNS support status of one or more VPCs. If enabled,
-         * the DNS hostname of a linked EC2-Classic instance resolves to its private IP
-         * address when addressed from an instance in the VPC to which it's linked.
-         * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
-         * address when addressed from a linked EC2-Classic instance. For more information,
-         * see <a
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>Describes the ClassicLink DNS support status of one or
+         * more VPCs. If enabled, the DNS hostname of a linked EC2-Classic instance
+         * resolves to its private IP address when addressed from an instance in the VPC to
+         * which it's linked. Similarly, the DNS hostname of an instance in a VPC resolves
+         * to its private IP address when addressed from a linked EC2-Classic instance. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
@@ -10051,10 +10114,14 @@ namespace Model
         virtual void DescribeVpnGatewaysAsync(const Model::DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the
-         * instance has been unlinked, the VPC security groups are no longer associated
-         * with it. An instance is automatically unlinked from a VPC when it's
-         * stopped.</p><p><h3>See Also:</h3>   <a
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>Unlinks (detaches) a linked EC2-Classic instance from
+         * a VPC. After the instance has been unlinked, the VPC security groups are no
+         * longer associated with it. An instance is automatically unlinked from a VPC when
+         * it's stopped.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">AWS
          * API Reference</a></p>
          */
@@ -10322,7 +10389,12 @@ namespace Model
 
         /**
          * <p>Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that
-         * has EC2-Classic instances linked to it.</p><p><h3>See Also:</h3>   <a
+         * has EC2-Classic instances linked to it.</p>  <p>We are retiring
+         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
+         * to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">AWS
          * API Reference</a></p>
          */
@@ -10345,7 +10417,12 @@ namespace Model
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
-         * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
+         * VPC ID in the request.</p>  <p>We are retiring EC2-Classic on August 15,
+         * 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          */
@@ -10367,8 +10444,13 @@ namespace Model
          * EC2-Classic platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>This is an idempotent operation. If you perform the operation more than once,
-         * Amazon EC2 doesn't return an error.</p><p><h3>See Also:</h3>   <a
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>This is an idempotent operation. If you perform the
+         * operation more than once, Amazon EC2 doesn't return an error.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">AWS
          * API Reference</a></p>
          */
@@ -10808,12 +10890,17 @@ namespace Model
         virtual void EnableVolumeIOAsync(const Model::EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables a VPC for ClassicLink. You can then link EC2-Classic instances to
-         * your ClassicLink-enabled VPC to allow communication over private IP addresses.
-         * You cannot enable your VPC for ClassicLink if any of your VPC route tables have
-         * existing routes for address ranges within the <code>10.0.0.0/8</code> IP address
-         * range, excluding local routes for VPCs in the <code>10.0.0.0/16</code> and
-         * <code>10.1.0.0/16</code> IP address ranges. For more information, see <a
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>Enables a VPC for ClassicLink. You can then link
+         * EC2-Classic instances to your ClassicLink-enabled VPC to allow communication
+         * over private IP addresses. You cannot enable your VPC for ClassicLink if any of
+         * your VPC route tables have existing routes for address ranges within the
+         * <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs in the
+         * <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
@@ -10833,12 +10920,16 @@ namespace Model
         virtual void EnableVpcClassicLinkAsync(const Model::EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled,
-         * the DNS hostname of a linked EC2-Classic instance resolves to its private IP
-         * address when addressed from an instance in the VPC to which it's linked.
-         * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
-         * address when addressed from a linked EC2-Classic instance. For more information,
-         * see <a
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>Enables a VPC to support DNS hostname resolution for
+         * ClassicLink. If enabled, the DNS hostname of a linked EC2-Classic instance
+         * resolves to its private IP address when addressed from an instance in the VPC to
+         * which it's linked. Similarly, the DNS hostname of an instance in a VPC resolves
+         * to its private IP address when addressed from a linked EC2-Classic instance. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
          * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
@@ -12613,8 +12704,12 @@ namespace Model
          * Instances to be modified must be identical, except for Availability Zone,
          * network platform, and instance type.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are
+         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -13072,18 +13167,22 @@ namespace Model
         virtual void ModifyVpcEndpointServicePermissionsAsync(const Model::ModifyVpcEndpointServicePermissionsRequest& request, const ModifyVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the VPC peering connection options on one side of a VPC peering
-         * connection. You can do the following:</p> <ul> <li> <p>Enable/disable
-         * communication over the peering connection between an EC2-Classic instance that's
-         * linked to your VPC (using ClassicLink) and instances in the peer VPC.</p> </li>
-         * <li> <p>Enable/disable communication over the peering connection between
-         * instances in your VPC and an EC2-Classic instance that's linked to the peer
-         * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
-         * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same Amazon Web Services
-         * account, you can enable DNS resolution for queries from the local VPC. This
-         * ensures that queries from the local VPC resolve to private IP addresses in the
-         * peer VPC. This option is not available if the peered VPCs are in different
+         *  <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you
+         * migrate from EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>Modifies the VPC peering connection options on one
+         * side of a VPC peering connection. You can do the following:</p> <ul> <li>
+         * <p>Enable/disable communication over the peering connection between an
+         * EC2-Classic instance that's linked to your VPC (using ClassicLink) and instances
+         * in the peer VPC.</p> </li> <li> <p>Enable/disable communication over the peering
+         * connection between instances in your VPC and an EC2-Classic instance that's
+         * linked to the peer VPC.</p> </li> <li> <p>Enable/disable the ability to resolve
+         * public DNS hostnames to private IP addresses when queried from instances in the
+         * peer VPC.</p> </li> </ul> <p>If the peered VPCs are in the same Amazon Web
+         * Services account, you can enable DNS resolution for queries from the local VPC.
+         * This ensures that queries from the local VPC resolve to private IP addresses in
+         * the peer VPC. This option is not available if the peered VPCs are in different
          * different Amazon Web Services accounts or different Regions. For peered VPCs in
          * different Amazon Web Services accounts, each Amazon Web Services account owner
          * must initiate a separate request to modify the peering connection options. For
@@ -13268,7 +13367,12 @@ namespace Model
          * address is moved, it is no longer available for use in the EC2-Classic platform,
          * unless you move it back using the <a>RestoreAddressToClassic</a> request. You
          * cannot move an Elastic IP address that was originally allocated for use in the
-         * EC2-VPC platform to the EC2-Classic platform. </p><p><h3>See Also:</h3>   <a
+         * EC2-VPC platform to the EC2-Classic platform.</p>  <p>We are retiring
+         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
+         * to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">AWS
          * API Reference</a></p>
          */
@@ -13713,9 +13817,14 @@ namespace Model
          * <p>Releases the specified Elastic IP address.</p> <p>[EC2-Classic, default VPC]
          * Releasing an Elastic IP address automatically disassociates it from any instance
          * that it's associated with. To disassociate an Elastic IP address without
-         * releasing it, use <a>DisassociateAddress</a>.</p> <p>[Nondefault VPC] You must
-         * use <a>DisassociateAddress</a> to disassociate the Elastic IP address before you
-         * can release it. Otherwise, Amazon EC2 returns an error
+         * releasing it, use <a>DisassociateAddress</a>.</p>  <p>We are retiring
+         * EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic
+         * to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p>  <p>[Nondefault VPC] You must use
+         * <a>DisassociateAddress</a> to disassociate the Elastic IP address before you can
+         * release it. Otherwise, Amazon EC2 returns an error
          * (<code>InvalidIPAddress.InUse</code>).</p> <p>After releasing an Elastic IP
          * address, it is released to the IP address pool. Be sure to update your DNS
          * records and any servers or devices that communicate with the address. If you
@@ -13994,7 +14103,12 @@ namespace Model
          * For options for requesting Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
          * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
+         * Linux Instances</i>.</p>   <p>We are retiring EC2-Classic on
+         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          */
@@ -14159,8 +14273,12 @@ namespace Model
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
-         * not be associated with an instance or network interface.</p><p><h3>See
-         * Also:</h3>   <a
+         * not be associated with an instance or network interface.</p>  <p>We are
+         * retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+         * EC2-Classic to a VPC. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">AWS
          * API Reference</a></p>
          */
@@ -14389,7 +14507,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * connecting to your instance</a>.</p><p><h3>See Also:</h3>   <a
+         * connecting to your instance</a>.</p>  <p>We are retiring EC2-Classic on
+         * August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
          */
