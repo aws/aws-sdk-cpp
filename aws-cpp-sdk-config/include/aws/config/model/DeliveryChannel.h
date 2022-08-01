@@ -118,7 +118,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
@@ -128,7 +128,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
@@ -138,7 +138,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
@@ -148,7 +148,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
@@ -158,7 +158,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
@@ -168,7 +168,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DeliveryChannel& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
@@ -178,7 +178,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DeliveryChannel& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
@@ -188,7 +188,7 @@ namespace Model
      * belongs to another Amazon Web Services account, that bucket must have policies
      * that grant access permissions to Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-     * for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+     * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DeliveryChannel& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
@@ -297,7 +297,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
 
@@ -307,7 +307,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
 
@@ -317,7 +317,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
 
@@ -327,7 +327,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
 
@@ -337,7 +337,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
 
@@ -347,7 +347,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
 
@@ -357,7 +357,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
 
@@ -367,7 +367,7 @@ namespace Model
      * another account, the topic must have policies that grant access permissions to
      * Config. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-     * for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+     * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 

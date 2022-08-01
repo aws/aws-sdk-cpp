@@ -497,42 +497,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline const Aws::String& GetCreatedByService() const{ return m_createdByService; }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline bool CreatedByServiceHasBeenSet() const { return m_createdByServiceHasBeenSet; }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline void SetCreatedByService(const Aws::String& value) { m_createdByServiceHasBeenSet = true; m_createdByService = value; }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline void SetCreatedByService(Aws::String&& value) { m_createdByServiceHasBeenSet = true; m_createdByService = std::move(value); }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline void SetCreatedByService(const char* value) { m_createdByServiceHasBeenSet = true; m_createdByService.assign(value); }
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline RemediationConfiguration& WithCreatedByService(const Aws::String& value) { SetCreatedByService(value); return *this;}
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline RemediationConfiguration& WithCreatedByService(Aws::String&& value) { SetCreatedByService(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
     inline RemediationConfiguration& WithCreatedByService(const char* value) { SetCreatedByService(value); return *this;}
 

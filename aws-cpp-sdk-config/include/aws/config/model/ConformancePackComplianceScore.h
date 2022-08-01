@@ -29,7 +29,7 @@ namespace Model
    * combinations in a conformance pack compared to the number of total possible
    * rule-resource combinations in the conformance pack. This metric provides you
    * with a high-level view of the compliance state of your conformance packs, and
-   * can be used to identify, investigate, and understand compliance deviations in
+   * can be used to identify, investigate, and understand the level of compliance in
    * your conformance packs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackComplianceScore">AWS
    * API Reference</a></p>
@@ -44,42 +44,58 @@ namespace Model
 
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline const Aws::String& GetScore() const{ return m_score; }
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline void SetScore(const Aws::String& value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline void SetScore(Aws::String&& value) { m_scoreHasBeenSet = true; m_score = std::move(value); }
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline void SetScore(const char* value) { m_scoreHasBeenSet = true; m_score.assign(value); }
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline ConformancePackComplianceScore& WithScore(const Aws::String& value) { SetScore(value); return *this;}
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline ConformancePackComplianceScore& WithScore(Aws::String&& value) { SetScore(std::move(value)); return *this;}
 
     /**
-     * <p>Compliance score for the conformance pack.</p>
+     * <p>Compliance score for the conformance pack. Conformance packs with no
+     * evaluation results will have a compliance score of
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline ConformancePackComplianceScore& WithScore(const char* value) { SetScore(value); return *this;}
 

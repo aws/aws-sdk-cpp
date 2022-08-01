@@ -37,7 +37,8 @@ WorkspaceDirectory::WorkspaceDirectory() :
     m_workspaceAccessPropertiesHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
-    m_selfservicePermissionsHasBeenSet(false)
+    m_selfservicePermissionsHasBeenSet(false),
+    m_samlPropertiesHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ WorkspaceDirectory::WorkspaceDirectory(JsonView jsonValue) :
     m_workspaceAccessPropertiesHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
-    m_selfservicePermissionsHasBeenSet(false)
+    m_selfservicePermissionsHasBeenSet(false),
+    m_samlPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -188,6 +190,13 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
     m_selfservicePermissionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SamlProperties"))
+  {
+    m_samlProperties = jsonValue.GetObject("SamlProperties");
+
+    m_samlPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -300,6 +309,12 @@ JsonValue WorkspaceDirectory::Jsonize() const
   if(m_selfservicePermissionsHasBeenSet)
   {
    payload.WithObject("SelfservicePermissions", m_selfservicePermissions.Jsonize());
+
+  }
+
+  if(m_samlPropertiesHasBeenSet)
+  {
+   payload.WithObject("SamlProperties", m_samlProperties.Jsonize());
 
   }
 

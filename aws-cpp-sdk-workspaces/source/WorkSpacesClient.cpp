@@ -64,6 +64,7 @@
 #include <aws/workspaces/model/MigrateWorkspaceRequest.h>
 #include <aws/workspaces/model/ModifyAccountRequest.h>
 #include <aws/workspaces/model/ModifyClientPropertiesRequest.h>
+#include <aws/workspaces/model/ModifySamlPropertiesRequest.h>
 #include <aws/workspaces/model/ModifySelfservicePermissionsRequest.h>
 #include <aws/workspaces/model/ModifyWorkspaceAccessPropertiesRequest.h>
 #include <aws/workspaces/model/ModifyWorkspaceCreationPropertiesRequest.h>
@@ -1210,6 +1211,30 @@ void WorkSpacesClient::ModifyClientPropertiesAsync(const ModifyClientPropertiesR
 void WorkSpacesClient::ModifyClientPropertiesAsyncHelper(const ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyClientProperties(request), context);
+}
+
+ModifySamlPropertiesOutcome WorkSpacesClient::ModifySamlProperties(const ModifySamlPropertiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifySamlPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ModifySamlPropertiesOutcomeCallable WorkSpacesClient::ModifySamlPropertiesCallable(const ModifySamlPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifySamlPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifySamlProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::ModifySamlPropertiesAsync(const ModifySamlPropertiesRequest& request, const ModifySamlPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifySamlPropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::ModifySamlPropertiesAsyncHelper(const ModifySamlPropertiesRequest& request, const ModifySamlPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifySamlProperties(request), context);
 }
 
 ModifySelfservicePermissionsOutcome WorkSpacesClient::ModifySelfservicePermissions(const ModifySelfservicePermissionsRequest& request) const
