@@ -55,6 +55,7 @@
 #include <aws/workspaces/model/MigrateWorkspaceResult.h>
 #include <aws/workspaces/model/ModifyAccountResult.h>
 #include <aws/workspaces/model/ModifyClientPropertiesResult.h>
+#include <aws/workspaces/model/ModifySamlPropertiesResult.h>
 #include <aws/workspaces/model/ModifySelfservicePermissionsResult.h>
 #include <aws/workspaces/model/ModifyWorkspaceAccessPropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspaceCreationPropertiesResult.h>
@@ -156,6 +157,7 @@ namespace Model
         class MigrateWorkspaceRequest;
         class ModifyAccountRequest;
         class ModifyClientPropertiesRequest;
+        class ModifySamlPropertiesRequest;
         class ModifySelfservicePermissionsRequest;
         class ModifyWorkspaceAccessPropertiesRequest;
         class ModifyWorkspaceCreationPropertiesRequest;
@@ -219,6 +221,7 @@ namespace Model
         typedef Aws::Utils::Outcome<MigrateWorkspaceResult, WorkSpacesError> MigrateWorkspaceOutcome;
         typedef Aws::Utils::Outcome<ModifyAccountResult, WorkSpacesError> ModifyAccountOutcome;
         typedef Aws::Utils::Outcome<ModifyClientPropertiesResult, WorkSpacesError> ModifyClientPropertiesOutcome;
+        typedef Aws::Utils::Outcome<ModifySamlPropertiesResult, WorkSpacesError> ModifySamlPropertiesOutcome;
         typedef Aws::Utils::Outcome<ModifySelfservicePermissionsResult, WorkSpacesError> ModifySelfservicePermissionsOutcome;
         typedef Aws::Utils::Outcome<ModifyWorkspaceAccessPropertiesResult, WorkSpacesError> ModifyWorkspaceAccessPropertiesOutcome;
         typedef Aws::Utils::Outcome<ModifyWorkspaceCreationPropertiesResult, WorkSpacesError> ModifyWorkspaceCreationPropertiesOutcome;
@@ -282,6 +285,7 @@ namespace Model
         typedef std::future<MigrateWorkspaceOutcome> MigrateWorkspaceOutcomeCallable;
         typedef std::future<ModifyAccountOutcome> ModifyAccountOutcomeCallable;
         typedef std::future<ModifyClientPropertiesOutcome> ModifyClientPropertiesOutcomeCallable;
+        typedef std::future<ModifySamlPropertiesOutcome> ModifySamlPropertiesOutcomeCallable;
         typedef std::future<ModifySelfservicePermissionsOutcome> ModifySelfservicePermissionsOutcomeCallable;
         typedef std::future<ModifyWorkspaceAccessPropertiesOutcome> ModifyWorkspaceAccessPropertiesOutcomeCallable;
         typedef std::future<ModifyWorkspaceCreationPropertiesOutcome> ModifyWorkspaceCreationPropertiesOutcomeCallable;
@@ -348,6 +352,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::MigrateWorkspaceRequest&, const Model::MigrateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MigrateWorkspaceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyAccountRequest&, const Model::ModifyAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyClientPropertiesRequest&, const Model::ModifyClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientPropertiesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifySamlPropertiesRequest&, const Model::ModifySamlPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySamlPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySelfservicePermissionsRequest&, const Model::ModifySelfservicePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySelfservicePermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceAccessPropertiesRequest&, const Model::ModifyWorkspaceAccessPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceAccessPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceCreationPropertiesRequest&, const Model::ModifyWorkspaceCreationPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceCreationPropertiesResponseReceivedHandler;
@@ -1344,6 +1349,26 @@ namespace Model
         virtual void ModifyClientPropertiesAsync(const Model::ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies multiple properties related to SAML 2.0 authentication, including
+         * the enablement status, user access URL, and relay state parameter name that are
+         * used for configuring federation with an SAML 2.0 identity
+         * provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifySamlPropertiesOutcome ModifySamlProperties(const Model::ModifySamlPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifySamlProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifySamlPropertiesOutcomeCallable ModifySamlPropertiesCallable(const Model::ModifySamlPropertiesRequest& request) const;
+
+        /**
+         * An Async wrapper for ModifySamlProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifySamlPropertiesAsync(const Model::ModifySamlPropertiesRequest& request, const ModifySamlPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the self-service WorkSpace management capabilities for your users.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable
@@ -1805,6 +1830,7 @@ namespace Model
         void MigrateWorkspaceAsyncHelper(const Model::MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAccountAsyncHelper(const Model::ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientPropertiesAsyncHelper(const Model::ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifySamlPropertiesAsyncHelper(const Model::ModifySamlPropertiesRequest& request, const ModifySamlPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySelfservicePermissionsAsyncHelper(const Model::ModifySelfservicePermissionsRequest& request, const ModifySelfservicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyWorkspaceAccessPropertiesAsyncHelper(const Model::ModifyWorkspaceAccessPropertiesRequest& request, const ModifyWorkspaceAccessPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyWorkspaceCreationPropertiesAsyncHelper(const Model::ModifyWorkspaceCreationPropertiesRequest& request, const ModifyWorkspaceCreationPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -13,6 +13,7 @@
 #include <aws/workspaces/model/WorkspaceAccessProperties.h>
 #include <aws/workspaces/model/Tenancy.h>
 #include <aws/workspaces/model/SelfservicePermissions.h>
+#include <aws/workspaces/model/SamlProperties.h>
 #include <utility>
 
 namespace Aws
@@ -760,6 +761,49 @@ namespace Model
      */
     inline WorkspaceDirectory& WithSelfservicePermissions(SelfservicePermissions&& value) { SetSelfservicePermissions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline const SamlProperties& GetSamlProperties() const{ return m_samlProperties; }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline bool SamlPropertiesHasBeenSet() const { return m_samlPropertiesHasBeenSet; }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline void SetSamlProperties(const SamlProperties& value) { m_samlPropertiesHasBeenSet = true; m_samlProperties = value; }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline void SetSamlProperties(SamlProperties&& value) { m_samlPropertiesHasBeenSet = true; m_samlProperties = std::move(value); }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline WorkspaceDirectory& WithSamlProperties(const SamlProperties& value) { SetSamlProperties(value); return *this;}
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline WorkspaceDirectory& WithSamlProperties(SamlProperties&& value) { SetSamlProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryId;
@@ -809,6 +853,9 @@ namespace Model
 
     SelfservicePermissions m_selfservicePermissions;
     bool m_selfservicePermissionsHasBeenSet;
+
+    SamlProperties m_samlProperties;
+    bool m_samlPropertiesHasBeenSet;
   };
 
 } // namespace Model
