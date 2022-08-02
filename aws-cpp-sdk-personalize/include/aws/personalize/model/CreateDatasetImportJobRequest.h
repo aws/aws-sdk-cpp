@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/DataSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/model/ImportMode.h>
 #include <aws/personalize/model/Tag.h>
 #include <utility>
 
@@ -255,6 +256,79 @@ namespace Model
      */
     inline CreateDatasetImportJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specify how to add the new records to an existing dataset. The default import
+     * mode is <code>FULL</code>. If you haven't imported bulk records into the dataset
+     * previously, you can only specify <code>FULL</code>.</p> <ul> <li> <p>Specify
+     * <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you
+     * imported individually is not replaced.</p> </li> <li> <p>Specify
+     * <code>INCREMENTAL</code> to append the new records to the existing data in your
+     * dataset. Amazon Personalize replaces any record with the same ID with the new
+     * one.</p> </li> </ul>
+     */
+    inline const ImportMode& GetImportMode() const{ return m_importMode; }
+
+    /**
+     * <p>Specify how to add the new records to an existing dataset. The default import
+     * mode is <code>FULL</code>. If you haven't imported bulk records into the dataset
+     * previously, you can only specify <code>FULL</code>.</p> <ul> <li> <p>Specify
+     * <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you
+     * imported individually is not replaced.</p> </li> <li> <p>Specify
+     * <code>INCREMENTAL</code> to append the new records to the existing data in your
+     * dataset. Amazon Personalize replaces any record with the same ID with the new
+     * one.</p> </li> </ul>
+     */
+    inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
+
+    /**
+     * <p>Specify how to add the new records to an existing dataset. The default import
+     * mode is <code>FULL</code>. If you haven't imported bulk records into the dataset
+     * previously, you can only specify <code>FULL</code>.</p> <ul> <li> <p>Specify
+     * <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you
+     * imported individually is not replaced.</p> </li> <li> <p>Specify
+     * <code>INCREMENTAL</code> to append the new records to the existing data in your
+     * dataset. Amazon Personalize replaces any record with the same ID with the new
+     * one.</p> </li> </ul>
+     */
+    inline void SetImportMode(const ImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
+
+    /**
+     * <p>Specify how to add the new records to an existing dataset. The default import
+     * mode is <code>FULL</code>. If you haven't imported bulk records into the dataset
+     * previously, you can only specify <code>FULL</code>.</p> <ul> <li> <p>Specify
+     * <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you
+     * imported individually is not replaced.</p> </li> <li> <p>Specify
+     * <code>INCREMENTAL</code> to append the new records to the existing data in your
+     * dataset. Amazon Personalize replaces any record with the same ID with the new
+     * one.</p> </li> </ul>
+     */
+    inline void SetImportMode(ImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
+
+    /**
+     * <p>Specify how to add the new records to an existing dataset. The default import
+     * mode is <code>FULL</code>. If you haven't imported bulk records into the dataset
+     * previously, you can only specify <code>FULL</code>.</p> <ul> <li> <p>Specify
+     * <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you
+     * imported individually is not replaced.</p> </li> <li> <p>Specify
+     * <code>INCREMENTAL</code> to append the new records to the existing data in your
+     * dataset. Amazon Personalize replaces any record with the same ID with the new
+     * one.</p> </li> </ul>
+     */
+    inline CreateDatasetImportJobRequest& WithImportMode(const ImportMode& value) { SetImportMode(value); return *this;}
+
+    /**
+     * <p>Specify how to add the new records to an existing dataset. The default import
+     * mode is <code>FULL</code>. If you haven't imported bulk records into the dataset
+     * previously, you can only specify <code>FULL</code>.</p> <ul> <li> <p>Specify
+     * <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you
+     * imported individually is not replaced.</p> </li> <li> <p>Specify
+     * <code>INCREMENTAL</code> to append the new records to the existing data in your
+     * dataset. Amazon Personalize replaces any record with the same ID with the new
+     * one.</p> </li> </ul>
+     */
+    inline CreateDatasetImportJobRequest& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -271,6 +345,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ImportMode m_importMode;
+    bool m_importModeHasBeenSet;
   };
 
 } // namespace Model

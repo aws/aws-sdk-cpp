@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/ImportMode.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +289,55 @@ namespace Model
      */
     inline DatasetImportJobSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>The import mode the dataset import job used to update the data in the
+     * dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating
+     * existing bulk data</a>. </p>
+     */
+    inline const ImportMode& GetImportMode() const{ return m_importMode; }
+
+    /**
+     * <p>The import mode the dataset import job used to update the data in the
+     * dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating
+     * existing bulk data</a>. </p>
+     */
+    inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
+
+    /**
+     * <p>The import mode the dataset import job used to update the data in the
+     * dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating
+     * existing bulk data</a>. </p>
+     */
+    inline void SetImportMode(const ImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
+
+    /**
+     * <p>The import mode the dataset import job used to update the data in the
+     * dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating
+     * existing bulk data</a>. </p>
+     */
+    inline void SetImportMode(ImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
+
+    /**
+     * <p>The import mode the dataset import job used to update the data in the
+     * dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating
+     * existing bulk data</a>. </p>
+     */
+    inline DatasetImportJobSummary& WithImportMode(const ImportMode& value) { SetImportMode(value); return *this;}
+
+    /**
+     * <p>The import mode the dataset import job used to update the data in the
+     * dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating
+     * existing bulk data</a>. </p>
+     */
+    inline DatasetImportJobSummary& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetImportJobArn;
@@ -307,6 +357,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    ImportMode m_importMode;
+    bool m_importModeHasBeenSet;
   };
 
 } // namespace Model
