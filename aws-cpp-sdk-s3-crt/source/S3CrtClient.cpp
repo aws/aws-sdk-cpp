@@ -143,22 +143,22 @@ static const char* ALLOCATION_TAG = "S3CrtClient";
 
 S3CrtClient::S3CrtClient(const S3Crt::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, m_credProvider,
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+    m_executor(clientConfiguration.executor), m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
-  init(clientConfiguration);
+  init(clientConfiguration, m_credProvider);
 }
 
 S3CrtClient::S3CrtClient(const AWSCredentials& credentials, const S3Crt::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, m_credProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+    m_executor(clientConfiguration.executor), m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
-  init(clientConfiguration, &credentials);
+  init(clientConfiguration, m_credProvider);
 }
 
 S3CrtClient::S3CrtClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -167,10 +167,9 @@ S3CrtClient::S3CrtClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+    m_executor(clientConfiguration.executor), m_credProvider(credentialsProvider), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
-  Aws::Auth::AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
-  init(clientConfiguration, &credentials);
+  init(clientConfiguration, m_credProvider);
 }
 
 S3CrtClient::~S3CrtClient()
@@ -179,7 +178,7 @@ S3CrtClient::~S3CrtClient()
   m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
 }
 
-void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth::AWSCredentials* credentials)
+void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider)
 {
   SetServiceClientName("S3");
   LoadS3CrtSpecificConfig(config.profileName);
@@ -205,23 +204,18 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
 
-  std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> provider(nullptr);
-  if (credentials)
-  {
-    Aws::Crt::Auth::CredentialsProviderStaticConfig staticCreds;
-    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromCString(credentials->GetAWSAccessKeyId().c_str());
-    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromCString(credentials->GetAWSSecretKey().c_str());
-    staticCreds.SessionToken = Aws::Crt::ByteCursorFromCString(credentials->GetSessionToken().c_str());
-    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderStatic(staticCreds);
-  }
-  else
-  {
-    Aws::Crt::Auth::CredentialsProviderChainDefaultConfig credsConfig;
-    credsConfig.Bootstrap = clientBootstrap;
-    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderChainDefault(credsConfig);
-  }
+  m_crtCredProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderDelegate({
+     std::bind([](const std::shared_ptr<AWSCredentialsProvider>& provider) {
+         AWSCredentials credentials = provider->GetAWSCredentials();
+         return Aws::MakeShared<Aws::Crt::Auth::Credentials>(ALLOCATION_TAG,
+             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetAWSAccessKeyId().c_str())),
+             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetAWSSecretKey().c_str())),
+             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetSessionToken().c_str())),
+             credentials.GetExpiration().Millis());
+     }, credentialsProvider)
+  });
 
-  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), provider->GetUnderlyingHandle());
+  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), m_crtCredProvider->GetUnderlyingHandle());
   m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
   s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
 
