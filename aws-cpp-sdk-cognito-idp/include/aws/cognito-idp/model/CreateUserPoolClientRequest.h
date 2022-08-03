@@ -531,22 +531,21 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline const Aws::Vector<ExplicitAuthFlowsType>& GetExplicitAuthFlows() const{ return m_explicitAuthFlows; }
 
@@ -555,22 +554,21 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline bool ExplicitAuthFlowsHasBeenSet() const { return m_explicitAuthFlowsHasBeenSet; }
 
@@ -579,22 +577,21 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline void SetExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = value; }
 
@@ -603,22 +600,21 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline void SetExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = std::move(value); }
 
@@ -627,22 +623,21 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline CreateUserPoolClientRequest& WithExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { SetExplicitAuthFlows(value); return *this;}
 
@@ -651,22 +646,21 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline CreateUserPoolClientRequest& WithExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { SetExplicitAuthFlows(std::move(value)); return *this;}
 
@@ -675,22 +669,21 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddExplicitAuthFlows(const ExplicitAuthFlowsType& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(value); return *this; }
 
@@ -699,95 +692,112 @@ namespace Model
      * names without the <code>ALLOW_</code> prefix are no longer supported, in favor
      * of new names with the <code>ALLOW_</code> prefix.</p>  <p>Values with
      * <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-     * prefix.</p>  <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * prefix.</p>  <p>Valid values include:</p> <dl>
+     * <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
      * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-     * authentication. In this flow, Amazon Cognito receives the password in the
-     * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
-     * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-     * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul> <p>If you don't specify a value for
-     * <code>ExplicitAuthFlows</code>, your app client activates the
-     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>
-     * authentication flows.</p>
+     * Remote Password (SRP) protocol to verify passwords.</p> </dd>
+     * <dt>ALLOW_CUSTOM_AUTH</dt> <dd> <p>Enable Lambda trigger based
+     * authentication.</p> </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> <p>Enable user
+     * password-based authentication. In this flow, Amazon Cognito receives the
+     * password in the request instead of using the SRP protocol to verify
+     * passwords.</p> </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> <p>Enable SRP-based
+     * authentication.</p> </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> <p>Enable the
+     * authflow that refreshes tokens.</p> </dd> </dl> <p>If you don't specify a value
+     * for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddExplicitAuthFlows(ExplicitAuthFlowsType&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline void SetSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = value; }
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline void SetSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = std::move(value); }
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline CreateUserPoolClientRequest& WithSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { SetSupportedIdentityProviders(value); return *this;}
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline CreateUserPoolClientRequest& WithSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { SetSupportedIdentityProviders(std::move(value)); return *this;}
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(const Aws::String& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(Aws::String&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(const char* value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 

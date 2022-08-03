@@ -35,99 +35,99 @@ namespace Model
 
 
     /**
-     * <p>The SMS text message multi-factor (MFA) configuration.</p>
+     * <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
      */
     inline const SmsMfaConfigType& GetSmsMfaConfiguration() const{ return m_smsMfaConfiguration; }
 
     /**
-     * <p>The SMS text message multi-factor (MFA) configuration.</p>
+     * <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
      */
     inline void SetSmsMfaConfiguration(const SmsMfaConfigType& value) { m_smsMfaConfiguration = value; }
 
     /**
-     * <p>The SMS text message multi-factor (MFA) configuration.</p>
+     * <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
      */
     inline void SetSmsMfaConfiguration(SmsMfaConfigType&& value) { m_smsMfaConfiguration = std::move(value); }
 
     /**
-     * <p>The SMS text message multi-factor (MFA) configuration.</p>
+     * <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
      */
     inline GetUserPoolMfaConfigResult& WithSmsMfaConfiguration(const SmsMfaConfigType& value) { SetSmsMfaConfiguration(value); return *this;}
 
     /**
-     * <p>The SMS text message multi-factor (MFA) configuration.</p>
+     * <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
      */
     inline GetUserPoolMfaConfigResult& WithSmsMfaConfiguration(SmsMfaConfigType&& value) { SetSmsMfaConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The software token multi-factor (MFA) configuration.</p>
+     * <p>The software token multi-factor authentication (MFA) configuration.</p>
      */
     inline const SoftwareTokenMfaConfigType& GetSoftwareTokenMfaConfiguration() const{ return m_softwareTokenMfaConfiguration; }
 
     /**
-     * <p>The software token multi-factor (MFA) configuration.</p>
+     * <p>The software token multi-factor authentication (MFA) configuration.</p>
      */
     inline void SetSoftwareTokenMfaConfiguration(const SoftwareTokenMfaConfigType& value) { m_softwareTokenMfaConfiguration = value; }
 
     /**
-     * <p>The software token multi-factor (MFA) configuration.</p>
+     * <p>The software token multi-factor authentication (MFA) configuration.</p>
      */
     inline void SetSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { m_softwareTokenMfaConfiguration = std::move(value); }
 
     /**
-     * <p>The software token multi-factor (MFA) configuration.</p>
+     * <p>The software token multi-factor authentication (MFA) configuration.</p>
      */
     inline GetUserPoolMfaConfigResult& WithSoftwareTokenMfaConfiguration(const SoftwareTokenMfaConfigType& value) { SetSoftwareTokenMfaConfiguration(value); return *this;}
 
     /**
-     * <p>The software token multi-factor (MFA) configuration.</p>
+     * <p>The software token multi-factor authentication (MFA) configuration.</p>
      */
     inline GetUserPoolMfaConfigResult& WithSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { SetSoftwareTokenMfaConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The multi-factor (MFA) configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
-     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
-     * MFA factor activated.</p> </li> </ul>
+     * <p>The multi-factor authentication (MFA) configuration. Valid values
+     * include:</p> <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p>
+     * </li> <li> <p> <code>ON</code> MFA is required for all users to sign in.</p>
+     * </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for individual
+     * users who have an MFA factor activated.</p> </li> </ul>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
 
     /**
-     * <p>The multi-factor (MFA) configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
-     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
-     * MFA factor activated.</p> </li> </ul>
+     * <p>The multi-factor authentication (MFA) configuration. Valid values
+     * include:</p> <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p>
+     * </li> <li> <p> <code>ON</code> MFA is required for all users to sign in.</p>
+     * </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for individual
+     * users who have an MFA factor activated.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfiguration = value; }
 
     /**
-     * <p>The multi-factor (MFA) configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
-     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
-     * MFA factor activated.</p> </li> </ul>
+     * <p>The multi-factor authentication (MFA) configuration. Valid values
+     * include:</p> <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p>
+     * </li> <li> <p> <code>ON</code> MFA is required for all users to sign in.</p>
+     * </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for individual
+     * users who have an MFA factor activated.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfiguration = std::move(value); }
 
     /**
-     * <p>The multi-factor (MFA) configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
-     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
-     * MFA factor activated.</p> </li> </ul>
+     * <p>The multi-factor authentication (MFA) configuration. Valid values
+     * include:</p> <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p>
+     * </li> <li> <p> <code>ON</code> MFA is required for all users to sign in.</p>
+     * </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for individual
+     * users who have an MFA factor activated.</p> </li> </ul>
      */
     inline GetUserPoolMfaConfigResult& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
 
     /**
-     * <p>The multi-factor (MFA) configuration. Valid values include:</p> <ul> <li> <p>
-     * <code>OFF</code> MFA won't be used for any users.</p> </li> <li> <p>
-     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
-     * MFA factor activated.</p> </li> </ul>
+     * <p>The multi-factor authentication (MFA) configuration. Valid values
+     * include:</p> <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p>
+     * </li> <li> <p> <code>ON</code> MFA is required for all users to sign in.</p>
+     * </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for individual
+     * users who have an MFA factor activated.</p> </li> </ul>
      */
     inline GetUserPoolMfaConfigResult& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 

@@ -402,7 +402,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -410,7 +410,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -418,7 +418,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -426,7 +426,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -434,7 +434,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -442,7 +442,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -450,7 +450,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -458,7 +458,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification message.
-     * EmailVerificationMessage is allowed only if <a
+     * <code>EmailVerificationMessage</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -467,7 +467,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -475,7 +475,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -483,7 +483,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -491,7 +491,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -499,7 +499,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -507,7 +507,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -515,7 +515,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -523,7 +523,7 @@ namespace Model
 
     /**
      * <p>A string representing the email verification subject.
-     * EmailVerificationSubject is allowed only if <a
+     * <code>EmailVerificationSubject</code> is allowed only if <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
@@ -645,7 +645,7 @@ namespace Model
      * setting that tells Amazon Cognito how to handle changes to the value of your
      * users' email address and phone number attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     * Verifying updates to email addresses and phone numbers</a>.</p>
      */
     inline const UserAttributeUpdateSettingsType& GetUserAttributeUpdateSettings() const{ return m_userAttributeUpdateSettings; }
 
@@ -655,7 +655,7 @@ namespace Model
      * setting that tells Amazon Cognito how to handle changes to the value of your
      * users' email address and phone number attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     * Verifying updates to email addresses and phone numbers</a>.</p>
      */
     inline bool UserAttributeUpdateSettingsHasBeenSet() const { return m_userAttributeUpdateSettingsHasBeenSet; }
 
@@ -665,7 +665,7 @@ namespace Model
      * setting that tells Amazon Cognito how to handle changes to the value of your
      * users' email address and phone number attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     * Verifying updates to email addresses and phone numbers</a>.</p>
      */
     inline void SetUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = value; }
 
@@ -675,7 +675,7 @@ namespace Model
      * setting that tells Amazon Cognito how to handle changes to the value of your
      * users' email address and phone number attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     * Verifying updates to email addresses and phone numbers</a>.</p>
      */
     inline void SetUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = std::move(value); }
 
@@ -685,7 +685,7 @@ namespace Model
      * setting that tells Amazon Cognito how to handle changes to the value of your
      * users' email address and phone number attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     * Verifying updates to email addresses and phone numbers</a>.</p>
      */
     inline CreateUserPoolRequest& WithUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { SetUserAttributeUpdateSettings(value); return *this;}
 
@@ -695,38 +695,56 @@ namespace Model
      * setting that tells Amazon Cognito how to handle changes to the value of your
      * users' email address and phone number attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     * Verifying updates to email addresses and phone numbers</a>.</p>
      */
     inline CreateUserPoolRequest& WithUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { SetUserAttributeUpdateSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>The device configuration.</p>
+     * <p>The device-remembering configuration for a user pool. A null value indicates
+     * that you have deactivated device remembering in your user pool.</p> 
+     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
+     * activate the Amazon Cognito device-remembering feature.</p> 
      */
     inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
 
     /**
-     * <p>The device configuration.</p>
+     * <p>The device-remembering configuration for a user pool. A null value indicates
+     * that you have deactivated device remembering in your user pool.</p> 
+     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
+     * activate the Amazon Cognito device-remembering feature.</p> 
      */
     inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
 
     /**
-     * <p>The device configuration.</p>
+     * <p>The device-remembering configuration for a user pool. A null value indicates
+     * that you have deactivated device remembering in your user pool.</p> 
+     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
+     * activate the Amazon Cognito device-remembering feature.</p> 
      */
     inline void SetDeviceConfiguration(const DeviceConfigurationType& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
 
     /**
-     * <p>The device configuration.</p>
+     * <p>The device-remembering configuration for a user pool. A null value indicates
+     * that you have deactivated device remembering in your user pool.</p> 
+     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
+     * activate the Amazon Cognito device-remembering feature.</p> 
      */
     inline void SetDeviceConfiguration(DeviceConfigurationType&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
 
     /**
-     * <p>The device configuration.</p>
+     * <p>The device-remembering configuration for a user pool. A null value indicates
+     * that you have deactivated device remembering in your user pool.</p> 
+     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
+     * activate the Amazon Cognito device-remembering feature.</p> 
      */
     inline CreateUserPoolRequest& WithDeviceConfiguration(const DeviceConfigurationType& value) { SetDeviceConfiguration(value); return *this;}
 
     /**
-     * <p>The device configuration.</p>
+     * <p>The device-remembering configuration for a user pool. A null value indicates
+     * that you have deactivated device remembering in your user pool.</p> 
+     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
+     * activate the Amazon Cognito device-remembering feature.</p> 
      */
     inline CreateUserPoolRequest& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
 

@@ -181,99 +181,99 @@ namespace Model
 
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline const Aws::String& GetConfirmationCode() const{ return m_confirmationCode; }
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline bool ConfirmationCodeHasBeenSet() const { return m_confirmationCodeHasBeenSet; }
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline void SetConfirmationCode(const Aws::String& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = value; }
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline void SetConfirmationCode(Aws::String&& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = std::move(value); }
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline void SetConfirmationCode(const char* value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode.assign(value); }
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(const Aws::String& value) { SetConfirmationCode(value); return *this;}
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(Aws::String&& value) { SetConfirmationCode(std::move(value)); return *this;}
 
     /**
-     * <p>The confirmation code sent by a user's request to retrieve a forgotten
-     * password. For more information, see <a
+     * <p>The confirmation code from your user's request to reset their password. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(const char* value) { SetConfirmationCode(value); return *this;}
 
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline ConfirmForgotPasswordRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline ConfirmForgotPasswordRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     * <p>The new password that your user wants to set.</p>
      */
     inline ConfirmForgotPasswordRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 

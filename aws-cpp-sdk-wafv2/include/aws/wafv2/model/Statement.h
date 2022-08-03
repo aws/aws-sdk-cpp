@@ -40,7 +40,8 @@ namespace Model
 
   /**
    * <p>The processing guidance for a <a>Rule</a>, used by WAF to determine whether a
-   * web request matches the rule. </p><p><h3>See Also:</h3>   <a
+   * web request matches the rule. </p> <p>For example specifications, see the
+   * examples section of <a>CreateWebACL</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement">AWS API
    * Reference</a></p>
    */

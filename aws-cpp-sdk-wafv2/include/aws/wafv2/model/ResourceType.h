@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     APPLICATION_LOAD_BALANCER,
     API_GATEWAY,
-    APPSYNC
+    APPSYNC,
+    COGNITO_USER_POOL
   };
 
 namespace ResourceTypeMapper
