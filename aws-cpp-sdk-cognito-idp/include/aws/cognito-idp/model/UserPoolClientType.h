@@ -746,72 +746,72 @@ namespace Model
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline void SetSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = value; }
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline void SetSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = std::move(value); }
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline UserPoolClientType& WithSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { SetSupportedIdentityProviders(value); return *this;}
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline UserPoolClientType& WithSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { SetSupportedIdentityProviders(std::move(value)); return *this;}
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline UserPoolClientType& AddSupportedIdentityProviders(const Aws::String& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline UserPoolClientType& AddSupportedIdentityProviders(Aws::String&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of provider names for the IdPs that this client supports. The
      * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
-     * and OIDC providers.</p>
+     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
+     * and the names of your own SAML and OIDC providers.</p>
      */
     inline UserPoolClientType& AddSupportedIdentityProviders(const char* value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 

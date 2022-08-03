@@ -37,7 +37,8 @@ namespace Model
    * needs of the managed rule group. For the ATP managed rule group, you provide the
    * following individual configuration objects: <code>LoginPath</code>,
    * <code>PasswordField</code>, <code>PayloadType</code> and
-   * <code>UsernameField</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>UsernameField</code>.</p> <p>For example specifications, see the examples
+   * section of <a>CreateWebACL</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupConfig">AWS
    * API Reference</a></p>
    */
