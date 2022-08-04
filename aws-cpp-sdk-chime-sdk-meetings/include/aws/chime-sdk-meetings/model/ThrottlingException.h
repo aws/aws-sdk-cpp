@@ -88,28 +88,44 @@ namespace Model
     inline ThrottlingException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline ThrottlingException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline ThrottlingException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the request that exceeded the throttling limit.</p>
+     */
     inline ThrottlingException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:

@@ -30,8 +30,11 @@
 #include <aws/chime-sdk-meetings/model/GetAttendeeRequest.h>
 #include <aws/chime-sdk-meetings/model/GetMeetingRequest.h>
 #include <aws/chime-sdk-meetings/model/ListAttendeesRequest.h>
+#include <aws/chime-sdk-meetings/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-meetings/model/StartMeetingTranscriptionRequest.h>
 #include <aws/chime-sdk-meetings/model/StopMeetingTranscriptionRequest.h>
+#include <aws/chime-sdk-meetings/model/TagResourceRequest.h>
+#include <aws/chime-sdk-meetings/model/UntagResourceRequest.h>
 #include <aws/chime-sdk-meetings/model/UpdateAttendeeCapabilitiesRequest.h>
 
 using namespace Aws;
@@ -432,6 +435,36 @@ void ChimeSDKMeetingsClient::ListAttendeesAsyncHelper(const ListAttendeesRequest
   handler(this, request, ListAttendees(request), context);
 }
 
+ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceARN, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceARN]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags");
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable ChimeSDKMeetingsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMeetingsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMeetingsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -500,6 +533,62 @@ void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsync(const StopMeetingTran
 void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsyncHelper(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopMeetingTranscription(request), context);
+}
+
+TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/tags");
+  ss.str("?operation=tag-resource");
+  uri.SetQueryString(ss.str());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable ChimeSDKMeetingsClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMeetingsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMeetingsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/tags");
+  ss.str("?operation=untag-resource");
+  uri.SetQueryString(ss.str());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable ChimeSDKMeetingsClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMeetingsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMeetingsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabilities(const UpdateAttendeeCapabilitiesRequest& request) const

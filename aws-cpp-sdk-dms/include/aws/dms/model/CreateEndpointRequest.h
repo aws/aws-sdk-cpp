@@ -159,11 +159,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -173,11 +172,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -187,11 +185,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -201,11 +198,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -215,11 +211,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -229,11 +224,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -243,11 +237,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -257,11 +250,10 @@ namespace Model
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
      * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>db2-zos</code>, <code>"azuredb"</code>,
-     * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>babelfish</code>.</p>
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

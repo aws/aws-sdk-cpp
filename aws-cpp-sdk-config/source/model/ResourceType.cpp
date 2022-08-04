@@ -155,6 +155,15 @@ namespace Aws
         static const int AWS_Batch_JobQueue_HASH = HashingUtils::HashString("AWS::Batch::JobQueue");
         static const int AWS_Batch_ComputeEnvironment_HASH = HashingUtils::HashString("AWS::Batch::ComputeEnvironment");
         static const int AWS_AccessAnalyzer_Analyzer_HASH = HashingUtils::HashString("AWS::AccessAnalyzer::Analyzer");
+        static const int AWS_Athena_WorkGroup_HASH = HashingUtils::HashString("AWS::Athena::WorkGroup");
+        static const int AWS_Athena_DataCatalog_HASH = HashingUtils::HashString("AWS::Athena::DataCatalog");
+        static const int AWS_Detective_Graph_HASH = HashingUtils::HashString("AWS::Detective::Graph");
+        static const int AWS_GlobalAccelerator_Accelerator_HASH = HashingUtils::HashString("AWS::GlobalAccelerator::Accelerator");
+        static const int AWS_GlobalAccelerator_EndpointGroup_HASH = HashingUtils::HashString("AWS::GlobalAccelerator::EndpointGroup");
+        static const int AWS_GlobalAccelerator_Listener_HASH = HashingUtils::HashString("AWS::GlobalAccelerator::Listener");
+        static const int AWS_EC2_TransitGatewayAttachment_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayAttachment");
+        static const int AWS_EC2_TransitGatewayRouteTable_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayRouteTable");
+        static const int AWS_DMS_Certificate_HASH = HashingUtils::HashString("AWS::DMS::Certificate");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -842,6 +851,51 @@ namespace Aws
             enumValue = ResourceType::AWS_AccessAnalyzer_Analyzer;
             return true;
           }
+          else if (hashCode == AWS_Athena_WorkGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Athena_WorkGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Athena_DataCatalog_HASH)
+          {
+            enumValue = ResourceType::AWS_Athena_DataCatalog;
+            return true;
+          }
+          else if (hashCode == AWS_Detective_Graph_HASH)
+          {
+            enumValue = ResourceType::AWS_Detective_Graph;
+            return true;
+          }
+          else if (hashCode == AWS_GlobalAccelerator_Accelerator_HASH)
+          {
+            enumValue = ResourceType::AWS_GlobalAccelerator_Accelerator;
+            return true;
+          }
+          else if (hashCode == AWS_GlobalAccelerator_EndpointGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_GlobalAccelerator_EndpointGroup;
+            return true;
+          }
+          else if (hashCode == AWS_GlobalAccelerator_Listener_HASH)
+          {
+            enumValue = ResourceType::AWS_GlobalAccelerator_Listener;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TransitGatewayAttachment_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TransitGatewayAttachment;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TransitGatewayRouteTable_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TransitGatewayRouteTable;
+            return true;
+          }
+          else if (hashCode == AWS_DMS_Certificate_HASH)
+          {
+            enumValue = ResourceType::AWS_DMS_Certificate;
+            return true;
+          }
           return false;
         }
 
@@ -1261,6 +1315,33 @@ namespace Aws
             return true;
           case ResourceType::AWS_AccessAnalyzer_Analyzer:
             value = "AWS::AccessAnalyzer::Analyzer";
+            return true;
+          case ResourceType::AWS_Athena_WorkGroup:
+            value = "AWS::Athena::WorkGroup";
+            return true;
+          case ResourceType::AWS_Athena_DataCatalog:
+            value = "AWS::Athena::DataCatalog";
+            return true;
+          case ResourceType::AWS_Detective_Graph:
+            value = "AWS::Detective::Graph";
+            return true;
+          case ResourceType::AWS_GlobalAccelerator_Accelerator:
+            value = "AWS::GlobalAccelerator::Accelerator";
+            return true;
+          case ResourceType::AWS_GlobalAccelerator_EndpointGroup:
+            value = "AWS::GlobalAccelerator::EndpointGroup";
+            return true;
+          case ResourceType::AWS_GlobalAccelerator_Listener:
+            value = "AWS::GlobalAccelerator::Listener";
+            return true;
+          case ResourceType::AWS_EC2_TransitGatewayAttachment:
+            value = "AWS::EC2::TransitGatewayAttachment";
+            return true;
+          case ResourceType::AWS_EC2_TransitGatewayRouteTable:
+            value = "AWS::EC2::TransitGatewayRouteTable";
+            return true;
+          case ResourceType::AWS_DMS_Certificate:
+            value = "AWS::DMS::Certificate";
             return true;
           default:
             return false;

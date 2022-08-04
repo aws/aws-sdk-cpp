@@ -150,7 +150,16 @@ namespace Model
     AWS_StepFunctions_StateMachine,
     AWS_Batch_JobQueue,
     AWS_Batch_ComputeEnvironment,
-    AWS_AccessAnalyzer_Analyzer
+    AWS_AccessAnalyzer_Analyzer,
+    AWS_Athena_WorkGroup,
+    AWS_Athena_DataCatalog,
+    AWS_Detective_Graph,
+    AWS_GlobalAccelerator_Accelerator,
+    AWS_GlobalAccelerator_EndpointGroup,
+    AWS_GlobalAccelerator_Listener,
+    AWS_EC2_TransitGatewayAttachment,
+    AWS_EC2_TransitGatewayRouteTable,
+    AWS_DMS_Certificate
   };
 
 namespace ResourceTypeMapper
