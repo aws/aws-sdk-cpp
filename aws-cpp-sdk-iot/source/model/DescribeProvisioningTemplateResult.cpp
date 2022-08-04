@@ -18,13 +18,15 @@ using namespace Aws;
 
 DescribeProvisioningTemplateResult::DescribeProvisioningTemplateResult() : 
     m_defaultVersionId(0),
-    m_enabled(false)
+    m_enabled(false),
+    m_type(TemplateType::NOT_SET)
 {
 }
 
 DescribeProvisioningTemplateResult::DescribeProvisioningTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_defaultVersionId(0),
-    m_enabled(false)
+    m_enabled(false),
+    m_type(TemplateType::NOT_SET)
 {
   *this = result;
 }
@@ -89,6 +91,12 @@ DescribeProvisioningTemplateResult& DescribeProvisioningTemplateResult::operator
   if(jsonValue.ValueExists("preProvisioningHook"))
   {
     m_preProvisioningHook = jsonValue.GetObject("preProvisioningHook");
+
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("type"));
 
   }
 

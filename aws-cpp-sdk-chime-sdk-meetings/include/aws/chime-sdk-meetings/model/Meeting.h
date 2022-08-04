@@ -432,6 +432,47 @@ namespace Model
      */
     inline Meeting& AddTenantIds(const char* value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline const Aws::String& GetMeetingArn() const{ return m_meetingArn; }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline bool MeetingArnHasBeenSet() const { return m_meetingArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline void SetMeetingArn(const Aws::String& value) { m_meetingArnHasBeenSet = true; m_meetingArn = value; }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline void SetMeetingArn(Aws::String&& value) { m_meetingArnHasBeenSet = true; m_meetingArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline void SetMeetingArn(const char* value) { m_meetingArnHasBeenSet = true; m_meetingArn.assign(value); }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline Meeting& WithMeetingArn(const Aws::String& value) { SetMeetingArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline Meeting& WithMeetingArn(Aws::String&& value) { SetMeetingArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline Meeting& WithMeetingArn(const char* value) { SetMeetingArn(value); return *this;}
+
   private:
 
     Aws::String m_meetingId;
@@ -457,6 +498,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tenantIds;
     bool m_tenantIdsHasBeenSet;
+
+    Aws::String m_meetingArn;
+    bool m_meetingArnHasBeenSet;
   };
 
 } // namespace Model

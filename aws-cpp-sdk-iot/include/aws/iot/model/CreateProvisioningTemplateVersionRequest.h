@@ -39,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline CreateProvisioningTemplateVersionRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline CreateProvisioningTemplateVersionRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline CreateProvisioningTemplateVersionRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline CreateProvisioningTemplateVersionRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline CreateProvisioningTemplateVersionRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON formatted contents of the fleet provisioning template.</p>
+     * <p>The JSON formatted contents of the provisioning template.</p>
      */
     inline CreateProvisioningTemplateVersionRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 

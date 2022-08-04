@@ -20,13 +20,15 @@ namespace Model
 
 RegistrationConfig::RegistrationConfig() : 
     m_templateBodyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_templateNameHasBeenSet(false)
 {
 }
 
 RegistrationConfig::RegistrationConfig(JsonView jsonValue) : 
     m_templateBodyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_templateNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ RegistrationConfig& RegistrationConfig::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("templateName"))
+  {
+    m_templateName = jsonValue.GetString("templateName");
+
+    m_templateNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue RegistrationConfig::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_templateNameHasBeenSet)
+  {
+   payload.WithString("templateName", m_templateName);
 
   }
 

@@ -20,7 +20,8 @@ ListCACertificatesRequest::ListCACertificatesRequest() :
     m_pageSizeHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_ascendingOrder(false),
-    m_ascendingOrderHasBeenSet(false)
+    m_ascendingOrderHasBeenSet(false),
+    m_templateNameHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,13 @@ void ListCACertificatesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_ascendingOrder;
       uri.AddQueryStringParameter("isAscendingOrder", ss.str());
+      ss.str("");
+    }
+
+    if(m_templateNameHasBeenSet)
+    {
+      ss << m_templateName;
+      uri.AddQueryStringParameter("templateName", ss.str());
       ss.str("");
     }
 

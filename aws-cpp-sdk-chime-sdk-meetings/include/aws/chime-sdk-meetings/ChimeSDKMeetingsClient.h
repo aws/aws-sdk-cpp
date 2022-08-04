@@ -18,6 +18,9 @@
 #include <aws/chime-sdk-meetings/model/GetAttendeeResult.h>
 #include <aws/chime-sdk-meetings/model/GetMeetingResult.h>
 #include <aws/chime-sdk-meetings/model/ListAttendeesResult.h>
+#include <aws/chime-sdk-meetings/model/ListTagsForResourceResult.h>
+#include <aws/chime-sdk-meetings/model/TagResourceResult.h>
+#include <aws/chime-sdk-meetings/model/UntagResourceResult.h>
 #include <aws/chime-sdk-meetings/model/UpdateAttendeeCapabilitiesResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -69,8 +72,11 @@ namespace Model
         class GetAttendeeRequest;
         class GetMeetingRequest;
         class ListAttendeesRequest;
+        class ListTagsForResourceRequest;
         class StartMeetingTranscriptionRequest;
         class StopMeetingTranscriptionRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateAttendeeCapabilitiesRequest;
 
         typedef Aws::Utils::Outcome<BatchCreateAttendeeResult, ChimeSDKMeetingsError> BatchCreateAttendeeOutcome;
@@ -83,8 +89,11 @@ namespace Model
         typedef Aws::Utils::Outcome<GetAttendeeResult, ChimeSDKMeetingsError> GetAttendeeOutcome;
         typedef Aws::Utils::Outcome<GetMeetingResult, ChimeSDKMeetingsError> GetMeetingOutcome;
         typedef Aws::Utils::Outcome<ListAttendeesResult, ChimeSDKMeetingsError> ListAttendeesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKMeetingsError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> StartMeetingTranscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> StopMeetingTranscriptionOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ChimeSDKMeetingsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ChimeSDKMeetingsError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAttendeeCapabilitiesResult, ChimeSDKMeetingsError> UpdateAttendeeCapabilitiesOutcome;
 
         typedef std::future<BatchCreateAttendeeOutcome> BatchCreateAttendeeOutcomeCallable;
@@ -97,8 +106,11 @@ namespace Model
         typedef std::future<GetAttendeeOutcome> GetAttendeeOutcomeCallable;
         typedef std::future<GetMeetingOutcome> GetMeetingOutcomeCallable;
         typedef std::future<ListAttendeesOutcome> ListAttendeesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<StartMeetingTranscriptionOutcome> StartMeetingTranscriptionOutcomeCallable;
         typedef std::future<StopMeetingTranscriptionOutcome> StopMeetingTranscriptionOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAttendeeCapabilitiesOutcome> UpdateAttendeeCapabilitiesOutcomeCallable;
 } // namespace Model
 
@@ -114,8 +126,11 @@ namespace Model
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::GetAttendeeRequest&, const Model::GetAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::GetMeetingRequest&, const Model::GetMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::ListAttendeesRequest&, const Model::ListAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeesResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::StartMeetingTranscriptionRequest&, const Model::StartMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMeetingTranscriptionResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::StopMeetingTranscriptionRequest&, const Model::StopMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMeetingTranscriptionResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::UpdateAttendeeCapabilitiesRequest&, const Model::UpdateAttendeeCapabilitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAttendeeCapabilitiesResponseReceivedHandler;
 
   /**
@@ -389,6 +404,24 @@ namespace Model
         virtual void ListAttendeesAsync(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the tags available for the specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts transcription for the specified <code>meetingId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StartMeetingTranscription">AWS
@@ -423,6 +456,54 @@ namespace Model
          * An Async wrapper for StopMeetingTranscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopMeetingTranscriptionAsync(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The resource that supports tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tags from the specified resources. When you specify a
+         * tag key, the action removes both that key and its associated value. The
+         * operation succeeds even if you attempt to remove tags from a resource that were
+         * already removed. Note the following:</p> <ul> <li> <p>To remove tags from a
+         * resource, you need the necessary permissions for the service that the resource
+         * belongs to as well as permissions for removing tags. For more information, see
+         * the documentation for the service whose resource you want to untag.</p> </li>
+         * <li> <p>You can only tag resources that are located in the specified AWS Region
+         * for the calling AWS account.</p> </li> </ul> <p> <b>Minimum permissions</b> </p>
+         * <p>In addition to the <code>tag:UntagResources</code> permission required by
+         * this operation, you must also have the remove tags permission defined by the
+         * service that created the resource. For example, to remove the tags from an
+         * Amazon EC2 instance using the <code>UntagResources</code> operation, you must
+         * have both of the following permissions:</p> <p> <code>tag:UntagResource</code>
+         * </p> <p> <code>ChimeSDKMeetings:DeleteTags</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The capabilties that you want to update.</p>  <p>You use the
@@ -474,8 +555,11 @@ namespace Model
         void GetAttendeeAsyncHelper(const Model::GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMeetingAsyncHelper(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttendeesAsyncHelper(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMeetingTranscriptionAsyncHelper(const Model::StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMeetingTranscriptionAsyncHelper(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAttendeeCapabilitiesAsyncHelper(const Model::UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
