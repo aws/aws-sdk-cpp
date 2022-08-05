@@ -1,0 +1,12 @@
+##This is a template generating property bag for from Shape's contextParam for CRT Endpoint Rules engine
+##Actual types, typecase, and nested contextParam TBD
+        Aws::UnorderedMap<Aws::String, Aws::String> paramBag;
+#foreach($member in $shape.members.entrySet())
+##TODO: Handle cases with nested contextParams (i.e. contextParams within Shape within Shape (etc) within RequestShape).
+#if($member.value.contextParam)
+#set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($member.key))
+        paramBag.emplace("$member.value.contextParam.get("name")", this->Get${memberKeyWithFirstLetterCapitalized}());
+#end
+#end##foreach($member in $shape.members.entrySet())
+
+        return paramBag;

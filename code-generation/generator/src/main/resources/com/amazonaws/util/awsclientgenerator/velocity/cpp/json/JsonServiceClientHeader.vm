@@ -117,6 +117,9 @@ namespace Model
 #if($customEndpointUsed)
       bool m_useCustomEndpoint;
 #end
+#if($serviceModel.endpointRules)
+      void* m_crtEndpointRuleEngineCtx = nullptr;
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
       bool m_enableEndpointDiscovery;

@@ -6,9 +6,10 @@ ${operation.name}Outcome ${className}::${operation.name}() const
 #else
   ss << m_uri << "${operation.http.requestUri}";
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(endpointRulesComputedUri, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
 #else
-  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+  return ${operation.name}Outcome(MakeRequest(endpointRulesComputedUri, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
 #end
 }

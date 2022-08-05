@@ -68,6 +68,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateClientConfigurationFile(serviceModel));
         fileList.add(generateRegionHeaderFile(serviceModel));
         fileList.add(generateRegionSourceFile(serviceModel));
+        if (serviceModel.getEndpointRules() != null) {
+            fileList.add(generateEndpointRulesHeaderFile(serviceModel));
+            fileList.add(generateEndpointRulesSourceFile(serviceModel));
+        }
         fileList.add(generateErrorsHeaderFile(serviceModel));
         fileList.add(generateErrorMarshallerHeaderFile(serviceModel));
         fileList.add(generateErrorSourceFile(serviceModel));
@@ -370,6 +374,30 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("endpointMapping", computeEndpointMappingForService(serviceModel));
 
         String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected SdkFileEntry generateEndpointRulesHeaderFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointRulesHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+        String fileName = String.format("include/aws/%s/%sEndpointRules.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected SdkFileEntry generateEndpointRulesSourceFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointRulesSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("endpointMapping", computeEndpointMappingForService(serviceModel));
+
+        String fileName = String.format("source/%sEndpointRules.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
     }
 

@@ -7,6 +7,8 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.c2j;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class C2jShapeMember {
     String shape;
@@ -16,6 +18,7 @@ public class C2jShapeMember {
     String location;
     String locationName;
     String queryName;
+    Map<String, String> contextParam;
     C2jXmlNamespace xmlNamespace;
     boolean deprecated;
     boolean flattened;
