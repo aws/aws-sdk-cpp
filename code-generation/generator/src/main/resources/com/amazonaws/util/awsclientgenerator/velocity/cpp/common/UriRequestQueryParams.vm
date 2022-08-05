@@ -61,3 +61,23 @@
 #if($queryStart)
   uri.SetQueryString(ss.str());
 #end
+
+#if($serviceModel.endpointRules)
+  Aws::Http::URI endpointRulesComputedUri = [&]()
+  {
+    std::cout << "Here we are going to call CRT EndpointRule engine with stored context m_crtEndpointRuleEngineCtx and context params\n";
+#if($operation.request.shape.hasContextParam())
+    Aws::UnorderedMap<Aws::String, Aws::String> contextParam = request.GetRequestContextEndpointRulesParam();
+#end
+#if($operation.staticContextParams)
+    Aws::UnorderedMap<Aws::String, Aws::String> staticParamBag;
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+    staticParamBag.emplace("${staticParamPair.key}", "${staticParamPair.value.get("value")}");
+#end
+#end
+##TODO: add clientContextParams
+##TODO: remove legacy code
+
+    return uri;
+  }();
+#end
