@@ -34,15 +34,22 @@
 #end
 #if($serviceNamespace == "S3Crt")
 #set($clientConfigurationNamespace = $serviceNamespace)
-#set($credentialsParam = ", &credentials")
-#set($getAWSCredentials = "Aws::Auth::AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
-  ")
-#set($credentialsArg = ", const Aws::Auth::AWSCredentials* credentials")
+#set($credentialsParam = ", m_credProvider")
+#set($credentialsArg = ", const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider")
+#set($defaultCredentialsProviderChainParam = "m_credProvider")
+#set($defaultCredentialsProviderChainMember = ", m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG))")
+#set($simpleCredentialsProviderParam = "m_credProvider")
+#set($simpleCredentialsProviderMember = ", m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials))")
+#set($credentialsProviderMember = ", m_credProvider(credentialsProvider)")
 #else
 #set($clientConfigurationNamespace = "Client")
 #set($credentialsParam = "")
-#set($getAWSCredentials = "")
 #set($credentialsArg = "")
+#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
+#set($defaultCredentialsProviderChainMember = "")
+#set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
+#set($simpleCredentialsProviderMember = "")
+#set($credentialsProviderMember = "")
 #end
 #set($hasEventStreamInputOperation = false)
 #foreach($operation in $serviceModel.operations)
@@ -54,20 +61,20 @@
 #if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
 ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration);
+  init(clientConfiguration${credentialsParam});
 }
 
 ${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -78,27 +85,27 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  ${getAWSCredentials}init(clientConfiguration${credentialsParam});
+  init(clientConfiguration${credentialsParam});
 }
 #else
 ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration);
+  init(clientConfiguration${credentialsParam});
 }
 
 ${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -109,9 +116,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember}
 {
-  ${getAWSCredentials}init(clientConfiguration${credentialsParam});
+  init(clientConfiguration${credentialsParam});
 }
 #end
 
@@ -191,23 +198,18 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
 
-  std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> provider(nullptr);
-  if (credentials)
-  {
-    Aws::Crt::Auth::CredentialsProviderStaticConfig staticCreds;
-    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromCString(credentials->GetAWSAccessKeyId().c_str());
-    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromCString(credentials->GetAWSSecretKey().c_str());
-    staticCreds.SessionToken = Aws::Crt::ByteCursorFromCString(credentials->GetSessionToken().c_str());
-    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderStatic(staticCreds);
-  }
-  else
-  {
-    Aws::Crt::Auth::CredentialsProviderChainDefaultConfig credsConfig;
-    credsConfig.Bootstrap = clientBootstrap;
-    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderChainDefault(credsConfig);
-  }
+  m_crtCredProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderDelegate({
+     std::bind([](const std::shared_ptr<AWSCredentialsProvider>& provider) {
+         AWSCredentials credentials = provider->GetAWSCredentials();
+         return Aws::MakeShared<Aws::Crt::Auth::Credentials>(ALLOCATION_TAG,
+             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetAWSAccessKeyId().c_str())),
+             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetAWSSecretKey().c_str())),
+             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetSessionToken().c_str())),
+             credentials.GetExpiration().Millis());
+     }, credentialsProvider)
+  });
 
-  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), provider->GetUnderlyingHandle());
+  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), m_crtCredProvider->GetUnderlyingHandle());
   m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
   s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
 
