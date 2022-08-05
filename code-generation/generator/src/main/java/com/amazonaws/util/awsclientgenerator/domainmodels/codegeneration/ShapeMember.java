@@ -7,6 +7,8 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class ShapeMember {
     Shape shape;
@@ -22,6 +24,7 @@ public class ShapeMember {
     String location;
     String locationName;
     String queryName;
+    Map<String, String> contextParam;
     XmlNamespace xmlNamespace;
     boolean isFlattened;
     boolean isCustomizedQuery;

@@ -5,6 +5,7 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTests;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
@@ -65,4 +66,7 @@ public class ServiceModel {
         }
         return operations.values().parallelStream().allMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
     }
+
+    String endpointRules;
+    EndpointTests endpointTests;
 }

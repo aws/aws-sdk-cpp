@@ -1,0 +1,26 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/utils/memory/stl/AWSString.h>
+\#include <aws/core/utils/memory/stl/AWSVector.h>
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+#if ($serviceModel.endpointRules)
+class ${metadata.classNamePrefix}EndpointRules
+{
+public:
+    static Aws::String GetRulesAsString();
+##C++ compilers are required to support maximum length 65536 of string literal, therefore, using vector
+    static const Aws::Vector<char> Rules; ##Avoid defining global constants in every cpp including this header with C++03-way. (C++03-way is a static constant in a useless class).
+
+};
+#end
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

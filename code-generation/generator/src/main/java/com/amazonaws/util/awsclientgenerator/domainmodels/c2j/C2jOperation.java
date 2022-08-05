@@ -9,6 +9,7 @@ import lombok.Data;
 
 import java.lang.*;
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class C2jOperation {
@@ -20,6 +21,7 @@ public class C2jOperation {
     private C2jShapeMember output;
     private List<C2jError> errors;
     private String documentation;
+    private Map<String, Map<String, String>> staticContextParams;
     private boolean deprecated;
     private boolean httpChecksumRequired;
     private C2jHttpChecksum httpChecksum;

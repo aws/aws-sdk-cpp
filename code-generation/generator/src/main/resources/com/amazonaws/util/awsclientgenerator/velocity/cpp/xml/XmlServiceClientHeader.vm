@@ -118,6 +118,9 @@ namespace Model
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
         bool m_enableEndpointDiscovery;
 #end
+#if($serviceModel.endpointRules)
+        void* m_crtEndpointRuleEngineCtx = nullptr;
+#end
         Aws::String m_configScheme;
 #if($metadata.hasPreSignedUrl)
         bool m_useDualStack;

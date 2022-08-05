@@ -203,9 +203,9 @@
 
 #end
 #end
-#end
-#end
-#if($shape.members.size() > 0)
+#end##if(!((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.request))
+#end##foreach($member in $shape.members.entrySet())
+#if($shape.members.size() > 0)##next contains private only
   private:
 #foreach($member in $shape.members.entrySet())
 
@@ -237,4 +237,4 @@
     Aws::Utils::Event::EventStreamDecoder m_decoder;
 
 #end
-#end
+#end##if($shape.members.size() > 0)

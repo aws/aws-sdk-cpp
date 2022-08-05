@@ -229,4 +229,26 @@ public class Shape {
 
         return thisMemberShapeNames.contains(otherShape.getName()) && otherMemberShapeNames.contains(this.getName());
     }
+
+    public boolean hasContextParam() {
+        if(listMember != null && listMember.getContextParam() != null) {
+            return true;
+        }
+        if(mapKey != null && mapKey.getContextParam() != null) {
+            return true;
+        }
+        if(mapValue != null && mapValue.getContextParam() != null) {
+            return true;
+        }
+        if(customizedQuery != null && customizedQuery.getContextParam() != null) {
+            return true;
+        }
+        for(Map.Entry<String, ShapeMember> entry : members.entrySet()) {
+            if(entry.getValue().getContextParam() != null){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

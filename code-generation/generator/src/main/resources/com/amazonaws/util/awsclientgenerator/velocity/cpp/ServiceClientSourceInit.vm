@@ -214,6 +214,16 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 ${className}::~${className}()
 {
+#if($serviceModel.endpointRules)
+    if (m_crtEndpointRuleEngineCtx)
+    {
+        [](void* engineCtxPtr)
+        {
+            std::cout << "Here we would call CRT's rule engine Free with ptr or use C++ CRT wrapper " << engineCtxPtr  << "\n";
+        }(m_crtEndpointRuleEngineCtx);
+        m_crtEndpointRuleEngineCtx = nullptr;
+    }
+#end
 }
 
 void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config)
@@ -221,49 +231,64 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   AWSClient::SetServiceClientName("${metadata.serviceId}");
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
-#end
+#end##if($AdditionalServiceSpecificConfigLoadString)
   m_configScheme = SchemeMapper::ToString(config.scheme);
 #if($metadata.hasPreSignedUrl)
   m_useDualStack = config.useDualStack;
-#end
+#end##if($metadata.hasPreSignedUrl)
 #if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
   m_scheme = m_configScheme;
 #if($arnEndpointSupported)
   m_useDualStack = config.useDualStack;
-#end
+#end##if($arnEndpointSupported)
   if (config.endpointOverride.empty())
   {
 #if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = false;
-#end
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
+#if($serviceModel.endpointRules)
+      m_crtEndpointRuleEngineCtx = []()
+      {
+          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
+          return nullptr;
+      }();
+#end##if($serviceModel.endpointRules)
   }
   else
   {
 #if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = true;
-#end
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       OverrideEndpoint(config.endpointOverride);
   }
-#else
+#else##of if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
   if (config.endpointOverride.empty())
   {
       m_uri = m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
 #if($customEndpointUsed)
       m_useCustomEndpoint = false;
-#end
+#end##if($customEndpointUsed)
+#if($serviceModel.endpointRules)
+      m_crtEndpointRuleEngineCtx = []()
+      {
+          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
+          return nullptr;
+      }();
+#end##if($serviceModel.endpointRules)
   }
+##if (config.endpointOverride.empty())
   else
   {
       OverrideEndpoint(config.endpointOverride);
 #if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = true;
-#end
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
   }
-#end
+#end##if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
-#end
+#end##if($metadata.hasEndpointTrait)
 }
 #if($metadata.hasEndpointDiscoveryTrait)
 

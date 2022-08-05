@@ -24,6 +24,8 @@ import java.util.Map;
 public class main {
 
     static final String INPUT_FILE_NAME = "inputfile";
+    static final String ENDPOINT_RULE_SET = "endpoint-rule-set";
+    static final String ENDPOINT_TESTS = "endpoint-tests";
     static final String OUTPUT_FILE_NAME = "outputfile";
     static final String ARBITRARY_OPTION = "arbitrary";
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
@@ -42,8 +44,6 @@ public class main {
         }
 
         Map<String, String> argPairs = getArgOptionPairs(args);
-
-        String arbitraryJson = null;
 
         //At this point we want to read the c2j from std in.
         //e.g. cat /home/henso/someC2jFile.normal.json | AWSClientGenerator --service myService --language-binding cpp or
@@ -71,17 +71,14 @@ public class main {
             String serviceName = argPairs.get(SERVICE_OPTION);
             boolean enableVirtualOperations = argPairs.containsKey(ENABLE_VIRTUAL_OPERATIONS);
 
-            //read from the piped input
-            try (InputStream stream = getInputStreamReader(argPairs)) {
-                StringBuilder stringBuilder = new StringBuilder();
-
-                byte[] buffer = new byte[1024];
-                int bytes;
-                while ((bytes = stream.read(buffer)) > 0) {
-                    stringBuilder.append(new String(buffer, 0, bytes, StandardCharsets.UTF_8));
-                }
-
-                arbitraryJson = stringBuilder.toString();
+            String arbitraryJson = readFile(argPairs.getOrDefault(INPUT_FILE_NAME, ""));
+            String endpointRules = null;
+            if (argPairs.containsKey(ENDPOINT_RULE_SET)) {
+                endpointRules = readFile(argPairs.get(ENDPOINT_RULE_SET));
+            }
+            String endpointRuleTests = null;
+            if (argPairs.containsKey(ENDPOINT_TESTS)) {
+                endpointRuleTests = readFile(argPairs.get(ENDPOINT_TESTS));
             }
 
             String outputFileName = null;
@@ -95,7 +92,7 @@ public class main {
 
                     String componentOutputName;
                     if (serviceName != null && !serviceName.isEmpty()) {
-                        generated = generateService(arbitraryJson, languageBinding, serviceName, namespace,
+                        generated = generateService(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
                                 licenseText, generateStandalonePakckage, enableVirtualOperations);
 
                         componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
@@ -139,18 +136,27 @@ public class main {
         printHelp();
     }
 
-    private static ByteArrayOutputStream generateService(String arbitraryJson, String languageBinding, String serviceName,
-                                        String namespace, String licenseText,
-                                        boolean generateStandalonePakckage, boolean enableVirtualOperations) throws Exception {
+    private static ByteArrayOutputStream generateService(String arbitraryJson,
+                                                         String endpointRules,
+                                                         String endpointRulesTests,
+                                                         String languageBinding,
+                                                         String serviceName,
+                                                         String namespace,
+                                                         String licenseText,
+                                                         boolean generateStandalonePackage,
+                                                         boolean enableVirtualOperations) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
 
-        ByteArrayOutputStream outputStream = directFromC2jGenerator.generateServiceSourceFromJson(arbitraryJson,
+        ByteArrayOutputStream outputStream = directFromC2jGenerator.generateServiceSourceFromJson(
+                arbitraryJson,
+                endpointRules,
+                endpointRulesTests,
                 languageBinding,
                 serviceName,
                 namespace,
                 licenseText,
-                generateStandalonePakckage,
+                generateStandalonePackage,
                 enableVirtualOperations);
         return outputStream;
     }
@@ -169,6 +175,23 @@ public class main {
                 generateStandalonePakckage,
                 enableVirtualOperations);
         return outputStream;
+    }
+
+    private static String readFile(String filename) throws IOException {
+        InputStream stream;
+        if(filename != null && !filename.isEmpty()) {
+            stream = new FileInputStream(filename);
+        } else {
+            stream = System.in;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        byte[] buffer = new byte[1024];
+        int bytes;
+        while ((bytes = stream.read(buffer)) > 0) {
+            stringBuilder.append(new String(buffer, 0, bytes, StandardCharsets.UTF_8));
+        }
+        return stringBuilder.toString();
     }
 
     private static InputStream getInputStreamReader(Map<String, String> argsMap) throws FileNotFoundException, UnsupportedEncodingException {

@@ -1,0 +1,14 @@
+#if($serviceModel.endpointRules)
+  Aws::String endpointRulesComputedUri = [&]()
+  {
+#if($operation.staticContextParams)
+    Aws::UnorderedMap<Aws::String, Aws::String> staticParamBag;
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+    staticParamBag.emplace("${staticParamPair.key}", "${staticParamPair.value.get("value")}");
+#end
+#end
+##TODO: add clientContextParams
+    std::cout << "Here we are going to call CRT EndpointRule engine with stored context m_crtEndpointRuleEngineCtx and context params\n";
+    return ss.str();
+  }();
+#end

@@ -25,9 +25,10 @@ import java.util.zip.ZipOutputStream;
 
 public class MainGenerator {
 
-    public ByteArrayOutputStream generateSourceFromC2jModel(C2jServiceModel c2jModel, String serviceName, String languageBinding,
-                                           String namespace, String licenseText, boolean generateStandalonePackage,
-                                           boolean enableVirtualOperations) throws Exception {
+    public ByteArrayOutputStream generateSourceFromC2jModel(C2jServiceModel c2jModel,
+                                                            String serviceName, String languageBinding,
+                                                            String namespace, String licenseText, boolean generateStandalonePackage,
+                                                            boolean enableVirtualOperations) throws Exception {
 
         SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
         // Transform to ServiceModel

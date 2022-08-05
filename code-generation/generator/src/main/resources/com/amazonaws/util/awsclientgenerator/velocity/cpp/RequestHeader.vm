@@ -10,6 +10,9 @@
 \#include <aws/${metadata.projectName}/model/${operation.name}Handler.h>
 \#include <aws/core/utils/event/EventStreamDecoder.h>
 #end
+#if($serviceModel.endpointRules && $operation.request.shape.hasContextParam())
+\#include <aws/core/utils/memory/stl/AWSMap.h>
+#end
 #if($operation.request.shape.hasEventStreamMembers())
 \#include <memory>
 #end
@@ -133,6 +136,13 @@ namespace Model
 
   public:
 #end
+#if($serviceModel.endpointRules && $operation.request.shape.hasContextParam())
+    Aws::UnorderedMap<Aws::String, Aws::String> GetRequestContextEndpointRulesParam() const
+    {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamBody.vm")
+    }
+#end
+
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
   };
