@@ -1027,17 +1027,11 @@ std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning
     return httpRequest;
 }
 
-std::shared_ptr<Aws::IOStream> AWSClient::GetBodyStream(const Aws::AmazonWebServiceRequest& request) const
-{
-    //check if body contains anything
-    if (request.GetBody() != NULL)
-    {
+std::shared_ptr<Aws::IOStream> AWSClient::GetBodyStream(const Aws::AmazonWebServiceRequest& request) const {
+    if (request.GetBody() != nullptr) {
         return request.GetBody();
     }
-    else
-    {
-        return nullptr;
-    }
+    return Aws::MakeShared<Aws::IOStream>(AWS_CLIENT_LOG_TAG, nullptr);
 }
 
 std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const
