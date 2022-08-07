@@ -1109,6 +1109,10 @@ namespace Aws
             {
                 if('/' == filePath[i])
                 {
+                    while (i + 1 < filePath.size() && '/' == filePath[i+1]) // Skip all  "//"
+                    {
+                        ++i;
+                    }
                     if(i + 2 < filePath.size() && '.' == filePath[i+1] && '/' == filePath[i+2]) // if "/./"
                     {
                         continue;
