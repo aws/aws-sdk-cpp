@@ -320,6 +320,7 @@ namespace Aws
             void InitializeGlobalStatics();
             std::shared_ptr<Aws::Http::HttpRequest> ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,
                 Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const;
+            std::shared_ptr<Aws::IOStream> GetBodyStream(const Aws::AmazonWebServiceRequest& request) const;
 
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
             std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
