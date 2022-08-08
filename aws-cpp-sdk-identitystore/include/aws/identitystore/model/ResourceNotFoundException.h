@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>The type of resource in the identity store service, which is an enum object.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>The type of resource in the identity store service, which is an enum object.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>The type of resource in the identity store service, which is an enum object.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>The type of resource in the identity store service, which is an enum object.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>The type of resource in the identity store service, which is an enum object.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline ResourceNotFoundException& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>The type of resource in the identity store service, which is an enum object.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline ResourceNotFoundException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
@@ -83,7 +83,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -97,7 +97,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -111,7 +111,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -125,7 +125,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -139,7 +139,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -153,7 +153,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -167,7 +167,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -181,7 +181,7 @@ namespace Model
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy SSO identity store, the
+     * identity store is migrated from a legacy single sign-on identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -216,56 +216,56 @@ namespace Model
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline ResourceNotFoundException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline ResourceNotFoundException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline ResourceNotFoundException& WithRequestId(const char* value) { SetRequestId(value); return *this;}

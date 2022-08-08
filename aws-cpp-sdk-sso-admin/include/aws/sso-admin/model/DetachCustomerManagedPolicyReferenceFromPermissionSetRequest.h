@@ -36,42 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. </p>
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. </p>
      */
     inline DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
@@ -118,43 +126,43 @@ namespace Model
 
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const{ return m_customerManagedPolicyReference; }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline void SetCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = value; }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline void SetCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::move(value); }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& WithCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { SetCustomerManagedPolicyReference(value); return *this;}
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& WithCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { SetCustomerManagedPolicyReference(std::move(value)); return *this;}

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/WorkerType.h>
 #include <aws/glue/model/NotificationProperty.h>
+#include <aws/glue/model/ExecutionClass.h>
 #include <aws/glue/model/Predecessor.h>
 #include <utility>
 
@@ -1203,6 +1204,73 @@ namespace Model
      */
     inline JobRun& WithDPUSeconds(double value) { SetDPUSeconds(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution-class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline const ExecutionClass& GetExecutionClass() const{ return m_executionClass; }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution-class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline bool ExecutionClassHasBeenSet() const { return m_executionClassHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution-class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline void SetExecutionClass(const ExecutionClass& value) { m_executionClassHasBeenSet = true; m_executionClass = value; }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution-class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline void SetExecutionClass(ExecutionClass&& value) { m_executionClassHasBeenSet = true; m_executionClass = std::move(value); }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution-class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline JobRun& WithExecutionClass(const ExecutionClass& value) { SetExecutionClass(value); return *this;}
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution-class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline JobRun& WithExecutionClass(ExecutionClass&& value) { SetExecutionClass(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1270,6 +1338,9 @@ namespace Model
 
     double m_dPUSeconds;
     bool m_dPUSecondsHasBeenSet;
+
+    ExecutionClass m_executionClass;
+    bool m_executionClassHasBeenSet;
   };
 
 } // namespace Model

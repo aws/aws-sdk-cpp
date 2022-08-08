@@ -161,6 +161,48 @@ namespace Model
      */
     inline WorkflowRunStatistics& WithRunningActions(int value) { SetRunningActions(value); return *this;}
 
+
+    /**
+     * <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+     */
+    inline int GetErroredActions() const{ return m_erroredActions; }
+
+    /**
+     * <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+     */
+    inline bool ErroredActionsHasBeenSet() const { return m_erroredActionsHasBeenSet; }
+
+    /**
+     * <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+     */
+    inline void SetErroredActions(int value) { m_erroredActionsHasBeenSet = true; m_erroredActions = value; }
+
+    /**
+     * <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+     */
+    inline WorkflowRunStatistics& WithErroredActions(int value) { SetErroredActions(value); return *this;}
+
+
+    /**
+     * <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+     */
+    inline int GetWaitingActions() const{ return m_waitingActions; }
+
+    /**
+     * <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+     */
+    inline bool WaitingActionsHasBeenSet() const { return m_waitingActionsHasBeenSet; }
+
+    /**
+     * <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+     */
+    inline void SetWaitingActions(int value) { m_waitingActionsHasBeenSet = true; m_waitingActions = value; }
+
+    /**
+     * <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+     */
+    inline WorkflowRunStatistics& WithWaitingActions(int value) { SetWaitingActions(value); return *this;}
+
   private:
 
     int m_totalActions;
@@ -180,6 +222,12 @@ namespace Model
 
     int m_runningActions;
     bool m_runningActionsHasBeenSet;
+
+    int m_erroredActions;
+    bool m_erroredActionsHasBeenSet;
+
+    int m_waitingActions;
+    bool m_waitingActionsHasBeenSet;
   };
 
 } // namespace Model

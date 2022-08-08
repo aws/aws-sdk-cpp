@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A query filter used by <code>ListUsers</code> and <code>ListGroup</code>.
+   * <p>A query filter used by <code>ListUsers</code> and <code>ListGroups</code>.
    * This filter object provides the attribute name and attribute value to search
    * users or groups.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/Filter">AWS

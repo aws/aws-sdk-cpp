@@ -29,12 +29,12 @@ namespace Model
    * managed policy that you want to set as a permissions boundary. Specify either
    * <code>CustomerManagedPolicyReference</code> to use the name and path of a
    * customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an
-   * Amazon Web Services managed IAM policy. A permissions boundary represents the
+   * Amazon Web Services managed policy. A permissions boundary represents the
    * maximum permissions that any policy can grant your role. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
    * boundaries for IAM entities</a> in the <i>Identity and Access Management User
-   * Guide</i>.</p>  <p>Policies used as permissions boundaries do not
+   * Guide</i>.</p>  <p>Policies used as permissions boundaries don't
    * provide permissions. You must also attach an IAM policy to the role. To learn
    * how the effective permissions for a role are evaluated, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
@@ -53,43 +53,43 @@ namespace Model
 
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const{ return m_customerManagedPolicyReference; }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline void SetCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = value; }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline void SetCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::move(value); }
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline PermissionsBoundary& WithCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { SetCustomerManagedPolicyReference(value); return *this;}
 
     /**
-     * <p>Specifies the name and path of the IAM customer managed policy. You must have
-     * an IAM policy that matches the name and path in each Amazon Web Services account
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline PermissionsBoundary& WithCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { SetCustomerManagedPolicyReference(std::move(value)); return *this;}

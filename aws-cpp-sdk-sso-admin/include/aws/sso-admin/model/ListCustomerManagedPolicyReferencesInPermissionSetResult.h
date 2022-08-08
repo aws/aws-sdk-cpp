@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies the names and paths of the IAM customer managed policies that you
-     * have attached to your permission set.</p>
+     * <p>Specifies the names and paths of the customer managed policies that you have
+     * attached to your permission set.</p>
      */
     inline const Aws::Vector<CustomerManagedPolicyReference>& GetCustomerManagedPolicyReferences() const{ return m_customerManagedPolicyReferences; }
 
     /**
-     * <p>Specifies the names and paths of the IAM customer managed policies that you
-     * have attached to your permission set.</p>
+     * <p>Specifies the names and paths of the customer managed policies that you have
+     * attached to your permission set.</p>
      */
     inline void SetCustomerManagedPolicyReferences(const Aws::Vector<CustomerManagedPolicyReference>& value) { m_customerManagedPolicyReferences = value; }
 
     /**
-     * <p>Specifies the names and paths of the IAM customer managed policies that you
-     * have attached to your permission set.</p>
+     * <p>Specifies the names and paths of the customer managed policies that you have
+     * attached to your permission set.</p>
      */
     inline void SetCustomerManagedPolicyReferences(Aws::Vector<CustomerManagedPolicyReference>&& value) { m_customerManagedPolicyReferences = std::move(value); }
 
     /**
-     * <p>Specifies the names and paths of the IAM customer managed policies that you
-     * have attached to your permission set.</p>
+     * <p>Specifies the names and paths of the customer managed policies that you have
+     * attached to your permission set.</p>
      */
     inline ListCustomerManagedPolicyReferencesInPermissionSetResult& WithCustomerManagedPolicyReferences(const Aws::Vector<CustomerManagedPolicyReference>& value) { SetCustomerManagedPolicyReferences(value); return *this;}
 
     /**
-     * <p>Specifies the names and paths of the IAM customer managed policies that you
-     * have attached to your permission set.</p>
+     * <p>Specifies the names and paths of the customer managed policies that you have
+     * attached to your permission set.</p>
      */
     inline ListCustomerManagedPolicyReferencesInPermissionSetResult& WithCustomerManagedPolicyReferences(Aws::Vector<CustomerManagedPolicyReference>&& value) { SetCustomerManagedPolicyReferences(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the names and paths of the IAM customer managed policies that you
-     * have attached to your permission set.</p>
+     * <p>Specifies the names and paths of the customer managed policies that you have
+     * attached to your permission set.</p>
      */
     inline ListCustomerManagedPolicyReferencesInPermissionSetResult& AddCustomerManagedPolicyReferences(const CustomerManagedPolicyReference& value) { m_customerManagedPolicyReferences.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the names and paths of the IAM customer managed policies that you
-     * have attached to your permission set.</p>
+     * <p>Specifies the names and paths of the customer managed policies that you have
+     * attached to your permission set.</p>
      */
     inline ListCustomerManagedPolicyReferencesInPermissionSetResult& AddCustomerManagedPolicyReferences(CustomerManagedPolicyReference&& value) { m_customerManagedPolicyReferences.push_back(std::move(value)); return *this; }
 

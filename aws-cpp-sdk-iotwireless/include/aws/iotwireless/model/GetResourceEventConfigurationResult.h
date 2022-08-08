@@ -9,6 +9,7 @@
 #include <aws/iotwireless/model/ProximityEventConfiguration.h>
 #include <aws/iotwireless/model/JoinEventConfiguration.h>
 #include <aws/iotwireless/model/ConnectionStatusEventConfiguration.h>
+#include <aws/iotwireless/model/MessageDeliveryStatusEventConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -138,6 +139,32 @@ namespace Model
      */
     inline GetResourceEventConfigurationResult& WithConnectionStatus(ConnectionStatusEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline const MessageDeliveryStatusEventConfiguration& GetMessageDeliveryStatus() const{ return m_messageDeliveryStatus; }
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline void SetMessageDeliveryStatus(const MessageDeliveryStatusEventConfiguration& value) { m_messageDeliveryStatus = value; }
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline void SetMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration&& value) { m_messageDeliveryStatus = std::move(value); }
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline GetResourceEventConfigurationResult& WithMessageDeliveryStatus(const MessageDeliveryStatusEventConfiguration& value) { SetMessageDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>Event configuration for the message delivery status event.</p>
+     */
+    inline GetResourceEventConfigurationResult& WithMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
+
   private:
 
     DeviceRegistrationStateEventConfiguration m_deviceRegistrationState;
@@ -147,6 +174,8 @@ namespace Model
     JoinEventConfiguration m_join;
 
     ConnectionStatusEventConfiguration m_connectionStatus;
+
+    MessageDeliveryStatusEventConfiguration m_messageDeliveryStatus;
   };
 
 } // namespace Model

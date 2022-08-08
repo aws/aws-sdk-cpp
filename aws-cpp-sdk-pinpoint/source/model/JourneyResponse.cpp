@@ -40,7 +40,11 @@ JourneyResponse::JourneyResponse() :
     m_waitForQuietTimeHasBeenSet(false),
     m_refreshOnSegmentUpdate(false),
     m_refreshOnSegmentUpdateHasBeenSet(false),
-    m_journeyChannelSettingsHasBeenSet(false)
+    m_journeyChannelSettingsHasBeenSet(false),
+    m_sendingSchedule(false),
+    m_sendingScheduleHasBeenSet(false),
+    m_openHoursHasBeenSet(false),
+    m_closedDaysHasBeenSet(false)
 {
 }
 
@@ -66,7 +70,11 @@ JourneyResponse::JourneyResponse(JsonView jsonValue) :
     m_waitForQuietTimeHasBeenSet(false),
     m_refreshOnSegmentUpdate(false),
     m_refreshOnSegmentUpdateHasBeenSet(false),
-    m_journeyChannelSettingsHasBeenSet(false)
+    m_journeyChannelSettingsHasBeenSet(false),
+    m_sendingSchedule(false),
+    m_sendingScheduleHasBeenSet(false),
+    m_openHoursHasBeenSet(false),
+    m_closedDaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -205,6 +213,27 @@ JourneyResponse& JourneyResponse::operator =(JsonView jsonValue)
     m_journeyChannelSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SendingSchedule"))
+  {
+    m_sendingSchedule = jsonValue.GetBool("SendingSchedule");
+
+    m_sendingScheduleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OpenHours"))
+  {
+    m_openHours = jsonValue.GetObject("OpenHours");
+
+    m_openHoursHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ClosedDays"))
+  {
+    m_closedDays = jsonValue.GetObject("ClosedDays");
+
+    m_closedDaysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -326,6 +355,24 @@ JsonValue JourneyResponse::Jsonize() const
   if(m_journeyChannelSettingsHasBeenSet)
   {
    payload.WithObject("JourneyChannelSettings", m_journeyChannelSettings.Jsonize());
+
+  }
+
+  if(m_sendingScheduleHasBeenSet)
+  {
+   payload.WithBool("SendingSchedule", m_sendingSchedule);
+
+  }
+
+  if(m_openHoursHasBeenSet)
+  {
+   payload.WithObject("OpenHours", m_openHours.Jsonize());
+
+  }
+
+  if(m_closedDaysHasBeenSet)
+  {
+   payload.WithObject("ClosedDays", m_closedDays.Jsonize());
 
   }
 

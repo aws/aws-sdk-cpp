@@ -9,6 +9,7 @@
 #include <aws/iotwireless/model/ProximityResourceTypeEventConfiguration.h>
 #include <aws/iotwireless/model/JoinResourceTypeEventConfiguration.h>
 #include <aws/iotwireless/model/ConnectionStatusResourceTypeEventConfiguration.h>
+#include <aws/iotwireless/model/MessageDeliveryStatusResourceTypeEventConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -143,6 +144,37 @@ namespace Model
      */
     inline GetEventConfigurationByResourceTypesResult& WithConnectionStatus(ConnectionStatusResourceTypeEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Resource type event configuration object for the message delivery status
+     * event.</p>
+     */
+    inline const MessageDeliveryStatusResourceTypeEventConfiguration& GetMessageDeliveryStatus() const{ return m_messageDeliveryStatus; }
+
+    /**
+     * <p>Resource type event configuration object for the message delivery status
+     * event.</p>
+     */
+    inline void SetMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { m_messageDeliveryStatus = value; }
+
+    /**
+     * <p>Resource type event configuration object for the message delivery status
+     * event.</p>
+     */
+    inline void SetMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { m_messageDeliveryStatus = std::move(value); }
+
+    /**
+     * <p>Resource type event configuration object for the message delivery status
+     * event.</p>
+     */
+    inline GetEventConfigurationByResourceTypesResult& WithMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { SetMessageDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>Resource type event configuration object for the message delivery status
+     * event.</p>
+     */
+    inline GetEventConfigurationByResourceTypesResult& WithMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
+
   private:
 
     DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;
@@ -152,6 +184,8 @@ namespace Model
     JoinResourceTypeEventConfiguration m_join;
 
     ConnectionStatusResourceTypeEventConfiguration m_connectionStatus;
+
+    MessageDeliveryStatusResourceTypeEventConfiguration m_messageDeliveryStatus;
   };
 
 } // namespace Model

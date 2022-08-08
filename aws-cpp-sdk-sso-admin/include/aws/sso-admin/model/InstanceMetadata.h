@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the SSO instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the Amazon Web Services SSO
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/InstanceMetadata">AWS
    * API Reference</a></p>
    */
@@ -38,8 +39,8 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -47,8 +48,8 @@ namespace Model
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -56,8 +57,8 @@ namespace Model
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -65,8 +66,8 @@ namespace Model
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -74,8 +75,8 @@ namespace Model
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -83,8 +84,8 @@ namespace Model
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -92,8 +93,8 @@ namespace Model
     inline InstanceMetadata& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -101,8 +102,8 @@ namespace Model
     inline InstanceMetadata& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -111,50 +112,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = value; }
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::move(value); }
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline void SetIdentityStoreId(const char* value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId.assign(value); }
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline InstanceMetadata& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline InstanceMetadata& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the identity store that is connected to the SSO
-     * instance.</p>
+     * <p>The identifier of the identity store that is connected to the Amazon Web
+     * Services SSO instance.</p>
      */
     inline InstanceMetadata& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
 

@@ -13,6 +13,8 @@
 #include <aws/pinpoint/model/StartCondition.h>
 #include <aws/pinpoint/model/State.h>
 #include <aws/pinpoint/model/JourneyChannelSettings.h>
+#include <aws/pinpoint/model/OpenHours.h>
+#include <aws/pinpoint/model/ClosedDays.h>
 #include <aws/pinpoint/model/Activity.h>
 #include <utility>
 
@@ -902,6 +904,105 @@ namespace Model
      */
     inline JourneyResponse& WithJourneyChannelSettings(JourneyChannelSettings&& value) { SetJourneyChannelSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
+     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     */
+    inline bool GetSendingSchedule() const{ return m_sendingSchedule; }
+
+    /**
+     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
+     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     */
+    inline bool SendingScheduleHasBeenSet() const { return m_sendingScheduleHasBeenSet; }
+
+    /**
+     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
+     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     */
+    inline void SetSendingSchedule(bool value) { m_sendingScheduleHasBeenSet = true; m_sendingSchedule = value; }
+
+    /**
+     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
+     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     */
+    inline JourneyResponse& WithSendingSchedule(bool value) { SetSendingSchedule(value); return *this;}
+
+
+    /**
+     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * first and SendingSchedule should be set to true.</p>
+     */
+    inline const OpenHours& GetOpenHours() const{ return m_openHours; }
+
+    /**
+     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * first and SendingSchedule should be set to true.</p>
+     */
+    inline bool OpenHoursHasBeenSet() const { return m_openHoursHasBeenSet; }
+
+    /**
+     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * first and SendingSchedule should be set to true.</p>
+     */
+    inline void SetOpenHours(const OpenHours& value) { m_openHoursHasBeenSet = true; m_openHours = value; }
+
+    /**
+     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * first and SendingSchedule should be set to true.</p>
+     */
+    inline void SetOpenHours(OpenHours&& value) { m_openHoursHasBeenSet = true; m_openHours = std::move(value); }
+
+    /**
+     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * first and SendingSchedule should be set to true.</p>
+     */
+    inline JourneyResponse& WithOpenHours(const OpenHours& value) { SetOpenHours(value); return *this;}
+
+    /**
+     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * first and SendingSchedule should be set to true.</p>
+     */
+    inline JourneyResponse& WithOpenHours(OpenHours&& value) { SetOpenHours(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time when journey will stop sending messages. QuietTime should be
+     * configured first and SendingSchedule should be set to true.</p>
+     */
+    inline const ClosedDays& GetClosedDays() const{ return m_closedDays; }
+
+    /**
+     * <p>The time when journey will stop sending messages. QuietTime should be
+     * configured first and SendingSchedule should be set to true.</p>
+     */
+    inline bool ClosedDaysHasBeenSet() const { return m_closedDaysHasBeenSet; }
+
+    /**
+     * <p>The time when journey will stop sending messages. QuietTime should be
+     * configured first and SendingSchedule should be set to true.</p>
+     */
+    inline void SetClosedDays(const ClosedDays& value) { m_closedDaysHasBeenSet = true; m_closedDays = value; }
+
+    /**
+     * <p>The time when journey will stop sending messages. QuietTime should be
+     * configured first and SendingSchedule should be set to true.</p>
+     */
+    inline void SetClosedDays(ClosedDays&& value) { m_closedDaysHasBeenSet = true; m_closedDays = std::move(value); }
+
+    /**
+     * <p>The time when journey will stop sending messages. QuietTime should be
+     * configured first and SendingSchedule should be set to true.</p>
+     */
+    inline JourneyResponse& WithClosedDays(const ClosedDays& value) { SetClosedDays(value); return *this;}
+
+    /**
+     * <p>The time when journey will stop sending messages. QuietTime should be
+     * configured first and SendingSchedule should be set to true.</p>
+     */
+    inline JourneyResponse& WithClosedDays(ClosedDays&& value) { SetClosedDays(std::move(value)); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Activity> m_activities;
@@ -957,6 +1058,15 @@ namespace Model
 
     JourneyChannelSettings m_journeyChannelSettings;
     bool m_journeyChannelSettingsHasBeenSet;
+
+    bool m_sendingSchedule;
+    bool m_sendingScheduleHasBeenSet;
+
+    OpenHours m_openHours;
+    bool m_openHoursHasBeenSet;
+
+    ClosedDays m_closedDays;
+    bool m_closedDaysHasBeenSet;
   };
 
 } // namespace Model
