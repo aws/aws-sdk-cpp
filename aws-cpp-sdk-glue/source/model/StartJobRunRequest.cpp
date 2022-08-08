@@ -25,7 +25,9 @@ StartJobRunRequest::StartJobRunRequest() :
     m_workerType(WorkerType::NOT_SET),
     m_workerTypeHasBeenSet(false),
     m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false)
+    m_numberOfWorkersHasBeenSet(false),
+    m_executionClass(ExecutionClass::NOT_SET),
+    m_executionClassHasBeenSet(false)
 {
 }
 
@@ -89,6 +91,11 @@ Aws::String StartJobRunRequest::SerializePayload() const
   {
    payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
 
+  }
+
+  if(m_executionClassHasBeenSet)
+  {
+   payload.WithString("ExecutionClass", ExecutionClassMapper::GetNameForExecutionClass(m_executionClass));
   }
 
   return payload.View().WriteReadable();

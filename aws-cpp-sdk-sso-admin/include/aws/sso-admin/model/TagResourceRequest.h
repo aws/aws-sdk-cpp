@@ -37,8 +37,8 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -46,8 +46,8 @@ namespace Model
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -55,8 +55,8 @@ namespace Model
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -64,8 +64,8 @@ namespace Model
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -73,8 +73,8 @@ namespace Model
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -82,8 +82,8 @@ namespace Model
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -91,8 +91,8 @@ namespace Model
     inline TagResourceRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -100,8 +100,8 @@ namespace Model
     inline TagResourceRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>

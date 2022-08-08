@@ -905,7 +905,10 @@ namespace Model
         virtual void CreateFolderMembershipAsync(const Model::CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon QuickSight group.</p> <p>The permissions resource is
+         * <p>Use the <code>CreateGroup</code> operation to create a group in Amazon
+         * QuickSight. You can create up to 10,000 groups in a namespace. If you want to
+         * create more than 10,000 groups in a namespace, contact AWS Support.</p> <p>The
+         * permissions resource is
          * <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">AWS
@@ -2007,18 +2010,19 @@ namespace Model
         virtual void GenerateEmbedUrlForRegisteredUserAsync(const Model::GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a temporary session URL and authorization code that you can use to
-         * embed an Amazon QuickSight read-only dashboard in your website or application.
-         * Before you use this command, make sure that you have configured the dashboards
-         * and permissions. </p> <p>Currently, you can use
+         * <p>Generates a temporary session URL and authorization code(bearer token) that
+         * you can use to embed an Amazon QuickSight read-only dashboard in your website or
+         * application. Before you use this command, make sure that you have configured the
+         * dashboards and permissions. </p> <p>Currently, you can use
          * <code>GetDashboardEmbedURL</code> only from the server, not from the user's
          * browser. The following rules apply to the generated URL:</p> <ul> <li> <p>They
          * must be used together.</p> </li> <li> <p>They can be used one time only.</p>
          * </li> <li> <p>They are valid for 5 minutes after you run this command.</p> </li>
-         * <li> <p>The resulting user session is valid for 15 minutes (default) up to 10
-         * hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code>
-         * parameter to customi session duration.</p> </li> </ul> <p>For more information,
-         * see <a
+         * <li> <p>You are charged only when the URL is used or there is interaction with
+         * Amazon QuickSight.</p> </li> <li> <p>The resulting user session is valid for 15
+         * minutes (default) up to 10 hours (maximum). You can use the optional
+         * <code>SessionLifetimeInMinutes</code> parameter to customize session
+         * duration.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
          * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User
          * Guide</i>.</p> <p>For more information about the high-level steps for embedding
@@ -2292,8 +2296,8 @@ namespace Model
         virtual void ListIngestionsAsync(const Model::ListIngestionsRequest& request, const ListIngestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the namespaces for the specified Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the namespaces for the specified Amazon Web Services account. This
+         * operation doesn't list deleted namespaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces">AWS
          * API Reference</a></p>
          */

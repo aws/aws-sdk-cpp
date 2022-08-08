@@ -42,8 +42,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
@@ -51,8 +51,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
@@ -60,8 +60,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
@@ -69,8 +69,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
@@ -78,8 +78,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
@@ -87,8 +87,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
@@ -96,8 +96,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
@@ -105,8 +105,8 @@ namespace Model
      * <p>The identifier used for the temporary security credentials. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
@@ -114,64 +114,64 @@ namespace Model
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
 
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
 
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::move(value); }
 
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetSecretAccessKey(const char* value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey.assign(value); }
 
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithSecretAccessKey(const Aws::String& value) { SetSecretAccessKey(value); return *this;}
 
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(std::move(value)); return *this;}
 
     /**
      * <p>The key that is used to sign the request. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
 
@@ -179,64 +179,64 @@ namespace Model
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
 
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
 
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
 
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline void SetSessionToken(const char* value) { m_sessionTokenHasBeenSet = true; m_sessionToken.assign(value); }
 
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
 
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
 
     /**
      * <p>The token used for temporary credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-     * Temporary Security Credentials to Request Access to AWS Resources</a> in the
-     * <i>AWS IAM User Guide</i>.</p>
+     * Temporary Security Credentials to Request Access to Amazon Web Services
+     * Resources</a> in the <i>Amazon Web Services IAM User Guide</i>.</p>
      */
     inline RoleCredentials& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
 

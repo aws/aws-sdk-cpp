@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+     * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
     inline const Aws::Vector<AttachedManagedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
 
     /**
-     * <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+     * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
     inline void SetAttachedManagedPolicies(const Aws::Vector<AttachedManagedPolicy>& value) { m_attachedManagedPolicies = value; }
 
     /**
-     * <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+     * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
     inline void SetAttachedManagedPolicies(Aws::Vector<AttachedManagedPolicy>&& value) { m_attachedManagedPolicies = std::move(value); }
 
     /**
-     * <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+     * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
     inline ListManagedPoliciesInPermissionSetResult& WithAttachedManagedPolicies(const Aws::Vector<AttachedManagedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
 
     /**
-     * <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+     * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
     inline ListManagedPoliciesInPermissionSetResult& WithAttachedManagedPolicies(Aws::Vector<AttachedManagedPolicy>&& value) { SetAttachedManagedPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+     * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
     inline ListManagedPoliciesInPermissionSetResult& AddAttachedManagedPolicies(const AttachedManagedPolicy& value) { m_attachedManagedPolicies.push_back(value); return *this; }
 
     /**
-     * <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+     * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
     inline ListManagedPoliciesInPermissionSetResult& AddAttachedManagedPolicies(AttachedManagedPolicy&& value) { m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
 

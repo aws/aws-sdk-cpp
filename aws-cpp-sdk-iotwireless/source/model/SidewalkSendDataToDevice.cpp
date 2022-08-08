@@ -22,7 +22,9 @@ SidewalkSendDataToDevice::SidewalkSendDataToDevice() :
     m_seq(0),
     m_seqHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false)
+    m_messageTypeHasBeenSet(false),
+    m_ackModeRetryDurationSecs(0),
+    m_ackModeRetryDurationSecsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ SidewalkSendDataToDevice::SidewalkSendDataToDevice(JsonView jsonValue) :
     m_seq(0),
     m_seqHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false)
+    m_messageTypeHasBeenSet(false),
+    m_ackModeRetryDurationSecs(0),
+    m_ackModeRetryDurationSecsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ SidewalkSendDataToDevice& SidewalkSendDataToDevice::operator =(JsonView jsonValu
     m_messageTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AckModeRetryDurationSecs"))
+  {
+    m_ackModeRetryDurationSecs = jsonValue.GetInteger("AckModeRetryDurationSecs");
+
+    m_ackModeRetryDurationSecsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue SidewalkSendDataToDevice::Jsonize() const
   if(m_messageTypeHasBeenSet)
   {
    payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
+  }
+
+  if(m_ackModeRetryDurationSecsHasBeenSet)
+  {
+   payload.WithInteger("AckModeRetryDurationSecs", m_ackModeRetryDurationSecs);
+
   }
 
   return payload;

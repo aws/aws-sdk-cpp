@@ -52,6 +52,12 @@ GetEventConfigurationByResourceTypesResult& GetEventConfigurationByResourceTypes
 
   }
 
+  if(jsonValue.ValueExists("MessageDeliveryStatus"))
+  {
+    m_messageDeliveryStatus = jsonValue.GetObject("MessageDeliveryStatus");
+
+  }
+
 
 
   return *this;

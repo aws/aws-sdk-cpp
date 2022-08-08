@@ -27,6 +27,8 @@ namespace Aws
         static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int WAITING_HASH = HashingUtils::HashString("WAITING");
 
 
         JobRunState GetJobRunStateForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return JobRunState::TIMEOUT;
           }
+          else if (hashCode == ERROR__HASH)
+          {
+            return JobRunState::ERROR_;
+          }
+          else if (hashCode == WAITING_HASH)
+          {
+            return JobRunState::WAITING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +98,10 @@ namespace Aws
             return "FAILED";
           case JobRunState::TIMEOUT:
             return "TIMEOUT";
+          case JobRunState::ERROR_:
+            return "ERROR";
+          case JobRunState::WAITING:
+            return "WAITING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -16,7 +16,8 @@ UpdateEventConfigurationByResourceTypesRequest::UpdateEventConfigurationByResour
     m_deviceRegistrationStateHasBeenSet(false),
     m_proximityHasBeenSet(false),
     m_joinHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_messageDeliveryStatusHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,12 @@ Aws::String UpdateEventConfigurationByResourceTypesRequest::SerializePayload() c
   if(m_connectionStatusHasBeenSet)
   {
    payload.WithObject("ConnectionStatus", m_connectionStatus.Jsonize());
+
+  }
+
+  if(m_messageDeliveryStatusHasBeenSet)
+  {
+   payload.WithObject("MessageDeliveryStatus", m_messageDeliveryStatus.Jsonize());
 
   }
 

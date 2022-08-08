@@ -20,13 +20,21 @@ namespace Model
 
 LoRaWANServiceProfile::LoRaWANServiceProfile() : 
     m_addGwMetadata(false),
-    m_addGwMetadataHasBeenSet(false)
+    m_addGwMetadataHasBeenSet(false),
+    m_drMin(0),
+    m_drMinHasBeenSet(false),
+    m_drMax(0),
+    m_drMaxHasBeenSet(false)
 {
 }
 
 LoRaWANServiceProfile::LoRaWANServiceProfile(JsonView jsonValue) : 
     m_addGwMetadata(false),
-    m_addGwMetadataHasBeenSet(false)
+    m_addGwMetadataHasBeenSet(false),
+    m_drMin(0),
+    m_drMinHasBeenSet(false),
+    m_drMax(0),
+    m_drMaxHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +48,20 @@ LoRaWANServiceProfile& LoRaWANServiceProfile::operator =(JsonView jsonValue)
     m_addGwMetadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DrMin"))
+  {
+    m_drMin = jsonValue.GetInteger("DrMin");
+
+    m_drMinHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DrMax"))
+  {
+    m_drMax = jsonValue.GetInteger("DrMax");
+
+    m_drMaxHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +72,18 @@ JsonValue LoRaWANServiceProfile::Jsonize() const
   if(m_addGwMetadataHasBeenSet)
   {
    payload.WithBool("AddGwMetadata", m_addGwMetadata);
+
+  }
+
+  if(m_drMinHasBeenSet)
+  {
+   payload.WithInteger("DrMin", m_drMin);
+
+  }
+
+  if(m_drMaxHasBeenSet)
+  {
+   payload.WithInteger("DrMax", m_drMax);
 
   }
 

@@ -273,7 +273,7 @@ namespace Model
 
 
         /**
-         * <p>Attaches the specified IAM customer managed policy to the specified
+         * <p>Attaches the specified customer managed policy to the specified
          * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">AWS
          * API Reference</a></p>
@@ -291,12 +291,12 @@ namespace Model
         virtual void AttachCustomerManagedPolicyReferenceToPermissionSetAsync(const Model::AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request, const AttachCustomerManagedPolicyReferenceToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an Amazon Web Services managed IAM policy ARN to a permission
-         * set.</p>  <p>If the permission set is already referenced by one or more
-         * account assignments, you will need to call <code> <a>ProvisionPermissionSet</a>
-         * </code> after this operation. Calling <code>ProvisionPermissionSet</code>
-         * applies the corresponding IAM policy updates to all assigned accounts.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Attaches an Amazon Web Services managed policy ARN to a permission set.</p>
+         *  <p>If the permission set is already referenced by one or more account
+         * assignments, you will need to call <code> <a>ProvisionPermissionSet</a> </code>
+         * after this operation. Calling <code>ProvisionPermissionSet</code> applies the
+         * corresponding IAM policy updates to all assigned accounts.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -318,11 +318,12 @@ namespace Model
          * refers to a user or group that is defined in Amazon Web Services SSO.</p>
          *   <p>As part of a successful <code>CreateAccountAssignment</code>
          * call, the specified permission set will automatically be provisioned to the
-         * account in the form of an IAM policy. That policy is attached to the SSO-created
-         * IAM role. If the permission set is subsequently updated, the corresponding IAM
-         * policies attached to roles in your accounts will not be updated automatically.
-         * In this case, you must call <code> <a>ProvisionPermissionSet</a> </code> to make
-         * these updates.</p> <p><h3>See Also:</h3>   <a
+         * account in the form of an IAM policy. That policy is attached to the IAM role
+         * created in Amazon Web Services SSO. If the permission set is subsequently
+         * updated, the corresponding IAM policies attached to roles in your accounts will
+         * not be updated automatically. In this case, you must call <code>
+         * <a>ProvisionPermissionSet</a> </code> to make these updates.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">AWS
          * API Reference</a></p>
          */
@@ -361,10 +362,10 @@ namespace Model
         virtual void CreateInstanceAccessControlAttributeConfigurationAsync(const Model::CreateInstanceAccessControlAttributeConfigurationRequest& request, const CreateInstanceAccessControlAttributeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a permission set within a specified SSO instance.</p>  <p>To
-         * grant users and groups access to Amazon Web Services account resources, use
-         * <code> <a>CreateAccountAssignment</a> </code>.</p> <p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates a permission set within a specified Amazon Web Services SSO
+         * instance.</p>  <p>To grant users and groups access to Amazon Web Services
+         * account resources, use <code> <a>CreateAccountAssignment</a> </code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreatePermissionSet">AWS
          * API Reference</a></p>
          */
@@ -570,7 +571,7 @@ namespace Model
         virtual void DescribePermissionSetProvisioningStatusAsync(const Model::DescribePermissionSetProvisioningStatusRequest& request, const DescribePermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches the specified IAM customer managed policy from the specified
+         * <p>Detaches the specified customer managed policy from the specified
          * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">AWS
          * API Reference</a></p>
@@ -588,7 +589,7 @@ namespace Model
         virtual void DetachCustomerManagedPolicyReferenceFromPermissionSetAsync(const Model::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request, const DetachCustomerManagedPolicyReferenceFromPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches the attached Amazon Web Services managed IAM policy ARN from the
+         * <p>Detaches the attached Amazon Web Services managed policy ARN from the
          * specified permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachManagedPolicyFromPermissionSet">AWS
          * API Reference</a></p>
@@ -643,7 +644,8 @@ namespace Model
 
         /**
          * <p>Lists the status of the Amazon Web Services account assignment creation
-         * requests for a specified SSO instance.</p><p><h3>See Also:</h3>   <a
+         * requests for a specified Amazon Web Services SSO instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentCreationStatus">AWS
          * API Reference</a></p>
          */
@@ -661,7 +663,8 @@ namespace Model
 
         /**
          * <p>Lists the status of the Amazon Web Services account assignment deletion
-         * requests for a specified SSO instance.</p><p><h3>See Also:</h3>   <a
+         * requests for a specified Amazon Web Services SSO instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentDeletionStatus">AWS
          * API Reference</a></p>
          */
@@ -714,7 +717,7 @@ namespace Model
         virtual void ListAccountsForProvisionedPermissionSetAsync(const Model::ListAccountsForProvisionedPermissionSetRequest& request, const ListAccountsForProvisionedPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all IAM customer managed policies attached to a specified
+         * <p>Lists all customer managed policies attached to a specified
          * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">AWS
          * API Reference</a></p>
@@ -732,8 +735,8 @@ namespace Model
         virtual void ListCustomerManagedPolicyReferencesInPermissionSetAsync(const Model::ListCustomerManagedPolicyReferencesInPermissionSetRequest& request, const ListCustomerManagedPolicyReferencesInPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the SSO instances that the caller has access to.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon Web Services SSO instances that the caller has access
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListInstances">AWS
          * API Reference</a></p>
          */
@@ -750,8 +753,8 @@ namespace Model
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Amazon Web Services managed IAM policy that is attached to a
-         * specified permission set.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon Web Services managed policy that is attached to a specified
+         * permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListManagedPoliciesInPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -769,7 +772,7 @@ namespace Model
 
         /**
          * <p>Lists the status of the permission set provisioning requests for a specified
-         * SSO instance.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services SSO instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetProvisioningStatus">AWS
          * API Reference</a></p>
          */
@@ -786,8 +789,8 @@ namespace Model
         virtual void ListPermissionSetProvisioningStatusAsync(const Model::ListPermissionSetProvisioningStatusRequest& request, const ListPermissionSetProvisioningStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the <a>PermissionSet</a>s in an SSO instance.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the <a>PermissionSet</a>s in an Amazon Web Services SSO
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSets">AWS
          * API Reference</a></p>
          */
@@ -858,7 +861,7 @@ namespace Model
         virtual void ProvisionPermissionSetAsync(const Model::ProvisionPermissionSetRequest& request, const ProvisionPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an IAM inline policy to a permission set.</p>  <p>If the
+         * <p>Attaches an inline policy to a permission set.</p>  <p>If the
          * permission set is already referenced by one or more account assignments, you
          * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action
          * to apply the corresponding IAM policy updates to all assigned accounts.</p>
@@ -879,7 +882,7 @@ namespace Model
         virtual void PutInlinePolicyToPermissionSetAsync(const Model::PutInlinePolicyToPermissionSetRequest& request, const PutInlinePolicyToPermissionSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an Amazon Web Services managed or customer managed IAM policy to the
+         * <p>Attaches an Amazon Web Services managed or customer managed policy to the
          * specified <a>PermissionSet</a> as a permissions boundary.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">AWS

@@ -30,7 +30,11 @@ WorkflowRunStatistics::WorkflowRunStatistics() :
     m_succeededActions(0),
     m_succeededActionsHasBeenSet(false),
     m_runningActions(0),
-    m_runningActionsHasBeenSet(false)
+    m_runningActionsHasBeenSet(false),
+    m_erroredActions(0),
+    m_erroredActionsHasBeenSet(false),
+    m_waitingActions(0),
+    m_waitingActionsHasBeenSet(false)
 {
 }
 
@@ -46,7 +50,11 @@ WorkflowRunStatistics::WorkflowRunStatistics(JsonView jsonValue) :
     m_succeededActions(0),
     m_succeededActionsHasBeenSet(false),
     m_runningActions(0),
-    m_runningActionsHasBeenSet(false)
+    m_runningActionsHasBeenSet(false),
+    m_erroredActions(0),
+    m_erroredActionsHasBeenSet(false),
+    m_waitingActions(0),
+    m_waitingActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +103,20 @@ WorkflowRunStatistics& WorkflowRunStatistics::operator =(JsonView jsonValue)
     m_runningActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ErroredActions"))
+  {
+    m_erroredActions = jsonValue.GetInteger("ErroredActions");
+
+    m_erroredActionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WaitingActions"))
+  {
+    m_waitingActions = jsonValue.GetInteger("WaitingActions");
+
+    m_waitingActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +157,18 @@ JsonValue WorkflowRunStatistics::Jsonize() const
   if(m_runningActionsHasBeenSet)
   {
    payload.WithInteger("RunningActions", m_runningActions);
+
+  }
+
+  if(m_erroredActionsHasBeenSet)
+  {
+   payload.WithInteger("ErroredActions", m_erroredActions);
+
+  }
+
+  if(m_waitingActionsHasBeenSet)
+  {
+   payload.WithInteger("WaitingActions", m_waitingActions);
 
   }
 

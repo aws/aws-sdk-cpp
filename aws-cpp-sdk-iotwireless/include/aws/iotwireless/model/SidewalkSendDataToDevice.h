@@ -76,6 +76,31 @@ namespace Model
     
     inline SidewalkSendDataToDevice& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The duration of time in seconds for which you want to retry sending the
+     * ACK.</p>
+     */
+    inline int GetAckModeRetryDurationSecs() const{ return m_ackModeRetryDurationSecs; }
+
+    /**
+     * <p>The duration of time in seconds for which you want to retry sending the
+     * ACK.</p>
+     */
+    inline bool AckModeRetryDurationSecsHasBeenSet() const { return m_ackModeRetryDurationSecsHasBeenSet; }
+
+    /**
+     * <p>The duration of time in seconds for which you want to retry sending the
+     * ACK.</p>
+     */
+    inline void SetAckModeRetryDurationSecs(int value) { m_ackModeRetryDurationSecsHasBeenSet = true; m_ackModeRetryDurationSecs = value; }
+
+    /**
+     * <p>The duration of time in seconds for which you want to retry sending the
+     * ACK.</p>
+     */
+    inline SidewalkSendDataToDevice& WithAckModeRetryDurationSecs(int value) { SetAckModeRetryDurationSecs(value); return *this;}
+
   private:
 
     int m_seq;
@@ -83,6 +108,9 @@ namespace Model
 
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;
+
+    int m_ackModeRetryDurationSecs;
+    bool m_ackModeRetryDurationSecsHasBeenSet;
   };
 
 } // namespace Model

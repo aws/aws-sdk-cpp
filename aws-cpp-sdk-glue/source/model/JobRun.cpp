@@ -48,7 +48,9 @@ JobRun::JobRun() :
     m_notificationPropertyHasBeenSet(false),
     m_glueVersionHasBeenSet(false),
     m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false)
+    m_dPUSecondsHasBeenSet(false),
+    m_executionClass(ExecutionClass::NOT_SET),
+    m_executionClassHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ JobRun::JobRun(JsonView jsonValue) :
     m_notificationPropertyHasBeenSet(false),
     m_glueVersionHasBeenSet(false),
     m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false)
+    m_dPUSecondsHasBeenSet(false),
+    m_executionClass(ExecutionClass::NOT_SET),
+    m_executionClassHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -249,6 +253,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_dPUSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionClass"))
+  {
+    m_executionClass = ExecutionClassMapper::GetExecutionClassForName(jsonValue.GetString("ExecutionClass"));
+
+    m_executionClassHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -391,6 +402,11 @@ JsonValue JobRun::Jsonize() const
   {
    payload.WithDouble("DPUSeconds", m_dPUSeconds);
 
+  }
+
+  if(m_executionClassHasBeenSet)
+  {
+   payload.WithString("ExecutionClass", ExecutionClassMapper::GetNameForExecutionClass(m_executionClass));
   }
 
   return payload;

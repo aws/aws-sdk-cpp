@@ -22,7 +22,8 @@ EventNotificationItemConfigurations::EventNotificationItemConfigurations() :
     m_deviceRegistrationStateHasBeenSet(false),
     m_proximityHasBeenSet(false),
     m_joinHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_messageDeliveryStatusHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ EventNotificationItemConfigurations::EventNotificationItemConfigurations(JsonVie
     m_deviceRegistrationStateHasBeenSet(false),
     m_proximityHasBeenSet(false),
     m_joinHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_messageDeliveryStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ EventNotificationItemConfigurations& EventNotificationItemConfigurations::operat
     m_connectionStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MessageDeliveryStatus"))
+  {
+    m_messageDeliveryStatus = jsonValue.GetObject("MessageDeliveryStatus");
+
+    m_messageDeliveryStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue EventNotificationItemConfigurations::Jsonize() const
   if(m_connectionStatusHasBeenSet)
   {
    payload.WithObject("ConnectionStatus", m_connectionStatus.Jsonize());
+
+  }
+
+  if(m_messageDeliveryStatusHasBeenSet)
+  {
+   payload.WithObject("MessageDeliveryStatus", m_messageDeliveryStatus.Jsonize());
 
   }
 

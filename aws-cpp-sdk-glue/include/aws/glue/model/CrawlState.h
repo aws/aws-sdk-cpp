@@ -20,7 +20,8 @@ namespace Model
     CANCELLING,
     CANCELLED,
     SUCCEEDED,
-    FAILED
+    FAILED,
+    ERROR_
   };
 
 namespace CrawlStateMapper

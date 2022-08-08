@@ -25,6 +25,7 @@ namespace Aws
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
         static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
         CrawlState GetCrawlStateForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return CrawlState::FAILED;
           }
+          else if (hashCode == ERROR__HASH)
+          {
+            return CrawlState::ERROR_;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "SUCCEEDED";
           case CrawlState::FAILED:
             return "FAILED";
+          case CrawlState::ERROR_:
+            return "ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

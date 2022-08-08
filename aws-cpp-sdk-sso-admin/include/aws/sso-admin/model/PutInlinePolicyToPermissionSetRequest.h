@@ -35,8 +35,8 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -44,8 +44,8 @@ namespace Model
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -53,8 +53,8 @@ namespace Model
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -62,8 +62,8 @@ namespace Model
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -71,8 +71,8 @@ namespace Model
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -80,8 +80,8 @@ namespace Model
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -89,8 +89,8 @@ namespace Model
     inline PutInlinePolicyToPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -98,8 +98,8 @@ namespace Model
     inline PutInlinePolicyToPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
+     * will be executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
@@ -149,42 +149,42 @@ namespace Model
 
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline const Aws::String& GetInlinePolicy() const{ return m_inlinePolicy; }
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline bool InlinePolicyHasBeenSet() const { return m_inlinePolicyHasBeenSet; }
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline void SetInlinePolicy(const Aws::String& value) { m_inlinePolicyHasBeenSet = true; m_inlinePolicy = value; }
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline void SetInlinePolicy(Aws::String&& value) { m_inlinePolicyHasBeenSet = true; m_inlinePolicy = std::move(value); }
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline void SetInlinePolicy(const char* value) { m_inlinePolicyHasBeenSet = true; m_inlinePolicy.assign(value); }
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline PutInlinePolicyToPermissionSetRequest& WithInlinePolicy(const Aws::String& value) { SetInlinePolicy(value); return *this;}
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline PutInlinePolicyToPermissionSetRequest& WithInlinePolicy(Aws::String&& value) { SetInlinePolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+     * <p>The inline policy to attach to a <a>PermissionSet</a>.</p>
      */
     inline PutInlinePolicyToPermissionSetRequest& WithInlinePolicy(const char* value) { SetInlinePolicy(value); return *this;}
 

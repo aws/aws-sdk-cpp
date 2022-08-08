@@ -10,6 +10,7 @@
 #include <aws/iotwireless/model/ProximityResourceTypeEventConfiguration.h>
 #include <aws/iotwireless/model/JoinResourceTypeEventConfiguration.h>
 #include <aws/iotwireless/model/ConnectionStatusResourceTypeEventConfiguration.h>
+#include <aws/iotwireless/model/MessageDeliveryStatusResourceTypeEventConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -182,6 +183,43 @@ namespace Model
      */
     inline UpdateEventConfigurationByResourceTypesRequest& WithConnectionStatus(ConnectionStatusResourceTypeEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline const MessageDeliveryStatusResourceTypeEventConfiguration& GetMessageDeliveryStatus() const{ return m_messageDeliveryStatus; }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline bool MessageDeliveryStatusHasBeenSet() const { return m_messageDeliveryStatusHasBeenSet; }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline void SetMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = value; }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline void SetMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = std::move(value); }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline UpdateEventConfigurationByResourceTypesRequest& WithMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { SetMessageDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline UpdateEventConfigurationByResourceTypesRequest& WithMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
+
   private:
 
     DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;
@@ -195,6 +233,9 @@ namespace Model
 
     ConnectionStatusResourceTypeEventConfiguration m_connectionStatus;
     bool m_connectionStatusHasBeenSet;
+
+    MessageDeliveryStatusResourceTypeEventConfiguration m_messageDeliveryStatus;
+    bool m_messageDeliveryStatusHasBeenSet;
   };
 
 } // namespace Model

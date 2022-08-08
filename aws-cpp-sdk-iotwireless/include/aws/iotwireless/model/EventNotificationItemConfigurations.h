@@ -9,6 +9,7 @@
 #include <aws/iotwireless/model/ProximityEventConfiguration.h>
 #include <aws/iotwireless/model/JoinEventConfiguration.h>
 #include <aws/iotwireless/model/ConnectionStatusEventConfiguration.h>
+#include <aws/iotwireless/model/MessageDeliveryStatusEventConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -170,6 +171,43 @@ namespace Model
      */
     inline EventNotificationItemConfigurations& WithConnectionStatus(ConnectionStatusEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Message delivery status event configuration for an event configuration
+     * item.</p>
+     */
+    inline const MessageDeliveryStatusEventConfiguration& GetMessageDeliveryStatus() const{ return m_messageDeliveryStatus; }
+
+    /**
+     * <p>Message delivery status event configuration for an event configuration
+     * item.</p>
+     */
+    inline bool MessageDeliveryStatusHasBeenSet() const { return m_messageDeliveryStatusHasBeenSet; }
+
+    /**
+     * <p>Message delivery status event configuration for an event configuration
+     * item.</p>
+     */
+    inline void SetMessageDeliveryStatus(const MessageDeliveryStatusEventConfiguration& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = value; }
+
+    /**
+     * <p>Message delivery status event configuration for an event configuration
+     * item.</p>
+     */
+    inline void SetMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration&& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = std::move(value); }
+
+    /**
+     * <p>Message delivery status event configuration for an event configuration
+     * item.</p>
+     */
+    inline EventNotificationItemConfigurations& WithMessageDeliveryStatus(const MessageDeliveryStatusEventConfiguration& value) { SetMessageDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>Message delivery status event configuration for an event configuration
+     * item.</p>
+     */
+    inline EventNotificationItemConfigurations& WithMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
+
   private:
 
     DeviceRegistrationStateEventConfiguration m_deviceRegistrationState;
@@ -183,6 +221,9 @@ namespace Model
 
     ConnectionStatusEventConfiguration m_connectionStatus;
     bool m_connectionStatusHasBeenSet;
+
+    MessageDeliveryStatusEventConfiguration m_messageDeliveryStatus;
+    bool m_messageDeliveryStatusHasBeenSet;
   };
 
 } // namespace Model
