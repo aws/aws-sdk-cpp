@@ -1514,25 +1514,4 @@ namespace
         ASSERT_STREQ("s3-object-lambda-fips.us-gov-east-1.amazonaws.com", S3CrtEndpoint::ForRegion("fips-us-gov-east-1", false, true, "s3-object-lambda").c_str());
         ASSERT_STREQ("s3-object-lambda-fips.us-gov-west-1.amazonaws.com", S3CrtEndpoint::ForRegion("us-gov-west-1-fips", false, true, "s3-object-lambda").c_str());
     }
-
-    TEST_F(BucketAndObjectOperationTest, TestEmptyBody) {
-        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
-
-        CreateBucketRequest createBucketRequest;
-        createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
-        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
-        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
-
-        PutObjectRequest putObjectRequest;
-        putObjectRequest.SetBucket(fullBucketName);
-        putObjectRequest.SetKey("sbiscigl_was_here");
-        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
-    }
 }
