@@ -1,17 +1,21 @@
 if (NOT LEGACY_BUILD)
     add_library(aws-sdk-cpp-core)
     add_library(aws-sdk-cpp::core ALIAS aws-sdk-cpp-core)
+
     target_include_directories(
             aws-sdk-cpp-core
             PUBLIC ${aws-crt-cpp_INCLUDE_DIRS}
+            PUBLIC ${CJSON_INCLUDE_DIRS}
     )
     target_link_directories(
             aws-sdk-cpp-core
             PUBLIC ${aws-crt-cpp_LIB_DIRS}
+            PUBLIC ${CJSON_LIBRARY_DIRS}
     )
     target_link_libraries(
             aws-sdk-cpp-core
             aws-crt-cpp
+            ${CJSON_LIBRARIES}
     )
     add_subdirectory(include)
     add_subdirectory(source)
