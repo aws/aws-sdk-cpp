@@ -32,7 +32,7 @@ DescribeHumanLoopResult& DescribeHumanLoopResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CreationTime"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTime = jsonValue.GetString("CreationTime");
 
   }
 

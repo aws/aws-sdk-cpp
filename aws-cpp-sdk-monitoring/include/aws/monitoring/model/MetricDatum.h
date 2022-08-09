@@ -232,7 +232,7 @@ namespace Model
      * <p>Array of numbers representing the values for the metric during the period.
      * Each unique value is listed just once in this array, and the corresponding
      * number in the <code>Counts</code> array specifies the number of times that value
-     * occurred during the period. You can include up to 150 unique values in each
+     * occurred during the period. You can include up to 500 unique values in each
      * <code>PutMetricData</code> action that specifies a <code>Values</code>
      * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
      * <code>Double</code>, CloudWatch rejects values that are either too small or too
@@ -245,7 +245,7 @@ namespace Model
      * <p>Array of numbers representing the values for the metric during the period.
      * Each unique value is listed just once in this array, and the corresponding
      * number in the <code>Counts</code> array specifies the number of times that value
-     * occurred during the period. You can include up to 150 unique values in each
+     * occurred during the period. You can include up to 500 unique values in each
      * <code>PutMetricData</code> action that specifies a <code>Values</code>
      * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
      * <code>Double</code>, CloudWatch rejects values that are either too small or too
@@ -258,7 +258,7 @@ namespace Model
      * <p>Array of numbers representing the values for the metric during the period.
      * Each unique value is listed just once in this array, and the corresponding
      * number in the <code>Counts</code> array specifies the number of times that value
-     * occurred during the period. You can include up to 150 unique values in each
+     * occurred during the period. You can include up to 500 unique values in each
      * <code>PutMetricData</code> action that specifies a <code>Values</code>
      * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
      * <code>Double</code>, CloudWatch rejects values that are either too small or too
@@ -271,7 +271,7 @@ namespace Model
      * <p>Array of numbers representing the values for the metric during the period.
      * Each unique value is listed just once in this array, and the corresponding
      * number in the <code>Counts</code> array specifies the number of times that value
-     * occurred during the period. You can include up to 150 unique values in each
+     * occurred during the period. You can include up to 500 unique values in each
      * <code>PutMetricData</code> action that specifies a <code>Values</code>
      * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
      * <code>Double</code>, CloudWatch rejects values that are either too small or too
@@ -284,7 +284,7 @@ namespace Model
      * <p>Array of numbers representing the values for the metric during the period.
      * Each unique value is listed just once in this array, and the corresponding
      * number in the <code>Counts</code> array specifies the number of times that value
-     * occurred during the period. You can include up to 150 unique values in each
+     * occurred during the period. You can include up to 500 unique values in each
      * <code>PutMetricData</code> action that specifies a <code>Values</code>
      * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
      * <code>Double</code>, CloudWatch rejects values that are either too small or too
@@ -297,7 +297,7 @@ namespace Model
      * <p>Array of numbers representing the values for the metric during the period.
      * Each unique value is listed just once in this array, and the corresponding
      * number in the <code>Counts</code> array specifies the number of times that value
-     * occurred during the period. You can include up to 150 unique values in each
+     * occurred during the period. You can include up to 500 unique values in each
      * <code>PutMetricData</code> action that specifies a <code>Values</code>
      * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
      * <code>Double</code>, CloudWatch rejects values that are either too small or too
@@ -310,7 +310,7 @@ namespace Model
      * <p>Array of numbers representing the values for the metric during the period.
      * Each unique value is listed just once in this array, and the corresponding
      * number in the <code>Counts</code> array specifies the number of times that value
-     * occurred during the period. You can include up to 150 unique values in each
+     * occurred during the period. You can include up to 500 unique values in each
      * <code>PutMetricData</code> action that specifies a <code>Values</code>
      * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
      * <code>Double</code>, CloudWatch rejects values that are either too small or too

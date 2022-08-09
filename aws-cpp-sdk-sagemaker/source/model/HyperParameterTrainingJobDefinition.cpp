@@ -37,7 +37,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_retryStrategyHasBeenSet(false),
+    m_hyperParameterTuningResourceConfigHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_retryStrategyHasBeenSet(false),
+    m_hyperParameterTuningResourceConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -185,6 +187,13 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_retryStrategyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HyperParameterTuningResourceConfig"))
+  {
+    m_hyperParameterTuningResourceConfig = jsonValue.GetObject("HyperParameterTuningResourceConfig");
+
+    m_hyperParameterTuningResourceConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -295,6 +304,12 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_retryStrategyHasBeenSet)
   {
    payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
+
+  }
+
+  if(m_hyperParameterTuningResourceConfigHasBeenSet)
+  {
+   payload.WithObject("HyperParameterTuningResourceConfig", m_hyperParameterTuningResourceConfig.Jsonize());
 
   }
 

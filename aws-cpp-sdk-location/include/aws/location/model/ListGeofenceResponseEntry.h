@@ -125,32 +125,32 @@ namespace Model
 
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline const GeofenceGeometry& GetGeometry() const{ return m_geometry; }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline void SetGeometry(const GeofenceGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline void SetGeometry(GeofenceGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline ListGeofenceResponseEntry& WithGeometry(const GeofenceGeometry& value) { SetGeometry(value); return *this;}
 
     /**
-     * <p>Contains the geofence geometry details describing a polygon.</p>
+     * <p>Contains the geofence geometry details describing a polygon or a circle.</p>
      */
     inline ListGeofenceResponseEntry& WithGeometry(GeofenceGeometry&& value) { SetGeometry(std::move(value)); return *this;}
 

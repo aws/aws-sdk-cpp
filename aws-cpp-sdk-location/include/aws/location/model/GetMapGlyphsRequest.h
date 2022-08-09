@@ -50,7 +50,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
@@ -77,7 +77,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
@@ -104,7 +104,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
@@ -131,7 +131,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
@@ -158,7 +158,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
@@ -185,7 +185,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
@@ -212,7 +212,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
@@ -239,7 +239,7 @@ namespace Model
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereBerlin – <code>Fira GO
+     * Technologies</a> styles: </p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
      * Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore,
      * VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code>
      * | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |

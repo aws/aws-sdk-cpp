@@ -29,7 +29,7 @@ namespace Model
    * add a unique name/value pair to one of your metrics, you are creating a new
    * variation of that metric. For example, many Amazon EC2 metrics publish
    * <code>InstanceId</code> as a dimension name, and the actual instance ID as the
-   * value for that dimension.</p> <p>You can assign up to 10 dimensions to a
+   * value for that dimension.</p> <p>You can assign up to 30 dimensions to a
    * metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Dimension">AWS
    * API Reference</a></p>

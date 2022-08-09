@@ -120,32 +120,44 @@ namespace Model
 
 
     /**
-     * <p>The KernelGatewayImageConfig.</p>
+     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
+     * AppImageConfig API. This kernel will be shown to users before the image starts.
+     * Once the image runs, all kernels are visible in JupyterLab.</p>
      */
     inline const KernelGatewayImageConfig& GetKernelGatewayImageConfig() const{ return m_kernelGatewayImageConfig; }
 
     /**
-     * <p>The KernelGatewayImageConfig.</p>
+     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
+     * AppImageConfig API. This kernel will be shown to users before the image starts.
+     * Once the image runs, all kernels are visible in JupyterLab.</p>
      */
     inline bool KernelGatewayImageConfigHasBeenSet() const { return m_kernelGatewayImageConfigHasBeenSet; }
 
     /**
-     * <p>The KernelGatewayImageConfig.</p>
+     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
+     * AppImageConfig API. This kernel will be shown to users before the image starts.
+     * Once the image runs, all kernels are visible in JupyterLab.</p>
      */
     inline void SetKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { m_kernelGatewayImageConfigHasBeenSet = true; m_kernelGatewayImageConfig = value; }
 
     /**
-     * <p>The KernelGatewayImageConfig.</p>
+     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
+     * AppImageConfig API. This kernel will be shown to users before the image starts.
+     * Once the image runs, all kernels are visible in JupyterLab.</p>
      */
     inline void SetKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { m_kernelGatewayImageConfigHasBeenSet = true; m_kernelGatewayImageConfig = std::move(value); }
 
     /**
-     * <p>The KernelGatewayImageConfig.</p>
+     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
+     * AppImageConfig API. This kernel will be shown to users before the image starts.
+     * Once the image runs, all kernels are visible in JupyterLab.</p>
      */
     inline CreateAppImageConfigRequest& WithKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { SetKernelGatewayImageConfig(value); return *this;}
 
     /**
-     * <p>The KernelGatewayImageConfig.</p>
+     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
+     * AppImageConfig API. This kernel will be shown to users before the image starts.
+     * Once the image runs, all kernels are visible in JupyterLab.</p>
      */
     inline CreateAppImageConfigRequest& WithKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { SetKernelGatewayImageConfig(std::move(value)); return *this;}
 

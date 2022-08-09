@@ -57,7 +57,7 @@ HumanLoopSummary& HumanLoopSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CreationTime"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTime = jsonValue.GetString("CreationTime");
 
     m_creationTimeHasBeenSet = true;
   }
@@ -96,7 +96,7 @@ JsonValue HumanLoopSummary::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+   payload.WithString("CreationTime", m_creationTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_failureReasonHasBeenSet)
