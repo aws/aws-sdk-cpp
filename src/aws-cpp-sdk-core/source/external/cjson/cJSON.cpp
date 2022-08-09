@@ -56,7 +56,7 @@
 #pragma GCC visibility pop
 #endif
 
-#include <aws/core/external/cjson/cJSON.h>
+#include <aws/core/external/cjson/cJSON_legacy.h>
 
 /* define our own boolean type */
 // #ifdef true
