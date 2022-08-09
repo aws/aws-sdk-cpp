@@ -185,7 +185,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -194,7 +198,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -203,7 +211,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -212,7 +224,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -221,7 +237,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline UpdateProjectRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -230,7 +250,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline UpdateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -239,7 +263,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline UpdateProjectRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -248,7 +276,11 @@ namespace Model
      * Services resources in different ways, for example, by purpose, owner, or
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a>.</p>
+     * Amazon Web Services Resources</a>. In addition, the project must have tag update
+     * constraints set in order to include this parameter in the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon
+     * Web Services Service Catalog Tag Update Constraints</a>.</p>
      */
     inline UpdateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

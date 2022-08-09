@@ -318,8 +318,8 @@ namespace Model
     typedef std::function<void(const LocationServiceClient*, const Model::UpdateTrackerRequest&, const Model::UpdateTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrackerResponseReceivedHandler;
 
   /**
-   * <p>Suite of geospatial services including Maps, Places, Routes, Tracking, and
-   * Geofencing</p>
+   * <p>"Suite of geospatial services including Maps, Places, Routes, Tracking, and
+   * Geofencing"</p>
    */
   class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -535,8 +535,10 @@ namespace Model
          * a travel mode</a> using TravelMode sets the transportation mode used to
          * calculate the routes. This also lets you specify additional route preferences in
          * <code>CarModeOptions</code> if traveling by <code>Car</code>, or
-         * <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> 
+         * <p>If you specify <code>walking</code> for the travel mode and your data
+         * provider is Esri, the start and destination must be within 40km.</p> 
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute">AWS
          * API Reference</a></p>
          */

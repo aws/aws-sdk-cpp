@@ -78,42 +78,66 @@ namespace Model
 
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline const Aws::Vector<FeatureDefinition>& GetFeatureAdditions() const{ return m_featureAdditions; }
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline bool FeatureAdditionsHasBeenSet() const { return m_featureAdditionsHasBeenSet; }
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline void SetFeatureAdditions(const Aws::Vector<FeatureDefinition>& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions = value; }
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline void SetFeatureAdditions(Aws::Vector<FeatureDefinition>&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions = std::move(value); }
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline UpdateFeatureGroupRequest& WithFeatureAdditions(const Aws::Vector<FeatureDefinition>& value) { SetFeatureAdditions(value); return *this;}
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline UpdateFeatureGroupRequest& WithFeatureAdditions(Aws::Vector<FeatureDefinition>&& value) { SetFeatureAdditions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline UpdateFeatureGroupRequest& AddFeatureAdditions(const FeatureDefinition& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions.push_back(value); return *this; }
 
     /**
-     * <p>A list of the features that you're adding to the feature group.</p>
+     * <p>Updates the feature group. Updating a feature group is an asynchronous
+     * operation. When you get an HTTP 200 response, you've made a valid request. It
+     * takes some time after you've made a valid request for Feature Store to update
+     * the feature group.</p>
      */
     inline UpdateFeatureGroupRequest& AddFeatureAdditions(FeatureDefinition&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions.push_back(std::move(value)); return *this; }
 

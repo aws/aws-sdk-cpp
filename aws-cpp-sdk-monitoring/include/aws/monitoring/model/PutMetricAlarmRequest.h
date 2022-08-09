@@ -1181,7 +1181,7 @@ namespace Model
      * evaluate the alarm. Usually, metrics are published with only one unit, so the
      * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves predictably.</p> <p>We recommend omitting
+     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1199,7 +1199,7 @@ namespace Model
      * evaluate the alarm. Usually, metrics are published with only one unit, so the
      * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves predictably.</p> <p>We recommend omitting
+     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1217,7 +1217,7 @@ namespace Model
      * evaluate the alarm. Usually, metrics are published with only one unit, so the
      * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves predictably.</p> <p>We recommend omitting
+     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1235,7 +1235,7 @@ namespace Model
      * evaluate the alarm. Usually, metrics are published with only one unit, so the
      * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves predictably.</p> <p>We recommend omitting
+     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1253,7 +1253,7 @@ namespace Model
      * evaluate the alarm. Usually, metrics are published with only one unit, so the
      * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves predictably.</p> <p>We recommend omitting
+     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1271,7 +1271,7 @@ namespace Model
      * evaluate the alarm. Usually, metrics are published with only one unit, so the
      * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves predictably.</p> <p>We recommend omitting
+     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>

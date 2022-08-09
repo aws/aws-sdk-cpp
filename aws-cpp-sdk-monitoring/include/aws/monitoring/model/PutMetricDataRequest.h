@@ -96,49 +96,49 @@ namespace Model
 
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = std::move(value); }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(std::move(value)); return *this;}
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
