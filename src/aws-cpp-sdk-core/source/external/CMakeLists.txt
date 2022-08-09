@@ -1,1 +1,1 @@
-message(FATAL_ERROR "Skip this directory when building with new build system")
+message(FATAL_ERROR "Skip this directory when building with new build system. Directory only used for Legacy builds.")

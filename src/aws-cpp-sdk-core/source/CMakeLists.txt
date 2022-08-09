@@ -7,6 +7,7 @@ add_subdirectory(monitoring)
 add_subdirectory(net)
 add_subdirectory(platform)
 add_subdirectory(utils)
+add_subdirectory(transition)
 
 target_sources(aws-sdk-cpp-core
         PRIVATE
