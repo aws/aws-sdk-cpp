@@ -2017,6 +2017,7 @@ TEST_F(TransferTests, TransferManager_TestRelativePrefix)
                 {R"(C:/)", R"(C:/.../../foo.txt)", true},
                 {R"(C:/)", R"(C:/.../.../../../foo.txt)", true},
                 {R"(C:/)", R"(C:/...////./foo.txt)", true},
+                {R"(C:/)", R"(C:////../test)", false},
 
                 {R"(/home/user/my-intended-directory)", R"(/home/user/my-intended-directory/foo.txt)", true},
                 {R"(/home/user/my-intended-directory/)", R"(/home/user/my-intended-directory/foo.txt)", true},
@@ -2040,6 +2041,7 @@ TEST_F(TransferTests, TransferManager_TestRelativePrefix)
                 {R"(./)", R"(./.../foo)", true},
                 {R"(./)", R"(./.../../foo)", true},
                 {R"(./)", R"(.//.../../foo)", true},
+                {R"(./)", R"(.////../test)", false}
             };
 
     for(const TestHelperTransferManager::TestCaseEntry& TC_ENTRY : TEST_CASES)
