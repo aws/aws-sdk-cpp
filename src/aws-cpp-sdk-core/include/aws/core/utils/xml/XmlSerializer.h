@@ -10,19 +10,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-
-namespace Aws
-{
-    namespace External
-    {
-        namespace tinyxml2
-        {
-            class XMLNode;
-
-            class XMLDocument;
-        } // namespace tinyxml2
-    } // namespace External
-} // namespace Aws
+#include <aws/core/external/tinyxml2/tinyxml2.h>
 
 namespace Aws
 {
