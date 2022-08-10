@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an AMI deprecation rule for cross-Region AMI copies created by a
-   * cross-Region copy rule.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[AMI policies only]</b> Specifies an AMI deprecation rule for
+   * cross-Region AMI copies created by an AMI policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyDeprecateRule">AWS
    * API Reference</a></p>
    */
@@ -72,32 +72,44 @@ namespace Model
 
 
     /**
-     * <p>The unit of time in which to measure the <b>Interval</b>.</p>
+     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
+     * deprecate a cross-Region AMI copy after 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
     inline const RetentionIntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
 
     /**
-     * <p>The unit of time in which to measure the <b>Interval</b>.</p>
+     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
+     * deprecate a cross-Region AMI copy after 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
 
     /**
-     * <p>The unit of time in which to measure the <b>Interval</b>.</p>
+     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
+     * deprecate a cross-Region AMI copy after 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
     inline void SetIntervalUnit(const RetentionIntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
 
     /**
-     * <p>The unit of time in which to measure the <b>Interval</b>.</p>
+     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
+     * deprecate a cross-Region AMI copy after 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
     inline void SetIntervalUnit(RetentionIntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
 
     /**
-     * <p>The unit of time in which to measure the <b>Interval</b>.</p>
+     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
+     * deprecate a cross-Region AMI copy after 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
     inline CrossRegionCopyDeprecateRule& WithIntervalUnit(const RetentionIntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
 
     /**
-     * <p>The unit of time in which to measure the <b>Interval</b>.</p>
+     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
+     * deprecate a cross-Region AMI copy after 3 months, specify
+     * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
     inline CrossRegionCopyDeprecateRule& WithIntervalUnit(RetentionIntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
 

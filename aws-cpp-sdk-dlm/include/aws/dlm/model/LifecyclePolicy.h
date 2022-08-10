@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Detailed information about a lifecycle policy.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[All policy types]</b> Detailed information about a snapshot, AMI, or
+   * event-based lifecycle policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/LifecyclePolicy">AWS
    * API Reference</a></p>
    */

@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the encryption settings for shared snapshots that are copied across
-   * Regions.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Event-based policies only]</b> Specifies the encryption settings for
+   * cross-Region snapshot copies created by event-based policies.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */

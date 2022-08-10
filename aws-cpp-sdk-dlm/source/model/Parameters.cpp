@@ -22,7 +22,8 @@ Parameters::Parameters() :
     m_excludeBootVolume(false),
     m_excludeBootVolumeHasBeenSet(false),
     m_noReboot(false),
-    m_noRebootHasBeenSet(false)
+    m_noRebootHasBeenSet(false),
+    m_excludeDataVolumeTagsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Parameters::Parameters(JsonView jsonValue) :
     m_excludeBootVolume(false),
     m_excludeBootVolumeHasBeenSet(false),
     m_noReboot(false),
-    m_noRebootHasBeenSet(false)
+    m_noRebootHasBeenSet(false),
+    m_excludeDataVolumeTagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,16 @@ Parameters& Parameters::operator =(JsonView jsonValue)
     m_noRebootHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExcludeDataVolumeTags"))
+  {
+    Array<JsonView> excludeDataVolumeTagsJsonList = jsonValue.GetArray("ExcludeDataVolumeTags");
+    for(unsigned excludeDataVolumeTagsIndex = 0; excludeDataVolumeTagsIndex < excludeDataVolumeTagsJsonList.GetLength(); ++excludeDataVolumeTagsIndex)
+    {
+      m_excludeDataVolumeTags.push_back(excludeDataVolumeTagsJsonList[excludeDataVolumeTagsIndex].AsObject());
+    }
+    m_excludeDataVolumeTagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +79,17 @@ JsonValue Parameters::Jsonize() const
   if(m_noRebootHasBeenSet)
   {
    payload.WithBool("NoReboot", m_noReboot);
+
+  }
+
+  if(m_excludeDataVolumeTagsHasBeenSet)
+  {
+   Array<JsonValue> excludeDataVolumeTagsJsonList(m_excludeDataVolumeTags.size());
+   for(unsigned excludeDataVolumeTagsIndex = 0; excludeDataVolumeTagsIndex < excludeDataVolumeTagsJsonList.GetLength(); ++excludeDataVolumeTagsIndex)
+   {
+     excludeDataVolumeTagsJsonList[excludeDataVolumeTagsIndex].AsObject(m_excludeDataVolumeTags[excludeDataVolumeTagsIndex].Jsonize());
+   }
+   payload.WithArray("ExcludeDataVolumeTags", std::move(excludeDataVolumeTagsJsonList));
 
   }
 
