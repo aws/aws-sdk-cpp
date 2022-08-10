@@ -10,6 +10,8 @@ add_subdirectory(xml)
 
 target_sources(aws-sdk-cpp-core
         PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/ARN.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Array.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/DateTimeCommon.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Directory.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/DNS.cpp
