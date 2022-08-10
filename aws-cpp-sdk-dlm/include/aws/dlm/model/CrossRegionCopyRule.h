@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a rule for cross-Region snapshot copies.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p> <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule
+   * for snapshot and AMI policies.</p>  <p>To specify a cross-Region copy
+   * action for event-based polices, use <a>CrossRegionCopyAction</a>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyRule">AWS
    * API Reference</a></p>
    */
@@ -41,66 +43,74 @@ namespace Model
 
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline CrossRegionCopyRule& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline CrossRegionCopyRule& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>Avoid using this parameter when creating new policies. Instead, use
+     *  <p>Avoid using this parameter when creating new policies. Instead, use
      * <b>Target</b> to specify a target Region or a target Outpost for snapshot
      * copies.</p> <p>For policies created before the <b>Target</b> parameter was
      * introduced, this parameter indicates the target Region for snapshot copies.</p>
+     * 
      */
     inline CrossRegionCopyRule& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
 
@@ -253,94 +263,100 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
-     * the cross-Region snapshot copy.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot or
+     * AMI to the cross-Region copy.</p>
      */
     inline bool GetCopyTags() const{ return m_copyTags; }
 
     /**
-     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
-     * the cross-Region snapshot copy.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot or
+     * AMI to the cross-Region copy.</p>
      */
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
 
     /**
-     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
-     * the cross-Region snapshot copy.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot or
+     * AMI to the cross-Region copy.</p>
      */
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
     /**
-     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
-     * the cross-Region snapshot copy.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot or
+     * AMI to the cross-Region copy.</p>
      */
     inline CrossRegionCopyRule& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
 
 
     /**
-     * <p>The retention rule that indicates how long snapshot copies are to be retained
-     * in the destination Region.</p>
+     * <p>The retention rule that indicates how long the cross-Region snapshot or AMI
+     * copies are to be retained in the destination Region.</p>
      */
     inline const CrossRegionCopyRetainRule& GetRetainRule() const{ return m_retainRule; }
 
     /**
-     * <p>The retention rule that indicates how long snapshot copies are to be retained
-     * in the destination Region.</p>
+     * <p>The retention rule that indicates how long the cross-Region snapshot or AMI
+     * copies are to be retained in the destination Region.</p>
      */
     inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
 
     /**
-     * <p>The retention rule that indicates how long snapshot copies are to be retained
-     * in the destination Region.</p>
+     * <p>The retention rule that indicates how long the cross-Region snapshot or AMI
+     * copies are to be retained in the destination Region.</p>
      */
     inline void SetRetainRule(const CrossRegionCopyRetainRule& value) { m_retainRuleHasBeenSet = true; m_retainRule = value; }
 
     /**
-     * <p>The retention rule that indicates how long snapshot copies are to be retained
-     * in the destination Region.</p>
+     * <p>The retention rule that indicates how long the cross-Region snapshot or AMI
+     * copies are to be retained in the destination Region.</p>
      */
     inline void SetRetainRule(CrossRegionCopyRetainRule&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::move(value); }
 
     /**
-     * <p>The retention rule that indicates how long snapshot copies are to be retained
-     * in the destination Region.</p>
+     * <p>The retention rule that indicates how long the cross-Region snapshot or AMI
+     * copies are to be retained in the destination Region.</p>
      */
     inline CrossRegionCopyRule& WithRetainRule(const CrossRegionCopyRetainRule& value) { SetRetainRule(value); return *this;}
 
     /**
-     * <p>The retention rule that indicates how long snapshot copies are to be retained
-     * in the destination Region.</p>
+     * <p>The retention rule that indicates how long the cross-Region snapshot or AMI
+     * copies are to be retained in the destination Region.</p>
      */
     inline CrossRegionCopyRule& WithRetainRule(CrossRegionCopyRetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
+     * copies created by the rule.</p>
      */
     inline const CrossRegionCopyDeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
 
     /**
-     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
+     * copies created by the rule.</p>
      */
     inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
 
     /**
-     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
+     * copies created by the rule.</p>
      */
     inline void SetDeprecateRule(const CrossRegionCopyDeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
 
     /**
-     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
+     * copies created by the rule.</p>
      */
     inline void SetDeprecateRule(CrossRegionCopyDeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
 
     /**
-     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
+     * copies created by the rule.</p>
      */
     inline CrossRegionCopyRule& WithDeprecateRule(const CrossRegionCopyDeprecateRule& value) { SetDeprecateRule(value); return *this;}
 
     /**
-     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI
+     * copies created by the rule.</p>
      */
     inline CrossRegionCopyRule& WithDeprecateRule(CrossRegionCopyDeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 

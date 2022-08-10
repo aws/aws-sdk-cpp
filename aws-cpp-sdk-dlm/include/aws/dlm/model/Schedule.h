@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a backup schedule for a snapshot or AMI lifecycle
-   * policy.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot
+   * or AMI lifecycle policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule">AWS API
    * Reference</a></p>
    */
@@ -162,72 +162,80 @@ namespace Model
 
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
     inline const Aws::Vector<Tag>& GetVariableTags() const{ return m_variableTags; }
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
     inline bool VariableTagsHasBeenSet() const { return m_variableTagsHasBeenSet; }
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
     inline void SetVariableTags(const Aws::Vector<Tag>& value) { m_variableTagsHasBeenSet = true; m_variableTags = value; }
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
     inline void SetVariableTags(Aws::Vector<Tag>&& value) { m_variableTagsHasBeenSet = true; m_variableTags = std::move(value); }
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
     inline Schedule& WithVariableTags(const Aws::Vector<Tag>& value) { SetVariableTags(value); return *this;}
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
     inline Schedule& WithVariableTags(Aws::Vector<Tag>&& value) { SetVariableTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
     inline Schedule& AddVariableTags(const Tag& value) { m_variableTagsHasBeenSet = true; m_variableTags.push_back(value); return *this; }
 
     /**
-     * <p>A collection of key/value pairs with values determined dynamically when the
-     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
-     * one of the two following formats: <code>$(instance-id)</code> or
+     * <p> <b>[AMI policies and snapshot policies that target instances only]</b> A
+     * collection of key/value pairs with values determined dynamically when the policy
+     * is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of
+     * the two following formats: <code>$(instance-id)</code> or
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
@@ -266,208 +274,214 @@ namespace Model
 
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule for snapshots or AMIs created by the policy.</p>
      */
     inline const RetainRule& GetRetainRule() const{ return m_retainRule; }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule for snapshots or AMIs created by the policy.</p>
      */
     inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule for snapshots or AMIs created by the policy.</p>
      */
     inline void SetRetainRule(const RetainRule& value) { m_retainRuleHasBeenSet = true; m_retainRule = value; }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule for snapshots or AMIs created by the policy.</p>
      */
     inline void SetRetainRule(RetainRule&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::move(value); }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule for snapshots or AMIs created by the policy.</p>
      */
     inline Schedule& WithRetainRule(const RetainRule& value) { SetRetainRule(value); return *this;}
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule for snapshots or AMIs created by the policy.</p>
      */
     inline Schedule& WithRetainRule(RetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
 
 
     /**
-     * <p>The rule for enabling fast snapshot restore.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * restore.</p>
      */
     inline const FastRestoreRule& GetFastRestoreRule() const{ return m_fastRestoreRule; }
 
     /**
-     * <p>The rule for enabling fast snapshot restore.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * restore.</p>
      */
     inline bool FastRestoreRuleHasBeenSet() const { return m_fastRestoreRuleHasBeenSet; }
 
     /**
-     * <p>The rule for enabling fast snapshot restore.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * restore.</p>
      */
     inline void SetFastRestoreRule(const FastRestoreRule& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = value; }
 
     /**
-     * <p>The rule for enabling fast snapshot restore.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * restore.</p>
      */
     inline void SetFastRestoreRule(FastRestoreRule&& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = std::move(value); }
 
     /**
-     * <p>The rule for enabling fast snapshot restore.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * restore.</p>
      */
     inline Schedule& WithFastRestoreRule(const FastRestoreRule& value) { SetFastRestoreRule(value); return *this;}
 
     /**
-     * <p>The rule for enabling fast snapshot restore.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot
+     * restore.</p>
      */
     inline Schedule& WithFastRestoreRule(FastRestoreRule&& value) { SetFastRestoreRule(std::move(value)); return *this;}
 
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline const Aws::Vector<CrossRegionCopyRule>& GetCrossRegionCopyRules() const{ return m_crossRegionCopyRules; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline bool CrossRegionCopyRulesHasBeenSet() const { return m_crossRegionCopyRulesHasBeenSet; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline void SetCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = value; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline void SetCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = std::move(value); }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline Schedule& WithCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { SetCrossRegionCopyRules(value); return *this;}
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline Schedule& WithCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { SetCrossRegionCopyRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline Schedule& AddCrossRegionCopyRules(const CrossRegionCopyRule& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(value); return *this; }
 
     /**
-     * <p>The rule for cross-Region snapshot copies.</p> <p>You can only specify
-     * cross-Region copy rules for policies that create snapshots in a Region. If the
-     * policy creates snapshots on an Outpost, then you cannot copy the snapshots to a
-     * Region or to an Outpost. If the policy creates snapshots in a Region, then
-     * snapshots can be copied to up to three Regions or Outposts.</p>
+     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>You can't specify cross-Region copy rules for policies that create snapshots
+     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
+     * be copied to up to three Regions or Outposts.</p> 
      */
     inline Schedule& AddCrossRegionCopyRules(CrossRegionCopyRule&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline const Aws::Vector<ShareRule>& GetShareRules() const{ return m_shareRules; }
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline bool ShareRulesHasBeenSet() const { return m_shareRulesHasBeenSet; }
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline void SetShareRules(const Aws::Vector<ShareRule>& value) { m_shareRulesHasBeenSet = true; m_shareRules = value; }
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline void SetShareRules(Aws::Vector<ShareRule>&& value) { m_shareRulesHasBeenSet = true; m_shareRules = std::move(value); }
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline Schedule& WithShareRules(const Aws::Vector<ShareRule>& value) { SetShareRules(value); return *this;}
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline Schedule& WithShareRules(Aws::Vector<ShareRule>&& value) { SetShareRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline Schedule& AddShareRules(const ShareRule& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(value); return *this; }
 
     /**
-     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
+     * <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other
+     * Amazon Web Services accounts.</p>
      */
     inline Schedule& AddShareRules(ShareRule&& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
      */
     inline const DeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
 
     /**
-     * <p>The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
      */
     inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
 
     /**
-     * <p>The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
      */
     inline void SetDeprecateRule(const DeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
 
     /**
-     * <p>The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
      */
     inline void SetDeprecateRule(DeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
 
     /**
-     * <p>The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
      */
     inline Schedule& WithDeprecateRule(const DeprecateRule& value) { SetDeprecateRule(value); return *this;}
 
     /**
-     * <p>The AMI deprecation rule for the schedule.</p>
+     * <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
      */
     inline Schedule& WithDeprecateRule(DeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 

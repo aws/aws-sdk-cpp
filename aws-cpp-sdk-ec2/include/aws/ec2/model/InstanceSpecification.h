@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,34 @@ namespace Model
      */
     inline InstanceSpecification& WithExcludeBootVolume(bool value) { SetExcludeBootVolume(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Aws::String>& GetExcludeDataVolumeIds() const{ return m_excludeDataVolumeIds; }
+
+    
+    inline bool ExcludeDataVolumeIdsHasBeenSet() const { return m_excludeDataVolumeIdsHasBeenSet; }
+
+    
+    inline void SetExcludeDataVolumeIds(const Aws::Vector<Aws::String>& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds = value; }
+
+    
+    inline void SetExcludeDataVolumeIds(Aws::Vector<Aws::String>&& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds = std::move(value); }
+
+    
+    inline InstanceSpecification& WithExcludeDataVolumeIds(const Aws::Vector<Aws::String>& value) { SetExcludeDataVolumeIds(value); return *this;}
+
+    
+    inline InstanceSpecification& WithExcludeDataVolumeIds(Aws::Vector<Aws::String>&& value) { SetExcludeDataVolumeIds(std::move(value)); return *this;}
+
+    
+    inline InstanceSpecification& AddExcludeDataVolumeIds(const Aws::String& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds.push_back(value); return *this; }
+
+    
+    inline InstanceSpecification& AddExcludeDataVolumeIds(Aws::String&& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds.push_back(std::move(value)); return *this; }
+
+    
+    inline InstanceSpecification& AddExcludeDataVolumeIds(const char* value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_instanceId;
@@ -108,6 +137,9 @@ namespace Model
 
     bool m_excludeBootVolume;
     bool m_excludeBootVolumeHasBeenSet;
+
+    Aws::Vector<Aws::String> m_excludeDataVolumeIds;
+    bool m_excludeDataVolumeIdsHasBeenSet;
   };
 
 } // namespace Model
