@@ -16,7 +16,7 @@ if (NOT LEGACY_BUILD)
     )
     target_link_libraries(
             aws-sdk-cpp-core
-            aws-crt-cpp
+            aws-crt-cpp aws-c-common aws-checksums
             ${CJSON_LIBRARIES}
             ${tinyxml2_LIBRARIES}
     )
