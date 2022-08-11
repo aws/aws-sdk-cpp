@@ -534,7 +534,7 @@ namespace Aws
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3CrtClient(const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never, bool useVirtualAddressing = true, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
+        S3CrtClient(const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never, bool useVirtualAddressing = true, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET, const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider = Aws::Auth::DefaultAWSCredentialsProviderChain());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
@@ -5178,7 +5178,7 @@ namespace Aws
         Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
 
     private:
-        void init(const S3Crt::ClientConfiguration& clientConfiguration, const Aws::Auth::AWSCredentials* credentials = nullptr);
+        void init(const S3Crt::ClientConfiguration& clientConfiguration, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider);
 
         struct CrtClientShutdownCallbackDataWrapper {
           void *data;
@@ -5305,6 +5305,8 @@ namespace Aws
         struct CrtClientShutdownCallbackDataWrapper m_wrappedData;
         std::shared_ptr<Aws::Utils::Threading::Semaphore> m_clientShutdownSem;
         Aws::String m_userAgent;
+        std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credProvider;
+        std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
         bool m_useVirtualAddressing;
         bool m_useDualStack;
         bool m_useArnRegion;
