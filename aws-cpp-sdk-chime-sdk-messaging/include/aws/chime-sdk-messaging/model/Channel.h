@@ -10,6 +10,7 @@
 #include <aws/chime-sdk-messaging/model/ChannelPrivacy.h>
 #include <aws/chime-sdk-messaging/model/Identity.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/chime-sdk-messaging/model/ElasticChannelConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -390,6 +391,43 @@ namespace Model
      */
     inline Channel& WithChannelFlowArn(const char* value) { SetChannelFlowArn(value); return *this;}
 
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline const ElasticChannelConfiguration& GetElasticChannelConfiguration() const{ return m_elasticChannelConfiguration; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline bool ElasticChannelConfigurationHasBeenSet() const { return m_elasticChannelConfigurationHasBeenSet; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline void SetElasticChannelConfiguration(const ElasticChannelConfiguration& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = value; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline void SetElasticChannelConfiguration(ElasticChannelConfiguration&& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = std::move(value); }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline Channel& WithElasticChannelConfiguration(const ElasticChannelConfiguration& value) { SetElasticChannelConfiguration(value); return *this;}
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline Channel& WithElasticChannelConfiguration(ElasticChannelConfiguration&& value) { SetElasticChannelConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -421,6 +459,9 @@ namespace Model
 
     Aws::String m_channelFlowArn;
     bool m_channelFlowArnHasBeenSet;
+
+    ElasticChannelConfiguration m_elasticChannelConfiguration;
+    bool m_elasticChannelConfigurationHasBeenSet;
   };
 
 } // namespace Model

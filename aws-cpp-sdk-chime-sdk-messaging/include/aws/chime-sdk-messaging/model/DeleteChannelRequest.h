@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace ChimeSDKMessaging
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteChannel"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -115,6 +121,47 @@ namespace Model
      */
     inline DeleteChannelRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline DeleteChannelRequest& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline DeleteChannelRequest& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>
+     */
+    inline DeleteChannelRequest& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -122,6 +169,9 @@ namespace Model
 
     Aws::String m_chimeBearer;
     bool m_chimeBearerHasBeenSet;
+
+    Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet;
   };
 
 } // namespace Model

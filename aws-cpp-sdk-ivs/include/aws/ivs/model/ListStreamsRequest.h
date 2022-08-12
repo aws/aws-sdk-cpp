@@ -65,22 +65,22 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline ListStreamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -55,6 +55,7 @@
 #include <aws/chime-sdk-messaging/model/ListChannelsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsAssociatedWithChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserRequest.h>
+#include <aws/chime-sdk-messaging/model/ListSubChannelsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesRequest.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageRequest.h>
@@ -1451,6 +1452,43 @@ void ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserAsync(const 
 void ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUserAsyncHelper(const ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannelsModeratedByAppInstanceUser(request), context);
+}
+
+ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubChannelsRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSubChannels", "Required field: ChannelArn, is not set");
+    return ListSubChannelsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.ChimeBearerHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSubChannels", "Required field: ChimeBearer, is not set");
+    return ListSubChannelsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/subchannels");
+  return ListSubChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSubChannelsOutcomeCallable ChimeSDKMessagingClient::ListSubChannelsCallable(const ListSubChannelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSubChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSubChannels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::ListSubChannelsAsync(const ListSubChannelsRequest& request, const ListSubChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSubChannelsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::ListSubChannelsAsyncHelper(const ListSubChannelsRequest& request, const ListSubChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSubChannels(request), context);
 }
 
 ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

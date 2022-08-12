@@ -16,13 +16,22 @@ using namespace Aws::Utils;
 RedactChannelMessageRequest::RedactChannelMessageRequest() : 
     m_channelArnHasBeenSet(false),
     m_messageIdHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
 Aws::String RedactChannelMessageRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RedactChannelMessageRequest::GetRequestSpecificHeaders() const

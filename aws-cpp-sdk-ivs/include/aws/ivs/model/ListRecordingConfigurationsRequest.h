@@ -33,22 +33,26 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline ListRecordingConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

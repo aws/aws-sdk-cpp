@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Object specifying a stream’s video configuration.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Object specifying a stream’s video configuration, as set up by the
+   * broadcaster (usually in an encoder). This is part of the
+   * <a>IngestConfiguration</a> object and used for monitoring stream
+   * health.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/VideoConfiguration">AWS
    * API Reference</a></p>
    */
