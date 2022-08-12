@@ -46,6 +46,12 @@ SendChannelMessageResult& SendChannelMessageResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+  }
+
 
 
   return *this;

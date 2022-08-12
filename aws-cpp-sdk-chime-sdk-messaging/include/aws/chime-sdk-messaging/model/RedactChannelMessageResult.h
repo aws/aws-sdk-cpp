@@ -103,11 +103,56 @@ namespace Model
      */
     inline RedactChannelMessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>  <p>Only required when
+     * redacting messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>  <p>Only required when
+     * redacting messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>  <p>Only required when
+     * redacting messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>  <p>Only required when
+     * redacting messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>  <p>Only required when
+     * redacting messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline RedactChannelMessageResult& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>  <p>Only required when
+     * redacting messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline RedactChannelMessageResult& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>  <p>Only required when
+     * redacting messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline RedactChannelMessageResult& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
 
     Aws::String m_messageId;
+
+    Aws::String m_subChannelId;
   };
 
 } // namespace Model

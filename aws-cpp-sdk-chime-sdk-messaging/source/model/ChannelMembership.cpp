@@ -25,7 +25,8 @@ ChannelMembership::ChannelMembership() :
     m_memberHasBeenSet(false),
     m_channelArnHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+    m_lastUpdatedTimestampHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ChannelMembership::ChannelMembership(JsonView jsonValue) :
     m_memberHasBeenSet(false),
     m_channelArnHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+    m_lastUpdatedTimestampHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,13 @@ ChannelMembership& ChannelMembership::operator =(JsonView jsonValue)
     m_lastUpdatedTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+    m_subChannelIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue ChannelMembership::Jsonize() const
   if(m_lastUpdatedTimestampHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTimestamp", m_lastUpdatedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
+
   }
 
   return payload;

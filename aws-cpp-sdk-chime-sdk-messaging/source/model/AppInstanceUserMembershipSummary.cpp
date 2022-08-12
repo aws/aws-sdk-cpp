@@ -21,14 +21,16 @@ namespace Model
 AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary() : 
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_readMarkerTimestampHasBeenSet(false)
+    m_readMarkerTimestampHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
 AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary(JsonView jsonValue) : 
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_readMarkerTimestampHasBeenSet(false)
+    m_readMarkerTimestampHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ AppInstanceUserMembershipSummary& AppInstanceUserMembershipSummary::operator =(J
     m_readMarkerTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+    m_subChannelIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +73,12 @@ JsonValue AppInstanceUserMembershipSummary::Jsonize() const
   if(m_readMarkerTimestampHasBeenSet)
   {
    payload.WithDouble("ReadMarkerTimestamp", m_readMarkerTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
+
   }
 
   return payload;

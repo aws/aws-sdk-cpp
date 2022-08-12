@@ -8,6 +8,8 @@
 #include <aws/personalize-runtime/PersonalizeRuntimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize-runtime/model/Promotion.h>
 #include <utility>
 
 namespace Aws
@@ -391,7 +393,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const{ return m_filterValues; }
 
@@ -407,7 +409,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }
 
@@ -423,7 +425,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline void SetFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { m_filterValuesHasBeenSet = true; m_filterValues = value; }
 
@@ -439,7 +441,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline void SetFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::move(value); }
 
@@ -455,7 +457,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& WithFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { SetFilterValues(value); return *this;}
 
@@ -471,7 +473,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& WithFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { SetFilterValues(std::move(value)); return *this;}
 
@@ -487,7 +489,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& AddFilterValues(const Aws::String& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
 
@@ -503,7 +505,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& AddFilterValues(Aws::String&& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
 
@@ -519,7 +521,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& AddFilterValues(const Aws::String& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
 
@@ -535,7 +537,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& AddFilterValues(Aws::String&& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -551,7 +553,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& AddFilterValues(const char* key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
 
@@ -567,7 +569,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& AddFilterValues(Aws::String&& key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
 
@@ -583,7 +585,7 @@ namespace Model
      * that portion of the expression to filter recommendations.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-     * Recommendations</a>.</p>
+     * recommendations and user segments</a>.</p>
      */
     inline GetRecommendationsRequest& AddFilterValues(const char* key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
 
@@ -644,6 +646,63 @@ namespace Model
      */
     inline GetRecommendationsRequest& WithRecommenderArn(const char* value) { SetRecommenderArn(value); return *this;}
 
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline const Aws::Vector<Promotion>& GetPromotions() const{ return m_promotions; }
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline bool PromotionsHasBeenSet() const { return m_promotionsHasBeenSet; }
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline void SetPromotions(const Aws::Vector<Promotion>& value) { m_promotionsHasBeenSet = true; m_promotions = value; }
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline void SetPromotions(Aws::Vector<Promotion>&& value) { m_promotionsHasBeenSet = true; m_promotions = std::move(value); }
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline GetRecommendationsRequest& WithPromotions(const Aws::Vector<Promotion>& value) { SetPromotions(value); return *this;}
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline GetRecommendationsRequest& WithPromotions(Aws::Vector<Promotion>&& value) { SetPromotions(std::move(value)); return *this;}
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline GetRecommendationsRequest& AddPromotions(const Promotion& value) { m_promotionsHasBeenSet = true; m_promotions.push_back(value); return *this; }
+
+    /**
+     * <p>The promotions to apply to the recommendation request. A promotion defines
+     * additional business rules that apply to a configurable subset of recommended
+     * items.</p>
+     */
+    inline GetRecommendationsRequest& AddPromotions(Promotion&& value) { m_promotionsHasBeenSet = true; m_promotions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_campaignArn;
@@ -669,6 +728,9 @@ namespace Model
 
     Aws::String m_recommenderArn;
     bool m_recommenderArnHasBeenSet;
+
+    Aws::Vector<Promotion> m_promotions;
+    bool m_promotionsHasBeenSet;
   };
 
 } // namespace Model

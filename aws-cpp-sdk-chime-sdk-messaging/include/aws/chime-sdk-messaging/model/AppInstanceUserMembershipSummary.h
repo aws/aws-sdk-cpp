@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/chime-sdk-messaging/model/ChannelMembershipType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,55 @@ namespace Model
      */
     inline AppInstanceUserMembershipSummary& WithReadMarkerTimestamp(Aws::Utils::DateTime&& value) { SetReadMarkerTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline AppInstanceUserMembershipSummary& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline AppInstanceUserMembershipSummary& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
+     * of.</p>
+     */
+    inline AppInstanceUserMembershipSummary& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     ChannelMembershipType m_type;
@@ -113,6 +163,9 @@ namespace Model
 
     Aws::Utils::DateTime m_readMarkerTimestamp;
     bool m_readMarkerTimestampHasBeenSet;
+
+    Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet;
   };
 
 } // namespace Model

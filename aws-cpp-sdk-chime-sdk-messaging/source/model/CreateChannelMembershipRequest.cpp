@@ -18,7 +18,8 @@ CreateChannelMembershipRequest::CreateChannelMembershipRequest() :
     m_memberArnHasBeenSet(false),
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,12 @@ Aws::String CreateChannelMembershipRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", ChannelMembershipTypeMapper::GetNameForChannelMembershipType(m_type));
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
+
   }
 
   return payload.View().WriteReadable();

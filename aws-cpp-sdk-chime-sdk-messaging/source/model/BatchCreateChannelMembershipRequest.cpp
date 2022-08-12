@@ -18,7 +18,8 @@ BatchCreateChannelMembershipRequest::BatchCreateChannelMembershipRequest() :
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
     m_memberArnsHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String BatchCreateChannelMembershipRequest::SerializePayload() const
      memberArnsJsonList[memberArnsIndex].AsString(m_memberArns[memberArnsIndex]);
    }
    payload.WithArray("MemberArns", std::move(memberArnsJsonList));
+
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
 
   }
 

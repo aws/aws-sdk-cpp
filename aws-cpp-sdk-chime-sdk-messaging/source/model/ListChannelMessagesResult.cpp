@@ -49,6 +49,12 @@ ListChannelMessagesResult& ListChannelMessagesResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+  }
+
 
 
   return *this;

@@ -34,6 +34,12 @@ UpdateChannelReadMarkerResult& UpdateChannelReadMarkerResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+  }
+
 
 
   return *this;

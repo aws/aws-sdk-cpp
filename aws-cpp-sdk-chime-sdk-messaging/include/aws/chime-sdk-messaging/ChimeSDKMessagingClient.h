@@ -38,6 +38,7 @@
 #include <aws/chime-sdk-messaging/model/ListChannelsResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsAssociatedWithChannelFlowResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserResult.h>
+#include <aws/chime-sdk-messaging/model/ListSubChannelsResult.h>
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceResult.h>
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesResult.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageResult.h>
@@ -122,6 +123,7 @@ namespace Model
         class ListChannelsRequest;
         class ListChannelsAssociatedWithChannelFlowRequest;
         class ListChannelsModeratedByAppInstanceUserRequest;
+        class ListSubChannelsRequest;
         class ListTagsForResourceRequest;
         class PutChannelMembershipPreferencesRequest;
         class RedactChannelMessageRequest;
@@ -169,6 +171,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListChannelsResult, ChimeSDKMessagingError> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListChannelsAssociatedWithChannelFlowResult, ChimeSDKMessagingError> ListChannelsAssociatedWithChannelFlowOutcome;
         typedef Aws::Utils::Outcome<ListChannelsModeratedByAppInstanceUserResult, ChimeSDKMessagingError> ListChannelsModeratedByAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<ListSubChannelsResult, ChimeSDKMessagingError> ListSubChannelsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKMessagingError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutChannelMembershipPreferencesResult, ChimeSDKMessagingError> PutChannelMembershipPreferencesOutcome;
         typedef Aws::Utils::Outcome<RedactChannelMessageResult, ChimeSDKMessagingError> RedactChannelMessageOutcome;
@@ -216,6 +219,7 @@ namespace Model
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListChannelsAssociatedWithChannelFlowOutcome> ListChannelsAssociatedWithChannelFlowOutcomeCallable;
         typedef std::future<ListChannelsModeratedByAppInstanceUserOutcome> ListChannelsModeratedByAppInstanceUserOutcomeCallable;
+        typedef std::future<ListSubChannelsOutcome> ListSubChannelsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutChannelMembershipPreferencesOutcome> PutChannelMembershipPreferencesOutcomeCallable;
         typedef std::future<RedactChannelMessageOutcome> RedactChannelMessageOutcomeCallable;
@@ -266,6 +270,7 @@ namespace Model
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsAssociatedWithChannelFlowRequest&, const Model::ListChannelsAssociatedWithChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsAssociatedWithChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsModeratedByAppInstanceUserRequest&, const Model::ListChannelsModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsModeratedByAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListSubChannelsRequest&, const Model::ListSubChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubChannelsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::PutChannelMembershipPreferencesRequest&, const Model::PutChannelMembershipPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutChannelMembershipPreferencesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::RedactChannelMessageRequest&, const Model::RedactChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactChannelMessageResponseReceivedHandler;
@@ -1070,6 +1075,25 @@ namespace Model
         virtual void ListChannelsModeratedByAppInstanceUserAsync(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all the SubChannels in an elastic channel when given a channel ID.
+         * Available only to the app instance admins and channel moderators of elastic
+         * channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListSubChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSubChannelsOutcome ListSubChannels(const Model::ListSubChannelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSubChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSubChannelsOutcomeCallable ListSubChannelsCallable(const Model::ListSubChannelsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSubChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSubChannelsAsync(const Model::ListSubChannelsRequest& request, const ListSubChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the tags applied to an Amazon Chime SDK messaging
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListTagsForResource">AWS
@@ -1327,6 +1351,7 @@ namespace Model
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAssociatedWithChannelFlowAsyncHelper(const Model::ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsModeratedByAppInstanceUserAsyncHelper(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSubChannelsAsyncHelper(const Model::ListSubChannelsRequest& request, const ListSubChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutChannelMembershipPreferencesAsyncHelper(const Model::PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RedactChannelMessageAsyncHelper(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

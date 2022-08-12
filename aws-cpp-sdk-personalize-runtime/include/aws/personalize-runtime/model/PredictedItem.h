@@ -107,6 +107,47 @@ namespace Model
      */
     inline PredictedItem& WithScore(double value) { SetScore(value); return *this;}
 
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline const Aws::String& GetPromotionName() const{ return m_promotionName; }
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline bool PromotionNameHasBeenSet() const { return m_promotionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline void SetPromotionName(const Aws::String& value) { m_promotionNameHasBeenSet = true; m_promotionName = value; }
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline void SetPromotionName(Aws::String&& value) { m_promotionNameHasBeenSet = true; m_promotionName = std::move(value); }
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline void SetPromotionName(const char* value) { m_promotionNameHasBeenSet = true; m_promotionName.assign(value); }
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline PredictedItem& WithPromotionName(const Aws::String& value) { SetPromotionName(value); return *this;}
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline PredictedItem& WithPromotionName(Aws::String&& value) { SetPromotionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the promotion that included the predicted item.</p>
+     */
+    inline PredictedItem& WithPromotionName(const char* value) { SetPromotionName(value); return *this;}
+
   private:
 
     Aws::String m_itemId;
@@ -114,6 +155,9 @@ namespace Model
 
     double m_score;
     bool m_scoreHasBeenSet;
+
+    Aws::String m_promotionName;
+    bool m_promotionNameHasBeenSet;
   };
 
 } // namespace Model

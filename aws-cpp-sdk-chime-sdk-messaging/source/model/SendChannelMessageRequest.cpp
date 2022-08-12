@@ -25,7 +25,8 @@ SendChannelMessageRequest::SendChannelMessageRequest() :
     m_clientRequestTokenHasBeenSet(true),
     m_chimeBearerHasBeenSet(false),
     m_pushNotificationHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,12 @@ Aws::String SendChannelMessageRequest::SerializePayload() const
      messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
    }
    payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
+
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
 
   }
 

@@ -130,6 +130,42 @@ namespace Model
      */
     inline UpdateChannelMessageResult& WithStatus(ChannelMessageStatusStructure&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline UpdateChannelMessageResult& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline UpdateChannelMessageResult& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline UpdateChannelMessageResult& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -137,6 +173,8 @@ namespace Model
     Aws::String m_messageId;
 
     ChannelMessageStatusStructure m_status;
+
+    Aws::String m_subChannelId;
   };
 
 } // namespace Model

@@ -113,38 +113,38 @@ namespace Model
 
 
     /**
-     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
-     * string.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+     * is returned as a string</i>. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
-     * string.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+     * is returned as a string</i>. </p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
-     * string.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+     * is returned as a string</i>. </p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
-     * string.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+     * is returned as a string</i>. </p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
-     * string.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+     * is returned as a string</i>. </p>
      */
     inline StreamSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
-     * string.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+     * is returned as a string</i>. </p>
      */
     inline StreamSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

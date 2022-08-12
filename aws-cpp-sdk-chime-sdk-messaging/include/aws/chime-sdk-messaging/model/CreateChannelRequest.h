@@ -10,6 +10,7 @@
 #include <aws/chime-sdk-messaging/model/ChannelMode.h>
 #include <aws/chime-sdk-messaging/model/ChannelPrivacy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-messaging/model/ElasticChannelConfiguration.h>
 #include <aws/chime-sdk-messaging/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -509,6 +510,49 @@ namespace Model
      */
     inline CreateChannelRequest& AddModeratorArns(const char* value) { m_moderatorArnsHasBeenSet = true; m_moderatorArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline const ElasticChannelConfiguration& GetElasticChannelConfiguration() const{ return m_elasticChannelConfiguration; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline bool ElasticChannelConfigurationHasBeenSet() const { return m_elasticChannelConfigurationHasBeenSet; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline void SetElasticChannelConfiguration(const ElasticChannelConfiguration& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = value; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline void SetElasticChannelConfiguration(ElasticChannelConfiguration&& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = std::move(value); }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline CreateChannelRequest& WithElasticChannelConfiguration(const ElasticChannelConfiguration& value) { SetElasticChannelConfiguration(value); return *this;}
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million users, excluding
+     * moderators.</p>
+     */
+    inline CreateChannelRequest& WithElasticChannelConfiguration(ElasticChannelConfiguration&& value) { SetElasticChannelConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appInstanceArn;
@@ -543,6 +587,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_moderatorArns;
     bool m_moderatorArnsHasBeenSet;
+
+    ElasticChannelConfiguration m_elasticChannelConfiguration;
+    bool m_elasticChannelConfigurationHasBeenSet;
   };
 
 } // namespace Model

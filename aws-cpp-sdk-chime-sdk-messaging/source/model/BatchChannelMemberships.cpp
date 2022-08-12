@@ -23,7 +23,8 @@ BatchChannelMemberships::BatchChannelMemberships() :
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
     m_membersHasBeenSet(false),
-    m_channelArnHasBeenSet(false)
+    m_channelArnHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ BatchChannelMemberships::BatchChannelMemberships(JsonView jsonValue) :
     m_type(ChannelMembershipType::NOT_SET),
     m_typeHasBeenSet(false),
     m_membersHasBeenSet(false),
-    m_channelArnHasBeenSet(false)
+    m_channelArnHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +72,13 @@ BatchChannelMemberships& BatchChannelMemberships::operator =(JsonView jsonValue)
     m_channelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubChannelId"))
+  {
+    m_subChannelId = jsonValue.GetString("SubChannelId");
+
+    m_subChannelIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +111,12 @@ JsonValue BatchChannelMemberships::Jsonize() const
   if(m_channelArnHasBeenSet)
   {
    payload.WithString("ChannelArn", m_channelArn);
+
+  }
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
 
   }
 
