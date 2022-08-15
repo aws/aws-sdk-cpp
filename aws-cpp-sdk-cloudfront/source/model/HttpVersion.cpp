@@ -22,6 +22,8 @@ namespace Aws
 
         static const int http1_1_HASH = HashingUtils::HashString("http1.1");
         static const int http2_HASH = HashingUtils::HashString("http2");
+        static const int http3_HASH = HashingUtils::HashString("http3");
+        static const int http2and3_HASH = HashingUtils::HashString("http2and3");
 
 
         HttpVersion GetHttpVersionForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == http2_HASH)
           {
             return HttpVersion::http2;
+          }
+          else if (hashCode == http3_HASH)
+          {
+            return HttpVersion::http3;
+          }
+          else if (hashCode == http2and3_HASH)
+          {
+            return HttpVersion::http2and3;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +63,10 @@ namespace Aws
             return "http1.1";
           case HttpVersion::http2:
             return "http2";
+          case HttpVersion::http3:
+            return "http3";
+          case HttpVersion::http2and3:
+            return "http2and3";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

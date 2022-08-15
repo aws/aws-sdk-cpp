@@ -42,6 +42,7 @@
 #include <aws/wisdom/model/ListKnowledgeBasesRequest.h>
 #include <aws/wisdom/model/ListTagsForResourceRequest.h>
 #include <aws/wisdom/model/NotifyRecommendationsReceivedRequest.h>
+#include <aws/wisdom/model/PutFeedbackRequest.h>
 #include <aws/wisdom/model/QueryAssistantRequest.h>
 #include <aws/wisdom/model/RemoveKnowledgeBaseTemplateUriRequest.h>
 #include <aws/wisdom/model/SearchContentRequest.h>
@@ -845,6 +846,38 @@ void ConnectWisdomServiceClient::NotifyRecommendationsReceivedAsync(const Notify
 void ConnectWisdomServiceClient::NotifyRecommendationsReceivedAsyncHelper(const NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, NotifyRecommendationsReceived(request), context);
+}
+
+PutFeedbackOutcome ConnectWisdomServiceClient::PutFeedback(const PutFeedbackRequest& request) const
+{
+  if (!request.AssistantIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutFeedback", "Required field: AssistantId, is not set");
+    return PutFeedbackOutcome(Aws::Client::AWSError<ConnectWisdomServiceErrors>(ConnectWisdomServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssistantId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/assistants/");
+  uri.AddPathSegment(request.GetAssistantId());
+  uri.AddPathSegments("/feedback");
+  return PutFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutFeedbackOutcomeCallable ConnectWisdomServiceClient::PutFeedbackCallable(const PutFeedbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFeedback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectWisdomServiceClient::PutFeedbackAsync(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutFeedbackAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectWisdomServiceClient::PutFeedbackAsyncHelper(const PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutFeedback(request), context);
 }
 
 QueryAssistantOutcome ConnectWisdomServiceClient::QueryAssistant(const QueryAssistantRequest& request) const

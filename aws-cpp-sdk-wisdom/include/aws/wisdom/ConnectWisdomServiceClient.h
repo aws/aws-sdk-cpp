@@ -33,6 +33,7 @@
 #include <aws/wisdom/model/ListKnowledgeBasesResult.h>
 #include <aws/wisdom/model/ListTagsForResourceResult.h>
 #include <aws/wisdom/model/NotifyRecommendationsReceivedResult.h>
+#include <aws/wisdom/model/PutFeedbackResult.h>
 #include <aws/wisdom/model/QueryAssistantResult.h>
 #include <aws/wisdom/model/RemoveKnowledgeBaseTemplateUriResult.h>
 #include <aws/wisdom/model/SearchContentResult.h>
@@ -103,6 +104,7 @@ namespace Model
         class ListKnowledgeBasesRequest;
         class ListTagsForResourceRequest;
         class NotifyRecommendationsReceivedRequest;
+        class PutFeedbackRequest;
         class QueryAssistantRequest;
         class RemoveKnowledgeBaseTemplateUriRequest;
         class SearchContentRequest;
@@ -135,6 +137,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListKnowledgeBasesResult, ConnectWisdomServiceError> ListKnowledgeBasesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectWisdomServiceError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<NotifyRecommendationsReceivedResult, ConnectWisdomServiceError> NotifyRecommendationsReceivedOutcome;
+        typedef Aws::Utils::Outcome<PutFeedbackResult, ConnectWisdomServiceError> PutFeedbackOutcome;
         typedef Aws::Utils::Outcome<QueryAssistantResult, ConnectWisdomServiceError> QueryAssistantOutcome;
         typedef Aws::Utils::Outcome<RemoveKnowledgeBaseTemplateUriResult, ConnectWisdomServiceError> RemoveKnowledgeBaseTemplateUriOutcome;
         typedef Aws::Utils::Outcome<SearchContentResult, ConnectWisdomServiceError> SearchContentOutcome;
@@ -167,6 +170,7 @@ namespace Model
         typedef std::future<ListKnowledgeBasesOutcome> ListKnowledgeBasesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<NotifyRecommendationsReceivedOutcome> NotifyRecommendationsReceivedOutcomeCallable;
+        typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
         typedef std::future<QueryAssistantOutcome> QueryAssistantOutcomeCallable;
         typedef std::future<RemoveKnowledgeBaseTemplateUriOutcome> RemoveKnowledgeBaseTemplateUriOutcomeCallable;
         typedef std::future<SearchContentOutcome> SearchContentOutcomeCallable;
@@ -202,6 +206,7 @@ namespace Model
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListKnowledgeBasesRequest&, const Model::ListKnowledgeBasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKnowledgeBasesResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::NotifyRecommendationsReceivedRequest&, const Model::NotifyRecommendationsReceivedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyRecommendationsReceivedResponseReceivedHandler;
+    typedef std::function<void(const ConnectWisdomServiceClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFeedbackResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::QueryAssistantRequest&, const Model::QueryAssistantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryAssistantResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::RemoveKnowledgeBaseTemplateUriRequest&, const Model::RemoveKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveKnowledgeBaseTemplateUriResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::SearchContentRequest&, const Model::SearchContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContentResponseReceivedHandler;
@@ -668,6 +673,29 @@ namespace Model
         virtual void NotifyRecommendationsReceivedAsync(const Model::NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Submits feedback to Wisdom. The feedback is used to improve future
+         * recommendations from <a
+         * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
+         * or results from <a
+         * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
+         * Feedback can be resubmitted up to 6 hours after submission. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const Model::PutFeedbackRequest& request) const;
+
+        /**
+         * An Async wrapper for PutFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutFeedbackAsync(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Performs a manual search against the specified assistant. To retrieve
          * recommendations for an assistant, use <a
          * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
@@ -865,6 +893,7 @@ namespace Model
         void ListKnowledgeBasesAsyncHelper(const Model::ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void NotifyRecommendationsReceivedAsyncHelper(const Model::NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutFeedbackAsyncHelper(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void QueryAssistantAsyncHelper(const Model::QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveKnowledgeBaseTemplateUriAsyncHelper(const Model::RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchContentAsyncHelper(const Model::SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
