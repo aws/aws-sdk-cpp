@@ -24,7 +24,10 @@ namespace Model
     FAILED,
     STOPPING,
     STOPPED,
-    DELETING
+    DELETING,
+    COPYING_IN_PROGRESS,
+    COPYING_COMPLETED,
+    COPYING_FAILED
   };
 
 namespace ProjectVersionStatusMapper

@@ -254,42 +254,42 @@ namespace Model
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
-     * by AWS Marketplace.</p>
+     * by Amazon Web Services Marketplace.</p>
      */
     inline const ProductType& GetType() const{ return m_type; }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
-     * by AWS Marketplace.</p>
+     * by Amazon Web Services Marketplace.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
-     * by AWS Marketplace.</p>
+     * by Amazon Web Services Marketplace.</p>
      */
     inline void SetType(const ProductType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
-     * by AWS Marketplace.</p>
+     * by Amazon Web Services Marketplace.</p>
      */
     inline void SetType(ProductType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
-     * by AWS Marketplace.</p>
+     * by Amazon Web Services Marketplace.</p>
      */
     inline ProductViewSummary& WithType(const ProductType& value) { SetType(value); return *this;}
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
-     * by AWS Marketplace.</p>
+     * by Amazon Web Services Marketplace.</p>
      */
     inline ProductViewSummary& WithType(ProductType&& value) { SetType(std::move(value)); return *this;}
 

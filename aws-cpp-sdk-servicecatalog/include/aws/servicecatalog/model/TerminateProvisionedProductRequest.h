@@ -199,25 +199,25 @@ namespace Model
 
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline bool GetIgnoreErrors() const{ return m_ignoreErrors; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline bool IgnoreErrorsHasBeenSet() const { return m_ignoreErrorsHasBeenSet; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline void SetIgnoreErrors(bool value) { m_ignoreErrorsHasBeenSet = true; m_ignoreErrors = value; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline TerminateProvisionedProductRequest& WithIgnoreErrors(bool value) { SetIgnoreErrors(value); return *this;}

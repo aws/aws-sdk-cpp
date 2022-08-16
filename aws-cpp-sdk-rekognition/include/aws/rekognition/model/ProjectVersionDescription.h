@@ -518,6 +518,63 @@ namespace Model
      */
     inline ProjectVersionDescription& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
 
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline const Aws::String& GetSourceProjectVersionArn() const{ return m_sourceProjectVersionArn; }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline bool SourceProjectVersionArnHasBeenSet() const { return m_sourceProjectVersionArnHasBeenSet; }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline void SetSourceProjectVersionArn(const Aws::String& value) { m_sourceProjectVersionArnHasBeenSet = true; m_sourceProjectVersionArn = value; }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline void SetSourceProjectVersionArn(Aws::String&& value) { m_sourceProjectVersionArnHasBeenSet = true; m_sourceProjectVersionArn = std::move(value); }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline void SetSourceProjectVersionArn(const char* value) { m_sourceProjectVersionArnHasBeenSet = true; m_sourceProjectVersionArn.assign(value); }
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline ProjectVersionDescription& WithSourceProjectVersionArn(const Aws::String& value) { SetSourceProjectVersionArn(value); return *this;}
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline ProjectVersionDescription& WithSourceProjectVersionArn(Aws::String&& value) { SetSourceProjectVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>If the model version was copied from a different project,
+     * <code>SourceProjectVersionArn</code> contains the ARN of the source model
+     * version. </p>
+     */
+    inline ProjectVersionDescription& WithSourceProjectVersionArn(const char* value) { SetSourceProjectVersionArn(value); return *this;}
+
   private:
 
     Aws::String m_projectVersionArn;
@@ -561,6 +618,9 @@ namespace Model
 
     int m_maxInferenceUnits;
     bool m_maxInferenceUnitsHasBeenSet;
+
+    Aws::String m_sourceProjectVersionArn;
+    bool m_sourceProjectVersionArnHasBeenSet;
   };
 
 } // namespace Model

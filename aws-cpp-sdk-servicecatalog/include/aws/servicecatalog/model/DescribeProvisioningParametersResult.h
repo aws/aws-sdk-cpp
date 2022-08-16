@@ -197,31 +197,31 @@ namespace Model
 
 
     /**
-     * <p>An object that contains information about preferences, such as regions and
+     * <p>An object that contains information about preferences, such as Regions and
      * accounts, for the provisioning artifact.</p>
      */
     inline const ProvisioningArtifactPreferences& GetProvisioningArtifactPreferences() const{ return m_provisioningArtifactPreferences; }
 
     /**
-     * <p>An object that contains information about preferences, such as regions and
+     * <p>An object that contains information about preferences, such as Regions and
      * accounts, for the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactPreferences(const ProvisioningArtifactPreferences& value) { m_provisioningArtifactPreferences = value; }
 
     /**
-     * <p>An object that contains information about preferences, such as regions and
+     * <p>An object that contains information about preferences, such as Regions and
      * accounts, for the provisioning artifact.</p>
      */
     inline void SetProvisioningArtifactPreferences(ProvisioningArtifactPreferences&& value) { m_provisioningArtifactPreferences = std::move(value); }
 
     /**
-     * <p>An object that contains information about preferences, such as regions and
+     * <p>An object that contains information about preferences, such as Regions and
      * accounts, for the provisioning artifact.</p>
      */
     inline DescribeProvisioningParametersResult& WithProvisioningArtifactPreferences(const ProvisioningArtifactPreferences& value) { SetProvisioningArtifactPreferences(value); return *this;}
 
     /**
-     * <p>An object that contains information about preferences, such as regions and
+     * <p>An object that contains information about preferences, such as Regions and
      * accounts, for the provisioning artifact.</p>
      */
     inline DescribeProvisioningParametersResult& WithProvisioningArtifactPreferences(ProvisioningArtifactPreferences&& value) { SetProvisioningArtifactPreferences(std::move(value)); return *this;}

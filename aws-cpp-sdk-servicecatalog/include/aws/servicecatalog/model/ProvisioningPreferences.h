@@ -27,11 +27,11 @@ namespace Model
   /**
    * <p>The user-defined preferences that will be applied when updating a provisioned
    * product. Not all preferences are applicable to all provisioned product type</p>
-   * <p>One or more AWS accounts that will have access to the provisioned
-   * product.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
-   * product type.</p> <p>The AWS accounts specified should be within the list of
-   * accounts in the <code>STACKSET</code> constraint. To get the list of accounts in
-   * the <code>STACKSET</code> constraint, use the
+   * <p>One or more Amazon Web Services accounts that will have access to the
+   * provisioned product.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
+   * provisioned product type.</p> <p>The Amazon Web Services accounts specified
+   * should be within the list of accounts in the <code>STACKSET</code> constraint.
+   * To get the list of accounts in the <code>STACKSET</code> constraint, use the
    * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
    * specified, the default value is all accounts from the <code>STACKSET</code>
    * constraint.</p><p><h3>See Also:</h3>   <a
@@ -48,11 +48,11 @@ namespace Model
 
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -60,11 +60,11 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetStackSetAccounts() const{ return m_stackSetAccounts; }
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -72,11 +72,11 @@ namespace Model
     inline bool StackSetAccountsHasBeenSet() const { return m_stackSetAccountsHasBeenSet; }
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -84,11 +84,11 @@ namespace Model
     inline void SetStackSetAccounts(const Aws::Vector<Aws::String>& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = value; }
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -96,11 +96,11 @@ namespace Model
     inline void SetStackSetAccounts(Aws::Vector<Aws::String>&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = std::move(value); }
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -108,11 +108,11 @@ namespace Model
     inline ProvisioningPreferences& WithStackSetAccounts(const Aws::Vector<Aws::String>& value) { SetStackSetAccounts(value); return *this;}
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -120,11 +120,11 @@ namespace Model
     inline ProvisioningPreferences& WithStackSetAccounts(Aws::Vector<Aws::String>&& value) { SetStackSetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -132,11 +132,11 @@ namespace Model
     inline ProvisioningPreferences& AddStackSetAccounts(const Aws::String& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -144,11 +144,11 @@ namespace Model
     inline ProvisioningPreferences& AddStackSetAccounts(Aws::String&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more AWS accounts where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified accounts should be within the list of accounts from the
-     * <code>STACKSET</code> constraint. To get the list of accounts in the
-     * <code>STACKSET</code> constraint, use the
+     * <p>One or more Amazon Web Services accounts where the provisioned product will
+     * be available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified accounts should be within the list of
+     * accounts from the <code>STACKSET</code> constraint. To get the list of accounts
+     * in the <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
      * specified, the default value is all acounts from the <code>STACKSET</code>
      * constraint.</p>
@@ -157,120 +157,120 @@ namespace Model
 
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStackSetRegions() const{ return m_stackSetRegions; }
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline bool StackSetRegionsHasBeenSet() const { return m_stackSetRegionsHasBeenSet; }
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline void SetStackSetRegions(const Aws::Vector<Aws::String>& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = value; }
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline void SetStackSetRegions(Aws::Vector<Aws::String>&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = std::move(value); }
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& WithStackSetRegions(const Aws::Vector<Aws::String>& value) { SetStackSetRegions(value); return *this;}
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& WithStackSetRegions(Aws::Vector<Aws::String>&& value) { SetStackSetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& AddStackSetRegions(const Aws::String& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& AddStackSetRegions(Aws::String&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more AWS Regions where the provisioned product will be available.</p>
-     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     * <p>The specified regions should be within the list of regions from the
-     * <code>STACKSET</code> constraint. To get the list of regions in the
+     * <p>One or more Amazon Web Services Regions where the provisioned product will be
+     * available.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>The specified Regions should be within the list of Regions
+     * from the <code>STACKSET</code> constraint. To get the list of Regions in the
      * <code>STACKSET</code> constraint, use the
      * <code>DescribeProvisioningParameters</code> operation.</p> <p>If no values are
-     * specified, the default value is all regions from the <code>STACKSET</code>
+     * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
     inline ProvisioningPreferences& AddStackSetRegions(const char* value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
 
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS Service Catalog stops the operation in that region. If the operation is
-     * stopped in a region, AWS Service Catalog doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * Service Catalog stops the operation in that Region. If the operation is stopped
+     * in a Region, Service Catalog doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p> <p>The
      * default value is <code>0</code> if no value is specified.</p>
@@ -278,11 +278,11 @@ namespace Model
     inline int GetStackSetFailureToleranceCount() const{ return m_stackSetFailureToleranceCount; }
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS Service Catalog stops the operation in that region. If the operation is
-     * stopped in a region, AWS Service Catalog doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * Service Catalog stops the operation in that Region. If the operation is stopped
+     * in a Region, Service Catalog doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p> <p>The
      * default value is <code>0</code> if no value is specified.</p>
@@ -290,11 +290,11 @@ namespace Model
     inline bool StackSetFailureToleranceCountHasBeenSet() const { return m_stackSetFailureToleranceCountHasBeenSet; }
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS Service Catalog stops the operation in that region. If the operation is
-     * stopped in a region, AWS Service Catalog doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * Service Catalog stops the operation in that Region. If the operation is stopped
+     * in a Region, Service Catalog doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p> <p>The
      * default value is <code>0</code> if no value is specified.</p>
@@ -302,11 +302,11 @@ namespace Model
     inline void SetStackSetFailureToleranceCount(int value) { m_stackSetFailureToleranceCountHasBeenSet = true; m_stackSetFailureToleranceCount = value; }
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS Service Catalog stops the operation in that region. If the operation is
-     * stopped in a region, AWS Service Catalog doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * Service Catalog stops the operation in that Region. If the operation is stopped
+     * in a Region, Service Catalog doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Applicable only to a <code>CFN_STACKSET</code> provisioned
+     * product type.</p> <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p> <p>The
      * default value is <code>0</code> if no value is specified.</p>
@@ -315,52 +315,52 @@ namespace Model
 
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS Service Catalog stops the operation in that region. If the
-     * operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS Service Catalog rounds down to
-     * the next whole number.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before Service Catalog stops the operation in that Region. If the operation
+     * is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, Service Catalog rounds down to the next whole number.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
      */
     inline int GetStackSetFailureTolerancePercentage() const{ return m_stackSetFailureTolerancePercentage; }
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS Service Catalog stops the operation in that region. If the
-     * operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS Service Catalog rounds down to
-     * the next whole number.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before Service Catalog stops the operation in that Region. If the operation
+     * is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, Service Catalog rounds down to the next whole number.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
      */
     inline bool StackSetFailureTolerancePercentageHasBeenSet() const { return m_stackSetFailureTolerancePercentageHasBeenSet; }
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS Service Catalog stops the operation in that region. If the
-     * operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS Service Catalog rounds down to
-     * the next whole number.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before Service Catalog stops the operation in that Region. If the operation
+     * is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, Service Catalog rounds down to the next whole number.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
      */
     inline void SetStackSetFailureTolerancePercentage(int value) { m_stackSetFailureTolerancePercentageHasBeenSet = true; m_stackSetFailureTolerancePercentage = value; }
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS Service Catalog stops the operation in that region. If the
-     * operation is stopped in a region, AWS Service Catalog doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS Service Catalog rounds down to
-     * the next whole number.</p> <p>Applicable only to a <code>CFN_STACKSET</code>
-     * provisioned product type.</p> <p>Conditional: You must specify either
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before Service Catalog stops the operation in that Region. If the operation
+     * is stopped in a Region, Service Catalog doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, Service Catalog rounds down to the next whole number.</p>
+     * <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     * <p>Conditional: You must specify either
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
      */
@@ -431,12 +431,12 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS Service Catalog rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.</p> <p>Note that this
-     * setting lets you specify the maximum for operations. For large deployments,
-     * under certain circumstances the actual number of accounts acted upon
-     * concurrently may be lower due to service throttling.</p> <p>Applicable only to a
+     * percentage, Service Catalog rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.</p> <p>Note that this setting
+     * lets you specify the maximum for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Applicable only to a
      * <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must
      * specify either <code>StackSetMaxConcurrentCount</code> or
      * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -446,12 +446,12 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS Service Catalog rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.</p> <p>Note that this
-     * setting lets you specify the maximum for operations. For large deployments,
-     * under certain circumstances the actual number of accounts acted upon
-     * concurrently may be lower due to service throttling.</p> <p>Applicable only to a
+     * percentage, Service Catalog rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.</p> <p>Note that this setting
+     * lets you specify the maximum for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Applicable only to a
      * <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must
      * specify either <code>StackSetMaxConcurrentCount</code> or
      * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -461,12 +461,12 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS Service Catalog rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.</p> <p>Note that this
-     * setting lets you specify the maximum for operations. For large deployments,
-     * under certain circumstances the actual number of accounts acted upon
-     * concurrently may be lower due to service throttling.</p> <p>Applicable only to a
+     * percentage, Service Catalog rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.</p> <p>Note that this setting
+     * lets you specify the maximum for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Applicable only to a
      * <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must
      * specify either <code>StackSetMaxConcurrentCount</code> or
      * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
@@ -476,12 +476,12 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS Service Catalog rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case, AWS
-     * Service Catalog sets the number as <code>1</code> instead.</p> <p>Note that this
-     * setting lets you specify the maximum for operations. For large deployments,
-     * under certain circumstances the actual number of accounts acted upon
-     * concurrently may be lower due to service throttling.</p> <p>Applicable only to a
+     * percentage, Service Catalog rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case, Service
+     * Catalog sets the number as <code>1</code> instead.</p> <p>Note that this setting
+     * lets you specify the maximum for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Applicable only to a
      * <code>CFN_STACKSET</code> provisioned product type.</p> <p>Conditional: You must
      * specify either <code>StackSetMaxConcurrentCount</code> or
      * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>

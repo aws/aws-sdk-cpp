@@ -36,7 +36,8 @@ ProjectVersionDescription::ProjectVersionDescription() :
     m_manifestSummaryHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false)
+    m_maxInferenceUnitsHasBeenSet(false),
+    m_sourceProjectVersionArnHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ ProjectVersionDescription::ProjectVersionDescription(JsonView jsonValue) :
     m_manifestSummaryHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false)
+    m_maxInferenceUnitsHasBeenSet(false),
+    m_sourceProjectVersionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -163,6 +165,13 @@ ProjectVersionDescription& ProjectVersionDescription::operator =(JsonView jsonVa
     m_maxInferenceUnitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceProjectVersionArn"))
+  {
+    m_sourceProjectVersionArn = jsonValue.GetString("SourceProjectVersionArn");
+
+    m_sourceProjectVersionArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -248,6 +257,12 @@ JsonValue ProjectVersionDescription::Jsonize() const
   if(m_maxInferenceUnitsHasBeenSet)
   {
    payload.WithInteger("MaxInferenceUnits", m_maxInferenceUnits);
+
+  }
+
+  if(m_sourceProjectVersionArnHasBeenSet)
+  {
+   payload.WithString("SourceProjectVersionArn", m_sourceProjectVersionArn);
 
   }
 
