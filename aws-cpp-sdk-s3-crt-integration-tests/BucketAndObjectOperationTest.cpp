@@ -592,6 +592,72 @@ namespace
         ASSERT_FALSE(headObjectOutcome.IsSuccess());
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithDefaultConstructor)
+    {
+        //Create Client with default constructor
+        Client = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG);
+
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+
+        std::shared_ptr<Aws::IOStream> bigStream = CreateStreamForUploadPart(25, "La");
+        putObjectRequest.SetBody(bigStream);
+        long long contentLength = static_cast<long long>(putObjectRequest.GetBody()->tellp());
+        putObjectRequest.SetContentLength(contentLength);
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.SetKey(TEST_OBJ_KEY);
+
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY));
+
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(TEST_OBJ_KEY);
+
+        GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+        ASSERT_EQ(contentLength, getObjectOutcome.GetResult().GetContentLength());
+
+        // GET with range
+        getObjectRequest.SetRange("bytes=128-1024");
+        getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+        ASSERT_EQ(1024-128+1, getObjectOutcome.GetResult().GetContentLength());
+
+        HeadObjectRequest headObjectRequest;
+        headObjectRequest.SetBucket(fullBucketName);
+        headObjectRequest.SetKey(TEST_OBJ_KEY);
+
+        HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
+        ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+        DeleteObjectRequest deleteObjectRequest;
+        deleteObjectRequest.SetBucket(fullBucketName);
+        deleteObjectRequest.SetKey(TEST_OBJ_KEY);
+        DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+        ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+
+        WaitForBucketToEmpty(fullBucketName);
+
+        headObjectOutcome = Client->HeadObject(headObjectRequest);
+        ASSERT_FALSE(headObjectOutcome.IsSuccess());
+    }
+
     TEST_F(BucketAndObjectOperationTest, TestKeysWithCrazyCharacterSets)
     {
         Aws::String fullBucketName = CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str());
