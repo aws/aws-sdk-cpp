@@ -21,6 +21,7 @@
 #include <aws/rekognition/RekognitionEndpoint.h>
 #include <aws/rekognition/RekognitionErrorMarshaller.h>
 #include <aws/rekognition/model/CompareFacesRequest.h>
+#include <aws/rekognition/model/CopyProjectVersionRequest.h>
 #include <aws/rekognition/model/CreateCollectionRequest.h>
 #include <aws/rekognition/model/CreateDatasetRequest.h>
 #include <aws/rekognition/model/CreateProjectRequest.h>
@@ -30,6 +31,7 @@
 #include <aws/rekognition/model/DeleteDatasetRequest.h>
 #include <aws/rekognition/model/DeleteFacesRequest.h>
 #include <aws/rekognition/model/DeleteProjectRequest.h>
+#include <aws/rekognition/model/DeleteProjectPolicyRequest.h>
 #include <aws/rekognition/model/DeleteProjectVersionRequest.h>
 #include <aws/rekognition/model/DeleteStreamProcessorRequest.h>
 #include <aws/rekognition/model/DescribeCollectionRequest.h>
@@ -58,8 +60,10 @@
 #include <aws/rekognition/model/ListDatasetEntriesRequest.h>
 #include <aws/rekognition/model/ListDatasetLabelsRequest.h>
 #include <aws/rekognition/model/ListFacesRequest.h>
+#include <aws/rekognition/model/ListProjectPoliciesRequest.h>
 #include <aws/rekognition/model/ListStreamProcessorsRequest.h>
 #include <aws/rekognition/model/ListTagsForResourceRequest.h>
+#include <aws/rekognition/model/PutProjectPolicyRequest.h>
 #include <aws/rekognition/model/RecognizeCelebritiesRequest.h>
 #include <aws/rekognition/model/SearchFacesRequest.h>
 #include <aws/rekognition/model/SearchFacesByImageRequest.h>
@@ -175,6 +179,30 @@ void RekognitionClient::CompareFacesAsync(const CompareFacesRequest& request, co
 void RekognitionClient::CompareFacesAsyncHelper(const CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CompareFaces(request), context);
+}
+
+CopyProjectVersionOutcome RekognitionClient::CopyProjectVersion(const CopyProjectVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CopyProjectVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CopyProjectVersionOutcomeCallable RekognitionClient::CopyProjectVersionCallable(const CopyProjectVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyProjectVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyProjectVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::CopyProjectVersionAsync(const CopyProjectVersionRequest& request, const CopyProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CopyProjectVersionAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::CopyProjectVersionAsyncHelper(const CopyProjectVersionRequest& request, const CopyProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyProjectVersion(request), context);
 }
 
 CreateCollectionOutcome RekognitionClient::CreateCollection(const CreateCollectionRequest& request) const
@@ -391,6 +419,30 @@ void RekognitionClient::DeleteProjectAsync(const DeleteProjectRequest& request, 
 void RekognitionClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteProject(request), context);
+}
+
+DeleteProjectPolicyOutcome RekognitionClient::DeleteProjectPolicy(const DeleteProjectPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteProjectPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteProjectPolicyOutcomeCallable RekognitionClient::DeleteProjectPolicyCallable(const DeleteProjectPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProjectPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DeleteProjectPolicyAsync(const DeleteProjectPolicyRequest& request, const DeleteProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DeleteProjectPolicyAsyncHelper(const DeleteProjectPolicyRequest& request, const DeleteProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProjectPolicy(request), context);
 }
 
 DeleteProjectVersionOutcome RekognitionClient::DeleteProjectVersion(const DeleteProjectVersionRequest& request) const
@@ -1065,6 +1117,30 @@ void RekognitionClient::ListFacesAsyncHelper(const ListFacesRequest& request, co
   handler(this, request, ListFaces(request), context);
 }
 
+ListProjectPoliciesOutcome RekognitionClient::ListProjectPolicies(const ListProjectPoliciesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListProjectPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListProjectPoliciesOutcomeCallable RekognitionClient::ListProjectPoliciesCallable(const ListProjectPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProjectPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProjectPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::ListProjectPoliciesAsync(const ListProjectPoliciesRequest& request, const ListProjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProjectPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::ListProjectPoliciesAsyncHelper(const ListProjectPoliciesRequest& request, const ListProjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProjectPolicies(request), context);
+}
+
 ListStreamProcessorsOutcome RekognitionClient::ListStreamProcessors(const ListStreamProcessorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1111,6 +1187,30 @@ void RekognitionClient::ListTagsForResourceAsync(const ListTagsForResourceReques
 void RekognitionClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+PutProjectPolicyOutcome RekognitionClient::PutProjectPolicy(const PutProjectPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutProjectPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutProjectPolicyOutcomeCallable RekognitionClient::PutProjectPolicyCallable(const PutProjectPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutProjectPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutProjectPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::PutProjectPolicyAsync(const PutProjectPolicyRequest& request, const PutProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutProjectPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::PutProjectPolicyAsyncHelper(const PutProjectPolicyRequest& request, const PutProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutProjectPolicy(request), context);
 }
 
 RecognizeCelebritiesOutcome RekognitionClient::RecognizeCelebrities(const RecognizeCelebritiesRequest& request) const

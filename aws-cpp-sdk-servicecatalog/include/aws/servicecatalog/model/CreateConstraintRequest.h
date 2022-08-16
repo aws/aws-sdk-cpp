@@ -204,7 +204,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -242,7 +242,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -280,7 +280,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -318,7 +318,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -356,7 +356,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -394,7 +394,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -432,7 +432,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
@@ -470,7 +470,7 @@ namespace Model
      * "String"}}</code> </p> <p>You cannot have both a <code>LAUNCH</code> and a
      * <code>STACKSET</code> constraint.</p> <p>You also cannot have more than one
      * <code>STACKSET</code> constraint on a product and portfolio.</p> <p>Products
-     * with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack
+     * with a <code>STACKSET</code> constraint will launch an CloudFormation stack
      * set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code>
      * property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template

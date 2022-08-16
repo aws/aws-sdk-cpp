@@ -31,7 +31,9 @@ static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNot
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INVALID_POLICY_REVISION_ID_HASH = HashingUtils::HashString("InvalidPolicyRevisionIdException");
 static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
+static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
@@ -66,9 +68,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::LIMIT_EXCEEDED), true);
   }
+  else if (hashCode == INVALID_POLICY_REVISION_ID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_POLICY_REVISION_ID), false);
+  }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_PAGINATION_TOKEN), false);
+  }
+  else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::MALFORMED_POLICY_DOCUMENT), false);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

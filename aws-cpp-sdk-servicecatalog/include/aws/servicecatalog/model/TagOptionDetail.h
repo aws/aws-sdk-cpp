@@ -182,42 +182,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline TagOptionDetail& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline TagOptionDetail& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline TagOptionDetail& WithOwner(const char* value) { SetOwner(value); return *this;}
 

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rekognition/model/CompareFacesResult.h>
+#include <aws/rekognition/model/CopyProjectVersionResult.h>
 #include <aws/rekognition/model/CreateCollectionResult.h>
 #include <aws/rekognition/model/CreateDatasetResult.h>
 #include <aws/rekognition/model/CreateProjectResult.h>
@@ -21,6 +22,7 @@
 #include <aws/rekognition/model/DeleteDatasetResult.h>
 #include <aws/rekognition/model/DeleteFacesResult.h>
 #include <aws/rekognition/model/DeleteProjectResult.h>
+#include <aws/rekognition/model/DeleteProjectPolicyResult.h>
 #include <aws/rekognition/model/DeleteProjectVersionResult.h>
 #include <aws/rekognition/model/DeleteStreamProcessorResult.h>
 #include <aws/rekognition/model/DescribeCollectionResult.h>
@@ -49,8 +51,10 @@
 #include <aws/rekognition/model/ListDatasetEntriesResult.h>
 #include <aws/rekognition/model/ListDatasetLabelsResult.h>
 #include <aws/rekognition/model/ListFacesResult.h>
+#include <aws/rekognition/model/ListProjectPoliciesResult.h>
 #include <aws/rekognition/model/ListStreamProcessorsResult.h>
 #include <aws/rekognition/model/ListTagsForResourceResult.h>
+#include <aws/rekognition/model/PutProjectPolicyResult.h>
 #include <aws/rekognition/model/RecognizeCelebritiesResult.h>
 #include <aws/rekognition/model/SearchFacesResult.h>
 #include <aws/rekognition/model/SearchFacesByImageResult.h>
@@ -110,6 +114,7 @@ namespace Rekognition
 namespace Model
 {
         class CompareFacesRequest;
+        class CopyProjectVersionRequest;
         class CreateCollectionRequest;
         class CreateDatasetRequest;
         class CreateProjectRequest;
@@ -119,6 +124,7 @@ namespace Model
         class DeleteDatasetRequest;
         class DeleteFacesRequest;
         class DeleteProjectRequest;
+        class DeleteProjectPolicyRequest;
         class DeleteProjectVersionRequest;
         class DeleteStreamProcessorRequest;
         class DescribeCollectionRequest;
@@ -147,8 +153,10 @@ namespace Model
         class ListDatasetEntriesRequest;
         class ListDatasetLabelsRequest;
         class ListFacesRequest;
+        class ListProjectPoliciesRequest;
         class ListStreamProcessorsRequest;
         class ListTagsForResourceRequest;
+        class PutProjectPolicyRequest;
         class RecognizeCelebritiesRequest;
         class SearchFacesRequest;
         class SearchFacesByImageRequest;
@@ -170,6 +178,7 @@ namespace Model
         class UpdateStreamProcessorRequest;
 
         typedef Aws::Utils::Outcome<CompareFacesResult, RekognitionError> CompareFacesOutcome;
+        typedef Aws::Utils::Outcome<CopyProjectVersionResult, RekognitionError> CopyProjectVersionOutcome;
         typedef Aws::Utils::Outcome<CreateCollectionResult, RekognitionError> CreateCollectionOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetResult, RekognitionError> CreateDatasetOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, RekognitionError> CreateProjectOutcome;
@@ -179,6 +188,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDatasetResult, RekognitionError> DeleteDatasetOutcome;
         typedef Aws::Utils::Outcome<DeleteFacesResult, RekognitionError> DeleteFacesOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, RekognitionError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectPolicyResult, RekognitionError> DeleteProjectPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectVersionResult, RekognitionError> DeleteProjectVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteStreamProcessorResult, RekognitionError> DeleteStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DescribeCollectionResult, RekognitionError> DescribeCollectionOutcome;
@@ -207,8 +217,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDatasetEntriesResult, RekognitionError> ListDatasetEntriesOutcome;
         typedef Aws::Utils::Outcome<ListDatasetLabelsResult, RekognitionError> ListDatasetLabelsOutcome;
         typedef Aws::Utils::Outcome<ListFacesResult, RekognitionError> ListFacesOutcome;
+        typedef Aws::Utils::Outcome<ListProjectPoliciesResult, RekognitionError> ListProjectPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListStreamProcessorsResult, RekognitionError> ListStreamProcessorsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, RekognitionError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutProjectPolicyResult, RekognitionError> PutProjectPolicyOutcome;
         typedef Aws::Utils::Outcome<RecognizeCelebritiesResult, RekognitionError> RecognizeCelebritiesOutcome;
         typedef Aws::Utils::Outcome<SearchFacesResult, RekognitionError> SearchFacesOutcome;
         typedef Aws::Utils::Outcome<SearchFacesByImageResult, RekognitionError> SearchFacesByImageOutcome;
@@ -230,6 +242,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateStreamProcessorResult, RekognitionError> UpdateStreamProcessorOutcome;
 
         typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
+        typedef std::future<CopyProjectVersionOutcome> CopyProjectVersionOutcomeCallable;
         typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
@@ -239,6 +252,7 @@ namespace Model
         typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
         typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+        typedef std::future<DeleteProjectPolicyOutcome> DeleteProjectPolicyOutcomeCallable;
         typedef std::future<DeleteProjectVersionOutcome> DeleteProjectVersionOutcomeCallable;
         typedef std::future<DeleteStreamProcessorOutcome> DeleteStreamProcessorOutcomeCallable;
         typedef std::future<DescribeCollectionOutcome> DescribeCollectionOutcomeCallable;
@@ -267,8 +281,10 @@ namespace Model
         typedef std::future<ListDatasetEntriesOutcome> ListDatasetEntriesOutcomeCallable;
         typedef std::future<ListDatasetLabelsOutcome> ListDatasetLabelsOutcomeCallable;
         typedef std::future<ListFacesOutcome> ListFacesOutcomeCallable;
+        typedef std::future<ListProjectPoliciesOutcome> ListProjectPoliciesOutcomeCallable;
         typedef std::future<ListStreamProcessorsOutcome> ListStreamProcessorsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<PutProjectPolicyOutcome> PutProjectPolicyOutcomeCallable;
         typedef std::future<RecognizeCelebritiesOutcome> RecognizeCelebritiesOutcomeCallable;
         typedef std::future<SearchFacesOutcome> SearchFacesOutcomeCallable;
         typedef std::future<SearchFacesByImageOutcome> SearchFacesByImageOutcomeCallable;
@@ -293,6 +309,7 @@ namespace Model
   class RekognitionClient;
 
     typedef std::function<void(const RekognitionClient*, const Model::CompareFacesRequest&, const Model::CompareFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompareFacesResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::CopyProjectVersionRequest&, const Model::CopyProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
@@ -302,6 +319,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectPolicyRequest&, const Model::DeleteProjectPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectPolicyResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectVersionRequest&, const Model::DeleteProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteStreamProcessorRequest&, const Model::DeleteStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeCollectionRequest&, const Model::DescribeCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCollectionResponseReceivedHandler;
@@ -330,8 +348,10 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::ListDatasetEntriesRequest&, const Model::ListDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetEntriesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListDatasetLabelsRequest&, const Model::ListDatasetLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListFacesRequest&, const Model::ListFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacesResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::ListProjectPoliciesRequest&, const Model::ListProjectPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectPoliciesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListStreamProcessorsRequest&, const Model::ListStreamProcessorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamProcessorsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::PutProjectPolicyRequest&, const Model::PutProjectPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProjectPolicyResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::RecognizeCelebritiesRequest&, const Model::RecognizeCelebritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeCelebritiesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::SearchFacesRequest&, const Model::SearchFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::SearchFacesByImageRequest&, const Model::SearchFacesByImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesByImageResponseReceivedHandler;
@@ -399,6 +419,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html">SearchFacesByImage</a>
    * </p> </li> </ul> <p> <b>Amazon Rekognition Custom Labels</b> </p> <ul> <li> <p>
    * <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html">CreateDataset</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProject.html">CreateProject</a>
@@ -408,6 +430,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteDataset.html">DeleteDataset</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProject.html">DeleteProject</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectPolicy.html">DeleteProjectPolicy</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectVersion.html">DeleteProjectVersion</a>
    * </p> </li> <li> <p> <a
@@ -424,6 +448,10 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetEntries.html">ListDatasetEntries</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetLabels.html">ListDatasetLabels</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListProjectPolicies.html">ListProjectPolicies</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_PutProjectPolicy.html">PutProjectPolicy</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartProjectVersion.html">StartProjectVersion</a>
    * </p> </li> <li> <p> <a
@@ -476,6 +504,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartStreamProcessor.html">StartStreamProcessor</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopStreamProcessor.html">StopStreamProcessor</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">UpdateStreamProcessor</a>
    * </p> </li> </ul>
    */
   class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient
@@ -564,6 +594,40 @@ namespace Model
          * An Async wrapper for CompareFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CompareFacesAsync(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Copies a version of an Amazon Rekognition Custom Labels model from a source
+         * project to a destination project. The source and destination projects can be in
+         * different AWS accounts but must be in the same AWS Region. You can't copy a
+         * model to another AWS service. </p> <p>To copy a model version to a different AWS
+         * account, you need to create a resource-based policy known as a <i>project
+         * policy</i>. You attach the project policy to the source project by calling
+         * <a>PutProjectPolicy</a>. The project policy gives permission to copy the model
+         * version from a trusting AWS account to a trusted account.</p> <p>For more
+         * information creating and attaching a project policy, see Attaching a project
+         * policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p> <p>If you are copying a model version to a project in the same AWS account,
+         * you don't need to create a project policy.</p>  <p>To copy a model, the
+         * destination project, source project, and source model version must already
+         * exist.</p>  <p>Copying a model version takes a while to complete. To get
+         * the current status, call <a>DescribeProjectVersions</a> and check the value of
+         * <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy
+         * operation has finished when the value of <code>Status</code> is
+         * <code>COPYING_COMPLETED</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopyProjectVersionOutcome CopyProjectVersion(const Model::CopyProjectVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CopyProjectVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CopyProjectVersionOutcomeCallable CopyProjectVersionCallable(const Model::CopyProjectVersionRequest& request) const;
+
+        /**
+         * An Async wrapper for CopyProjectVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CopyProjectVersionAsync(const Model::CopyProjectVersionRequest& request, const CopyProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a collection in an AWS Region. You can add faces to the collection
@@ -809,9 +873,10 @@ namespace Model
          * <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is an
          * asynchronous operation. To check if the project is deleted, call
          * <a>DescribeProjects</a>. The project is deleted when the project no longer
-         * appears in the response.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>  
-         * <a
+         * appears in the response. Be aware that deleting a given project will also delete
+         * any <code>ProjectPolicies</code> associated with that project.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          */
@@ -826,6 +891,25 @@ namespace Model
          * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an existing project policy.</p> <p>To get a list of project policies
+         * attached to a project, call <a>ListProjectPolicies</a>. To attach a project
+         * policy to a project, call <a>PutProjectPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProjectPolicyOutcome DeleteProjectPolicy(const Model::DeleteProjectPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteProjectPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteProjectPolicyOutcomeCallable DeleteProjectPolicyCallable(const Model::DeleteProjectPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteProjectPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteProjectPolicyAsync(const Model::DeleteProjectPolicyRequest& request, const DeleteProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
@@ -1814,6 +1898,26 @@ namespace Model
         virtual void ListFacesAsync(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of the project policies attached to a project.</p> <p>To attach a
+         * project policy to a project, call <a>PutProjectPolicy</a>. To remove a project
+         * policy from a project, call <a>DeleteProjectPolicy</a>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProjectPoliciesOutcome ListProjectPolicies(const Model::ListProjectPoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProjectPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListProjectPoliciesOutcomeCallable ListProjectPoliciesCallable(const Model::ListProjectPoliciesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListProjectPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListProjectPoliciesAsync(const Model::ListProjectPoliciesRequest& request, const ListProjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of stream processors that you have created with
          * <a>CreateStreamProcessor</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">AWS
@@ -1850,6 +1954,36 @@ namespace Model
          * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a
+         * trusting AWS account. A project policy specifies that a trusted AWS account can
+         * copy a model version from a trusting AWS account to a project in the trusted AWS
+         * account. To copy a model version you use the <a>CopyProjectVersion</a>
+         * operation.</p> <p>For more information about the format of a project policy
+         * document, see Attaching a project policy (SDK) in the <i>Amazon Rekognition
+         * Custom Labels Developer Guide</i>. </p> <p>The response from
+         * <code>PutProjectPolicy</code> is a revision ID for the project policy. You can
+         * attach multiple project policies to a project. You can also update an existing
+         * project policy by specifying the policy revision ID of the existing policy.</p>
+         * <p>To remove a project policy from a project, call <a>DeleteProjectPolicy</a>.
+         * To get a list of project policies attached to a project, call
+         * <a>ListProjectPolicies</a>. </p> <p>You copy a model version by calling
+         * <a>CopyProjectVersion</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutProjectPolicyOutcome PutProjectPolicy(const Model::PutProjectPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutProjectPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutProjectPolicyOutcomeCallable PutProjectPolicyCallable(const Model::PutProjectPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for PutProjectPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutProjectPolicyAsync(const Model::PutProjectPolicyRequest& request, const PutProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
@@ -2410,6 +2544,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CompareFacesAsyncHelper(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CopyProjectVersionAsyncHelper(const Model::CopyProjectVersionRequest& request, const CopyProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCollectionAsyncHelper(const Model::CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2419,6 +2554,7 @@ namespace Model
         void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFacesAsyncHelper(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteProjectPolicyAsyncHelper(const Model::DeleteProjectPolicyRequest& request, const DeleteProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectVersionAsyncHelper(const Model::DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamProcessorAsyncHelper(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCollectionAsyncHelper(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2447,8 +2583,10 @@ namespace Model
         void ListDatasetEntriesAsyncHelper(const Model::ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetLabelsAsyncHelper(const Model::ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFacesAsyncHelper(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListProjectPoliciesAsyncHelper(const Model::ListProjectPoliciesRequest& request, const ListProjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStreamProcessorsAsyncHelper(const Model::ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutProjectPolicyAsyncHelper(const Model::PutProjectPolicyRequest& request, const PutProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RecognizeCelebritiesAsyncHelper(const Model::RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchFacesAsyncHelper(const Model::SearchFacesRequest& request, const SearchFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchFacesByImageAsyncHelper(const Model::SearchFacesByImageRequest& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

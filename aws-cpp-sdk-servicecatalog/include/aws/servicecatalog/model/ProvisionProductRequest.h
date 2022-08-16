@@ -384,49 +384,57 @@ namespace Model
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline void SetProvisionedProductName(const char* value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName.assign(value); }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(const Aws::String& value) { SetProvisionedProductName(value); return *this;}
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
-     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     * for the Amazon Web Services account and cannot be updated after the product is
+     * provisioned.</p>
      */
     inline ProvisionProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
