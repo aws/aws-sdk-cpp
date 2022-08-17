@@ -148,6 +148,12 @@ DescribeIntentResult& DescribeIntentResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("initialResponseSetting"))
+  {
+    m_initialResponseSetting = jsonValue.GetObject("initialResponseSetting");
+
+  }
+
 
 
   return *this;

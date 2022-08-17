@@ -13,6 +13,7 @@
 #include <aws/lexv2-models/model/IntentClosingSetting.h>
 #include <aws/lexv2-models/model/KendraConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/InitialResponseSetting.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/SlotPriority.h>
 #include <aws/lexv2-models/model/InputContext.h>
@@ -673,6 +674,32 @@ namespace Model
      */
     inline UpdateIntentResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const InitialResponseSetting& GetInitialResponseSetting() const{ return m_initialResponseSetting; }
+
+    /**
+     * <p/>
+     */
+    inline void SetInitialResponseSetting(const InitialResponseSetting& value) { m_initialResponseSetting = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetInitialResponseSetting(InitialResponseSetting&& value) { m_initialResponseSetting = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline UpdateIntentResult& WithInitialResponseSetting(const InitialResponseSetting& value) { SetInitialResponseSetting(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline UpdateIntentResult& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_intentId;
@@ -710,6 +737,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
+
+    InitialResponseSetting m_initialResponseSetting;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lakeformation/model/AddLFTagsToResourceResult.h>
+#include <aws/lakeformation/model/AssumeDecoratedRoleWithSAMLResult.h>
 #include <aws/lakeformation/model/BatchGrantPermissionsResult.h>
 #include <aws/lakeformation/model/BatchRevokePermissionsResult.h>
 #include <aws/lakeformation/model/CancelTransactionResult.h>
@@ -95,6 +96,7 @@ namespace LakeFormation
 namespace Model
 {
         class AddLFTagsToResourceRequest;
+        class AssumeDecoratedRoleWithSAMLRequest;
         class BatchGrantPermissionsRequest;
         class BatchRevokePermissionsRequest;
         class CancelTransactionRequest;
@@ -140,6 +142,7 @@ namespace Model
         class UpdateTableStorageOptimizerRequest;
 
         typedef Aws::Utils::Outcome<AddLFTagsToResourceResult, LakeFormationError> AddLFTagsToResourceOutcome;
+        typedef Aws::Utils::Outcome<AssumeDecoratedRoleWithSAMLResult, LakeFormationError> AssumeDecoratedRoleWithSAMLOutcome;
         typedef Aws::Utils::Outcome<BatchGrantPermissionsResult, LakeFormationError> BatchGrantPermissionsOutcome;
         typedef Aws::Utils::Outcome<BatchRevokePermissionsResult, LakeFormationError> BatchRevokePermissionsOutcome;
         typedef Aws::Utils::Outcome<CancelTransactionResult, LakeFormationError> CancelTransactionOutcome;
@@ -185,6 +188,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTableStorageOptimizerResult, LakeFormationError> UpdateTableStorageOptimizerOutcome;
 
         typedef std::future<AddLFTagsToResourceOutcome> AddLFTagsToResourceOutcomeCallable;
+        typedef std::future<AssumeDecoratedRoleWithSAMLOutcome> AssumeDecoratedRoleWithSAMLOutcomeCallable;
         typedef std::future<BatchGrantPermissionsOutcome> BatchGrantPermissionsOutcomeCallable;
         typedef std::future<BatchRevokePermissionsOutcome> BatchRevokePermissionsOutcomeCallable;
         typedef std::future<CancelTransactionOutcome> CancelTransactionOutcomeCallable;
@@ -233,6 +237,7 @@ namespace Model
   class LakeFormationClient;
 
     typedef std::function<void(const LakeFormationClient*, const Model::AddLFTagsToResourceRequest&, const Model::AddLFTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddLFTagsToResourceResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::AssumeDecoratedRoleWithSAMLRequest&, const Model::AssumeDecoratedRoleWithSAMLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeDecoratedRoleWithSAMLResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::BatchGrantPermissionsRequest&, const Model::BatchGrantPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGrantPermissionsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::BatchRevokePermissionsRequest&, const Model::BatchRevokePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchRevokePermissionsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::CancelTransactionRequest&, const Model::CancelTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelTransactionResponseReceivedHandler;
@@ -325,6 +330,36 @@ namespace Model
          * An Async wrapper for AddLFTagsToResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddLFTagsToResourceAsync(const Model::AddLFTagsToResourceRequest& request, const AddLFTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allows a caller to assume an IAM role decorated as the SAML user specified in
+         * the SAML assertion included in the request. This decoration allows Lake
+         * Formation to enforce access policies against the SAML users and groups. This API
+         * operation requires SAML federation setup in the caller’s account as it can only
+         * be called with valid SAML assertions. Lake Formation does not scope down the
+         * permission of the assumed role. All permissions attached to the role via the
+         * SAML federation setup will be included in the role session. </p> <p> This
+         * decorated role is expected to access data in Amazon S3 by getting temporary
+         * access from Lake Formation which is authorized via the virtual API
+         * <code>GetDataAccess</code>. Therefore, all SAML roles that can be assumed via
+         * <code>AssumeDecoratedRoleWithSAML</code> must at a minimum include
+         * <code>lakeformation:GetDataAccess</code> in their role policies. A typical IAM
+         * policy attached to such a role would look as follows: </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AssumeDecoratedRoleWithSAML">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssumeDecoratedRoleWithSAMLOutcome AssumeDecoratedRoleWithSAML(const Model::AssumeDecoratedRoleWithSAMLRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssumeDecoratedRoleWithSAML that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssumeDecoratedRoleWithSAMLOutcomeCallable AssumeDecoratedRoleWithSAMLCallable(const Model::AssumeDecoratedRoleWithSAMLRequest& request) const;
+
+        /**
+         * An Async wrapper for AssumeDecoratedRoleWithSAML that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssumeDecoratedRoleWithSAMLAsync(const Model::AssumeDecoratedRoleWithSAMLRequest& request, const AssumeDecoratedRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Batch operation to grant permissions to the principal.</p><p><h3>See
@@ -453,12 +488,12 @@ namespace Model
         virtual void DeleteDataCellsFilterAsync(const Model::DeleteDataCellsFilterRequest& request, const DeleteDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified LF-tag key name. If the attribute key does not exist or
-         * the LF-tag does not exist, then the operation will not do anything. If the
-         * attribute key exists, then the operation checks if any resources are tagged with
-         * this attribute key, if yes, the API throws a 400 Exception with the message
-         * "Delete not allowed" as the LF-tag key is still attached with resources. You can
-         * consider untagging resources with this LF-tag key.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified LF-tag given a key name. If the input parameter tag key
+         * was not found, then the operation will throw an exception. When you delete an
+         * LF-tag, the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If
+         * the deleted LF-tag was still assigned to any resource, the tag policy attach to
+         * the deleted LF-tag will no longer be applied to the resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag">AWS
          * API Reference</a></p>
          */
@@ -1175,6 +1210,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AddLFTagsToResourceAsyncHelper(const Model::AddLFTagsToResourceRequest& request, const AddLFTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssumeDecoratedRoleWithSAMLAsyncHelper(const Model::AssumeDecoratedRoleWithSAMLRequest& request, const AssumeDecoratedRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGrantPermissionsAsyncHelper(const Model::BatchGrantPermissionsRequest& request, const BatchGrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchRevokePermissionsAsyncHelper(const Model::BatchRevokePermissionsRequest& request, const BatchRevokePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelTransactionAsyncHelper(const Model::CancelTransactionRequest& request, const CancelTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

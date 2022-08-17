@@ -39,6 +39,27 @@ namespace Model
 
 
     /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline GatewayRouteTarget& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
      * <p>An object that represents a virtual service gateway route target.</p>
      */
     inline const GatewayRouteVirtualService& GetVirtualService() const{ return m_virtualService; }
@@ -69,6 +90,9 @@ namespace Model
     inline GatewayRouteTarget& WithVirtualService(GatewayRouteVirtualService&& value) { SetVirtualService(std::move(value)); return *this;}
 
   private:
+
+    int m_port;
+    bool m_portHasBeenSet;
 
     GatewayRouteVirtualService m_virtualService;
     bool m_virtualServiceHasBeenSet;

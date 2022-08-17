@@ -18,6 +18,7 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_type(DataSourceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_configurationHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -53,6 +54,12 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("Configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

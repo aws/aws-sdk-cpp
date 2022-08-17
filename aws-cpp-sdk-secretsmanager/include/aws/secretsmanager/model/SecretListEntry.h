@@ -454,38 +454,38 @@ namespace Model
 
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessedDate() const{ return m_lastAccessedDate; }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline bool LastAccessedDateHasBeenSet() const { return m_lastAccessedDateHasBeenSet; }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(const Aws::Utils::DateTime& value) { m_lastAccessedDateHasBeenSet = true; m_lastAccessedDate = value; }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(Aws::Utils::DateTime&& value) { m_lastAccessedDateHasBeenSet = true; m_lastAccessedDate = std::move(value); }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline SecretListEntry& WithLastAccessedDate(const Aws::Utils::DateTime& value) { SetLastAccessedDate(value); return *this;}
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline SecretListEntry& WithLastAccessedDate(Aws::Utils::DateTime&& value) { SetLastAccessedDate(std::move(value)); return *this;}
 

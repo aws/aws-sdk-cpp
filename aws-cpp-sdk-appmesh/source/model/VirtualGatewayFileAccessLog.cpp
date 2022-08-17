@@ -19,11 +19,13 @@ namespace Model
 {
 
 VirtualGatewayFileAccessLog::VirtualGatewayFileAccessLog() : 
+    m_formatHasBeenSet(false),
     m_pathHasBeenSet(false)
 {
 }
 
 VirtualGatewayFileAccessLog::VirtualGatewayFileAccessLog(JsonView jsonValue) : 
+    m_formatHasBeenSet(false),
     m_pathHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ VirtualGatewayFileAccessLog::VirtualGatewayFileAccessLog(JsonView jsonValue) :
 
 VirtualGatewayFileAccessLog& VirtualGatewayFileAccessLog::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("format"))
+  {
+    m_format = jsonValue.GetObject("format");
+
+    m_formatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
@@ -44,6 +53,12 @@ VirtualGatewayFileAccessLog& VirtualGatewayFileAccessLog::operator =(JsonView js
 JsonValue VirtualGatewayFileAccessLog::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithObject("format", m_format.Jsonize());
+
+  }
 
   if(m_pathHasBeenSet)
   {

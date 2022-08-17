@@ -11,6 +11,7 @@
 #include <aws/kendra/model/DataSourceVpcConfiguration.h>
 #include <aws/kendra/model/S3Path.h>
 #include <aws/kendra/model/SharePointOnlineAuthenticationType.h>
+#include <aws/kendra/model/ProxyConfiguration.h>
 #include <aws/kendra/model/DataSourceToIndexFieldMapping.h>
 #include <utility>
 
@@ -757,6 +758,115 @@ namespace Model
      */
     inline SharePointConfiguration& WithAuthenticationType(SharePointOnlineAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration information to connect to your Microsoft SharePoint site URLs
+     * via instance via a web proxy. You can use this option for SharePoint Server.</p>
+     * <p>You must provide the website host name and port number. For example, the host
+     * name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port
+     * is 443, the standard port for HTTPS.</p> <p>Web proxy credentials are optional
+     * and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you
+     * use a secret in Secrets Manager.</p> <p>It is recommended that you follow best
+     * security practices when configuring your web proxy. This includes setting up
+     * throttling, setting up logging and monitoring, and applying security patches on
+     * a regular basis. If you use your web proxy with multiple data sources, sync jobs
+     * that occur at the same time could strain the load on your proxy. It is
+     * recommended you prepare your proxy beforehand for any security and load
+     * requirements.</p>
+     */
+    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+
+    /**
+     * <p>Configuration information to connect to your Microsoft SharePoint site URLs
+     * via instance via a web proxy. You can use this option for SharePoint Server.</p>
+     * <p>You must provide the website host name and port number. For example, the host
+     * name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port
+     * is 443, the standard port for HTTPS.</p> <p>Web proxy credentials are optional
+     * and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you
+     * use a secret in Secrets Manager.</p> <p>It is recommended that you follow best
+     * security practices when configuring your web proxy. This includes setting up
+     * throttling, setting up logging and monitoring, and applying security patches on
+     * a regular basis. If you use your web proxy with multiple data sources, sync jobs
+     * that occur at the same time could strain the load on your proxy. It is
+     * recommended you prepare your proxy beforehand for any security and load
+     * requirements.</p>
+     */
+    inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information to connect to your Microsoft SharePoint site URLs
+     * via instance via a web proxy. You can use this option for SharePoint Server.</p>
+     * <p>You must provide the website host name and port number. For example, the host
+     * name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port
+     * is 443, the standard port for HTTPS.</p> <p>Web proxy credentials are optional
+     * and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you
+     * use a secret in Secrets Manager.</p> <p>It is recommended that you follow best
+     * security practices when configuring your web proxy. This includes setting up
+     * throttling, setting up logging and monitoring, and applying security patches on
+     * a regular basis. If you use your web proxy with multiple data sources, sync jobs
+     * that occur at the same time could strain the load on your proxy. It is
+     * recommended you prepare your proxy beforehand for any security and load
+     * requirements.</p>
+     */
+    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
+
+    /**
+     * <p>Configuration information to connect to your Microsoft SharePoint site URLs
+     * via instance via a web proxy. You can use this option for SharePoint Server.</p>
+     * <p>You must provide the website host name and port number. For example, the host
+     * name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port
+     * is 443, the standard port for HTTPS.</p> <p>Web proxy credentials are optional
+     * and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you
+     * use a secret in Secrets Manager.</p> <p>It is recommended that you follow best
+     * security practices when configuring your web proxy. This includes setting up
+     * throttling, setting up logging and monitoring, and applying security patches on
+     * a regular basis. If you use your web proxy with multiple data sources, sync jobs
+     * that occur at the same time could strain the load on your proxy. It is
+     * recommended you prepare your proxy beforehand for any security and load
+     * requirements.</p>
+     */
+    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information to connect to your Microsoft SharePoint site URLs
+     * via instance via a web proxy. You can use this option for SharePoint Server.</p>
+     * <p>You must provide the website host name and port number. For example, the host
+     * name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port
+     * is 443, the standard port for HTTPS.</p> <p>Web proxy credentials are optional
+     * and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you
+     * use a secret in Secrets Manager.</p> <p>It is recommended that you follow best
+     * security practices when configuring your web proxy. This includes setting up
+     * throttling, setting up logging and monitoring, and applying security patches on
+     * a regular basis. If you use your web proxy with multiple data sources, sync jobs
+     * that occur at the same time could strain the load on your proxy. It is
+     * recommended you prepare your proxy beforehand for any security and load
+     * requirements.</p>
+     */
+    inline SharePointConfiguration& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information to connect to your Microsoft SharePoint site URLs
+     * via instance via a web proxy. You can use this option for SharePoint Server.</p>
+     * <p>You must provide the website host name and port number. For example, the host
+     * name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port
+     * is 443, the standard port for HTTPS.</p> <p>Web proxy credentials are optional
+     * and you can use them to connect to a web proxy server that requires basic
+     * authentication of user name and password. To store web proxy credentials, you
+     * use a secret in Secrets Manager.</p> <p>It is recommended that you follow best
+     * security practices when configuring your web proxy. This includes setting up
+     * throttling, setting up logging and monitoring, and applying security patches on
+     * a regular basis. If you use your web proxy with multiple data sources, sync jobs
+     * that occur at the same time could strain the load on your proxy. It is
+     * recommended you prepare your proxy beforehand for any security and load
+     * requirements.</p>
+     */
+    inline SharePointConfiguration& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+
   private:
 
     SharePointVersion m_sharePointVersion;
@@ -797,6 +907,9 @@ namespace Model
 
     SharePointOnlineAuthenticationType m_authenticationType;
     bool m_authenticationTypeHasBeenSet;
+
+    ProxyConfiguration m_proxyConfiguration;
+    bool m_proxyConfigurationHasBeenSet;
   };
 
 } // namespace Model

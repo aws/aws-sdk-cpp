@@ -36,7 +36,8 @@ SharePointConfiguration::SharePointConfiguration() :
     m_disableLocalGroupsHasBeenSet(false),
     m_sslCertificateS3PathHasBeenSet(false),
     m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+    m_authenticationTypeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_disableLocalGroupsHasBeenSet(false),
     m_sslCertificateS3PathHasBeenSet(false),
     m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+    m_authenticationTypeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +170,13 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_authenticationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProxyConfiguration"))
+  {
+    m_proxyConfiguration = jsonValue.GetObject("ProxyConfiguration");
+
+    m_proxyConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -269,6 +278,12 @@ JsonValue SharePointConfiguration::Jsonize() const
   if(m_authenticationTypeHasBeenSet)
   {
    payload.WithString("AuthenticationType", SharePointOnlineAuthenticationTypeMapper::GetNameForSharePointOnlineAuthenticationType(m_authenticationType));
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProxyConfiguration", m_proxyConfiguration.Jsonize());
+
   }
 
   return payload;

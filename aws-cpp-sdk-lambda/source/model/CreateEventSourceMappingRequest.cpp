@@ -40,7 +40,9 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_queuesHasBeenSet(false),
     m_sourceAccessConfigurationsHasBeenSet(false),
     m_selfManagedEventSourceHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false)
+    m_functionResponseTypesHasBeenSet(false),
+    m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,18 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
      functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
    }
    payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
+
+  }
+
+  if(m_amazonManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("AmazonManagedKafkaEventSourceConfig", m_amazonManagedKafkaEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_selfManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
 
   }
 

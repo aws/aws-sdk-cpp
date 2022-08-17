@@ -33,7 +33,8 @@ namespace Model
     QUIP,
     JIRA,
     GITHUB,
-    ALFRESCO
+    ALFRESCO,
+    TEMPLATE
   };
 
 namespace DataSourceTypeMapper

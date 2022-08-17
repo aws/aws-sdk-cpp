@@ -19,11 +19,15 @@ namespace Model
 {
 
 GatewayRouteTarget::GatewayRouteTarget() : 
+    m_port(0),
+    m_portHasBeenSet(false),
     m_virtualServiceHasBeenSet(false)
 {
 }
 
 GatewayRouteTarget::GatewayRouteTarget(JsonView jsonValue) : 
+    m_port(0),
+    m_portHasBeenSet(false),
     m_virtualServiceHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +35,13 @@ GatewayRouteTarget::GatewayRouteTarget(JsonView jsonValue) :
 
 GatewayRouteTarget& GatewayRouteTarget::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+
+    m_portHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("virtualService"))
   {
     m_virtualService = jsonValue.GetObject("virtualService");
@@ -44,6 +55,12 @@ GatewayRouteTarget& GatewayRouteTarget::operator =(JsonView jsonValue)
 JsonValue GatewayRouteTarget::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
+
+  }
 
   if(m_virtualServiceHasBeenSet)
   {

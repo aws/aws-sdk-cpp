@@ -21,14 +21,18 @@ namespace Model
 IntentClosingSetting::IntentClosingSetting() : 
     m_closingResponseHasBeenSet(false),
     m_active(false),
-    m_activeHasBeenSet(false)
+    m_activeHasBeenSet(false),
+    m_nextStepHasBeenSet(false),
+    m_conditionalHasBeenSet(false)
 {
 }
 
 IntentClosingSetting::IntentClosingSetting(JsonView jsonValue) : 
     m_closingResponseHasBeenSet(false),
     m_active(false),
-    m_activeHasBeenSet(false)
+    m_activeHasBeenSet(false),
+    m_nextStepHasBeenSet(false),
+    m_conditionalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,20 @@ IntentClosingSetting& IntentClosingSetting::operator =(JsonView jsonValue)
     m_activeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("nextStep"))
+  {
+    m_nextStep = jsonValue.GetObject("nextStep");
+
+    m_nextStepHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("conditional"))
+  {
+    m_conditional = jsonValue.GetObject("conditional");
+
+    m_conditionalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +83,18 @@ JsonValue IntentClosingSetting::Jsonize() const
   if(m_activeHasBeenSet)
   {
    payload.WithBool("active", m_active);
+
+  }
+
+  if(m_nextStepHasBeenSet)
+  {
+   payload.WithObject("nextStep", m_nextStep.Jsonize());
+
+  }
+
+  if(m_conditionalHasBeenSet)
+  {
+   payload.WithObject("conditional", m_conditional.Jsonize());
 
   }
 

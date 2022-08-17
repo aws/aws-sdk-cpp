@@ -210,32 +210,38 @@ namespace Model
 
 
     /**
-     * <p>The date that you last accessed the secret in the Region. </p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessedDate() const{ return m_lastAccessedDate; }
 
     /**
-     * <p>The date that you last accessed the secret in the Region. </p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline bool LastAccessedDateHasBeenSet() const { return m_lastAccessedDateHasBeenSet; }
 
     /**
-     * <p>The date that you last accessed the secret in the Region. </p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(const Aws::Utils::DateTime& value) { m_lastAccessedDateHasBeenSet = true; m_lastAccessedDate = value; }
 
     /**
-     * <p>The date that you last accessed the secret in the Region. </p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(Aws::Utils::DateTime&& value) { m_lastAccessedDateHasBeenSet = true; m_lastAccessedDate = std::move(value); }
 
     /**
-     * <p>The date that you last accessed the secret in the Region. </p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline ReplicationStatusType& WithLastAccessedDate(const Aws::Utils::DateTime& value) { SetLastAccessedDate(value); return *this;}
 
     /**
-     * <p>The date that you last accessed the secret in the Region. </p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline ReplicationStatusType& WithLastAccessedDate(Aws::Utils::DateTime&& value) { SetLastAccessedDate(std::move(value)); return *this;}
 

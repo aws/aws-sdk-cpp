@@ -19,6 +19,8 @@ namespace Model
 {
 
 WeightedTarget::WeightedTarget() : 
+    m_port(0),
+    m_portHasBeenSet(false),
     m_virtualNodeHasBeenSet(false),
     m_weight(0),
     m_weightHasBeenSet(false)
@@ -26,6 +28,8 @@ WeightedTarget::WeightedTarget() :
 }
 
 WeightedTarget::WeightedTarget(JsonView jsonValue) : 
+    m_port(0),
+    m_portHasBeenSet(false),
     m_virtualNodeHasBeenSet(false),
     m_weight(0),
     m_weightHasBeenSet(false)
@@ -35,6 +39,13 @@ WeightedTarget::WeightedTarget(JsonView jsonValue) :
 
 WeightedTarget& WeightedTarget::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+
+    m_portHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("virtualNode"))
   {
     m_virtualNode = jsonValue.GetString("virtualNode");
@@ -55,6 +66,12 @@ WeightedTarget& WeightedTarget::operator =(JsonView jsonValue)
 JsonValue WeightedTarget::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
+
+  }
 
   if(m_virtualNodeHasBeenSet)
   {

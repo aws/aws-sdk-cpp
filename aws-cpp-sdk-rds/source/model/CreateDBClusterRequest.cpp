@@ -72,6 +72,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_networkTypeHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -326,6 +327,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_serverlessV2ScalingConfigurationHasBeenSet)
   {
     m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

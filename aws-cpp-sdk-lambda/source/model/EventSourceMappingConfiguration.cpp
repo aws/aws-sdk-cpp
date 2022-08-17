@@ -49,7 +49,9 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_maximumRetryAttemptsHasBeenSet(false),
     m_tumblingWindowInSeconds(0),
     m_tumblingWindowInSecondsHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false)
+    m_functionResponseTypesHasBeenSet(false),
+    m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_maximumRetryAttemptsHasBeenSet(false),
     m_tumblingWindowInSeconds(0),
     m_tumblingWindowInSecondsHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false)
+    m_functionResponseTypesHasBeenSet(false),
+    m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -264,6 +268,20 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_functionResponseTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmazonManagedKafkaEventSourceConfig"))
+  {
+    m_amazonManagedKafkaEventSourceConfig = jsonValue.GetObject("AmazonManagedKafkaEventSourceConfig");
+
+    m_amazonManagedKafkaEventSourceConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SelfManagedKafkaEventSourceConfig"))
+  {
+    m_selfManagedKafkaEventSourceConfig = jsonValue.GetObject("SelfManagedKafkaEventSourceConfig");
+
+    m_selfManagedKafkaEventSourceConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -423,6 +441,18 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
      functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
    }
    payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
+
+  }
+
+  if(m_amazonManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("AmazonManagedKafkaEventSourceConfig", m_amazonManagedKafkaEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_selfManagedKafkaEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
 
   }
 

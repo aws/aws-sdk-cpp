@@ -179,6 +179,27 @@ namespace Model
 
 
     /**
+     * <p>The port number to match on.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline HttpGatewayRouteMatch& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
      * <p>Specifies the path to match requests with. This parameter must always start
      * with <code>/</code>, which by itself matches all requests to the virtual service
      * name. You can also match for path-based routing of requests. For example, if
@@ -312,6 +333,9 @@ namespace Model
 
     HttpPathMatch m_path;
     bool m_pathHasBeenSet;
+
+    int m_port;
+    bool m_portHasBeenSet;
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;

@@ -13,6 +13,7 @@
 #include <aws/lexv2-models/model/IntentClosingSetting.h>
 #include <aws/lexv2-models/model/KendraConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/InitialResponseSetting.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/InputContext.h>
 #include <aws/lexv2-models/model/OutputContext.h>
@@ -562,6 +563,37 @@ namespace Model
      */
     inline CreateIntentResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline const InitialResponseSetting& GetInitialResponseSetting() const{ return m_initialResponseSetting; }
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline void SetInitialResponseSetting(const InitialResponseSetting& value) { m_initialResponseSetting = value; }
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline void SetInitialResponseSetting(InitialResponseSetting&& value) { m_initialResponseSetting = std::move(value); }
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline CreateIntentResult& WithInitialResponseSetting(const InitialResponseSetting& value) { SetInitialResponseSetting(value); return *this;}
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline CreateIntentResult& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_intentId;
@@ -595,6 +627,8 @@ namespace Model
     Aws::String m_localeId;
 
     Aws::Utils::DateTime m_creationDateTime;
+
+    InitialResponseSetting m_initialResponseSetting;
   };
 
 } // namespace Model

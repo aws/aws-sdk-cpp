@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/ResponseSpecification.h>
+#include <aws/lexv2-models/model/DialogState.h>
+#include <aws/lexv2-models/model/ConditionalSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -103,6 +105,86 @@ namespace Model
      */
     inline IntentClosingSetting& WithActive(bool value) { SetActive(value); return *this;}
 
+
+    /**
+     * <p>Specifies the next step that the bot executes after playing the intent's
+     * closing response.</p>
+     */
+    inline const DialogState& GetNextStep() const{ return m_nextStep; }
+
+    /**
+     * <p>Specifies the next step that the bot executes after playing the intent's
+     * closing response.</p>
+     */
+    inline bool NextStepHasBeenSet() const { return m_nextStepHasBeenSet; }
+
+    /**
+     * <p>Specifies the next step that the bot executes after playing the intent's
+     * closing response.</p>
+     */
+    inline void SetNextStep(const DialogState& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
+
+    /**
+     * <p>Specifies the next step that the bot executes after playing the intent's
+     * closing response.</p>
+     */
+    inline void SetNextStep(DialogState&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
+
+    /**
+     * <p>Specifies the next step that the bot executes after playing the intent's
+     * closing response.</p>
+     */
+    inline IntentClosingSetting& WithNextStep(const DialogState& value) { SetNextStep(value); return *this;}
+
+    /**
+     * <p>Specifies the next step that the bot executes after playing the intent's
+     * closing response.</p>
+     */
+    inline IntentClosingSetting& WithNextStep(DialogState&& value) { SetNextStep(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of conditional branches associated with the intent's closing response.
+     * These branches are executed when the <code>nextStep</code> attribute is set to
+     * <code>EvalutateConditional</code>.</p>
+     */
+    inline const ConditionalSpecification& GetConditional() const{ return m_conditional; }
+
+    /**
+     * <p>A list of conditional branches associated with the intent's closing response.
+     * These branches are executed when the <code>nextStep</code> attribute is set to
+     * <code>EvalutateConditional</code>.</p>
+     */
+    inline bool ConditionalHasBeenSet() const { return m_conditionalHasBeenSet; }
+
+    /**
+     * <p>A list of conditional branches associated with the intent's closing response.
+     * These branches are executed when the <code>nextStep</code> attribute is set to
+     * <code>EvalutateConditional</code>.</p>
+     */
+    inline void SetConditional(const ConditionalSpecification& value) { m_conditionalHasBeenSet = true; m_conditional = value; }
+
+    /**
+     * <p>A list of conditional branches associated with the intent's closing response.
+     * These branches are executed when the <code>nextStep</code> attribute is set to
+     * <code>EvalutateConditional</code>.</p>
+     */
+    inline void SetConditional(ConditionalSpecification&& value) { m_conditionalHasBeenSet = true; m_conditional = std::move(value); }
+
+    /**
+     * <p>A list of conditional branches associated with the intent's closing response.
+     * These branches are executed when the <code>nextStep</code> attribute is set to
+     * <code>EvalutateConditional</code>.</p>
+     */
+    inline IntentClosingSetting& WithConditional(const ConditionalSpecification& value) { SetConditional(value); return *this;}
+
+    /**
+     * <p>A list of conditional branches associated with the intent's closing response.
+     * These branches are executed when the <code>nextStep</code> attribute is set to
+     * <code>EvalutateConditional</code>.</p>
+     */
+    inline IntentClosingSetting& WithConditional(ConditionalSpecification&& value) { SetConditional(std::move(value)); return *this;}
+
   private:
 
     ResponseSpecification m_closingResponse;
@@ -110,6 +192,12 @@ namespace Model
 
     bool m_active;
     bool m_activeHasBeenSet;
+
+    DialogState m_nextStep;
+    bool m_nextStepHasBeenSet;
+
+    ConditionalSpecification m_conditional;
+    bool m_conditionalHasBeenSet;
   };
 
 } // namespace Model

@@ -149,6 +149,31 @@ namespace Model
      */
     inline FulfillmentCodeHookSettings& WithFulfillmentUpdatesSpecification(FulfillmentUpdatesSpecification&& value) { SetFulfillmentUpdatesSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Determines whether the fulfillment code hook is used. When
+     * <code>active</code> is false, the code hook doesn't run.</p>
+     */
+    inline bool GetActive() const{ return m_active; }
+
+    /**
+     * <p>Determines whether the fulfillment code hook is used. When
+     * <code>active</code> is false, the code hook doesn't run.</p>
+     */
+    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+
+    /**
+     * <p>Determines whether the fulfillment code hook is used. When
+     * <code>active</code> is false, the code hook doesn't run.</p>
+     */
+    inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
+
+    /**
+     * <p>Determines whether the fulfillment code hook is used. When
+     * <code>active</code> is false, the code hook doesn't run.</p>
+     */
+    inline FulfillmentCodeHookSettings& WithActive(bool value) { SetActive(value); return *this;}
+
   private:
 
     bool m_enabled;
@@ -159,6 +184,9 @@ namespace Model
 
     FulfillmentUpdatesSpecification m_fulfillmentUpdatesSpecification;
     bool m_fulfillmentUpdatesSpecificationHasBeenSet;
+
+    bool m_active;
+    bool m_activeHasBeenSet;
   };
 
 } // namespace Model

@@ -404,105 +404,137 @@ namespace Model
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline CreateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline CreateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * the secret value in the secret.</p> <p>To use a KMS key in a different account,
-     * use the key ARN or the alias ARN.</p> <p>If you don't specify this value, then
-     * Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key
-     * doesn't yet exist, then Secrets Manager creates it for you automatically the
-     * first time it encrypts the secret value.</p> <p>If the secret is in a different
-     * Amazon Web Services account from the credentials calling the API, then you can't
-     * use <code>aws/secretsmanager</code> to encrypt the secret, and you must create
-     * and use a customer managed KMS key. </p>
+     * the secret value in the secret. An alias is always prefixed by
+     * <code>alias/</code>, for example <code>alias/aws/secretsmanager</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>To use a KMS key in a different account, use the key ARN or
+     * the alias ARN.</p> <p>If you don't specify this value, then Secrets Manager uses
+     * the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then
+     * Secrets Manager creates it for you automatically the first time it encrypts the
+     * secret value.</p> <p>If the secret is in a different Amazon Web Services account
+     * from the credentials calling the API, then you can't use
+     * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+     * use a customer managed KMS key. </p>
      */
     inline CreateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

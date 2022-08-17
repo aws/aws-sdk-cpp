@@ -10,6 +10,7 @@
 #include <aws/lexv2-models/model/PromptSpecification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/WaitAndContinueSpecification.h>
+#include <aws/lexv2-models/model/SlotCaptureSetting.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <utility>
 
@@ -231,6 +232,43 @@ namespace Model
     
     inline SlotValueElicitationSetting& WithWaitAndContinueSpecification(WaitAndContinueSpecification&& value) { SetWaitAndContinueSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the settings that Amazon Lex uses when a slot value is successfully
+     * entered by a user.</p>
+     */
+    inline const SlotCaptureSetting& GetSlotCaptureSetting() const{ return m_slotCaptureSetting; }
+
+    /**
+     * <p>Specifies the settings that Amazon Lex uses when a slot value is successfully
+     * entered by a user.</p>
+     */
+    inline bool SlotCaptureSettingHasBeenSet() const { return m_slotCaptureSettingHasBeenSet; }
+
+    /**
+     * <p>Specifies the settings that Amazon Lex uses when a slot value is successfully
+     * entered by a user.</p>
+     */
+    inline void SetSlotCaptureSetting(const SlotCaptureSetting& value) { m_slotCaptureSettingHasBeenSet = true; m_slotCaptureSetting = value; }
+
+    /**
+     * <p>Specifies the settings that Amazon Lex uses when a slot value is successfully
+     * entered by a user.</p>
+     */
+    inline void SetSlotCaptureSetting(SlotCaptureSetting&& value) { m_slotCaptureSettingHasBeenSet = true; m_slotCaptureSetting = std::move(value); }
+
+    /**
+     * <p>Specifies the settings that Amazon Lex uses when a slot value is successfully
+     * entered by a user.</p>
+     */
+    inline SlotValueElicitationSetting& WithSlotCaptureSetting(const SlotCaptureSetting& value) { SetSlotCaptureSetting(value); return *this;}
+
+    /**
+     * <p>Specifies the settings that Amazon Lex uses when a slot value is successfully
+     * entered by a user.</p>
+     */
+    inline SlotValueElicitationSetting& WithSlotCaptureSetting(SlotCaptureSetting&& value) { SetSlotCaptureSetting(std::move(value)); return *this;}
+
   private:
 
     SlotDefaultValueSpecification m_defaultValueSpecification;
@@ -247,6 +285,9 @@ namespace Model
 
     WaitAndContinueSpecification m_waitAndContinueSpecification;
     bool m_waitAndContinueSpecificationHasBeenSet;
+
+    SlotCaptureSetting m_slotCaptureSetting;
+    bool m_slotCaptureSettingHasBeenSet;
   };
 
 } // namespace Model

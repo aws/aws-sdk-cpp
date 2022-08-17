@@ -19,11 +19,13 @@ namespace Model
 {
 
 FileAccessLog::FileAccessLog() : 
+    m_formatHasBeenSet(false),
     m_pathHasBeenSet(false)
 {
 }
 
 FileAccessLog::FileAccessLog(JsonView jsonValue) : 
+    m_formatHasBeenSet(false),
     m_pathHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ FileAccessLog::FileAccessLog(JsonView jsonValue) :
 
 FileAccessLog& FileAccessLog::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("format"))
+  {
+    m_format = jsonValue.GetObject("format");
+
+    m_formatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
@@ -44,6 +53,12 @@ FileAccessLog& FileAccessLog::operator =(JsonView jsonValue)
 JsonValue FileAccessLog::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithObject("format", m_format.Jsonize());
+
+  }
 
   if(m_pathHasBeenSet)
   {

@@ -13,6 +13,7 @@
 #include <aws/lexv2-models/model/IntentConfirmationSetting.h>
 #include <aws/lexv2-models/model/IntentClosingSetting.h>
 #include <aws/lexv2-models/model/KendraConfiguration.h>
+#include <aws/lexv2-models/model/InitialResponseSetting.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/InputContext.h>
 #include <aws/lexv2-models/model/OutputContext.h>
@@ -874,6 +875,43 @@ namespace Model
      */
     inline CreateIntentRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline const InitialResponseSetting& GetInitialResponseSetting() const{ return m_initialResponseSetting; }
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline bool InitialResponseSettingHasBeenSet() const { return m_initialResponseSettingHasBeenSet; }
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline void SetInitialResponseSetting(const InitialResponseSetting& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = value; }
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline void SetInitialResponseSetting(InitialResponseSetting&& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = std::move(value); }
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline CreateIntentRequest& WithInitialResponseSetting(const InitialResponseSetting& value) { SetInitialResponseSetting(value); return *this;}
+
+    /**
+     * <p>Configuration settings for the response that is sent to the user at the
+     * beginning of a conversation, before eliciting slot values.</p>
+     */
+    inline CreateIntentRequest& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_intentName;
@@ -917,6 +955,9 @@ namespace Model
 
     Aws::String m_localeId;
     bool m_localeIdHasBeenSet;
+
+    InitialResponseSetting m_initialResponseSetting;
+    bool m_initialResponseSettingHasBeenSet;
   };
 
 } // namespace Model

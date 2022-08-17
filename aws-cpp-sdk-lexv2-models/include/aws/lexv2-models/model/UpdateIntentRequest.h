@@ -13,6 +13,7 @@
 #include <aws/lexv2-models/model/IntentConfirmationSetting.h>
 #include <aws/lexv2-models/model/IntentClosingSetting.h>
 #include <aws/lexv2-models/model/KendraConfiguration.h>
+#include <aws/lexv2-models/model/InitialResponseSetting.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/SlotPriority.h>
 #include <aws/lexv2-models/model/InputContext.h>
@@ -735,6 +736,37 @@ namespace Model
      */
     inline UpdateIntentRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const InitialResponseSetting& GetInitialResponseSetting() const{ return m_initialResponseSetting; }
+
+    /**
+     * <p/>
+     */
+    inline bool InitialResponseSettingHasBeenSet() const { return m_initialResponseSettingHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetInitialResponseSetting(const InitialResponseSetting& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetInitialResponseSetting(InitialResponseSetting&& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline UpdateIntentRequest& WithInitialResponseSetting(const InitialResponseSetting& value) { SetInitialResponseSetting(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline UpdateIntentRequest& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_intentId;
@@ -784,6 +816,9 @@ namespace Model
 
     Aws::String m_localeId;
     bool m_localeIdHasBeenSet;
+
+    InitialResponseSetting m_initialResponseSetting;
+    bool m_initialResponseSettingHasBeenSet;
   };
 
 } // namespace Model
