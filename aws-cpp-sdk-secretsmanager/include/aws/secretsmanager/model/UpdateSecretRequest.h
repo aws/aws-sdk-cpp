@@ -265,129 +265,201 @@ namespace Model
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
-     * new secret versions as well as any existing versions the staging labels
+     * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
      * For more information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
-     * Version</a>.</p>  <p>You can only use the Amazon Web Services managed
-     * key <code>aws/secretsmanager</code> if you call this operation using credentials
-     * from the same Amazon Web Services account that owns the secret. If the secret is
-     * in a different account, then you must use a customer managed key and provide the
-     * ARN of that KMS key in this field. The user making the call must have
-     * permissions to both the secret and the KMS key in their respective accounts.</p>
-     * 
+     * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
+     * example <code>alias/aws/secretsmanager</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+     * aliases</a>.</p> <p>If you set this to an empty string, Secrets Manager uses the
+     * Amazon Web Services managed key <code>aws/secretsmanager</code>. If this key
+     * doesn't already exist in your account, then Secrets Manager creates it for you
+     * automatically. All users and roles in the Amazon Web Services account
+     * automatically have access to use <code>aws/secretsmanager</code>. Creating
+     * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+     * returning the result. </p>  <p>You can only use the Amazon Web
+     * Services managed key <code>aws/secretsmanager</code> if you call this operation
+     * using credentials from the same Amazon Web Services account that owns the
+     * secret. If the secret is in a different account, then you must use a customer
+     * managed key and provide the ARN of that KMS key in this field. The user making
+     * the call must have permissions to both the secret and the KMS key in their
+     * respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

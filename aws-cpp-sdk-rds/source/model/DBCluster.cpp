@@ -111,7 +111,8 @@ DBCluster::DBCluster() :
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false)
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -206,7 +207,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false)
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -685,6 +687,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_serverlessV2ScalingConfiguration = serverlessV2ScalingConfigurationNode;
       m_serverlessV2ScalingConfigurationHasBeenSet = true;
     }
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if(!networkTypeNode.IsNull())
+    {
+      m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
+      m_networkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1090,6 +1098,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1423,6 +1436,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String serverlessV2ScalingConfigurationLocationAndMember(location);
       serverlessV2ScalingConfigurationLocationAndMember += ".ServerlessV2ScalingConfiguration";
       m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMember.c_str());
+  }
+  if(m_networkTypeHasBeenSet)
+  {
+      oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 }
 

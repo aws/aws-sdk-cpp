@@ -13,6 +13,7 @@
 #include <aws/kendra/model/ConfluenceAttachmentConfiguration.h>
 #include <aws/kendra/model/DataSourceVpcConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/ProxyConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -574,6 +575,109 @@ namespace Model
      */
     inline ConfluenceConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline ConfluenceConfiguration& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline ConfluenceConfiguration& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serverUrl;
@@ -605,6 +709,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
     bool m_exclusionPatternsHasBeenSet;
+
+    ProxyConfiguration m_proxyConfiguration;
+    bool m_proxyConfigurationHasBeenSet;
   };
 
 } // namespace Model

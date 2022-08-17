@@ -21,6 +21,7 @@
 #include <aws/lakeformation/LakeFormationEndpoint.h>
 #include <aws/lakeformation/LakeFormationErrorMarshaller.h>
 #include <aws/lakeformation/model/AddLFTagsToResourceRequest.h>
+#include <aws/lakeformation/model/AssumeDecoratedRoleWithSAMLRequest.h>
 #include <aws/lakeformation/model/BatchGrantPermissionsRequest.h>
 #include <aws/lakeformation/model/BatchRevokePermissionsRequest.h>
 #include <aws/lakeformation/model/CancelTransactionRequest.h>
@@ -170,6 +171,31 @@ void LakeFormationClient::AddLFTagsToResourceAsync(const AddLFTagsToResourceRequ
 void LakeFormationClient::AddLFTagsToResourceAsyncHelper(const AddLFTagsToResourceRequest& request, const AddLFTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddLFTagsToResource(request), context);
+}
+
+AssumeDecoratedRoleWithSAMLOutcome LakeFormationClient::AssumeDecoratedRoleWithSAML(const AssumeDecoratedRoleWithSAMLRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/AssumeDecoratedRoleWithSAML");
+  return AssumeDecoratedRoleWithSAMLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssumeDecoratedRoleWithSAMLOutcomeCallable LakeFormationClient::AssumeDecoratedRoleWithSAMLCallable(const AssumeDecoratedRoleWithSAMLRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssumeDecoratedRoleWithSAMLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssumeDecoratedRoleWithSAML(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LakeFormationClient::AssumeDecoratedRoleWithSAMLAsync(const AssumeDecoratedRoleWithSAMLRequest& request, const AssumeDecoratedRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssumeDecoratedRoleWithSAMLAsyncHelper( request, handler, context ); } );
+}
+
+void LakeFormationClient::AssumeDecoratedRoleWithSAMLAsyncHelper(const AssumeDecoratedRoleWithSAMLRequest& request, const AssumeDecoratedRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssumeDecoratedRoleWithSAML(request), context);
 }
 
 BatchGrantPermissionsOutcome LakeFormationClient::BatchGrantPermissions(const BatchGrantPermissionsRequest& request) const

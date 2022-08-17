@@ -22,6 +22,7 @@
 #include <aws/kendra/model/JiraConfiguration.h>
 #include <aws/kendra/model/GitHubConfiguration.h>
 #include <aws/kendra/model/AlfrescoConfiguration.h>
+#include <aws/kendra/model/TemplateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -664,6 +665,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithAlfrescoConfiguration(AlfrescoConfiguration&& value) { SetAlfrescoConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides a template for the configuration information to connect to your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -716,6 +754,9 @@ namespace Model
 
     AlfrescoConfiguration m_alfrescoConfiguration;
     bool m_alfrescoConfigurationHasBeenSet;
+
+    TemplateConfiguration m_templateConfiguration;
+    bool m_templateConfigurationHasBeenSet;
   };
 
 } // namespace Model

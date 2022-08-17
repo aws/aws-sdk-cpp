@@ -38,6 +38,7 @@ namespace Aws
         static const int JIRA_HASH = HashingUtils::HashString("JIRA");
         static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
         static const int ALFRESCO_HASH = HashingUtils::HashString("ALFRESCO");
+        static const int TEMPLATE_HASH = HashingUtils::HashString("TEMPLATE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return DataSourceType::ALFRESCO;
           }
+          else if (hashCode == TEMPLATE_HASH)
+          {
+            return DataSourceType::TEMPLATE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +170,8 @@ namespace Aws
             return "GITHUB";
           case DataSourceType::ALFRESCO:
             return "ALFRESCO";
+          case DataSourceType::TEMPLATE:
+            return "TEMPLATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

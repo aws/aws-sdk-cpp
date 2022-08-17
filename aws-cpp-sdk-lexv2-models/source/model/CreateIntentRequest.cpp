@@ -26,7 +26,8 @@ CreateIntentRequest::CreateIntentRequest() :
     m_kendraConfigurationHasBeenSet(false),
     m_botIdHasBeenSet(false),
     m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+    m_localeIdHasBeenSet(false),
+    m_initialResponseSettingHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,12 @@ Aws::String CreateIntentRequest::SerializePayload() const
   if(m_kendraConfigurationHasBeenSet)
   {
    payload.WithObject("kendraConfiguration", m_kendraConfiguration.Jsonize());
+
+  }
+
+  if(m_initialResponseSettingHasBeenSet)
+  {
+   payload.WithObject("initialResponseSetting", m_initialResponseSetting.Jsonize());
 
   }
 

@@ -194,6 +194,18 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
     }
   }
 
+  if(jsonValue.ValueExists("AmazonManagedKafkaEventSourceConfig"))
+  {
+    m_amazonManagedKafkaEventSourceConfig = jsonValue.GetObject("AmazonManagedKafkaEventSourceConfig");
+
+  }
+
+  if(jsonValue.ValueExists("SelfManagedKafkaEventSourceConfig"))
+  {
+    m_selfManagedKafkaEventSourceConfig = jsonValue.GetObject("SelfManagedKafkaEventSourceConfig");
+
+  }
+
 
 
   return *this;

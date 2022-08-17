@@ -35,7 +35,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_quipConfigurationHasBeenSet(false),
     m_jiraConfigurationHasBeenSet(false),
     m_gitHubConfigurationHasBeenSet(false),
-    m_alfrescoConfigurationHasBeenSet(false)
+    m_alfrescoConfigurationHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_quipConfigurationHasBeenSet(false),
     m_jiraConfigurationHasBeenSet(false),
     m_gitHubConfigurationHasBeenSet(false),
-    m_alfrescoConfigurationHasBeenSet(false)
+    m_alfrescoConfigurationHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +184,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_alfrescoConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TemplateConfiguration"))
+  {
+    m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
+
+    m_templateConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -288,6 +297,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_alfrescoConfigurationHasBeenSet)
   {
    payload.WithObject("AlfrescoConfiguration", m_alfrescoConfiguration.Jsonize());
+
+  }
+
+  if(m_templateConfigurationHasBeenSet)
+  {
+   payload.WithObject("TemplateConfiguration", m_templateConfiguration.Jsonize());
 
   }
 

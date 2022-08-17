@@ -114,6 +114,27 @@ namespace Model
 
 
     /**
+     * <p>The port number to match from the request.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number to match from the request.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number to match from the request.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number to match from the request.</p>
+     */
+    inline GrpcGatewayRouteMatch& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
      * <p>The fully qualified domain name for the service to match from the
      * request.</p>
      */
@@ -168,6 +189,9 @@ namespace Model
 
     Aws::Vector<GrpcGatewayRouteMetadata> m_metadata;
     bool m_metadataHasBeenSet;
+
+    int m_port;
+    bool m_portHasBeenSet;
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;

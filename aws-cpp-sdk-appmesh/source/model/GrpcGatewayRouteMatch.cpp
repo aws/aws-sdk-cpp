@@ -21,6 +21,8 @@ namespace Model
 GrpcGatewayRouteMatch::GrpcGatewayRouteMatch() : 
     m_hostnameHasBeenSet(false),
     m_metadataHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ GrpcGatewayRouteMatch::GrpcGatewayRouteMatch() :
 GrpcGatewayRouteMatch::GrpcGatewayRouteMatch(JsonView jsonValue) : 
     m_hostnameHasBeenSet(false),
     m_metadataHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,6 +54,13 @@ GrpcGatewayRouteMatch& GrpcGatewayRouteMatch::operator =(JsonView jsonValue)
       m_metadata.push_back(metadataJsonList[metadataIndex].AsObject());
     }
     m_metadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+
+    m_portHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serviceName"))
@@ -80,6 +91,12 @@ JsonValue GrpcGatewayRouteMatch::Jsonize() const
      metadataJsonList[metadataIndex].AsObject(m_metadata[metadataIndex].Jsonize());
    }
    payload.WithArray("metadata", std::move(metadataJsonList));
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 

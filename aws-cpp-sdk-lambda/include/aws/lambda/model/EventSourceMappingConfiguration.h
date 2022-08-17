@@ -12,6 +12,8 @@
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>
+#include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -975,6 +977,80 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline const AmazonManagedKafkaEventSourceConfig& GetAmazonManagedKafkaEventSourceConfig() const{ return m_amazonManagedKafkaEventSourceConfig; }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline bool AmazonManagedKafkaEventSourceConfigHasBeenSet() const { return m_amazonManagedKafkaEventSourceConfigHasBeenSet; }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline void SetAmazonManagedKafkaEventSourceConfig(const AmazonManagedKafkaEventSourceConfig& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = value; }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline void SetAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig&& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = std::move(value); }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithAmazonManagedKafkaEventSourceConfig(const AmazonManagedKafkaEventSourceConfig& value) { SetAmazonManagedKafkaEventSourceConfig(value); return *this;}
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig&& value) { SetAmazonManagedKafkaEventSourceConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline const SelfManagedKafkaEventSourceConfig& GetSelfManagedKafkaEventSourceConfig() const{ return m_selfManagedKafkaEventSourceConfig; }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline bool SelfManagedKafkaEventSourceConfigHasBeenSet() const { return m_selfManagedKafkaEventSourceConfigHasBeenSet; }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline void SetSelfManagedKafkaEventSourceConfig(const SelfManagedKafkaEventSourceConfig& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = value; }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline void SetSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = std::move(value); }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithSelfManagedKafkaEventSourceConfig(const SelfManagedKafkaEventSourceConfig& value) { SetSelfManagedKafkaEventSourceConfig(value); return *this;}
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { SetSelfManagedKafkaEventSourceConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_uUID;
@@ -1045,6 +1121,12 @@ namespace Model
 
     Aws::Vector<FunctionResponseType> m_functionResponseTypes;
     bool m_functionResponseTypesHasBeenSet;
+
+    AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
+    bool m_amazonManagedKafkaEventSourceConfigHasBeenSet;
+
+    SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
+    bool m_selfManagedKafkaEventSourceConfigHasBeenSet;
   };
 
 } // namespace Model

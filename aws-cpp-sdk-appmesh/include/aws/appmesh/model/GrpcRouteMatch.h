@@ -131,6 +131,27 @@ namespace Model
 
 
     /**
+     * <p>The port number to match on.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline GrpcRouteMatch& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
      * <p>The fully qualified domain name for the service to match from the
      * request.</p>
      */
@@ -185,6 +206,9 @@ namespace Model
 
     Aws::String m_methodName;
     bool m_methodNameHasBeenSet;
+
+    int m_port;
+    bool m_portHasBeenSet;
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;

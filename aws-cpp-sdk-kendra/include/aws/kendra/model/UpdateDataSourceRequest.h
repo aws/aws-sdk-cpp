@@ -8,6 +8,7 @@
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/DataSourceConfiguration.h>
+#include <aws/kendra/model/DataSourceVpcConfiguration.h>
 #include <aws/kendra/model/CustomDocumentEnrichmentConfiguration.h>
 #include <utility>
 
@@ -78,50 +79,42 @@ namespace Model
 
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline UpdateDataSourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline UpdateDataSourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A new name for the data source connector. You must first delete the data
-     * source and re-create it to change the name of the data source.</p>
+     * <p>A new name for the data source connector.</p>
      */
     inline UpdateDataSourceRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -202,6 +195,55 @@ namespace Model
      * connector.</p>
      */
     inline UpdateDataSourceRequest& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
+    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
+    inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
+    inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
+    inline UpdateDataSourceRequest& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
+    inline UpdateDataSourceRequest& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -505,6 +547,9 @@ namespace Model
 
     DataSourceConfiguration m_configuration;
     bool m_configurationHasBeenSet;
+
+    DataSourceVpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
