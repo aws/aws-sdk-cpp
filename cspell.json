@@ -25,7 +25,7 @@
         // MSVC
         "msvc", "MSFT", "LPDWORD", "DATAW", "mkgmtime", "vscprintf", "wtoi", "msxml", "runtimeobject", "winhttp", "Wininet",
         // Crypto
-        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT", "libcrypto", "AWSLC",
+        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT", "libcrypto", "AWSLC", "COMMONCRYPTO",
         // EC2
         "IMDS",
         // Cognito
@@ -47,6 +47,8 @@
         // in DefaultRateLimiter
         "renormalize",
         // parameters defined in tinyxml2
-        "uval"
+        "uval",
+        // negated option in parameters
+        "DNON"
     ]
 }

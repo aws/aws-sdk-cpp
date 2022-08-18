@@ -1,4 +1,3 @@
-message(WARNING "not complete implementation yet")
 if (USE_OPENSSL)
     add_subdirectory(openssl)
 endif ()
