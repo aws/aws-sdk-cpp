@@ -360,6 +360,7 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
     bodyStream.write(reinterpret_cast<char*>(meta_request_result->error_response_body->buffer), static_cast<std::streamsize>(meta_request_result->error_response_body->len));
   }
 
+  std::lock_guard<std::mutex> lockRequest{userData->underlyingS3RequestMutex};
   aws_s3_meta_request_release(userData->underlyingS3Request);
 }
 
@@ -498,6 +499,8 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
+
+  std::lock_guard<std::mutex> lockRequest{userData->underlyingS3RequestMutex};
   aws_s3_meta_request *rawRequest = aws_s3_client_make_meta_request(m_s3CrtClient, &options);
   userData->underlyingS3Request = rawRequest;
 }
@@ -566,6 +569,8 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
+
+  std::lock_guard<std::mutex> lockRequest{userData->underlyingS3RequestMutex};
   aws_s3_meta_request *rawRequest = aws_s3_client_make_meta_request(m_s3CrtClient, &options);
   userData->underlyingS3Request = rawRequest;
 }
