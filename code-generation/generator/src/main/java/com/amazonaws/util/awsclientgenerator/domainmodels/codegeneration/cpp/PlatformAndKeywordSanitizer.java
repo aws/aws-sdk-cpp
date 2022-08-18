@@ -142,6 +142,7 @@ public class PlatformAndKeywordSanitizer {
     static {
         Map<Character,Character> mapping = new HashMap<>();
         mapping.put('-', '_');
+        mapping.put('+', '_');
         mapping.put(':', '_');
         mapping.put('.', '_');
         mapping.put('*', '_');
