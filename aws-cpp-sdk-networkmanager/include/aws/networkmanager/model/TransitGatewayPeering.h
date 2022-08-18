@@ -109,6 +109,47 @@ namespace Model
      */
     inline TransitGatewayPeering& WithTransitGatewayArn(const char* value) { SetTransitGatewayArn(value); return *this;}
 
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline const Aws::String& GetTransitGatewayPeeringAttachmentId() const{ return m_transitGatewayPeeringAttachmentId; }
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline bool TransitGatewayPeeringAttachmentIdHasBeenSet() const { return m_transitGatewayPeeringAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline void SetTransitGatewayPeeringAttachmentId(const Aws::String& value) { m_transitGatewayPeeringAttachmentIdHasBeenSet = true; m_transitGatewayPeeringAttachmentId = value; }
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline void SetTransitGatewayPeeringAttachmentId(Aws::String&& value) { m_transitGatewayPeeringAttachmentIdHasBeenSet = true; m_transitGatewayPeeringAttachmentId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline void SetTransitGatewayPeeringAttachmentId(const char* value) { m_transitGatewayPeeringAttachmentIdHasBeenSet = true; m_transitGatewayPeeringAttachmentId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline TransitGatewayPeering& WithTransitGatewayPeeringAttachmentId(const Aws::String& value) { SetTransitGatewayPeeringAttachmentId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline TransitGatewayPeering& WithTransitGatewayPeeringAttachmentId(Aws::String&& value) { SetTransitGatewayPeeringAttachmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway peering attachment.</p>
+     */
+    inline TransitGatewayPeering& WithTransitGatewayPeeringAttachmentId(const char* value) { SetTransitGatewayPeeringAttachmentId(value); return *this;}
+
   private:
 
     Peering m_peering;
@@ -116,6 +157,9 @@ namespace Model
 
     Aws::String m_transitGatewayArn;
     bool m_transitGatewayArnHasBeenSet;
+
+    Aws::String m_transitGatewayPeeringAttachmentId;
+    bool m_transitGatewayPeeringAttachmentIdHasBeenSet;
   };
 
 } // namespace Model

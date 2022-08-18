@@ -71,42 +71,42 @@ namespace Model
 
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline BatchStatementError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline BatchStatementError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline BatchStatementError& WithMessage(const char* value) { SetMessage(value); return *this;}
 

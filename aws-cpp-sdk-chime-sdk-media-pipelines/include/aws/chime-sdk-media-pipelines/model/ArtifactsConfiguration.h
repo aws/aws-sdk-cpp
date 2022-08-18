@@ -8,6 +8,7 @@
 #include <aws/chime-sdk-media-pipelines/model/AudioArtifactsConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/VideoArtifactsConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/ContentArtifactsConfiguration.h>
+#include <aws/chime-sdk-media-pipelines/model/CompositedVideoArtifactsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,37 @@ namespace Model
      */
     inline ArtifactsConfiguration& WithContent(ContentArtifactsConfiguration&& value) { SetContent(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline const CompositedVideoArtifactsConfiguration& GetCompositedVideo() const{ return m_compositedVideo; }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline bool CompositedVideoHasBeenSet() const { return m_compositedVideoHasBeenSet; }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline void SetCompositedVideo(const CompositedVideoArtifactsConfiguration& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = value; }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline void SetCompositedVideo(CompositedVideoArtifactsConfiguration&& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = std::move(value); }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline ArtifactsConfiguration& WithCompositedVideo(const CompositedVideoArtifactsConfiguration& value) { SetCompositedVideo(value); return *this;}
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline ArtifactsConfiguration& WithCompositedVideo(CompositedVideoArtifactsConfiguration&& value) { SetCompositedVideo(std::move(value)); return *this;}
+
   private:
 
     AudioArtifactsConfiguration m_audio;
@@ -141,6 +173,9 @@ namespace Model
 
     ContentArtifactsConfiguration m_content;
     bool m_contentHasBeenSet;
+
+    CompositedVideoArtifactsConfiguration m_compositedVideo;
+    bool m_compositedVideoHasBeenSet;
   };
 
 } // namespace Model

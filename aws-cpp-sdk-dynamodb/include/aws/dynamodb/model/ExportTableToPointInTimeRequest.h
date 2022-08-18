@@ -131,8 +131,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -145,8 +144,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -159,8 +157,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -173,8 +170,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -187,8 +183,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -201,8 +196,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline ExportTableToPointInTimeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -215,8 +209,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline ExportTableToPointInTimeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -229,8 +222,7 @@ namespace Model
      * not resubmit the same request with the same client token for more than 8 hours,
      * or the result might not be idempotent.</p> <p>If you submit a request with the
      * same client token but a change in other parameters within the 8-hour idempotency
-     * window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-     * exception.</p>
+     * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
      */
     inline ExportTableToPointInTimeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

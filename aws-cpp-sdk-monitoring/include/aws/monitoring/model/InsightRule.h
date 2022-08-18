@@ -262,6 +262,27 @@ namespace Model
      */
     inline InsightRule& WithDefinition(const char* value) { SetDefinition(value); return *this;}
 
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline bool GetManagedRule() const{ return m_managedRule; }
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline bool ManagedRuleHasBeenSet() const { return m_managedRuleHasBeenSet; }
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline void SetManagedRule(bool value) { m_managedRuleHasBeenSet = true; m_managedRule = value; }
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline InsightRule& WithManagedRule(bool value) { SetManagedRule(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -275,6 +296,9 @@ namespace Model
 
     Aws::String m_definition;
     bool m_definitionHasBeenSet;
+
+    bool m_managedRule;
+    bool m_managedRuleHasBeenSet;
   };
 
 } // namespace Model

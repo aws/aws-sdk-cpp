@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VpnTunnelLogOptionsSpecification.h>
 #include <aws/ec2/model/Phase1EncryptionAlgorithmsRequestListValue.h>
 #include <aws/ec2/model/Phase2EncryptionAlgorithmsRequestListValue.h>
 #include <aws/ec2/model/Phase1IntegrityAlgorithmsRequestListValue.h>
@@ -1045,6 +1046,37 @@ namespace Model
      */
     inline ModifyVpnTunnelOptionsSpecification& WithStartupAction(const char* value) { SetStartupAction(value); return *this;}
 
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline const VpnTunnelLogOptionsSpecification& GetLogOptions() const{ return m_logOptions; }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline bool LogOptionsHasBeenSet() const { return m_logOptionsHasBeenSet; }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline void SetLogOptions(const VpnTunnelLogOptionsSpecification& value) { m_logOptionsHasBeenSet = true; m_logOptions = value; }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline void SetLogOptions(VpnTunnelLogOptionsSpecification&& value) { m_logOptionsHasBeenSet = true; m_logOptions = std::move(value); }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithLogOptions(const VpnTunnelLogOptionsSpecification& value) { SetLogOptions(value); return *this;}
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithLogOptions(VpnTunnelLogOptionsSpecification&& value) { SetLogOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tunnelInsideCidr;
@@ -1100,6 +1132,9 @@ namespace Model
 
     Aws::String m_startupAction;
     bool m_startupActionHasBeenSet;
+
+    VpnTunnelLogOptionsSpecification m_logOptions;
+    bool m_logOptionsHasBeenSet;
   };
 
 } // namespace Model

@@ -30,12 +30,14 @@
 #include <aws/monitoring/model/GetMetricStreamResult.h>
 #include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 #include <aws/monitoring/model/ListDashboardsResult.h>
+#include <aws/monitoring/model/ListManagedInsightRulesResult.h>
 #include <aws/monitoring/model/ListMetricStreamsResult.h>
 #include <aws/monitoring/model/ListMetricsResult.h>
 #include <aws/monitoring/model/ListTagsForResourceResult.h>
 #include <aws/monitoring/model/PutAnomalyDetectorResult.h>
 #include <aws/monitoring/model/PutDashboardResult.h>
 #include <aws/monitoring/model/PutInsightRuleResult.h>
+#include <aws/monitoring/model/PutManagedInsightRulesResult.h>
 #include <aws/monitoring/model/PutMetricStreamResult.h>
 #include <aws/monitoring/model/StartMetricStreamsResult.h>
 #include <aws/monitoring/model/StopMetricStreamsResult.h>
@@ -108,6 +110,7 @@ namespace Model
         class GetMetricStreamRequest;
         class GetMetricWidgetImageRequest;
         class ListDashboardsRequest;
+        class ListManagedInsightRulesRequest;
         class ListMetricStreamsRequest;
         class ListMetricsRequest;
         class ListTagsForResourceRequest;
@@ -115,6 +118,7 @@ namespace Model
         class PutCompositeAlarmRequest;
         class PutDashboardRequest;
         class PutInsightRuleRequest;
+        class PutManagedInsightRulesRequest;
         class PutMetricAlarmRequest;
         class PutMetricDataRequest;
         class PutMetricStreamRequest;
@@ -145,6 +149,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMetricStreamResult, CloudWatchError> GetMetricStreamOutcome;
         typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, CloudWatchError> GetMetricWidgetImageOutcome;
         typedef Aws::Utils::Outcome<ListDashboardsResult, CloudWatchError> ListDashboardsOutcome;
+        typedef Aws::Utils::Outcome<ListManagedInsightRulesResult, CloudWatchError> ListManagedInsightRulesOutcome;
         typedef Aws::Utils::Outcome<ListMetricStreamsResult, CloudWatchError> ListMetricStreamsOutcome;
         typedef Aws::Utils::Outcome<ListMetricsResult, CloudWatchError> ListMetricsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchError> ListTagsForResourceOutcome;
@@ -152,6 +157,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutCompositeAlarmOutcome;
         typedef Aws::Utils::Outcome<PutDashboardResult, CloudWatchError> PutDashboardOutcome;
         typedef Aws::Utils::Outcome<PutInsightRuleResult, CloudWatchError> PutInsightRuleOutcome;
+        typedef Aws::Utils::Outcome<PutManagedInsightRulesResult, CloudWatchError> PutManagedInsightRulesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricAlarmOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricDataOutcome;
         typedef Aws::Utils::Outcome<PutMetricStreamResult, CloudWatchError> PutMetricStreamOutcome;
@@ -182,6 +188,7 @@ namespace Model
         typedef std::future<GetMetricStreamOutcome> GetMetricStreamOutcomeCallable;
         typedef std::future<GetMetricWidgetImageOutcome> GetMetricWidgetImageOutcomeCallable;
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
+        typedef std::future<ListManagedInsightRulesOutcome> ListManagedInsightRulesOutcomeCallable;
         typedef std::future<ListMetricStreamsOutcome> ListMetricStreamsOutcomeCallable;
         typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -189,6 +196,7 @@ namespace Model
         typedef std::future<PutCompositeAlarmOutcome> PutCompositeAlarmOutcomeCallable;
         typedef std::future<PutDashboardOutcome> PutDashboardOutcomeCallable;
         typedef std::future<PutInsightRuleOutcome> PutInsightRuleOutcomeCallable;
+        typedef std::future<PutManagedInsightRulesOutcome> PutManagedInsightRulesOutcomeCallable;
         typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
         typedef std::future<PutMetricDataOutcome> PutMetricDataOutcomeCallable;
         typedef std::future<PutMetricStreamOutcome> PutMetricStreamOutcomeCallable;
@@ -222,6 +230,7 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricStreamRequest&, const Model::GetMetricStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricStreamResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricWidgetImageRequest&, const Model::GetMetricWidgetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricWidgetImageResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::ListManagedInsightRulesRequest&, const Model::ListManagedInsightRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedInsightRulesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricStreamsRequest&, const Model::ListMetricStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricStreamsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricsRequest&, const Model::ListMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -229,6 +238,7 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::PutCompositeAlarmRequest&, const Model::PutCompositeAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCompositeAlarmResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutDashboardRequest&, const Model::PutDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutInsightRuleRequest&, const Model::PutInsightRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInsightRuleResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::PutManagedInsightRulesRequest&, const Model::PutManagedInsightRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutManagedInsightRulesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricAlarmRequest&, const Model::PutMetricAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricAlarmResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricDataRequest&, const Model::PutMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricDataResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricStreamRequest&, const Model::PutMetricStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricStreamResponseReceivedHandler;
@@ -829,6 +839,24 @@ namespace Model
         virtual void ListDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns a list that contains the number of managed Contributor Insights
+         * rules in your account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedInsightRulesOutcome ListManagedInsightRules(const Model::ListManagedInsightRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListManagedInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListManagedInsightRulesOutcomeCallable ListManagedInsightRulesCallable(const Model::ListManagedInsightRulesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListManagedInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListManagedInsightRulesAsync(const Model::ListManagedInsightRulesRequest& request, const ListManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of metric streams in this account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">AWS
@@ -1027,6 +1055,31 @@ namespace Model
          * An Async wrapper for PutInsightRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutInsightRuleAsync(const Model::PutInsightRuleRequest& request, const PutInsightRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a managed Contributor Insights rule for a specified Amazon Web
+         * Services resource. When you enable a managed rule, you create a Contributor
+         * Insights rule that collects data from Amazon Web Services services. You cannot
+         * edit these rules with <code>PutInsightRule</code>. The rules can be enabled,
+         * disabled, and deleted using <code>EnableInsightRules</code>,
+         * <code>DisableInsightRules</code>, and <code>DeleteInsightRules</code>. If a
+         * previously created managed rule is currently disabled, a subsequent call to this
+         * API will re-enable it. Use <code>ListManagedInsightRules</code> to describe all
+         * available rules. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutManagedInsightRulesOutcome PutManagedInsightRules(const Model::PutManagedInsightRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutManagedInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutManagedInsightRulesOutcomeCallable PutManagedInsightRulesCallable(const Model::PutManagedInsightRulesRequest& request) const;
+
+        /**
+         * An Async wrapper for PutManagedInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutManagedInsightRulesAsync(const Model::PutManagedInsightRulesRequest& request, const PutManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an alarm and associates it with the specified metric,
@@ -1321,6 +1374,7 @@ namespace Model
         void GetMetricStreamAsyncHelper(const Model::GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricWidgetImageAsyncHelper(const Model::GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListManagedInsightRulesAsyncHelper(const Model::ListManagedInsightRulesRequest& request, const ListManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricStreamsAsyncHelper(const Model::ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricsAsyncHelper(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1328,6 +1382,7 @@ namespace Model
         void PutCompositeAlarmAsyncHelper(const Model::PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDashboardAsyncHelper(const Model::PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutInsightRuleAsyncHelper(const Model::PutInsightRuleRequest& request, const PutInsightRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutManagedInsightRulesAsyncHelper(const Model::PutManagedInsightRulesRequest& request, const PutManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricAlarmAsyncHelper(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricDataAsyncHelper(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricStreamAsyncHelper(const Model::PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
