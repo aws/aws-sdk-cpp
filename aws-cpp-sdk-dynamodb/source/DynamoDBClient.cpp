@@ -37,6 +37,7 @@
 #include <aws/dynamodb/model/DescribeExportRequest.h>
 #include <aws/dynamodb/model/DescribeGlobalTableRequest.h>
 #include <aws/dynamodb/model/DescribeGlobalTableSettingsRequest.h>
+#include <aws/dynamodb/model/DescribeImportRequest.h>
 #include <aws/dynamodb/model/DescribeKinesisStreamingDestinationRequest.h>
 #include <aws/dynamodb/model/DescribeLimitsRequest.h>
 #include <aws/dynamodb/model/DescribeTableRequest.h>
@@ -48,10 +49,12 @@
 #include <aws/dynamodb/model/ExecuteTransactionRequest.h>
 #include <aws/dynamodb/model/ExportTableToPointInTimeRequest.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
+#include <aws/dynamodb/model/ImportTableRequest.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
 #include <aws/dynamodb/model/ListContributorInsightsRequest.h>
 #include <aws/dynamodb/model/ListExportsRequest.h>
 #include <aws/dynamodb/model/ListGlobalTablesRequest.h>
+#include <aws/dynamodb/model/ListImportsRequest.h>
 #include <aws/dynamodb/model/ListTablesRequest.h>
 #include <aws/dynamodb/model/ListTagsOfResourceRequest.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
@@ -892,6 +895,30 @@ void DynamoDBClient::DescribeGlobalTableSettingsAsyncHelper(const DescribeGlobal
   handler(this, request, DescribeGlobalTableSettings(request), context);
 }
 
+DescribeImportOutcome DynamoDBClient::DescribeImport(const DescribeImportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeImportOutcomeCallable DynamoDBClient::DescribeImportCallable(const DescribeImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeImportAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::DescribeImportAsyncHelper(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeImport(request), context);
+}
+
 DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStreamingDestination(const DescribeKinesisStreamingDestinationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1345,6 +1372,30 @@ void DynamoDBClient::GetItemAsyncHelper(const GetItemRequest& request, const Get
   handler(this, request, GetItem(request), context);
 }
 
+ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ImportTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportTableOutcomeCallable DynamoDBClient::ImportTableCallable(const ImportTableRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportTable(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::ImportTableAsync(const ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportTableAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::ImportTableAsyncHelper(const ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportTable(request), context);
+}
+
 ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1493,6 +1544,30 @@ void DynamoDBClient::ListGlobalTablesAsync(const ListGlobalTablesRequest& reques
 void DynamoDBClient::ListGlobalTablesAsyncHelper(const ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListGlobalTables(request), context);
+}
+
+ListImportsOutcome DynamoDBClient::ListImports(const ListImportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListImportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportsOutcomeCallable DynamoDBClient::ListImportsCallable(const ListImportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImportsAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::ListImportsAsyncHelper(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImports(request), context);
 }
 
 ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) const

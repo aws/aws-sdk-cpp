@@ -118,37 +118,37 @@ namespace Model
 
     /**
      * <p>Destination type to which the media artifacts are saved. You must use an S3
-     * bucket. </p>
+     * bucket.</p>
      */
     inline const MediaPipelineSinkType& GetSinkType() const{ return m_sinkType; }
 
     /**
      * <p>Destination type to which the media artifacts are saved. You must use an S3
-     * bucket. </p>
+     * bucket.</p>
      */
     inline bool SinkTypeHasBeenSet() const { return m_sinkTypeHasBeenSet; }
 
     /**
      * <p>Destination type to which the media artifacts are saved. You must use an S3
-     * bucket. </p>
+     * bucket.</p>
      */
     inline void SetSinkType(const MediaPipelineSinkType& value) { m_sinkTypeHasBeenSet = true; m_sinkType = value; }
 
     /**
      * <p>Destination type to which the media artifacts are saved. You must use an S3
-     * bucket. </p>
+     * bucket.</p>
      */
     inline void SetSinkType(MediaPipelineSinkType&& value) { m_sinkTypeHasBeenSet = true; m_sinkType = std::move(value); }
 
     /**
      * <p>Destination type to which the media artifacts are saved. You must use an S3
-     * bucket. </p>
+     * bucket.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithSinkType(const MediaPipelineSinkType& value) { SetSinkType(value); return *this;}
 
     /**
      * <p>Destination type to which the media artifacts are saved. You must use an S3
-     * bucket. </p>
+     * bucket.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithSinkType(MediaPipelineSinkType&& value) { SetSinkType(std::move(value)); return *this;}
 
@@ -195,120 +195,128 @@ namespace Model
 
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a unique token for each media pipeline request.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * <p>The configuration for a specified media capture pipeline.
-     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     * <p>The configuration for a specified media pipeline. <code>SourceType</code>
+     * must be <code>ChimeSdkMeeting</code>.</p>
      */
     inline const ChimeSdkMeetingConfiguration& GetChimeSdkMeetingConfiguration() const{ return m_chimeSdkMeetingConfiguration; }
 
     /**
-     * <p>The configuration for a specified media capture pipeline.
-     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     * <p>The configuration for a specified media pipeline. <code>SourceType</code>
+     * must be <code>ChimeSdkMeeting</code>.</p>
      */
     inline bool ChimeSdkMeetingConfigurationHasBeenSet() const { return m_chimeSdkMeetingConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration for a specified media capture pipeline.
-     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     * <p>The configuration for a specified media pipeline. <code>SourceType</code>
+     * must be <code>ChimeSdkMeeting</code>.</p>
      */
     inline void SetChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = value; }
 
     /**
-     * <p>The configuration for a specified media capture pipeline.
-     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     * <p>The configuration for a specified media pipeline. <code>SourceType</code>
+     * must be <code>ChimeSdkMeeting</code>.</p>
      */
     inline void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for a specified media capture pipeline.
-     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     * <p>The configuration for a specified media pipeline. <code>SourceType</code>
+     * must be <code>ChimeSdkMeeting</code>.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { SetChimeSdkMeetingConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for a specified media capture pipeline.
-     * <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+     * <p>The configuration for a specified media pipeline. <code>SourceType</code>
+     * must be <code>ChimeSdkMeeting</code>.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { SetChimeSdkMeetingConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline CreateMediaCapturePipelineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags.</p>
+     * <p>The tag key-value pairs.</p>
      */
     inline CreateMediaCapturePipelineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -20,13 +20,15 @@ namespace Model
 
 TransitGatewayPeering::TransitGatewayPeering() : 
     m_peeringHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false)
+    m_transitGatewayArnHasBeenSet(false),
+    m_transitGatewayPeeringAttachmentIdHasBeenSet(false)
 {
 }
 
 TransitGatewayPeering::TransitGatewayPeering(JsonView jsonValue) : 
     m_peeringHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false)
+    m_transitGatewayArnHasBeenSet(false),
+    m_transitGatewayPeeringAttachmentIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ TransitGatewayPeering& TransitGatewayPeering::operator =(JsonView jsonValue)
     m_transitGatewayArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransitGatewayPeeringAttachmentId"))
+  {
+    m_transitGatewayPeeringAttachmentId = jsonValue.GetString("TransitGatewayPeeringAttachmentId");
+
+    m_transitGatewayPeeringAttachmentIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue TransitGatewayPeering::Jsonize() const
   if(m_transitGatewayArnHasBeenSet)
   {
    payload.WithString("TransitGatewayArn", m_transitGatewayArn);
+
+  }
+
+  if(m_transitGatewayPeeringAttachmentIdHasBeenSet)
+  {
+   payload.WithString("TransitGatewayPeeringAttachmentId", m_transitGatewayPeeringAttachmentId);
 
   }
 

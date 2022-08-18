@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VpnTunnelLogOptions.h>
 #include <aws/ec2/model/Phase1EncryptionAlgorithmsListValue.h>
 #include <aws/ec2/model/Phase2EncryptionAlgorithmsListValue.h>
 #include <aws/ec2/model/Phase1IntegrityAlgorithmsListValue.h>
@@ -785,6 +786,37 @@ namespace Model
      */
     inline TunnelOption& WithStartupAction(const char* value) { SetStartupAction(value); return *this;}
 
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline const VpnTunnelLogOptions& GetLogOptions() const{ return m_logOptions; }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline bool LogOptionsHasBeenSet() const { return m_logOptionsHasBeenSet; }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline void SetLogOptions(const VpnTunnelLogOptions& value) { m_logOptionsHasBeenSet = true; m_logOptions = value; }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline void SetLogOptions(VpnTunnelLogOptions&& value) { m_logOptionsHasBeenSet = true; m_logOptions = std::move(value); }
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline TunnelOption& WithLogOptions(const VpnTunnelLogOptions& value) { SetLogOptions(value); return *this;}
+
+    /**
+     * <p>Options for logging VPN tunnel activity.</p>
+     */
+    inline TunnelOption& WithLogOptions(VpnTunnelLogOptions&& value) { SetLogOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_outsideIpAddress;
@@ -843,6 +875,9 @@ namespace Model
 
     Aws::String m_startupAction;
     bool m_startupActionHasBeenSet;
+
+    VpnTunnelLogOptions m_logOptions;
+    bool m_logOptionsHasBeenSet;
   };
 
 } // namespace Model

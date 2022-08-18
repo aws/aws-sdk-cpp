@@ -20,20 +20,25 @@ namespace Aws
       namespace EventResponseTypeMapper
       {
 
-        static const int Success_HASH = HashingUtils::HashString("Success");
-        static const int Failure_HASH = HashingUtils::HashString("Failure");
+        static const int Pass_HASH = HashingUtils::HashString("Pass");
+        static const int Fail_HASH = HashingUtils::HashString("Fail");
+        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
 
 
         EventResponseType GetEventResponseTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Success_HASH)
+          if (hashCode == Pass_HASH)
           {
-            return EventResponseType::Success;
+            return EventResponseType::Pass;
           }
-          else if (hashCode == Failure_HASH)
+          else if (hashCode == Fail_HASH)
           {
-            return EventResponseType::Failure;
+            return EventResponseType::Fail;
+          }
+          else if (hashCode == InProgress_HASH)
+          {
+            return EventResponseType::InProgress;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case EventResponseType::Success:
-            return "Success";
-          case EventResponseType::Failure:
-            return "Failure";
+          case EventResponseType::Pass:
+            return "Pass";
+          case EventResponseType::Fail:
+            return "Fail";
+          case EventResponseType::InProgress:
+            return "InProgress";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

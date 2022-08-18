@@ -24,7 +24,9 @@ InsightRule::InsightRule() :
     m_nameHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_schemaHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_managedRule(false),
+    m_managedRuleHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ InsightRule::InsightRule(const XmlNode& xmlNode) :
     m_nameHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_schemaHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_managedRule(false),
+    m_managedRuleHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,6 +71,12 @@ InsightRule& InsightRule::operator =(const XmlNode& xmlNode)
       m_definition = Aws::Utils::Xml::DecodeEscapedXmlText(definitionNode.GetText());
       m_definitionHasBeenSet = true;
     }
+    XmlNode managedRuleNode = resultNode.FirstChild("ManagedRule");
+    if(!managedRuleNode.IsNull())
+    {
+      m_managedRule = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedRuleNode.GetText()).c_str()).c_str());
+      m_managedRuleHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -94,6 +104,11 @@ void InsightRule::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".Definition=" << StringUtils::URLEncode(m_definition.c_str()) << "&";
   }
 
+  if(m_managedRuleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManagedRule=" << std::boolalpha << m_managedRule << "&";
+  }
+
 }
 
 void InsightRule::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -113,6 +128,10 @@ void InsightRule::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_definitionHasBeenSet)
   {
       oStream << location << ".Definition=" << StringUtils::URLEncode(m_definition.c_str()) << "&";
+  }
+  if(m_managedRuleHasBeenSet)
+  {
+      oStream << location << ".ManagedRule=" << std::boolalpha << m_managedRule << "&";
   }
 }
 

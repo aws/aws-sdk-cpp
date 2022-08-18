@@ -32,6 +32,7 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int REPLICA_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicaAlreadyExistsException");
 static const int TRANSACTION_CONFLICT_HASH = HashingUtils::HashString("TransactionConflictException");
 static const int REPLICA_NOT_FOUND_HASH = HashingUtils::HashString("ReplicaNotFoundException");
+static const int IMPORT_CONFLICT_HASH = HashingUtils::HashString("ImportConflictException");
 static const int TABLE_NOT_FOUND_HASH = HashingUtils::HashString("TableNotFoundException");
 static const int EXPORT_NOT_FOUND_HASH = HashingUtils::HashString("ExportNotFoundException");
 static const int TRANSACTION_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionInProgressException");
@@ -50,6 +51,7 @@ static const int EXPORT_CONFLICT_HASH = HashingUtils::HashString("ExportConflict
 static const int GLOBAL_TABLE_ALREADY_EXISTS_HASH = HashingUtils::HashString("GlobalTableAlreadyExistsException");
 static const int INVALID_EXPORT_TIME_HASH = HashingUtils::HashString("InvalidExportTimeException");
 static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RequestLimitExceeded");
+static const int IMPORT_NOT_FOUND_HASH = HashingUtils::HashString("ImportNotFoundException");
 static const int GLOBAL_TABLE_NOT_FOUND_HASH = HashingUtils::HashString("GlobalTableNotFoundException");
 static const int DUPLICATE_ITEM_HASH = HashingUtils::HashString("DuplicateItemException");
 static const int INDEX_NOT_FOUND_HASH = HashingUtils::HashString("IndexNotFoundException");
@@ -82,6 +84,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REPLICA_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REPLICA_NOT_FOUND), false);
+  }
+  else if (hashCode == IMPORT_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IMPORT_CONFLICT), false);
   }
   else if (hashCode == TABLE_NOT_FOUND_HASH)
   {
@@ -154,6 +160,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REQUEST_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::REQUEST_LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == IMPORT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::IMPORT_NOT_FOUND), false);
   }
   else if (hashCode == GLOBAL_TABLE_NOT_FOUND_HASH)
   {

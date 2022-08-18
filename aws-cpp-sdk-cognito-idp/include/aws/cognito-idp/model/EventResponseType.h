@@ -16,8 +16,9 @@ namespace Model
   enum class EventResponseType
   {
     NOT_SET,
-    Success,
-    Failure
+    Pass,
+    Fail,
+    InProgress
   };
 
 namespace EventResponseTypeMapper

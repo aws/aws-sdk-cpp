@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The media capture pipeline object.</p>
+     * <p>The media pipeline object.</p>
      */
     inline const MediaCapturePipeline& GetMediaCapturePipeline() const{ return m_mediaCapturePipeline; }
 
     /**
-     * <p>The media capture pipeline object.</p>
+     * <p>The media pipeline object.</p>
      */
     inline void SetMediaCapturePipeline(const MediaCapturePipeline& value) { m_mediaCapturePipeline = value; }
 
     /**
-     * <p>The media capture pipeline object.</p>
+     * <p>The media pipeline object.</p>
      */
     inline void SetMediaCapturePipeline(MediaCapturePipeline&& value) { m_mediaCapturePipeline = std::move(value); }
 
     /**
-     * <p>The media capture pipeline object.</p>
+     * <p>The media pipeline object.</p>
      */
     inline GetMediaCapturePipelineResult& WithMediaCapturePipeline(const MediaCapturePipeline& value) { SetMediaCapturePipeline(value); return *this;}
 
     /**
-     * <p>The media capture pipeline object.</p>
+     * <p>The media pipeline object.</p>
      */
     inline GetMediaCapturePipelineResult& WithMediaCapturePipeline(MediaCapturePipeline&& value) { SetMediaCapturePipeline(std::move(value)); return *this;}
 

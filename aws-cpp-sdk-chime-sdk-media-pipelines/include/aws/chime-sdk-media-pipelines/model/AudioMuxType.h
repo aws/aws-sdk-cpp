@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AudioOnly,
-    AudioWithActiveSpeakerVideo
+    AudioWithActiveSpeakerVideo,
+    AudioWithCompositedVideo
   };
 
 namespace AudioMuxTypeMapper

@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     SignIn,
     SignUp,
-    ForgotPassword
+    ForgotPassword,
+    PasswordChange,
+    ResendCode
   };
 
 namespace EventTypeMapper

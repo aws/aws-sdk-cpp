@@ -388,8 +388,8 @@ namespace Model
      * <p>The output format for the stream. Valid values are <code>json</code> and
      * <code>opentelemetry0.7</code>. For more information about metric stream output
      * formats, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
-     * Metric streams output formats</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric
+     * streams output formats</a>.</p>
      */
     inline const MetricStreamOutputFormat& GetOutputFormat() const{ return m_outputFormat; }
 
@@ -397,8 +397,8 @@ namespace Model
      * <p>The output format for the stream. Valid values are <code>json</code> and
      * <code>opentelemetry0.7</code>. For more information about metric stream output
      * formats, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
-     * Metric streams output formats</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric
+     * streams output formats</a>.</p>
      */
     inline void SetOutputFormat(const MetricStreamOutputFormat& value) { m_outputFormat = value; }
 
@@ -406,8 +406,8 @@ namespace Model
      * <p>The output format for the stream. Valid values are <code>json</code> and
      * <code>opentelemetry0.7</code>. For more information about metric stream output
      * formats, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
-     * Metric streams output formats</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric
+     * streams output formats</a>.</p>
      */
     inline void SetOutputFormat(MetricStreamOutputFormat&& value) { m_outputFormat = std::move(value); }
 
@@ -415,8 +415,8 @@ namespace Model
      * <p>The output format for the stream. Valid values are <code>json</code> and
      * <code>opentelemetry0.7</code>. For more information about metric stream output
      * formats, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
-     * Metric streams output formats</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric
+     * streams output formats</a>.</p>
      */
     inline GetMetricStreamResult& WithOutputFormat(const MetricStreamOutputFormat& value) { SetOutputFormat(value); return *this;}
 
@@ -424,8 +424,8 @@ namespace Model
      * <p>The output format for the stream. Valid values are <code>json</code> and
      * <code>opentelemetry0.7</code>. For more information about metric stream output
      * formats, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
-     * Metric streams output formats</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric
+     * streams output formats</a>.</p>
      */
     inline GetMetricStreamResult& WithOutputFormat(MetricStreamOutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 
