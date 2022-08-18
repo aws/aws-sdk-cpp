@@ -5171,7 +5171,7 @@ namespace Aws
           std::shared_ptr<Aws::Http::HttpRequest> request;
           std::shared_ptr<Aws::Http::HttpResponse> response;
           std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
-          std::mutex underlyingS3RequestMutex;
+          mutable std::mutex underlyingS3RequestMutex;
           aws_s3_meta_request *underlyingS3Request;
         };
 
