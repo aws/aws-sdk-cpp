@@ -32,7 +32,6 @@ namespace Aws
             /**
              * Gets all providers stored in this chain.
              */
-            const Aws::Vector<std::shared_ptr<AWSCredentialsProvider>>& GetProviders() { return m_providerChain; }
             const Aws::Vector<std::shared_ptr<AWSCredentialsProvider>>& GetProviders() const { return m_providerChain; }
 
         protected:

@@ -19,7 +19,6 @@ namespace Aws
         using namespace Aws::Utils;
         using namespace Aws::Auth;
 
-        static const char* const CONFIG_LOADER_TAG = "Aws::Config::AWSProfileConfigLoader";
         static const char* const INTERNAL_EXCEPTION_PHRASE = "InternalServiceException";
         static const int64_t FIVE_MINUTE_MILLIS = 60000 * 5;
         static const int64_t TEN_MINUTE_MILLIS = 60000 * 10;
@@ -49,6 +48,10 @@ namespace Aws
             }
             this->credentialsValidUntilMillis = DateTime::Now().Millis();
 
+            if (!m_ec2metadataClient) {
+                AWS_LOGSTREAM_FATAL(EC2_INSTANCE_PROFILE_LOG_TAG, "EC2MetadataClient is a nullptr!")
+                return false;
+            }
             auto credentialsStr = m_ec2metadataClient->GetDefaultCredentialsSecurely();
             if(credentialsStr.empty()) return false;
 

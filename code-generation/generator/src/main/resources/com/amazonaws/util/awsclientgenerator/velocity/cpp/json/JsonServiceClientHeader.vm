@@ -52,6 +52,13 @@ namespace Auth
 {
   class AWSCredentials;
   class AWSCredentialsProvider;
+#if($serviceModel.hasBearerAuth())
+    class BearerTokenAuthSignerProvider;
+#end
+#if($serviceModel.hasSigV4Auth())
+    class AWSCredentials;
+    class AWSCredentialsProvider;
+#end
 } // namespace Auth
 
 namespace Client
