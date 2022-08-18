@@ -38,8 +38,8 @@
         "dupenv", "USERPROFILE", "subblock", "LANGANDCODEPAGE",
         // Crypto
         "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT", "libcrypto",
-        "AWSLC", "CBCCTS", "tweaklen", "taglen", "blockcipher", "AESGCM", "compated", "outdata", "Decrypto", "GCMAAD",
-        "CEKGCM", "HMACRAII", "OSSL", "ossl",
+        "AWSLC", "COMMONCRYPTO", "CBCCTS", "tweaklen", "taglen", "blockcipher", "AESGCM", "compated", "outdata",
+        "Decrypto", "GCMAAD", "CEKGCM", "HMACRAII", "OSSL", "ossl",
         // EC2
         "IMDS",
         // Eventstream
@@ -65,6 +65,8 @@
         // in DefaultRateLimiter
         "renormalize",
         // parameters defined in tinyxml2
-        "uval"
+        "uval",
+        // negated option in parameters
+        "DNON"
     ]
 }

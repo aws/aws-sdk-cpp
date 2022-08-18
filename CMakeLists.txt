@@ -95,16 +95,7 @@ else ()
     endif ()
 
     # -- Dependencies --
-    add_subdirectory(dependencies)
-    if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-        # Testing Dependencies
-        if (BUILD_TESTING)
-            message(STATUS "Building tests")
-            # Testing dependency
-            find_package(GTest 1.11 REQUIRED)
-            include(GoogleTest) # for gtest_discover_tests()
-        endif ()
-    endif ()
+    include(dependencies)
 
     # -- main build targets --
     add_subdirectory(src)
@@ -121,9 +112,6 @@ else ()
 
     message(WARNING "Anything below this warning is a TODO not yet implemented.")
 
-    message(STATUS "Setting up core library.")
-    message(STATUS "Prepare CRT dependency.")
-    message(STATUS "Building core library.")
     message(STATUS "Building core library tests.")
     message(STATUS "Add support for static analysis.")
     message(STATUS "Building client libraries.")

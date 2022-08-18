@@ -10,13 +10,13 @@ if (NOT LEGACY_BUILD)
     )
     target_link_directories(
             aws-sdk-cpp-core
-            PUBLIC ${aws-crt-cpp_LIB_DIRS}
+            PUBLIC ${aws-crt-cpp_LIBRARY_DIRS}
             PUBLIC ${CJSON_LIBRARY_DIRS}
             PUBLIC ${tinyxml2_LIBRARY_DIRS}
     )
     target_link_libraries(
             aws-sdk-cpp-core
-            aws-crt-cpp aws-c-common aws-checksums
+            ${aws-crt-cpp_LIBRARIES}
             ${CJSON_LIBRARIES}
             ${tinyxml2_LIBRARIES}
     )
