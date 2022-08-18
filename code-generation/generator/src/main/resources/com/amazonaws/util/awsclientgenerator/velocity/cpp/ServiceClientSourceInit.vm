@@ -32,97 +32,64 @@
 #if($metadata.hasEndpointDiscoveryTrait)
 #set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
-#if($serviceNamespace == "S3Crt")
-#set($clientConfigurationNamespace = $serviceNamespace)
-#set($credentialsParam = ", m_credProvider")
-#set($credentialsArg = ", const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider")
-#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider)")
-#set($defaultCredentialsProviderChainMember = ", m_credProvider(Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, credentialsProvider))")
-#set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
-#set($simpleCredentialsProviderMember = ", m_credProvider(Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials))")
-#set($credentialsProviderMember = ", m_credProvider(credentialsProvider)")
-#set($credentialProviderArg = ", const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider")
-#else
 #set($clientConfigurationNamespace = "Client")
-#set($credentialsParam = "")
-#set($credentialsArg = "")
 #set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
-#set($defaultCredentialsProviderChainMember = "")
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
-#set($simpleCredentialsProviderMember = "")
-#set($credentialsProviderMember = "")
-#set($credentialProviderArg = "")
-#end
 #set($hasEventStreamInputOperation = false)
 #foreach($operation in $serviceModel.operations)
 #if($operation.request.shape.hasEventStreamMembers())
     #set($hasEventStreamInputOperation = true)
 #end
 #end
+#set($signerToMake = "AWSAuthV4Signer")
+#if($serviceModel.hasOnlyBearerAuth())
+    #set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
+#else if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
+    #set($signerToMake = "Aws::Auth::DefaultAuthSignerProvider")
+#end
 
-#if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
-${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}${credentialProviderArg}) :
+#if($serviceModel.hasOnlyBearerAuth())
+    ${className}::${className}(const ${signerToMake}& bearerTokenProvider, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
+    Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, bearerTokenProvider),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration${credentialsParam});
+  init(clientConfiguration);
 }
 
-${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
-{
-  init(clientConfiguration${credentialsParam});
-}
-
-${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
-{
-  init(clientConfiguration${credentialsParam});
-}
-#else
+#else##!#if($serviceModel.hasOnlyBearerAuth())
 ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
+    Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration${credentialsParam});
+  init(clientConfiguration);
 }
 
 ${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
+    Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration${credentialsParam});
+  init(clientConfiguration);
 }
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
   const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
+    Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember}
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration${credentialsParam});
+  init(clientConfiguration);
 }
-#end
+#end##if($serviceModel.hasOnlyBearerAuth())
 
 #if($metadata.standalone || $metadata.apigateway)
 ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
@@ -137,13 +104,9 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
 #end
 ${className}::~${className}()
 {
-#if($serviceNamespace == "S3Crt")
-  aws_s3_client_release(m_s3CrtClient);
-  m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
-#end
 }
 
-void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config${credentialsArg})
+void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config)
 {
   SetServiceClientName("${metadata.serviceId}");
 #if($AdditionalServiceSpecificConfigLoadString)
@@ -190,66 +153,6 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 #end
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
-#end
-#if($serviceNamespace == "S3Crt")
-
-  // initialize aws_s3_client;
-  aws_s3_client_config s3CrtConfig;
-  AWS_ZERO_STRUCT(s3CrtConfig);
-  s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
-  Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
-  s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
-
-  m_crtCredProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderDelegate({
-     std::bind([](const std::shared_ptr<AWSCredentialsProvider>& provider) {
-         AWSCredentials credentials = provider->GetAWSCredentials();
-         return Aws::MakeShared<Aws::Crt::Auth::Credentials>(ALLOCATION_TAG,
-             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetAWSAccessKeyId().c_str())),
-             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetAWSSecretKey().c_str())),
-             *Aws::MakeShared<Aws::Crt::ByteCursor>(ALLOCATION_TAG, Aws::Crt::ByteCursorFromCString(credentials.GetSessionToken().c_str())),
-             credentials.GetExpiration().Millis());
-     }, credentialsProvider)
-  });
-
-  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), m_crtCredProvider->GetUnderlyingHandle());
-  m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
-  s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
-
-  static const size_t DEFAULT_PART_SIZE = 5 * 1024 * 1024; // 5MB
-  s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
-
-  Aws::Crt::Io::TlsConnectionOptions* tlsConnectionOptions = config.tlsConnectionOptions ? config.tlsConnectionOptions.get() : Aws::GetDefaultTlsConnectionOptions();
-  aws_tls_connection_options tlsOptions;
-  AWS_ZERO_STRUCT(tlsOptions);
-  if (tlsConnectionOptions)
-  {
-    aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
-    tlsOptions.server_name = aws_string_new_from_c_str(Aws::get_aws_allocator(), m_baseUri.c_str());
-    s3CrtConfig.tls_connection_options = &tlsOptions;
-  }
-  else
-  {
-    s3CrtConfig.tls_connection_options = nullptr;
-  }
-
-  s3CrtConfig.tls_mode = config.scheme == Aws::Http::Scheme::HTTPS ? AWS_MR_TLS_ENABLED : AWS_MR_TLS_DISABLED;
-  s3CrtConfig.throughput_target_gbps = config.throughputTargetGbps;
-  m_clientShutdownSem = Aws::MakeShared<Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  m_wrappedData.data = config.shutdownCallbackUserData;
-  m_wrappedData.fn = config.clientShutdownCallback;
-  m_wrappedData.clientShutdownSem = m_clientShutdownSem;
-  s3CrtConfig.shutdown_callback = CrtClientShutdownCallback;
-  s3CrtConfig.shutdown_callback_user_data = static_cast<void*>(&m_wrappedData);
-
-  m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
-  if (tlsConnectionOptions)
-  {
-    aws_tls_connection_options_clean_up(&tlsOptions);
-  }
-  if (!m_s3CrtClient)
-  {
-    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
-  }
 #end
 }
 #if($metadata.hasEndpointDiscoveryTrait)

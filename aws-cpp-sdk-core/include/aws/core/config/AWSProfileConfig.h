@@ -19,6 +19,47 @@ namespace Aws
         class Profile
         {
         public:
+            /*
+             * Data container for a sso-session config entry.
+             * This is independent of the general profile configuration and used by a bearer auth token provider.
+             */
+            class SsoSession
+            {
+            public:
+                inline const Aws::String& GetName() const { return m_name; }
+                inline void SetName(const Aws::String& value) { m_name = value; }
+                inline const Aws::String& GetSsoRegion() const { return m_ssoRegion; }
+                inline void SetSsoRegion(const Aws::String& value) { m_ssoRegion = value; }
+                inline const Aws::String& GetSsoStartUrl() const { return m_ssoStartUrl; }
+                inline void SetSsoStartUrl(const Aws::String& value) { m_ssoStartUrl = value; }
+
+                inline void SetAllKeyValPairs(const Aws::Map<Aws::String, Aws::String>& map) { m_allKeyValPairs = map; }
+                inline const Aws::String GetValue(const Aws::String& key) const
+                {
+                    auto iter = m_allKeyValPairs.find(key);
+                    if (iter == m_allKeyValPairs.end()) return {};
+                    return iter->second;
+                }
+
+                bool operator==(SsoSession const& other) const
+                {
+                    return this->m_name == other.m_name &&
+                            this->m_ssoRegion == other.m_ssoRegion &&
+                            this->m_ssoStartUrl == other.m_ssoStartUrl &&
+                            this->m_allKeyValPairs == other.m_allKeyValPairs;
+                }
+                bool operator!=(SsoSession const& other) const
+                {
+                    return !operator==(other);
+                }
+            private:
+                // This is independent of the general configuration
+                Aws::String m_name;
+                Aws::String m_ssoRegion;
+                Aws::String m_ssoStartUrl;
+                Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
+            };
+
             inline const Aws::String& GetName() const { return m_name; }
             inline void SetName(const Aws::String& value) { m_name = value; }
             inline const Aws::Auth::AWSCredentials& GetCredentials() const { return m_credentials; }
@@ -52,6 +93,11 @@ namespace Aws
                 return iter->second;
             }
 
+            inline bool IsSsoSessionSet() const { return m_ssoSessionSet; }
+            inline const SsoSession& GetSsoSession() const { return m_ssoSession; }
+            inline void SetSsoSession(const SsoSession& value) { m_ssoSessionSet = true; m_ssoSession = value; }
+            inline void SetSsoSession(SsoSession&& value) { m_ssoSessionSet = true; m_ssoSession = std::move(value); }
+
         private:
             Aws::String m_name;
             Aws::String m_region;
@@ -66,6 +112,9 @@ namespace Aws
             Aws::String m_ssoRoleName;
             Aws::String m_defaultsMode;
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
+
+            bool m_ssoSessionSet = false;
+            SsoSession m_ssoSession;
         };
     }
 }

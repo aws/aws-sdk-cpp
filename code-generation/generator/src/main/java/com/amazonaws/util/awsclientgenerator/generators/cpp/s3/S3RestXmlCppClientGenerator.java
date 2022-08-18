@@ -16,6 +16,7 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -227,8 +228,15 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     protected SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
 
+        Map<String, String> templateOverride = new HashMap<>();
+        if ("S3-CRT".equalsIgnoreCase(serviceModel.getMetadata().getProjectName())) {
+            templateOverride.put("ServiceClientSourceInit_template",
+                    "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtServiceClientSourceInit.vm");
+        }
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("TemplateOverride", templateOverride);
+
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 

@@ -494,6 +494,23 @@ public class C2jModelToGeneratorModelTransformer {
             operation.setHasEndpointTrait(true);
         }
 
+        if(operation.getAuthtype() == null) {
+            if(c2jServiceModel.getMetadata().getSignatureVersion() != null &&
+                    c2jServiceModel.getMetadata().getSignatureVersion().equals("bearer")) {
+                operation.setSignerName("Aws::Auth::BEARER_SIGNER");
+            } else {
+                operation.setSignerName("Aws::Auth::SIGV4_SIGNER");
+            }
+        } else if (operation.getAuthtype().equals("v4-unsigned-body")) {
+            operation.setSignerName("Aws::Auth::SIGV4_SIGNER");
+        } else if (operation.getAuthtype().equals("bearer")) {
+            operation.setSignerName("Aws::Auth::BEARER_SIGNER");
+        } else if (operation.getAuthtype().equals("custom")) {
+            operation.setSignerName("\"" + operation.getAuthorizer() + "\"");
+        } else {
+            operation.setSignerName("Aws::Auth::NULL_SIGNER");
+        }
+
         // input
         if (c2jOperation.getInput() != null) {
             String requestName = c2jOperation.getName() + "Request";
@@ -514,16 +531,8 @@ public class C2jModelToGeneratorModelTransformer {
             }
 
             requestShape.setSignBody(true);
-
-            if(operation.getAuthtype() == null) {
-                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
-            } else if (operation.getAuthtype().equals("v4-unsigned-body")) {
+            if (operation.getAuthtype() != null && operation.getAuthtype().equals("v4-unsigned-body")) {
                 requestShape.setSignBody(false);
-                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
-            } else if (operation.getAuthtype().equals("custom")) {
-               requestShape.setSignerName("\"" + operation.getAuthorizer() + "\"");
-            } else {
-                requestShape.setSignerName("Aws::Auth::NULL_SIGNER");
             }
 
             if(c2jOperation.isHttpChecksumRequired()) {

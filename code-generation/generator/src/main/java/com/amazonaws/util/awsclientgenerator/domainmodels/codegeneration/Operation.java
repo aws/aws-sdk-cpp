@@ -21,6 +21,7 @@ public class Operation {
     private boolean virtualAddressAllowed;
     private String virtualAddressMemberName;
     private String authtype;
+    private String signerName;
     private String authorizer;
     private boolean eventStream;
     private boolean supportsChunkedEncoding;
