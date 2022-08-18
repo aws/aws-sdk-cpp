@@ -259,6 +259,25 @@ namespace Aws
 
              SSOGetRoleCredentialsResult GetSSOCredentials(const SSOGetRoleCredentialsRequest& request);
 
+             struct SSOCreateTokenRequest
+             {
+                 Aws::String clientId;
+                 Aws::String clientSecret;
+                 Aws::String grantType;
+                 Aws::String refreshToken;
+             };
+
+             struct SSOCreateTokenResult
+             {
+                 Aws::String accessToken;
+                 size_t expiresIn = 0; //seconds
+                 Aws::String idToken;
+                 Aws::String refreshToken;
+                 Aws::String clientId;
+                 Aws::String tokenType;
+             };
+
+             SSOCreateTokenResult CreateToken(const SSOCreateTokenRequest& request);
          private:
              Aws::String m_endpoint;
          };

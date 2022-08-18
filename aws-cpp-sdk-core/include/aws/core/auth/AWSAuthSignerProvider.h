@@ -8,5 +8,6 @@
 
 #include <aws/core/auth/signer-provider/AWSAuthSignerProviderBase.h>
 #include <aws/core/auth/signer-provider/DefaultAuthSignerProvider.h>
+#include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
 
 // This is a header that represents old legacy all-in-one header to maintain backward compatibility

@@ -6,7 +6,6 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <fstream>
 
 using namespace Aws::Utils;
@@ -167,44 +166,137 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCorrupted)
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
-static const char* const ALLOCATION_TAG = "EC2InstanceProfileConfigLoaderTest";
+bool WriteConfigFileWithSSO(Aws::OStream& stream, const Aws::String& profileName, const Aws::String& ssoSessionName) {
+    const Aws::String configFileContent =
+            R"([ default]
+  aws_access_key_id = ACCESS_KEY_0
+aws_secret_access_key = SECRET_KEY_0
 
-TEST(EC2InstanceProfileConfigLoaderTest, TestSuccesfullyHitsService)
+
+[profile custom-profile    ]
+aws_access_key_id = ACCESS_KEY_1
+aws_secret_access_key = SECRET_KEY_1
+[profile )" + profileName + R"(]
+sso_session = )" + ssoSessionName + R"(
+
+[sso-session )" + ssoSessionName + R"(]
+sso_region = us-east-1
+sso_start_url = https://d-abc123.awsapps.com/start)";
+
+    stream << configFileContent;
+    stream.flush();
+
+    return stream.good();
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigWithSSOParsing)
 {
-    std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
-    mockClient->SetCurrentRegionValue("us-east-1");
-    mockClient->SetMockedCredentialsValue("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }");
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
-    EC2InstanceProfileConfigLoader loader(mockClient);
+    ASSERT_TRUE(configFile.good());
+    static const Aws::String SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
+    Aws::String profileFileName = configFile.GetFileName().find_last_of(R"(/\)") == std::string::npos ?
+                                  configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)"));
+    static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
+    ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
     ASSERT_TRUE(loader.Load());
-    ASSERT_EQ(1u, loader.GetProfiles().size());
     auto profiles = loader.GetProfiles();
-    ASSERT_NE(profiles.end(), profiles.find(Aws::Config::INSTANCE_PROFILE_KEY));
-    auto creds = profiles[Aws::Config::INSTANCE_PROFILE_KEY].GetCredentials();
-    ASSERT_STREQ("goodAccessKey", creds.GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("goodSecretKey", creds.GetAWSSecretKey().c_str());
-    ASSERT_STREQ("goodToken", creds.GetSessionToken().c_str());
-    ASSERT_STREQ("us-east-1", profiles[Aws::Config::INSTANCE_PROFILE_KEY].GetRegion().c_str());
+
+    ASSERT_EQ(3u, profiles.size());
+    ASSERT_NE(profiles.end(), profiles.find("default"));
+    ASSERT_NE(profiles.end(), profiles.find("custom-profile"));
+    ASSERT_NE(profiles.end(), profiles.find(SSO_AWS_PROFILE));
+
+    const auto ssoProfile = profiles.at(SSO_AWS_PROFILE);
+    ASSERT_EQ(SSO_AWS_PROFILE, ssoProfile.GetName());
+    ASSERT_TRUE(ssoProfile.GetRegion().empty());
+    ASSERT_TRUE(ssoProfile.GetCredentials().GetAWSSecretKey().empty() &&
+                ssoProfile.GetCredentials().GetAWSAccessKeyId().empty() &&
+                ssoProfile.GetCredentials().GetSessionToken().empty());
+    ASSERT_TRUE(ssoProfile.GetSourceProfile().empty());
+    ASSERT_TRUE(ssoProfile.GetCredentialProcess().empty());
+
+    // Important: sso_session pointing to a sso-session section is a different entity than sso_* properties under [profile] section
+    ASSERT_TRUE(ssoProfile.GetSsoStartUrl().empty() &&
+                ssoProfile.GetSsoRegion().empty() &&
+                ssoProfile.GetSsoAccountId().empty() &&
+                ssoProfile.GetSsoRoleName().empty());
+
+    ASSERT_TRUE(ssoProfile.GetDefaultsMode().empty());
+
+    // here is [sso-session] section name that is linked by [profile] by a property "sso_session=<SSO_SESSION_NAME>" under [profile]
+    ASSERT_EQ(SSO_SESSION_NAME, ssoProfile.GetSsoSession().GetName());
+    ASSERT_EQ("us-east-1", ssoProfile.GetSsoSession().GetSsoRegion());
+    ASSERT_EQ("https://d-abc123.awsapps.com/start", ssoProfile.GetSsoSession().GetSsoStartUrl());
 }
 
-TEST(EC2InstanceProfileConfigLoaderTest, TestFailsToHitService)
+TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
 {
-    std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
-    mockClient->SetCurrentRegionValue("");
-    mockClient->SetMockedCredentialsValue("");
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
-    EC2InstanceProfileConfigLoader loader(mockClient);
-    ASSERT_FALSE(loader.Load());
-    ASSERT_EQ(0u, loader.GetProfiles().size());
-}
+    ASSERT_TRUE(configFile.good());
+    static const Aws::String SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
+    Aws::String profileFileName = configFile.GetFileName().find_last_of(R"(/\)") == std::string::npos ?
+                                  configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)"));
+    static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
+    ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
 
-TEST(EC2InstanceProfileConfigLoaderTest, TestBadJsonInResponse)
-{
-    std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
-    mockClient->SetCurrentRegionValue("us-east-1");
-    mockClient->SetMockedCredentialsValue("{ \"AccessKeyId\": \"goodAccessKey\",");
+    class TEST_HELPER_AWSConfigFileProfileConfigLoader : public AWSConfigFileProfileConfigLoader
+    {
+    public:
+        TEST_HELPER_AWSConfigFileProfileConfigLoader(const Aws::String& fileName)
+            : AWSConfigFileProfileConfigLoader(fileName, /*useProfilePrefix*/true)
+        {}
 
-    EC2InstanceProfileConfigLoader loader(mockClient);
-    ASSERT_FALSE(loader.Load());
-    ASSERT_EQ(0u, loader.GetProfiles().size());
+        bool Public_PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>& profiles)
+        {
+            return this->PersistInternal(profiles);
+        }
+    };
+
+    // Parse static test profile config
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_TRUE(loader.Load());
+    auto initiallyReadProfiles = loader.GetProfiles();
+
+    // Dump parsed test profile config
+    TempFile dumpedConfigFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(dumpedConfigFile.good());
+    TEST_HELPER_AWSConfigFileProfileConfigLoader dumper(dumpedConfigFile.GetFileName());
+    dumper.Public_PersistInternal(initiallyReadProfiles);
+
+    // Parse dumped test profile config
+    AWSConfigFileProfileConfigLoader loaderOfDumped(dumpedConfigFile.GetFileName());
+    ASSERT_TRUE(loaderOfDumped.Load());
+    auto profiles = loaderOfDumped.GetProfiles();
+
+    // Repeat validation from a previous test
+    ASSERT_EQ(3u, profiles.size());
+    ASSERT_NE(profiles.end(), profiles.find("default"));
+    ASSERT_NE(profiles.end(), profiles.find("custom-profile"));
+    ASSERT_NE(profiles.end(), profiles.find(SSO_AWS_PROFILE));
+
+    const auto ssoProfile = profiles.at(SSO_AWS_PROFILE);
+    ASSERT_EQ(SSO_AWS_PROFILE, ssoProfile.GetName());
+    ASSERT_TRUE(ssoProfile.GetRegion().empty());
+    ASSERT_TRUE(ssoProfile.GetCredentials().GetAWSSecretKey().empty() &&
+                ssoProfile.GetCredentials().GetAWSAccessKeyId().empty() &&
+                ssoProfile.GetCredentials().GetSessionToken().empty());
+    ASSERT_TRUE(ssoProfile.GetSourceProfile().empty());
+    ASSERT_TRUE(ssoProfile.GetCredentialProcess().empty());
+
+    // Important: sso_session pointing to a sso-session section is a different entity than sso_* properties under [profile] section
+    ASSERT_TRUE(ssoProfile.GetSsoStartUrl().empty() &&
+                ssoProfile.GetSsoRegion().empty() &&
+                ssoProfile.GetSsoAccountId().empty() &&
+                ssoProfile.GetSsoRoleName().empty());
+
+    ASSERT_TRUE(ssoProfile.GetDefaultsMode().empty());
+
+    // here is [sso-session] section name that is linked by [profile] by a property "sso_session=<SSO_SESSION_NAME>" under [profile]
+    ASSERT_EQ(SSO_SESSION_NAME, ssoProfile.GetSsoSession().GetName());
+    ASSERT_EQ("us-east-1", ssoProfile.GetSsoSession().GetSsoRegion());
+    ASSERT_EQ("https://d-abc123.awsapps.com/start", ssoProfile.GetSsoSession().GetSsoStartUrl());
 }
