@@ -616,12 +616,13 @@ namespace Aws
         // An internal SSO CreateToken implementation to lightweight core package and not introduce a dependency on sso-oidc
         SSOCredentialsClient::SSOCreateTokenResult SSOCredentialsClient::CreateToken(const SSOCreateTokenRequest& request)
         {
-            Aws::StringStream ssUri;
-            ssUri << m_endpoint << SSO_GET_ROLE_RESOURCE;
-
             std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_GET,
                                                                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-
+            SSOCreateTokenResult result;
+            if(!httpRequest) {
+                AWS_LOGSTREAM_FATAL(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to CreateHttpRequest: nullptr returned");
+                return result;
+            }
             httpRequest->SetUserAgent(ComputeUserAgentString());
 
             Json::JsonValue requestDoc;
@@ -639,6 +640,10 @@ namespace Aws
             }
 
             std::shared_ptr<Aws::IOStream> body = Aws::MakeShared<Aws::StringStream>("SSO_BEARER_TOKEN_CREATE_TOKEN");
+            if(!body) {
+                AWS_LOGSTREAM_FATAL(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to allocate body");  // exceptions disabled
+                return result;
+            }
             *body << requestDoc.View().WriteReadable();;
 
             httpRequest->AddContentBody(body);
@@ -653,7 +658,7 @@ namespace Aws
             Aws::String rawReply = GetResourceWithAWSWebServiceResult(httpRequest).GetPayload();
             Json::JsonValue refreshTokenDoc(rawReply);
             Utils::Json::JsonView jsonValue = refreshTokenDoc.View();
-            SSOCreateTokenResult result;
+
             if(jsonValue.ValueExists("accessToken")) {
                 result.accessToken = jsonValue.GetString("accessToken");
             }
@@ -664,10 +669,10 @@ namespace Aws
                 result.expiresIn = jsonValue.GetInteger("expiresIn");
             }
             if(jsonValue.ValueExists("idToken")) {
-                result.idToken = jsonValue.GetInteger("idToken");
+                result.idToken = jsonValue.GetString("idToken");
             }
             if(jsonValue.ValueExists("refreshToken")) {
-                result.refreshToken = jsonValue.GetInteger("refreshToken");
+                result.refreshToken = jsonValue.GetString("refreshToken");
             }
 
             return result;

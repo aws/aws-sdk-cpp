@@ -11,35 +11,30 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 
-const char BTASP_ALLOC_TAG[] = "BearerTokenAuthSignerProvider";
+const char BEARER_TOKEN_AUTH_SIGNER_PROVIDER_ALLOC_TAG[] = "BearerTokenAuthSignerProvider";
 
 using namespace Aws::Auth;
 
 BearerTokenAuthSignerProvider::BearerTokenAuthSignerProvider(const std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase> bearerTokenProvider)
 {
-    m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSAuthBearerSigner>(BTASP_ALLOC_TAG, bearerTokenProvider));
-    m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSNullSigner>(BTASP_ALLOC_TAG));
+    m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSAuthBearerSigner>(BEARER_TOKEN_AUTH_SIGNER_PROVIDER_ALLOC_TAG, bearerTokenProvider));
+    m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSNullSigner>(BEARER_TOKEN_AUTH_SIGNER_PROVIDER_ALLOC_TAG));
 }
-
-//BearerTokenAuthSignerProvider::BearerTokenAuthSignerProvider(const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer)
-//{
-//    m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSNullSigner>(CLASS_TAG));
-//    if(signer)
-//    {
-//        m_signers.emplace_back(signer);
-//    }
-//}
 
 std::shared_ptr<Aws::Client::AWSAuthSigner> BearerTokenAuthSignerProvider::GetSigner(const Aws::String& signerName) const
 {
     for(const auto& signer : m_signers)
     {
+        if(!signer) {
+            AWS_LOGSTREAM_FATAL(BEARER_TOKEN_AUTH_SIGNER_PROVIDER_ALLOC_TAG, "Unexpected nullptr in BearerTokenAuthSignerProvider::m_signers");
+            break;
+        }
         if(signer->GetName() == signerName)
         {
             return signer;
         }
     }
-    AWS_LOGSTREAM_ERROR(BTASP_ALLOC_TAG, "Request's signer: '" << signerName << "' is not found in the signer's map.");
+    AWS_LOGSTREAM_ERROR(BEARER_TOKEN_AUTH_SIGNER_PROVIDER_ALLOC_TAG, "Request's signer: '" << signerName << "' is not found in the signer's map.");
     assert(false);
     return nullptr;
 }

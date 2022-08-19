@@ -36,7 +36,7 @@ namespace Aws
 
         public:
             /**
-             *
+             * An implementation of a signer interface that uses bearer token auth signature.
              */
             AWSAuthBearerSigner(const std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase> bearerTokenProvider)
               : m_bearerTokenProvider(bearerTokenProvider)
@@ -45,7 +45,7 @@ namespace Aws
             virtual ~AWSAuthBearerSigner() {};
 
             /**
-             *
+             * Return the signer's name
              */
             const char* GetName() const override
             {
@@ -53,38 +53,45 @@ namespace Aws
             }
 
             /**
-             *
+             * Sign request with a bearer auth token
+             * @return true if success, false if fail to sign
              */
             bool SignRequest(Aws::Http::HttpRequest& ) const override;
 
             /**
-             *
+             * Dummy function to satisfy the interface requirements of a base Signer interface
+             *   additional arguments are not used.
+             * @return true if success, false if fail to sign
              */
             bool SignRequest(Aws::Http::HttpRequest& ioRequest, const char* /*region*/, const char* /*serviceName*/, bool /*signBody*/) const override
             {
                 return SignRequest(ioRequest);
             }
 
-
             /**
-             *
-            */
+             * Dummy function to satisfy the interface requirements of a base Signer interface
+             * @return true if success, false if fail to sign
+             */
             bool PresignRequest(Aws::Http::HttpRequest& ioRequest, long long /*expirationInSeconds = 0*/) const override
             {
                 return SignRequest(ioRequest);
             }
 
             /**
-             *
-            */
+             * Dummy function to satisfy the interface requirements of a base Signer interface
+             *   additional arguments are not used.
+             * @return true if success, false if fail to sign
+             */
             bool PresignRequest(Aws::Http::HttpRequest& ioRequest, const char* /*region*/, long long expirationInSeconds = 0) const override
             {
                 return PresignRequest(ioRequest, expirationInSeconds);
             }
 
             /**
-             *
-            */
+             * Dummy function to satisfy the interface requirements of a base Signer interface
+             *   additional arguments are not used.
+             * @return true if success, false if fail to sign
+             */
             bool PresignRequest(Aws::Http::HttpRequest& ioRequest, const char* /*region*/, const char* /*serviceName*/, long long expirationInSeconds = 0) const override
             {
                 return PresignRequest(ioRequest, expirationInSeconds);
