@@ -14,8 +14,8 @@ namespace Aws
 {
     namespace Auth
     {
-        class AWSBearerTokenProvider;
         /**
+         * Default built-in AWSBearerTokenProviderChainBase implementation that includes Aws::Auth::SSOBearerTokenProvider in the chain.
          */
         class AWS_CORE_API DefaultBearerTokenProviderChain : public AWSBearerTokenProviderChainBase
         {
@@ -24,6 +24,7 @@ namespace Aws
             virtual ~DefaultBearerTokenProviderChain() = default;
 
             /**
+             * Return bearer token, implementation of a base class interface
              */
             virtual AWSBearerToken GetAWSBearerToken() override;
 

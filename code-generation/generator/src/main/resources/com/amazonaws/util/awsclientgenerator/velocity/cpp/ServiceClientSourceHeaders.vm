@@ -17,6 +17,9 @@
 #if($arnEndpointSupported)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
 #end
+#if($serviceModel.hasBearerAuth())
+\#include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
+#end
 #foreach($operation in $serviceModel.operations)
 #if($operation.request)
 \#include <aws/${metadata.projectName}/model/${operation.request.shape.name}.h>

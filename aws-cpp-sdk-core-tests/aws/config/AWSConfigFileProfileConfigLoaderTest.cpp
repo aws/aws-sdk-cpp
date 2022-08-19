@@ -221,7 +221,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigWithSSOParsing)
     ASSERT_TRUE(configFile.good());
     static const Aws::String SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
     Aws::String profileFileName = configFile.GetFileName().find_last_of(R"(/\)") == std::string::npos ?
-                                  configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)"));
+                                  configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)") + 1);
     static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
     ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
 
@@ -264,7 +264,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
     ASSERT_TRUE(configFile.good());
     static const Aws::String SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
     Aws::String profileFileName = configFile.GetFileName().find_last_of(R"(/\)") == std::string::npos ?
-                                  configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)"));
+                                  configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)") + 1);
     static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
     ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
 

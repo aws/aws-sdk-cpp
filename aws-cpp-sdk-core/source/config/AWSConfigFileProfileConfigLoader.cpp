@@ -347,7 +347,7 @@ namespace Aws
                 } while(0); // end of goto in a form of "do { break; } while(0);"
 
                 ioSectionName.erase();
-                ioState = FAILURE;
+                ioState = UNKNOWN_SECTION_FOUND;
                 return;
             }
 

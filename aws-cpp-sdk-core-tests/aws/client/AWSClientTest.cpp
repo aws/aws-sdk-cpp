@@ -718,7 +718,7 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationSetsRegionToProfile)
 {
     // create a config file with profile named Dijkstra
     Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    configFileNew << "[Dijkstra]" << std::endl;
+    configFileNew << "[profile Dijkstra]" << std::endl;  // profile keyword is mandatory per specification
     configFileNew << "region = " << Aws::Region::US_WEST_2 << std::endl;
 
     configFileNew.flush();

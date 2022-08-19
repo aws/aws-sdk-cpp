@@ -48,7 +48,7 @@ namespace Aws
             }
 
             /**
-             * If token has not been initialized or been initialized to emtpy value.
+             * If token has not been initialized or been initialized to empty value.
              * Expiration date does not affect the result of this function.
              */
             inline bool IsEmpty() const { return m_token.empty(); }

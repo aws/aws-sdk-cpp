@@ -64,7 +64,7 @@ AWSBearerToken SSOBearerTokenProvider::GetAWSBearerToken()
         /* If a loaded token has expired and has insufficient metadata to perform a refresh the SSO token
          provider must raise an exception that the token has expired and cannot be refreshed.
          Error logging and returning an empty object instead because of disabled exceptions and poor legacy API design. */
-        AWS_LOGSTREAM_ERROR(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "SSOBearerTokenProvider is unable to provide a token!");
+        AWS_LOGSTREAM_ERROR(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "SSOBearerTokenProvider is unable to provide a token");
         return Aws::Auth::AWSBearerToken("", Aws::Utils::DateTime(0.0));
     }
     return m_token;
@@ -109,6 +109,10 @@ void SSOBearerTokenProvider::RefreshFromSso()
     ssoCreateTokenRequest.grantType = SSO_GRANT_TYPE;
     ssoCreateTokenRequest.refreshToken = cachedSsoToken.refreshToken;
 
+    if(!m_client) {
+        AWS_LOGSTREAM_FATAL(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Unexpected nullptr in SSOBearerTokenProvider::m_client");
+        return;
+    }
     Aws::Internal::SSOCredentialsClient::SSOCreateTokenResult result = m_client->CreateToken(ssoCreateTokenRequest);
     if(!result.accessToken.empty())
     {
@@ -136,7 +140,7 @@ SSOBearerTokenProvider::CachedSsoToken SSOBearerTokenProvider::LoadAccessTokenFi
 
     const Aws::Config::Profile& profile = Aws::Config::GetCachedConfigProfile(m_profileToUse);
     if(!profile.IsSsoSessionSet()) {
-        AWS_LOGSTREAM_ERROR(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "SSOBearerTokenProvider set to use a profile " << m_profileToUse << " without a sso_session. Unable to load cached token");
+        AWS_LOGSTREAM_ERROR(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "SSOBearerTokenProvider set to use a profile " << m_profileToUse << " without a sso_session. Unable to load cached token.");
         return retValue;
     }
 
@@ -183,7 +187,8 @@ bool SSOBearerTokenProvider::WriteAccessTokenFile(const CachedSsoToken& token) c
 {
     const Aws::Config::Profile& profile = Aws::Config::GetCachedConfigProfile(m_profileToUse);
     if(!profile.IsSsoSessionSet()) {
-        AWS_LOGSTREAM_ERROR(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "SSOBearerTokenProvider set to use a profile " << m_profileToUse << " without a sso_session. Unable to write cached token");
+        AWS_LOGSTREAM_ERROR(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "SSOBearerTokenProvider set to use a profile "
+                        << m_profileToUse << " without a sso_session. Unable to write a cached token.");
         return false;
     }
 

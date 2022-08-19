@@ -3,11 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #pragma once
 
 #include <aws/core/auth/signer-provider/AWSAuthSignerProviderBase.h>
-
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/auth/signer/AWSAuthBearerSigner.h>
 
