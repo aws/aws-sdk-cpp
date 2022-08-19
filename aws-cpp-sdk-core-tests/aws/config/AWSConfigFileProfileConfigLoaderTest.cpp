@@ -38,6 +38,31 @@ static void WriteDefaultConfigFile(Aws::OStream& stream, bool useProfilePrefix =
     stream << "region = us-west-2" << std::endl;
 }
 
+class TEST_HELPER_AWSConfigFileProfileConfigLoader : public AWSConfigFileProfileConfigLoader
+{
+public:
+    TEST_HELPER_AWSConfigFileProfileConfigLoader(const Aws::String& fileName)
+            : AWSConfigFileProfileConfigLoader(fileName, /*useProfilePrefix*/true)
+    {}
+
+    // just making protected public in tests
+    bool Public_PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>& profiles)
+    {
+        return this->PersistInternal(profiles);
+    }
+};
+
+Aws::Map<Aws::String, Aws::Config::Profile> DumpAndReloadProfiles(const Aws::Map<Aws::String, Aws::Config::Profile>& profiles)
+{
+    TempFile dumpedConfigFile(std::ios_base::out | std::ios_base::trunc);
+    TEST_HELPER_AWSConfigFileProfileConfigLoader dumper(dumpedConfigFile.GetFileName());
+    dumper.Public_PersistInternal(profiles);
+
+    AWSConfigFileProfileConfigLoader loader(dumpedConfigFile.GetFileName(), true);
+    loader.Load();
+    return loader.GetProfiles();
+}
+
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
@@ -46,7 +71,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
 
     WriteDefaultConfigFile(configFile);
 
-    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), false);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
     // check the 3 profiles were read
@@ -90,7 +115,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
 
-    WriteDefaultConfigFile(configFile);
+    WriteDefaultConfigFile(configFile, true);
 
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
@@ -133,7 +158,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileEmpty)
     ASSERT_TRUE(configFile.good());
     configFile << std::endl;
 
-    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), false);
     ASSERT_FALSE(loader.Load());
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
@@ -145,7 +170,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileNotExists)
     ASSERT_FALSE(configFile.good());
     configFile << std::endl;
 
-    AWSConfigFileProfileConfigLoader loader(configFileName);
+    AWSConfigFileProfileConfigLoader loader(configFileName, false);
     ASSERT_FALSE(loader.Load());
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
@@ -161,7 +186,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCorrupted)
     configFile << "blah=blah" << std::endl;
     configFile << "fjk;dsaifoewagtndsalkjds" << std::endl;
 
-    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), false);
     ASSERT_FALSE(loader.Load());
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
@@ -200,7 +225,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigWithSSOParsing)
     static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
     ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
 
-    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
 
@@ -243,21 +268,8 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
     static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
     ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
 
-    class TEST_HELPER_AWSConfigFileProfileConfigLoader : public AWSConfigFileProfileConfigLoader
-    {
-    public:
-        TEST_HELPER_AWSConfigFileProfileConfigLoader(const Aws::String& fileName)
-            : AWSConfigFileProfileConfigLoader(fileName, /*useProfilePrefix*/true)
-        {}
-
-        bool Public_PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>& profiles)
-        {
-            return this->PersistInternal(profiles);
-        }
-    };
-
     // Parse static test profile config
-    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto initiallyReadProfiles = loader.GetProfiles();
 
@@ -268,7 +280,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
     dumper.Public_PersistInternal(initiallyReadProfiles);
 
     // Parse dumped test profile config
-    AWSConfigFileProfileConfigLoader loaderOfDumped(dumpedConfigFile.GetFileName());
+    AWSConfigFileProfileConfigLoader loaderOfDumped(dumpedConfigFile.GetFileName(), true);
     ASSERT_TRUE(loaderOfDumped.Load());
     auto profiles = loaderOfDumped.GetProfiles();
 
@@ -299,4 +311,171 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
     ASSERT_EQ(SSO_SESSION_NAME, ssoProfile.GetSsoSession().GetName());
     ASSERT_EQ("us-east-1", ssoProfile.GetSsoSession().GetSsoRegion());
     ASSERT_EQ("https://d-abc123.awsapps.com/start", ssoProfile.GetSsoSession().GetSsoStartUrl());
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestEmptyProfileFile)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    configFile << R"()";
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_FALSE(loader.Load());
+    ASSERT_EQ(0u, loader.GetProfiles().size());
+
+    configFile << "\t    \n\n\n\n\n\t\t\t\t\t\n    \n\n\n  ";
+    configFile.flush();
+    AWSConfigFileProfileConfigLoader loader1(configFile.GetFileName());
+    ASSERT_FALSE(loader1.Load());
+    ASSERT_EQ(0u, loader1.GetProfiles().size());
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCredentialsProcess)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    const Aws::String profileFileContent = \
+R"(
+# Here is the example of .awsprofile
+     ;another comment
+[  default ]
+source_profile   =   base)" "\t" R"(
+credential_process = echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "Expiration": "2022-05-02T18:36:00+00:00" }'#COMMENT
+ ; Comment to be ignored
+)"
+R"(                  )" // to avoid blank space removals by an IDE.
+R"(
+[  profile   )" "\t\t\t" R"(    base  ]
+    region  =   us-east-1#sa-east-3
+    #region = commented-out region
+)";
+
+    configFile << profileFileContent;
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+    const auto& loadedProfiles = loader.GetProfiles();
+    const auto& reloadedProfiles = DumpAndReloadProfiles(loadedProfiles);
+
+    // 2 profiles 1 check
+    const Aws::Vector<std::reference_wrapper<const Aws::Map<Aws::String, Aws::Config::Profile>>> loadedToCheck
+        = {std::cref(loadedProfiles), std::cref(reloadedProfiles)};
+    for(const auto& profilesRef : loadedToCheck)
+    {
+        const auto& profiles = profilesRef.get();
+        ASSERT_EQ(2u, profiles.size());
+
+        ASSERT_EQ("base", profiles.at("default").GetSourceProfile());
+        ASSERT_TRUE(profiles.at("base").GetSourceProfile().empty());
+
+        ASSERT_TRUE(profiles.at("base").GetCredentialProcess().empty());
+        ASSERT_EQ(
+                R"(echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "SessionToken": "TESTSESSIONTOKEN", "Expiration": "2022-05-02T18:36:00+00:00" }')",
+                profiles.at("default").GetCredentialProcess());
+
+        ASSERT_EQ("us-east-1", profiles.at("base").GetRegion());
+        ASSERT_TRUE(profiles.at("default").GetRegion().empty());
+    }
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileProfileName)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    Aws::String profileFileContent = \
+R"([default]
+region = us-east-1
+aws_access_key_id = incorrect_key
+aws_secret_access_key = incorrect_secret
+[profile some-thing:long/the_one%only.foo@bar+]
+region = us-east-2
+aws_access_key_id = correct_key
+aws_secret_access_key = correct_secret)";
+
+    configFile << profileFileContent;
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+
+    const auto& loadedProfiles = loader.GetProfiles();
+    const auto& reloadedProfiles = DumpAndReloadProfiles(loadedProfiles);
+
+    // 2 profiles 1 check
+    const Aws::Vector<std::reference_wrapper<const Aws::Map<Aws::String, Aws::Config::Profile>>> loadedToCheck
+            = {std::cref(loadedProfiles), std::cref(reloadedProfiles)};
+    for(const auto& profilesRef : loadedToCheck)
+    {
+        const auto& profiles = profilesRef.get();
+
+        ASSERT_EQ(2u, profiles.size());
+        ASSERT_TRUE(profiles.find("default") != profiles.end());
+        ASSERT_EQ("default", profiles.at("default").GetName());
+        ASSERT_EQ("us-east-1", profiles.at("default").GetRegion());
+        ASSERT_EQ("incorrect_key", profiles.at("default").GetCredentials().GetAWSAccessKeyId());
+        ASSERT_EQ("incorrect_secret", profiles.at("default").GetCredentials().GetAWSSecretKey());
+
+        const Aws::String complicatedProfileName = R"(some-thing:long/the_one%only.foo@bar+)";
+        ASSERT_TRUE(profiles.find(complicatedProfileName) != profiles.end());
+        ASSERT_EQ(complicatedProfileName, profiles.at(complicatedProfileName).GetName());
+        ASSERT_EQ("us-east-2", profiles.at(complicatedProfileName).GetRegion());
+        ASSERT_EQ("correct_key", profiles.at(complicatedProfileName).GetCredentials().GetAWSAccessKeyId());
+        ASSERT_EQ("correct_secret", profiles.at(complicatedProfileName).GetCredentials().GetAWSSecretKey());
+    }
+}
+
+TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsBlankSpace)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    Aws::String profileFileContent = \
+R"([  default ]
+region   = us-east-1
+)"
+R"(                  )"
+R"(
+aws_access_key_id =   incorrect_key
+   aws_secret_access_key = incorrect_secret
+[   profile      some-thing:long/the_one%only.foo@bar+  ]
+region = us-east-2
+ aws_access_key_id = correct_key
+aws_secret_access_key =   correct_secret)";
+
+    std::replace(profileFileContent.begin(), profileFileContent.end(), ' ', '\t');
+
+    configFile << profileFileContent;
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+    const auto& loadedProfiles = loader.GetProfiles();
+    const auto& reloadedProfiles = DumpAndReloadProfiles(loadedProfiles);
+
+    // 2 profiles 1 check
+    const Aws::Vector<std::reference_wrapper<const Aws::Map<Aws::String, Aws::Config::Profile>>> loadedToCheck
+            = {std::cref(loadedProfiles), std::cref(reloadedProfiles)};
+    for(const auto& profilesRef : loadedToCheck)
+    {
+        const auto& profiles = profilesRef.get();
+
+        ASSERT_EQ(2u, profiles.size());
+        ASSERT_TRUE(profiles.find("default") != profiles.end());
+        ASSERT_EQ("default", profiles.at("default").GetName());
+        ASSERT_EQ("us-east-1", profiles.at("default").GetRegion());
+        ASSERT_EQ("incorrect_key", profiles.at("default").GetCredentials().GetAWSAccessKeyId());
+        ASSERT_EQ("incorrect_secret", profiles.at("default").GetCredentials().GetAWSSecretKey());
+    
+        const Aws::String complicatedProfileName = R"(some-thing:long/the_one%only.foo@bar+)";
+        ASSERT_TRUE(profiles.find(complicatedProfileName) != profiles.end());
+        ASSERT_EQ(complicatedProfileName, profiles.at(complicatedProfileName).GetName());
+        ASSERT_EQ("us-east-2", profiles.at(complicatedProfileName).GetRegion());
+        ASSERT_EQ("correct_key", profiles.at(complicatedProfileName).GetCredentials().GetAWSAccessKeyId());
+        ASSERT_EQ("correct_secret", profiles.at(complicatedProfileName).GetCredentials().GetAWSSecretKey());
+    }
 }

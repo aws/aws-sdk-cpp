@@ -13,8 +13,10 @@
 #end
 #if($serviceNamespace == "S3Crt")
 #set($clientConfigurationNamespace = $serviceNamespace)
+#set($credentialProviderArg = ", const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider = Aws::Auth::DefaultAWSCredentialsProviderChain()")
 #else
 #set($clientConfigurationNamespace = "Client")
+#set($credentialProviderArg = "")
 #end
 #if($serviceModel.hasOnlyBearerAuth())
         /**
@@ -26,7 +28,7 @@
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ${className}(const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
+        ${className}(const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}${credentialProviderArg});
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config

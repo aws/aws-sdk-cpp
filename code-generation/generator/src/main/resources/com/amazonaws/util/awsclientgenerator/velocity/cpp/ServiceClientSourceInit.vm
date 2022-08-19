@@ -44,7 +44,7 @@
 #set($signerToMake = "AWSAuthV4Signer")
 #if($serviceModel.hasOnlyBearerAuth())
     #set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
-#else if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
+#elseif($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
     #set($signerToMake = "Aws::Auth::DefaultAuthSignerProvider")
 #end
 
