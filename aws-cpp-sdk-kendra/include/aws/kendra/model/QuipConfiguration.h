@@ -42,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline QuipConfiguration& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline QuipConfiguration& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The Quip site domain.</p>
+     * <p>The Quip site domain. For example,
+     * <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is
+     * "quipdomain".</p>
      */
     inline QuipConfiguration& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -227,65 +243,74 @@ namespace Model
 
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline const Aws::Vector<Aws::String>& GetFolderIds() const{ return m_folderIds; }
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline bool FolderIdsHasBeenSet() const { return m_folderIdsHasBeenSet; }
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline void SetFolderIds(const Aws::Vector<Aws::String>& value) { m_folderIdsHasBeenSet = true; m_folderIds = value; }
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline void SetFolderIds(Aws::Vector<Aws::String>&& value) { m_folderIdsHasBeenSet = true; m_folderIds = std::move(value); }
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& WithFolderIds(const Aws::Vector<Aws::String>& value) { SetFolderIds(value); return *this;}
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& WithFolderIds(Aws::Vector<Aws::String>&& value) { SetFolderIds(std::move(value)); return *this;}
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& AddFolderIds(const Aws::String& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& AddFolderIds(Aws::String&& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identifiers of the Quip folders you want to index. You can find in your
-     * browser URL when you access your folder in Quip. For example,
-     * <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.</p>
+     * <p>The identifiers of the Quip folders you want to index. You can find the
+     * folder ID in your browser URL when you access your folder in Quip. For example,
+     * <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder
+     * ID in this example is "zlLuOVNSarTL".</p>
      */
     inline QuipConfiguration& AddFolderIds(const char* value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 

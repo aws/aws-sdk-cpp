@@ -127,96 +127,88 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
     inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
     inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
     inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
     inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
     inline StartTaskContactRequest& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
     inline StartTaskContactRequest& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow for initiating the tasks. To see the
-     * ContactFlowId in the Amazon Connect console user interface, on the navigation
-     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
-     * contact flow page, under the name of the contact flow, choose <b>Show additional
-     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
-     * in bold: </p>
+     * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
+     * in the Amazon Connect console user interface, on the navigation menu go to
+     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
+     * the name of the flow, choose <b>Show additional flow information</b>. The
+     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -225,118 +217,118 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
-     * other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across
-     * all key-value pairs per contact. Attribute keys can include only alphanumeric,
-     * dash, and underscore characters.</p>
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline StartTaskContactRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -563,43 +555,43 @@ namespace Model
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline const Aws::Utils::DateTime& GetScheduledTime() const{ return m_scheduledTime; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline bool ScheduledTimeHasBeenSet() const { return m_scheduledTimeHasBeenSet; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline void SetScheduledTime(const Aws::Utils::DateTime& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = value; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline void SetScheduledTime(Aws::Utils::DateTime&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::move(value); }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline StartTaskContactRequest& WithScheduledTime(const Aws::Utils::DateTime& value) { SetScheduledTime(value); return *this;}
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline StartTaskContactRequest& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
 

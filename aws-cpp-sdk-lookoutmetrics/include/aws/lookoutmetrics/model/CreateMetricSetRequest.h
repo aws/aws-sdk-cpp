@@ -204,25 +204,29 @@ namespace Model
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline CreateMetricSetRequest& WithOffset(int value) { SetOffset(value); return *this;}
 

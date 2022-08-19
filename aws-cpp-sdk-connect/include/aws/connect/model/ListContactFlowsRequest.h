@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline const Aws::Vector<ContactFlowType>& GetContactFlowTypes() const{ return m_contactFlowTypes; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline bool ContactFlowTypesHasBeenSet() const { return m_contactFlowTypesHasBeenSet; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline void SetContactFlowTypes(const Aws::Vector<ContactFlowType>& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes = value; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline void SetContactFlowTypes(Aws::Vector<ContactFlowType>&& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes = std::move(value); }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& WithContactFlowTypes(const Aws::Vector<ContactFlowType>& value) { SetContactFlowTypes(value); return *this;}
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& WithContactFlowTypes(Aws::Vector<ContactFlowType>&& value) { SetContactFlowTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& AddContactFlowTypes(const ContactFlowType& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes.push_back(value); return *this; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& AddContactFlowTypes(ContactFlowType&& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes.push_back(std::move(value)); return *this; }
 
@@ -180,22 +180,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline ListContactFlowsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -124,6 +124,7 @@
 #include <aws/connect/model/ReleasePhoneNumberRequest.h>
 #include <aws/connect/model/ResumeContactRecordingRequest.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersRequest.h>
+#include <aws/connect/model/SearchSecurityProfilesRequest.h>
 #include <aws/connect/model/SearchUsersRequest.h>
 #include <aws/connect/model/SearchVocabulariesRequest.h>
 #include <aws/connect/model/StartChatContactRequest.h>
@@ -3776,6 +3777,31 @@ void ConnectClient::SearchAvailablePhoneNumbersAsync(const SearchAvailablePhoneN
 void ConnectClient::SearchAvailablePhoneNumbersAsyncHelper(const SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchAvailablePhoneNumbers(request), context);
+}
+
+SearchSecurityProfilesOutcome ConnectClient::SearchSecurityProfiles(const SearchSecurityProfilesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/search-security-profiles");
+  return SearchSecurityProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchSecurityProfilesOutcomeCallable ConnectClient::SearchSecurityProfilesCallable(const SearchSecurityProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchSecurityProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchSecurityProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::SearchSecurityProfilesAsync(const SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchSecurityProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::SearchSecurityProfilesAsyncHelper(const SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchSecurityProfiles(request), context);
 }
 
 SearchUsersOutcome ConnectClient::SearchUsers(const SearchUsersRequest& request) const

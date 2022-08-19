@@ -14,6 +14,7 @@
 #include <aws/kendra/model/DataSourceVpcConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/ProxyConfiguration.h>
+#include <aws/kendra/model/ConfluenceAuthenticationType.h>
 #include <utility>
 
 namespace Aws
@@ -106,80 +107,104 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * user name and password required to connect to the Confluence instance. If you
-     * use Confluence cloud, you use a generated API token as the password. For more
+     * use Confluence Cloud, you use a generated API token as the password. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-     * a Confluence data source</a>.</p>
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -678,6 +703,49 @@ namespace Model
      */
     inline ConfluenceConfiguration& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline const ConfluenceAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline void SetAuthenticationType(const ConfluenceAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline void SetAuthenticationType(ConfluenceAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline ConfluenceConfiguration& WithAuthenticationType(const ConfluenceAuthenticationType& value) { SetAuthenticationType(value); return *this;}
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline ConfluenceConfiguration& WithAuthenticationType(ConfluenceAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serverUrl;
@@ -712,6 +780,9 @@ namespace Model
 
     ProxyConfiguration m_proxyConfiguration;
     bool m_proxyConfigurationHasBeenSet;
+
+    ConfluenceAuthenticationType m_authenticationType;
+    bool m_authenticationTypeHasBeenSet;
   };
 
 } // namespace Model

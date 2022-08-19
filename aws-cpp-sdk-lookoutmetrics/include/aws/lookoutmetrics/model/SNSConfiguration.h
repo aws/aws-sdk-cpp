@@ -127,7 +127,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -138,7 +138,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -149,7 +149,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -160,7 +160,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -171,7 +171,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
@@ -182,7 +182,7 @@ namespace Model
      * alerts with an anomaly ID and a link to the anomaly detail page. This is the
      * default.</p> </li> <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts
      * with information about the impacted timeseries and a link to the anomaly detail
-     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> ��
+     * page. We recommend this for email.</p> </li> <li> <p> <code>SHORT_TEXT</code> –
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */

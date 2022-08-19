@@ -398,8 +398,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -409,8 +409,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -420,8 +420,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -431,8 +431,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -442,8 +442,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -453,8 +453,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -464,8 +464,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
@@ -475,8 +475,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source connector. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
+     * source and required resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p> <p>You can't specify the <code>RoleArn</code> parameter
      * when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
      * you receive a <code>ValidationException</code> exception.</p> <p>The
