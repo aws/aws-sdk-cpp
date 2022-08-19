@@ -33,7 +33,7 @@ namespace Aws
             }
             if(!m_bearerTokenProvider)
             {
-                AWS_LOGSTREAM_ERROR(LOGGING_TAG, "Unexpected nullptr AWSAuthBearerSigner::m_bearerTokenProvider");
+                AWS_LOGSTREAM_FATAL(LOGGING_TAG, "Unexpected nullptr AWSAuthBearerSigner::m_bearerTokenProvider");
                 return false;
             }
             const Aws::Auth::AWSBearerToken& token = m_bearerTokenProvider->GetAWSBearerToken();

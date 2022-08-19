@@ -6,6 +6,8 @@
 #include <aws/core/auth/bearer-token-provider/DefaultBearerTokenProviderChain.h>
 #include <aws/core/auth/AWSBearerToken.h>
 #include <aws/core/auth/bearer-token-provider/SSOBearerTokenProvider.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 
 static const char SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] = "SSOBearerTokenProvider";
 
@@ -13,6 +15,11 @@ Aws::Auth::AWSBearerToken Aws::Auth::DefaultBearerTokenProviderChain::GetAWSBear
 {
     for (auto&& bearerTokenProvider : m_providerChain)
     {
+        if(!bearerTokenProvider) {
+            AWS_LOGSTREAM_FATAL(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG,
+                                "Unexpected nullptr in DefaultBearerTokenProviderChain::m_providerChain");
+            break;
+        }
         AWSBearerToken bearerToken = bearerTokenProvider->GetAWSBearerToken();
         if(!bearerToken.IsExpiredOrEmpty())
         {
