@@ -37,83 +37,83 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index used with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
@@ -206,74 +206,74 @@ namespace Model
 
     /**
      * <p>When specified, the synchronization jobs returned in the list are limited to
-     * jobs between the specified dates. </p>
+     * jobs between the specified dates.</p>
      */
     inline const TimeRange& GetStartTimeFilter() const{ return m_startTimeFilter; }
 
     /**
      * <p>When specified, the synchronization jobs returned in the list are limited to
-     * jobs between the specified dates. </p>
+     * jobs between the specified dates.</p>
      */
     inline bool StartTimeFilterHasBeenSet() const { return m_startTimeFilterHasBeenSet; }
 
     /**
      * <p>When specified, the synchronization jobs returned in the list are limited to
-     * jobs between the specified dates. </p>
+     * jobs between the specified dates.</p>
      */
     inline void SetStartTimeFilter(const TimeRange& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = value; }
 
     /**
      * <p>When specified, the synchronization jobs returned in the list are limited to
-     * jobs between the specified dates. </p>
+     * jobs between the specified dates.</p>
      */
     inline void SetStartTimeFilter(TimeRange&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = std::move(value); }
 
     /**
      * <p>When specified, the synchronization jobs returned in the list are limited to
-     * jobs between the specified dates. </p>
+     * jobs between the specified dates.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithStartTimeFilter(const TimeRange& value) { SetStartTimeFilter(value); return *this;}
 
     /**
      * <p>When specified, the synchronization jobs returned in the list are limited to
-     * jobs between the specified dates. </p>
+     * jobs between the specified dates.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithStartTimeFilter(TimeRange&& value) { SetStartTimeFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>When specified, only returns synchronization jobs with the
-     * <code>Status</code> field equal to the specified status.</p>
+     * <p>Only returns synchronization jobs with the <code>Status</code> field equal to
+     * the specified status.</p>
      */
     inline const DataSourceSyncJobStatus& GetStatusFilter() const{ return m_statusFilter; }
 
     /**
-     * <p>When specified, only returns synchronization jobs with the
-     * <code>Status</code> field equal to the specified status.</p>
+     * <p>Only returns synchronization jobs with the <code>Status</code> field equal to
+     * the specified status.</p>
      */
     inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
 
     /**
-     * <p>When specified, only returns synchronization jobs with the
-     * <code>Status</code> field equal to the specified status.</p>
+     * <p>Only returns synchronization jobs with the <code>Status</code> field equal to
+     * the specified status.</p>
      */
     inline void SetStatusFilter(const DataSourceSyncJobStatus& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
 
     /**
-     * <p>When specified, only returns synchronization jobs with the
-     * <code>Status</code> field equal to the specified status.</p>
+     * <p>Only returns synchronization jobs with the <code>Status</code> field equal to
+     * the specified status.</p>
      */
     inline void SetStatusFilter(DataSourceSyncJobStatus&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
 
     /**
-     * <p>When specified, only returns synchronization jobs with the
-     * <code>Status</code> field equal to the specified status.</p>
+     * <p>Only returns synchronization jobs with the <code>Status</code> field equal to
+     * the specified status.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithStatusFilter(const DataSourceSyncJobStatus& value) { SetStatusFilter(value); return *this;}
 
     /**
-     * <p>When specified, only returns synchronization jobs with the
-     * <code>Status</code> field equal to the specified status.</p>
+     * <p>Only returns synchronization jobs with the <code>Status</code> field equal to
+     * the specified status.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithStatusFilter(DataSourceSyncJobStatus&& value) { SetStatusFilter(std::move(value)); return *this;}
 

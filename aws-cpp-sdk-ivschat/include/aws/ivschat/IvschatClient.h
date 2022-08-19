@@ -135,27 +135,42 @@ namespace Model
    * </li> </ul> <p> <b>Resources</b> </p> <p>The following resource is part of
    * Amazon IVS Chat:</p> <ul> <li> <p> <b>Room</b> — The central Amazon IVS Chat
    * resource through which clients connect to and exchange chat messages. See the
-   * Room endpoints for more information.</p> </li> </ul> <p> <b>API Access
-   * Security</b> </p> <p>Your Amazon IVS Chat applications (service applications and
-   * clients) must be authenticated and authorized to access Amazon IVS Chat
-   * resources. Note the differences between these concepts:</p> <ul> <li> <p>
-   * <i>Authentication</i> is about verifying identity. Requests to the Amazon IVS
-   * Chat API must be signed to verify your identity.</p> </li> <li> <p>
-   * <i>Authorization</i> is about granting permissions. Your IAM roles need to have
-   * permissions for Amazon IVS Chat API requests.</p> </li> </ul> <p>Users (viewers)
-   * connect to a room using secure access tokens that you create using the
-   * <a>CreateChatToken</a> endpoint through the AWS SDK. You call CreateChatToken
-   * for every user’s chat session, passing identity and authorization information
-   * about the user.</p> <p> <b>Signing API Requests</b> </p> <p>HTTP API requests
-   * must be signed with an AWS SigV4 signature using your AWS security credentials.
-   * The AWS Command Line Interface (CLI) and the AWS SDKs take care of signing the
-   * underlying API calls for you. However, if your application calls the Amazon IVS
-   * Chat HTTP API directly, it’s your responsibility to sign the requests.</p>
-   * <p>You generate a signature using valid AWS credentials for an IAM role that has
-   * permission to perform the requested action. For example, DeleteMessage requests
-   * must be made using an IAM role that has the <code>ivschat:DeleteMessage</code>
-   * permission.</p> <p>For more information:</p> <ul> <li> <p>Authentication and
-   * generating signatures — See <a
+   * Room endpoints for more information.</p> </li> </ul> <p> <b>Tagging</b> </p>
+   * <p>A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag
+   * comprises a <i>key</i> and a <i>value</i>, both set by you. For example, you
+   * might set a tag as <code>topic:nature</code> to label a particular video
+   * category. See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+   * AWS Resources</a> for more information, including restrictions that apply to
+   * tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
+   * service-specific constraints beyond what is documented there.</p> <p>Tags can
+   * help you identify and organize your AWS resources. For example, you can use the
+   * same tag for different resources to indicate that they are related. You can also
+   * use tags to manage access (see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Access
+   * Tags</a>).</p> <p>The Amazon IVS Chat API has these tag-related endpoints:
+   * <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>. The
+   * following resource supports tagging: Room.</p> <p>At most 50 tags can be applied
+   * to a resource.</p> <p> <b>API Access Security</b> </p> <p>Your Amazon IVS Chat
+   * applications (service applications and clients) must be authenticated and
+   * authorized to access Amazon IVS Chat resources. Note the differences between
+   * these concepts:</p> <ul> <li> <p> <i>Authentication</i> is about verifying
+   * identity. Requests to the Amazon IVS Chat API must be signed to verify your
+   * identity.</p> </li> <li> <p> <i>Authorization</i> is about granting permissions.
+   * Your IAM roles need to have permissions for Amazon IVS Chat API requests.</p>
+   * </li> </ul> <p>Users (viewers) connect to a room using secure access tokens that
+   * you create using the <a>CreateChatToken</a> endpoint through the AWS SDK. You
+   * call CreateChatToken for every user’s chat session, passing identity and
+   * authorization information about the user.</p> <p> <b>Signing API Requests</b>
+   * </p> <p>HTTP API requests must be signed with an AWS SigV4 signature using your
+   * AWS security credentials. The AWS Command Line Interface (CLI) and the AWS SDKs
+   * take care of signing the underlying API calls for you. However, if your
+   * application calls the Amazon IVS Chat HTTP API directly, it’s your
+   * responsibility to sign the requests.</p> <p>You generate a signature using valid
+   * AWS credentials for an IAM role that has permission to perform the requested
+   * action. For example, DeleteMessage requests must be made using an IAM role that
+   * has the <code>ivschat:DeleteMessage</code> permission.</p> <p>For more
+   * information:</p> <ul> <li> <p>Authentication and generating signatures — See <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
    * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon Web
    * Services General Reference</i>.</p> </li> <li> <p>Managing Amazon IVS

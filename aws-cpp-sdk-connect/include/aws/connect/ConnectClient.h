@@ -89,6 +89,7 @@
 #include <aws/connect/model/PutUserStatusResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/connect/model/SearchSecurityProfilesResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
 #include <aws/connect/model/SearchVocabulariesResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
@@ -252,6 +253,7 @@ namespace Model
         class ReleasePhoneNumberRequest;
         class ResumeContactRecordingRequest;
         class SearchAvailablePhoneNumbersRequest;
+        class SearchSecurityProfilesRequest;
         class SearchUsersRequest;
         class SearchVocabulariesRequest;
         class StartChatContactRequest;
@@ -404,6 +406,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
+        typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
         typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
         typedef Aws::Utils::Outcome<SearchVocabulariesResult, ConnectError> SearchVocabulariesOutcome;
         typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
@@ -556,6 +559,7 @@ namespace Model
         typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
         typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+        typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
         typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
         typedef std::future<SearchVocabulariesOutcome> SearchVocabulariesOutcomeCallable;
         typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
@@ -711,6 +715,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchSecurityProfilesRequest&, const Model::SearchSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchVocabulariesRequest&, const Model::SearchVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchVocabulariesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChatContactResponseReceivedHandler;
@@ -773,8 +778,7 @@ namespace Model
    * <p>You can connect programmatically to an Amazon Web Services service by using
    * an endpoint. For a list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect Endpoints</a>.</p>  <p>Working with contact flows? Check out the
-   * <a
+   * Connect Endpoints</a>.</p>  <p>Working with flows? Check out the <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
    * Connect Flow language</a>.</p> 
    */
@@ -925,7 +929,7 @@ namespace Model
         virtual void AssociateLexBotAsync(const Model::AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a contact flow with a phone number claimed to your Amazon Connect
+         * <p>Associates a flow with a phone number claimed to your Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociatePhoneNumberContactFlow">AWS
          * API Reference</a></p>
@@ -1036,8 +1040,8 @@ namespace Model
         virtual void CreateAgentStatusAsync(const Model::CreateAgentStatusRequest& request, const CreateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a contact flow for the specified Amazon Connect instance.</p> <p>You
-         * can also create and update contact flows using the <a
+         * <p>Creates a flow for the specified Amazon Connect instance.</p> <p>You can also
+         * create and update flows using the <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">AWS
@@ -1056,7 +1060,7 @@ namespace Model
         virtual void CreateContactFlowAsync(const Model::CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a contact flow module for the specified Amazon Connect instance.
+         * <p>Creates a flow module for the specified Amazon Connect instance.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">AWS
          * API Reference</a></p>
@@ -1304,8 +1308,8 @@ namespace Model
         virtual void CreateVocabularyAsync(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a contact flow for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a flow for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
          * API Reference</a></p>
          */
@@ -1322,7 +1326,7 @@ namespace Model
         virtual void DeleteContactFlowAsync(const Model::DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified flow module.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule">AWS
          * API Reference</a></p>
          */
@@ -1565,8 +1569,8 @@ namespace Model
         virtual void DescribeContactAsync(const Model::DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified contact flow.</p> <p>You can also create and update
-         * contact flows using the <a
+         * <p>Describes the specified flow.</p> <p>You can also create and update flows
+         * using the <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
@@ -1585,7 +1589,7 @@ namespace Model
         virtual void DescribeContactFlowAsync(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified flow module.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">AWS
          * API Reference</a></p>
          */
@@ -1901,7 +1905,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Remove the Lambda function from the dropdown options available in
-         * the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * the relevant flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          */
@@ -1937,9 +1941,8 @@ namespace Model
         virtual void DisassociateLexBotAsync(const Model::DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the contact flow association from a phone number claimed to your
-         * Amazon Connect instance, if a contact flow association exists.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the flow association from a phone number claimed to your Amazon
+         * Connect instance, if a flow association exists.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociatePhoneNumberContactFlow">AWS
          * API Reference</a></p>
          */
@@ -2185,8 +2188,8 @@ namespace Model
         virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides information about the contact flow modules for the specified Amazon
-         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about the flow modules for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">AWS
          * API Reference</a></p>
          */
@@ -2203,14 +2206,12 @@ namespace Model
         virtual void ListContactFlowModulesAsync(const Model::ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>You can also create and update contact flows using the <a
+         * <p>Provides information about the flows for the specified Amazon Connect
+         * instance.</p> <p>You can also create and update flows using the <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
-         * Connect Flow language</a>.</p> <p>For more information about contact flows, see
-         * <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-         * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Connect Flow language</a>.</p> <p>For more information about flows, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
+         * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">AWS
          * API Reference</a></p>
          */
@@ -2365,8 +2366,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Returns a paginated list of all Lambda functions that display in
-         * the dropdown options in the relevant contact flow blocks.</p><p><h3>See
-         * Also:</h3>   <a
+         * the dropdown options in the relevant flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
          */
@@ -2802,6 +2802,25 @@ namespace Model
         virtual void SearchAvailablePhoneNumbersAsync(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Searches security profiles in an Amazon Connect instance, with
+         * optional filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchSecurityProfilesOutcome SearchSecurityProfiles(const Model::SearchSecurityProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchSecurityProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchSecurityProfilesOutcomeCallable SearchSecurityProfilesCallable(const Model::SearchSecurityProfilesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchSecurityProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchSecurityProfilesAsync(const Model::SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Searches users in an Amazon Connect instance, with optional
          * filtering.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
@@ -2839,8 +2858,8 @@ namespace Model
         virtual void SearchVocabulariesAsync(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a contact flow to start a new chat for the customer. Response of
-         * this API provides a token required to obtain credentials from the <a
+         * <p>Initiates a flow to start a new chat for the customer. Response of this API
+         * provides a token required to obtain credentials from the <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * API in the Amazon Connect Participant Service.</p> <p>When a new chat contact is
          * successfully created, clients must subscribe to the participant’s connection for
@@ -2926,24 +2945,23 @@ namespace Model
         virtual void StartContactStreamingAsync(const Model::StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Places an outbound call to a contact, and then initiates the contact flow. It
-         * performs the actions in the contact flow that's specified (in
+         * <p>Places an outbound call to a contact, and then initiates the flow. It
+         * performs the actions in the flow that's specified (in
          * <code>ContactFlowId</code>).</p> <p>Agents do not initiate the outbound API,
-         * which means that they do not dial the contact. If the contact flow places an
-         * outbound call to a contact, and then puts the contact in queue, the call is then
-         * routed to the agent, like any other inbound case.</p> <p>There is a 60-second
-         * dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
-         * default. Before you can dial these UK mobile numbers, you must submit a service
-         * quota increase request. For more information, see <a
+         * which means that they do not dial the contact. If the flow places an outbound
+         * call to a contact, and then puts the contact in queue, the call is then routed
+         * to the agent, like any other inbound case.</p> <p>There is a 60-second dialing
+         * timeout for this operation. If the call is not connected after 60 seconds, it
+         * fails.</p>  <p>UK numbers with a 447 prefix are not allowed by default.
+         * Before you can dial these UK mobile numbers, you must submit a service quota
+         * increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
          * </p>   <p>Campaign calls are not allowed by default. Before you can
          * make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must
-         * submit a service quota increase request. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> <p><h3>See Also:</h3>   <a
+         * submit a service quota increase request to the quota <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
+         * Connect campaigns</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          */
@@ -2960,7 +2978,7 @@ namespace Model
         virtual void StartOutboundVoiceContactAsync(const Model::StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a contact flow to start a new task.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates a flow to start a new task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">AWS
          * API Reference</a></p>
          */
@@ -3061,10 +3079,13 @@ namespace Model
         virtual void SuspendContactRecordingAsync(const Model::SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, queues, quick connects, contact
-         * flows, agent status, hours of operation, phone number, security profiles, and
-         * task templates.</p> <p>For sample policies that use tags, see <a
+         * <p>Adds the specified tags to the specified resource.</p> <p>Some of the
+         * supported resource types are agents, routing profiles, queues, quick connects,
+         * contact flows, agent statuses, hours of operation, phone numbers, security
+         * profiles, and task templates. For a complete list, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+         * resources in Amazon Connect</a>.</p> <p>For sample policies that use tags, see
+         * <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3086,17 +3107,16 @@ namespace Model
         /**
          * <p>Transfers contacts from one agent or queue to another agent or queue at any
          * point after a contact is created. You can transfer a contact to another queue by
-         * providing the contact flow which orchestrates the contact to the destination
-         * queue. This gives you more control over contact handling and helps you adhere to
-         * the service level agreement (SLA) guaranteed to your customers.</p> <p>Note the
-         * following requirements:</p> <ul> <li> <p>Transfer is supported for only
-         * <code>TASK</code> contacts.</p> </li> <li> <p>Do not use both
-         * <code>QueueId</code> and <code>UserId</code> in the same call.</p> </li> <li>
-         * <p>The following contact flow types are supported: Inbound contact flow,
-         * Transfer to agent flow, and Transfer to queue flow.</p> </li> <li> <p>The
-         * <code>TransferContact</code> API can be called only on active contacts.</p>
-         * </li> <li> <p>A contact cannot be transferred more than 11 times.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * providing the flow which orchestrates the contact to the destination queue. This
+         * gives you more control over contact handling and helps you adhere to the service
+         * level agreement (SLA) guaranteed to your customers.</p> <p>Note the following
+         * requirements:</p> <ul> <li> <p>Transfer is supported for only <code>TASK</code>
+         * contacts.</p> </li> <li> <p>Do not use both <code>QueueId</code> and
+         * <code>UserId</code> in the same call.</p> </li> <li> <p>The following flow types
+         * are supported: Inbound flow, Transfer to agent flow, and Transfer to queue
+         * flow.</p> </li> <li> <p>The <code>TransferContact</code> API can be called only
+         * on active contacts.</p> </li> <li> <p>A contact cannot be transferred more than
+         * 11 times.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">AWS
          * API Reference</a></p>
          */
@@ -3180,17 +3200,12 @@ namespace Model
          * data from your CRM application and save the data with the contact in Amazon
          * Connect. You could also flag calls for additional analysis, such as legal review
          * or to identify abusive callers.</p> <p>Contact attributes are available in
-         * Amazon Connect for 24 months, and are then deleted. For information about CTR
-         * retention and the maximum size of the CTR attributes section, see <a
+         * Amazon Connect for 24 months, and are then deleted. For information about
+         * contact record retention and the maximum size of the contact record attributes
+         * section, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
-         * specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <p>
-         * <b>Important:</b> You cannot use the operation to update attributes for contacts
-         * that occurred prior to the release of the API, which was September 12, 2018. You
-         * can update attributes only for contacts that started after the release of the
-         * API. If you attempt to update attributes for a contact that occurred prior to
-         * the release of the API, a 400 error is returned. This applies also to queued
-         * callbacks that were initiated prior to the release of the API but are still
-         * active in your instance.</p><p><h3>See Also:</h3>   <a
+         * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          */
@@ -3207,8 +3222,8 @@ namespace Model
         virtual void UpdateContactAttributesAsync(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified contact flow.</p> <p>You can also create and update
-         * contact flows using the <a
+         * <p>Updates the specified flow.</p> <p>You can also create and update flows using
+         * the <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
@@ -3227,7 +3242,7 @@ namespace Model
         virtual void UpdateContactFlowContentAsync(const Model::UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates metadata about specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates metadata about specified flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata">AWS
          * API Reference</a></p>
          */
@@ -3244,8 +3259,8 @@ namespace Model
         virtual void UpdateContactFlowMetadataAsync(const Model::UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates specified contact flow module for the specified Amazon Connect
-         * instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates specified flow module for the specified Amazon Connect instance.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">AWS
          * API Reference</a></p>
          */
@@ -3262,8 +3277,7 @@ namespace Model
         virtual void UpdateContactFlowModuleContentAsync(const Model::UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates metadata about specified contact flow module.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates metadata about specified flow module.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata">AWS
          * API Reference</a></p>
          */
@@ -3280,8 +3294,8 @@ namespace Model
         virtual void UpdateContactFlowModuleMetadataAsync(const Model::UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The name of the contact flow.</p> <p>You can also create and update contact
-         * flows using the <a
+         * <p>The name of the flow.</p> <p>You can also create and update flows using the
+         * <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowName">AWS
@@ -3875,6 +3889,7 @@ namespace Model
         void ReleasePhoneNumberAsyncHelper(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchSecurityProfilesAsyncHelper(const Model::SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchUsersAsyncHelper(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchVocabulariesAsyncHelper(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChatContactAsyncHelper(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

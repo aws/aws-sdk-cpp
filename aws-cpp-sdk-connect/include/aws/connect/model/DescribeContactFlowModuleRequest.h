@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline const Aws::String& GetContactFlowModuleId() const{ return m_contactFlowModuleId; }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline bool ContactFlowModuleIdHasBeenSet() const { return m_contactFlowModuleIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline void SetContactFlowModuleId(const Aws::String& value) { m_contactFlowModuleIdHasBeenSet = true; m_contactFlowModuleId = value; }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline void SetContactFlowModuleId(Aws::String&& value) { m_contactFlowModuleIdHasBeenSet = true; m_contactFlowModuleId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline void SetContactFlowModuleId(const char* value) { m_contactFlowModuleIdHasBeenSet = true; m_contactFlowModuleId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline DescribeContactFlowModuleRequest& WithContactFlowModuleId(const Aws::String& value) { SetContactFlowModuleId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline DescribeContactFlowModuleRequest& WithContactFlowModuleId(Aws::String&& value) { SetContactFlowModuleId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow module.</p>
+     * <p>The identifier of the flow module.</p>
      */
     inline DescribeContactFlowModuleRequest& WithContactFlowModuleId(const char* value) { SetContactFlowModuleId(value); return *this;}
 

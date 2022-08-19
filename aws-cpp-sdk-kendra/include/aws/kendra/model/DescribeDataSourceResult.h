@@ -39,171 +39,171 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the data source.</p>
+     * <p>The identifier of the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the index that contains the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index that contains the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexId = value; }
 
     /**
-     * <p>The identifier of the index that contains the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index that contains the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(const char* value) { m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index that contains the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
-     * <p>The name for the data source.</p>
+     * <p>The name for the data source connector.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name for the data source.</p>
+     * <p>The name for the data source connector.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The name for the data source.</p>
+     * <p>The name for the data source connector.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The name for the data source.</p>
+     * <p>The name for the data source connector.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The name for the data source.</p>
+     * <p>The name for the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name for the data source.</p>
+     * <p>The name for the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the data source.</p>
+     * <p>The name for the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
      */
     inline void SetType(const DataSourceType& value) { m_type = value; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
      */
     inline void SetType(DataSourceType&& value) { m_type = std::move(value); }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
      */
     inline DescribeDataSourceResult& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
      */
     inline DescribeDataSourceResult& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Configuration details for the data source. This shows how the data source is
-     * configured. The configuration options for a data source depend on the data
-     * source provider.</p>
+     * <p>Configuration details for the data source connector. This shows how the data
+     * source is configured. The configuration options for a data source depend on the
+     * data source provider.</p>
      */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Configuration details for the data source. This shows how the data source is
-     * configured. The configuration options for a data source depend on the data
-     * source provider.</p>
+     * <p>Configuration details for the data source connector. This shows how the data
+     * source is configured. The configuration options for a data source depend on the
+     * data source provider.</p>
      */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>Configuration details for the data source. This shows how the data source is
-     * configured. The configuration options for a data source depend on the data
-     * source provider.</p>
+     * <p>Configuration details for the data source connector. This shows how the data
+     * source is configured. The configuration options for a data source depend on the
+     * data source provider.</p>
      */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>Configuration details for the data source. This shows how the data source is
-     * configured. The configuration options for a data source depend on the data
-     * source provider.</p>
+     * <p>Configuration details for the data source connector. This shows how the data
+     * source is configured. The configuration options for a data source depend on the
+     * data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration details for the data source. This shows how the data source is
-     * configured. The configuration options for a data source depend on the data
-     * source provider.</p>
+     * <p>Configuration details for the data source connector. This shows how the data
+     * source is configured. The configuration options for a data source depend on the
+     * data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -250,130 +250,130 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp of when the data source was created.</p>
+     * <p>The Unix timestamp of when the data source connector was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp of when the data source was created.</p>
+     * <p>The Unix timestamp of when the data source connector was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp of when the data source was created.</p>
+     * <p>The Unix timestamp of when the data source connector was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp of when the data source was created.</p>
+     * <p>The Unix timestamp of when the data source connector was created.</p>
      */
     inline DescribeDataSourceResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp of when the data source was created.</p>
+     * <p>The Unix timestamp of when the data source connector was created.</p>
      */
     inline DescribeDataSourceResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp of when the data source was last updated.</p>
+     * <p>The Unix timestamp of when the data source connector was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix timestamp of when the data source was last updated.</p>
+     * <p>The Unix timestamp of when the data source connector was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
-     * <p>The Unix timestamp of when the data source was last updated.</p>
+     * <p>The Unix timestamp of when the data source connector was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp of when the data source was last updated.</p>
+     * <p>The Unix timestamp of when the data source connector was last updated.</p>
      */
     inline DescribeDataSourceResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp of when the data source was last updated.</p>
+     * <p>The Unix timestamp of when the data source connector was last updated.</p>
      */
     inline DescribeDataSourceResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The description for the data source.</p>
+     * <p>The description for the data source connector.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for the data source.</p>
+     * <p>The description for the data source connector.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The description for the data source.</p>
+     * <p>The description for the data source connector.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The description for the data source.</p>
+     * <p>The description for the data source connector.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The description for the data source.</p>
+     * <p>The description for the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for the data source.</p>
+     * <p>The description for the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for the data source.</p>
+     * <p>The description for the data source connector.</p>
      */
     inline DescribeDataSourceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The current status of the data source. When the status is <code>ACTIVE</code>
-     * the data source is ready to use. When the status is <code>FAILED</code>, the
-     * <code>ErrorMessage</code> field contains the reason that the data source
-     * failed.</p>
+     * <p>The current status of the data source connector. When the status is
+     * <code>ACTIVE</code> the data source is ready to use. When the status is
+     * <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason
+     * that the data source failed.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the data source. When the status is <code>ACTIVE</code>
-     * the data source is ready to use. When the status is <code>FAILED</code>, the
-     * <code>ErrorMessage</code> field contains the reason that the data source
-     * failed.</p>
+     * <p>The current status of the data source connector. When the status is
+     * <code>ACTIVE</code> the data source is ready to use. When the status is
+     * <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason
+     * that the data source failed.</p>
      */
     inline void SetStatus(const DataSourceStatus& value) { m_status = value; }
 
     /**
-     * <p>The current status of the data source. When the status is <code>ACTIVE</code>
-     * the data source is ready to use. When the status is <code>FAILED</code>, the
-     * <code>ErrorMessage</code> field contains the reason that the data source
-     * failed.</p>
+     * <p>The current status of the data source connector. When the status is
+     * <code>ACTIVE</code> the data source is ready to use. When the status is
+     * <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason
+     * that the data source failed.</p>
      */
     inline void SetStatus(DataSourceStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The current status of the data source. When the status is <code>ACTIVE</code>
-     * the data source is ready to use. When the status is <code>FAILED</code>, the
-     * <code>ErrorMessage</code> field contains the reason that the data source
-     * failed.</p>
+     * <p>The current status of the data source connector. When the status is
+     * <code>ACTIVE</code> the data source is ready to use. When the status is
+     * <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason
+     * that the data source failed.</p>
      */
     inline DescribeDataSourceResult& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the data source. When the status is <code>ACTIVE</code>
-     * the data source is ready to use. When the status is <code>FAILED</code>, the
-     * <code>ErrorMessage</code> field contains the reason that the data source
-     * failed.</p>
+     * <p>The current status of the data source connector. When the status is
+     * <code>ACTIVE</code> the data source is ready to use. When the status is
+     * <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason
+     * that the data source failed.</p>
      */
     inline DescribeDataSourceResult& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -415,44 +415,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that enables the data source to
-     * access its resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
+     * source and required resources.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that enables the data source to
-     * access its resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
+     * source and required resources.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that enables the data source to
-     * access its resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
+     * source and required resources.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that enables the data source to
-     * access its resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
+     * source and required resources.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that enables the data source to
-     * access its resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
+     * source and required resources.</p>
      */
     inline DescribeDataSourceResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that enables the data source to
-     * access its resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
+     * source and required resources.</p>
      */
     inline DescribeDataSourceResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that enables the data source to
-     * access its resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
+     * source and required resources.</p>
      */
     inline DescribeDataSourceResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

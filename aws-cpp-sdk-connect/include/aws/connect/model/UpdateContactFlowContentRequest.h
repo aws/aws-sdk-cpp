@@ -74,49 +74,48 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline UpdateContactFlowContentRequest& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline UpdateContactFlowContentRequest& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline UpdateContactFlowContentRequest& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
 
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>
@@ -124,8 +123,7 @@ namespace Model
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>
@@ -133,8 +131,7 @@ namespace Model
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>
@@ -142,8 +139,7 @@ namespace Model
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>
@@ -151,8 +147,7 @@ namespace Model
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>
@@ -160,8 +155,7 @@ namespace Model
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>
@@ -169,8 +163,7 @@ namespace Model
     inline UpdateContactFlowContentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>
@@ -178,8 +171,7 @@ namespace Model
     inline UpdateContactFlowContentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON string that represents contact flow’s content. For an example, see
-     * <a
+     * <p>The JSON string that represents flow's content. For an example, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example
      * contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect
      * Administrator Guide</i>. </p>

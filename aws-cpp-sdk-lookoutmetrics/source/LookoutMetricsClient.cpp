@@ -34,6 +34,7 @@
 #include <aws/lookoutmetrics/model/DescribeMetricSetRequest.h>
 #include <aws/lookoutmetrics/model/DetectMetricSetConfigRequest.h>
 #include <aws/lookoutmetrics/model/GetAnomalyGroupRequest.h>
+#include <aws/lookoutmetrics/model/GetDataQualityMetricsRequest.h>
 #include <aws/lookoutmetrics/model/GetFeedbackRequest.h>
 #include <aws/lookoutmetrics/model/GetSampleDataRequest.h>
 #include <aws/lookoutmetrics/model/ListAlertsRequest.h>
@@ -471,6 +472,31 @@ void LookoutMetricsClient::GetAnomalyGroupAsync(const GetAnomalyGroupRequest& re
 void LookoutMetricsClient::GetAnomalyGroupAsyncHelper(const GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAnomalyGroup(request), context);
+}
+
+GetDataQualityMetricsOutcome LookoutMetricsClient::GetDataQualityMetrics(const GetDataQualityMetricsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/GetDataQualityMetrics");
+  return GetDataQualityMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDataQualityMetricsOutcomeCallable LookoutMetricsClient::GetDataQualityMetricsCallable(const GetDataQualityMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataQualityMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutMetricsClient::GetDataQualityMetricsAsync(const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDataQualityMetricsAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutMetricsClient::GetDataQualityMetricsAsyncHelper(const GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDataQualityMetrics(request), context);
 }
 
 GetFeedbackOutcome LookoutMetricsClient::GetFeedback(const GetFeedbackRequest& request) const

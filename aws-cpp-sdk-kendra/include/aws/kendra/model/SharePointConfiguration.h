@@ -77,47 +77,47 @@ namespace Model
 
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUrls() const{ return m_urls; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline void SetUrls(const Aws::Vector<Aws::String>& value) { m_urlsHasBeenSet = true; m_urls = value; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline void SetUrls(Aws::Vector<Aws::String>&& value) { m_urlsHasBeenSet = true; m_urls = std::move(value); }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& WithUrls(const Aws::Vector<Aws::String>& value) { SetUrls(value); return *this;}
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& WithUrls(Aws::Vector<Aws::String>&& value) { SetUrls(std::move(value)); return *this;}
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& AddUrls(const Aws::String& value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& AddUrls(Aws::String&& value) { m_urlsHasBeenSet = true; m_urls.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
      */
     inline SharePointConfiguration& AddUrls(const char* value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
 
@@ -681,37 +681,61 @@ namespace Model
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline const S3Path& GetSslCertificateS3Path() const{ return m_sslCertificateS3Path; }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline bool SslCertificateS3PathHasBeenSet() const { return m_sslCertificateS3PathHasBeenSet; }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline void SetSslCertificateS3Path(const S3Path& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = value; }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline void SetSslCertificateS3Path(S3Path&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::move(value); }
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline SharePointConfiguration& WithSslCertificateS3Path(const S3Path& value) { SetSslCertificateS3Path(value); return *this;}
 
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
-     * to connect to SharePoint.</p>
+     * to connect to SharePoint Server if you require a secure SSL connection.</p>
+     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline SharePointConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
 

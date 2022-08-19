@@ -556,9 +556,9 @@ namespace Model
         virtual void CreateAccessControlConfigurationAsync(const Model::CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a data source that you want to use with an Amazon Kendra index. </p>
-         * <p>You specify a name, data source connector type and description for your data
-         * source. You also specify configuration information for the data source
+         * <p>Creates a data source connector that you want to use with an Amazon Kendra
+         * index.</p> <p>You specify a name, data source connector type and description for
+         * your data source. You also specify configuration information for the data source
          * connector.</p> <p> <code>CreateDataSource</code> is a synchronous operation. The
          * operation returns 200 if the data source was successfully created. Otherwise, an
          * exception is raised.</p> <p>Amazon S3 and <a
@@ -729,9 +729,9 @@ namespace Model
         virtual void DeleteAccessControlConfigurationAsync(const Model::DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon Kendra data source. An exception is not thrown if the data
-         * source is already being deleted. While the data source is being deleted, the
-         * <code>Status</code> field returned by a call to the
+         * <p>Deletes an Amazon Kendra data source connector. An exception is not thrown if
+         * the data source is already being deleted. While the data source is being
+         * deleted, the <code>Status</code> field returned by a call to the
          * <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
@@ -898,8 +898,8 @@ namespace Model
         virtual void DescribeAccessControlConfigurationAsync(const Model::DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about an Amazon Kendra data source.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about an Amazon Kendra data source connector.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeDataSource">AWS
          * API Reference</a></p>
          */
@@ -1157,8 +1157,8 @@ namespace Model
         virtual void ListAccessControlConfigurationsAsync(const Model::ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets statistics about synchronizing Amazon Kendra with a data
-         * source.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets statistics about synchronizing a data source connector.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSourceSyncJobs">AWS
          * API Reference</a></p>
          */
@@ -1175,7 +1175,8 @@ namespace Model
         virtual void ListDataSourceSyncJobsAsync(const Model::ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the data sources that you have created.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the data source connectors that you have created.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSources">AWS
          * API Reference</a></p>
          */
@@ -1422,9 +1423,9 @@ namespace Model
         virtual void QueryAsync(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a synchronization job for a data source. If a synchronization job is
-         * already in progress, Amazon Kendra returns a <code>ResourceInUseException</code>
-         * exception.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a synchronization job for a data source connector. If a
+         * synchronization job is already in progress, Amazon Kendra returns a
+         * <code>ResourceInUseException</code> exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StartDataSourceSyncJob">AWS
          * API Reference</a></p>
          */
@@ -1553,7 +1554,8 @@ namespace Model
         virtual void UpdateAccessControlConfigurationAsync(const Model::UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing Amazon Kendra data source.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon Kendra data source connector.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">AWS
          * API Reference</a></p>
          */

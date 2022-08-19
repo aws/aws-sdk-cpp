@@ -125,43 +125,43 @@ namespace Model
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline const Aws::Utils::DateTime& GetScheduledTime() const{ return m_scheduledTime; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline bool ScheduledTimeHasBeenSet() const { return m_scheduledTimeHasBeenSet; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline void SetScheduledTime(const Aws::Utils::DateTime& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = value; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline void SetScheduledTime(Aws::Utils::DateTime&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::move(value); }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline UpdateContactScheduleRequest& WithScheduledTime(const Aws::Utils::DateTime& value) { SetScheduledTime(value); return *this;}
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline UpdateContactScheduleRequest& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
 

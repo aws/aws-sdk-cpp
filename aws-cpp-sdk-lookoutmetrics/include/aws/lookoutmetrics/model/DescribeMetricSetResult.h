@@ -235,17 +235,23 @@ namespace Model
 
 
     /**
-     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+     * <p>After an interval ends, the amount of seconds that the detector waits before
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
-     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+     * <p>After an interval ends, the amount of seconds that the detector waits before
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline void SetOffset(int value) { m_offset = value; }
 
     /**
-     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+     * <p>After an interval ends, the amount of seconds that the detector waits before
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline DescribeMetricSetResult& WithOffset(int value) { SetOffset(value); return *this;}
 
