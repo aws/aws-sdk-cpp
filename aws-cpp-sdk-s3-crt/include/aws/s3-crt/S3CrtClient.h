@@ -8,6 +8,7 @@
 #include <aws/s3-crt/S3CrtErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/s3-crt/ClientConfiguration.h>
 #include <aws/s3-crt/S3CrtErrorMarshaller.h>
@@ -110,7 +111,6 @@ namespace Aws
   {
     class AWSCredentials;
     class AWSCredentialsProvider;
-    class DefaultAWSCredentialsProviderChain;
   } // namespace Auth
 
   namespace S3Crt
