@@ -110,6 +110,7 @@ namespace Aws
   {
     class AWSCredentials;
     class AWSCredentialsProvider;
+    class DefaultAWSCredentialsProviderChain;
   } // namespace Auth
 
   namespace S3Crt

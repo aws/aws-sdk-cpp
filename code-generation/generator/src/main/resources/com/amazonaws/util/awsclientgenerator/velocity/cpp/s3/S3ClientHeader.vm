@@ -63,6 +63,9 @@ namespace Aws
   {
     class AWSCredentials;
     class AWSCredentialsProvider;
+#if($serviceNamespace == "S3Crt")
+    class DefaultAWSCredentialsProviderChain;
+#end
   } // namespace Auth
 
   namespace ${metadata.namespace}
