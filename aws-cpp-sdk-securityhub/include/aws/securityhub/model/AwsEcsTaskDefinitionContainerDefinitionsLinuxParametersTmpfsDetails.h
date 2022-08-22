@@ -81,47 +81,173 @@ namespace Model
 
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetMountOptions() const{ return m_mountOptions; }
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline void SetMountOptions(const Aws::Vector<Aws::String>& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline void SetMountOptions(Aws::Vector<Aws::String>&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& WithMountOptions(const Aws::Vector<Aws::String>& value) { SetMountOptions(value); return *this;}
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& WithMountOptions(Aws::Vector<Aws::String>&& value) { SetMountOptions(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& AddMountOptions(const Aws::String& value) { m_mountOptionsHasBeenSet = true; m_mountOptions.push_back(value); return *this; }
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& AddMountOptions(Aws::String&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of tmpfs volume mount options.</p>
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values:
+     * <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> |
+     * <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> |
+     * <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> |
+     * <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> |
+     * <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> |
+     * <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> |
+     * <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> |
+     * <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code>
+     * | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> |
+     * <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> |
+     * <code>"norelatime"</code> | <code>"strictatime"</code> |
+     * <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> |
+     * <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> |
+     * <code>"mpol"</code> </p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& AddMountOptions(const char* value) { m_mountOptionsHasBeenSet = true; m_mountOptions.push_back(value); return *this; }
 

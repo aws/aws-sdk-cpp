@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecastquery/model/QueryForecastResult.h>
+#include <aws/forecastquery/model/QueryWhatIfForecastResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -52,15 +53,19 @@ namespace ForecastQueryService
 namespace Model
 {
         class QueryForecastRequest;
+        class QueryWhatIfForecastRequest;
 
         typedef Aws::Utils::Outcome<QueryForecastResult, ForecastQueryServiceError> QueryForecastOutcome;
+        typedef Aws::Utils::Outcome<QueryWhatIfForecastResult, ForecastQueryServiceError> QueryWhatIfForecastOutcome;
 
         typedef std::future<QueryForecastOutcome> QueryForecastOutcomeCallable;
+        typedef std::future<QueryWhatIfForecastOutcome> QueryWhatIfForecastOutcomeCallable;
 } // namespace Model
 
   class ForecastQueryServiceClient;
 
     typedef std::function<void(const ForecastQueryServiceClient*, const Model::QueryForecastRequest&, const Model::QueryForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryForecastResponseReceivedHandler;
+    typedef std::function<void(const ForecastQueryServiceClient*, const Model::QueryWhatIfForecastRequest&, const Model::QueryWhatIfForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryWhatIfForecastResponseReceivedHandler;
 
   /**
    * <p>Provides APIs for creating and managing Amazon Forecast resources.</p>
@@ -120,11 +125,29 @@ namespace Model
          */
         virtual void QueryForecastAsync(const Model::QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Retrieves a what-if forecast.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::QueryWhatIfForecastOutcome QueryWhatIfForecast(const Model::QueryWhatIfForecastRequest& request) const;
+
+        /**
+         * A Callable wrapper for QueryWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::QueryWhatIfForecastOutcomeCallable QueryWhatIfForecastCallable(const Model::QueryWhatIfForecastRequest& request) const;
+
+        /**
+         * An Async wrapper for QueryWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void QueryWhatIfForecastAsync(const Model::QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void QueryForecastAsyncHelper(const Model::QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void QueryWhatIfForecastAsyncHelper(const Model::QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

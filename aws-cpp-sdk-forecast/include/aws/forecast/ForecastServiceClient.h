@@ -22,6 +22,9 @@
 #include <aws/forecast/model/CreateMonitorResult.h>
 #include <aws/forecast/model/CreatePredictorResult.h>
 #include <aws/forecast/model/CreatePredictorBacktestExportJobResult.h>
+#include <aws/forecast/model/CreateWhatIfAnalysisResult.h>
+#include <aws/forecast/model/CreateWhatIfForecastResult.h>
+#include <aws/forecast/model/CreateWhatIfForecastExportResult.h>
 #include <aws/forecast/model/DescribeAutoPredictorResult.h>
 #include <aws/forecast/model/DescribeDatasetResult.h>
 #include <aws/forecast/model/DescribeDatasetGroupResult.h>
@@ -33,6 +36,9 @@
 #include <aws/forecast/model/DescribeMonitorResult.h>
 #include <aws/forecast/model/DescribePredictorResult.h>
 #include <aws/forecast/model/DescribePredictorBacktestExportJobResult.h>
+#include <aws/forecast/model/DescribeWhatIfAnalysisResult.h>
+#include <aws/forecast/model/DescribeWhatIfForecastResult.h>
+#include <aws/forecast/model/DescribeWhatIfForecastExportResult.h>
 #include <aws/forecast/model/GetAccuracyMetricsResult.h>
 #include <aws/forecast/model/ListDatasetGroupsResult.h>
 #include <aws/forecast/model/ListDatasetImportJobsResult.h>
@@ -46,6 +52,9 @@
 #include <aws/forecast/model/ListPredictorBacktestExportJobsResult.h>
 #include <aws/forecast/model/ListPredictorsResult.h>
 #include <aws/forecast/model/ListTagsForResourceResult.h>
+#include <aws/forecast/model/ListWhatIfAnalysesResult.h>
+#include <aws/forecast/model/ListWhatIfForecastExportsResult.h>
+#include <aws/forecast/model/ListWhatIfForecastsResult.h>
 #include <aws/forecast/model/TagResourceResult.h>
 #include <aws/forecast/model/UntagResourceResult.h>
 #include <aws/forecast/model/UpdateDatasetGroupResult.h>
@@ -100,6 +109,9 @@ namespace Model
         class CreateMonitorRequest;
         class CreatePredictorRequest;
         class CreatePredictorBacktestExportJobRequest;
+        class CreateWhatIfAnalysisRequest;
+        class CreateWhatIfForecastRequest;
+        class CreateWhatIfForecastExportRequest;
         class DeleteDatasetRequest;
         class DeleteDatasetGroupRequest;
         class DeleteDatasetImportJobRequest;
@@ -111,6 +123,9 @@ namespace Model
         class DeletePredictorRequest;
         class DeletePredictorBacktestExportJobRequest;
         class DeleteResourceTreeRequest;
+        class DeleteWhatIfAnalysisRequest;
+        class DeleteWhatIfForecastRequest;
+        class DeleteWhatIfForecastExportRequest;
         class DescribeAutoPredictorRequest;
         class DescribeDatasetRequest;
         class DescribeDatasetGroupRequest;
@@ -122,6 +137,9 @@ namespace Model
         class DescribeMonitorRequest;
         class DescribePredictorRequest;
         class DescribePredictorBacktestExportJobRequest;
+        class DescribeWhatIfAnalysisRequest;
+        class DescribeWhatIfForecastRequest;
+        class DescribeWhatIfForecastExportRequest;
         class GetAccuracyMetricsRequest;
         class ListDatasetGroupsRequest;
         class ListDatasetImportJobsRequest;
@@ -135,6 +153,9 @@ namespace Model
         class ListPredictorBacktestExportJobsRequest;
         class ListPredictorsRequest;
         class ListTagsForResourceRequest;
+        class ListWhatIfAnalysesRequest;
+        class ListWhatIfForecastExportsRequest;
+        class ListWhatIfForecastsRequest;
         class ResumeResourceRequest;
         class StopResourceRequest;
         class TagResourceRequest;
@@ -152,6 +173,9 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateMonitorResult, ForecastServiceError> CreateMonitorOutcome;
         typedef Aws::Utils::Outcome<CreatePredictorResult, ForecastServiceError> CreatePredictorOutcome;
         typedef Aws::Utils::Outcome<CreatePredictorBacktestExportJobResult, ForecastServiceError> CreatePredictorBacktestExportJobOutcome;
+        typedef Aws::Utils::Outcome<CreateWhatIfAnalysisResult, ForecastServiceError> CreateWhatIfAnalysisOutcome;
+        typedef Aws::Utils::Outcome<CreateWhatIfForecastResult, ForecastServiceError> CreateWhatIfForecastOutcome;
+        typedef Aws::Utils::Outcome<CreateWhatIfForecastExportResult, ForecastServiceError> CreateWhatIfForecastExportOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteDatasetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteDatasetImportJobOutcome;
@@ -163,6 +187,9 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeletePredictorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeletePredictorBacktestExportJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteResourceTreeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteWhatIfAnalysisOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteWhatIfForecastOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteWhatIfForecastExportOutcome;
         typedef Aws::Utils::Outcome<DescribeAutoPredictorResult, ForecastServiceError> DescribeAutoPredictorOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, ForecastServiceError> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetGroupResult, ForecastServiceError> DescribeDatasetGroupOutcome;
@@ -174,6 +201,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeMonitorResult, ForecastServiceError> DescribeMonitorOutcome;
         typedef Aws::Utils::Outcome<DescribePredictorResult, ForecastServiceError> DescribePredictorOutcome;
         typedef Aws::Utils::Outcome<DescribePredictorBacktestExportJobResult, ForecastServiceError> DescribePredictorBacktestExportJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeWhatIfAnalysisResult, ForecastServiceError> DescribeWhatIfAnalysisOutcome;
+        typedef Aws::Utils::Outcome<DescribeWhatIfForecastResult, ForecastServiceError> DescribeWhatIfForecastOutcome;
+        typedef Aws::Utils::Outcome<DescribeWhatIfForecastExportResult, ForecastServiceError> DescribeWhatIfForecastExportOutcome;
         typedef Aws::Utils::Outcome<GetAccuracyMetricsResult, ForecastServiceError> GetAccuracyMetricsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetGroupsResult, ForecastServiceError> ListDatasetGroupsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetImportJobsResult, ForecastServiceError> ListDatasetImportJobsOutcome;
@@ -187,6 +217,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPredictorBacktestExportJobsResult, ForecastServiceError> ListPredictorBacktestExportJobsOutcome;
         typedef Aws::Utils::Outcome<ListPredictorsResult, ForecastServiceError> ListPredictorsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ForecastServiceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListWhatIfAnalysesResult, ForecastServiceError> ListWhatIfAnalysesOutcome;
+        typedef Aws::Utils::Outcome<ListWhatIfForecastExportsResult, ForecastServiceError> ListWhatIfForecastExportsOutcome;
+        typedef Aws::Utils::Outcome<ListWhatIfForecastsResult, ForecastServiceError> ListWhatIfForecastsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> ResumeResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> StopResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, ForecastServiceError> TagResourceOutcome;
@@ -204,6 +237,9 @@ namespace Model
         typedef std::future<CreateMonitorOutcome> CreateMonitorOutcomeCallable;
         typedef std::future<CreatePredictorOutcome> CreatePredictorOutcomeCallable;
         typedef std::future<CreatePredictorBacktestExportJobOutcome> CreatePredictorBacktestExportJobOutcomeCallable;
+        typedef std::future<CreateWhatIfAnalysisOutcome> CreateWhatIfAnalysisOutcomeCallable;
+        typedef std::future<CreateWhatIfForecastOutcome> CreateWhatIfForecastOutcomeCallable;
+        typedef std::future<CreateWhatIfForecastExportOutcome> CreateWhatIfForecastExportOutcomeCallable;
         typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
         typedef std::future<DeleteDatasetGroupOutcome> DeleteDatasetGroupOutcomeCallable;
         typedef std::future<DeleteDatasetImportJobOutcome> DeleteDatasetImportJobOutcomeCallable;
@@ -215,6 +251,9 @@ namespace Model
         typedef std::future<DeletePredictorOutcome> DeletePredictorOutcomeCallable;
         typedef std::future<DeletePredictorBacktestExportJobOutcome> DeletePredictorBacktestExportJobOutcomeCallable;
         typedef std::future<DeleteResourceTreeOutcome> DeleteResourceTreeOutcomeCallable;
+        typedef std::future<DeleteWhatIfAnalysisOutcome> DeleteWhatIfAnalysisOutcomeCallable;
+        typedef std::future<DeleteWhatIfForecastOutcome> DeleteWhatIfForecastOutcomeCallable;
+        typedef std::future<DeleteWhatIfForecastExportOutcome> DeleteWhatIfForecastExportOutcomeCallable;
         typedef std::future<DescribeAutoPredictorOutcome> DescribeAutoPredictorOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeDatasetGroupOutcome> DescribeDatasetGroupOutcomeCallable;
@@ -226,6 +265,9 @@ namespace Model
         typedef std::future<DescribeMonitorOutcome> DescribeMonitorOutcomeCallable;
         typedef std::future<DescribePredictorOutcome> DescribePredictorOutcomeCallable;
         typedef std::future<DescribePredictorBacktestExportJobOutcome> DescribePredictorBacktestExportJobOutcomeCallable;
+        typedef std::future<DescribeWhatIfAnalysisOutcome> DescribeWhatIfAnalysisOutcomeCallable;
+        typedef std::future<DescribeWhatIfForecastOutcome> DescribeWhatIfForecastOutcomeCallable;
+        typedef std::future<DescribeWhatIfForecastExportOutcome> DescribeWhatIfForecastExportOutcomeCallable;
         typedef std::future<GetAccuracyMetricsOutcome> GetAccuracyMetricsOutcomeCallable;
         typedef std::future<ListDatasetGroupsOutcome> ListDatasetGroupsOutcomeCallable;
         typedef std::future<ListDatasetImportJobsOutcome> ListDatasetImportJobsOutcomeCallable;
@@ -239,6 +281,9 @@ namespace Model
         typedef std::future<ListPredictorBacktestExportJobsOutcome> ListPredictorBacktestExportJobsOutcomeCallable;
         typedef std::future<ListPredictorsOutcome> ListPredictorsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListWhatIfAnalysesOutcome> ListWhatIfAnalysesOutcomeCallable;
+        typedef std::future<ListWhatIfForecastExportsOutcome> ListWhatIfForecastExportsOutcomeCallable;
+        typedef std::future<ListWhatIfForecastsOutcome> ListWhatIfForecastsOutcomeCallable;
         typedef std::future<ResumeResourceOutcome> ResumeResourceOutcomeCallable;
         typedef std::future<StopResourceOutcome> StopResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -259,6 +304,9 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::CreateMonitorRequest&, const Model::CreateMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMonitorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreatePredictorRequest&, const Model::CreatePredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreatePredictorBacktestExportJobRequest&, const Model::CreatePredictorBacktestExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePredictorBacktestExportJobResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::CreateWhatIfAnalysisRequest&, const Model::CreateWhatIfAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWhatIfAnalysisResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::CreateWhatIfForecastRequest&, const Model::CreateWhatIfForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWhatIfForecastResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::CreateWhatIfForecastExportRequest&, const Model::CreateWhatIfForecastExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWhatIfForecastExportResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteDatasetGroupRequest&, const Model::DeleteDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteDatasetImportJobRequest&, const Model::DeleteDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetImportJobResponseReceivedHandler;
@@ -270,6 +318,9 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::DeletePredictorRequest&, const Model::DeletePredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeletePredictorBacktestExportJobRequest&, const Model::DeletePredictorBacktestExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePredictorBacktestExportJobResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteResourceTreeRequest&, const Model::DeleteResourceTreeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceTreeResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DeleteWhatIfAnalysisRequest&, const Model::DeleteWhatIfAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWhatIfAnalysisResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DeleteWhatIfForecastRequest&, const Model::DeleteWhatIfForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWhatIfForecastResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DeleteWhatIfForecastExportRequest&, const Model::DeleteWhatIfForecastExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWhatIfForecastExportResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeAutoPredictorRequest&, const Model::DescribeAutoPredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoPredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetGroupRequest&, const Model::DescribeDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetGroupResponseReceivedHandler;
@@ -281,6 +332,9 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeMonitorRequest&, const Model::DescribeMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMonitorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribePredictorRequest&, const Model::DescribePredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribePredictorBacktestExportJobRequest&, const Model::DescribePredictorBacktestExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePredictorBacktestExportJobResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DescribeWhatIfAnalysisRequest&, const Model::DescribeWhatIfAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWhatIfAnalysisResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DescribeWhatIfForecastRequest&, const Model::DescribeWhatIfForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWhatIfForecastResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DescribeWhatIfForecastExportRequest&, const Model::DescribeWhatIfForecastExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWhatIfForecastExportResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::GetAccuracyMetricsRequest&, const Model::GetAccuracyMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccuracyMetricsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListDatasetGroupsRequest&, const Model::ListDatasetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetGroupsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListDatasetImportJobsRequest&, const Model::ListDatasetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetImportJobsResponseReceivedHandler;
@@ -294,6 +348,9 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::ListPredictorBacktestExportJobsRequest&, const Model::ListPredictorBacktestExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPredictorBacktestExportJobsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListPredictorsRequest&, const Model::ListPredictorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPredictorsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::ListWhatIfAnalysesRequest&, const Model::ListWhatIfAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWhatIfAnalysesResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::ListWhatIfForecastExportsRequest&, const Model::ListWhatIfForecastExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWhatIfForecastExportsResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::ListWhatIfForecastsRequest&, const Model::ListWhatIfForecastsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWhatIfForecastsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ResumeResourceRequest&, const Model::ResumeResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeResourceResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::StopResourceRequest&, const Model::StopResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopResourceResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -733,6 +790,92 @@ namespace Model
         virtual void CreatePredictorBacktestExportJobAsync(const Model::CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>What-if analysis is a scenario modeling technique where you make a
+         * hypothetical change to a time series and compare the forecasts generated by
+         * these changes against the baseline, unchanged time series. It is important to
+         * remember that the purpose of a what-if analysis is to understand how a forecast
+         * can change given different modifications to the baseline time series.</p> <p>For
+         * example, imagine you are a clothing retailer who is considering an end of season
+         * sale to clear space for new styles. After creating a baseline forecast, you can
+         * use a what-if analysis to investigate how different sales tactics might affect
+         * your goals. You could create a scenario where everything is given a 25% markdown
+         * and another where everything is given a fixed dollar markdown. You can create a
+         * scenario where the sale lasts for 1 week and another where the sale lasts for 1
+         * month. Your what-if analysis enables you to compare many different scenarios
+         * against each other.</p> <p>Note that a what-if analysis is meant to display what
+         * the forecasting model has learned and how it will behave in the scenarios that
+         * you are evaluating. Do not blindly use the results of the what-if analysis to
+         * make business decisions. For instance, forecasts might not be accurate for novel
+         * scenarios where there is no reference available to determine whether a forecast
+         * is good.</p> <p>The <a>TimeSeriesSelector</a> object defines the items that you
+         * want in the what-if analysis.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWhatIfAnalysisOutcome CreateWhatIfAnalysis(const Model::CreateWhatIfAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWhatIfAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWhatIfAnalysisOutcomeCallable CreateWhatIfAnalysisCallable(const Model::CreateWhatIfAnalysisRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateWhatIfAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWhatIfAnalysisAsync(const Model::CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A what-if forecast is a forecast that is created from a modified version of
+         * the baseline forecast. Each what-if forecast incorporates either a replacement
+         * dataset or a set of transformations to the original dataset. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWhatIfForecastOutcome CreateWhatIfForecast(const Model::CreateWhatIfForecastRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWhatIfForecastOutcomeCallable CreateWhatIfForecastCallable(const Model::CreateWhatIfForecastRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWhatIfForecastAsync(const Model::CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Exports a forecast created by the <a>CreateWhatIfForecast</a> operation to
+         * your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name
+         * will match the following conventions:</p> <p>
+         * <code>≈&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</code>
+         * </p> <p>The &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat
+         * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
+         * that includes an AWS Identity and Access Management (IAM) role that Amazon
+         * Forecast can assume to access the Amazon S3 bucket. For more information, see
+         * <a>aws-forecast-iam-roles</a>.</p> <p>For more information, see
+         * <a>howitworks-forecast</a>.</p> <p>To get a list of all your what-if forecast
+         * export jobs, use the <a>ListWhatIfForecastExports</a> operation.</p> 
+         * <p>The <code>Status</code> of the forecast export job must be
+         * <code>ACTIVE</code> before you can access the forecast in your Amazon S3 bucket.
+         * To get the status, use the <a>DescribeWhatIfForecastExport</a> operation.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecastExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWhatIfForecastExportOutcome CreateWhatIfForecastExport(const Model::CreateWhatIfForecastExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWhatIfForecastExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWhatIfForecastExportOutcomeCallable CreateWhatIfForecastExportCallable(const Model::CreateWhatIfForecastExportRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateWhatIfForecastExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWhatIfForecastExportAsync(const Model::CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an Amazon Forecast dataset that was created using the <a
          * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
          * operation. You can only delete datasets that have a status of
@@ -970,6 +1113,71 @@ namespace Model
          * An Async wrapper for DeleteResourceTree that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteResourceTreeAsync(const Model::DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a what-if analysis created using the <a>CreateWhatIfAnalysis</a>
+         * operation. You can delete only what-if analyses that have a status of
+         * <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the
+         * <a>DescribeWhatIfAnalysis</a> operation. </p> <p>You can't delete a what-if
+         * analysis while any of its forecasts are being exported.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWhatIfAnalysisOutcome DeleteWhatIfAnalysis(const Model::DeleteWhatIfAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWhatIfAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWhatIfAnalysisOutcomeCallable DeleteWhatIfAnalysisCallable(const Model::DeleteWhatIfAnalysisRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteWhatIfAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWhatIfAnalysisAsync(const Model::DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a what-if forecast created using the <a>CreateWhatIfForecast</a>
+         * operation. You can delete only what-if forecasts that have a status of
+         * <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the
+         * <a>DescribeWhatIfForecast</a> operation. </p> <p>You can't delete a what-if
+         * forecast while it is being exported. After a what-if forecast is deleted, you
+         * can no longer query the what-if analysis.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWhatIfForecastOutcome DeleteWhatIfForecast(const Model::DeleteWhatIfForecastRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWhatIfForecastOutcomeCallable DeleteWhatIfForecastCallable(const Model::DeleteWhatIfForecastRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWhatIfForecastAsync(const Model::DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a what-if forecast export created using the
+         * <a>CreateWhatIfForecastExport</a> operation. You can delete only what-if
+         * forecast exports that have a status of <code>ACTIVE</code> or
+         * <code>CREATE_FAILED</code>. To get the status, use the
+         * <a>DescribeWhatIfForecastExport</a> operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecastExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWhatIfForecastExportOutcome DeleteWhatIfForecastExport(const Model::DeleteWhatIfForecastExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWhatIfForecastExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWhatIfForecastExportOutcomeCallable DeleteWhatIfForecastExportCallable(const Model::DeleteWhatIfForecastExportRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteWhatIfForecastExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWhatIfForecastExportAsync(const Model::DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a predictor created using the CreateAutoPredictor
@@ -1221,6 +1429,76 @@ namespace Model
          * An Async wrapper for DescribePredictorBacktestExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePredictorBacktestExportJobAsync(const Model::DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the what-if analysis created using the <a>CreateWhatIfAnalysis</a>
+         * operation.</p> <p>In addition to listing the properties provided in the
+         * <code>CreateWhatIfAnalysis</code> request, this operation lists the following
+         * properties:</p> <ul> <li> <p> <code>CreationTime</code> </p> </li> <li> <p>
+         * <code>LastModificationTime</code> </p> </li> <li> <p> <code>Message</code> - If
+         * an error occurred, information about the error.</p> </li> <li> <p>
+         * <code>Status</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWhatIfAnalysisOutcome DescribeWhatIfAnalysis(const Model::DescribeWhatIfAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWhatIfAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWhatIfAnalysisOutcomeCallable DescribeWhatIfAnalysisCallable(const Model::DescribeWhatIfAnalysisRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeWhatIfAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWhatIfAnalysisAsync(const Model::DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the what-if forecast created using the <a>CreateWhatIfForecast</a>
+         * operation.</p> <p>In addition to listing the properties provided in the
+         * <code>CreateWhatIfForecast</code> request, this operation lists the following
+         * properties:</p> <ul> <li> <p> <code>CreationTime</code> </p> </li> <li> <p>
+         * <code>LastModificationTime</code> </p> </li> <li> <p> <code>Message</code> - If
+         * an error occurred, information about the error.</p> </li> <li> <p>
+         * <code>Status</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWhatIfForecastOutcome DescribeWhatIfForecast(const Model::DescribeWhatIfForecastRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWhatIfForecastOutcomeCallable DescribeWhatIfForecastCallable(const Model::DescribeWhatIfForecastRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWhatIfForecastAsync(const Model::DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the what-if forecast export created using the
+         * <a>CreateWhatIfForecastExport</a> operation.</p> <p>In addition to listing the
+         * properties provided in the <code>CreateWhatIfForecastExport</code> request, this
+         * operation lists the following properties:</p> <ul> <li> <p>
+         * <code>CreationTime</code> </p> </li> <li> <p> <code>LastModificationTime</code>
+         * </p> </li> <li> <p> <code>Message</code> - If an error occurred, information
+         * about the error.</p> </li> <li> <p> <code>Status</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecastExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWhatIfForecastExportOutcome DescribeWhatIfForecastExport(const Model::DescribeWhatIfForecastExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWhatIfForecastExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWhatIfForecastExportOutcomeCallable DescribeWhatIfForecastExportCallable(const Model::DescribeWhatIfForecastExportRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeWhatIfForecastExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWhatIfForecastExportAsync(const Model::DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides metrics on the accuracy of the models that were trained by the
@@ -1524,6 +1802,72 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of what-if analyses created using the
+         * <a>CreateWhatIfAnalysis</a> operation. For each what-if analysis, this operation
+         * returns a summary of its properties, including its Amazon Resource Name (ARN).
+         * You can retrieve the complete set of properties by using the what-if analysis
+         * ARN with the <a>DescribeWhatIfAnalysis</a> operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfAnalyses">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWhatIfAnalysesOutcome ListWhatIfAnalyses(const Model::ListWhatIfAnalysesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWhatIfAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListWhatIfAnalysesOutcomeCallable ListWhatIfAnalysesCallable(const Model::ListWhatIfAnalysesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListWhatIfAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListWhatIfAnalysesAsync(const Model::ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of what-if forecast exports created using the
+         * <a>CreateWhatIfForecastExport</a> operation. For each what-if forecast export,
+         * this operation returns a summary of its properties, including its Amazon
+         * Resource Name (ARN). You can retrieve the complete set of properties by using
+         * the what-if forecast export ARN with the <a>DescribeWhatIfForecastExport</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecastExports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWhatIfForecastExportsOutcome ListWhatIfForecastExports(const Model::ListWhatIfForecastExportsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWhatIfForecastExports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListWhatIfForecastExportsOutcomeCallable ListWhatIfForecastExportsCallable(const Model::ListWhatIfForecastExportsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListWhatIfForecastExports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListWhatIfForecastExportsAsync(const Model::ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of what-if forecasts created using the
+         * <a>CreateWhatIfForecast</a> operation. For each what-if forecast, this operation
+         * returns a summary of its properties, including its Amazon Resource Name (ARN).
+         * You can retrieve the complete set of properties by using the what-if forecast
+         * ARN with the <a>DescribeWhatIfForecast</a> operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecasts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWhatIfForecastsOutcome ListWhatIfForecasts(const Model::ListWhatIfForecastsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWhatIfForecasts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListWhatIfForecastsOutcomeCallable ListWhatIfForecastsCallable(const Model::ListWhatIfForecastsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListWhatIfForecasts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListWhatIfForecastsAsync(const Model::ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Resumes a stopped monitor resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">AWS
          * API Reference</a></p>
@@ -1639,6 +1983,9 @@ namespace Model
         void CreateMonitorAsyncHelper(const Model::CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePredictorAsyncHelper(const Model::CreatePredictorRequest& request, const CreatePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePredictorBacktestExportJobAsyncHelper(const Model::CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateWhatIfAnalysisAsyncHelper(const Model::CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateWhatIfForecastAsyncHelper(const Model::CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateWhatIfForecastExportAsyncHelper(const Model::CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatasetGroupAsyncHelper(const Model::DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatasetImportJobAsyncHelper(const Model::DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1650,6 +1997,9 @@ namespace Model
         void DeletePredictorAsyncHelper(const Model::DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePredictorBacktestExportJobAsyncHelper(const Model::DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourceTreeAsyncHelper(const Model::DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteWhatIfAnalysisAsyncHelper(const Model::DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteWhatIfForecastAsyncHelper(const Model::DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteWhatIfForecastExportAsyncHelper(const Model::DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAutoPredictorAsyncHelper(const Model::DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetGroupAsyncHelper(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1661,6 +2011,9 @@ namespace Model
         void DescribeMonitorAsyncHelper(const Model::DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePredictorAsyncHelper(const Model::DescribePredictorRequest& request, const DescribePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePredictorBacktestExportJobAsyncHelper(const Model::DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeWhatIfAnalysisAsyncHelper(const Model::DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeWhatIfForecastAsyncHelper(const Model::DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeWhatIfForecastExportAsyncHelper(const Model::DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccuracyMetricsAsyncHelper(const Model::GetAccuracyMetricsRequest& request, const GetAccuracyMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetGroupsAsyncHelper(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetImportJobsAsyncHelper(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1674,6 +2027,9 @@ namespace Model
         void ListPredictorBacktestExportJobsAsyncHelper(const Model::ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPredictorsAsyncHelper(const Model::ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListWhatIfAnalysesAsyncHelper(const Model::ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListWhatIfForecastExportsAsyncHelper(const Model::ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListWhatIfForecastsAsyncHelper(const Model::ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeResourceAsyncHelper(const Model::ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopResourceAsyncHelper(const Model::StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

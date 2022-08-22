@@ -168,49 +168,73 @@ namespace Model
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline AwsS3BucketNotificationConfigurationDetail& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline AwsS3BucketNotificationConfigurationDetail& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline AwsS3BucketNotificationConfigurationDetail& WithType(const char* value) { SetType(value); return *this;}
 

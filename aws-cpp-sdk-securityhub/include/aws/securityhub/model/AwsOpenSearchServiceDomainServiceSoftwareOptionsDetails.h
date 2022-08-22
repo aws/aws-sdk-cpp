@@ -261,42 +261,74 @@ namespace Model
 
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetUpdateStatus() const{ return m_updateStatus; }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdateStatus(const Aws::String& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdateStatus(Aws::String&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdateStatus(const char* value) { m_updateStatusHasBeenSet = true; m_updateStatus.assign(value); }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails& WithUpdateStatus(const Aws::String& value) { SetUpdateStatus(value); return *this;}
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails& WithUpdateStatus(Aws::String&& value) { SetUpdateStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails& WithUpdateStatus(const char* value) { SetUpdateStatus(value); return *this;}
 

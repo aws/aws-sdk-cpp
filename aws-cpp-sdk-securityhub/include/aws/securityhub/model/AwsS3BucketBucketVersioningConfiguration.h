@@ -67,42 +67,50 @@ namespace Model
 
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const char* value) { SetStatus(value); return *this;}
 

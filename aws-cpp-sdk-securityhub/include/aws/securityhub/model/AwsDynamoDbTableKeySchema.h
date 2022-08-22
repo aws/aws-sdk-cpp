@@ -80,42 +80,50 @@ namespace Model
 
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline const Aws::String& GetKeyType() const{ return m_keyType; }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline void SetKeyType(const Aws::String& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline void SetKeyType(Aws::String&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline void SetKeyType(const char* value) { m_keyTypeHasBeenSet = true; m_keyType.assign(value); }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline AwsDynamoDbTableKeySchema& WithKeyType(const Aws::String& value) { SetKeyType(value); return *this;}
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline AwsDynamoDbTableKeySchema& WithKeyType(Aws::String&& value) { SetKeyType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline AwsDynamoDbTableKeySchema& WithKeyType(const char* value) { SetKeyType(value); return *this;}
 

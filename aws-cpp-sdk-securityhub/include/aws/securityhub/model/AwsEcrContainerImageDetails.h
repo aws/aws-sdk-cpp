@@ -129,42 +129,58 @@ namespace Model
 
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline AwsEcrContainerImageDetails& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline AwsEcrContainerImageDetails& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline AwsEcrContainerImageDetails& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 

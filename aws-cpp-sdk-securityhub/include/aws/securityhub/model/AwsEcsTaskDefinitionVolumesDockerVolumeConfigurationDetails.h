@@ -240,7 +240,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline const Aws::String& GetScope() const{ return m_scope; }
 
@@ -248,7 +248,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
@@ -256,7 +256,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
@@ -264,7 +264,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
@@ -272,7 +272,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
 
@@ -280,7 +280,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(const Aws::String& value) { SetScope(value); return *this;}
 
@@ -288,7 +288,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
 
@@ -296,7 +296,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(const char* value) { SetScope(value); return *this;}
 

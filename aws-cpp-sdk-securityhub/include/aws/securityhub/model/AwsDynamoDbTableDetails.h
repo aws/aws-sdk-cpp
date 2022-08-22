@@ -729,42 +729,82 @@ namespace Model
 
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline const Aws::String& GetTableStatus() const{ return m_tableStatus; }
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline bool TableStatusHasBeenSet() const { return m_tableStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetTableStatus(const Aws::String& value) { m_tableStatusHasBeenSet = true; m_tableStatus = value; }
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetTableStatus(Aws::String&& value) { m_tableStatusHasBeenSet = true; m_tableStatus = std::move(value); }
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetTableStatus(const char* value) { m_tableStatusHasBeenSet = true; m_tableStatus.assign(value); }
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableDetails& WithTableStatus(const Aws::String& value) { SetTableStatus(value); return *this;}
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableDetails& WithTableStatus(Aws::String&& value) { SetTableStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of the table.</p>
+     * <p>The current status of the table. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>ARCHIVED</code> </p> </li>
+     * <li> <p> <code>ARCHIVING</code> </p> </li> <li> <p> <code>CREATING</code> </p>
+     * </li> <li> <p> <code>DELETING</code> </p> </li> <li> <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li> <li> <p>
+     * <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableDetails& WithTableStatus(const char* value) { SetTableStatus(value); return *this;}
 

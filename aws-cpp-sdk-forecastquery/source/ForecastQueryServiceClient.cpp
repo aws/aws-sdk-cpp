@@ -21,6 +21,7 @@
 #include <aws/forecastquery/ForecastQueryServiceEndpoint.h>
 #include <aws/forecastquery/ForecastQueryServiceErrorMarshaller.h>
 #include <aws/forecastquery/model/QueryForecastRequest.h>
+#include <aws/forecastquery/model/QueryWhatIfForecastRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -117,5 +118,29 @@ void ForecastQueryServiceClient::QueryForecastAsync(const QueryForecastRequest& 
 void ForecastQueryServiceClient::QueryForecastAsyncHelper(const QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, QueryForecast(request), context);
+}
+
+QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const QueryWhatIfForecastRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return QueryWhatIfForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+QueryWhatIfForecastOutcomeCallable ForecastQueryServiceClient::QueryWhatIfForecastCallable(const QueryWhatIfForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< QueryWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryWhatIfForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastQueryServiceClient::QueryWhatIfForecastAsync(const QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->QueryWhatIfForecastAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastQueryServiceClient::QueryWhatIfForecastAsyncHelper(const QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, QueryWhatIfForecast(request), context);
 }
 

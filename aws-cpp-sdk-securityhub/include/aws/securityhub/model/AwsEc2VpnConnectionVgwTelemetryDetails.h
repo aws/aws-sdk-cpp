@@ -222,42 +222,50 @@ namespace Model
 
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline AwsEc2VpnConnectionVgwTelemetryDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline AwsEc2VpnConnectionVgwTelemetryDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline AwsEc2VpnConnectionVgwTelemetryDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 

@@ -204,42 +204,66 @@ namespace Model
 
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline const Aws::String& GetReplicaStatus() const{ return m_replicaStatus; }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetReplicaStatus(const Aws::String& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetReplicaStatus(Aws::String&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetReplicaStatus(const char* value) { m_replicaStatusHasBeenSet = true; m_replicaStatus.assign(value); }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableReplica& WithReplicaStatus(const Aws::String& value) { SetReplicaStatus(value); return *this;}
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableReplica& WithReplicaStatus(Aws::String&& value) { SetReplicaStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableReplica& WithReplicaStatus(const char* value) { SetReplicaStatus(value); return *this;}
 

@@ -141,42 +141,66 @@ namespace Model
 
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline AwsEc2VolumeAttachment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline AwsEc2VolumeAttachment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The attachment state of the volume.</p>
+     * <p>The attachment state of the volume. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>attaching</code> </p> </li> <li> <p> <code>attached</code> </p>
+     * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
+     * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
     inline AwsEc2VolumeAttachment& WithStatus(const char* value) { SetStatus(value); return *this;}
 

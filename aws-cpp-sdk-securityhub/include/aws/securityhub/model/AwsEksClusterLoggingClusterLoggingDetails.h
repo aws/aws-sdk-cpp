@@ -64,47 +64,74 @@ namespace Model
 
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline AwsEksClusterLoggingClusterLoggingDetails& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline AwsEksClusterLoggingClusterLoggingDetails& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline AwsEksClusterLoggingClusterLoggingDetails& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline AwsEksClusterLoggingClusterLoggingDetails& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of logging types.</p>
+     * <p>A list of logging types. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>api</code> </p> </li> <li> <p> <code>audit</code> </p> </li> <li> <p>
+     * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
+     * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
     inline AwsEksClusterLoggingClusterLoggingDetails& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
 

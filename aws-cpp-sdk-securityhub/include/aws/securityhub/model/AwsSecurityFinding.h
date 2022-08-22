@@ -46,13 +46,12 @@ namespace Model
 {
 
   /**
-   * <p>Provides consistent format for the contents of the Security Hub-aggregated
-   * findings. <code>AwsSecurityFinding</code> format enables you to share findings
-   * between Amazon Web Services security services and third-party solutions, and
-   * security standards checks.</p>  <p>A finding is a potential security issue
-   * generated either by Amazon Web Services services or by the integrated
-   * third-party solutions and standards checks.</p> <p><h3>See Also:</h3>  
-   * <a
+   * <p>Provides a consistent format for Security Hub findings.
+   * <code>AwsSecurityFinding</code> format allows you to share findings between
+   * Amazon Web Services security services and third-party solutions.</p>  <p>A
+   * finding is a potential security issue generated either by Amazon Web Services
+   * services or by the integrated third-party solutions and standards checks.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
    * API Reference</a></p>
    */

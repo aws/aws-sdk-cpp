@@ -163,8 +163,9 @@ namespace Model
 
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |
@@ -177,8 +178,9 @@ namespace Model
     inline const Aws::String& GetRenewalStatusReason() const{ return m_renewalStatusReason; }
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |
@@ -191,8 +193,9 @@ namespace Model
     inline bool RenewalStatusReasonHasBeenSet() const { return m_renewalStatusReasonHasBeenSet; }
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |
@@ -205,8 +208,9 @@ namespace Model
     inline void SetRenewalStatusReason(const Aws::String& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = value; }
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |
@@ -219,8 +223,9 @@ namespace Model
     inline void SetRenewalStatusReason(Aws::String&& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = std::move(value); }
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |
@@ -233,8 +238,9 @@ namespace Model
     inline void SetRenewalStatusReason(const char* value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason.assign(value); }
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |
@@ -247,8 +253,9 @@ namespace Model
     inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatusReason(const Aws::String& value) { SetRenewalStatusReason(value); return *this;}
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |
@@ -261,8 +268,9 @@ namespace Model
     inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatusReason(Aws::String&& value) { SetRenewalStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason that a renewal request was unsuccessful.</p> <p>Valid values:
-     * <code>NO_AVAILABLE_CONTACTS</code> |
+     * <p>The reason that a renewal request was unsuccessful. This attribute is used
+     * only when <code>RenewalStatus</code> is <code>FAILED</code>.</p> <p>Valid
+     * values: <code>NO_AVAILABLE_CONTACTS</code> |
      * <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code>
      * | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> |
      * <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> |

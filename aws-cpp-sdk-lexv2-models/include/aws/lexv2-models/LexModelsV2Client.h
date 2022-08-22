@@ -63,6 +63,7 @@
 #include <aws/lexv2-models/model/SearchAssociatedTranscriptsResult.h>
 #include <aws/lexv2-models/model/StartBotRecommendationResult.h>
 #include <aws/lexv2-models/model/StartImportResult.h>
+#include <aws/lexv2-models/model/StopBotRecommendationResult.h>
 #include <aws/lexv2-models/model/TagResourceResult.h>
 #include <aws/lexv2-models/model/UntagResourceResult.h>
 #include <aws/lexv2-models/model/UpdateBotResult.h>
@@ -169,6 +170,7 @@ namespace Model
         class SearchAssociatedTranscriptsRequest;
         class StartBotRecommendationRequest;
         class StartImportRequest;
+        class StopBotRecommendationRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateBotRequest;
@@ -236,6 +238,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchAssociatedTranscriptsResult, LexModelsV2Error> SearchAssociatedTranscriptsOutcome;
         typedef Aws::Utils::Outcome<StartBotRecommendationResult, LexModelsV2Error> StartBotRecommendationOutcome;
         typedef Aws::Utils::Outcome<StartImportResult, LexModelsV2Error> StartImportOutcome;
+        typedef Aws::Utils::Outcome<StopBotRecommendationResult, LexModelsV2Error> StopBotRecommendationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, LexModelsV2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LexModelsV2Error> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateBotResult, LexModelsV2Error> UpdateBotOutcome;
@@ -303,6 +306,7 @@ namespace Model
         typedef std::future<SearchAssociatedTranscriptsOutcome> SearchAssociatedTranscriptsOutcomeCallable;
         typedef std::future<StartBotRecommendationOutcome> StartBotRecommendationOutcomeCallable;
         typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
+        typedef std::future<StopBotRecommendationOutcome> StopBotRecommendationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateBotOutcome> UpdateBotOutcomeCallable;
@@ -373,6 +377,7 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::SearchAssociatedTranscriptsRequest&, const Model::SearchAssociatedTranscriptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAssociatedTranscriptsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::StartBotRecommendationRequest&, const Model::StartBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBotRecommendationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::StopBotRecommendationRequest&, const Model::StopBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBotRecommendationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotRequest&, const Model::UpdateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotResponseReceivedHandler;
@@ -1475,6 +1480,24 @@ namespace Model
         virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stop an already running Bot Recommendation request.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopBotRecommendationOutcome StopBotRecommendation(const Model::StopBotRecommendationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopBotRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopBotRecommendationOutcomeCallable StopBotRecommendationCallable(const Model::StopBotRecommendationRequest& request) const;
+
+        /**
+         * An Async wrapper for StopBotRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopBotRecommendationAsync(const Model::StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds the specified tags to the specified resource. If a tag key already
          * exists, the existing value is replaced with the new value.</p><p><h3>See
          * Also:</h3>   <a
@@ -1733,6 +1756,7 @@ namespace Model
         void SearchAssociatedTranscriptsAsyncHelper(const Model::SearchAssociatedTranscriptsRequest& request, const SearchAssociatedTranscriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBotRecommendationAsyncHelper(const Model::StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImportAsyncHelper(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopBotRecommendationAsyncHelper(const Model::StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotAsyncHelper(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

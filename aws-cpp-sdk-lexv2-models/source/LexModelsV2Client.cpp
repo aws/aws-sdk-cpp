@@ -75,6 +75,7 @@
 #include <aws/lexv2-models/model/SearchAssociatedTranscriptsRequest.h>
 #include <aws/lexv2-models/model/StartBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/StartImportRequest.h>
+#include <aws/lexv2-models/model/StopBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/TagResourceRequest.h>
 #include <aws/lexv2-models/model/UntagResourceRequest.h>
 #include <aws/lexv2-models/model/UpdateBotRequest.h>
@@ -2292,6 +2293,59 @@ void LexModelsV2Client::StartImportAsync(const StartImportRequest& request, cons
 void LexModelsV2Client::StartImportAsyncHelper(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartImport(request), context);
+}
+
+StopBotRecommendationOutcome LexModelsV2Client::StopBotRecommendation(const StopBotRecommendationRequest& request) const
+{
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopBotRecommendation", "Required field: BotId, is not set");
+    return StopBotRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopBotRecommendation", "Required field: BotVersion, is not set");
+    return StopBotRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopBotRecommendation", "Required field: LocaleId, is not set");
+    return StopBotRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  if (!request.BotRecommendationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopBotRecommendation", "Required field: BotRecommendationId, is not set");
+    return StopBotRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotRecommendationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botversions/");
+  uri.AddPathSegment(request.GetBotVersion());
+  uri.AddPathSegments("/botlocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/botrecommendations/");
+  uri.AddPathSegment(request.GetBotRecommendationId());
+  uri.AddPathSegments("/stopbotrecommendation");
+  return StopBotRecommendationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopBotRecommendationOutcomeCallable LexModelsV2Client::StopBotRecommendationCallable(const StopBotRecommendationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopBotRecommendationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopBotRecommendation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::StopBotRecommendationAsync(const StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopBotRecommendationAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::StopBotRecommendationAsyncHelper(const StopBotRecommendationRequest& request, const StopBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopBotRecommendation(request), context);
 }
 
 TagResourceOutcome LexModelsV2Client::TagResource(const TagResourceRequest& request) const

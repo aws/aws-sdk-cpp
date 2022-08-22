@@ -584,42 +584,90 @@ namespace Model
 
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline AwsElasticBeanstalkEnvironmentDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline AwsElasticBeanstalkEnvironmentDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current operational status of the environment.</p>
+     * <p>The current operational status of the environment. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>Aborting</code> </p> </li> <li> <p>
+     * <code>Launching</code> </p> </li> <li> <p> <code>LinkingFrom</code> </p> </li>
+     * <li> <p> <code>LinkingTo</code> </p> </li> <li> <p> <code>Ready</code> </p>
+     * </li> <li> <p> <code>Terminated</code> </p> </li> <li> <p>
+     * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
+     * </ul>
      */
     inline AwsElasticBeanstalkEnvironmentDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 
