@@ -214,42 +214,66 @@ namespace Model
 
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline const Aws::String& GetKeyState() const{ return m_keyState; }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline void SetKeyState(const Aws::String& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline void SetKeyState(Aws::String&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline void SetKeyState(const char* value) { m_keyStateHasBeenSet = true; m_keyState.assign(value); }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline AwsKmsKeyDetails& WithKeyState(const Aws::String& value) { SetKeyState(value); return *this;}
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline AwsKmsKeyDetails& WithKeyState(Aws::String&& value) { SetKeyState(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline AwsKmsKeyDetails& WithKeyState(const char* value) { SetKeyState(value); return *this;}
 

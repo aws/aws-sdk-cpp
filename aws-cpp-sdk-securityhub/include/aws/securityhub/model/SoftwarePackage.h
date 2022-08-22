@@ -323,6 +323,104 @@ namespace Model
      */
     inline SoftwarePackage& WithFilePath(const char* value) { SetFilePath(value); return *this;}
 
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline const Aws::String& GetFixedInVersion() const{ return m_fixedInVersion; }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline bool FixedInVersionHasBeenSet() const { return m_fixedInVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline void SetFixedInVersion(const Aws::String& value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion = value; }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline void SetFixedInVersion(Aws::String&& value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion = std::move(value); }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline void SetFixedInVersion(const char* value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion.assign(value); }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline SoftwarePackage& WithFixedInVersion(const Aws::String& value) { SetFixedInVersion(value); return *this;}
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline SoftwarePackage& WithFixedInVersion(Aws::String&& value) { SetFixedInVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline SoftwarePackage& WithFixedInVersion(const char* value) { SetFixedInVersion(value); return *this;}
+
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline const Aws::String& GetRemediation() const{ return m_remediation; }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline void SetRemediation(const Aws::String& value) { m_remediationHasBeenSet = true; m_remediation = value; }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline void SetRemediation(Aws::String&& value) { m_remediationHasBeenSet = true; m_remediation = std::move(value); }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline void SetRemediation(const char* value) { m_remediationHasBeenSet = true; m_remediation.assign(value); }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline SoftwarePackage& WithRemediation(const Aws::String& value) { SetRemediation(value); return *this;}
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline SoftwarePackage& WithRemediation(Aws::String&& value) { SetRemediation(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline SoftwarePackage& WithRemediation(const char* value) { SetRemediation(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -345,6 +443,12 @@ namespace Model
 
     Aws::String m_filePath;
     bool m_filePathHasBeenSet;
+
+    Aws::String m_fixedInVersion;
+    bool m_fixedInVersionHasBeenSet;
+
+    Aws::String m_remediation;
+    bool m_remediationHasBeenSet;
   };
 
 } // namespace Model

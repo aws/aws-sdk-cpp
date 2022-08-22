@@ -212,42 +212,66 @@ namespace Model
 
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 

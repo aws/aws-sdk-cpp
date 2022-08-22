@@ -198,42 +198,74 @@ namespace Model
 
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

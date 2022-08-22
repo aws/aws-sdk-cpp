@@ -394,42 +394,66 @@ namespace Model
 
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline const Aws::String& GetServiceState() const{ return m_serviceState; }
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline bool ServiceStateHasBeenSet() const { return m_serviceStateHasBeenSet; }
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline void SetServiceState(const Aws::String& value) { m_serviceStateHasBeenSet = true; m_serviceState = value; }
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline void SetServiceState(Aws::String&& value) { m_serviceStateHasBeenSet = true; m_serviceState = std::move(value); }
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline void SetServiceState(const char* value) { m_serviceStateHasBeenSet = true; m_serviceState.assign(value); }
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline AwsEc2VpcEndpointServiceDetails& WithServiceState(const Aws::String& value) { SetServiceState(value); return *this;}
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline AwsEc2VpcEndpointServiceDetails& WithServiceState(Aws::String&& value) { SetServiceState(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the service.</p>
+     * <p>The current state of the service. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>Available</code> </p> </li> <li> <p> <code>Deleted</code> </p> </li>
+     * <li> <p> <code>Deleting</code> </p> </li> <li> <p> <code>Failed</code> </p>
+     * </li> <li> <p> <code>Pending</code> </p> </li> </ul>
      */
     inline AwsEc2VpcEndpointServiceDetails& WithServiceState(const char* value) { SetServiceState(value); return *this;}
 

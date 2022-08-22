@@ -94,7 +94,10 @@ ResourceDetails::ResourceDetails() :
     m_awsWafRegionalWebAclHasBeenSet(false),
     m_awsWafRuleHasBeenSet(false),
     m_awsWafRuleGroupHasBeenSet(false),
-    m_awsEcsTaskHasBeenSet(false)
+    m_awsEcsTaskHasBeenSet(false),
+    m_awsBackupBackupVaultHasBeenSet(false),
+    m_awsBackupBackupPlanHasBeenSet(false),
+    m_awsBackupRecoveryPointHasBeenSet(false)
 {
 }
 
@@ -174,7 +177,10 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsWafRegionalWebAclHasBeenSet(false),
     m_awsWafRuleHasBeenSet(false),
     m_awsWafRuleGroupHasBeenSet(false),
-    m_awsEcsTaskHasBeenSet(false)
+    m_awsEcsTaskHasBeenSet(false),
+    m_awsBackupBackupVaultHasBeenSet(false),
+    m_awsBackupBackupPlanHasBeenSet(false),
+    m_awsBackupRecoveryPointHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -716,6 +722,27 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEcsTaskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsBackupBackupVault"))
+  {
+    m_awsBackupBackupVault = jsonValue.GetObject("AwsBackupBackupVault");
+
+    m_awsBackupBackupVaultHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsBackupBackupPlan"))
+  {
+    m_awsBackupBackupPlan = jsonValue.GetObject("AwsBackupBackupPlan");
+
+    m_awsBackupBackupPlanHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsBackupRecoveryPoint"))
+  {
+    m_awsBackupRecoveryPoint = jsonValue.GetObject("AwsBackupRecoveryPoint");
+
+    m_awsBackupRecoveryPointHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1181,6 +1208,24 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEcsTaskHasBeenSet)
   {
    payload.WithObject("AwsEcsTask", m_awsEcsTask.Jsonize());
+
+  }
+
+  if(m_awsBackupBackupVaultHasBeenSet)
+  {
+   payload.WithObject("AwsBackupBackupVault", m_awsBackupBackupVault.Jsonize());
+
+  }
+
+  if(m_awsBackupBackupPlanHasBeenSet)
+  {
+   payload.WithObject("AwsBackupBackupPlan", m_awsBackupBackupPlan.Jsonize());
+
+  }
+
+  if(m_awsBackupRecoveryPointHasBeenSet)
+  {
+   payload.WithObject("AwsBackupRecoveryPoint", m_awsBackupRecoveryPoint.Jsonize());
 
   }
 

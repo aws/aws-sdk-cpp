@@ -120,42 +120,74 @@ namespace Model
 
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline const Aws::String& GetCidrBlockState() const{ return m_cidrBlockState; }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline bool CidrBlockStateHasBeenSet() const { return m_cidrBlockStateHasBeenSet; }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline void SetCidrBlockState(const Aws::String& value) { m_cidrBlockStateHasBeenSet = true; m_cidrBlockState = value; }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline void SetCidrBlockState(Aws::String&& value) { m_cidrBlockStateHasBeenSet = true; m_cidrBlockState = std::move(value); }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline void SetCidrBlockState(const char* value) { m_cidrBlockStateHasBeenSet = true; m_cidrBlockState.assign(value); }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline Ipv6CidrBlockAssociation& WithCidrBlockState(const Aws::String& value) { SetCidrBlockState(value); return *this;}
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline Ipv6CidrBlockAssociation& WithCidrBlockState(Aws::String&& value) { SetCidrBlockState(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>Information about the state of the CIDR block. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>associating</code> </p> </li> <li> <p>
+     * <code>associated</code> </p> </li> <li> <p> <code>disassociating</code> </p>
+     * </li> <li> <p> <code>disassociated</code> </p> </li> <li> <p>
+     * <code>failed</code> </p> </li> <li> <p> <code>failing</code> </p> </li> </ul>
      */
     inline Ipv6CidrBlockAssociation& WithCidrBlockState(const char* value) { SetCidrBlockState(value); return *this;}
 

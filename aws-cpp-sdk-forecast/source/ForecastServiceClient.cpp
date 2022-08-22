@@ -31,6 +31,9 @@
 #include <aws/forecast/model/CreateMonitorRequest.h>
 #include <aws/forecast/model/CreatePredictorRequest.h>
 #include <aws/forecast/model/CreatePredictorBacktestExportJobRequest.h>
+#include <aws/forecast/model/CreateWhatIfAnalysisRequest.h>
+#include <aws/forecast/model/CreateWhatIfForecastRequest.h>
+#include <aws/forecast/model/CreateWhatIfForecastExportRequest.h>
 #include <aws/forecast/model/DeleteDatasetRequest.h>
 #include <aws/forecast/model/DeleteDatasetGroupRequest.h>
 #include <aws/forecast/model/DeleteDatasetImportJobRequest.h>
@@ -42,6 +45,9 @@
 #include <aws/forecast/model/DeletePredictorRequest.h>
 #include <aws/forecast/model/DeletePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/DeleteResourceTreeRequest.h>
+#include <aws/forecast/model/DeleteWhatIfAnalysisRequest.h>
+#include <aws/forecast/model/DeleteWhatIfForecastRequest.h>
+#include <aws/forecast/model/DeleteWhatIfForecastExportRequest.h>
 #include <aws/forecast/model/DescribeAutoPredictorRequest.h>
 #include <aws/forecast/model/DescribeDatasetRequest.h>
 #include <aws/forecast/model/DescribeDatasetGroupRequest.h>
@@ -53,6 +59,9 @@
 #include <aws/forecast/model/DescribeMonitorRequest.h>
 #include <aws/forecast/model/DescribePredictorRequest.h>
 #include <aws/forecast/model/DescribePredictorBacktestExportJobRequest.h>
+#include <aws/forecast/model/DescribeWhatIfAnalysisRequest.h>
+#include <aws/forecast/model/DescribeWhatIfForecastRequest.h>
+#include <aws/forecast/model/DescribeWhatIfForecastExportRequest.h>
 #include <aws/forecast/model/GetAccuracyMetricsRequest.h>
 #include <aws/forecast/model/ListDatasetGroupsRequest.h>
 #include <aws/forecast/model/ListDatasetImportJobsRequest.h>
@@ -66,6 +75,9 @@
 #include <aws/forecast/model/ListPredictorBacktestExportJobsRequest.h>
 #include <aws/forecast/model/ListPredictorsRequest.h>
 #include <aws/forecast/model/ListTagsForResourceRequest.h>
+#include <aws/forecast/model/ListWhatIfAnalysesRequest.h>
+#include <aws/forecast/model/ListWhatIfForecastExportsRequest.h>
+#include <aws/forecast/model/ListWhatIfForecastsRequest.h>
 #include <aws/forecast/model/ResumeResourceRequest.h>
 #include <aws/forecast/model/StopResourceRequest.h>
 #include <aws/forecast/model/TagResourceRequest.h>
@@ -409,6 +421,78 @@ void ForecastServiceClient::CreatePredictorBacktestExportJobAsyncHelper(const Cr
   handler(this, request, CreatePredictorBacktestExportJob(request), context);
 }
 
+CreateWhatIfAnalysisOutcome ForecastServiceClient::CreateWhatIfAnalysis(const CreateWhatIfAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateWhatIfAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWhatIfAnalysisOutcomeCallable ForecastServiceClient::CreateWhatIfAnalysisCallable(const CreateWhatIfAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWhatIfAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWhatIfAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreateWhatIfAnalysisAsync(const CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWhatIfAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreateWhatIfAnalysisAsyncHelper(const CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWhatIfAnalysis(request), context);
+}
+
+CreateWhatIfForecastOutcome ForecastServiceClient::CreateWhatIfForecast(const CreateWhatIfForecastRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateWhatIfForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWhatIfForecastOutcomeCallable ForecastServiceClient::CreateWhatIfForecastCallable(const CreateWhatIfForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWhatIfForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreateWhatIfForecastAsync(const CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWhatIfForecastAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreateWhatIfForecastAsyncHelper(const CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWhatIfForecast(request), context);
+}
+
+CreateWhatIfForecastExportOutcome ForecastServiceClient::CreateWhatIfForecastExport(const CreateWhatIfForecastExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateWhatIfForecastExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWhatIfForecastExportOutcomeCallable ForecastServiceClient::CreateWhatIfForecastExportCallable(const CreateWhatIfForecastExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWhatIfForecastExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWhatIfForecastExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreateWhatIfForecastExportAsync(const CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWhatIfForecastExportAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreateWhatIfForecastExportAsyncHelper(const CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWhatIfForecastExport(request), context);
+}
+
 DeleteDatasetOutcome ForecastServiceClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -673,6 +757,78 @@ void ForecastServiceClient::DeleteResourceTreeAsyncHelper(const DeleteResourceTr
   handler(this, request, DeleteResourceTree(request), context);
 }
 
+DeleteWhatIfAnalysisOutcome ForecastServiceClient::DeleteWhatIfAnalysis(const DeleteWhatIfAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteWhatIfAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWhatIfAnalysisOutcomeCallable ForecastServiceClient::DeleteWhatIfAnalysisCallable(const DeleteWhatIfAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWhatIfAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWhatIfAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeleteWhatIfAnalysisAsync(const DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWhatIfAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeleteWhatIfAnalysisAsyncHelper(const DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWhatIfAnalysis(request), context);
+}
+
+DeleteWhatIfForecastOutcome ForecastServiceClient::DeleteWhatIfForecast(const DeleteWhatIfForecastRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteWhatIfForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWhatIfForecastOutcomeCallable ForecastServiceClient::DeleteWhatIfForecastCallable(const DeleteWhatIfForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWhatIfForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeleteWhatIfForecastAsync(const DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWhatIfForecastAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeleteWhatIfForecastAsyncHelper(const DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWhatIfForecast(request), context);
+}
+
+DeleteWhatIfForecastExportOutcome ForecastServiceClient::DeleteWhatIfForecastExport(const DeleteWhatIfForecastExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteWhatIfForecastExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWhatIfForecastExportOutcomeCallable ForecastServiceClient::DeleteWhatIfForecastExportCallable(const DeleteWhatIfForecastExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWhatIfForecastExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWhatIfForecastExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeleteWhatIfForecastExportAsync(const DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWhatIfForecastExportAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeleteWhatIfForecastExportAsyncHelper(const DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWhatIfForecastExport(request), context);
+}
+
 DescribeAutoPredictorOutcome ForecastServiceClient::DescribeAutoPredictor(const DescribeAutoPredictorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -935,6 +1091,78 @@ void ForecastServiceClient::DescribePredictorBacktestExportJobAsync(const Descri
 void ForecastServiceClient::DescribePredictorBacktestExportJobAsyncHelper(const DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePredictorBacktestExportJob(request), context);
+}
+
+DescribeWhatIfAnalysisOutcome ForecastServiceClient::DescribeWhatIfAnalysis(const DescribeWhatIfAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeWhatIfAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWhatIfAnalysisOutcomeCallable ForecastServiceClient::DescribeWhatIfAnalysisCallable(const DescribeWhatIfAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWhatIfAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWhatIfAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribeWhatIfAnalysisAsync(const DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWhatIfAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribeWhatIfAnalysisAsyncHelper(const DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWhatIfAnalysis(request), context);
+}
+
+DescribeWhatIfForecastOutcome ForecastServiceClient::DescribeWhatIfForecast(const DescribeWhatIfForecastRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeWhatIfForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWhatIfForecastOutcomeCallable ForecastServiceClient::DescribeWhatIfForecastCallable(const DescribeWhatIfForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWhatIfForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribeWhatIfForecastAsync(const DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWhatIfForecastAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribeWhatIfForecastAsyncHelper(const DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWhatIfForecast(request), context);
+}
+
+DescribeWhatIfForecastExportOutcome ForecastServiceClient::DescribeWhatIfForecastExport(const DescribeWhatIfForecastExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeWhatIfForecastExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWhatIfForecastExportOutcomeCallable ForecastServiceClient::DescribeWhatIfForecastExportCallable(const DescribeWhatIfForecastExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWhatIfForecastExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWhatIfForecastExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribeWhatIfForecastExportAsync(const DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWhatIfForecastExportAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribeWhatIfForecastExportAsyncHelper(const DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWhatIfForecastExport(request), context);
 }
 
 GetAccuracyMetricsOutcome ForecastServiceClient::GetAccuracyMetrics(const GetAccuracyMetricsRequest& request) const
@@ -1247,6 +1475,78 @@ void ForecastServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRe
 void ForecastServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListWhatIfAnalysesOutcome ForecastServiceClient::ListWhatIfAnalyses(const ListWhatIfAnalysesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListWhatIfAnalysesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWhatIfAnalysesOutcomeCallable ForecastServiceClient::ListWhatIfAnalysesCallable(const ListWhatIfAnalysesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWhatIfAnalysesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWhatIfAnalyses(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListWhatIfAnalysesAsync(const ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWhatIfAnalysesAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListWhatIfAnalysesAsyncHelper(const ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWhatIfAnalyses(request), context);
+}
+
+ListWhatIfForecastExportsOutcome ForecastServiceClient::ListWhatIfForecastExports(const ListWhatIfForecastExportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListWhatIfForecastExportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWhatIfForecastExportsOutcomeCallable ForecastServiceClient::ListWhatIfForecastExportsCallable(const ListWhatIfForecastExportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWhatIfForecastExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWhatIfForecastExports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListWhatIfForecastExportsAsync(const ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWhatIfForecastExportsAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListWhatIfForecastExportsAsyncHelper(const ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWhatIfForecastExports(request), context);
+}
+
+ListWhatIfForecastsOutcome ForecastServiceClient::ListWhatIfForecasts(const ListWhatIfForecastsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListWhatIfForecastsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWhatIfForecastsOutcomeCallable ForecastServiceClient::ListWhatIfForecastsCallable(const ListWhatIfForecastsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWhatIfForecastsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWhatIfForecasts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListWhatIfForecastsAsync(const ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWhatIfForecastsAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListWhatIfForecastsAsyncHelper(const ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWhatIfForecasts(request), context);
 }
 
 ResumeResourceOutcome ForecastServiceClient::ResumeResource(const ResumeResourceRequest& request) const

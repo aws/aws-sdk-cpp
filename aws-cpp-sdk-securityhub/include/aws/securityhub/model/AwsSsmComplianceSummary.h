@@ -39,66 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline AwsSsmComplianceSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline AwsSsmComplianceSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current patch compliance status.</p> <p>The possible status values
-     * are:</p> <ul> <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p>
-     * <code>NON_COMPLIANT</code> </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code>
-     * </p> </li> </ul>
+     * <p>The current patch compliance status. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>COMPLIANT</code> </p> </li> <li> <p> <code>NON_COMPLIANT</code>
+     * </p> </li> <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li> </ul>
      */
     inline AwsSsmComplianceSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -501,42 +493,74 @@ namespace Model
 
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetOverallSeverity() const{ return m_overallSeverity; }
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline bool OverallSeverityHasBeenSet() const { return m_overallSeverityHasBeenSet; }
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline void SetOverallSeverity(const Aws::String& value) { m_overallSeverityHasBeenSet = true; m_overallSeverity = value; }
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline void SetOverallSeverity(Aws::String&& value) { m_overallSeverityHasBeenSet = true; m_overallSeverity = std::move(value); }
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline void SetOverallSeverity(const char* value) { m_overallSeverityHasBeenSet = true; m_overallSeverity.assign(value); }
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline AwsSsmComplianceSummary& WithOverallSeverity(const Aws::String& value) { SetOverallSeverity(value); return *this;}
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline AwsSsmComplianceSummary& WithOverallSeverity(Aws::String&& value) { SetOverallSeverity(std::move(value)); return *this;}
 
     /**
-     * <p>The highest severity for the patches.</p>
+     * <p>The highest severity for the patches. Valid values are as follows:</p> <ul>
+     * <li> <p> <code>CRITICAL</code> </p> </li> <li> <p> <code>HIGH</code> </p> </li>
+     * <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LOW</code> </p> </li>
+     * <li> <p> <code>INFORMATIONAL</code> </p> </li> <li> <p> <code>UNSPECIFIED</code>
+     * </p> </li> </ul>
      */
     inline AwsSsmComplianceSummary& WithOverallSeverity(const char* value) { SetOverallSeverity(value); return *this;}
 

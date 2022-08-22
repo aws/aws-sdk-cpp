@@ -167,42 +167,58 @@ namespace Model
 
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline const Aws::String& GetIndexStatus() const{ return m_indexStatus; }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetIndexStatus(const Aws::String& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetIndexStatus(Aws::String&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetIndexStatus(const char* value) { m_indexStatusHasBeenSet = true; m_indexStatus.assign(value); }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableGlobalSecondaryIndex& WithIndexStatus(const Aws::String& value) { SetIndexStatus(value); return *this;}
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableGlobalSecondaryIndex& WithIndexStatus(Aws::String&& value) { SetIndexStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableGlobalSecondaryIndex& WithIndexStatus(const char* value) { SetIndexStatus(value); return *this;}
 

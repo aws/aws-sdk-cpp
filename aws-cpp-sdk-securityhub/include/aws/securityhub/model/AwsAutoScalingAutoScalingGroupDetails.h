@@ -129,42 +129,50 @@ namespace Model
 
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline AwsAutoScalingAutoScalingGroupDetails& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline AwsAutoScalingAutoScalingGroupDetails& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
-     * <p>The service to use for the health checks.</p>
+     * <p>The service to use for the health checks. Valid values are <code>EC2</code>
+     * or <code>ELB</code>.</p>
      */
     inline AwsAutoScalingAutoScalingGroupDetails& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 

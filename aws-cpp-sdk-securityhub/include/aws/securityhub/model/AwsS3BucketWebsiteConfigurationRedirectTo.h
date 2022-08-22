@@ -80,50 +80,58 @@ namespace Model
 
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The protocol to use when redirecting requests. By default, uses the same
-     * protocol as the original request.</p>
+     * <p>The protocol to use when redirecting requests. By default, this field uses
+     * the same protocol as the original request. Valid values are <code>http</code> or
+     * <code>https</code>.</p>
      */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 

@@ -297,42 +297,50 @@ namespace Model
 
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2SubnetDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2SubnetDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2SubnetDetails& WithState(const char* value) { SetState(value); return *this;}
 

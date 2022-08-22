@@ -237,42 +237,74 @@ namespace Model
 
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline AwsEc2VolumeDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline AwsEc2VolumeDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The volume state.</p>
+     * <p>The volume state. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li>
+     * <p> <code>deleted</code> </p> </li> <li> <p> <code>deleting</code> </p> </li>
+     * <li> <p> <code>error</code> </p> </li> <li> <p> <code>in-use</code> </p> </li>
+     * </ul>
      */
     inline AwsEc2VolumeDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 

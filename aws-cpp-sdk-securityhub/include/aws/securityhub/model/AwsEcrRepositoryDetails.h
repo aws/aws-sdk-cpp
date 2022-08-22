@@ -113,42 +113,50 @@ namespace Model
 
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline const Aws::String& GetImageTagMutability() const{ return m_imageTagMutability; }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline bool ImageTagMutabilityHasBeenSet() const { return m_imageTagMutabilityHasBeenSet; }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline void SetImageTagMutability(const Aws::String& value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability = value; }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline void SetImageTagMutability(Aws::String&& value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability = std::move(value); }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline void SetImageTagMutability(const char* value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability.assign(value); }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline AwsEcrRepositoryDetails& WithImageTagMutability(const Aws::String& value) { SetImageTagMutability(value); return *this;}
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline AwsEcrRepositoryDetails& WithImageTagMutability(Aws::String&& value) { SetImageTagMutability(std::move(value)); return *this;}
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline AwsEcrRepositoryDetails& WithImageTagMutability(const char* value) { SetImageTagMutability(value); return *this;}
 

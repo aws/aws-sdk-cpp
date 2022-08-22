@@ -25,7 +25,9 @@ SoftwarePackage::SoftwarePackage() :
     m_releaseHasBeenSet(false),
     m_architectureHasBeenSet(false),
     m_packageManagerHasBeenSet(false),
-    m_filePathHasBeenSet(false)
+    m_filePathHasBeenSet(false),
+    m_fixedInVersionHasBeenSet(false),
+    m_remediationHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ SoftwarePackage::SoftwarePackage(JsonView jsonValue) :
     m_releaseHasBeenSet(false),
     m_architectureHasBeenSet(false),
     m_packageManagerHasBeenSet(false),
-    m_filePathHasBeenSet(false)
+    m_filePathHasBeenSet(false),
+    m_fixedInVersionHasBeenSet(false),
+    m_remediationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,20 @@ SoftwarePackage& SoftwarePackage::operator =(JsonView jsonValue)
     m_filePathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FixedInVersion"))
+  {
+    m_fixedInVersion = jsonValue.GetString("FixedInVersion");
+
+    m_fixedInVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Remediation"))
+  {
+    m_remediation = jsonValue.GetString("Remediation");
+
+    m_remediationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +156,18 @@ JsonValue SoftwarePackage::Jsonize() const
   if(m_filePathHasBeenSet)
   {
    payload.WithString("FilePath", m_filePath);
+
+  }
+
+  if(m_fixedInVersionHasBeenSet)
+  {
+   payload.WithString("FixedInVersion", m_fixedInVersion);
+
+  }
+
+  if(m_remediationHasBeenSet)
+  {
+   payload.WithString("Remediation", m_remediation);
 
   }
 

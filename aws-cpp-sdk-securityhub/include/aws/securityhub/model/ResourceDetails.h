@@ -81,6 +81,9 @@
 #include <aws/securityhub/model/AwsWafRuleDetails.h>
 #include <aws/securityhub/model/AwsWafRuleGroupDetails.h>
 #include <aws/securityhub/model/AwsEcsTaskDetails.h>
+#include <aws/securityhub/model/AwsBackupBackupVaultDetails.h>
+#include <aws/securityhub/model/AwsBackupBackupPlanDetails.h>
+#include <aws/securityhub/model/AwsBackupRecoveryPointDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -2680,6 +2683,99 @@ namespace Model
      */
     inline ResourceDetails& WithAwsEcsTask(AwsEcsTaskDetails&& value) { SetAwsEcsTask(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline const AwsBackupBackupVaultDetails& GetAwsBackupBackupVault() const{ return m_awsBackupBackupVault; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline bool AwsBackupBackupVaultHasBeenSet() const { return m_awsBackupBackupVaultHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline void SetAwsBackupBackupVault(const AwsBackupBackupVaultDetails& value) { m_awsBackupBackupVaultHasBeenSet = true; m_awsBackupBackupVault = value; }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline void SetAwsBackupBackupVault(AwsBackupBackupVaultDetails&& value) { m_awsBackupBackupVaultHasBeenSet = true; m_awsBackupBackupVault = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupVault(const AwsBackupBackupVaultDetails& value) { SetAwsBackupBackupVault(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup vault. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupVault(AwsBackupBackupVaultDetails&& value) { SetAwsBackupBackupVault(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline const AwsBackupBackupPlanDetails& GetAwsBackupBackupPlan() const{ return m_awsBackupBackupPlan; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline bool AwsBackupBackupPlanHasBeenSet() const { return m_awsBackupBackupPlanHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline void SetAwsBackupBackupPlan(const AwsBackupBackupPlanDetails& value) { m_awsBackupBackupPlanHasBeenSet = true; m_awsBackupBackupPlan = value; }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline void SetAwsBackupBackupPlan(AwsBackupBackupPlanDetails&& value) { m_awsBackupBackupPlanHasBeenSet = true; m_awsBackupBackupPlan = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupPlan(const AwsBackupBackupPlanDetails& value) { SetAwsBackupBackupPlan(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup plan. </p>
+     */
+    inline ResourceDetails& WithAwsBackupBackupPlan(AwsBackupBackupPlanDetails&& value) { SetAwsBackupBackupPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline const AwsBackupRecoveryPointDetails& GetAwsBackupRecoveryPoint() const{ return m_awsBackupRecoveryPoint; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline bool AwsBackupRecoveryPointHasBeenSet() const { return m_awsBackupRecoveryPointHasBeenSet; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline void SetAwsBackupRecoveryPoint(const AwsBackupRecoveryPointDetails& value) { m_awsBackupRecoveryPointHasBeenSet = true; m_awsBackupRecoveryPoint = value; }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline void SetAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails&& value) { m_awsBackupRecoveryPointHasBeenSet = true; m_awsBackupRecoveryPoint = std::move(value); }
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline ResourceDetails& WithAwsBackupRecoveryPoint(const AwsBackupRecoveryPointDetails& value) { SetAwsBackupRecoveryPoint(value); return *this;}
+
+    /**
+     * <p>Provides details about an Backup backup, or recovery point. </p>
+     */
+    inline ResourceDetails& WithAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetails&& value) { SetAwsBackupRecoveryPoint(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -2909,6 +3005,15 @@ namespace Model
 
     AwsEcsTaskDetails m_awsEcsTask;
     bool m_awsEcsTaskHasBeenSet;
+
+    AwsBackupBackupVaultDetails m_awsBackupBackupVault;
+    bool m_awsBackupBackupVaultHasBeenSet;
+
+    AwsBackupBackupPlanDetails m_awsBackupBackupPlan;
+    bool m_awsBackupBackupPlanHasBeenSet;
+
+    AwsBackupRecoveryPointDetails m_awsBackupRecoveryPoint;
+    bool m_awsBackupRecoveryPointHasBeenSet;
   };
 
 } // namespace Model
