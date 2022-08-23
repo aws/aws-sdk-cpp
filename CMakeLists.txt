@@ -99,6 +99,7 @@ else ()
 
     # -- main build targets --
     add_subdirectory(src)
+    add_subdirectory(generated)
 
     # -- Tests and packaging if running this as top project --
     if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
