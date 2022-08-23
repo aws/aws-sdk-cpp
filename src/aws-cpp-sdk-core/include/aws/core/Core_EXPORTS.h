@@ -5,25 +5,31 @@
 
 #pragma once
 
-#include <aws/core/SDKConfig.h>
+#ifdef NON_LEGACY_BUILD
+    #include "aws-sdk-cpp-core_export.h"
+#else
 
-#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
-    #ifdef _MSC_VER
-        #pragma warning(disable : 4251)
-    #endif // _MSC_VER
+    #include <aws/core/SDKConfig.h>
 
-    #ifdef USE_IMPORT_EXPORT
-        #ifdef AWS_CORE_EXPORTS
-            #define  AWS_CORE_API __declspec(dllexport)
-        #else // AWS_CORE_EXPORTS
-            #define  AWS_CORE_API __declspec(dllimport)
-        #endif // AWS_CORE_EXPORTS
-    #else // USE_IMPORT_EXPORT
+    #if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
+        #ifdef _MSC_VER
+            #pragma warning(disable : 4251)
+        #endif // _MSC_VER
+
+        #ifdef USE_IMPORT_EXPORT
+            #ifdef AWS_CORE_EXPORTS
+                #define  AWS_CORE_API __declspec(dllexport)
+            #else // AWS_CORE_EXPORTS
+                #define  AWS_CORE_API __declspec(dllimport)
+            #endif // AWS_CORE_EXPORTS
+        #else // USE_IMPORT_EXPORT
+            #define AWS_CORE_API
+        #endif // USE_IMPORT_EXPORT
+    #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
         #define AWS_CORE_API
-    #endif // USE_IMPORT_EXPORT
-#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
-    #define AWS_CORE_API
-#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
+    #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
+
+#endif
 
 #ifdef _MSC_VER
     #define AWS_SUPPRESS_WARNING_PUSH(W) \

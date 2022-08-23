@@ -1,0 +1,18 @@
+target_sources(
+        aws-sdk-cpp-core-test
+        PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}/ARNTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/CacheTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/CompilerMacrosTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/DateTimeTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/DNSTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/DocumentTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/EnumOverflowTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/FileSystemUtilsTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/GetTheLightsTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/HashingUtilsTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/OSVersionInfoTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/OutcomeTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/StringUtilsTest.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/UUIDTest.cpp
+)
