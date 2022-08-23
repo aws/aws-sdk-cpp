@@ -3,22 +3,27 @@ if (NOT LEGACY_BUILD)
     add_library(aws-sdk-cpp::test-resources ALIAS aws-sdk-cpp-test-resources)
     target_link_libraries(
             aws-sdk-cpp-test-resources
+            GTest::GTest
             aws-sdk-cpp::core
+            aws-sdk-cpp::test-resources
+            aws-crt-cpp
     )
     add_subdirectory(testing-resources)
 
     add_executable(aws_core_test)
     target_link_libraries(
             aws_core_test
-            PRIVATE GTest::GTest
-            PRIVATE aws-sdk-cpp::core
-            PRIVATE aws-sdk-cpp::test-resources
+            GTest::GTest
+            aws-sdk-cpp::core
+            aws-sdk-cpp::test-resources
+            aws-crt-cpp
     )
-    target_sources(aws_core_test
+    target_sources(
+            aws_core_test
             PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/VersionTests.cpp
-            )
+    )
     gtest_discover_tests(aws_core_test)
 
     message(WARNING "Building core test with new cmake scripts not yet implemented")

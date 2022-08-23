@@ -8,6 +8,7 @@ if (NOT LEGACY_BUILD)
             PUBLIC ${CJSON_INCLUDE_DIRS}
             PUBLIC ${tinyxml2_INCLUDE_DIRS}
     )
+    message(STATUS "CRT: ${aws-crt-cpp_LIBRARY_DIRS}")
     target_link_directories(
             aws-sdk-cpp-core
             PUBLIC ${aws-crt-cpp_LIBRARY_DIRS}
@@ -18,7 +19,8 @@ if (NOT LEGACY_BUILD)
             aws-sdk-cpp-core
             ${aws-crt-cpp_LIBRARIES}
             ${CJSON_LIBRARIES}
-            ${tinyxml2_LIBRARIES}
+            tinyxml2::tinyxml2
+            CURL::libcurl
     )
     add_subdirectory(include)
     add_subdirectory(source)
