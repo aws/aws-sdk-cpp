@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
 
     /**
      * <p>Name of the bucket to which the multipart upload was initiated.</p> <p>When

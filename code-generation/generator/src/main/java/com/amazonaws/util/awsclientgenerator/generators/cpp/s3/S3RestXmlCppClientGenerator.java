@@ -12,13 +12,13 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMe
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
+import com.google.common.collect.ImmutableSet;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -28,6 +28,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
     private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
+    private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of("CompleteMultipartUploadRequest");
 
     static {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
@@ -123,6 +124,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         if (indexOfComplete != -1) {
             replicationStatus.getEnumValues().set(indexOfComplete, "COMPLETED");
         }
+
+        // Some S3 operations have embedded errors, and we need to search for errors in the response.
+        serviceModel.getShapes().values().stream()
+                .filter(shape -> functionsWithEmbeddedErrors.contains(shape.getName()))
+                .forEach(shape -> shape.setEmbeddedErrors(true));
 
         // Customized Log Information
         Shape logTagKeyShape = new Shape();

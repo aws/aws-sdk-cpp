@@ -103,12 +103,17 @@ protected:
 
     void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers)
     {
+        QueueMockResponse(code, headers, "ss");
+    }
+
+    void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers, const Aws::String& body)
+    {
         auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         httpRequest->SetResolvedRemoteHost("127.0.0.1");
         auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
         httpResponse->SetResponseCode(code);
-        httpResponse->GetResponseBody() << "";
+        httpResponse->GetResponseBody() << body;
         for(auto&& header : headers)
         {
             httpResponse->AddHeader(header.first, header.second);
@@ -548,6 +553,19 @@ TEST_F(AWSClientTestSuite, TestRecursionDetection)
         }
         mockHttpClient->Reset();
     }
+}
+
+TEST_F(AWSClientTestSuite, TestErrorInBodyOfResponse)
+{
+    HeaderValueCollection responseHeaders;
+    AmazonWebServiceRequestMock request;
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders, "<Error><Code>SomeException</Code><Message>TestErrorInBodyOfResponse</Message></Error>");
+    auto outcome = client->MakeRequest(request);
+
+    ASSERT_TRUE(!outcome.IsSuccess());
+    ASSERT_EQ(outcome.GetError().GetErrorType(), CoreErrors::SLOW_DOWN);
+    ASSERT_EQ(outcome.GetError().GetMessage(), "TestErrorInBodyOfResponse");
+    ASSERT_EQ(outcome.GetError().GetExceptionName(), "TestErrorInBodyOfResponse");
 }
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
