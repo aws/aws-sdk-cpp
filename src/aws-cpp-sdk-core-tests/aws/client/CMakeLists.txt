@@ -1,0 +1,9 @@
+target_sources(
+        aws-sdk-cpp-core-test
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/AdaptiveRetryStrategyTest.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/AWSClientTest.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/AWSErrorMashallerTest.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/HttpSchemeMapperTest.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/RetryStrategyTest.cpp
+)

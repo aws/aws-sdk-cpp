@@ -4,16 +4,15 @@ if (NOT LEGACY_BUILD)
 
     target_include_directories(
             aws-sdk-cpp-core
+            PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
             PUBLIC ${aws-crt-cpp_INCLUDE_DIRS}
             PUBLIC ${CJSON_INCLUDE_DIRS}
-            PUBLIC ${tinyxml2_INCLUDE_DIRS}
     )
     message(STATUS "CRT: ${aws-crt-cpp_LIBRARY_DIRS}")
     target_link_directories(
             aws-sdk-cpp-core
             PUBLIC ${aws-crt-cpp_LIBRARY_DIRS}
             PUBLIC ${CJSON_LIBRARY_DIRS}
-            PUBLIC ${tinyxml2_LIBRARY_DIRS}
     )
     target_link_libraries(
             aws-sdk-cpp-core
@@ -22,6 +21,14 @@ if (NOT LEGACY_BUILD)
             tinyxml2::tinyxml2
             CURL::libcurl
     )
+
+    include(GenerateExportHeader)
+    generate_export_header(
+            aws-sdk-cpp-core
+            EXPORT_MACRO_NAME AWS_CORE_API # to be backward compatible during LEGACY_BUILD exist until 1.11
+    )
+
+
     add_subdirectory(include)
     add_subdirectory(source)
 else ()
