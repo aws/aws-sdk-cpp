@@ -57,6 +57,7 @@ DBSnapshot::DBSnapshot() :
     m_dbiResourceIdHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_originalSnapshotCreateTimeHasBeenSet(false),
+    m_snapshotDatabaseTimeHasBeenSet(false),
     m_snapshotTargetHasBeenSet(false)
 {
 }
@@ -98,6 +99,7 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_dbiResourceIdHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_originalSnapshotCreateTimeHasBeenSet(false),
+    m_snapshotDatabaseTimeHasBeenSet(false),
     m_snapshotTargetHasBeenSet(false)
 {
   *this = xmlNode;
@@ -301,6 +303,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_originalSnapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalSnapshotCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_originalSnapshotCreateTimeHasBeenSet = true;
     }
+    XmlNode snapshotDatabaseTimeNode = resultNode.FirstChild("SnapshotDatabaseTime");
+    if(!snapshotDatabaseTimeNode.IsNull())
+    {
+      m_snapshotDatabaseTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotDatabaseTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotDatabaseTimeHasBeenSet = true;
+    }
     XmlNode snapshotTargetNode = resultNode.FirstChild("SnapshotTarget");
     if(!snapshotTargetNode.IsNull())
     {
@@ -476,6 +484,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_snapshotDatabaseTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotDatabaseTime=" << StringUtils::URLEncode(m_snapshotDatabaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_snapshotTargetHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
@@ -616,6 +629,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_originalSnapshotCreateTimeHasBeenSet)
   {
       oStream << location << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_snapshotDatabaseTimeHasBeenSet)
+  {
+      oStream << location << ".SnapshotDatabaseTime=" << StringUtils::URLEncode(m_snapshotDatabaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_snapshotTargetHasBeenSet)
   {

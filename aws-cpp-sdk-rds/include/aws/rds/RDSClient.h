@@ -137,6 +137,7 @@
 #include <aws/rds/model/StopDBClusterResult.h>
 #include <aws/rds/model/StopDBInstanceResult.h>
 #include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationResult.h>
+#include <aws/rds/model/SwitchoverReadReplicaResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -317,6 +318,7 @@ namespace Aws
         class StopDBClusterRequest;
         class StopDBInstanceRequest;
         class StopDBInstanceAutomatedBackupsReplicationRequest;
+        class SwitchoverReadReplicaRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddRoleToDBClusterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddRoleToDBInstanceOutcome;
@@ -454,6 +456,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<StopDBClusterResult, RDSError> StopDBClusterOutcome;
         typedef Aws::Utils::Outcome<StopDBInstanceResult, RDSError> StopDBInstanceOutcome;
         typedef Aws::Utils::Outcome<StopDBInstanceAutomatedBackupsReplicationResult, RDSError> StopDBInstanceAutomatedBackupsReplicationOutcome;
+        typedef Aws::Utils::Outcome<SwitchoverReadReplicaResult, RDSError> SwitchoverReadReplicaOutcome;
 
         typedef std::future<AddRoleToDBClusterOutcome> AddRoleToDBClusterOutcomeCallable;
         typedef std::future<AddRoleToDBInstanceOutcome> AddRoleToDBInstanceOutcomeCallable;
@@ -591,6 +594,7 @@ namespace Aws
         typedef std::future<StopDBClusterOutcome> StopDBClusterOutcomeCallable;
         typedef std::future<StopDBInstanceOutcome> StopDBInstanceOutcomeCallable;
         typedef std::future<StopDBInstanceAutomatedBackupsReplicationOutcome> StopDBInstanceAutomatedBackupsReplicationOutcomeCallable;
+        typedef std::future<SwitchoverReadReplicaOutcome> SwitchoverReadReplicaOutcomeCallable;
     } // namespace Model
 
         class RDSClient;
@@ -731,6 +735,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::StopDBClusterRequest&, const Model::StopDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceRequest&, const Model::StopDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceAutomatedBackupsReplicationRequest&, const Model::StopDBInstanceAutomatedBackupsReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::SwitchoverReadReplicaRequest&, const Model::SwitchoverReadReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverReadReplicaResponseReceivedHandler;
 
         /**
      * <fullname>Amazon Relational Database Service</fullname> <p/> <p>Amazon
@@ -4026,6 +4031,25 @@ namespace Aws
          */
         virtual void StopDBInstanceAutomatedBackupsReplicationAsync(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request, const StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Switches over an Oracle standby database in an Oracle Data Guard environment,
+         * making it the new primary database. Issue this command in the AWS Region that
+         * hosts the current standby database.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SwitchoverReadReplicaOutcome SwitchoverReadReplica(const Model::SwitchoverReadReplicaRequest& request) const;
+
+        /**
+         * A Callable wrapper for SwitchoverReadReplica that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SwitchoverReadReplicaOutcomeCallable SwitchoverReadReplicaCallable(const Model::SwitchoverReadReplicaRequest& request) const;
+
+        /**
+         * An Async wrapper for SwitchoverReadReplica that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SwitchoverReadReplicaAsync(const Model::SwitchoverReadReplicaRequest& request, const SwitchoverReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
         void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -4166,6 +4190,7 @@ namespace Aws
         void StopDBClusterAsyncHelper(const Model::StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDBInstanceAsyncHelper(const Model::StopDBInstanceRequest& request, const StopDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDBInstanceAutomatedBackupsReplicationAsyncHelper(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request, const StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SwitchoverReadReplicaAsyncHelper(const Model::SwitchoverReadReplicaRequest& request, const SwitchoverReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;
