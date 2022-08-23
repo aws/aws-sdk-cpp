@@ -1,0 +1,1 @@
+add_subdirectory(aws-cpp-sdk-dynamodb)
