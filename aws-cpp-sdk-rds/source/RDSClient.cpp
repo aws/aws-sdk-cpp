@@ -156,6 +156,7 @@
 #include <aws/rds/model/StopDBClusterRequest.h>
 #include <aws/rds/model/StopDBInstanceRequest.h>
 #include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationRequest.h>
+#include <aws/rds/model/SwitchoverReadReplicaRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -3534,6 +3535,30 @@ void RDSClient::StopDBInstanceAutomatedBackupsReplicationAsync(const StopDBInsta
 void RDSClient::StopDBInstanceAutomatedBackupsReplicationAsyncHelper(const StopDBInstanceAutomatedBackupsReplicationRequest& request, const StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopDBInstanceAutomatedBackupsReplication(request), context);
+}
+
+SwitchoverReadReplicaOutcome RDSClient::SwitchoverReadReplica(const SwitchoverReadReplicaRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SwitchoverReadReplicaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+SwitchoverReadReplicaOutcomeCallable RDSClient::SwitchoverReadReplicaCallable(const SwitchoverReadReplicaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SwitchoverReadReplicaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SwitchoverReadReplica(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::SwitchoverReadReplicaAsync(const SwitchoverReadReplicaRequest& request, const SwitchoverReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SwitchoverReadReplicaAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::SwitchoverReadReplicaAsyncHelper(const SwitchoverReadReplicaRequest& request, const SwitchoverReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SwitchoverReadReplica(request), context);
 }
 
 Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const

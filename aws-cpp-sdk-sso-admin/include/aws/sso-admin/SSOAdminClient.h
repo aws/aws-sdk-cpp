@@ -243,7 +243,33 @@ namespace Model
     typedef std::function<void(const SSOAdminClient*, const Model::UpdatePermissionSetRequest&, const Model::UpdatePermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePermissionSetResponseReceivedHandler;
 
   /**
-   * <p/>
+   * <p>Amazon Web Services Single Sign On helps you securely create, or connect,
+   * your workforce identities and manage their access centrally across Amazon Web
+   * Services accounts and applications. Amazon Web Services SSO is the recommended
+   * approach for workforce authentication and authorization in Amazon Web Services,
+   * for organizations of any size and type.</p>  <p>Although Amazon Web
+   * Services Single Sign-On was renamed, the <code>sso</code> and
+   * <code>identitystore</code> API namespaces will continue to retain their original
+   * name for backward compatibility purposes. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">Amazon
+   * Web Services SSO rename</a>.</p>  <p>This reference guide provides
+   * information on single sign-on operations which could be used for access
+   * management of Amazon Web Services accounts. For information about Amazon Web
+   * Services SSO features, see the <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
+   * Web Services SSO User Guide</a>.</p> <p>Many operations in the Amazon Web
+   * Services SSO APIs rely on identifiers for users and groups, known as principals.
+   * For more information about how to work with principals and principal IDs in
+   * Amazon Web Services SSO, see the <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity
+   * Store API Reference</a>.</p>  <p>Amazon Web Services provides SDKs that
+   * consist of libraries and sample code for various programming languages and
+   * platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a
+   * convenient way to create programmatic access to Amazon Web Services SSO and
+   * other Amazon Web Services services. For more information about the Amazon Web
+   * Services SDKs, including how to download and install them, see <a
+   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
+   * 
    */
   class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient
   {
@@ -322,8 +348,10 @@ namespace Model
          * created in Amazon Web Services SSO. If the permission set is subsequently
          * updated, the corresponding IAM policies attached to roles in your accounts will
          * not be updated automatically. In this case, you must call <code>
-         * <a>ProvisionPermissionSet</a> </code> to make these updates.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <a>ProvisionPermissionSet</a> </code> to make these updates.</p>  
+         * <p> After a successful response, call
+         * <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of
+         * an assignment creation request. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">AWS
          * API Reference</a></p>
          */
@@ -344,8 +372,11 @@ namespace Model
          * Amazon Web Services SSO instance. You can also specify new attributes to add to
          * your ABAC configuration during the enabling process. For more information about
          * ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
-         * Access Control</a> in the <i>Amazon Web Services SSO User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p> 
+         * <p>After a successful response, call
+         * <code>DescribeInstanceAccessControlAttributeConfiguration</code> to validate
+         * that <code>InstanceAccessControlAttributeConfiguration</code> was created.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration">AWS
          * API Reference</a></p>
          */
@@ -383,7 +414,9 @@ namespace Model
 
         /**
          * <p>Deletes a principal's access from a specified Amazon Web Services account
-         * using a specified permission set.</p><p><h3>See Also:</h3>   <a
+         * using a specified permission set.</p>  <p>After a successful response,
+         * call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status
+         * of an assignment deletion request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteAccountAssignment">AWS
          * API Reference</a></p>
          */
