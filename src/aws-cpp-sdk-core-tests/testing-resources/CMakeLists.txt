@@ -9,8 +9,6 @@ add_project(testing-resources
         "Testing utility library for the AWS C++ SDK"
         aws-cpp-sdk-core)
 
-include(GenerateExportHeader)
-
 file(GLOB AWS_TESTING_HEADERS "include/aws/testing/*.h")
 file(GLOB AWS_TESTING_EXTERNAL_HEADERS "include/aws/external/*.h")
 file(GLOB AWS_TESTING_AUTH_MOCKS_HEADERS "include/aws/testing/mocks/aws/auth/*.h")

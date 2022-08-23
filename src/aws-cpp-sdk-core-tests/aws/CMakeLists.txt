@@ -1,0 +1,9 @@
+target_sources(
+        aws-sdk-cpp-core-test
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/RegionTest.cpp
+)
+add_subdirectory(auth)
+add_subdirectory(client)
+add_subdirectory(config)
+add_subdirectory(net)
