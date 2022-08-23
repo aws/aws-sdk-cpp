@@ -241,7 +241,7 @@ function(add_sdks)
 
     #testing
     if(ENABLE_TESTING)
-        add_subdirectory(tests/testing-resources)
+        add_subdirectory(src/aws-cpp-sdk-core-tests/testing-resources)
 
         if(ENABLE_FUNCTIONAL_TESTING)
             message(STATUS "Clearing existing directory for document-test to prepare for generation.")

@@ -1,9 +1,9 @@
 target_sources(aws-sdk-cpp-core
         PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/AWSAuthSigner.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/AWSAuthSignerProvider.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/AWSCredentialsProvider.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/AWSCredentialsProviderChain.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/SSOCredentialsProvider.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/STSCredentialsProvider.cpp
         )
+add_subdirectory(signer)
+add_subdirectory(signer-provider)
