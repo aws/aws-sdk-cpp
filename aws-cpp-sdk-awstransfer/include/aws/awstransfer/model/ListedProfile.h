@@ -122,42 +122,82 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline const Aws::String& GetAs2Id() const{ return m_as2Id; }
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline bool As2IdHasBeenSet() const { return m_as2IdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline void SetAs2Id(const Aws::String& value) { m_as2IdHasBeenSet = true; m_as2Id = value; }
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline void SetAs2Id(Aws::String&& value) { m_as2IdHasBeenSet = true; m_as2Id = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline void SetAs2Id(const char* value) { m_as2IdHasBeenSet = true; m_as2Id.assign(value); }
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline ListedProfile& WithAs2Id(const Aws::String& value) { SetAs2Id(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline ListedProfile& WithAs2Id(Aws::String&& value) { SetAs2Id(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AS2 process.</p>
+     * <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a
+     * href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound
+     * transfers, this is the <code>AS2-From</code> header for the AS2 messages sent
+     * from the partner. For outbound connectors, this is the <code>AS2-To</code>
+     * header for the AS2 messages sent to the partner using the
+     * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
     inline ListedProfile& WithAs2Id(const char* value) { SetAs2Id(value); return *this;}
 

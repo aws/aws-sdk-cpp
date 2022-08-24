@@ -267,17 +267,22 @@ namespace Model
    * permissions — See <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/security-iam.html">Identity
    * and Access Management</a> on the Security page of the <i>Amazon IVS User
-   * Guide</i>.</p> </li> </ul> <p> <b>Channel Endpoints</b> </p> <ul> <li> <p>
-   * <a>CreateChannel</a> — Creates a new channel and an associated stream key to
-   * start streaming.</p> </li> <li> <p> <a>GetChannel</a> — Gets the channel
-   * configuration for the specified channel ARN (Amazon Resource Name).</p> </li>
-   * <li> <p> <a>BatchGetChannel</a> — Performs <a>GetChannel</a> on multiple ARNs
-   * simultaneously.</p> </li> <li> <p> <a>ListChannels</a> — Gets summary
-   * information about all channels in your account, in the Amazon Web Services
-   * region where the API request is processed. This list can be filtered to match a
-   * specified name or recording-configuration ARN. Filters are mutually exclusive
-   * and cannot be used together. If you try to use both filters, you will get an
-   * error (409 Conflict Exception).</p> </li> <li> <p> <a>UpdateChannel</a> —
+   * Guide</i>.</p> </li> </ul> <p> <b>Amazon Resource Names (ARNs)</b> </p> <p>ARNs
+   * uniquely identify AWS resources. An ARN is required when you need to specify a
+   * resource unambiguously across all of AWS, such as in IAM policies and API calls.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+   * Resource Names</a> in the <i>AWS General Reference</i>.</p> <p> <b>Channel
+   * Endpoints</b> </p> <ul> <li> <p> <a>CreateChannel</a> — Creates a new channel
+   * and an associated stream key to start streaming.</p> </li> <li> <p>
+   * <a>GetChannel</a> — Gets the channel configuration for the specified channel
+   * ARN.</p> </li> <li> <p> <a>BatchGetChannel</a> — Performs <a>GetChannel</a> on
+   * multiple ARNs simultaneously.</p> </li> <li> <p> <a>ListChannels</a> — Gets
+   * summary information about all channels in your account, in the Amazon Web
+   * Services region where the API request is processed. This list can be filtered to
+   * match a specified name or recording-configuration ARN. Filters are mutually
+   * exclusive and cannot be used together. If you try to use both filters, you will
+   * get an error (409 Conflict Exception).</p> </li> <li> <p> <a>UpdateChannel</a> —
    * Updates a channel's configuration. This does not affect an ongoing stream of
    * this channel. You must stop and restart the stream for the changes to take
    * effect.</p> </li> <li> <p> <a>DeleteChannel</a> — Deletes the specified

@@ -45,124 +45,132 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline const Aws::String& GetLocalProfileId() const{ return m_localProfileId; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline bool LocalProfileIdHasBeenSet() const { return m_localProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const Aws::String& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = value; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(Aws::String&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const char* value) { m_localProfileIdHasBeenSet = true; m_localProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline As2ConnectorConfig& WithLocalProfileId(const Aws::String& value) { SetLocalProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline As2ConnectorConfig& WithLocalProfileId(Aws::String&& value) { SetLocalProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline As2ConnectorConfig& WithLocalProfileId(const char* value) { SetLocalProfileId(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline const Aws::String& GetPartnerProfileId() const{ return m_partnerProfileId; }
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline bool PartnerProfileIdHasBeenSet() const { return m_partnerProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline void SetPartnerProfileId(const Aws::String& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = value; }
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline void SetPartnerProfileId(Aws::String&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline void SetPartnerProfileId(const char* value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline As2ConnectorConfig& WithPartnerProfileId(const Aws::String& value) { SetPartnerProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline As2ConnectorConfig& WithPartnerProfileId(Aws::String&& value) { SetPartnerProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the partner for the connector.</p>
+     * <p>A unique identifier for the partner profile for the connector.</p>
      */
     inline As2ConnectorConfig& WithPartnerProfileId(const char* value) { SetPartnerProfileId(value); return *this;}
 
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline const Aws::String& GetMessageSubject() const{ return m_messageSubject; }
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline bool MessageSubjectHasBeenSet() const { return m_messageSubjectHasBeenSet; }
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline void SetMessageSubject(const Aws::String& value) { m_messageSubjectHasBeenSet = true; m_messageSubject = value; }
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline void SetMessageSubject(Aws::String&& value) { m_messageSubjectHasBeenSet = true; m_messageSubject = std::move(value); }
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline void SetMessageSubject(const char* value) { m_messageSubjectHasBeenSet = true; m_messageSubject.assign(value); }
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline As2ConnectorConfig& WithMessageSubject(const Aws::String& value) { SetMessageSubject(value); return *this;}
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline As2ConnectorConfig& WithMessageSubject(Aws::String&& value) { SetMessageSubject(std::move(value)); return *this;}
 
     /**
-     * <p>A short description to help identify the connector.</p>
+     * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
+     * are being sent with the connector.</p>
      */
     inline As2ConnectorConfig& WithMessageSubject(const char* value) { SetMessageSubject(value); return *this;}
 
@@ -230,69 +238,81 @@ namespace Model
 
 
     /**
-     * <p>The algorithm that is used to sign the AS2 transfers for this partner
-     * profile.</p>
+     * <p>The algorithm that is used to sign the AS2 messages sent with the
+     * connector.</p>
      */
     inline const SigningAlg& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
 
     /**
-     * <p>The algorithm that is used to sign the AS2 transfers for this partner
-     * profile.</p>
+     * <p>The algorithm that is used to sign the AS2 messages sent with the
+     * connector.</p>
      */
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
 
     /**
-     * <p>The algorithm that is used to sign the AS2 transfers for this partner
-     * profile.</p>
+     * <p>The algorithm that is used to sign the AS2 messages sent with the
+     * connector.</p>
      */
     inline void SetSigningAlgorithm(const SigningAlg& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
 
     /**
-     * <p>The algorithm that is used to sign the AS2 transfers for this partner
-     * profile.</p>
+     * <p>The algorithm that is used to sign the AS2 messages sent with the
+     * connector.</p>
      */
     inline void SetSigningAlgorithm(SigningAlg&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm that is used to sign the AS2 transfers for this partner
-     * profile.</p>
+     * <p>The algorithm that is used to sign the AS2 messages sent with the
+     * connector.</p>
      */
     inline As2ConnectorConfig& WithSigningAlgorithm(const SigningAlg& value) { SetSigningAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm that is used to sign the AS2 transfers for this partner
-     * profile.</p>
+     * <p>The algorithm that is used to sign the AS2 messages sent with the
+     * connector.</p>
      */
     inline As2ConnectorConfig& WithSigningAlgorithm(SigningAlg&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
 
 
     /**
-     * <p>The signing algorithm for the MDN response.</p>
+     * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+     * 
      */
     inline const MdnSigningAlg& GetMdnSigningAlgorithm() const{ return m_mdnSigningAlgorithm; }
 
     /**
-     * <p>The signing algorithm for the MDN response.</p>
+     * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+     * 
      */
     inline bool MdnSigningAlgorithmHasBeenSet() const { return m_mdnSigningAlgorithmHasBeenSet; }
 
     /**
-     * <p>The signing algorithm for the MDN response.</p>
+     * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+     * 
      */
     inline void SetMdnSigningAlgorithm(const MdnSigningAlg& value) { m_mdnSigningAlgorithmHasBeenSet = true; m_mdnSigningAlgorithm = value; }
 
     /**
-     * <p>The signing algorithm for the MDN response.</p>
+     * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+     * 
      */
     inline void SetMdnSigningAlgorithm(MdnSigningAlg&& value) { m_mdnSigningAlgorithmHasBeenSet = true; m_mdnSigningAlgorithm = std::move(value); }
 
     /**
-     * <p>The signing algorithm for the MDN response.</p>
+     * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+     * 
      */
     inline As2ConnectorConfig& WithMdnSigningAlgorithm(const MdnSigningAlg& value) { SetMdnSigningAlgorithm(value); return *this;}
 
     /**
-     * <p>The signing algorithm for the MDN response.</p>
+     * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
+     * 
      */
     inline As2ConnectorConfig& WithMdnSigningAlgorithm(MdnSigningAlg&& value) { SetMdnSigningAlgorithm(std::move(value)); return *this;}
 

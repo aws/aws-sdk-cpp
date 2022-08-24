@@ -267,58 +267,122 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline CreateAgreementRequest& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline CreateAgreementRequest& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that grants access to at least the <code>HomeDirectory</code> of your
-     * users' Amazon S3 buckets.</p>
+     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
+     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
+     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
+     * temporarily store a processed AS2 message file, store the MDN when we receive
+     * them from the partner, and write a final JSON file containing relevant metadata
+     * of the transmission. So, the <code>AccessRole</code> needs to provide read and
+     * write access to the parent directory of the file location used in the
+     * <code>StartFileTransfer</code> request. Additionally, you need to provide read
+     * and write access to the parent directory of the files that you intend to send
+     * with <code>StartFileTransfer</code>.</p>
      */
     inline CreateAgreementRequest& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
 

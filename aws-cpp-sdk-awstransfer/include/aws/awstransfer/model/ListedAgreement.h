@@ -250,83 +250,83 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline const Aws::String& GetLocalProfileId() const{ return m_localProfileId; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline bool LocalProfileIdHasBeenSet() const { return m_localProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const Aws::String& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = value; }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(Aws::String&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline void SetLocalProfileId(const char* value) { m_localProfileIdHasBeenSet = true; m_localProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline ListedAgreement& WithLocalProfileId(const Aws::String& value) { SetLocalProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline ListedAgreement& WithLocalProfileId(Aws::String&& value) { SetLocalProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the AS2 process.</p>
+     * <p>A unique identifier for the AS2 local profile.</p>
      */
     inline ListedAgreement& WithLocalProfileId(const char* value) { SetLocalProfileId(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline const Aws::String& GetPartnerProfileId() const{ return m_partnerProfileId; }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline bool PartnerProfileIdHasBeenSet() const { return m_partnerProfileIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline void SetPartnerProfileId(const Aws::String& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = value; }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline void SetPartnerProfileId(Aws::String&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline void SetPartnerProfileId(const char* value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId.assign(value); }
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline ListedAgreement& WithPartnerProfileId(const Aws::String& value) { SetPartnerProfileId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline ListedAgreement& WithPartnerProfileId(Aws::String&& value) { SetPartnerProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the partner process.</p>
+     * <p>A unique identifier for the partner profile.</p>
      */
     inline ListedAgreement& WithPartnerProfileId(const char* value) { SetPartnerProfileId(value); return *this;}
 

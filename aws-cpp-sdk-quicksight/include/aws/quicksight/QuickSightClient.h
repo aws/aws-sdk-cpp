@@ -1940,13 +1940,13 @@ namespace Model
 
         /**
          * <p>Generates an embed URL that you can use to embed an Amazon QuickSight
-         * dashboard in your website, without having to register any reader users. Before
-         * you use this action, make sure that you have configured the dashboards and
-         * permissions.</p> <p>The following rules apply to the generated URL:</p> <ul>
-         * <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it
-         * is generated. Once redeemed within this period, it cannot be re-used again.</p>
-         * </li> <li> <p>The URL validity period should not be confused with the actual
-         * session lifetime that can be customized using the <code> <a
+         * dashboard or visual in your website, without having to register any reader
+         * users. Before you use this action, make sure that you have configured the
+         * dashboards and permissions.</p> <p>The following rules apply to the generated
+         * URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is valid for 5
+         * minutes after it is generated. Once redeemed within this period, it cannot be
+         * re-used again.</p> </li> <li> <p>The URL validity period should not be confused
+         * with the actual session lifetime that can be customized using the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
          * </code> parameter. The resulting user session is valid for 15 minutes (minimum)
          * to 10 hours (maximum). The default session duration is 10 hours.</p> </li> <li>

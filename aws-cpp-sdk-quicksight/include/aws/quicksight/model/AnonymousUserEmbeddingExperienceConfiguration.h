@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AnonymousUserDashboardEmbeddingConfiguration.h>
+#include <aws/quicksight/model/AnonymousUserDashboardVisualEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +75,50 @@ namespace Model
      */
     inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboard(AnonymousUserDashboardEmbeddingConfiguration&& value) { SetDashboard(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline const AnonymousUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const{ return m_dashboardVisual; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(const AnonymousUserDashboardVisualEmbeddingConfiguration& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = value; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfiguration&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::move(value); }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboardVisual(const AnonymousUserDashboardVisualEmbeddingConfiguration& value) { SetDashboardVisual(value); return *this;}
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
+
   private:
 
     AnonymousUserDashboardEmbeddingConfiguration m_dashboard;
     bool m_dashboardHasBeenSet;
+
+    AnonymousUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
+    bool m_dashboardVisualHasBeenSet;
   };
 
 } // namespace Model
