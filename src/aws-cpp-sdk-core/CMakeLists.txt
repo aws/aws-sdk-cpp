@@ -28,7 +28,6 @@ if (NOT LEGACY_BUILD)
             EXPORT_MACRO_NAME AWS_CORE_API # to be backward compatible during LEGACY_BUILD exist until 1.11
     )
 
-
     add_subdirectory(include)
     add_subdirectory(source)
 else ()
