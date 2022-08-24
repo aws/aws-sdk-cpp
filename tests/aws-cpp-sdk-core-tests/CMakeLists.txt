@@ -29,11 +29,11 @@ else ()
 
     # Headers are included in the source so that they show up in Visual Studio.
     # They are included elsewhere for consistency.
-    file(GLOB AWS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/*.cpp")
-    file(GLOB AWS_AUTH_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/auth/*.cpp")
-    file(GLOB AWS_CONFIG_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/config/*.cpp")
-    file(GLOB AWS_CLIENT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/client/*.cpp")
-    file(GLOB AWS_NET_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/net/*.cpp")
+    file(GLOB AWS_SRC "aws/*.cpp")
+    file(GLOB AWS_AUTH_SRC "aws/auth/*.cpp")
+    file(GLOB AWS_CONFIG_SRC "aws/config/*.cpp")
+    file(GLOB AWS_CLIENT_SRC "aws/client/*.cpp")
+    file(GLOB AWS_NET_SRC "aws/net/*.cpp")
     file(GLOB HTTP_SRC "${CMAKE_CURRENT_SOURCE_DIR}/http/*.cpp")
     file(GLOB UTILS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/*.cpp")
     file(GLOB UTILS_CRYPTO_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/crypto/*.cpp")
@@ -131,7 +131,7 @@ else ()
 
     add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_directory
-            ${CMAKE_CURRENT_SOURCE_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR})
+            resources ${CMAKE_CURRENT_BINARY_DIR})
 
     if (ENABLE_HTTP_CLIENT_TESTING)
         add_definitions(-DENABLE_HTTP_CLIENT_TESTING)
