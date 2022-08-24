@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/config/model/TemplateSSMDocumentDetails.h>
 #include <aws/config/model/ConformancePackInputParameter.h>
 #include <utility>
 
@@ -305,75 +306,118 @@ namespace Model
 
 
     /**
-     * <p>Last time when conformation pack update was requested. </p>
+     * <p>The last time a conformation pack update was requested. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateRequestedTime() const{ return m_lastUpdateRequestedTime; }
 
     /**
-     * <p>Last time when conformation pack update was requested. </p>
+     * <p>The last time a conformation pack update was requested. </p>
      */
     inline bool LastUpdateRequestedTimeHasBeenSet() const { return m_lastUpdateRequestedTimeHasBeenSet; }
 
     /**
-     * <p>Last time when conformation pack update was requested. </p>
+     * <p>The last time a conformation pack update was requested. </p>
      */
     inline void SetLastUpdateRequestedTime(const Aws::Utils::DateTime& value) { m_lastUpdateRequestedTimeHasBeenSet = true; m_lastUpdateRequestedTime = value; }
 
     /**
-     * <p>Last time when conformation pack update was requested. </p>
+     * <p>The last time a conformation pack update was requested. </p>
      */
     inline void SetLastUpdateRequestedTime(Aws::Utils::DateTime&& value) { m_lastUpdateRequestedTimeHasBeenSet = true; m_lastUpdateRequestedTime = std::move(value); }
 
     /**
-     * <p>Last time when conformation pack update was requested. </p>
+     * <p>The last time a conformation pack update was requested. </p>
      */
     inline ConformancePackDetail& WithLastUpdateRequestedTime(const Aws::Utils::DateTime& value) { SetLastUpdateRequestedTime(value); return *this;}
 
     /**
-     * <p>Last time when conformation pack update was requested. </p>
+     * <p>The last time a conformation pack update was requested. </p>
      */
     inline ConformancePackDetail& WithLastUpdateRequestedTime(Aws::Utils::DateTime&& value) { SetLastUpdateRequestedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline ConformancePackDetail& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline ConformancePackDetail& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Web Services service that created the conformance pack.</p>
+     * <p>The Amazon Web Services service that created the conformance pack.</p>
      */
     inline ConformancePackDetail& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+
+
+    /**
+     * <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon
+     * Web Services Systems Manager document (SSM document) and the version of the SSM
+     * document that is used to create a conformance pack.</p>
+     */
+    inline const TemplateSSMDocumentDetails& GetTemplateSSMDocumentDetails() const{ return m_templateSSMDocumentDetails; }
+
+    /**
+     * <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon
+     * Web Services Systems Manager document (SSM document) and the version of the SSM
+     * document that is used to create a conformance pack.</p>
+     */
+    inline bool TemplateSSMDocumentDetailsHasBeenSet() const { return m_templateSSMDocumentDetailsHasBeenSet; }
+
+    /**
+     * <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon
+     * Web Services Systems Manager document (SSM document) and the version of the SSM
+     * document that is used to create a conformance pack.</p>
+     */
+    inline void SetTemplateSSMDocumentDetails(const TemplateSSMDocumentDetails& value) { m_templateSSMDocumentDetailsHasBeenSet = true; m_templateSSMDocumentDetails = value; }
+
+    /**
+     * <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon
+     * Web Services Systems Manager document (SSM document) and the version of the SSM
+     * document that is used to create a conformance pack.</p>
+     */
+    inline void SetTemplateSSMDocumentDetails(TemplateSSMDocumentDetails&& value) { m_templateSSMDocumentDetailsHasBeenSet = true; m_templateSSMDocumentDetails = std::move(value); }
+
+    /**
+     * <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon
+     * Web Services Systems Manager document (SSM document) and the version of the SSM
+     * document that is used to create a conformance pack.</p>
+     */
+    inline ConformancePackDetail& WithTemplateSSMDocumentDetails(const TemplateSSMDocumentDetails& value) { SetTemplateSSMDocumentDetails(value); return *this;}
+
+    /**
+     * <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon
+     * Web Services Systems Manager document (SSM document) and the version of the SSM
+     * document that is used to create a conformance pack.</p>
+     */
+    inline ConformancePackDetail& WithTemplateSSMDocumentDetails(TemplateSSMDocumentDetails&& value) { SetTemplateSSMDocumentDetails(std::move(value)); return *this;}
 
   private:
 
@@ -400,6 +444,9 @@ namespace Model
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet;
+
+    TemplateSSMDocumentDetails m_templateSSMDocumentDetails;
+    bool m_templateSSMDocumentDetailsHasBeenSet;
   };
 
 } // namespace Model

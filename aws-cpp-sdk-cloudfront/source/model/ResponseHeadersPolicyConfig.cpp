@@ -25,8 +25,8 @@ ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig() :
     m_nameHasBeenSet(false),
     m_corsConfigHasBeenSet(false),
     m_securityHeadersConfigHasBeenSet(false),
-    m_customHeadersConfigHasBeenSet(false),
-    m_serverTimingHeadersConfigHasBeenSet(false)
+    m_serverTimingHeadersConfigHasBeenSet(false),
+    m_customHeadersConfigHasBeenSet(false)
 {
 }
 
@@ -35,8 +35,8 @@ ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig(const XmlNode& xmlNode)
     m_nameHasBeenSet(false),
     m_corsConfigHasBeenSet(false),
     m_securityHeadersConfigHasBeenSet(false),
-    m_customHeadersConfigHasBeenSet(false),
-    m_serverTimingHeadersConfigHasBeenSet(false)
+    m_serverTimingHeadersConfigHasBeenSet(false),
+    m_customHeadersConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,17 +71,17 @@ ResponseHeadersPolicyConfig& ResponseHeadersPolicyConfig::operator =(const XmlNo
       m_securityHeadersConfig = securityHeadersConfigNode;
       m_securityHeadersConfigHasBeenSet = true;
     }
-    XmlNode customHeadersConfigNode = resultNode.FirstChild("CustomHeadersConfig");
-    if(!customHeadersConfigNode.IsNull())
-    {
-      m_customHeadersConfig = customHeadersConfigNode;
-      m_customHeadersConfigHasBeenSet = true;
-    }
     XmlNode serverTimingHeadersConfigNode = resultNode.FirstChild("ServerTimingHeadersConfig");
     if(!serverTimingHeadersConfigNode.IsNull())
     {
       m_serverTimingHeadersConfig = serverTimingHeadersConfigNode;
       m_serverTimingHeadersConfigHasBeenSet = true;
+    }
+    XmlNode customHeadersConfigNode = resultNode.FirstChild("CustomHeadersConfig");
+    if(!customHeadersConfigNode.IsNull())
+    {
+      m_customHeadersConfig = customHeadersConfigNode;
+      m_customHeadersConfigHasBeenSet = true;
     }
   }
 
@@ -115,16 +115,16 @@ void ResponseHeadersPolicyConfig::AddToNode(XmlNode& parentNode) const
    m_securityHeadersConfig.AddToNode(securityHeadersConfigNode);
   }
 
-  if(m_customHeadersConfigHasBeenSet)
-  {
-   XmlNode customHeadersConfigNode = parentNode.CreateChildElement("CustomHeadersConfig");
-   m_customHeadersConfig.AddToNode(customHeadersConfigNode);
-  }
-
   if(m_serverTimingHeadersConfigHasBeenSet)
   {
    XmlNode serverTimingHeadersConfigNode = parentNode.CreateChildElement("ServerTimingHeadersConfig");
    m_serverTimingHeadersConfig.AddToNode(serverTimingHeadersConfigNode);
+  }
+
+  if(m_customHeadersConfigHasBeenSet)
+  {
+   XmlNode customHeadersConfigNode = parentNode.CreateChildElement("CustomHeadersConfig");
+   m_customHeadersConfig.AddToNode(customHeadersConfigNode);
   }
 
 }

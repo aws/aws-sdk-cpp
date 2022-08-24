@@ -148,50 +148,128 @@ namespace Model
 
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
-     * address, such as the public IP address of a firewall, router, or load balancer.
-     * </p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
-     * address, such as the public IP address of a firewall, router, or load balancer.
-     * </p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
-     * address, such as the public IP address of a firewall, router, or load balancer.
-     * </p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
-     * address, such as the public IP address of a firewall, router, or load balancer.
-     * </p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
-     * address, such as the public IP address of a firewall, router, or load balancer.
-     * </p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline DescribedServer& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
 
     /**
-     * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
-     * address, such as the public IP address of a firewall, router, or load balancer.
-     * </p>
+     * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline DescribedServer& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 
@@ -776,7 +854,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
 
@@ -787,7 +880,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
 
@@ -798,7 +906,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
 
@@ -809,7 +932,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
 
@@ -820,7 +958,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
 
@@ -831,7 +984,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
 
@@ -842,7 +1010,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
 
@@ -853,7 +1036,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 

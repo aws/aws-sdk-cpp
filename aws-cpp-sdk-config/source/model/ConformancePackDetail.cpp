@@ -26,7 +26,8 @@ ConformancePackDetail::ConformancePackDetail() :
     m_deliveryS3KeyPrefixHasBeenSet(false),
     m_conformancePackInputParametersHasBeenSet(false),
     m_lastUpdateRequestedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_templateSSMDocumentDetailsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ConformancePackDetail::ConformancePackDetail(JsonView jsonValue) :
     m_deliveryS3KeyPrefixHasBeenSet(false),
     m_conformancePackInputParametersHasBeenSet(false),
     m_lastUpdateRequestedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_templateSSMDocumentDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ ConformancePackDetail& ConformancePackDetail::operator =(JsonView jsonValue)
     m_createdByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TemplateSSMDocumentDetails"))
+  {
+    m_templateSSMDocumentDetails = jsonValue.GetObject("TemplateSSMDocumentDetails");
+
+    m_templateSSMDocumentDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +169,12 @@ JsonValue ConformancePackDetail::Jsonize() const
   if(m_createdByHasBeenSet)
   {
    payload.WithString("CreatedBy", m_createdBy);
+
+  }
+
+  if(m_templateSSMDocumentDetailsHasBeenSet)
+  {
+   payload.WithObject("TemplateSSMDocumentDetails", m_templateSSMDocumentDetails.Jsonize());
 
   }
 

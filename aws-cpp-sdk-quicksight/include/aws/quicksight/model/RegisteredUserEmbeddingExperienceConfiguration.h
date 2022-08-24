@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/RegisteredUserDashboardEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQuickSightConsoleEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQSearchBarEmbeddingConfiguration.h>
+#include <aws/quicksight/model/RegisteredUserDashboardVisualEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -309,6 +310,43 @@ namespace Model
      */
     inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline const RegisteredUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const{ return m_dashboardVisual; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = value; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::move(value); }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { SetDashboardVisual(value); return *this;}
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
+
   private:
 
     RegisteredUserDashboardEmbeddingConfiguration m_dashboard;
@@ -319,6 +357,9 @@ namespace Model
 
     RegisteredUserQSearchBarEmbeddingConfiguration m_qSearchBar;
     bool m_qSearchBarHasBeenSet;
+
+    RegisteredUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
+    bool m_dashboardVisualHasBeenSet;
   };
 
 } // namespace Model

@@ -989,176 +989,208 @@ namespace Model
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
 
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
 
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
 
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
 
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline UpdateServerRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
 
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline UpdateServerRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline UpdateServerRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
 
     /**
      * <p>Specifies the file transfer protocol or protocols over which your file
      * transfer protocol client can connect to your server's endpoint. The available
-     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
-     * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
-     * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-     * ServicesCertificate Manager (ACM) which will be used to identify your server
-     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
-     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
-     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * protocols are:</p> <ul> <li> <p> <code>SFTP</code> (Secure Shell (SSH) File
+     * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
+     * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+     * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline UpdateServerRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 

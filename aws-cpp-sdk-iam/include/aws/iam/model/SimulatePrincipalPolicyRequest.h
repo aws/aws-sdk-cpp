@@ -1314,15 +1314,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline const Aws::String& GetResourceHandlingOption() const{ return m_resourceHandlingOption; }
 
@@ -1342,15 +1339,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline bool ResourceHandlingOptionHasBeenSet() const { return m_resourceHandlingOptionHasBeenSet; }
 
@@ -1370,15 +1364,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(const Aws::String& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = value; }
 
@@ -1398,15 +1389,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(Aws::String&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = std::move(value); }
 
@@ -1426,15 +1414,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(const char* value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption.assign(value); }
 
@@ -1454,15 +1439,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(const Aws::String& value) { SetResourceHandlingOption(value); return *this;}
 
@@ -1482,15 +1464,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(Aws::String&& value) { SetResourceHandlingOption(std::move(value)); return *this;}
 
@@ -1510,15 +1489,12 @@ namespace Model
      * EC2 scenario options, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
-     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security group, network interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
-     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
-     * interface, subnet, volume</p> </li> </ul>
+     * <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network
+     * interface</p> </li> <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p>
+     * <p>instance, image, security group, network interface, subnet</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
+     * security group, network interface, subnet, volume</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(const char* value) { SetResourceHandlingOption(value); return *this;}
 

@@ -31,6 +31,7 @@
 #include <aws/cloudfront/model/CreateInvalidation2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateMonitoringSubscription2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateOriginAccessControl2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreatePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateRealtimeLogConfig2020_05_31Request.h>
@@ -45,6 +46,7 @@
 #include <aws/cloudfront/model/DeleteFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteMonitoringSubscription2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteOriginAccessControl2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteRealtimeLogConfig2020_05_31Request.h>
@@ -66,6 +68,8 @@
 #include <aws/cloudfront/model/GetKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/GetKeyGroupConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetMonitoringSubscription2020_05_31Request.h>
+#include <aws/cloudfront/model/GetOriginAccessControl2020_05_31Request.h>
+#include <aws/cloudfront/model/GetOriginAccessControlConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetOriginRequestPolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetPublicKey2020_05_31Request.h>
@@ -90,6 +94,7 @@
 #include <aws/cloudfront/model/ListFunctions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListInvalidations2020_05_31Request.h>
 #include <aws/cloudfront/model/ListKeyGroups2020_05_31Request.h>
+#include <aws/cloudfront/model/ListOriginAccessControls2020_05_31Request.h>
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListPublicKeys2020_05_31Request.h>
 #include <aws/cloudfront/model/ListRealtimeLogConfigs2020_05_31Request.h>
@@ -107,6 +112,7 @@
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateKeyGroup2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateOriginAccessControl2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdatePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateRealtimeLogConfig2020_05_31Request.h>
@@ -469,7 +475,7 @@ CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoring
   Aws::Http::URI uri = m_uri;
   uri.AddPathSegments("/2020-05-31/distributions/");
   uri.AddPathSegment(request.GetDistributionId());
-  uri.AddPathSegments("/monitoring-subscription");
+  uri.AddPathSegments("/monitoring-subscription/");
   return CreateMonitoringSubscription2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -489,6 +495,31 @@ void CloudFrontClient::CreateMonitoringSubscription2020_05_31Async(const CreateM
 void CloudFrontClient::CreateMonitoringSubscription2020_05_31AsyncHelper(const CreateMonitoringSubscription2020_05_31Request& request, const CreateMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateMonitoringSubscription2020_05_31(request), context);
+}
+
+CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessControl2020_05_31(const CreateOriginAccessControl2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/origin-access-control");
+  return CreateOriginAccessControl2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::CreateOriginAccessControl2020_05_31Callable(const CreateOriginAccessControl2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateOriginAccessControl2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CreateOriginAccessControl2020_05_31Async(const CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::CreateOriginAccessControl2020_05_31AsyncHelper(const CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateOriginAccessControl2020_05_31(request), context);
 }
 
 CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequestPolicy2020_05_31(const CreateOriginRequestPolicy2020_05_31Request& request) const
@@ -876,7 +907,7 @@ DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoring
   Aws::Http::URI uri = m_uri;
   uri.AddPathSegments("/2020-05-31/distributions/");
   uri.AddPathSegment(request.GetDistributionId());
-  uri.AddPathSegments("/monitoring-subscription");
+  uri.AddPathSegments("/monitoring-subscription/");
   return DeleteMonitoringSubscription2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -896,6 +927,37 @@ void CloudFrontClient::DeleteMonitoringSubscription2020_05_31Async(const DeleteM
 void CloudFrontClient::DeleteMonitoringSubscription2020_05_31AsyncHelper(const DeleteMonitoringSubscription2020_05_31Request& request, const DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMonitoringSubscription2020_05_31(request), context);
+}
+
+DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessControl2020_05_31(const DeleteOriginAccessControl2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteOriginAccessControl2020_05_31", "Required field: Id, is not set");
+    return DeleteOriginAccessControl2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/origin-access-control/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteOriginAccessControl2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::DeleteOriginAccessControl2020_05_31Callable(const DeleteOriginAccessControl2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOriginAccessControl2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteOriginAccessControl2020_05_31Async(const DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DeleteOriginAccessControl2020_05_31AsyncHelper(const DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteOriginAccessControl2020_05_31(request), context);
 }
 
 DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequestPolicy2020_05_31(const DeleteOriginRequestPolicy2020_05_31Request& request) const
@@ -1536,7 +1598,7 @@ GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscr
   Aws::Http::URI uri = m_uri;
   uri.AddPathSegments("/2020-05-31/distributions/");
   uri.AddPathSegment(request.GetDistributionId());
-  uri.AddPathSegments("/monitoring-subscription");
+  uri.AddPathSegments("/monitoring-subscription/");
   return GetMonitoringSubscription2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1556,6 +1618,69 @@ void CloudFrontClient::GetMonitoringSubscription2020_05_31Async(const GetMonitor
 void CloudFrontClient::GetMonitoringSubscription2020_05_31AsyncHelper(const GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetMonitoringSubscription2020_05_31(request), context);
+}
+
+GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl2020_05_31(const GetOriginAccessControl2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetOriginAccessControl2020_05_31", "Required field: Id, is not set");
+    return GetOriginAccessControl2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/origin-access-control/");
+  uri.AddPathSegment(request.GetId());
+  return GetOriginAccessControl2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::GetOriginAccessControl2020_05_31Callable(const GetOriginAccessControl2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOriginAccessControl2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetOriginAccessControl2020_05_31Async(const GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetOriginAccessControl2020_05_31AsyncHelper(const GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOriginAccessControl2020_05_31(request), context);
+}
+
+GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessControlConfig2020_05_31(const GetOriginAccessControlConfig2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetOriginAccessControlConfig2020_05_31", "Required field: Id, is not set");
+    return GetOriginAccessControlConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/origin-access-control/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
+  return GetOriginAccessControlConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetOriginAccessControlConfig2020_05_31OutcomeCallable CloudFrontClient::GetOriginAccessControlConfig2020_05_31Callable(const GetOriginAccessControlConfig2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetOriginAccessControlConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOriginAccessControlConfig2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetOriginAccessControlConfig2020_05_31Async(const GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetOriginAccessControlConfig2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetOriginAccessControlConfig2020_05_31AsyncHelper(const GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOriginAccessControlConfig2020_05_31(request), context);
 }
 
 GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy2020_05_31(const GetOriginRequestPolicy2020_05_31Request& request) const
@@ -2257,6 +2382,31 @@ void CloudFrontClient::ListKeyGroups2020_05_31AsyncHelper(const ListKeyGroups202
   handler(this, request, ListKeyGroups2020_05_31(request), context);
 }
 
+ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessControls2020_05_31(const ListOriginAccessControls2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/origin-access-control");
+  return ListOriginAccessControls2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListOriginAccessControls2020_05_31OutcomeCallable CloudFrontClient::ListOriginAccessControls2020_05_31Callable(const ListOriginAccessControls2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOriginAccessControls2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOriginAccessControls2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListOriginAccessControls2020_05_31Async(const ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOriginAccessControls2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListOriginAccessControls2020_05_31AsyncHelper(const ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOriginAccessControls2020_05_31(request), context);
+}
+
 ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPolicies2020_05_31(const ListOriginRequestPolicies2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2776,6 +2926,38 @@ void CloudFrontClient::UpdateKeyGroup2020_05_31Async(const UpdateKeyGroup2020_05
 void CloudFrontClient::UpdateKeyGroup2020_05_31AsyncHelper(const UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateKeyGroup2020_05_31(request), context);
+}
+
+UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessControl2020_05_31(const UpdateOriginAccessControl2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateOriginAccessControl2020_05_31", "Required field: Id, is not set");
+    return UpdateOriginAccessControl2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/origin-access-control/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
+  return UpdateOriginAccessControl2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateOriginAccessControl2020_05_31OutcomeCallable CloudFrontClient::UpdateOriginAccessControl2020_05_31Callable(const UpdateOriginAccessControl2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateOriginAccessControl2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOriginAccessControl2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateOriginAccessControl2020_05_31Async(const UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateOriginAccessControl2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::UpdateOriginAccessControl2020_05_31AsyncHelper(const UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateOriginAccessControl2020_05_31(request), context);
 }
 
 UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequestPolicy2020_05_31(const UpdateOriginRequestPolicy2020_05_31Request& request) const

@@ -19,12 +19,14 @@ namespace Model
 {
 
 AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration() : 
-    m_dashboardHasBeenSet(false)
+    m_dashboardHasBeenSet(false),
+    m_dashboardVisualHasBeenSet(false)
 {
 }
 
 AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration(JsonView jsonValue) : 
-    m_dashboardHasBeenSet(false)
+    m_dashboardHasBeenSet(false),
+    m_dashboardVisualHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ AnonymousUserEmbeddingExperienceConfiguration& AnonymousUserEmbeddingExperienceC
     m_dashboardHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DashboardVisual"))
+  {
+    m_dashboardVisual = jsonValue.GetObject("DashboardVisual");
+
+    m_dashboardVisualHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue AnonymousUserEmbeddingExperienceConfiguration::Jsonize() const
   if(m_dashboardHasBeenSet)
   {
    payload.WithObject("Dashboard", m_dashboard.Jsonize());
+
+  }
+
+  if(m_dashboardVisualHasBeenSet)
+  {
+   payload.WithObject("DashboardVisual", m_dashboardVisual.Jsonize());
 
   }
 
