@@ -5,6 +5,7 @@ if (NOT LEGACY_BUILD)
             aws-sdk-cpp-core-test
             GTest::GTest
             aws-sdk-cpp::core
+            aws-sdk-cpp::testing-resources
             aws-crt-cpp
     )
     target_sources(
@@ -17,7 +18,6 @@ if (NOT LEGACY_BUILD)
     add_subdirectory(aws)
     add_subdirectory(http)
     add_subdirectory(monitoring)
-    add_subdirectory(testing-resources)
     add_subdirectory(utils)
 
     gtest_discover_tests(aws-sdk-cpp-core-test)
