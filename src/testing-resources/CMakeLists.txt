@@ -2,6 +2,15 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 if (NOT LEGACY_BUILD)
+    add_library(aws-sdk-cpp-testing-resources)
+    add_library(aws-sdk-cpp::testing-resources ALIAS aws-sdk-cpp-testing-resources)
+
+    target_link_libraries(
+            aws-sdk-cpp-testing-resources
+            aws-sdk-cpp::core
+            GTest::GTest
+    )
+
     add_subdirectory(include)
     add_subdirectory(source)
 else()
