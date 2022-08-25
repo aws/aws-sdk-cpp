@@ -1,0 +1,17 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($endpointPrefix = $metadata.endpointPrefix)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+#if ($serviceModel.endpointRules)
+
+#end
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

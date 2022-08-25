@@ -65,6 +65,9 @@
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
     ${className}::${className}(const ${signerToMake}& bearerTokenProvider,
+#if($serviceModel.endpointRules)
+    ${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
     ${clsWSpace}  ${clsWSpace} const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($bearerAddCtorArgs.isEmpty())) :#else,#end
 #foreach($ctorArgument in $bearerAddCtorArgs)
     ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
@@ -126,6 +129,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $simpleCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
 ${className}::${className}(const AWSCredentials& credentials,
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
 ${clsWSpace}  ${clsWSpace} const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($simpleCredsCtor.isEmpty())) :#else,#end
 
 #foreach($ctorArgument in $simpleCredsCtor)
@@ -161,6 +167,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $specCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
 ${clsWSpace}  ${clsWSpace} const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($specCredsCtor.isEmpty())) :#else,#end
 
 #foreach($ctorArgument in $specCredsCtor)
@@ -214,16 +223,6 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 ${className}::~${className}()
 {
-#if($serviceModel.endpointRules)
-    if (m_crtEndpointRuleEngineCtx)
-    {
-        [](void* engineCtxPtr)
-        {
-            std::cout << "Here we would call CRT's rule engine Free with ptr or use C++ CRT wrapper " << engineCtxPtr  << "\n";
-        }(m_crtEndpointRuleEngineCtx);
-        m_crtEndpointRuleEngineCtx = nullptr;
-    }
-#end
 }
 
 void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config)
