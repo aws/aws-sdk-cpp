@@ -34,6 +34,9 @@
         * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
         */
         ${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
+#if($serviceModel.endpointRules)
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($bearerAddCtorArgs.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $bearerAddCtorArgs)
@@ -65,6 +68,9 @@
         * is not specified, it will be initialized to default values.
         */
         ${className}(const Aws::Auth::AWSCredentials& credentials,
+#if($serviceModel.endpointRules)
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($simpleCredsCtor.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $simpleCredsCtor)
@@ -81,6 +87,9 @@
         * the default http client factory will be used
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+#if($serviceModel.endpointRules)
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($specCredsCtor.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $specCredsCtor)
@@ -99,6 +108,9 @@
         * is not specified, it will be initialized to default values.
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
+#if($serviceModel.endpointRules)
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($standaloneCredsCtor.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $specCredsCtor)

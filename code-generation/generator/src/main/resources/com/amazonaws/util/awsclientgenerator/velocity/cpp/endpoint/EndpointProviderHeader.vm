@@ -1,0 +1,46 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}EndpointProvider")
+#pragma once
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/endpoint/DefaultEndpointProvider.h>
+\#include <aws/core/endpoint/EndpointParameter.h>
+\#include <aws/core/utils/memory/stl/AWSString.h>
+\#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#if($serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointRules.h>
+#end
+
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+namespace Endpoint
+{
+#set($endpointParametersType = "${metadata.classNamePrefix}EndpointParameters")
+using ${endpointParametersType} = Aws::List<Aws::Endpoint::EndpointParameter>;
+
+#if ($serviceModel.endpointRules)
+class ${className} : public Aws::Endpoint::DefaultEndpointProvider<${className}, ${endpointParametersType}>
+{
+public:
+    using ${metadata.classNamePrefix}ResolveEndpointOutcome = typename Aws::Endpoint::DefaultEndpointProvider<${className}, ${endpointParametersType}>::ResolveEndpointOutcome;
+
+    ${className}()
+      : Aws::Endpoint::DefaultEndpointProvider<${className}, ${endpointParametersType}>(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules)
+    {}
+
+    ${metadata.classNamePrefix}ResolveEndpointOutcome ResolveEndpointImpl(const ${endpointParametersType}& epParams)
+    {
+        return Aws::Endpoint::ResolveEndpointDefaultImpl<${className}, ${endpointParametersType}>(epParams);
+    }
+};
+#end
+} // namespace Endpoint
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

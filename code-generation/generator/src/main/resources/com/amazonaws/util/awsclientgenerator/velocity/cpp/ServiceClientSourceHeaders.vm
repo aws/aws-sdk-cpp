@@ -18,7 +18,7 @@
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
 #end
 #if($serviceModel.endpointRules)
-\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointRules.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
 #end
 #if($serviceModel.hasBearerAuth())
 \#include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
