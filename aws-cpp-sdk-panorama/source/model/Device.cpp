@@ -22,12 +22,20 @@ Device::Device() :
     m_brand(DeviceBrand::NOT_SET),
     m_brandHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
+    m_currentSoftwareHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_deviceAggregatedStatus(DeviceAggregatedStatus::NOT_SET),
+    m_deviceAggregatedStatusHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_latestDeviceJobHasBeenSet(false),
     m_leaseExpirationTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_provisioningStatus(DeviceStatus::NOT_SET),
-    m_provisioningStatusHasBeenSet(false)
+    m_provisioningStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_type(DeviceType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -35,12 +43,20 @@ Device::Device(JsonView jsonValue) :
     m_brand(DeviceBrand::NOT_SET),
     m_brandHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
+    m_currentSoftwareHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_deviceAggregatedStatus(DeviceAggregatedStatus::NOT_SET),
+    m_deviceAggregatedStatusHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_latestDeviceJobHasBeenSet(false),
     m_leaseExpirationTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_provisioningStatus(DeviceStatus::NOT_SET),
-    m_provisioningStatusHasBeenSet(false)
+    m_provisioningStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_type(DeviceType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +77,27 @@ Device& Device::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CurrentSoftware"))
+  {
+    m_currentSoftware = jsonValue.GetString("CurrentSoftware");
+
+    m_currentSoftwareHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeviceAggregatedStatus"))
+  {
+    m_deviceAggregatedStatus = DeviceAggregatedStatusMapper::GetDeviceAggregatedStatusForName(jsonValue.GetString("DeviceAggregatedStatus"));
+
+    m_deviceAggregatedStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
@@ -73,6 +110,13 @@ Device& Device::operator =(JsonView jsonValue)
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
 
     m_lastUpdatedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LatestDeviceJob"))
+  {
+    m_latestDeviceJob = jsonValue.GetObject("LatestDeviceJob");
+
+    m_latestDeviceJobHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LeaseExpirationTime"))
@@ -96,6 +140,23 @@ Device& Device::operator =(JsonView jsonValue)
     m_provisioningStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = DeviceTypeMapper::GetDeviceTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +174,23 @@ JsonValue Device::Jsonize() const
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
+  if(m_currentSoftwareHasBeenSet)
+  {
+   payload.WithString("CurrentSoftware", m_currentSoftware);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_deviceAggregatedStatusHasBeenSet)
+  {
+   payload.WithString("DeviceAggregatedStatus", DeviceAggregatedStatusMapper::GetNameForDeviceAggregatedStatus(m_deviceAggregatedStatus));
+  }
+
   if(m_deviceIdHasBeenSet)
   {
    payload.WithString("DeviceId", m_deviceId);
@@ -122,6 +200,12 @@ JsonValue Device::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_latestDeviceJobHasBeenSet)
+  {
+   payload.WithObject("LatestDeviceJob", m_latestDeviceJob.Jsonize());
+
   }
 
   if(m_leaseExpirationTimeHasBeenSet)
@@ -138,6 +222,22 @@ JsonValue Device::Jsonize() const
   if(m_provisioningStatusHasBeenSet)
   {
    payload.WithString("ProvisioningStatus", DeviceStatusMapper::GetNameForDeviceStatus(m_provisioningStatus));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", DeviceTypeMapper::GetNameForDeviceType(m_type));
   }
 
   return payload;

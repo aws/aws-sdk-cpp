@@ -177,11 +177,17 @@ namespace Model
    * permissions — See <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/security-iam.html">Identity
    * and Access Management</a> on the Security page of the <i>Amazon IVS User
-   * Guide</i>.</p> </li> </ul> <p> <b>Messaging Endpoints</b> </p> <ul> <li> <p>
-   * <a>DeleteMessage</a> — Sends an event to a specific room which directs clients
-   * to delete a specific message; that is, unrender it from view and delete it from
-   * the client’s chat history. This event’s <code>EventName</code> is
-   * <code>aws:DELETE_MESSAGE</code>. This replicates the <a
+   * Guide</i>.</p> </li> </ul> <p> <b>Amazon Resource Names (ARNs)</b> </p> <p>ARNs
+   * uniquely identify AWS resources. An ARN is required when you need to specify a
+   * resource unambiguously across all of AWS, such as in IAM policies and API calls.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+   * Resource Names</a> in the <i>AWS General Reference</i>.</p> <p> <b>Messaging
+   * Endpoints</b> </p> <ul> <li> <p> <a>DeleteMessage</a> — Sends an event to a
+   * specific room which directs clients to delete a specific message; that is,
+   * unrender it from view and delete it from the client’s chat history. This event’s
+   * <code>EventName</code> is <code>aws:DELETE_MESSAGE</code>. This replicates the
+   * <a
    * href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
    * DeleteMessage</a> WebSocket operation in the Amazon IVS Chat Messaging API.</p>
    * </li> <li> <p> <a>DisconnectUser</a> — Disconnects all connections using a
