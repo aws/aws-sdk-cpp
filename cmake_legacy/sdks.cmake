@@ -76,7 +76,7 @@ endif()
 # SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
 if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     execute_process(
-            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
+            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepare-tools
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )
 endif()
@@ -103,7 +103,7 @@ if(REGENERATE_CLIENTS)
             file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${SDK}")
 
             execute_process(
-                    COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./generated/
+                    COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --service-name ${SDK} --api-version ${C2J_DATE} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output-path ../generated/
                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
             message(STATUS "Generated service: ${SDK}, version: ${C2J_DATE}")
@@ -118,7 +118,7 @@ if(REGENERATE_DEFAULTS)
 
     if(TRUE)#EXISTS ${SDK_C2J_FILE})
         execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --clientConfigDefaults "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/defaults/sdk-default-configuration.json" --outputLocation ./generated/
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --generate-config-defaults --config-defaults-path "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/defaults/sdk-default-configuration.json" --outputLocation ./generated/
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         message(STATUS "Generated defaults into ${CMAKE_CURRENT_SOURCE_DIR}")
@@ -175,7 +175,7 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
         file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
         message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
         execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./generated/
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --service-name ${C_SERVICE_NAME} --api-version ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output-path ./generated/
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})
@@ -249,7 +249,7 @@ function(add_sdks)
 
             # Generates SDK client based on aws-cpp-sdk-core-tests/resources/api-descriptions/document-test-2021-06-28.normal.json for functional testing.
             execute_process(
-                    COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./generated/ --prepareTool
+                    COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --api-definitions-path aws-cpp-sdk-core-tests/resources/api-descriptions --service-name document-test --api-version 2021-06-28 --output-path ./generated/ --prepare-tool
                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
             message(STATUS "Generated service: document-test, version: 2021-06-28")

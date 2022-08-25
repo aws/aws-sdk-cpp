@@ -84,7 +84,14 @@ else ()
     if (REGENERATE_CLIENTS)
         string(CONCAT CONFIG_FAIL_MSG
                 "The REGENERATE_CLIENTS option previously available is removed from new build scripts. "
-                "To regenerate service client code from models use the tools/script/generate_sdks.py script. "
+                "To generate service client code from models use the tools/script/generate_sdks.py script. "
+                "Example call: \n"
+                "tools/scripts/generate_sdks.py\n"
+                "     --service-name dynamodb\n"
+                "     --api-version 2012-08-10\n"
+                "     --enable-virtual-operations\n"
+                "     --output-path generated\n"
+                "     --prepare-tools\n"
                 "Alternatively, -DLEGACY_BUILD=ON can be passed to cmake to use the old build scripts until 1.11.")
         message(FATAL_ERROR "${CONFIG_FAIL_MSG}")
     endif ()
