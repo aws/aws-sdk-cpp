@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/client/CoreErrors.h>
 
 namespace Aws
 {
@@ -74,6 +75,15 @@ namespace Aws
          * Defaults to true, if this is set to false, then signers, if they support body signing, will not do so
          */
         virtual bool SignBody() const { return true; }
+
+        /**
+         * Defaults to false, if a derived class returns true it indicates that the body has an embedded error.
+         */
+        virtual bool HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const {
+            (void) body;
+            (void) header;
+            return false;
+        }
 
         /**
          * Defaults to false, if this is set to true, it supports chunked transfer encoding.

@@ -39,6 +39,13 @@ public:
     bool ShouldComputeContentMd5() const override { return m_shouldComputeMd5; }
     void SetComputeContentMd5(bool value) { m_shouldComputeMd5 = value; }
     virtual const char* GetServiceRequestName() const override { return "AmazonWebServiceRequestMock"; }
+    virtual bool HasEmbeddedError(Aws::IOStream& body, const Aws::Http::HeaderValueCollection& header) const override {
+        (void) header;
+        std::stringstream ss;
+        ss << body.rdbuf();
+        auto bodyString = ss.str();
+        return bodyString.find("TestErrorInBodyOfResponse") != std::string::npos;
+    }
 
 private:
     std::shared_ptr<Aws::IOStream> m_body;
@@ -119,6 +126,10 @@ protected:
     std::shared_ptr<CountedRetryStrategy> m_countedRetryStrategy;
     Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override
     {
+        if (response->GetResponseCode() == Aws::Http::HttpResponseCode::OK)
+        {
+            return { Aws::Client::CoreErrors::SLOW_DOWN, "TestErrorInBodyOfResponse", "TestErrorInBodyOfResponse", false };
+        }
         Aws::Client::AWSError<Aws::Client::CoreErrors> error;
         if (response->HasClientError())
         {

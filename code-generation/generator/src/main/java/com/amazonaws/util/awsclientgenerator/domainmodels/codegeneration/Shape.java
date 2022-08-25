@@ -50,6 +50,7 @@ public class Shape {
     private boolean sensitive;
     private boolean hasPreSignedUrl;
     private boolean document;
+    private boolean hasEmbeddedErrors = false;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());
@@ -87,6 +88,14 @@ public class Shape {
 
     public boolean isDocument() {
         return "structure".equals(type.toLowerCase()) && document;
+    }
+
+    public boolean hasEmbeddedErrors() {
+        return this.hasEmbeddedErrors;
+    }
+
+    public void setEmbeddedErrors(boolean hasEmbeddedErrors) {
+        this.hasEmbeddedErrors = hasEmbeddedErrors;
     }
 
     public boolean isPrimitive() {

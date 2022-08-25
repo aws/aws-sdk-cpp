@@ -73,6 +73,9 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
+#if($shape.hasEmbeddedErrors())
+    bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
+#end
 #if($operation.requestAlgorithmMember)
     Aws::String GetChecksumAlgorithmName() const override;
 
