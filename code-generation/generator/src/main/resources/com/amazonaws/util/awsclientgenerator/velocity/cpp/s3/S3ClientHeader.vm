@@ -68,6 +68,12 @@ namespace Aws
 
   namespace ${metadata.namespace}
   {
+#if($serviceModel.endpointRules)
+    namespace Endpoint
+    {
+      class ${metadata.classNamePrefix}EndpointProvider;
+    } // namespace Endpoint
+#end
     namespace Model
     {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
@@ -249,7 +255,7 @@ namespace Aws
         bool m_enableEndpointDiscovery;
 #end
 #if($serviceModel.endpointRules)
-        void* m_crtEndpointRuleEngineCtx = nullptr;
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
 #end
         Aws::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption;
     };

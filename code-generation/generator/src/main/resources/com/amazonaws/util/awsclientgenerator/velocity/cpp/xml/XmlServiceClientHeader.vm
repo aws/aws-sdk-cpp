@@ -63,7 +63,9 @@ namespace ${rootNamespace}
 #end
 namespace ${serviceNamespace}
 {
-
+#if($serviceModel.endpointRules)
+  class ${metadata.classNamePrefix}EndpointProvider;
+#end
 namespace Model
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
@@ -119,7 +121,7 @@ namespace Model
         bool m_enableEndpointDiscovery;
 #end
 #if($serviceModel.endpointRules)
-        void* m_crtEndpointRuleEngineCtx = nullptr;
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
 #end
         Aws::String m_configScheme;
 #if($metadata.hasPreSignedUrl)
