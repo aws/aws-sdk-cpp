@@ -529,7 +529,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
         }
     }
 
-    if (DoesResponseGenerateError(httpResponse))
+    if (DoesResponseGenerateError(httpResponse) || request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
         auto error = BuildAWSError(httpResponse);
@@ -1297,8 +1297,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     }
     else
     {
-        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-
         // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
         // file pointer back to the beginning in order to correctly read the input using the XML string iterator
         if ((httpResponse->GetResponseBody().tellp() > 0)
