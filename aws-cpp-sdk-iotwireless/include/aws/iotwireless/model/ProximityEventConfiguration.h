@@ -77,38 +77,38 @@ namespace Model
 
 
     /**
-     * <p>Enum to denote whether the wireless device id proximity event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID proximity event topic is enabled or
+     * disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessDeviceIdEventTopic() const{ return m_wirelessDeviceIdEventTopic; }
 
     /**
-     * <p>Enum to denote whether the wireless device id proximity event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID proximity event topic is enabled or
+     * disabled.</p>
      */
     inline bool WirelessDeviceIdEventTopicHasBeenSet() const { return m_wirelessDeviceIdEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether the wireless device id proximity event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID proximity event topic is enabled or
+     * disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether the wireless device id proximity event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID proximity event topic is enabled or
+     * disabled.</p>
      */
     inline void SetWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether the wireless device id proximity event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID proximity event topic is enabled or
+     * disabled.</p>
      */
     inline ProximityEventConfiguration& WithWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceIdEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether the wireless device id proximity event topic is
-     * enabled or disabled.</p>
+     * <p>Denotes whether the wireless device ID proximity event topic is enabled or
+     * disabled.</p>
      */
     inline ProximityEventConfiguration& WithWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceIdEventTopic(std::move(value)); return *this;}
 

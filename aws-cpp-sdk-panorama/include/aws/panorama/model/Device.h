@@ -8,7 +8,11 @@
 #include <aws/panorama/model/DeviceBrand.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/model/DeviceAggregatedStatus.h>
+#include <aws/panorama/model/LatestDeviceJob.h>
 #include <aws/panorama/model/DeviceStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/panorama/model/DeviceType.h>
 #include <utility>
 
 namespace Aws
@@ -103,6 +107,125 @@ namespace Model
 
 
     /**
+     * <p>A device's current software.</p>
+     */
+    inline const Aws::String& GetCurrentSoftware() const{ return m_currentSoftware; }
+
+    /**
+     * <p>A device's current software.</p>
+     */
+    inline bool CurrentSoftwareHasBeenSet() const { return m_currentSoftwareHasBeenSet; }
+
+    /**
+     * <p>A device's current software.</p>
+     */
+    inline void SetCurrentSoftware(const Aws::String& value) { m_currentSoftwareHasBeenSet = true; m_currentSoftware = value; }
+
+    /**
+     * <p>A device's current software.</p>
+     */
+    inline void SetCurrentSoftware(Aws::String&& value) { m_currentSoftwareHasBeenSet = true; m_currentSoftware = std::move(value); }
+
+    /**
+     * <p>A device's current software.</p>
+     */
+    inline void SetCurrentSoftware(const char* value) { m_currentSoftwareHasBeenSet = true; m_currentSoftware.assign(value); }
+
+    /**
+     * <p>A device's current software.</p>
+     */
+    inline Device& WithCurrentSoftware(const Aws::String& value) { SetCurrentSoftware(value); return *this;}
+
+    /**
+     * <p>A device's current software.</p>
+     */
+    inline Device& WithCurrentSoftware(Aws::String&& value) { SetCurrentSoftware(std::move(value)); return *this;}
+
+    /**
+     * <p>A device's current software.</p>
+     */
+    inline Device& WithCurrentSoftware(const char* value) { SetCurrentSoftware(value); return *this;}
+
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline Device& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline Device& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the device.</p>
+     */
+    inline Device& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline const DeviceAggregatedStatus& GetDeviceAggregatedStatus() const{ return m_deviceAggregatedStatus; }
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline bool DeviceAggregatedStatusHasBeenSet() const { return m_deviceAggregatedStatusHasBeenSet; }
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline void SetDeviceAggregatedStatus(const DeviceAggregatedStatus& value) { m_deviceAggregatedStatusHasBeenSet = true; m_deviceAggregatedStatus = value; }
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline void SetDeviceAggregatedStatus(DeviceAggregatedStatus&& value) { m_deviceAggregatedStatusHasBeenSet = true; m_deviceAggregatedStatus = std::move(value); }
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline Device& WithDeviceAggregatedStatus(const DeviceAggregatedStatus& value) { SetDeviceAggregatedStatus(value); return *this;}
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline Device& WithDeviceAggregatedStatus(DeviceAggregatedStatus&& value) { SetDeviceAggregatedStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The device's ID.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
@@ -172,6 +295,43 @@ namespace Model
      * <p>When the device was updated.</p>
      */
     inline Device& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the update job
+     * status.</p>
+     */
+    inline const LatestDeviceJob& GetLatestDeviceJob() const{ return m_latestDeviceJob; }
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the update job
+     * status.</p>
+     */
+    inline bool LatestDeviceJobHasBeenSet() const { return m_latestDeviceJobHasBeenSet; }
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the update job
+     * status.</p>
+     */
+    inline void SetLatestDeviceJob(const LatestDeviceJob& value) { m_latestDeviceJobHasBeenSet = true; m_latestDeviceJob = value; }
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the update job
+     * status.</p>
+     */
+    inline void SetLatestDeviceJob(LatestDeviceJob&& value) { m_latestDeviceJobHasBeenSet = true; m_latestDeviceJob = std::move(value); }
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the update job
+     * status.</p>
+     */
+    inline Device& WithLatestDeviceJob(const LatestDeviceJob& value) { SetLatestDeviceJob(value); return *this;}
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the update job
+     * status.</p>
+     */
+    inline Device& WithLatestDeviceJob(LatestDeviceJob&& value) { SetLatestDeviceJob(std::move(value)); return *this;}
 
 
     /**
@@ -276,6 +436,103 @@ namespace Model
      */
     inline Device& WithProvisioningStatus(DeviceStatus&& value) { SetProvisioningStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The device's tags.</p>
+     */
+    inline Device& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The device's type.</p>
+     */
+    inline const DeviceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The device's type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The device's type.</p>
+     */
+    inline void SetType(const DeviceType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The device's type.</p>
+     */
+    inline void SetType(DeviceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The device's type.</p>
+     */
+    inline Device& WithType(const DeviceType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The device's type.</p>
+     */
+    inline Device& WithType(DeviceType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     DeviceBrand m_brand;
@@ -284,11 +541,23 @@ namespace Model
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
 
+    Aws::String m_currentSoftware;
+    bool m_currentSoftwareHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    DeviceAggregatedStatus m_deviceAggregatedStatus;
+    bool m_deviceAggregatedStatusHasBeenSet;
+
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
+    LatestDeviceJob m_latestDeviceJob;
+    bool m_latestDeviceJobHasBeenSet;
 
     Aws::Utils::DateTime m_leaseExpirationTime;
     bool m_leaseExpirationTimeHasBeenSet;
@@ -298,6 +567,12 @@ namespace Model
 
     DeviceStatus m_provisioningStatus;
     bool m_provisioningStatusHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    DeviceType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model
