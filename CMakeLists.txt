@@ -80,8 +80,17 @@ else ()
         endif ()
     endif ()
 
+    # Options no longer supported FATAL with message
+    if (REGENERATE_CLIENTS)
+        string(CONCAT CONFIG_FAIL_MSG
+                "The REGENERATE_CLIENTS option previously available is removed from new build scripts. "
+                "To regenerate service client code from models use the tools/script/generate_sdks.py script. "
+                "Alternatively, -DLEGACY_BUILD=ON can be passed to cmake to use the old build scripts until 1.11.")
+        message(FATAL_ERROR "${CONFIG_FAIL_MSG}")
+    endif ()
+
     # Options definition
-    option(BUILD_TESTING "If enabled, the SDK will include tests in the build" OFF)
+    option(BUILD_TESTING "If enabled, the SDK will include tests in the build." OFF)
 
     # TODO: redefine below as option with proper defaults per platform
     if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
@@ -113,7 +122,6 @@ else ()
 
     message(WARNING "Anything below this warning is a TODO not yet implemented.")
 
-    message(STATUS "Building core library tests.")
     message(STATUS "Add support for static analysis.")
     message(STATUS "Building client libraries.")
     message(STATUS "Setting up tests.")
@@ -122,4 +130,5 @@ else ()
     message(STATUS "Setting up docs.")
     message(STATUS "Add support support for SDK flags.")
     message(STATUS "Add previously available options.")
+    message(STATUS "Update scripts in the tools directory.")
 endif ()
