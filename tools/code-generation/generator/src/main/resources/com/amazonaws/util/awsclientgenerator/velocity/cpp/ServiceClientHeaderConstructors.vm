@@ -18,6 +18,12 @@
 #set($clientConfigurationNamespace = "Client")
 #set($credentialProviderArg = "")
 #end
+#if($serviceModel.hasOnlyBearerAuth())
+        /**
+        * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
+        */
+        ${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider, const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
+#else##if($serviceModel.hasOnlyBearerAuth())
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -36,6 +42,7 @@
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
             const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
+#end##if($serviceModel.hasOnlyBearerAuth())
 
 #if($metadata.standalone || $metadata.apigateway)
        /**

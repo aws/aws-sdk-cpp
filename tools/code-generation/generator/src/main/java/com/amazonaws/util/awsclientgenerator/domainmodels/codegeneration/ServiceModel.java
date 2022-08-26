@@ -44,4 +44,25 @@ public class ServiceModel {
     public Collection<Error> getNonCoreServiceErrors() {
         return serviceErrors.stream().filter(e -> !e.isCoreError()).collect(Collectors.toSet());
     }
+
+    public boolean hasSigV4Auth() {
+        if(metadata.getSignatureVersion().equals("v4") || metadata.getSignatureVersion().equals("s3v4")) {
+            return true;
+        }
+        return operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::SIGV4_SIGNER"));
+    }
+
+    public boolean hasBearerAuth() {
+        if(metadata.getSignatureVersion().equals("bearer")) {
+            return true;
+        }
+        return operations.values().parallelStream().anyMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
+    }
+
+    public boolean hasOnlyBearerAuth() {
+        if(!metadata.getSignatureVersion().equals("bearer")) {
+            return false;
+        }
+        return operations.values().parallelStream().allMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
+    }
 }
