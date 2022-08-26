@@ -276,105 +276,121 @@ namespace Model
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 
