@@ -50,6 +50,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
 
     /**
      * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
