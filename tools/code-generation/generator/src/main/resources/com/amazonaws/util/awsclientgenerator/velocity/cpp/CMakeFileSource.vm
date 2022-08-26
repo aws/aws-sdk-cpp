@@ -1,0 +1,10 @@
+#set($metadata = $serviceModel.metadata)
+#set($cmakeVarStart = "${")
+target_sources(aws-sdk-cpp-${metadata.projectName}
+        PRIVATE
+        ${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}/${metadata.classNamePrefix}Client.cpp
+        ${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}/${metadata.classNamePrefix}Endpoint.cpp
+        ${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}/${metadata.classNamePrefix}ErrorMarshaller.cpp
+        ${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}/${metadata.classNamePrefix}Errors.cpp
+        )
+add_subdirectory(model)

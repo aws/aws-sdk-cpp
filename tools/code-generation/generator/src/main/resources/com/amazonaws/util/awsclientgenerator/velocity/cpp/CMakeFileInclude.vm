@@ -1,0 +1,7 @@
+#set($metadata = $serviceModel.metadata)
+#set($cmakeVarStart = "${")
+target_include_directories(
+        aws-sdk-cpp-${metadata.projectName}
+        BEFORE
+        PUBLIC ${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}
+)

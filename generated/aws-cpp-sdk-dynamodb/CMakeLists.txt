@@ -83,7 +83,6 @@ else ()
             PUBLIC ${aws-crt-cpp_INCLUDE_DIRS}
             PUBLIC ${CJSON_INCLUDE_DIRS}
     )
-    message(STATUS "CRT: ${aws-crt-cpp_LIBRARY_DIRS}")
     target_link_directories(
             aws-sdk-cpp-dynamodb
             PUBLIC ${aws-crt-cpp_LIBRARY_DIRS}

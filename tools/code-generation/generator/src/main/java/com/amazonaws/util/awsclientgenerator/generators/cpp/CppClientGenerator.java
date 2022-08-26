@@ -26,7 +26,10 @@ import org.slf4j.helpers.NOPLoggerFactory;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public abstract class CppClientGenerator implements ClientGenerator {
 
@@ -52,11 +55,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
         //check on all fields.
         serviceModel.getShapes().values().stream().filter(hasMembers -> hasMembers.getMembers() != null).forEach(shape ->
                 shape.getMembers().values().stream().filter(shapeMember ->
-                        shapeMember.isRequired()).forEach( member -> member.setRequired(false)));
+                        shapeMember.isRequired()).forEach(member -> member.setRequired(false)));
 
         getOperationsToRemove().stream().forEach(operation ->
         {
-          serviceModel.getOperations().remove(operation);
+            serviceModel.getOperations().remove(operation);
         });
         List<SdkFileEntry> fileList = new ArrayList<>();
         fileList.addAll(generateModelHeaderFiles(serviceModel));
@@ -75,6 +78,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateServiceRequestHeader(serviceModel));
         fileList.add(generateExportHeader(serviceModel));
         fileList.add(generateCmakeFile(serviceModel));
+        fileList.add(generateCmakeFileInclude(serviceModel));
+        fileList.add(generateCmakeFileSource(serviceModel));
+        fileList.add(generateCmakeFileSourceModel(serviceModel, fileList));
+
 
         SdkFileEntry[] retArray = new SdkFileEntry[fileList.size()];
         return fileList.toArray(retArray);
@@ -127,13 +134,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
                     break;
                 }
             }
-        }
-        else if (shape.isEnum()) {
+        } else if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelEnumHeader.vm", StandardCharsets.UTF_8.name());
             EnumModel enumModel = new EnumModel(serviceModel.getMetadata().getNamespace(), shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
-        }
-        else if (shape.isEvent() && shape.getEventPayloadType().equals("blob")) {
+        } else if (shape.isEvent() && shape.getEventPayloadType().equals("blob")) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EventHeader.vm", StandardCharsets.UTF_8.name());
             shape.getMembers().entrySet().stream().filter(memberEntry -> memberEntry.getKey().equals(shape.getEventPayloadMemberName())).forEach(blobMemberEntry -> context.put("blobMember", blobMemberEntry));
         }
@@ -184,14 +189,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
         for (Map.Entry<String, Shape> shapeEntry : serviceModel.getShapes().entrySet()) {
 
             SdkFileEntry sdkFileEntry = generateModelSourceFile(serviceModel, shapeEntry);
-            if (sdkFileEntry != null)
-            {
+            if (sdkFileEntry != null) {
                 sdkFileEntries.add(sdkFileEntry);
             }
 
             sdkFileEntry = generateEventStreamHandlerSourceFile(serviceModel, shapeEntry);
-            if (sdkFileEntry != null)
-            {
+            if (sdkFileEntry != null) {
                 sdkFileEntries.add(sdkFileEntry);
             }
         }
@@ -261,10 +264,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
     protected SdkFileEntry generateErrorSourceFile(final ServiceModel serviceModel) throws Exception {
 
         Set<String> retryableErrors = getRetryableErrors();
-        for(Error error : serviceModel.getServiceErrors()) {
-           if(retryableErrors.contains(error.getName())) {
-               error.setRetryable(true);
-           }
+        for (Error error : serviceModel.getServiceErrors()) {
+            if (retryableErrors.contains(error.getName())) {
+                error.setRetryable(true);
+            }
         }
 
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceErrorsSource.vm", StandardCharsets.UTF_8.name());
@@ -377,11 +380,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
         Map<String, String> endpoints = new HashMap<>();
 
         if (serviceModel.getServiceName().equals("budgets") ||
-            serviceModel.getServiceName().equals("cloudfront") ||
-            serviceModel.getServiceName().equals("importexport") ||
-            serviceModel.getServiceName().equals("savingsplans") ||
-            serviceModel.getServiceName().equals("waf"))
-        {
+                serviceModel.getServiceName().equals("cloudfront") ||
+                serviceModel.getServiceName().equals("importexport") ||
+                serviceModel.getServiceName().equals("savingsplans") ||
+                serviceModel.getServiceName().equals("waf")) {
             serviceModel.getMetadata().setGlobalEndpoint(serviceModel.getServiceName() + ".amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("ce")) {
@@ -417,10 +419,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         } else if (serviceModel.getServiceName().equals("shield")) {
             endpoints.put("fips-aws-global", "shield-fips.us-east-1.amazonaws.com");
-        }
-
-        else if (serviceModel.getServiceName().equals("sts")) {
-             serviceModel.getMetadata().setGlobalEndpoint(null);
+        } else if (serviceModel.getServiceName().equals("sts")) {
+            serviceModel.getMetadata().setGlobalEndpoint(null);
         }
 
         return endpoints;
@@ -447,6 +447,46 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, "CMakeLists.txt", false);
     }
 
+    private SdkFileEntry generateCmakeFileInclude(final ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/CMakeFileInclude.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        return makeFile(template, context, "include/CMakeLists.txt", false);
+    }
+
+    private SdkFileEntry generateCmakeFileSource(final ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/CMakeFileSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        return makeFile(template, context, "source/CMakeLists.txt", false);
+    }
+
+    private SdkFileEntry generateCmakeFileSourceModel(final ServiceModel serviceModel, final List<SdkFileEntry> fileList) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/CMakeFileSourceModel.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        List<String> files = new ArrayList<>();
+        for (int i = 0; i < fileList.size(); i++) {
+            if (fileList.get(i) != null) {
+                String filePath = fileList.get(i).getPathRelativeToRoot();
+                if (filePath.endsWith("cpp") && filePath.contains("/model/")) {
+                    files.add(Paths.get(filePath).getFileName().toString());
+                }
+            }
+        }
+        Collections.sort(files);
+        context.put("filelist", files);
+
+        return makeFile(template, context, "source/model/CMakeLists.txt", false);
+    }
+
+
     protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) throws IOException {
         StringWriter sw = new StringWriter();
         template.merge(context, sw);
@@ -467,7 +507,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return file;
     }
 
-    protected Set<String> getOperationsToRemove(){
+    protected Set<String> getOperationsToRemove() {
         return new HashSet<String>();
     }
 }

@@ -34,8 +34,8 @@ target_sources(aws-sdk-cpp-dynamodb
         ${CMAKE_CURRENT_SOURCE_DIR}/Capacity.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ComparisonOperator.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Condition.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/ConditionalOperator.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ConditionCheck.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ConditionalOperator.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ConsumedCapacity.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ContinuousBackupsDescription.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ContinuousBackupsStatus.cpp
@@ -130,9 +130,9 @@ target_sources(aws-sdk-cpp-dynamodb
         ${CMAKE_CURRENT_SOURCE_DIR}/InputFormatOptions.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ItemCollectionMetrics.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ItemResponse.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/KeysAndAttributes.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/KeySchemaElement.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/KeyType.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/KeysAndAttributes.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/KinesisDataStreamDestination.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ListBackupsRequest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ListBackupsResult.cpp
@@ -179,8 +179,8 @@ target_sources(aws-sdk-cpp-dynamodb
         ${CMAKE_CURRENT_SOURCE_DIR}/ReplicaSettingsDescription.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ReplicaSettingsUpdate.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ReplicaStatus.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/ReplicationGroupUpdate.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ReplicaUpdate.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ReplicationGroupUpdate.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/RestoreSummary.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/RestoreTableFromBackupRequest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/RestoreTableFromBackupResult.cpp
@@ -192,16 +192,16 @@ target_sources(aws-sdk-cpp-dynamodb
         ${CMAKE_CURRENT_SOURCE_DIR}/ReturnValuesOnConditionCheckFailure.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/S3BucketSource.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/S3SseAlgorithm.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SSEDescription.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SSESpecification.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SSEStatus.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SSEType.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ScalarAttributeType.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ScanRequest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ScanResult.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Select.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/SourceTableDetails.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/SourceTableFeatureDetails.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/SSEDescription.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/SSESpecification.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/SSEStatus.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/SSEType.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/StreamSpecification.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/StreamViewType.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/TableAutoScalingDescription.cpp
@@ -218,10 +218,10 @@ target_sources(aws-sdk-cpp-dynamodb
         ${CMAKE_CURRENT_SOURCE_DIR}/TransactGetItem.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/TransactGetItemsRequest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/TransactGetItemsResult.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/TransactionCanceledException.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/TransactWriteItem.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/TransactWriteItemsRequest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/TransactWriteItemsResult.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/TransactionCanceledException.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/UntagResourceRequest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Update.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/UpdateContinuousBackupsRequest.cpp
@@ -243,4 +243,4 @@ target_sources(aws-sdk-cpp-dynamodb
         ${CMAKE_CURRENT_SOURCE_DIR}/UpdateTimeToLiveRequest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/UpdateTimeToLiveResult.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/WriteRequest.cpp
-        )
+)

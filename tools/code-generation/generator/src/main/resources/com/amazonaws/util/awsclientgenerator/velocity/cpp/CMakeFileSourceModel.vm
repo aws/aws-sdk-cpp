@@ -1,0 +1,8 @@
+#set($metadata = $serviceModel.metadata)
+#set($cmakeVarStart = "${")
+target_sources(aws-sdk-cpp-${metadata.projectName}
+        PRIVATE
+#foreach( $file in $filelist )
+        ${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}/${file}
+#end
+)
