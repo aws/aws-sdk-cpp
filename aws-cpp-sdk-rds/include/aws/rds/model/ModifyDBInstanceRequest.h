@@ -148,14 +148,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -165,14 +164,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -182,14 +180,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -199,14 +196,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -216,14 +212,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -233,14 +228,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -250,14 +244,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -267,14 +260,13 @@ namespace Model
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>. For RDS Custom, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB
-     * instance class support for RDS Custom for Oracle</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS">DB
-     * instance class support for RDS Custom for SQL Server</a>.</p> <p>If you modify
-     * the DB instance class, an outage occurs during the change. The change is applied
-     * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>Default: Uses existing setting</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
+     * modify the DB instance class, an outage occurs during the change. The change is
+     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
+     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 

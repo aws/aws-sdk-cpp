@@ -4033,8 +4033,8 @@ namespace Aws
 
         /**
          * <p>Switches over an Oracle standby database in an Oracle Data Guard environment,
-         * making it the new primary database. Issue this command in the AWS Region that
-         * hosts the current standby database.</p><p><h3>See Also:</h3>   <a
+         * making it the new primary database. Issue this command in the Region that hosts
+         * the current standby database.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">AWS
          * API Reference</a></p>
          */

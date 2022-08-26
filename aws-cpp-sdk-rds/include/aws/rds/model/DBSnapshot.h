@@ -1251,8 +1251,7 @@ namespace Model
      * completed.</p> <p>If you back up a read replica, you can determine the replica
      * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
      * example, if originalSnapshotCreateTime is two hours later than
-     * SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27:
-     * Switchover</p>
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotDatabaseTime() const{ return m_snapshotDatabaseTime; }
 
@@ -1264,8 +1263,7 @@ namespace Model
      * completed.</p> <p>If you back up a read replica, you can determine the replica
      * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
      * example, if originalSnapshotCreateTime is two hours later than
-     * SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27:
-     * Switchover</p>
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
      */
     inline bool SnapshotDatabaseTimeHasBeenSet() const { return m_snapshotDatabaseTimeHasBeenSet; }
 
@@ -1277,8 +1275,7 @@ namespace Model
      * completed.</p> <p>If you back up a read replica, you can determine the replica
      * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
      * example, if originalSnapshotCreateTime is two hours later than
-     * SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27:
-     * Switchover</p>
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
      */
     inline void SetSnapshotDatabaseTime(const Aws::Utils::DateTime& value) { m_snapshotDatabaseTimeHasBeenSet = true; m_snapshotDatabaseTime = value; }
 
@@ -1290,8 +1287,7 @@ namespace Model
      * completed.</p> <p>If you back up a read replica, you can determine the replica
      * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
      * example, if originalSnapshotCreateTime is two hours later than
-     * SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27:
-     * Switchover</p>
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
      */
     inline void SetSnapshotDatabaseTime(Aws::Utils::DateTime&& value) { m_snapshotDatabaseTimeHasBeenSet = true; m_snapshotDatabaseTime = std::move(value); }
 
@@ -1303,8 +1299,7 @@ namespace Model
      * completed.</p> <p>If you back up a read replica, you can determine the replica
      * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
      * example, if originalSnapshotCreateTime is two hours later than
-     * SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27:
-     * Switchover</p>
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
      */
     inline DBSnapshot& WithSnapshotDatabaseTime(const Aws::Utils::DateTime& value) { SetSnapshotDatabaseTime(value); return *this;}
 
@@ -1316,8 +1311,7 @@ namespace Model
      * completed.</p> <p>If you back up a read replica, you can determine the replica
      * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
      * example, if originalSnapshotCreateTime is two hours later than
-     * SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS 7/27:
-     * Switchover</p>
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
      */
     inline DBSnapshot& WithSnapshotDatabaseTime(Aws::Utils::DateTime&& value) { SetSnapshotDatabaseTime(std::move(value)); return *this;}
 
