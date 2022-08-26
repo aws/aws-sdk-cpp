@@ -28,7 +28,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
     private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
-    private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of("CompleteMultipartUploadRequest");
+    private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of(
+            "CompleteMultipartUploadRequest",
+            "CopyObjectRequest",
+            "UploadPartCopyRequest"
+    );
 
     static {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");

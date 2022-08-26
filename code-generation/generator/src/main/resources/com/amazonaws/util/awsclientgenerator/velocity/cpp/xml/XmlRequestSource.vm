@@ -32,7 +32,7 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 }
 #if($shape.hasEmbeddedErrors())
 
-bool CompleteMultipartUploadRequest::HasEmbeddedError(Aws::IOStream &body,
+bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {
   // Header is unused

@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
 
     /**
      * <p>The bucket name.</p> <p>When using this action with an access point, you must
