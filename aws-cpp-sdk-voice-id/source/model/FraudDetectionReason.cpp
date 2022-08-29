@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int KNOWN_FRAUDSTER_HASH = HashingUtils::HashString("KNOWN_FRAUDSTER");
+        static const int VOICE_SPOOFING_HASH = HashingUtils::HashString("VOICE_SPOOFING");
 
 
         FraudDetectionReason GetFraudDetectionReasonForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == KNOWN_FRAUDSTER_HASH)
           {
             return FraudDetectionReason::KNOWN_FRAUDSTER;
+          }
+          else if (hashCode == VOICE_SPOOFING_HASH)
+          {
+            return FraudDetectionReason::VOICE_SPOOFING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case FraudDetectionReason::KNOWN_FRAUDSTER:
             return "KNOWN_FRAUDSTER";
+          case FraudDetectionReason::VOICE_SPOOFING:
+            return "VOICE_SPOOFING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

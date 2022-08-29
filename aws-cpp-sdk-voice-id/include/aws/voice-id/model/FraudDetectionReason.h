@@ -16,7 +16,8 @@ namespace Model
   enum class FraudDetectionReason
   {
     NOT_SET,
-    KNOWN_FRAUDSTER
+    KNOWN_FRAUDSTER,
+    VOICE_SPOOFING
   };
 
 namespace FraudDetectionReasonMapper

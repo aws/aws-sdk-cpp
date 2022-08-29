@@ -449,42 +449,42 @@ namespace Model
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline FraudsterRegistrationJob& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline FraudsterRegistrationJob& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
