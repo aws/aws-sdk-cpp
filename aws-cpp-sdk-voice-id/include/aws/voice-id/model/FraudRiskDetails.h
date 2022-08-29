@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/KnownFraudsterRisk.h>
+#include <aws/voice-id/model/VoiceSpoofingRisk.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +75,44 @@ namespace Model
      */
     inline FraudRiskDetails& WithKnownFraudsterRisk(KnownFraudsterRisk&& value) { SetKnownFraudsterRisk(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+     */
+    inline const VoiceSpoofingRisk& GetVoiceSpoofingRisk() const{ return m_voiceSpoofingRisk; }
+
+    /**
+     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+     */
+    inline bool VoiceSpoofingRiskHasBeenSet() const { return m_voiceSpoofingRiskHasBeenSet; }
+
+    /**
+     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+     */
+    inline void SetVoiceSpoofingRisk(const VoiceSpoofingRisk& value) { m_voiceSpoofingRiskHasBeenSet = true; m_voiceSpoofingRisk = value; }
+
+    /**
+     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+     */
+    inline void SetVoiceSpoofingRisk(VoiceSpoofingRisk&& value) { m_voiceSpoofingRiskHasBeenSet = true; m_voiceSpoofingRisk = std::move(value); }
+
+    /**
+     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+     */
+    inline FraudRiskDetails& WithVoiceSpoofingRisk(const VoiceSpoofingRisk& value) { SetVoiceSpoofingRisk(value); return *this;}
+
+    /**
+     * <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
+     */
+    inline FraudRiskDetails& WithVoiceSpoofingRisk(VoiceSpoofingRisk&& value) { SetVoiceSpoofingRisk(std::move(value)); return *this;}
+
   private:
 
     KnownFraudsterRisk m_knownFraudsterRisk;
     bool m_knownFraudsterRiskHasBeenSet;
+
+    VoiceSpoofingRisk m_voiceSpoofingRisk;
+    bool m_voiceSpoofingRiskHasBeenSet;
   };
 
 } // namespace Model

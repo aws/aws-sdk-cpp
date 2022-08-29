@@ -98,12 +98,13 @@ namespace Model
 
 
     /**
-     * <p>The security style for the volume. Specify one of the following values:</p>
-     * <ul> <li> <p> <code>UNIX</code> if the file system is managed by a UNIX
-     * administrator, the majority of users are NFS clients, and an application
-     * accessing the data uses a UNIX user as the service account. <code>UNIX</code> is
-     * the default.</p> </li> <li> <p> <code>NTFS</code> if the file system is managed
-     * by a Windows administrator, the majority of users are SMB clients, and an
+     * <p>The security style for the volume. If a volume's security style is not
+     * specified, it is automatically set to the root volume's security style. Specify
+     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
+     * system is managed by a UNIX administrator, the majority of users are NFS
+     * clients, and an application accessing the data uses a UNIX user as the service
+     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
+     * a Windows administrator, the majority of users are SMB clients, and an
      * application accessing the data uses a Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and
      * Windows administrators and users consist of both NFS and SMB clients.</p> </li>
@@ -112,12 +113,13 @@ namespace Model
     inline const SecurityStyle& GetSecurityStyle() const{ return m_securityStyle; }
 
     /**
-     * <p>The security style for the volume. Specify one of the following values:</p>
-     * <ul> <li> <p> <code>UNIX</code> if the file system is managed by a UNIX
-     * administrator, the majority of users are NFS clients, and an application
-     * accessing the data uses a UNIX user as the service account. <code>UNIX</code> is
-     * the default.</p> </li> <li> <p> <code>NTFS</code> if the file system is managed
-     * by a Windows administrator, the majority of users are SMB clients, and an
+     * <p>The security style for the volume. If a volume's security style is not
+     * specified, it is automatically set to the root volume's security style. Specify
+     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
+     * system is managed by a UNIX administrator, the majority of users are NFS
+     * clients, and an application accessing the data uses a UNIX user as the service
+     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
+     * a Windows administrator, the majority of users are SMB clients, and an
      * application accessing the data uses a Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and
      * Windows administrators and users consist of both NFS and SMB clients.</p> </li>
@@ -126,12 +128,13 @@ namespace Model
     inline bool SecurityStyleHasBeenSet() const { return m_securityStyleHasBeenSet; }
 
     /**
-     * <p>The security style for the volume. Specify one of the following values:</p>
-     * <ul> <li> <p> <code>UNIX</code> if the file system is managed by a UNIX
-     * administrator, the majority of users are NFS clients, and an application
-     * accessing the data uses a UNIX user as the service account. <code>UNIX</code> is
-     * the default.</p> </li> <li> <p> <code>NTFS</code> if the file system is managed
-     * by a Windows administrator, the majority of users are SMB clients, and an
+     * <p>The security style for the volume. If a volume's security style is not
+     * specified, it is automatically set to the root volume's security style. Specify
+     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
+     * system is managed by a UNIX administrator, the majority of users are NFS
+     * clients, and an application accessing the data uses a UNIX user as the service
+     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
+     * a Windows administrator, the majority of users are SMB clients, and an
      * application accessing the data uses a Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and
      * Windows administrators and users consist of both NFS and SMB clients.</p> </li>
@@ -140,12 +143,13 @@ namespace Model
     inline void SetSecurityStyle(const SecurityStyle& value) { m_securityStyleHasBeenSet = true; m_securityStyle = value; }
 
     /**
-     * <p>The security style for the volume. Specify one of the following values:</p>
-     * <ul> <li> <p> <code>UNIX</code> if the file system is managed by a UNIX
-     * administrator, the majority of users are NFS clients, and an application
-     * accessing the data uses a UNIX user as the service account. <code>UNIX</code> is
-     * the default.</p> </li> <li> <p> <code>NTFS</code> if the file system is managed
-     * by a Windows administrator, the majority of users are SMB clients, and an
+     * <p>The security style for the volume. If a volume's security style is not
+     * specified, it is automatically set to the root volume's security style. Specify
+     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
+     * system is managed by a UNIX administrator, the majority of users are NFS
+     * clients, and an application accessing the data uses a UNIX user as the service
+     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
+     * a Windows administrator, the majority of users are SMB clients, and an
      * application accessing the data uses a Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and
      * Windows administrators and users consist of both NFS and SMB clients.</p> </li>
@@ -154,12 +158,13 @@ namespace Model
     inline void SetSecurityStyle(SecurityStyle&& value) { m_securityStyleHasBeenSet = true; m_securityStyle = std::move(value); }
 
     /**
-     * <p>The security style for the volume. Specify one of the following values:</p>
-     * <ul> <li> <p> <code>UNIX</code> if the file system is managed by a UNIX
-     * administrator, the majority of users are NFS clients, and an application
-     * accessing the data uses a UNIX user as the service account. <code>UNIX</code> is
-     * the default.</p> </li> <li> <p> <code>NTFS</code> if the file system is managed
-     * by a Windows administrator, the majority of users are SMB clients, and an
+     * <p>The security style for the volume. If a volume's security style is not
+     * specified, it is automatically set to the root volume's security style. Specify
+     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
+     * system is managed by a UNIX administrator, the majority of users are NFS
+     * clients, and an application accessing the data uses a UNIX user as the service
+     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
+     * a Windows administrator, the majority of users are SMB clients, and an
      * application accessing the data uses a Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and
      * Windows administrators and users consist of both NFS and SMB clients.</p> </li>
@@ -168,12 +173,13 @@ namespace Model
     inline CreateOntapVolumeConfiguration& WithSecurityStyle(const SecurityStyle& value) { SetSecurityStyle(value); return *this;}
 
     /**
-     * <p>The security style for the volume. Specify one of the following values:</p>
-     * <ul> <li> <p> <code>UNIX</code> if the file system is managed by a UNIX
-     * administrator, the majority of users are NFS clients, and an application
-     * accessing the data uses a UNIX user as the service account. <code>UNIX</code> is
-     * the default.</p> </li> <li> <p> <code>NTFS</code> if the file system is managed
-     * by a Windows administrator, the majority of users are SMB clients, and an
+     * <p>The security style for the volume. If a volume's security style is not
+     * specified, it is automatically set to the root volume's security style. Specify
+     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
+     * system is managed by a UNIX administrator, the majority of users are NFS
+     * clients, and an application accessing the data uses a UNIX user as the service
+     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
+     * a Windows administrator, the majority of users are SMB clients, and an
      * application accessing the data uses a Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and
      * Windows administrators and users consist of both NFS and SMB clients.</p> </li>

@@ -335,42 +335,42 @@ namespace Model
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline bool RegistrationConfigHasBeenSet() const { return m_registrationConfigHasBeenSet; }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = value; }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = std::move(value); }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline StartFraudsterRegistrationJobRequest& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline StartFraudsterRegistrationJobRequest& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
 

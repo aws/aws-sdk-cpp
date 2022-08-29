@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

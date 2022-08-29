@@ -242,42 +242,42 @@ namespace Model
 
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline FraudsterRegistrationJobSummary& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline FraudsterRegistrationJobSummary& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline FraudsterRegistrationJobSummary& WithJobName(const char* value) { SetJobName(value); return *this;}
 

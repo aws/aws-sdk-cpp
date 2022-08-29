@@ -88,42 +88,42 @@ namespace Model
 
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

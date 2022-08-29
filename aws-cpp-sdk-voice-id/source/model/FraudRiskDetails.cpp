@@ -19,12 +19,14 @@ namespace Model
 {
 
 FraudRiskDetails::FraudRiskDetails() : 
-    m_knownFraudsterRiskHasBeenSet(false)
+    m_knownFraudsterRiskHasBeenSet(false),
+    m_voiceSpoofingRiskHasBeenSet(false)
 {
 }
 
 FraudRiskDetails::FraudRiskDetails(JsonView jsonValue) : 
-    m_knownFraudsterRiskHasBeenSet(false)
+    m_knownFraudsterRiskHasBeenSet(false),
+    m_voiceSpoofingRiskHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ FraudRiskDetails& FraudRiskDetails::operator =(JsonView jsonValue)
     m_knownFraudsterRiskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VoiceSpoofingRisk"))
+  {
+    m_voiceSpoofingRisk = jsonValue.GetObject("VoiceSpoofingRisk");
+
+    m_voiceSpoofingRiskHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue FraudRiskDetails::Jsonize() const
   if(m_knownFraudsterRiskHasBeenSet)
   {
    payload.WithObject("KnownFraudsterRisk", m_knownFraudsterRisk.Jsonize());
+
+  }
+
+  if(m_voiceSpoofingRiskHasBeenSet)
+  {
+   payload.WithObject("VoiceSpoofingRisk", m_voiceSpoofingRisk.Jsonize());
 
   }
 

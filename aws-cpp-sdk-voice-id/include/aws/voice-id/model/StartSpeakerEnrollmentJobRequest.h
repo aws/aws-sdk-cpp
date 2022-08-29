@@ -92,8 +92,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
@@ -102,8 +102,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
@@ -112,8 +112,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
@@ -122,8 +122,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
@@ -132,8 +132,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
@@ -142,8 +142,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -152,8 +152,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
@@ -162,8 +162,8 @@ namespace Model
      * access customer's buckets to read the input manifest file and write the job
      * output file. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-     * enrollment using audio data from prior calls</a> documentation for the
-     * permissions needed in this role.</p>
+     * enrollment using audio data from prior calls</a> for the permissions needed in
+     * this role.</p>
      */
     inline StartSpeakerEnrollmentJobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
