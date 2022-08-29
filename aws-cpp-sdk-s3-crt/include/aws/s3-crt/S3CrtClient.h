@@ -535,20 +535,31 @@ namespace Aws
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3CrtClient(const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never, bool useVirtualAddressing = true, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET, const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider = Aws::Auth::DefaultAWSCredentialsProviderChain());
+        S3CrtClient(const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(),
+                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
+                    bool useVirtualAddressing = true,
+                    Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET,
+                    const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider = Aws::Auth::DefaultAWSCredentialsProviderChain());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3CrtClient(const Aws::Auth::AWSCredentials& credentials, const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never, bool useVirtualAddressing = true, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
+        S3CrtClient(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(),
+                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
+                    bool useVirtualAddressing = true,
+                    Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         S3CrtClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never, bool useVirtualAddressing = true, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
+                    const Aws::S3Crt::ClientConfiguration& clientConfiguration = Aws::S3Crt::ClientConfiguration(),
+                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
+                    bool useVirtualAddressing = true,
+                    Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
         virtual ~S3CrtClient();
 

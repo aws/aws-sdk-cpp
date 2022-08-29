@@ -88,33 +88,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "events";
 static const char* ALLOCATION_TAG = "EventBridgeClient";
 
-
 EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials,
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 EventBridgeClient::EventBridgeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
