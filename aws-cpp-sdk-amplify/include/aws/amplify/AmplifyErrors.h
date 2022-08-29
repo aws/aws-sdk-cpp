@@ -42,13 +42,13 @@ enum class AmplifyErrors
   SIGNATURE_DOES_NOT_MATCH = 22,
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
+  BAD_REQUEST = 25,
   NETWORK_CONNECTION = 99,
 
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  DEPENDENT_SERVICE_FAILURE,
+  DEPENDENT_SERVICE_FAILURE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
   NOT_FOUND,
   UNAUTHORIZED

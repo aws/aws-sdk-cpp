@@ -42,12 +42,11 @@ enum class MobileAnalyticsErrors
   SIGNATURE_DOES_NOT_MATCH = 22,
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
+  BAD_REQUEST = 25,
   NETWORK_CONNECTION = 99,
 
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
-
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 
 class AWS_MOBILEANALYTICS_API MobileAnalyticsError : public Aws::Client::AWSError<MobileAnalyticsErrors>
