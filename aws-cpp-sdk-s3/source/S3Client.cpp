@@ -128,34 +128,61 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "s3";
 static const char* ALLOCATION_TAG = "S3Client";
 
-
-S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
+S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
+                   Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+                   bool useVirtualAddressing /*= true*/,
+                   Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                                                  signPayloads,
+                                                                  /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_useVirtualAddressing(useVirtualAddressing),
+  m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
 
-S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
+S3Client::S3Client(const AWSCredentials& credentials,
+                   const Client::ClientConfiguration& clientConfiguration,
+                   Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+                   bool useVirtualAddressing /*= true*/,
+                   Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                                                  signPayloads,
+                                                                  /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_useVirtualAddressing(useVirtualAddressing),
+    m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
 
 S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
+                   const Client::ClientConfiguration& clientConfiguration,
+                   Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+                   bool useVirtualAddressing /*= true*/,
+                   Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
-    Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                                                  signPayloads,
+                                                                  /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_useVirtualAddressing(useVirtualAddressing),
+    m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
