@@ -105,6 +105,11 @@ namespace Aws
             NETWORK_CONNECT_TIMEOUT = 599
         };
 
+        /**
+         * Overload ostream operator<< for HttpResponseCode enum class for a prettier output such as "200"
+         */
+        AWS_CORE_API Aws::OStream& operator<< (Aws::OStream& oStream, HttpResponseCode code);
+
         inline bool IsRetryableHttpResponseCode(HttpResponseCode responseCode)
         {
             switch (responseCode)
