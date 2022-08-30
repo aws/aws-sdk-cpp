@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
@@ -293,7 +294,7 @@ typedef Outcome<NoResult, JsonServiceError> JsonServiceNoResultOperationOutcome;
 TEST(HttpResponseOutcomeTest, TestMoveFromHttpResponse)
 {
     HttpResponseOutcome httpResponseOutcome(CreateHttpResponse());
-    ASSERT_TRUE(httpResponseOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(httpResponseOutcome);
     ASSERT_EQ(HttpResponseCode::OK, httpResponseOutcome.GetResult()->GetResponseCode());
     ASSERT_TRUE(httpResponseOutcome.GetResult()->HasHeader(HEADER_KEY_1));
     ASSERT_STREQ(HEADER_VALUE_1, httpResponseOutcome.GetResult()->GetHeader(HEADER_KEY_1).c_str());
@@ -315,7 +316,7 @@ TEST(StreamOutcomeTest, TestMoveFromAmazonWebServiceResult)
     auto httpResponse = CreateHttpResponse(RESPONSE_PAYLOAD);
     StreamOutcome streamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(httpResponse->SwapResponseStreamOwnership(),
         httpResponse->GetHeaders(), httpResponse->GetResponseCode()));
-    ASSERT_TRUE(streamOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(streamOutcome);
     ASSERT_EQ(HttpResponseCode::OK, streamOutcome.GetResult().GetResponseCode());
     HeaderValueCollection headers = streamOutcome.GetResult().GetHeaderValueCollection();
     ASSERT_NE(headers.end(), headers.find(HEADER_KEY_1));
@@ -342,7 +343,7 @@ TEST(XmlOutcomeTest, TestMoveFromAmazonWebServiceResult)
 {
     Xml::XmlDocument xmlDocument = Xml::XmlDocument::CreateFromXmlString(XML_RESULT_PAYLOAD);
     XmlOutcome xmlOutcome(CreateAmazonWebServiceResult<Xml::XmlDocument>(xmlDocument, HttpResponseCode::OK));
-    ASSERT_TRUE(xmlOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(xmlOutcome);
     HeaderValueCollection headers = xmlOutcome.GetResult().GetHeaderValueCollection();
     ASSERT_NE(headers.end(), headers.find(HEADER_KEY_1));
     ASSERT_STREQ(HEADER_VALUE_1, headers[HEADER_KEY_1].c_str());
@@ -365,7 +366,7 @@ TEST(JsonOutcomeTest, TestMoveFromAmazonWebServiceResult)
 {
     Json::JsonValue jsonValue(JSON_RESULT_PAYLOAD);
     JsonOutcome jsonOutcome(CreateAmazonWebServiceResult<Json::JsonValue>(jsonValue, HttpResponseCode::OK));
-    ASSERT_TRUE(jsonOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(jsonOutcome);
     HeaderValueCollection headers = jsonOutcome.GetResult().GetHeaderValueCollection();
     ASSERT_NE(headers.end(), headers.find(HEADER_KEY_1));
     ASSERT_STREQ(HEADER_VALUE_1, headers[HEADER_KEY_1].c_str());
@@ -390,7 +391,7 @@ TEST(XmlServiceOperationOutcomeTest, TestMoveFromXmlOutcome)
     // Success case
     Xml::XmlDocument xmlDocument = Xml::XmlDocument::CreateFromXmlString(XML_RESULT_PAYLOAD);
     XmlServiceOperationOutcome xmlServiceOperationOutcome(XmlOutcome(CreateAmazonWebServiceResult<Xml::XmlDocument>(xmlDocument, HttpResponseCode::OK)));
-    ASSERT_TRUE(xmlServiceOperationOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(xmlServiceOperationOutcome);
     ASSERT_STREQ("Detailed info", xmlServiceOperationOutcome.GetResult().GetOperationInfo().c_str());
 
     // Failure case
@@ -411,7 +412,7 @@ TEST(JsonServiceOperationOutcomeTest, TestMoveFromJsonOutcome)
     // Success case
     Json::JsonValue jsonValue(JSON_RESULT_PAYLOAD);
     JsonServiceOperationOutcome jsonServiceOperationOutcome(JsonOutcome(CreateAmazonWebServiceResult<Json::JsonValue>(jsonValue, HttpResponseCode::OK)));
-    ASSERT_TRUE(jsonServiceOperationOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(jsonServiceOperationOutcome);
     ASSERT_STREQ("Detailed info", jsonServiceOperationOutcome.GetResult().GetOperationInfo().c_str());
 
     // Failure case
@@ -431,7 +432,7 @@ TEST(XmlServiceNoResultOperationOutcomeTest, TestMoveFromXmlOutcome)
     // Success case
     Xml::XmlDocument xmlDocument = Xml::XmlDocument::CreateFromXmlString(XML_RESULT_PAYLOAD);
     XmlServiceNoResultOperationOutcome xmlServiceNoResultOperationOutcome(XmlOutcome(CreateAmazonWebServiceResult<Xml::XmlDocument>(xmlDocument, HttpResponseCode::OK)));
-    ASSERT_TRUE(xmlServiceNoResultOperationOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(xmlServiceNoResultOperationOutcome);
 
     // Failure case
     XmlServiceErrorMarshaller errorMarshaller;
@@ -451,7 +452,7 @@ TEST(JsonServiceNoResultOperationOutcomeTest, TestMoveFromJsonOutcome)
     // Success case
     Json::JsonValue jsonValue;
     JsonServiceNoResultOperationOutcome jsonServiceNoResultOperationOutcome(JsonOutcome(CreateAmazonWebServiceResult<Json::JsonValue>(jsonValue, HttpResponseCode::OK)));
-    ASSERT_TRUE(jsonServiceNoResultOperationOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(jsonServiceNoResultOperationOutcome);
 
     // Failure case
     JsonServiceErrorMarshaller errorMarshaller;

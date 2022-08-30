@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -342,7 +343,7 @@ TEST_F(AWSClientTestSuite, TestRetryHeaders)
     QueueMockResponse(HttpResponseCode::OK, HeaderValueCollection{std::make_pair("Date", serverTime3.ToGmtString(DateFormat::RFC822))});
     AmazonWebServiceRequestMock request;
     auto outcome = client->MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(2, client->GetRequestAttemptedRetries());
     const auto& requests = mockHttpClient->GetAllRequestsMade();
     ASSERT_EQ(3u, requests.size());
@@ -406,7 +407,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
     AmazonWebServiceRequestMock request;
     auto outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(500, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
@@ -426,7 +427,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     QueueMockResponse(requestTimeoutError, responseHeaders); // Acquire 10 tokens
     QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 10 tokens
     outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(2, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(480, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
@@ -449,7 +450,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     // 6. Successful request.
     QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 1 token
     outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(3, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
@@ -522,7 +523,7 @@ TEST_F(AWSClientTestSuite, TestRecursionDetection)
 
         // Make request
         auto outcome = mockedClient.MakeRequest(request);
-        ASSERT_TRUE(outcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(outcome);
 
         // Validate actual headers set
         const auto& requestsMade = mockHttpClient->GetAllRequestsMade();
@@ -562,7 +563,7 @@ TEST_F(AWSClientTestSuite, TestErrorInBodyOfResponse)
     QueueMockResponse(HttpResponseCode::OK, responseHeaders, "<Error><Code>SomeException</Code><Message>TestErrorInBodyOfResponse</Message></Error>");
     auto outcome = client->MakeRequest(request);
 
-    ASSERT_TRUE(!outcome.IsSuccess());
+    ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(outcome.GetError().GetErrorType(), CoreErrors::SLOW_DOWN);
     ASSERT_EQ(outcome.GetError().GetMessage(), "TestErrorInBodyOfResponse");
     ASSERT_EQ(outcome.GetError().GetExceptionName(), "TestErrorInBodyOfResponse");

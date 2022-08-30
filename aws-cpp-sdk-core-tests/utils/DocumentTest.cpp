@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -686,7 +687,7 @@ TEST(DocumentTest, TestRequestResponseBody)
     request.SetDocumentTypeMember(doc);
 
     auto outcome = client.DocumentTypeOperation(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
 
     JsonValue expectedRequestBody;
     expectedRequestBody.WithString("StringTypeMember", "RequestStringMember");
@@ -718,7 +719,7 @@ TEST(DocumentTest, TestRequestResponseBody)
     request.SetDocumentTypeMember(nullDoc);
 
     outcome = client.DocumentTypeOperation(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
 
     JsonValue expectedRequestBodyWithNullDoc;
     expectedRequestBodyWithNullDoc.WithString("StringTypeMember", "RequestStringMember");
