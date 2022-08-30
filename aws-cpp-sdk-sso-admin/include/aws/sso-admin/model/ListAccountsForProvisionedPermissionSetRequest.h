@@ -36,160 +36,146 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web
-     * Services accounts will be listed.</p>
+     * <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+     * will be listed.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
 
 
     /**
-     * <p>The permission set provisioning status for an Amazon Web Services
-     * account.</p>
+     * <p>The permission set provisioning status for an AWS account.</p>
      */
     inline const ProvisioningStatus& GetProvisioningStatus() const{ return m_provisioningStatus; }
 
     /**
-     * <p>The permission set provisioning status for an Amazon Web Services
-     * account.</p>
+     * <p>The permission set provisioning status for an AWS account.</p>
      */
     inline bool ProvisioningStatusHasBeenSet() const { return m_provisioningStatusHasBeenSet; }
 
     /**
-     * <p>The permission set provisioning status for an Amazon Web Services
-     * account.</p>
+     * <p>The permission set provisioning status for an AWS account.</p>
      */
     inline void SetProvisioningStatus(const ProvisioningStatus& value) { m_provisioningStatusHasBeenSet = true; m_provisioningStatus = value; }
 
     /**
-     * <p>The permission set provisioning status for an Amazon Web Services
-     * account.</p>
+     * <p>The permission set provisioning status for an AWS account.</p>
      */
     inline void SetProvisioningStatus(ProvisioningStatus&& value) { m_provisioningStatusHasBeenSet = true; m_provisioningStatus = std::move(value); }
 
     /**
-     * <p>The permission set provisioning status for an Amazon Web Services
-     * account.</p>
+     * <p>The permission set provisioning status for an AWS account.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithProvisioningStatus(const ProvisioningStatus& value) { SetProvisioningStatus(value); return *this;}
 
     /**
-     * <p>The permission set provisioning status for an Amazon Web Services
-     * account.</p>
+     * <p>The permission set provisioning status for an AWS account.</p>
      */
     inline ListAccountsForProvisionedPermissionSetRequest& WithProvisioningStatus(ProvisioningStatus&& value) { SetProvisioningStatus(std::move(value)); return *this;}
 

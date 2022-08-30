@@ -87,7 +87,7 @@ namespace Model
      * affected S3 object exceeds the size quota for retrieving occurrences of
      * sensitive data.</p></li> <li><p>OBJECT_UNAVAILABLE - The affected S3 object
      * isn't available. The object might have been renamed, moved, or deleted. Or the
-     * object was changed after Amazon Macie created the finding.</p></li>
+     * object was changed after Macie created the finding.</p></li>
      * <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data
      * finding.</p></li> <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a
      * file or storage format that Macie doesn't support for retrieving occurrences of
@@ -108,7 +108,7 @@ namespace Model
      * affected S3 object exceeds the size quota for retrieving occurrences of
      * sensitive data.</p></li> <li><p>OBJECT_UNAVAILABLE - The affected S3 object
      * isn't available. The object might have been renamed, moved, or deleted. Or the
-     * object was changed after Amazon Macie created the finding.</p></li>
+     * object was changed after Macie created the finding.</p></li>
      * <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data
      * finding.</p></li> <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a
      * file or storage format that Macie doesn't support for retrieving occurrences of
@@ -129,7 +129,7 @@ namespace Model
      * affected S3 object exceeds the size quota for retrieving occurrences of
      * sensitive data.</p></li> <li><p>OBJECT_UNAVAILABLE - The affected S3 object
      * isn't available. The object might have been renamed, moved, or deleted. Or the
-     * object was changed after Amazon Macie created the finding.</p></li>
+     * object was changed after Macie created the finding.</p></li>
      * <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data
      * finding.</p></li> <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a
      * file or storage format that Macie doesn't support for retrieving occurrences of
@@ -150,7 +150,7 @@ namespace Model
      * affected S3 object exceeds the size quota for retrieving occurrences of
      * sensitive data.</p></li> <li><p>OBJECT_UNAVAILABLE - The affected S3 object
      * isn't available. The object might have been renamed, moved, or deleted. Or the
-     * object was changed after Amazon Macie created the finding.</p></li>
+     * object was changed after Macie created the finding.</p></li>
      * <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data
      * finding.</p></li> <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a
      * file or storage format that Macie doesn't support for retrieving occurrences of
@@ -171,7 +171,7 @@ namespace Model
      * affected S3 object exceeds the size quota for retrieving occurrences of
      * sensitive data.</p></li> <li><p>OBJECT_UNAVAILABLE - The affected S3 object
      * isn't available. The object might have been renamed, moved, or deleted. Or the
-     * object was changed after Amazon Macie created the finding.</p></li>
+     * object was changed after Macie created the finding.</p></li>
      * <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data
      * finding.</p></li> <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a
      * file or storage format that Macie doesn't support for retrieving occurrences of
@@ -192,7 +192,7 @@ namespace Model
      * affected S3 object exceeds the size quota for retrieving occurrences of
      * sensitive data.</p></li> <li><p>OBJECT_UNAVAILABLE - The affected S3 object
      * isn't available. The object might have been renamed, moved, or deleted. Or the
-     * object was changed after Amazon Macie created the finding.</p></li>
+     * object was changed after Macie created the finding.</p></li>
      * <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data
      * finding.</p></li> <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a
      * file or storage format that Macie doesn't support for retrieving occurrences of
@@ -213,7 +213,7 @@ namespace Model
      * affected S3 object exceeds the size quota for retrieving occurrences of
      * sensitive data.</p></li> <li><p>OBJECT_UNAVAILABLE - The affected S3 object
      * isn't available. The object might have been renamed, moved, or deleted. Or the
-     * object was changed after Amazon Macie created the finding.</p></li>
+     * object was changed after Macie created the finding.</p></li>
      * <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data
      * finding.</p></li> <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a
      * file or storage format that Macie doesn't support for retrieving occurrences of

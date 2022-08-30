@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/Macie2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/model/JobType.h>
 #include <aws/macie2/model/ManagedDataIdentifierSelector.h>
 #include <aws/macie2/model/S3JobDefinition.h>
@@ -37,6 +37,61 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateClassificationJob"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowListIds() const{ return m_allowListIds; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline bool AllowListIdsHasBeenSet() const { return m_allowListIdsHasBeenSet; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline void SetAllowListIds(const Aws::Vector<Aws::String>& value) { m_allowListIdsHasBeenSet = true; m_allowListIds = value; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline void SetAllowListIds(Aws::Vector<Aws::String>&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds = std::move(value); }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline CreateClassificationJobRequest& WithAllowListIds(const Aws::Vector<Aws::String>& value) { SetAllowListIds(value); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline CreateClassificationJobRequest& WithAllowListIds(Aws::Vector<Aws::String>&& value) { SetAllowListIds(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline CreateClassificationJobRequest& AddAllowListIds(const Aws::String& value) { m_allowListIdsHasBeenSet = true; m_allowListIds.push_back(value); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline CreateClassificationJobRequest& AddAllowListIds(Aws::String&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list for the job to use
+     * when it analyzes data.</p>
+     */
+    inline CreateClassificationJobRequest& AddAllowListIds(const char* value) { m_allowListIdsHasBeenSet = true; m_allowListIds.push_back(value); return *this; }
 
 
     /**
@@ -214,7 +269,7 @@ namespace Model
      * <p>For a recurring job, specifies whether to analyze all existing, eligible
      * objects immediately after the job is created (true). To analyze only those
      * objects that are created or changed after you create the job and before the
-     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job's first scheduled run, set this value to false.</p> <p>If you configure the
      * job to run only once, don't specify a value for this property.</p>
      */
     inline bool GetInitialRun() const{ return m_initialRun; }
@@ -223,7 +278,7 @@ namespace Model
      * <p>For a recurring job, specifies whether to analyze all existing, eligible
      * objects immediately after the job is created (true). To analyze only those
      * objects that are created or changed after you create the job and before the
-     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job's first scheduled run, set this value to false.</p> <p>If you configure the
      * job to run only once, don't specify a value for this property.</p>
      */
     inline bool InitialRunHasBeenSet() const { return m_initialRunHasBeenSet; }
@@ -232,7 +287,7 @@ namespace Model
      * <p>For a recurring job, specifies whether to analyze all existing, eligible
      * objects immediately after the job is created (true). To analyze only those
      * objects that are created or changed after you create the job and before the
-     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job's first scheduled run, set this value to false.</p> <p>If you configure the
      * job to run only once, don't specify a value for this property.</p>
      */
     inline void SetInitialRun(bool value) { m_initialRunHasBeenSet = true; m_initialRun = value; }
@@ -241,7 +296,7 @@ namespace Model
      * <p>For a recurring job, specifies whether to analyze all existing, eligible
      * objects immediately after the job is created (true). To analyze only those
      * objects that are created or changed after you create the job and before the
-     * job's first scheduled run, set this value to false.</p><p>If you configure the
+     * job's first scheduled run, set this value to false.</p> <p>If you configure the
      * job to run only once, don't specify a value for this property.</p>
      */
     inline CreateClassificationJobRequest& WithInitialRun(bool value) { SetInitialRun(value); return *this;}
@@ -306,7 +361,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
@@ -315,7 +370,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline bool ManagedDataIdentifierIdsHasBeenSet() const { return m_managedDataIdentifierIdsHasBeenSet; }
@@ -324,7 +379,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = value; }
@@ -333,7 +388,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::move(value); }
@@ -342,7 +397,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline CreateClassificationJobRequest& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
@@ -351,7 +406,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline CreateClassificationJobRequest& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
@@ -360,7 +415,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
@@ -369,7 +424,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
@@ -378,7 +433,7 @@ namespace Model
      * <p>An array of unique identifiers, one for each managed data identifier for the
      * job to include (use) or exclude (not use) when it analyzes data. Inclusion or
      * exclusion depends on the managed data identifier selection type that you specify
-     * for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid
+     * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
     inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
@@ -770,6 +825,9 @@ namespace Model
     inline CreateClassificationJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    Aws::Vector<Aws::String> m_allowListIds;
+    bool m_allowListIdsHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

@@ -7,6 +7,7 @@
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrassv2/model/InstalledComponentLifecycleState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -213,6 +214,61 @@ namespace Model
      */
     inline InstalledComponent& WithIsRoot(bool value) { SetIsRoot(value); return *this;}
 
+
+    /**
+     * <p>The status of how current the data is.</p> <p>This response is based off of
+     * component state changes. The status reflects component disruptions and
+     * deployments. If a component only sees a configuration update during a
+     * deployment, it might not undergo a state change and this status would not be
+     * updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastStatusChangeTimestamp() const{ return m_lastStatusChangeTimestamp; }
+
+    /**
+     * <p>The status of how current the data is.</p> <p>This response is based off of
+     * component state changes. The status reflects component disruptions and
+     * deployments. If a component only sees a configuration update during a
+     * deployment, it might not undergo a state change and this status would not be
+     * updated.</p>
+     */
+    inline bool LastStatusChangeTimestampHasBeenSet() const { return m_lastStatusChangeTimestampHasBeenSet; }
+
+    /**
+     * <p>The status of how current the data is.</p> <p>This response is based off of
+     * component state changes. The status reflects component disruptions and
+     * deployments. If a component only sees a configuration update during a
+     * deployment, it might not undergo a state change and this status would not be
+     * updated.</p>
+     */
+    inline void SetLastStatusChangeTimestamp(const Aws::Utils::DateTime& value) { m_lastStatusChangeTimestampHasBeenSet = true; m_lastStatusChangeTimestamp = value; }
+
+    /**
+     * <p>The status of how current the data is.</p> <p>This response is based off of
+     * component state changes. The status reflects component disruptions and
+     * deployments. If a component only sees a configuration update during a
+     * deployment, it might not undergo a state change and this status would not be
+     * updated.</p>
+     */
+    inline void SetLastStatusChangeTimestamp(Aws::Utils::DateTime&& value) { m_lastStatusChangeTimestampHasBeenSet = true; m_lastStatusChangeTimestamp = std::move(value); }
+
+    /**
+     * <p>The status of how current the data is.</p> <p>This response is based off of
+     * component state changes. The status reflects component disruptions and
+     * deployments. If a component only sees a configuration update during a
+     * deployment, it might not undergo a state change and this status would not be
+     * updated.</p>
+     */
+    inline InstalledComponent& WithLastStatusChangeTimestamp(const Aws::Utils::DateTime& value) { SetLastStatusChangeTimestamp(value); return *this;}
+
+    /**
+     * <p>The status of how current the data is.</p> <p>This response is based off of
+     * component state changes. The status reflects component disruptions and
+     * deployments. If a component only sees a configuration update during a
+     * deployment, it might not undergo a state change and this status would not be
+     * updated.</p>
+     */
+    inline InstalledComponent& WithLastStatusChangeTimestamp(Aws::Utils::DateTime&& value) { SetLastStatusChangeTimestamp(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_componentName;
@@ -229,6 +285,9 @@ namespace Model
 
     bool m_isRoot;
     bool m_isRootHasBeenSet;
+
+    Aws::Utils::DateTime m_lastStatusChangeTimestamp;
+    bool m_lastStatusChangeTimestampHasBeenSet;
   };
 
 } // namespace Model

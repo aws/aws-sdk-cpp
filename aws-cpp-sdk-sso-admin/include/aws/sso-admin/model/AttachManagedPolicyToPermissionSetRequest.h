@@ -35,74 +35,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed. For more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
@@ -157,50 +149,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline const Aws::String& GetManagedPolicyArn() const{ return m_managedPolicyArn; }
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline bool ManagedPolicyArnHasBeenSet() const { return m_managedPolicyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline void SetManagedPolicyArn(const Aws::String& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = value; }
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline void SetManagedPolicyArn(Aws::String&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline void SetManagedPolicyArn(const char* value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn.assign(value); }
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(const Aws::String& value) { SetManagedPolicyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(Aws::String&& value) { SetManagedPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services managed policy ARN to be attached to a permission
-     * set.</p>
+     * <p>The AWS managed policy ARN to be attached to a permission set.</p>
      */
     inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(const char* value) { SetManagedPolicyArn(value); return *this;}
 

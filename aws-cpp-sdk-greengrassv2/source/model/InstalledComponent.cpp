@@ -25,7 +25,8 @@ InstalledComponent::InstalledComponent() :
     m_lifecycleStateHasBeenSet(false),
     m_lifecycleStateDetailsHasBeenSet(false),
     m_isRoot(false),
-    m_isRootHasBeenSet(false)
+    m_isRootHasBeenSet(false),
+    m_lastStatusChangeTimestampHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ InstalledComponent::InstalledComponent(JsonView jsonValue) :
     m_lifecycleStateHasBeenSet(false),
     m_lifecycleStateDetailsHasBeenSet(false),
     m_isRoot(false),
-    m_isRootHasBeenSet(false)
+    m_isRootHasBeenSet(false),
+    m_lastStatusChangeTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +80,13 @@ InstalledComponent& InstalledComponent::operator =(JsonView jsonValue)
     m_isRootHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastStatusChangeTimestamp"))
+  {
+    m_lastStatusChangeTimestamp = jsonValue.GetDouble("lastStatusChangeTimestamp");
+
+    m_lastStatusChangeTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +121,11 @@ JsonValue InstalledComponent::Jsonize() const
   {
    payload.WithBool("isRoot", m_isRoot);
 
+  }
+
+  if(m_lastStatusChangeTimestampHasBeenSet)
+  {
+   payload.WithDouble("lastStatusChangeTimestamp", m_lastStatusChangeTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

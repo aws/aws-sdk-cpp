@@ -22,6 +22,7 @@
 #include <aws/macie2/Macie2ErrorMarshaller.h>
 #include <aws/macie2/model/AcceptInvitationRequest.h>
 #include <aws/macie2/model/BatchGetCustomDataIdentifiersRequest.h>
+#include <aws/macie2/model/CreateAllowListRequest.h>
 #include <aws/macie2/model/CreateClassificationJobRequest.h>
 #include <aws/macie2/model/CreateCustomDataIdentifierRequest.h>
 #include <aws/macie2/model/CreateFindingsFilterRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/macie2/model/CreateMemberRequest.h>
 #include <aws/macie2/model/CreateSampleFindingsRequest.h>
 #include <aws/macie2/model/DeclineInvitationsRequest.h>
+#include <aws/macie2/model/DeleteAllowListRequest.h>
 #include <aws/macie2/model/DeleteCustomDataIdentifierRequest.h>
 #include <aws/macie2/model/DeleteFindingsFilterRequest.h>
 #include <aws/macie2/model/DeleteInvitationsRequest.h>
@@ -44,6 +46,7 @@
 #include <aws/macie2/model/EnableMacieRequest.h>
 #include <aws/macie2/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/macie2/model/GetAdministratorAccountRequest.h>
+#include <aws/macie2/model/GetAllowListRequest.h>
 #include <aws/macie2/model/GetBucketStatisticsRequest.h>
 #include <aws/macie2/model/GetClassificationExportConfigurationRequest.h>
 #include <aws/macie2/model/GetCustomDataIdentifierRequest.h>
@@ -60,6 +63,7 @@
 #include <aws/macie2/model/GetSensitiveDataOccurrencesAvailabilityRequest.h>
 #include <aws/macie2/model/GetUsageStatisticsRequest.h>
 #include <aws/macie2/model/GetUsageTotalsRequest.h>
+#include <aws/macie2/model/ListAllowListsRequest.h>
 #include <aws/macie2/model/ListClassificationJobsRequest.h>
 #include <aws/macie2/model/ListCustomDataIdentifiersRequest.h>
 #include <aws/macie2/model/ListFindingsRequest.h>
@@ -75,6 +79,7 @@
 #include <aws/macie2/model/TagResourceRequest.h>
 #include <aws/macie2/model/TestCustomDataIdentifierRequest.h>
 #include <aws/macie2/model/UntagResourceRequest.h>
+#include <aws/macie2/model/UpdateAllowListRequest.h>
 #include <aws/macie2/model/UpdateClassificationJobRequest.h>
 #include <aws/macie2/model/UpdateFindingsFilterRequest.h>
 #include <aws/macie2/model/UpdateMacieSessionRequest.h>
@@ -209,6 +214,31 @@ void Macie2Client::BatchGetCustomDataIdentifiersAsync(const BatchGetCustomDataId
 void Macie2Client::BatchGetCustomDataIdentifiersAsyncHelper(const BatchGetCustomDataIdentifiersRequest& request, const BatchGetCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetCustomDataIdentifiers(request), context);
+}
+
+CreateAllowListOutcome Macie2Client::CreateAllowList(const CreateAllowListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/allow-lists");
+  return CreateAllowListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAllowListOutcomeCallable Macie2Client::CreateAllowListCallable(const CreateAllowListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAllowListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAllowList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::CreateAllowListAsync(const CreateAllowListRequest& request, const CreateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAllowListAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::CreateAllowListAsyncHelper(const CreateAllowListRequest& request, const CreateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAllowList(request), context);
 }
 
 CreateClassificationJobOutcome Macie2Client::CreateClassificationJob(const CreateClassificationJobRequest& request) const
@@ -384,6 +414,37 @@ void Macie2Client::DeclineInvitationsAsync(const DeclineInvitationsRequest& requ
 void Macie2Client::DeclineInvitationsAsyncHelper(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeclineInvitations(request), context);
+}
+
+DeleteAllowListOutcome Macie2Client::DeleteAllowList(const DeleteAllowListRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAllowList", "Required field: Id, is not set");
+    return DeleteAllowListOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/allow-lists/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteAllowListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAllowListOutcomeCallable Macie2Client::DeleteAllowListCallable(const DeleteAllowListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAllowListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAllowList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::DeleteAllowListAsync(const DeleteAllowListRequest& request, const DeleteAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAllowListAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::DeleteAllowListAsyncHelper(const DeleteAllowListRequest& request, const DeleteAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAllowList(request), context);
 }
 
 DeleteCustomDataIdentifierOutcome Macie2Client::DeleteCustomDataIdentifier(const DeleteCustomDataIdentifierRequest& request) const
@@ -794,6 +855,37 @@ void Macie2Client::GetAdministratorAccountAsync(const GetAdministratorAccountReq
 void Macie2Client::GetAdministratorAccountAsyncHelper(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAdministratorAccount(request), context);
+}
+
+GetAllowListOutcome Macie2Client::GetAllowList(const GetAllowListRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAllowList", "Required field: Id, is not set");
+    return GetAllowListOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/allow-lists/");
+  uri.AddPathSegment(request.GetId());
+  return GetAllowListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAllowListOutcomeCallable Macie2Client::GetAllowListCallable(const GetAllowListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAllowListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAllowList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetAllowListAsync(const GetAllowListRequest& request, const GetAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAllowListAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::GetAllowListAsyncHelper(const GetAllowListRequest& request, const GetAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAllowList(request), context);
 }
 
 GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStatisticsRequest& request) const
@@ -1228,6 +1320,31 @@ void Macie2Client::GetUsageTotalsAsyncHelper(const GetUsageTotalsRequest& reques
   handler(this, request, GetUsageTotals(request), context);
 }
 
+ListAllowListsOutcome Macie2Client::ListAllowLists(const ListAllowListsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/allow-lists");
+  return ListAllowListsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAllowListsOutcomeCallable Macie2Client::ListAllowListsCallable(const ListAllowListsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAllowListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAllowLists(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::ListAllowListsAsync(const ListAllowListsRequest& request, const ListAllowListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAllowListsAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::ListAllowListsAsyncHelper(const ListAllowListsRequest& request, const ListAllowListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAllowLists(request), context);
+}
+
 ListClassificationJobsOutcome Macie2Client::ListClassificationJobs(const ListClassificationJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1624,6 +1741,37 @@ void Macie2Client::UntagResourceAsync(const UntagResourceRequest& request, const
 void Macie2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAllowListOutcome Macie2Client::UpdateAllowList(const UpdateAllowListRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAllowList", "Required field: Id, is not set");
+    return UpdateAllowListOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/allow-lists/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateAllowListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAllowListOutcomeCallable Macie2Client::UpdateAllowListCallable(const UpdateAllowListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAllowListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAllowList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::UpdateAllowListAsync(const UpdateAllowListRequest& request, const UpdateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAllowListAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::UpdateAllowListAsyncHelper(const UpdateAllowListRequest& request, const UpdateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAllowList(request), context);
 }
 
 UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const UpdateClassificationJobRequest& request) const

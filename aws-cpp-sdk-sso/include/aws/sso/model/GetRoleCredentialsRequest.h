@@ -82,50 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline GetRoleCredentialsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline GetRoleCredentialsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the Amazon Web Services account that is assigned to the
-     * user.</p>
+     * <p>The identifier for the AWS account that is assigned to the user.</p>
      */
     inline GetRoleCredentialsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -134,7 +126,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
@@ -142,7 +134,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
@@ -150,7 +142,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
@@ -158,7 +150,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
@@ -166,7 +158,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
@@ -174,7 +166,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline GetRoleCredentialsRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
@@ -182,7 +174,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline GetRoleCredentialsRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
@@ -190,7 +182,7 @@ namespace Model
      * <p>The token issued by the <code>CreateToken</code> API call. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-     * in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+     * in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
      */
     inline GetRoleCredentialsRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
