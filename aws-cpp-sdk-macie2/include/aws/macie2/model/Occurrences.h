@@ -30,9 +30,7 @@ namespace Model
   /**
    * <p>Specifies the location of 1-15 occurrences of sensitive data that was
    * detected by a managed data identifier or a custom data identifier and produced a
-   * sensitive data finding. Depending on the file or storage format of the affected
-   * S3 object, you can optionally retrieve (reveal) sample occurrences of the
-   * sensitive data that was detected.</p><p><h3>See Also:</h3>   <a
+   * sensitive data finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Occurrences">AWS
    * API Reference</a></p>
    */
@@ -48,7 +46,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline const Aws::Vector<Cell>& GetCells() const{ return m_cells; }
@@ -56,7 +54,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline bool CellsHasBeenSet() const { return m_cellsHasBeenSet; }
@@ -64,7 +62,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline void SetCells(const Aws::Vector<Cell>& value) { m_cellsHasBeenSet = true; m_cells = value; }
@@ -72,7 +70,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline void SetCells(Aws::Vector<Cell>&& value) { m_cellsHasBeenSet = true; m_cells = std::move(value); }
@@ -80,7 +78,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline Occurrences& WithCells(const Aws::Vector<Cell>& value) { SetCells(value); return *this;}
@@ -88,7 +86,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline Occurrences& WithCells(Aws::Vector<Cell>&& value) { SetCells(std::move(value)); return *this;}
@@ -96,7 +94,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline Occurrences& AddCells(const Cell& value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
@@ -104,7 +102,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in a Microsoft
      * Excel workbook, CSV file, or TSV file. This value is null for all other types of
-     * files.</p><p>Each Cell object specifies a cell or field that contains the
+     * files.</p> <p>Each Cell object specifies a cell or field that contains the
      * sensitive data.</p>
      */
     inline Occurrences& AddCells(Cell&& value) { m_cellsHasBeenSet = true; m_cells.push_back(std::move(value)); return *this; }
@@ -259,7 +257,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline const Aws::Vector<Page>& GetPages() const{ return m_pages; }
@@ -267,7 +265,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
@@ -275,7 +273,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline void SetPages(const Aws::Vector<Page>& value) { m_pagesHasBeenSet = true; m_pages = value; }
@@ -283,7 +281,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline void SetPages(Aws::Vector<Page>&& value) { m_pagesHasBeenSet = true; m_pages = std::move(value); }
@@ -291,7 +289,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline Occurrences& WithPages(const Aws::Vector<Page>& value) { SetPages(value); return *this;}
@@ -299,7 +297,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline Occurrences& WithPages(Aws::Vector<Page>&& value) { SetPages(std::move(value)); return *this;}
@@ -307,7 +305,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline Occurrences& AddPages(const Page& value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
@@ -315,7 +313,7 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. This value is null for all other types of
-     * files.</p><p>Each Page object specifies a page that contains the sensitive
+     * files.</p> <p>Each Page object specifies a page that contains the sensitive
      * data.</p>
      */
     inline Occurrences& AddPages(Page&& value) { m_pagesHasBeenSet = true; m_pages.push_back(std::move(value)); return *this; }

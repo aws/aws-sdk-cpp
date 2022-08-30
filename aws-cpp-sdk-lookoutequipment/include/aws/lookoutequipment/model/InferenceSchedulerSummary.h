@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/model/InferenceSchedulerStatus.h>
 #include <aws/lookoutequipment/model/DataUploadFrequency.h>
+#include <aws/lookoutequipment/model/LatestInferenceResult.h>
 #include <utility>
 
 namespace Aws
@@ -353,6 +354,43 @@ namespace Model
      */
     inline InferenceSchedulerSummary& WithDataUploadFrequency(DataUploadFrequency&& value) { SetDataUploadFrequency(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline const LatestInferenceResult& GetLatestInferenceResult() const{ return m_latestInferenceResult; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline bool LatestInferenceResultHasBeenSet() const { return m_latestInferenceResultHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline void SetLatestInferenceResult(const LatestInferenceResult& value) { m_latestInferenceResultHasBeenSet = true; m_latestInferenceResult = value; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline void SetLatestInferenceResult(LatestInferenceResult&& value) { m_latestInferenceResultHasBeenSet = true; m_latestInferenceResult = std::move(value); }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline InferenceSchedulerSummary& WithLatestInferenceResult(const LatestInferenceResult& value) { SetLatestInferenceResult(value); return *this;}
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline InferenceSchedulerSummary& WithLatestInferenceResult(LatestInferenceResult&& value) { SetLatestInferenceResult(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -375,6 +413,9 @@ namespace Model
 
     DataUploadFrequency m_dataUploadFrequency;
     bool m_dataUploadFrequencyHasBeenSet;
+
+    LatestInferenceResult m_latestInferenceResult;
+    bool m_latestInferenceResultHasBeenSet;
   };
 
 } // namespace Model

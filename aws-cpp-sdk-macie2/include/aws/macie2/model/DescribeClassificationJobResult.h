@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/model/JobStatus.h>
 #include <aws/macie2/model/JobType.h>
 #include <aws/macie2/model/LastRunErrorStatus.h>
@@ -42,6 +42,55 @@ namespace Model
     DescribeClassificationJobResult();
     DescribeClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowListIds() const{ return m_allowListIds; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline void SetAllowListIds(const Aws::Vector<Aws::String>& value) { m_allowListIds = value; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline void SetAllowListIds(Aws::Vector<Aws::String>&& value) { m_allowListIds = std::move(value); }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline DescribeClassificationJobResult& WithAllowListIds(const Aws::Vector<Aws::String>& value) { SetAllowListIds(value); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline DescribeClassificationJobResult& WithAllowListIds(Aws::Vector<Aws::String>&& value) { SetAllowListIds(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline DescribeClassificationJobResult& AddAllowListIds(const Aws::String& value) { m_allowListIds.push_back(value); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline DescribeClassificationJobResult& AddAllowListIds(Aws::String&& value) { m_allowListIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of unique identifiers, one for each allow list that the job uses
+     * when it analyzes data.</p>
+     */
+    inline DescribeClassificationJobResult& AddAllowListIds(const char* value) { m_allowListIds.push_back(value); return *this; }
 
 
     /**
@@ -120,57 +169,57 @@ namespace Model
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const{ return m_customDataIdentifierIds; }
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline void SetCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_customDataIdentifierIds = value; }
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline void SetCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_customDataIdentifierIds = std::move(value); }
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& WithCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetCustomDataIdentifierIds(value); return *this;}
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& WithCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetCustomDataIdentifierIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(const Aws::String& value) { m_customDataIdentifierIds.push_back(value); return *this; }
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(Aws::String&& value) { m_customDataIdentifierIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses to analyze data. This value is null if the job uses only managed data
-     * identifiers to analyze data.</p>
+     * job uses when it analyzes data. This value is null if the job uses only managed
+     * data identifiers to analyze data.</p>
      */
     inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(const char* value) { m_customDataIdentifierIds.push_back(value); return *this; }
 
@@ -939,6 +988,8 @@ namespace Model
     inline DescribeClassificationJobResult& WithUserPausedDetails(UserPausedDetails&& value) { SetUserPausedDetails(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<Aws::String> m_allowListIds;
 
     Aws::String m_clientToken;
 

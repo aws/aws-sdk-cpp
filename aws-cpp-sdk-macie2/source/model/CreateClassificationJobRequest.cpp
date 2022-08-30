@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateClassificationJobRequest::CreateClassificationJobRequest() : 
+    m_allowListIdsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customDataIdentifierIdsHasBeenSet(false),
@@ -36,6 +37,17 @@ CreateClassificationJobRequest::CreateClassificationJobRequest() :
 Aws::String CreateClassificationJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_allowListIdsHasBeenSet)
+  {
+   Array<JsonValue> allowListIdsJsonList(m_allowListIds.size());
+   for(unsigned allowListIdsIndex = 0; allowListIdsIndex < allowListIdsJsonList.GetLength(); ++allowListIdsIndex)
+   {
+     allowListIdsJsonList[allowListIdsIndex].AsString(m_allowListIds[allowListIdsIndex]);
+   }
+   payload.WithArray("allowListIds", std::move(allowListIdsJsonList));
+
+  }
 
   if(m_clientTokenHasBeenSet)
   {

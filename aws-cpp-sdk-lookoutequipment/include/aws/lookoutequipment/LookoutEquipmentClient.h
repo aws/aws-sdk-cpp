@@ -13,16 +13,22 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutequipment/model/CreateDatasetResult.h>
 #include <aws/lookoutequipment/model/CreateInferenceSchedulerResult.h>
+#include <aws/lookoutequipment/model/CreateLabelResult.h>
+#include <aws/lookoutequipment/model/CreateLabelGroupResult.h>
 #include <aws/lookoutequipment/model/CreateModelResult.h>
 #include <aws/lookoutequipment/model/DescribeDataIngestionJobResult.h>
 #include <aws/lookoutequipment/model/DescribeDatasetResult.h>
 #include <aws/lookoutequipment/model/DescribeInferenceSchedulerResult.h>
+#include <aws/lookoutequipment/model/DescribeLabelResult.h>
+#include <aws/lookoutequipment/model/DescribeLabelGroupResult.h>
 #include <aws/lookoutequipment/model/DescribeModelResult.h>
 #include <aws/lookoutequipment/model/ListDataIngestionJobsResult.h>
 #include <aws/lookoutequipment/model/ListDatasetsResult.h>
 #include <aws/lookoutequipment/model/ListInferenceEventsResult.h>
 #include <aws/lookoutequipment/model/ListInferenceExecutionsResult.h>
 #include <aws/lookoutequipment/model/ListInferenceSchedulersResult.h>
+#include <aws/lookoutequipment/model/ListLabelGroupsResult.h>
+#include <aws/lookoutequipment/model/ListLabelsResult.h>
 #include <aws/lookoutequipment/model/ListModelsResult.h>
 #include <aws/lookoutequipment/model/ListSensorStatisticsResult.h>
 #include <aws/lookoutequipment/model/ListTagsForResourceResult.h>
@@ -73,19 +79,27 @@ namespace Model
 {
         class CreateDatasetRequest;
         class CreateInferenceSchedulerRequest;
+        class CreateLabelRequest;
+        class CreateLabelGroupRequest;
         class CreateModelRequest;
         class DeleteDatasetRequest;
         class DeleteInferenceSchedulerRequest;
+        class DeleteLabelRequest;
+        class DeleteLabelGroupRequest;
         class DeleteModelRequest;
         class DescribeDataIngestionJobRequest;
         class DescribeDatasetRequest;
         class DescribeInferenceSchedulerRequest;
+        class DescribeLabelRequest;
+        class DescribeLabelGroupRequest;
         class DescribeModelRequest;
         class ListDataIngestionJobsRequest;
         class ListDatasetsRequest;
         class ListInferenceEventsRequest;
         class ListInferenceExecutionsRequest;
         class ListInferenceSchedulersRequest;
+        class ListLabelGroupsRequest;
+        class ListLabelsRequest;
         class ListModelsRequest;
         class ListSensorStatisticsRequest;
         class ListTagsForResourceRequest;
@@ -95,22 +109,31 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateInferenceSchedulerRequest;
+        class UpdateLabelGroupRequest;
 
         typedef Aws::Utils::Outcome<CreateDatasetResult, LookoutEquipmentError> CreateDatasetOutcome;
         typedef Aws::Utils::Outcome<CreateInferenceSchedulerResult, LookoutEquipmentError> CreateInferenceSchedulerOutcome;
+        typedef Aws::Utils::Outcome<CreateLabelResult, LookoutEquipmentError> CreateLabelOutcome;
+        typedef Aws::Utils::Outcome<CreateLabelGroupResult, LookoutEquipmentError> CreateLabelGroupOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, LookoutEquipmentError> CreateModelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LookoutEquipmentError> DeleteDatasetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LookoutEquipmentError> DeleteInferenceSchedulerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LookoutEquipmentError> DeleteLabelOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LookoutEquipmentError> DeleteLabelGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LookoutEquipmentError> DeleteModelOutcome;
         typedef Aws::Utils::Outcome<DescribeDataIngestionJobResult, LookoutEquipmentError> DescribeDataIngestionJobOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, LookoutEquipmentError> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeInferenceSchedulerResult, LookoutEquipmentError> DescribeInferenceSchedulerOutcome;
+        typedef Aws::Utils::Outcome<DescribeLabelResult, LookoutEquipmentError> DescribeLabelOutcome;
+        typedef Aws::Utils::Outcome<DescribeLabelGroupResult, LookoutEquipmentError> DescribeLabelGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeModelResult, LookoutEquipmentError> DescribeModelOutcome;
         typedef Aws::Utils::Outcome<ListDataIngestionJobsResult, LookoutEquipmentError> ListDataIngestionJobsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetsResult, LookoutEquipmentError> ListDatasetsOutcome;
         typedef Aws::Utils::Outcome<ListInferenceEventsResult, LookoutEquipmentError> ListInferenceEventsOutcome;
         typedef Aws::Utils::Outcome<ListInferenceExecutionsResult, LookoutEquipmentError> ListInferenceExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListInferenceSchedulersResult, LookoutEquipmentError> ListInferenceSchedulersOutcome;
+        typedef Aws::Utils::Outcome<ListLabelGroupsResult, LookoutEquipmentError> ListLabelGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListLabelsResult, LookoutEquipmentError> ListLabelsOutcome;
         typedef Aws::Utils::Outcome<ListModelsResult, LookoutEquipmentError> ListModelsOutcome;
         typedef Aws::Utils::Outcome<ListSensorStatisticsResult, LookoutEquipmentError> ListSensorStatisticsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, LookoutEquipmentError> ListTagsForResourceOutcome;
@@ -120,22 +143,31 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, LookoutEquipmentError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LookoutEquipmentError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LookoutEquipmentError> UpdateInferenceSchedulerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, LookoutEquipmentError> UpdateLabelGroupOutcome;
 
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
         typedef std::future<CreateInferenceSchedulerOutcome> CreateInferenceSchedulerOutcomeCallable;
+        typedef std::future<CreateLabelOutcome> CreateLabelOutcomeCallable;
+        typedef std::future<CreateLabelGroupOutcome> CreateLabelGroupOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
         typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
         typedef std::future<DeleteInferenceSchedulerOutcome> DeleteInferenceSchedulerOutcomeCallable;
+        typedef std::future<DeleteLabelOutcome> DeleteLabelOutcomeCallable;
+        typedef std::future<DeleteLabelGroupOutcome> DeleteLabelGroupOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
         typedef std::future<DescribeDataIngestionJobOutcome> DescribeDataIngestionJobOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeInferenceSchedulerOutcome> DescribeInferenceSchedulerOutcomeCallable;
+        typedef std::future<DescribeLabelOutcome> DescribeLabelOutcomeCallable;
+        typedef std::future<DescribeLabelGroupOutcome> DescribeLabelGroupOutcomeCallable;
         typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
         typedef std::future<ListDataIngestionJobsOutcome> ListDataIngestionJobsOutcomeCallable;
         typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
         typedef std::future<ListInferenceEventsOutcome> ListInferenceEventsOutcomeCallable;
         typedef std::future<ListInferenceExecutionsOutcome> ListInferenceExecutionsOutcomeCallable;
         typedef std::future<ListInferenceSchedulersOutcome> ListInferenceSchedulersOutcomeCallable;
+        typedef std::future<ListLabelGroupsOutcome> ListLabelGroupsOutcomeCallable;
+        typedef std::future<ListLabelsOutcome> ListLabelsOutcomeCallable;
         typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
         typedef std::future<ListSensorStatisticsOutcome> ListSensorStatisticsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -145,25 +177,34 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateInferenceSchedulerOutcome> UpdateInferenceSchedulerOutcomeCallable;
+        typedef std::future<UpdateLabelGroupOutcome> UpdateLabelGroupOutcomeCallable;
 } // namespace Model
 
   class LookoutEquipmentClient;
 
     typedef std::function<void(const LookoutEquipmentClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::CreateInferenceSchedulerRequest&, const Model::CreateInferenceSchedulerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInferenceSchedulerResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::CreateLabelRequest&, const Model::CreateLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::CreateLabelGroupRequest&, const Model::CreateLabelGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelGroupResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DeleteInferenceSchedulerRequest&, const Model::DeleteInferenceSchedulerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInferenceSchedulerResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::DeleteLabelRequest&, const Model::DeleteLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLabelResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::DeleteLabelGroupRequest&, const Model::DeleteLabelGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLabelGroupResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DescribeDataIngestionJobRequest&, const Model::DescribeDataIngestionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataIngestionJobResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DescribeInferenceSchedulerRequest&, const Model::DescribeInferenceSchedulerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInferenceSchedulerResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::DescribeLabelRequest&, const Model::DescribeLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::DescribeLabelGroupRequest&, const Model::DescribeLabelGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelGroupResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListDataIngestionJobsRequest&, const Model::ListDataIngestionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataIngestionJobsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceEventsRequest&, const Model::ListInferenceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceEventsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceExecutionsRequest&, const Model::ListInferenceExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceExecutionsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceSchedulersRequest&, const Model::ListInferenceSchedulersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceSchedulersResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::ListLabelGroupsRequest&, const Model::ListLabelGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelGroupsResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::ListLabelsRequest&, const Model::ListLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListSensorStatisticsRequest&, const Model::ListSensorStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSensorStatisticsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -173,6 +214,7 @@ namespace Model
     typedef std::function<void(const LookoutEquipmentClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::UpdateInferenceSchedulerRequest&, const Model::UpdateInferenceSchedulerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInferenceSchedulerResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::UpdateLabelGroupRequest&, const Model::UpdateLabelGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLabelGroupResponseReceivedHandler;
 
   /**
    * <p>Amazon Lookout for Equipment is a machine learning service that uses advanced
@@ -251,6 +293,40 @@ namespace Model
         virtual void CreateInferenceSchedulerAsync(const Model::CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Creates a label for an event. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLabelOutcome CreateLabel(const Model::CreateLabelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLabel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLabelOutcomeCallable CreateLabelCallable(const Model::CreateLabelRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLabel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLabelAsync(const Model::CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a group of labels. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLabelGroupOutcome CreateLabelGroup(const Model::CreateLabelGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLabelGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLabelGroupOutcomeCallable CreateLabelGroupCallable(const Model::CreateLabelGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLabelGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLabelGroupAsync(const Model::CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an ML model for data inference. </p> <p>A machine-learning (ML) model
          * is a mathematical model that finds patterns in your data. In Amazon Lookout for
          * Equipment, the model learns the patterns of normal behavior and detects abnormal
@@ -314,6 +390,40 @@ namespace Model
          * An Async wrapper for DeleteInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteInferenceSchedulerAsync(const Model::DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes a label. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLabelOutcome DeleteLabel(const Model::DeleteLabelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLabel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLabelOutcomeCallable DeleteLabelCallable(const Model::DeleteLabelRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLabel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLabelAsync(const Model::DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes a group of labels. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLabelGroupOutcome DeleteLabelGroup(const Model::DeleteLabelGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLabelGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLabelGroupOutcomeCallable DeleteLabelGroupCallable(const Model::DeleteLabelGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLabelGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLabelGroupAsync(const Model::DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an ML model currently available for Amazon Lookout for Equipment.
@@ -387,6 +497,40 @@ namespace Model
          * An Async wrapper for DescribeInferenceScheduler that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInferenceSchedulerAsync(const Model::DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns the name of the label. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLabelOutcome DescribeLabel(const Model::DescribeLabelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLabel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLabelOutcomeCallable DescribeLabelCallable(const Model::DescribeLabelRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeLabel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLabelAsync(const Model::DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns information about the label group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLabelGroupOutcome DescribeLabelGroup(const Model::DescribeLabelGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLabelGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLabelGroupOutcomeCallable DescribeLabelGroupCallable(const Model::DescribeLabelGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeLabelGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLabelGroupAsync(const Model::DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a JSON containing the overall information about a specific ML model,
@@ -496,6 +640,40 @@ namespace Model
          * An Async wrapper for ListInferenceSchedulers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInferenceSchedulersAsync(const Model::ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a list of the label groups. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLabelGroupsOutcome ListLabelGroups(const Model::ListLabelGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLabelGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLabelGroupsOutcomeCallable ListLabelGroupsCallable(const Model::ListLabelGroupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListLabelGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLabelGroupsAsync(const Model::ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Provides a list of labels. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLabelsOutcome ListLabels(const Model::ListLabelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLabels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLabelsOutcomeCallable ListLabelsCallable(const Model::ListLabelsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListLabels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLabelsAsync(const Model::ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a list of all models in the account, including model name and ARN,
@@ -662,25 +840,50 @@ namespace Model
          */
         virtual void UpdateInferenceSchedulerAsync(const Model::UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> Updates the label group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLabelGroupOutcome UpdateLabelGroup(const Model::UpdateLabelGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLabelGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLabelGroupOutcomeCallable UpdateLabelGroupCallable(const Model::UpdateLabelGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateLabelGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLabelGroupAsync(const Model::UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInferenceSchedulerAsyncHelper(const Model::CreateInferenceSchedulerRequest& request, const CreateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLabelAsyncHelper(const Model::CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLabelGroupAsyncHelper(const Model::CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInferenceSchedulerAsyncHelper(const Model::DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLabelAsyncHelper(const Model::DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLabelGroupAsyncHelper(const Model::DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataIngestionJobAsyncHelper(const Model::DescribeDataIngestionJobRequest& request, const DescribeDataIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInferenceSchedulerAsyncHelper(const Model::DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLabelAsyncHelper(const Model::DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLabelGroupAsyncHelper(const Model::DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataIngestionJobsAsyncHelper(const Model::ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInferenceEventsAsyncHelper(const Model::ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInferenceExecutionsAsyncHelper(const Model::ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInferenceSchedulersAsyncHelper(const Model::ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLabelGroupsAsyncHelper(const Model::ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLabelsAsyncHelper(const Model::ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelsAsyncHelper(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSensorStatisticsAsyncHelper(const Model::ListSensorStatisticsRequest& request, const ListSensorStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -690,6 +893,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInferenceSchedulerAsyncHelper(const Model::UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLabelGroupAsyncHelper(const Model::UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -264,73 +264,73 @@ namespace Model
 
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline GetFindingsFilterResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }

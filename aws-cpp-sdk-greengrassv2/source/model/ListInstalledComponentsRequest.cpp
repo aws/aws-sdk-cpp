@@ -19,7 +19,9 @@ ListInstalledComponentsRequest::ListInstalledComponentsRequest() :
     m_coreDeviceThingNameHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_topologyFilter(InstalledComponentTopologyFilter::NOT_SET),
+    m_topologyFilterHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,13 @@ void ListInstalledComponentsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_topologyFilterHasBeenSet)
+    {
+      ss << InstalledComponentTopologyFilterMapper::GetNameForInstalledComponentTopologyFilter(m_topologyFilter);
+      uri.AddQueryStringParameter("topologyFilter", ss.str());
       ss.str("");
     }
 

@@ -35,37 +35,58 @@ namespace Model
 
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on
+     * Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can
+     * be inaccurate on earlier versions.</p> 
      */
     inline const Aws::Vector<InstalledComponent>& GetInstalledComponents() const{ return m_installedComponents; }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on
+     * Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can
+     * be inaccurate on earlier versions.</p> 
      */
     inline void SetInstalledComponents(const Aws::Vector<InstalledComponent>& value) { m_installedComponents = value; }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on
+     * Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can
+     * be inaccurate on earlier versions.</p> 
      */
     inline void SetInstalledComponents(Aws::Vector<InstalledComponent>&& value) { m_installedComponents = std::move(value); }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on
+     * Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can
+     * be inaccurate on earlier versions.</p> 
      */
     inline ListInstalledComponentsResult& WithInstalledComponents(const Aws::Vector<InstalledComponent>& value) { SetInstalledComponents(value); return *this;}
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on
+     * Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can
+     * be inaccurate on earlier versions.</p> 
      */
     inline ListInstalledComponentsResult& WithInstalledComponents(Aws::Vector<InstalledComponent>&& value) { SetInstalledComponents(std::move(value)); return *this;}
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on
+     * Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can
+     * be inaccurate on earlier versions.</p> 
      */
     inline ListInstalledComponentsResult& AddInstalledComponents(const InstalledComponent& value) { m_installedComponents.push_back(value); return *this; }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on
+     * Greengrass nucleus v2.7.0. It performs best on Greengrass nucleus v2.7.0 and can
+     * be inaccurate on earlier versions.</p> 
      */
     inline ListInstalledComponentsResult& AddInstalledComponents(InstalledComponent&& value) { m_installedComponents.push_back(std::move(value)); return *this; }
 

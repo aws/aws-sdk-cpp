@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Web Services SSO instance under which the operation
-     * will be executed.</p>
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed.</p>
      */
     inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 

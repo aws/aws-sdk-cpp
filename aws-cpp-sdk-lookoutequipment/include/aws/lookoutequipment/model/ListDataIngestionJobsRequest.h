@@ -77,49 +77,49 @@ namespace Model
 
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline ListDataIngestionJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline ListDataIngestionJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
+     * <p>An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline ListDataIngestionJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

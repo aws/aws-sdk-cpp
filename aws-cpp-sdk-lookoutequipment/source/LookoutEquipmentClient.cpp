@@ -22,19 +22,27 @@
 #include <aws/lookoutequipment/LookoutEquipmentErrorMarshaller.h>
 #include <aws/lookoutequipment/model/CreateDatasetRequest.h>
 #include <aws/lookoutequipment/model/CreateInferenceSchedulerRequest.h>
+#include <aws/lookoutequipment/model/CreateLabelRequest.h>
+#include <aws/lookoutequipment/model/CreateLabelGroupRequest.h>
 #include <aws/lookoutequipment/model/CreateModelRequest.h>
 #include <aws/lookoutequipment/model/DeleteDatasetRequest.h>
 #include <aws/lookoutequipment/model/DeleteInferenceSchedulerRequest.h>
+#include <aws/lookoutequipment/model/DeleteLabelRequest.h>
+#include <aws/lookoutequipment/model/DeleteLabelGroupRequest.h>
 #include <aws/lookoutequipment/model/DeleteModelRequest.h>
 #include <aws/lookoutequipment/model/DescribeDataIngestionJobRequest.h>
 #include <aws/lookoutequipment/model/DescribeDatasetRequest.h>
 #include <aws/lookoutequipment/model/DescribeInferenceSchedulerRequest.h>
+#include <aws/lookoutequipment/model/DescribeLabelRequest.h>
+#include <aws/lookoutequipment/model/DescribeLabelGroupRequest.h>
 #include <aws/lookoutequipment/model/DescribeModelRequest.h>
 #include <aws/lookoutequipment/model/ListDataIngestionJobsRequest.h>
 #include <aws/lookoutequipment/model/ListDatasetsRequest.h>
 #include <aws/lookoutequipment/model/ListInferenceEventsRequest.h>
 #include <aws/lookoutequipment/model/ListInferenceExecutionsRequest.h>
 #include <aws/lookoutequipment/model/ListInferenceSchedulersRequest.h>
+#include <aws/lookoutequipment/model/ListLabelGroupsRequest.h>
+#include <aws/lookoutequipment/model/ListLabelsRequest.h>
 #include <aws/lookoutequipment/model/ListModelsRequest.h>
 #include <aws/lookoutequipment/model/ListSensorStatisticsRequest.h>
 #include <aws/lookoutequipment/model/ListTagsForResourceRequest.h>
@@ -44,6 +52,7 @@
 #include <aws/lookoutequipment/model/TagResourceRequest.h>
 #include <aws/lookoutequipment/model/UntagResourceRequest.h>
 #include <aws/lookoutequipment/model/UpdateInferenceSchedulerRequest.h>
+#include <aws/lookoutequipment/model/UpdateLabelGroupRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -172,6 +181,54 @@ void LookoutEquipmentClient::CreateInferenceSchedulerAsyncHelper(const CreateInf
   handler(this, request, CreateInferenceScheduler(request), context);
 }
 
+CreateLabelOutcome LookoutEquipmentClient::CreateLabel(const CreateLabelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLabelOutcomeCallable LookoutEquipmentClient::CreateLabelCallable(const CreateLabelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLabel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::CreateLabelAsync(const CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLabelAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::CreateLabelAsyncHelper(const CreateLabelRequest& request, const CreateLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLabel(request), context);
+}
+
+CreateLabelGroupOutcome LookoutEquipmentClient::CreateLabelGroup(const CreateLabelGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLabelGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLabelGroupOutcomeCallable LookoutEquipmentClient::CreateLabelGroupCallable(const CreateLabelGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLabelGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::CreateLabelGroupAsync(const CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLabelGroupAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::CreateLabelGroupAsyncHelper(const CreateLabelGroupRequest& request, const CreateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLabelGroup(request), context);
+}
+
 CreateModelOutcome LookoutEquipmentClient::CreateModel(const CreateModelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -242,6 +299,54 @@ void LookoutEquipmentClient::DeleteInferenceSchedulerAsync(const DeleteInference
 void LookoutEquipmentClient::DeleteInferenceSchedulerAsyncHelper(const DeleteInferenceSchedulerRequest& request, const DeleteInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteInferenceScheduler(request), context);
+}
+
+DeleteLabelOutcome LookoutEquipmentClient::DeleteLabel(const DeleteLabelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLabelOutcomeCallable LookoutEquipmentClient::DeleteLabelCallable(const DeleteLabelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLabel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::DeleteLabelAsync(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLabelAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::DeleteLabelAsyncHelper(const DeleteLabelRequest& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLabel(request), context);
+}
+
+DeleteLabelGroupOutcome LookoutEquipmentClient::DeleteLabelGroup(const DeleteLabelGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteLabelGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLabelGroupOutcomeCallable LookoutEquipmentClient::DeleteLabelGroupCallable(const DeleteLabelGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLabelGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::DeleteLabelGroupAsync(const DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLabelGroupAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::DeleteLabelGroupAsyncHelper(const DeleteLabelGroupRequest& request, const DeleteLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLabelGroup(request), context);
 }
 
 DeleteModelOutcome LookoutEquipmentClient::DeleteModel(const DeleteModelRequest& request) const
@@ -338,6 +443,54 @@ void LookoutEquipmentClient::DescribeInferenceSchedulerAsync(const DescribeInfer
 void LookoutEquipmentClient::DescribeInferenceSchedulerAsyncHelper(const DescribeInferenceSchedulerRequest& request, const DescribeInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeInferenceScheduler(request), context);
+}
+
+DescribeLabelOutcome LookoutEquipmentClient::DescribeLabel(const DescribeLabelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLabelOutcomeCallable LookoutEquipmentClient::DescribeLabelCallable(const DescribeLabelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLabel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::DescribeLabelAsync(const DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLabelAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::DescribeLabelAsyncHelper(const DescribeLabelRequest& request, const DescribeLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLabel(request), context);
+}
+
+DescribeLabelGroupOutcome LookoutEquipmentClient::DescribeLabelGroup(const DescribeLabelGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLabelGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLabelGroupOutcomeCallable LookoutEquipmentClient::DescribeLabelGroupCallable(const DescribeLabelGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLabelGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::DescribeLabelGroupAsync(const DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLabelGroupAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::DescribeLabelGroupAsyncHelper(const DescribeLabelGroupRequest& request, const DescribeLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLabelGroup(request), context);
 }
 
 DescribeModelOutcome LookoutEquipmentClient::DescribeModel(const DescribeModelRequest& request) const
@@ -482,6 +635,54 @@ void LookoutEquipmentClient::ListInferenceSchedulersAsync(const ListInferenceSch
 void LookoutEquipmentClient::ListInferenceSchedulersAsyncHelper(const ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInferenceSchedulers(request), context);
+}
+
+ListLabelGroupsOutcome LookoutEquipmentClient::ListLabelGroups(const ListLabelGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListLabelGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLabelGroupsOutcomeCallable LookoutEquipmentClient::ListLabelGroupsCallable(const ListLabelGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLabelGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLabelGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::ListLabelGroupsAsync(const ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLabelGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::ListLabelGroupsAsyncHelper(const ListLabelGroupsRequest& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLabelGroups(request), context);
+}
+
+ListLabelsOutcome LookoutEquipmentClient::ListLabels(const ListLabelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListLabelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLabelsOutcomeCallable LookoutEquipmentClient::ListLabelsCallable(const ListLabelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLabels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::ListLabelsAsync(const ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLabelsAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::ListLabelsAsyncHelper(const ListLabelsRequest& request, const ListLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLabels(request), context);
 }
 
 ListModelsOutcome LookoutEquipmentClient::ListModels(const ListModelsRequest& request) const
@@ -698,5 +899,29 @@ void LookoutEquipmentClient::UpdateInferenceSchedulerAsync(const UpdateInference
 void LookoutEquipmentClient::UpdateInferenceSchedulerAsyncHelper(const UpdateInferenceSchedulerRequest& request, const UpdateInferenceSchedulerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInferenceScheduler(request), context);
+}
+
+UpdateLabelGroupOutcome LookoutEquipmentClient::UpdateLabelGroup(const UpdateLabelGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateLabelGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLabelGroupOutcomeCallable LookoutEquipmentClient::UpdateLabelGroupCallable(const UpdateLabelGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLabelGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLabelGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::UpdateLabelGroupAsync(const UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLabelGroupAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::UpdateLabelGroupAsyncHelper(const UpdateLabelGroupRequest& request, const UpdateLabelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLabelGroup(request), context);
 }
 
