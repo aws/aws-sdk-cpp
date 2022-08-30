@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -127,7 +128,7 @@ TEST_F(EC2OperationTest, DescribeSpotFleet)
     Aws::EC2::Model::DescribeSpotFleetRequestsRequest request;
 
     auto outcome = m_EC2Client->DescribeSpotFleetRequests(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
 }
 
 TEST_F(EC2OperationTest, CreateSecurityGroup)
@@ -139,7 +140,7 @@ TEST_F(EC2OperationTest, CreateSecurityGroup)
     createRequest.SetDescription("A dummy description");
 
     auto createOutcome = m_EC2Client->CreateSecurityGroup(createRequest);
-    ASSERT_TRUE(createOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createOutcome);
 
     WaitOnSecurityGroupState(securityGroupName, ObjectState::Ready);
     DeleteSecurityGroup(securityGroupName);

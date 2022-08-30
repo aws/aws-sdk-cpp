@@ -76,7 +76,7 @@ public:
             .WithACL(Model::BucketCannedACL::private_);
 
         auto createBucketOutcome = StandardClient->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
     }
 
     static void TagTestBucket(const Aws::String& bucketName) {
@@ -143,13 +143,13 @@ TEST_F(LiveClientTest, TestEOMode)
     putObjectRequest.SetBody(ss);
 
     auto putObjectResult = client.PutObject(putObjectRequest);
-    ASSERT_TRUE(putObjectResult.IsSuccess());
+    AWS_ASSERT_SUCCESS(putObjectResult);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
-    EXPECT_TRUE(getObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(getObjectResult);
 
     Aws::StringStream responseStringStream;
     responseStringStream << getObjectResult.GetResult().GetBody().rdbuf();
@@ -179,7 +179,7 @@ TEST_F(LiveClientTest, TestEOMode)
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
     auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(standardGetObjectResult);
     ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()));
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
     standardGetObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
@@ -194,7 +194,7 @@ TEST_F(LiveClientTest, TestEOMode)
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
-    EXPECT_TRUE(deleteResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteResult);
 }
 
 TEST_F(LiveClientTest, TestAEMode)
@@ -224,13 +224,13 @@ TEST_F(LiveClientTest, TestAEMode)
     putObjectRequest.SetBody(ss);
 
     auto putObjectResult = client.PutObject(putObjectRequest);
-    ASSERT_TRUE(putObjectResult.IsSuccess());
+    AWS_ASSERT_SUCCESS(putObjectResult);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
-    EXPECT_TRUE(getObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(getObjectResult);
 
     Aws::StringStream responseStringStream;
     responseStringStream << getObjectResult.GetResult().GetBody().rdbuf();
@@ -264,7 +264,7 @@ TEST_F(LiveClientTest, TestAEMode)
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
     auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(standardGetObjectResult);
     EXPECT_EQ((cryptoMaterial.GetCryptoTagLength() / 8) + sizeof(TEST_STRING) - 1, static_cast<size_t>(standardGetObjectResult.GetResult().GetContentLength()));
 
     ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()) - (cryptoMaterial.GetCryptoTagLength() / 8));
@@ -281,7 +281,7 @@ TEST_F(LiveClientTest, TestAEMode)
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
-    EXPECT_TRUE(deleteResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteResult);
 }
 
 TEST_F(LiveClientTest, TestAEModeRangeGet)
@@ -311,13 +311,13 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     putObjectRequest.SetBody(ss);
 
     auto putObjectResult = client.PutObject(putObjectRequest);
-    ASSERT_TRUE(putObjectResult.IsSuccess());
+    AWS_ASSERT_SUCCESS(putObjectResult);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
-    EXPECT_TRUE(getObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(getObjectResult);
 
     Aws::StringStream responseStringStream;
     responseStringStream << getObjectResult.GetResult().GetBody().rdbuf();
@@ -351,7 +351,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
     auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(standardGetObjectResult);
     EXPECT_EQ(sizeof(RANGE_GET_TEST_STRING) - 1, static_cast<size_t>(standardGetObjectResult.GetResult().GetContentLength()));
 
     ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()));
@@ -369,7 +369,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
-    EXPECT_TRUE(deleteResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteResult);
 }
 
 TEST_F(LiveClientTest, TestS3EncryptionError)
@@ -430,13 +430,13 @@ TEST_F(LiveClientTest, TestV2AEMode)
     putObjectRequest.SetBody(ss);
 
     auto putObjectResult = client.PutObject(putObjectRequest, {});
-    ASSERT_TRUE(putObjectResult.IsSuccess());
+    AWS_ASSERT_SUCCESS(putObjectResult);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
-    EXPECT_TRUE(getObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(getObjectResult);
 
     Aws::StringStream responseStringStream;
     responseStringStream << getObjectResult.GetResult().GetBody().rdbuf();
@@ -470,7 +470,7 @@ TEST_F(LiveClientTest, TestV2AEMode)
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
     auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(standardGetObjectResult);
     EXPECT_EQ((cryptoMaterial.GetCryptoTagLength() / 8) + sizeof(TEST_STRING) - 1, static_cast<size_t>(standardGetObjectResult.GetResult().GetContentLength()));
 
     ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()) - (cryptoMaterial.GetCryptoTagLength() / 8));
@@ -487,7 +487,7 @@ TEST_F(LiveClientTest, TestV2AEMode)
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
-    EXPECT_TRUE(deleteResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteResult);
 }
 
 TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
@@ -514,13 +514,13 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
     putObjectRequest.SetBody(ss);
 
     auto putObjectResult = client.PutObject(putObjectRequest, {});
-    ASSERT_TRUE(putObjectResult.IsSuccess());
+    AWS_ASSERT_SUCCESS(putObjectResult);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
-    EXPECT_TRUE(getObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(getObjectResult);
 
     Aws::StringStream responseStringStream;
     responseStringStream << getObjectResult.GetResult().GetBody().rdbuf();
@@ -554,7 +554,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
     auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(standardGetObjectResult);
     EXPECT_EQ(sizeof(RANGE_GET_TEST_STRING) - 1, static_cast<size_t>(standardGetObjectResult.GetResult().GetContentLength()));
 
     ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()));
@@ -572,7 +572,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
-    EXPECT_TRUE(deleteResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteResult);
 }
 
 TEST_F(LiveClientTest, TestV2AEModeRangeGetFailWithoutSetting)
@@ -598,7 +598,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetFailWithoutSetting)
     putObjectRequest.SetBody(ss);
 
     auto putObjectResult = client.PutObject(putObjectRequest, {});
-    ASSERT_TRUE(putObjectResult.IsSuccess());
+    AWS_ASSERT_SUCCESS(putObjectResult);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
@@ -610,7 +610,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetFailWithoutSetting)
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
-    EXPECT_TRUE(deleteResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteResult);
 }
 
 TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
@@ -637,13 +637,13 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
     putObjectRequest.SetBody(ss);
 
     auto putObjectResult = client.PutObject(putObjectRequest, {});
-    ASSERT_TRUE(putObjectResult.IsSuccess());
+    AWS_ASSERT_SUCCESS(putObjectResult);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(OVERFLOW_RANGE_GET_STR);
 
     auto getObjectResult = client.GetObject(getObjectRequest);
-    EXPECT_TRUE(getObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(getObjectResult);
 
     Aws::StringStream responseStringStream;
     responseStringStream << getObjectResult.GetResult().GetBody().rdbuf();
@@ -677,7 +677,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
     getUnencryptedObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey).WithRange(RANGE_GET_STR);
     auto standardGetObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
-    EXPECT_TRUE(standardGetObjectResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(standardGetObjectResult);
     EXPECT_EQ(sizeof(RANGE_GET_TEST_STRING) - 1, static_cast<size_t>(standardGetObjectResult.GetResult().GetContentLength()));
 
     ByteBuffer rawData(static_cast< size_t >(standardGetObjectResult.GetResult().GetContentLength()));
@@ -695,7 +695,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
     deleteObject.WithBucket(BucketName.c_str()).WithKey(objectKey);
 
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
-    EXPECT_TRUE(deleteResult.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteResult);
 }
 
 TEST_F(LiveClientTest, TestV2S3EncryptionError)
