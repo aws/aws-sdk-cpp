@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/monitoring/MonitoringInterface.h>
@@ -43,7 +44,7 @@ public:
     void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
-        ASSERT_TRUE(outcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(outcome);
         ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_STREQ(URI_STRING, outcome.GetResult()->GetOriginatingRequest().GetURIString().c_str());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
@@ -121,7 +122,7 @@ public:
     void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
         const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, void* context) const override
     {
-        ASSERT_TRUE(outcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(outcome);
         ASSERT_STREQ(URI_STRING, request->GetURIString().c_str());
         ASSERT_STREQ(URI_STRING, outcome.GetResult()->GetOriginatingRequest().GetURIString().c_str());
         ASSERT_TRUE(metricsFromCore.httpClientMetrics.size() == 0);
@@ -254,7 +255,7 @@ TEST_F(MonitoringTestSuite, TestMonitoringListenersAreCalledCorrectlyWithRetryAn
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
     auto outcome = client->MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
     ASSERT_EQ(0x1F, MonitorOneAPICalledFlag);
     ASSERT_EQ(0x1F, MonitorTwoAPICalledFlag);
@@ -295,7 +296,7 @@ TEST_F(MonitoringTestSuite, TestMonitoringListenersAreCalledCorrectlyWithoutRetr
     request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
     auto outcome = client->MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(0, client->GetRequestAttemptedRetries());
     ASSERT_EQ(0x13, MonitorOneAPICalledFlag);
     ASSERT_EQ(0x13, MonitorTwoAPICalledFlag);

@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
@@ -275,7 +276,7 @@ namespace
 
         static void VerifyUploadPartOutcome(UploadPartOutcome& outcome, const ByteBuffer& md5OfStream)
         {
-            ASSERT_TRUE(outcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(outcome);
             Aws::StringStream ss;
             ss << "\"" << HashingUtils::HexEncode(md5OfStream) << "\"";
             ASSERT_STREQ(ss.str().c_str(), outcome.GetResult().GetETag().c_str());
@@ -294,9 +295,8 @@ namespace
             tagging.AddTagSet(tag);
             taggingRequest.SetTagging(tagging);
 
-            auto taggingOutcome = client->PutBucketTagging(taggingRequest);
-
-            ASSERT_TRUE(taggingOutcome.IsSuccess());
+            auto taggingOutcome = CallOperationWithUnconditionalRetry(client.get(), &Aws::S3::S3Client::PutBucketTagging, taggingRequest);
+            AWS_ASSERT_SUCCESS(taggingOutcome);
         }
 
         static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client>& client = Client)
@@ -390,7 +390,7 @@ namespace
             while (checkForObjectsCount++ < TIMEOUT_MAX)
             {
                 ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-                ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+                AWS_ASSERT_SUCCESS(listObjectsOutcome);
 
                 if (listObjectsOutcome.GetResult().GetContents().size() > 0)
                 {
@@ -417,8 +417,8 @@ namespace
                 DeleteBucketRequest deleteBucketRequest;
                 deleteBucketRequest.SetBucket(bucketName);
 
-                DeleteBucketOutcome deleteBucketOutcome = Client->DeleteBucket(deleteBucketRequest);
-                ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+                auto deleteBucketOutcome = CallOperationWithUnconditionalRetry(Client.get(), &Aws::S3::S3Client::DeleteBucket, deleteBucketRequest);
+                AWS_ASSERT_SUCCESS(deleteBucketOutcome);
             }
         }
 
@@ -472,7 +472,7 @@ namespace
             Aws::S3::Model::GetObjectRequest getObjectRequest;
             getObjectRequest.WithBucket(bucketName).WithKey(TEST_OBJ_KEY);
             auto outcome = Client->GetObject(getObjectRequest);
-            ASSERT_TRUE(outcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(outcome);
             if (putRequest->HasHeader(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION))
             {
                 ASSERT_STREQ(Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(outcome.GetResult().GetServerSideEncryption()).c_str(), putRequest->GetHeaderValue(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION).c_str());
@@ -575,7 +575,7 @@ namespace
                 .WithSSECustomerKey(HashingUtils::Base64Encode(sseKey))
                 .WithSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
             outcome = Client->GetObject(getObjectRequest);
-            ASSERT_TRUE(outcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(outcome);
             ss.str("");
             ss << outcome.GetResult().GetBody().rdbuf();
             ASSERT_STREQ("Test Object", ss.str().c_str());
@@ -660,7 +660,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
@@ -678,7 +678,7 @@ namespace
         putObjectRequest.SetKey(TEST_OBJ_KEY);
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         //verify md5 sums between what was sent and what s3 told us they received.
         putObjectRequest.GetBody()->clear();
@@ -728,14 +728,14 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
         ListBucketsOutcome listBucketsOutcome = Client->ListBuckets();
-        ASSERT_TRUE(listBucketsOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(listBucketsOutcome);
         ASSERT_GE(listBucketsOutcome.GetResult().GetBuckets().size(), 1u);
 
         bool foundBucket(false);
@@ -753,7 +753,7 @@ namespace
         DeleteBucketRequest deleteBucketRequest;
         deleteBucketRequest.SetBucket(fullBucketName);
         DeleteBucketOutcome deleteBucketOutcome = Client->DeleteBucket(deleteBucketRequest);
-        ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteBucketOutcome);
     }
 
     //Create a bucket somewhere other than US Standard and ensure the location is correctly shown later
@@ -767,7 +767,7 @@ namespace
         createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
 
         CreateBucketOutcome createBucketOutcome = oregonClient->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, oregonClient));
@@ -776,13 +776,13 @@ namespace
         GetBucketLocationRequest locationRequest;
         locationRequest.SetBucket(fullBucketName);
         auto locationOutcome = oregonClient->GetBucketLocation(locationRequest);
-        ASSERT_TRUE(locationOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(locationOutcome);
         ASSERT_EQ(locationOutcome.GetResult().GetLocationConstraint(), BucketLocationConstraint::us_west_2);
 
         DeleteBucketRequest deleteBucketRequest;
         deleteBucketRequest.SetBucket(fullBucketName);
         DeleteBucketOutcome deleteBucketOutcome = oregonClient->DeleteBucket(deleteBucketRequest);
-        ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteBucketOutcome);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestPutWithSpecialCharactersInKeyName)
@@ -794,7 +794,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
@@ -808,7 +808,7 @@ namespace
         putObjectRequest.SetContentType("text/plain");
         putObjectRequest.SetKey("foo;jsessionid=40+2");
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestKeysWithNewlineCharacterSets)
@@ -820,7 +820,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
@@ -842,7 +842,7 @@ namespace
             putObjectRequest.SetContentType("text/plain");
             putObjectRequest.SetKey(key);
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(putObjectOutcome);
         }
 
         for (const Aws::String& key : objectKeysWithNewlineCharacter)
@@ -851,7 +851,7 @@ namespace
             getObjectRequest.SetBucket(fullBucketName);
             getObjectRequest.SetKey(key);
             GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
-            ASSERT_TRUE(getObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(getObjectOutcome);
             Aws::StringStream ss;
             ss << getObjectOutcome.GetResult().GetBody().rdbuf();
             ASSERT_NE(Aws::String::npos, ss.str().find(key));
@@ -870,12 +870,12 @@ namespace
         deleteObjects.SetObjects(objectIdentifiers);
         deleteObjectsRequest.SetDelete(deleteObjects);
         DeleteObjectsOutcome deleteObjectsOutcome = Client->DeleteObjects(deleteObjectsRequest);
-        ASSERT_TRUE(deleteObjectsOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteObjectsOutcome);
 
         ListObjectsRequest listObjectsRequest;
         listObjectsRequest.SetBucket(fullBucketName);
         ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(listObjectsOutcome);
         ASSERT_EQ(0u, listObjectsOutcome.GetResult().GetContents().size());
     }
 
@@ -888,7 +888,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
@@ -907,7 +907,7 @@ namespace
         putObjectRequest.SetKey(TEST_OBJ_KEY);
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         //verify md5 sums between what was sent and what s3 told us they received.
         putObjectRequest.GetBody()->clear();
@@ -922,7 +922,7 @@ namespace
         auto getObjectCallback = [&](const S3Client *client, const GetObjectRequest &request,
                                     GetObjectOutcome outcome, const std::shared_ptr<const AsyncCallerContext> &) {
             ASSERT_TRUE(client);
-            ASSERT_TRUE(outcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(outcome);
             ss.str("");
             ss << outcome.GetResult().GetBody().rdbuf();
             ASSERT_STREQ("Test Object", ss.str().c_str());
@@ -937,7 +937,7 @@ namespace
         getObjectRequest.SetKey(TEST_OBJ_KEY);
 
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
-        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getObjectOutcome);
         ss.str("");
         ss << getObjectOutcome.GetResult().GetBody().rdbuf();
         ASSERT_STREQ("Test Object", ss.str().c_str());
@@ -947,7 +947,7 @@ namespace
         headObjectRequest.SetKey(TEST_OBJ_KEY);
 
         HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-        ASSERT_TRUE(headObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(headObjectOutcome);
 
         //verify md5 sums between what was sent and what the file s3 gave us back.
         ss.str("");
@@ -958,7 +958,7 @@ namespace
         deleteObjectRequest.SetBucket(fullBucketName);
         deleteObjectRequest.SetKey(TEST_OBJ_KEY);
         DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
-        ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteObjectOutcome);
 
         WaitForBucketToEmpty(fullBucketName);
 
@@ -975,7 +975,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
@@ -995,7 +995,7 @@ namespace
             putObjectRequest.SetKey(unicodekey);
 
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(putObjectOutcome);
 
             ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, unicodekey.c_str()));
 
@@ -1003,7 +1003,7 @@ namespace
             deleteObjectRequest.SetBucket(fullBucketName);
             deleteObjectRequest.SetKey(unicodekey);
             DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
-            ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteObjectOutcome);
         }
 
         //test uri encoding edge case.
@@ -1018,7 +1018,7 @@ namespace
             putObjectRequest.SetKey(URIESCAPE_KEY);
 
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(putObjectOutcome);
 
             ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY));
 
@@ -1026,7 +1026,7 @@ namespace
             deleteObjectRequest.SetBucket(fullBucketName);
             deleteObjectRequest.SetKey(URIESCAPE_KEY);
             DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
-            ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteObjectOutcome);
         }
 
         WaitForBucketToEmpty(fullBucketName);
@@ -1139,7 +1139,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
@@ -1152,7 +1152,7 @@ namespace
 
         CreateMultipartUploadOutcome createMultipartUploadOutcome = Client->CreateMultipartUpload(
                 createMultipartUploadRequest);
-        ASSERT_TRUE(createMultipartUploadOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createMultipartUploadOutcome);
 
         std::shared_ptr<Aws::IOStream> part1Stream = Create5MbStreamForUploadPart("1");
         ByteBuffer part1Md5(HashingUtils::CalculateMD5(*part1Stream));
@@ -1209,7 +1209,7 @@ namespace
 
         CompleteMultipartUploadOutcome completeMultipartUploadOutcome = Client->CompleteMultipartUpload(
                 completeMultipartUploadRequest);
-        ASSERT_TRUE(completeMultipartUploadOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(completeMultipartUploadOutcome);
 
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, multipartKeyName));
 
@@ -1232,7 +1232,7 @@ namespace
         ASSERT_STREQ("?x-key1=value1&x-key2=value2&x-key3=value3", uri.GetQueryString().c_str());
 
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
-        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getObjectOutcome);
 
         part1Stream->clear();
         part2Stream->clear();
@@ -1280,7 +1280,7 @@ namespace
         {
             // Enclose scope just to make sure the download file is properly closed before we reread it
             GetObjectOutcome getObjectOutcome2 = Client->GetObject(getObjectRequest2);
-            ASSERT_TRUE(getObjectOutcome2.IsSuccess());
+            AWS_ASSERT_SUCCESS(getObjectOutcome2);
         }
 
         // Test the download of a non-existent file, to ensure that the error handling works correctly
@@ -1326,7 +1326,7 @@ namespace
         {
             // Enclose scope just to make sure the download file is properly closed before we reread it
             GetObjectOutcome getObjectOutcome2 = Client->GetObject(getObjectRequest2);
-            ASSERT_TRUE(getObjectOutcome2.IsSuccess());
+            AWS_ASSERT_SUCCESS(getObjectOutcome2);
         }
 
         Aws::String fileContents;
@@ -1351,7 +1351,7 @@ namespace
         deleteObjectRequest.SetKey(multipartKeyName);
 
         DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
-        ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteObjectOutcome);
     }
 
 
@@ -1375,7 +1375,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1398,7 +1398,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1414,7 +1414,7 @@ namespace
         putObjectRequest.WithKey(TEST_NOT_MODIFIED_OBJ_KEY);
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.WithBucket(fullBucketName)
@@ -1433,7 +1433,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1449,7 +1449,7 @@ namespace
         putObjectRequest.WithKey(TEST_DNS_UNFRIENDLY_OBJ_KEY);
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_DNS_UNFRIENDLY_OBJ_KEY, HttpMethod::HTTP_PUT);
         ASSERT_EQ(0ul, presignedUrlPut.find("https://s3.amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY));
@@ -1462,7 +1462,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1478,7 +1478,7 @@ namespace
         putObjectRequest.SetContentType("text/plain");
         putObjectRequest.SetKey(unicodekey);
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         CopyObjectRequest copyRequest;
         copyRequest.WithBucket(fullBucketName)
@@ -1486,7 +1486,7 @@ namespace
             .WithCopySource(fullBucketName + "/" + unicodekey);
 
         auto copyOutcome = Client->CopyObject(copyRequest);
-        ASSERT_TRUE(copyOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(copyOutcome);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectLock)
@@ -1497,7 +1497,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         createBucketRequest.SetObjectLockEnabledForBucket(true);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1515,7 +1515,7 @@ namespace
         putObjectRequest.SetObjectLockRetainUntilDate(Aws::Utils::DateTime::Now() + std::chrono::hours(1));
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
         Aws::String versionId = putObjectOutcome.GetResult().GetVersionId();
 
         GetObjectRequest getObjectRequest;
@@ -1524,7 +1524,7 @@ namespace
         getObjectRequest.SetVersionId(versionId);
 
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
-        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getObjectOutcome);
 
         DeleteObjectRequest deleteObjectRequest;
         deleteObjectRequest.SetBucket(fullBucketName);
@@ -1532,7 +1532,7 @@ namespace
         deleteObjectRequest.SetVersionId(versionId);
         deleteObjectRequest.SetBypassGovernanceRetention(true);
         DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
-        ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteObjectOutcome);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)
@@ -1542,7 +1542,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1561,7 +1561,7 @@ namespace
         putObjectRequest.SetContentType("text/csv");
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
@@ -1606,7 +1606,7 @@ namespace
         selectObjectContentRequest.SetEventStreamHandler(handler);
 
         auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
-        ASSERT_TRUE(selectObjectContentOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(selectObjectContentOutcome);
         ASSERT_TRUE(isRecordsEventReceived);
         ASSERT_TRUE(isStatsEventReceived);
     }
@@ -1619,7 +1619,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1638,7 +1638,7 @@ namespace
         putObjectRequest.SetContentType("text/csv");
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
@@ -1693,7 +1693,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1715,7 +1715,7 @@ namespace
         putObjectRequest.SetContentType("text/csv");
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
@@ -1798,7 +1798,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1821,7 +1821,7 @@ namespace
         putObjectRequest.SetContentType("text/csv");
 
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
@@ -1869,7 +1869,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         WaitForBucketToPropagate(fullBucketName, Client);
         TagTestBucket(fullBucketName, Client);
 
@@ -1883,25 +1883,25 @@ namespace
         putObjectRequest.SetBody(objectStream);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
         auto putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         objectStream->clear();
         objectStream->seekg(0);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C);
         putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         objectStream->clear();
         objectStream->seekg(0);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256);
         putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         objectStream->clear();
         objectStream->seekg(0);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1);
         putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         // Checksums in request headers
         ClientConfiguration config;
@@ -1912,25 +1912,25 @@ namespace
         objectStream->seekg(0);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
         putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         objectStream->clear();
         objectStream->seekg(0);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C);
         putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         objectStream->clear();
         objectStream->seekg(0);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256);
         putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         objectStream->clear();
         objectStream->seekg(0);
         putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1);
         putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         // Response Checksums Validation
         GetObjectRequest getObjectRequest;
@@ -1939,7 +1939,7 @@ namespace
         getObjectRequest.SetChecksumMode(ChecksumMode::ENABLED);
 
         auto getObjectOutcome = Client->GetObject(getObjectRequest);
-        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getObjectOutcome);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestMultipartFlexibleChecksums)
@@ -1951,7 +1951,7 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
         TagTestBucket(fullBucketName, Client);
 
@@ -1961,7 +1961,7 @@ namespace
         createMultipartUploadRequest.SetContentType("text/plain");
 
         CreateMultipartUploadOutcome createMultipartUploadOutcome = Client->CreateMultipartUpload(createMultipartUploadRequest);
-        ASSERT_TRUE(createMultipartUploadOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createMultipartUploadOutcome);
 
         std::shared_ptr<Aws::IOStream> part1Stream = Create5MbStreamForUploadPart("1");
         std::shared_ptr<Aws::IOStream> part2Stream = Create5MbStreamForUploadPart("2");
@@ -1975,17 +1975,17 @@ namespace
         uploadPartRequest.SetPartNumber(1);
         uploadPartRequest.SetBody(part1Stream);
         auto uploadPartOutcome1 = Client->UploadPart(uploadPartRequest);
-        ASSERT_TRUE(uploadPartOutcome1.IsSuccess());
+        AWS_ASSERT_SUCCESS(uploadPartOutcome1);
 
         uploadPartRequest.SetPartNumber(2);
         uploadPartRequest.SetBody(part2Stream);
         auto uploadPartOutcome2 = Client->UploadPart(uploadPartRequest);
-        ASSERT_TRUE(uploadPartOutcome2.IsSuccess());
+        AWS_ASSERT_SUCCESS(uploadPartOutcome2);
 
         uploadPartRequest.SetPartNumber(3);
         uploadPartRequest.SetBody(part3Stream);
         auto uploadPartOutcome3 = Client->UploadPart(uploadPartRequest);
-        ASSERT_TRUE(uploadPartOutcome3.IsSuccess());
+        AWS_ASSERT_SUCCESS(uploadPartOutcome3);
 
         CompletedPart completedPart1;
         completedPart1.SetETag(uploadPartOutcome1.GetResult().GetETag());
@@ -2011,7 +2011,7 @@ namespace
         completeMultipartUploadRequest.SetMultipartUpload(completedMultipartUpload);
 
         CompleteMultipartUploadOutcome completeMultipartUploadOutcome = Client->CompleteMultipartUpload(completeMultipartUploadRequest);
-        ASSERT_TRUE(completeMultipartUploadOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(completeMultipartUploadOutcome);
 
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, multipartKeyName));
 
@@ -2021,7 +2021,7 @@ namespace
         getObjectRequest.SetChecksumMode(ChecksumMode::ENABLED);
 
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
-        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getObjectOutcome);
     }
 
 
@@ -2036,7 +2036,7 @@ namespace
         createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
 
         CreateBucketOutcome createBucketOutcome = oregonClient->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         WaitForBucketToPropagate(fullBucketName, oregonClient);
@@ -2049,12 +2049,12 @@ namespace
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
         // Client in aws-global will make cross-region request.
         listObjectsOutcome = globalClient->ListObjects(listObjectsRequest);
-        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(listObjectsOutcome);
 
         DeleteBucketRequest deleteBucketRequest;
         deleteBucketRequest.SetBucket(fullBucketName);
         DeleteBucketOutcome deleteBucketOutcome = globalClient->DeleteBucket(deleteBucketRequest);
-        ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteBucketOutcome);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestCustomEndpointOverride)
@@ -2582,11 +2582,11 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARNValidation)
     {
         // The followings are examples for valid S3 ARN:
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint").Validate().IsSuccess());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint").Validate());
         // FIPS region in client configuration
-        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("us-east-1-fips").IsSuccess());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1"));
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("us-east-1-fips"));
 
         // The followings are examples for invalid S3 ARN:
         // S3ARN partition
@@ -2659,10 +2659,10 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestS3MultiRegionAccessPointARNValidation)
     {
         // The followings are examples for valid S3 ARN:
-        ASSERT_TRUE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws-cn:s3::123456789012:accesspoint:myendpoint.mrap").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate("aws-global").IsSuccess());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws-cn:s3::123456789012:accesspoint:myendpoint.mrap").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate("aws-global"));
 
         // The followings are examples for invalid S3 ARN:
         // S3ARN partition
@@ -2718,8 +2718,8 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestS3OutpostsARNValidation)
     {
         // The followings are examples for valid S3 ARN:
-        ASSERT_TRUE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost/outpost-id/accesspoint/access-point-name").Validate().IsSuccess());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost/outpost-id/accesspoint/access-point-name").Validate());
 
         // The followings are examples for invalid S3 ARN:
         // S3ARN partition
@@ -2789,14 +2789,14 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestS3ObjectLambdaARNValidation)
     {
         // The followings are examples for valid S3 ARN:
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate("cn-north-1").IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate("cn-north-1"));
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate());
         // FIPS region in client configuration
-        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("us-east-1-fips").IsSuccess());
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1"));
+        AWS_ASSERT_SUCCESS(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("us-east-1-fips"));
 
         // The followings are examples for invalid S3 ARN:
         // S3ARN partition
@@ -2899,7 +2899,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
@@ -2909,6 +2909,6 @@ namespace
         putObjectRequest.SetBucket(fullBucketName);
         putObjectRequest.SetKey("sbiscigl_was_here");
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
     }
 }

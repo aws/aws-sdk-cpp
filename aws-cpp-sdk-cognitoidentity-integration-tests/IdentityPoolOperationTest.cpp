@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
 #include <algorithm>
 #include <thread>
@@ -129,7 +130,7 @@ protected:
             deleteIdentityPoolRequest.WithIdentityPoolId(pool.GetIdentityPoolId());
 
             DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
-            ASSERT_TRUE(deleteIdentityPoolOutcome.IsSuccess());
+            ASSERT_TRUE(deleteIdentityPoolOutcome.IsSuccess()) << deleteIdentityPoolOutcome.GetError().GetMessage();
         }
     }
 
@@ -167,7 +168,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
 
     CreateIdentityPoolOutcome createIdentityPoolOutcome = client->CreateIdentityPool(createIdentityPoolRequest);
 
-    ASSERT_TRUE(createIdentityPoolOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createIdentityPoolOutcome);
     ASSERT_FALSE(createIdentityPoolOutcome.GetResult().GetIdentityPoolId().empty());
     EXPECT_EQ(createIdentityPoolRequest.GetIdentityPoolName(), createIdentityPoolOutcome.GetResult().GetIdentityPoolName());
     EXPECT_TRUE(createIdentityPoolOutcome.GetResult().GetAllowUnauthenticatedIdentities());
@@ -244,7 +245,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
 
     CreateIdentityPoolOutcome createIdentityPoolOutcome = client->CreateIdentityPool(createIdentityPoolRequest);
 
-    ASSERT_TRUE(createIdentityPoolOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createIdentityPoolOutcome);
     Aws::String identityPoolId = createIdentityPoolOutcome.GetResult().GetIdentityPoolId();
     EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
 
@@ -324,7 +325,7 @@ TEST_F(IdentityPoolOperationTest, TestDeveloperIdentityActions)
 
     CreateIdentityPoolOutcome createIdentityPoolOutcome = client->CreateIdentityPool(createIdentityPoolRequest);
 
-    ASSERT_TRUE(createIdentityPoolOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createIdentityPoolOutcome);
 
     GetIdRequest getIdRequest;
     getIdRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
