@@ -4,6 +4,7 @@
  */
 #define AWS_DISABLE_DEPRECATION
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 #include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -79,6 +80,7 @@ public:
     }
 
     static void TagTestBucket(const Aws::String& bucketName) {
+        ASSERT_TRUE(StandardClient.get());
         Aws::S3::Model::PutBucketTaggingRequest taggingRequest;
         taggingRequest.SetBucket(bucketName);
         Aws::S3::Model::Tag tag;
@@ -88,9 +90,8 @@ public:
         tagging.AddTagSet(tag);
         taggingRequest.SetTagging(tagging);
 
-        auto taggingOutcome = StandardClient->PutBucketTagging(taggingRequest);
-
-        ASSERT_TRUE(taggingOutcome.IsSuccess());
+        auto taggingOutcome = CallOperationWithUnconditionalRetry(StandardClient.get(), &Aws::S3::S3Client::PutBucketTagging, taggingRequest);
+        AWS_ASSERT_SUCCESS(taggingOutcome);
     }
 
     static void TearDownTestCase()
