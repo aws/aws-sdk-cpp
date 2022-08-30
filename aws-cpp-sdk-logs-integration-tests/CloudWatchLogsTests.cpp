@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Outcome.h>
@@ -63,7 +64,7 @@ namespace
             DeleteLogGroupRequest deleteRequest;
             deleteRequest.SetLogGroupName(groupName);
             auto deleteOutcome = m_client->DeleteLogGroup(deleteRequest);
-            ASSERT_TRUE(deleteOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteOutcome);
         }
 
         void CreateLogsGroup(const Aws::String& groupName)
@@ -71,7 +72,7 @@ namespace
             CreateLogGroupRequest createRequest;
             createRequest.SetLogGroupName(groupName);
             auto createOutcome = m_client->CreateLogGroup(createRequest);
-            ASSERT_TRUE(createOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(createOutcome);
         }
     };
 
@@ -81,7 +82,7 @@ namespace
         createStreamRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
                             .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM));
         auto createStreamOutcome = m_client->CreateLogStream(createStreamRequest);
-        ASSERT_TRUE(createStreamOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createStreamOutcome);
 
         PutLogEventsRequest putRequest;
         putRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
@@ -95,7 +96,7 @@ namespace
 
         putRequest.AddLogEvents(e1).AddLogEvents(e2);
         auto putOutcome = m_client->PutLogEvents(putRequest);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
         auto nextSeqToken = putOutcome.GetResult().GetNextSequenceToken();
 
         InputLogEvent e3;
@@ -106,7 +107,7 @@ namespace
         putRequest.AddLogEvents(e3).AddLogEvents(e4);
         putRequest.WithSequenceToken(nextSeqToken);
         putOutcome = m_client->PutLogEvents(putRequest);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         //There should be in total 6 events in the stream. with messages ended with 1,2,1,2,3,4;
         GetLogEventsRequest getRequest;
@@ -118,7 +119,7 @@ namespace
         while (retry++ < 10)
         {
             auto getOutcome = m_client->GetLogEvents(getRequest);
-            ASSERT_TRUE(getOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(getOutcome);
             auto outputEvents = getOutcome.GetResult().GetEvents();
             eventsCount = outputEvents.size();
             if (eventsCount == 6)

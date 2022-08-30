@@ -5,6 +5,7 @@
 #include <fstream>
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/redshift/RedshiftClient.h>
 #include <aws/redshift/model/DeleteClusterRequest.h>
@@ -108,7 +109,7 @@ namespace
       clusterRequest.WithNumberOfNodes(2).SetNodeType(CLUSTER_NODE_TYPE);
 
       CreateClusterOutcome createOutcome = Client->CreateCluster(clusterRequest);
-      ASSERT_TRUE(createOutcome.IsSuccess());
+      AWS_ASSERT_SUCCESS(createOutcome);
       WaitForClusterAvailability(clusterName);
     }
 
@@ -155,7 +156,7 @@ namespace
 
     DescribeClusterSubnetGroupsRequest getVpcIdRequest;
     DescribeClusterSubnetGroupsOutcome getVpcIdOutcome = Client->DescribeClusterSubnetGroups(getVpcIdRequest);
-    ASSERT_TRUE(getVpcIdOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(getVpcIdOutcome);
     subnetId.push_back(getVpcIdOutcome.GetResult().GetClusterSubnetGroups().front().GetSubnets().front().GetSubnetIdentifier());
 
 
@@ -165,14 +166,14 @@ namespace
     createSubnetGroupRequest.SetSubnetIds(subnetId);
 
     CreateClusterSubnetGroupOutcome createSubnetGroupOutcome = Client->CreateClusterSubnetGroup(createSubnetGroupRequest);
-    ASSERT_TRUE(createSubnetGroupOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createSubnetGroupOutcome);
 
 
     DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest;
     deleteClusterSubnetGroupRequest.SetClusterSubnetGroupName(subnetGroupName);
 
     DeleteClusterSubnetGroupOutcome deleteClusterSubnetGroupOutcome = Client->DeleteClusterSubnetGroup(deleteClusterSubnetGroupRequest);
-    ASSERT_TRUE(deleteClusterSubnetGroupOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(deleteClusterSubnetGroupOutcome);
   }
 
   TEST_F(RedshiftClientTest, TestClusterSnapshot)
@@ -186,7 +187,7 @@ namespace
     createSnapshotRequest.SetSnapshotIdentifier(snapshotIdentifier);
 
     CreateClusterSnapshotOutcome createSnapshotOutcome = Client->CreateClusterSnapshot(createSnapshotRequest);
-    ASSERT_TRUE(createSnapshotOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createSnapshotOutcome);
     WaitForClusterSnapshotAvailability(snapshotIdentifier);
 
 
@@ -195,7 +196,7 @@ namespace
     authorizeSnapshotRequest.SetSnapshotIdentifier(snapshotIdentifier);
 
     AuthorizeSnapshotAccessOutcome authorizeSnapshotOutcome = Client->AuthorizeSnapshotAccess(authorizeSnapshotRequest);
-    EXPECT_TRUE(authorizeSnapshotOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(authorizeSnapshotOutcome);
     EXPECT_EQ(CLUSTER_MASTER_USERNAME, authorizeSnapshotOutcome.GetResult().GetSnapshot().GetMasterUsername());
 
 
@@ -203,7 +204,7 @@ namespace
     describeSnapshotsRequest.SetSnapshotIdentifier(snapshotIdentifier);
 
     DescribeClusterSnapshotsOutcome describeSnapshotOutcome = Client->DescribeClusterSnapshots(describeSnapshotsRequest);
-    EXPECT_TRUE(describeSnapshotOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(describeSnapshotOutcome);
     EXPECT_EQ(CLUSTER_MASTER_USERNAME, describeSnapshotOutcome.GetResult().GetSnapshots().front().GetMasterUsername());
 
 
@@ -212,7 +213,7 @@ namespace
     revokeSnapshotRequest.SetSnapshotIdentifier(snapshotIdentifier);
 
     RevokeSnapshotAccessOutcome revokeSnapshotOutcome = Client->RevokeSnapshotAccess(revokeSnapshotRequest);
-    EXPECT_TRUE(revokeSnapshotOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(revokeSnapshotOutcome);
     EXPECT_EQ(CLUSTER_MASTER_USERNAME, revokeSnapshotOutcome.GetResult().GetSnapshot().GetMasterUsername());
 
 
@@ -221,7 +222,7 @@ namespace
     enableSnapshotCopyRequest.SetDestinationRegion("us-west-2");
 
     EnableSnapshotCopyOutcome enableSnapshotCopyOutcome = Client->EnableSnapshotCopy(enableSnapshotCopyRequest);
-    EXPECT_TRUE(enableSnapshotCopyOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(enableSnapshotCopyOutcome);
 
 
     ModifySnapshotCopyRetentionPeriodRequest modifySnapshotRetentionRequest;
@@ -229,7 +230,7 @@ namespace
     modifySnapshotRetentionRequest.SetRetentionPeriod(1);
 
     ModifySnapshotCopyRetentionPeriodOutcome modifySnapshotRetentionOutcome = Client->ModifySnapshotCopyRetentionPeriod(modifySnapshotRetentionRequest);
-    EXPECT_TRUE(modifySnapshotRetentionOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(modifySnapshotRetentionOutcome);
     EXPECT_EQ(1, modifySnapshotRetentionOutcome.GetResult().GetCluster().GetAutomatedSnapshotRetentionPeriod());
 
 
@@ -238,7 +239,7 @@ namespace
     createCopyGrantReqeust.SetSnapshotCopyGrantName(copyGrantName);
 
     CreateSnapshotCopyGrantOutcome createCopyGrantOutcome = Client->CreateSnapshotCopyGrant(createCopyGrantReqeust);
-    EXPECT_TRUE(createCopyGrantOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(createCopyGrantOutcome);
     EXPECT_EQ(copyGrantName, createCopyGrantOutcome.GetResult().GetSnapshotCopyGrant().GetSnapshotCopyGrantName());
 
 
@@ -246,7 +247,7 @@ namespace
     describeCopyGrantRequest.SetSnapshotCopyGrantName(copyGrantName);
 
     DescribeSnapshotCopyGrantsOutcome describeCopyGrantOutcome = Client->DescribeSnapshotCopyGrants(describeCopyGrantRequest);
-    EXPECT_TRUE(describeCopyGrantOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(describeCopyGrantOutcome);
     EXPECT_EQ(copyGrantName, describeCopyGrantOutcome.GetResult().GetSnapshotCopyGrants().front().GetSnapshotCopyGrantName());
 
 
@@ -254,21 +255,21 @@ namespace
     deleteCopyGrantRequest.SetSnapshotCopyGrantName(copyGrantName);
 
     DeleteSnapshotCopyGrantOutcome deleteCopyGrantOutcome = Client->DeleteSnapshotCopyGrant(deleteCopyGrantRequest);
-    EXPECT_TRUE(deleteCopyGrantOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteCopyGrantOutcome);
 
 
     DisableSnapshotCopyRequest disableSnapshotCopyRequest;
     disableSnapshotCopyRequest.SetClusterIdentifier(clusterIdentifier);
 
     DisableSnapshotCopyOutcome disableSnapshotCopyOutcome = Client->DisableSnapshotCopy(disableSnapshotCopyRequest);
-    EXPECT_TRUE(disableSnapshotCopyOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(disableSnapshotCopyOutcome);
 
 
     DeleteClusterSnapshotRequest deleteSnapshotRequest;
     deleteSnapshotRequest.SetSnapshotIdentifier(snapshotIdentifier);
 
     DeleteClusterSnapshotOutcome deleteSnapshotOutcome = Client->DeleteClusterSnapshot(deleteSnapshotRequest);
-    ASSERT_TRUE(deleteSnapshotOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(deleteSnapshotOutcome);
     ASSERT_EQ(CLUSTER_MASTER_USERNAME, deleteSnapshotOutcome.GetResult().GetSnapshot().GetMasterUsername());
   }
 
@@ -280,7 +281,7 @@ namespace
     createHsmRequest.SetHsmClientCertificateIdentifier(hsmIdentifier);
 
     CreateHsmClientCertificateOutcome createHsmOutcome = Client->CreateHsmClientCertificate(createHsmRequest);
-    EXPECT_TRUE(createHsmOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(createHsmOutcome);
     EXPECT_EQ(hsmIdentifier, createHsmOutcome.GetResult().GetHsmClientCertificate().GetHsmClientCertificateIdentifier());
 
 
@@ -288,7 +289,7 @@ namespace
     describeHsmRequest.SetHsmClientCertificateIdentifier(hsmIdentifier);
 
     DescribeHsmClientCertificatesOutcome describeHsmOutcome = Client->DescribeHsmClientCertificates(describeHsmRequest);
-    EXPECT_TRUE(describeHsmOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(describeHsmOutcome);
     EXPECT_EQ(hsmIdentifier, describeHsmOutcome.GetResult().GetHsmClientCertificates().front().GetHsmClientCertificateIdentifier());
 
 
@@ -296,7 +297,7 @@ namespace
     deleteHsmRequest.SetHsmClientCertificateIdentifier(hsmIdentifier);
 
     DeleteHsmClientCertificateOutcome deleteHsmOutcome = Client->DeleteHsmClientCertificate(deleteHsmRequest);
-    ASSERT_TRUE(deleteHsmOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(deleteHsmOutcome);
   }
 
   TEST_F(RedshiftClientTest, TestClusterParameterGroup)
@@ -307,7 +308,7 @@ namespace
 
     DescribeClusterParameterGroupsRequest describeParameterGroupsRequest;
     DescribeClusterParameterGroupsOutcome describeParameterGroupOutcome = Client->DescribeClusterParameterGroups(describeParameterGroupsRequest);
-    ASSERT_TRUE(describeParameterGroupOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(describeParameterGroupOutcome);
     parameterGroupFamily = describeParameterGroupOutcome.GetResult().GetParameterGroups().front().GetParameterGroupFamily();
 
 
@@ -317,7 +318,7 @@ namespace
     createParameterGroupRequest.SetParameterGroupFamily(parameterGroupFamily);
 
     CreateClusterParameterGroupOutcome createParameterGroupOutcome = Client->CreateClusterParameterGroup(createParameterGroupRequest);
-    ASSERT_TRUE(createParameterGroupOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createParameterGroupOutcome);
     EXPECT_EQ(groupDescription, createParameterGroupOutcome.GetResult().GetClusterParameterGroup().GetDescription());
 
 
@@ -325,7 +326,7 @@ namespace
     describeParametersRequest.SetParameterGroupName(groupName);
 
     DescribeClusterParametersOutcome describeParametersOutcome = Client->DescribeClusterParameters(describeParametersRequest);
-    EXPECT_TRUE(describeParametersOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(describeParametersOutcome);
     EXPECT_TRUE(describeParametersOutcome.GetResult().GetParameters().size() > 1);
 
 
@@ -333,7 +334,7 @@ namespace
     describeDefaultParametersRequest.SetParameterGroupFamily(parameterGroupFamily);
 
     DescribeDefaultClusterParametersOutcome describeDefaultParametersOutcome = Client->DescribeDefaultClusterParameters(describeDefaultParametersRequest);
-    EXPECT_TRUE(describeDefaultParametersOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(describeDefaultParametersOutcome);
     EXPECT_EQ(parameterGroupFamily, describeDefaultParametersOutcome.GetResult().GetDefaultClusterParameters().GetParameterGroupFamily());
 
 
@@ -342,7 +343,7 @@ namespace
     resetParameterGroupRequest.SetResetAllParameters(true);
 
     ResetClusterParameterGroupOutcome resetParameterGroupOutcome = Client->ResetClusterParameterGroup(resetParameterGroupRequest);
-    EXPECT_TRUE(resetParameterGroupOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(resetParameterGroupOutcome);
     EXPECT_EQ(groupName, resetParameterGroupOutcome.GetResult().GetParameterGroupName());
 
 
@@ -350,6 +351,6 @@ namespace
     deleteParameterGroupRequest.SetParameterGroupName(groupName);
 
     DeleteClusterParameterGroupOutcome deleteParameterGroupOutcome = Client->DeleteClusterParameterGroup(deleteParameterGroupRequest);
-    EXPECT_TRUE(deleteParameterGroupOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteParameterGroupOutcome);
   }
 }

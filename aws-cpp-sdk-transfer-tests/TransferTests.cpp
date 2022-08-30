@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
@@ -627,7 +628,7 @@ protected:
         }
 
         auto createBucketOutcome = m_s3Client->CreateBucket(createBucket);
-        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
 
         ASSERT_TRUE(WaitForBucketToPropagate(GetTestBucketName()));
 
@@ -1348,7 +1349,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     ListMultipartUploadsRequest listMultipartRequest;
     listMultipartRequest.WithBucket(GetTestBucketName());
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
-    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listMultipartOutcome);
     ASSERT_EQ(1u, listMultipartOutcome.GetResult().GetUploads().size());
 
     HeadObjectRequest headObjectRequest;
@@ -1379,7 +1380,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
 
     listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
-    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listMultipartOutcome);
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CANCEL_FILE_KEY));
@@ -1452,7 +1453,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     listMultipartRequest.WithBucket(GetTestBucketName());
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
-    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listMultipartOutcome);
     // S3 has eventual consistency, even thought we called AbortMultiPartUpload and get successful return,
     // following call of listMultiPartUpload will not gurantee to return 0.
     size_t retries = 0;
@@ -1460,7 +1461,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     {
         std::this_thread::sleep_for(std::chrono::seconds(1));
         listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
-        EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(listMultipartOutcome);
     }
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
 
@@ -1618,7 +1619,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     Aws::Map<Aws::String, Aws::String> headObjectMetadata = headObjectOutcome.GetResult().GetMetadata();
     ASSERT_EQ(metadata.size(), headObjectMetadata.size());
@@ -1670,7 +1671,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     Aws::Map<Aws::String, Aws::String> headObjectMetadata = headObjectOutcome.GetResult().GetMetadata();
     ASSERT_EQ(metadata.size(), headObjectMetadata.size());
@@ -1852,7 +1853,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithComputeContentMd5Test)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     VerifyUploadedFile(*transferManager,
                        testFilePath,
@@ -1913,7 +1914,7 @@ TEST_F(TransferTests, MultipartUploadWithComputeContentMd5Test)
     headObjectRequest.SetKey(RandomFileName);
 
     HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(headObjectOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(headObjectOutcome);
 
     VerifyUploadedFile(*transferManager,
                        testFilePath,

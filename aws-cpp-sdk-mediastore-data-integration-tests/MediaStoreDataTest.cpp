@@ -5,6 +5,7 @@
 
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/platform/Platform.h>
@@ -86,7 +87,7 @@ namespace
                 CreateContainerRequest createContainerRequest;
                 createContainerRequest.SetContainerName(GetTestContainerName());
                 auto createContainerOutcome = m_mediaStoreClient->CreateContainer(createContainerRequest);
-                ASSERT_TRUE(createContainerOutcome.IsSuccess());
+                AWS_ASSERT_SUCCESS(createContainerOutcome);
                 ASSERT_TRUE(WaitForContainerToBeActive(GetTestContainerName()));
             }
 
@@ -274,18 +275,18 @@ namespace
             putObjectRequest.SetBody(objectStream);
 
             auto putObjectOutcome = m_mediaStoreDataClient->PutObject(putObjectRequest);
-            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(putObjectOutcome);
 
             DescribeObjectRequest describeObjectRequest;
             describeObjectRequest.SetPath(SMALL_PAYLOAD_TEST_PATH);
             auto describeObjectOutcome = m_mediaStoreDataClient->DescribeObject(describeObjectRequest);
-            ASSERT_TRUE(describeObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(describeObjectOutcome);
             ASSERT_EQ(strlen(SMALL_PAYLOAD_TEST_TEXT), static_cast<size_t>(describeObjectOutcome.GetResult().GetContentLength()));
 
             GetObjectRequest getObjectRequest;
             getObjectRequest.SetPath(SMALL_PAYLOAD_TEST_PATH);
             auto getObjectOutcome = m_mediaStoreDataClient->GetObject(getObjectRequest);
-            ASSERT_TRUE(getObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(getObjectOutcome);
             Aws::StringStream ss;
             ss << getObjectOutcome.GetResult().GetBody().rdbuf();
             ASSERT_STREQ(SMALL_PAYLOAD_TEST_TEXT, ss.str().c_str());
@@ -305,12 +306,12 @@ namespace
 
             auto putObjectOutcome = m_mediaStoreDataClient->PutObject(putObjectRequest);
             testFileStream->close();
-            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(putObjectOutcome);
 
             DescribeObjectRequest describeObjectRequest;
             describeObjectRequest.SetPath(BIG_TEST_FILE_PATH);
             auto describeObjectOutcome = m_mediaStoreDataClient->DescribeObject(describeObjectRequest);
-            ASSERT_TRUE(describeObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(describeObjectOutcome);
             ASSERT_EQ(BIG_TEST_FILE_SIZE, static_cast<size_t>(describeObjectOutcome.GetResult().GetContentLength()));
 
             GetObjectRequest getObjectRequest;
@@ -321,7 +322,7 @@ namespace
             // Make sure the download file is closed when it's out of scope.
             {
                 auto getObjectOutcome = m_mediaStoreDataClient->GetObject(getObjectRequest);
-                ASSERT_TRUE(getObjectOutcome.IsSuccess());
+                AWS_ASSERT_SUCCESS(getObjectOutcome);
             }
             ASSERT_TRUE(AreFilesSame(sourceTestFileName, downloadTestFileName));
             Aws::FileSystem::RemoveFileIfExists(sourceTestFileName.c_str());

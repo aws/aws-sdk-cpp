@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/Outcome.h>
@@ -76,7 +77,7 @@ namespace
         CreateFileSystemRequest createFileSystemRequest;
         createFileSystemRequest.SetCreationToken(BuildUniqueCreationToken(FILE_SYSTEM_CREATION_TOKEN));
         auto createFileSystemOutcome = m_client.CreateFileSystem(createFileSystemRequest);
-        ASSERT_TRUE(createFileSystemOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createFileSystemOutcome);
         Aws::String fileSystemId = createFileSystemOutcome.GetResult().GetFileSystemId();
         ASSERT_TRUE(WaitForFileSystemToBeActive(fileSystemId));
 
@@ -93,6 +94,6 @@ namespace
         DeleteFileSystemRequest deleteFileSystemRequest;
         deleteFileSystemRequest.SetFileSystemId(fileSystemId);
         auto deleteFileSystemOutcome = m_client.DeleteFileSystem(deleteFileSystemRequest);
-        ASSERT_TRUE(deleteFileSystemOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteFileSystemOutcome);
     }
 }

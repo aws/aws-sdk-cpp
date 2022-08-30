@@ -9,12 +9,18 @@
 #include <chrono>
 #include <thread>
 
+#include <aws/core/client/AWSError.h>
+#include <aws/core/client/CoreErrors.h>
+
 #if defined(GetMessage)
 #undef GetMessage
 #endif
 
 #define AWS_ASSERT_SUCCESS(awsCppSdkOutcome) \
   ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << awsCppSdkOutcome.GetError().GetMessage()
+
+#define AWS_EXPECT_SUCCESS(awsCppSdkOutcome) \
+  EXPECT_TRUE(awsCppSdkOutcome.IsSuccess()) << awsCppSdkOutcome.GetError().GetMessage()
 
 /**
  * AWS-CPP-SDK test utility helper function to un-conditionally retry not succeeded operation call.
@@ -50,6 +56,14 @@ OutcomeT CallOperationWithUnconditionalRetry(const ClientT* client,
                                              const size_t retries = 5,
                                              const std::chrono::seconds sleepBetween = std::chrono::seconds (1))
 {
+    if(!client)
+    {
+        return OutcomeT(Aws::Client::AWSError<Aws::Client::CoreErrors>(
+                Aws::Client::CoreErrors::VALIDATION,
+                "",
+                "CallOperationWithUnconditionalRetry: client is a nullptr", false/*retryable*/));
+    }
+
     std::function<OutcomeT(void)> func = std::bind(OperationFunc, client, request);
     return CallOperationWithUnconditionalRetry(func, retries, sleepBetween);
 }
