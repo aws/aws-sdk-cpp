@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -223,7 +224,7 @@ TEST_F(CloudfrontOperationTest, TestCreateAndDeleteDistribution)
         .WithDistributionConfig(distributionConfig);
 
     auto createDistributionOutcome = cloudFrontClient->CreateDistribution2015_04_17(createDistributionRequest);
-    ASSERT_TRUE(createDistributionOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createDistributionOutcome);
 
 
     //createDistributionOutcome = // some function call
@@ -233,7 +234,7 @@ TEST_F(CloudfrontOperationTest, TestCreateAndDeleteDistribution)
     getDistributionConfigRequest.SetId(distribution.GetId());
 
     auto getDistributionConfigOutcome = cloudFrontClient->GetDistributionConfig2015_04_17(getDistributionConfigRequest);
-    ASSERT_TRUE(getDistributionConfigOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(getDistributionConfigOutcome);
 
     DistributionConfig returnedDistributionConfigRequest;
     returnedDistributionConfigRequest = distributionConfig;
@@ -245,7 +246,7 @@ TEST_F(CloudfrontOperationTest, TestCreateAndDeleteDistribution)
     updateDistributionRequest.SetIfMatch(getDistributionConfigOutcome.GetResult().GetETag());
 
     auto updateDistributionOutcome = cloudFrontClient->UpdateDistribution2015_04_17(updateDistributionRequest);
-    ASSERT_TRUE(updateDistributionOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(updateDistributionOutcome);
     ASSERT_FALSE(updateDistributionOutcome.GetResult().GetDistribution().GetDistributionConfig().GetEnabled());
     WaitForDistributionDeployment(distribution.GetId());
 
@@ -256,5 +257,5 @@ TEST_F(CloudfrontOperationTest, TestCreateAndDeleteDistribution)
     deleteDistributionRequest.SetIfMatch(getDistributionConfigOutcome.GetResult().GetETag());
 
     auto deleteDistributionOutcome = cloudFrontClient->DeleteDistribution2015_04_17(deleteDistributionRequest);
-    ASSERT_TRUE(deleteDistributionOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(deleteDistributionOutcome);
 }

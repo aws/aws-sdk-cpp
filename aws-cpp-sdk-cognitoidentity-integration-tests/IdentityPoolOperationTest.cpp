@@ -130,7 +130,7 @@ protected:
             deleteIdentityPoolRequest.WithIdentityPoolId(pool.GetIdentityPoolId());
 
             DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
-            ASSERT_TRUE(deleteIdentityPoolOutcome.IsSuccess()) << deleteIdentityPoolOutcome.GetError().GetMessage();
+            AWS_ASSERT_SUCCESS(deleteIdentityPoolOutcome);
         }
     }
 
@@ -143,7 +143,7 @@ protected:
         {
             std::cout << "Encountered Unexpected Error:" << outcome.GetError().GetExceptionName() << std::endl;
         }
-        EXPECT_TRUE(outcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(outcome);
 
         auto& identityPools = outcome.GetResult().GetIdentityPools();
         Aws::Vector<IdentityPoolShortDescription> pools;
@@ -183,7 +183,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
     describeIdentityPoolRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
 
     DescribeIdentityPoolOutcome describeIdentityPoolOutcome = client->DescribeIdentityPool(describeIdentityPoolRequest);
-    EXPECT_TRUE(describeIdentityPoolOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(describeIdentityPoolOutcome);
     EXPECT_EQ(createIdentityPoolOutcome.GetResult().GetIdentityPoolId(), describeIdentityPoolOutcome.GetResult().GetIdentityPoolId());
     EXPECT_EQ(createIdentityPoolRequest.GetIdentityPoolName(), describeIdentityPoolOutcome.GetResult().GetIdentityPoolName());
     EXPECT_TRUE(describeIdentityPoolOutcome.GetResult().GetAllowUnauthenticatedIdentities());
@@ -200,7 +200,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
                              .WithSupportedLoginProviders(createIdentityPoolRequest.GetSupportedLoginProviders());
 
     UpdateIdentityPoolOutcome updateIdentityPoolOutcome = client->UpdateIdentityPool(updateIdentityPoolRequest);
-    EXPECT_TRUE(updateIdentityPoolOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(updateIdentityPoolOutcome);
     EXPECT_EQ(updateIdentityPoolRequest.GetIdentityPoolId(), updateIdentityPoolOutcome.GetResult().GetIdentityPoolId());
     EXPECT_EQ(updateIdentityPoolRequest.GetIdentityPoolName(), updateIdentityPoolOutcome.GetResult().GetIdentityPoolName());
     EXPECT_TRUE(updateIdentityPoolRequest.GetAllowUnauthenticatedIdentities());
@@ -212,7 +212,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
     deleteIdentityPoolRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
 
     DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
-    EXPECT_TRUE(deleteIdentityPoolOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteIdentityPoolOutcome);
     ASSERT_EQ(initialPoolCount, GetAllPoolsWithPrefix(GetResourcePrefix()).size());
 }
 
@@ -264,7 +264,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     getIdRequest.WithAccountId(accountId);
 
     GetIdOutcome getIdOutcome = client->GetId(getIdRequest);
-    EXPECT_TRUE(getIdOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(getIdOutcome);
     EXPECT_FALSE(getIdOutcome.GetResult().GetIdentityId().empty());
 
     // No Roles, so expect this to fail
@@ -280,7 +280,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     listIdentitiesRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId()).WithMaxResults(10);
 
     ListIdentitiesOutcome listIdentitiesOutcome = client->ListIdentities(listIdentitiesRequest);
-    EXPECT_TRUE(listIdentitiesOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listIdentitiesOutcome);
     EXPECT_EQ(1u, listIdentitiesOutcome.GetResult().GetIdentities().size());
     EXPECT_EQ(createIdentityPoolOutcome.GetResult().GetIdentityPoolId(), listIdentitiesOutcome.GetResult().GetIdentityPoolId());
     EXPECT_EQ(getIdOutcome.GetResult().GetIdentityId(), listIdentitiesOutcome.GetResult().GetIdentities()[0].GetIdentityId());
@@ -289,7 +289,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     getOpenIdTokenRequest.WithIdentityId(getIdOutcome.GetResult().GetIdentityId());
 
     GetOpenIdTokenOutcome getOpenIdTokenOutcome = client->GetOpenIdToken(getOpenIdTokenRequest);
-    EXPECT_TRUE(getOpenIdTokenOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(getOpenIdTokenOutcome);
     EXPECT_EQ(getIdOutcome.GetResult().GetIdentityId(), getOpenIdTokenOutcome.GetResult().GetIdentityId());
     EXPECT_FALSE(getOpenIdTokenOutcome.GetResult().GetToken().empty());
 
@@ -300,10 +300,10 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
                     .AddLoginToRemove("www.amazon.com");
 
     UnlinkIdentityOutcome unlinkIdentityOutcome = client->UnlinkIdentity(unlinkIdentityRequest);
-    EXPECT_TRUE(unlinkIdentityOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(unlinkIdentityOutcome);
 
     listIdentitiesOutcome = client->ListIdentities(listIdentitiesRequest);
-    EXPECT_TRUE(listIdentitiesOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(listIdentitiesOutcome);
     EXPECT_EQ(0u, listIdentitiesOutcome.GetResult().GetIdentities().size());
     EXPECT_EQ(createIdentityPoolOutcome.GetResult().GetIdentityPoolId(), listIdentitiesOutcome.GetResult().GetIdentityPoolId());*/
 
@@ -311,7 +311,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     deleteIdentityPoolRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
 
     DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
-    EXPECT_TRUE(deleteIdentityPoolOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteIdentityPoolOutcome);
 }
 
 /***This Test will not work until we have a live openId provider to link against.
@@ -332,7 +332,7 @@ TEST_F(IdentityPoolOperationTest, TestDeveloperIdentityActions)
     getIdRequest.WithAccountId("868711054045");
 
     GetIdOutcome getIdOutcome = client->GetId(getIdRequest);
-    EXPECT_TRUE(getIdOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(getIdOutcome);
     EXPECT_FALSE(getIdOutcome.GetResult().GetIdentityId().empty());
 
     GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest;
@@ -343,7 +343,7 @@ TEST_F(IdentityPoolOperationTest, TestDeveloperIdentityActions)
     GetOpenIdTokenForDeveloperIdentityOutcome getOpenIdTokenForDeveloperIdentityOutcome =
                     client->GetOpenIdTokenForDeveloperIdentity(getOpenIdTokenForDeveloperIdentityRequest);
 
-    EXPECT_TRUE(getOpenIdTokenForDeveloperIdentityOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(getOpenIdTokenForDeveloperIdentityOutcome);
     EXPECT_EQ(getIdOutcome.GetResult().GetIdentityId(), getOpenIdTokenForDeveloperIdentityOutcome.GetResult().GetIdentityId());
     EXPECT_FALSE(getOpenIdTokenForDeveloperIdentityOutcome.GetResult().GetToken().empty());
 
@@ -352,7 +352,7 @@ TEST_F(IdentityPoolOperationTest, TestDeveloperIdentityActions)
                     .WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
 
     LookupDeveloperIdentityOutcome lookupDeveloperIdentityOutcome = client->LookupDeveloperIdentity(lookupDeveloperIdentityRequest);
-    EXPECT_TRUE(lookupDeveloperIdentityOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(lookupDeveloperIdentityOutcome);
     EXPECT_EQ(getIdOutcome.GetResult().GetIdentityId(), lookupDeveloperIdentityOutcome.GetResult().GetIdentityId());
     //EXPECT_EQ(getOpenIdTokenForDeveloperIdentityOutcome.GetResult().GetIdentityId(),
         //      lookupDeveloperIdentityOutcome.GetResult().GetDeveloperUserIdentifierList()[0]);
@@ -361,7 +361,7 @@ TEST_F(IdentityPoolOperationTest, TestDeveloperIdentityActions)
     deleteIdentityPoolRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId());
 
     DeleteIdentityPoolOutcome deleteIdentityPoolOutcome = client->DeleteIdentityPool(deleteIdentityPoolRequest);
-    EXPECT_TRUE(deleteIdentityPoolOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(deleteIdentityPoolOutcome);
 }*/
 
 }

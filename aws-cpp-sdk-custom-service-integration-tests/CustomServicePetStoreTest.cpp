@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
 #if STANDALONE
@@ -71,14 +72,14 @@ namespace
         newPet.SetPrice(9.99);
         createPetRequest.SetNewPet(newPet);
         auto createPetOutcome = client.CreatePet(createPetRequest);
-        ASSERT_TRUE(createPetOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(createPetOutcome);
 
         // Test GetPetRequest
         GetPetRequest getPetRequest;
         getPetRequest.SetPetId(1);
 
         auto getPetOutcome = client.GetPet(getPetRequest);
-        ASSERT_TRUE(getPetOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getPetOutcome);
         ASSERT_EQ("dog", getPetOutcome.GetResult().GetPet().GetType());
         ASSERT_EQ(249.99, getPetOutcome.GetResult().GetPet().GetPrice());
 
@@ -86,7 +87,7 @@ namespace
         GetPetsRequest getPetsRequest;
         auto getPetsOutcome = client.GetPets(getPetsRequest);
 
-        ASSERT_TRUE(getPetsOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getPetsOutcome);
         auto pets = getPetsOutcome.GetResult().GetPets();
         ASSERT_EQ(3u, pets.size());
         auto pet = pets[1];
@@ -104,7 +105,7 @@ namespace
         GetPetsRequest getPetsRequest;
         auto getPetsOutcome = client.GetPets(getPetsRequest);
 
-        ASSERT_TRUE(getPetsOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getPetsOutcome);
         ASSERT_EQ(3u, getPetsOutcome.GetResult().GetPets().size());
     }
 }

@@ -4,6 +4,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
 #include <aws/core/auth/AWSCredentials.h>
@@ -51,7 +52,7 @@ TEST_F(EC2DualStackTests, TestDualStackMocked)
 
     Aws::EC2::Model::DescribeHostsRequest request;
     Aws::EC2::Model::DescribeHostsOutcome response = ec2Client.DescribeHosts(request);
-    ASSERT_TRUE(response.IsSuccess());
+    AWS_ASSERT_SUCCESS(response);
 
     auto requestsMade = mockHttpClient->GetAllRequestsMade();
     ASSERT_EQ(1u, requestsMade.size());
@@ -77,5 +78,5 @@ TEST_F(EC2DualStackTests, TestDualStackEndpoint)
     Aws::EC2::Model::DescribeHostsRequest request;
     Aws::EC2::Model::DescribeHostsOutcome response = ec2Client.DescribeHosts(request);
 
-    ASSERT_TRUE(response.IsSuccess());
+    AWS_ASSERT_SUCCESS(response);
 }

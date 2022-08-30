@@ -360,7 +360,7 @@ namespace
             createBucketRequest.SetBucket(fullBucketName);
             createBucketRequest.SetACL(BucketCannedACL::private_);
             CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-            EXPECT_TRUE(createBucketOutcome.IsSuccess());
+            AWS_EXPECT_SUCCESS(createBucketOutcome);
             const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
             EXPECT_TRUE(!createBucketResult.GetLocation().empty());
             EXPECT_TRUE(WaitForBucketToPropagate(fullBucketName));

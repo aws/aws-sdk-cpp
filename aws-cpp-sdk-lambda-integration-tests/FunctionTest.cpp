@@ -5,6 +5,7 @@
 #include <fstream>
 
 #include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -249,7 +250,7 @@ protected:
         createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs12_x);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
-        ASSERT_TRUE(createFunctionOutcome.IsSuccess()) << createFunctionOutcome.GetError().GetMessage();
+        AWS_ASSERT_SUCCESS(createFunctionOutcome);
         ASSERT_EQ(functionName,createFunctionOutcome.GetResult().GetFunctionName());
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
         ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
@@ -291,7 +292,7 @@ TEST_F(FunctionTest, TestListFunction)
         if(!listFunctionsOutcome.GetResult().GetNextMarker().empty())
             listFunctionsRequest.SetMarker(listFunctionsOutcome.GetResult().GetNextMarker());
         listFunctionsOutcome = m_client->ListFunctions(listFunctionsRequest);
-        EXPECT_TRUE(listFunctionsOutcome.IsSuccess()) << listFunctionsOutcome.GetError().GetMessage();
+        AWS_EXPECT_SUCCESS(listFunctionsOutcome);
 
         auto functions = listFunctionsOutcome.GetResult().GetFunctions();
         Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
@@ -312,7 +313,7 @@ TEST_F(FunctionTest, TestGetFunction)
     GetFunctionRequest getFunctionRequest;
     getFunctionRequest.SetFunctionName(simpleFunctionName);
     GetFunctionOutcome getFunctionOutcome = m_client->GetFunction(getFunctionRequest);
-    EXPECT_TRUE(getFunctionOutcome.IsSuccess()) << getFunctionOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(getFunctionOutcome);
 
     GetFunctionResult getFunctionResult = getFunctionOutcome.GetResult();
     EXPECT_EQ(Runtime::nodejs12_x, getFunctionResult.GetConfiguration().GetRuntime());
@@ -330,7 +331,7 @@ TEST_F(FunctionTest, TestGetFunctionConfiguration)
     GetFunctionConfigurationRequest getFunctionConfigurationRequest;
     getFunctionConfigurationRequest.SetFunctionName(simpleFunctionName);
     GetFunctionConfigurationOutcome getFunctionConfigurationOutcome = m_client->GetFunctionConfiguration(getFunctionConfigurationRequest);
-    EXPECT_TRUE(getFunctionConfigurationOutcome.IsSuccess()) << getFunctionConfigurationOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(getFunctionConfigurationOutcome);
 
     GetFunctionConfigurationResult getFunctionConfigurationResult = getFunctionConfigurationOutcome.GetResult();
     EXPECT_EQ(Runtime::nodejs12_x, getFunctionConfigurationResult.GetRuntime());
@@ -348,7 +349,7 @@ TEST_F(FunctionTest, TestInvokeEvent)
     invokeRequest.SetInvocationType(InvocationType::Event);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(invokeOutcome);
     EXPECT_EQ(202,invokeOutcome.GetResult().GetStatusCode());
 }
 
@@ -361,7 +362,7 @@ TEST_F(FunctionTest, TestInvokeEventFromARN)
     invokeRequest.SetInvocationType(InvocationType::Event);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(invokeOutcome);
     EXPECT_EQ(202,invokeOutcome.GetResult().GetStatusCode());
 }
 
@@ -373,7 +374,7 @@ TEST_F(FunctionTest, TestInvokeDryRun)
     invokeRequest.SetInvocationType(InvocationType::DryRun);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(invokeOutcome);
     EXPECT_EQ(204,invokeOutcome.GetResult().GetStatusCode());
 }
 
@@ -392,7 +393,7 @@ TEST_F(FunctionTest, TestInvokeSync)
 
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(invokeOutcome);
     auto &result = invokeOutcome.GetResult();
     EXPECT_EQ(200,result.GetStatusCode());
 
@@ -435,7 +436,7 @@ TEST_F(FunctionTest, TestInvokeSyncUnhandledFunctionError)
 
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(invokeOutcome);
     const auto& result = invokeOutcome.GetResult();
     EXPECT_EQ(200,result.GetStatusCode());
 
@@ -456,7 +457,7 @@ TEST_F(FunctionTest, TestPermissions)
     addPermissionRequest.SetStatementId("12345");
 
     auto outcome = m_client->AddPermission(addPermissionRequest);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
 
     AddPermissionResult result = outcome.GetResult();
     auto statement = Aws::Utils::Json::JsonValue(result.GetStatement());
@@ -469,7 +470,7 @@ TEST_F(FunctionTest, TestPermissions)
     getPolicyRequest.SetFunctionName(simpleFunctionName);
     auto getPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
     //If this fails, stop.
-    ASSERT_TRUE(getPolicyOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(getPolicyOutcome);
     Aws::Lambda::Model::GetPolicyResult getPolicyResult = getPolicyOutcome.GetResult();
     auto getPolicyStatement = Aws::Utils::Json::JsonValue(getPolicyResult.GetPolicy());
 
@@ -480,7 +481,7 @@ TEST_F(FunctionTest, TestPermissions)
     removePermissionRequest.SetFunctionName(simpleFunctionName);
     removePermissionRequest.SetStatementId("12345");
     auto removePermissionOutcome = m_client->RemovePermission(removePermissionRequest);
-    EXPECT_TRUE(removePermissionOutcome.IsSuccess()) << removePermissionOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(removePermissionOutcome);
 
 
     auto getRemovedPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
@@ -567,7 +568,7 @@ TEST_F(FunctionTest, TestEventSources)
     GetEventSourceMappingRequest getRequest;
     getRequest.SetUUID(createdMappingUUID);
     GetEventSourceMappingOutcome getEventSourceMappingOutcome = m_client->GetEventSourceMapping(getRequest);
-    EXPECT_TRUE(getEventSourceMappingOutcome.IsSuccess()) << getEventSourceMappingOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(getEventSourceMappingOutcome);
     GetEventSourceMappingResult getResult = getEventSourceMappingOutcome.GetResult();
     EXPECT_EQ(99, getResult.GetBatchSize());
     EXPECT_NE(std::string::npos, getResult.GetFunctionArn().find(simpleFunctionName));
@@ -577,14 +578,14 @@ TEST_F(FunctionTest, TestEventSources)
     updateRequest.SetUUID(createdMappingUUID);
     updateRequest.SetEnabled(false);
     UpdateEventSourceMappingOutcome updateOutcome = m_client->UpdateEventSourceMapping(updateRequest);
-    EXPECT_TRUE(updateOutcome.IsSuccess()) << updateOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(updateOutcome);
     UpdateEventSourceMappingResult updateResult = updateOutcome.GetResult();
     EXPECT_NE("Disabled",updateResult.GetState());//This may be 'Updating' or 'Disabling'
 
     DeleteEventSourceMappingRequest deleteRequest;
     deleteRequest.SetUUID(createdMappingUUID);
     DeleteEventSourceMappingOutcome deleteOutcome = m_client->DeleteEventSourceMapping(deleteRequest);
-    EXPECT_TRUE(deleteOutcome.IsSuccess()) << deleteOutcome.GetError().GetMessage();
+    AWS_EXPECT_SUCCESS(deleteOutcome);
 }
 
 } // anonymous namespace
