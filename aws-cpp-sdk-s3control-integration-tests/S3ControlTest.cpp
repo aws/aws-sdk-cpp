@@ -233,13 +233,21 @@ namespace
                 const Aws::String& operation = S3Control::Model::AsyncOperationNameMapper::GetNameForAsyncOperationName(
                         outcome.GetResult().GetAsyncOperation().GetOperation());
                 const auto& status = outcome.GetResult().GetAsyncOperation().GetRequestStatus();
-                std::cout << "S3Control::DescribeMultiRegionAccessPointOperation GetRequestStatus for " << operation << " is " <<
-                             status << " after poll #" << timeoutCount;
-                if(outcome.GetResult().GetAsyncOperation().GetRequestStatus() == "SUCCEEDED")
+                std::cout << "S3Control::DescribeMultiRegionAccessPointOperation request status for " << operation << " is " <<
+                             status << " after poll #" << timeoutCount << "\n";
+                EXPECT_NE(status, "FAILED") << outcome.GetResult().GetAsyncOperation().GetResponseDetails().GetErrorDetails().GetMessage();
+                if(status == "FAILED")
+                {
+                    for(const auto& item : outcome.GetResult().GetAsyncOperation().GetResponseDetails().GetMultiRegionAccessPointDetails().GetRegions()) {
+                        std::cout << "MRAP Detail: " << item.GetName() << " " << item.GetRequestStatus() << "\n";
+                    }
+                    return false;
+                }
+                if(status == "SUCCEEDED")
                 {
                     return true;
                 }
-                std::this_thread::sleep_for(std::chrono::seconds(10));
+                std::this_thread::sleep_for(std::chrono::seconds(20));
             }
 
             return false;
