@@ -39,136 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the database.</p>
-     */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline BatchExecuteStatementRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline BatchExecuteStatementRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database.</p>
-     */
-    inline BatchExecuteStatementRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
-
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline const Aws::Vector<Aws::Vector<SqlParameter>>& GetParameterSets() const{ return m_parameterSets; }
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline bool ParameterSetsHasBeenSet() const { return m_parameterSetsHasBeenSet; }
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline void SetParameterSets(const Aws::Vector<Aws::Vector<SqlParameter>>& value) { m_parameterSetsHasBeenSet = true; m_parameterSets = value; }
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline void SetParameterSets(Aws::Vector<Aws::Vector<SqlParameter>>&& value) { m_parameterSetsHasBeenSet = true; m_parameterSets = std::move(value); }
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline BatchExecuteStatementRequest& WithParameterSets(const Aws::Vector<Aws::Vector<SqlParameter>>& value) { SetParameterSets(value); return *this;}
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline BatchExecuteStatementRequest& WithParameterSets(Aws::Vector<Aws::Vector<SqlParameter>>&& value) { SetParameterSets(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline BatchExecuteStatementRequest& AddParameterSets(const Aws::Vector<SqlParameter>& value) { m_parameterSetsHasBeenSet = true; m_parameterSets.push_back(value); return *this; }
-
-    /**
-     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
-     * executed as many times as the number of parameter sets provided. To execute a
-     * SQL statement with no parameters, use one of the following options:</p> <ul>
-     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
-     * <code>ExecuteStatement</code> operation instead of the
-     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
-     * parameters are not supported.</p> 
-     */
-    inline BatchExecuteStatementRequest& AddParameterSets(Aws::Vector<SqlParameter>&& value) { m_parameterSetsHasBeenSet = true; m_parameterSets.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
@@ -207,47 +77,6 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
      */
     inline BatchExecuteStatementRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline BatchExecuteStatementRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline BatchExecuteStatementRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database schema.</p>
-     */
-    inline BatchExecuteStatementRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 
 
     /**
@@ -373,6 +202,177 @@ namespace Model
 
 
     /**
+     * <p>The name of the database.</p>
+     */
+    inline const Aws::String& GetDatabase() const{ return m_database; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline BatchExecuteStatementRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline BatchExecuteStatementRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the database.</p>
+     */
+    inline BatchExecuteStatementRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline const Aws::String& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline BatchExecuteStatementRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline BatchExecuteStatementRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the database schema.</p>
+     */
+    inline BatchExecuteStatementRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
+
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline const Aws::Vector<Aws::Vector<SqlParameter>>& GetParameterSets() const{ return m_parameterSets; }
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline bool ParameterSetsHasBeenSet() const { return m_parameterSetsHasBeenSet; }
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline void SetParameterSets(const Aws::Vector<Aws::Vector<SqlParameter>>& value) { m_parameterSetsHasBeenSet = true; m_parameterSets = value; }
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline void SetParameterSets(Aws::Vector<Aws::Vector<SqlParameter>>&& value) { m_parameterSetsHasBeenSet = true; m_parameterSets = std::move(value); }
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline BatchExecuteStatementRequest& WithParameterSets(const Aws::Vector<Aws::Vector<SqlParameter>>& value) { SetParameterSets(value); return *this;}
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline BatchExecuteStatementRequest& WithParameterSets(Aws::Vector<Aws::Vector<SqlParameter>>&& value) { SetParameterSets(std::move(value)); return *this;}
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline BatchExecuteStatementRequest& AddParameterSets(const Aws::Vector<SqlParameter>& value) { m_parameterSetsHasBeenSet = true; m_parameterSets.push_back(value); return *this; }
+
+    /**
+     * <p>The parameter set for the batch operation.</p> <p>The SQL statement is
+     * executed as many times as the number of parameter sets provided. To execute a
+     * SQL statement with no parameters, use one of the following options:</p> <ul>
+     * <li> <p>Specify one or more empty parameter sets.</p> </li> <li> <p>Use the
+     * <code>ExecuteStatement</code> operation instead of the
+     * <code>BatchExecuteStatement</code> operation.</p> </li> </ul>  <p>Array
+     * parameters are not supported.</p> 
+     */
+    inline BatchExecuteStatementRequest& AddParameterSets(Aws::Vector<SqlParameter>&& value) { m_parameterSetsHasBeenSet = true; m_parameterSets.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The identifier of a transaction that was started by using the
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
      * transaction that you want to include the SQL statement in.</p> <p>If the SQL
@@ -438,23 +438,23 @@ namespace Model
 
   private:
 
-    Aws::String m_database;
-    bool m_databaseHasBeenSet;
-
-    Aws::Vector<Aws::Vector<SqlParameter>> m_parameterSets;
-    bool m_parameterSetsHasBeenSet;
-
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
-
-    Aws::String m_schema;
-    bool m_schemaHasBeenSet;
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet;
 
     Aws::String m_sql;
     bool m_sqlHasBeenSet;
+
+    Aws::String m_database;
+    bool m_databaseHasBeenSet;
+
+    Aws::String m_schema;
+    bool m_schemaHasBeenSet;
+
+    Aws::Vector<Aws::Vector<SqlParameter>> m_parameterSets;
+    bool m_parameterSetsHasBeenSet;
 
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet;

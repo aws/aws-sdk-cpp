@@ -58,30 +58,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline int GetMaxRuntimePerTrainingJobInSeconds() const{ return m_maxRuntimePerTrainingJobInSeconds; }
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline bool MaxRuntimePerTrainingJobInSecondsHasBeenSet() const { return m_maxRuntimePerTrainingJobInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline void SetMaxRuntimePerTrainingJobInSeconds(int value) { m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true; m_maxRuntimePerTrainingJobInSeconds = value; }
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxRuntimePerTrainingJobInSeconds(int value) { SetMaxRuntimePerTrainingJobInSeconds(value); return *this;}
 

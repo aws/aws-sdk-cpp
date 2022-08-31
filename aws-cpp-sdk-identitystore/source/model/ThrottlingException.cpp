@@ -20,13 +20,17 @@ namespace Model
 
 ThrottlingException::ThrottlingException() : 
     m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
 }
 
 ThrottlingException::ThrottlingException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_retryAfterSeconds(0),
+    m_retryAfterSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
     m_requestIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetryAfterSeconds"))
+  {
+    m_retryAfterSeconds = jsonValue.GetInteger("RetryAfterSeconds");
+
+    m_retryAfterSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue ThrottlingException::Jsonize() const
   if(m_requestIdHasBeenSet)
   {
    payload.WithString("RequestId", m_requestId);
+
+  }
+
+  if(m_retryAfterSecondsHasBeenSet)
+  {
+   payload.WithInteger("RetryAfterSeconds", m_retryAfterSeconds);
 
   }
 

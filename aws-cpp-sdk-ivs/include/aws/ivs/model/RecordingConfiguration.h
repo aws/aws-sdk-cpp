@@ -162,6 +162,35 @@ namespace Model
 
 
     /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline int GetRecordingReconnectWindowSeconds() const{ return m_recordingReconnectWindowSeconds; }
+
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline bool RecordingReconnectWindowSecondsHasBeenSet() const { return m_recordingReconnectWindowSecondsHasBeenSet; }
+
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
+
+    /**
+     * <p>If a broadcast disconnects and then reconnects within the specified interval,
+     * the multiple streams will be considered a single broadcast and merged together.
+     * Default: 0.</p>
+     */
+    inline RecordingConfiguration& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
+
+
+    /**
      * <p>Indicates the current state of the recording configuration. When the state is
      * <code>ACTIVE</code>, the configuration is ready for recording a channel
      * stream.</p>
@@ -387,6 +416,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    int m_recordingReconnectWindowSeconds;
+    bool m_recordingReconnectWindowSecondsHasBeenSet;
 
     RecordingConfigurationState m_state;
     bool m_stateHasBeenSet;

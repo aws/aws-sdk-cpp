@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A CloudFront origin access control.</p><p><h3>See Also:</h3>   <a
+   * <p>A CloudFront origin access control configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginAccessControlConfig">AWS
    * API Reference</a></p>
    */
@@ -183,10 +184,10 @@ namespace Model
      * request and instead passes along the <code>Authorization</code> header from the
      * viewer request. <b>WARNING: To pass along the <code>Authorization</code> header
      * from the viewer request, you <i>must</i> add the <code>Authorization</code>
-     * header to an <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin
-     * request policy</a> for all cache behaviors that use origins associated with this
-     * origin access control.</b> </p> </li> </ul>
+     * header to a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
+     * policy</a> for all cache behaviors that use origins associated with this origin
+     * access control.</b> </p> </li> </ul>
      */
     inline const OriginAccessControlSigningBehaviors& GetSigningBehavior() const{ return m_signingBehavior; }
 
@@ -208,10 +209,10 @@ namespace Model
      * request and instead passes along the <code>Authorization</code> header from the
      * viewer request. <b>WARNING: To pass along the <code>Authorization</code> header
      * from the viewer request, you <i>must</i> add the <code>Authorization</code>
-     * header to an <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin
-     * request policy</a> for all cache behaviors that use origins associated with this
-     * origin access control.</b> </p> </li> </ul>
+     * header to a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
+     * policy</a> for all cache behaviors that use origins associated with this origin
+     * access control.</b> </p> </li> </ul>
      */
     inline bool SigningBehaviorHasBeenSet() const { return m_signingBehaviorHasBeenSet; }
 
@@ -233,10 +234,10 @@ namespace Model
      * request and instead passes along the <code>Authorization</code> header from the
      * viewer request. <b>WARNING: To pass along the <code>Authorization</code> header
      * from the viewer request, you <i>must</i> add the <code>Authorization</code>
-     * header to an <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin
-     * request policy</a> for all cache behaviors that use origins associated with this
-     * origin access control.</b> </p> </li> </ul>
+     * header to a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
+     * policy</a> for all cache behaviors that use origins associated with this origin
+     * access control.</b> </p> </li> </ul>
      */
     inline void SetSigningBehavior(const OriginAccessControlSigningBehaviors& value) { m_signingBehaviorHasBeenSet = true; m_signingBehavior = value; }
 
@@ -258,10 +259,10 @@ namespace Model
      * request and instead passes along the <code>Authorization</code> header from the
      * viewer request. <b>WARNING: To pass along the <code>Authorization</code> header
      * from the viewer request, you <i>must</i> add the <code>Authorization</code>
-     * header to an <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin
-     * request policy</a> for all cache behaviors that use origins associated with this
-     * origin access control.</b> </p> </li> </ul>
+     * header to a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
+     * policy</a> for all cache behaviors that use origins associated with this origin
+     * access control.</b> </p> </li> </ul>
      */
     inline void SetSigningBehavior(OriginAccessControlSigningBehaviors&& value) { m_signingBehaviorHasBeenSet = true; m_signingBehavior = std::move(value); }
 
@@ -283,10 +284,10 @@ namespace Model
      * request and instead passes along the <code>Authorization</code> header from the
      * viewer request. <b>WARNING: To pass along the <code>Authorization</code> header
      * from the viewer request, you <i>must</i> add the <code>Authorization</code>
-     * header to an <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin
-     * request policy</a> for all cache behaviors that use origins associated with this
-     * origin access control.</b> </p> </li> </ul>
+     * header to a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
+     * policy</a> for all cache behaviors that use origins associated with this origin
+     * access control.</b> </p> </li> </ul>
      */
     inline OriginAccessControlConfig& WithSigningBehavior(const OriginAccessControlSigningBehaviors& value) { SetSigningBehavior(value); return *this;}
 
@@ -308,10 +309,10 @@ namespace Model
      * request and instead passes along the <code>Authorization</code> header from the
      * viewer request. <b>WARNING: To pass along the <code>Authorization</code> header
      * from the viewer request, you <i>must</i> add the <code>Authorization</code>
-     * header to an <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">origin
-     * request policy</a> for all cache behaviors that use origins associated with this
-     * origin access control.</b> </p> </li> </ul>
+     * header to a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache
+     * policy</a> for all cache behaviors that use origins associated with this origin
+     * access control.</b> </p> </li> </ul>
      */
     inline OriginAccessControlConfig& WithSigningBehavior(OriginAccessControlSigningBehaviors&& value) { SetSigningBehavior(std::move(value)); return *this;}
 

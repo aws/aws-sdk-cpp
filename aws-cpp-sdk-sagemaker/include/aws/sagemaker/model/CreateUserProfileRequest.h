@@ -122,129 +122,137 @@ namespace Model
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline const Aws::String& GetSingleSignOnUserIdentifier() const{ return m_singleSignOnUserIdentifier; }
 
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline bool SingleSignOnUserIdentifierHasBeenSet() const { return m_singleSignOnUserIdentifierHasBeenSet; }
 
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline void SetSingleSignOnUserIdentifier(const Aws::String& value) { m_singleSignOnUserIdentifierHasBeenSet = true; m_singleSignOnUserIdentifier = value; }
 
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline void SetSingleSignOnUserIdentifier(Aws::String&& value) { m_singleSignOnUserIdentifierHasBeenSet = true; m_singleSignOnUserIdentifier = std::move(value); }
 
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline void SetSingleSignOnUserIdentifier(const char* value) { m_singleSignOnUserIdentifierHasBeenSet = true; m_singleSignOnUserIdentifier.assign(value); }
 
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserIdentifier(const Aws::String& value) { SetSingleSignOnUserIdentifier(value); return *this;}
 
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserIdentifier(Aws::String&& value) { SetSingleSignOnUserIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A specifier for the type of value specified in SingleSignOnUserValue.
      * Currently, the only supported value is "UserName". If the Domain's AuthMode is
-     * SSO, this field is required. If the Domain's AuthMode is not SSO, this field
-     * cannot be specified. </p>
+     * Amazon Web Services SSO, this field is required. If the Domain's AuthMode is not
+     * Amazon Web Services SSO, this field cannot be specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserIdentifier(const char* value) { SetSingleSignOnUserIdentifier(value); return *this;}
 
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline const Aws::String& GetSingleSignOnUserValue() const{ return m_singleSignOnUserValue; }
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline bool SingleSignOnUserValueHasBeenSet() const { return m_singleSignOnUserValueHasBeenSet; }
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline void SetSingleSignOnUserValue(const Aws::String& value) { m_singleSignOnUserValueHasBeenSet = true; m_singleSignOnUserValue = value; }
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline void SetSingleSignOnUserValue(Aws::String&& value) { m_singleSignOnUserValueHasBeenSet = true; m_singleSignOnUserValue = std::move(value); }
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline void SetSingleSignOnUserValue(const char* value) { m_singleSignOnUserValueHasBeenSet = true; m_singleSignOnUserValue.assign(value); }
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserValue(const Aws::String& value) { SetSingleSignOnUserValue(value); return *this;}
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserValue(Aws::String&& value) { SetSingleSignOnUserValue(std::move(value)); return *this;}
 
     /**
      * <p>The username of the associated Amazon Web Services Single Sign-On User for
-     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
-     * must match a valid username of a user in your directory. If the Domain's
-     * AuthMode is not SSO, this field cannot be specified. </p>
+     * this UserProfile. If the Domain's AuthMode is Amazon Web Services SSO, this
+     * field is required, and must match a valid username of a user in your directory.
+     * If the Domain's AuthMode is not Amazon Web Services SSO, this field cannot be
+     * specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserValue(const char* value) { SetSingleSignOnUserValue(value); return *this;}
 

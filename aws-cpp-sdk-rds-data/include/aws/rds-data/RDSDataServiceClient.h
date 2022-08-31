@@ -84,9 +84,10 @@ namespace Model
 
   /**
    * <p><fullname>Amazon RDS Data Service</fullname> <p>Amazon RDS provides an HTTP
-   * endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster. To run
-   * these statements, you work with the Data Service API.</p> <p>For more
-   * information about the Data Service API, see <a
+   * endpoint to run SQL statements on an Amazon Aurora Serverless v1 DB cluster. To
+   * run these statements, you work with the Data Service API.</p>  <p>The Data
+   * Service API isn't supported on Amazon Aurora Serverless v2 DB clusters.</p>
+   *  <p>For more information about the Data Service API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
    * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
    */
@@ -122,8 +123,8 @@ namespace Model
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
          * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p>  <p>If
-         * a call isn't part of a transaction because it doesn't include the
+         * improvement over individual insert and update operations.</p>  <p>If a
+         * call isn't part of a transaction because it doesn't include the
          * <code>transactionID</code> parameter, changes that result from the call are
          * committed automatically.</p> <p>There isn't a fixed upper limit on the number of
          * parameter sets. However, the maximum size of the HTTP request submitted through
@@ -150,16 +151,14 @@ namespace Model
         virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a SQL transaction.</p> <pre><code> &lt;important&gt; &lt;p&gt;A
-         * transaction can run for a maximum of 24 hours. A transaction is terminated and
-         * rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times
-         * out if no calls use its transaction ID in three minutes. If a transaction times
-         * out before it's committed, it's rolled back automatically.&lt;/p&gt;
-         * &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We
-         * recommend that you run each DDL statement in a separate
-         * &lt;code&gt;ExecuteStatement&lt;/code&gt; call with
-         * &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt;
-         * &lt;/important&gt; </code></pre><p><h3>See Also:</h3>   <a
+         * <p>Starts a SQL transaction.</p>  <p>A transaction can run for a maximum
+         * of 24 hours. A transaction is terminated and rolled back automatically after 24
+         * hours.</p> <p>A transaction times out if no calls use its transaction ID in
+         * three minutes. If a transaction times out before it's committed, it's rolled
+         * back automatically.</p> <p>DDL statements inside a transaction cause an implicit
+         * commit. We recommend that you run each DDL statement in a separate
+         * <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code>
+         * enabled.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">AWS
          * API Reference</a></p>
          */
@@ -194,8 +193,8 @@ namespace Model
         virtual void CommitTransactionAsync(const Model::CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
-         * part of a transaction because it doesn't include the <code>transactionID</code>
+         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't part
+         * of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
          * <p>If the binary response data from the database is more than 1 MB, the call is
          * terminated.</p> <p><h3>See Also:</h3>   <a

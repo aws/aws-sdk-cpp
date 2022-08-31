@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/TrafficPattern.h>
 #include <aws/sagemaker/model/RecommendationJobResourceLimit.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/RecommendationJobContainerConfig.h>
 #include <aws/sagemaker/model/EndpointInputConfiguration.h>
 #include <utility>
 
@@ -399,6 +400,49 @@ namespace Model
      */
     inline RecommendationJobInputConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline const RecommendationJobContainerConfig& GetContainerConfig() const{ return m_containerConfig; }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline bool ContainerConfigHasBeenSet() const { return m_containerConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline void SetContainerConfig(const RecommendationJobContainerConfig& value) { m_containerConfigHasBeenSet = true; m_containerConfig = value; }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline void SetContainerConfig(RecommendationJobContainerConfig&& value) { m_containerConfigHasBeenSet = true; m_containerConfig = std::move(value); }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline RecommendationJobInputConfig& WithContainerConfig(const RecommendationJobContainerConfig& value) { SetContainerConfig(value); return *this;}
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline RecommendationJobInputConfig& WithContainerConfig(RecommendationJobContainerConfig&& value) { SetContainerConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelPackageVersionArn;
@@ -418,6 +462,9 @@ namespace Model
 
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet;
+
+    RecommendationJobContainerConfig m_containerConfig;
+    bool m_containerConfigHasBeenSet;
   };
 
 } // namespace Model

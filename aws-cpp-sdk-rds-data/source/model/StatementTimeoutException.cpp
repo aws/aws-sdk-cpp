@@ -19,34 +19,34 @@ namespace Model
 {
 
 StatementTimeoutException::StatementTimeoutException() : 
+    m_messageHasBeenSet(false),
     m_dbConnectionId(0),
-    m_dbConnectionIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_dbConnectionIdHasBeenSet(false)
 {
 }
 
 StatementTimeoutException::StatementTimeoutException(JsonView jsonValue) : 
+    m_messageHasBeenSet(false),
     m_dbConnectionId(0),
-    m_dbConnectionIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_dbConnectionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 StatementTimeoutException& StatementTimeoutException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dbConnectionId"))
-  {
-    m_dbConnectionId = jsonValue.GetInt64("dbConnectionId");
-
-    m_dbConnectionIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
 
     m_messageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dbConnectionId"))
+  {
+    m_dbConnectionId = jsonValue.GetInt64("dbConnectionId");
+
+    m_dbConnectionIdHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue StatementTimeoutException::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dbConnectionIdHasBeenSet)
-  {
-   payload.WithInt64("dbConnectionId", m_dbConnectionId);
-
-  }
-
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
+
+  }
+
+  if(m_dbConnectionIdHasBeenSet)
+  {
+   payload.WithInt64("dbConnectionId", m_dbConnectionId);
 
   }
 

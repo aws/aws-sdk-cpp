@@ -1623,7 +1623,8 @@ namespace Model
         virtual void GetMonitoringSubscription2020_05_31Async(const Model::GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a CloudFront origin access control.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a CloudFront origin access control, including its unique
+         * identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -1640,7 +1641,8 @@ namespace Model
         virtual void GetOriginAccessControl2020_05_31Async(const Model::GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a CloudFront origin access control.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a CloudFront origin access control configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig2020_05_31">AWS
          * API Reference</a></p>
          */

@@ -25,7 +25,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig() :
     m_trafficPatternHasBeenSet(false),
     m_resourceLimitHasBeenSet(false),
     m_endpointConfigurationsHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_containerConfigHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue) :
     m_trafficPatternHasBeenSet(false),
     m_resourceLimitHasBeenSet(false),
     m_endpointConfigurationsHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_containerConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,13 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
     m_volumeKmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContainerConfig"))
+  {
+    m_containerConfig = jsonValue.GetObject("ContainerConfig");
+
+    m_containerConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +142,12 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
   if(m_volumeKmsKeyIdHasBeenSet)
   {
    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
+  }
+
+  if(m_containerConfigHasBeenSet)
+  {
+   payload.WithObject("ContainerConfig", m_containerConfig.Jsonize());
 
   }
 

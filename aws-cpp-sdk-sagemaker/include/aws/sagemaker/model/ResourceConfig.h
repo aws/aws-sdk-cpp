@@ -102,17 +102,27 @@ namespace Model
      * storage volumes store model artifacts and incremental states. Training
      * algorithms might also use the ML storage volume for scratch space. If you want
      * to store the training data in the ML storage volume, choose <code>File</code> as
-     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>You
-     * must specify sufficient ML storage for your scenario. </p>  <p> SageMaker
-     * supports only the General Purpose SSD (gp2) ML storage volume type. </p> 
-     *  <p>Certain Nitro-based instances include local storage with a fixed total
-     * size, dependent on the instance type. When using these instances for training,
-     * SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage.
-     * You can't request a <code>VolumeSizeInGB</code> greater than the total size of
-     * the local instance storage.</p> <p>For a list of instance types that support
-     * local instance storage, including the total size per instance type, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
-     * Store Volumes</a>.</p> 
+     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>When
+     * using an ML instance with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe
+     * SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD
+     * (gp2) storage. Available storage is fixed to the NVMe-type instance's storage
+     * capacity. SageMaker configures storage paths for training datasets, checkpoints,
+     * model artifacts, and outputs to use the entire capacity of the instance storage.
+     * For example, ML instance families with the NVMe-type instance storage include
+     * <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p> <p>When
+     * using an ML instance with the EBS-only storage option and without instance
+     * storage, you must define the size of EBS volume through
+     * <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example,
+     * ML instance families that use EBS volumes include <code>ml.c5</code> and
+     * <code>ml.p2</code>. </p> <p>To look up instance types and their instance storage
+     * types and volumes, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> <p>To find the default local paths defined by the SageMaker
+     * training platform, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon
+     * SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model
+     * Artifacts, and Outputs</a>.</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
 
@@ -121,17 +131,27 @@ namespace Model
      * storage volumes store model artifacts and incremental states. Training
      * algorithms might also use the ML storage volume for scratch space. If you want
      * to store the training data in the ML storage volume, choose <code>File</code> as
-     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>You
-     * must specify sufficient ML storage for your scenario. </p>  <p> SageMaker
-     * supports only the General Purpose SSD (gp2) ML storage volume type. </p> 
-     *  <p>Certain Nitro-based instances include local storage with a fixed total
-     * size, dependent on the instance type. When using these instances for training,
-     * SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage.
-     * You can't request a <code>VolumeSizeInGB</code> greater than the total size of
-     * the local instance storage.</p> <p>For a list of instance types that support
-     * local instance storage, including the total size per instance type, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
-     * Store Volumes</a>.</p> 
+     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>When
+     * using an ML instance with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe
+     * SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD
+     * (gp2) storage. Available storage is fixed to the NVMe-type instance's storage
+     * capacity. SageMaker configures storage paths for training datasets, checkpoints,
+     * model artifacts, and outputs to use the entire capacity of the instance storage.
+     * For example, ML instance families with the NVMe-type instance storage include
+     * <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p> <p>When
+     * using an ML instance with the EBS-only storage option and without instance
+     * storage, you must define the size of EBS volume through
+     * <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example,
+     * ML instance families that use EBS volumes include <code>ml.c5</code> and
+     * <code>ml.p2</code>. </p> <p>To look up instance types and their instance storage
+     * types and volumes, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> <p>To find the default local paths defined by the SageMaker
+     * training platform, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon
+     * SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model
+     * Artifacts, and Outputs</a>.</p>
      */
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
@@ -140,17 +160,27 @@ namespace Model
      * storage volumes store model artifacts and incremental states. Training
      * algorithms might also use the ML storage volume for scratch space. If you want
      * to store the training data in the ML storage volume, choose <code>File</code> as
-     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>You
-     * must specify sufficient ML storage for your scenario. </p>  <p> SageMaker
-     * supports only the General Purpose SSD (gp2) ML storage volume type. </p> 
-     *  <p>Certain Nitro-based instances include local storage with a fixed total
-     * size, dependent on the instance type. When using these instances for training,
-     * SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage.
-     * You can't request a <code>VolumeSizeInGB</code> greater than the total size of
-     * the local instance storage.</p> <p>For a list of instance types that support
-     * local instance storage, including the total size per instance type, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
-     * Store Volumes</a>.</p> 
+     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>When
+     * using an ML instance with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe
+     * SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD
+     * (gp2) storage. Available storage is fixed to the NVMe-type instance's storage
+     * capacity. SageMaker configures storage paths for training datasets, checkpoints,
+     * model artifacts, and outputs to use the entire capacity of the instance storage.
+     * For example, ML instance families with the NVMe-type instance storage include
+     * <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p> <p>When
+     * using an ML instance with the EBS-only storage option and without instance
+     * storage, you must define the size of EBS volume through
+     * <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example,
+     * ML instance families that use EBS volumes include <code>ml.c5</code> and
+     * <code>ml.p2</code>. </p> <p>To look up instance types and their instance storage
+     * types and volumes, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> <p>To find the default local paths defined by the SageMaker
+     * training platform, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon
+     * SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model
+     * Artifacts, and Outputs</a>.</p>
      */
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
 
@@ -159,17 +189,27 @@ namespace Model
      * storage volumes store model artifacts and incremental states. Training
      * algorithms might also use the ML storage volume for scratch space. If you want
      * to store the training data in the ML storage volume, choose <code>File</code> as
-     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>You
-     * must specify sufficient ML storage for your scenario. </p>  <p> SageMaker
-     * supports only the General Purpose SSD (gp2) ML storage volume type. </p> 
-     *  <p>Certain Nitro-based instances include local storage with a fixed total
-     * size, dependent on the instance type. When using these instances for training,
-     * SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage.
-     * You can't request a <code>VolumeSizeInGB</code> greater than the total size of
-     * the local instance storage.</p> <p>For a list of instance types that support
-     * local instance storage, including the total size per instance type, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
-     * Store Volumes</a>.</p> 
+     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>When
+     * using an ML instance with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe
+     * SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD
+     * (gp2) storage. Available storage is fixed to the NVMe-type instance's storage
+     * capacity. SageMaker configures storage paths for training datasets, checkpoints,
+     * model artifacts, and outputs to use the entire capacity of the instance storage.
+     * For example, ML instance families with the NVMe-type instance storage include
+     * <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p> <p>When
+     * using an ML instance with the EBS-only storage option and without instance
+     * storage, you must define the size of EBS volume through
+     * <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example,
+     * ML instance families that use EBS volumes include <code>ml.c5</code> and
+     * <code>ml.p2</code>. </p> <p>To look up instance types and their instance storage
+     * types and volumes, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> <p>To find the default local paths defined by the SageMaker
+     * training platform, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon
+     * SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model
+     * Artifacts, and Outputs</a>.</p>
      */
     inline ResourceConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
 
