@@ -1601,4 +1601,25 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
     }
+
+    TEST_F(BucketAndObjectOperationTest, NoAuthPublicBucket) {
+        Aws::S3Crt::ClientConfiguration s3ClientConfig;
+        s3ClientConfig.region = Aws::Region::US_EAST_1;
+        s3ClientConfig.scheme = Scheme::HTTPS;
+        s3ClientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+        s3ClientConfig.throughputTargetGbps = 2.0;
+        s3ClientConfig.partSize = 5 * 1024 * 1024;
+
+        Client = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG,
+                                              Aws::Auth::AWSCredentials{"", ""},
+                                              s3ClientConfig,
+                                              Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never);
+
+        //Make a request for one of out public doc pages
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket("aws-sdk-cpp-docs");
+        getObjectRequest.SetKey("cpp/api/LATEST/index.html");
+
+        AWS_ASSERT_SUCCESS(Client->GetObject(getObjectRequest));
+    }
 }
