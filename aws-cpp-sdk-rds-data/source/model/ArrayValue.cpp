@@ -19,36 +19,26 @@ namespace Model
 {
 
 ArrayValue::ArrayValue() : 
-    m_arrayValuesHasBeenSet(false),
     m_booleanValuesHasBeenSet(false),
-    m_doubleValuesHasBeenSet(false),
     m_longValuesHasBeenSet(false),
-    m_stringValuesHasBeenSet(false)
+    m_doubleValuesHasBeenSet(false),
+    m_stringValuesHasBeenSet(false),
+    m_arrayValuesHasBeenSet(false)
 {
 }
 
 ArrayValue::ArrayValue(JsonView jsonValue) : 
-    m_arrayValuesHasBeenSet(false),
     m_booleanValuesHasBeenSet(false),
-    m_doubleValuesHasBeenSet(false),
     m_longValuesHasBeenSet(false),
-    m_stringValuesHasBeenSet(false)
+    m_doubleValuesHasBeenSet(false),
+    m_stringValuesHasBeenSet(false),
+    m_arrayValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ArrayValue& ArrayValue::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arrayValues"))
-  {
-    Array<JsonView> arrayValuesJsonList = jsonValue.GetArray("arrayValues");
-    for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
-    {
-      m_arrayValues.push_back(arrayValuesJsonList[arrayValuesIndex].AsObject());
-    }
-    m_arrayValuesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("booleanValues"))
   {
     Array<JsonView> booleanValuesJsonList = jsonValue.GetArray("booleanValues");
@@ -57,16 +47,6 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
       m_booleanValues.push_back(booleanValuesJsonList[booleanValuesIndex].AsBool());
     }
     m_booleanValuesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("doubleValues"))
-  {
-    Array<JsonView> doubleValuesJsonList = jsonValue.GetArray("doubleValues");
-    for(unsigned doubleValuesIndex = 0; doubleValuesIndex < doubleValuesJsonList.GetLength(); ++doubleValuesIndex)
-    {
-      m_doubleValues.push_back(doubleValuesJsonList[doubleValuesIndex].AsDouble());
-    }
-    m_doubleValuesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("longValues"))
@@ -79,6 +59,16 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
     m_longValuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("doubleValues"))
+  {
+    Array<JsonView> doubleValuesJsonList = jsonValue.GetArray("doubleValues");
+    for(unsigned doubleValuesIndex = 0; doubleValuesIndex < doubleValuesJsonList.GetLength(); ++doubleValuesIndex)
+    {
+      m_doubleValues.push_back(doubleValuesJsonList[doubleValuesIndex].AsDouble());
+    }
+    m_doubleValuesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("stringValues"))
   {
     Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
@@ -89,23 +79,22 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
     m_stringValuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arrayValues"))
+  {
+    Array<JsonView> arrayValuesJsonList = jsonValue.GetArray("arrayValues");
+    for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
+    {
+      m_arrayValues.push_back(arrayValuesJsonList[arrayValuesIndex].AsObject());
+    }
+    m_arrayValuesHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ArrayValue::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_arrayValuesHasBeenSet)
-  {
-   Array<JsonValue> arrayValuesJsonList(m_arrayValues.size());
-   for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
-   {
-     arrayValuesJsonList[arrayValuesIndex].AsObject(m_arrayValues[arrayValuesIndex].Jsonize());
-   }
-   payload.WithArray("arrayValues", std::move(arrayValuesJsonList));
-
-  }
 
   if(m_booleanValuesHasBeenSet)
   {
@@ -115,17 +104,6 @@ JsonValue ArrayValue::Jsonize() const
      booleanValuesJsonList[booleanValuesIndex].AsBool(m_booleanValues[booleanValuesIndex]);
    }
    payload.WithArray("booleanValues", std::move(booleanValuesJsonList));
-
-  }
-
-  if(m_doubleValuesHasBeenSet)
-  {
-   Array<JsonValue> doubleValuesJsonList(m_doubleValues.size());
-   for(unsigned doubleValuesIndex = 0; doubleValuesIndex < doubleValuesJsonList.GetLength(); ++doubleValuesIndex)
-   {
-     doubleValuesJsonList[doubleValuesIndex].AsDouble(m_doubleValues[doubleValuesIndex]);
-   }
-   payload.WithArray("doubleValues", std::move(doubleValuesJsonList));
 
   }
 
@@ -140,6 +118,17 @@ JsonValue ArrayValue::Jsonize() const
 
   }
 
+  if(m_doubleValuesHasBeenSet)
+  {
+   Array<JsonValue> doubleValuesJsonList(m_doubleValues.size());
+   for(unsigned doubleValuesIndex = 0; doubleValuesIndex < doubleValuesJsonList.GetLength(); ++doubleValuesIndex)
+   {
+     doubleValuesJsonList[doubleValuesIndex].AsDouble(m_doubleValues[doubleValuesIndex]);
+   }
+   payload.WithArray("doubleValues", std::move(doubleValuesJsonList));
+
+  }
+
   if(m_stringValuesHasBeenSet)
   {
    Array<JsonValue> stringValuesJsonList(m_stringValues.size());
@@ -148,6 +137,17 @@ JsonValue ArrayValue::Jsonize() const
      stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);
    }
    payload.WithArray("stringValues", std::move(stringValuesJsonList));
+
+  }
+
+  if(m_arrayValuesHasBeenSet)
+  {
+   Array<JsonValue> arrayValuesJsonList(m_arrayValues.size());
+   for(unsigned arrayValuesIndex = 0; arrayValuesIndex < arrayValuesJsonList.GetLength(); ++arrayValuesIndex)
+   {
+     arrayValuesJsonList[arrayValuesIndex].AsObject(m_arrayValues[arrayValuesIndex].Jsonize());
+   }
+   payload.WithArray("arrayValues", std::move(arrayValuesJsonList));
 
   }
 

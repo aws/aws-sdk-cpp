@@ -19,34 +19,34 @@ namespace Model
 {
 
 SqlStatementResult::SqlStatementResult() : 
+    m_resultFrameHasBeenSet(false),
     m_numberOfRecordsUpdated(0),
-    m_numberOfRecordsUpdatedHasBeenSet(false),
-    m_resultFrameHasBeenSet(false)
+    m_numberOfRecordsUpdatedHasBeenSet(false)
 {
 }
 
 SqlStatementResult::SqlStatementResult(JsonView jsonValue) : 
+    m_resultFrameHasBeenSet(false),
     m_numberOfRecordsUpdated(0),
-    m_numberOfRecordsUpdatedHasBeenSet(false),
-    m_resultFrameHasBeenSet(false)
+    m_numberOfRecordsUpdatedHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SqlStatementResult& SqlStatementResult::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("numberOfRecordsUpdated"))
-  {
-    m_numberOfRecordsUpdated = jsonValue.GetInt64("numberOfRecordsUpdated");
-
-    m_numberOfRecordsUpdatedHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("resultFrame"))
   {
     m_resultFrame = jsonValue.GetObject("resultFrame");
 
     m_resultFrameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("numberOfRecordsUpdated"))
+  {
+    m_numberOfRecordsUpdated = jsonValue.GetInt64("numberOfRecordsUpdated");
+
+    m_numberOfRecordsUpdatedHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue SqlStatementResult::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_numberOfRecordsUpdatedHasBeenSet)
-  {
-   payload.WithInt64("numberOfRecordsUpdated", m_numberOfRecordsUpdated);
-
-  }
-
   if(m_resultFrameHasBeenSet)
   {
    payload.WithObject("resultFrame", m_resultFrame.Jsonize());
+
+  }
+
+  if(m_numberOfRecordsUpdatedHasBeenSet)
+  {
+   payload.WithInt64("numberOfRecordsUpdated", m_numberOfRecordsUpdated);
 
   }
 

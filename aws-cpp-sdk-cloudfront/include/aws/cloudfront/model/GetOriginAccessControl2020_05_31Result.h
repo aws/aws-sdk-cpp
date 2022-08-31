@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Contains an origin access control.</p>
+     * <p>Contains an origin access control, including its unique identifier.</p>
      */
     inline const OriginAccessControl& GetOriginAccessControl() const{ return m_originAccessControl; }
 
     /**
-     * <p>Contains an origin access control.</p>
+     * <p>Contains an origin access control, including its unique identifier.</p>
      */
     inline void SetOriginAccessControl(const OriginAccessControl& value) { m_originAccessControl = value; }
 
     /**
-     * <p>Contains an origin access control.</p>
+     * <p>Contains an origin access control, including its unique identifier.</p>
      */
     inline void SetOriginAccessControl(OriginAccessControl&& value) { m_originAccessControl = std::move(value); }
 
     /**
-     * <p>Contains an origin access control.</p>
+     * <p>Contains an origin access control, including its unique identifier.</p>
      */
     inline GetOriginAccessControl2020_05_31Result& WithOriginAccessControl(const OriginAccessControl& value) { SetOriginAccessControl(value); return *this;}
 
     /**
-     * <p>Contains an origin access control.</p>
+     * <p>Contains an origin access control, including its unique identifier.</p>
      */
     inline GetOriginAccessControl2020_05_31Result& WithOriginAccessControl(OriginAccessControl&& value) { SetOriginAccessControl(std::move(value)); return *this;}
 

@@ -119,6 +119,31 @@ namespace Model
      */
     inline InternalServerException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
+
+    /**
+     * <p>The number of seconds that you would like to wait before retrying the next
+     * request.</p>
+     */
+    inline InternalServerException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
+
   private:
 
     Aws::String m_message;
@@ -126,6 +151,9 @@ namespace Model
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
+
+    int m_retryAfterSeconds;
+    bool m_retryAfterSecondsHasBeenSet;
   };
 
 } // namespace Model

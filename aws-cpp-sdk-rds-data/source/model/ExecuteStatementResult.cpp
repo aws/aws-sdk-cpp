@@ -30,36 +30,6 @@ ExecuteStatementResult::ExecuteStatementResult(const Aws::AmazonWebServiceResult
 ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("columnMetadata"))
-  {
-    Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
-    for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
-    {
-      m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("formattedRecords"))
-  {
-    m_formattedRecords = jsonValue.GetString("formattedRecords");
-
-  }
-
-  if(jsonValue.ValueExists("generatedFields"))
-  {
-    Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
-    for(unsigned generatedFieldsIndex = 0; generatedFieldsIndex < generatedFieldsJsonList.GetLength(); ++generatedFieldsIndex)
-    {
-      m_generatedFields.push_back(generatedFieldsJsonList[generatedFieldsIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("numberOfRecordsUpdated"))
-  {
-    m_numberOfRecordsUpdated = jsonValue.GetInt64("numberOfRecordsUpdated");
-
-  }
-
   if(jsonValue.ValueExists("records"))
   {
     Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
@@ -74,6 +44,36 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
       }
       m_records.push_back(std::move(fieldListList));
     }
+  }
+
+  if(jsonValue.ValueExists("columnMetadata"))
+  {
+    Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
+    for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
+    {
+      m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("numberOfRecordsUpdated"))
+  {
+    m_numberOfRecordsUpdated = jsonValue.GetInt64("numberOfRecordsUpdated");
+
+  }
+
+  if(jsonValue.ValueExists("generatedFields"))
+  {
+    Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
+    for(unsigned generatedFieldsIndex = 0; generatedFieldsIndex < generatedFieldsJsonList.GetLength(); ++generatedFieldsIndex)
+    {
+      m_generatedFields.push_back(generatedFieldsJsonList[generatedFieldsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("formattedRecords"))
+  {
+    m_formattedRecords = jsonValue.GetString("formattedRecords");
+
   }
 
 

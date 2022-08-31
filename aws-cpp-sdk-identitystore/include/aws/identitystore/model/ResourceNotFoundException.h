@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The type of resource in the identity store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource in the identity store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource in the identity store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource in the identity store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource in the identity store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline ResourceNotFoundException& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource in the identity store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline ResourceNotFoundException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -91,13 +91,13 @@ namespace Model
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -105,13 +105,13 @@ namespace Model
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -119,13 +119,13 @@ namespace Model
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -133,13 +133,13 @@ namespace Model
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -147,13 +147,13 @@ namespace Model
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -161,13 +161,13 @@ namespace Model
     inline ResourceNotFoundException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>
@@ -175,13 +175,13 @@ namespace Model
     inline ResourceNotFoundException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
      * value for each resource when it is created and <code>1234567890</code>
      * represents the <code>IdentityStoreId</code> string value. In the case that the
-     * identity store is migrated from a legacy single sign-on identity store, the
+     * identity store is migrated from a legacy SSO identity store, the
      * <code>ResourceId</code> for that identity store will be in the format of
      * <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
      * format.</p>

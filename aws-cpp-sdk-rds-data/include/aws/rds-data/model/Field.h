@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
-#include <aws/rds-data/model/ArrayValue.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
+#include <aws/rds-data/model/ArrayValue.h>
 #include <utility>
 
 namespace Aws
@@ -40,65 +40,24 @@ namespace Model
 
 
     /**
-     * <p>An array of values.</p>
+     * <p>A NULL value.</p>
      */
-    inline const ArrayValue& GetArrayValue() const{ return m_arrayValue; }
+    inline bool GetIsNull() const{ return m_isNull; }
 
     /**
-     * <p>An array of values.</p>
+     * <p>A NULL value.</p>
      */
-    inline bool ArrayValueHasBeenSet() const { return m_arrayValueHasBeenSet; }
+    inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
 
     /**
-     * <p>An array of values.</p>
+     * <p>A NULL value.</p>
      */
-    inline void SetArrayValue(const ArrayValue& value) { m_arrayValueHasBeenSet = true; m_arrayValue = value; }
+    inline void SetIsNull(bool value) { m_isNullHasBeenSet = true; m_isNull = value; }
 
     /**
-     * <p>An array of values.</p>
+     * <p>A NULL value.</p>
      */
-    inline void SetArrayValue(ArrayValue&& value) { m_arrayValueHasBeenSet = true; m_arrayValue = std::move(value); }
-
-    /**
-     * <p>An array of values.</p>
-     */
-    inline Field& WithArrayValue(const ArrayValue& value) { SetArrayValue(value); return *this;}
-
-    /**
-     * <p>An array of values.</p>
-     */
-    inline Field& WithArrayValue(ArrayValue&& value) { SetArrayValue(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A value of BLOB data type.</p>
-     */
-    inline const Aws::Utils::ByteBuffer& GetBlobValue() const{ return m_blobValue; }
-
-    /**
-     * <p>A value of BLOB data type.</p>
-     */
-    inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
-
-    /**
-     * <p>A value of BLOB data type.</p>
-     */
-    inline void SetBlobValue(const Aws::Utils::ByteBuffer& value) { m_blobValueHasBeenSet = true; m_blobValue = value; }
-
-    /**
-     * <p>A value of BLOB data type.</p>
-     */
-    inline void SetBlobValue(Aws::Utils::ByteBuffer&& value) { m_blobValueHasBeenSet = true; m_blobValue = std::move(value); }
-
-    /**
-     * <p>A value of BLOB data type.</p>
-     */
-    inline Field& WithBlobValue(const Aws::Utils::ByteBuffer& value) { SetBlobValue(value); return *this;}
-
-    /**
-     * <p>A value of BLOB data type.</p>
-     */
-    inline Field& WithBlobValue(Aws::Utils::ByteBuffer&& value) { SetBlobValue(std::move(value)); return *this;}
+    inline Field& WithIsNull(bool value) { SetIsNull(value); return *this;}
 
 
     /**
@@ -123,48 +82,6 @@ namespace Model
 
 
     /**
-     * <p>A value of double data type.</p>
-     */
-    inline double GetDoubleValue() const{ return m_doubleValue; }
-
-    /**
-     * <p>A value of double data type.</p>
-     */
-    inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
-
-    /**
-     * <p>A value of double data type.</p>
-     */
-    inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
-
-    /**
-     * <p>A value of double data type.</p>
-     */
-    inline Field& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
-
-
-    /**
-     * <p>A NULL value.</p>
-     */
-    inline bool GetIsNull() const{ return m_isNull; }
-
-    /**
-     * <p>A NULL value.</p>
-     */
-    inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
-
-    /**
-     * <p>A NULL value.</p>
-     */
-    inline void SetIsNull(bool value) { m_isNullHasBeenSet = true; m_isNull = value; }
-
-    /**
-     * <p>A NULL value.</p>
-     */
-    inline Field& WithIsNull(bool value) { SetIsNull(value); return *this;}
-
-
-    /**
      * <p>A value of long data type.</p>
      */
     inline long long GetLongValue() const{ return m_longValue; }
@@ -183,6 +100,27 @@ namespace Model
      * <p>A value of long data type.</p>
      */
     inline Field& WithLongValue(long long value) { SetLongValue(value); return *this;}
+
+
+    /**
+     * <p>A value of double data type.</p>
+     */
+    inline double GetDoubleValue() const{ return m_doubleValue; }
+
+    /**
+     * <p>A value of double data type.</p>
+     */
+    inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
+
+    /**
+     * <p>A value of double data type.</p>
+     */
+    inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
+
+    /**
+     * <p>A value of double data type.</p>
+     */
+    inline Field& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
 
 
     /**
@@ -225,28 +163,90 @@ namespace Model
      */
     inline Field& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
+
+    /**
+     * <p>A value of BLOB data type.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetBlobValue() const{ return m_blobValue; }
+
+    /**
+     * <p>A value of BLOB data type.</p>
+     */
+    inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
+
+    /**
+     * <p>A value of BLOB data type.</p>
+     */
+    inline void SetBlobValue(const Aws::Utils::ByteBuffer& value) { m_blobValueHasBeenSet = true; m_blobValue = value; }
+
+    /**
+     * <p>A value of BLOB data type.</p>
+     */
+    inline void SetBlobValue(Aws::Utils::ByteBuffer&& value) { m_blobValueHasBeenSet = true; m_blobValue = std::move(value); }
+
+    /**
+     * <p>A value of BLOB data type.</p>
+     */
+    inline Field& WithBlobValue(const Aws::Utils::ByteBuffer& value) { SetBlobValue(value); return *this;}
+
+    /**
+     * <p>A value of BLOB data type.</p>
+     */
+    inline Field& WithBlobValue(Aws::Utils::ByteBuffer&& value) { SetBlobValue(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline const ArrayValue& GetArrayValue() const{ return m_arrayValue; }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline bool ArrayValueHasBeenSet() const { return m_arrayValueHasBeenSet; }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline void SetArrayValue(const ArrayValue& value) { m_arrayValueHasBeenSet = true; m_arrayValue = value; }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline void SetArrayValue(ArrayValue&& value) { m_arrayValueHasBeenSet = true; m_arrayValue = std::move(value); }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline Field& WithArrayValue(const ArrayValue& value) { SetArrayValue(value); return *this;}
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline Field& WithArrayValue(ArrayValue&& value) { SetArrayValue(std::move(value)); return *this;}
+
   private:
-
-    ArrayValue m_arrayValue;
-    bool m_arrayValueHasBeenSet;
-
-    Aws::Utils::ByteBuffer m_blobValue;
-    bool m_blobValueHasBeenSet;
-
-    bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
-
-    double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
 
     bool m_isNull;
     bool m_isNullHasBeenSet;
 
+    bool m_booleanValue;
+    bool m_booleanValueHasBeenSet;
+
     long long m_longValue;
     bool m_longValueHasBeenSet;
 
+    double m_doubleValue;
+    bool m_doubleValueHasBeenSet;
+
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
+
+    Aws::Utils::ByteBuffer m_blobValue;
+    bool m_blobValueHasBeenSet;
+
+    ArrayValue m_arrayValue;
+    bool m_arrayValueHasBeenSet;
   };
 
 } // namespace Model

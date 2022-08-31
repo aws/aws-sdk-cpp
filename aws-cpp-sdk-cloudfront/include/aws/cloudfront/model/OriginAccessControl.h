@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A CloudFront origin access control.</p><p><h3>See Also:</h3>   <a
+   * <p>A CloudFront origin access control, including its unique
+   * identifier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginAccessControl">AWS
    * API Reference</a></p>
    */
