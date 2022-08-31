@@ -32,6 +32,7 @@
 #include <aws/s3control/model/CreateBucketRequest.h>
 #include <aws/s3control/model/GetBucketRequest.h>
 #include <aws/s3control/model/DeleteBucketRequest.h>
+#include <aws/s3control/model/DescribeMultiRegionAccessPointOperationRequest.h>
 #include <aws/s3control/model/CreateAccessPointRequest.h>
 #include <aws/s3control/model/GetAccessPointRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
@@ -199,6 +200,51 @@ namespace
             return false;
         }
 
+        /**
+         * Wait for S3-MRAP server-side asynchronous Operation completion
+         *
+         * @param requestToken
+         * @param accountId
+         * @param client
+         * @return
+         */
+        static bool WaitForMultiRegionAccessPointOperationCompletion(const Aws::String& requestToken,
+                                                                     const Aws::String& accountId,
+                                                                     const S3Control::S3ControlClient& client)
+        {
+            /*
+             * These (CreateMultiRegionAccessPoint,DeleteMultiRegionAccessPoint, etc.) requests are asynchronous,
+             * meaning that you might receive a response before the command has completed.
+             */
+            unsigned timeoutCount = 0;
+            while (timeoutCount++ < TIMEOUT_MAX)
+            {
+                S3Control::Model::DescribeMultiRegionAccessPointOperationRequest request;
+                request.SetRequestTokenARN(requestToken);
+                request.SetAccountId(accountId);
+                auto outcome =
+                        CallOperationWithUnconditionalRetry(&client, &Aws::S3Control::S3ControlClient::DescribeMultiRegionAccessPointOperation, request);
+                AWS_EXPECT_SUCCESS(outcome);
+                if(!outcome.IsSuccess())
+                {
+                    return false;
+                }
+
+                const Aws::String& operation = S3Control::Model::AsyncOperationNameMapper::GetNameForAsyncOperationName(
+                        outcome.GetResult().GetAsyncOperation().GetOperation());
+                const auto& status = outcome.GetResult().GetAsyncOperation().GetRequestStatus();
+                std::cout << "S3Control::DescribeMultiRegionAccessPointOperation GetRequestStatus for " << operation << " is " <<
+                             status << " after poll #" << timeoutCount;
+                if(outcome.GetResult().GetAsyncOperation().GetRequestStatus() == "SUCCEEDED")
+                {
+                    return true;
+                }
+                std::this_thread::sleep_for(std::chrono::seconds(10));
+            }
+
+            return false;
+        }
+
         void PrepareAccessPointTest(const Aws::String& bucketName, const Aws::String& accessPointName)
         {
             m_environments.emplace_back("AWS_S3_USE_ARN_REGION", Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION"));
@@ -285,21 +331,14 @@ namespace
 
             auto createMRAPOutcome = m_client.CreateMultiRegionAccessPoint(createMRAPRequest);
             AWS_ASSERT_SUCCESS(createMRAPOutcome);
+            ASSERT_TRUE(WaitForMultiRegionAccessPointOperationCompletion(createMRAPOutcome.GetResult().GetRequestTokenARN(), m_accountId, m_client));
 
-
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX * 2)
-            {
-                GetMultiRegionAccessPointRequest getMRAPRequest;
-                getMRAPRequest.SetAccountId(m_accountId);
-                getMRAPRequest.SetName(accessPointName);
-                auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
-                if (getMRAPOutcome.IsSuccess() && getMRAPOutcome.GetResult().GetAccessPoint().GetStatus() == MultiRegionAccessPointStatus::READY)
-                {
-                    return;
-                }
-                std::this_thread::sleep_for(std::chrono::seconds(10));
-            }
+            GetMultiRegionAccessPointRequest getMRAPRequest;
+            getMRAPRequest.SetAccountId(m_accountId);
+            getMRAPRequest.SetName(accessPointName);
+            auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
+            AWS_ASSERT_SUCCESS(createMRAPOutcome);
+            ASSERT_EQ(getMRAPOutcome.GetResult().GetAccessPoint().GetStatus(), MultiRegionAccessPointStatus::READY);
         }
 
         void CleanUpMRAPTest(const Aws::String& bucketName, const Aws::Vector<Aws::String>& multiRegions, const Aws::String& accessPointName)
@@ -312,20 +351,13 @@ namespace
             deleteMRAPRequest.SetAccountId(m_accountId);
             auto deleteMRAPOutcome = m_client.DeleteMultiRegionAccessPoint(deleteMRAPRequest);
             AWS_ASSERT_SUCCESS(deleteMRAPOutcome);
+            ASSERT_TRUE(WaitForMultiRegionAccessPointOperationCompletion(deleteMRAPOutcome.GetResult().GetRequestTokenARN(), m_accountId, m_client));
 
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX * 2)
-            {
-                GetMultiRegionAccessPointRequest getMRAPRequest;
-                getMRAPRequest.SetAccountId(m_accountId);
-                getMRAPRequest.SetName(accessPointName);
-                auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
-                if (!getMRAPOutcome.IsSuccess())
-                {
-                    break;
-                }
-                std::this_thread::sleep_for(std::chrono::seconds(10));
-            }
+            GetMultiRegionAccessPointRequest getMRAPRequest;
+            getMRAPRequest.SetAccountId(m_accountId);
+            getMRAPRequest.SetName(accessPointName);
+            auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
+            ASSERT_FALSE(getMRAPOutcome.IsSuccess());
 
             for (const Aws::String& region : multiRegions)
             {
