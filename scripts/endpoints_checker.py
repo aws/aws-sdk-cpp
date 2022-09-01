@@ -2,121 +2,148 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-# This script is used to check aws-cpp-sdk source file to identify hard coded endpoints in source code.
-# This identification action is corresponding to a COE https://coe.amazon.com/coes/70203.
-# Complete endpoints list can be found at http://docs.aws.amazon.com/general/latest/gr/rande.html
-# Some appearances of endpoints in source files are intentional based on api description such as files' name end with [svc]Endpoint.cpp [svc]/model/*Region.cpp and etc.
-# These files can be white listed during checking by adding skip pattern in below SkipFile function.
-# Files will be comments-stripped before checking to avoid false alarm.
-# If identified, file name, the first appearance of hard coded endpoints and context will be output to command-line.
-# The exit code will be 1 if identified any file with hard coded endpoints, 0 otherwise.
-
 import os
 import re
 
 """
-endpoints = ["us-east-1", "us-east-2",
-          "us-west-1", "us-west-2",
-          "eu-west-1", "eu-west-2", "eu-west-3", "eu-central-1", "eu-north-1",
-          "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-east-1",
-          "sa-east-1",
-          "cn-north-1", "cn-northwest-1",
-          "ca-central-1",
-          "us-gov-west-1","us-gov-east-1",
-          "us-iso-west-1",
-          "me-south-1",
-          "af-south-1"];
+endpoints = [
+        "us-east-1", "us-east-2",
+        "us-west-1", "us-west-2",
+        "eu-west-1", "eu-west-2", "eu-west-3", 
+        "eu-central-1", 
+        "eu-north-1",
+        "ap-southeast-1", "ap-southeast-2", 
+        "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", 
+        "ap-south-1", 
+        "ap-east-1",
+        "sa-east-1",
+        "cn-north-1", 
+        "cn-northwest-1",
+        "ca-central-1",
+        "us-gov-west-1","us-gov-east-1",
+        "us-iso-west-1",
+        "me-south-1",
+        "af-south-1"
+        ];
 """
 
-def RemoveCPPComments(text):
+
+def remove_cpp_comments(text):
     def replacer(match):
-        s = match.group(0);
+        s = match.group(0)
         if s.startswith('/'):
-            return " "; # int/**/x=5 -> int x=5, instead of intx=5.
+            return " "  # int/**/x=5 -> int x=5, instead of intx=5.
         else:
-            return s;
-    pattern = re.compile(r'//.*?$|/\*.*?\*/|"(?:\\.|[^\\"])*"', re.DOTALL | re.MULTILINE);
-    return re.sub(pattern, replacer, text);
+            return s
 
-def SkipFile(fileName):
-    skipFilePattern = re.compile(r'.*source\/model\/BucketLocationConstraint\.cpp'
-            '|.*source\/S3Client\.cpp'
-            '|.*source\/model\/.*Region.*\.cpp'
-            '|.*source\/[^\/]+Endpoint\.cpp'
-            '|.*aws-cpp-sdk-core\/include\/aws\/core/\Region.h'
-            '|.*tests\/.*Test\.cpp'
-            # add more white lists here
-            );
-    if skipFilePattern.match(fileName):
-        return True;
-    return False;
+    pattern = re.compile(r'//.*?$|/\*.*?\*/|"(?:\\.|[^\\"])*"', re.DOTALL | re.MULTILINE)
+    return re.sub(pattern, replacer, text)
 
-def ScanContent(content):
-    EndpointsPattern = re.compile(r'us-east-1|us-east-2|us-west-1|us-west-2|eu-west-1|eu-west-2|eu-west-3|eu-central-1|eu-north-1|ap-southeast-1|ap-southeast-2|ap-northeast-1|ap-northeast-2|ap-northeast-3|ap-south-1|sa-east-1|sa-east-1|cn-north-1|cn-northwest-1|ca-central-1|us-gov-west-1|us-gov-east-1|me-south-1|af-south-1');
-    return re.search(EndpointsPattern, content);
 
-def CheckFile(inputFile):
-    if SkipFile(inputFile):
-        return False;
+def skip_file(filename):
+    skip_file_pattern = re.compile(r'.*source/model/BucketLocationConstraint.cpp'
+                                   '|.*source/S3Client.cpp'
+                                   '|.*source/model/.*Region.*.cpp'
+                                   '|.*source/[^/]+Endpoint.cpp'
+                                   '|.*aws-cpp-sdk-core/include/aws/core/Region.h'
+                                   '|.*tests/.*Test.cpp'
+                                   # add more white lists here
+                                   )
+    if skip_file_pattern.match(filename):
+        return True
+    return False
 
-    with open(inputFile) as ftarget:
-        content = ftarget.read();
 
-    strippedContent = RemoveCPPComments(content);
-    match = ScanContent(strippedContent);
+def scan_content(content):
+    endpoints_pattern = re.compile(
+        r'us-east-1|us-east-2|'
+        r'us-west-1|us-west-2|'
+        r'eu-west-1|eu-west-2|eu-west-3|'
+        r'eu-central-1|'
+        r'eu-north-1|'
+        r'ap-southeast-1|ap-southeast-2|'
+        r'ap-northeast-1|ap-northeast-2|ap-northeast-3|'
+        r'ap-south-1|'
+        r'ap-east-1|'
+        r'sa-east-1|'
+        r'cn-north-1|'
+        r'cn-northwest-1|'
+        r'ca-central-1|'
+        r'us-gov-west-1|us-gov-east-1|'
+        r'us-iso-west-1|'
+        r'me-south-1|'
+        r'af-south-1')
+    return re.search(endpoints_pattern, content)
+
+
+def check_file(input_file):
+    if skip_file(input_file):
+        return False
+
+    with open(input_file) as input_file_handler:
+        content = input_file_handler.read()
+
+    stripped_content = remove_cpp_comments(content)
+    match = scan_content(stripped_content)
     if match:
-        print inputFile;
-        print "..." + strippedContent[match.start() : match.end()] + "...";
-        return True;
+        print(input_file)
+        print("..." + stripped_content[match.start(): match.end()] + "...")
+        return True
 
-    return False;
+    return False
 
-###################Test Start#####################################
-assert RemoveCPPComments("") == "";
-assert RemoveCPPComments("/") == "/";
-assert RemoveCPPComments("//") == " ";
-assert RemoveCPPComments("abc//test") == "abc ";
-assert RemoveCPPComments("//test") == " ";
-assert RemoveCPPComments("abc") == "abc";
-assert RemoveCPPComments("/abc") == "/abc";
-assert RemoveCPPComments("/abc/") == "/abc/";
-assert RemoveCPPComments("/**/") == " ";
-assert RemoveCPPComments("/*") == "/*";
-assert RemoveCPPComments("*/") == "*/";
-assert RemoveCPPComments("/*/") == "/*/";
-assert RemoveCPPComments("\"") == "\"";
-assert RemoveCPPComments(r'"Hello \"/*test*/World\""') == r'"Hello \"/*test*/World\""';
-assert RemoveCPPComments("/*abc*/") == " ";
-assert RemoveCPPComments(r'abc="//"//comments') == r'abc="//" ';
-assert RemoveCPPComments(r'abc="/*inner comments*/"/*\
-        multiline\
-        comments*/') == r'abc="/*inner comments*/" ';
 
-assert SkipFile("source/model/Regionabc.cpp") == True;
-assert SkipFile("source/model/abcRegion.cpp") == True;
-assert SkipFile("source/abcEndpoint.cpp") == True;
-assert SkipFile("aws-cpp-sdk-core/include/aws/core/Region.h") == True;
-assert SkipFile("aws-cpp-sdk-s3/source/model/BucketLocationConstraint.cpp") == True;
-assert SkipFile("aws-cpp-sdk-s3/source/S3Client.cpp") == True;
-assert SkipFile("source/model/abc.cpp") == False;
-assert SkipFile("source/model/absEndpoint.cpp") == False;
-assert SkipFile("source/model/Endpointabs.cpp") == False;
-assert SkipFile("Endpoint.cpp") == False;
+def main():
+    # Test Start
+    assert remove_cpp_comments("") == ""
+    assert remove_cpp_comments("/") == "/"
+    assert remove_cpp_comments("//") == " "
+    assert remove_cpp_comments("abc//test") == "abc "
+    assert remove_cpp_comments("//test") == " "
+    assert remove_cpp_comments("abc") == "abc"
+    assert remove_cpp_comments("/abc") == "/abc"
+    assert remove_cpp_comments("/abc/") == "/abc/"
+    assert remove_cpp_comments("/**/") == " "
+    assert remove_cpp_comments("/*") == "/*"
+    assert remove_cpp_comments("*/") == "*/"
+    assert remove_cpp_comments("/*/") == "/*/"
+    assert remove_cpp_comments("\"") == "\""
+    assert remove_cpp_comments(r'"Hello \"/*test*/World\""') == r'"Hello \"/*test*/World\""'
+    assert remove_cpp_comments("/*abc*/") == " "
+    assert remove_cpp_comments(r'abc="//"//comments') == r'abc="//" '
+    assert remove_cpp_comments(r'abc="/*inner comments*/"/*\
+            multiline\
+            comments*/') == r'abc="/*inner comments*/" '
 
-assert ScanContent("us-west-1") != None;
-assert ScanContent("avbcap-southeast-1") != None;
-assert ScanContent("eu-central-1") != None;
-assert ScanContent("\"cn-north-1 is in BJS\"") != None;
-assert ScanContent("\"cn-north-2 doesn't exist\"") == None;
+    assert skip_file("source/model/Regionabc.cpp") is True
+    assert skip_file("source/model/abcRegion.cpp") is True
+    assert skip_file("source/abcEndpoint.cpp") is True
+    assert skip_file("aws-cpp-sdk-core/include/aws/core/Region.h") is True
+    assert skip_file("aws-cpp-sdk-s3/source/model/BucketLocationConstraint.cpp") is True
+    assert skip_file("aws-cpp-sdk-s3/source/S3Client.cpp") is True
+    assert skip_file("source/model/abc.cpp") is False
+    assert skip_file("source/model/absEndpoint.cpp") is False
+    assert skip_file("source/model/Endpointabs.cpp") is False
+    assert skip_file("Endpoint.cpp") is False
 
-###################Test End######################################
-print "Start checking hard coded endpoints in source files...";
-exitCode = 0;
-RootDir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)));
-for root, dirnames, fileNames in os.walk(RootDir):
-    for fileName in fileNames:
-        if not root.endswith('-tests') and fileName.endswith(('.h', '.cpp')):
-            targetFile = os.path.join(root, fileName);
-            exitCode |= CheckFile(targetFile);
-print "Finished checking hard coded endpoints in source files with exit code",exitCode,".";
-exit(exitCode);
+    assert scan_content("us-west-1") is not None
+    assert scan_content("avbcap-southeast-1") is not None
+    assert scan_content("eu-central-1") is not None
+    assert scan_content("\"cn-north-1 is in BJS\"") is not None
+    assert scan_content("\"cn-north-2 doesn't exist\"") is None
+    # Test End
+
+    print("Start checking hard coded endpoints in source files...")
+    exit_code = 0
+    root_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    for root, dirnames, file_names in os.walk(root_dir):
+        for fileName in file_names:
+            if not root.endswith('-tests') and fileName.endswith(('.h', '.cpp')):
+                target_file = os.path.join(root, fileName)
+                exit_code |= check_file(target_file)
+    print("Finished checking hard coded endpoints in source files with exit code", exit_code, ".")
+    exit(exit_code)
+
+
+if __name__ == "__main__":
+    main()
