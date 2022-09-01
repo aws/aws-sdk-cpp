@@ -137,7 +137,7 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
         file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
         message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
         execute_process(
-            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
+            COMMAND ${PYTHON3_CMD} scripts/legacy/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})
@@ -198,7 +198,7 @@ function(add_sdks)
 
             # Generates SDK client based on aws-cpp-sdk-core-tests/resources/api-descriptions/document-test-2021-06-28.normal.json for functional testing.
             execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./ --prepareTool
+                COMMAND ${PYTHON3_CMD} scripts/legacy/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./ --prepareTool
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
             message(STATUS "Generated service: document-test, version: 2021-06-28")
