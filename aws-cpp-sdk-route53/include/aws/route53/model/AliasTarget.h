@@ -26,10 +26,8 @@ namespace Model
    * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
    * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
    * that you want to route traffic to.</p> <p>When creating resource record sets for
-   * a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation
-   * alias resource record sets or latency alias resource record sets in a private
-   * hosted zone is unsupported.</p> </li> <li> <p>For information about creating
-   * failover resource record sets in a private hosted zone, see <a
+   * a private hosted zone, note the following:</p> <ul> <li> <p>For information
+   * about creating failover resource record sets in a private hosted zone, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
    * Failover in a Private Hosted Zone</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AliasTarget">AWS

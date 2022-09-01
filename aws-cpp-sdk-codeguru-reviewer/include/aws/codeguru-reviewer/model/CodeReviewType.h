@@ -26,14 +26,14 @@ namespace Model
 {
 
   /**
-   * <p> The type of a code review. There are two code review types: </p> <ul> <li>
-   * <p> <code>PullRequest</code> - A code review that is automatically triggered by
-   * a pull request on an associated repository. </p> </li> <li> <p>
+   * <p>The type of a code review. There are two code review types:</p> <ul> <li> <p>
+   * <code>PullRequest</code> - A code review that is automatically triggered by a
+   * pull request on an associated repository.</p> </li> <li> <p>
    * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a
    * specified branch in an associated repository. The associated repository is
    * specified using its ARN in <a
-   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-   * <code>CreateCodeReview</code> </a>. </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CodeReviewType">AWS
    * API Reference</a></p>
    */
@@ -47,56 +47,50 @@ namespace Model
 
 
     /**
-     * <p> A code review that analyzes all code under a specified branch in an
+     * <p>A code review that analyzes all code under a specified branch in an
      * associated repository. The associated repository is specified using its ARN in
      * <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>. </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
      */
     inline const RepositoryAnalysis& GetRepositoryAnalysis() const{ return m_repositoryAnalysis; }
 
     /**
-     * <p> A code review that analyzes all code under a specified branch in an
+     * <p>A code review that analyzes all code under a specified branch in an
      * associated repository. The associated repository is specified using its ARN in
      * <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>. </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
      */
     inline bool RepositoryAnalysisHasBeenSet() const { return m_repositoryAnalysisHasBeenSet; }
 
     /**
-     * <p> A code review that analyzes all code under a specified branch in an
+     * <p>A code review that analyzes all code under a specified branch in an
      * associated repository. The associated repository is specified using its ARN in
      * <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>. </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
      */
     inline void SetRepositoryAnalysis(const RepositoryAnalysis& value) { m_repositoryAnalysisHasBeenSet = true; m_repositoryAnalysis = value; }
 
     /**
-     * <p> A code review that analyzes all code under a specified branch in an
+     * <p>A code review that analyzes all code under a specified branch in an
      * associated repository. The associated repository is specified using its ARN in
      * <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>. </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
      */
     inline void SetRepositoryAnalysis(RepositoryAnalysis&& value) { m_repositoryAnalysisHasBeenSet = true; m_repositoryAnalysis = std::move(value); }
 
     /**
-     * <p> A code review that analyzes all code under a specified branch in an
+     * <p>A code review that analyzes all code under a specified branch in an
      * associated repository. The associated repository is specified using its ARN in
      * <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>. </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
      */
     inline CodeReviewType& WithRepositoryAnalysis(const RepositoryAnalysis& value) { SetRepositoryAnalysis(value); return *this;}
 
     /**
-     * <p> A code review that analyzes all code under a specified branch in an
+     * <p>A code review that analyzes all code under a specified branch in an
      * associated repository. The associated repository is specified using its ARN in
      * <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-     * <code>CreateCodeReview</code> </a>. </p>
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
      */
     inline CodeReviewType& WithRepositoryAnalysis(RepositoryAnalysis&& value) { SetRepositoryAnalysis(std::move(value)); return *this;}
 

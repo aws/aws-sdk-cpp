@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p> Information about the statistics from the code review. </p><p><h3>See
+   * <p>Information about the statistics from the code review.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/Metrics">AWS
    * API Reference</a></p>
@@ -39,28 +39,28 @@ namespace Model
     /**
      * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
-     * such as comments and blank lines. </p>
+     * such as comments and blank lines.</p>
      */
     inline long long GetMeteredLinesOfCodeCount() const{ return m_meteredLinesOfCodeCount; }
 
     /**
      * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
-     * such as comments and blank lines. </p>
+     * such as comments and blank lines.</p>
      */
     inline bool MeteredLinesOfCodeCountHasBeenSet() const { return m_meteredLinesOfCodeCountHasBeenSet; }
 
     /**
      * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
-     * such as comments and blank lines. </p>
+     * such as comments and blank lines.</p>
      */
     inline void SetMeteredLinesOfCodeCount(long long value) { m_meteredLinesOfCodeCountHasBeenSet = true; m_meteredLinesOfCodeCount = value; }
 
     /**
      * <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the
      * repository where the code review happened. This does not include non-code lines
-     * such as comments and blank lines. </p>
+     * such as comments and blank lines.</p>
      */
     inline Metrics& WithMeteredLinesOfCodeCount(long long value) { SetMeteredLinesOfCodeCount(value); return *this;}
 
@@ -107,22 +107,22 @@ namespace Model
 
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline long long GetFindingsCount() const{ return m_findingsCount; }
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline bool FindingsCountHasBeenSet() const { return m_findingsCountHasBeenSet; }
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline void SetFindingsCount(long long value) { m_findingsCountHasBeenSet = true; m_findingsCount = value; }
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline Metrics& WithFindingsCount(long long value) { SetFindingsCount(value); return *this;}
 

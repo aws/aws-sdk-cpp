@@ -25,10 +25,10 @@ namespace Model
 {
 
   /**
-   * <p> Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object
+   * <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object
    * that contains the S3 object keys for a source code .zip file and for a build
-   * artifacts .zip file that contains .jar or .class files. </p><p><h3>See
-   * Also:</h3>   <a
+   * artifacts .zip file that contains .jar or .class files.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/S3RepositoryDetails">AWS
    * API Reference</a></p>
    */
@@ -91,44 +91,44 @@ namespace Model
 
 
     /**
-     * <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
+     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
      * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files. </p>
+     * .zip file that contains .jar or .class files.</p>
      */
     inline const CodeArtifacts& GetCodeArtifacts() const{ return m_codeArtifacts; }
 
     /**
-     * <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
+     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
      * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files. </p>
+     * .zip file that contains .jar or .class files.</p>
      */
     inline bool CodeArtifactsHasBeenSet() const { return m_codeArtifactsHasBeenSet; }
 
     /**
-     * <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
+     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
      * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files. </p>
+     * .zip file that contains .jar or .class files.</p>
      */
     inline void SetCodeArtifacts(const CodeArtifacts& value) { m_codeArtifactsHasBeenSet = true; m_codeArtifacts = value; }
 
     /**
-     * <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
+     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
      * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files. </p>
+     * .zip file that contains .jar or .class files.</p>
      */
     inline void SetCodeArtifacts(CodeArtifacts&& value) { m_codeArtifactsHasBeenSet = true; m_codeArtifacts = std::move(value); }
 
     /**
-     * <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
+     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
      * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files. </p>
+     * .zip file that contains .jar or .class files.</p>
      */
     inline S3RepositoryDetails& WithCodeArtifacts(const CodeArtifacts& value) { SetCodeArtifacts(value); return *this;}
 
     /**
-     * <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
+     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
      * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files. </p>
+     * .zip file that contains .jar or .class files.</p>
      */
     inline S3RepositoryDetails& WithCodeArtifacts(CodeArtifacts&& value) { SetCodeArtifacts(std::move(value)); return *this;}
 

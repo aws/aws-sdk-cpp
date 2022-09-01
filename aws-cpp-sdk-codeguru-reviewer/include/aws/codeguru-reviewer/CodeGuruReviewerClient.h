@@ -137,13 +137,13 @@ namespace Model
    * maintainability of your code base during the code review stage. For more
    * information about CodeGuru Reviewer, see the <i> <a
    * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon
-   * CodeGuru Reviewer User Guide</a>.</i> </p> <p> To improve the security of your
+   * CodeGuru Reviewer User Guide</a>.</i> </p> <p>To improve the security of your
    * CodeGuru Reviewer API calls, you can establish a private connection between your
    * VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru
    * Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in
-   * the <i>Amazon CodeGuru Reviewer User Guide</i>. </p>
+   * the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
    */
   class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJsonClient
   {
@@ -174,7 +174,7 @@ namespace Model
 
 
         /**
-         * <p> Use to associate an Amazon Web Services CodeCommit repository or a repostory
+         * <p>Use to associate an Amazon Web Services CodeCommit repository or a repository
          * managed by Amazon Web Services CodeStar Connections with Amazon CodeGuru
          * Reviewer. When you associate a repository, CodeGuru Reviewer reviews source code
          * changes in the repository's pull requests and provides automatic
@@ -189,7 +189,7 @@ namespace Model
          * Connections to connect to CodeGuru Reviewer. For more information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html">Associate
          * a repository</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i> </p> 
-         * <p> You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to
+         * <p>You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to
          * associate a GitHub repository with Amazon CodeGuru Reviewer. To associate a
          * GitHub repository, use the console. For more information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
@@ -211,12 +211,12 @@ namespace Model
         virtual void AssociateRepositoryAsync(const Model::AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Use to create a code review with a <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-         * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type
-         * of code review analyzes all code under a specified branch in an associated
-         * repository. <code>PullRequest</code> code reviews are automatically triggered by
-         * a pull request. </p><p><h3>See Also:</h3>   <a
+         * <p>Use to create a code review with a <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a>
+         * of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
+         * under a specified branch in an associated repository. <code>PullRequest</code>
+         * code reviews are automatically triggered by a pull request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">AWS
          * API Reference</a></p>
          */
@@ -233,7 +233,7 @@ namespace Model
         virtual void CreateCodeReviewAsync(const Model::CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the metadata associated with the code review along with its
+         * <p>Returns the metadata associated with the code review along with its
          * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview">AWS
          * API Reference</a></p>
@@ -251,8 +251,8 @@ namespace Model
         virtual void DescribeCodeReviewAsync(const Model::DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Describes the customer feedback for a CodeGuru Reviewer recommendation.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Describes the customer feedback for a CodeGuru Reviewer
+         * recommendation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback">AWS
          * API Reference</a></p>
          */
@@ -269,10 +269,10 @@ namespace Model
         virtual void DescribeRecommendationFeedbackAsync(const Model::DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-         * <code>RepositoryAssociation</code> </a> object that contains information about
-         * the requested repository association. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>
+         * object that contains information about the requested repository
+         * association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRepositoryAssociation">AWS
          * API Reference</a></p>
          */
@@ -307,8 +307,8 @@ namespace Model
         virtual void DisassociateRepositoryAsync(const Model::DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists all the code reviews that the customer has created in the past 90
-         * days. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the code reviews that the customer has created in the past 90
+         * days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews">AWS
          * API Reference</a></p>
          */
@@ -325,11 +325,10 @@ namespace Model
         virtual void ListCodeReviewsAsync(const Model::ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">
-         * <code>RecommendationFeedbackSummary</code> </a> objects that contain customer
-         * recommendation feedback for all CodeGuru Reviewer users. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">RecommendationFeedbackSummary</a>
+         * objects that contain customer recommendation feedback for all CodeGuru Reviewer
+         * users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback">AWS
          * API Reference</a></p>
          */
@@ -346,8 +345,8 @@ namespace Model
         virtual void ListRecommendationFeedbackAsync(const Model::ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the list of all recommendations for a completed code review.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the list of all recommendations for a completed code
+         * review.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations">AWS
          * API Reference</a></p>
          */
@@ -364,19 +363,18 @@ namespace Model
         virtual void ListRecommendationsAsync(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">
-         * <code>RepositoryAssociationSummary</code> </a> objects that contain summary
-         * information about a repository association. You can filter the returned list by
+         * <p>Returns a list of <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">RepositoryAssociationSummary</a>
+         * objects that contain summary information about a repository association. You can
+         * filter the returned list by <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">ProviderType</a>,
          * <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">
-         * <code>ProviderType</code> </a>, <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">
-         * <code>Name</code> </a>, <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">
-         * <code>State</code> </a>, and <a
-         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">
-         * <code>Owner</code> </a>. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">Name</a>,
+         * <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">State</a>,
+         * and <a
+         * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">Owner</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRepositoryAssociations">AWS
          * API Reference</a></p>
          */
@@ -411,9 +409,9 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Stores customer feedback for a CodeGuru Reviewer recommendation. When this
+         * <p>Stores customer feedback for a CodeGuru Reviewer recommendation. When this
          * API is called again with different reactions the previous feedback is
-         * overwritten. </p><p><h3>See Also:</h3>   <a
+         * overwritten.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback">AWS
          * API Reference</a></p>
          */
