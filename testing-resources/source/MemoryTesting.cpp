@@ -61,6 +61,7 @@ void* BaseTestMemorySystem::AllocateMemory(std::size_t blockSize, std::size_t al
     // we end up with malloc extra 16 bytes.
     
     char* rawMemory = reinterpret_cast<char*>(malloc(blockSize + alignof(max_align_t)));
+    EXPECT_TRUE(rawMemory);
     std::size_t *pointerToSize = reinterpret_cast<std::size_t*>(reinterpret_cast<void*>(rawMemory));
     *pointerToSize = blockSize;
 
@@ -99,8 +100,9 @@ ExactTestMemorySystem::ExactTestMemorySystem(uint32_t bucketCount, uint32_t trac
     m_internalSync()
 {
     m_buckets = reinterpret_cast<TaggedMemoryTracker**>(malloc(bucketCount * sizeof(TaggedMemoryTracker*)));
+    EXPECT_TRUE(m_buckets);
 
-    for(uint32_t i = 0; i < bucketCount; ++i)
+    for(uint32_t i = 0; m_buckets && i < bucketCount; ++i)
     {
         m_buckets[i] = nullptr;
     }
@@ -129,6 +131,7 @@ void ExactTestMemorySystem::GrowFreePool()
 {
     // malloc enough memory to hold the linked list pointer as well as the desired number of TaggedMemoryTrackers
     RawBlock* block = reinterpret_cast<RawBlock*>(malloc(m_trackersPerBlock * sizeof(TaggedMemoryTracker) + sizeof(RawBlock*)));
+    ASSERT_TRUE(block);
     block->m_next = m_blocks;
     m_blocks = block;
 

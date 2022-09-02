@@ -146,8 +146,7 @@ ClientConfiguration::ClientConfiguration(const char* profile) {
             region = tmpRegion;
         }
 
-        const Aws::String& profileDefaultsMode = Aws::Config::GetCachedConfigProfile(
-                this->profileName).GetDefaultsMode();
+        Aws::String profileDefaultsMode = Aws::Config::GetCachedConfigProfile(this->profileName).GetDefaultsMode();
         Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, profileDefaultsMode,
                                                                        hasEc2MetadataRegion, ec2MetadataRegion);
         return;

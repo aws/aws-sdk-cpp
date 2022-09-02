@@ -228,13 +228,13 @@
     $CppViewHelper.computeCppType($member.value.shape) $CppViewHelper.computeMemberVariableName($member.key);
 #end
 #if(!$member.value.required && $useRequiredField && !$isEventStreamInput)
-    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)};
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
 #end
 #end
 #end
 #if($operation.result.shape.hasEventStreamMembers())
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
     ${operation.name}Handler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder;
 
 #end
 #end

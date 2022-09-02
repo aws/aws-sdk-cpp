@@ -69,7 +69,7 @@ Aws::String urlEncodeSegment(const Aws::String& segment)
 } // namespace Http
 } // namespace Aws
 
-URI::URI() : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT)
+URI::URI() : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT), m_pathHasTrailingSlash(false)
 {
 }
 

@@ -56,8 +56,14 @@ private:
 class CountedRetryStrategy : public Aws::Client::DefaultRetryStrategy
 {
 public:
-    CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries((std::numeric_limits<long>::max)()) {}
-    CountedRetryStrategy(long maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? (std::numeric_limits<long>::max)() : maxRetires) {}
+    CountedRetryStrategy()
+        : Aws::Client::DefaultRetryStrategy(),
+          m_attemptedRetries(0)
+      {}
+    CountedRetryStrategy(long maxRetires)
+        : Aws::Client::DefaultRetryStrategy(maxRetires <= 0 ? (std::numeric_limits<long>::max)() : maxRetires),
+          m_attemptedRetries(0)
+      {}
 
     bool ShouldRetry(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error, long attemptedRetries) const override
     {
@@ -76,7 +82,6 @@ public:
     void ResetAttemptedRetriesCount() { m_attemptedRetries = 0; }
 private:
     mutable long m_attemptedRetries;
-    long m_maxRetries;
 };
 
 class MockAWSErrorMarshaller : public Aws::Client::AWSErrorMarshaller
@@ -135,6 +140,7 @@ protected:
         {
             bool retryable = response->GetClientErrorType() == Aws::Client::CoreErrors::NETWORK_CONNECTION ? true : false;
             error = Aws::Client::AWSError<Aws::Client::CoreErrors>(response->GetClientErrorType(), "", response->GetClientErrorMessage(), retryable);
+            return error;
         }
         error = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INVALID_ACTION, false);
         error.SetResponseHeaders(response->GetHeaders());

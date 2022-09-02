@@ -133,7 +133,7 @@ ${className}::~${className}()
 
 void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config${credentialsArg})
 {
-  SetServiceClientName("${metadata.serviceId}");
+  AWSClient::SetServiceClientName("${metadata.serviceId}");
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end

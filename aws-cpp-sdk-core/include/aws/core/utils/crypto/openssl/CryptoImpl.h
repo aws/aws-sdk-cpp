@@ -206,7 +206,7 @@ namespace Aws
                 void Cleanup();
 
                 /* openssl has bug finalize decryption of an empty string */
-                bool m_emptyPlaintext;
+                bool m_emptyPlaintext = false;
             };
 
             /**

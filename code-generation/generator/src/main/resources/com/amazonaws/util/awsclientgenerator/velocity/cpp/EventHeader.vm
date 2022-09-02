@@ -59,7 +59,7 @@ namespace Model
   private:
 
     Aws::Vector<unsigned char> $memberVariableName;
-    bool ${CppViewHelper.computeVariableHasBeenSetName($blobMember.key)};
+    bool ${CppViewHelper.computeVariableHasBeenSetName($blobMember.key)} = false;
   };
 
 } // namespace Model

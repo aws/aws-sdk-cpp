@@ -161,6 +161,7 @@ TEST_F(STSProfileCredentialsProviderTest, TestCredentialsLoadAndCache)
     ASSERT_EQ(expiryTime, actualCredentials.GetExpiration());
 
     ASSERT_EQ(1, stsCallCounter);
+    ASSERT_TRUE(stsClient);
     ASSERT_STREQ(ACCESS_KEY_ID_1, stsClient->Credentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ(SECRET_ACCESS_KEY_ID_1, stsClient->Credentials().GetAWSSecretKey().c_str());
 
@@ -287,6 +288,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithProcessCredentials)
     ASSERT_EQ(expiryTime, actualCredentials.GetExpiration());
 
     ASSERT_EQ(1, stsCallCounter);
+    ASSERT_TRUE(stsClient);
     ASSERT_STREQ("AccessKey123", stsClient->Credentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("SecretKey321", stsClient->Credentials().GetAWSSecretKey().c_str());
 }
