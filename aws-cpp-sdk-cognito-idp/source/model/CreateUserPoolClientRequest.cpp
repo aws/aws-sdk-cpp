@@ -41,7 +41,9 @@ CreateUserPoolClientRequest::CreateUserPoolClientRequest() :
     m_enableTokenRevocation(false),
     m_enableTokenRevocationHasBeenSet(false),
     m_enablePropagateAdditionalUserContextData(false),
-    m_enablePropagateAdditionalUserContextDataHasBeenSet(false)
+    m_enablePropagateAdditionalUserContextDataHasBeenSet(false),
+    m_authSessionValidity(0),
+    m_authSessionValidityHasBeenSet(false)
 {
 }
 
@@ -211,6 +213,12 @@ Aws::String CreateUserPoolClientRequest::SerializePayload() const
   if(m_enablePropagateAdditionalUserContextDataHasBeenSet)
   {
    payload.WithBool("EnablePropagateAdditionalUserContextData", m_enablePropagateAdditionalUserContextData);
+
+  }
+
+  if(m_authSessionValidityHasBeenSet)
+  {
+   payload.WithInteger("AuthSessionValidity", m_authSessionValidity);
 
   }
 

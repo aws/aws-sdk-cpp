@@ -1501,6 +1501,39 @@ namespace Model
      */
     inline CreateUserPoolClientRequest& WithEnablePropagateAdditionalUserContextData(bool value) { SetEnablePropagateAdditionalUserContextData(value); return *this;}
 
+
+    /**
+     * <p>Amazon Cognito creates a session token for each API request in an
+     * authentication flow. <code>AuthSessionValidity</code> is the duration, in
+     * minutes, of that session token. Your user pool native user must respond to each
+     * authentication challenge before the session expires.</p>
+     */
+    inline int GetAuthSessionValidity() const{ return m_authSessionValidity; }
+
+    /**
+     * <p>Amazon Cognito creates a session token for each API request in an
+     * authentication flow. <code>AuthSessionValidity</code> is the duration, in
+     * minutes, of that session token. Your user pool native user must respond to each
+     * authentication challenge before the session expires.</p>
+     */
+    inline bool AuthSessionValidityHasBeenSet() const { return m_authSessionValidityHasBeenSet; }
+
+    /**
+     * <p>Amazon Cognito creates a session token for each API request in an
+     * authentication flow. <code>AuthSessionValidity</code> is the duration, in
+     * minutes, of that session token. Your user pool native user must respond to each
+     * authentication challenge before the session expires.</p>
+     */
+    inline void SetAuthSessionValidity(int value) { m_authSessionValidityHasBeenSet = true; m_authSessionValidity = value; }
+
+    /**
+     * <p>Amazon Cognito creates a session token for each API request in an
+     * authentication flow. <code>AuthSessionValidity</code> is the duration, in
+     * minutes, of that session token. Your user pool native user must respond to each
+     * authentication challenge before the session expires.</p>
+     */
+    inline CreateUserPoolClientRequest& WithAuthSessionValidity(int value) { SetAuthSessionValidity(value); return *this;}
+
   private:
 
     Aws::String m_userPoolId;
@@ -1565,6 +1598,9 @@ namespace Model
 
     bool m_enablePropagateAdditionalUserContextData;
     bool m_enablePropagateAdditionalUserContextDataHasBeenSet;
+
+    int m_authSessionValidity;
+    bool m_authSessionValidityHasBeenSet;
   };
 
 } // namespace Model

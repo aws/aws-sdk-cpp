@@ -421,6 +421,48 @@ namespace Model
      */
     inline RoutingProfile& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The number of associated queues in routing profile.</p>
+     */
+    inline long long GetNumberOfAssociatedQueues() const{ return m_numberOfAssociatedQueues; }
+
+    /**
+     * <p>The number of associated queues in routing profile.</p>
+     */
+    inline bool NumberOfAssociatedQueuesHasBeenSet() const { return m_numberOfAssociatedQueuesHasBeenSet; }
+
+    /**
+     * <p>The number of associated queues in routing profile.</p>
+     */
+    inline void SetNumberOfAssociatedQueues(long long value) { m_numberOfAssociatedQueuesHasBeenSet = true; m_numberOfAssociatedQueues = value; }
+
+    /**
+     * <p>The number of associated queues in routing profile.</p>
+     */
+    inline RoutingProfile& WithNumberOfAssociatedQueues(long long value) { SetNumberOfAssociatedQueues(value); return *this;}
+
+
+    /**
+     * <p>The number of associated users in routing profile.</p>
+     */
+    inline long long GetNumberOfAssociatedUsers() const{ return m_numberOfAssociatedUsers; }
+
+    /**
+     * <p>The number of associated users in routing profile.</p>
+     */
+    inline bool NumberOfAssociatedUsersHasBeenSet() const { return m_numberOfAssociatedUsersHasBeenSet; }
+
+    /**
+     * <p>The number of associated users in routing profile.</p>
+     */
+    inline void SetNumberOfAssociatedUsers(long long value) { m_numberOfAssociatedUsersHasBeenSet = true; m_numberOfAssociatedUsers = value; }
+
+    /**
+     * <p>The number of associated users in routing profile.</p>
+     */
+    inline RoutingProfile& WithNumberOfAssociatedUsers(long long value) { SetNumberOfAssociatedUsers(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -446,6 +488,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    long long m_numberOfAssociatedQueues;
+    bool m_numberOfAssociatedQueuesHasBeenSet;
+
+    long long m_numberOfAssociatedUsers;
+    bool m_numberOfAssociatedUsersHasBeenSet;
   };
 
 } // namespace Model

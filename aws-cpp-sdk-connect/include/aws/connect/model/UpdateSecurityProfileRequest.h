@@ -75,47 +75,74 @@ namespace Model
 
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline void SetPermissions(const Aws::Vector<Aws::String>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline void SetPermissions(Aws::Vector<Aws::String>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline UpdateSecurityProfileRequest& WithPermissions(const Aws::Vector<Aws::String>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline UpdateSecurityProfileRequest& WithPermissions(Aws::Vector<Aws::String>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline UpdateSecurityProfileRequest& AddPermissions(const Aws::String& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline UpdateSecurityProfileRequest& AddPermissions(Aws::String&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The permissions granted to a security profile.</p>
+     * <p>The permissions granted to a security profile. For a list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline UpdateSecurityProfileRequest& AddPermissions(const char* value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 

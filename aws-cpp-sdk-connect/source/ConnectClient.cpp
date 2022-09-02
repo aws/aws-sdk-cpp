@@ -124,6 +124,8 @@
 #include <aws/connect/model/ReleasePhoneNumberRequest.h>
 #include <aws/connect/model/ResumeContactRecordingRequest.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersRequest.h>
+#include <aws/connect/model/SearchQueuesRequest.h>
+#include <aws/connect/model/SearchRoutingProfilesRequest.h>
 #include <aws/connect/model/SearchSecurityProfilesRequest.h>
 #include <aws/connect/model/SearchUsersRequest.h>
 #include <aws/connect/model/SearchVocabulariesRequest.h>
@@ -3783,6 +3785,56 @@ void ConnectClient::SearchAvailablePhoneNumbersAsync(const SearchAvailablePhoneN
 void ConnectClient::SearchAvailablePhoneNumbersAsyncHelper(const SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchAvailablePhoneNumbers(request), context);
+}
+
+SearchQueuesOutcome ConnectClient::SearchQueues(const SearchQueuesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/search-queues");
+  return SearchQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchQueuesOutcomeCallable ConnectClient::SearchQueuesCallable(const SearchQueuesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchQueuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchQueues(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::SearchQueuesAsync(const SearchQueuesRequest& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchQueuesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::SearchQueuesAsyncHelper(const SearchQueuesRequest& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchQueues(request), context);
+}
+
+SearchRoutingProfilesOutcome ConnectClient::SearchRoutingProfiles(const SearchRoutingProfilesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/search-routing-profiles");
+  return SearchRoutingProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchRoutingProfilesOutcomeCallable ConnectClient::SearchRoutingProfilesCallable(const SearchRoutingProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchRoutingProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchRoutingProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::SearchRoutingProfilesAsync(const SearchRoutingProfilesRequest& request, const SearchRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchRoutingProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::SearchRoutingProfilesAsyncHelper(const SearchRoutingProfilesRequest& request, const SearchRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchRoutingProfiles(request), context);
 }
 
 SearchSecurityProfilesOutcome ConnectClient::SearchSecurityProfiles(const SearchSecurityProfilesRequest& request) const

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/RStudioServerProDomainSettingsForUpdate.h>
+#include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +75,74 @@ namespace Model
      */
     inline DomainSettingsForUpdate& WithRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdate&& value) { SetRStudioServerProDomainSettingsForUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
+     * <code>sts:SourceIdentity</code> key</a>. This configuration can only be modified
+     * if there are no apps in the <code>InService</code> or <code>Pending</code>
+     * state.</p>
+     */
+    inline const ExecutionRoleIdentityConfig& GetExecutionRoleIdentityConfig() const{ return m_executionRoleIdentityConfig; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
+     * <code>sts:SourceIdentity</code> key</a>. This configuration can only be modified
+     * if there are no apps in the <code>InService</code> or <code>Pending</code>
+     * state.</p>
+     */
+    inline bool ExecutionRoleIdentityConfigHasBeenSet() const { return m_executionRoleIdentityConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
+     * <code>sts:SourceIdentity</code> key</a>. This configuration can only be modified
+     * if there are no apps in the <code>InService</code> or <code>Pending</code>
+     * state.</p>
+     */
+    inline void SetExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = value; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
+     * <code>sts:SourceIdentity</code> key</a>. This configuration can only be modified
+     * if there are no apps in the <code>InService</code> or <code>Pending</code>
+     * state.</p>
+     */
+    inline void SetExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
+     * <code>sts:SourceIdentity</code> key</a>. This configuration can only be modified
+     * if there are no apps in the <code>InService</code> or <code>Pending</code>
+     * state.</p>
+     */
+    inline DomainSettingsForUpdate& WithExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { SetExecutionRoleIdentityConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
+     * <code>sts:SourceIdentity</code> key</a>. This configuration can only be modified
+     * if there are no apps in the <code>InService</code> or <code>Pending</code>
+     * state.</p>
+     */
+    inline DomainSettingsForUpdate& WithExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { SetExecutionRoleIdentityConfig(std::move(value)); return *this;}
+
   private:
 
     RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
     bool m_rStudioServerProDomainSettingsForUpdateHasBeenSet;
+
+    ExecutionRoleIdentityConfig m_executionRoleIdentityConfig;
+    bool m_executionRoleIdentityConfigHasBeenSet;
   };
 
 } // namespace Model

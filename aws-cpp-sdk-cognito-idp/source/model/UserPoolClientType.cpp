@@ -49,7 +49,9 @@ UserPoolClientType::UserPoolClientType() :
     m_enableTokenRevocation(false),
     m_enableTokenRevocationHasBeenSet(false),
     m_enablePropagateAdditionalUserContextData(false),
-    m_enablePropagateAdditionalUserContextDataHasBeenSet(false)
+    m_enablePropagateAdditionalUserContextDataHasBeenSet(false),
+    m_authSessionValidity(0),
+    m_authSessionValidityHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ UserPoolClientType::UserPoolClientType(JsonView jsonValue) :
     m_enableTokenRevocation(false),
     m_enableTokenRevocationHasBeenSet(false),
     m_enablePropagateAdditionalUserContextData(false),
-    m_enablePropagateAdditionalUserContextDataHasBeenSet(false)
+    m_enablePropagateAdditionalUserContextDataHasBeenSet(false),
+    m_authSessionValidity(0),
+    m_authSessionValidityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -283,6 +287,13 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     m_enablePropagateAdditionalUserContextDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthSessionValidity"))
+  {
+    m_authSessionValidity = jsonValue.GetInteger("AuthSessionValidity");
+
+    m_authSessionValidityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -468,6 +479,12 @@ JsonValue UserPoolClientType::Jsonize() const
   if(m_enablePropagateAdditionalUserContextDataHasBeenSet)
   {
    payload.WithBool("EnablePropagateAdditionalUserContextData", m_enablePropagateAdditionalUserContextData);
+
+  }
+
+  if(m_authSessionValidityHasBeenSet)
+  {
+   payload.WithInteger("AuthSessionValidity", m_authSessionValidity);
 
   }
 

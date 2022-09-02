@@ -89,6 +89,8 @@
 #include <aws/connect/model/PutUserStatusResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/connect/model/SearchQueuesResult.h>
+#include <aws/connect/model/SearchRoutingProfilesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
 #include <aws/connect/model/SearchVocabulariesResult.h>
@@ -253,6 +255,8 @@ namespace Model
         class ReleasePhoneNumberRequest;
         class ResumeContactRecordingRequest;
         class SearchAvailablePhoneNumbersRequest;
+        class SearchQueuesRequest;
+        class SearchRoutingProfilesRequest;
         class SearchSecurityProfilesRequest;
         class SearchUsersRequest;
         class SearchVocabulariesRequest;
@@ -406,6 +410,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
+        typedef Aws::Utils::Outcome<SearchQueuesResult, ConnectError> SearchQueuesOutcome;
+        typedef Aws::Utils::Outcome<SearchRoutingProfilesResult, ConnectError> SearchRoutingProfilesOutcome;
         typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
         typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
         typedef Aws::Utils::Outcome<SearchVocabulariesResult, ConnectError> SearchVocabulariesOutcome;
@@ -559,6 +565,8 @@ namespace Model
         typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
         typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+        typedef std::future<SearchQueuesOutcome> SearchQueuesOutcomeCallable;
+        typedef std::future<SearchRoutingProfilesOutcome> SearchRoutingProfilesOutcomeCallable;
         typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
         typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
         typedef std::future<SearchVocabulariesOutcome> SearchVocabulariesOutcomeCallable;
@@ -715,6 +723,8 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchQueuesRequest&, const Model::SearchQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQueuesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchRoutingProfilesRequest&, const Model::SearchRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchRoutingProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchSecurityProfilesRequest&, const Model::SearchSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchVocabulariesRequest&, const Model::SearchVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchVocabulariesResponseReceivedHandler;
@@ -1553,7 +1563,8 @@ namespace Model
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <p>Contact
          * information remains available in Amazon Connect for 24 months, and then it is
-         * deleted.</p> <p><h3>See Also:</h3>   <a
+         * deleted.</p> <p>Only data from November 12, 2021, and later is returned by this
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
          */
@@ -2171,8 +2182,8 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>For the specified version of Amazon Lex, returns a paginated list
-         * of all the Amazon Lex bots currently associated with the instance.
-         * </p><p><h3>See Also:</h3>   <a
+         * of all the Amazon Lex bots currently associated with the instance. Use this API
+         * to returns both Amazon Lex V1 and V2 bots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots">AWS
          * API Reference</a></p>
          */
@@ -2385,8 +2396,11 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Returns a paginated list of all the Amazon Lex bots currently
-         * associated with the instance.</p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Returns a paginated list of all the Amazon Lex V1 bots currently
+         * associated with the instance. To return both Amazon Lex V1 and V2 bots, use the
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">AWS
          * API Reference</a></p>
          */
@@ -2801,6 +2815,44 @@ namespace Model
          * An Async wrapper for SearchAvailablePhoneNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchAvailablePhoneNumbersAsync(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Searches queues in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchQueuesOutcome SearchQueues(const Model::SearchQueuesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchQueues that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchQueuesOutcomeCallable SearchQueuesCallable(const Model::SearchQueuesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchQueuesAsync(const Model::SearchQueuesRequest& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Searches routing profiles in an Amazon Connect instance, with
+         * optional filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchRoutingProfilesOutcome SearchRoutingProfiles(const Model::SearchRoutingProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchRoutingProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchRoutingProfilesOutcomeCallable SearchRoutingProfilesCallable(const Model::SearchRoutingProfilesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchRoutingProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchRoutingProfilesAsync(const Model::SearchRoutingProfilesRequest& request, const SearchRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -3890,6 +3942,8 @@ namespace Model
         void ReleasePhoneNumberAsyncHelper(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchQueuesAsyncHelper(const Model::SearchQueuesRequest& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchRoutingProfilesAsyncHelper(const Model::SearchRoutingProfilesRequest& request, const SearchRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchSecurityProfilesAsyncHelper(const Model::SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchUsersAsyncHelper(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchVocabulariesAsyncHelper(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

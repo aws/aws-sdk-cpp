@@ -20,6 +20,8 @@ namespace Model
 
 CmafEncryption::CmafEncryption() : 
     m_constantInitializationVectorHasBeenSet(false),
+    m_encryptionMethod(CmafEncryptionMethod::NOT_SET),
+    m_encryptionMethodHasBeenSet(false),
     m_keyRotationIntervalSeconds(0),
     m_keyRotationIntervalSecondsHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -28,6 +30,8 @@ CmafEncryption::CmafEncryption() :
 
 CmafEncryption::CmafEncryption(JsonView jsonValue) : 
     m_constantInitializationVectorHasBeenSet(false),
+    m_encryptionMethod(CmafEncryptionMethod::NOT_SET),
+    m_encryptionMethodHasBeenSet(false),
     m_keyRotationIntervalSeconds(0),
     m_keyRotationIntervalSecondsHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -42,6 +46,13 @@ CmafEncryption& CmafEncryption::operator =(JsonView jsonValue)
     m_constantInitializationVector = jsonValue.GetString("constantInitializationVector");
 
     m_constantInitializationVectorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionMethod"))
+  {
+    m_encryptionMethod = CmafEncryptionMethodMapper::GetCmafEncryptionMethodForName(jsonValue.GetString("encryptionMethod"));
+
+    m_encryptionMethodHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("keyRotationIntervalSeconds"))
@@ -69,6 +80,11 @@ JsonValue CmafEncryption::Jsonize() const
   {
    payload.WithString("constantInitializationVector", m_constantInitializationVector);
 
+  }
+
+  if(m_encryptionMethodHasBeenSet)
+  {
+   payload.WithString("encryptionMethod", CmafEncryptionMethodMapper::GetNameForCmafEncryptionMethod(m_encryptionMethod));
   }
 
   if(m_keyRotationIntervalSecondsHasBeenSet)
