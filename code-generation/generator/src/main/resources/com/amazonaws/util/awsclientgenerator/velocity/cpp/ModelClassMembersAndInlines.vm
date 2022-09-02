@@ -63,16 +63,20 @@
 #set($setterWithCopy = " { ${required}${memberVariableName} = value; }")
 #set($setterWithMove = " { ${required}${memberVariableName} = std::move(value); }")
 #end
+#set($getterFunctionName = "Get${memberKeyWithFirstLetterCapitalized}")
+#if($getterFunctionName == ${member.value.shape.name})
+#set($getterFunctionName = "Get${getterFunctionName}")
+#end
 #if($isStream)
     $memberDocumentation
-    ${inline}Aws::IOStream& Get${memberKeyWithFirstLetterCapitalized}() { return ${memberVariableName}.GetUnderlyingStream(); }
+    ${inline}Aws::IOStream& ${getterFunctionName}() { return ${memberVariableName}.GetUnderlyingStream(); }
 
     $memberDocumentation
     ${inline}void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
 
 #elseif ($isEventStreamInput)
     $memberDocumentation
-    std::shared_ptr<${member.value.shape.name}> Get${memberKeyWithFirstLetterCapitalized}() const ${getterBody}
+    std::shared_ptr<${member.value.shape.name}> ${getterFunctionName}() const ${getterBody}
 
     $memberDocumentation
     void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${setterWithCopy}
@@ -86,7 +90,7 @@
 #set($override = " override ")
 #end
     $memberDocumentation
-    ${inline}${returnType} Get${memberKeyWithFirstLetterCapitalized}() const$override${getterBody}
+    ${inline}${returnType} ${getterFunctionName}() const$override${getterBody}
 
 #end
 #if(!$isStream && !$isEventStreamInput)
