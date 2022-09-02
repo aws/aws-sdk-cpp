@@ -47,11 +47,9 @@ def skip_file(filename):
                                    '|.*source/[^/]+Endpoint.cpp'
                                    '|.*aws-cpp-sdk-core/include/aws/core/Region.h'
                                    '|.*tests/.*Test.cpp'
-                                   # add more white lists here
+                                   # add more allowed files to skip as needed
                                    )
-    if skip_file_pattern.match(filename):
-        return True
-    return False
+    return skip_file_pattern.match(filename)
 
 
 def scan_content(content):
@@ -89,7 +87,6 @@ def check_file(input_file):
         print(input_file)
         print("..." + stripped_content[match.start(): match.end()] + "...")
         return True
-
     return False
 
 
