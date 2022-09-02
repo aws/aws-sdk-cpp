@@ -360,172 +360,148 @@ namespace Model
 
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline const Aws::String& GetSmsVerificationMessage() const{ return m_smsVerificationMessage; }
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetSmsVerificationMessage(const Aws::String& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = value; }
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetSmsVerificationMessage(Aws::String&& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = std::move(value); }
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetSmsVerificationMessage(const char* value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage.assign(value); }
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithSmsVerificationMessage(const Aws::String& value) { SetSmsVerificationMessage(value); return *this;}
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithSmsVerificationMessage(Aws::String&& value) { SetSmsVerificationMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A string representing the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithSmsVerificationMessage(const char* value) { SetSmsVerificationMessage(value); return *this;}
 
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationMessage(const Aws::String& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = value; }
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationMessage(Aws::String&& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = std::move(value); }
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationMessage(const char* value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage.assign(value); }
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationMessage(const Aws::String& value) { SetEmailVerificationMessage(value); return *this;}
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationMessage(Aws::String&& value) { SetEmailVerificationMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A string representing the email verification message.
-     * <code>EmailVerificationMessage</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationSubject(const Aws::String& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = std::move(value); }
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationSubject(const char* value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject.assign(value); }
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationSubject(const Aws::String& value) { SetEmailVerificationSubject(value); return *this;}
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(std::move(value)); return *this;}
 
     /**
-     * <p>A string representing the email verification subject.
-     * <code>EmailVerificationSubject</code> is allowed only if <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
-     * is DEVELOPER. </p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline CreateUserPoolRequest& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 

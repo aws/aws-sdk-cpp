@@ -124,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline UpdateContactFlowMetadataRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline UpdateContactFlowMetadataRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>TThe name of the flow.</p>
+     * <p>The name of the flow.</p>
      */
     inline UpdateContactFlowMetadataRequest& WithName(const char* value) { SetName(value); return *this;}
 

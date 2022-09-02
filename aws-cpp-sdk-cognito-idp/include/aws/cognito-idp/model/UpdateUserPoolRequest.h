@@ -210,124 +210,148 @@ namespace Model
 
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline const Aws::String& GetSmsVerificationMessage() const{ return m_smsVerificationMessage; }
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetSmsVerificationMessage(const Aws::String& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = value; }
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetSmsVerificationMessage(Aws::String&& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = std::move(value); }
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetSmsVerificationMessage(const char* value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage.assign(value); }
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithSmsVerificationMessage(const Aws::String& value) { SetSmsVerificationMessage(value); return *this;}
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithSmsVerificationMessage(Aws::String&& value) { SetSmsVerificationMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A container with information about the SMS verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithSmsVerificationMessage(const char* value) { SetSmsVerificationMessage(value); return *this;}
 
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationMessage(const Aws::String& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = value; }
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationMessage(Aws::String&& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = std::move(value); }
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationMessage(const char* value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage.assign(value); }
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationMessage(const Aws::String& value) { SetEmailVerificationMessage(value); return *this;}
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationMessage(Aws::String&& value) { SetEmailVerificationMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The contents of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationSubject(const Aws::String& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = std::move(value); }
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline void SetEmailVerificationSubject(const char* value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject.assign(value); }
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(const Aws::String& value) { SetEmailVerificationSubject(value); return *this;}
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(std::move(value)); return *this;}
 
     /**
-     * <p>The subject of the email verification message.</p>
+     * <p>This parameter is no longer used. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
