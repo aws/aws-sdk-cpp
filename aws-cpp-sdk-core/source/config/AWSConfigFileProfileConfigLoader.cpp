@@ -236,7 +236,7 @@ namespace Aws
                     }
                     pos++;
                     pos = line.find_first_not_of(WHITESPACE_CHARACTERS, pos);
-                    if(pos == Aws::String::npos && pos < line.size())
+                    if(pos == Aws::String::npos || pos >= line.size())
                     {
                         AWS_LOGSTREAM_ERROR(PARSER_TAG, "Unknown section found in the aws config file: " << line);
                         break;

@@ -44,7 +44,7 @@ namespace Aws
                     UNKNOWN
                 };
 
-                EventHeaderValue() : m_eventHeaderStaticValue({0}) {}
+                EventHeaderValue() : m_eventHeaderType(EventHeaderType::UNKNOWN), m_eventHeaderStaticValue({0}) {}
 
                 EventHeaderValue(aws_event_stream_header_value_pair* header) :
                     m_eventHeaderType(static_cast<EventHeaderType>(header->header_value_type)),

@@ -142,7 +142,8 @@ namespace Aws
             HttpResponse(const std::shared_ptr<const HttpRequest>& originatingRequest) :
                 m_httpRequest(originatingRequest),
                 m_responseCode(HttpResponseCode::REQUEST_NOT_MADE),
-                m_hasClientError(false)
+                m_hasClientError(false),
+                m_clientErrorType(Aws::Client::CoreErrors::OK)
             {}
 
             virtual ~HttpResponse() = default;

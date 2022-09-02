@@ -200,11 +200,11 @@ namespace Aws
             void ExtractAndSetQueryString(const Aws::String& uri);
             bool CompareURIParts(const URI& other) const;
 
-            Scheme m_scheme;
+            Scheme m_scheme = Scheme::HTTP;
             Aws::String m_authority;
-            uint16_t m_port;
+            uint16_t m_port = HTTP_DEFAULT_PORT;
             Aws::Vector<Aws::String> m_pathSegments;
-            bool m_pathHasTrailingSlash;
+            bool m_pathHasTrailingSlash = false;
             Aws::String m_queryString;
         };
 
