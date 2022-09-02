@@ -9,6 +9,7 @@ target_sources(aws-sdk-cpp-core
         ${CMAKE_CURRENT_SOURCE_DIR}/HttpClient.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/HttpClientFactory.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/HttpRequest.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/HttpResponse.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/HttpTypes.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Scheme.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/URI.cpp
