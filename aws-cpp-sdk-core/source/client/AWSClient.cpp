@@ -117,7 +117,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
-    SetServiceClientName("AWSBaseClient");
+    AWSClient::SetServiceClientName("AWSBaseClient");
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -136,7 +136,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
-    SetServiceClientName("AWSBaseClient");
+    AWSClient::SetServiceClientName("AWSBaseClient");
 }
 
 void AWSClient::SetServiceClientName(const Aws::String& name)
