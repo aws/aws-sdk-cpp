@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     AuthScheme m_authScheme;
-    bool m_authSchemeHasBeenSet;
+    bool m_authSchemeHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     IAMAuthMode m_iAMAuth;
-    bool m_iAMAuthHasBeenSet;
+    bool m_iAMAuthHasBeenSet = false;
   };
 
 } // namespace Model

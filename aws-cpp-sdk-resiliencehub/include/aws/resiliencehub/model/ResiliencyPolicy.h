@@ -475,31 +475,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     DataLocationConstraint m_dataLocationConstraint;
-    bool m_dataLocationConstraintHasBeenSet;
+    bool m_dataLocationConstraintHasBeenSet = false;
 
     EstimatedCostTier m_estimatedCostTier;
-    bool m_estimatedCostTierHasBeenSet;
+    bool m_estimatedCostTierHasBeenSet = false;
 
     Aws::Map<DisruptionType, FailurePolicy> m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_policyDescription;
-    bool m_policyDescriptionHasBeenSet;
+    bool m_policyDescriptionHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ResiliencyPolicyTier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

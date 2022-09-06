@@ -338,10 +338,10 @@ namespace Model
   private:
 
     MatchFieldType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_cloudFormationStackARN;
-    bool m_cloudFormationStackARNHasBeenSet;
+    bool m_cloudFormationStackARNHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_tagFilters;
-    bool m_tagFiltersHasBeenSet;
+    bool m_tagFiltersHasBeenSet = false;
   };
 
 } // namespace Model

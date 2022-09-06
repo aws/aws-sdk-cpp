@@ -3744,148 +3744,148 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dBSecurityGroups;
-    bool m_dBSecurityGroupsHasBeenSet;
+    bool m_dBSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_dBParameterGroupName;
-    bool m_dBParameterGroupNameHasBeenSet;
+    bool m_dBParameterGroupNameHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_allowMajorVersionUpgrade;
-    bool m_allowMajorVersionUpgradeHasBeenSet;
+    bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_newDBInstanceIdentifier;
-    bool m_newDBInstanceIdentifierHasBeenSet;
+    bool m_newDBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_tdeCredentialArn;
-    bool m_tdeCredentialArnHasBeenSet;
+    bool m_tdeCredentialArnHasBeenSet = false;
 
     Aws::String m_tdeCredentialPassword;
-    bool m_tdeCredentialPasswordHasBeenSet;
+    bool m_tdeCredentialPasswordHasBeenSet = false;
 
     Aws::String m_cACertificateIdentifier;
-    bool m_cACertificateIdentifierHasBeenSet;
+    bool m_cACertificateIdentifierHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     int m_dBPortNumber;
-    bool m_dBPortNumberHasBeenSet;
+    bool m_dBPortNumberHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
-    bool m_enablePerformanceInsightsHasBeenSet;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
     int m_performanceInsightsRetentionPeriod;
-    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
-    bool m_cloudwatchLogsExportConfigurationHasBeenSet;
+    bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
 
     Aws::Vector<ProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
 
     bool m_useDefaultProcessorFeatures;
-    bool m_useDefaultProcessorFeaturesHasBeenSet;
+    bool m_useDefaultProcessorFeaturesHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     int m_maxAllocatedStorage;
-    bool m_maxAllocatedStorageHasBeenSet;
+    bool m_maxAllocatedStorageHasBeenSet = false;
 
     bool m_certificateRotationRestart;
-    bool m_certificateRotationRestartHasBeenSet;
+    bool m_certificateRotationRestartHasBeenSet = false;
 
     ReplicaMode m_replicaMode;
-    bool m_replicaModeHasBeenSet;
+    bool m_replicaModeHasBeenSet = false;
 
     bool m_enableCustomerOwnedIp;
-    bool m_enableCustomerOwnedIpHasBeenSet;
+    bool m_enableCustomerOwnedIpHasBeenSet = false;
 
     Aws::String m_awsBackupRecoveryPointArn;
-    bool m_awsBackupRecoveryPointArnHasBeenSet;
+    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
 
     AutomationMode m_automationMode;
-    bool m_automationModeHasBeenSet;
+    bool m_automationModeHasBeenSet = false;
 
     int m_resumeFullAutomationModeMinutes;
-    bool m_resumeFullAutomationModeMinutesHasBeenSet;
+    bool m_resumeFullAutomationModeMinutesHasBeenSet = false;
 
     Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,13 +153,13 @@ namespace Model
   private:
 
     CoverageMapComparison m_comparison;
-    bool m_comparisonHasBeenSet;
+    bool m_comparisonHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

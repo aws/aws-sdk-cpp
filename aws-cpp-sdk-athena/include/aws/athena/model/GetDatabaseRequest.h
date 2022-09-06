@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_catalogName;
-    bool m_catalogNameHasBeenSet;
+    bool m_catalogNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
   };
 
 } // namespace Model

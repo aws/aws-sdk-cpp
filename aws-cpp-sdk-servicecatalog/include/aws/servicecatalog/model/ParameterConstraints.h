@@ -445,25 +445,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     Aws::String m_allowedPattern;
-    bool m_allowedPatternHasBeenSet;
+    bool m_allowedPatternHasBeenSet = false;
 
     Aws::String m_constraintDescription;
-    bool m_constraintDescriptionHasBeenSet;
+    bool m_constraintDescriptionHasBeenSet = false;
 
     Aws::String m_maxLength;
-    bool m_maxLengthHasBeenSet;
+    bool m_maxLengthHasBeenSet = false;
 
     Aws::String m_minLength;
-    bool m_minLengthHasBeenSet;
+    bool m_minLengthHasBeenSet = false;
 
     Aws::String m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
 
     Aws::String m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
   };
 
 } // namespace Model

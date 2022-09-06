@@ -109,7 +109,7 @@ PanoramaClient::~PanoramaClient()
 
 void PanoramaClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Panorama");
+  AWSClient::SetServiceClientName("Panorama");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

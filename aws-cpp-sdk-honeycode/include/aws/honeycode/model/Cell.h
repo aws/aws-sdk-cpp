@@ -682,19 +682,19 @@ namespace Model
   private:
 
     Aws::String m_formula;
-    bool m_formulaHasBeenSet;
+    bool m_formulaHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_rawValue;
-    bool m_rawValueHasBeenSet;
+    bool m_rawValueHasBeenSet = false;
 
     Aws::String m_formattedValue;
-    bool m_formattedValueHasBeenSet;
+    bool m_formattedValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_formattedValues;
-    bool m_formattedValuesHasBeenSet;
+    bool m_formattedValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -142,16 +142,16 @@ namespace Model
   private:
 
     long long m_external;
-    bool m_externalHasBeenSet;
+    bool m_externalHasBeenSet = false;
 
     long long m_internal;
-    bool m_internalHasBeenSet;
+    bool m_internalHasBeenSet = false;
 
     long long m_notShared;
-    bool m_notSharedHasBeenSet;
+    bool m_notSharedHasBeenSet = false;
 
     long long m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
   };
 
 } // namespace Model

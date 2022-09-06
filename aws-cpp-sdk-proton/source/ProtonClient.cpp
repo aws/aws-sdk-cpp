@@ -151,7 +151,7 @@ ProtonClient::~ProtonClient()
 
 void ProtonClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Proton");
+  AWSClient::SetServiceClientName("Proton");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

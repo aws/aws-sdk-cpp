@@ -438,31 +438,31 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     ParameterApplyType m_applyType;
-    bool m_applyTypeHasBeenSet;
+    bool m_applyTypeHasBeenSet = false;
 
     bool m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
-    bool m_minimumEngineVersionHasBeenSet;
+    bool m_minimumEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

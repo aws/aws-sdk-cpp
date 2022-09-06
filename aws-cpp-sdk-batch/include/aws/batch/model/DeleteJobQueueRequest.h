@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_jobQueue;
-    bool m_jobQueueHasBeenSet;
+    bool m_jobQueueHasBeenSet = false;
   };
 
 } // namespace Model

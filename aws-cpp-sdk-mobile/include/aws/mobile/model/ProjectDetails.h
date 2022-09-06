@@ -266,28 +266,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     ProjectState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::String m_consoleUrl;
-    bool m_consoleUrlHasBeenSet;
+    bool m_consoleUrlHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

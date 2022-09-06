@@ -203,19 +203,19 @@ namespace Model
   private:
 
     Aws::String m_shareInvitationId;
-    bool m_shareInvitationIdHasBeenSet;
+    bool m_shareInvitationIdHasBeenSet = false;
 
     ShareResourceType m_shareResourceType;
-    bool m_shareResourceTypeHasBeenSet;
+    bool m_shareResourceTypeHasBeenSet = false;
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
   };
 
 } // namespace Model

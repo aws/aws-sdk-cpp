@@ -134,10 +134,10 @@ namespace Model
   private:
 
     int m_estimatedInstanceWarmup;
-    bool m_estimatedInstanceWarmupHasBeenSet;
+    bool m_estimatedInstanceWarmupHasBeenSet = false;
 
     TargetTrackingConfiguration m_targetTrackingConfiguration;
-    bool m_targetTrackingConfigurationHasBeenSet;
+    bool m_targetTrackingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

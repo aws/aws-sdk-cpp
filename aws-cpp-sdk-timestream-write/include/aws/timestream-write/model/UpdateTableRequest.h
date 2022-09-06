@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     RetentionProperties m_retentionProperties;
-    bool m_retentionPropertiesHasBeenSet;
+    bool m_retentionPropertiesHasBeenSet = false;
 
     MagneticStoreWriteProperties m_magneticStoreWriteProperties;
-    bool m_magneticStoreWritePropertiesHasBeenSet;
+    bool m_magneticStoreWritePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_dataId;
-    bool m_dataIdHasBeenSet;
+    bool m_dataIdHasBeenSet = false;
 
     bool m_negated;
-    bool m_negatedHasBeenSet;
+    bool m_negatedHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

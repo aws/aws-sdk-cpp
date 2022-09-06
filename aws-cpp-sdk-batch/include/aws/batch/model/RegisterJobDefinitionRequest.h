@@ -796,37 +796,37 @@ namespace Model
   private:
 
     Aws::String m_jobDefinitionName;
-    bool m_jobDefinitionNameHasBeenSet;
+    bool m_jobDefinitionNameHasBeenSet = false;
 
     JobDefinitionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     int m_schedulingPriority;
-    bool m_schedulingPriorityHasBeenSet;
+    bool m_schedulingPriorityHasBeenSet = false;
 
     ContainerProperties m_containerProperties;
-    bool m_containerPropertiesHasBeenSet;
+    bool m_containerPropertiesHasBeenSet = false;
 
     NodeProperties m_nodeProperties;
-    bool m_nodePropertiesHasBeenSet;
+    bool m_nodePropertiesHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
 
     bool m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     JobTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<PlatformCapability> m_platformCapabilities;
-    bool m_platformCapabilitiesHasBeenSet;
+    bool m_platformCapabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

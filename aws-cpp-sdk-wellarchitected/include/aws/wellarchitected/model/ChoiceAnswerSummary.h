@@ -129,13 +129,13 @@ namespace Model
   private:
 
     Aws::String m_choiceId;
-    bool m_choiceIdHasBeenSet;
+    bool m_choiceIdHasBeenSet = false;
 
     ChoiceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ChoiceReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

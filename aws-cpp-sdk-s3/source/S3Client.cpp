@@ -193,7 +193,7 @@ S3Client::~S3Client()
 
 void S3Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("S3");
+  AWSClient::SetServiceClientName("S3");
   LoadS3SpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
@@ -4155,7 +4155,7 @@ ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucket
                 return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
                     "S3 Multi Region Access Point ARNs do not support custom endpoint override right now.", false));
             }
-            ss << S3Endpoint::ForMultiRegionAccessPointArn(arn, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
+            ss << S3Endpoint::ForMultiRegionAccessPointArn(arn, m_useDualStack, /*endpointOverride*/ "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), "*", SERVICE_NAME, Aws::Auth::ASYMMETRIC_SIGV4_SIGNER));
         }
         // Regular S3 Access Point ARN

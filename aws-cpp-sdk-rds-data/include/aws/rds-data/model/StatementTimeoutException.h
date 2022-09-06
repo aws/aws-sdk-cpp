@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     long long m_dbConnectionId;
-    bool m_dbConnectionIdHasBeenSet;
+    bool m_dbConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

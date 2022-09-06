@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingUpdate;
-    bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet;
+    bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = false;
   };
 
 } // namespace Model

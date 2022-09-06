@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_patternSetName;
-    bool m_patternSetNameHasBeenSet;
+    bool m_patternSetNameHasBeenSet = false;
 
     Aws::String m_patternName;
-    bool m_patternNameHasBeenSet;
+    bool m_patternNameHasBeenSet = false;
   };
 
 } // namespace Model

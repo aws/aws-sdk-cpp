@@ -98,7 +98,7 @@ MQClient::~MQClient()
 
 void MQClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("mq");
+  AWSClient::SetServiceClientName("mq");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -155,13 +155,13 @@ namespace Model
   private:
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_identityName;
-    bool m_identityNameHasBeenSet;
+    bool m_identityNameHasBeenSet = false;
 
     bool m_sendingEnabled;
-    bool m_sendingEnabledHasBeenSet;
+    bool m_sendingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

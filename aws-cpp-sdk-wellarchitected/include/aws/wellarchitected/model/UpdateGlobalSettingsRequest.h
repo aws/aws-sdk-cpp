@@ -65,7 +65,7 @@ namespace Model
   private:
 
     OrganizationSharingStatus m_organizationSharingStatus;
-    bool m_organizationSharingStatusHasBeenSet;
+    bool m_organizationSharingStatusHasBeenSet = false;
   };
 
 } // namespace Model

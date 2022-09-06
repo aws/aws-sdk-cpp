@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_addressDefinition;
-    bool m_addressDefinitionHasBeenSet;
+    bool m_addressDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

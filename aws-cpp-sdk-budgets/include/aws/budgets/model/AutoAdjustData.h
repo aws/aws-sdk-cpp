@@ -147,13 +147,13 @@ namespace Model
   private:
 
     AutoAdjustType m_autoAdjustType;
-    bool m_autoAdjustTypeHasBeenSet;
+    bool m_autoAdjustTypeHasBeenSet = false;
 
     HistoricalOptions m_historicalOptions;
-    bool m_historicalOptionsHasBeenSet;
+    bool m_historicalOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAutoAdjustTime;
-    bool m_lastAutoAdjustTimeHasBeenSet;
+    bool m_lastAutoAdjustTimeHasBeenSet = false;
   };
 
 } // namespace Model

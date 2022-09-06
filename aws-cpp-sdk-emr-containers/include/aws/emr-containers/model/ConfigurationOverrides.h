@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<Configuration> m_applicationConfiguration;
-    bool m_applicationConfigurationHasBeenSet;
+    bool m_applicationConfigurationHasBeenSet = false;
 
     MonitoringConfiguration m_monitoringConfiguration;
-    bool m_monitoringConfigurationHasBeenSet;
+    bool m_monitoringConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1275,49 +1275,49 @@ namespace Model
   private:
 
     VerifyMode m_verifyMode;
-    bool m_verifyModeHasBeenSet;
+    bool m_verifyModeHasBeenSet = false;
 
     OverwriteMode m_overwriteMode;
-    bool m_overwriteModeHasBeenSet;
+    bool m_overwriteModeHasBeenSet = false;
 
     Atime m_atime;
-    bool m_atimeHasBeenSet;
+    bool m_atimeHasBeenSet = false;
 
     Mtime m_mtime;
-    bool m_mtimeHasBeenSet;
+    bool m_mtimeHasBeenSet = false;
 
     Uid m_uid;
-    bool m_uidHasBeenSet;
+    bool m_uidHasBeenSet = false;
 
     Gid m_gid;
-    bool m_gidHasBeenSet;
+    bool m_gidHasBeenSet = false;
 
     PreserveDeletedFiles m_preserveDeletedFiles;
-    bool m_preserveDeletedFilesHasBeenSet;
+    bool m_preserveDeletedFilesHasBeenSet = false;
 
     PreserveDevices m_preserveDevices;
-    bool m_preserveDevicesHasBeenSet;
+    bool m_preserveDevicesHasBeenSet = false;
 
     PosixPermissions m_posixPermissions;
-    bool m_posixPermissionsHasBeenSet;
+    bool m_posixPermissionsHasBeenSet = false;
 
     long long m_bytesPerSecond;
-    bool m_bytesPerSecondHasBeenSet;
+    bool m_bytesPerSecondHasBeenSet = false;
 
     TaskQueueing m_taskQueueing;
-    bool m_taskQueueingHasBeenSet;
+    bool m_taskQueueingHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
 
     TransferMode m_transferMode;
-    bool m_transferModeHasBeenSet;
+    bool m_transferModeHasBeenSet = false;
 
     SmbSecurityDescriptorCopyFlags m_securityDescriptorCopyFlags;
-    bool m_securityDescriptorCopyFlagsHasBeenSet;
+    bool m_securityDescriptorCopyFlagsHasBeenSet = false;
 
     ObjectTags m_objectTags;
-    bool m_objectTagsHasBeenSet;
+    bool m_objectTagsHasBeenSet = false;
   };
 
 } // namespace Model

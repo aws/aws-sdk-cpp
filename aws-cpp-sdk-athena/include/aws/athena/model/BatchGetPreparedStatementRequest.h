@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_preparedStatementNames;
-    bool m_preparedStatementNamesHasBeenSet;
+    bool m_preparedStatementNamesHasBeenSet = false;
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
   };
 
 } // namespace Model

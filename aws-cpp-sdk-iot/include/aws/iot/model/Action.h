@@ -814,70 +814,70 @@ namespace Model
   private:
 
     DynamoDBAction m_dynamoDB;
-    bool m_dynamoDBHasBeenSet;
+    bool m_dynamoDBHasBeenSet = false;
 
     DynamoDBv2Action m_dynamoDBv2;
-    bool m_dynamoDBv2HasBeenSet;
+    bool m_dynamoDBv2HasBeenSet = false;
 
     LambdaAction m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
 
     SnsAction m_sns;
-    bool m_snsHasBeenSet;
+    bool m_snsHasBeenSet = false;
 
     SqsAction m_sqs;
-    bool m_sqsHasBeenSet;
+    bool m_sqsHasBeenSet = false;
 
     KinesisAction m_kinesis;
-    bool m_kinesisHasBeenSet;
+    bool m_kinesisHasBeenSet = false;
 
     RepublishAction m_republish;
-    bool m_republishHasBeenSet;
+    bool m_republishHasBeenSet = false;
 
     S3Action m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     FirehoseAction m_firehose;
-    bool m_firehoseHasBeenSet;
+    bool m_firehoseHasBeenSet = false;
 
     CloudwatchMetricAction m_cloudwatchMetric;
-    bool m_cloudwatchMetricHasBeenSet;
+    bool m_cloudwatchMetricHasBeenSet = false;
 
     CloudwatchAlarmAction m_cloudwatchAlarm;
-    bool m_cloudwatchAlarmHasBeenSet;
+    bool m_cloudwatchAlarmHasBeenSet = false;
 
     CloudwatchLogsAction m_cloudwatchLogs;
-    bool m_cloudwatchLogsHasBeenSet;
+    bool m_cloudwatchLogsHasBeenSet = false;
 
     ElasticsearchAction m_elasticsearch;
-    bool m_elasticsearchHasBeenSet;
+    bool m_elasticsearchHasBeenSet = false;
 
     SalesforceAction m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     IotAnalyticsAction m_iotAnalytics;
-    bool m_iotAnalyticsHasBeenSet;
+    bool m_iotAnalyticsHasBeenSet = false;
 
     IotEventsAction m_iotEvents;
-    bool m_iotEventsHasBeenSet;
+    bool m_iotEventsHasBeenSet = false;
 
     IotSiteWiseAction m_iotSiteWise;
-    bool m_iotSiteWiseHasBeenSet;
+    bool m_iotSiteWiseHasBeenSet = false;
 
     StepFunctionsAction m_stepFunctions;
-    bool m_stepFunctionsHasBeenSet;
+    bool m_stepFunctionsHasBeenSet = false;
 
     TimestreamAction m_timestream;
-    bool m_timestreamHasBeenSet;
+    bool m_timestreamHasBeenSet = false;
 
     HttpAction m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     KafkaAction m_kafka;
-    bool m_kafkaHasBeenSet;
+    bool m_kafkaHasBeenSet = false;
 
     OpenSearchAction m_openSearch;
-    bool m_openSearchHasBeenSet;
+    bool m_openSearchHasBeenSet = false;
   };
 
 } // namespace Model

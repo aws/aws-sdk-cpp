@@ -326,25 +326,25 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_peerTransitGatewayId;
-    bool m_peerTransitGatewayIdHasBeenSet;
+    bool m_peerTransitGatewayIdHasBeenSet = false;
 
     Aws::String m_peerAccountId;
-    bool m_peerAccountIdHasBeenSet;
+    bool m_peerAccountIdHasBeenSet = false;
 
     Aws::String m_peerRegion;
-    bool m_peerRegionHasBeenSet;
+    bool m_peerRegionHasBeenSet = false;
 
     CreateTransitGatewayPeeringAttachmentRequestOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

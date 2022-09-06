@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     ConformancePackComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_controls;
-    bool m_controlsHasBeenSet;
+    bool m_controlsHasBeenSet = false;
   };
 
 } // namespace Model

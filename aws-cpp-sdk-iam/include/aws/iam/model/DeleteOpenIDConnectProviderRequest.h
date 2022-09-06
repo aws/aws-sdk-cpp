@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::String m_openIDConnectProviderArn;
-    bool m_openIDConnectProviderArnHasBeenSet;
+    bool m_openIDConnectProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

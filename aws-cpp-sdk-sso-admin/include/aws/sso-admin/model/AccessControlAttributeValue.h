@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

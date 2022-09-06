@@ -289,13 +289,13 @@ namespace Model
   private:
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_tokenCode;
-    bool m_tokenCodeHasBeenSet;
+    bool m_tokenCodeHasBeenSet = false;
   };
 
 } // namespace Model

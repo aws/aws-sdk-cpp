@@ -158,13 +158,13 @@ namespace Model
   private:
 
     bool m_consoleAccess;
-    bool m_consoleAccessHasBeenSet;
+    bool m_consoleAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     ChangeType m_pendingChange;
-    bool m_pendingChangeHasBeenSet;
+    bool m_pendingChangeHasBeenSet = false;
   };
 
 } // namespace Model

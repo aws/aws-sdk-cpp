@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AttributeKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     TypedAttributeValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

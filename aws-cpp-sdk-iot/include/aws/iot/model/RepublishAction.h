@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     int m_qos;
-    bool m_qosHasBeenSet;
+    bool m_qosHasBeenSet = false;
   };
 
 } // namespace Model

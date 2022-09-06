@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     BaiduChannelRequest m_baiduChannelRequest;
-    bool m_baiduChannelRequestHasBeenSet;
+    bool m_baiduChannelRequestHasBeenSet = false;
   };
 
 } // namespace Model

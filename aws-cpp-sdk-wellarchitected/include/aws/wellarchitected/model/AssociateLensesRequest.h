@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lensAliases;
-    bool m_lensAliasesHasBeenSet;
+    bool m_lensAliasesHasBeenSet = false;
   };
 
 } // namespace Model

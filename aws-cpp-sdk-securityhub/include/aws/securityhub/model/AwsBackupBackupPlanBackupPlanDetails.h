@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_backupPlanName;
-    bool m_backupPlanNameHasBeenSet;
+    bool m_backupPlanNameHasBeenSet = false;
 
     Aws::Vector<AwsBackupBackupPlanAdvancedBackupSettingsDetails> m_advancedBackupSettings;
-    bool m_advancedBackupSettingsHasBeenSet;
+    bool m_advancedBackupSettingsHasBeenSet = false;
 
     Aws::Vector<AwsBackupBackupPlanRuleDetails> m_backupPlanRule;
-    bool m_backupPlanRuleHasBeenSet;
+    bool m_backupPlanRuleHasBeenSet = false;
   };
 
 } // namespace Model

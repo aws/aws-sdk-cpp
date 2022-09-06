@@ -153,16 +153,16 @@ namespace Model
   private:
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     int m_uniqueThreatNameCount;
-    bool m_uniqueThreatNameCountHasBeenSet;
+    bool m_uniqueThreatNameCountHasBeenSet = false;
 
     bool m_shortened;
-    bool m_shortenedHasBeenSet;
+    bool m_shortenedHasBeenSet = false;
 
     Aws::Vector<ScanThreatName> m_threatNames;
-    bool m_threatNamesHasBeenSet;
+    bool m_threatNamesHasBeenSet = false;
   };
 
 } // namespace Model

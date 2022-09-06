@@ -132,10 +132,10 @@ Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
   private:
 
     MsSmoothH265PackagingType m_h265PackagingType;
-    bool m_h265PackagingTypeHasBeenSet;
+    bool m_h265PackagingTypeHasBeenSet = false;
 
     Aws::String m_nameModifier;
-    bool m_nameModifierHasBeenSet;
+    bool m_nameModifierHasBeenSet = false;
   };
 
 } // namespace Model

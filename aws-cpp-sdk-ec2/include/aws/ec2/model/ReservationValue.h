@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
+    bool m_hourlyPriceHasBeenSet = false;
 
     Aws::String m_remainingTotalValue;
-    bool m_remainingTotalValueHasBeenSet;
+    bool m_remainingTotalValueHasBeenSet = false;
 
     Aws::String m_remainingUpfrontValue;
-    bool m_remainingUpfrontValueHasBeenSet;
+    bool m_remainingUpfrontValueHasBeenSet = false;
   };
 
 } // namespace Model

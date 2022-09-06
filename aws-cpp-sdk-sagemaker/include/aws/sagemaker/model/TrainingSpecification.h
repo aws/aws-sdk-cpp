@@ -414,28 +414,28 @@ namespace Model
   private:
 
     Aws::String m_trainingImage;
-    bool m_trainingImageHasBeenSet;
+    bool m_trainingImageHasBeenSet = false;
 
     Aws::String m_trainingImageDigest;
-    bool m_trainingImageDigestHasBeenSet;
+    bool m_trainingImageDigestHasBeenSet = false;
 
     Aws::Vector<HyperParameterSpecification> m_supportedHyperParameters;
-    bool m_supportedHyperParametersHasBeenSet;
+    bool m_supportedHyperParametersHasBeenSet = false;
 
     Aws::Vector<TrainingInstanceType> m_supportedTrainingInstanceTypes;
-    bool m_supportedTrainingInstanceTypesHasBeenSet;
+    bool m_supportedTrainingInstanceTypesHasBeenSet = false;
 
     bool m_supportsDistributedTraining;
-    bool m_supportsDistributedTrainingHasBeenSet;
+    bool m_supportsDistributedTrainingHasBeenSet = false;
 
     Aws::Vector<MetricDefinition> m_metricDefinitions;
-    bool m_metricDefinitionsHasBeenSet;
+    bool m_metricDefinitionsHasBeenSet = false;
 
     Aws::Vector<ChannelSpecification> m_trainingChannels;
-    bool m_trainingChannelsHasBeenSet;
+    bool m_trainingChannelsHasBeenSet = false;
 
     Aws::Vector<HyperParameterTuningJobObjective> m_supportedTuningJobObjectiveMetrics;
-    bool m_supportedTuningJobObjectiveMetricsHasBeenSet;
+    bool m_supportedTuningJobObjectiveMetricsHasBeenSet = false;
   };
 
 } // namespace Model

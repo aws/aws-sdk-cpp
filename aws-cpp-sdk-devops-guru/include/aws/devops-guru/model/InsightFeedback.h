@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     InsightFeedbackOption m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
   };
 
 } // namespace Model

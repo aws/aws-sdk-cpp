@@ -281,19 +281,19 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     AccessKeyLastUsed m_lastUsed;
-    bool m_lastUsedHasBeenSet;
+    bool m_lastUsedHasBeenSet = false;
   };
 
 } // namespace Model

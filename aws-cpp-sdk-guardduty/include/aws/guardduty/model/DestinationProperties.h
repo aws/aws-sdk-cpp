@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

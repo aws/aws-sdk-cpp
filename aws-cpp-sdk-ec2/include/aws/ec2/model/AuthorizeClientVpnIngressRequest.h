@@ -358,25 +358,25 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_targetNetworkCidr;
-    bool m_targetNetworkCidrHasBeenSet;
+    bool m_targetNetworkCidrHasBeenSet = false;
 
     Aws::String m_accessGroupId;
-    bool m_accessGroupIdHasBeenSet;
+    bool m_accessGroupIdHasBeenSet = false;
 
     bool m_authorizeAllGroups;
-    bool m_authorizeAllGroupsHasBeenSet;
+    bool m_authorizeAllGroupsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

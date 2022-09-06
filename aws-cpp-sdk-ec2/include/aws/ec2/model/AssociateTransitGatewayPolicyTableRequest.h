@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayPolicyTableId;
-    bool m_transitGatewayPolicyTableIdHasBeenSet;
+    bool m_transitGatewayPolicyTableIdHasBeenSet = false;
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

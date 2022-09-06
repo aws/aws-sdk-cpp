@@ -98,7 +98,7 @@ AppRegistryClient::~AppRegistryClient()
 
 void AppRegistryClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Service Catalog AppRegistry");
+  AWSClient::SetServiceClientName("Service Catalog AppRegistry");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

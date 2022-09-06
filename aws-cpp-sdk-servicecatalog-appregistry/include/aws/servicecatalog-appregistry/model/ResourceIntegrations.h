@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ResourceGroup m_resourceGroup;
-    bool m_resourceGroupHasBeenSet;
+    bool m_resourceGroupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -145,7 +145,7 @@ namespace Model
   private:
 
     Aws::String m_identityAttributeName;
-    bool m_identityAttributeNameHasBeenSet;
+    bool m_identityAttributeNameHasBeenSet = false;
   };
 
 } // namespace Model

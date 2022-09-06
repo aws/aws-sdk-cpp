@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_workloadArn;
-    bool m_workloadArnHasBeenSet;
+    bool m_workloadArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

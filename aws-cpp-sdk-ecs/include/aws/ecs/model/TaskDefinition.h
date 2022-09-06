@@ -2076,76 +2076,76 @@ namespace Model
   private:
 
     Aws::String m_taskDefinitionArn;
-    bool m_taskDefinitionArnHasBeenSet;
+    bool m_taskDefinitionArnHasBeenSet = false;
 
     Aws::Vector<ContainerDefinition> m_containerDefinitions;
-    bool m_containerDefinitionsHasBeenSet;
+    bool m_containerDefinitionsHasBeenSet = false;
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_taskRoleArn;
-    bool m_taskRoleArnHasBeenSet;
+    bool m_taskRoleArnHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     NetworkMode m_networkMode;
-    bool m_networkModeHasBeenSet;
+    bool m_networkModeHasBeenSet = false;
 
     int m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::Vector<Volume> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
 
     TaskDefinitionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Attribute> m_requiresAttributes;
-    bool m_requiresAttributesHasBeenSet;
+    bool m_requiresAttributesHasBeenSet = false;
 
     Aws::Vector<TaskDefinitionPlacementConstraint> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     Aws::Vector<Compatibility> m_compatibilities;
-    bool m_compatibilitiesHasBeenSet;
+    bool m_compatibilitiesHasBeenSet = false;
 
     RuntimePlatform m_runtimePlatform;
-    bool m_runtimePlatformHasBeenSet;
+    bool m_runtimePlatformHasBeenSet = false;
 
     Aws::Vector<Compatibility> m_requiresCompatibilities;
-    bool m_requiresCompatibilitiesHasBeenSet;
+    bool m_requiresCompatibilitiesHasBeenSet = false;
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
-    bool m_inferenceAcceleratorsHasBeenSet;
+    bool m_inferenceAcceleratorsHasBeenSet = false;
 
     PidMode m_pidMode;
-    bool m_pidModeHasBeenSet;
+    bool m_pidModeHasBeenSet = false;
 
     IpcMode m_ipcMode;
-    bool m_ipcModeHasBeenSet;
+    bool m_ipcModeHasBeenSet = false;
 
     ProxyConfiguration m_proxyConfiguration;
-    bool m_proxyConfigurationHasBeenSet;
+    bool m_proxyConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_registeredAt;
-    bool m_registeredAtHasBeenSet;
+    bool m_registeredAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deregisteredAt;
-    bool m_deregisteredAtHasBeenSet;
+    bool m_deregisteredAtHasBeenSet = false;
 
     Aws::String m_registeredBy;
-    bool m_registeredByHasBeenSet;
+    bool m_registeredByHasBeenSet = false;
 
     EphemeralStorage m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

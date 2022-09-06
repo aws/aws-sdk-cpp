@@ -338,28 +338,28 @@ namespace Model
   private:
 
     Aws::String m_pipelineArn;
-    bool m_pipelineArnHasBeenSet;
+    bool m_pipelineArnHasBeenSet = false;
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_pipelineDisplayName;
-    bool m_pipelineDisplayNameHasBeenSet;
+    bool m_pipelineDisplayNameHasBeenSet = false;
 
     Aws::String m_pipelineDescription;
-    bool m_pipelineDescriptionHasBeenSet;
+    bool m_pipelineDescriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastExecutionTime;
-    bool m_lastExecutionTimeHasBeenSet;
+    bool m_lastExecutionTimeHasBeenSet = false;
   };
 
 } // namespace Model

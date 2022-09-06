@@ -173,10 +173,10 @@ namespace Model
   private:
 
     Aws::Vector<VariableImpactExplanation> m_variableImpactExplanations;
-    bool m_variableImpactExplanationsHasBeenSet;
+    bool m_variableImpactExplanationsHasBeenSet = false;
 
     Aws::Vector<AggregatedVariablesImpactExplanation> m_aggregatedVariablesImpactExplanations;
-    bool m_aggregatedVariablesImpactExplanationsHasBeenSet;
+    bool m_aggregatedVariablesImpactExplanationsHasBeenSet = false;
   };
 
 } // namespace Model

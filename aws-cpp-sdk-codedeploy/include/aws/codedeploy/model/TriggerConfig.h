@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_triggerName;
-    bool m_triggerNameHasBeenSet;
+    bool m_triggerNameHasBeenSet = false;
 
     Aws::String m_triggerTargetArn;
-    bool m_triggerTargetArnHasBeenSet;
+    bool m_triggerTargetArnHasBeenSet = false;
 
     Aws::Vector<TriggerEventType> m_triggerEvents;
-    bool m_triggerEventsHasBeenSet;
+    bool m_triggerEventsHasBeenSet = false;
   };
 
 } // namespace Model

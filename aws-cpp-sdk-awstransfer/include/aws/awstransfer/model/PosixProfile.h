@@ -122,13 +122,13 @@ namespace Model
   private:
 
     long long m_uid;
-    bool m_uidHasBeenSet;
+    bool m_uidHasBeenSet = false;
 
     long long m_gid;
-    bool m_gidHasBeenSet;
+    bool m_gidHasBeenSet = false;
 
     Aws::Vector<long long> m_secondaryGids;
-    bool m_secondaryGidsHasBeenSet;
+    bool m_secondaryGidsHasBeenSet = false;
   };
 
 } // namespace Model

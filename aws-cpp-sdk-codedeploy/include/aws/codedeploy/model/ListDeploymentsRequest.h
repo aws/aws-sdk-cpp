@@ -413,22 +413,22 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::Vector<DeploymentStatus> m_includeOnlyStatuses;
-    bool m_includeOnlyStatusesHasBeenSet;
+    bool m_includeOnlyStatusesHasBeenSet = false;
 
     TimeRange m_createTimeRange;
-    bool m_createTimeRangeHasBeenSet;
+    bool m_createTimeRangeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     bool m_aggregationEnabled;
-    bool m_aggregationEnabledHasBeenSet;
+    bool m_aggregationEnabledHasBeenSet = false;
   };
 
 } // namespace Model

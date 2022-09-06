@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_subnetGroupName;
-    bool m_subnetGroupNameHasBeenSet;
+    bool m_subnetGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

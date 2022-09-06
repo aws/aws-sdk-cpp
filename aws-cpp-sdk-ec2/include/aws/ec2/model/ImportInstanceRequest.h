@@ -219,19 +219,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<DiskImage> m_diskImages;
-    bool m_diskImagesHasBeenSet;
+    bool m_diskImagesHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     ImportInstanceLaunchSpecification m_launchSpecification;
-    bool m_launchSpecificationHasBeenSet;
+    bool m_launchSpecificationHasBeenSet = false;
 
     PlatformValues m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

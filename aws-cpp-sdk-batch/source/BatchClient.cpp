@@ -100,7 +100,7 @@ BatchClient::~BatchClient()
 
 void BatchClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Batch");
+  AWSClient::SetServiceClientName("Batch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

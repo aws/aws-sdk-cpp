@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_vpceConfigurationName;
-    bool m_vpceConfigurationNameHasBeenSet;
+    bool m_vpceConfigurationNameHasBeenSet = false;
 
     Aws::String m_vpceServiceName;
-    bool m_vpceServiceNameHasBeenSet;
+    bool m_vpceServiceNameHasBeenSet = false;
 
     Aws::String m_serviceDnsName;
-    bool m_serviceDnsNameHasBeenSet;
+    bool m_serviceDnsNameHasBeenSet = false;
 
     Aws::String m_vpceConfigurationDescription;
-    bool m_vpceConfigurationDescriptionHasBeenSet;
+    bool m_vpceConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

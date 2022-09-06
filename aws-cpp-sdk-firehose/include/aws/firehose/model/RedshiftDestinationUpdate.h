@@ -493,37 +493,37 @@ namespace Model
   private:
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_clusterJDBCURL;
-    bool m_clusterJDBCURLHasBeenSet;
+    bool m_clusterJDBCURLHasBeenSet = false;
 
     CopyCommand m_copyCommand;
-    bool m_copyCommandHasBeenSet;
+    bool m_copyCommandHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     RedshiftRetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     S3DestinationUpdate m_s3Update;
-    bool m_s3UpdateHasBeenSet;
+    bool m_s3UpdateHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     RedshiftS3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationUpdate m_s3BackupUpdate;
-    bool m_s3BackupUpdateHasBeenSet;
+    bool m_s3BackupUpdateHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

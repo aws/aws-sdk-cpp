@@ -243,16 +243,16 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_externalIdProperty;
-    bool m_externalIdPropertyHasBeenSet;
+    bool m_externalIdPropertyHasBeenSet = false;
 
     Aws::String m_propertyName;
-    bool m_propertyNameHasBeenSet;
+    bool m_propertyNameHasBeenSet = false;
   };
 
 } // namespace Model

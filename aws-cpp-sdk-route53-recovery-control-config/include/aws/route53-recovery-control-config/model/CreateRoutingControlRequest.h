@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::String m_routingControlName;
-    bool m_routingControlNameHasBeenSet;
+    bool m_routingControlNameHasBeenSet = false;
   };
 
 } // namespace Model

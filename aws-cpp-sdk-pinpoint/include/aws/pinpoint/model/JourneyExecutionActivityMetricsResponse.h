@@ -477,22 +477,22 @@ namespace Model
   private:
 
     Aws::String m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_journeyActivityId;
-    bool m_journeyActivityIdHasBeenSet;
+    bool m_journeyActivityIdHasBeenSet = false;
 
     Aws::String m_journeyId;
-    bool m_journeyIdHasBeenSet;
+    bool m_journeyIdHasBeenSet = false;
 
     Aws::String m_lastEvaluatedTime;
-    bool m_lastEvaluatedTimeHasBeenSet;
+    bool m_lastEvaluatedTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

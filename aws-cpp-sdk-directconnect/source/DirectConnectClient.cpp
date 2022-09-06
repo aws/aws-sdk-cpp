@@ -132,7 +132,7 @@ DirectConnectClient::~DirectConnectClient()
 
 void DirectConnectClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Direct Connect");
+  AWSClient::SetServiceClientName("Direct Connect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

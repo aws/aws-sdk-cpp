@@ -416,25 +416,25 @@ namespace Model
   private:
 
     Aws::String m_algorithmName;
-    bool m_algorithmNameHasBeenSet;
+    bool m_algorithmNameHasBeenSet = false;
 
     Aws::String m_algorithmDescription;
-    bool m_algorithmDescriptionHasBeenSet;
+    bool m_algorithmDescriptionHasBeenSet = false;
 
     TrainingSpecification m_trainingSpecification;
-    bool m_trainingSpecificationHasBeenSet;
+    bool m_trainingSpecificationHasBeenSet = false;
 
     InferenceSpecification m_inferenceSpecification;
-    bool m_inferenceSpecificationHasBeenSet;
+    bool m_inferenceSpecificationHasBeenSet = false;
 
     AlgorithmValidationSpecification m_validationSpecification;
-    bool m_validationSpecificationHasBeenSet;
+    bool m_validationSpecificationHasBeenSet = false;
 
     bool m_certifyForMarketplace;
-    bool m_certifyForMarketplaceHasBeenSet;
+    bool m_certifyForMarketplaceHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

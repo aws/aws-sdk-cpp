@@ -266,13 +266,13 @@ namespace Model
   private:
 
     Aws::String m_containerPath;
-    bool m_containerPathHasBeenSet;
+    bool m_containerPathHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
   };
 
 } // namespace Model

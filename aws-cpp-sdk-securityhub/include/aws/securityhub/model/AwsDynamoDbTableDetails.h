@@ -811,61 +811,61 @@ namespace Model
   private:
 
     Aws::Vector<AwsDynamoDbTableAttributeDefinition> m_attributeDefinitions;
-    bool m_attributeDefinitionsHasBeenSet;
+    bool m_attributeDefinitionsHasBeenSet = false;
 
     AwsDynamoDbTableBillingModeSummary m_billingModeSummary;
-    bool m_billingModeSummaryHasBeenSet;
+    bool m_billingModeSummaryHasBeenSet = false;
 
     Aws::String m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Vector<AwsDynamoDbTableGlobalSecondaryIndex> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     Aws::String m_globalTableVersion;
-    bool m_globalTableVersionHasBeenSet;
+    bool m_globalTableVersionHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::Vector<AwsDynamoDbTableKeySchema> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     Aws::String m_latestStreamArn;
-    bool m_latestStreamArnHasBeenSet;
+    bool m_latestStreamArnHasBeenSet = false;
 
     Aws::String m_latestStreamLabel;
-    bool m_latestStreamLabelHasBeenSet;
+    bool m_latestStreamLabelHasBeenSet = false;
 
     Aws::Vector<AwsDynamoDbTableLocalSecondaryIndex> m_localSecondaryIndexes;
-    bool m_localSecondaryIndexesHasBeenSet;
+    bool m_localSecondaryIndexesHasBeenSet = false;
 
     AwsDynamoDbTableProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
 
     Aws::Vector<AwsDynamoDbTableReplica> m_replicas;
-    bool m_replicasHasBeenSet;
+    bool m_replicasHasBeenSet = false;
 
     AwsDynamoDbTableRestoreSummary m_restoreSummary;
-    bool m_restoreSummaryHasBeenSet;
+    bool m_restoreSummaryHasBeenSet = false;
 
     AwsDynamoDbTableSseDescription m_sseDescription;
-    bool m_sseDescriptionHasBeenSet;
+    bool m_sseDescriptionHasBeenSet = false;
 
     AwsDynamoDbTableStreamSpecification m_streamSpecification;
-    bool m_streamSpecificationHasBeenSet;
+    bool m_streamSpecificationHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     long long m_tableSizeBytes;
-    bool m_tableSizeBytesHasBeenSet;
+    bool m_tableSizeBytesHasBeenSet = false;
 
     Aws::String m_tableStatus;
-    bool m_tableStatusHasBeenSet;
+    bool m_tableStatusHasBeenSet = false;
   };
 
 } // namespace Model

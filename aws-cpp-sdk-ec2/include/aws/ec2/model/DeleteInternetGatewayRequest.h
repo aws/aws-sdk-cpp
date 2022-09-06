@@ -112,10 +112,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_internetGatewayId;
-    bool m_internetGatewayIdHasBeenSet;
+    bool m_internetGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

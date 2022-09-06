@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_recoverySnapshotID;
-    bool m_recoverySnapshotIDHasBeenSet;
+    bool m_recoverySnapshotIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

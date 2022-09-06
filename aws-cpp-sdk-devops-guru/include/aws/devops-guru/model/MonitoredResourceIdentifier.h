@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_monitoredResourceName;
-    bool m_monitoredResourceNameHasBeenSet;
+    bool m_monitoredResourceNameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ResourcePermission m_resourcePermission;
-    bool m_resourcePermissionHasBeenSet;
+    bool m_resourcePermissionHasBeenSet = false;
   };
 
 } // namespace Model

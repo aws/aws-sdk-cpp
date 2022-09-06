@@ -148,7 +148,7 @@ SESClient::~SESClient()
 
 void SESClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SES");
+  AWSClient::SetServiceClientName("SES");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

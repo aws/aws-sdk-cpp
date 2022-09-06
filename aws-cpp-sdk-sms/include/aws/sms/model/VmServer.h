@@ -226,19 +226,19 @@ namespace Model
   private:
 
     VmServerAddress m_vmServerAddress;
-    bool m_vmServerAddressHasBeenSet;
+    bool m_vmServerAddressHasBeenSet = false;
 
     Aws::String m_vmName;
-    bool m_vmNameHasBeenSet;
+    bool m_vmNameHasBeenSet = false;
 
     Aws::String m_vmManagerName;
-    bool m_vmManagerNameHasBeenSet;
+    bool m_vmManagerNameHasBeenSet = false;
 
     VmManagerType m_vmManagerType;
-    bool m_vmManagerTypeHasBeenSet;
+    bool m_vmManagerTypeHasBeenSet = false;
 
     Aws::String m_vmPath;
-    bool m_vmPathHasBeenSet;
+    bool m_vmPathHasBeenSet = false;
   };
 
 } // namespace Model

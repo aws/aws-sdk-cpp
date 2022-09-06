@@ -289,13 +289,13 @@ namespace Model
   private:
 
     WindowsAccessAuditLogLevel m_fileAccessAuditLogLevel;
-    bool m_fileAccessAuditLogLevelHasBeenSet;
+    bool m_fileAccessAuditLogLevelHasBeenSet = false;
 
     WindowsAccessAuditLogLevel m_fileShareAccessAuditLogLevel;
-    bool m_fileShareAccessAuditLogLevelHasBeenSet;
+    bool m_fileShareAccessAuditLogLevelHasBeenSet = false;
 
     Aws::String m_auditLogDestination;
-    bool m_auditLogDestinationHasBeenSet;
+    bool m_auditLogDestinationHasBeenSet = false;
   };
 
 } // namespace Model

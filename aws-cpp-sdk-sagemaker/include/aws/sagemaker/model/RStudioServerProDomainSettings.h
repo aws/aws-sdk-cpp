@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_domainExecutionRoleArn;
-    bool m_domainExecutionRoleArnHasBeenSet;
+    bool m_domainExecutionRoleArnHasBeenSet = false;
 
     Aws::String m_rStudioConnectUrl;
-    bool m_rStudioConnectUrlHasBeenSet;
+    bool m_rStudioConnectUrlHasBeenSet = false;
 
     Aws::String m_rStudioPackageManagerUrl;
-    bool m_rStudioPackageManagerUrlHasBeenSet;
+    bool m_rStudioPackageManagerUrlHasBeenSet = false;
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

@@ -401,13 +401,13 @@ namespace Model
   private:
 
     LogDriver m_logDriver;
-    bool m_logDriverHasBeenSet;
+    bool m_logDriverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<Secret> m_secretOptions;
-    bool m_secretOptionsHasBeenSet;
+    bool m_secretOptionsHasBeenSet = false;
   };
 
 } // namespace Model

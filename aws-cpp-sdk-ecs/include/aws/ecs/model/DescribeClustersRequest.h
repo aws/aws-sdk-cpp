@@ -206,10 +206,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_clusters;
-    bool m_clustersHasBeenSet;
+    bool m_clustersHasBeenSet = false;
 
     Aws::Vector<ClusterField> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

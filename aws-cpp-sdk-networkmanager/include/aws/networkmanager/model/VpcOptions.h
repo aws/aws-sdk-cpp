@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_ipv6Support;
-    bool m_ipv6SupportHasBeenSet;
+    bool m_ipv6SupportHasBeenSet = false;
   };
 
 } // namespace Model

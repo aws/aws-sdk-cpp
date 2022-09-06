@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_nonce;
-    bool m_nonceHasBeenSet;
+    bool m_nonceHasBeenSet = false;
   };
 
 } // namespace Model

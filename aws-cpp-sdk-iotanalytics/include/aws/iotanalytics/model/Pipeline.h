@@ -269,22 +269,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<PipelineActivity> m_activities;
-    bool m_activitiesHasBeenSet;
+    bool m_activitiesHasBeenSet = false;
 
     Aws::Vector<ReprocessingSummary> m_reprocessingSummaries;
-    bool m_reprocessingSummariesHasBeenSet;
+    bool m_reprocessingSummariesHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

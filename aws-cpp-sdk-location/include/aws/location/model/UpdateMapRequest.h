@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_mapName;
-    bool m_mapNameHasBeenSet;
+    bool m_mapNameHasBeenSet = false;
   };
 
 } // namespace Model

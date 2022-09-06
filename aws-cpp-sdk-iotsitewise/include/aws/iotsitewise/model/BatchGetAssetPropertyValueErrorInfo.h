@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BatchGetAssetPropertyValueErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_errorTimestamp;
-    bool m_errorTimestampHasBeenSet;
+    bool m_errorTimestampHasBeenSet = false;
   };
 
 } // namespace Model

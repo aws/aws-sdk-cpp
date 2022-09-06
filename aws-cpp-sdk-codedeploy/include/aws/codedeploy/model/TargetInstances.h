@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::Vector<EC2TagFilter> m_tagFilters;
-    bool m_tagFiltersHasBeenSet;
+    bool m_tagFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     EC2TagSet m_ec2TagSet;
-    bool m_ec2TagSetHasBeenSet;
+    bool m_ec2TagSetHasBeenSet = false;
   };
 
 } // namespace Model

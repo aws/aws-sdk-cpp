@@ -343,25 +343,25 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_backtrackIdentifier;
-    bool m_backtrackIdentifierHasBeenSet;
+    bool m_backtrackIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_backtrackTo;
-    bool m_backtrackToHasBeenSet;
+    bool m_backtrackToHasBeenSet = false;
 
     Aws::Utils::DateTime m_backtrackedFrom;
-    bool m_backtrackedFromHasBeenSet;
+    bool m_backtrackedFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_backtrackRequestCreationTime;
-    bool m_backtrackRequestCreationTimeHasBeenSet;
+    bool m_backtrackRequestCreationTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

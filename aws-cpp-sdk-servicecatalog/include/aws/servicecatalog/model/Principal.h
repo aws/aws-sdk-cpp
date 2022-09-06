@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_principalARN;
-    bool m_principalARNHasBeenSet;
+    bool m_principalARNHasBeenSet = false;
 
     PrincipalType m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
   };
 
 } // namespace Model

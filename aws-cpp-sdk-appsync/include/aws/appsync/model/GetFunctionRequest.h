@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_functionId;
-    bool m_functionIdHasBeenSet;
+    bool m_functionIdHasBeenSet = false;
   };
 
 } // namespace Model

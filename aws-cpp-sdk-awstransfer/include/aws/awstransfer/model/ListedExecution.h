@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     FileLocation m_initialFileLocation;
-    bool m_initialFileLocationHasBeenSet;
+    bool m_initialFileLocationHasBeenSet = false;
 
     ServiceMetadata m_serviceMetadata;
-    bool m_serviceMetadataHasBeenSet;
+    bool m_serviceMetadataHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

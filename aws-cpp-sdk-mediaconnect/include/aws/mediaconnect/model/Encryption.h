@@ -514,31 +514,31 @@ namespace Model
   private:
 
     Algorithm m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

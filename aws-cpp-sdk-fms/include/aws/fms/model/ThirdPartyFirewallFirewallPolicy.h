@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_firewallPolicyId;
-    bool m_firewallPolicyIdHasBeenSet;
+    bool m_firewallPolicyIdHasBeenSet = false;
 
     Aws::String m_firewallPolicyName;
-    bool m_firewallPolicyNameHasBeenSet;
+    bool m_firewallPolicyNameHasBeenSet = false;
   };
 
 } // namespace Model

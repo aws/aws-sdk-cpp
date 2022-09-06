@@ -79,10 +79,10 @@ namespace Model
   private:
 
     long long m_connectedDeviceCount;
-    bool m_connectedDeviceCountHasBeenSet;
+    bool m_connectedDeviceCountHasBeenSet = false;
 
     long long m_registeredDeviceCount;
-    bool m_registeredDeviceCountHasBeenSet;
+    bool m_registeredDeviceCountHasBeenSet = false;
   };
 
 } // namespace Model

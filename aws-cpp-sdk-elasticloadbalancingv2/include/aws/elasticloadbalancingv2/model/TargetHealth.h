@@ -359,13 +359,13 @@ namespace Model
   private:
 
     TargetHealthStateEnum m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     TargetHealthReasonEnum m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

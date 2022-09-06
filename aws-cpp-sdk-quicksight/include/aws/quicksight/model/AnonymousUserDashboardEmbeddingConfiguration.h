@@ -121,7 +121,7 @@ namespace Model
   private:
 
     Aws::String m_initialDashboardId;
-    bool m_initialDashboardIdHasBeenSet;
+    bool m_initialDashboardIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -289,28 +289,28 @@ namespace Model
   private:
 
     Aws::String m_edgeDeploymentPlanArn;
-    bool m_edgeDeploymentPlanArnHasBeenSet;
+    bool m_edgeDeploymentPlanArnHasBeenSet = false;
 
     Aws::String m_edgeDeploymentPlanName;
-    bool m_edgeDeploymentPlanNameHasBeenSet;
+    bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
     Aws::String m_deviceFleetName;
-    bool m_deviceFleetNameHasBeenSet;
+    bool m_deviceFleetNameHasBeenSet = false;
 
     int m_edgeDeploymentSuccess;
-    bool m_edgeDeploymentSuccessHasBeenSet;
+    bool m_edgeDeploymentSuccessHasBeenSet = false;
 
     int m_edgeDeploymentPending;
-    bool m_edgeDeploymentPendingHasBeenSet;
+    bool m_edgeDeploymentPendingHasBeenSet = false;
 
     int m_edgeDeploymentFailed;
-    bool m_edgeDeploymentFailedHasBeenSet;
+    bool m_edgeDeploymentFailedHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

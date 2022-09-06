@@ -183,13 +183,13 @@ namespace Model
   private:
 
     SlotValueResolutionStrategy m_resolutionStrategy;
-    bool m_resolutionStrategyHasBeenSet;
+    bool m_resolutionStrategyHasBeenSet = false;
 
     SlotValueRegexFilter m_regexFilter;
-    bool m_regexFilterHasBeenSet;
+    bool m_regexFilterHasBeenSet = false;
 
     AdvancedRecognitionSetting m_advancedRecognitionSetting;
-    bool m_advancedRecognitionSettingHasBeenSet;
+    bool m_advancedRecognitionSettingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     OriginAccessControlConfig m_originAccessControlConfig;
-    bool m_originAccessControlConfigHasBeenSet;
+    bool m_originAccessControlConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -384,22 +384,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ArtifactStore m_artifactStore;
-    bool m_artifactStoreHasBeenSet;
+    bool m_artifactStoreHasBeenSet = false;
 
     Aws::Map<Aws::String, ArtifactStore> m_artifactStores;
-    bool m_artifactStoresHasBeenSet;
+    bool m_artifactStoresHasBeenSet = false;
 
     Aws::Vector<StageDeclaration> m_stages;
-    bool m_stagesHasBeenSet;
+    bool m_stagesHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

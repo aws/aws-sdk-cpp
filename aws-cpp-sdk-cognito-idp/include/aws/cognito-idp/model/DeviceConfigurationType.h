@@ -161,10 +161,10 @@ namespace Model
   private:
 
     bool m_challengeRequiredOnNewDevice;
-    bool m_challengeRequiredOnNewDeviceHasBeenSet;
+    bool m_challengeRequiredOnNewDeviceHasBeenSet = false;
 
     bool m_deviceOnlyRememberedOnUserPrompt;
-    bool m_deviceOnlyRememberedOnUserPromptHasBeenSet;
+    bool m_deviceOnlyRememberedOnUserPromptHasBeenSet = false;
   };
 
 } // namespace Model

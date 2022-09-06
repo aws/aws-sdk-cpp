@@ -111,10 +111,10 @@ namespace Model
   private:
 
     ReplicationTimeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ReplicationTimeValue m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
   };
 
 } // namespace Model

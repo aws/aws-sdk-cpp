@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAtAfter;
-    bool m_createdAtAfterHasBeenSet;
+    bool m_createdAtAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAtBefore;
-    bool m_createdAtBeforeHasBeenSet;
+    bool m_createdAtBeforeHasBeenSet = false;
 
     Aws::Vector<JobRunState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
   };
 
 } // namespace Model

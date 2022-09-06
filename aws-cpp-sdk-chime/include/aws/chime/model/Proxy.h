@@ -174,16 +174,16 @@ namespace Model
   private:
 
     int m_defaultSessionExpiryMinutes;
-    bool m_defaultSessionExpiryMinutesHasBeenSet;
+    bool m_defaultSessionExpiryMinutesHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::String m_fallBackPhoneNumber;
-    bool m_fallBackPhoneNumberHasBeenSet;
+    bool m_fallBackPhoneNumberHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phoneNumberCountries;
-    bool m_phoneNumberCountriesHasBeenSet;
+    bool m_phoneNumberCountriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CIDRSummary m_cIDRs;
-    bool m_cIDRsHasBeenSet;
+    bool m_cIDRsHasBeenSet = false;
   };
 
 } // namespace Model

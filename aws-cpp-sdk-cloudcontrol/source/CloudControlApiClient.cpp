@@ -84,7 +84,7 @@ CloudControlApiClient::~CloudControlApiClient()
 
 void CloudControlApiClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudControl");
+  AWSClient::SetServiceClientName("CloudControl");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

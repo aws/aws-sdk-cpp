@@ -278,19 +278,19 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_ipPermissions;
-    bool m_ipPermissionsHasBeenSet;
+    bool m_ipPermissionsHasBeenSet = false;
 
     Aws::Vector<SecurityGroupRuleDescription> m_securityGroupRuleDescriptions;
-    bool m_securityGroupRuleDescriptionsHasBeenSet;
+    bool m_securityGroupRuleDescriptionsHasBeenSet = false;
   };
 
 } // namespace Model

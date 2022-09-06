@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_relationshipType;
-    bool m_relationshipTypeHasBeenSet;
+    bool m_relationshipTypeHasBeenSet = false;
 
     Aws::String m_targetComponentTypeId;
-    bool m_targetComponentTypeIdHasBeenSet;
+    bool m_targetComponentTypeIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::String m_destinationBackupVaultArn;
-    bool m_destinationBackupVaultArnHasBeenSet;
+    bool m_destinationBackupVaultArnHasBeenSet = false;
 
     AwsBackupBackupPlanLifecycleDetails m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -90,7 +90,7 @@ TimestreamQueryClient::~TimestreamQueryClient()
 
 void TimestreamQueryClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Timestream Query");
+  AWSClient::SetServiceClientName("Timestream Query");
   LoadTimestreamQuerySpecificConfig(config);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())

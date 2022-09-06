@@ -181,19 +181,19 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     int m_hourOfDay;
-    bool m_hourOfDayHasBeenSet;
+    bool m_hourOfDayHasBeenSet = false;
 
     int m_minuteOfHour;
-    bool m_minuteOfHourHasBeenSet;
+    bool m_minuteOfHourHasBeenSet = false;
 
     int m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
 
     int m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
   };
 
 } // namespace Model

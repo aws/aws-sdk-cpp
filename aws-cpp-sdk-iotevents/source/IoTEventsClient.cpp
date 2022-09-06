@@ -102,7 +102,7 @@ IoTEventsClient::~IoTEventsClient()
 
 void IoTEventsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT Events");
+  AWSClient::SetServiceClientName("IoT Events");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

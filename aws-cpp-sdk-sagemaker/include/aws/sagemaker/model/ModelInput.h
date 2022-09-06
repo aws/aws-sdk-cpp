@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_dataInputConfig;
-    bool m_dataInputConfigHasBeenSet;
+    bool m_dataInputConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -219,19 +219,19 @@ namespace Model
   private:
 
     Aws::Vector<DataValue> m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     Aws::Vector<DataType> m_nestedType;
-    bool m_nestedTypeHasBeenSet;
+    bool m_nestedTypeHasBeenSet = false;
 
     Relationship m_relationship;
-    bool m_relationshipHasBeenSet;
+    bool m_relationshipHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_unitOfMeasure;
-    bool m_unitOfMeasureHasBeenSet;
+    bool m_unitOfMeasureHasBeenSet = false;
   };
 
 } // namespace Model

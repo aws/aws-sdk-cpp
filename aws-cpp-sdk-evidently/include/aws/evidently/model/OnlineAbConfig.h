@@ -165,10 +165,10 @@ namespace Model
   private:
 
     Aws::String m_controlTreatmentName;
-    bool m_controlTreatmentNameHasBeenSet;
+    bool m_controlTreatmentNameHasBeenSet = false;
 
     Aws::Map<Aws::String, long long> m_treatmentWeights;
-    bool m_treatmentWeightsHasBeenSet;
+    bool m_treatmentWeightsHasBeenSet = false;
   };
 
 } // namespace Model

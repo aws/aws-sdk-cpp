@@ -142,7 +142,7 @@ S3ControlClient::~S3ControlClient()
 
 void S3ControlClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("S3 Control");
+  AWSClient::SetServiceClientName("S3 Control");
   LoadS3ControlSpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;

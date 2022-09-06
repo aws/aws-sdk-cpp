@@ -77,7 +77,7 @@ namespace Model
   private:
 
     EC2Specification m_eC2Specification;
-    bool m_eC2SpecificationHasBeenSet;
+    bool m_eC2SpecificationHasBeenSet = false;
   };
 
 } // namespace Model

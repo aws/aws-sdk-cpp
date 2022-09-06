@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<OpenZFSClientConfiguration> m_clientConfigurations;
-    bool m_clientConfigurationsHasBeenSet;
+    bool m_clientConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

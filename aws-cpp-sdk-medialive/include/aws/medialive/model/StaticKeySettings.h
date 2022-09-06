@@ -112,10 +112,10 @@ namespace Model
   private:
 
     InputLocation m_keyProviderServer;
-    bool m_keyProviderServerHasBeenSet;
+    bool m_keyProviderServerHasBeenSet = false;
 
     Aws::String m_staticKeyValue;
-    bool m_staticKeyValueHasBeenSet;
+    bool m_staticKeyValueHasBeenSet = false;
   };
 
 } // namespace Model

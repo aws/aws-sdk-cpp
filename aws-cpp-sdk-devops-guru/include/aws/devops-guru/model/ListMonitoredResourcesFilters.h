@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ResourcePermission m_resourcePermission;
-    bool m_resourcePermissionHasBeenSet;
+    bool m_resourcePermissionHasBeenSet = false;
 
     Aws::Vector<ResourceTypeFilter> m_resourceTypeFilters;
-    bool m_resourceTypeFiltersHasBeenSet;
+    bool m_resourceTypeFiltersHasBeenSet = false;
   };
 
 } // namespace Model

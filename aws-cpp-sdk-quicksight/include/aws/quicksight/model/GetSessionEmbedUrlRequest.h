@@ -324,16 +324,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     long long m_sessionLifetimeInMinutes;
-    bool m_sessionLifetimeInMinutesHasBeenSet;
+    bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
   };
 
 } // namespace Model

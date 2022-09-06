@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_retentionConfigurationName;
-    bool m_retentionConfigurationNameHasBeenSet;
+    bool m_retentionConfigurationNameHasBeenSet = false;
   };
 
 } // namespace Model

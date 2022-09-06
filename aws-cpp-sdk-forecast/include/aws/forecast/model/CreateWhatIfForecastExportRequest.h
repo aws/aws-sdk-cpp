@@ -285,19 +285,19 @@ namespace Model
   private:
 
     Aws::String m_whatIfForecastExportName;
-    bool m_whatIfForecastExportNameHasBeenSet;
+    bool m_whatIfForecastExportNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_whatIfForecastArns;
-    bool m_whatIfForecastArnsHasBeenSet;
+    bool m_whatIfForecastArnsHasBeenSet = false;
 
     DataDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

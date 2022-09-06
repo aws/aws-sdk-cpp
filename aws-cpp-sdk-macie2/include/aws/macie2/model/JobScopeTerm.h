@@ -117,10 +117,10 @@ namespace Model
   private:
 
     SimpleScopeTerm m_simpleScopeTerm;
-    bool m_simpleScopeTermHasBeenSet;
+    bool m_simpleScopeTermHasBeenSet = false;
 
     TagScopeTerm m_tagScopeTerm;
-    bool m_tagScopeTermHasBeenSet;
+    bool m_tagScopeTermHasBeenSet = false;
   };
 
 } // namespace Model

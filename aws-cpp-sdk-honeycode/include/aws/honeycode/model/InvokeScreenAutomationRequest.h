@@ -455,25 +455,25 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_screenId;
-    bool m_screenIdHasBeenSet;
+    bool m_screenIdHasBeenSet = false;
 
     Aws::String m_screenAutomationId;
-    bool m_screenAutomationIdHasBeenSet;
+    bool m_screenAutomationIdHasBeenSet = false;
 
     Aws::Map<Aws::String, VariableValue> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

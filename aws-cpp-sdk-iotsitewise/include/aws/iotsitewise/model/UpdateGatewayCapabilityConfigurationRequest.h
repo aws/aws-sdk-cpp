@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_capabilityNamespace;
-    bool m_capabilityNamespaceHasBeenSet;
+    bool m_capabilityNamespaceHasBeenSet = false;
 
     Aws::String m_capabilityConfiguration;
-    bool m_capabilityConfigurationHasBeenSet;
+    bool m_capabilityConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

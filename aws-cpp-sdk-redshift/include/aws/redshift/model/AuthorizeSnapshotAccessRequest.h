@@ -237,16 +237,16 @@ namespace Model
   private:
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotArn;
-    bool m_snapshotArnHasBeenSet;
+    bool m_snapshotArnHasBeenSet = false;
 
     Aws::String m_snapshotClusterIdentifier;
-    bool m_snapshotClusterIdentifierHasBeenSet;
+    bool m_snapshotClusterIdentifierHasBeenSet = false;
 
     Aws::String m_accountWithRestoreAccess;
-    bool m_accountWithRestoreAccessHasBeenSet;
+    bool m_accountWithRestoreAccessHasBeenSet = false;
   };
 
 } // namespace Model

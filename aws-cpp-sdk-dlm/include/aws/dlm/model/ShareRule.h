@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_targetAccounts;
-    bool m_targetAccountsHasBeenSet;
+    bool m_targetAccountsHasBeenSet = false;
 
     int m_unshareInterval;
-    bool m_unshareIntervalHasBeenSet;
+    bool m_unshareIntervalHasBeenSet = false;
 
     RetentionIntervalUnitValues m_unshareIntervalUnit;
-    bool m_unshareIntervalUnitHasBeenSet;
+    bool m_unshareIntervalUnitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -105,7 +105,7 @@ CloudTrailClient::~CloudTrailClient()
 
 void CloudTrailClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudTrail");
+  AWSClient::SetServiceClientName("CloudTrail");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

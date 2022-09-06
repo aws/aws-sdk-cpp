@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     DeploymentLaunchConfig m_launchConfig;
-    bool m_launchConfigHasBeenSet;
+    bool m_launchConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -366,31 +366,31 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_taskName;
-    bool m_taskNameHasBeenSet;
+    bool m_taskNameHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     long long m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     long long m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPrefix;
-    bool m_destinationPrefixHasBeenSet;
+    bool m_destinationPrefixHasBeenSet = false;
 
     ExportTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ExportTaskExecutionInfo m_executionInfo;
-    bool m_executionInfoHasBeenSet;
+    bool m_executionInfoHasBeenSet = false;
   };
 
 } // namespace Model

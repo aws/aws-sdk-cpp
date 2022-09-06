@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_attachedObjectIdentifier;
-    bool m_attachedObjectIdentifierHasBeenSet;
+    bool m_attachedObjectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

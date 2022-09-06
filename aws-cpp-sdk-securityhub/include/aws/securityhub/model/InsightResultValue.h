@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_groupByAttributeValue;
-    bool m_groupByAttributeValueHasBeenSet;
+    bool m_groupByAttributeValueHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

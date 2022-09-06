@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logicalResourceIds;
-    bool m_logicalResourceIdsHasBeenSet;
+    bool m_logicalResourceIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIdentifiers;
-    bool m_resourceIdentifiersHasBeenSet;
+    bool m_resourceIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

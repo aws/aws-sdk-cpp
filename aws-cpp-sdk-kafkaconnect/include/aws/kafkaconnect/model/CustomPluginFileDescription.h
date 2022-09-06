@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_fileMd5;
-    bool m_fileMd5HasBeenSet;
+    bool m_fileMd5HasBeenSet = false;
 
     long long m_fileSize;
-    bool m_fileSizeHasBeenSet;
+    bool m_fileSizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -126,10 +126,10 @@ namespace Model
   private:
 
     long long m_occurrencesThreshold;
-    bool m_occurrencesThresholdHasBeenSet;
+    bool m_occurrencesThresholdHasBeenSet = false;
 
     DataIdentifierSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
   };
 
 } // namespace Model

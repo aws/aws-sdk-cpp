@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ChangeTypeEnum m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     ChangeTypeEnum m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastStartedAt;
-    bool m_lastStartedAtHasBeenSet;
+    bool m_lastStartedAtHasBeenSet = false;
 
     ManagedAgentName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
   };
 
 } // namespace Model

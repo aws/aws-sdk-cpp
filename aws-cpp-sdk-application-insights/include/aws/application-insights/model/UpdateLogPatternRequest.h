@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_patternSetName;
-    bool m_patternSetNameHasBeenSet;
+    bool m_patternSetNameHasBeenSet = false;
 
     Aws::String m_patternName;
-    bool m_patternNameHasBeenSet;
+    bool m_patternNameHasBeenSet = false;
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
   };
 
 } // namespace Model

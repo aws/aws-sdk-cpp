@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
   };
 
 } // namespace Model

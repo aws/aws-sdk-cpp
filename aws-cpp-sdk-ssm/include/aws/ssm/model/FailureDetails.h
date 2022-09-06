@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_failureStage;
-    bool m_failureStageHasBeenSet;
+    bool m_failureStageHasBeenSet = false;
 
     Aws::String m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

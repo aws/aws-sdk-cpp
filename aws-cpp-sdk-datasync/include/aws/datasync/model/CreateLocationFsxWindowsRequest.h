@@ -455,25 +455,25 @@ namespace Model
   private:
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_fsxFilesystemArn;
-    bool m_fsxFilesystemArnHasBeenSet;
+    bool m_fsxFilesystemArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
   };
 
 } // namespace Model

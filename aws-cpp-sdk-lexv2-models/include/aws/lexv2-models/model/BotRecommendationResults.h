@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_botLocaleExportUrl;
-    bool m_botLocaleExportUrlHasBeenSet;
+    bool m_botLocaleExportUrlHasBeenSet = false;
 
     Aws::String m_associatedTranscriptsUrl;
-    bool m_associatedTranscriptsUrlHasBeenSet;
+    bool m_associatedTranscriptsUrlHasBeenSet = false;
 
     BotRecommendationResultStatistics m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
   };
 
 } // namespace Model

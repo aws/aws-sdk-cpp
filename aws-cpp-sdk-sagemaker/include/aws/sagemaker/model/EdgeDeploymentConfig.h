@@ -83,7 +83,7 @@ namespace Model
   private:
 
     FailureHandlingPolicy m_failureHandlingPolicy;
-    bool m_failureHandlingPolicyHasBeenSet;
+    bool m_failureHandlingPolicyHasBeenSet = false;
   };
 
 } // namespace Model

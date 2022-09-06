@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

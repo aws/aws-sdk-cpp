@@ -110,10 +110,10 @@ namespace Model
   private:
 
     UpdateActionType m_attributeActionType;
-    bool m_attributeActionTypeHasBeenSet;
+    bool m_attributeActionTypeHasBeenSet = false;
 
     TypedAttributeValue m_attributeUpdateValue;
-    bool m_attributeUpdateValueHasBeenSet;
+    bool m_attributeUpdateValueHasBeenSet = false;
   };
 
 } // namespace Model

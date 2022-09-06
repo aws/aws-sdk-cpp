@@ -171,13 +171,13 @@ namespace Model
   private:
 
     CreateMultiRegionAccessPointInput m_createMultiRegionAccessPointRequest;
-    bool m_createMultiRegionAccessPointRequestHasBeenSet;
+    bool m_createMultiRegionAccessPointRequestHasBeenSet = false;
 
     DeleteMultiRegionAccessPointInput m_deleteMultiRegionAccessPointRequest;
-    bool m_deleteMultiRegionAccessPointRequestHasBeenSet;
+    bool m_deleteMultiRegionAccessPointRequestHasBeenSet = false;
 
     PutMultiRegionAccessPointPolicyInput m_putMultiRegionAccessPointPolicyRequest;
-    bool m_putMultiRegionAccessPointPolicyRequestHasBeenSet;
+    bool m_putMultiRegionAccessPointPolicyRequestHasBeenSet = false;
   };
 
 } // namespace Model

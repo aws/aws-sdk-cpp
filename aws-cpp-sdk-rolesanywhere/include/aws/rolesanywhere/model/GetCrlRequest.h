@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_crlId;
-    bool m_crlIdHasBeenSet;
+    bool m_crlIdHasBeenSet = false;
   };
 
 } // namespace Model

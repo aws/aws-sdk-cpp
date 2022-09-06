@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_nodeGroupId;
-    bool m_nodeGroupIdHasBeenSet;
+    bool m_nodeGroupIdHasBeenSet = false;
 
     Aws::Vector<NodeGroupMemberUpdateStatus> m_nodeGroupMemberUpdateStatus;
-    bool m_nodeGroupMemberUpdateStatusHasBeenSet;
+    bool m_nodeGroupMemberUpdateStatusHasBeenSet = false;
   };
 
 } // namespace Model

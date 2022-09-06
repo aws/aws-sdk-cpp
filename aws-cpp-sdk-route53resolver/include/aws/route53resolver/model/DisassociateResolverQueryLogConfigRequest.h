@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_resolverQueryLogConfigId;
-    bool m_resolverQueryLogConfigIdHasBeenSet;
+    bool m_resolverQueryLogConfigIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
   };
 
 } // namespace Model

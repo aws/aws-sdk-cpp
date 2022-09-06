@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     bool m_usePrefixAttributeValue;
-    bool m_usePrefixAttributeValueHasBeenSet;
+    bool m_usePrefixAttributeValueHasBeenSet = false;
   };
 
 } // namespace Model

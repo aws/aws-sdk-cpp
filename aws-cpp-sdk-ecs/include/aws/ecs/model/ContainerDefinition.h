@@ -4891,121 +4891,121 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     RepositoryCredentials m_repositoryCredentials;
-    bool m_repositoryCredentialsHasBeenSet;
+    bool m_repositoryCredentialsHasBeenSet = false;
 
     int m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     int m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     int m_memoryReservation;
-    bool m_memoryReservationHasBeenSet;
+    bool m_memoryReservationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_links;
-    bool m_linksHasBeenSet;
+    bool m_linksHasBeenSet = false;
 
     Aws::Vector<PortMapping> m_portMappings;
-    bool m_portMappingsHasBeenSet;
+    bool m_portMappingsHasBeenSet = false;
 
     bool m_essential;
-    bool m_essentialHasBeenSet;
+    bool m_essentialHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<EnvironmentFile> m_environmentFiles;
-    bool m_environmentFilesHasBeenSet;
+    bool m_environmentFilesHasBeenSet = false;
 
     Aws::Vector<MountPoint> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     Aws::Vector<VolumeFrom> m_volumesFrom;
-    bool m_volumesFromHasBeenSet;
+    bool m_volumesFromHasBeenSet = false;
 
     LinuxParameters m_linuxParameters;
-    bool m_linuxParametersHasBeenSet;
+    bool m_linuxParametersHasBeenSet = false;
 
     Aws::Vector<Secret> m_secrets;
-    bool m_secretsHasBeenSet;
+    bool m_secretsHasBeenSet = false;
 
     Aws::Vector<ContainerDependency> m_dependsOn;
-    bool m_dependsOnHasBeenSet;
+    bool m_dependsOnHasBeenSet = false;
 
     int m_startTimeout;
-    bool m_startTimeoutHasBeenSet;
+    bool m_startTimeoutHasBeenSet = false;
 
     int m_stopTimeout;
-    bool m_stopTimeoutHasBeenSet;
+    bool m_stopTimeoutHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     bool m_disableNetworking;
-    bool m_disableNetworkingHasBeenSet;
+    bool m_disableNetworkingHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
 
     bool m_readonlyRootFilesystem;
-    bool m_readonlyRootFilesystemHasBeenSet;
+    bool m_readonlyRootFilesystemHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsServers;
-    bool m_dnsServersHasBeenSet;
+    bool m_dnsServersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsSearchDomains;
-    bool m_dnsSearchDomainsHasBeenSet;
+    bool m_dnsSearchDomainsHasBeenSet = false;
 
     Aws::Vector<HostEntry> m_extraHosts;
-    bool m_extraHostsHasBeenSet;
+    bool m_extraHostsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dockerSecurityOptions;
-    bool m_dockerSecurityOptionsHasBeenSet;
+    bool m_dockerSecurityOptionsHasBeenSet = false;
 
     bool m_interactive;
-    bool m_interactiveHasBeenSet;
+    bool m_interactiveHasBeenSet = false;
 
     bool m_pseudoTerminal;
-    bool m_pseudoTerminalHasBeenSet;
+    bool m_pseudoTerminalHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_dockerLabels;
-    bool m_dockerLabelsHasBeenSet;
+    bool m_dockerLabelsHasBeenSet = false;
 
     Aws::Vector<Ulimit> m_ulimits;
-    bool m_ulimitsHasBeenSet;
+    bool m_ulimitsHasBeenSet = false;
 
     LogConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     HealthCheck m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     Aws::Vector<SystemControl> m_systemControls;
-    bool m_systemControlsHasBeenSet;
+    bool m_systemControlsHasBeenSet = false;
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
 
     FirelensConfiguration m_firelensConfiguration;
-    bool m_firelensConfigurationHasBeenSet;
+    bool m_firelensConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

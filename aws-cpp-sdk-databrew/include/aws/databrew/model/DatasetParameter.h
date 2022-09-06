@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ParameterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DatetimeOptions m_datetimeOptions;
-    bool m_datetimeOptionsHasBeenSet;
+    bool m_datetimeOptionsHasBeenSet = false;
 
     bool m_createColumn;
-    bool m_createColumnHasBeenSet;
+    bool m_createColumnHasBeenSet = false;
 
     FilterExpression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

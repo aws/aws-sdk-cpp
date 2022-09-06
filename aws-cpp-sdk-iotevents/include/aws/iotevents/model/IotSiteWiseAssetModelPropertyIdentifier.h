@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_assetModelId;
-    bool m_assetModelIdHasBeenSet;
+    bool m_assetModelIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
   };
 
 } // namespace Model

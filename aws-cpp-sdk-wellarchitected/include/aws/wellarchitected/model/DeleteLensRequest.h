@@ -123,13 +123,13 @@ namespace Model
   private:
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     LensStatusType m_lensStatus;
-    bool m_lensStatusHasBeenSet;
+    bool m_lensStatusHasBeenSet = false;
   };
 
 } // namespace Model

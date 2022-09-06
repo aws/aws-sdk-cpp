@@ -124,13 +124,13 @@ namespace Model
   private:
 
     ExperimentTemplateCloudWatchLogsLogConfiguration m_cloudWatchLogsConfiguration;
-    bool m_cloudWatchLogsConfigurationHasBeenSet;
+    bool m_cloudWatchLogsConfigurationHasBeenSet = false;
 
     ExperimentTemplateS3LogConfiguration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     int m_logSchemaVersion;
-    bool m_logSchemaVersionHasBeenSet;
+    bool m_logSchemaVersionHasBeenSet = false;
   };
 
 } // namespace Model

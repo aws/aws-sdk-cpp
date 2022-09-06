@@ -277,10 +277,10 @@ namespace Model
   private:
 
     Aws::String m_dBParameterGroupName;
-    bool m_dBParameterGroupNameHasBeenSet;
+    bool m_dBParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

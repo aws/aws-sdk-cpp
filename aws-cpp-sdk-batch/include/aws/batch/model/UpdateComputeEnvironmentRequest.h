@@ -523,22 +523,22 @@ namespace Model
   private:
 
     Aws::String m_computeEnvironment;
-    bool m_computeEnvironmentHasBeenSet;
+    bool m_computeEnvironmentHasBeenSet = false;
 
     CEState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_unmanagedvCpus;
-    bool m_unmanagedvCpusHasBeenSet;
+    bool m_unmanagedvCpusHasBeenSet = false;
 
     ComputeResourceUpdate m_computeResources;
-    bool m_computeResourcesHasBeenSet;
+    bool m_computeResourcesHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     UpdatePolicy m_updatePolicy;
-    bool m_updatePolicyHasBeenSet;
+    bool m_updatePolicyHasBeenSet = false;
   };
 
 } // namespace Model

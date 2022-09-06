@@ -128,13 +128,13 @@ namespace Model
   private:
 
     FlowTemplateSummary m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     DefinitionDocument m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     long long m_validatedNamespaceVersion;
-    bool m_validatedNamespaceVersionHasBeenSet;
+    bool m_validatedNamespaceVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -193,16 +193,16 @@ namespace Model
   private:
 
     Aws::String m_outpostIdentifier;
-    bool m_outpostIdentifierHasBeenSet;
+    bool m_outpostIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostIdFilter;
-    bool m_hostIdFilterHasBeenSet;
+    bool m_hostIdFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

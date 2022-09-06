@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -953,19 +953,19 @@ namespace Model
   private:
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

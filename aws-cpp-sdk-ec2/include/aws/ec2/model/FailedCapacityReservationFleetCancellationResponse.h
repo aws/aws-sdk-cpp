@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_capacityReservationFleetId;
-    bool m_capacityReservationFleetIdHasBeenSet;
+    bool m_capacityReservationFleetIdHasBeenSet = false;
 
     CancelCapacityReservationFleetError m_cancelCapacityReservationFleetError;
-    bool m_cancelCapacityReservationFleetErrorHasBeenSet;
+    bool m_cancelCapacityReservationFleetErrorHasBeenSet = false;
   };
 
 } // namespace Model

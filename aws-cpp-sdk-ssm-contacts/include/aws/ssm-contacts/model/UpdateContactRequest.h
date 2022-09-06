@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Plan m_plan;
-    bool m_planHasBeenSet;
+    bool m_planHasBeenSet = false;
   };
 
 } // namespace Model

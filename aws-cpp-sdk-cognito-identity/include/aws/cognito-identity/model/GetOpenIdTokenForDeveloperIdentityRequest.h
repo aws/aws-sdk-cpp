@@ -416,19 +416,19 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_logins;
-    bool m_loginsHasBeenSet;
+    bool m_loginsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_principalTags;
-    bool m_principalTagsHasBeenSet;
+    bool m_principalTagsHasBeenSet = false;
 
     long long m_tokenDuration;
-    bool m_tokenDurationHasBeenSet;
+    bool m_tokenDurationHasBeenSet = false;
   };
 
 } // namespace Model

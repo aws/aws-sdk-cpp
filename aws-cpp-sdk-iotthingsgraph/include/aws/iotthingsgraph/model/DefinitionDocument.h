@@ -118,10 +118,10 @@ namespace Model
   private:
 
     DefinitionLanguage m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

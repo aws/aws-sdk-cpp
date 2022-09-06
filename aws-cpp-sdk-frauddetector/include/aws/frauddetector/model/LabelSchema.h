@@ -242,10 +242,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_labelMapper;
-    bool m_labelMapperHasBeenSet;
+    bool m_labelMapperHasBeenSet = false;
 
     UnlabeledEventsTreatment m_unlabeledEventsTreatment;
-    bool m_unlabeledEventsTreatmentHasBeenSet;
+    bool m_unlabeledEventsTreatmentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -176,10 +176,10 @@ namespace Model
   private:
 
     Aws::String m_credentialsParameter;
-    bool m_credentialsParameterHasBeenSet;
+    bool m_credentialsParameterHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
   };
 
 } // namespace Model

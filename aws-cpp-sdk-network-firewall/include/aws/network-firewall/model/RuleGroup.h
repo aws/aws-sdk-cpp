@@ -193,16 +193,16 @@ namespace Model
   private:
 
     RuleVariables m_ruleVariables;
-    bool m_ruleVariablesHasBeenSet;
+    bool m_ruleVariablesHasBeenSet = false;
 
     ReferenceSets m_referenceSets;
-    bool m_referenceSetsHasBeenSet;
+    bool m_referenceSetsHasBeenSet = false;
 
     RulesSource m_rulesSource;
-    bool m_rulesSourceHasBeenSet;
+    bool m_rulesSourceHasBeenSet = false;
 
     StatefulRuleOptions m_statefulRuleOptions;
-    bool m_statefulRuleOptionsHasBeenSet;
+    bool m_statefulRuleOptionsHasBeenSet = false;
   };
 
 } // namespace Model

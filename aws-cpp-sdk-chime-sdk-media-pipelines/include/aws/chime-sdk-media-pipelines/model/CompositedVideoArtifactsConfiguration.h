@@ -147,13 +147,13 @@ namespace Model
   private:
 
     LayoutOption m_layout;
-    bool m_layoutHasBeenSet;
+    bool m_layoutHasBeenSet = false;
 
     ResolutionOption m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     GridViewConfiguration m_gridViewConfiguration;
-    bool m_gridViewConfigurationHasBeenSet;
+    bool m_gridViewConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

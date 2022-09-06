@@ -689,28 +689,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<MetricStreamFilter> m_includeFilters;
-    bool m_includeFiltersHasBeenSet;
+    bool m_includeFiltersHasBeenSet = false;
 
     Aws::Vector<MetricStreamFilter> m_excludeFilters;
-    bool m_excludeFiltersHasBeenSet;
+    bool m_excludeFiltersHasBeenSet = false;
 
     Aws::String m_firehoseArn;
-    bool m_firehoseArnHasBeenSet;
+    bool m_firehoseArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MetricStreamOutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
-    bool m_statisticsConfigurationsHasBeenSet;
+    bool m_statisticsConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

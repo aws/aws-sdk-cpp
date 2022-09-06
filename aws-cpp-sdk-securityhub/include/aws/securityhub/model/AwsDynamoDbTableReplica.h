@@ -311,22 +311,22 @@ namespace Model
   private:
 
     Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyId;
-    bool m_kmsMasterKeyIdHasBeenSet;
+    bool m_kmsMasterKeyIdHasBeenSet = false;
 
     AwsDynamoDbTableProvisionedThroughputOverride m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::String m_replicaStatus;
-    bool m_replicaStatusHasBeenSet;
+    bool m_replicaStatusHasBeenSet = false;
 
     Aws::String m_replicaStatusDescription;
-    bool m_replicaStatusDescriptionHasBeenSet;
+    bool m_replicaStatusDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

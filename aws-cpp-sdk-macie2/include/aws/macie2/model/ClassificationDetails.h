@@ -273,19 +273,19 @@ namespace Model
   private:
 
     Aws::String m_detailedResultsLocation;
-    bool m_detailedResultsLocationHasBeenSet;
+    bool m_detailedResultsLocationHasBeenSet = false;
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     OriginType m_originType;
-    bool m_originTypeHasBeenSet;
+    bool m_originTypeHasBeenSet = false;
 
     ClassificationResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

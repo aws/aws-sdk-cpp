@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_e164PhoneNumber;
-    bool m_e164PhoneNumberHasBeenSet;
+    bool m_e164PhoneNumberHasBeenSet = false;
 
     OrderedPhoneNumberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

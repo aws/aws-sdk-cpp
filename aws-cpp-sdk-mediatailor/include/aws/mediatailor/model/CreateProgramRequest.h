@@ -314,25 +314,25 @@ namespace Model
   private:
 
     Aws::Vector<AdBreak> m_adBreaks;
-    bool m_adBreaksHasBeenSet;
+    bool m_adBreaksHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_liveSourceName;
-    bool m_liveSourceNameHasBeenSet;
+    bool m_liveSourceNameHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
 
     ScheduleConfiguration m_scheduleConfiguration;
-    bool m_scheduleConfigurationHasBeenSet;
+    bool m_scheduleConfigurationHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

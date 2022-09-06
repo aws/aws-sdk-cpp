@@ -117,13 +117,13 @@ namespace Model
   private:
 
     int m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_isDefaultVersion;
-    bool m_isDefaultVersionHasBeenSet;
+    bool m_isDefaultVersionHasBeenSet = false;
   };
 
 } // namespace Model

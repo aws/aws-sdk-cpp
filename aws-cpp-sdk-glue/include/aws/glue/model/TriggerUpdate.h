@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Predicate m_predicate;
-    bool m_predicateHasBeenSet;
+    bool m_predicateHasBeenSet = false;
 
     EventBatchingCondition m_eventBatchingCondition;
-    bool m_eventBatchingConditionHasBeenSet;
+    bool m_eventBatchingConditionHasBeenSet = false;
   };
 
 } // namespace Model

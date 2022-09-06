@@ -111,7 +111,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_groundTruth;
-    bool m_groundTruthHasBeenSet;
+    bool m_groundTruthHasBeenSet = false;
   };
 
 } // namespace Model

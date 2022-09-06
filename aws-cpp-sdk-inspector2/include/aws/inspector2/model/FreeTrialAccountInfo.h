@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<FreeTrialInfo> m_freeTrialInfo;
-    bool m_freeTrialInfoHasBeenSet;
+    bool m_freeTrialInfoHasBeenSet = false;
   };
 
 } // namespace Model

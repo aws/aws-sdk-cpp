@@ -398,25 +398,25 @@ namespace Model
   private:
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Options m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_excludes;
-    bool m_excludesHasBeenSet;
+    bool m_excludesHasBeenSet = false;
 
     TaskSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupArn;
-    bool m_cloudWatchLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_includes;
-    bool m_includesHasBeenSet;
+    bool m_includesHasBeenSet = false;
   };
 
 } // namespace Model

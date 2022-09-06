@@ -167,13 +167,13 @@ namespace Model
   private:
 
     bool m_sampledRequestsEnabled;
-    bool m_sampledRequestsEnabledHasBeenSet;
+    bool m_sampledRequestsEnabledHasBeenSet = false;
 
     bool m_cloudWatchMetricsEnabled;
-    bool m_cloudWatchMetricsEnabledHasBeenSet;
+    bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
   };
 
 } // namespace Model

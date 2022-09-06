@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Compliance m_compliance;
-    bool m_complianceHasBeenSet;
+    bool m_complianceHasBeenSet = false;
   };
 
 } // namespace Model

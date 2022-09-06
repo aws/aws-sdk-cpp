@@ -102,10 +102,10 @@ namespace Model
   private:
 
     long long m_timems;
-    bool m_timemsHasBeenSet;
+    bool m_timemsHasBeenSet = false;
 
     Aws::String m_rid;
-    bool m_ridHasBeenSet;
+    bool m_ridHasBeenSet = false;
   };
 
 } // namespace Model

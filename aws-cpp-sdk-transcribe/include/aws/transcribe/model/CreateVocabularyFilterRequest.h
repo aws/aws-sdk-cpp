@@ -490,19 +490,19 @@ namespace Model
   private:
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_words;
-    bool m_wordsHasBeenSet;
+    bool m_wordsHasBeenSet = false;
 
     Aws::String m_vocabularyFilterFileUri;
-    bool m_vocabularyFilterFileUriHasBeenSet;
+    bool m_vocabularyFilterFileUriHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

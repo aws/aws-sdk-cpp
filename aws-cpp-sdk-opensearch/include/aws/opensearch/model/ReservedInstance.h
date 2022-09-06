@@ -502,46 +502,46 @@ namespace Model
   private:
 
     Aws::String m_reservationName;
-    bool m_reservationNameHasBeenSet;
+    bool m_reservationNameHasBeenSet = false;
 
     Aws::String m_reservedInstanceId;
-    bool m_reservedInstanceIdHasBeenSet;
+    bool m_reservedInstanceIdHasBeenSet = false;
 
     long long m_billingSubscriptionId;
-    bool m_billingSubscriptionIdHasBeenSet;
+    bool m_billingSubscriptionIdHasBeenSet = false;
 
     Aws::String m_reservedInstanceOfferingId;
-    bool m_reservedInstanceOfferingIdHasBeenSet;
+    bool m_reservedInstanceOfferingIdHasBeenSet = false;
 
     OpenSearchPartitionInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ReservedInstancePaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
   };
 
 } // namespace Model

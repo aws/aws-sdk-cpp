@@ -422,34 +422,34 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
-    bool m_minimumEngineVersionHasBeenSet;
+    bool m_minimumEngineVersionHasBeenSet = false;
 
     Aws::String m_accessString;
-    bool m_accessStringHasBeenSet;
+    bool m_accessStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroupIds;
-    bool m_userGroupIdsHasBeenSet;
+    bool m_userGroupIdsHasBeenSet = false;
 
     Authentication m_authentication;
-    bool m_authenticationHasBeenSet;
+    bool m_authenticationHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

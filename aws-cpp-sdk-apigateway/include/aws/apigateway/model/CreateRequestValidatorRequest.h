@@ -173,16 +173,16 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_validateRequestBody;
-    bool m_validateRequestBodyHasBeenSet;
+    bool m_validateRequestBodyHasBeenSet = false;
 
     bool m_validateRequestParameters;
-    bool m_validateRequestParametersHasBeenSet;
+    bool m_validateRequestParametersHasBeenSet = false;
   };
 
 } // namespace Model

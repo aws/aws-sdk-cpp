@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     LexBot m_lexBot;
-    bool m_lexBotHasBeenSet;
+    bool m_lexBotHasBeenSet = false;
 
     LexV2Bot m_lexV2Bot;
-    bool m_lexV2BotHasBeenSet;
+    bool m_lexV2BotHasBeenSet = false;
   };
 
 } // namespace Model

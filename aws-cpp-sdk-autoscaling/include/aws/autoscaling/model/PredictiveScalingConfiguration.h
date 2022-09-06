@@ -346,19 +346,19 @@ namespace Model
   private:
 
     Aws::Vector<PredictiveScalingMetricSpecification> m_metricSpecifications;
-    bool m_metricSpecificationsHasBeenSet;
+    bool m_metricSpecificationsHasBeenSet = false;
 
     PredictiveScalingMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     int m_schedulingBufferTime;
-    bool m_schedulingBufferTimeHasBeenSet;
+    bool m_schedulingBufferTimeHasBeenSet = false;
 
     PredictiveScalingMaxCapacityBreachBehavior m_maxCapacityBreachBehavior;
-    bool m_maxCapacityBreachBehaviorHasBeenSet;
+    bool m_maxCapacityBreachBehaviorHasBeenSet = false;
 
     int m_maxCapacityBuffer;
-    bool m_maxCapacityBufferHasBeenSet;
+    bool m_maxCapacityBufferHasBeenSet = false;
   };
 
 } // namespace Model

@@ -89,7 +89,7 @@ namespace Model
   private:
 
     AutomatedAbrSettings m_abrSettings;
-    bool m_abrSettingsHasBeenSet;
+    bool m_abrSettingsHasBeenSet = false;
   };
 
 } // namespace Model

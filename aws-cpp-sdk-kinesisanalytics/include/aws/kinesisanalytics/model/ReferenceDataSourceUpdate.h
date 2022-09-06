@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_tableNameUpdate;
-    bool m_tableNameUpdateHasBeenSet;
+    bool m_tableNameUpdateHasBeenSet = false;
 
     S3ReferenceDataSourceUpdate m_s3ReferenceDataSourceUpdate;
-    bool m_s3ReferenceDataSourceUpdateHasBeenSet;
+    bool m_s3ReferenceDataSourceUpdateHasBeenSet = false;
 
     SourceSchema m_referenceSchemaUpdate;
-    bool m_referenceSchemaUpdateHasBeenSet;
+    bool m_referenceSchemaUpdateHasBeenSet = false;
   };
 
 } // namespace Model

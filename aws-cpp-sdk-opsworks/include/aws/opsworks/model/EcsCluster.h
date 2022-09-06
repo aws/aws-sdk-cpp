@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_ecsClusterArn;
-    bool m_ecsClusterArnHasBeenSet;
+    bool m_ecsClusterArnHasBeenSet = false;
 
     Aws::String m_ecsClusterName;
-    bool m_ecsClusterNameHasBeenSet;
+    bool m_ecsClusterNameHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_registeredAt;
-    bool m_registeredAtHasBeenSet;
+    bool m_registeredAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_appKey;
-    bool m_appKeyHasBeenSet;
+    bool m_appKeyHasBeenSet = false;
 
     Aws::String m_appEui;
-    bool m_appEuiHasBeenSet;
+    bool m_appEuiHasBeenSet = false;
 
     Aws::String m_genAppKey;
-    bool m_genAppKeyHasBeenSet;
+    bool m_genAppKeyHasBeenSet = false;
   };
 
 } // namespace Model

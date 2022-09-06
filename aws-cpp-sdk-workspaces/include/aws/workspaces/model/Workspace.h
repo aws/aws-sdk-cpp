@@ -680,49 +680,49 @@ namespace Model
   private:
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     WorkspaceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_computerName;
-    bool m_computerNameHasBeenSet;
+    bool m_computerNameHasBeenSet = false;
 
     Aws::String m_volumeEncryptionKey;
-    bool m_volumeEncryptionKeyHasBeenSet;
+    bool m_volumeEncryptionKeyHasBeenSet = false;
 
     bool m_userVolumeEncryptionEnabled;
-    bool m_userVolumeEncryptionEnabledHasBeenSet;
+    bool m_userVolumeEncryptionEnabledHasBeenSet = false;
 
     bool m_rootVolumeEncryptionEnabled;
-    bool m_rootVolumeEncryptionEnabledHasBeenSet;
+    bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
 
     WorkspaceProperties m_workspaceProperties;
-    bool m_workspacePropertiesHasBeenSet;
+    bool m_workspacePropertiesHasBeenSet = false;
 
     Aws::Vector<ModificationState> m_modificationStates;
-    bool m_modificationStatesHasBeenSet;
+    bool m_modificationStatesHasBeenSet = false;
   };
 
 } // namespace Model

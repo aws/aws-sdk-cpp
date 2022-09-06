@@ -705,58 +705,58 @@ namespace Model
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     SharePointConfiguration m_sharePointConfiguration;
-    bool m_sharePointConfigurationHasBeenSet;
+    bool m_sharePointConfigurationHasBeenSet = false;
 
     DatabaseConfiguration m_databaseConfiguration;
-    bool m_databaseConfigurationHasBeenSet;
+    bool m_databaseConfigurationHasBeenSet = false;
 
     SalesforceConfiguration m_salesforceConfiguration;
-    bool m_salesforceConfigurationHasBeenSet;
+    bool m_salesforceConfigurationHasBeenSet = false;
 
     OneDriveConfiguration m_oneDriveConfiguration;
-    bool m_oneDriveConfigurationHasBeenSet;
+    bool m_oneDriveConfigurationHasBeenSet = false;
 
     ServiceNowConfiguration m_serviceNowConfiguration;
-    bool m_serviceNowConfigurationHasBeenSet;
+    bool m_serviceNowConfigurationHasBeenSet = false;
 
     ConfluenceConfiguration m_confluenceConfiguration;
-    bool m_confluenceConfigurationHasBeenSet;
+    bool m_confluenceConfigurationHasBeenSet = false;
 
     GoogleDriveConfiguration m_googleDriveConfiguration;
-    bool m_googleDriveConfigurationHasBeenSet;
+    bool m_googleDriveConfigurationHasBeenSet = false;
 
     WebCrawlerConfiguration m_webCrawlerConfiguration;
-    bool m_webCrawlerConfigurationHasBeenSet;
+    bool m_webCrawlerConfigurationHasBeenSet = false;
 
     WorkDocsConfiguration m_workDocsConfiguration;
-    bool m_workDocsConfigurationHasBeenSet;
+    bool m_workDocsConfigurationHasBeenSet = false;
 
     FsxConfiguration m_fsxConfiguration;
-    bool m_fsxConfigurationHasBeenSet;
+    bool m_fsxConfigurationHasBeenSet = false;
 
     SlackConfiguration m_slackConfiguration;
-    bool m_slackConfigurationHasBeenSet;
+    bool m_slackConfigurationHasBeenSet = false;
 
     BoxConfiguration m_boxConfiguration;
-    bool m_boxConfigurationHasBeenSet;
+    bool m_boxConfigurationHasBeenSet = false;
 
     QuipConfiguration m_quipConfiguration;
-    bool m_quipConfigurationHasBeenSet;
+    bool m_quipConfigurationHasBeenSet = false;
 
     JiraConfiguration m_jiraConfiguration;
-    bool m_jiraConfigurationHasBeenSet;
+    bool m_jiraConfigurationHasBeenSet = false;
 
     GitHubConfiguration m_gitHubConfiguration;
-    bool m_gitHubConfigurationHasBeenSet;
+    bool m_gitHubConfigurationHasBeenSet = false;
 
     AlfrescoConfiguration m_alfrescoConfiguration;
-    bool m_alfrescoConfigurationHasBeenSet;
+    bool m_alfrescoConfigurationHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;
-    bool m_templateConfigurationHasBeenSet;
+    bool m_templateConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

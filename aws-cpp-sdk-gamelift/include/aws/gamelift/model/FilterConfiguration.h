@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowedLocations;
-    bool m_allowedLocationsHasBeenSet;
+    bool m_allowedLocationsHasBeenSet = false;
   };
 
 } // namespace Model

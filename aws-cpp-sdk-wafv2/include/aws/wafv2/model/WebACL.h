@@ -1028,46 +1028,46 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     DefaultAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
 
     long long m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::Vector<FirewallManagerRuleGroup> m_preProcessFirewallManagerRuleGroups;
-    bool m_preProcessFirewallManagerRuleGroupsHasBeenSet;
+    bool m_preProcessFirewallManagerRuleGroupsHasBeenSet = false;
 
     Aws::Vector<FirewallManagerRuleGroup> m_postProcessFirewallManagerRuleGroups;
-    bool m_postProcessFirewallManagerRuleGroupsHasBeenSet;
+    bool m_postProcessFirewallManagerRuleGroupsHasBeenSet = false;
 
     bool m_managedByFirewallManager;
-    bool m_managedByFirewallManagerHasBeenSet;
+    bool m_managedByFirewallManagerHasBeenSet = false;
 
     Aws::String m_labelNamespace;
-    bool m_labelNamespaceHasBeenSet;
+    bool m_labelNamespaceHasBeenSet = false;
 
     Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
-    bool m_customResponseBodiesHasBeenSet;
+    bool m_customResponseBodiesHasBeenSet = false;
 
     CaptchaConfig m_captchaConfig;
-    bool m_captchaConfigHasBeenSet;
+    bool m_captchaConfigHasBeenSet = false;
   };
 
 } // namespace Model

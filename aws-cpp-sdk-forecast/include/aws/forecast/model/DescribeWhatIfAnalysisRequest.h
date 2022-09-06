@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_whatIfAnalysisArn;
-    bool m_whatIfAnalysisArnHasBeenSet;
+    bool m_whatIfAnalysisArnHasBeenSet = false;
   };
 
 } // namespace Model

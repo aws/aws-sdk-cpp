@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_junctionPath;
-    bool m_junctionPathHasBeenSet;
+    bool m_junctionPathHasBeenSet = false;
 
     SecurityStyle m_securityStyle;
-    bool m_securityStyleHasBeenSet;
+    bool m_securityStyleHasBeenSet = false;
 
     int m_sizeInMegabytes;
-    bool m_sizeInMegabytesHasBeenSet;
+    bool m_sizeInMegabytesHasBeenSet = false;
 
     bool m_storageEfficiencyEnabled;
-    bool m_storageEfficiencyEnabledHasBeenSet;
+    bool m_storageEfficiencyEnabledHasBeenSet = false;
 
     TieringPolicy m_tieringPolicy;
-    bool m_tieringPolicyHasBeenSet;
+    bool m_tieringPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     bool m_honorCooldown;
-    bool m_honorCooldownHasBeenSet;
+    bool m_honorCooldownHasBeenSet = false;
   };
 
 } // namespace Model

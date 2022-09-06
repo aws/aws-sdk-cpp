@@ -143,19 +143,19 @@ namespace Model
   private:
 
     int m_totalLabeled;
-    bool m_totalLabeledHasBeenSet;
+    bool m_totalLabeledHasBeenSet = false;
 
     int m_humanLabeled;
-    bool m_humanLabeledHasBeenSet;
+    bool m_humanLabeledHasBeenSet = false;
 
     int m_machineLabeled;
-    bool m_machineLabeledHasBeenSet;
+    bool m_machineLabeledHasBeenSet = false;
 
     int m_failedNonRetryableError;
-    bool m_failedNonRetryableErrorHasBeenSet;
+    bool m_failedNonRetryableErrorHasBeenSet = false;
 
     int m_unlabeled;
-    bool m_unlabeledHasBeenSet;
+    bool m_unlabeledHasBeenSet = false;
   };
 
 } // namespace Model

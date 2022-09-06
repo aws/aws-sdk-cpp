@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_executionRole;
-    bool m_executionRoleHasBeenSet;
+    bool m_executionRoleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_updaterRequestId;
-    bool m_updaterRequestIdHasBeenSet;
+    bool m_updaterRequestIdHasBeenSet = false;
 
     PrivateDnsNamespaceChange m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

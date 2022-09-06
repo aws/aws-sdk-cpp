@@ -504,37 +504,37 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     Aws::String m_globalClusterResourceId;
-    bool m_globalClusterResourceIdHasBeenSet;
+    bool m_globalClusterResourceIdHasBeenSet = false;
 
     Aws::String m_globalClusterArn;
-    bool m_globalClusterArnHasBeenSet;
+    bool m_globalClusterArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
-    bool m_globalClusterMembersHasBeenSet;
+    bool m_globalClusterMembersHasBeenSet = false;
 
     FailoverState m_failoverState;
-    bool m_failoverStateHasBeenSet;
+    bool m_failoverStateHasBeenSet = false;
   };
 
 } // namespace Model

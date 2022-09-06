@@ -1153,55 +1153,55 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     IntegrationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_integrationHttpMethod;
-    bool m_integrationHttpMethodHasBeenSet;
+    bool m_integrationHttpMethodHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestParameters;
-    bool m_requestParametersHasBeenSet;
+    bool m_requestParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
-    bool m_requestTemplatesHasBeenSet;
+    bool m_requestTemplatesHasBeenSet = false;
 
     Aws::String m_passthroughBehavior;
-    bool m_passthroughBehaviorHasBeenSet;
+    bool m_passthroughBehaviorHasBeenSet = false;
 
     Aws::String m_cacheNamespace;
-    bool m_cacheNamespaceHasBeenSet;
+    bool m_cacheNamespaceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheKeyParameters;
-    bool m_cacheKeyParametersHasBeenSet;
+    bool m_cacheKeyParametersHasBeenSet = false;
 
     ContentHandlingStrategy m_contentHandling;
-    bool m_contentHandlingHasBeenSet;
+    bool m_contentHandlingHasBeenSet = false;
 
     int m_timeoutInMillis;
-    bool m_timeoutInMillisHasBeenSet;
+    bool m_timeoutInMillisHasBeenSet = false;
 
     TlsConfig m_tlsConfig;
-    bool m_tlsConfigHasBeenSet;
+    bool m_tlsConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -218,16 +218,16 @@ namespace Model
   private:
 
     Aws::String m_dataShareArn;
-    bool m_dataShareArnHasBeenSet;
+    bool m_dataShareArnHasBeenSet = false;
 
     bool m_disassociateEntireAccount;
-    bool m_disassociateEntireAccountHasBeenSet;
+    bool m_disassociateEntireAccountHasBeenSet = false;
 
     Aws::String m_consumerArn;
-    bool m_consumerArnHasBeenSet;
+    bool m_consumerArnHasBeenSet = false;
 
     Aws::String m_consumerRegion;
-    bool m_consumerRegionHasBeenSet;
+    bool m_consumerRegionHasBeenSet = false;
   };
 
 } // namespace Model

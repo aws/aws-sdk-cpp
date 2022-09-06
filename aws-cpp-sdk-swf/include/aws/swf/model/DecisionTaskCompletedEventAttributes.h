@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_executionContext;
-    bool m_executionContextHasBeenSet;
+    bool m_executionContextHasBeenSet = false;
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

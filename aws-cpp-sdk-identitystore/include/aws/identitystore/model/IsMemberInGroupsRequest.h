@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     MemberId m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet;
+    bool m_groupIdsHasBeenSet = false;
   };
 
 } // namespace Model

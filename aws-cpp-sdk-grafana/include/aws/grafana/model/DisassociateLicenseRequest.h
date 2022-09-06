@@ -107,10 +107,10 @@ namespace Model
   private:
 
     LicenseType m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

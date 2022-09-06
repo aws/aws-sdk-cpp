@@ -112,10 +112,10 @@ namespace Model
   private:
 
     ButtonAction m_buttonAction;
-    bool m_buttonActionHasBeenSet;
+    bool m_buttonActionHasBeenSet = false;
 
     Aws::String m_link;
-    bool m_linkHasBeenSet;
+    bool m_linkHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,16 +180,16 @@ namespace Model
   private:
 
     Aws::String m_archiveName;
-    bool m_archiveNameHasBeenSet;
+    bool m_archiveNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_eventPattern;
-    bool m_eventPatternHasBeenSet;
+    bool m_eventPatternHasBeenSet = false;
 
     int m_retentionDays;
-    bool m_retentionDaysHasBeenSet;
+    bool m_retentionDaysHasBeenSet = false;
   };
 
 } // namespace Model

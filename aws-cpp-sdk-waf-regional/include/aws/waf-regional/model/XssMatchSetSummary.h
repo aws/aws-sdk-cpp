@@ -193,10 +193,10 @@ namespace Model
   private:
 
     Aws::String m_xssMatchSetId;
-    bool m_xssMatchSetIdHasBeenSet;
+    bool m_xssMatchSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

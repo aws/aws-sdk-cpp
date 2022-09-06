@@ -295,13 +295,13 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::String m_digest;
-    bool m_digestHasBeenSet;
+    bool m_digestHasBeenSet = false;
   };
 
 } // namespace Model

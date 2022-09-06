@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_notifyDelayAfter;
-    bool m_notifyDelayAfterHasBeenSet;
+    bool m_notifyDelayAfterHasBeenSet = false;
   };
 
 } // namespace Model

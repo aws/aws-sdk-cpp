@@ -163,7 +163,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
   };
 
 } // namespace Model

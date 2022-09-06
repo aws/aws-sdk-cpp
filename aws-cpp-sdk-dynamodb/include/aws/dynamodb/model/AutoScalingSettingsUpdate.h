@@ -190,19 +190,19 @@ namespace Model
   private:
 
     long long m_minimumUnits;
-    bool m_minimumUnitsHasBeenSet;
+    bool m_minimumUnitsHasBeenSet = false;
 
     long long m_maximumUnits;
-    bool m_maximumUnitsHasBeenSet;
+    bool m_maximumUnitsHasBeenSet = false;
 
     bool m_autoScalingDisabled;
-    bool m_autoScalingDisabledHasBeenSet;
+    bool m_autoScalingDisabledHasBeenSet = false;
 
     Aws::String m_autoScalingRoleArn;
-    bool m_autoScalingRoleArnHasBeenSet;
+    bool m_autoScalingRoleArnHasBeenSet = false;
 
     AutoScalingPolicyUpdate m_scalingPolicyUpdate;
-    bool m_scalingPolicyUpdateHasBeenSet;
+    bool m_scalingPolicyUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -330,22 +330,22 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
-    bool m_lastFailureMessageHasBeenSet;
+    bool m_lastFailureMessageHasBeenSet = false;
 
     Aws::String m_lastFailureTime;
-    bool m_lastFailureTimeHasBeenSet;
+    bool m_lastFailureTimeHasBeenSet = false;
 
     Aws::String m_lastSuccessfulDeliveryTime;
-    bool m_lastSuccessfulDeliveryTimeHasBeenSet;
+    bool m_lastSuccessfulDeliveryTimeHasBeenSet = false;
 
     bool m_loggingEnabled;
-    bool m_loggingEnabledHasBeenSet;
+    bool m_loggingEnabledHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

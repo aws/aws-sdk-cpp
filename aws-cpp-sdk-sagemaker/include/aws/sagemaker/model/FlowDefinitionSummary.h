@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_flowDefinitionName;
-    bool m_flowDefinitionNameHasBeenSet;
+    bool m_flowDefinitionNameHasBeenSet = false;
 
     Aws::String m_flowDefinitionArn;
-    bool m_flowDefinitionArnHasBeenSet;
+    bool m_flowDefinitionArnHasBeenSet = false;
 
     FlowDefinitionStatus m_flowDefinitionStatus;
-    bool m_flowDefinitionStatusHasBeenSet;
+    bool m_flowDefinitionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

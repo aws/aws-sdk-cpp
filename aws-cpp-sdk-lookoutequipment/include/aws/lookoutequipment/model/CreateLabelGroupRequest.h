@@ -267,16 +267,16 @@ namespace Model
   private:
 
     Aws::String m_labelGroupName;
-    bool m_labelGroupNameHasBeenSet;
+    bool m_labelGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_faultCodes;
-    bool m_faultCodesHasBeenSet;
+    bool m_faultCodesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

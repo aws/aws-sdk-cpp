@@ -950,52 +950,52 @@ namespace Model
   private:
 
     int m_maxAssignments;
-    bool m_maxAssignmentsHasBeenSet;
+    bool m_maxAssignmentsHasBeenSet = false;
 
     long long m_autoApprovalDelayInSeconds;
-    bool m_autoApprovalDelayInSecondsHasBeenSet;
+    bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
     long long m_lifetimeInSeconds;
-    bool m_lifetimeInSecondsHasBeenSet;
+    bool m_lifetimeInSecondsHasBeenSet = false;
 
     long long m_assignmentDurationInSeconds;
-    bool m_assignmentDurationInSecondsHasBeenSet;
+    bool m_assignmentDurationInSecondsHasBeenSet = false;
 
     Aws::String m_reward;
-    bool m_rewardHasBeenSet;
+    bool m_rewardHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_question;
-    bool m_questionHasBeenSet;
+    bool m_questionHasBeenSet = false;
 
     Aws::String m_requesterAnnotation;
-    bool m_requesterAnnotationHasBeenSet;
+    bool m_requesterAnnotationHasBeenSet = false;
 
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
-    bool m_qualificationRequirementsHasBeenSet;
+    bool m_qualificationRequirementsHasBeenSet = false;
 
     Aws::String m_uniqueRequestToken;
-    bool m_uniqueRequestTokenHasBeenSet;
+    bool m_uniqueRequestTokenHasBeenSet = false;
 
     ReviewPolicy m_assignmentReviewPolicy;
-    bool m_assignmentReviewPolicyHasBeenSet;
+    bool m_assignmentReviewPolicyHasBeenSet = false;
 
     ReviewPolicy m_hITReviewPolicy;
-    bool m_hITReviewPolicyHasBeenSet;
+    bool m_hITReviewPolicyHasBeenSet = false;
 
     Aws::String m_hITLayoutId;
-    bool m_hITLayoutIdHasBeenSet;
+    bool m_hITLayoutIdHasBeenSet = false;
 
     Aws::Vector<HITLayoutParameter> m_hITLayoutParameters;
-    bool m_hITLayoutParametersHasBeenSet;
+    bool m_hITLayoutParametersHasBeenSet = false;
   };
 
 } // namespace Model

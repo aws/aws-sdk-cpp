@@ -153,13 +153,13 @@ namespace Model
   private:
 
     FailureType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_externalExecutionId;
-    bool m_externalExecutionIdHasBeenSet;
+    bool m_externalExecutionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_moveToColdStorageAt;
-    bool m_moveToColdStorageAtHasBeenSet;
+    bool m_moveToColdStorageAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deleteAt;
-    bool m_deleteAtHasBeenSet;
+    bool m_deleteAtHasBeenSet = false;
   };
 
 } // namespace Model

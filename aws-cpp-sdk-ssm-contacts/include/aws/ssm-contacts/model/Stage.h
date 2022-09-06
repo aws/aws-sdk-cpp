@@ -115,10 +115,10 @@ namespace Model
   private:
 
     int m_durationInMinutes;
-    bool m_durationInMinutesHasBeenSet;
+    bool m_durationInMinutesHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
   };
 
 } // namespace Model

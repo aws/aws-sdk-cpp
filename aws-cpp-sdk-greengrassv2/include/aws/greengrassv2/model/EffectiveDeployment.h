@@ -466,34 +466,34 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     Aws::String m_iotJobId;
-    bool m_iotJobIdHasBeenSet;
+    bool m_iotJobIdHasBeenSet = false;
 
     Aws::String m_iotJobArn;
-    bool m_iotJobArnHasBeenSet;
+    bool m_iotJobArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     EffectiveDeploymentExecutionStatus m_coreDeviceExecutionStatus;
-    bool m_coreDeviceExecutionStatusHasBeenSet;
+    bool m_coreDeviceExecutionStatusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTimestamp;
-    bool m_modifiedTimestampHasBeenSet;
+    bool m_modifiedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

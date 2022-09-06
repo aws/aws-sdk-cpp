@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StateMachineType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

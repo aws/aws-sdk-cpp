@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
-    bool m_frameworkVersionHasBeenSet;
+    bool m_frameworkVersionHasBeenSet = false;
   };
 
 } // namespace Model

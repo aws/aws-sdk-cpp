@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     AttributeType m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
   };
 
 } // namespace Model

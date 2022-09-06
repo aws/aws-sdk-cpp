@@ -110,7 +110,7 @@ EKSClient::~EKSClient()
 
 void EKSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EKS");
+  AWSClient::SetServiceClientName("EKS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

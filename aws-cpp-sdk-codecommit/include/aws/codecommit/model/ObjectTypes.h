@@ -133,13 +133,13 @@ namespace Model
   private:
 
     ObjectTypeEnum m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     ObjectTypeEnum m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     ObjectTypeEnum m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

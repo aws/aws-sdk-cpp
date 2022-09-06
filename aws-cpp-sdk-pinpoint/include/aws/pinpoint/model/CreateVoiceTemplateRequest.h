@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     VoiceTemplateRequest m_voiceTemplateRequest;
-    bool m_voiceTemplateRequestHasBeenSet;
+    bool m_voiceTemplateRequestHasBeenSet = false;
   };
 
 } // namespace Model

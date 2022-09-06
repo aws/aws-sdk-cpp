@@ -105,10 +105,10 @@ namespace Model
   private:
 
     long long m_durationInMinutes;
-    bool m_durationInMinutesHasBeenSet;
+    bool m_durationInMinutesHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
   };
 
 } // namespace Model

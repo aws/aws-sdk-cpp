@@ -110,10 +110,10 @@ namespace Model
   private:
 
     ConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     NotificationDestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
   };
 
 } // namespace Model

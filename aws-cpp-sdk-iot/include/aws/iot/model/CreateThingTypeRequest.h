@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     ThingTypeProperties m_thingTypeProperties;
-    bool m_thingTypePropertiesHasBeenSet;
+    bool m_thingTypePropertiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

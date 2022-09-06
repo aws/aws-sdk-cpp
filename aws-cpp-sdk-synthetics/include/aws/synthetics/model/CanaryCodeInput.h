@@ -352,19 +352,19 @@ namespace Model
   private:
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
 
     Aws::String m_s3Version;
-    bool m_s3VersionHasBeenSet;
+    bool m_s3VersionHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_zipFile;
-    bool m_zipFileHasBeenSet;
+    bool m_zipFileHasBeenSet = false;
 
     Aws::String m_handler;
-    bool m_handlerHasBeenSet;
+    bool m_handlerHasBeenSet = false;
   };
 
 } // namespace Model

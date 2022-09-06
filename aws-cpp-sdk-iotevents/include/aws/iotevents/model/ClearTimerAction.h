@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_timerName;
-    bool m_timerNameHasBeenSet;
+    bool m_timerNameHasBeenSet = false;
   };
 
 } // namespace Model

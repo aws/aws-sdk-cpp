@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_additionalAuditContext;
-    bool m_additionalAuditContextHasBeenSet;
+    bool m_additionalAuditContextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedColumns;
-    bool m_requestedColumnsHasBeenSet;
+    bool m_requestedColumnsHasBeenSet = false;
 
     bool m_allColumnsRequested;
-    bool m_allColumnsRequestedHasBeenSet;
+    bool m_allColumnsRequestedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_extendsFrom;
-    bool m_extendsFromHasBeenSet;
+    bool m_extendsFromHasBeenSet = false;
 
     bool m_isAbstract;
-    bool m_isAbstractHasBeenSet;
+    bool m_isAbstractHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

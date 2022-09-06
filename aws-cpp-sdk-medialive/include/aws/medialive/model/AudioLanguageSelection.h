@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     AudioLanguageSelectionPolicy m_languageSelectionPolicy;
-    bool m_languageSelectionPolicyHasBeenSet;
+    bool m_languageSelectionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

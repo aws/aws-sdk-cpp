@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<Channel> m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

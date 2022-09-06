@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
   };
 
 } // namespace Model

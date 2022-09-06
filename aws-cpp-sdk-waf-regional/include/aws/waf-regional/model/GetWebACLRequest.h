@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
   };
 
 } // namespace Model

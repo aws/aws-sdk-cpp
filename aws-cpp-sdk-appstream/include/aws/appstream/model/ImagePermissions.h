@@ -79,10 +79,10 @@ namespace Model
   private:
 
     bool m_allowFleet;
-    bool m_allowFleetHasBeenSet;
+    bool m_allowFleetHasBeenSet = false;
 
     bool m_allowImageBuilder;
-    bool m_allowImageBuilderHasBeenSet;
+    bool m_allowImageBuilderHasBeenSet = false;
   };
 
 } // namespace Model

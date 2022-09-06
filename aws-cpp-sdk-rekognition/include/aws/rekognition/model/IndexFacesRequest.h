@@ -464,22 +464,22 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_externalImageId;
-    bool m_externalImageIdHasBeenSet;
+    bool m_externalImageIdHasBeenSet = false;
 
     Aws::Vector<Attribute> m_detectionAttributes;
-    bool m_detectionAttributesHasBeenSet;
+    bool m_detectionAttributesHasBeenSet = false;
 
     int m_maxFaces;
-    bool m_maxFacesHasBeenSet;
+    bool m_maxFacesHasBeenSet = false;
 
     QualityFilter m_qualityFilter;
-    bool m_qualityFilterHasBeenSet;
+    bool m_qualityFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -231,19 +231,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     QueryArgProfileConfig m_queryArgProfileConfig;
-    bool m_queryArgProfileConfigHasBeenSet;
+    bool m_queryArgProfileConfigHasBeenSet = false;
 
     ContentTypeProfileConfig m_contentTypeProfileConfig;
-    bool m_contentTypeProfileConfigHasBeenSet;
+    bool m_contentTypeProfileConfigHasBeenSet = false;
   };
 
 } // namespace Model

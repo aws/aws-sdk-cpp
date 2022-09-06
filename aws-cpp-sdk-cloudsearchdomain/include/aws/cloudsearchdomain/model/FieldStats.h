@@ -452,28 +452,28 @@ namespace Model
   private:
 
     Aws::String m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     Aws::String m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     long long m_missing;
-    bool m_missingHasBeenSet;
+    bool m_missingHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     double m_sumOfSquares;
-    bool m_sumOfSquaresHasBeenSet;
+    bool m_sumOfSquaresHasBeenSet = false;
 
     Aws::String m_mean;
-    bool m_meanHasBeenSet;
+    bool m_meanHasBeenSet = false;
 
     double m_stddev;
-    bool m_stddevHasBeenSet;
+    bool m_stddevHasBeenSet = false;
   };
 
 } // namespace Model

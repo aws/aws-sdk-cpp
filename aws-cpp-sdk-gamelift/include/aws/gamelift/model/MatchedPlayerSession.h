@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_playerSessionId;
-    bool m_playerSessionIdHasBeenSet;
+    bool m_playerSessionIdHasBeenSet = false;
   };
 
 } // namespace Model

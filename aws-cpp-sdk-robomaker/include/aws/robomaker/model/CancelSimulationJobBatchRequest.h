@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_batch;
-    bool m_batchHasBeenSet;
+    bool m_batchHasBeenSet = false;
   };
 
 } // namespace Model

@@ -154,10 +154,10 @@ namespace Model
   private:
 
     RepositoryAnalysis m_repositoryAnalysis;
-    bool m_repositoryAnalysisHasBeenSet;
+    bool m_repositoryAnalysisHasBeenSet = false;
 
     Aws::Vector<AnalysisType> m_analysisTypes;
-    bool m_analysisTypesHasBeenSet;
+    bool m_analysisTypesHasBeenSet = false;
   };
 
 } // namespace Model

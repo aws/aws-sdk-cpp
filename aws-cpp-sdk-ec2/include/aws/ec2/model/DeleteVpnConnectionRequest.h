@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

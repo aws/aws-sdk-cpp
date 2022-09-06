@@ -86,7 +86,7 @@ HealthClient::~HealthClient()
 
 void HealthClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Health");
+  AWSClient::SetServiceClientName("Health");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

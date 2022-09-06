@@ -347,22 +347,22 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     Aws::String m_imagePublishedAt;
-    bool m_imagePublishedAtHasBeenSet;
+    bool m_imagePublishedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -119,10 +119,10 @@ namespace Model
   private:
 
     double m_totalPercentageArea;
-    bool m_totalPercentageAreaHasBeenSet;
+    bool m_totalPercentageAreaHasBeenSet = false;
 
     Aws::String m_color;
-    bool m_colorHasBeenSet;
+    bool m_colorHasBeenSet = false;
   };
 
 } // namespace Model

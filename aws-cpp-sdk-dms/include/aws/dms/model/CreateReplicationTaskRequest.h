@@ -908,43 +908,43 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskIdentifier;
-    bool m_replicationTaskIdentifierHasBeenSet;
+    bool m_replicationTaskIdentifierHasBeenSet = false;
 
     Aws::String m_sourceEndpointArn;
-    bool m_sourceEndpointArnHasBeenSet;
+    bool m_sourceEndpointArnHasBeenSet = false;
 
     Aws::String m_targetEndpointArn;
-    bool m_targetEndpointArnHasBeenSet;
+    bool m_targetEndpointArnHasBeenSet = false;
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     MigrationTypeValue m_migrationType;
-    bool m_migrationTypeHasBeenSet;
+    bool m_migrationTypeHasBeenSet = false;
 
     Aws::String m_tableMappings;
-    bool m_tableMappingsHasBeenSet;
+    bool m_tableMappingsHasBeenSet = false;
 
     Aws::String m_replicationTaskSettings;
-    bool m_replicationTaskSettingsHasBeenSet;
+    bool m_replicationTaskSettingsHasBeenSet = false;
 
     Aws::Utils::DateTime m_cdcStartTime;
-    bool m_cdcStartTimeHasBeenSet;
+    bool m_cdcStartTimeHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;
-    bool m_cdcStartPositionHasBeenSet;
+    bool m_cdcStartPositionHasBeenSet = false;
 
     Aws::String m_cdcStopPosition;
-    bool m_cdcStopPositionHasBeenSet;
+    bool m_cdcStopPositionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_taskData;
-    bool m_taskDataHasBeenSet;
+    bool m_taskDataHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

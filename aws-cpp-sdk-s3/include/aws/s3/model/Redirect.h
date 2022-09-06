@@ -386,19 +386,19 @@ namespace Model
   private:
 
     Aws::String m_hostName;
-    bool m_hostNameHasBeenSet;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::String m_httpRedirectCode;
-    bool m_httpRedirectCodeHasBeenSet;
+    bool m_httpRedirectCodeHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_replaceKeyPrefixWith;
-    bool m_replaceKeyPrefixWithHasBeenSet;
+    bool m_replaceKeyPrefixWithHasBeenSet = false;
 
     Aws::String m_replaceKeyWith;
-    bool m_replaceKeyWithHasBeenSet;
+    bool m_replaceKeyWithHasBeenSet = false;
   };
 
 } // namespace Model

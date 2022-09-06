@@ -262,10 +262,10 @@ namespace Model
   private:
 
     Aws::String m_rootSquash;
-    bool m_rootSquashHasBeenSet;
+    bool m_rootSquashHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_noSquashNids;
-    bool m_noSquashNidsHasBeenSet;
+    bool m_noSquashNidsHasBeenSet = false;
   };
 
 } // namespace Model

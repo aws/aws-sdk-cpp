@@ -335,31 +335,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     DataSetImportMode m_importMode;
-    bool m_importModeHasBeenSet;
+    bool m_importModeHasBeenSet = false;
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
-    bool m_rowLevelPermissionDataSetHasBeenSet;
+    bool m_rowLevelPermissionDataSetHasBeenSet = false;
 
     bool m_rowLevelPermissionTagConfigurationApplied;
-    bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet;
+    bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = false;
 
     bool m_columnLevelPermissionRulesApplied;
-    bool m_columnLevelPermissionRulesAppliedHasBeenSet;
+    bool m_columnLevelPermissionRulesAppliedHasBeenSet = false;
   };
 
 } // namespace Model

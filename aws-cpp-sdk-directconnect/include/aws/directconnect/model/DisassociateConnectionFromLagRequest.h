@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_lagId;
-    bool m_lagIdHasBeenSet;
+    bool m_lagIdHasBeenSet = false;
   };
 
 } // namespace Model

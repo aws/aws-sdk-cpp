@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     Aws::String m_endpointConfigArn;
-    bool m_endpointConfigArnHasBeenSet;
+    bool m_endpointConfigArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_processingJobName;
-    bool m_processingJobNameHasBeenSet;
+    bool m_processingJobNameHasBeenSet = false;
   };
 
 } // namespace Model

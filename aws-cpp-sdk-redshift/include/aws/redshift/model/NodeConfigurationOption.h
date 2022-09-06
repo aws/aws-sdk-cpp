@@ -156,16 +156,16 @@ namespace Model
   private:
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     double m_estimatedDiskUtilizationPercent;
-    bool m_estimatedDiskUtilizationPercentHasBeenSet;
+    bool m_estimatedDiskUtilizationPercentHasBeenSet = false;
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

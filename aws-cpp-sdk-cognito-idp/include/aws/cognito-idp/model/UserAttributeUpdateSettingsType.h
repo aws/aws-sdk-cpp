@@ -231,7 +231,7 @@ namespace Model
   private:
 
     Aws::Vector<VerifiedAttributeType> m_attributesRequireVerificationBeforeUpdate;
-    bool m_attributesRequireVerificationBeforeUpdateHasBeenSet;
+    bool m_attributesRequireVerificationBeforeUpdateHasBeenSet = false;
   };
 
 } // namespace Model

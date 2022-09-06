@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<AuthenticationProviderTypes> m_providers;
-    bool m_providersHasBeenSet;
+    bool m_providersHasBeenSet = false;
 
     SamlConfigurationStatus m_samlConfigurationStatus;
-    bool m_samlConfigurationStatusHasBeenSet;
+    bool m_samlConfigurationStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -466,22 +466,22 @@ namespace Model
   private:
 
     Aws::String m_workteamName;
-    bool m_workteamNameHasBeenSet;
+    bool m_workteamNameHasBeenSet = false;
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     Aws::Vector<MemberDefinition> m_memberDefinitions;
-    bool m_memberDefinitionsHasBeenSet;
+    bool m_memberDefinitionsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

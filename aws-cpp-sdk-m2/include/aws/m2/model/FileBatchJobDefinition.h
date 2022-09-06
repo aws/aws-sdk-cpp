@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     Aws::String m_folderPath;
-    bool m_folderPathHasBeenSet;
+    bool m_folderPathHasBeenSet = false;
   };
 
 } // namespace Model

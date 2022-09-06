@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
   };
 
 } // namespace Model

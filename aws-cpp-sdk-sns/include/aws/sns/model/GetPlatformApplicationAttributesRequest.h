@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_platformApplicationArn;
-    bool m_platformApplicationArnHasBeenSet;
+    bool m_platformApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

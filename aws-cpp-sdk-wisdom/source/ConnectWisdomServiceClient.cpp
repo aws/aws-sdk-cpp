@@ -108,7 +108,7 @@ ConnectWisdomServiceClient::~ConnectWisdomServiceClient()
 
 void ConnectWisdomServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Wisdom");
+  AWSClient::SetServiceClientName("Wisdom");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
   };
 
 } // namespace Model

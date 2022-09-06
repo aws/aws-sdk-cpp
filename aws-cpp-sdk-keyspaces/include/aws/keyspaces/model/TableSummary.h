@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_keyspaceName;
-    bool m_keyspaceNameHasBeenSet;
+    bool m_keyspaceNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

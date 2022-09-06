@@ -80,7 +80,7 @@ ControlTowerClient::~ControlTowerClient()
 
 void ControlTowerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ControlTower");
+  AWSClient::SetServiceClientName("ControlTower");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

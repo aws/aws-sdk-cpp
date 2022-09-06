@@ -1014,25 +1014,25 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     StepScalingPolicyConfiguration m_stepScalingPolicyConfiguration;
-    bool m_stepScalingPolicyConfigurationHasBeenSet;
+    bool m_stepScalingPolicyConfigurationHasBeenSet = false;
 
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
-    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet;
+    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

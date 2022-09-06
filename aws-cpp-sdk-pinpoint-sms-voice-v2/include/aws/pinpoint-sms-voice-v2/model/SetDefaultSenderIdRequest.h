@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
   };
 
 } // namespace Model

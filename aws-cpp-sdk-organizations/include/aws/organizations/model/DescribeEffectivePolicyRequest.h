@@ -167,10 +167,10 @@ namespace Model
   private:
 
     EffectivePolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -99,13 +99,13 @@ namespace Model
   private:
 
     CallInstructionsMessageType m_callInstructionsMessage;
-    bool m_callInstructionsMessageHasBeenSet;
+    bool m_callInstructionsMessageHasBeenSet = false;
 
     PlainTextMessageType m_plainTextMessage;
-    bool m_plainTextMessageHasBeenSet;
+    bool m_plainTextMessageHasBeenSet = false;
 
     SSMLMessageType m_sSMLMessage;
-    bool m_sSMLMessageHasBeenSet;
+    bool m_sSMLMessageHasBeenSet = false;
   };
 
 } // namespace Model

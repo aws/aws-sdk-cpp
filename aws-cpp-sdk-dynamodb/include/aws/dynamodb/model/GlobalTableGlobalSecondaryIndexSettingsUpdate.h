@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     long long m_provisionedWriteCapacityUnits;
-    bool m_provisionedWriteCapacityUnitsHasBeenSet;
+    bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingSettingsUpdate;
-    bool m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet;
+    bool m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = false;
   };
 
 } // namespace Model

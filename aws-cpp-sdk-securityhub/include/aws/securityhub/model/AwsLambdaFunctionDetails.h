@@ -746,58 +746,58 @@ namespace Model
   private:
 
     AwsLambdaFunctionCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_codeSha256;
-    bool m_codeSha256HasBeenSet;
+    bool m_codeSha256HasBeenSet = false;
 
     AwsLambdaFunctionDeadLetterConfig m_deadLetterConfig;
-    bool m_deadLetterConfigHasBeenSet;
+    bool m_deadLetterConfigHasBeenSet = false;
 
     AwsLambdaFunctionEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_handler;
-    bool m_handlerHasBeenSet;
+    bool m_handlerHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::Vector<AwsLambdaFunctionLayer> m_layers;
-    bool m_layersHasBeenSet;
+    bool m_layersHasBeenSet = false;
 
     Aws::String m_masterArn;
-    bool m_masterArnHasBeenSet;
+    bool m_masterArnHasBeenSet = false;
 
     int m_memorySize;
-    bool m_memorySizeHasBeenSet;
+    bool m_memorySizeHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     AwsLambdaFunctionTracingConfig m_tracingConfig;
-    bool m_tracingConfigHasBeenSet;
+    bool m_tracingConfigHasBeenSet = false;
 
     AwsLambdaFunctionVpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

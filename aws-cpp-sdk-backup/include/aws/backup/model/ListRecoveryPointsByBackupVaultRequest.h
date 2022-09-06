@@ -405,28 +405,28 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_byResourceArn;
-    bool m_byResourceArnHasBeenSet;
+    bool m_byResourceArnHasBeenSet = false;
 
     Aws::String m_byResourceType;
-    bool m_byResourceTypeHasBeenSet;
+    bool m_byResourceTypeHasBeenSet = false;
 
     Aws::String m_byBackupPlanId;
-    bool m_byBackupPlanIdHasBeenSet;
+    bool m_byBackupPlanIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedBefore;
-    bool m_byCreatedBeforeHasBeenSet;
+    bool m_byCreatedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedAfter;
-    bool m_byCreatedAfterHasBeenSet;
+    bool m_byCreatedAfterHasBeenSet = false;
   };
 
 } // namespace Model

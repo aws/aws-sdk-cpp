@@ -130,13 +130,13 @@ namespace Model
   private:
 
     Aws::Vector<int> m_reminderAtMinutes;
-    bool m_reminderAtMinutesHasBeenSet;
+    bool m_reminderAtMinutesHasBeenSet = false;
 
     EndOfMeetingReminderType m_reminderType;
-    bool m_reminderTypeHasBeenSet;
+    bool m_reminderTypeHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

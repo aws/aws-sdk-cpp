@@ -584,43 +584,43 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     QualificationTypeStatus m_qualificationTypeStatus;
-    bool m_qualificationTypeStatusHasBeenSet;
+    bool m_qualificationTypeStatusHasBeenSet = false;
 
     Aws::String m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     long long m_testDurationInSeconds;
-    bool m_testDurationInSecondsHasBeenSet;
+    bool m_testDurationInSecondsHasBeenSet = false;
 
     Aws::String m_answerKey;
-    bool m_answerKeyHasBeenSet;
+    bool m_answerKeyHasBeenSet = false;
 
     long long m_retryDelayInSeconds;
-    bool m_retryDelayInSecondsHasBeenSet;
+    bool m_retryDelayInSecondsHasBeenSet = false;
 
     bool m_isRequestable;
-    bool m_isRequestableHasBeenSet;
+    bool m_isRequestableHasBeenSet = false;
 
     bool m_autoGranted;
-    bool m_autoGrantedHasBeenSet;
+    bool m_autoGrantedHasBeenSet = false;
 
     int m_autoGrantedValue;
-    bool m_autoGrantedValueHasBeenSet;
+    bool m_autoGrantedValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,7 +113,7 @@ FSxClient::~FSxClient()
 
 void FSxClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("FSx");
+  AWSClient::SetServiceClientName("FSx");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

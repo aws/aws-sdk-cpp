@@ -107,10 +107,10 @@ namespace Model
   private:
 
     QueryPlanningContext m_queryPlanningContext;
-    bool m_queryPlanningContextHasBeenSet;
+    bool m_queryPlanningContextHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
   };
 
 } // namespace Model

@@ -146,13 +146,13 @@ namespace Model
   private:
 
     TargetDescription m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_healthCheckPort;
-    bool m_healthCheckPortHasBeenSet;
+    bool m_healthCheckPortHasBeenSet = false;
 
     TargetHealth m_targetHealth;
-    bool m_targetHealthHasBeenSet;
+    bool m_targetHealthHasBeenSet = false;
   };
 
 } // namespace Model

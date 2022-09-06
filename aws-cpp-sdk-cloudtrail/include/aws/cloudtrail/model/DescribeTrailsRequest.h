@@ -235,10 +235,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_trailNameList;
-    bool m_trailNameListHasBeenSet;
+    bool m_trailNameListHasBeenSet = false;
 
     bool m_includeShadowTrails;
-    bool m_includeShadowTrailsHasBeenSet;
+    bool m_includeShadowTrailsHasBeenSet = false;
   };
 
 } // namespace Model

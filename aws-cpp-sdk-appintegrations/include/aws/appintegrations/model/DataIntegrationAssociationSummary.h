@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_dataIntegrationAssociationArn;
-    bool m_dataIntegrationAssociationArnHasBeenSet;
+    bool m_dataIntegrationAssociationArnHasBeenSet = false;
 
     Aws::String m_dataIntegrationArn;
-    bool m_dataIntegrationArnHasBeenSet;
+    bool m_dataIntegrationArnHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
   };
 
 } // namespace Model

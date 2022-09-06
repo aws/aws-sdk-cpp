@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

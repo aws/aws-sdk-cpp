@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_fargateProfileName;
-    bool m_fargateProfileNameHasBeenSet;
+    bool m_fargateProfileNameHasBeenSet = false;
   };
 
 } // namespace Model

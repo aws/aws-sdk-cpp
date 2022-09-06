@@ -612,31 +612,31 @@ namespace Model
   private:
 
     Aws::String m_diskName;
-    bool m_diskNameHasBeenSet;
+    bool m_diskNameHasBeenSet = false;
 
     Aws::String m_diskSnapshotName;
-    bool m_diskSnapshotNameHasBeenSet;
+    bool m_diskSnapshotNameHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AddOnRequest> m_addOns;
-    bool m_addOnsHasBeenSet;
+    bool m_addOnsHasBeenSet = false;
 
     Aws::String m_sourceDiskName;
-    bool m_sourceDiskNameHasBeenSet;
+    bool m_sourceDiskNameHasBeenSet = false;
 
     Aws::String m_restoreDate;
-    bool m_restoreDateHasBeenSet;
+    bool m_restoreDateHasBeenSet = false;
 
     bool m_useLatestRestorableAutoSnapshot;
-    bool m_useLatestRestorableAutoSnapshotHasBeenSet;
+    bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
   };
 
 } // namespace Model

@@ -125,16 +125,16 @@ namespace Model
   private:
 
     int m_desired;
-    bool m_desiredHasBeenSet;
+    bool m_desiredHasBeenSet = false;
 
     int m_running;
-    bool m_runningHasBeenSet;
+    bool m_runningHasBeenSet = false;
 
     int m_inUse;
-    bool m_inUseHasBeenSet;
+    bool m_inUseHasBeenSet = false;
 
     int m_available;
-    bool m_availableHasBeenSet;
+    bool m_availableHasBeenSet = false;
   };
 
 } // namespace Model

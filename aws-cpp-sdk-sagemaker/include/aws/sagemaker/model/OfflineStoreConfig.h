@@ -144,13 +144,13 @@ namespace Model
   private:
 
     S3StorageConfig m_s3StorageConfig;
-    bool m_s3StorageConfigHasBeenSet;
+    bool m_s3StorageConfigHasBeenSet = false;
 
     bool m_disableGlueTableCreation;
-    bool m_disableGlueTableCreationHasBeenSet;
+    bool m_disableGlueTableCreationHasBeenSet = false;
 
     DataCatalogConfig m_dataCatalogConfig;
-    bool m_dataCatalogConfigHasBeenSet;
+    bool m_dataCatalogConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -214,7 +214,7 @@ RDSClient::~RDSClient()
 
 void RDSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("RDS");
+  AWSClient::SetServiceClientName("RDS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_useDualStack = config.useDualStack;
   if (config.endpointOverride.empty())

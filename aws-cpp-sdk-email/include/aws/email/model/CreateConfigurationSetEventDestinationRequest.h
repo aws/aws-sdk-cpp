@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     EventDestination m_eventDestination;
-    bool m_eventDestinationHasBeenSet;
+    bool m_eventDestinationHasBeenSet = false;
   };
 
 } // namespace Model

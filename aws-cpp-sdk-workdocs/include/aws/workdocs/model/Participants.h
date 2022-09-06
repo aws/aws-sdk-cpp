@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<UserMetadata> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
 
     Aws::Vector<GroupMetadata> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
   };
 
 } // namespace Model

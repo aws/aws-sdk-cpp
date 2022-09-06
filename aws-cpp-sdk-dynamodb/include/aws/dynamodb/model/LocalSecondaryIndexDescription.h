@@ -339,22 +339,22 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     Projection m_projection;
-    bool m_projectionHasBeenSet;
+    bool m_projectionHasBeenSet = false;
 
     long long m_indexSizeBytes;
-    bool m_indexSizeBytesHasBeenSet;
+    bool m_indexSizeBytesHasBeenSet = false;
 
     long long m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::String m_indexArn;
-    bool m_indexArnHasBeenSet;
+    bool m_indexArnHasBeenSet = false;
   };
 
 } // namespace Model

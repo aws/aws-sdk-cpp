@@ -70,7 +70,7 @@ namespace Model
   private:
 
     CompromisedCredentialsEventActionType m_eventAction;
-    bool m_eventActionHasBeenSet;
+    bool m_eventActionHasBeenSet = false;
   };
 
 } // namespace Model

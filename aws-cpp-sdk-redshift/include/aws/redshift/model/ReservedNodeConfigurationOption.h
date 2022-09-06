@@ -103,13 +103,13 @@ namespace Model
   private:
 
     ReservedNode m_sourceReservedNode;
-    bool m_sourceReservedNodeHasBeenSet;
+    bool m_sourceReservedNodeHasBeenSet = false;
 
     int m_targetReservedNodeCount;
-    bool m_targetReservedNodeCountHasBeenSet;
+    bool m_targetReservedNodeCountHasBeenSet = false;
 
     ReservedNodeOffering m_targetReservedNodeOffering;
-    bool m_targetReservedNodeOfferingHasBeenSet;
+    bool m_targetReservedNodeOfferingHasBeenSet = false;
   };
 
 } // namespace Model

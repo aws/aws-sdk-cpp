@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
   };
 
 } // namespace Model

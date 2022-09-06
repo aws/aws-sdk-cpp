@@ -283,19 +283,19 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     PolicyOwnerEntityType m_entityType;
-    bool m_entityTypeHasBeenSet;
+    bool m_entityTypeHasBeenSet = false;
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -455,31 +455,31 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::Vector<SqlParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_sql;
-    bool m_sqlHasBeenSet;
+    bool m_sqlHasBeenSet = false;
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     bool m_withEvent;
-    bool m_withEventHasBeenSet;
+    bool m_withEventHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

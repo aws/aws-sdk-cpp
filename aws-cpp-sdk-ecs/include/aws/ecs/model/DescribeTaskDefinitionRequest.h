@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     Aws::Vector<TaskDefinitionField> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,10 +114,10 @@ namespace Model
   private:
 
     PrincipalType m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
   };
 
 } // namespace Model

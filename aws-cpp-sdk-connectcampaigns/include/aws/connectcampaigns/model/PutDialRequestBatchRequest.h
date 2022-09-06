@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::Vector<DialRequest> m_dialRequests;
-    bool m_dialRequestsHasBeenSet;
+    bool m_dialRequestsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

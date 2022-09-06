@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_datastoreName;
-    bool m_datastoreNameHasBeenSet;
+    bool m_datastoreNameHasBeenSet = false;
 
     DatastoreStatus m_datastoreStatus;
-    bool m_datastoreStatusHasBeenSet;
+    bool m_datastoreStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
   };
 
 } // namespace Model

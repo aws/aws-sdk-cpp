@@ -241,13 +241,13 @@ namespace Model
   private:
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
 
     SensitivityLevel m_sensitivityLevel;
-    bool m_sensitivityLevelHasBeenSet;
+    bool m_sensitivityLevelHasBeenSet = false;
   };
 
 } // namespace Model

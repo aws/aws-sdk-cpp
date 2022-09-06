@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ResourceValue m_resourceValue;
-    bool m_resourceValueHasBeenSet;
+    bool m_resourceValueHasBeenSet = false;
 
     StaticValue m_staticValue;
-    bool m_staticValueHasBeenSet;
+    bool m_staticValueHasBeenSet = false;
   };
 
 } // namespace Model

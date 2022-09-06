@@ -76,7 +76,7 @@ namespace Model
   private:
 
     MonitoringS3Output m_s3Output;
-    bool m_s3OutputHasBeenSet;
+    bool m_s3OutputHasBeenSet = false;
   };
 
 } // namespace Model

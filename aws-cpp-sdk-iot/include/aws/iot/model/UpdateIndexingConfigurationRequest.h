@@ -97,10 +97,10 @@ namespace Model
   private:
 
     ThingIndexingConfiguration m_thingIndexingConfiguration;
-    bool m_thingIndexingConfigurationHasBeenSet;
+    bool m_thingIndexingConfigurationHasBeenSet = false;
 
     ThingGroupIndexingConfiguration m_thingGroupIndexingConfiguration;
-    bool m_thingGroupIndexingConfigurationHasBeenSet;
+    bool m_thingGroupIndexingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -142,13 +142,13 @@ namespace Model
   private:
 
     ChangeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_hookInvocationCount;
-    bool m_hookInvocationCountHasBeenSet;
+    bool m_hookInvocationCountHasBeenSet = false;
 
     ResourceChange m_resourceChange;
-    bool m_resourceChangeHasBeenSet;
+    bool m_resourceChangeHasBeenSet = false;
   };
 
 } // namespace Model

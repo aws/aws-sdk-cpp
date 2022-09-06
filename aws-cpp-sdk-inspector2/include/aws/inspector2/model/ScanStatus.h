@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ScanStatusReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     ScanStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
   };
 
 } // namespace Model

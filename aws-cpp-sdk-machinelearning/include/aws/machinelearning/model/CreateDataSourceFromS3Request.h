@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_dataSourceName;
-    bool m_dataSourceNameHasBeenSet;
+    bool m_dataSourceNameHasBeenSet = false;
 
     S3DataSpec m_dataSpec;
-    bool m_dataSpecHasBeenSet;
+    bool m_dataSpecHasBeenSet = false;
 
     bool m_computeStatistics;
-    bool m_computeStatisticsHasBeenSet;
+    bool m_computeStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

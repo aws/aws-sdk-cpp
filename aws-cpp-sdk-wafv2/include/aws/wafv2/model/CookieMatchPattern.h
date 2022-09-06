@@ -186,13 +186,13 @@ namespace Model
   private:
 
     All m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includedCookies;
-    bool m_includedCookiesHasBeenSet;
+    bool m_includedCookiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedCookies;
-    bool m_excludedCookiesHasBeenSet;
+    bool m_excludedCookiesHasBeenSet = false;
   };
 
 } // namespace Model

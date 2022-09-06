@@ -177,10 +177,10 @@ namespace Model
   private:
 
     Aws::String m_gameLiftAwsAccountId;
-    bool m_gameLiftAwsAccountIdHasBeenSet;
+    bool m_gameLiftAwsAccountIdHasBeenSet = false;
 
     Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet;
+    bool m_peerVpcIdHasBeenSet = false;
   };
 
 } // namespace Model

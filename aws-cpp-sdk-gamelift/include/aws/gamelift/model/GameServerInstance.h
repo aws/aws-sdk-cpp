@@ -300,16 +300,16 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_gameServerGroupArn;
-    bool m_gameServerGroupArnHasBeenSet;
+    bool m_gameServerGroupArnHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     GameServerInstanceStatus m_instanceStatus;
-    bool m_instanceStatusHasBeenSet;
+    bool m_instanceStatusHasBeenSet = false;
   };
 
 } // namespace Model

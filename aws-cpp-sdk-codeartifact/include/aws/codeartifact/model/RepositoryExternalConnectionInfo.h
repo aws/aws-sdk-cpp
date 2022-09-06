@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_externalConnectionName;
-    bool m_externalConnectionNameHasBeenSet;
+    bool m_externalConnectionNameHasBeenSet = false;
 
     PackageFormat m_packageFormat;
-    bool m_packageFormatHasBeenSet;
+    bool m_packageFormatHasBeenSet = false;
 
     ExternalConnectionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

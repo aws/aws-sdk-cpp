@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_kinesisStreamARN;
-    bool m_kinesisStreamARNHasBeenSet;
+    bool m_kinesisStreamARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::Utils::DateTime m_deliveryStartTimestamp;
-    bool m_deliveryStartTimestampHasBeenSet;
+    bool m_deliveryStartTimestampHasBeenSet = false;
   };
 
 } // namespace Model

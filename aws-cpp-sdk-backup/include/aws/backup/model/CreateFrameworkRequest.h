@@ -337,19 +337,19 @@ namespace Model
   private:
 
     Aws::String m_frameworkName;
-    bool m_frameworkNameHasBeenSet;
+    bool m_frameworkNameHasBeenSet = false;
 
     Aws::String m_frameworkDescription;
-    bool m_frameworkDescriptionHasBeenSet;
+    bool m_frameworkDescriptionHasBeenSet = false;
 
     Aws::Vector<FrameworkControl> m_frameworkControls;
-    bool m_frameworkControlsHasBeenSet;
+    bool m_frameworkControlsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_frameworkTags;
-    bool m_frameworkTagsHasBeenSet;
+    bool m_frameworkTagsHasBeenSet = false;
   };
 
 } // namespace Model

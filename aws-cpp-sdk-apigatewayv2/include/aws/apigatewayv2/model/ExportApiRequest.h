@@ -310,22 +310,22 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_exportVersion;
-    bool m_exportVersionHasBeenSet;
+    bool m_exportVersionHasBeenSet = false;
 
     bool m_includeExtensions;
-    bool m_includeExtensionsHasBeenSet;
+    bool m_includeExtensionsHasBeenSet = false;
 
     Aws::String m_outputType;
-    bool m_outputTypeHasBeenSet;
+    bool m_outputTypeHasBeenSet = false;
 
     Aws::String m_specification;
-    bool m_specificationHasBeenSet;
+    bool m_specificationHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
   };
 
 } // namespace Model

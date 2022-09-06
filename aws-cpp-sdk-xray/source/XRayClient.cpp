@@ -103,7 +103,7 @@ XRayClient::~XRayClient()
 
 void XRayClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("XRay");
+  AWSClient::SetServiceClientName("XRay");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

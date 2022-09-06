@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_secretStringKey;
-    bool m_secretStringKeyHasBeenSet;
+    bool m_secretStringKeyHasBeenSet = false;
   };
 
 } // namespace Model

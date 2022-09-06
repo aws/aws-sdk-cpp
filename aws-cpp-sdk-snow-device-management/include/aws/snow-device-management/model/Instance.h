@@ -519,43 +519,43 @@ namespace Model
   private:
 
     int m_amiLaunchIndex;
-    bool m_amiLaunchIndexHasBeenSet;
+    bool m_amiLaunchIndexHasBeenSet = false;
 
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     CpuOptions m_cpuOptions;
-    bool m_cpuOptionsHasBeenSet;
+    bool m_cpuOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::String m_publicIpAddress;
-    bool m_publicIpAddressHasBeenSet;
+    bool m_publicIpAddressHasBeenSet = false;
 
     Aws::String m_rootDeviceName;
-    bool m_rootDeviceNameHasBeenSet;
+    bool m_rootDeviceNameHasBeenSet = false;
 
     Aws::Vector<SecurityGroupIdentifier> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     InstanceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

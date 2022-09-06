@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_targetCustomerId;
-    bool m_targetCustomerIdHasBeenSet;
+    bool m_targetCustomerIdHasBeenSet = false;
 
     InputDeviceTransferType m_transferType;
-    bool m_transferTypeHasBeenSet;
+    bool m_transferTypeHasBeenSet = false;
   };
 
 } // namespace Model

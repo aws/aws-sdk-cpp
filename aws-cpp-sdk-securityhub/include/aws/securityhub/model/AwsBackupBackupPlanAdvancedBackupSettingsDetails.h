@@ -221,10 +221,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
-    bool m_backupOptionsHasBeenSet;
+    bool m_backupOptionsHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

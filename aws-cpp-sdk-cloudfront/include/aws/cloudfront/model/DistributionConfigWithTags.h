@@ -103,10 +103,10 @@ namespace Model
   private:
 
     DistributionConfig m_distributionConfig;
-    bool m_distributionConfigHasBeenSet;
+    bool m_distributionConfigHasBeenSet = false;
 
     Tags m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

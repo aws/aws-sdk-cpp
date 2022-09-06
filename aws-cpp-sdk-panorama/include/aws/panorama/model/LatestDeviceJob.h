@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_imageVersion;
-    bool m_imageVersionHasBeenSet;
+    bool m_imageVersionHasBeenSet = false;
 
     UpdateProgress m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

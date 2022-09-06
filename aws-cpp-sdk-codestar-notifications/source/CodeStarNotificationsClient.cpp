@@ -89,7 +89,7 @@ CodeStarNotificationsClient::~CodeStarNotificationsClient()
 
 void CodeStarNotificationsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("codestar notifications");
+  AWSClient::SetServiceClientName("codestar notifications");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

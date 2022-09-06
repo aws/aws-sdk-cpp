@@ -702,49 +702,49 @@ namespace Model
   private:
 
     Aws::String m_ipamId;
-    bool m_ipamIdHasBeenSet;
+    bool m_ipamIdHasBeenSet = false;
 
     Aws::String m_ipamScopeId;
-    bool m_ipamScopeIdHasBeenSet;
+    bool m_ipamScopeIdHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet;
+    bool m_ipamPoolIdHasBeenSet = false;
 
     Aws::String m_resourceRegion;
-    bool m_resourceRegionHasBeenSet;
+    bool m_resourceRegionHasBeenSet = false;
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_resourceCidr;
-    bool m_resourceCidrHasBeenSet;
+    bool m_resourceCidrHasBeenSet = false;
 
     IpamResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<IpamResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     double m_ipUsage;
-    bool m_ipUsageHasBeenSet;
+    bool m_ipUsageHasBeenSet = false;
 
     IpamComplianceStatus m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     IpamManagementState m_managementState;
-    bool m_managementStateHasBeenSet;
+    bool m_managementStateHasBeenSet = false;
 
     IpamOverlapStatus m_overlapStatus;
-    bool m_overlapStatusHasBeenSet;
+    bool m_overlapStatusHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

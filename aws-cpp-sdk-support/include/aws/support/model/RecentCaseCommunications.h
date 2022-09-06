@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<Communication> m_communications;
-    bool m_communicationsHasBeenSet;
+    bool m_communicationsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

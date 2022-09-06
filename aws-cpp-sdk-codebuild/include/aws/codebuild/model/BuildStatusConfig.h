@@ -266,10 +266,10 @@ namespace Model
   private:
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_targetUrl;
-    bool m_targetUrlHasBeenSet;
+    bool m_targetUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_acmPcaArn;
-    bool m_acmPcaArnHasBeenSet;
+    bool m_acmPcaArnHasBeenSet = false;
 
     Aws::String m_x509CertificateData;
-    bool m_x509CertificateDataHasBeenSet;
+    bool m_x509CertificateDataHasBeenSet = false;
   };
 
 } // namespace Model

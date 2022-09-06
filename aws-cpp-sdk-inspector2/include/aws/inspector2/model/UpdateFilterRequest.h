@@ -268,22 +268,22 @@ namespace Model
   private:
 
     FilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet;
+    bool m_filterArnHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

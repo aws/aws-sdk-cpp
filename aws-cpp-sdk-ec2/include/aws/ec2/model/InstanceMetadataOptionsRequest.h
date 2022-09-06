@@ -293,19 +293,19 @@ namespace Model
   private:
 
     HttpTokensState m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     InstanceMetadataEndpointState m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     InstanceMetadataProtocolState m_httpProtocolIpv6;
-    bool m_httpProtocolIpv6HasBeenSet;
+    bool m_httpProtocolIpv6HasBeenSet = false;
 
     InstanceMetadataTagsState m_instanceMetadataTags;
-    bool m_instanceMetadataTagsHasBeenSet;
+    bool m_instanceMetadataTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_mobileDeviceAccessRuleId;
-    bool m_mobileDeviceAccessRuleIdHasBeenSet;
+    bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
   };
 
 } // namespace Model

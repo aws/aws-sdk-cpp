@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
   };
 
 } // namespace Model

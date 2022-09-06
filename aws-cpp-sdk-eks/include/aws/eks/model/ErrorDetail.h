@@ -235,13 +235,13 @@ namespace Model
   private:
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
   };
 
 } // namespace Model

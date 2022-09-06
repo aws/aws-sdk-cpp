@@ -280,13 +280,13 @@ namespace Model
   private:
 
     RouteAnalysisCompletionResultCode m_resultCode;
-    bool m_resultCodeHasBeenSet;
+    bool m_resultCodeHasBeenSet = false;
 
     RouteAnalysisCompletionReasonCode m_reasonCode;
-    bool m_reasonCodeHasBeenSet;
+    bool m_reasonCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_reasonContext;
-    bool m_reasonContextHasBeenSet;
+    bool m_reasonContextHasBeenSet = false;
   };
 
 } // namespace Model

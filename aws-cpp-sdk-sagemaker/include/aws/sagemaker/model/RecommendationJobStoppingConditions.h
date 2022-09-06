@@ -127,10 +127,10 @@ namespace Model
   private:
 
     int m_maxInvocations;
-    bool m_maxInvocationsHasBeenSet;
+    bool m_maxInvocationsHasBeenSet = false;
 
     Aws::Vector<ModelLatencyThreshold> m_modelLatencyThresholds;
-    bool m_modelLatencyThresholdsHasBeenSet;
+    bool m_modelLatencyThresholdsHasBeenSet = false;
   };
 
 } // namespace Model

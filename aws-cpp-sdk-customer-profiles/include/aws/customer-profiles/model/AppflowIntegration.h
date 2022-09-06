@@ -102,10 +102,10 @@ namespace Model
   private:
 
     FlowDefinition m_flowDefinition;
-    bool m_flowDefinitionHasBeenSet;
+    bool m_flowDefinitionHasBeenSet = false;
 
     Aws::Vector<Batch> m_batches;
-    bool m_batchesHasBeenSet;
+    bool m_batchesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
   };
 
 } // namespace Model

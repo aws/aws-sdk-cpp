@@ -90,7 +90,7 @@ AmplifyUIBuilderClient::~AmplifyUIBuilderClient()
 
 void AmplifyUIBuilderClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AmplifyUIBuilder");
+  AWSClient::SetServiceClientName("AmplifyUIBuilder");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

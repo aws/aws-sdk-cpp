@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

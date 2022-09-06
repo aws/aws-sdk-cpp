@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::String m_threatName;
-    bool m_threatNameHasBeenSet;
+    bool m_threatNameHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

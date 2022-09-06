@@ -81,10 +81,10 @@ namespace Model
   private:
 
     Aws::String m_reportName;
-    bool m_reportNameHasBeenSet;
+    bool m_reportNameHasBeenSet = false;
 
     ReportDefinition m_reportDefinition;
-    bool m_reportDefinitionHasBeenSet;
+    bool m_reportDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -734,58 +734,58 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     bool m_archived;
-    bool m_archivedHasBeenSet;
+    bool m_archivedHasBeenSet = false;
 
     FindingCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     ClassificationDetails m_classificationDetails;
-    bool m_classificationDetailsHasBeenSet;
+    bool m_classificationDetailsHasBeenSet = false;
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_partition;
-    bool m_partitionHasBeenSet;
+    bool m_partitionHasBeenSet = false;
 
     PolicyDetails m_policyDetails;
-    bool m_policyDetailsHasBeenSet;
+    bool m_policyDetailsHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     ResourcesAffected m_resourcesAffected;
-    bool m_resourcesAffectedHasBeenSet;
+    bool m_resourcesAffectedHasBeenSet = false;
 
     bool m_sample;
-    bool m_sampleHasBeenSet;
+    bool m_sampleHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Severity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     FindingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

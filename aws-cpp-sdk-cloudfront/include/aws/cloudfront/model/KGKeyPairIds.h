@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_keyGroupId;
-    bool m_keyGroupIdHasBeenSet;
+    bool m_keyGroupIdHasBeenSet = false;
 
     KeyPairIds m_keyPairIds;
-    bool m_keyPairIdsHasBeenSet;
+    bool m_keyPairIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -172,16 +172,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_validateRequestBody;
-    bool m_validateRequestBodyHasBeenSet;
+    bool m_validateRequestBodyHasBeenSet = false;
 
     bool m_validateRequestParameters;
-    bool m_validateRequestParametersHasBeenSet;
+    bool m_validateRequestParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,10 +136,10 @@ namespace Model
   private:
 
     RecordingMode m_recordingMode;
-    bool m_recordingModeHasBeenSet;
+    bool m_recordingModeHasBeenSet = false;
 
     long long m_targetIntervalSeconds;
-    bool m_targetIntervalSecondsHasBeenSet;
+    bool m_targetIntervalSecondsHasBeenSet = false;
   };
 
 } // namespace Model

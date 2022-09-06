@@ -190,16 +190,16 @@ namespace Model
   private:
 
     bool m_eligibleForReplication;
-    bool m_eligibleForReplicationHasBeenSet;
+    bool m_eligibleForReplicationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Vector<ReplicationStatus> m_objectReplicationStatuses;
-    bool m_objectReplicationStatusesHasBeenSet;
+    bool m_objectReplicationStatusesHasBeenSet = false;
   };
 
 } // namespace Model

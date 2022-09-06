@@ -308,16 +308,16 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_projectionExpression;
-    bool m_projectionExpressionHasBeenSet;
+    bool m_projectionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

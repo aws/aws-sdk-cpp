@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_windowTargetId;
-    bool m_windowTargetIdHasBeenSet;
+    bool m_windowTargetIdHasBeenSet = false;
 
     bool m_safe;
-    bool m_safeHasBeenSet;
+    bool m_safeHasBeenSet = false;
   };
 
 } // namespace Model

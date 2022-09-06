@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

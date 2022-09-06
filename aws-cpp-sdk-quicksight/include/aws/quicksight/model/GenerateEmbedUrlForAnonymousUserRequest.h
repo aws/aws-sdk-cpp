@@ -495,25 +495,25 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     long long m_sessionLifetimeInMinutes;
-    bool m_sessionLifetimeInMinutesHasBeenSet;
+    bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::Vector<SessionTag> m_sessionTags;
-    bool m_sessionTagsHasBeenSet;
+    bool m_sessionTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedResourceArns;
-    bool m_authorizedResourceArnsHasBeenSet;
+    bool m_authorizedResourceArnsHasBeenSet = false;
 
     AnonymousUserEmbeddingExperienceConfiguration m_experienceConfiguration;
-    bool m_experienceConfigurationHasBeenSet;
+    bool m_experienceConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedDomains;
-    bool m_allowedDomainsHasBeenSet;
+    bool m_allowedDomainsHasBeenSet = false;
   };
 
 } // namespace Model

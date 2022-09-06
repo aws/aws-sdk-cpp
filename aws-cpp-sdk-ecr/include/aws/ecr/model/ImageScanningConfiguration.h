@@ -83,7 +83,7 @@ namespace Model
   private:
 
     bool m_scanOnPush;
-    bool m_scanOnPushHasBeenSet;
+    bool m_scanOnPushHasBeenSet = false;
   };
 
 } // namespace Model

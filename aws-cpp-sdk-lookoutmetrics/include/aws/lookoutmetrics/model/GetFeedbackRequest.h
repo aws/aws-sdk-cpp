@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     AnomalyGroupTimeSeries m_anomalyGroupTimeSeriesFeedback;
-    bool m_anomalyGroupTimeSeriesFeedbackHasBeenSet;
+    bool m_anomalyGroupTimeSeriesFeedbackHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

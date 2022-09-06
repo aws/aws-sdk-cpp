@@ -263,13 +263,13 @@ namespace Model
   private:
 
     ShardIteratorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

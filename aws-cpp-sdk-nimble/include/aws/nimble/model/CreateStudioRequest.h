@@ -394,25 +394,25 @@ namespace Model
   private:
 
     Aws::String m_adminRoleArn;
-    bool m_adminRoleArnHasBeenSet;
+    bool m_adminRoleArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     StudioEncryptionConfiguration m_studioEncryptionConfiguration;
-    bool m_studioEncryptionConfigurationHasBeenSet;
+    bool m_studioEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_studioName;
-    bool m_studioNameHasBeenSet;
+    bool m_studioNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_userRoleArn;
-    bool m_userRoleArnHasBeenSet;
+    bool m_userRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

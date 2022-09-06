@@ -168,7 +168,7 @@ namespace Model
   private:
 
     StackInstanceDetailedStatus m_detailedStatus;
-    bool m_detailedStatusHasBeenSet;
+    bool m_detailedStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_protectionId;
-    bool m_protectionIdHasBeenSet;
+    bool m_protectionIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

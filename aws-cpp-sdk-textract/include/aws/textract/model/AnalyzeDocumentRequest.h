@@ -250,16 +250,16 @@ namespace Model
   private:
 
     Document m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     Aws::Vector<FeatureType> m_featureTypes;
-    bool m_featureTypesHasBeenSet;
+    bool m_featureTypesHasBeenSet = false;
 
     HumanLoopConfig m_humanLoopConfig;
-    bool m_humanLoopConfigHasBeenSet;
+    bool m_humanLoopConfigHasBeenSet = false;
 
     QueriesConfig m_queriesConfig;
-    bool m_queriesConfigHasBeenSet;
+    bool m_queriesConfigHasBeenSet = false;
   };
 
 } // namespace Model

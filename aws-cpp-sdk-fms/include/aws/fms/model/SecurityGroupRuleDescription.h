@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_iPV4Range;
-    bool m_iPV4RangeHasBeenSet;
+    bool m_iPV4RangeHasBeenSet = false;
 
     Aws::String m_iPV6Range;
-    bool m_iPV6RangeHasBeenSet;
+    bool m_iPV6RangeHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     long long m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     long long m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
   };
 
 } // namespace Model

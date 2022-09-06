@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_openTime;
-    bool m_openTimeHasBeenSet;
+    bool m_openTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_closeTime;
-    bool m_closeTimeHasBeenSet;
+    bool m_closeTimeHasBeenSet = false;
   };
 
 } // namespace Model

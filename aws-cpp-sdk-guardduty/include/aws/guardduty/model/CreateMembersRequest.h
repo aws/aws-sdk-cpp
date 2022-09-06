@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::Vector<AccountDetail> m_accountDetails;
-    bool m_accountDetailsHasBeenSet;
+    bool m_accountDetailsHasBeenSet = false;
   };
 
 } // namespace Model

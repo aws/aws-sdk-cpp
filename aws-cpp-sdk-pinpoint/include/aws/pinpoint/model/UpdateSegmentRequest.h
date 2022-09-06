@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
 
     WriteSegmentRequest m_writeSegmentRequest;
-    bool m_writeSegmentRequestHasBeenSet;
+    bool m_writeSegmentRequestHasBeenSet = false;
   };
 
 } // namespace Model

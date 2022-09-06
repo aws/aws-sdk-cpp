@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_evaluationId;
-    bool m_evaluationIdHasBeenSet;
+    bool m_evaluationIdHasBeenSet = false;
 
     Aws::String m_evaluationName;
-    bool m_evaluationNameHasBeenSet;
+    bool m_evaluationNameHasBeenSet = false;
   };
 
 } // namespace Model

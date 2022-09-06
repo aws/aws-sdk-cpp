@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_controlId;
-    bool m_controlIdHasBeenSet;
+    bool m_controlIdHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     Target m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedTime;
-    bool m_requestedTimeHasBeenSet;
+    bool m_requestedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -145,13 +145,13 @@ namespace Model
   private:
 
     ReshardingStatus m_resharding;
-    bool m_reshardingHasBeenSet;
+    bool m_reshardingHasBeenSet = false;
 
     ACLsUpdateStatus m_aCLs;
-    bool m_aCLsHasBeenSet;
+    bool m_aCLsHasBeenSet = false;
 
     Aws::Vector<PendingModifiedServiceUpdate> m_serviceUpdates;
-    bool m_serviceUpdatesHasBeenSet;
+    bool m_serviceUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

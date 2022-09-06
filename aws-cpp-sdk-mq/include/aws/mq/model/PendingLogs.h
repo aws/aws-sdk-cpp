@@ -84,10 +84,10 @@ namespace Model
   private:
 
     bool m_audit;
-    bool m_auditHasBeenSet;
+    bool m_auditHasBeenSet = false;
 
     bool m_general;
-    bool m_generalHasBeenSet;
+    bool m_generalHasBeenSet = false;
   };
 
 } // namespace Model

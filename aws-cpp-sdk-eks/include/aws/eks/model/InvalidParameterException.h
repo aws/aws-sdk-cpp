@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::String m_fargateProfileName;
-    bool m_fargateProfileNameHasBeenSet;
+    bool m_fargateProfileNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

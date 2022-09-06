@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
   };
 
 } // namespace Model

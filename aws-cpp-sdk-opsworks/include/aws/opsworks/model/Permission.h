@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
 
     bool m_allowSsh;
-    bool m_allowSshHasBeenSet;
+    bool m_allowSshHasBeenSet = false;
 
     bool m_allowSudo;
-    bool m_allowSudoHasBeenSet;
+    bool m_allowSudoHasBeenSet = false;
 
     Aws::String m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
   };
 
 } // namespace Model

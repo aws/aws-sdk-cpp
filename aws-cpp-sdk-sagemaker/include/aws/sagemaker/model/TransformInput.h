@@ -373,16 +373,16 @@ namespace Model
   private:
 
     TransformDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     SplitType m_splitType;
-    bool m_splitTypeHasBeenSet;
+    bool m_splitTypeHasBeenSet = false;
   };
 
 } // namespace Model

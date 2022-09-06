@@ -98,7 +98,7 @@ ConnectCampaignsClient::~ConnectCampaignsClient()
 
 void ConnectCampaignsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ConnectCampaigns");
+  AWSClient::SetServiceClientName("ConnectCampaigns");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

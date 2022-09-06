@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_storageJobId;
-    bool m_storageJobIdHasBeenSet;
+    bool m_storageJobIdHasBeenSet = false;
 
     Aws::String m_objectToken;
-    bool m_objectTokenHasBeenSet;
+    bool m_objectTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

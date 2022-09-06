@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     ResponseHeadersPolicyConfig m_responseHeadersPolicyConfig;
-    bool m_responseHeadersPolicyConfigHasBeenSet;
+    bool m_responseHeadersPolicyConfigHasBeenSet = false;
   };
 
 } // namespace Model

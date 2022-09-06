@@ -220,10 +220,10 @@ namespace Model
   private:
 
     Attachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::Map<Aws::String, PerObjectStatus> m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
   };
 
 } // namespace Model

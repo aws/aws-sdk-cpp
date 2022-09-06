@@ -253,22 +253,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     AuditTaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
 
     AuditTaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

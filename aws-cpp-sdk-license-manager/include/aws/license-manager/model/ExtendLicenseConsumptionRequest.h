@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_licenseConsumptionToken;
-    bool m_licenseConsumptionTokenHasBeenSet;
+    bool m_licenseConsumptionTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

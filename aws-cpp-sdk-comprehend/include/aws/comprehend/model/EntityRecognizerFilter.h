@@ -201,16 +201,16 @@ namespace Model
   private:
 
     ModelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_recognizerName;
-    bool m_recognizerNameHasBeenSet;
+    bool m_recognizerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTimeBefore;
-    bool m_submitTimeBeforeHasBeenSet;
+    bool m_submitTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTimeAfter;
-    bool m_submitTimeAfterHasBeenSet;
+    bool m_submitTimeAfterHasBeenSet = false;
   };
 
 } // namespace Model

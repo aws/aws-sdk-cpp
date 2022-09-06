@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableDefaultStandards;
-    bool m_enableDefaultStandardsHasBeenSet;
+    bool m_enableDefaultStandardsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -219,19 +219,19 @@ namespace Model
   private:
 
     AggregationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     TitleSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_titles;
-    bool m_titlesHasBeenSet;
+    bool m_titlesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vulnerabilityIds;
-    bool m_vulnerabilityIdsHasBeenSet;
+    bool m_vulnerabilityIdsHasBeenSet = false;
   };
 
 } // namespace Model

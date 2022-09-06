@@ -107,10 +107,10 @@ namespace Model
   private:
 
     int m_lineItemGroupIndex;
-    bool m_lineItemGroupIndexHasBeenSet;
+    bool m_lineItemGroupIndexHasBeenSet = false;
 
     Aws::Vector<LineItemFields> m_lineItems;
-    bool m_lineItemsHasBeenSet;
+    bool m_lineItemsHasBeenSet = false;
   };
 
 } // namespace Model

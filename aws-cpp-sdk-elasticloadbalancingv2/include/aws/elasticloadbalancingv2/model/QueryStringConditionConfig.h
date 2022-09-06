@@ -143,7 +143,7 @@ namespace Model
   private:
 
     Aws::Vector<QueryStringKeyValuePair> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

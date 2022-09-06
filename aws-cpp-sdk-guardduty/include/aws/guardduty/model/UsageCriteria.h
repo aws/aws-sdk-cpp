@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<DataSource> m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

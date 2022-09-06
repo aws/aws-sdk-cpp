@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_tableCatalogId;
-    bool m_tableCatalogIdHasBeenSet;
+    bool m_tableCatalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RowFilter m_rowFilter;
-    bool m_rowFilterHasBeenSet;
+    bool m_rowFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_columnNames;
-    bool m_columnNamesHasBeenSet;
+    bool m_columnNamesHasBeenSet = false;
 
     ColumnWildcard m_columnWildcard;
-    bool m_columnWildcardHasBeenSet;
+    bool m_columnWildcardHasBeenSet = false;
   };
 
 } // namespace Model

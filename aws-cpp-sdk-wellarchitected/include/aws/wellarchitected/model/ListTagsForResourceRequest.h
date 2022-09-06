@@ -59,7 +59,7 @@ namespace Model
   private:
 
     Aws::String m_workloadArn;
-    bool m_workloadArnHasBeenSet;
+    bool m_workloadArnHasBeenSet = false;
   };
 
 } // namespace Model

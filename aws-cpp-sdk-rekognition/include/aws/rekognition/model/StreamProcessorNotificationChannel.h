@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_sNSTopicArn;
-    bool m_sNSTopicArnHasBeenSet;
+    bool m_sNSTopicArnHasBeenSet = false;
   };
 
 } // namespace Model

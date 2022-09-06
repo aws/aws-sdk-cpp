@@ -369,28 +369,28 @@ namespace Model
   private:
 
     Aws::String m_awsAccountNumber;
-    bool m_awsAccountNumberHasBeenSet;
+    bool m_awsAccountNumberHasBeenSet = false;
 
     Aws::Map<DevicePlatform, int> m_unmeteredDevices;
-    bool m_unmeteredDevicesHasBeenSet;
+    bool m_unmeteredDevicesHasBeenSet = false;
 
     Aws::Map<DevicePlatform, int> m_unmeteredRemoteAccessDevices;
-    bool m_unmeteredRemoteAccessDevicesHasBeenSet;
+    bool m_unmeteredRemoteAccessDevicesHasBeenSet = false;
 
     int m_maxJobTimeoutMinutes;
-    bool m_maxJobTimeoutMinutesHasBeenSet;
+    bool m_maxJobTimeoutMinutesHasBeenSet = false;
 
     TrialMinutes m_trialMinutes;
-    bool m_trialMinutesHasBeenSet;
+    bool m_trialMinutesHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_maxSlots;
-    bool m_maxSlotsHasBeenSet;
+    bool m_maxSlotsHasBeenSet = false;
 
     int m_defaultJobTimeoutMinutes;
-    bool m_defaultJobTimeoutMinutesHasBeenSet;
+    bool m_defaultJobTimeoutMinutesHasBeenSet = false;
 
     bool m_skipAppResign;
-    bool m_skipAppResignHasBeenSet;
+    bool m_skipAppResignHasBeenSet = false;
   };
 
 } // namespace Model

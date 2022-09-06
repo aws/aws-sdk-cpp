@@ -125,13 +125,13 @@ namespace Model
   private:
 
     double m_progressPercentage;
-    bool m_progressPercentageHasBeenSet;
+    bool m_progressPercentageHasBeenSet = false;
 
     long long m_cumulativeBytesScanned;
-    bool m_cumulativeBytesScannedHasBeenSet;
+    bool m_cumulativeBytesScannedHasBeenSet = false;
 
     long long m_cumulativeBytesMetered;
-    bool m_cumulativeBytesMeteredHasBeenSet;
+    bool m_cumulativeBytesMeteredHasBeenSet = false;
   };
 
 } // namespace Model

@@ -315,25 +315,25 @@ namespace Model
   private:
 
     int m_contactPostPassDurationSeconds;
-    bool m_contactPostPassDurationSecondsHasBeenSet;
+    bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
     int m_contactPrePassDurationSeconds;
-    bool m_contactPrePassDurationSecondsHasBeenSet;
+    bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_dataflowEdges;
-    bool m_dataflowEdgesHasBeenSet;
+    bool m_dataflowEdgesHasBeenSet = false;
 
     int m_minimumViableContactDurationSeconds;
-    bool m_minimumViableContactDurationSecondsHasBeenSet;
+    bool m_minimumViableContactDurationSecondsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_trackingConfigArn;
-    bool m_trackingConfigArnHasBeenSet;
+    bool m_trackingConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

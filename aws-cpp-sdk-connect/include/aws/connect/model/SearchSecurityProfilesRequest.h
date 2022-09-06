@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SecurityProfileSearchCriteria m_searchCriteria;
-    bool m_searchCriteriaHasBeenSet;
+    bool m_searchCriteriaHasBeenSet = false;
 
     SecurityProfilesSearchFilter m_searchFilter;
-    bool m_searchFilterHasBeenSet;
+    bool m_searchFilterHasBeenSet = false;
   };
 
 } // namespace Model

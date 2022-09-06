@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     SqlQueryDatasetAction m_queryAction;
-    bool m_queryActionHasBeenSet;
+    bool m_queryActionHasBeenSet = false;
 
     ContainerDatasetAction m_containerAction;
-    bool m_containerActionHasBeenSet;
+    bool m_containerActionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -174,10 +174,10 @@ namespace Model
   private:
 
     Aws::String m_webACLArn;
-    bool m_webACLArnHasBeenSet;
+    bool m_webACLArnHasBeenSet = false;
 
     Aws::String m_webACLLockToken;
-    bool m_webACLLockTokenHasBeenSet;
+    bool m_webACLLockTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_codeSigningConfigArn;
-    bool m_codeSigningConfigArnHasBeenSet;
+    bool m_codeSigningConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

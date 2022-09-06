@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::Vector<GeneratedPolicy> m_generatedPolicies;
-    bool m_generatedPoliciesHasBeenSet;
+    bool m_generatedPoliciesHasBeenSet = false;
 
     GeneratedPolicyProperties m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

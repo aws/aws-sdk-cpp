@@ -109,7 +109,7 @@ LookoutEquipmentClient::~LookoutEquipmentClient()
 
 void LookoutEquipmentClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("LookoutEquipment");
+  AWSClient::SetServiceClientName("LookoutEquipment");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

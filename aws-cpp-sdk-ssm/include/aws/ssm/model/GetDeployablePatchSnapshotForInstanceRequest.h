@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     BaselineOverride m_baselineOverride;
-    bool m_baselineOverrideHasBeenSet;
+    bool m_baselineOverrideHasBeenSet = false;
   };
 
 } // namespace Model

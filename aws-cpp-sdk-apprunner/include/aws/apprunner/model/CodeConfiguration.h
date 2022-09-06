@@ -157,10 +157,10 @@ namespace Model
   private:
 
     ConfigurationSource m_configurationSource;
-    bool m_configurationSourceHasBeenSet;
+    bool m_configurationSourceHasBeenSet = false;
 
     CodeConfigurationValues m_codeConfigurationValues;
-    bool m_codeConfigurationValuesHasBeenSet;
+    bool m_codeConfigurationValuesHasBeenSet = false;
   };
 
 } // namespace Model

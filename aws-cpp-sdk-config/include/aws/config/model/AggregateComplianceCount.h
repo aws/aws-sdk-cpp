@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     ComplianceSummary m_complianceSummary;
-    bool m_complianceSummaryHasBeenSet;
+    bool m_complianceSummaryHasBeenSet = false;
   };
 
 } // namespace Model

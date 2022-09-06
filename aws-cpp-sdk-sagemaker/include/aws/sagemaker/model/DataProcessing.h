@@ -373,13 +373,13 @@ namespace Model
   private:
 
     Aws::String m_inputFilter;
-    bool m_inputFilterHasBeenSet;
+    bool m_inputFilterHasBeenSet = false;
 
     Aws::String m_outputFilter;
-    bool m_outputFilterHasBeenSet;
+    bool m_outputFilterHasBeenSet = false;
 
     JoinSource m_joinSource;
-    bool m_joinSourceHasBeenSet;
+    bool m_joinSourceHasBeenSet = false;
   };
 
 } // namespace Model

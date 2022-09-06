@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayConnectPeerArn;
-    bool m_transitGatewayConnectPeerArnHasBeenSet;
+    bool m_transitGatewayConnectPeerArnHasBeenSet = false;
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_linkId;
-    bool m_linkIdHasBeenSet;
+    bool m_linkIdHasBeenSet = false;
 
     TransitGatewayConnectPeerAssociationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

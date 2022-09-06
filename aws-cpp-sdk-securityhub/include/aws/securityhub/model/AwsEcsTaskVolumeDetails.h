@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AwsEcsTaskVolumeHostDetails m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
   };
 
 } // namespace Model

@@ -181,10 +181,10 @@ namespace Model
   private:
 
     AssertionRule m_aSSERTION;
-    bool m_aSSERTIONHasBeenSet;
+    bool m_aSSERTIONHasBeenSet = false;
 
     GatingRule m_gATING;
-    bool m_gATINGHasBeenSet;
+    bool m_gATINGHasBeenSet = false;
   };
 
 } // namespace Model

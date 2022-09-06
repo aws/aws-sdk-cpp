@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     AddressType m_addressType;
-    bool m_addressTypeHasBeenSet;
+    bool m_addressTypeHasBeenSet = false;
 
     Address m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
   };
 
 } // namespace Model

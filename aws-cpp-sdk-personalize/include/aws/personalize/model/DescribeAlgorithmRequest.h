@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_algorithmArn;
-    bool m_algorithmArnHasBeenSet;
+    bool m_algorithmArnHasBeenSet = false;
   };
 
 } // namespace Model

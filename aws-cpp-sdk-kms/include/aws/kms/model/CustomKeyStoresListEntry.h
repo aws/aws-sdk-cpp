@@ -680,25 +680,25 @@ namespace Model
   private:
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     Aws::String m_customKeyStoreName;
-    bool m_customKeyStoreNameHasBeenSet;
+    bool m_customKeyStoreNameHasBeenSet = false;
 
     Aws::String m_cloudHsmClusterId;
-    bool m_cloudHsmClusterIdHasBeenSet;
+    bool m_cloudHsmClusterIdHasBeenSet = false;
 
     Aws::String m_trustAnchorCertificate;
-    bool m_trustAnchorCertificateHasBeenSet;
+    bool m_trustAnchorCertificateHasBeenSet = false;
 
     ConnectionStateType m_connectionState;
-    bool m_connectionStateHasBeenSet;
+    bool m_connectionStateHasBeenSet = false;
 
     ConnectionErrorCodeType m_connectionErrorCode;
-    bool m_connectionErrorCodeHasBeenSet;
+    bool m_connectionErrorCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

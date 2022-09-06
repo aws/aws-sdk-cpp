@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Dimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::Vector<CurrentMetricData> m_collections;
-    bool m_collectionsHasBeenSet;
+    bool m_collectionsHasBeenSet = false;
   };
 
 } // namespace Model

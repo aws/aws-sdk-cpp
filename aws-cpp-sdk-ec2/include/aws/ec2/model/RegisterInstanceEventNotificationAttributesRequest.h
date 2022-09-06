@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     RegisterInstanceTagAttributeRequest m_instanceTagAttribute;
-    bool m_instanceTagAttributeHasBeenSet;
+    bool m_instanceTagAttributeHasBeenSet = false;
   };
 
 } // namespace Model

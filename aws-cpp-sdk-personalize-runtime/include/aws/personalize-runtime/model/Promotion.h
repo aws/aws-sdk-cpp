@@ -378,16 +378,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_percentPromotedItems;
-    bool m_percentPromotedItemsHasBeenSet;
+    bool m_percentPromotedItemsHasBeenSet = false;
 
     Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet;
+    bool m_filterArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_filterValues;
-    bool m_filterValuesHasBeenSet;
+    bool m_filterValuesHasBeenSet = false;
   };
 
 } // namespace Model

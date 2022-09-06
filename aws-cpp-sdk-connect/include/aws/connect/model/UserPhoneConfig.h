@@ -155,16 +155,16 @@ namespace Model
   private:
 
     PhoneType m_phoneType;
-    bool m_phoneTypeHasBeenSet;
+    bool m_phoneTypeHasBeenSet = false;
 
     bool m_autoAccept;
-    bool m_autoAcceptHasBeenSet;
+    bool m_autoAcceptHasBeenSet = false;
 
     int m_afterContactWorkTimeLimit;
-    bool m_afterContactWorkTimeLimitHasBeenSet;
+    bool m_afterContactWorkTimeLimitHasBeenSet = false;
 
     Aws::String m_deskPhoneNumber;
-    bool m_deskPhoneNumberHasBeenSet;
+    bool m_deskPhoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

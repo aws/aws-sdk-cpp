@@ -276,13 +276,13 @@ namespace Model
   private:
 
     Aws::String m_automationExecutionId;
-    bool m_automationExecutionIdHasBeenSet;
+    bool m_automationExecutionIdHasBeenSet = false;
 
     SignalType m_signalType;
-    bool m_signalTypeHasBeenSet;
+    bool m_signalTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

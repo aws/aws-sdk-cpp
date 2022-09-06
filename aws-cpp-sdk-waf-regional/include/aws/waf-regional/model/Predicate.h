@@ -216,13 +216,13 @@ namespace Model
   private:
 
     bool m_negated;
-    bool m_negatedHasBeenSet;
+    bool m_negatedHasBeenSet = false;
 
     PredicateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_dataId;
-    bool m_dataIdHasBeenSet;
+    bool m_dataIdHasBeenSet = false;
   };
 
 } // namespace Model

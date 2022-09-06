@@ -283,22 +283,22 @@ namespace Model
   private:
 
     int m_numCacheNodes;
-    bool m_numCacheNodesHasBeenSet;
+    bool m_numCacheNodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;
-    bool m_cacheNodeIdsToRemoveHasBeenSet;
+    bool m_cacheNodeIdsToRemoveHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     AuthTokenUpdateStatus m_authTokenStatus;
-    bool m_authTokenStatusHasBeenSet;
+    bool m_authTokenStatusHasBeenSet = false;
 
     Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -185,16 +185,16 @@ namespace Model
   private:
 
     LaunchStatus m_launchStatus;
-    bool m_launchStatusHasBeenSet;
+    bool m_launchStatusHasBeenSet = false;
 
     Aws::String m_launchedEc2InstanceID;
-    bool m_launchedEc2InstanceIDHasBeenSet;
+    bool m_launchedEc2InstanceIDHasBeenSet = false;
 
     PostLaunchActionsStatus m_postLaunchActionsStatus;
-    bool m_postLaunchActionsStatusHasBeenSet;
+    bool m_postLaunchActionsStatusHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

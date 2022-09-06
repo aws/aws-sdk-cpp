@@ -289,25 +289,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_urls;
-    bool m_urlsHasBeenSet;
+    bool m_urlsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     FaceDetail m_face;
-    bool m_faceHasBeenSet;
+    bool m_faceHasBeenSet = false;
 
     KnownGender m_knownGender;
-    bool m_knownGenderHasBeenSet;
+    bool m_knownGenderHasBeenSet = false;
   };
 
 } // namespace Model

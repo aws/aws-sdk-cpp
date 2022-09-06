@@ -424,25 +424,25 @@ namespace Model
   private:
 
     ThingIndexingMode m_thingIndexingMode;
-    bool m_thingIndexingModeHasBeenSet;
+    bool m_thingIndexingModeHasBeenSet = false;
 
     ThingConnectivityIndexingMode m_thingConnectivityIndexingMode;
-    bool m_thingConnectivityIndexingModeHasBeenSet;
+    bool m_thingConnectivityIndexingModeHasBeenSet = false;
 
     DeviceDefenderIndexingMode m_deviceDefenderIndexingMode;
-    bool m_deviceDefenderIndexingModeHasBeenSet;
+    bool m_deviceDefenderIndexingModeHasBeenSet = false;
 
     NamedShadowIndexingMode m_namedShadowIndexingMode;
-    bool m_namedShadowIndexingModeHasBeenSet;
+    bool m_namedShadowIndexingModeHasBeenSet = false;
 
     Aws::Vector<Field> m_managedFields;
-    bool m_managedFieldsHasBeenSet;
+    bool m_managedFieldsHasBeenSet = false;
 
     Aws::Vector<Field> m_customFields;
-    bool m_customFieldsHasBeenSet;
+    bool m_customFieldsHasBeenSet = false;
 
     IndexingFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

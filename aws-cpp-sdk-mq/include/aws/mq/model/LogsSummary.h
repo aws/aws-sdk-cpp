@@ -214,19 +214,19 @@ namespace Model
   private:
 
     bool m_audit;
-    bool m_auditHasBeenSet;
+    bool m_auditHasBeenSet = false;
 
     Aws::String m_auditLogGroup;
-    bool m_auditLogGroupHasBeenSet;
+    bool m_auditLogGroupHasBeenSet = false;
 
     bool m_general;
-    bool m_generalHasBeenSet;
+    bool m_generalHasBeenSet = false;
 
     Aws::String m_generalLogGroup;
-    bool m_generalLogGroupHasBeenSet;
+    bool m_generalLogGroupHasBeenSet = false;
 
     PendingLogs m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
   };
 
 } // namespace Model

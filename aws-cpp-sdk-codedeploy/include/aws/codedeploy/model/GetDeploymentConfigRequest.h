@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
   };
 
 } // namespace Model

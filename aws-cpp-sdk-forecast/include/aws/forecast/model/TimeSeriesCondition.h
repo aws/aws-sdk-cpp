@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
 
     Condition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
   };
 
 } // namespace Model

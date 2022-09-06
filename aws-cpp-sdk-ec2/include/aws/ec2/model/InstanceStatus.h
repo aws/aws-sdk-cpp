@@ -326,25 +326,25 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::Vector<InstanceStatusEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     InstanceState m_instanceState;
-    bool m_instanceStateHasBeenSet;
+    bool m_instanceStateHasBeenSet = false;
 
     InstanceStatusSummary m_instanceStatus;
-    bool m_instanceStatusHasBeenSet;
+    bool m_instanceStatusHasBeenSet = false;
 
     InstanceStatusSummary m_systemStatus;
-    bool m_systemStatusHasBeenSet;
+    bool m_systemStatusHasBeenSet = false;
   };
 
 } // namespace Model

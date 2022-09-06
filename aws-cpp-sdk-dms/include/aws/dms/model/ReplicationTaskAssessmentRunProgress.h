@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_individualAssessmentCount;
-    bool m_individualAssessmentCountHasBeenSet;
+    bool m_individualAssessmentCountHasBeenSet = false;
 
     int m_individualAssessmentCompletedCount;
-    bool m_individualAssessmentCompletedCountHasBeenSet;
+    bool m_individualAssessmentCompletedCountHasBeenSet = false;
   };
 
 } // namespace Model

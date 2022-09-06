@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_s3BucketOwner;
-    bool m_s3BucketOwnerHasBeenSet;
+    bool m_s3BucketOwnerHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

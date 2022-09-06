@@ -86,7 +86,7 @@ CloudWatchRUMClient::~CloudWatchRUMClient()
 
 void CloudWatchRUMClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("RUM");
+  AWSClient::SetServiceClientName("RUM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   if (config.endpointOverride.empty())

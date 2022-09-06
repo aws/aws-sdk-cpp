@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
   };
 
 } // namespace Model

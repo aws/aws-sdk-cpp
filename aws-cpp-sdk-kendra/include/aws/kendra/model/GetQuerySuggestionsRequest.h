@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_queryText;
-    bool m_queryTextHasBeenSet;
+    bool m_queryTextHasBeenSet = false;
 
     int m_maxSuggestionsCount;
-    bool m_maxSuggestionsCountHasBeenSet;
+    bool m_maxSuggestionsCountHasBeenSet = false;
   };
 
 } // namespace Model

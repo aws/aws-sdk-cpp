@@ -157,10 +157,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     long long m_expiresInSec;
-    bool m_expiresInSecHasBeenSet;
+    bool m_expiresInSecHasBeenSet = false;
   };
 
 } // namespace Model

@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_sizeConstraintSetId;
-    bool m_sizeConstraintSetIdHasBeenSet;
+    bool m_sizeConstraintSetIdHasBeenSet = false;
   };
 
 } // namespace Model

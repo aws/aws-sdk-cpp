@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     IpPreference m_ipPreference;
-    bool m_ipPreferenceHasBeenSet;
+    bool m_ipPreferenceHasBeenSet = false;
 
     DnsResponseType m_responseType;
-    bool m_responseTypeHasBeenSet;
+    bool m_responseTypeHasBeenSet = false;
   };
 
 } // namespace Model

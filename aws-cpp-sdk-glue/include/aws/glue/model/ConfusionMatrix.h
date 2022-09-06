@@ -140,16 +140,16 @@ namespace Model
   private:
 
     long long m_numTruePositives;
-    bool m_numTruePositivesHasBeenSet;
+    bool m_numTruePositivesHasBeenSet = false;
 
     long long m_numFalsePositives;
-    bool m_numFalsePositivesHasBeenSet;
+    bool m_numFalsePositivesHasBeenSet = false;
 
     long long m_numTrueNegatives;
-    bool m_numTrueNegativesHasBeenSet;
+    bool m_numTrueNegativesHasBeenSet = false;
 
     long long m_numFalseNegatives;
-    bool m_numFalseNegativesHasBeenSet;
+    bool m_numFalseNegativesHasBeenSet = false;
   };
 
 } // namespace Model

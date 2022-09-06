@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::Vector<FeatureDefinition> m_featureAdditions;
-    bool m_featureAdditionsHasBeenSet;
+    bool m_featureAdditionsHasBeenSet = false;
   };
 
 } // namespace Model

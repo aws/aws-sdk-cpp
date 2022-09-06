@@ -145,10 +145,10 @@ namespace Model
   private:
 
     CustomerManagedPolicyReference m_customerManagedPolicyReference;
-    bool m_customerManagedPolicyReferenceHasBeenSet;
+    bool m_customerManagedPolicyReferenceHasBeenSet = false;
 
     Aws::String m_managedPolicyArn;
-    bool m_managedPolicyArnHasBeenSet;
+    bool m_managedPolicyArnHasBeenSet = false;
   };
 
 } // namespace Model

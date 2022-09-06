@@ -1101,49 +1101,49 @@ namespace Model
   private:
 
     Aws::String m_jiraAccountUrl;
-    bool m_jiraAccountUrlHasBeenSet;
+    bool m_jiraAccountUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_issueType;
-    bool m_issueTypeHasBeenSet;
+    bool m_issueTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<IssueSubEntity> m_issueSubEntityFilter;
-    bool m_issueSubEntityFilterHasBeenSet;
+    bool m_issueSubEntityFilterHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_attachmentFieldMappings;
-    bool m_attachmentFieldMappingsHasBeenSet;
+    bool m_attachmentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_commentFieldMappings;
-    bool m_commentFieldMappingsHasBeenSet;
+    bool m_commentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_issueFieldMappings;
-    bool m_issueFieldMappingsHasBeenSet;
+    bool m_issueFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_projectFieldMappings;
-    bool m_projectFieldMappingsHasBeenSet;
+    bool m_projectFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_workLogFieldMappings;
-    bool m_workLogFieldMappingsHasBeenSet;
+    bool m_workLogFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

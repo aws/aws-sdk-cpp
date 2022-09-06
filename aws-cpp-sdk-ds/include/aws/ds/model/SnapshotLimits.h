@@ -101,13 +101,13 @@ namespace Model
   private:
 
     int m_manualSnapshotsLimit;
-    bool m_manualSnapshotsLimitHasBeenSet;
+    bool m_manualSnapshotsLimitHasBeenSet = false;
 
     int m_manualSnapshotsCurrentCount;
-    bool m_manualSnapshotsCurrentCountHasBeenSet;
+    bool m_manualSnapshotsCurrentCountHasBeenSet = false;
 
     bool m_manualSnapshotsLimitReached;
-    bool m_manualSnapshotsLimitReachedHasBeenSet;
+    bool m_manualSnapshotsLimitReachedHasBeenSet = false;
   };
 
 } // namespace Model

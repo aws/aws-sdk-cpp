@@ -254,22 +254,22 @@ namespace Model
   private:
 
     Aws::String m_connectionDirection;
-    bool m_connectionDirectionHasBeenSet;
+    bool m_connectionDirectionHasBeenSet = false;
 
     ActionRemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
 
     ActionRemotePortDetails m_remotePortDetails;
-    bool m_remotePortDetailsHasBeenSet;
+    bool m_remotePortDetailsHasBeenSet = false;
 
     ActionLocalPortDetails m_localPortDetails;
-    bool m_localPortDetailsHasBeenSet;
+    bool m_localPortDetailsHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     bool m_blocked;
-    bool m_blockedHasBeenSet;
+    bool m_blockedHasBeenSet = false;
   };
 
 } // namespace Model

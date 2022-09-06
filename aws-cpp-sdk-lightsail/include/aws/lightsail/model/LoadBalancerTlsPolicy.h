@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ciphers;
-    bool m_ciphersHasBeenSet;
+    bool m_ciphersHasBeenSet = false;
   };
 
 } // namespace Model

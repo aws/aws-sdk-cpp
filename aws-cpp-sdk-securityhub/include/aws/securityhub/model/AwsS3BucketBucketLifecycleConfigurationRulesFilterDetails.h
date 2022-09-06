@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails m_predicate;
-    bool m_predicateHasBeenSet;
+    bool m_predicateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_osByol;
-    bool m_osByolHasBeenSet;
+    bool m_osByolHasBeenSet = false;
   };
 
 } // namespace Model

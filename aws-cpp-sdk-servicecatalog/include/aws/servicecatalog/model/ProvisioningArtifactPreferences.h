@@ -210,10 +210,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_stackSetAccounts;
-    bool m_stackSetAccountsHasBeenSet;
+    bool m_stackSetAccountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stackSetRegions;
-    bool m_stackSetRegionsHasBeenSet;
+    bool m_stackSetRegionsHasBeenSet = false;
   };
 
 } // namespace Model

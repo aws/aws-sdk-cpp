@@ -238,19 +238,19 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     UpdateDataRetentionOperation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     int m_dataRetentionChangeInHours;
-    bool m_dataRetentionChangeInHoursHasBeenSet;
+    bool m_dataRetentionChangeInHoursHasBeenSet = false;
   };
 
 } // namespace Model

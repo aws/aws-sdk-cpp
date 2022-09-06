@@ -77,7 +77,7 @@ namespace Model
   private:
 
     EventNotificationTopicStatus m_wirelessGatewayEventTopic;
-    bool m_wirelessGatewayEventTopicHasBeenSet;
+    bool m_wirelessGatewayEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

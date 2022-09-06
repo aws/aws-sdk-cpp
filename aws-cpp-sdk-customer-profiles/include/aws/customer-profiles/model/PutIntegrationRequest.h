@@ -406,22 +406,22 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     FlowDefinition m_flowDefinition;
-    bool m_flowDefinitionHasBeenSet;
+    bool m_flowDefinitionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
-    bool m_objectTypeNamesHasBeenSet;
+    bool m_objectTypeNamesHasBeenSet = false;
   };
 
 } // namespace Model

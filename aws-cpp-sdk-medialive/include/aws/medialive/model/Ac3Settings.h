@@ -274,25 +274,25 @@ namespace Model
   private:
 
     double m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Ac3BitstreamMode m_bitstreamMode;
-    bool m_bitstreamModeHasBeenSet;
+    bool m_bitstreamModeHasBeenSet = false;
 
     Ac3CodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     int m_dialnorm;
-    bool m_dialnormHasBeenSet;
+    bool m_dialnormHasBeenSet = false;
 
     Ac3DrcProfile m_drcProfile;
-    bool m_drcProfileHasBeenSet;
+    bool m_drcProfileHasBeenSet = false;
 
     Ac3LfeFilter m_lfeFilter;
-    bool m_lfeFilterHasBeenSet;
+    bool m_lfeFilterHasBeenSet = false;
 
     Ac3MetadataControl m_metadataControl;
-    bool m_metadataControlHasBeenSet;
+    bool m_metadataControlHasBeenSet = false;
   };
 
 } // namespace Model

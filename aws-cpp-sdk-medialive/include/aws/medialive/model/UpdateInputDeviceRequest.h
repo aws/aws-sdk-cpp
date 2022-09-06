@@ -182,16 +182,16 @@ namespace Model
   private:
 
     InputDeviceConfigurableSettings m_hdDeviceSettings;
-    bool m_hdDeviceSettingsHasBeenSet;
+    bool m_hdDeviceSettingsHasBeenSet = false;
 
     Aws::String m_inputDeviceId;
-    bool m_inputDeviceIdHasBeenSet;
+    bool m_inputDeviceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InputDeviceConfigurableSettings m_uhdDeviceSettings;
-    bool m_uhdDeviceSettingsHasBeenSet;
+    bool m_uhdDeviceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

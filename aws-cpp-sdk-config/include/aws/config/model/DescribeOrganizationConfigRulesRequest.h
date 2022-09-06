@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_organizationConfigRuleNames;
-    bool m_organizationConfigRuleNamesHasBeenSet;
+    bool m_organizationConfigRuleNamesHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

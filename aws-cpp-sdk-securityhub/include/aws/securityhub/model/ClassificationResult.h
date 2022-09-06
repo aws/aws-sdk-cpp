@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_mimeType;
-    bool m_mimeTypeHasBeenSet;
+    bool m_mimeTypeHasBeenSet = false;
 
     long long m_sizeClassified;
-    bool m_sizeClassifiedHasBeenSet;
+    bool m_sizeClassifiedHasBeenSet = false;
 
     bool m_additionalOccurrences;
-    bool m_additionalOccurrencesHasBeenSet;
+    bool m_additionalOccurrencesHasBeenSet = false;
 
     ClassificationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<SensitiveDataResult> m_sensitiveData;
-    bool m_sensitiveDataHasBeenSet;
+    bool m_sensitiveDataHasBeenSet = false;
 
     CustomDataIdentifiersResult m_customDataIdentifiers;
-    bool m_customDataIdentifiersHasBeenSet;
+    bool m_customDataIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

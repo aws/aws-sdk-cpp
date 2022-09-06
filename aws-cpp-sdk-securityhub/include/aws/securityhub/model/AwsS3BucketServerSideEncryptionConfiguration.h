@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsS3BucketServerSideEncryptionRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

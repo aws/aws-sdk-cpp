@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
   };
 
 } // namespace Model

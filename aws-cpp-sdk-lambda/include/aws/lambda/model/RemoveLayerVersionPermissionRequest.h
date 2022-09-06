@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_layerName;
-    bool m_layerNameHasBeenSet;
+    bool m_layerNameHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

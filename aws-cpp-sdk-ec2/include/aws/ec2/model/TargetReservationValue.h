@@ -123,10 +123,10 @@ namespace Model
   private:
 
     ReservationValue m_reservationValue;
-    bool m_reservationValueHasBeenSet;
+    bool m_reservationValueHasBeenSet = false;
 
     TargetConfiguration m_targetConfiguration;
-    bool m_targetConfigurationHasBeenSet;
+    bool m_targetConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -425,28 +425,28 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet;
+    bool m_ipamPoolIdHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     int m_netmaskLength;
-    bool m_netmaskLengthHasBeenSet;
+    bool m_netmaskLengthHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_previewNextCidr;
-    bool m_previewNextCidrHasBeenSet;
+    bool m_previewNextCidrHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_disallowedCidrs;
-    bool m_disallowedCidrsHasBeenSet;
+    bool m_disallowedCidrsHasBeenSet = false;
   };
 
 } // namespace Model

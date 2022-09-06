@@ -135,13 +135,13 @@ namespace Model
   private:
 
     ArtifactType m_artifactType;
-    bool m_artifactTypeHasBeenSet;
+    bool m_artifactTypeHasBeenSet = false;
 
     S3ContentLocation m_s3ContentLocation;
-    bool m_s3ContentLocationHasBeenSet;
+    bool m_s3ContentLocationHasBeenSet = false;
 
     MavenReference m_mavenReference;
-    bool m_mavenReferenceHasBeenSet;
+    bool m_mavenReferenceHasBeenSet = false;
   };
 
 } // namespace Model

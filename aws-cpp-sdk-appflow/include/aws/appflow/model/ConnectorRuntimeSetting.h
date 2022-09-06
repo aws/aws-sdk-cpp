@@ -322,25 +322,25 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     bool m_isRequired;
-    bool m_isRequiredHasBeenSet;
+    bool m_isRequiredHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectorSuppliedValueOptions;
-    bool m_connectorSuppliedValueOptionsHasBeenSet;
+    bool m_connectorSuppliedValueOptionsHasBeenSet = false;
   };
 
 } // namespace Model

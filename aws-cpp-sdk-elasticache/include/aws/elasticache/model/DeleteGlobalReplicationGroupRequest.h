@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     bool m_retainPrimaryReplicationGroup;
-    bool m_retainPrimaryReplicationGroupHasBeenSet;
+    bool m_retainPrimaryReplicationGroupHasBeenSet = false;
   };
 
 } // namespace Model

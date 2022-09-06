@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_environmentIds;
-    bool m_environmentIdsHasBeenSet;
+    bool m_environmentIdsHasBeenSet = false;
   };
 
 } // namespace Model

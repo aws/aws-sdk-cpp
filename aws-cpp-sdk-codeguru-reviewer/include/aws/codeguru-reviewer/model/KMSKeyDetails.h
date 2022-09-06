@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet;
+    bool m_kMSKeyIdHasBeenSet = false;
 
     EncryptionOption m_encryptionOption;
-    bool m_encryptionOptionHasBeenSet;
+    bool m_encryptionOptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -235,22 +235,22 @@ namespace Model
   private:
 
     Aws::String m_gatewayEui;
-    bool m_gatewayEuiHasBeenSet;
+    bool m_gatewayEuiHasBeenSet = false;
 
     Aws::String m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_joinEuiFilters;
-    bool m_joinEuiFiltersHasBeenSet;
+    bool m_joinEuiFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_netIdFilters;
-    bool m_netIdFiltersHasBeenSet;
+    bool m_netIdFiltersHasBeenSet = false;
 
     Aws::Vector<int> m_subBands;
-    bool m_subBandsHasBeenSet;
+    bool m_subBandsHasBeenSet = false;
 
     Beaconing m_beaconing;
-    bool m_beaconingHasBeenSet;
+    bool m_beaconingHasBeenSet = false;
   };
 
 } // namespace Model

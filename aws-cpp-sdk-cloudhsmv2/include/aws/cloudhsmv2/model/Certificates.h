@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_clusterCsr;
-    bool m_clusterCsrHasBeenSet;
+    bool m_clusterCsrHasBeenSet = false;
 
     Aws::String m_hsmCertificate;
-    bool m_hsmCertificateHasBeenSet;
+    bool m_hsmCertificateHasBeenSet = false;
 
     Aws::String m_awsHardwareCertificate;
-    bool m_awsHardwareCertificateHasBeenSet;
+    bool m_awsHardwareCertificateHasBeenSet = false;
 
     Aws::String m_manufacturerHardwareCertificate;
-    bool m_manufacturerHardwareCertificateHasBeenSet;
+    bool m_manufacturerHardwareCertificateHasBeenSet = false;
 
     Aws::String m_clusterCertificate;
-    bool m_clusterCertificateHasBeenSet;
+    bool m_clusterCertificateHasBeenSet = false;
   };
 
 } // namespace Model

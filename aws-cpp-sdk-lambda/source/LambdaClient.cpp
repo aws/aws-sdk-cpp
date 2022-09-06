@@ -138,7 +138,7 @@ LambdaClient::~LambdaClient()
 
 void LambdaClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Lambda");
+  AWSClient::SetServiceClientName("Lambda");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

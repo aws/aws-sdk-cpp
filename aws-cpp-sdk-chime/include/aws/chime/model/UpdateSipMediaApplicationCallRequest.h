@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_sipMediaApplicationId;
-    bool m_sipMediaApplicationIdHasBeenSet;
+    bool m_sipMediaApplicationIdHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_arguments;
-    bool m_argumentsHasBeenSet;
+    bool m_argumentsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -533,25 +533,25 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     MaintenanceWindowResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_ownerInformation;
-    bool m_ownerInformationHasBeenSet;
+    bool m_ownerInformationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

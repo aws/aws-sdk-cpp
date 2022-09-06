@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_crossClusterSearchConnectionId;
-    bool m_crossClusterSearchConnectionIdHasBeenSet;
+    bool m_crossClusterSearchConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

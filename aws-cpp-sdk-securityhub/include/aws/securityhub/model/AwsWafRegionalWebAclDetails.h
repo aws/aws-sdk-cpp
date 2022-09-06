@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AwsWafRegionalWebAclRulesListDetails> m_rulesList;
-    bool m_rulesListHasBeenSet;
+    bool m_rulesListHasBeenSet = false;
 
     Aws::String m_webAclId;
-    bool m_webAclIdHasBeenSet;
+    bool m_webAclIdHasBeenSet = false;
   };
 
 } // namespace Model

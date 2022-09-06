@@ -264,22 +264,22 @@ namespace Model
   private:
 
     ChangeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     CoreNetworkChangeValues m_previousValues;
-    bool m_previousValuesHasBeenSet;
+    bool m_previousValuesHasBeenSet = false;
 
     CoreNetworkChangeValues m_newValues;
-    bool m_newValuesHasBeenSet;
+    bool m_newValuesHasBeenSet = false;
 
     Aws::String m_identifierPath;
-    bool m_identifierPathHasBeenSet;
+    bool m_identifierPathHasBeenSet = false;
   };
 
 } // namespace Model

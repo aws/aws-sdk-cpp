@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_regexString;
-    bool m_regexStringHasBeenSet;
+    bool m_regexStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_contextWords;
-    bool m_contextWordsHasBeenSet;
+    bool m_contextWordsHasBeenSet = false;
   };
 
 } // namespace Model

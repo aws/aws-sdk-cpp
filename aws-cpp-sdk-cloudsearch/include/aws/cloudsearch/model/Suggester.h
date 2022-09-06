@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_suggesterName;
-    bool m_suggesterNameHasBeenSet;
+    bool m_suggesterNameHasBeenSet = false;
 
     DocumentSuggesterOptions m_documentSuggesterOptions;
-    bool m_documentSuggesterOptionsHasBeenSet;
+    bool m_documentSuggesterOptionsHasBeenSet = false;
   };
 
 } // namespace Model

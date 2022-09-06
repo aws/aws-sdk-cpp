@@ -1341,82 +1341,82 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<DomainValidation> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
 
     Aws::String m_serial;
-    bool m_serialHasBeenSet;
+    bool m_serialHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_issuedAt;
-    bool m_issuedAtHasBeenSet;
+    bool m_issuedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_importedAt;
-    bool m_importedAtHasBeenSet;
+    bool m_importedAtHasBeenSet = false;
 
     CertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
 
     RevocationReason m_revocationReason;
-    bool m_revocationReasonHasBeenSet;
+    bool m_revocationReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     KeyAlgorithm m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     Aws::String m_signatureAlgorithm;
-    bool m_signatureAlgorithmHasBeenSet;
+    bool m_signatureAlgorithmHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inUseBy;
-    bool m_inUseByHasBeenSet;
+    bool m_inUseByHasBeenSet = false;
 
     FailureReason m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     CertificateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     RenewalSummary m_renewalSummary;
-    bool m_renewalSummaryHasBeenSet;
+    bool m_renewalSummaryHasBeenSet = false;
 
     Aws::Vector<KeyUsage> m_keyUsages;
-    bool m_keyUsagesHasBeenSet;
+    bool m_keyUsagesHasBeenSet = false;
 
     Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsages;
-    bool m_extendedKeyUsagesHasBeenSet;
+    bool m_extendedKeyUsagesHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     RenewalEligibility m_renewalEligibility;
-    bool m_renewalEligibilityHasBeenSet;
+    bool m_renewalEligibilityHasBeenSet = false;
 
     CertificateOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -96,10 +96,10 @@ namespace Model
   private:
 
     int m_timeToLiveInSeconds;
-    bool m_timeToLiveInSecondsHasBeenSet;
+    bool m_timeToLiveInSecondsHasBeenSet = false;
 
     int m_turnsToLive;
-    bool m_turnsToLiveHasBeenSet;
+    bool m_turnsToLiveHasBeenSet = false;
   };
 
 } // namespace Model

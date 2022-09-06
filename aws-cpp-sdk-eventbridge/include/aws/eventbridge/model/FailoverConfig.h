@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Primary m_primary;
-    bool m_primaryHasBeenSet;
+    bool m_primaryHasBeenSet = false;
 
     Secondary m_secondary;
-    bool m_secondaryHasBeenSet;
+    bool m_secondaryHasBeenSet = false;
   };
 
 } // namespace Model

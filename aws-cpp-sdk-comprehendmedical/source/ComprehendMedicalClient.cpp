@@ -101,7 +101,7 @@ ComprehendMedicalClient::~ComprehendMedicalClient()
 
 void ComprehendMedicalClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ComprehendMedical");
+  AWSClient::SetServiceClientName("ComprehendMedical");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

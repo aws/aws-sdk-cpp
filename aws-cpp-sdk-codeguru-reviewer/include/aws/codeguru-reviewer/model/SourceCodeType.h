@@ -277,19 +277,19 @@ namespace Model
   private:
 
     CommitDiffSourceCodeType m_commitDiff;
-    bool m_commitDiffHasBeenSet;
+    bool m_commitDiffHasBeenSet = false;
 
     RepositoryHeadSourceCodeType m_repositoryHead;
-    bool m_repositoryHeadHasBeenSet;
+    bool m_repositoryHeadHasBeenSet = false;
 
     BranchDiffSourceCodeType m_branchDiff;
-    bool m_branchDiffHasBeenSet;
+    bool m_branchDiffHasBeenSet = false;
 
     S3BucketRepository m_s3BucketRepository;
-    bool m_s3BucketRepositoryHasBeenSet;
+    bool m_s3BucketRepositoryHasBeenSet = false;
 
     RequestMetadata m_requestMetadata;
-    bool m_requestMetadataHasBeenSet;
+    bool m_requestMetadataHasBeenSet = false;
   };
 
 } // namespace Model

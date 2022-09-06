@@ -360,28 +360,28 @@ namespace Model
   private:
 
     OtherName m_otherName;
-    bool m_otherNameHasBeenSet;
+    bool m_otherNameHasBeenSet = false;
 
     Aws::String m_rfc822Name;
-    bool m_rfc822NameHasBeenSet;
+    bool m_rfc822NameHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     ASN1Subject m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
 
     EdiPartyName m_ediPartyName;
-    bool m_ediPartyNameHasBeenSet;
+    bool m_ediPartyNameHasBeenSet = false;
 
     Aws::String m_uniformResourceIdentifier;
-    bool m_uniformResourceIdentifierHasBeenSet;
+    bool m_uniformResourceIdentifierHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_registeredId;
-    bool m_registeredIdHasBeenSet;
+    bool m_registeredIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -97,10 +97,10 @@ namespace Model
   private:
 
     int m_maximumIndividualPlayerLatencyMilliseconds;
-    bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet;
+    bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = false;
 
     int m_policyDurationSeconds;
-    bool m_policyDurationSecondsHasBeenSet;
+    bool m_policyDurationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

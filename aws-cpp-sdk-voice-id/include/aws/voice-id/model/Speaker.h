@@ -300,25 +300,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_customerSpeakerId;
-    bool m_customerSpeakerIdHasBeenSet;
+    bool m_customerSpeakerIdHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_generatedSpeakerId;
-    bool m_generatedSpeakerIdHasBeenSet;
+    bool m_generatedSpeakerIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessedAt;
-    bool m_lastAccessedAtHasBeenSet;
+    bool m_lastAccessedAtHasBeenSet = false;
 
     SpeakerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

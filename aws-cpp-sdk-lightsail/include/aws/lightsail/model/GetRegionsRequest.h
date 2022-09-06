@@ -92,10 +92,10 @@ namespace Model
   private:
 
     bool m_includeAvailabilityZones;
-    bool m_includeAvailabilityZonesHasBeenSet;
+    bool m_includeAvailabilityZonesHasBeenSet = false;
 
     bool m_includeRelationalDatabaseAvailabilityZones;
-    bool m_includeRelationalDatabaseAvailabilityZonesHasBeenSet;
+    bool m_includeRelationalDatabaseAvailabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

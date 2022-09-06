@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_usagePlanId;
-    bool m_usagePlanIdHasBeenSet;
+    bool m_usagePlanIdHasBeenSet = false;
 
     Aws::Vector<PatchOperation> m_patchOperations;
-    bool m_patchOperationsHasBeenSet;
+    bool m_patchOperationsHasBeenSet = false;
   };
 
 } // namespace Model

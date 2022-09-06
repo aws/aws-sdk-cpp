@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_invocationRole;
-    bool m_invocationRoleHasBeenSet;
+    bool m_invocationRoleHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_function;
-    bool m_functionHasBeenSet;
+    bool m_functionHasBeenSet = false;
   };
 
 } // namespace Model

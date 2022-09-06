@@ -228,13 +228,13 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_stackPolicyBody;
-    bool m_stackPolicyBodyHasBeenSet;
+    bool m_stackPolicyBodyHasBeenSet = false;
 
     Aws::String m_stackPolicyURL;
-    bool m_stackPolicyURLHasBeenSet;
+    bool m_stackPolicyURLHasBeenSet = false;
   };
 
 } // namespace Model

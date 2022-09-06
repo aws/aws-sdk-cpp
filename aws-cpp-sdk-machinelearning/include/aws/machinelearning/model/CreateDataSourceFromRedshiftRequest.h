@@ -362,19 +362,19 @@ namespace Model
   private:
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_dataSourceName;
-    bool m_dataSourceNameHasBeenSet;
+    bool m_dataSourceNameHasBeenSet = false;
 
     RedshiftDataSpec m_dataSpec;
-    bool m_dataSpecHasBeenSet;
+    bool m_dataSpecHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     bool m_computeStatistics;
-    bool m_computeStatisticsHasBeenSet;
+    bool m_computeStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

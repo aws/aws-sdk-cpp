@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::Vector<AwsWafWebAclRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_webAclId;
-    bool m_webAclIdHasBeenSet;
+    bool m_webAclIdHasBeenSet = false;
   };
 
 } // namespace Model

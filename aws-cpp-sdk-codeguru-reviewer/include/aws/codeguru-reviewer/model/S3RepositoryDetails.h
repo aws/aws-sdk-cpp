@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     CodeArtifacts m_codeArtifacts;
-    bool m_codeArtifactsHasBeenSet;
+    bool m_codeArtifactsHasBeenSet = false;
   };
 
 } // namespace Model

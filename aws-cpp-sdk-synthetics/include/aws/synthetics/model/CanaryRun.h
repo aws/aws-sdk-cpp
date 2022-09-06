@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CanaryRunStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CanaryRunTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
 
     Aws::String m_artifactS3Location;
-    bool m_artifactS3LocationHasBeenSet;
+    bool m_artifactS3LocationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -246,16 +246,16 @@ namespace Model
   private:
 
     Aws::Vector<ConditionParameter> m_stringEquals;
-    bool m_stringEqualsHasBeenSet;
+    bool m_stringEqualsHasBeenSet = false;
 
     Aws::Vector<ConditionParameter> m_stringNotEquals;
-    bool m_stringNotEqualsHasBeenSet;
+    bool m_stringNotEqualsHasBeenSet = false;
 
     Aws::Vector<ConditionParameter> m_stringLike;
-    bool m_stringLikeHasBeenSet;
+    bool m_stringLikeHasBeenSet = false;
 
     Aws::Vector<ConditionParameter> m_stringNotLike;
-    bool m_stringNotLikeHasBeenSet;
+    bool m_stringNotLikeHasBeenSet = false;
   };
 
 } // namespace Model

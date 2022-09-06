@@ -123,7 +123,7 @@ GlobalAcceleratorClient::~GlobalAcceleratorClient()
 
 void GlobalAcceleratorClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Global Accelerator");
+  AWSClient::SetServiceClientName("Global Accelerator");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

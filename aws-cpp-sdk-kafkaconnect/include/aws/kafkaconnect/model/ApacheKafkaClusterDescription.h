@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_bootstrapServers;
-    bool m_bootstrapServersHasBeenSet;
+    bool m_bootstrapServersHasBeenSet = false;
 
     VpcDescription m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
   };
 
 } // namespace Model

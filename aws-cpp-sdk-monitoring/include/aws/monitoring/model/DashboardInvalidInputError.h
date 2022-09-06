@@ -93,10 +93,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<DashboardValidationMessage> m_dashboardValidationMessages;
-    bool m_dashboardValidationMessagesHasBeenSet;
+    bool m_dashboardValidationMessagesHasBeenSet = false;
   };
 
 } // namespace Model

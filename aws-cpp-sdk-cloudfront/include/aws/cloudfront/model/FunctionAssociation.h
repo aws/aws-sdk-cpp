@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_functionARN;
-    bool m_functionARNHasBeenSet;
+    bool m_functionARNHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
   };
 
 } // namespace Model

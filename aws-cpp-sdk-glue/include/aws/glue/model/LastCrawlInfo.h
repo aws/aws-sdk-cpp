@@ -268,22 +268,22 @@ namespace Model
   private:
 
     LastCrawlStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_logGroup;
-    bool m_logGroupHasBeenSet;
+    bool m_logGroupHasBeenSet = false;
 
     Aws::String m_logStream;
-    bool m_logStreamHasBeenSet;
+    bool m_logStreamHasBeenSet = false;
 
     Aws::String m_messagePrefix;
-    bool m_messagePrefixHasBeenSet;
+    bool m_messagePrefixHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

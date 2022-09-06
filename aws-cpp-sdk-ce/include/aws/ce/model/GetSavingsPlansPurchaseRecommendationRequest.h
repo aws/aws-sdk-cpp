@@ -400,28 +400,28 @@ namespace Model
   private:
 
     SupportedSavingsPlansType m_savingsPlansType;
-    bool m_savingsPlansTypeHasBeenSet;
+    bool m_savingsPlansTypeHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

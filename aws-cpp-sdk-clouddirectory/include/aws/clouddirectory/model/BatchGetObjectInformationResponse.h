@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<SchemaFacet> m_schemaFacets;
-    bool m_schemaFacetsHasBeenSet;
+    bool m_schemaFacetsHasBeenSet = false;
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

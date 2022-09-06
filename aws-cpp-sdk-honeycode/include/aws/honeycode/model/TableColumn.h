@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_tableColumnId;
-    bool m_tableColumnIdHasBeenSet;
+    bool m_tableColumnIdHasBeenSet = false;
 
     Aws::String m_tableColumnName;
-    bool m_tableColumnNameHasBeenSet;
+    bool m_tableColumnNameHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

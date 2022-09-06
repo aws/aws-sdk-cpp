@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     UnlimitedSupportedInstanceFamily m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
   };
 
 } // namespace Model

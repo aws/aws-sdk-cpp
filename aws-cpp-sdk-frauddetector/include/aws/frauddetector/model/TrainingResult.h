@@ -134,13 +134,13 @@ namespace Model
   private:
 
     DataValidationMetrics m_dataValidationMetrics;
-    bool m_dataValidationMetricsHasBeenSet;
+    bool m_dataValidationMetricsHasBeenSet = false;
 
     TrainingMetrics m_trainingMetrics;
-    bool m_trainingMetricsHasBeenSet;
+    bool m_trainingMetricsHasBeenSet = false;
 
     VariableImportanceMetrics m_variableImportanceMetrics;
-    bool m_variableImportanceMetricsHasBeenSet;
+    bool m_variableImportanceMetricsHasBeenSet = false;
   };
 
 } // namespace Model

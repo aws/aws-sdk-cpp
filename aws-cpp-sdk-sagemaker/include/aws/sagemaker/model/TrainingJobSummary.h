@@ -260,22 +260,22 @@ namespace Model
   private:
 
     Aws::String m_trainingJobName;
-    bool m_trainingJobNameHasBeenSet;
+    bool m_trainingJobNameHasBeenSet = false;
 
     Aws::String m_trainingJobArn;
-    bool m_trainingJobArnHasBeenSet;
+    bool m_trainingJobArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingEndTime;
-    bool m_trainingEndTimeHasBeenSet;
+    bool m_trainingEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     TrainingJobStatus m_trainingJobStatus;
-    bool m_trainingJobStatusHasBeenSet;
+    bool m_trainingJobStatusHasBeenSet = false;
   };
 
 } // namespace Model

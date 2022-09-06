@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     UnshareTarget m_unshareTarget;
-    bool m_unshareTargetHasBeenSet;
+    bool m_unshareTargetHasBeenSet = false;
   };
 
 } // namespace Model

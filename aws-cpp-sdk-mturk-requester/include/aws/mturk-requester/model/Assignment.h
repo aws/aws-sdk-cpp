@@ -589,40 +589,40 @@ namespace Model
   private:
 
     Aws::String m_assignmentId;
-    bool m_assignmentIdHasBeenSet;
+    bool m_assignmentIdHasBeenSet = false;
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     AssignmentStatus m_assignmentStatus;
-    bool m_assignmentStatusHasBeenSet;
+    bool m_assignmentStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_autoApprovalTime;
-    bool m_autoApprovalTimeHasBeenSet;
+    bool m_autoApprovalTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_acceptTime;
-    bool m_acceptTimeHasBeenSet;
+    bool m_acceptTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_approvalTime;
-    bool m_approvalTimeHasBeenSet;
+    bool m_approvalTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_rejectionTime;
-    bool m_rejectionTimeHasBeenSet;
+    bool m_rejectionTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deadline;
-    bool m_deadlineHasBeenSet;
+    bool m_deadlineHasBeenSet = false;
 
     Aws::String m_answer;
-    bool m_answerHasBeenSet;
+    bool m_answerHasBeenSet = false;
 
     Aws::String m_requesterFeedback;
-    bool m_requesterFeedbackHasBeenSet;
+    bool m_requesterFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

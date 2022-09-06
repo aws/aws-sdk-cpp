@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_headerList;
-    bool m_headerListHasBeenSet;
+    bool m_headerListHasBeenSet = false;
   };
 
 } // namespace Model

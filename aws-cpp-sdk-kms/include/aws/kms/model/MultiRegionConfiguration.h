@@ -167,13 +167,13 @@ namespace Model
   private:
 
     MultiRegionKeyType m_multiRegionKeyType;
-    bool m_multiRegionKeyTypeHasBeenSet;
+    bool m_multiRegionKeyTypeHasBeenSet = false;
 
     MultiRegionKey m_primaryKey;
-    bool m_primaryKeyHasBeenSet;
+    bool m_primaryKeyHasBeenSet = false;
 
     Aws::Vector<MultiRegionKey> m_replicaKeys;
-    bool m_replicaKeysHasBeenSet;
+    bool m_replicaKeysHasBeenSet = false;
   };
 
 } // namespace Model

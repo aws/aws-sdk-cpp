@@ -81,10 +81,10 @@ namespace Model
   private:
 
     int m_loadBalancerPort;
-    bool m_loadBalancerPortHasBeenSet;
+    bool m_loadBalancerPortHasBeenSet = false;
 
     int m_instancePort;
-    bool m_instancePortHasBeenSet;
+    bool m_instancePortHasBeenSet = false;
   };
 
 } // namespace Model

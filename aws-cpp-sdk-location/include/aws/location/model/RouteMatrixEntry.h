@@ -119,13 +119,13 @@ namespace Model
   private:
 
     double m_distance;
-    bool m_distanceHasBeenSet;
+    bool m_distanceHasBeenSet = false;
 
     double m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     RouteMatrixEntryError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

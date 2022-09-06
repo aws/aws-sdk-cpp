@@ -157,19 +157,19 @@ namespace Model
   private:
 
     bool m_eBSEnabled;
-    bool m_eBSEnabledHasBeenSet;
+    bool m_eBSEnabledHasBeenSet = false;
 
     VolumeType m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     int m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
   };
 
 } // namespace Model

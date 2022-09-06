@@ -930,55 +930,55 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_handler;
-    bool m_handlerHasBeenSet;
+    bool m_handlerHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_memorySize;
-    bool m_memorySizeHasBeenSet;
+    bool m_memorySizeHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Environment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Runtime m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
 
     DeadLetterConfig m_deadLetterConfig;
-    bool m_deadLetterConfigHasBeenSet;
+    bool m_deadLetterConfigHasBeenSet = false;
 
     Aws::String m_kMSKeyArn;
-    bool m_kMSKeyArnHasBeenSet;
+    bool m_kMSKeyArnHasBeenSet = false;
 
     TracingConfig m_tracingConfig;
-    bool m_tracingConfigHasBeenSet;
+    bool m_tracingConfigHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_layers;
-    bool m_layersHasBeenSet;
+    bool m_layersHasBeenSet = false;
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
-    bool m_fileSystemConfigsHasBeenSet;
+    bool m_fileSystemConfigsHasBeenSet = false;
 
     ImageConfig m_imageConfig;
-    bool m_imageConfigHasBeenSet;
+    bool m_imageConfigHasBeenSet = false;
 
     EphemeralStorage m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

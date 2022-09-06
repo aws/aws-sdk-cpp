@@ -493,34 +493,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_channelState;
-    bool m_channelStateHasBeenSet;
+    bool m_channelStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     SlateSource m_fillerSlate;
-    bool m_fillerSlateHasBeenSet;
+    bool m_fillerSlateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<ResponseOutputItem> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_playbackMode;
-    bool m_playbackModeHasBeenSet;
+    bool m_playbackModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

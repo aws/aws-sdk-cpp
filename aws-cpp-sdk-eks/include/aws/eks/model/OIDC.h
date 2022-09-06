@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
   };
 
 } // namespace Model

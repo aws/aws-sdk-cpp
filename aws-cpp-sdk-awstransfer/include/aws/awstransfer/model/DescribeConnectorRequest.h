@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
   };
 
 } // namespace Model

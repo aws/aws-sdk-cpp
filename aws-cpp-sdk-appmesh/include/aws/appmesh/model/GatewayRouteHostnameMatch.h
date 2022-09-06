@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_exact;
-    bool m_exactHasBeenSet;
+    bool m_exactHasBeenSet = false;
 
     Aws::String m_suffix;
-    bool m_suffixHasBeenSet;
+    bool m_suffixHasBeenSet = false;
   };
 
 } // namespace Model

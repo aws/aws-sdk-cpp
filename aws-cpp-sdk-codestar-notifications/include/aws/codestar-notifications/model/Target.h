@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetAddress;
-    bool m_targetAddressHasBeenSet;
+    bool m_targetAddressHasBeenSet = false;
   };
 
 } // namespace Model

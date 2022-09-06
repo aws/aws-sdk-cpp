@@ -475,37 +475,37 @@ namespace Model
   private:
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     EncryptionMode m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LogSubscription m_logSubscription;
-    bool m_logSubscriptionHasBeenSet;
+    bool m_logSubscriptionHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     int m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
-    bool m_dataCatalogOutputsHasBeenSet;
+    bool m_dataCatalogOutputsHasBeenSet = false;
 
     Aws::Vector<DatabaseOutput> m_databaseOutputs;
-    bool m_databaseOutputsHasBeenSet;
+    bool m_databaseOutputsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

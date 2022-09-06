@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_whatIfForecastExportArn;
-    bool m_whatIfForecastExportArnHasBeenSet;
+    bool m_whatIfForecastExportArnHasBeenSet = false;
   };
 
 } // namespace Model

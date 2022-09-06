@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_approvalRuleName;
-    bool m_approvalRuleNameHasBeenSet;
+    bool m_approvalRuleNameHasBeenSet = false;
 
     Aws::String m_approvalRuleId;
-    bool m_approvalRuleIdHasBeenSet;
+    bool m_approvalRuleIdHasBeenSet = false;
 
     Aws::String m_approvalRuleContent;
-    bool m_approvalRuleContentHasBeenSet;
+    bool m_approvalRuleContentHasBeenSet = false;
   };
 
 } // namespace Model

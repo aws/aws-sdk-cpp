@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_eventTypeId;
-    bool m_eventTypeIdHasBeenSet;
+    bool m_eventTypeIdHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

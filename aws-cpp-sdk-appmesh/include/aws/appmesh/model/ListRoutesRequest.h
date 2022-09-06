@@ -312,19 +312,19 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     Aws::String m_meshOwner;
-    bool m_meshOwnerHasBeenSet;
+    bool m_meshOwnerHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_virtualRouterName;
-    bool m_virtualRouterNameHasBeenSet;
+    bool m_virtualRouterNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_audioChunk;
-    bool m_audioChunkHasBeenSet;
+    bool m_audioChunkHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     long long m_clientTimestampMillis;
-    bool m_clientTimestampMillisHasBeenSet;
+    bool m_clientTimestampMillisHasBeenSet = false;
   };
 
 } // namespace Model

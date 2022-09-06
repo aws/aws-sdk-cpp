@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::Vector<UserSearchCriteria> m_orConditions;
-    bool m_orConditionsHasBeenSet;
+    bool m_orConditionsHasBeenSet = false;
 
     Aws::Vector<UserSearchCriteria> m_andConditions;
-    bool m_andConditionsHasBeenSet;
+    bool m_andConditionsHasBeenSet = false;
 
     StringCondition m_stringCondition;
-    bool m_stringConditionHasBeenSet;
+    bool m_stringConditionHasBeenSet = false;
 
     HierarchyGroupCondition m_hierarchyGroupCondition;
-    bool m_hierarchyGroupConditionHasBeenSet;
+    bool m_hierarchyGroupConditionHasBeenSet = false;
   };
 
 } // namespace Model

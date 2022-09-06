@@ -474,31 +474,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::String m_resourceGroupArn;
-    bool m_resourceGroupArnHasBeenSet;
+    bool m_resourceGroupArnHasBeenSet = false;
 
     ResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     ResourceRegionScope m_resourceRegionScope;
-    bool m_resourceRegionScopeHasBeenSet;
+    bool m_resourceRegionScopeHasBeenSet = false;
   };
 
 } // namespace Model

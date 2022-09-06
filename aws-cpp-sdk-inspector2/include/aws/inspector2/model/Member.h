@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_delegatedAdminAccountId;
-    bool m_delegatedAdminAccountIdHasBeenSet;
+    bool m_delegatedAdminAccountIdHasBeenSet = false;
 
     RelationshipStatus m_relationshipStatus;
-    bool m_relationshipStatusHasBeenSet;
+    bool m_relationshipStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

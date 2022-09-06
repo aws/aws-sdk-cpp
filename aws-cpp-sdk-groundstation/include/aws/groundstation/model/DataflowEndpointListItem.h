@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_dataflowEndpointGroupArn;
-    bool m_dataflowEndpointGroupArnHasBeenSet;
+    bool m_dataflowEndpointGroupArnHasBeenSet = false;
 
     Aws::String m_dataflowEndpointGroupId;
-    bool m_dataflowEndpointGroupIdHasBeenSet;
+    bool m_dataflowEndpointGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

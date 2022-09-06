@@ -115,10 +115,10 @@ namespace Model
   private:
 
     int m_documentIndex;
-    bool m_documentIndexHasBeenSet;
+    bool m_documentIndexHasBeenSet = false;
 
     Aws::Vector<IdentityDocumentField> m_identityDocumentFields;
-    bool m_identityDocumentFieldsHasBeenSet;
+    bool m_identityDocumentFieldsHasBeenSet = false;
   };
 
 } // namespace Model

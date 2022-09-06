@@ -1077,61 +1077,61 @@ namespace Model
   private:
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminationTime;
-    bool m_terminationTimeHasBeenSet;
+    bool m_terminationTimeHasBeenSet = false;
 
     int m_currentPlayerSessionCount;
-    bool m_currentPlayerSessionCountHasBeenSet;
+    bool m_currentPlayerSessionCountHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     GameSessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     GameSessionStatusReason m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
-    bool m_gamePropertiesHasBeenSet;
+    bool m_gamePropertiesHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
-    bool m_playerSessionCreationPolicyHasBeenSet;
+    bool m_playerSessionCreationPolicyHasBeenSet = false;
 
     Aws::String m_creatorId;
-    bool m_creatorIdHasBeenSet;
+    bool m_creatorIdHasBeenSet = false;
 
     Aws::String m_gameSessionData;
-    bool m_gameSessionDataHasBeenSet;
+    bool m_gameSessionDataHasBeenSet = false;
 
     Aws::String m_matchmakerData;
-    bool m_matchmakerDataHasBeenSet;
+    bool m_matchmakerDataHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

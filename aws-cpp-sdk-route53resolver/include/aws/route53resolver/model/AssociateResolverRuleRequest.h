@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_resolverRuleId;
-    bool m_resolverRuleIdHasBeenSet;
+    bool m_resolverRuleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
   };
 
 } // namespace Model

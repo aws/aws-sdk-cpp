@@ -361,25 +361,25 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_folderId;
-    bool m_folderIdHasBeenSet;
+    bool m_folderIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FolderType m_folderType;
-    bool m_folderTypeHasBeenSet;
+    bool m_folderTypeHasBeenSet = false;
 
     Aws::String m_parentFolderArn;
-    bool m_parentFolderArnHasBeenSet;
+    bool m_parentFolderArnHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

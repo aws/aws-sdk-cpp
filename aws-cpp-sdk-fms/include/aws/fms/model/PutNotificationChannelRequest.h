@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_snsRoleName;
-    bool m_snsRoleNameHasBeenSet;
+    bool m_snsRoleNameHasBeenSet = false;
   };
 
 } // namespace Model

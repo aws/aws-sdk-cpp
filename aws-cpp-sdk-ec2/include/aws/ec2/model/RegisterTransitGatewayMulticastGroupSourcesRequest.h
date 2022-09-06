@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayMulticastDomainId;
-    bool m_transitGatewayMulticastDomainIdHasBeenSet;
+    bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
     Aws::String m_groupIpAddress;
-    bool m_groupIpAddressHasBeenSet;
+    bool m_groupIpAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkInterfaceIds;
-    bool m_networkInterfaceIdsHasBeenSet;
+    bool m_networkInterfaceIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

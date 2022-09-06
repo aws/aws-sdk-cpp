@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     FederationMode m_federationMode;
-    bool m_federationModeHasBeenSet;
+    bool m_federationModeHasBeenSet = false;
 
     FederationParameters m_federationParameters;
-    bool m_federationParametersHasBeenSet;
+    bool m_federationParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_layerHash;
-    bool m_layerHashHasBeenSet;
+    bool m_layerHashHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet;
+    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

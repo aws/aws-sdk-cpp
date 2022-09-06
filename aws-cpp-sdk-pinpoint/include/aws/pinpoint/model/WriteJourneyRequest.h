@@ -866,58 +866,58 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Activity> m_activities;
-    bool m_activitiesHasBeenSet;
+    bool m_activitiesHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     JourneyLimits m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     bool m_localTime;
-    bool m_localTimeHasBeenSet;
+    bool m_localTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     QuietTime m_quietTime;
-    bool m_quietTimeHasBeenSet;
+    bool m_quietTimeHasBeenSet = false;
 
     Aws::String m_refreshFrequency;
-    bool m_refreshFrequencyHasBeenSet;
+    bool m_refreshFrequencyHasBeenSet = false;
 
     JourneySchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_startActivity;
-    bool m_startActivityHasBeenSet;
+    bool m_startActivityHasBeenSet = false;
 
     StartCondition m_startCondition;
-    bool m_startConditionHasBeenSet;
+    bool m_startConditionHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_waitForQuietTime;
-    bool m_waitForQuietTimeHasBeenSet;
+    bool m_waitForQuietTimeHasBeenSet = false;
 
     bool m_refreshOnSegmentUpdate;
-    bool m_refreshOnSegmentUpdateHasBeenSet;
+    bool m_refreshOnSegmentUpdateHasBeenSet = false;
 
     JourneyChannelSettings m_journeyChannelSettings;
-    bool m_journeyChannelSettingsHasBeenSet;
+    bool m_journeyChannelSettingsHasBeenSet = false;
 
     bool m_sendingSchedule;
-    bool m_sendingScheduleHasBeenSet;
+    bool m_sendingScheduleHasBeenSet = false;
 
     OpenHours m_openHours;
-    bool m_openHoursHasBeenSet;
+    bool m_openHoursHasBeenSet = false;
 
     ClosedDays m_closedDays;
-    bool m_closedDaysHasBeenSet;
+    bool m_closedDaysHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_httpName;
-    bool m_httpNameHasBeenSet;
+    bool m_httpNameHasBeenSet = false;
   };
 
 } // namespace Model

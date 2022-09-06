@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_mpdLocation;
-    bool m_mpdLocationHasBeenSet;
+    bool m_mpdLocationHasBeenSet = false;
 
     OriginManifestType m_originManifestType;
-    bool m_originManifestTypeHasBeenSet;
+    bool m_originManifestTypeHasBeenSet = false;
   };
 
 } // namespace Model

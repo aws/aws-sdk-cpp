@@ -202,19 +202,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_testWindowStart;
-    bool m_testWindowStartHasBeenSet;
+    bool m_testWindowStartHasBeenSet = false;
 
     Aws::Utils::DateTime m_testWindowEnd;
-    bool m_testWindowEndHasBeenSet;
+    bool m_testWindowEndHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     EvaluationType m_evaluationType;
-    bool m_evaluationTypeHasBeenSet;
+    bool m_evaluationTypeHasBeenSet = false;
 
     Metrics m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_accessRole;
-    bool m_accessRoleHasBeenSet;
+    bool m_accessRoleHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Vector<Trail> m_trails;
-    bool m_trailsHasBeenSet;
+    bool m_trailsHasBeenSet = false;
   };
 
 } // namespace Model

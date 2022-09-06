@@ -331,25 +331,25 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::Vector<Predicate> m_predicates;
-    bool m_predicatesHasBeenSet;
+    bool m_predicatesHasBeenSet = false;
 
     Aws::String m_userAttribute;
-    bool m_userAttributeHasBeenSet;
+    bool m_userAttributeHasBeenSet = false;
   };
 
 } // namespace Model

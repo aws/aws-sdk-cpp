@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     long long m_bytesPerHour;
-    bool m_bytesPerHourHasBeenSet;
+    bool m_bytesPerHourHasBeenSet = false;
   };
 
 } // namespace Model

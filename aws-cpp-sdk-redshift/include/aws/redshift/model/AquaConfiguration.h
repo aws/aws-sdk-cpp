@@ -147,10 +147,10 @@ namespace Model
   private:
 
     AquaStatus m_aquaStatus;
-    bool m_aquaStatusHasBeenSet;
+    bool m_aquaStatusHasBeenSet = false;
 
     AquaConfigurationStatus m_aquaConfigurationStatus;
-    bool m_aquaConfigurationStatusHasBeenSet;
+    bool m_aquaConfigurationStatusHasBeenSet = false;
   };
 
 } // namespace Model

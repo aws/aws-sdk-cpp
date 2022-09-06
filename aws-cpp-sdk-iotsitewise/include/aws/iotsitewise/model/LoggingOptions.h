@@ -70,7 +70,7 @@ namespace Model
   private:
 
     LoggingLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
   };
 
 } // namespace Model

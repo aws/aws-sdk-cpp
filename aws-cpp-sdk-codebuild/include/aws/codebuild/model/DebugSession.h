@@ -120,10 +120,10 @@ namespace Model
   private:
 
     bool m_sessionEnabled;
-    bool m_sessionEnabledHasBeenSet;
+    bool m_sessionEnabledHasBeenSet = false;
 
     Aws::String m_sessionTarget;
-    bool m_sessionTargetHasBeenSet;
+    bool m_sessionTargetHasBeenSet = false;
   };
 
 } // namespace Model

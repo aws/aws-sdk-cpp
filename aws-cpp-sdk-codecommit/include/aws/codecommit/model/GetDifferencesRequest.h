@@ -395,25 +395,25 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_beforeCommitSpecifier;
-    bool m_beforeCommitSpecifierHasBeenSet;
+    bool m_beforeCommitSpecifierHasBeenSet = false;
 
     Aws::String m_afterCommitSpecifier;
-    bool m_afterCommitSpecifierHasBeenSet;
+    bool m_afterCommitSpecifierHasBeenSet = false;
 
     Aws::String m_beforePath;
-    bool m_beforePathHasBeenSet;
+    bool m_beforePathHasBeenSet = false;
 
     Aws::String m_afterPath;
-    bool m_afterPathHasBeenSet;
+    bool m_afterPathHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -204,16 +204,16 @@ namespace Model
   private:
 
     bool m_iAMUser;
-    bool m_iAMUserHasBeenSet;
+    bool m_iAMUserHasBeenSet = false;
 
     Aws::String m_userLoginName;
-    bool m_userLoginNameHasBeenSet;
+    bool m_userLoginNameHasBeenSet = false;
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_directoryType;
-    bool m_directoryTypeHasBeenSet;
+    bool m_directoryTypeHasBeenSet = false;
   };
 
 } // namespace Model

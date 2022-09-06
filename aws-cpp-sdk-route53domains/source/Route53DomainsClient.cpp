@@ -106,7 +106,7 @@ Route53DomainsClient::~Route53DomainsClient()
 
 void Route53DomainsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Route 53 Domains");
+  AWSClient::SetServiceClientName("Route 53 Domains");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

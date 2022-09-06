@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<TargetDatabaseEngine> m_targetDatabaseEngine;
-    bool m_targetDatabaseEngineHasBeenSet;
+    bool m_targetDatabaseEngineHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<VolumeDetail> m_scannedVolumeDetails;
-    bool m_scannedVolumeDetailsHasBeenSet;
+    bool m_scannedVolumeDetailsHasBeenSet = false;
 
     Aws::Vector<VolumeDetail> m_skippedVolumeDetails;
-    bool m_skippedVolumeDetailsHasBeenSet;
+    bool m_skippedVolumeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

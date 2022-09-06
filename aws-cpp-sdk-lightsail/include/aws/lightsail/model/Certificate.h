@@ -1224,67 +1224,67 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     CertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<DomainValidationRecord> m_domainValidationRecords;
-    bool m_domainValidationRecordsHasBeenSet;
+    bool m_domainValidationRecordsHasBeenSet = false;
 
     Aws::String m_requestFailureReason;
-    bool m_requestFailureReasonHasBeenSet;
+    bool m_requestFailureReasonHasBeenSet = false;
 
     int m_inUseResourceCount;
-    bool m_inUseResourceCountHasBeenSet;
+    bool m_inUseResourceCountHasBeenSet = false;
 
     Aws::String m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_issuedAt;
-    bool m_issuedAtHasBeenSet;
+    bool m_issuedAtHasBeenSet = false;
 
     Aws::String m_issuerCA;
-    bool m_issuerCAHasBeenSet;
+    bool m_issuerCAHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     Aws::String m_eligibleToRenew;
-    bool m_eligibleToRenewHasBeenSet;
+    bool m_eligibleToRenewHasBeenSet = false;
 
     RenewalSummary m_renewalSummary;
-    bool m_renewalSummaryHasBeenSet;
+    bool m_renewalSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
 
     Aws::String m_revocationReason;
-    bool m_revocationReasonHasBeenSet;
+    bool m_revocationReasonHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
   };
 
 } // namespace Model

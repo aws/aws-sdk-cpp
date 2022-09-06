@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_resizeType;
-    bool m_resizeTypeHasBeenSet;
+    bool m_resizeTypeHasBeenSet = false;
 
     bool m_allowCancelResize;
-    bool m_allowCancelResizeHasBeenSet;
+    bool m_allowCancelResizeHasBeenSet = false;
   };
 
 } // namespace Model

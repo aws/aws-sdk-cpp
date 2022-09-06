@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Engine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     bool m_includeAdditionalLanguageCodes;
-    bool m_includeAdditionalLanguageCodesHasBeenSet;
+    bool m_includeAdditionalLanguageCodesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

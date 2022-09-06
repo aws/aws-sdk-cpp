@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
-    bool m_inputStartingPositionConfigurationHasBeenSet;
+    bool m_inputStartingPositionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

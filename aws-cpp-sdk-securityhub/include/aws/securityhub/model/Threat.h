@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::Vector<FilePaths> m_filePaths;
-    bool m_filePathsHasBeenSet;
+    bool m_filePathsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -206,16 +206,16 @@ namespace Model
   private:
 
     NoiseReducerFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     NoiseReducerFilterSettings m_filterSettings;
-    bool m_filterSettingsHasBeenSet;
+    bool m_filterSettingsHasBeenSet = false;
 
     NoiseReducerSpatialFilterSettings m_spatialFilterSettings;
-    bool m_spatialFilterSettingsHasBeenSet;
+    bool m_spatialFilterSettingsHasBeenSet = false;
 
     NoiseReducerTemporalFilterSettings m_temporalFilterSettings;
-    bool m_temporalFilterSettingsHasBeenSet;
+    bool m_temporalFilterSettingsHasBeenSet = false;
   };
 
 } // namespace Model

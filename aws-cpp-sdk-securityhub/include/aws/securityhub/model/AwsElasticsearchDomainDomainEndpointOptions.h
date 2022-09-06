@@ -134,10 +134,10 @@ namespace Model
   private:
 
     bool m_enforceHTTPS;
-    bool m_enforceHTTPSHasBeenSet;
+    bool m_enforceHTTPSHasBeenSet = false;
 
     Aws::String m_tLSSecurityPolicy;
-    bool m_tLSSecurityPolicyHasBeenSet;
+    bool m_tLSSecurityPolicyHasBeenSet = false;
   };
 
 } // namespace Model

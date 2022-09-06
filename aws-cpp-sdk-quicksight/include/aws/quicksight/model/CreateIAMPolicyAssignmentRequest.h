@@ -359,22 +359,22 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_assignmentName;
-    bool m_assignmentNameHasBeenSet;
+    bool m_assignmentNameHasBeenSet = false;
 
     AssignmentStatus m_assignmentStatus;
-    bool m_assignmentStatusHasBeenSet;
+    bool m_assignmentStatusHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_identities;
-    bool m_identitiesHasBeenSet;
+    bool m_identitiesHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     int m_days;
-    bool m_daysHasBeenSet;
+    bool m_daysHasBeenSet = false;
 
     bool m_expiredObjectDeleteMarker;
-    bool m_expiredObjectDeleteMarkerHasBeenSet;
+    bool m_expiredObjectDeleteMarkerHasBeenSet = false;
   };
 
 } // namespace Model

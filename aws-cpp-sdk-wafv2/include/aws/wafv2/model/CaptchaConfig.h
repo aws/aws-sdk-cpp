@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ImmunityTimeProperty m_immunityTimeProperty;
-    bool m_immunityTimePropertyHasBeenSet;
+    bool m_immunityTimePropertyHasBeenSet = false;
   };
 
 } // namespace Model

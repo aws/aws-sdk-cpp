@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_artifactName;
-    bool m_artifactNameHasBeenSet;
+    bool m_artifactNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -804,55 +804,55 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<AwsElbLoadBalancerBackendServerDescription> m_backendServerDescriptions;
-    bool m_backendServerDescriptionsHasBeenSet;
+    bool m_backendServerDescriptionsHasBeenSet = false;
 
     Aws::String m_canonicalHostedZoneName;
-    bool m_canonicalHostedZoneNameHasBeenSet;
+    bool m_canonicalHostedZoneNameHasBeenSet = false;
 
     Aws::String m_canonicalHostedZoneNameID;
-    bool m_canonicalHostedZoneNameIDHasBeenSet;
+    bool m_canonicalHostedZoneNameIDHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     AwsElbLoadBalancerHealthCheck m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     Aws::Vector<AwsElbLoadBalancerInstance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::Vector<AwsElbLoadBalancerListenerDescription> m_listenerDescriptions;
-    bool m_listenerDescriptionsHasBeenSet;
+    bool m_listenerDescriptionsHasBeenSet = false;
 
     AwsElbLoadBalancerAttributes m_loadBalancerAttributes;
-    bool m_loadBalancerAttributesHasBeenSet;
+    bool m_loadBalancerAttributesHasBeenSet = false;
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     AwsElbLoadBalancerPolicies m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
 
     Aws::String m_scheme;
-    bool m_schemeHasBeenSet;
+    bool m_schemeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     AwsElbLoadBalancerSourceSecurityGroup m_sourceSecurityGroup;
-    bool m_sourceSecurityGroupHasBeenSet;
+    bool m_sourceSecurityGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

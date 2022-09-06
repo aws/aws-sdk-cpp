@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_accessKey;
-    bool m_accessKeyHasBeenSet;
+    bool m_accessKeyHasBeenSet = false;
   };
 
 } // namespace Model

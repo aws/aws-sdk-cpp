@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_devEndpointNames;
-    bool m_devEndpointNamesHasBeenSet;
+    bool m_devEndpointNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     PushNotificationConfiguration m_pushNotification;
-    bool m_pushNotificationHasBeenSet;
+    bool m_pushNotificationHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

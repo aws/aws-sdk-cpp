@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     RequestedJobStatus m_requestedJobStatus;
-    bool m_requestedJobStatusHasBeenSet;
+    bool m_requestedJobStatusHasBeenSet = false;
 
     Aws::String m_statusUpdateReason;
-    bool m_statusUpdateReasonHasBeenSet;
+    bool m_statusUpdateReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::String m_dynamicVariable;
-    bool m_dynamicVariableHasBeenSet;
+    bool m_dynamicVariableHasBeenSet = false;
 
     Operator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

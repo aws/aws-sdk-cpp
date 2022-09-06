@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     bool m_setDefaultVersion;
-    bool m_setDefaultVersionHasBeenSet;
+    bool m_setDefaultVersionHasBeenSet = false;
   };
 
 } // namespace Model

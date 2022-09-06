@@ -109,10 +109,10 @@ namespace Model
   private:
 
     EventSourceValues m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     EventParameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

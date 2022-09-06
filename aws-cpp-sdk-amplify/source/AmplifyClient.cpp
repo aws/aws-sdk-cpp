@@ -113,7 +113,7 @@ AmplifyClient::~AmplifyClient()
 
 void AmplifyClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Amplify");
+  AWSClient::SetServiceClientName("Amplify");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

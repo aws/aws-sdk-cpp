@@ -143,10 +143,10 @@ namespace Model
   private:
 
     LocationType m_locationType;
-    bool m_locationTypeHasBeenSet;
+    bool m_locationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
   };
 
 } // namespace Model

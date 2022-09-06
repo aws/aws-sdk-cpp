@@ -78,7 +78,7 @@ namespace Model
   private:
 
     MedicalTranscript m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
   };
 
 } // namespace Model

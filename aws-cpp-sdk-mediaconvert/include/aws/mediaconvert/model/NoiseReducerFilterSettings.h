@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

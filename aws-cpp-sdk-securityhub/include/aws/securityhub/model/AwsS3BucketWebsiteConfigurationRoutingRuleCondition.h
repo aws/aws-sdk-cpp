@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_httpErrorCodeReturnedEquals;
-    bool m_httpErrorCodeReturnedEqualsHasBeenSet;
+    bool m_httpErrorCodeReturnedEqualsHasBeenSet = false;
 
     Aws::String m_keyPrefixEquals;
-    bool m_keyPrefixEqualsHasBeenSet;
+    bool m_keyPrefixEqualsHasBeenSet = false;
   };
 
 } // namespace Model

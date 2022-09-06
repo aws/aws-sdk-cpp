@@ -123,10 +123,10 @@ namespace Model
   private:
 
     RStudioServerProAccessStatus m_accessStatus;
-    bool m_accessStatusHasBeenSet;
+    bool m_accessStatusHasBeenSet = false;
 
     RStudioServerProUserGroup m_userGroup;
-    bool m_userGroupHasBeenSet;
+    bool m_userGroupHasBeenSet = false;
   };
 
 } // namespace Model

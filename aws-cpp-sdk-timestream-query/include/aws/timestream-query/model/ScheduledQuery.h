@@ -343,31 +343,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ScheduledQueryState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_previousInvocationTime;
-    bool m_previousInvocationTimeHasBeenSet;
+    bool m_previousInvocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextInvocationTime;
-    bool m_nextInvocationTimeHasBeenSet;
+    bool m_nextInvocationTimeHasBeenSet = false;
 
     ErrorReportConfiguration m_errorReportConfiguration;
-    bool m_errorReportConfigurationHasBeenSet;
+    bool m_errorReportConfigurationHasBeenSet = false;
 
     TargetDestination m_targetDestination;
-    bool m_targetDestinationHasBeenSet;
+    bool m_targetDestinationHasBeenSet = false;
 
     ScheduledQueryRunStatus m_lastRunStatus;
-    bool m_lastRunStatusHasBeenSet;
+    bool m_lastRunStatusHasBeenSet = false;
   };
 
 } // namespace Model

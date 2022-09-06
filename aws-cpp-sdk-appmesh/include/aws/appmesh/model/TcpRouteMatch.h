@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

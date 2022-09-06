@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     StorageLensConfiguration m_storageLensConfiguration;
-    bool m_storageLensConfigurationHasBeenSet;
+    bool m_storageLensConfigurationHasBeenSet = false;
 
     Aws::Vector<StorageLensTag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ReportFrequencyType m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
   };
 
 } // namespace Model

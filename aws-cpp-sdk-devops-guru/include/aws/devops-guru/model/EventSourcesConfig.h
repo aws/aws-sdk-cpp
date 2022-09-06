@@ -78,7 +78,7 @@ namespace Model
   private:
 
     AmazonCodeGuruProfilerIntegration m_amazonCodeGuruProfiler;
-    bool m_amazonCodeGuruProfilerHasBeenSet;
+    bool m_amazonCodeGuruProfilerHasBeenSet = false;
   };
 
 } // namespace Model

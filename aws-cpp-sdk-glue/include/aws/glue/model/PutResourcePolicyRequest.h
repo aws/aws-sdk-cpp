@@ -301,19 +301,19 @@ namespace Model
   private:
 
     Aws::String m_policyInJson;
-    bool m_policyInJsonHasBeenSet;
+    bool m_policyInJsonHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_policyHashCondition;
-    bool m_policyHashConditionHasBeenSet;
+    bool m_policyHashConditionHasBeenSet = false;
 
     ExistCondition m_policyExistsCondition;
-    bool m_policyExistsConditionHasBeenSet;
+    bool m_policyExistsConditionHasBeenSet = false;
 
     EnableHybridValues m_enableHybrid;
-    bool m_enableHybridHasBeenSet;
+    bool m_enableHybridHasBeenSet = false;
   };
 
 } // namespace Model

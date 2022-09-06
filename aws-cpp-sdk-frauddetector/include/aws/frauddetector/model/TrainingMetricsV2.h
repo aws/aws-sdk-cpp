@@ -134,13 +134,13 @@ namespace Model
   private:
 
     OFITrainingMetricsValue m_ofi;
-    bool m_ofiHasBeenSet;
+    bool m_ofiHasBeenSet = false;
 
     TFITrainingMetricsValue m_tfi;
-    bool m_tfiHasBeenSet;
+    bool m_tfiHasBeenSet = false;
 
     ATITrainingMetricsValue m_ati;
-    bool m_atiHasBeenSet;
+    bool m_atiHasBeenSet = false;
   };
 
 } // namespace Model

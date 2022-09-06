@@ -254,16 +254,16 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Aws::String m_attemptId;
-    bool m_attemptIdHasBeenSet;
+    bool m_attemptIdHasBeenSet = false;
 
     Aws::Map<Aws::String, PipelineObject> m_objects;
-    bool m_objectsHasBeenSet;
+    bool m_objectsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -845,43 +845,43 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_deliverLogsPermissionArn;
-    bool m_deliverLogsPermissionArnHasBeenSet;
+    bool m_deliverLogsPermissionArnHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     FlowLogsResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     TrafficType m_trafficType;
-    bool m_trafficTypeHasBeenSet;
+    bool m_trafficTypeHasBeenSet = false;
 
     LogDestinationType m_logDestinationType;
-    bool m_logDestinationTypeHasBeenSet;
+    bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::String m_logDestination;
-    bool m_logDestinationHasBeenSet;
+    bool m_logDestinationHasBeenSet = false;
 
     Aws::String m_logFormat;
-    bool m_logFormatHasBeenSet;
+    bool m_logFormatHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     int m_maxAggregationInterval;
-    bool m_maxAggregationIntervalHasBeenSet;
+    bool m_maxAggregationIntervalHasBeenSet = false;
 
     DestinationOptionsRequest m_destinationOptions;
-    bool m_destinationOptionsHasBeenSet;
+    bool m_destinationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

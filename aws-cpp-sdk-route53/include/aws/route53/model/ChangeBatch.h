@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Vector<Change> m_changes;
-    bool m_changesHasBeenSet;
+    bool m_changesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_snapshotArn;
-    bool m_snapshotArnHasBeenSet;
+    bool m_snapshotArnHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

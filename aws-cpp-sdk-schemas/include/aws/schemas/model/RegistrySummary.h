@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_registryArn;
-    bool m_registryArnHasBeenSet;
+    bool m_registryArnHasBeenSet = false;
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

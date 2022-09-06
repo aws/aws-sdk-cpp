@@ -315,25 +315,25 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     DocumentationPartType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_nameQuery;
-    bool m_nameQueryHasBeenSet;
+    bool m_nameQueryHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     LocationStatusType m_locationStatus;
-    bool m_locationStatusHasBeenSet;
+    bool m_locationStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
 
     Aws::String m_bgpPeerId;
-    bool m_bgpPeerIdHasBeenSet;
+    bool m_bgpPeerIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::Vector<BatchReadOperation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
 
     ConsistencyLevel m_consistencyLevel;
-    bool m_consistencyLevelHasBeenSet;
+    bool m_consistencyLevelHasBeenSet = false;
   };
 
 } // namespace Model

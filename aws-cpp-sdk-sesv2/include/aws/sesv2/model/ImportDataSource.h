@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet;
+    bool m_s3UrlHasBeenSet = false;
 
     DataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
   };
 
 } // namespace Model

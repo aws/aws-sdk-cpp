@@ -275,19 +275,19 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     int m_maxGroupPreparedCapacity;
-    bool m_maxGroupPreparedCapacityHasBeenSet;
+    bool m_maxGroupPreparedCapacityHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     WarmPoolState m_poolState;
-    bool m_poolStateHasBeenSet;
+    bool m_poolStateHasBeenSet = false;
 
     InstanceReusePolicy m_instanceReusePolicy;
-    bool m_instanceReusePolicyHasBeenSet;
+    bool m_instanceReusePolicyHasBeenSet = false;
   };
 
 } // namespace Model

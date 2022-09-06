@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<FindingType> m_findingTypes;
-    bool m_findingTypesHasBeenSet;
+    bool m_findingTypesHasBeenSet = false;
   };
 
 } // namespace Model

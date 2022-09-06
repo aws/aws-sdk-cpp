@@ -77,7 +77,7 @@ namespace Model
   private:
 
     TrustedAdvisorCostOptimizingSummary m_costOptimizing;
-    bool m_costOptimizingHasBeenSet;
+    bool m_costOptimizingHasBeenSet = false;
   };
 
 } // namespace Model

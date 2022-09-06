@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_customRedirectDomain;
-    bool m_customRedirectDomainHasBeenSet;
+    bool m_customRedirectDomainHasBeenSet = false;
   };
 
 } // namespace Model

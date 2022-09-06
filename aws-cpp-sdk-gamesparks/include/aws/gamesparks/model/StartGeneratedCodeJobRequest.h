@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     Generator m_generator;
-    bool m_generatorHasBeenSet;
+    bool m_generatorHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
   };
 
 } // namespace Model

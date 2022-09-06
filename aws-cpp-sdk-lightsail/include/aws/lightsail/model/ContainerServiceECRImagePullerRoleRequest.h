@@ -70,7 +70,7 @@ namespace Model
   private:
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
   };
 
 } // namespace Model

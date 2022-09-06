@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_pythonScript;
-    bool m_pythonScriptHasBeenSet;
+    bool m_pythonScriptHasBeenSet = false;
   };
 
 } // namespace Model

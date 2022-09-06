@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

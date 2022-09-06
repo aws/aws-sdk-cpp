@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_standardsSubscriptionArns;
-    bool m_standardsSubscriptionArnsHasBeenSet;
+    bool m_standardsSubscriptionArnsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

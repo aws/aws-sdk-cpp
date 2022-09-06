@@ -598,37 +598,37 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
 
     int m_expirationDays;
-    bool m_expirationDaysHasBeenSet;
+    bool m_expirationDaysHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     bool m_allowProfileCreation;
-    bool m_allowProfileCreationHasBeenSet;
+    bool m_allowProfileCreationHasBeenSet = false;
 
     Aws::String m_sourceLastUpdatedTimestampFormat;
-    bool m_sourceLastUpdatedTimestampFormatHasBeenSet;
+    bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

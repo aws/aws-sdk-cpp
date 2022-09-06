@@ -452,16 +452,16 @@ namespace Model
   private:
 
     Aws::String m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     AclConfiguration m_aclConfiguration;
-    bool m_aclConfigurationHasBeenSet;
+    bool m_aclConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

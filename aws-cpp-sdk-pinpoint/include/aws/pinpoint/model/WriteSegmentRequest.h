@@ -251,16 +251,16 @@ namespace Model
   private:
 
     SegmentDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SegmentGroupList m_segmentGroups;
-    bool m_segmentGroupsHasBeenSet;
+    bool m_segmentGroupsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

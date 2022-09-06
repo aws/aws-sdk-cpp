@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<PlacementGroupStrategy> m_supportedStrategies;
-    bool m_supportedStrategiesHasBeenSet;
+    bool m_supportedStrategiesHasBeenSet = false;
   };
 
 } // namespace Model

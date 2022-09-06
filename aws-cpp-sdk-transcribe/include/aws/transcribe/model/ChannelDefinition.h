@@ -101,10 +101,10 @@ namespace Model
   private:
 
     int m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     ParticipantRole m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
   };
 
 } // namespace Model

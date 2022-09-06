@@ -116,7 +116,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, ChannelResponse> m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
   };
 
 } // namespace Model

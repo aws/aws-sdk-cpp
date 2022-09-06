@@ -266,10 +266,10 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
   };
 
 } // namespace Model

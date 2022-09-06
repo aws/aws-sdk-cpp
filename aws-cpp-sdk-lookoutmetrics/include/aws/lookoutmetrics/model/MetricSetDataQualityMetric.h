@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_metricSetArn;
-    bool m_metricSetArnHasBeenSet;
+    bool m_metricSetArnHasBeenSet = false;
 
     Aws::Vector<DataQualityMetric> m_dataQualityMetricList;
-    bool m_dataQualityMetricListHasBeenSet;
+    bool m_dataQualityMetricListHasBeenSet = false;
   };
 
 } // namespace Model

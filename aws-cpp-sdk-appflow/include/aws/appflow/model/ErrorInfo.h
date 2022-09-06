@@ -102,10 +102,10 @@ namespace Model
   private:
 
     long long m_putFailuresCount;
-    bool m_putFailuresCountHasBeenSet;
+    bool m_putFailuresCountHasBeenSet = false;
 
     Aws::String m_executionMessage;
-    bool m_executionMessageHasBeenSet;
+    bool m_executionMessageHasBeenSet = false;
   };
 
 } // namespace Model

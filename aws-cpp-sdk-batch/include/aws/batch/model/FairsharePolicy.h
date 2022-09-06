@@ -203,13 +203,13 @@ namespace Model
   private:
 
     int m_shareDecaySeconds;
-    bool m_shareDecaySecondsHasBeenSet;
+    bool m_shareDecaySecondsHasBeenSet = false;
 
     int m_computeReservation;
-    bool m_computeReservationHasBeenSet;
+    bool m_computeReservationHasBeenSet = false;
 
     Aws::Vector<ShareAttributes> m_shareDistribution;
-    bool m_shareDistributionHasBeenSet;
+    bool m_shareDistributionHasBeenSet = false;
   };
 
 } // namespace Model

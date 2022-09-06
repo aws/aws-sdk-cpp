@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_fileSystemAssociationARN;
-    bool m_fileSystemAssociationARNHasBeenSet;
+    bool m_fileSystemAssociationARNHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

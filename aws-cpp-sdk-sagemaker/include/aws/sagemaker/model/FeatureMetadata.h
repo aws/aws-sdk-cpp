@@ -342,28 +342,28 @@ namespace Model
   private:
 
     Aws::String m_featureGroupArn;
-    bool m_featureGroupArnHasBeenSet;
+    bool m_featureGroupArnHasBeenSet = false;
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_featureName;
-    bool m_featureNameHasBeenSet;
+    bool m_featureNameHasBeenSet = false;
 
     FeatureType m_featureType;
-    bool m_featureTypeHasBeenSet;
+    bool m_featureTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<FeatureParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

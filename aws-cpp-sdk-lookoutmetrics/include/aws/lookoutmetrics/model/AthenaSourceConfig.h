@@ -325,25 +325,25 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_dataCatalog;
-    bool m_dataCatalogHasBeenSet;
+    bool m_dataCatalogHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_workGroupName;
-    bool m_workGroupNameHasBeenSet;
+    bool m_workGroupNameHasBeenSet = false;
 
     Aws::String m_s3ResultsPath;
-    bool m_s3ResultsPathHasBeenSet;
+    bool m_s3ResultsPathHasBeenSet = false;
 
     BackTestConfiguration m_backTestConfiguration;
-    bool m_backTestConfigurationHasBeenSet;
+    bool m_backTestConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

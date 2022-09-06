@@ -231,16 +231,16 @@ namespace Model
   private:
 
     AppMonitorConfiguration m_appMonitorConfiguration;
-    bool m_appMonitorConfigurationHasBeenSet;
+    bool m_appMonitorConfigurationHasBeenSet = false;
 
     bool m_cwLogEnabled;
-    bool m_cwLogEnabledHasBeenSet;
+    bool m_cwLogEnabledHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

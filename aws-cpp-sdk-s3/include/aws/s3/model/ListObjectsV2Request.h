@@ -639,37 +639,37 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     EncodingType m_encodingType;
-    bool m_encodingTypeHasBeenSet;
+    bool m_encodingTypeHasBeenSet = false;
 
     int m_maxKeys;
-    bool m_maxKeysHasBeenSet;
+    bool m_maxKeysHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_continuationToken;
-    bool m_continuationTokenHasBeenSet;
+    bool m_continuationTokenHasBeenSet = false;
 
     bool m_fetchOwner;
-    bool m_fetchOwnerHasBeenSet;
+    bool m_fetchOwnerHasBeenSet = false;
 
     Aws::String m_startAfter;
-    bool m_startAfterHasBeenSet;
+    bool m_startAfterHasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

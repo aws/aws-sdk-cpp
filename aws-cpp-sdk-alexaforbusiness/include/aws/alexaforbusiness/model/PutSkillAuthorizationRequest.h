@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_authorizationResult;
-    bool m_authorizationResultHasBeenSet;
+    bool m_authorizationResultHasBeenSet = false;
 
     Aws::String m_skillId;
-    bool m_skillIdHasBeenSet;
+    bool m_skillIdHasBeenSet = false;
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
   };
 
 } // namespace Model

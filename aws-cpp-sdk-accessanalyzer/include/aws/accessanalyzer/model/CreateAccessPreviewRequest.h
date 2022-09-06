@@ -248,13 +248,13 @@ namespace Model
   private:
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
   };
 
 } // namespace Model

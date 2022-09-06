@@ -401,25 +401,25 @@ namespace Model
   private:
 
     Aws::Vector<double> m_biasPosition;
-    bool m_biasPositionHasBeenSet;
+    bool m_biasPositionHasBeenSet = false;
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::Vector<double> m_filterBBox;
-    bool m_filterBBoxHasBeenSet;
+    bool m_filterBBoxHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterCountries;
-    bool m_filterCountriesHasBeenSet;
+    bool m_filterCountriesHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

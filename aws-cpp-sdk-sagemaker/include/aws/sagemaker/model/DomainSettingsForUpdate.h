@@ -139,10 +139,10 @@ namespace Model
   private:
 
     RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
-    bool m_rStudioServerProDomainSettingsForUpdateHasBeenSet;
+    bool m_rStudioServerProDomainSettingsForUpdateHasBeenSet = false;
 
     ExecutionRoleIdentityConfig m_executionRoleIdentityConfig;
-    bool m_executionRoleIdentityConfigHasBeenSet;
+    bool m_executionRoleIdentityConfigHasBeenSet = false;
   };
 
 } // namespace Model

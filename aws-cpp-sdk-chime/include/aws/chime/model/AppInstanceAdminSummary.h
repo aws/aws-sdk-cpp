@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Identity m_admin;
-    bool m_adminHasBeenSet;
+    bool m_adminHasBeenSet = false;
   };
 
 } // namespace Model

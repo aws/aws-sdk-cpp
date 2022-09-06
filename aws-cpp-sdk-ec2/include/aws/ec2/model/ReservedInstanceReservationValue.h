@@ -121,10 +121,10 @@ namespace Model
   private:
 
     ReservationValue m_reservationValue;
-    bool m_reservationValueHasBeenSet;
+    bool m_reservationValueHasBeenSet = false;
 
     Aws::String m_reservedInstanceId;
-    bool m_reservedInstanceIdHasBeenSet;
+    bool m_reservedInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

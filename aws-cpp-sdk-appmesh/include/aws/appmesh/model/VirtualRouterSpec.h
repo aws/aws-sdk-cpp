@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<VirtualRouterListener> m_listeners;
-    bool m_listenersHasBeenSet;
+    bool m_listenersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_sourceFileSystemId;
-    bool m_sourceFileSystemIdHasBeenSet;
+    bool m_sourceFileSystemIdHasBeenSet = false;
 
     Aws::Vector<DestinationToCreate> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
   };
 
 } // namespace Model

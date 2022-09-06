@@ -108,7 +108,7 @@ namespace Model
   private:
 
     AssignPublicIp m_assignPublicIp;
-    bool m_assignPublicIpHasBeenSet;
+    bool m_assignPublicIpHasBeenSet = false;
   };
 
 } // namespace Model

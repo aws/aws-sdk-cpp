@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_executionTime;
-    bool m_executionTimeHasBeenSet;
+    bool m_executionTimeHasBeenSet = false;
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::String m_executionType;
-    bool m_executionTypeHasBeenSet;
+    bool m_executionTypeHasBeenSet = false;
   };
 
 } // namespace Model

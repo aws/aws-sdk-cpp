@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Aws::Vector<SamplingStatisticsDocument> m_samplingStatisticsDocuments;
-    bool m_samplingStatisticsDocumentsHasBeenSet;
+    bool m_samplingStatisticsDocumentsHasBeenSet = false;
   };
 
 } // namespace Model

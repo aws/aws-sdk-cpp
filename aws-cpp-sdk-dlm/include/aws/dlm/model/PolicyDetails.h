@@ -528,28 +528,28 @@ namespace Model
   private:
 
     PolicyTypeValues m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     Aws::Vector<ResourceTypeValues> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::Vector<ResourceLocationValues> m_resourceLocations;
-    bool m_resourceLocationsHasBeenSet;
+    bool m_resourceLocationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_targetTags;
-    bool m_targetTagsHasBeenSet;
+    bool m_targetTagsHasBeenSet = false;
 
     Aws::Vector<Schedule> m_schedules;
-    bool m_schedulesHasBeenSet;
+    bool m_schedulesHasBeenSet = false;
 
     Parameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     EventSource m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

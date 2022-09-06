@@ -84,10 +84,10 @@ namespace Model
   private:
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     GetCampaignStateBatchFailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
   };
 
 } // namespace Model

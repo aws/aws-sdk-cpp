@@ -153,13 +153,13 @@ namespace Model
   private:
 
     NetworkConnectionStatus m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_ntpServerName;
-    bool m_ntpServerNameHasBeenSet;
+    bool m_ntpServerNameHasBeenSet = false;
   };
 
 } // namespace Model

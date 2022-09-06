@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<EventFilterType> m_eventFilter;
-    bool m_eventFilterHasBeenSet;
+    bool m_eventFilterHasBeenSet = false;
 
     CompromisedCredentialsActionsType m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

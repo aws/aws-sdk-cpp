@@ -614,34 +614,34 @@ namespace Model
   private:
 
     Aws::String m_updateToken;
-    bool m_updateTokenHasBeenSet;
+    bool m_updateTokenHasBeenSet = false;
 
     Aws::String m_ruleGroupArn;
-    bool m_ruleGroupArnHasBeenSet;
+    bool m_ruleGroupArnHasBeenSet = false;
 
     Aws::String m_ruleGroupName;
-    bool m_ruleGroupNameHasBeenSet;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     RuleGroup m_ruleGroup;
-    bool m_ruleGroupHasBeenSet;
+    bool m_ruleGroupHasBeenSet = false;
 
     Aws::String m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     RuleGroupType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     SourceMetadata m_sourceMetadata;
-    bool m_sourceMetadataHasBeenSet;
+    bool m_sourceMetadataHasBeenSet = false;
   };
 
 } // namespace Model

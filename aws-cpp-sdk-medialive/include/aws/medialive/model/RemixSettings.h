@@ -127,13 +127,13 @@ Valid values: 1, 2, 4, 6, 8
   private:
 
     Aws::Vector<AudioChannelMapping> m_channelMappings;
-    bool m_channelMappingsHasBeenSet;
+    bool m_channelMappingsHasBeenSet = false;
 
     int m_channelsIn;
-    bool m_channelsInHasBeenSet;
+    bool m_channelsInHasBeenSet = false;
 
     int m_channelsOut;
-    bool m_channelsOutHasBeenSet;
+    bool m_channelsOutHasBeenSet = false;
   };
 
 } // namespace Model

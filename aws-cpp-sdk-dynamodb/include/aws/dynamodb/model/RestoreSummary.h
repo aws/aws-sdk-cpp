@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_sourceBackupArn;
-    bool m_sourceBackupArnHasBeenSet;
+    bool m_sourceBackupArnHasBeenSet = false;
 
     Aws::String m_sourceTableArn;
-    bool m_sourceTableArnHasBeenSet;
+    bool m_sourceTableArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreDateTime;
-    bool m_restoreDateTimeHasBeenSet;
+    bool m_restoreDateTimeHasBeenSet = false;
 
     bool m_restoreInProgress;
-    bool m_restoreInProgressHasBeenSet;
+    bool m_restoreInProgressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_mountTargetId;
-    bool m_mountTargetIdHasBeenSet;
+    bool m_mountTargetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

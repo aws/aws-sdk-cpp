@@ -284,22 +284,22 @@ namespace Model
   private:
 
     Aws::Vector<GroupIdentifier> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<Instance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_requesterId;
-    bool m_requesterIdHasBeenSet;
+    bool m_requesterIdHasBeenSet = false;
 
     Aws::String m_reservationId;
-    bool m_reservationIdHasBeenSet;
+    bool m_reservationIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

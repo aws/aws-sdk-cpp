@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_globalTableName;
-    bool m_globalTableNameHasBeenSet;
+    bool m_globalTableNameHasBeenSet = false;
   };
 
 } // namespace Model

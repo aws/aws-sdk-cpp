@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_assessmentRunArns;
-    bool m_assessmentRunArnsHasBeenSet;
+    bool m_assessmentRunArnsHasBeenSet = false;
   };
 
 } // namespace Model

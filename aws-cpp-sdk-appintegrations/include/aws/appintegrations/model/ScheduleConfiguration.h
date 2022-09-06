@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_firstExecutionFrom;
-    bool m_firstExecutionFromHasBeenSet;
+    bool m_firstExecutionFromHasBeenSet = false;
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
   };
 
 } // namespace Model

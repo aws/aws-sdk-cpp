@@ -433,31 +433,31 @@ namespace Model
   private:
 
     Aws::String m_targetBackupVault;
-    bool m_targetBackupVaultHasBeenSet;
+    bool m_targetBackupVaultHasBeenSet = false;
 
     long long m_startWindowMinutes;
-    bool m_startWindowMinutesHasBeenSet;
+    bool m_startWindowMinutesHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     bool m_enableContinuousBackup;
-    bool m_enableContinuousBackupHasBeenSet;
+    bool m_enableContinuousBackupHasBeenSet = false;
 
     long long m_completionWindowMinutes;
-    bool m_completionWindowMinutesHasBeenSet;
+    bool m_completionWindowMinutesHasBeenSet = false;
 
     Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails> m_copyActions;
-    bool m_copyActionsHasBeenSet;
+    bool m_copyActionsHasBeenSet = false;
 
     AwsBackupBackupPlanLifecycleDetails m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
   };
 
 } // namespace Model

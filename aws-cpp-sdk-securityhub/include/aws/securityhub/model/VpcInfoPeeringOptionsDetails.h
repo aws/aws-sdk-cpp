@@ -113,13 +113,13 @@ namespace Model
   private:
 
     bool m_allowDnsResolutionFromRemoteVpc;
-    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet;
+    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet = false;
 
     bool m_allowEgressFromLocalClassicLinkToRemoteVpc;
-    bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet;
+    bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = false;
 
     bool m_allowEgressFromLocalVpcToRemoteClassicLink;
-    bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet;
+    bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = false;
   };
 
 } // namespace Model

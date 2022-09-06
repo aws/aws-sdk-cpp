@@ -310,25 +310,25 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_architectures;
-    bool m_architecturesHasBeenSet;
+    bool m_architecturesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_imageShas;
-    bool m_imageShasHasBeenSet;
+    bool m_imageShasHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_repositories;
-    bool m_repositoriesHasBeenSet;
+    bool m_repositoriesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     AwsEcrContainerSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

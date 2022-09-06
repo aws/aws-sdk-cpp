@@ -89,10 +89,10 @@ namespace Model
   private:
 
     long long m_deleteAfterDays;
-    bool m_deleteAfterDaysHasBeenSet;
+    bool m_deleteAfterDaysHasBeenSet = false;
 
     long long m_moveToColdStorageAfterDays;
-    bool m_moveToColdStorageAfterDaysHasBeenSet;
+    bool m_moveToColdStorageAfterDaysHasBeenSet = false;
   };
 
 } // namespace Model

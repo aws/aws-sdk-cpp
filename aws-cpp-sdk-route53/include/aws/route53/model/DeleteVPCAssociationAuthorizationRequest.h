@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     VPC m_vPC;
-    bool m_vPCHasBeenSet;
+    bool m_vPCHasBeenSet = false;
   };
 
 } // namespace Model

@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,13 +157,13 @@ namespace Model
   private:
 
     int m_expenseIndex;
-    bool m_expenseIndexHasBeenSet;
+    bool m_expenseIndexHasBeenSet = false;
 
     Aws::Vector<ExpenseField> m_summaryFields;
-    bool m_summaryFieldsHasBeenSet;
+    bool m_summaryFieldsHasBeenSet = false;
 
     Aws::Vector<LineItemGroup> m_lineItemGroups;
-    bool m_lineItemGroupsHasBeenSet;
+    bool m_lineItemGroupsHasBeenSet = false;
   };
 
 } // namespace Model

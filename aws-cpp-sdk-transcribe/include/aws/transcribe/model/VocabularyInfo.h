@@ -248,16 +248,16 @@ namespace Model
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     VocabularyState m_vocabularyState;
-    bool m_vocabularyStateHasBeenSet;
+    bool m_vocabularyStateHasBeenSet = false;
   };
 
 } // namespace Model

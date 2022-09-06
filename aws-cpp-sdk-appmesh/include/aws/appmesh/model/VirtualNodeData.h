@@ -218,19 +218,19 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     ResourceMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     VirtualNodeSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     VirtualNodeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_virtualNodeName;
-    bool m_virtualNodeNameHasBeenSet;
+    bool m_virtualNodeNameHasBeenSet = false;
   };
 
 } // namespace Model

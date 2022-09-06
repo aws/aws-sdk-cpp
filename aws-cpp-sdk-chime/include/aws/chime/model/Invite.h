@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_inviteId;
-    bool m_inviteIdHasBeenSet;
+    bool m_inviteIdHasBeenSet = false;
 
     InviteStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     EmailStatus m_emailStatus;
-    bool m_emailStatusHasBeenSet;
+    bool m_emailStatusHasBeenSet = false;
   };
 
 } // namespace Model

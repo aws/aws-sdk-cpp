@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<ContactState> m_contactStates;
-    bool m_contactStatesHasBeenSet;
+    bool m_contactStatesHasBeenSet = false;
   };
 
 } // namespace Model

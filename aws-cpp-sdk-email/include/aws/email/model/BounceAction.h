@@ -316,19 +316,19 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_smtpReplyCode;
-    bool m_smtpReplyCodeHasBeenSet;
+    bool m_smtpReplyCodeHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
   };
 
 } // namespace Model

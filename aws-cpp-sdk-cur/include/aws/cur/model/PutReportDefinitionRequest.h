@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ReportDefinition m_reportDefinition;
-    bool m_reportDefinitionHasBeenSet;
+    bool m_reportDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

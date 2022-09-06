@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Aws::Vector<ParameterValue> m_parameterValues;
-    bool m_parameterValuesHasBeenSet;
+    bool m_parameterValuesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
   };
 
 } // namespace Model

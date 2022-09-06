@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     ConnectorOAuthRequest m_oAuthRequest;
-    bool m_oAuthRequestHasBeenSet;
+    bool m_oAuthRequestHasBeenSet = false;
   };
 
 } // namespace Model

@@ -544,37 +544,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     S3Location m_iconS3Location;
-    bool m_iconS3LocationHasBeenSet;
+    bool m_iconS3LocationHasBeenSet = false;
 
     Aws::String m_launchPath;
-    bool m_launchPathHasBeenSet;
+    bool m_launchPathHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     Aws::String m_launchParameters;
-    bool m_launchParametersHasBeenSet;
+    bool m_launchParametersHasBeenSet = false;
 
     Aws::Vector<PlatformType> m_platforms;
-    bool m_platformsHasBeenSet;
+    bool m_platformsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceFamilies;
-    bool m_instanceFamiliesHasBeenSet;
+    bool m_instanceFamiliesHasBeenSet = false;
 
     Aws::String m_appBlockArn;
-    bool m_appBlockArnHasBeenSet;
+    bool m_appBlockArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

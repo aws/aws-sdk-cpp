@@ -1847,88 +1847,88 @@ namespace Model
   private:
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupDescription;
-    bool m_replicationGroupDescriptionHasBeenSet;
+    bool m_replicationGroupDescriptionHasBeenSet = false;
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_snapshotStatus;
-    bool m_snapshotStatusHasBeenSet;
+    bool m_snapshotStatusHasBeenSet = false;
 
     Aws::String m_snapshotSource;
-    bool m_snapshotSourceHasBeenSet;
+    bool m_snapshotSourceHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     int m_numCacheNodes;
-    bool m_numCacheNodesHasBeenSet;
+    bool m_numCacheNodesHasBeenSet = false;
 
     Aws::String m_preferredAvailabilityZone;
-    bool m_preferredAvailabilityZoneHasBeenSet;
+    bool m_preferredAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_preferredOutpostArn;
-    bool m_preferredOutpostArnHasBeenSet;
+    bool m_preferredOutpostArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_cacheClusterCreateTime;
-    bool m_cacheClusterCreateTimeHasBeenSet;
+    bool m_cacheClusterCreateTimeHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::String m_cacheSubnetGroupName;
-    bool m_cacheSubnetGroupNameHasBeenSet;
+    bool m_cacheSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     int m_numNodeGroups;
-    bool m_numNodeGroupsHasBeenSet;
+    bool m_numNodeGroupsHasBeenSet = false;
 
     AutomaticFailoverStatus m_automaticFailover;
-    bool m_automaticFailoverHasBeenSet;
+    bool m_automaticFailoverHasBeenSet = false;
 
     Aws::Vector<NodeSnapshot> m_nodeSnapshots;
-    bool m_nodeSnapshotsHasBeenSet;
+    bool m_nodeSnapshotsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     DataTieringStatus m_dataTiering;
-    bool m_dataTieringHasBeenSet;
+    bool m_dataTieringHasBeenSet = false;
   };
 
 } // namespace Model

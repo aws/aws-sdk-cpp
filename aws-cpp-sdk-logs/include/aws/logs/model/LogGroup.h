@@ -250,25 +250,25 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     int m_retentionInDays;
-    bool m_retentionInDaysHasBeenSet;
+    bool m_retentionInDaysHasBeenSet = false;
 
     int m_metricFilterCount;
-    bool m_metricFilterCountHasBeenSet;
+    bool m_metricFilterCountHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_storedBytes;
-    bool m_storedBytesHasBeenSet;
+    bool m_storedBytesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

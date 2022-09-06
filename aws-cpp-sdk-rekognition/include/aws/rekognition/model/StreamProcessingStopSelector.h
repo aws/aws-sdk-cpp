@@ -67,7 +67,7 @@ namespace Model
   private:
 
     long long m_maxDurationInSeconds;
-    bool m_maxDurationInSecondsHasBeenSet;
+    bool m_maxDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

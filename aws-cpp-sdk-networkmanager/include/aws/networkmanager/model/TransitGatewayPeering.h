@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Peering m_peering;
-    bool m_peeringHasBeenSet;
+    bool m_peeringHasBeenSet = false;
 
     Aws::String m_transitGatewayArn;
-    bool m_transitGatewayArnHasBeenSet;
+    bool m_transitGatewayArnHasBeenSet = false;
 
     Aws::String m_transitGatewayPeeringAttachmentId;
-    bool m_transitGatewayPeeringAttachmentIdHasBeenSet;
+    bool m_transitGatewayPeeringAttachmentIdHasBeenSet = false;
   };
 
 } // namespace Model

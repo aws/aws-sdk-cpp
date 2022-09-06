@@ -466,34 +466,34 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_routingProfileArn;
-    bool m_routingProfileArnHasBeenSet;
+    bool m_routingProfileArnHasBeenSet = false;
 
     Aws::String m_routingProfileId;
-    bool m_routingProfileIdHasBeenSet;
+    bool m_routingProfileIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<MediaConcurrency> m_mediaConcurrencies;
-    bool m_mediaConcurrenciesHasBeenSet;
+    bool m_mediaConcurrenciesHasBeenSet = false;
 
     Aws::String m_defaultOutboundQueueId;
-    bool m_defaultOutboundQueueIdHasBeenSet;
+    bool m_defaultOutboundQueueIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     long long m_numberOfAssociatedQueues;
-    bool m_numberOfAssociatedQueuesHasBeenSet;
+    bool m_numberOfAssociatedQueuesHasBeenSet = false;
 
     long long m_numberOfAssociatedUsers;
-    bool m_numberOfAssociatedUsersHasBeenSet;
+    bool m_numberOfAssociatedUsersHasBeenSet = false;
   };
 
 } // namespace Model

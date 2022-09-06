@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::Vector<EngineAttribute> m_engineAttributes;
-    bool m_engineAttributesHasBeenSet;
+    bool m_engineAttributesHasBeenSet = false;
   };
 
 } // namespace Model

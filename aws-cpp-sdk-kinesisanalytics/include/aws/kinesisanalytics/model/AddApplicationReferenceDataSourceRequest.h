@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     ReferenceDataSource m_referenceDataSource;
-    bool m_referenceDataSourceHasBeenSet;
+    bool m_referenceDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

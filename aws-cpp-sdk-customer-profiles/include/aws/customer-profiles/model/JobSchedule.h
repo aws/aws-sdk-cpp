@@ -113,10 +113,10 @@ namespace Model
   private:
 
     JobScheduleDayOfTheWeek m_dayOfTheWeek;
-    bool m_dayOfTheWeekHasBeenSet;
+    bool m_dayOfTheWeekHasBeenSet = false;
 
     Aws::String m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
   };
 
 } // namespace Model

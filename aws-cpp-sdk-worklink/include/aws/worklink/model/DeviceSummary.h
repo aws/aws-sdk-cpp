@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     DeviceStatus m_deviceStatus;
-    bool m_deviceStatusHasBeenSet;
+    bool m_deviceStatusHasBeenSet = false;
   };
 
 } // namespace Model

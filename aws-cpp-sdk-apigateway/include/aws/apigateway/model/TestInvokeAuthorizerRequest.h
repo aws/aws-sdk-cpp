@@ -534,28 +534,28 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_authorizerId;
-    bool m_authorizerIdHasBeenSet;
+    bool m_authorizerIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_multiValueHeaders;
-    bool m_multiValueHeadersHasBeenSet;
+    bool m_multiValueHeadersHasBeenSet = false;
 
     Aws::String m_pathWithQueryString;
-    bool m_pathWithQueryStringHasBeenSet;
+    bool m_pathWithQueryStringHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
-    bool m_stageVariablesHasBeenSet;
+    bool m_stageVariablesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalContext;
-    bool m_additionalContextHasBeenSet;
+    bool m_additionalContextHasBeenSet = false;
 
     Aws::String m_requestBody;
-    bool m_requestBodyHasBeenSet;
+    bool m_requestBodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
-    bool m_requestHeadersHasBeenSet;
+    bool m_requestHeadersHasBeenSet = false;
   };
 
 } // namespace Model

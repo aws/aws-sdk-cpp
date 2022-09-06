@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Format m_overrideFormat;
-    bool m_overrideFormatHasBeenSet;
+    bool m_overrideFormatHasBeenSet = false;
 
     Aws::String m_rawValue;
-    bool m_rawValueHasBeenSet;
+    bool m_rawValueHasBeenSet = false;
 
     Aws::String m_formattedValue;
-    bool m_formattedValueHasBeenSet;
+    bool m_formattedValueHasBeenSet = false;
   };
 
 } // namespace Model

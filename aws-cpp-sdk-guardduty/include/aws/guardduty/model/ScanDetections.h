@@ -173,16 +173,16 @@ namespace Model
   private:
 
     ScannedItemCount m_scannedItemCount;
-    bool m_scannedItemCountHasBeenSet;
+    bool m_scannedItemCountHasBeenSet = false;
 
     ThreatsDetectedItemCount m_threatsDetectedItemCount;
-    bool m_threatsDetectedItemCountHasBeenSet;
+    bool m_threatsDetectedItemCountHasBeenSet = false;
 
     HighestSeverityThreatDetails m_highestSeverityThreatDetails;
-    bool m_highestSeverityThreatDetailsHasBeenSet;
+    bool m_highestSeverityThreatDetailsHasBeenSet = false;
 
     ThreatDetectedByName m_threatDetectedByName;
-    bool m_threatDetectedByNameHasBeenSet;
+    bool m_threatDetectedByNameHasBeenSet = false;
   };
 
 } // namespace Model

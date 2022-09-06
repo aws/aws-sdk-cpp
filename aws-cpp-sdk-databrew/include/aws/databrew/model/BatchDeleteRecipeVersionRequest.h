@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recipeVersions;
-    bool m_recipeVersionsHasBeenSet;
+    bool m_recipeVersionsHasBeenSet = false;
   };
 
 } // namespace Model

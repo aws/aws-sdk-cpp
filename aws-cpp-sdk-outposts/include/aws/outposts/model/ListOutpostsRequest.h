@@ -298,19 +298,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lifeCycleStatusFilter;
-    bool m_lifeCycleStatusFilterHasBeenSet;
+    bool m_lifeCycleStatusFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZoneFilter;
-    bool m_availabilityZoneFilterHasBeenSet;
+    bool m_availabilityZoneFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZoneIdFilter;
-    bool m_availabilityZoneIdFilterHasBeenSet;
+    bool m_availabilityZoneIdFilterHasBeenSet = false;
   };
 
 } // namespace Model

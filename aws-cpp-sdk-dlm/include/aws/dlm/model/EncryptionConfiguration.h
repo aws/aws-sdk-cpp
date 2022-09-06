@@ -131,10 +131,10 @@ namespace Model
   private:
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_cmkArn;
-    bool m_cmkArnHasBeenSet;
+    bool m_cmkArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -195,16 +195,16 @@ namespace Model
   private:
 
     ExperimentStopDesiredState m_desiredState;
-    bool m_desiredStateHasBeenSet;
+    bool m_desiredStateHasBeenSet = false;
 
     Aws::String m_experiment;
-    bool m_experimentHasBeenSet;
+    bool m_experimentHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

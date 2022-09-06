@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_desiredInstances;
-    bool m_desiredInstancesHasBeenSet;
+    bool m_desiredInstancesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -221,25 +221,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     int m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     int m_inProgress;
-    bool m_inProgressHasBeenSet;
+    bool m_inProgressHasBeenSet = false;
 
     int m_servers;
-    bool m_serversHasBeenSet;
+    bool m_serversHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     AssessmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_success;
-    bool m_successHasBeenSet;
+    bool m_successHasBeenSet = false;
   };
 
 } // namespace Model

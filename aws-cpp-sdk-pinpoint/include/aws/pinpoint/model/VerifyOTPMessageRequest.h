@@ -95,10 +95,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     VerifyOTPMessageRequestParameters m_verifyOTPMessageRequestParameters;
-    bool m_verifyOTPMessageRequestParametersHasBeenSet;
+    bool m_verifyOTPMessageRequestParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -526,34 +526,34 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     bool m_rotateMasterUserPassword;
-    bool m_rotateMasterUserPasswordHasBeenSet;
+    bool m_rotateMasterUserPasswordHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_enableBackupRetention;
-    bool m_enableBackupRetentionHasBeenSet;
+    bool m_enableBackupRetentionHasBeenSet = false;
 
     bool m_disableBackupRetention;
-    bool m_disableBackupRetentionHasBeenSet;
+    bool m_disableBackupRetentionHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_caCertificateIdentifier;
-    bool m_caCertificateIdentifierHasBeenSet;
+    bool m_caCertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

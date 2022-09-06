@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_confirmationToken;
-    bool m_confirmationTokenHasBeenSet;
+    bool m_confirmationTokenHasBeenSet = false;
   };
 
 } // namespace Model

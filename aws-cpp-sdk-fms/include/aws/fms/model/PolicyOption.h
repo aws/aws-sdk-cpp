@@ -104,10 +104,10 @@ namespace Model
   private:
 
     NetworkFirewallPolicy m_networkFirewallPolicy;
-    bool m_networkFirewallPolicyHasBeenSet;
+    bool m_networkFirewallPolicyHasBeenSet = false;
 
     ThirdPartyFirewallPolicy m_thirdPartyFirewallPolicy;
-    bool m_thirdPartyFirewallPolicyHasBeenSet;
+    bool m_thirdPartyFirewallPolicyHasBeenSet = false;
   };
 
 } // namespace Model

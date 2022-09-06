@@ -118,7 +118,7 @@ namespace Model
   private:
 
     S3AclOption m_s3AclOption;
-    bool m_s3AclOptionHasBeenSet;
+    bool m_s3AclOptionHasBeenSet = false;
   };
 
 } // namespace Model

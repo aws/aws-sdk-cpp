@@ -577,22 +577,22 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     IdentityProviderTypeType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_providerDetails;
-    bool m_providerDetailsHasBeenSet;
+    bool m_providerDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributeMapping;
-    bool m_attributeMappingHasBeenSet;
+    bool m_attributeMappingHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_idpIdentifiers;
-    bool m_idpIdentifiersHasBeenSet;
+    bool m_idpIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

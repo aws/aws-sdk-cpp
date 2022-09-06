@@ -406,22 +406,22 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_addonVersion;
-    bool m_addonVersionHasBeenSet;
+    bool m_addonVersionHasBeenSet = false;
 
     Aws::String m_serviceAccountRoleArn;
-    bool m_serviceAccountRoleArnHasBeenSet;
+    bool m_serviceAccountRoleArnHasBeenSet = false;
 
     ResolveConflicts m_resolveConflicts;
-    bool m_resolveConflictsHasBeenSet;
+    bool m_resolveConflictsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

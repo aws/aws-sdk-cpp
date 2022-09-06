@@ -1896,94 +1896,94 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Endpoint m_configurationEndpoint;
-    bool m_configurationEndpointHasBeenSet;
+    bool m_configurationEndpointHasBeenSet = false;
 
     Aws::String m_clientDownloadLandingPage;
-    bool m_clientDownloadLandingPageHasBeenSet;
+    bool m_clientDownloadLandingPageHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheClusterStatus;
-    bool m_cacheClusterStatusHasBeenSet;
+    bool m_cacheClusterStatusHasBeenSet = false;
 
     int m_numCacheNodes;
-    bool m_numCacheNodesHasBeenSet;
+    bool m_numCacheNodesHasBeenSet = false;
 
     Aws::String m_preferredAvailabilityZone;
-    bool m_preferredAvailabilityZoneHasBeenSet;
+    bool m_preferredAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_preferredOutpostArn;
-    bool m_preferredOutpostArnHasBeenSet;
+    bool m_preferredOutpostArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_cacheClusterCreateTime;
-    bool m_cacheClusterCreateTimeHasBeenSet;
+    bool m_cacheClusterCreateTimeHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     PendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
 
     Aws::Vector<CacheSecurityGroupMembership> m_cacheSecurityGroups;
-    bool m_cacheSecurityGroupsHasBeenSet;
+    bool m_cacheSecurityGroupsHasBeenSet = false;
 
     CacheParameterGroupStatus m_cacheParameterGroup;
-    bool m_cacheParameterGroupHasBeenSet;
+    bool m_cacheParameterGroupHasBeenSet = false;
 
     Aws::String m_cacheSubnetGroupName;
-    bool m_cacheSubnetGroupNameHasBeenSet;
+    bool m_cacheSubnetGroupNameHasBeenSet = false;
 
     Aws::Vector<CacheNode> m_cacheNodes;
-    bool m_cacheNodesHasBeenSet;
+    bool m_cacheNodesHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::Vector<SecurityGroupMembership> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     bool m_authTokenEnabled;
-    bool m_authTokenEnabledHasBeenSet;
+    bool m_authTokenEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_authTokenLastModifiedDate;
-    bool m_authTokenLastModifiedDateHasBeenSet;
+    bool m_authTokenLastModifiedDateHasBeenSet = false;
 
     bool m_transitEncryptionEnabled;
-    bool m_transitEncryptionEnabledHasBeenSet;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
 
     bool m_atRestEncryptionEnabled;
-    bool m_atRestEncryptionEnabledHasBeenSet;
+    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     bool m_replicationGroupLogDeliveryEnabled;
-    bool m_replicationGroupLogDeliveryEnabledHasBeenSet;
+    bool m_replicationGroupLogDeliveryEnabledHasBeenSet = false;
 
     Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

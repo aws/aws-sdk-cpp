@@ -378,19 +378,19 @@ namespace Model
   private:
 
     Aws::String m_jobQueue;
-    bool m_jobQueueHasBeenSet;
+    bool m_jobQueueHasBeenSet = false;
 
     JQState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_schedulingPolicyArn;
-    bool m_schedulingPolicyArnHasBeenSet;
+    bool m_schedulingPolicyArnHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
-    bool m_computeEnvironmentOrderHasBeenSet;
+    bool m_computeEnvironmentOrderHasBeenSet = false;
   };
 
 } // namespace Model

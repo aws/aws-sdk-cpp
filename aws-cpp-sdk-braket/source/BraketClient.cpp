@@ -89,7 +89,7 @@ BraketClient::~BraketClient()
 
 void BraketClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Braket");
+  AWSClient::SetServiceClientName("Braket");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

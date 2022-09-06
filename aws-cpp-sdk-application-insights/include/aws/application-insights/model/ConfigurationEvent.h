@@ -270,22 +270,22 @@ namespace Model
   private:
 
     Aws::String m_monitoredResourceARN;
-    bool m_monitoredResourceARNHasBeenSet;
+    bool m_monitoredResourceARNHasBeenSet = false;
 
     ConfigurationEventStatus m_eventStatus;
-    bool m_eventStatusHasBeenSet;
+    bool m_eventStatusHasBeenSet = false;
 
     ConfigurationEventResourceType m_eventResourceType;
-    bool m_eventResourceTypeHasBeenSet;
+    bool m_eventResourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_eventDetail;
-    bool m_eventDetailHasBeenSet;
+    bool m_eventDetailHasBeenSet = false;
 
     Aws::String m_eventResourceName;
-    bool m_eventResourceNameHasBeenSet;
+    bool m_eventResourceNameHasBeenSet = false;
   };
 
 } // namespace Model

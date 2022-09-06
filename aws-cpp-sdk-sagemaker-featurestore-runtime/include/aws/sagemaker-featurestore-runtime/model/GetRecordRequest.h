@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierValueAsString;
-    bool m_recordIdentifierValueAsStringHasBeenSet;
+    bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_featureNames;
-    bool m_featureNamesHasBeenSet;
+    bool m_featureNamesHasBeenSet = false;
   };
 
 } // namespace Model

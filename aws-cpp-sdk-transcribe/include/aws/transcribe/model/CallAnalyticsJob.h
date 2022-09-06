@@ -965,49 +965,49 @@ namespace Model
   private:
 
     Aws::String m_callAnalyticsJobName;
-    bool m_callAnalyticsJobNameHasBeenSet;
+    bool m_callAnalyticsJobNameHasBeenSet = false;
 
     CallAnalyticsJobStatus m_callAnalyticsJobStatus;
-    bool m_callAnalyticsJobStatusHasBeenSet;
+    bool m_callAnalyticsJobStatusHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaFormat m_mediaFormat;
-    bool m_mediaFormatHasBeenSet;
+    bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     Transcript m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     double m_identifiedLanguageScore;
-    bool m_identifiedLanguageScoreHasBeenSet;
+    bool m_identifiedLanguageScoreHasBeenSet = false;
 
     CallAnalyticsJobSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     Aws::Vector<ChannelDefinition> m_channelDefinitions;
-    bool m_channelDefinitionsHasBeenSet;
+    bool m_channelDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_gameServerId;
-    bool m_gameServerIdHasBeenSet;
+    bool m_gameServerIdHasBeenSet = false;
 
     Aws::String m_gameServerData;
-    bool m_gameServerDataHasBeenSet;
+    bool m_gameServerDataHasBeenSet = false;
   };
 
 } // namespace Model

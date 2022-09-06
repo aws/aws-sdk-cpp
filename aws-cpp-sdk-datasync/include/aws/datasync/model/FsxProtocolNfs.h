@@ -60,7 +60,7 @@ namespace Model
   private:
 
     NfsMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
   };
 
 } // namespace Model

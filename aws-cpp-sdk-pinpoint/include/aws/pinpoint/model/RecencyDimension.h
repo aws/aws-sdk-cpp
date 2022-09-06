@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Duration m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     RecencyType m_recencyType;
-    bool m_recencyTypeHasBeenSet;
+    bool m_recencyTypeHasBeenSet = false;
   };
 
 } // namespace Model

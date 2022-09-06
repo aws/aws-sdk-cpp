@@ -106,10 +106,10 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_rollDisposition;
-    bool m_rollDispositionHasBeenSet;
+    bool m_rollDispositionHasBeenSet = false;
   };
 
 } // namespace Model

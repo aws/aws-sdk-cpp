@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     AccessLevelFilter m_accessLevelFilter;
-    bool m_accessLevelFilterHasBeenSet;
+    bool m_accessLevelFilterHasBeenSet = false;
 
     ListRecordHistorySearchFilter m_searchFilter;
-    bool m_searchFilterHasBeenSet;
+    bool m_searchFilterHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

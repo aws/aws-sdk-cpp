@@ -94,7 +94,7 @@ BackupGatewayClient::~BackupGatewayClient()
 
 void BackupGatewayClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Backup Gateway");
+  AWSClient::SetServiceClientName("Backup Gateway");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

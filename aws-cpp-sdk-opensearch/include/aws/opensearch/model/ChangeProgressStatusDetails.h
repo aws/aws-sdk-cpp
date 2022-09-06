@@ -347,25 +347,25 @@ namespace Model
   private:
 
     Aws::String m_changeId;
-    bool m_changeIdHasBeenSet;
+    bool m_changeIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     OverallChangeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_pendingProperties;
-    bool m_pendingPropertiesHasBeenSet;
+    bool m_pendingPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_completedProperties;
-    bool m_completedPropertiesHasBeenSet;
+    bool m_completedPropertiesHasBeenSet = false;
 
     int m_totalNumberOfStages;
-    bool m_totalNumberOfStagesHasBeenSet;
+    bool m_totalNumberOfStagesHasBeenSet = false;
 
     Aws::Vector<ChangeProgressStage> m_changeProgressStages;
-    bool m_changeProgressStagesHasBeenSet;
+    bool m_changeProgressStagesHasBeenSet = false;
   };
 
 } // namespace Model

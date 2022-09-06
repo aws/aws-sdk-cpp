@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_kMSKeyArn;
-    bool m_kMSKeyArnHasBeenSet;
+    bool m_kMSKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

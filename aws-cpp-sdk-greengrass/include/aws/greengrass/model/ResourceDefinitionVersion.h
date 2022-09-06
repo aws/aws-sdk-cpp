@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

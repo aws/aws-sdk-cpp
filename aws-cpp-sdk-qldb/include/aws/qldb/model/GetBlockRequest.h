@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ValueHolder m_blockAddress;
-    bool m_blockAddressHasBeenSet;
+    bool m_blockAddressHasBeenSet = false;
 
     ValueHolder m_digestTipAddress;
-    bool m_digestTipAddressHasBeenSet;
+    bool m_digestTipAddressHasBeenSet = false;
   };
 
 } // namespace Model

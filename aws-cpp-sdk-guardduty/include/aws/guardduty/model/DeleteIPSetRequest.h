@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_ipSetId;
-    bool m_ipSetIdHasBeenSet;
+    bool m_ipSetIdHasBeenSet = false;
   };
 
 } // namespace Model

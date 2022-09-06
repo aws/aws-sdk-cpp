@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Value m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Shape m_shape;
-    bool m_shapeHasBeenSet;
+    bool m_shapeHasBeenSet = false;
 
     Aws::Vector<Slot> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

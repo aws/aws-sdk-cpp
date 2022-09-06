@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_enableAnswerMachineDetection;
-    bool m_enableAnswerMachineDetectionHasBeenSet;
+    bool m_enableAnswerMachineDetectionHasBeenSet = false;
   };
 
 } // namespace Model

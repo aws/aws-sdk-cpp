@@ -318,19 +318,19 @@ namespace Model
   private:
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinationAddresses;
-    bool m_destinationAddressesHasBeenSet;
+    bool m_destinationAddressesHasBeenSet = false;
 
     Aws::Vector<int> m_destinationPorts;
-    bool m_destinationPortsHasBeenSet;
+    bool m_destinationPortsHasBeenSet = false;
 
     bool m_allowAllTrafficToEndpoint;
-    bool m_allowAllTrafficToEndpointHasBeenSet;
+    bool m_allowAllTrafficToEndpointHasBeenSet = false;
   };
 
 } // namespace Model

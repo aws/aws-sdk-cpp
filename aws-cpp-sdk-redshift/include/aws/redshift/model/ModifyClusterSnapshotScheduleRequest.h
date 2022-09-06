@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_scheduleIdentifier;
-    bool m_scheduleIdentifierHasBeenSet;
+    bool m_scheduleIdentifierHasBeenSet = false;
 
     bool m_disassociateSchedule;
-    bool m_disassociateScheduleHasBeenSet;
+    bool m_disassociateScheduleHasBeenSet = false;
   };
 
 } // namespace Model

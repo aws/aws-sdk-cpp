@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     SMBSecurityStrategy m_sMBSecurityStrategy;
-    bool m_sMBSecurityStrategyHasBeenSet;
+    bool m_sMBSecurityStrategyHasBeenSet = false;
   };
 
 } // namespace Model

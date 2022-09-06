@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     IdentityProvider m_identityProvider;
-    bool m_identityProviderHasBeenSet;
+    bool m_identityProviderHasBeenSet = false;
 
     Aws::String m_product;
-    bool m_productHasBeenSet;
+    bool m_productHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

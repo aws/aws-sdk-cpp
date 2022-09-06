@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
   };
 
 } // namespace Model

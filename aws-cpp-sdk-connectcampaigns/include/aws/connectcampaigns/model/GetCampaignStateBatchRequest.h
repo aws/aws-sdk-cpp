@@ -66,7 +66,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_campaignIds;
-    bool m_campaignIdsHasBeenSet;
+    bool m_campaignIdsHasBeenSet = false;
   };
 
 } // namespace Model

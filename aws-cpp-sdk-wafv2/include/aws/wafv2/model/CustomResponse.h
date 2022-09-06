@@ -266,13 +266,13 @@ namespace Model
   private:
 
     int m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     Aws::String m_customResponseBodyKey;
-    bool m_customResponseBodyKeyHasBeenSet;
+    bool m_customResponseBodyKeyHasBeenSet = false;
 
     Aws::Vector<CustomHTTPHeader> m_responseHeaders;
-    bool m_responseHeadersHasBeenSet;
+    bool m_responseHeadersHasBeenSet = false;
   };
 
 } // namespace Model

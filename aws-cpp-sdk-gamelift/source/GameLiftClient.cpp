@@ -171,7 +171,7 @@ GameLiftClient::~GameLiftClient()
 
 void GameLiftClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("GameLift");
+  AWSClient::SetServiceClientName("GameLift");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

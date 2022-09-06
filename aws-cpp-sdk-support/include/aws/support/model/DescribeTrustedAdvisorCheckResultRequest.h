@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_checkId;
-    bool m_checkIdHasBeenSet;
+    bool m_checkIdHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

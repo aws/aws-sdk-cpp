@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_attemptDurationSeconds;
-    bool m_attemptDurationSecondsHasBeenSet;
+    bool m_attemptDurationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

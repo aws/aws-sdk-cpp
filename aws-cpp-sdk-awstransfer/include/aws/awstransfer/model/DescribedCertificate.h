@@ -587,46 +587,46 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     CertificateUsageType m_usage;
-    bool m_usageHasBeenSet;
+    bool m_usageHasBeenSet = false;
 
     CertificateStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
 
     Aws::Utils::DateTime m_activeDate;
-    bool m_activeDateHasBeenSet;
+    bool m_activeDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_inactiveDate;
-    bool m_inactiveDateHasBeenSet;
+    bool m_inactiveDateHasBeenSet = false;
 
     Aws::String m_serial;
-    bool m_serialHasBeenSet;
+    bool m_serialHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBeforeDate;
-    bool m_notBeforeDateHasBeenSet;
+    bool m_notBeforeDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfterDate;
-    bool m_notAfterDateHasBeenSet;
+    bool m_notAfterDateHasBeenSet = false;
 
     CertificateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

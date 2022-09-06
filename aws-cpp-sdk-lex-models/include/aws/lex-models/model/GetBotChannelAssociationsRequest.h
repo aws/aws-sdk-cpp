@@ -285,19 +285,19 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nameContains;
-    bool m_nameContainsHasBeenSet;
+    bool m_nameContainsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     int m_pendingWindowInDays;
-    bool m_pendingWindowInDaysHasBeenSet;
+    bool m_pendingWindowInDaysHasBeenSet = false;
   };
 
 } // namespace Model

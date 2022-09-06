@@ -184,13 +184,13 @@ namespace Model
   private:
 
     double m_metricIntervalLowerBound;
-    bool m_metricIntervalLowerBoundHasBeenSet;
+    bool m_metricIntervalLowerBoundHasBeenSet = false;
 
     double m_metricIntervalUpperBound;
-    bool m_metricIntervalUpperBoundHasBeenSet;
+    bool m_metricIntervalUpperBoundHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
   };
 
 } // namespace Model

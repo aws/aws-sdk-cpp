@@ -480,34 +480,34 @@ namespace Model
   private:
 
     Aws::String m_queryExecutionId;
-    bool m_queryExecutionIdHasBeenSet;
+    bool m_queryExecutionIdHasBeenSet = false;
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     StatementType m_statementType;
-    bool m_statementTypeHasBeenSet;
+    bool m_statementTypeHasBeenSet = false;
 
     ResultConfiguration m_resultConfiguration;
-    bool m_resultConfigurationHasBeenSet;
+    bool m_resultConfigurationHasBeenSet = false;
 
     QueryExecutionContext m_queryExecutionContext;
-    bool m_queryExecutionContextHasBeenSet;
+    bool m_queryExecutionContextHasBeenSet = false;
 
     QueryExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     QueryExecutionStatistics m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     EngineVersion m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_executionParameters;
-    bool m_executionParametersHasBeenSet;
+    bool m_executionParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -104,13 +104,13 @@ namespace Model
   private:
 
     int m_maxJobs;
-    bool m_maxJobsHasBeenSet;
+    bool m_maxJobsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_aPIVersion;
-    bool m_aPIVersionHasBeenSet;
+    bool m_aPIVersionHasBeenSet = false;
   };
 
 } // namespace Model

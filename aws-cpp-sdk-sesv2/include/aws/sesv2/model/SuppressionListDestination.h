@@ -89,7 +89,7 @@ namespace Model
   private:
 
     SuppressionListImportAction m_suppressionListImportAction;
-    bool m_suppressionListImportActionHasBeenSet;
+    bool m_suppressionListImportActionHasBeenSet = false;
   };
 
 } // namespace Model

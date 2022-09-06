@@ -1058,79 +1058,79 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_shortName;
-    bool m_shortNameHasBeenSet;
+    bool m_shortNameHasBeenSet = false;
 
     DirectorySize m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     DirectoryEdition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_accessUrl;
-    bool m_accessUrlHasBeenSet;
+    bool m_accessUrlHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIpAddrs;
-    bool m_dnsIpAddrsHasBeenSet;
+    bool m_dnsIpAddrsHasBeenSet = false;
 
     DirectoryStage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     ShareStatus m_shareStatus;
-    bool m_shareStatusHasBeenSet;
+    bool m_shareStatusHasBeenSet = false;
 
     ShareMethod m_shareMethod;
-    bool m_shareMethodHasBeenSet;
+    bool m_shareMethodHasBeenSet = false;
 
     Aws::String m_shareNotes;
-    bool m_shareNotesHasBeenSet;
+    bool m_shareNotesHasBeenSet = false;
 
     Aws::Utils::DateTime m_launchTime;
-    bool m_launchTimeHasBeenSet;
+    bool m_launchTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_stageLastUpdatedDateTime;
-    bool m_stageLastUpdatedDateTimeHasBeenSet;
+    bool m_stageLastUpdatedDateTimeHasBeenSet = false;
 
     DirectoryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DirectoryVpcSettingsDescription m_vpcSettings;
-    bool m_vpcSettingsHasBeenSet;
+    bool m_vpcSettingsHasBeenSet = false;
 
     DirectoryConnectSettingsDescription m_connectSettings;
-    bool m_connectSettingsHasBeenSet;
+    bool m_connectSettingsHasBeenSet = false;
 
     RadiusSettings m_radiusSettings;
-    bool m_radiusSettingsHasBeenSet;
+    bool m_radiusSettingsHasBeenSet = false;
 
     RadiusStatus m_radiusStatus;
-    bool m_radiusStatusHasBeenSet;
+    bool m_radiusStatusHasBeenSet = false;
 
     Aws::String m_stageReason;
-    bool m_stageReasonHasBeenSet;
+    bool m_stageReasonHasBeenSet = false;
 
     bool m_ssoEnabled;
-    bool m_ssoEnabledHasBeenSet;
+    bool m_ssoEnabledHasBeenSet = false;
 
     int m_desiredNumberOfDomainControllers;
-    bool m_desiredNumberOfDomainControllersHasBeenSet;
+    bool m_desiredNumberOfDomainControllersHasBeenSet = false;
 
     OwnerDirectoryDescription m_ownerDirectoryDescription;
-    bool m_ownerDirectoryDescriptionHasBeenSet;
+    bool m_ownerDirectoryDescriptionHasBeenSet = false;
 
     RegionsInfo m_regionsInfo;
-    bool m_regionsInfoHasBeenSet;
+    bool m_regionsInfoHasBeenSet = false;
   };
 
 } // namespace Model

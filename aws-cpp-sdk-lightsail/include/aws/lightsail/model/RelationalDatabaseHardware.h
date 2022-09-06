@@ -100,13 +100,13 @@ namespace Model
   private:
 
     int m_cpuCount;
-    bool m_cpuCountHasBeenSet;
+    bool m_cpuCountHasBeenSet = false;
 
     int m_diskSizeInGb;
-    bool m_diskSizeInGbHasBeenSet;
+    bool m_diskSizeInGbHasBeenSet = false;
 
     double m_ramSizeInGb;
-    bool m_ramSizeInGbHasBeenSet;
+    bool m_ramSizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_appInstanceAdminArn;
-    bool m_appInstanceAdminArnHasBeenSet;
+    bool m_appInstanceAdminArnHasBeenSet = false;
 
     Aws::String m_appInstanceArn;
-    bool m_appInstanceArnHasBeenSet;
+    bool m_appInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model

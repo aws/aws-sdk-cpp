@@ -176,13 +176,13 @@ namespace Model
   private:
 
     int m_fontSize;
-    bool m_fontSizeHasBeenSet;
+    bool m_fontSizeHasBeenSet = false;
 
     TimecodeBurninPosition m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

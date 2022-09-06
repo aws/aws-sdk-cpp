@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SnowconeDeviceConfiguration m_snowconeDeviceConfiguration;
-    bool m_snowconeDeviceConfigurationHasBeenSet;
+    bool m_snowconeDeviceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

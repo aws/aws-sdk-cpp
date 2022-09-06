@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     int m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

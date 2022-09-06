@@ -240,13 +240,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Field m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     TypeHint m_typeHint;
-    bool m_typeHintHasBeenSet;
+    bool m_typeHintHasBeenSet = false;
   };
 
 } // namespace Model

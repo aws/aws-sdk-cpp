@@ -114,13 +114,13 @@ namespace Model
   private:
 
     int m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     int m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
 
     int m_step;
-    bool m_stepHasBeenSet;
+    bool m_stepHasBeenSet = false;
   };
 
 } // namespace Model

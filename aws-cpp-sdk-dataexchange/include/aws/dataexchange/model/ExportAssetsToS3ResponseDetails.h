@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::Vector<AssetDestinationEntry> m_assetDestinations;
-    bool m_assetDestinationsHasBeenSet;
+    bool m_assetDestinationsHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     ExportServerSideEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

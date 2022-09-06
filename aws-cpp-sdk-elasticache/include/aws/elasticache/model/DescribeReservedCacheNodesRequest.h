@@ -1018,28 +1018,28 @@ namespace Model
   private:
 
     Aws::String m_reservedCacheNodeId;
-    bool m_reservedCacheNodeIdHasBeenSet;
+    bool m_reservedCacheNodeIdHasBeenSet = false;
 
     Aws::String m_reservedCacheNodesOfferingId;
-    bool m_reservedCacheNodesOfferingIdHasBeenSet;
+    bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

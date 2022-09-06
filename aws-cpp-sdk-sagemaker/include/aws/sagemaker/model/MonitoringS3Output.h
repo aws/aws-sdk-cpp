@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     ProcessingS3UploadMode m_s3UploadMode;
-    bool m_s3UploadModeHasBeenSet;
+    bool m_s3UploadModeHasBeenSet = false;
   };
 
 } // namespace Model

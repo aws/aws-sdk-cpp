@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_requester;
-    bool m_requesterHasBeenSet;
+    bool m_requesterHasBeenSet = false;
 
     EventInfo m_eventInfo;
-    bool m_eventInfoHasBeenSet;
+    bool m_eventInfoHasBeenSet = false;
 
     VendorName m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
   };
 
 } // namespace Model

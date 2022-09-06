@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobUpdate m_jobUpdate;
-    bool m_jobUpdateHasBeenSet;
+    bool m_jobUpdateHasBeenSet = false;
   };
 
 } // namespace Model

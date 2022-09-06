@@ -647,31 +647,31 @@ namespace Model
   private:
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_fromEmailAddressIdentityArn;
-    bool m_fromEmailAddressIdentityArnHasBeenSet;
+    bool m_fromEmailAddressIdentityArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replyToAddresses;
-    bool m_replyToAddressesHasBeenSet;
+    bool m_replyToAddressesHasBeenSet = false;
 
     Aws::String m_feedbackForwardingEmailAddress;
-    bool m_feedbackForwardingEmailAddressHasBeenSet;
+    bool m_feedbackForwardingEmailAddressHasBeenSet = false;
 
     Aws::String m_feedbackForwardingEmailAddressIdentityArn;
-    bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet;
+    bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_defaultEmailTags;
-    bool m_defaultEmailTagsHasBeenSet;
+    bool m_defaultEmailTagsHasBeenSet = false;
 
     BulkEmailContent m_defaultContent;
-    bool m_defaultContentHasBeenSet;
+    bool m_defaultContentHasBeenSet = false;
 
     Aws::Vector<BulkEmailEntry> m_bulkEmailEntries;
-    bool m_bulkEmailEntriesHasBeenSet;
+    bool m_bulkEmailEntriesHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
   };
 
 } // namespace Model

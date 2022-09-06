@@ -351,25 +351,25 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     DetectorModelDefinition m_detectorModelDefinition;
-    bool m_detectorModelDefinitionHasBeenSet;
+    bool m_detectorModelDefinitionHasBeenSet = false;
 
     Aws::String m_detectorModelDescription;
-    bool m_detectorModelDescriptionHasBeenSet;
+    bool m_detectorModelDescriptionHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     EvaluationMethod m_evaluationMethod;
-    bool m_evaluationMethodHasBeenSet;
+    bool m_evaluationMethodHasBeenSet = false;
   };
 
 } // namespace Model

@@ -413,34 +413,34 @@ namespace Model
   private:
 
     long long m_approximateDurationSeconds;
-    bool m_approximateDurationSecondsHasBeenSet;
+    bool m_approximateDurationSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_approximateStartTime;
-    bool m_approximateStartTimeHasBeenSet;
+    bool m_approximateStartTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_liveSourceName;
-    bool m_liveSourceNameHasBeenSet;
+    bool m_liveSourceNameHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
 
     Aws::Vector<ScheduleAdBreak> m_scheduleAdBreaks;
-    bool m_scheduleAdBreaksHasBeenSet;
+    bool m_scheduleAdBreaksHasBeenSet = false;
 
     ScheduleEntryType m_scheduleEntryType;
-    bool m_scheduleEntryTypeHasBeenSet;
+    bool m_scheduleEntryTypeHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_redshiftTmpDir;
-    bool m_redshiftTmpDirHasBeenSet;
+    bool m_redshiftTmpDirHasBeenSet = false;
 
     Aws::String m_tmpDirIAMRole;
-    bool m_tmpDirIAMRoleHasBeenSet;
+    bool m_tmpDirIAMRoleHasBeenSet = false;
   };
 
 } // namespace Model

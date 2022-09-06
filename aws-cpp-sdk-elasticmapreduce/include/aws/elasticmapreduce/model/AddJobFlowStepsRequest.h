@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_jobFlowId;
-    bool m_jobFlowIdHasBeenSet;
+    bool m_jobFlowIdHasBeenSet = false;
 
     Aws::Vector<StepConfig> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
   };
 
 } // namespace Model

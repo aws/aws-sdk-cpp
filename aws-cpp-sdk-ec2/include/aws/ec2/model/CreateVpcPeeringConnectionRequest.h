@@ -318,22 +318,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_peerOwnerId;
-    bool m_peerOwnerIdHasBeenSet;
+    bool m_peerOwnerIdHasBeenSet = false;
 
     Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet;
+    bool m_peerVpcIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_peerRegion;
-    bool m_peerRegionHasBeenSet;
+    bool m_peerRegionHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

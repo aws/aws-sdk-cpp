@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::Vector<ConcatenationSource> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     Aws::Vector<ConcatenationSink> m_sinks;
-    bool m_sinksHasBeenSet;
+    bool m_sinksHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

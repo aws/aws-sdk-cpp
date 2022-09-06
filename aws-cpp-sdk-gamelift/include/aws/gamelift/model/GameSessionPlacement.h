@@ -1134,58 +1134,58 @@ namespace Model
   private:
 
     Aws::String m_placementId;
-    bool m_placementIdHasBeenSet;
+    bool m_placementIdHasBeenSet = false;
 
     Aws::String m_gameSessionQueueName;
-    bool m_gameSessionQueueNameHasBeenSet;
+    bool m_gameSessionQueueNameHasBeenSet = false;
 
     GameSessionPlacementState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
-    bool m_gamePropertiesHasBeenSet;
+    bool m_gamePropertiesHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_gameSessionName;
-    bool m_gameSessionNameHasBeenSet;
+    bool m_gameSessionNameHasBeenSet = false;
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_gameSessionArn;
-    bool m_gameSessionArnHasBeenSet;
+    bool m_gameSessionArnHasBeenSet = false;
 
     Aws::String m_gameSessionRegion;
-    bool m_gameSessionRegionHasBeenSet;
+    bool m_gameSessionRegionHasBeenSet = false;
 
     Aws::Vector<PlayerLatency> m_playerLatencies;
-    bool m_playerLatenciesHasBeenSet;
+    bool m_playerLatenciesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::Vector<PlacedPlayerSession> m_placedPlayerSessions;
-    bool m_placedPlayerSessionsHasBeenSet;
+    bool m_placedPlayerSessionsHasBeenSet = false;
 
     Aws::String m_gameSessionData;
-    bool m_gameSessionDataHasBeenSet;
+    bool m_gameSessionDataHasBeenSet = false;
 
     Aws::String m_matchmakerData;
-    bool m_matchmakerDataHasBeenSet;
+    bool m_matchmakerDataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     int m_stepConcurrencyLevel;
-    bool m_stepConcurrencyLevelHasBeenSet;
+    bool m_stepConcurrencyLevelHasBeenSet = false;
   };
 
 } // namespace Model

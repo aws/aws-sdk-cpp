@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_availBlankingImage;
-    bool m_availBlankingImageHasBeenSet;
+    bool m_availBlankingImageHasBeenSet = false;
   };
 
 } // namespace Model

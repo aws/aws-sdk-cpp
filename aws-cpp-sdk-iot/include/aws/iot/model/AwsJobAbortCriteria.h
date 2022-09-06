@@ -157,16 +157,16 @@ namespace Model
   private:
 
     AwsJobAbortCriteriaFailureType m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     AwsJobAbortCriteriaAbortAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     double m_thresholdPercentage;
-    bool m_thresholdPercentageHasBeenSet;
+    bool m_thresholdPercentageHasBeenSet = false;
 
     int m_minNumberOfExecutedThings;
-    bool m_minNumberOfExecutedThingsHasBeenSet;
+    bool m_minNumberOfExecutedThingsHasBeenSet = false;
   };
 
 } // namespace Model

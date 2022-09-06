@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_rpoInSecs;
-    bool m_rpoInSecsHasBeenSet;
+    bool m_rpoInSecsHasBeenSet = false;
 
     int m_rtoInSecs;
-    bool m_rtoInSecsHasBeenSet;
+    bool m_rtoInSecsHasBeenSet = false;
   };
 
 } // namespace Model

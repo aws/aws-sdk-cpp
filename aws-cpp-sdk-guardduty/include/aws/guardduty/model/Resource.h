@@ -355,31 +355,31 @@ namespace Model
   private:
 
     AccessKeyDetails m_accessKeyDetails;
-    bool m_accessKeyDetailsHasBeenSet;
+    bool m_accessKeyDetailsHasBeenSet = false;
 
     Aws::Vector<S3BucketDetail> m_s3BucketDetails;
-    bool m_s3BucketDetailsHasBeenSet;
+    bool m_s3BucketDetailsHasBeenSet = false;
 
     InstanceDetails m_instanceDetails;
-    bool m_instanceDetailsHasBeenSet;
+    bool m_instanceDetailsHasBeenSet = false;
 
     EksClusterDetails m_eksClusterDetails;
-    bool m_eksClusterDetailsHasBeenSet;
+    bool m_eksClusterDetailsHasBeenSet = false;
 
     KubernetesDetails m_kubernetesDetails;
-    bool m_kubernetesDetailsHasBeenSet;
+    bool m_kubernetesDetailsHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     EbsVolumeDetails m_ebsVolumeDetails;
-    bool m_ebsVolumeDetailsHasBeenSet;
+    bool m_ebsVolumeDetailsHasBeenSet = false;
 
     EcsClusterDetails m_ecsClusterDetails;
-    bool m_ecsClusterDetailsHasBeenSet;
+    bool m_ecsClusterDetailsHasBeenSet = false;
 
     Container m_containerDetails;
-    bool m_containerDetailsHasBeenSet;
+    bool m_containerDetailsHasBeenSet = false;
   };
 
 } // namespace Model

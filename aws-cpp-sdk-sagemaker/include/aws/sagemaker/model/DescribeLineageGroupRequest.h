@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_lineageGroupName;
-    bool m_lineageGroupNameHasBeenSet;
+    bool m_lineageGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

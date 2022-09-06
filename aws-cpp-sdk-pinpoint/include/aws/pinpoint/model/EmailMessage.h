@@ -373,25 +373,25 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_feedbackForwardingAddress;
-    bool m_feedbackForwardingAddressHasBeenSet;
+    bool m_feedbackForwardingAddressHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     RawEmail m_rawEmail;
-    bool m_rawEmailHasBeenSet;
+    bool m_rawEmailHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replyToAddresses;
-    bool m_replyToAddressesHasBeenSet;
+    bool m_replyToAddressesHasBeenSet = false;
 
     SimpleEmail m_simpleEmail;
-    bool m_simpleEmailHasBeenSet;
+    bool m_simpleEmailHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
   };
 
 } // namespace Model

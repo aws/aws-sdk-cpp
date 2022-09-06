@@ -214,16 +214,16 @@ namespace Model
   private:
 
     RouteActivationState m_activationState;
-    bool m_activationStateHasBeenSet;
+    bool m_activationStateHasBeenSet = false;
 
     bool m_includeChildPaths;
-    bool m_includeChildPathsHasBeenSet;
+    bool m_includeChildPathsHasBeenSet = false;
 
     Aws::Vector<HttpMethod> m_methods;
-    bool m_methodsHasBeenSet;
+    bool m_methodsHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_edgePackagingJobName;
-    bool m_edgePackagingJobNameHasBeenSet;
+    bool m_edgePackagingJobNameHasBeenSet = false;
   };
 
 } // namespace Model

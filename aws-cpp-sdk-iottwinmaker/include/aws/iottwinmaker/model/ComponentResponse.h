@@ -311,22 +311,22 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_definedIn;
-    bool m_definedInHasBeenSet;
+    bool m_definedInHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, PropertyResponse> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

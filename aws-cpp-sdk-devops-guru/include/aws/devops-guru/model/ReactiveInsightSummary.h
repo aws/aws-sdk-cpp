@@ -326,28 +326,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InsightSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     InsightStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     InsightTimeRange m_insightTimeRange;
-    bool m_insightTimeRangeHasBeenSet;
+    bool m_insightTimeRangeHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     ServiceCollection m_serviceCollection;
-    bool m_serviceCollectionHasBeenSet;
+    bool m_serviceCollectionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedResourceArns;
-    bool m_associatedResourceArnsHasBeenSet;
+    bool m_associatedResourceArnsHasBeenSet = false;
   };
 
 } // namespace Model

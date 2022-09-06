@@ -123,7 +123,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_conformancePackNames;
-    bool m_conformancePackNamesHasBeenSet;
+    bool m_conformancePackNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,13 +180,13 @@ namespace Model
   private:
 
     bool m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_seenAt;
-    bool m_seenAtHasBeenSet;
+    bool m_seenAtHasBeenSet = false;
   };
 
 } // namespace Model

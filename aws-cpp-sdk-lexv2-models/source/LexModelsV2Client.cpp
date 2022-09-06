@@ -143,7 +143,7 @@ LexModelsV2Client::~LexModelsV2Client()
 
 void LexModelsV2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Lex Models V2");
+  AWSClient::SetServiceClientName("Lex Models V2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

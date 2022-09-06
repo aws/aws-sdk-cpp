@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
   };
 
 } // namespace Model

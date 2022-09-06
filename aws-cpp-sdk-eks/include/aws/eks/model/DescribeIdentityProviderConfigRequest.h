@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     IdentityProviderConfig m_identityProviderConfig;
-    bool m_identityProviderConfigHasBeenSet;
+    bool m_identityProviderConfigHasBeenSet = false;
   };
 
 } // namespace Model

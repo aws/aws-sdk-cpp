@@ -649,40 +649,40 @@ namespace Model
   private:
 
     AudioDurationCorrection m_audioDurationCorrection;
-    bool m_audioDurationCorrectionHasBeenSet;
+    bool m_audioDurationCorrectionHasBeenSet = false;
 
     Aws::String m_customLanguageCode;
-    bool m_customLanguageCodeHasBeenSet;
+    bool m_customLanguageCodeHasBeenSet = false;
 
     AudioDefaultSelection m_defaultSelection;
-    bool m_defaultSelectionHasBeenSet;
+    bool m_defaultSelectionHasBeenSet = false;
 
     Aws::String m_externalAudioFileInput;
-    bool m_externalAudioFileInputHasBeenSet;
+    bool m_externalAudioFileInputHasBeenSet = false;
 
     HlsRenditionGroupSettings m_hlsRenditionGroupSettings;
-    bool m_hlsRenditionGroupSettingsHasBeenSet;
+    bool m_hlsRenditionGroupSettingsHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     Aws::Vector<int> m_pids;
-    bool m_pidsHasBeenSet;
+    bool m_pidsHasBeenSet = false;
 
     int m_programSelection;
-    bool m_programSelectionHasBeenSet;
+    bool m_programSelectionHasBeenSet = false;
 
     RemixSettings m_remixSettings;
-    bool m_remixSettingsHasBeenSet;
+    bool m_remixSettingsHasBeenSet = false;
 
     AudioSelectorType m_selectorType;
-    bool m_selectorTypeHasBeenSet;
+    bool m_selectorTypeHasBeenSet = false;
 
     Aws::Vector<int> m_tracks;
-    bool m_tracksHasBeenSet;
+    bool m_tracksHasBeenSet = false;
   };
 
 } // namespace Model

@@ -317,22 +317,22 @@ namespace Model
   private:
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     DataSourceType m_dataSourceType;
-    bool m_dataSourceTypeHasBeenSet;
+    bool m_dataSourceTypeHasBeenSet = false;
 
     Aws::Vector<Group> m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3bucketForReportData;
-    bool m_s3bucketForReportDataHasBeenSet;
+    bool m_s3bucketForReportDataHasBeenSet = false;
 
     Aws::String m_s3key;
-    bool m_s3keyHasBeenSet;
+    bool m_s3keyHasBeenSet = false;
   };
 
 } // namespace Model

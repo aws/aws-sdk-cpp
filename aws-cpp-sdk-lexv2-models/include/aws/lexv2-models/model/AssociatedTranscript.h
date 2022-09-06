@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
   };
 
 } // namespace Model

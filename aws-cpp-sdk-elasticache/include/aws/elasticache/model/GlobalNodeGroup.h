@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_globalNodeGroupId;
-    bool m_globalNodeGroupIdHasBeenSet;
+    bool m_globalNodeGroupIdHasBeenSet = false;
 
     Aws::String m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
   };
 
 } // namespace Model

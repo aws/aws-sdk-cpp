@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

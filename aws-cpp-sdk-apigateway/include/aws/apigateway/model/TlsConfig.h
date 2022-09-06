@@ -103,7 +103,7 @@ namespace Model
   private:
 
     bool m_insecureSkipVerification;
-    bool m_insecureSkipVerificationHasBeenSet;
+    bool m_insecureSkipVerificationHasBeenSet = false;
   };
 
 } // namespace Model

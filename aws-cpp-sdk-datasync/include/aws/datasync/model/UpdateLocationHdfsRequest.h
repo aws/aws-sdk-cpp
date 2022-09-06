@@ -591,43 +591,43 @@ namespace Model
   private:
 
     Aws::String m_locationArn;
-    bool m_locationArnHasBeenSet;
+    bool m_locationArnHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::Vector<HdfsNameNode> m_nameNodes;
-    bool m_nameNodesHasBeenSet;
+    bool m_nameNodesHasBeenSet = false;
 
     int m_blockSize;
-    bool m_blockSizeHasBeenSet;
+    bool m_blockSizeHasBeenSet = false;
 
     int m_replicationFactor;
-    bool m_replicationFactorHasBeenSet;
+    bool m_replicationFactorHasBeenSet = false;
 
     Aws::String m_kmsKeyProviderUri;
-    bool m_kmsKeyProviderUriHasBeenSet;
+    bool m_kmsKeyProviderUriHasBeenSet = false;
 
     QopConfiguration m_qopConfiguration;
-    bool m_qopConfigurationHasBeenSet;
+    bool m_qopConfigurationHasBeenSet = false;
 
     HdfsAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     Aws::String m_simpleUser;
-    bool m_simpleUserHasBeenSet;
+    bool m_simpleUserHasBeenSet = false;
 
     Aws::String m_kerberosPrincipal;
-    bool m_kerberosPrincipalHasBeenSet;
+    bool m_kerberosPrincipalHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_kerberosKeytab;
-    bool m_kerberosKeytabHasBeenSet;
+    bool m_kerberosKeytabHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_kerberosKrb5Conf;
-    bool m_kerberosKrb5ConfHasBeenSet;
+    bool m_kerberosKrb5ConfHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
   };
 
 } // namespace Model

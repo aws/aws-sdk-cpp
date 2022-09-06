@@ -274,16 +274,16 @@ namespace Model
   private:
 
     ClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     EncryptionInfo m_encryptionInfo;
-    bool m_encryptionInfoHasBeenSet;
+    bool m_encryptionInfoHasBeenSet = false;
   };
 
 } // namespace Model

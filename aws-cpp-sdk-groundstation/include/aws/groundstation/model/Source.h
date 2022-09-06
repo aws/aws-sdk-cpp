@@ -191,16 +191,16 @@ namespace Model
   private:
 
     ConfigDetails m_configDetails;
-    bool m_configDetailsHasBeenSet;
+    bool m_configDetailsHasBeenSet = false;
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     ConfigCapabilityType m_configType;
-    bool m_configTypeHasBeenSet;
+    bool m_configTypeHasBeenSet = false;
 
     Aws::String m_dataflowSourceRegion;
-    bool m_dataflowSourceRegionHasBeenSet;
+    bool m_dataflowSourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

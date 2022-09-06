@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_identifiers;
-    bool m_identifiersHasBeenSet;
+    bool m_identifiersHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Predicate m_predicate;
-    bool m_predicateHasBeenSet;
+    bool m_predicateHasBeenSet = false;
 
     Aws::Vector<SortProperty> m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
   };
 
 } // namespace Model

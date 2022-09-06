@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupName;
-    bool m_ruleGroupNameHasBeenSet;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

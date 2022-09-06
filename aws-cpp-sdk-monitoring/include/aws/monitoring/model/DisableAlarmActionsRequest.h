@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_alarmNames;
-    bool m_alarmNamesHasBeenSet;
+    bool m_alarmNamesHasBeenSet = false;
   };
 
 } // namespace Model

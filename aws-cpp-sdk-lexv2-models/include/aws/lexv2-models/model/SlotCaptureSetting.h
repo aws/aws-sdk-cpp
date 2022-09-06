@@ -292,28 +292,28 @@ namespace Model
   private:
 
     ResponseSpecification m_captureResponse;
-    bool m_captureResponseHasBeenSet;
+    bool m_captureResponseHasBeenSet = false;
 
     DialogState m_captureNextStep;
-    bool m_captureNextStepHasBeenSet;
+    bool m_captureNextStepHasBeenSet = false;
 
     ConditionalSpecification m_captureConditional;
-    bool m_captureConditionalHasBeenSet;
+    bool m_captureConditionalHasBeenSet = false;
 
     ResponseSpecification m_failureResponse;
-    bool m_failureResponseHasBeenSet;
+    bool m_failureResponseHasBeenSet = false;
 
     DialogState m_failureNextStep;
-    bool m_failureNextStepHasBeenSet;
+    bool m_failureNextStepHasBeenSet = false;
 
     ConditionalSpecification m_failureConditional;
-    bool m_failureConditionalHasBeenSet;
+    bool m_failureConditionalHasBeenSet = false;
 
     DialogCodeHookInvocationSetting m_codeHook;
-    bool m_codeHookHasBeenSet;
+    bool m_codeHookHasBeenSet = false;
 
     ElicitationCodeHookInvocationSetting m_elicitationCodeHook;
-    bool m_elicitationCodeHookHasBeenSet;
+    bool m_elicitationCodeHookHasBeenSet = false;
   };
 
 } // namespace Model

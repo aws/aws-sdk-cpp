@@ -103,10 +103,10 @@ namespace Model
   private:
 
     CostCategoryStatusComponent m_component;
-    bool m_componentHasBeenSet;
+    bool m_componentHasBeenSet = false;
 
     CostCategoryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_selectExpression;
-    bool m_selectExpressionHasBeenSet;
+    bool m_selectExpressionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
   };
 
 } // namespace Model

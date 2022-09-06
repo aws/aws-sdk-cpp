@@ -244,19 +244,19 @@ namespace Model
   private:
 
     RecommendationTriggerData m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet;
+    bool m_recommendationIdsHasBeenSet = false;
 
     RecommendationSourceType m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     RecommendationTriggerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

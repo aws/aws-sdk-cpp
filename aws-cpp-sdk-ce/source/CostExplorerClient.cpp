@@ -111,7 +111,7 @@ CostExplorerClient::~CostExplorerClient()
 
 void CostExplorerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Cost Explorer");
+  AWSClient::SetServiceClientName("Cost Explorer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

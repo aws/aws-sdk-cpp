@@ -176,7 +176,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Vector<DataPoint>> m_predictions;
-    bool m_predictionsHasBeenSet;
+    bool m_predictionsHasBeenSet = false;
   };
 
 } // namespace Model

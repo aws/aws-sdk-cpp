@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<int> m_integerValues;
-    bool m_integerValuesHasBeenSet;
+    bool m_integerValuesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringValues;
-    bool m_stringValuesHasBeenSet;
+    bool m_stringValuesHasBeenSet = false;
   };
 
 } // namespace Model

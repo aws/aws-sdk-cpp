@@ -426,22 +426,22 @@ namespace Model
   private:
 
     EntityRecognizerDataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     Aws::Vector<EntityTypesListItem> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
 
     EntityRecognizerDocuments m_documents;
-    bool m_documentsHasBeenSet;
+    bool m_documentsHasBeenSet = false;
 
     EntityRecognizerAnnotations m_annotations;
-    bool m_annotationsHasBeenSet;
+    bool m_annotationsHasBeenSet = false;
 
     EntityRecognizerEntityList m_entityList;
-    bool m_entityListHasBeenSet;
+    bool m_entityListHasBeenSet = false;
 
     Aws::Vector<AugmentedManifestsListItem> m_augmentedManifests;
-    bool m_augmentedManifestsHasBeenSet;
+    bool m_augmentedManifestsHasBeenSet = false;
   };
 
 } // namespace Model

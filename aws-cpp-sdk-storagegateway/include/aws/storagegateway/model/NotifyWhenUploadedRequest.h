@@ -61,7 +61,7 @@ namespace Model
   private:
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -502,34 +502,34 @@ namespace Model
   private:
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Ac3BitstreamMode m_bitstreamMode;
-    bool m_bitstreamModeHasBeenSet;
+    bool m_bitstreamModeHasBeenSet = false;
 
     Ac3CodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     int m_dialnorm;
-    bool m_dialnormHasBeenSet;
+    bool m_dialnormHasBeenSet = false;
 
     Ac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine;
-    bool m_dynamicRangeCompressionLineHasBeenSet;
+    bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
     Ac3DynamicRangeCompressionProfile m_dynamicRangeCompressionProfile;
-    bool m_dynamicRangeCompressionProfileHasBeenSet;
+    bool m_dynamicRangeCompressionProfileHasBeenSet = false;
 
     Ac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf;
-    bool m_dynamicRangeCompressionRfHasBeenSet;
+    bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
     Ac3LfeFilter m_lfeFilter;
-    bool m_lfeFilterHasBeenSet;
+    bool m_lfeFilterHasBeenSet = false;
 
     Ac3MetadataControl m_metadataControl;
-    bool m_metadataControlHasBeenSet;
+    bool m_metadataControlHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,7 +58,7 @@ namespace Model
   private:
 
     M2tsSettings m_m2tsSettings;
-    bool m_m2tsSettingsHasBeenSet;
+    bool m_m2tsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3Configuration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

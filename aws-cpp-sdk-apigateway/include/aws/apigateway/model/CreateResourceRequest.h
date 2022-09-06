@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_pathPart;
-    bool m_pathPartHasBeenSet;
+    bool m_pathPartHasBeenSet = false;
   };
 
 } // namespace Model

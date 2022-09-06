@@ -79,7 +79,7 @@ SagemakerEdgeManagerClient::~SagemakerEdgeManagerClient()
 
 void SagemakerEdgeManagerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Sagemaker Edge");
+  AWSClient::SetServiceClientName("Sagemaker Edge");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

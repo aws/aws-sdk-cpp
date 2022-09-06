@@ -406,31 +406,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Vector<TemplateError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     ResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<DataSetConfiguration> m_dataSetConfigurations;
-    bool m_dataSetConfigurationsHasBeenSet;
+    bool m_dataSetConfigurationsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_sourceEntityArn;
-    bool m_sourceEntityArnHasBeenSet;
+    bool m_sourceEntityArnHasBeenSet = false;
 
     Aws::String m_themeArn;
-    bool m_themeArnHasBeenSet;
+    bool m_themeArnHasBeenSet = false;
 
     Aws::Vector<Sheet> m_sheets;
-    bool m_sheetsHasBeenSet;
+    bool m_sheetsHasBeenSet = false;
   };
 
 } // namespace Model

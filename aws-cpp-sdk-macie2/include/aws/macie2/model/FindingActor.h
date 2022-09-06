@@ -159,13 +159,13 @@ namespace Model
   private:
 
     DomainDetails m_domainDetails;
-    bool m_domainDetailsHasBeenSet;
+    bool m_domainDetailsHasBeenSet = false;
 
     IpAddressDetails m_ipAddressDetails;
-    bool m_ipAddressDetailsHasBeenSet;
+    bool m_ipAddressDetailsHasBeenSet = false;
 
     UserIdentity m_userIdentity;
-    bool m_userIdentityHasBeenSet;
+    bool m_userIdentityHasBeenSet = false;
   };
 
 } // namespace Model

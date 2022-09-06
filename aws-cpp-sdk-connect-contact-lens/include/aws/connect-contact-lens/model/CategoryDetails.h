@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PointOfInterest> m_pointsOfInterest;
-    bool m_pointsOfInterestHasBeenSet;
+    bool m_pointsOfInterestHasBeenSet = false;
   };
 
 } // namespace Model

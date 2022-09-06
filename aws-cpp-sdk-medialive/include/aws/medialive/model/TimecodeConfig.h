@@ -151,10 +151,10 @@ namespace Model
   private:
 
     TimecodeConfigSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     int m_syncThreshold;
-    bool m_syncThresholdHasBeenSet;
+    bool m_syncThresholdHasBeenSet = false;
   };
 
 } // namespace Model

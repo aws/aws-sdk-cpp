@@ -293,25 +293,25 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::String m_expressionWithValues;
-    bool m_expressionWithValuesHasBeenSet;
+    bool m_expressionWithValuesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outcomes;
-    bool m_outcomesHasBeenSet;
+    bool m_outcomesHasBeenSet = false;
 
     bool m_evaluated;
-    bool m_evaluatedHasBeenSet;
+    bool m_evaluatedHasBeenSet = false;
 
     bool m_matched;
-    bool m_matchedHasBeenSet;
+    bool m_matchedHasBeenSet = false;
   };
 
 } // namespace Model

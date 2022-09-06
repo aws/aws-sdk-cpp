@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_elementName;
-    bool m_elementNameHasBeenSet;
+    bool m_elementNameHasBeenSet = false;
 
     SanitizationWarningReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

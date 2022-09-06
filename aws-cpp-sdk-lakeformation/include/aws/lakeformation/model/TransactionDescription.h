@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     TransactionStatus m_transactionStatus;
-    bool m_transactionStatusHasBeenSet;
+    bool m_transactionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_transactionStartTime;
-    bool m_transactionStartTimeHasBeenSet;
+    bool m_transactionStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_transactionEndTime;
-    bool m_transactionEndTimeHasBeenSet;
+    bool m_transactionEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

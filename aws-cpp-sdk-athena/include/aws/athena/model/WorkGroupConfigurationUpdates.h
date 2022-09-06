@@ -308,25 +308,25 @@ namespace Model
   private:
 
     bool m_enforceWorkGroupConfiguration;
-    bool m_enforceWorkGroupConfigurationHasBeenSet;
+    bool m_enforceWorkGroupConfigurationHasBeenSet = false;
 
     ResultConfigurationUpdates m_resultConfigurationUpdates;
-    bool m_resultConfigurationUpdatesHasBeenSet;
+    bool m_resultConfigurationUpdatesHasBeenSet = false;
 
     bool m_publishCloudWatchMetricsEnabled;
-    bool m_publishCloudWatchMetricsEnabledHasBeenSet;
+    bool m_publishCloudWatchMetricsEnabledHasBeenSet = false;
 
     long long m_bytesScannedCutoffPerQuery;
-    bool m_bytesScannedCutoffPerQueryHasBeenSet;
+    bool m_bytesScannedCutoffPerQueryHasBeenSet = false;
 
     bool m_removeBytesScannedCutoffPerQuery;
-    bool m_removeBytesScannedCutoffPerQueryHasBeenSet;
+    bool m_removeBytesScannedCutoffPerQueryHasBeenSet = false;
 
     bool m_requesterPaysEnabled;
-    bool m_requesterPaysEnabledHasBeenSet;
+    bool m_requesterPaysEnabledHasBeenSet = false;
 
     EngineVersion m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
   };
 
 } // namespace Model

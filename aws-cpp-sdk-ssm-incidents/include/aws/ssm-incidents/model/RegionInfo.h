@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_sseKmsKeyId;
-    bool m_sseKmsKeyIdHasBeenSet;
+    bool m_sseKmsKeyIdHasBeenSet = false;
 
     RegionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_statusUpdateDateTime;
-    bool m_statusUpdateDateTimeHasBeenSet;
+    bool m_statusUpdateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

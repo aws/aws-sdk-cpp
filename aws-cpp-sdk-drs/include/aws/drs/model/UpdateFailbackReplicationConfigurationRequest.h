@@ -166,16 +166,16 @@ namespace Model
   private:
 
     long long m_bandwidthThrottling;
-    bool m_bandwidthThrottlingHasBeenSet;
+    bool m_bandwidthThrottlingHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recoveryInstanceID;
-    bool m_recoveryInstanceIDHasBeenSet;
+    bool m_recoveryInstanceIDHasBeenSet = false;
 
     bool m_usePrivateIP;
-    bool m_usePrivateIPHasBeenSet;
+    bool m_usePrivateIPHasBeenSet = false;
   };
 
 } // namespace Model

@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stepIds;
-    bool m_stepIdsHasBeenSet;
+    bool m_stepIdsHasBeenSet = false;
 
     StepCancellationOption m_stepCancellationOption;
-    bool m_stepCancellationOptionHasBeenSet;
+    bool m_stepCancellationOptionHasBeenSet = false;
   };
 
 } // namespace Model

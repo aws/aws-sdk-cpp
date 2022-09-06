@@ -159,10 +159,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_flags;
-    bool m_flagsHasBeenSet;
+    bool m_flagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_masks;
-    bool m_masksHasBeenSet;
+    bool m_masksHasBeenSet = false;
   };
 
 } // namespace Model

@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_featureSpecificationS3Uri;
-    bool m_featureSpecificationS3UriHasBeenSet;
+    bool m_featureSpecificationS3UriHasBeenSet = false;
   };
 
 } // namespace Model

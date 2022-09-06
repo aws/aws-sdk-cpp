@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_clientName;
-    bool m_clientNameHasBeenSet;
+    bool m_clientNameHasBeenSet = false;
 
     Aws::String m_clientType;
-    bool m_clientTypeHasBeenSet;
+    bool m_clientTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scopes;
-    bool m_scopesHasBeenSet;
+    bool m_scopesHasBeenSet = false;
   };
 
 } // namespace Model

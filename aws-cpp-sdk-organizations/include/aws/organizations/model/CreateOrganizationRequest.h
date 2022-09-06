@@ -139,7 +139,7 @@ namespace Model
   private:
 
     OrganizationFeatureSet m_featureSet;
-    bool m_featureSetHasBeenSet;
+    bool m_featureSetHasBeenSet = false;
   };
 
 } // namespace Model

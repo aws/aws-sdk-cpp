@@ -191,16 +191,16 @@ namespace Model
   private:
 
     DriftCheckBias m_bias;
-    bool m_biasHasBeenSet;
+    bool m_biasHasBeenSet = false;
 
     DriftCheckExplainability m_explainability;
-    bool m_explainabilityHasBeenSet;
+    bool m_explainabilityHasBeenSet = false;
 
     DriftCheckModelQuality m_modelQuality;
-    bool m_modelQualityHasBeenSet;
+    bool m_modelQualityHasBeenSet = false;
 
     DriftCheckModelDataQuality m_modelDataQuality;
-    bool m_modelDataQualityHasBeenSet;
+    bool m_modelDataQualityHasBeenSet = false;
   };
 
 } // namespace Model

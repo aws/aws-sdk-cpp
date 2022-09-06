@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
   };
 
 } // namespace Model

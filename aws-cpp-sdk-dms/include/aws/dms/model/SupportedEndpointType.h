@@ -312,19 +312,19 @@ namespace Model
   private:
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     bool m_supportsCDC;
-    bool m_supportsCDCHasBeenSet;
+    bool m_supportsCDCHasBeenSet = false;
 
     ReplicationEndpointTypeValue m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_replicationInstanceEngineMinimumVersion;
-    bool m_replicationInstanceEngineMinimumVersionHasBeenSet;
+    bool m_replicationInstanceEngineMinimumVersionHasBeenSet = false;
 
     Aws::String m_engineDisplayName;
-    bool m_engineDisplayNameHasBeenSet;
+    bool m_engineDisplayNameHasBeenSet = false;
   };
 
 } // namespace Model

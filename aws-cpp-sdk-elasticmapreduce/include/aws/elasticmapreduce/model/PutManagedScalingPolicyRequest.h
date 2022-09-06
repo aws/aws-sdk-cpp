@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     ManagedScalingPolicy m_managedScalingPolicy;
-    bool m_managedScalingPolicyHasBeenSet;
+    bool m_managedScalingPolicyHasBeenSet = false;
   };
 
 } // namespace Model

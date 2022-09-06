@@ -315,22 +315,22 @@ namespace Model
   private:
 
     Aws::String m_quickConnectARN;
-    bool m_quickConnectARNHasBeenSet;
+    bool m_quickConnectARNHasBeenSet = false;
 
     Aws::String m_quickConnectId;
-    bool m_quickConnectIdHasBeenSet;
+    bool m_quickConnectIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     QuickConnectConfig m_quickConnectConfig;
-    bool m_quickConnectConfigHasBeenSet;
+    bool m_quickConnectConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

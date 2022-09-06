@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_inferenceSpecificationName;
-    bool m_inferenceSpecificationNameHasBeenSet;
+    bool m_inferenceSpecificationNameHasBeenSet = false;
 
     Aws::Vector<EnvironmentParameter> m_environmentParameters;
-    bool m_environmentParametersHasBeenSet;
+    bool m_environmentParametersHasBeenSet = false;
   };
 
 } // namespace Model

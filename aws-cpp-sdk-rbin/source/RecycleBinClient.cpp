@@ -84,7 +84,7 @@ RecycleBinClient::~RecycleBinClient()
 
 void RecycleBinClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("rbin");
+  AWSClient::SetServiceClientName("rbin");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

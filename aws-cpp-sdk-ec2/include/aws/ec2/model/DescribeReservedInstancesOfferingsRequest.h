@@ -831,49 +831,49 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     bool m_includeMarketplace;
-    bool m_includeMarketplaceHasBeenSet;
+    bool m_includeMarketplaceHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     long long m_maxDuration;
-    bool m_maxDurationHasBeenSet;
+    bool m_maxDurationHasBeenSet = false;
 
     int m_maxInstanceCount;
-    bool m_maxInstanceCountHasBeenSet;
+    bool m_maxInstanceCountHasBeenSet = false;
 
     long long m_minDuration;
-    bool m_minDurationHasBeenSet;
+    bool m_minDurationHasBeenSet = false;
 
     OfferingClassType m_offeringClass;
-    bool m_offeringClassHasBeenSet;
+    bool m_offeringClassHasBeenSet = false;
 
     RIProductDescription m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reservedInstancesOfferingIds;
-    bool m_reservedInstancesOfferingIdsHasBeenSet;
+    bool m_reservedInstancesOfferingIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Tenancy m_instanceTenancy;
-    bool m_instanceTenancyHasBeenSet;
+    bool m_instanceTenancyHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     OfferingTypeValues m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
   };
 
 } // namespace Model

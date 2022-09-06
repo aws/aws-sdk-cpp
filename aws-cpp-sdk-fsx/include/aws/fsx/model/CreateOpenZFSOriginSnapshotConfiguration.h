@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_snapshotARN;
-    bool m_snapshotARNHasBeenSet;
+    bool m_snapshotARNHasBeenSet = false;
 
     OpenZFSCopyStrategy m_copyStrategy;
-    bool m_copyStrategyHasBeenSet;
+    bool m_copyStrategyHasBeenSet = false;
   };
 
 } // namespace Model

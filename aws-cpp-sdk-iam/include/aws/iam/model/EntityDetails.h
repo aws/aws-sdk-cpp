@@ -150,10 +150,10 @@ namespace Model
   private:
 
     EntityInfo m_entityInfo;
-    bool m_entityInfoHasBeenSet;
+    bool m_entityInfoHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAuthenticated;
-    bool m_lastAuthenticatedHasBeenSet;
+    bool m_lastAuthenticatedHasBeenSet = false;
   };
 
 } // namespace Model

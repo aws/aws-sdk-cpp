@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_unvalidatedJSON;
-    bool m_unvalidatedJSONHasBeenSet;
+    bool m_unvalidatedJSONHasBeenSet = false;
   };
 
 } // namespace Model

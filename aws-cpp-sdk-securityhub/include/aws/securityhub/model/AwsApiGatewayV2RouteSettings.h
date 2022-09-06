@@ -212,19 +212,19 @@ namespace Model
   private:
 
     bool m_detailedMetricsEnabled;
-    bool m_detailedMetricsEnabledHasBeenSet;
+    bool m_detailedMetricsEnabledHasBeenSet = false;
 
     Aws::String m_loggingLevel;
-    bool m_loggingLevelHasBeenSet;
+    bool m_loggingLevelHasBeenSet = false;
 
     bool m_dataTraceEnabled;
-    bool m_dataTraceEnabledHasBeenSet;
+    bool m_dataTraceEnabledHasBeenSet = false;
 
     int m_throttlingBurstLimit;
-    bool m_throttlingBurstLimitHasBeenSet;
+    bool m_throttlingBurstLimitHasBeenSet = false;
 
     double m_throttlingRateLimit;
-    bool m_throttlingRateLimitHasBeenSet;
+    bool m_throttlingRateLimitHasBeenSet = false;
   };
 
 } // namespace Model

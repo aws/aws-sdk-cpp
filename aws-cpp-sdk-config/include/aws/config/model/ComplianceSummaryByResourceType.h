@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ComplianceSummary m_complianceSummary;
-    bool m_complianceSummaryHasBeenSet;
+    bool m_complianceSummaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_warnings;
-    bool m_warningsHasBeenSet;
+    bool m_warningsHasBeenSet = false;
   };
 
 } // namespace Model

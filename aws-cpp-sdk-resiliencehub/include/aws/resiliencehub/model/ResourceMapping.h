@@ -362,25 +362,25 @@ namespace Model
   private:
 
     Aws::String m_appRegistryAppName;
-    bool m_appRegistryAppNameHasBeenSet;
+    bool m_appRegistryAppNameHasBeenSet = false;
 
     Aws::String m_logicalStackName;
-    bool m_logicalStackNameHasBeenSet;
+    bool m_logicalStackNameHasBeenSet = false;
 
     ResourceMappingType m_mappingType;
-    bool m_mappingTypeHasBeenSet;
+    bool m_mappingTypeHasBeenSet = false;
 
     PhysicalResourceId m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_terraformSourceName;
-    bool m_terraformSourceNameHasBeenSet;
+    bool m_terraformSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -358,28 +358,28 @@ namespace Model
   private:
 
     Aws::String m_integrationAssociationId;
-    bool m_integrationAssociationIdHasBeenSet;
+    bool m_integrationAssociationIdHasBeenSet = false;
 
     Aws::String m_integrationAssociationArn;
-    bool m_integrationAssociationArnHasBeenSet;
+    bool m_integrationAssociationArnHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     IntegrationType m_integrationType;
-    bool m_integrationTypeHasBeenSet;
+    bool m_integrationTypeHasBeenSet = false;
 
     Aws::String m_integrationArn;
-    bool m_integrationArnHasBeenSet;
+    bool m_integrationArnHasBeenSet = false;
 
     Aws::String m_sourceApplicationUrl;
-    bool m_sourceApplicationUrlHasBeenSet;
+    bool m_sourceApplicationUrlHasBeenSet = false;
 
     Aws::String m_sourceApplicationName;
-    bool m_sourceApplicationNameHasBeenSet;
+    bool m_sourceApplicationNameHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -369,22 +369,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InstanceFleetType m_instanceFleetType;
-    bool m_instanceFleetTypeHasBeenSet;
+    bool m_instanceFleetTypeHasBeenSet = false;
 
     int m_targetOnDemandCapacity;
-    bool m_targetOnDemandCapacityHasBeenSet;
+    bool m_targetOnDemandCapacityHasBeenSet = false;
 
     int m_targetSpotCapacity;
-    bool m_targetSpotCapacityHasBeenSet;
+    bool m_targetSpotCapacityHasBeenSet = false;
 
     Aws::Vector<InstanceTypeConfig> m_instanceTypeConfigs;
-    bool m_instanceTypeConfigsHasBeenSet;
+    bool m_instanceTypeConfigsHasBeenSet = false;
 
     InstanceFleetProvisioningSpecifications m_launchSpecifications;
-    bool m_launchSpecificationsHasBeenSet;
+    bool m_launchSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

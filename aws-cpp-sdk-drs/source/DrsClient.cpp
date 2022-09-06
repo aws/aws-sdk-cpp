@@ -108,7 +108,7 @@ DrsClient::~DrsClient()
 
 void DrsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("drs");
+  AWSClient::SetServiceClientName("drs");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

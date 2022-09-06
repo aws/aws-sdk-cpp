@@ -271,25 +271,25 @@ namespace Model
   private:
 
     bool m_blocked;
-    bool m_blockedHasBeenSet;
+    bool m_blockedHasBeenSet = false;
 
     Aws::String m_connectionDirection;
-    bool m_connectionDirectionHasBeenSet;
+    bool m_connectionDirectionHasBeenSet = false;
 
     LocalPortDetails m_localPortDetails;
-    bool m_localPortDetailsHasBeenSet;
+    bool m_localPortDetailsHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     LocalIpDetails m_localIpDetails;
-    bool m_localIpDetailsHasBeenSet;
+    bool m_localIpDetailsHasBeenSet = false;
 
     RemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
 
     RemotePortDetails m_remotePortDetails;
-    bool m_remotePortDetailsHasBeenSet;
+    bool m_remotePortDetailsHasBeenSet = false;
   };
 
 } // namespace Model

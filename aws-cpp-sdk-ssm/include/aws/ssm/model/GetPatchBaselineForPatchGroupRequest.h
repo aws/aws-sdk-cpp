@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_patchGroup;
-    bool m_patchGroupHasBeenSet;
+    bool m_patchGroupHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
   };
 
 } // namespace Model

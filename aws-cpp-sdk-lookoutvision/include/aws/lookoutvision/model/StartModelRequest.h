@@ -310,19 +310,19 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     int m_minInferenceUnits;
-    bool m_minInferenceUnitsHasBeenSet;
+    bool m_minInferenceUnitsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     int m_maxInferenceUnits;
-    bool m_maxInferenceUnitsHasBeenSet;
+    bool m_maxInferenceUnitsHasBeenSet = false;
   };
 
 } // namespace Model

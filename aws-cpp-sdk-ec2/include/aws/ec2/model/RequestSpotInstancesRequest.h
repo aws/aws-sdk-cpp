@@ -815,43 +815,43 @@ namespace Model
   private:
 
     Aws::String m_availabilityZoneGroup;
-    bool m_availabilityZoneGroupHasBeenSet;
+    bool m_availabilityZoneGroupHasBeenSet = false;
 
     int m_blockDurationMinutes;
-    bool m_blockDurationMinutesHasBeenSet;
+    bool m_blockDurationMinutesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_launchGroup;
-    bool m_launchGroupHasBeenSet;
+    bool m_launchGroupHasBeenSet = false;
 
     RequestSpotLaunchSpecification m_launchSpecification;
-    bool m_launchSpecificationHasBeenSet;
+    bool m_launchSpecificationHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     SpotInstanceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_awsAccountNumber;
-    bool m_awsAccountNumberHasBeenSet;
+    bool m_awsAccountNumberHasBeenSet = false;
 
     KeyPairIds m_keyPairIds;
-    bool m_keyPairIdsHasBeenSet;
+    bool m_keyPairIdsHasBeenSet = false;
   };
 
 } // namespace Model

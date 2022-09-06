@@ -105,7 +105,7 @@ GreengrassV2Client::~GreengrassV2Client()
 
 void GreengrassV2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("GreengrassV2");
+  AWSClient::SetServiceClientName("GreengrassV2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

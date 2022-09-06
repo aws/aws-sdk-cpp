@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::String m_extensionIdentifier;
-    bool m_extensionIdentifierHasBeenSet;
+    bool m_extensionIdentifierHasBeenSet = false;
 
     int m_extensionVersionNumber;
-    bool m_extensionVersionNumberHasBeenSet;
+    bool m_extensionVersionNumberHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

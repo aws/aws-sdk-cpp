@@ -1071,31 +1071,31 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_validationData;
-    bool m_validationDataHasBeenSet;
+    bool m_validationDataHasBeenSet = false;
 
     Aws::String m_temporaryPassword;
-    bool m_temporaryPasswordHasBeenSet;
+    bool m_temporaryPasswordHasBeenSet = false;
 
     bool m_forceAliasCreation;
-    bool m_forceAliasCreationHasBeenSet;
+    bool m_forceAliasCreationHasBeenSet = false;
 
     MessageActionType m_messageAction;
-    bool m_messageActionHasBeenSet;
+    bool m_messageActionHasBeenSet = false;
 
     Aws::Vector<DeliveryMediumType> m_desiredDeliveryMediums;
-    bool m_desiredDeliveryMediumsHasBeenSet;
+    bool m_desiredDeliveryMediumsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
   };
 
 } // namespace Model

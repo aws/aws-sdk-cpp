@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
   };
 
 } // namespace Model

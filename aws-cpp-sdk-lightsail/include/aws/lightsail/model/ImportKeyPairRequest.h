@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_keyPairName;
-    bool m_keyPairNameHasBeenSet;
+    bool m_keyPairNameHasBeenSet = false;
 
     Aws::String m_publicKeyBase64;
-    bool m_publicKeyBase64HasBeenSet;
+    bool m_publicKeyBase64HasBeenSet = false;
   };
 
 } // namespace Model

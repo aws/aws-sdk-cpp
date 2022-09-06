@@ -99,10 +99,10 @@ namespace Model
   private:
 
     int m_maxUnavailable;
-    bool m_maxUnavailableHasBeenSet;
+    bool m_maxUnavailableHasBeenSet = false;
 
     int m_maxUnavailablePercentage;
-    bool m_maxUnavailablePercentageHasBeenSet;
+    bool m_maxUnavailablePercentageHasBeenSet = false;
   };
 
 } // namespace Model

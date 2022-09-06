@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::Vector<Expression> m_or;
-    bool m_orHasBeenSet;
+    bool m_orHasBeenSet = false;
 
     Aws::Vector<Expression> m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
 
     Aws::Vector<Expression> m_not;
-    bool m_notHasBeenSet;
+    bool m_notHasBeenSet = false;
 
     DimensionValues m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     TagValues m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CostCategoryValues m_costCategories;
-    bool m_costCategoriesHasBeenSet;
+    bool m_costCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

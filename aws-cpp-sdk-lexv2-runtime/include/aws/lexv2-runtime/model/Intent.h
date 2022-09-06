@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Slot> m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     IntentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ConfirmationState m_confirmationState;
-    bool m_confirmationStateHasBeenSet;
+    bool m_confirmationStateHasBeenSet = false;
   };
 
 } // namespace Model

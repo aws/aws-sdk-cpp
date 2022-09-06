@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_folderId;
-    bool m_folderIdHasBeenSet;
+    bool m_folderIdHasBeenSet = false;
 
     bool m_includeCustomMetadata;
-    bool m_includeCustomMetadataHasBeenSet;
+    bool m_includeCustomMetadataHasBeenSet = false;
   };
 
 } // namespace Model

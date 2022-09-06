@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_ec2SecurityGroupId;
-    bool m_ec2SecurityGroupIdHasBeenSet;
+    bool m_ec2SecurityGroupIdHasBeenSet = false;
 
     Aws::String m_ec2SecurityGroupName;
-    bool m_ec2SecurityGroupNameHasBeenSet;
+    bool m_ec2SecurityGroupNameHasBeenSet = false;
 
     Aws::String m_ec2SecurityGroupOwnerId;
-    bool m_ec2SecurityGroupOwnerIdHasBeenSet;
+    bool m_ec2SecurityGroupOwnerIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_taskExecutionArn;
-    bool m_taskExecutionArnHasBeenSet;
+    bool m_taskExecutionArnHasBeenSet = false;
 
     Options m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

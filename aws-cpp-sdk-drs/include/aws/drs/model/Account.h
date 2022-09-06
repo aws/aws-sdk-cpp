@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_accountID;
-    bool m_accountIDHasBeenSet;
+    bool m_accountIDHasBeenSet = false;
   };
 
 } // namespace Model

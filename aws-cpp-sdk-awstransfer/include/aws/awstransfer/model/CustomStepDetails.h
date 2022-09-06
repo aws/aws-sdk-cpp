@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
 
     Aws::String m_sourceFileLocation;
-    bool m_sourceFileLocationHasBeenSet;
+    bool m_sourceFileLocationHasBeenSet = false;
   };
 
 } // namespace Model

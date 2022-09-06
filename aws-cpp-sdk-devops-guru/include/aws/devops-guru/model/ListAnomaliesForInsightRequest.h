@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_insightId;
-    bool m_insightIdHasBeenSet;
+    bool m_insightIdHasBeenSet = false;
 
     StartTimeRange m_startTimeRange;
-    bool m_startTimeRangeHasBeenSet;
+    bool m_startTimeRangeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

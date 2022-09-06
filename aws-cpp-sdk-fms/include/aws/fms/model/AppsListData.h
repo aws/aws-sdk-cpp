@@ -358,25 +358,25 @@ namespace Model
   private:
 
     Aws::String m_listId;
-    bool m_listIdHasBeenSet;
+    bool m_listIdHasBeenSet = false;
 
     Aws::String m_listName;
-    bool m_listNameHasBeenSet;
+    bool m_listNameHasBeenSet = false;
 
     Aws::String m_listUpdateToken;
-    bool m_listUpdateTokenHasBeenSet;
+    bool m_listUpdateTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Vector<App> m_appsList;
-    bool m_appsListHasBeenSet;
+    bool m_appsListHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<App>> m_previousAppsList;
-    bool m_previousAppsListHasBeenSet;
+    bool m_previousAppsListHasBeenSet = false;
   };
 
 } // namespace Model

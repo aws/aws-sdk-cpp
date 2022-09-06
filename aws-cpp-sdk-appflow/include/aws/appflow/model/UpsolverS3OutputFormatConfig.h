@@ -117,13 +117,13 @@ namespace Model
   private:
 
     FileType m_fileType;
-    bool m_fileTypeHasBeenSet;
+    bool m_fileTypeHasBeenSet = false;
 
     PrefixConfig m_prefixConfig;
-    bool m_prefixConfigHasBeenSet;
+    bool m_prefixConfigHasBeenSet = false;
 
     AggregationConfig m_aggregationConfig;
-    bool m_aggregationConfigHasBeenSet;
+    bool m_aggregationConfigHasBeenSet = false;
   };
 
 } // namespace Model

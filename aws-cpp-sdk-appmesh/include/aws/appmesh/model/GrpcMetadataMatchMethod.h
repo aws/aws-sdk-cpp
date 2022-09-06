@@ -224,19 +224,19 @@ namespace Model
   private:
 
     Aws::String m_exact;
-    bool m_exactHasBeenSet;
+    bool m_exactHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     MatchRange m_range;
-    bool m_rangeHasBeenSet;
+    bool m_rangeHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     Aws::String m_suffix;
-    bool m_suffixHasBeenSet;
+    bool m_suffixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -250,16 +250,16 @@ namespace Model
   private:
 
     CodeSigningSignature m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
 
     CodeSigningCertificateChain m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
 
     Aws::String m_hashAlgorithm;
-    bool m_hashAlgorithmHasBeenSet;
+    bool m_hashAlgorithmHasBeenSet = false;
 
     Aws::String m_signatureAlgorithm;
-    bool m_signatureAlgorithmHasBeenSet;
+    bool m_signatureAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

@@ -94,7 +94,7 @@ ComputeOptimizerClient::~ComputeOptimizerClient()
 
 void ComputeOptimizerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Compute Optimizer");
+  AWSClient::SetServiceClientName("Compute Optimizer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

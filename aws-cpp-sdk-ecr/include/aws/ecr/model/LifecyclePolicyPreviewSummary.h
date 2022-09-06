@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_expiringImageTotalCount;
-    bool m_expiringImageTotalCountHasBeenSet;
+    bool m_expiringImageTotalCountHasBeenSet = false;
   };
 
 } // namespace Model

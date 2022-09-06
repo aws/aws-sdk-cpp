@@ -374,16 +374,16 @@ namespace Model
   private:
 
     ReadWriteType m_readWriteType;
-    bool m_readWriteTypeHasBeenSet;
+    bool m_readWriteTypeHasBeenSet = false;
 
     bool m_includeManagementEvents;
-    bool m_includeManagementEventsHasBeenSet;
+    bool m_includeManagementEventsHasBeenSet = false;
 
     Aws::Vector<DataResource> m_dataResources;
-    bool m_dataResourcesHasBeenSet;
+    bool m_dataResourcesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeManagementEventSources;
-    bool m_excludeManagementEventSourcesHasBeenSet;
+    bool m_excludeManagementEventSourcesHasBeenSet = false;
   };
 
 } // namespace Model

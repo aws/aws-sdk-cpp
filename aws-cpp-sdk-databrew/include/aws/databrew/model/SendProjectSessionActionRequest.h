@@ -214,22 +214,22 @@ namespace Model
   private:
 
     bool m_preview;
-    bool m_previewHasBeenSet;
+    bool m_previewHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RecipeStep m_recipeStep;
-    bool m_recipeStepHasBeenSet;
+    bool m_recipeStepHasBeenSet = false;
 
     int m_stepIndex;
-    bool m_stepIndexHasBeenSet;
+    bool m_stepIndexHasBeenSet = false;
 
     Aws::String m_clientSessionId;
-    bool m_clientSessionIdHasBeenSet;
+    bool m_clientSessionIdHasBeenSet = false;
 
     ViewFrame m_viewFrame;
-    bool m_viewFrameHasBeenSet;
+    bool m_viewFrameHasBeenSet = false;
   };
 
 } // namespace Model

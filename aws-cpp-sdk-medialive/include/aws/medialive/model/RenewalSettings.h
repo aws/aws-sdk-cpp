@@ -91,10 +91,10 @@ namespace Model
   private:
 
     ReservationAutomaticRenewal m_automaticRenewal;
-    bool m_automaticRenewalHasBeenSet;
+    bool m_automaticRenewalHasBeenSet = false;
 
     int m_renewalCount;
-    bool m_renewalCountHasBeenSet;
+    bool m_renewalCountHasBeenSet = false;
   };
 
 } // namespace Model

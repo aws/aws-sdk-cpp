@@ -765,37 +765,37 @@ namespace Model
   private:
 
     Aws::String m_calculatorName;
-    bool m_calculatorNameHasBeenSet;
+    bool m_calculatorNameHasBeenSet = false;
 
     CalculateRouteCarModeOptions m_carModeOptions;
-    bool m_carModeOptionsHasBeenSet;
+    bool m_carModeOptionsHasBeenSet = false;
 
     bool m_departNow;
-    bool m_departNowHasBeenSet;
+    bool m_departNowHasBeenSet = false;
 
     Aws::Vector<double> m_departurePosition;
-    bool m_departurePositionHasBeenSet;
+    bool m_departurePositionHasBeenSet = false;
 
     Aws::Utils::DateTime m_departureTime;
-    bool m_departureTimeHasBeenSet;
+    bool m_departureTimeHasBeenSet = false;
 
     Aws::Vector<double> m_destinationPosition;
-    bool m_destinationPositionHasBeenSet;
+    bool m_destinationPositionHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     bool m_includeLegGeometry;
-    bool m_includeLegGeometryHasBeenSet;
+    bool m_includeLegGeometryHasBeenSet = false;
 
     TravelMode m_travelMode;
-    bool m_travelModeHasBeenSet;
+    bool m_travelModeHasBeenSet = false;
 
     CalculateRouteTruckModeOptions m_truckModeOptions;
-    bool m_truckModeOptionsHasBeenSet;
+    bool m_truckModeOptionsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<double>> m_waypointPositions;
-    bool m_waypointPositionsHasBeenSet;
+    bool m_waypointPositionsHasBeenSet = false;
   };
 
 } // namespace Model

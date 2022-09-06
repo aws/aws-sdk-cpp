@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_billingGroupArn;
-    bool m_billingGroupArnHasBeenSet;
+    bool m_billingGroupArnHasBeenSet = false;
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_accountEmail;
-    bool m_accountEmailHasBeenSet;
+    bool m_accountEmailHasBeenSet = false;
   };
 
 } // namespace Model

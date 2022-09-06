@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
-    bool m_instanceAccessControlAttributeConfigurationHasBeenSet;
+    bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

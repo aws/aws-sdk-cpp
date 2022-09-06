@@ -220,13 +220,13 @@ namespace Model
   private:
 
     InstanceMetadataHttpTokensState m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     InstanceMetadataEndpointState m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
   };
 
 } // namespace Model

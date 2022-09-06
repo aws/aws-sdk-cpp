@@ -389,22 +389,22 @@ namespace Model
   private:
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     Aws::String m_majorEngineVersion;
-    bool m_majorEngineVersionHasBeenSet;
+    bool m_majorEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

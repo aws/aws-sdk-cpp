@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::Vector<EventAccountFilter> m_organizationEntityFilters;
-    bool m_organizationEntityFiltersHasBeenSet;
+    bool m_organizationEntityFiltersHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -337,16 +337,16 @@ namespace Model
   private:
 
     ProjectDataDeliveryConfig m_dataDelivery;
-    bool m_dataDeliveryHasBeenSet;
+    bool m_dataDeliveryHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

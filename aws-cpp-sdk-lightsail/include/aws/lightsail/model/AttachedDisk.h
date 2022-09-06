@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

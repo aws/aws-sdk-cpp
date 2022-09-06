@@ -126,7 +126,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_namedShadowNames;
-    bool m_namedShadowNamesHasBeenSet;
+    bool m_namedShadowNamesHasBeenSet = false;
   };
 
 } // namespace Model

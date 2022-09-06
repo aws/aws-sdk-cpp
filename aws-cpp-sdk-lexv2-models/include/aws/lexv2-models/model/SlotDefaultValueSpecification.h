@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<SlotDefaultValue> m_defaultValueList;
-    bool m_defaultValueListHasBeenSet;
+    bool m_defaultValueListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     NotificationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     LensUpgradeSummary m_lensUpgradeSummary;
-    bool m_lensUpgradeSummaryHasBeenSet;
+    bool m_lensUpgradeSummaryHasBeenSet = false;
   };
 
 } // namespace Model

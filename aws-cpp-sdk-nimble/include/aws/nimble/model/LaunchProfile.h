@@ -771,55 +771,55 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2SubnetIds;
-    bool m_ec2SubnetIdsHasBeenSet;
+    bool m_ec2SubnetIdsHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_launchProfileProtocolVersions;
-    bool m_launchProfileProtocolVersionsHasBeenSet;
+    bool m_launchProfileProtocolVersionsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LaunchProfileState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     LaunchProfileStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     StreamConfiguration m_streamConfiguration;
-    bool m_streamConfigurationHasBeenSet;
+    bool m_streamConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_studioComponentIds;
-    bool m_studioComponentIdsHasBeenSet;
+    bool m_studioComponentIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
-    bool m_updatedByHasBeenSet;
+    bool m_updatedByHasBeenSet = false;
 
     Aws::Vector<ValidationResult> m_validationResults;
-    bool m_validationResultsHasBeenSet;
+    bool m_validationResultsHasBeenSet = false;
   };
 
 } // namespace Model

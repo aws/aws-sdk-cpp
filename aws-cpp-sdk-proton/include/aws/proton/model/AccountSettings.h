@@ -149,10 +149,10 @@ namespace Model
   private:
 
     RepositoryBranch m_pipelineProvisioningRepository;
-    bool m_pipelineProvisioningRepositoryHasBeenSet;
+    bool m_pipelineProvisioningRepositoryHasBeenSet = false;
 
     Aws::String m_pipelineServiceRoleArn;
-    bool m_pipelineServiceRoleArnHasBeenSet;
+    bool m_pipelineServiceRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

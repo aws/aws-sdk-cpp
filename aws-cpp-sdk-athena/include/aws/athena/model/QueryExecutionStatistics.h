@@ -296,25 +296,25 @@ namespace Model
   private:
 
     long long m_engineExecutionTimeInMillis;
-    bool m_engineExecutionTimeInMillisHasBeenSet;
+    bool m_engineExecutionTimeInMillisHasBeenSet = false;
 
     long long m_dataScannedInBytes;
-    bool m_dataScannedInBytesHasBeenSet;
+    bool m_dataScannedInBytesHasBeenSet = false;
 
     Aws::String m_dataManifestLocation;
-    bool m_dataManifestLocationHasBeenSet;
+    bool m_dataManifestLocationHasBeenSet = false;
 
     long long m_totalExecutionTimeInMillis;
-    bool m_totalExecutionTimeInMillisHasBeenSet;
+    bool m_totalExecutionTimeInMillisHasBeenSet = false;
 
     long long m_queryQueueTimeInMillis;
-    bool m_queryQueueTimeInMillisHasBeenSet;
+    bool m_queryQueueTimeInMillisHasBeenSet = false;
 
     long long m_queryPlanningTimeInMillis;
-    bool m_queryPlanningTimeInMillisHasBeenSet;
+    bool m_queryPlanningTimeInMillisHasBeenSet = false;
 
     long long m_serviceProcessingTimeInMillis;
-    bool m_serviceProcessingTimeInMillisHasBeenSet;
+    bool m_serviceProcessingTimeInMillisHasBeenSet = false;
   };
 
 } // namespace Model

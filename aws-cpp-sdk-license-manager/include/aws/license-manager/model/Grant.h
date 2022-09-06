@@ -442,34 +442,34 @@ namespace Model
   private:
 
     Aws::String m_grantArn;
-    bool m_grantArnHasBeenSet;
+    bool m_grantArnHasBeenSet = false;
 
     Aws::String m_grantName;
-    bool m_grantNameHasBeenSet;
+    bool m_grantNameHasBeenSet = false;
 
     Aws::String m_parentArn;
-    bool m_parentArnHasBeenSet;
+    bool m_parentArnHasBeenSet = false;
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::String m_granteePrincipalArn;
-    bool m_granteePrincipalArnHasBeenSet;
+    bool m_granteePrincipalArnHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     GrantStatus m_grantStatus;
-    bool m_grantStatusHasBeenSet;
+    bool m_grantStatusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<AllowedOperation> m_grantedOperations;
-    bool m_grantedOperationsHasBeenSet;
+    bool m_grantedOperationsHasBeenSet = false;
   };
 
 } // namespace Model

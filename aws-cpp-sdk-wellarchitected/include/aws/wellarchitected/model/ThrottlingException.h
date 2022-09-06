@@ -114,13 +114,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
   };
 
 } // namespace Model

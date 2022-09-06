@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_number;
-    bool m_numberHasBeenSet;
+    bool m_numberHasBeenSet = false;
 
     PhoneNumberType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

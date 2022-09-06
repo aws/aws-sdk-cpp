@@ -298,25 +298,25 @@ namespace Model
   private:
 
     Aws::String m_labelGroupName;
-    bool m_labelGroupNameHasBeenSet;
+    bool m_labelGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_intervalStartTime;
-    bool m_intervalStartTimeHasBeenSet;
+    bool m_intervalStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_intervalEndTime;
-    bool m_intervalEndTimeHasBeenSet;
+    bool m_intervalEndTimeHasBeenSet = false;
 
     Aws::String m_faultCode;
-    bool m_faultCodeHasBeenSet;
+    bool m_faultCodeHasBeenSet = false;
 
     Aws::String m_equipment;
-    bool m_equipmentHasBeenSet;
+    bool m_equipmentHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

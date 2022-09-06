@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_violationId;
-    bool m_violationIdHasBeenSet;
+    bool m_violationIdHasBeenSet = false;
 
     VerificationState m_verificationState;
-    bool m_verificationStateHasBeenSet;
+    bool m_verificationStateHasBeenSet = false;
 
     Aws::String m_verificationStateDescription;
-    bool m_verificationStateDescriptionHasBeenSet;
+    bool m_verificationStateDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -681,40 +681,40 @@ namespace Model
   private:
 
     Aws::String m_computeEnvironmentName;
-    bool m_computeEnvironmentNameHasBeenSet;
+    bool m_computeEnvironmentNameHasBeenSet = false;
 
     Aws::String m_computeEnvironmentArn;
-    bool m_computeEnvironmentArnHasBeenSet;
+    bool m_computeEnvironmentArnHasBeenSet = false;
 
     int m_unmanagedvCpus;
-    bool m_unmanagedvCpusHasBeenSet;
+    bool m_unmanagedvCpusHasBeenSet = false;
 
     Aws::String m_ecsClusterArn;
-    bool m_ecsClusterArnHasBeenSet;
+    bool m_ecsClusterArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CEType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CEState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     CEStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     ComputeResource m_computeResources;
-    bool m_computeResourcesHasBeenSet;
+    bool m_computeResourcesHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     UpdatePolicy m_updatePolicy;
-    bool m_updatePolicyHasBeenSet;
+    bool m_updatePolicyHasBeenSet = false;
   };
 
 } // namespace Model

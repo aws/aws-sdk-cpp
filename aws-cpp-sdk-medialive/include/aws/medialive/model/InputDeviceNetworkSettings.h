@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_dnsAddresses;
-    bool m_dnsAddressesHasBeenSet;
+    bool m_dnsAddressesHasBeenSet = false;
 
     Aws::String m_gateway;
-    bool m_gatewayHasBeenSet;
+    bool m_gatewayHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     InputDeviceIpScheme m_ipScheme;
-    bool m_ipSchemeHasBeenSet;
+    bool m_ipSchemeHasBeenSet = false;
 
     Aws::String m_subnetMask;
-    bool m_subnetMaskHasBeenSet;
+    bool m_subnetMaskHasBeenSet = false;
   };
 
 } // namespace Model

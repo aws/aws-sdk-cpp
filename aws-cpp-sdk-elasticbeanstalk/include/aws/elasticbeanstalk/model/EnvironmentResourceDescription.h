@@ -378,28 +378,28 @@ namespace Model
   private:
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::Vector<Instance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::Vector<LaunchConfiguration> m_launchConfigurations;
-    bool m_launchConfigurationsHasBeenSet;
+    bool m_launchConfigurationsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplate> m_launchTemplates;
-    bool m_launchTemplatesHasBeenSet;
+    bool m_launchTemplatesHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::Vector<Trigger> m_triggers;
-    bool m_triggersHasBeenSet;
+    bool m_triggersHasBeenSet = false;
 
     Aws::Vector<Queue> m_queues;
-    bool m_queuesHasBeenSet;
+    bool m_queuesHasBeenSet = false;
   };
 
 } // namespace Model

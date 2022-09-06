@@ -168,16 +168,16 @@ namespace Model
   private:
 
     Aws::Vector<MessageGroup> m_messageGroups;
-    bool m_messageGroupsHasBeenSet;
+    bool m_messageGroupsHasBeenSet = false;
 
     int m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     bool m_allowInterrupt;
-    bool m_allowInterruptHasBeenSet;
+    bool m_allowInterruptHasBeenSet = false;
 
     MessageSelectionStrategy m_messageSelectionStrategy;
-    bool m_messageSelectionStrategyHasBeenSet;
+    bool m_messageSelectionStrategyHasBeenSet = false;
   };
 
 } // namespace Model

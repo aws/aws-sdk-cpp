@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

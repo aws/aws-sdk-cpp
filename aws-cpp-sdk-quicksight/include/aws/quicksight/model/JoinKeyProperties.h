@@ -67,7 +67,7 @@ namespace Model
   private:
 
     bool m_uniqueKey;
-    bool m_uniqueKeyHasBeenSet;
+    bool m_uniqueKeyHasBeenSet = false;
   };
 
 } // namespace Model

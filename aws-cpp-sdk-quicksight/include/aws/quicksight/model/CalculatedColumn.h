@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnId;
-    bool m_columnIdHasBeenSet;
+    bool m_columnIdHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

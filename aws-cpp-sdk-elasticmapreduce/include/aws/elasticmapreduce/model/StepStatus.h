@@ -173,16 +173,16 @@ namespace Model
   private:
 
     StepState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StepStateChangeReason m_stateChangeReason;
-    bool m_stateChangeReasonHasBeenSet;
+    bool m_stateChangeReasonHasBeenSet = false;
 
     FailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     StepTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
   };
 
 } // namespace Model

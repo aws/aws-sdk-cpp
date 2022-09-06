@@ -76,7 +76,7 @@ namespace Model
   private:
 
     SOA m_sOA;
-    bool m_sOAHasBeenSet;
+    bool m_sOAHasBeenSet = false;
   };
 
 } // namespace Model

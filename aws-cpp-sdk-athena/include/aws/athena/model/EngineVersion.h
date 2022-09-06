@@ -185,10 +185,10 @@ namespace Model
   private:
 
     Aws::String m_selectedEngineVersion;
-    bool m_selectedEngineVersionHasBeenSet;
+    bool m_selectedEngineVersionHasBeenSet = false;
 
     Aws::String m_effectiveEngineVersion;
-    bool m_effectiveEngineVersionHasBeenSet;
+    bool m_effectiveEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

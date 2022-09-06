@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_lastStatusCheckDate;
-    bool m_lastStatusCheckDateHasBeenSet;
+    bool m_lastStatusCheckDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_products;
-    bool m_productsHasBeenSet;
+    bool m_productsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

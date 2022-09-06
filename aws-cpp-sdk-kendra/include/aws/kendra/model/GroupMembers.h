@@ -235,13 +235,13 @@ namespace Model
   private:
 
     Aws::Vector<MemberGroup> m_memberGroups;
-    bool m_memberGroupsHasBeenSet;
+    bool m_memberGroupsHasBeenSet = false;
 
     Aws::Vector<MemberUser> m_memberUsers;
-    bool m_memberUsersHasBeenSet;
+    bool m_memberUsersHasBeenSet = false;
 
     S3Path m_s3PathforGroupMembers;
-    bool m_s3PathforGroupMembersHasBeenSet;
+    bool m_s3PathforGroupMembersHasBeenSet = false;
   };
 
 } // namespace Model

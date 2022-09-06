@@ -177,10 +177,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<CancellationReason> m_cancellationReasons;
-    bool m_cancellationReasonsHasBeenSet;
+    bool m_cancellationReasonsHasBeenSet = false;
   };
 
 } // namespace Model

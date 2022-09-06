@@ -950,58 +950,58 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     UserPoolPolicyType m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
 
     LambdaConfigType m_lambdaConfig;
-    bool m_lambdaConfigHasBeenSet;
+    bool m_lambdaConfigHasBeenSet = false;
 
     Aws::Vector<VerifiedAttributeType> m_autoVerifiedAttributes;
-    bool m_autoVerifiedAttributesHasBeenSet;
+    bool m_autoVerifiedAttributesHasBeenSet = false;
 
     Aws::String m_smsVerificationMessage;
-    bool m_smsVerificationMessageHasBeenSet;
+    bool m_smsVerificationMessageHasBeenSet = false;
 
     Aws::String m_emailVerificationMessage;
-    bool m_emailVerificationMessageHasBeenSet;
+    bool m_emailVerificationMessageHasBeenSet = false;
 
     Aws::String m_emailVerificationSubject;
-    bool m_emailVerificationSubjectHasBeenSet;
+    bool m_emailVerificationSubjectHasBeenSet = false;
 
     VerificationMessageTemplateType m_verificationMessageTemplate;
-    bool m_verificationMessageTemplateHasBeenSet;
+    bool m_verificationMessageTemplateHasBeenSet = false;
 
     Aws::String m_smsAuthenticationMessage;
-    bool m_smsAuthenticationMessageHasBeenSet;
+    bool m_smsAuthenticationMessageHasBeenSet = false;
 
     UserAttributeUpdateSettingsType m_userAttributeUpdateSettings;
-    bool m_userAttributeUpdateSettingsHasBeenSet;
+    bool m_userAttributeUpdateSettingsHasBeenSet = false;
 
     UserPoolMfaType m_mfaConfiguration;
-    bool m_mfaConfigurationHasBeenSet;
+    bool m_mfaConfigurationHasBeenSet = false;
 
     DeviceConfigurationType m_deviceConfiguration;
-    bool m_deviceConfigurationHasBeenSet;
+    bool m_deviceConfigurationHasBeenSet = false;
 
     EmailConfigurationType m_emailConfiguration;
-    bool m_emailConfigurationHasBeenSet;
+    bool m_emailConfigurationHasBeenSet = false;
 
     SmsConfigurationType m_smsConfiguration;
-    bool m_smsConfigurationHasBeenSet;
+    bool m_smsConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_userPoolTags;
-    bool m_userPoolTagsHasBeenSet;
+    bool m_userPoolTagsHasBeenSet = false;
 
     AdminCreateUserConfigType m_adminCreateUserConfig;
-    bool m_adminCreateUserConfigHasBeenSet;
+    bool m_adminCreateUserConfigHasBeenSet = false;
 
     UserPoolAddOnsType m_userPoolAddOns;
-    bool m_userPoolAddOnsHasBeenSet;
+    bool m_userPoolAddOnsHasBeenSet = false;
 
     AccountRecoverySettingType m_accountRecoverySetting;
-    bool m_accountRecoverySettingHasBeenSet;
+    bool m_accountRecoverySettingHasBeenSet = false;
   };
 
 } // namespace Model

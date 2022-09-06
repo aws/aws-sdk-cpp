@@ -104,10 +104,10 @@ namespace Model
   private:
 
     CodeContentType m_codeContentTypeUpdate;
-    bool m_codeContentTypeUpdateHasBeenSet;
+    bool m_codeContentTypeUpdateHasBeenSet = false;
 
     CodeContentUpdate m_codeContentUpdate;
-    bool m_codeContentUpdateHasBeenSet;
+    bool m_codeContentUpdateHasBeenSet = false;
   };
 
 } // namespace Model

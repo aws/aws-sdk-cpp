@@ -172,22 +172,22 @@ namespace Model
   private:
 
     long long m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
 
     long long m_inProgress;
-    bool m_inProgressHasBeenSet;
+    bool m_inProgressHasBeenSet = false;
 
     long long m_succeeded;
-    bool m_succeededHasBeenSet;
+    bool m_succeededHasBeenSet = false;
 
     long long m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     long long m_skipped;
-    bool m_skippedHasBeenSet;
+    bool m_skippedHasBeenSet = false;
 
     long long m_ready;
-    bool m_readyHasBeenSet;
+    bool m_readyHasBeenSet = false;
   };
 
 } // namespace Model

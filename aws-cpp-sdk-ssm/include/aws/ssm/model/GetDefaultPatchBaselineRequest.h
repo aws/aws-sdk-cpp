@@ -67,7 +67,7 @@ namespace Model
   private:
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
   };
 
 } // namespace Model

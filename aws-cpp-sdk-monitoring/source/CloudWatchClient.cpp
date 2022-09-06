@@ -115,7 +115,7 @@ CloudWatchClient::~CloudWatchClient()
 
 void CloudWatchClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudWatch");
+  AWSClient::SetServiceClientName("CloudWatch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

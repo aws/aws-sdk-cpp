@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::String m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_targetColumn;
-    bool m_targetColumnHasBeenSet;
+    bool m_targetColumnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -418,19 +418,19 @@ namespace Model
   private:
 
     Aws::Vector<Cell> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
 
     Aws::Vector<Range> m_lineRanges;
-    bool m_lineRangesHasBeenSet;
+    bool m_lineRangesHasBeenSet = false;
 
     Aws::Vector<Range> m_offsetRanges;
-    bool m_offsetRangesHasBeenSet;
+    bool m_offsetRangesHasBeenSet = false;
 
     Aws::Vector<Page> m_pages;
-    bool m_pagesHasBeenSet;
+    bool m_pagesHasBeenSet = false;
 
     Aws::Vector<Record> m_records;
-    bool m_recordsHasBeenSet;
+    bool m_recordsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1182,25 +1182,25 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_equals;
-    bool m_equalsHasBeenSet;
+    bool m_equalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_startsWith;
-    bool m_startsWithHasBeenSet;
+    bool m_startsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endsWith;
-    bool m_endsWithHasBeenSet;
+    bool m_endsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEquals;
-    bool m_notEqualsHasBeenSet;
+    bool m_notEqualsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notStartsWith;
-    bool m_notStartsWithHasBeenSet;
+    bool m_notStartsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEndsWith;
-    bool m_notEndsWithHasBeenSet;
+    bool m_notEndsWithHasBeenSet = false;
   };
 
 } // namespace Model

@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::Vector<ColumnTag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

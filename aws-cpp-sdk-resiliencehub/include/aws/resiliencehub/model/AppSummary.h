@@ -319,25 +319,25 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     AppAssessmentScheduleType m_assessmentSchedule;
-    bool m_assessmentScheduleHasBeenSet;
+    bool m_assessmentScheduleHasBeenSet = false;
 
     AppComplianceStatusType m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_resiliencyScore;
-    bool m_resiliencyScoreHasBeenSet;
+    bool m_resiliencyScoreHasBeenSet = false;
   };
 
 } // namespace Model

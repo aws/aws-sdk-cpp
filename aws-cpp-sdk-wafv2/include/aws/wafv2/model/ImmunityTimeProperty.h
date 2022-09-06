@@ -64,7 +64,7 @@ namespace Model
   private:
 
     long long m_immunityTime;
-    bool m_immunityTimeHasBeenSet;
+    bool m_immunityTimeHasBeenSet = false;
   };
 
 } // namespace Model

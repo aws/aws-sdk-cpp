@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<VpcConfig> m_vpcConfigs;
-    bool m_vpcConfigsHasBeenSet;
+    bool m_vpcConfigsHasBeenSet = false;
 
     ServerlessClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

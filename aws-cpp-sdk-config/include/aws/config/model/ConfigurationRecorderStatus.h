@@ -310,28 +310,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStartTime;
-    bool m_lastStartTimeHasBeenSet;
+    bool m_lastStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStopTime;
-    bool m_lastStopTimeHasBeenSet;
+    bool m_lastStopTimeHasBeenSet = false;
 
     bool m_recording;
-    bool m_recordingHasBeenSet;
+    bool m_recordingHasBeenSet = false;
 
     RecorderStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::String m_lastErrorCode;
-    bool m_lastErrorCodeHasBeenSet;
+    bool m_lastErrorCodeHasBeenSet = false;
 
     Aws::String m_lastErrorMessage;
-    bool m_lastErrorMessageHasBeenSet;
+    bool m_lastErrorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusChangeTime;
-    bool m_lastStatusChangeTimeHasBeenSet;
+    bool m_lastStatusChangeTimeHasBeenSet = false;
   };
 
 } // namespace Model

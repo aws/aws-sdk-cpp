@@ -263,16 +263,16 @@ namespace Model
   private:
 
     Aws::Vector<ExportDataFormat> m_exportDataFormat;
-    bool m_exportDataFormatHasBeenSet;
+    bool m_exportDataFormatHasBeenSet = false;
 
     Aws::Vector<ExportFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

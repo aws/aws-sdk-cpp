@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_quickConnectIds;
-    bool m_quickConnectIdsHasBeenSet;
+    bool m_quickConnectIdsHasBeenSet = false;
   };
 
 } // namespace Model

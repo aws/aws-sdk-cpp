@@ -205,19 +205,19 @@ rounded to the
   private:
 
     CmafEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::Vector<HlsManifest> m_hlsManifests;
-    bool m_hlsManifestsHasBeenSet;
+    bool m_hlsManifestsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     Aws::String m_segmentPrefix;
-    bool m_segmentPrefixHasBeenSet;
+    bool m_segmentPrefixHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

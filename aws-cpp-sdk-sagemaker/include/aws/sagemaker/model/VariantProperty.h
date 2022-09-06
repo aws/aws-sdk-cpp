@@ -117,7 +117,7 @@ namespace Model
   private:
 
     VariantPropertyType m_variantPropertyType;
-    bool m_variantPropertyTypeHasBeenSet;
+    bool m_variantPropertyTypeHasBeenSet = false;
   };
 
 } // namespace Model

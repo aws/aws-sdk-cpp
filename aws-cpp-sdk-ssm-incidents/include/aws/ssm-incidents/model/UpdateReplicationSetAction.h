@@ -114,10 +114,10 @@ namespace Model
   private:
 
     AddRegionAction m_addRegionAction;
-    bool m_addRegionActionHasBeenSet;
+    bool m_addRegionActionHasBeenSet = false;
 
     DeleteRegionAction m_deleteRegionAction;
-    bool m_deleteRegionActionHasBeenSet;
+    bool m_deleteRegionActionHasBeenSet = false;
   };
 
 } // namespace Model

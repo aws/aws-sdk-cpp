@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_savingsPlanId;
-    bool m_savingsPlanIdHasBeenSet;
+    bool m_savingsPlanIdHasBeenSet = false;
   };
 
 } // namespace Model

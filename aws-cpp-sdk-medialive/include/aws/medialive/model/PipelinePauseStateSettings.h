@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PipelineId m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -144,13 +144,13 @@ namespace Model
   private:
 
     FleetErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_errorTimestamp;
-    bool m_errorTimestampHasBeenSet;
+    bool m_errorTimestampHasBeenSet = false;
   };
 
 } // namespace Model

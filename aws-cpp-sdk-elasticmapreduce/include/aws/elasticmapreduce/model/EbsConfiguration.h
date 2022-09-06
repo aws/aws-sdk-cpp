@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::Vector<EbsBlockDeviceConfig> m_ebsBlockDeviceConfigs;
-    bool m_ebsBlockDeviceConfigsHasBeenSet;
+    bool m_ebsBlockDeviceConfigsHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
   };
 
 } // namespace Model

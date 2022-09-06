@@ -137,13 +137,13 @@ namespace Model
   private:
 
     int m_baseRatePerMinute;
-    bool m_baseRatePerMinuteHasBeenSet;
+    bool m_baseRatePerMinuteHasBeenSet = false;
 
     double m_incrementFactor;
-    bool m_incrementFactorHasBeenSet;
+    bool m_incrementFactorHasBeenSet = false;
 
     AwsJobRateIncreaseCriteria m_rateIncreaseCriteria;
-    bool m_rateIncreaseCriteriaHasBeenSet;
+    bool m_rateIncreaseCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

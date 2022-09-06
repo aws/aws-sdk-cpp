@@ -138,13 +138,13 @@ namespace Model
   private:
 
     Aws::String m_equalsValue;
-    bool m_equalsValueHasBeenSet;
+    bool m_equalsValueHasBeenSet = false;
 
     long long m_greaterThan;
-    bool m_greaterThanHasBeenSet;
+    bool m_greaterThanHasBeenSet = false;
 
     long long m_lessThan;
-    bool m_lessThanHasBeenSet;
+    bool m_lessThanHasBeenSet = false;
   };
 
 } // namespace Model

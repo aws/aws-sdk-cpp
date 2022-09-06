@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_findingId;
-    bool m_findingIdHasBeenSet;
+    bool m_findingIdHasBeenSet = false;
   };
 
 } // namespace Model

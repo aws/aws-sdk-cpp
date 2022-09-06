@@ -218,13 +218,13 @@ namespace Model
   private:
 
     DeinterlaceAlgorithm m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     DeinterlacerControl m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
 
     DeinterlacerMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

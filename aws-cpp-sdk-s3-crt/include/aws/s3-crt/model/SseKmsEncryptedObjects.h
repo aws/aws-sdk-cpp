@@ -83,7 +83,7 @@ namespace Model
   private:
 
     SseKmsEncryptedObjectsStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

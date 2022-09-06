@@ -483,34 +483,34 @@ namespace Model
   private:
 
     Aws::String m_apiGatewayDomainName;
-    bool m_apiGatewayDomainNameHasBeenSet;
+    bool m_apiGatewayDomainNameHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_certificateUploadDate;
-    bool m_certificateUploadDateHasBeenSet;
+    bool m_certificateUploadDateHasBeenSet = false;
 
     DomainNameStatus m_domainNameStatus;
-    bool m_domainNameStatusHasBeenSet;
+    bool m_domainNameStatusHasBeenSet = false;
 
     Aws::String m_domainNameStatusMessage;
-    bool m_domainNameStatusMessageHasBeenSet;
+    bool m_domainNameStatusMessageHasBeenSet = false;
 
     EndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     SecurityPolicy m_securityPolicy;
-    bool m_securityPolicyHasBeenSet;
+    bool m_securityPolicyHasBeenSet = false;
 
     Aws::String m_ownershipVerificationCertificateArn;
-    bool m_ownershipVerificationCertificateArnHasBeenSet;
+    bool m_ownershipVerificationCertificateArnHasBeenSet = false;
   };
 
 } // namespace Model

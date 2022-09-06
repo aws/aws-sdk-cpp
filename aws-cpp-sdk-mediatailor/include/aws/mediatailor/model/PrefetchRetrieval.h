@@ -260,13 +260,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
-    bool m_dynamicVariablesHasBeenSet;
+    bool m_dynamicVariablesHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

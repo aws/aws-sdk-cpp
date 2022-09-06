@@ -268,22 +268,22 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     StreamHealth m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     StreamState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     long long m_viewerCount;
-    bool m_viewerCountHasBeenSet;
+    bool m_viewerCountHasBeenSet = false;
   };
 
 } // namespace Model

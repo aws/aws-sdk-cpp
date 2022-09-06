@@ -90,7 +90,7 @@ SupportClient::~SupportClient()
 
 void SupportClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Support");
+  AWSClient::SetServiceClientName("Support");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

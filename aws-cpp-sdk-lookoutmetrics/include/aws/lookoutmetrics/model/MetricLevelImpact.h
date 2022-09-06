@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     int m_numTimeSeries;
-    bool m_numTimeSeriesHasBeenSet;
+    bool m_numTimeSeriesHasBeenSet = false;
 
     ContributionMatrix m_contributionMatrix;
-    bool m_contributionMatrixHasBeenSet;
+    bool m_contributionMatrixHasBeenSet = false;
   };
 
 } // namespace Model

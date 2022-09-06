@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_anomalyDetectorDescription;
-    bool m_anomalyDetectorDescriptionHasBeenSet;
+    bool m_anomalyDetectorDescriptionHasBeenSet = false;
 
     AnomalyDetectorConfig m_anomalyDetectorConfig;
-    bool m_anomalyDetectorConfigHasBeenSet;
+    bool m_anomalyDetectorConfigHasBeenSet = false;
   };
 
 } // namespace Model

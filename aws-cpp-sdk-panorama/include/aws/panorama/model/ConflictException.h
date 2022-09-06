@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::Vector<ConflictExceptionErrorArgument> m_errorArguments;
-    bool m_errorArgumentsHasBeenSet;
+    bool m_errorArgumentsHasBeenSet = false;
 
     Aws::String m_errorId;
-    bool m_errorIdHasBeenSet;
+    bool m_errorIdHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

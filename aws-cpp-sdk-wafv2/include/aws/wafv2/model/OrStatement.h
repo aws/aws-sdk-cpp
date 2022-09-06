@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Statement> m_statements;
-    bool m_statementsHasBeenSet;
+    bool m_statementsHasBeenSet = false;
   };
 
 } // namespace Model

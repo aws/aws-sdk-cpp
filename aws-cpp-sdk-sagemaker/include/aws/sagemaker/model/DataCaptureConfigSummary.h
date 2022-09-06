@@ -196,19 +196,19 @@ namespace Model
   private:
 
     bool m_enableCapture;
-    bool m_enableCaptureHasBeenSet;
+    bool m_enableCaptureHasBeenSet = false;
 
     CaptureStatus m_captureStatus;
-    bool m_captureStatusHasBeenSet;
+    bool m_captureStatusHasBeenSet = false;
 
     int m_currentSamplingPercentage;
-    bool m_currentSamplingPercentageHasBeenSet;
+    bool m_currentSamplingPercentageHasBeenSet = false;
 
     Aws::String m_destinationS3Uri;
-    bool m_destinationS3UriHasBeenSet;
+    bool m_destinationS3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

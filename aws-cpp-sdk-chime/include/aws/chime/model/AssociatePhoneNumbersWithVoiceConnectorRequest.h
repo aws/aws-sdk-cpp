@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_e164PhoneNumbers;
-    bool m_e164PhoneNumbersHasBeenSet;
+    bool m_e164PhoneNumbersHasBeenSet = false;
 
     bool m_forceAssociate;
-    bool m_forceAssociateHasBeenSet;
+    bool m_forceAssociateHasBeenSet = false;
   };
 
 } // namespace Model

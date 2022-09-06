@@ -83,10 +83,10 @@ namespace Model
   private:
 
     int m_gain;
-    bool m_gainHasBeenSet;
+    bool m_gainHasBeenSet = false;
 
     int m_inputChannel;
-    bool m_inputChannelHasBeenSet;
+    bool m_inputChannelHasBeenSet = false;
   };
 
 } // namespace Model

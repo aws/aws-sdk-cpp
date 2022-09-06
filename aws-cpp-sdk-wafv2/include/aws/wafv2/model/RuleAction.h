@@ -174,16 +174,16 @@ namespace Model
   private:
 
     BlockAction m_block;
-    bool m_blockHasBeenSet;
+    bool m_blockHasBeenSet = false;
 
     AllowAction m_allow;
-    bool m_allowHasBeenSet;
+    bool m_allowHasBeenSet = false;
 
     CountAction m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     CaptchaAction m_captcha;
-    bool m_captchaHasBeenSet;
+    bool m_captchaHasBeenSet = false;
   };
 
 } // namespace Model

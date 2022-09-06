@@ -226,13 +226,13 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_fileMap;
-    bool m_fileMapHasBeenSet;
+    bool m_fileMapHasBeenSet = false;
   };
 
 } // namespace Model

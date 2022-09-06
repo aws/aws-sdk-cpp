@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_trackingNumber;
-    bool m_trackingNumberHasBeenSet;
+    bool m_trackingNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     bool m_autoRollbackEnabled;
-    bool m_autoRollbackEnabledHasBeenSet;
+    bool m_autoRollbackEnabledHasBeenSet = false;
   };
 
 } // namespace Model

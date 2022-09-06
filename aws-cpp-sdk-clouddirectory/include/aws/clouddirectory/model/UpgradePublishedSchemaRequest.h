@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_developmentSchemaArn;
-    bool m_developmentSchemaArnHasBeenSet;
+    bool m_developmentSchemaArnHasBeenSet = false;
 
     Aws::String m_publishedSchemaArn;
-    bool m_publishedSchemaArnHasBeenSet;
+    bool m_publishedSchemaArnHasBeenSet = false;
 
     Aws::String m_minorVersion;
-    bool m_minorVersionHasBeenSet;
+    bool m_minorVersionHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

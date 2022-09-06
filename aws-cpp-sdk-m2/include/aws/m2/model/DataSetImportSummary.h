@@ -142,19 +142,19 @@ namespace Model
   private:
 
     int m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     int m_inProgress;
-    bool m_inProgressHasBeenSet;
+    bool m_inProgressHasBeenSet = false;
 
     int m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
 
     int m_succeeded;
-    bool m_succeededHasBeenSet;
+    bool m_succeededHasBeenSet = false;
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

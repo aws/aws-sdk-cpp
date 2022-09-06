@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_sourceCommitId;
-    bool m_sourceCommitIdHasBeenSet;
+    bool m_sourceCommitIdHasBeenSet = false;
 
     Aws::String m_destinationCommitId;
-    bool m_destinationCommitIdHasBeenSet;
+    bool m_destinationCommitIdHasBeenSet = false;
 
     Aws::String m_mergeBase;
-    bool m_mergeBaseHasBeenSet;
+    bool m_mergeBaseHasBeenSet = false;
   };
 
 } // namespace Model

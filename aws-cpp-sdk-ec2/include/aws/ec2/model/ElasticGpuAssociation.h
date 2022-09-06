@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_elasticGpuId;
-    bool m_elasticGpuIdHasBeenSet;
+    bool m_elasticGpuIdHasBeenSet = false;
 
     Aws::String m_elasticGpuAssociationId;
-    bool m_elasticGpuAssociationIdHasBeenSet;
+    bool m_elasticGpuAssociationIdHasBeenSet = false;
 
     Aws::String m_elasticGpuAssociationState;
-    bool m_elasticGpuAssociationStateHasBeenSet;
+    bool m_elasticGpuAssociationStateHasBeenSet = false;
 
     Aws::String m_elasticGpuAssociationTime;
-    bool m_elasticGpuAssociationTimeHasBeenSet;
+    bool m_elasticGpuAssociationTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_targetFacetName;
-    bool m_targetFacetNameHasBeenSet;
+    bool m_targetFacetNameHasBeenSet = false;
 
     Aws::String m_targetAttributeName;
-    bool m_targetAttributeNameHasBeenSet;
+    bool m_targetAttributeNameHasBeenSet = false;
   };
 
 } // namespace Model

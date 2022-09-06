@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     DetectorVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

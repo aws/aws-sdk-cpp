@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_loadBalancerNames;
-    bool m_loadBalancerNamesHasBeenSet;
+    bool m_loadBalancerNamesHasBeenSet = false;
   };
 
 } // namespace Model

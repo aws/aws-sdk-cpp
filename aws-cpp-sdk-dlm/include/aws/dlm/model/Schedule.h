@@ -488,34 +488,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsToAdd;
-    bool m_tagsToAddHasBeenSet;
+    bool m_tagsToAddHasBeenSet = false;
 
     Aws::Vector<Tag> m_variableTags;
-    bool m_variableTagsHasBeenSet;
+    bool m_variableTagsHasBeenSet = false;
 
     CreateRule m_createRule;
-    bool m_createRuleHasBeenSet;
+    bool m_createRuleHasBeenSet = false;
 
     RetainRule m_retainRule;
-    bool m_retainRuleHasBeenSet;
+    bool m_retainRuleHasBeenSet = false;
 
     FastRestoreRule m_fastRestoreRule;
-    bool m_fastRestoreRuleHasBeenSet;
+    bool m_fastRestoreRuleHasBeenSet = false;
 
     Aws::Vector<CrossRegionCopyRule> m_crossRegionCopyRules;
-    bool m_crossRegionCopyRulesHasBeenSet;
+    bool m_crossRegionCopyRulesHasBeenSet = false;
 
     Aws::Vector<ShareRule> m_shareRules;
-    bool m_shareRulesHasBeenSet;
+    bool m_shareRulesHasBeenSet = false;
 
     DeprecateRule m_deprecateRule;
-    bool m_deprecateRuleHasBeenSet;
+    bool m_deprecateRuleHasBeenSet = false;
   };
 
 } // namespace Model

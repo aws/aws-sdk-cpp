@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<TransactGetItem> m_transactItems;
-    bool m_transactItemsHasBeenSet;
+    bool m_transactItemsHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

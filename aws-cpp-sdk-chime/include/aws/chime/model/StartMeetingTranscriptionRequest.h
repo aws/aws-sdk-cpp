@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     TranscriptionConfiguration m_transcriptionConfiguration;
-    bool m_transcriptionConfigurationHasBeenSet;
+    bool m_transcriptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

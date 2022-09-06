@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     long long m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

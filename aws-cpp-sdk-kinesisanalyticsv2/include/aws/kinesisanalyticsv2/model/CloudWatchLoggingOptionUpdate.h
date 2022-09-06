@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLoggingOptionId;
-    bool m_cloudWatchLoggingOptionIdHasBeenSet;
+    bool m_cloudWatchLoggingOptionIdHasBeenSet = false;
 
     Aws::String m_logStreamARNUpdate;
-    bool m_logStreamARNUpdateHasBeenSet;
+    bool m_logStreamARNUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,16 +123,16 @@ namespace Model
   private:
 
     long long m_inputRows;
-    bool m_inputRowsHasBeenSet;
+    bool m_inputRowsHasBeenSet = false;
 
     long long m_inputBytes;
-    bool m_inputBytesHasBeenSet;
+    bool m_inputBytesHasBeenSet = false;
 
     long long m_outputBytes;
-    bool m_outputBytesHasBeenSet;
+    bool m_outputBytesHasBeenSet = false;
 
     long long m_outputRows;
-    bool m_outputRowsHasBeenSet;
+    bool m_outputRowsHasBeenSet = false;
   };
 
 } // namespace Model

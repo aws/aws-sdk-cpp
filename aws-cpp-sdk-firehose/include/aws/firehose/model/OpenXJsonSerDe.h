@@ -228,13 +228,13 @@ namespace Model
   private:
 
     bool m_convertDotsInJsonKeysToUnderscores;
-    bool m_convertDotsInJsonKeysToUnderscoresHasBeenSet;
+    bool m_convertDotsInJsonKeysToUnderscoresHasBeenSet = false;
 
     bool m_caseInsensitive;
-    bool m_caseInsensitiveHasBeenSet;
+    bool m_caseInsensitiveHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_columnToJsonKeyMappings;
-    bool m_columnToJsonKeyMappingsHasBeenSet;
+    bool m_columnToJsonKeyMappingsHasBeenSet = false;
   };
 
 } // namespace Model

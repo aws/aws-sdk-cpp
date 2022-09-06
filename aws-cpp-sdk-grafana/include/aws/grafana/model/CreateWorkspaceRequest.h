@@ -887,43 +887,43 @@ namespace Model
   private:
 
     AccountAccessType m_accountAccessType;
-    bool m_accountAccessTypeHasBeenSet;
+    bool m_accountAccessTypeHasBeenSet = false;
 
     Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
-    bool m_authenticationProvidersHasBeenSet;
+    bool m_authenticationProvidersHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_organizationRoleName;
-    bool m_organizationRoleNameHasBeenSet;
+    bool m_organizationRoleNameHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<DataSourceType> m_workspaceDataSources;
-    bool m_workspaceDataSourcesHasBeenSet;
+    bool m_workspaceDataSourcesHasBeenSet = false;
 
     Aws::String m_workspaceDescription;
-    bool m_workspaceDescriptionHasBeenSet;
+    bool m_workspaceDescriptionHasBeenSet = false;
 
     Aws::String m_workspaceName;
-    bool m_workspaceNameHasBeenSet;
+    bool m_workspaceNameHasBeenSet = false;
 
     Aws::Vector<NotificationDestinationType> m_workspaceNotificationDestinations;
-    bool m_workspaceNotificationDestinationsHasBeenSet;
+    bool m_workspaceNotificationDestinationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_workspaceOrganizationalUnits;
-    bool m_workspaceOrganizationalUnitsHasBeenSet;
+    bool m_workspaceOrganizationalUnitsHasBeenSet = false;
 
     Aws::String m_workspaceRoleArn;
-    bool m_workspaceRoleArnHasBeenSet;
+    bool m_workspaceRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

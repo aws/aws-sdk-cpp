@@ -176,16 +176,16 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     bool m_sendNotification;
-    bool m_sendNotificationHasBeenSet;
+    bool m_sendNotificationHasBeenSet = false;
   };
 
 } // namespace Model

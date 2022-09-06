@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_executionNamePrefix;
-    bool m_executionNamePrefixHasBeenSet;
+    bool m_executionNamePrefixHasBeenSet = false;
 
     Aws::String m_stateMachineName;
-    bool m_stateMachineNameHasBeenSet;
+    bool m_stateMachineNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

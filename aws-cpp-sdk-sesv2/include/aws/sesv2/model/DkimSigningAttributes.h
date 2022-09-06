@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_domainSigningSelector;
-    bool m_domainSigningSelectorHasBeenSet;
+    bool m_domainSigningSelectorHasBeenSet = false;
 
     Aws::String m_domainSigningPrivateKey;
-    bool m_domainSigningPrivateKeyHasBeenSet;
+    bool m_domainSigningPrivateKeyHasBeenSet = false;
 
     DkimSigningKeyLength m_nextSigningKeyLength;
-    bool m_nextSigningKeyLengthHasBeenSet;
+    bool m_nextSigningKeyLengthHasBeenSet = false;
   };
 
 } // namespace Model

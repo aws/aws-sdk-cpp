@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_validZones;
-    bool m_validZonesHasBeenSet;
+    bool m_validZonesHasBeenSet = false;
   };
 
 } // namespace Model

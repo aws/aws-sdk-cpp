@@ -122,13 +122,13 @@ namespace Model
   private:
 
     Aws::String m_gatewayEui;
-    bool m_gatewayEuiHasBeenSet;
+    bool m_gatewayEuiHasBeenSet = false;
 
     double m_snr;
-    bool m_snrHasBeenSet;
+    bool m_snrHasBeenSet = false;
 
     double m_rssi;
-    bool m_rssiHasBeenSet;
+    bool m_rssiHasBeenSet = false;
   };
 
 } // namespace Model

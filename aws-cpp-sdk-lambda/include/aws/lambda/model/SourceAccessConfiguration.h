@@ -280,10 +280,10 @@ namespace Model
   private:
 
     SourceAccessType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_uRI;
-    bool m_uRIHasBeenSet;
+    bool m_uRIHasBeenSet = false;
   };
 
 } // namespace Model

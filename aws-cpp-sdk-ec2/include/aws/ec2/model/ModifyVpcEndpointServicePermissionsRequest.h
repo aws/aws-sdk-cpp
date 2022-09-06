@@ -232,16 +232,16 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addAllowedPrincipals;
-    bool m_addAllowedPrincipalsHasBeenSet;
+    bool m_addAllowedPrincipalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeAllowedPrincipals;
-    bool m_removeAllowedPrincipalsHasBeenSet;
+    bool m_removeAllowedPrincipalsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_shipmentTrackingNumber;
-    bool m_shipmentTrackingNumberHasBeenSet;
+    bool m_shipmentTrackingNumberHasBeenSet = false;
 
     ShipmentCarrier m_shipmentCarrier;
-    bool m_shipmentCarrierHasBeenSet;
+    bool m_shipmentCarrierHasBeenSet = false;
   };
 
 } // namespace Model

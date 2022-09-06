@@ -361,22 +361,22 @@ namespace Model
   private:
 
     Aws::Vector<MappingEntry> m_mapping;
-    bool m_mappingHasBeenSet;
+    bool m_mappingHasBeenSet = false;
 
     CatalogEntry m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<CatalogEntry> m_sinks;
-    bool m_sinksHasBeenSet;
+    bool m_sinksHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Language m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalPlanOptionsMap;
-    bool m_additionalPlanOptionsMapHasBeenSet;
+    bool m_additionalPlanOptionsMapHasBeenSet = false;
   };
 
 } // namespace Model

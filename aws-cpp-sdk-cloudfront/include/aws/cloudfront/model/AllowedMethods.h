@@ -156,13 +156,13 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Method> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     CachedMethods m_cachedMethods;
-    bool m_cachedMethodsHasBeenSet;
+    bool m_cachedMethodsHasBeenSet = false;
   };
 
 } // namespace Model

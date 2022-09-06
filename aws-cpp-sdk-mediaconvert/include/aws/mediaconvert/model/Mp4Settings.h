@@ -362,22 +362,22 @@ namespace Model
   private:
 
     CmfcAudioDuration m_audioDuration;
-    bool m_audioDurationHasBeenSet;
+    bool m_audioDurationHasBeenSet = false;
 
     Mp4CslgAtom m_cslgAtom;
-    bool m_cslgAtomHasBeenSet;
+    bool m_cslgAtomHasBeenSet = false;
 
     int m_cttsVersion;
-    bool m_cttsVersionHasBeenSet;
+    bool m_cttsVersionHasBeenSet = false;
 
     Mp4FreeSpaceBox m_freeSpaceBox;
-    bool m_freeSpaceBoxHasBeenSet;
+    bool m_freeSpaceBoxHasBeenSet = false;
 
     Mp4MoovPlacement m_moovPlacement;
-    bool m_moovPlacementHasBeenSet;
+    bool m_moovPlacementHasBeenSet = false;
 
     Aws::String m_mp4MajorBrand;
-    bool m_mp4MajorBrandHasBeenSet;
+    bool m_mp4MajorBrandHasBeenSet = false;
   };
 
 } // namespace Model

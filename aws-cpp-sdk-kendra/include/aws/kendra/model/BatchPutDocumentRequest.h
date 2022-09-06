@@ -301,16 +301,16 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Document> m_documents;
-    bool m_documentsHasBeenSet;
+    bool m_documentsHasBeenSet = false;
 
     CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
-    bool m_customDocumentEnrichmentConfigurationHasBeenSet;
+    bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

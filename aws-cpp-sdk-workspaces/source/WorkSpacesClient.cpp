@@ -139,7 +139,7 @@ WorkSpacesClient::~WorkSpacesClient()
 
 void WorkSpacesClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("WorkSpaces");
+  AWSClient::SetServiceClientName("WorkSpaces");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

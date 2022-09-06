@@ -110,10 +110,10 @@ namespace Model
   private:
 
     bool m_allowCancelResize;
-    bool m_allowCancelResizeHasBeenSet;
+    bool m_allowCancelResizeHasBeenSet = false;
 
     Aws::String m_resizeType;
-    bool m_resizeTypeHasBeenSet;
+    bool m_resizeTypeHasBeenSet = false;
   };
 
 } // namespace Model

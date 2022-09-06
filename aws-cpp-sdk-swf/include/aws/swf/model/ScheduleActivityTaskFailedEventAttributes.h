@@ -228,16 +228,16 @@ namespace Model
   private:
 
     ActivityType m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
 
     Aws::String m_activityId;
-    bool m_activityIdHasBeenSet;
+    bool m_activityIdHasBeenSet = false;
 
     ScheduleActivityTaskFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

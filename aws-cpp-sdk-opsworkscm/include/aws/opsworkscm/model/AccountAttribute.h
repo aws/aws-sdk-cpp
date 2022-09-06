@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     int m_used;
-    bool m_usedHasBeenSet;
+    bool m_usedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -427,22 +427,22 @@ namespace Model
   private:
 
     Aws::String m_sourceSnapshotName;
-    bool m_sourceSnapshotNameHasBeenSet;
+    bool m_sourceSnapshotNameHasBeenSet = false;
 
     Aws::String m_sourceResourceName;
-    bool m_sourceResourceNameHasBeenSet;
+    bool m_sourceResourceNameHasBeenSet = false;
 
     Aws::String m_restoreDate;
-    bool m_restoreDateHasBeenSet;
+    bool m_restoreDateHasBeenSet = false;
 
     bool m_useLatestRestorableAutoSnapshot;
-    bool m_useLatestRestorableAutoSnapshotHasBeenSet;
+    bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
 
     Aws::String m_targetSnapshotName;
-    bool m_targetSnapshotNameHasBeenSet;
+    bool m_targetSnapshotNameHasBeenSet = false;
 
     RegionName m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

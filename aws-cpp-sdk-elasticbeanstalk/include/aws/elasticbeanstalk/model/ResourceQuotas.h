@@ -198,19 +198,19 @@ namespace Model
   private:
 
     ResourceQuota m_applicationQuota;
-    bool m_applicationQuotaHasBeenSet;
+    bool m_applicationQuotaHasBeenSet = false;
 
     ResourceQuota m_applicationVersionQuota;
-    bool m_applicationVersionQuotaHasBeenSet;
+    bool m_applicationVersionQuotaHasBeenSet = false;
 
     ResourceQuota m_environmentQuota;
-    bool m_environmentQuotaHasBeenSet;
+    bool m_environmentQuotaHasBeenSet = false;
 
     ResourceQuota m_configurationTemplateQuota;
-    bool m_configurationTemplateQuotaHasBeenSet;
+    bool m_configurationTemplateQuotaHasBeenSet = false;
 
     ResourceQuota m_customPlatformQuota;
-    bool m_customPlatformQuotaHasBeenSet;
+    bool m_customPlatformQuotaHasBeenSet = false;
   };
 
 } // namespace Model

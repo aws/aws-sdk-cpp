@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_reportGroupArns;
-    bool m_reportGroupArnsHasBeenSet;
+    bool m_reportGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

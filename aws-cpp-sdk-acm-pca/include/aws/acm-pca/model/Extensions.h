@@ -332,19 +332,19 @@ namespace Model
   private:
 
     Aws::Vector<PolicyInformation> m_certificatePolicies;
-    bool m_certificatePoliciesHasBeenSet;
+    bool m_certificatePoliciesHasBeenSet = false;
 
     Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsage;
-    bool m_extendedKeyUsageHasBeenSet;
+    bool m_extendedKeyUsageHasBeenSet = false;
 
     KeyUsage m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     Aws::Vector<GeneralName> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<CustomExtension> m_customExtensions;
-    bool m_customExtensionsHasBeenSet;
+    bool m_customExtensionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_protectionId;
-    bool m_protectionIdHasBeenSet;
+    bool m_protectionIdHasBeenSet = false;
 
     Aws::String m_healthCheckArn;
-    bool m_healthCheckArnHasBeenSet;
+    bool m_healthCheckArnHasBeenSet = false;
   };
 
 } // namespace Model

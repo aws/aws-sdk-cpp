@@ -112,10 +112,10 @@ namespace Model
   private:
 
     SigningAlg m_signingAlg;
-    bool m_signingAlgHasBeenSet;
+    bool m_signingAlgHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

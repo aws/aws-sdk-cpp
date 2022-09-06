@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ConnectorProfileProperties m_connectorProfileProperties;
-    bool m_connectorProfilePropertiesHasBeenSet;
+    bool m_connectorProfilePropertiesHasBeenSet = false;
 
     ConnectorProfileCredentials m_connectorProfileCredentials;
-    bool m_connectorProfileCredentialsHasBeenSet;
+    bool m_connectorProfileCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

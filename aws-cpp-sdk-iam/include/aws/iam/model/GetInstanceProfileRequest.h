@@ -111,7 +111,7 @@ namespace Model
   private:
 
     Aws::String m_instanceProfileName;
-    bool m_instanceProfileNameHasBeenSet;
+    bool m_instanceProfileNameHasBeenSet = false;
   };
 
 } // namespace Model

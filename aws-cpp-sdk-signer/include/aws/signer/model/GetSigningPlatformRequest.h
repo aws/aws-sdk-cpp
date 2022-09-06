@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_platformId;
-    bool m_platformIdHasBeenSet;
+    bool m_platformIdHasBeenSet = false;
   };
 
 } // namespace Model

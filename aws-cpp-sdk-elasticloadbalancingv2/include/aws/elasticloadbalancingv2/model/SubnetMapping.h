@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_privateIPv4Address;
-    bool m_privateIPv4AddressHasBeenSet;
+    bool m_privateIPv4AddressHasBeenSet = false;
 
     Aws::String m_iPv6Address;
-    bool m_iPv6AddressHasBeenSet;
+    bool m_iPv6AddressHasBeenSet = false;
   };
 
 } // namespace Model

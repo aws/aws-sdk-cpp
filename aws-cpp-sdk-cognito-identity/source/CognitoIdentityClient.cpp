@@ -99,7 +99,7 @@ CognitoIdentityClient::~CognitoIdentityClient()
 
 void CognitoIdentityClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Cognito Identity");
+  AWSClient::SetServiceClientName("Cognito Identity");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

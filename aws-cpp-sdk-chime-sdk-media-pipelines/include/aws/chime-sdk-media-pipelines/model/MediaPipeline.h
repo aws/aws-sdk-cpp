@@ -135,13 +135,13 @@ namespace Model
   private:
 
     MediaCapturePipeline m_mediaCapturePipeline;
-    bool m_mediaCapturePipelineHasBeenSet;
+    bool m_mediaCapturePipelineHasBeenSet = false;
 
     MediaLiveConnectorPipeline m_mediaLiveConnectorPipeline;
-    bool m_mediaLiveConnectorPipelineHasBeenSet;
+    bool m_mediaLiveConnectorPipelineHasBeenSet = false;
 
     MediaConcatenationPipeline m_mediaConcatenationPipeline;
-    bool m_mediaConcatenationPipelineHasBeenSet;
+    bool m_mediaConcatenationPipelineHasBeenSet = false;
   };
 
 } // namespace Model

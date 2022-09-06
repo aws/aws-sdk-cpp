@@ -675,37 +675,37 @@ namespace Model
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CreateFileSystemWindowsConfiguration m_windowsConfiguration;
-    bool m_windowsConfigurationHasBeenSet;
+    bool m_windowsConfigurationHasBeenSet = false;
 
     CreateFileSystemLustreConfiguration m_lustreConfiguration;
-    bool m_lustreConfigurationHasBeenSet;
+    bool m_lustreConfigurationHasBeenSet = false;
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_fileSystemTypeVersion;
-    bool m_fileSystemTypeVersionHasBeenSet;
+    bool m_fileSystemTypeVersionHasBeenSet = false;
 
     CreateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

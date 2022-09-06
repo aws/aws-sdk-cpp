@@ -133,10 +133,10 @@ namespace Model
   private:
 
     ListenerTlsFileCertificate m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     ListenerTlsSdsCertificate m_sds;
-    bool m_sdsHasBeenSet;
+    bool m_sdsHasBeenSet = false;
   };
 
 } // namespace Model

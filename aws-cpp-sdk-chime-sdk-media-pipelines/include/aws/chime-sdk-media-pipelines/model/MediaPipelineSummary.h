@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_mediaPipelineId;
-    bool m_mediaPipelineIdHasBeenSet;
+    bool m_mediaPipelineIdHasBeenSet = false;
 
     Aws::String m_mediaPipelineArn;
-    bool m_mediaPipelineArnHasBeenSet;
+    bool m_mediaPipelineArnHasBeenSet = false;
   };
 
 } // namespace Model

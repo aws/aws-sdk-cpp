@@ -133,13 +133,13 @@ namespace Model
   private:
 
     bool m_dynamicScalingInSuspended;
-    bool m_dynamicScalingInSuspendedHasBeenSet;
+    bool m_dynamicScalingInSuspendedHasBeenSet = false;
 
     bool m_dynamicScalingOutSuspended;
-    bool m_dynamicScalingOutSuspendedHasBeenSet;
+    bool m_dynamicScalingOutSuspendedHasBeenSet = false;
 
     bool m_scheduledScalingSuspended;
-    bool m_scheduledScalingSuspendedHasBeenSet;
+    bool m_scheduledScalingSuspendedHasBeenSet = false;
   };
 
 } // namespace Model

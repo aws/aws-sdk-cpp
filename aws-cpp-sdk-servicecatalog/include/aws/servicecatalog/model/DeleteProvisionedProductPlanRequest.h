@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_planId;
-    bool m_planIdHasBeenSet;
+    bool m_planIdHasBeenSet = false;
 
     bool m_ignoreErrors;
-    bool m_ignoreErrorsHasBeenSet;
+    bool m_ignoreErrorsHasBeenSet = false;
   };
 
 } // namespace Model

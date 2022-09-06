@@ -211,16 +211,16 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     UsageLimitUsageType m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

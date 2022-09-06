@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_ssoClientId;
-    bool m_ssoClientIdHasBeenSet;
+    bool m_ssoClientIdHasBeenSet = false;
   };
 
 } // namespace Model

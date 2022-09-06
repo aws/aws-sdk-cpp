@@ -529,40 +529,40 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_changeSetId;
-    bool m_changeSetIdHasBeenSet;
+    bool m_changeSetIdHasBeenSet = false;
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     ExecutionStatus m_executionStatus;
-    bool m_executionStatusHasBeenSet;
+    bool m_executionStatusHasBeenSet = false;
 
     ChangeSetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_includeNestedStacks;
-    bool m_includeNestedStacksHasBeenSet;
+    bool m_includeNestedStacksHasBeenSet = false;
 
     Aws::String m_parentChangeSetId;
-    bool m_parentChangeSetIdHasBeenSet;
+    bool m_parentChangeSetIdHasBeenSet = false;
 
     Aws::String m_rootChangeSetId;
-    bool m_rootChangeSetIdHasBeenSet;
+    bool m_rootChangeSetIdHasBeenSet = false;
   };
 
 } // namespace Model

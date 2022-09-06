@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     ObjectReference m_indexReference;
-    bool m_indexReferenceHasBeenSet;
+    bool m_indexReferenceHasBeenSet = false;
 
     ObjectReference m_targetReference;
-    bool m_targetReferenceHasBeenSet;
+    bool m_targetReferenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SettablePolicyStateValues m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     PolicyDetails m_policyDetails;
-    bool m_policyDetailsHasBeenSet;
+    bool m_policyDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

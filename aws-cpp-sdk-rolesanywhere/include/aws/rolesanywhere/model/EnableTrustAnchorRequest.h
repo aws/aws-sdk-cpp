@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_trustAnchorId;
-    bool m_trustAnchorIdHasBeenSet;
+    bool m_trustAnchorIdHasBeenSet = false;
   };
 
 } // namespace Model

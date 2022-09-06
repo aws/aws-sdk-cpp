@@ -102,10 +102,10 @@ namespace Model
   private:
 
     InputConfiguration m_inputConfiguration;
-    bool m_inputConfigurationHasBeenSet;
+    bool m_inputConfigurationHasBeenSet = false;
 
     InputDefinition m_inputDefinition;
-    bool m_inputDefinitionHasBeenSet;
+    bool m_inputDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -72,7 +72,7 @@ namespace Model
   private:
 
     ConnectedHomeSettingsForUpdate m_connectedHomeForUpdate;
-    bool m_connectedHomeForUpdateHasBeenSet;
+    bool m_connectedHomeForUpdateHasBeenSet = false;
   };
 
 } // namespace Model

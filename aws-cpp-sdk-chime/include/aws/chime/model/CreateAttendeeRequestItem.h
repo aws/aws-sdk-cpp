@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_externalUserId;
-    bool m_externalUserIdHasBeenSet;
+    bool m_externalUserIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

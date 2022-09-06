@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::Vector<ThemeValues> m_children;
-    bool m_childrenHasBeenSet;
+    bool m_childrenHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

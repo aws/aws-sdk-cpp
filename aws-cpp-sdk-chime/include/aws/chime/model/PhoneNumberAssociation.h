@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     PhoneNumberAssociationName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_associatedTimestamp;
-    bool m_associatedTimestampHasBeenSet;
+    bool m_associatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

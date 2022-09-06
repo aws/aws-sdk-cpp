@@ -1161,58 +1161,58 @@ namespace Model
   private:
 
     Aws::String m_containerInstanceArn;
-    bool m_containerInstanceArnHasBeenSet;
+    bool m_containerInstanceArnHasBeenSet = false;
 
     Aws::String m_ec2InstanceId;
-    bool m_ec2InstanceIdHasBeenSet;
+    bool m_ec2InstanceIdHasBeenSet = false;
 
     Aws::String m_capacityProviderName;
-    bool m_capacityProviderNameHasBeenSet;
+    bool m_capacityProviderNameHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     VersionInfo m_versionInfo;
-    bool m_versionInfoHasBeenSet;
+    bool m_versionInfoHasBeenSet = false;
 
     Aws::Vector<Resource> m_remainingResources;
-    bool m_remainingResourcesHasBeenSet;
+    bool m_remainingResourcesHasBeenSet = false;
 
     Aws::Vector<Resource> m_registeredResources;
-    bool m_registeredResourcesHasBeenSet;
+    bool m_registeredResourcesHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     bool m_agentConnected;
-    bool m_agentConnectedHasBeenSet;
+    bool m_agentConnectedHasBeenSet = false;
 
     int m_runningTasksCount;
-    bool m_runningTasksCountHasBeenSet;
+    bool m_runningTasksCountHasBeenSet = false;
 
     int m_pendingTasksCount;
-    bool m_pendingTasksCountHasBeenSet;
+    bool m_pendingTasksCountHasBeenSet = false;
 
     AgentUpdateStatus m_agentUpdateStatus;
-    bool m_agentUpdateStatusHasBeenSet;
+    bool m_agentUpdateStatusHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_registeredAt;
-    bool m_registeredAtHasBeenSet;
+    bool m_registeredAtHasBeenSet = false;
 
     Aws::Vector<Attachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ContainerInstanceHealthStatus m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
   };
 
 } // namespace Model

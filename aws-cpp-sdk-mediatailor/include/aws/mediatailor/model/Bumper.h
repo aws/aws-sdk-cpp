@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_endUrl;
-    bool m_endUrlHasBeenSet;
+    bool m_endUrlHasBeenSet = false;
 
     Aws::String m_startUrl;
-    bool m_startUrlHasBeenSet;
+    bool m_startUrlHasBeenSet = false;
   };
 
 } // namespace Model

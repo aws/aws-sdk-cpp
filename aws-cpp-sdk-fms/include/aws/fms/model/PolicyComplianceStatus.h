@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_policyOwner;
-    bool m_policyOwnerHasBeenSet;
+    bool m_policyOwnerHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_memberAccount;
-    bool m_memberAccountHasBeenSet;
+    bool m_memberAccountHasBeenSet = false;
 
     Aws::Vector<EvaluationResult> m_evaluationResults;
-    bool m_evaluationResultsHasBeenSet;
+    bool m_evaluationResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::Map<DependentServiceName, Aws::String> m_issueInfoMap;
-    bool m_issueInfoMapHasBeenSet;
+    bool m_issueInfoMapHasBeenSet = false;
   };
 
 } // namespace Model

@@ -358,19 +358,19 @@ namespace Model
   private:
 
     Aws::String m_predictorBacktestExportJobName;
-    bool m_predictorBacktestExportJobNameHasBeenSet;
+    bool m_predictorBacktestExportJobNameHasBeenSet = false;
 
     Aws::String m_predictorArn;
-    bool m_predictorArnHasBeenSet;
+    bool m_predictorArnHasBeenSet = false;
 
     DataDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

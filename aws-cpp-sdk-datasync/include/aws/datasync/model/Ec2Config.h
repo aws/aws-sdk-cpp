@@ -193,10 +193,10 @@ namespace Model
   private:
 
     Aws::String m_subnetArn;
-    bool m_subnetArnHasBeenSet;
+    bool m_subnetArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

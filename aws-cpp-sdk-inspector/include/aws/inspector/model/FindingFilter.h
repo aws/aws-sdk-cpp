@@ -502,28 +502,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_agentIds;
-    bool m_agentIdsHasBeenSet;
+    bool m_agentIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ruleNames;
-    bool m_ruleNamesHasBeenSet;
+    bool m_ruleNamesHasBeenSet = false;
 
     Aws::Vector<Severity> m_severities;
-    bool m_severitiesHasBeenSet;
+    bool m_severitiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<Attribute> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
 
     TimestampRange m_creationTimeRange;
-    bool m_creationTimeRangeHasBeenSet;
+    bool m_creationTimeRangeHasBeenSet = false;
   };
 
 } // namespace Model

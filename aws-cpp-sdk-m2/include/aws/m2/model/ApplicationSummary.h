@@ -477,40 +477,40 @@ namespace Model
   private:
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     int m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ApplicationDeploymentLifecycle m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStartTime;
-    bool m_lastStartTimeHasBeenSet;
+    bool m_lastStartTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ApplicationLifecycle m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ApplicationVersionLifecycle m_versionStatus;
-    bool m_versionStatusHasBeenSet;
+    bool m_versionStatusHasBeenSet = false;
   };
 
 } // namespace Model

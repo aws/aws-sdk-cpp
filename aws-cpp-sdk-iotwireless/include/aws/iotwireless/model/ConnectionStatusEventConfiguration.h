@@ -115,10 +115,10 @@ namespace Model
   private:
 
     LoRaWANConnectionStatusEventNotificationConfigurations m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
 
     EventNotificationTopicStatus m_wirelessGatewayIdEventTopic;
-    bool m_wirelessGatewayIdEventTopicHasBeenSet;
+    bool m_wirelessGatewayIdEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

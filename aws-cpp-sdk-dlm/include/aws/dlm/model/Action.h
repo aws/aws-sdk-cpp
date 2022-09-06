@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<CrossRegionCopyAction> m_crossRegionCopy;
-    bool m_crossRegionCopyHasBeenSet;
+    bool m_crossRegionCopyHasBeenSet = false;
   };
 
 } // namespace Model

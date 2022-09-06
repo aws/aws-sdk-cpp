@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_firewallRuleGroupAssociationId;
-    bool m_firewallRuleGroupAssociationIdHasBeenSet;
+    bool m_firewallRuleGroupAssociationIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,16 +180,16 @@ namespace Model
   private:
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     double m_desiredValue;
-    bool m_desiredValueHasBeenSet;
+    bool m_desiredValueHasBeenSet = false;
   };
 
 } // namespace Model

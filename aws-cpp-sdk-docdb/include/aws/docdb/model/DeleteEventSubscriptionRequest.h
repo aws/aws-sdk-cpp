@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_subscriptionName;
-    bool m_subscriptionNameHasBeenSet;
+    bool m_subscriptionNameHasBeenSet = false;
   };
 
 } // namespace Model

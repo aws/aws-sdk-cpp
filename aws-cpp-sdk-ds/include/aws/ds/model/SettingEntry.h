@@ -501,34 +501,34 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     Aws::String m_appliedValue;
-    bool m_appliedValueHasBeenSet;
+    bool m_appliedValueHasBeenSet = false;
 
     Aws::String m_requestedValue;
-    bool m_requestedValueHasBeenSet;
+    bool m_requestedValueHasBeenSet = false;
 
     DirectoryConfigurationStatus m_requestStatus;
-    bool m_requestStatusHasBeenSet;
+    bool m_requestStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, DirectoryConfigurationStatus> m_requestDetailedStatus;
-    bool m_requestDetailedStatusHasBeenSet;
+    bool m_requestDetailedStatusHasBeenSet = false;
 
     Aws::String m_requestStatusMessage;
-    bool m_requestStatusMessageHasBeenSet;
+    bool m_requestStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRequestedDateTime;
-    bool m_lastRequestedDateTimeHasBeenSet;
+    bool m_lastRequestedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

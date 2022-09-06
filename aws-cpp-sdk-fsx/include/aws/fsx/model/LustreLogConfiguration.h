@@ -172,10 +172,10 @@ namespace Model
   private:
 
     LustreAccessAuditLogLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

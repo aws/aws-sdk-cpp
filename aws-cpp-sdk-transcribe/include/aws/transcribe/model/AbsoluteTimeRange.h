@@ -159,16 +159,16 @@ namespace Model
   private:
 
     long long m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     long long m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     long long m_first;
-    bool m_firstHasBeenSet;
+    bool m_firstHasBeenSet = false;
 
     long long m_last;
-    bool m_lastHasBeenSet;
+    bool m_lastHasBeenSet = false;
   };
 
 } // namespace Model

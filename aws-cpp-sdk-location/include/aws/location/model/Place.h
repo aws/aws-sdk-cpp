@@ -577,40 +577,40 @@ namespace Model
   private:
 
     Aws::String m_addressNumber;
-    bool m_addressNumberHasBeenSet;
+    bool m_addressNumberHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     PlaceGeometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
 
     bool m_interpolated;
-    bool m_interpolatedHasBeenSet;
+    bool m_interpolatedHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::String m_municipality;
-    bool m_municipalityHasBeenSet;
+    bool m_municipalityHasBeenSet = false;
 
     Aws::String m_neighborhood;
-    bool m_neighborhoodHasBeenSet;
+    bool m_neighborhoodHasBeenSet = false;
 
     Aws::String m_postalCode;
-    bool m_postalCodeHasBeenSet;
+    bool m_postalCodeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_street;
-    bool m_streetHasBeenSet;
+    bool m_streetHasBeenSet = false;
 
     Aws::String m_subRegion;
-    bool m_subRegionHasBeenSet;
+    bool m_subRegionHasBeenSet = false;
 
     TimeZone m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
   };
 
 } // namespace Model

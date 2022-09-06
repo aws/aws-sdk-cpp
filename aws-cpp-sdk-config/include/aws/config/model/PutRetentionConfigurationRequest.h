@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_retentionPeriodInDays;
-    bool m_retentionPeriodInDaysHasBeenSet;
+    bool m_retentionPeriodInDaysHasBeenSet = false;
   };
 
 } // namespace Model

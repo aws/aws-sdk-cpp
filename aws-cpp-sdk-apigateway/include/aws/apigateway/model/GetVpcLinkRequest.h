@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_vpcLinkId;
-    bool m_vpcLinkIdHasBeenSet;
+    bool m_vpcLinkIdHasBeenSet = false;
   };
 
 } // namespace Model

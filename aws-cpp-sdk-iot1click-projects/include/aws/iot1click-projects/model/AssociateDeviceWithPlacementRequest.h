@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_placementName;
-    bool m_placementNameHasBeenSet;
+    bool m_placementNameHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_deviceTemplateName;
-    bool m_deviceTemplateNameHasBeenSet;
+    bool m_deviceTemplateNameHasBeenSet = false;
   };
 
 } // namespace Model

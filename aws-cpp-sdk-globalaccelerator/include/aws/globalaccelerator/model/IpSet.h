@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ipAddresses;
-    bool m_ipAddressesHasBeenSet;
+    bool m_ipAddressesHasBeenSet = false;
 
     IpAddressFamily m_ipAddressFamily;
-    bool m_ipAddressFamilyHasBeenSet;
+    bool m_ipAddressFamilyHasBeenSet = false;
   };
 
 } // namespace Model

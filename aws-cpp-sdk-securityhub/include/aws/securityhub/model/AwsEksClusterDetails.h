@@ -430,31 +430,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_certificateAuthorityData;
-    bool m_certificateAuthorityDataHasBeenSet;
+    bool m_certificateAuthorityDataHasBeenSet = false;
 
     Aws::String m_clusterStatus;
-    bool m_clusterStatusHasBeenSet;
+    bool m_clusterStatusHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AwsEksClusterResourcesVpcConfigDetails m_resourcesVpcConfig;
-    bool m_resourcesVpcConfigHasBeenSet;
+    bool m_resourcesVpcConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     AwsEksClusterLoggingDetails m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
   };
 
 } // namespace Model

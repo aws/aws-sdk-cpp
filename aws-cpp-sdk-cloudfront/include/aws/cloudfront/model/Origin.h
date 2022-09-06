@@ -609,34 +609,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_originPath;
-    bool m_originPathHasBeenSet;
+    bool m_originPathHasBeenSet = false;
 
     CustomHeaders m_customHeaders;
-    bool m_customHeadersHasBeenSet;
+    bool m_customHeadersHasBeenSet = false;
 
     S3OriginConfig m_s3OriginConfig;
-    bool m_s3OriginConfigHasBeenSet;
+    bool m_s3OriginConfigHasBeenSet = false;
 
     CustomOriginConfig m_customOriginConfig;
-    bool m_customOriginConfigHasBeenSet;
+    bool m_customOriginConfigHasBeenSet = false;
 
     int m_connectionAttempts;
-    bool m_connectionAttemptsHasBeenSet;
+    bool m_connectionAttemptsHasBeenSet = false;
 
     int m_connectionTimeout;
-    bool m_connectionTimeoutHasBeenSet;
+    bool m_connectionTimeoutHasBeenSet = false;
 
     OriginShield m_originShield;
-    bool m_originShieldHasBeenSet;
+    bool m_originShieldHasBeenSet = false;
 
     Aws::String m_originAccessControlId;
-    bool m_originAccessControlIdHasBeenSet;
+    bool m_originAccessControlIdHasBeenSet = false;
   };
 
 } // namespace Model

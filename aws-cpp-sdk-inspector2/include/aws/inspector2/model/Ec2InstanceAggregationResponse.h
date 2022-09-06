@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_ami;
-    bool m_amiHasBeenSet;
+    bool m_amiHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_instanceTags;
-    bool m_instanceTagsHasBeenSet;
+    bool m_instanceTagsHasBeenSet = false;
 
     long long m_networkFindings;
-    bool m_networkFindingsHasBeenSet;
+    bool m_networkFindingsHasBeenSet = false;
 
     Aws::String m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet;
+    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

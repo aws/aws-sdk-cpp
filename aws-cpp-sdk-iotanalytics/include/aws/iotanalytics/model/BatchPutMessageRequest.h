@@ -214,10 +214,10 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::Vector<Message> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
   };
 
 } // namespace Model

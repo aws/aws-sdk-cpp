@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_networkSiteArn;
-    bool m_networkSiteArnHasBeenSet;
+    bool m_networkSiteArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -597,46 +597,46 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStateChangeAt;
-    bool m_lastStateChangeAtHasBeenSet;
+    bool m_lastStateChangeAtHasBeenSet = false;
 
     CertificateAuthorityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_serial;
-    bool m_serialHasBeenSet;
+    bool m_serialHasBeenSet = false;
 
     CertificateAuthorityStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     FailureReason m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     CertificateAuthorityConfiguration m_certificateAuthorityConfiguration;
-    bool m_certificateAuthorityConfigurationHasBeenSet;
+    bool m_certificateAuthorityConfigurationHasBeenSet = false;
 
     RevocationConfiguration m_revocationConfiguration;
-    bool m_revocationConfigurationHasBeenSet;
+    bool m_revocationConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_restorableUntil;
-    bool m_restorableUntilHasBeenSet;
+    bool m_restorableUntilHasBeenSet = false;
 
     KeyStorageSecurityStandard m_keyStorageSecurityStandard;
-    bool m_keyStorageSecurityStandardHasBeenSet;
+    bool m_keyStorageSecurityStandardHasBeenSet = false;
   };
 
 } // namespace Model

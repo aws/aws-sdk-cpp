@@ -113,13 +113,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_internalUserDatabaseEnabled;
-    bool m_internalUserDatabaseEnabledHasBeenSet;
+    bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
     AwsOpenSearchServiceDomainMasterUserOptionsDetails m_masterUserOptions;
-    bool m_masterUserOptionsHasBeenSet;
+    bool m_masterUserOptionsHasBeenSet = false;
   };
 
 } // namespace Model

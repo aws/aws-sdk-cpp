@@ -71,7 +71,7 @@ namespace Model
   private:
 
     KnowledgeBaseAssociationData m_knowledgeBaseAssociation;
-    bool m_knowledgeBaseAssociationHasBeenSet;
+    bool m_knowledgeBaseAssociationHasBeenSet = false;
   };
 
 } // namespace Model

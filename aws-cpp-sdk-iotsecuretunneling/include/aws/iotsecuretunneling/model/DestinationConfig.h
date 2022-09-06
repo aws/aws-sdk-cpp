@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -76,13 +76,13 @@ namespace Model
   private:
 
     int m_clockSync;
-    bool m_clockSyncHasBeenSet;
+    bool m_clockSyncHasBeenSet = false;
 
     int m_stream;
-    bool m_streamHasBeenSet;
+    bool m_streamHasBeenSet = false;
 
     int m_gnss;
-    bool m_gnssHasBeenSet;
+    bool m_gnssHasBeenSet = false;
   };
 
 } // namespace Model

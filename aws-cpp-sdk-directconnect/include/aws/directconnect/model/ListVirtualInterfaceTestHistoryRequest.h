@@ -289,22 +289,22 @@ namespace Model
   private:
 
     Aws::String m_testId;
-    bool m_testIdHasBeenSet;
+    bool m_testIdHasBeenSet = false;
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bgpPeers;
-    bool m_bgpPeersHasBeenSet;
+    bool m_bgpPeersHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

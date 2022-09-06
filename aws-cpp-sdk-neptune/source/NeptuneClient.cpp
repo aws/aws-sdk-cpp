@@ -146,7 +146,7 @@ NeptuneClient::~NeptuneClient()
 
 void NeptuneClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Neptune");
+  AWSClient::SetServiceClientName("Neptune");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_useDualStack = config.useDualStack;
   if (config.endpointOverride.empty())

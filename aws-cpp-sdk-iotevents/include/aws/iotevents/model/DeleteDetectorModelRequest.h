@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
   };
 
 } // namespace Model

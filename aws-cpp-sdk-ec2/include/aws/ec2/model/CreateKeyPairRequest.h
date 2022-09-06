@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     KeyFormat m_keyFormat;
-    bool m_keyFormatHasBeenSet;
+    bool m_keyFormatHasBeenSet = false;
   };
 
 } // namespace Model

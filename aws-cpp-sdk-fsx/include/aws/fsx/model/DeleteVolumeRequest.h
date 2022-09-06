@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     DeleteVolumeOntapConfiguration m_ontapConfiguration;
-    bool m_ontapConfigurationHasBeenSet;
+    bool m_ontapConfigurationHasBeenSet = false;
 
     DeleteVolumeOpenZFSConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

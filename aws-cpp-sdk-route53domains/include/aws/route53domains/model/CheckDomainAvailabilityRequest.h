@@ -250,10 +250,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_idnLangCode;
-    bool m_idnLangCodeHasBeenSet;
+    bool m_idnLangCodeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     OperationType m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_invoiceId;
-    bool m_invoiceIdHasBeenSet;
+    bool m_invoiceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_billDate;
-    bool m_billDateHasBeenSet;
+    bool m_billDateHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
   };
 
 } // namespace Model

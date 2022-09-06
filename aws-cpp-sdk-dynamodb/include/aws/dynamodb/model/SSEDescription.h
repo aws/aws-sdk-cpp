@@ -237,16 +237,16 @@ namespace Model
   private:
 
     SSEStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     SSEType m_sSEType;
-    bool m_sSETypeHasBeenSet;
+    bool m_sSETypeHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyArn;
-    bool m_kMSMasterKeyArnHasBeenSet;
+    bool m_kMSMasterKeyArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_inaccessibleEncryptionDateTime;
-    bool m_inaccessibleEncryptionDateTimeHasBeenSet;
+    bool m_inaccessibleEncryptionDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

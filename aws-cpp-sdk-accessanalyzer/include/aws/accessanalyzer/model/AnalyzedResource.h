@@ -456,37 +456,37 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_analyzedAt;
-    bool m_analyzedAtHasBeenSet;
+    bool m_analyzedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     bool m_isPublic;
-    bool m_isPublicHasBeenSet;
+    bool m_isPublicHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_resourceOwnerAccount;
-    bool m_resourceOwnerAccountHasBeenSet;
+    bool m_resourceOwnerAccountHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sharedVia;
-    bool m_sharedViaHasBeenSet;
+    bool m_sharedViaHasBeenSet = false;
 
     FindingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

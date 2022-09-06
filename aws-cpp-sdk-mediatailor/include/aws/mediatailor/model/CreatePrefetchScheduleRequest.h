@@ -289,19 +289,19 @@ namespace Model
   private:
 
     PrefetchConsumption m_consumption;
-    bool m_consumptionHasBeenSet;
+    bool m_consumptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_playbackConfigurationName;
-    bool m_playbackConfigurationNameHasBeenSet;
+    bool m_playbackConfigurationNameHasBeenSet = false;
 
     PrefetchRetrieval m_retrieval;
-    bool m_retrievalHasBeenSet;
+    bool m_retrievalHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
   };
 
 } // namespace Model

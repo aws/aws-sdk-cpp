@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     Aws::String m_destinationId;
-    bool m_destinationIdHasBeenSet;
+    bool m_destinationIdHasBeenSet = false;
   };
 
 } // namespace Model

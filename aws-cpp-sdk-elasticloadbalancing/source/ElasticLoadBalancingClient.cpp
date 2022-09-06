@@ -106,7 +106,7 @@ ElasticLoadBalancingClient::~ElasticLoadBalancingClient()
 
 void ElasticLoadBalancingClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Elastic Load Balancing");
+  AWSClient::SetServiceClientName("Elastic Load Balancing");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_cellReference;
-    bool m_cellReferenceHasBeenSet;
+    bool m_cellReferenceHasBeenSet = false;
 
     long long m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     long long m_row;
-    bool m_rowHasBeenSet;
+    bool m_rowHasBeenSet = false;
   };
 
 } // namespace Model

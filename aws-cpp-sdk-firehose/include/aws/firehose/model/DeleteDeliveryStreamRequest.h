@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     bool m_allowForceDelete;
-    bool m_allowForceDeleteHasBeenSet;
+    bool m_allowForceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

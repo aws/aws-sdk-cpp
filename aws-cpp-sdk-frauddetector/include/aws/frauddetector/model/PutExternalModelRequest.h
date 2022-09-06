@@ -289,25 +289,25 @@ namespace Model
   private:
 
     Aws::String m_modelEndpoint;
-    bool m_modelEndpointHasBeenSet;
+    bool m_modelEndpointHasBeenSet = false;
 
     ModelSource m_modelSource;
-    bool m_modelSourceHasBeenSet;
+    bool m_modelSourceHasBeenSet = false;
 
     Aws::String m_invokeModelEndpointRoleArn;
-    bool m_invokeModelEndpointRoleArnHasBeenSet;
+    bool m_invokeModelEndpointRoleArnHasBeenSet = false;
 
     ModelInputConfiguration m_inputConfiguration;
-    bool m_inputConfigurationHasBeenSet;
+    bool m_inputConfigurationHasBeenSet = false;
 
     ModelOutputConfiguration m_outputConfiguration;
-    bool m_outputConfigurationHasBeenSet;
+    bool m_outputConfigurationHasBeenSet = false;
 
     ModelEndpointStatus m_modelEndpointStatus;
-    bool m_modelEndpointStatusHasBeenSet;
+    bool m_modelEndpointStatusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

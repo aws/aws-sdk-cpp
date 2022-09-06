@@ -112,10 +112,10 @@ namespace Model
   private:
 
     int m_allocatedUsageQuantity;
-    bool m_allocatedUsageQuantityHasBeenSet;
+    bool m_allocatedUsageQuantityHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

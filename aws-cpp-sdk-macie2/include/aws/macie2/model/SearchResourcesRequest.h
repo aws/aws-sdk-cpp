@@ -178,16 +178,16 @@ namespace Model
   private:
 
     SearchResourcesBucketCriteria m_bucketCriteria;
-    bool m_bucketCriteriaHasBeenSet;
+    bool m_bucketCriteriaHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     SearchResourcesSortCriteria m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

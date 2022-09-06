@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_oneDriveUserList;
-    bool m_oneDriveUserListHasBeenSet;
+    bool m_oneDriveUserListHasBeenSet = false;
 
     S3Path m_oneDriveUserS3Path;
-    bool m_oneDriveUserS3PathHasBeenSet;
+    bool m_oneDriveUserS3PathHasBeenSet = false;
   };
 
 } // namespace Model

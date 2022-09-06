@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::Vector<RepositoryTrigger> m_triggers;
-    bool m_triggersHasBeenSet;
+    bool m_triggersHasBeenSet = false;
   };
 
 } // namespace Model

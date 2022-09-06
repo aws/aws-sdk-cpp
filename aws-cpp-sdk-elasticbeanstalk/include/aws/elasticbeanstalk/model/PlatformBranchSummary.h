@@ -282,19 +282,19 @@ namespace Model
   private:
 
     Aws::String m_platformName;
-    bool m_platformNameHasBeenSet;
+    bool m_platformNameHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_lifecycleState;
-    bool m_lifecycleStateHasBeenSet;
+    bool m_lifecycleStateHasBeenSet = false;
 
     int m_branchOrder;
-    bool m_branchOrderHasBeenSet;
+    bool m_branchOrderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedTierList;
-    bool m_supportedTierListHasBeenSet;
+    bool m_supportedTierListHasBeenSet = false;
   };
 
 } // namespace Model

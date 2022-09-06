@@ -308,19 +308,19 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
 
     EFSTransitEncryption m_transitEncryption;
-    bool m_transitEncryptionHasBeenSet;
+    bool m_transitEncryptionHasBeenSet = false;
 
     int m_transitEncryptionPort;
-    bool m_transitEncryptionPortHasBeenSet;
+    bool m_transitEncryptionPortHasBeenSet = false;
 
     EFSAuthorizationConfig m_authorizationConfig;
-    bool m_authorizationConfigHasBeenSet;
+    bool m_authorizationConfigHasBeenSet = false;
   };
 
 } // namespace Model

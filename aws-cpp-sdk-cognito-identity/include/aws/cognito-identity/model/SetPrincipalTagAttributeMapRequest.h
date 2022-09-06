@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityProviderName;
-    bool m_identityProviderNameHasBeenSet;
+    bool m_identityProviderNameHasBeenSet = false;
 
     bool m_useDefaults;
-    bool m_useDefaultsHasBeenSet;
+    bool m_useDefaultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_principalTags;
-    bool m_principalTagsHasBeenSet;
+    bool m_principalTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -245,10 +245,10 @@ namespace Model
   private:
 
     Aws::String m_endTimecode;
-    bool m_endTimecodeHasBeenSet;
+    bool m_endTimecodeHasBeenSet = false;
 
     Aws::String m_startTimecode;
-    bool m_startTimecodeHasBeenSet;
+    bool m_startTimecodeHasBeenSet = false;
   };
 
 } // namespace Model

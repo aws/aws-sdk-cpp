@@ -118,7 +118,7 @@ MediaTailorClient::~MediaTailorClient()
 
 void MediaTailorClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MediaTailor");
+  AWSClient::SetServiceClientName("MediaTailor");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

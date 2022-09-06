@@ -311,13 +311,13 @@ namespace Model
   private:
 
     Aws::String m_forecastFrequency;
-    bool m_forecastFrequencyHasBeenSet;
+    bool m_forecastFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastDimensions;
-    bool m_forecastDimensionsHasBeenSet;
+    bool m_forecastDimensionsHasBeenSet = false;
 
     Aws::Vector<Featurization> m_featurizations;
-    bool m_featurizationsHasBeenSet;
+    bool m_featurizationsHasBeenSet = false;
   };
 
 } // namespace Model

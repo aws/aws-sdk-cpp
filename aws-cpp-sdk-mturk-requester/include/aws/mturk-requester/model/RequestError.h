@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_turkErrorCode;
-    bool m_turkErrorCodeHasBeenSet;
+    bool m_turkErrorCodeHasBeenSet = false;
   };
 
 } // namespace Model

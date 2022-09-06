@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_countUpdate;
-    bool m_countUpdateHasBeenSet;
+    bool m_countUpdateHasBeenSet = false;
   };
 
 } // namespace Model

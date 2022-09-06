@@ -285,19 +285,19 @@ namespace Model
   private:
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
 
     RelativePosition m_relativePosition;
-    bool m_relativePositionHasBeenSet;
+    bool m_relativePositionHasBeenSet = false;
 
     Aws::String m_relativeProgram;
-    bool m_relativeProgramHasBeenSet;
+    bool m_relativeProgramHasBeenSet = false;
 
     long long m_scheduledStartTimeMillis;
-    bool m_scheduledStartTimeMillisHasBeenSet;
+    bool m_scheduledStartTimeMillisHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

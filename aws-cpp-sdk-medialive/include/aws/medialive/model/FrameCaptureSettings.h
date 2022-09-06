@@ -99,10 +99,10 @@ namespace Model
   private:
 
     int m_captureInterval;
-    bool m_captureIntervalHasBeenSet;
+    bool m_captureIntervalHasBeenSet = false;
 
     FrameCaptureIntervalUnit m_captureIntervalUnits;
-    bool m_captureIntervalUnitsHasBeenSet;
+    bool m_captureIntervalUnitsHasBeenSet = false;
   };
 
 } // namespace Model

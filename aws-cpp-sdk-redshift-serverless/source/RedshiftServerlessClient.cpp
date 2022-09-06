@@ -113,7 +113,7 @@ RedshiftServerlessClient::~RedshiftServerlessClient()
 
 void RedshiftServerlessClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Redshift Serverless");
+  AWSClient::SetServiceClientName("Redshift Serverless");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

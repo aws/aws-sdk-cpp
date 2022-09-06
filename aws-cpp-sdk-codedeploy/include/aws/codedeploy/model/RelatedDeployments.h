@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_autoUpdateOutdatedInstancesRootDeploymentId;
-    bool m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet;
+    bool m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoUpdateOutdatedInstancesDeploymentIds;
-    bool m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet;
+    bool m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet = false;
   };
 
 } // namespace Model

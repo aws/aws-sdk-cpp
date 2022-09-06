@@ -60,10 +60,10 @@ namespace Model
   private:
 
     int m_maximumReplicationCount;
-    bool m_maximumReplicationCountHasBeenSet;
+    bool m_maximumReplicationCountHasBeenSet = false;
 
     int m_maximumPartitionCount;
-    bool m_maximumPartitionCountHasBeenSet;
+    bool m_maximumPartitionCountHasBeenSet = false;
   };
 
 } // namespace Model

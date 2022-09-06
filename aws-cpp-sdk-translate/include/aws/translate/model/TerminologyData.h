@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::Utils::CryptoBuffer m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     TerminologyDataFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Directionality m_directionality;
-    bool m_directionalityHasBeenSet;
+    bool m_directionalityHasBeenSet = false;
   };
 
 } // namespace Model

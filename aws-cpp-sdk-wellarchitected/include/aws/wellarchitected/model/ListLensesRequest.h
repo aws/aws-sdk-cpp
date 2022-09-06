@@ -170,19 +170,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     LensType m_lensType;
-    bool m_lensTypeHasBeenSet;
+    bool m_lensTypeHasBeenSet = false;
 
     LensStatusType m_lensStatus;
-    bool m_lensStatusHasBeenSet;
+    bool m_lensStatusHasBeenSet = false;
 
     Aws::String m_lensName;
-    bool m_lensNameHasBeenSet;
+    bool m_lensNameHasBeenSet = false;
   };
 
 } // namespace Model

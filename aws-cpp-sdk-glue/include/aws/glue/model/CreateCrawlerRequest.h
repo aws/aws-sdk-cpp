@@ -773,49 +773,49 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     CrawlerTargets m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_classifiers;
-    bool m_classifiersHasBeenSet;
+    bool m_classifiersHasBeenSet = false;
 
     Aws::String m_tablePrefix;
-    bool m_tablePrefixHasBeenSet;
+    bool m_tablePrefixHasBeenSet = false;
 
     SchemaChangePolicy m_schemaChangePolicy;
-    bool m_schemaChangePolicyHasBeenSet;
+    bool m_schemaChangePolicyHasBeenSet = false;
 
     RecrawlPolicy m_recrawlPolicy;
-    bool m_recrawlPolicyHasBeenSet;
+    bool m_recrawlPolicyHasBeenSet = false;
 
     LineageConfiguration m_lineageConfiguration;
-    bool m_lineageConfigurationHasBeenSet;
+    bool m_lineageConfigurationHasBeenSet = false;
 
     LakeFormationConfiguration m_lakeFormationConfiguration;
-    bool m_lakeFormationConfigurationHasBeenSet;
+    bool m_lakeFormationConfigurationHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_crawlerSecurityConfiguration;
-    bool m_crawlerSecurityConfigurationHasBeenSet;
+    bool m_crawlerSecurityConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

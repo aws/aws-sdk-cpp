@@ -246,16 +246,16 @@ namespace Model
   private:
 
     Aws::String m_reservedNodeId;
-    bool m_reservedNodeIdHasBeenSet;
+    bool m_reservedNodeIdHasBeenSet = false;
 
     Aws::String m_reservedNodeExchangeRequestId;
-    bool m_reservedNodeExchangeRequestIdHasBeenSet;
+    bool m_reservedNodeExchangeRequestIdHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

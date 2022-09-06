@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     Aws::String m_configurationProfileIdentifier;
-    bool m_configurationProfileIdentifierHasBeenSet;
+    bool m_configurationProfileIdentifierHasBeenSet = false;
 
     int m_requiredMinimumPollIntervalInSeconds;
-    bool m_requiredMinimumPollIntervalInSecondsHasBeenSet;
+    bool m_requiredMinimumPollIntervalInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

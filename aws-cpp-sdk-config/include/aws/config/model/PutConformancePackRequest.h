@@ -422,25 +422,25 @@ namespace Model
   private:
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     Aws::String m_templateS3Uri;
-    bool m_templateS3UriHasBeenSet;
+    bool m_templateS3UriHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_deliveryS3Bucket;
-    bool m_deliveryS3BucketHasBeenSet;
+    bool m_deliveryS3BucketHasBeenSet = false;
 
     Aws::String m_deliveryS3KeyPrefix;
-    bool m_deliveryS3KeyPrefixHasBeenSet;
+    bool m_deliveryS3KeyPrefixHasBeenSet = false;
 
     Aws::Vector<ConformancePackInputParameter> m_conformancePackInputParameters;
-    bool m_conformancePackInputParametersHasBeenSet;
+    bool m_conformancePackInputParametersHasBeenSet = false;
 
     TemplateSSMDocumentDetails m_templateSSMDocumentDetails;
-    bool m_templateSSMDocumentDetailsHasBeenSet;
+    bool m_templateSSMDocumentDetailsHasBeenSet = false;
   };
 
 } // namespace Model

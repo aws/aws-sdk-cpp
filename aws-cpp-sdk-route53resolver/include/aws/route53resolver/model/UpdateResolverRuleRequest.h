@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_resolverRuleId;
-    bool m_resolverRuleIdHasBeenSet;
+    bool m_resolverRuleIdHasBeenSet = false;
 
     ResolverRuleConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
   };
 
 } // namespace Model

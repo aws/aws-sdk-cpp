@@ -151,7 +151,7 @@ namespace Model
   private:
 
     BlockPublicAccessConfiguration m_blockPublicAccessConfiguration;
-    bool m_blockPublicAccessConfigurationHasBeenSet;
+    bool m_blockPublicAccessConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

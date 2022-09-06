@@ -413,25 +413,25 @@ namespace Model
   private:
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     SecurityServiceType m_securityServiceType;
-    bool m_securityServiceTypeHasBeenSet;
+    bool m_securityServiceTypeHasBeenSet = false;
 
     bool m_remediationEnabled;
-    bool m_remediationEnabledHasBeenSet;
+    bool m_remediationEnabledHasBeenSet = false;
 
     bool m_deleteUnusedFMManagedResources;
-    bool m_deleteUnusedFMManagedResourcesHasBeenSet;
+    bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

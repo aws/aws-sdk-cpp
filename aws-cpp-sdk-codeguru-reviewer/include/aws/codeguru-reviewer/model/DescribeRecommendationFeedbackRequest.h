@@ -243,13 +243,13 @@ namespace Model
   private:
 
     Aws::String m_codeReviewArn;
-    bool m_codeReviewArnHasBeenSet;
+    bool m_codeReviewArnHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -124,13 +124,13 @@ namespace Model
   private:
 
     bool m_isPreferred;
-    bool m_isPreferredHasBeenSet;
+    bool m_isPreferredHasBeenSet = false;
 
     RecommendationSet m_recommendation;
-    bool m_recommendationHasBeenSet;
+    bool m_recommendationHasBeenSet = false;
 
     StrategyRecommendation m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

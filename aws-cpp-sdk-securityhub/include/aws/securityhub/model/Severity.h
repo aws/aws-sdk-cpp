@@ -266,16 +266,16 @@ namespace Model
   private:
 
     double m_product;
-    bool m_productHasBeenSet;
+    bool m_productHasBeenSet = false;
 
     SeverityLabel m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     int m_normalized;
-    bool m_normalizedHasBeenSet;
+    bool m_normalizedHasBeenSet = false;
 
     Aws::String m_original;
-    bool m_originalHasBeenSet;
+    bool m_originalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,7 +80,7 @@ DynamoDBStreamsClient::~DynamoDBStreamsClient()
 
 void DynamoDBStreamsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DynamoDB Streams");
+  AWSClient::SetServiceClientName("DynamoDB Streams");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

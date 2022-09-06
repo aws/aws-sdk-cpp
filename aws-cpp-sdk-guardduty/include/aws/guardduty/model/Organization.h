@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_asnOrg;
-    bool m_asnOrgHasBeenSet;
+    bool m_asnOrgHasBeenSet = false;
 
     Aws::String m_isp;
-    bool m_ispHasBeenSet;
+    bool m_ispHasBeenSet = false;
 
     Aws::String m_org;
-    bool m_orgHasBeenSet;
+    bool m_orgHasBeenSet = false;
   };
 
 } // namespace Model

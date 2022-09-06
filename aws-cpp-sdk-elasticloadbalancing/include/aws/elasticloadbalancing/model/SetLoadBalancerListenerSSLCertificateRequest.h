@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     int m_loadBalancerPort;
-    bool m_loadBalancerPortHasBeenSet;
+    bool m_loadBalancerPortHasBeenSet = false;
 
     Aws::String m_sSLCertificateId;
-    bool m_sSLCertificateIdHasBeenSet;
+    bool m_sSLCertificateIdHasBeenSet = false;
   };
 
 } // namespace Model

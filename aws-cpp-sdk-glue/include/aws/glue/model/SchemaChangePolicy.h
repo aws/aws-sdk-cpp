@@ -103,10 +103,10 @@ namespace Model
   private:
 
     UpdateBehavior m_updateBehavior;
-    bool m_updateBehaviorHasBeenSet;
+    bool m_updateBehaviorHasBeenSet = false;
 
     DeleteBehavior m_deleteBehavior;
-    bool m_deleteBehaviorHasBeenSet;
+    bool m_deleteBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

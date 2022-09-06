@@ -134,13 +134,13 @@ namespace Model
   private:
 
     FilterOperation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     bool m_negated;
-    bool m_negatedHasBeenSet;
+    bool m_negatedHasBeenSet = false;
 
     Aws::Vector<FilterValue> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

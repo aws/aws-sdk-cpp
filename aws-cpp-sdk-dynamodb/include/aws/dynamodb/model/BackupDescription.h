@@ -141,13 +141,13 @@ namespace Model
   private:
 
     BackupDetails m_backupDetails;
-    bool m_backupDetailsHasBeenSet;
+    bool m_backupDetailsHasBeenSet = false;
 
     SourceTableDetails m_sourceTableDetails;
-    bool m_sourceTableDetailsHasBeenSet;
+    bool m_sourceTableDetailsHasBeenSet = false;
 
     SourceTableFeatureDetails m_sourceTableFeatureDetails;
-    bool m_sourceTableFeatureDetailsHasBeenSet;
+    bool m_sourceTableFeatureDetailsHasBeenSet = false;
   };
 
 } // namespace Model

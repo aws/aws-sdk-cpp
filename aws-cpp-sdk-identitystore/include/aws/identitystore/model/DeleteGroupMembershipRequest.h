@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     Aws::String m_membershipId;
-    bool m_membershipIdHasBeenSet;
+    bool m_membershipIdHasBeenSet = false;
   };
 
 } // namespace Model

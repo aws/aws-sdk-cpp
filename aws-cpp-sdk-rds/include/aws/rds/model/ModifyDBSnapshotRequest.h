@@ -281,13 +281,13 @@ namespace Model
   private:
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,16 +122,16 @@ namespace Model
   private:
 
     long long m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     long long m_critical;
-    bool m_criticalHasBeenSet;
+    bool m_criticalHasBeenSet = false;
 
     long long m_high;
-    bool m_highHasBeenSet;
+    bool m_highHasBeenSet = false;
 
     long long m_medium;
-    bool m_mediumHasBeenSet;
+    bool m_mediumHasBeenSet = false;
   };
 
 } // namespace Model

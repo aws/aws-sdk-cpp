@@ -106,7 +106,7 @@ BillingConductorClient::~BillingConductorClient()
 
 void BillingConductorClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("billingconductor");
+  AWSClient::SetServiceClientName("billingconductor");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

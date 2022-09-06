@@ -293,10 +293,10 @@ namespace Model
   private:
 
     Aws::String m_appBoundaryKey;
-    bool m_appBoundaryKeyHasBeenSet;
+    bool m_appBoundaryKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagValues;
-    bool m_tagValuesHasBeenSet;
+    bool m_tagValuesHasBeenSet = false;
   };
 
 } // namespace Model

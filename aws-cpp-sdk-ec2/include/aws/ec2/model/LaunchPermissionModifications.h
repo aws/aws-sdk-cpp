@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<LaunchPermission> m_add;
-    bool m_addHasBeenSet;
+    bool m_addHasBeenSet = false;
 
     Aws::Vector<LaunchPermission> m_remove;
-    bool m_removeHasBeenSet;
+    bool m_removeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -178,16 +178,16 @@ namespace Model
   private:
 
     bool m_disableScaleIn;
-    bool m_disableScaleInHasBeenSet;
+    bool m_disableScaleInHasBeenSet = false;
 
     int m_scaleInCooldown;
-    bool m_scaleInCooldownHasBeenSet;
+    bool m_scaleInCooldownHasBeenSet = false;
 
     int m_scaleOutCooldown;
-    bool m_scaleOutCooldownHasBeenSet;
+    bool m_scaleOutCooldownHasBeenSet = false;
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
   };
 
 } // namespace Model

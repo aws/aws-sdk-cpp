@@ -198,22 +198,22 @@ namespace Model
   private:
 
     bool m_isBasicAuthSupported;
-    bool m_isBasicAuthSupportedHasBeenSet;
+    bool m_isBasicAuthSupportedHasBeenSet = false;
 
     bool m_isApiKeyAuthSupported;
-    bool m_isApiKeyAuthSupportedHasBeenSet;
+    bool m_isApiKeyAuthSupportedHasBeenSet = false;
 
     bool m_isOAuth2Supported;
-    bool m_isOAuth2SupportedHasBeenSet;
+    bool m_isOAuth2SupportedHasBeenSet = false;
 
     bool m_isCustomAuthSupported;
-    bool m_isCustomAuthSupportedHasBeenSet;
+    bool m_isCustomAuthSupportedHasBeenSet = false;
 
     OAuth2Defaults m_oAuth2Defaults;
-    bool m_oAuth2DefaultsHasBeenSet;
+    bool m_oAuth2DefaultsHasBeenSet = false;
 
     Aws::Vector<CustomAuthConfig> m_customAuthConfigs;
-    bool m_customAuthConfigsHasBeenSet;
+    bool m_customAuthConfigsHasBeenSet = false;
   };
 
 } // namespace Model

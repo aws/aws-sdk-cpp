@@ -325,19 +325,19 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
 
     PropertyNotificationState m_propertyNotificationState;
-    bool m_propertyNotificationStateHasBeenSet;
+    bool m_propertyNotificationStateHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -245,10 +245,10 @@ namespace Model
   private:
 
     Aws::String m_locationArn;
-    bool m_locationArnHasBeenSet;
+    bool m_locationArnHasBeenSet = false;
 
     Aws::String m_locationUri;
-    bool m_locationUriHasBeenSet;
+    bool m_locationUriHasBeenSet = false;
   };
 
 } // namespace Model

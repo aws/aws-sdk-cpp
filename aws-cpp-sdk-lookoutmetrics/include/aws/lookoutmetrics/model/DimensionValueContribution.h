@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionValue;
-    bool m_dimensionValueHasBeenSet;
+    bool m_dimensionValueHasBeenSet = false;
 
     double m_contributionScore;
-    bool m_contributionScoreHasBeenSet;
+    bool m_contributionScoreHasBeenSet = false;
   };
 
 } // namespace Model

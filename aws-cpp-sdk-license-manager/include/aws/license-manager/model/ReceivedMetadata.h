@@ -156,13 +156,13 @@ namespace Model
   private:
 
     ReceivedStatus m_receivedStatus;
-    bool m_receivedStatusHasBeenSet;
+    bool m_receivedStatusHasBeenSet = false;
 
     Aws::String m_receivedStatusReason;
-    bool m_receivedStatusReasonHasBeenSet;
+    bool m_receivedStatusReasonHasBeenSet = false;
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
-    bool m_allowedOperationsHasBeenSet;
+    bool m_allowedOperationsHasBeenSet = false;
   };
 
 } // namespace Model

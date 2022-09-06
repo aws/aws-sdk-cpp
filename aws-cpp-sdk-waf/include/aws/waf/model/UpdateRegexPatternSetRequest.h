@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_regexPatternSetId;
-    bool m_regexPatternSetIdHasBeenSet;
+    bool m_regexPatternSetIdHasBeenSet = false;
 
     Aws::Vector<RegexPatternSetUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

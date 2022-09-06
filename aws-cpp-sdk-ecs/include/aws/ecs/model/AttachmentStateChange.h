@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_attachmentArn;
-    bool m_attachmentArnHasBeenSet;
+    bool m_attachmentArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

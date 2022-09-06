@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     HistoryEventExecutionDataDetails m_inputDetails;
-    bool m_inputDetailsHasBeenSet;
+    bool m_inputDetailsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

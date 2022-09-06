@@ -205,13 +205,13 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_defaultNamespace;
-    bool m_defaultNamespaceHasBeenSet;
+    bool m_defaultNamespaceHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
   };
 
 } // namespace Model

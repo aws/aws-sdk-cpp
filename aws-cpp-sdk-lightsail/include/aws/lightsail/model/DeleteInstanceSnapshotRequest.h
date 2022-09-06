@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_instanceSnapshotName;
-    bool m_instanceSnapshotNameHasBeenSet;
+    bool m_instanceSnapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

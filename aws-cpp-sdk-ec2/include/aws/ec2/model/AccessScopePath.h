@@ -146,13 +146,13 @@ namespace Model
   private:
 
     PathStatement m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     PathStatement m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<ThroughResourcesStatement> m_throughResources;
-    bool m_throughResourcesHasBeenSet;
+    bool m_throughResourcesHasBeenSet = false;
   };
 
 } // namespace Model

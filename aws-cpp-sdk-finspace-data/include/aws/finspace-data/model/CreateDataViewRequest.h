@@ -295,25 +295,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     bool m_autoUpdate;
-    bool m_autoUpdateHasBeenSet;
+    bool m_autoUpdateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sortColumns;
-    bool m_sortColumnsHasBeenSet;
+    bool m_sortColumnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_partitionColumns;
-    bool m_partitionColumnsHasBeenSet;
+    bool m_partitionColumnsHasBeenSet = false;
 
     long long m_asOfTimestamp;
-    bool m_asOfTimestampHasBeenSet;
+    bool m_asOfTimestampHasBeenSet = false;
 
     DataViewDestinationTypeParams m_destinationTypeParams;
-    bool m_destinationTypeParamsHasBeenSet;
+    bool m_destinationTypeParamsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -294,19 +294,19 @@ namespace Model
   private:
 
     QuoteFields m_quoteFields;
-    bool m_quoteFieldsHasBeenSet;
+    bool m_quoteFieldsHasBeenSet = false;
 
     Aws::String m_quoteEscapeCharacter;
-    bool m_quoteEscapeCharacterHasBeenSet;
+    bool m_quoteEscapeCharacterHasBeenSet = false;
 
     Aws::String m_recordDelimiter;
-    bool m_recordDelimiterHasBeenSet;
+    bool m_recordDelimiterHasBeenSet = false;
 
     Aws::String m_fieldDelimiter;
-    bool m_fieldDelimiterHasBeenSet;
+    bool m_fieldDelimiterHasBeenSet = false;
 
     Aws::String m_quoteCharacter;
-    bool m_quoteCharacterHasBeenSet;
+    bool m_quoteCharacterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     IotEventsDestinationConfiguration m_iotEventsDestinationConfiguration;
-    bool m_iotEventsDestinationConfigurationHasBeenSet;
+    bool m_iotEventsDestinationConfigurationHasBeenSet = false;
 
     S3DestinationConfiguration m_s3DestinationConfiguration;
-    bool m_s3DestinationConfigurationHasBeenSet;
+    bool m_s3DestinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

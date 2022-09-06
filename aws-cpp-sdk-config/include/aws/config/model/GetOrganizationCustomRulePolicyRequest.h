@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_organizationConfigRuleName;
-    bool m_organizationConfigRuleNameHasBeenSet;
+    bool m_organizationConfigRuleNameHasBeenSet = false;
   };
 
 } // namespace Model

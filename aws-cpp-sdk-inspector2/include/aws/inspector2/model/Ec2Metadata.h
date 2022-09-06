@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Ec2Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

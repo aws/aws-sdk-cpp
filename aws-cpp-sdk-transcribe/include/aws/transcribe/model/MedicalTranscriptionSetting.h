@@ -384,22 +384,22 @@ namespace Model
   private:
 
     bool m_showSpeakerLabels;
-    bool m_showSpeakerLabelsHasBeenSet;
+    bool m_showSpeakerLabelsHasBeenSet = false;
 
     int m_maxSpeakerLabels;
-    bool m_maxSpeakerLabelsHasBeenSet;
+    bool m_maxSpeakerLabelsHasBeenSet = false;
 
     bool m_channelIdentification;
-    bool m_channelIdentificationHasBeenSet;
+    bool m_channelIdentificationHasBeenSet = false;
 
     bool m_showAlternatives;
-    bool m_showAlternativesHasBeenSet;
+    bool m_showAlternativesHasBeenSet = false;
 
     int m_maxAlternatives;
-    bool m_maxAlternativesHasBeenSet;
+    bool m_maxAlternativesHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<PredictorExecution> m_predictorExecutions;
-    bool m_predictorExecutionsHasBeenSet;
+    bool m_predictorExecutionsHasBeenSet = false;
   };
 
 } // namespace Model

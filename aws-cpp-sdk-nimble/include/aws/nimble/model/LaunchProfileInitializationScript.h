@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_runtimeRoleArn;
-    bool m_runtimeRoleArnHasBeenSet;
+    bool m_runtimeRoleArnHasBeenSet = false;
 
     Aws::String m_script;
-    bool m_scriptHasBeenSet;
+    bool m_scriptHasBeenSet = false;
 
     Aws::String m_secureInitializationRoleArn;
-    bool m_secureInitializationRoleArnHasBeenSet;
+    bool m_secureInitializationRoleArnHasBeenSet = false;
 
     Aws::String m_studioComponentId;
-    bool m_studioComponentIdHasBeenSet;
+    bool m_studioComponentIdHasBeenSet = false;
 
     Aws::String m_studioComponentName;
-    bool m_studioComponentNameHasBeenSet;
+    bool m_studioComponentNameHasBeenSet = false;
   };
 
 } // namespace Model

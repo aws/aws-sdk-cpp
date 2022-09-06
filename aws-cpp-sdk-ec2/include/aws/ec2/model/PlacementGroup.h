@@ -334,28 +334,28 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     PlacementGroupState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     PlacementStrategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     int m_partitionCount;
-    bool m_partitionCountHasBeenSet;
+    bool m_partitionCountHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_groupArn;
-    bool m_groupArnHasBeenSet;
+    bool m_groupArnHasBeenSet = false;
 
     SpreadLevel m_spreadLevel;
-    bool m_spreadLevelHasBeenSet;
+    bool m_spreadLevelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -866,61 +866,61 @@ namespace Model
   private:
 
     Aws::String m_actualBlockHourlyPrice;
-    bool m_actualBlockHourlyPriceHasBeenSet;
+    bool m_actualBlockHourlyPriceHasBeenSet = false;
 
     Aws::String m_availabilityZoneGroup;
-    bool m_availabilityZoneGroupHasBeenSet;
+    bool m_availabilityZoneGroupHasBeenSet = false;
 
     int m_blockDurationMinutes;
-    bool m_blockDurationMinutesHasBeenSet;
+    bool m_blockDurationMinutesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     SpotInstanceStateFault m_fault;
-    bool m_faultHasBeenSet;
+    bool m_faultHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_launchGroup;
-    bool m_launchGroupHasBeenSet;
+    bool m_launchGroupHasBeenSet = false;
 
     LaunchSpecification m_launchSpecification;
-    bool m_launchSpecificationHasBeenSet;
+    bool m_launchSpecificationHasBeenSet = false;
 
     Aws::String m_launchedAvailabilityZone;
-    bool m_launchedAvailabilityZoneHasBeenSet;
+    bool m_launchedAvailabilityZoneHasBeenSet = false;
 
     RIProductDescription m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_spotInstanceRequestId;
-    bool m_spotInstanceRequestIdHasBeenSet;
+    bool m_spotInstanceRequestIdHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     SpotInstanceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     SpotInstanceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     SpotInstanceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

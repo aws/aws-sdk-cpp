@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_distributionName;
-    bool m_distributionNameHasBeenSet;
+    bool m_distributionNameHasBeenSet = false;
 
     InputOrigin m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     CacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     CacheSettings m_cacheBehaviorSettings;
-    bool m_cacheBehaviorSettingsHasBeenSet;
+    bool m_cacheBehaviorSettingsHasBeenSet = false;
 
     Aws::Vector<CacheBehaviorPerPath> m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
   };
 
 } // namespace Model

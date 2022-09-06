@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_progressing;
-    bool m_progressingHasBeenSet;
+    bool m_progressingHasBeenSet = false;
 
     Aws::String m_completed;
-    bool m_completedHasBeenSet;
+    bool m_completedHasBeenSet = false;
 
     Aws::String m_warning;
-    bool m_warningHasBeenSet;
+    bool m_warningHasBeenSet = false;
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -382,22 +382,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     HadoopStepConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
 
     ActionOnFailure m_actionOnFailure;
-    bool m_actionOnFailureHasBeenSet;
+    bool m_actionOnFailureHasBeenSet = false;
 
     StepStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

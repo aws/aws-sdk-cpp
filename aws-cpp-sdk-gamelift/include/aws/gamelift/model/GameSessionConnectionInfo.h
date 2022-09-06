@@ -323,19 +323,19 @@ namespace Model
   private:
 
     Aws::String m_gameSessionArn;
-    bool m_gameSessionArnHasBeenSet;
+    bool m_gameSessionArnHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::Vector<MatchedPlayerSession> m_matchedPlayerSessions;
-    bool m_matchedPlayerSessionsHasBeenSet;
+    bool m_matchedPlayerSessionsHasBeenSet = false;
   };
 
 } // namespace Model

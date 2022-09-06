@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_agreementId;
-    bool m_agreementIdHasBeenSet;
+    bool m_agreementIdHasBeenSet = false;
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
   };
 
 } // namespace Model

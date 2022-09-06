@@ -98,7 +98,7 @@ AppflowClient::~AppflowClient()
 
 void AppflowClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Appflow");
+  AWSClient::SetServiceClientName("Appflow");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

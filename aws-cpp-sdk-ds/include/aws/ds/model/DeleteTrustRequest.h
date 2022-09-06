@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_trustId;
-    bool m_trustIdHasBeenSet;
+    bool m_trustIdHasBeenSet = false;
 
     bool m_deleteAssociatedConditionalForwarder;
-    bool m_deleteAssociatedConditionalForwarderHasBeenSet;
+    bool m_deleteAssociatedConditionalForwarderHasBeenSet = false;
   };
 
 } // namespace Model

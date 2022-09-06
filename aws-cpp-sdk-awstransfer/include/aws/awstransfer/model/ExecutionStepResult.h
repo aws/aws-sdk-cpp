@@ -177,13 +177,13 @@ namespace Model
   private:
 
     WorkflowStepType m_stepType;
-    bool m_stepTypeHasBeenSet;
+    bool m_stepTypeHasBeenSet = false;
 
     Aws::String m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     ExecutionError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

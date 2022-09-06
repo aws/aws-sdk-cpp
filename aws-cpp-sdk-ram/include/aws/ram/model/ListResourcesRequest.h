@@ -537,28 +537,28 @@ namespace Model
   private:
 
     ResourceOwner m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceShareArns;
-    bool m_resourceShareArnsHasBeenSet;
+    bool m_resourceShareArnsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ResourceRegionScopeFilter m_resourceRegionScope;
-    bool m_resourceRegionScopeHasBeenSet;
+    bool m_resourceRegionScopeHasBeenSet = false;
   };
 
 } // namespace Model

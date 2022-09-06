@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_componentArn;
-    bool m_componentArnHasBeenSet;
+    bool m_componentArnHasBeenSet = false;
 
     Aws::Vector<ComponentParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

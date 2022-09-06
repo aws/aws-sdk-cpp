@@ -109,10 +109,10 @@ namespace Model
   private:
 
     JobManifestSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     JobManifestLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

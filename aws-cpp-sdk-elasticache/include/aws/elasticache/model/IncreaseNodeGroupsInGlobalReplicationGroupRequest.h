@@ -176,16 +176,16 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     int m_nodeGroupCount;
-    bool m_nodeGroupCountHasBeenSet;
+    bool m_nodeGroupCountHasBeenSet = false;
 
     Aws::Vector<RegionalConfiguration> m_regionalConfigurations;
-    bool m_regionalConfigurationsHasBeenSet;
+    bool m_regionalConfigurationsHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
   };
 
 } // namespace Model

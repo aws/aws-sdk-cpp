@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_traceSegmentDocuments;
-    bool m_traceSegmentDocumentsHasBeenSet;
+    bool m_traceSegmentDocumentsHasBeenSet = false;
   };
 
 } // namespace Model

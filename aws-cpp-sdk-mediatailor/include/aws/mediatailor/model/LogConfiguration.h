@@ -87,7 +87,7 @@ namespace Model
   private:
 
     int m_percentEnabled;
-    bool m_percentEnabledHasBeenSet;
+    bool m_percentEnabledHasBeenSet = false;
   };
 
 } // namespace Model

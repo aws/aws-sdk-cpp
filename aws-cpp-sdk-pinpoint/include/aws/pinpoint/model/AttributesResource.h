@@ -219,13 +219,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

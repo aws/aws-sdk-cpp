@@ -278,19 +278,19 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     PathFormat m_pathFormat;
-    bool m_pathFormatHasBeenSet;
+    bool m_pathFormatHasBeenSet = false;
 
     TranscriptFormat m_transcriptFormat;
-    bool m_transcriptFormatHasBeenSet;
+    bool m_transcriptFormatHasBeenSet = false;
 
     TranscriptFilter m_transcriptFilter;
-    bool m_transcriptFilterHasBeenSet;
+    bool m_transcriptFilterHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

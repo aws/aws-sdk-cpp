@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_originId;
-    bool m_originIdHasBeenSet;
+    bool m_originIdHasBeenSet = false;
   };
 
 } // namespace Model

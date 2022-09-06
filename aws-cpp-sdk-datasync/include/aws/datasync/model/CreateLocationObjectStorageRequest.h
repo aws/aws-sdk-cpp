@@ -469,31 +469,31 @@ namespace Model
   private:
 
     Aws::String m_serverHostname;
-    bool m_serverHostnameHasBeenSet;
+    bool m_serverHostnameHasBeenSet = false;
 
     int m_serverPort;
-    bool m_serverPortHasBeenSet;
+    bool m_serverPortHasBeenSet = false;
 
     ObjectStorageServerProtocol m_serverProtocol;
-    bool m_serverProtocolHasBeenSet;
+    bool m_serverProtocolHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_accessKey;
-    bool m_accessKeyHasBeenSet;
+    bool m_accessKeyHasBeenSet = false;
 
     Aws::String m_secretKey;
-    bool m_secretKeyHasBeenSet;
+    bool m_secretKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

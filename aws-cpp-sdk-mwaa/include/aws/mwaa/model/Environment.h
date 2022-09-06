@@ -1575,82 +1575,82 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_airflowConfigurationOptions;
-    bool m_airflowConfigurationOptionsHasBeenSet;
+    bool m_airflowConfigurationOptionsHasBeenSet = false;
 
     Aws::String m_airflowVersion;
-    bool m_airflowVersionHasBeenSet;
+    bool m_airflowVersionHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dagS3Path;
-    bool m_dagS3PathHasBeenSet;
+    bool m_dagS3PathHasBeenSet = false;
 
     Aws::String m_environmentClass;
-    bool m_environmentClassHasBeenSet;
+    bool m_environmentClassHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
 
     LastUpdate m_lastUpdate;
-    bool m_lastUpdateHasBeenSet;
+    bool m_lastUpdateHasBeenSet = false;
 
     LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     int m_maxWorkers;
-    bool m_maxWorkersHasBeenSet;
+    bool m_maxWorkersHasBeenSet = false;
 
     int m_minWorkers;
-    bool m_minWorkersHasBeenSet;
+    bool m_minWorkersHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::String m_pluginsS3ObjectVersion;
-    bool m_pluginsS3ObjectVersionHasBeenSet;
+    bool m_pluginsS3ObjectVersionHasBeenSet = false;
 
     Aws::String m_pluginsS3Path;
-    bool m_pluginsS3PathHasBeenSet;
+    bool m_pluginsS3PathHasBeenSet = false;
 
     Aws::String m_requirementsS3ObjectVersion;
-    bool m_requirementsS3ObjectVersionHasBeenSet;
+    bool m_requirementsS3ObjectVersionHasBeenSet = false;
 
     Aws::String m_requirementsS3Path;
-    bool m_requirementsS3PathHasBeenSet;
+    bool m_requirementsS3PathHasBeenSet = false;
 
     int m_schedulers;
-    bool m_schedulersHasBeenSet;
+    bool m_schedulersHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     Aws::String m_sourceBucketArn;
-    bool m_sourceBucketArnHasBeenSet;
+    bool m_sourceBucketArnHasBeenSet = false;
 
     EnvironmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WebserverAccessMode m_webserverAccessMode;
-    bool m_webserverAccessModeHasBeenSet;
+    bool m_webserverAccessModeHasBeenSet = false;
 
     Aws::String m_webserverUrl;
-    bool m_webserverUrlHasBeenSet;
+    bool m_webserverUrlHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceWindowStart;
-    bool m_weeklyMaintenanceWindowStartHasBeenSet;
+    bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
   };
 
 } // namespace Model

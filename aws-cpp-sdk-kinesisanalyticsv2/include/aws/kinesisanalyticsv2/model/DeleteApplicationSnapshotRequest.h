@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreationTimestamp;
-    bool m_snapshotCreationTimestampHasBeenSet;
+    bool m_snapshotCreationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

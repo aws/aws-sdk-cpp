@@ -253,22 +253,22 @@ namespace Model
   private:
 
     DeviceAggregatedStatus m_deviceAggregatedStatusFilter;
-    bool m_deviceAggregatedStatusFilterHasBeenSet;
+    bool m_deviceAggregatedStatusFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nameFilter;
-    bool m_nameFilterHasBeenSet;
+    bool m_nameFilterHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ListDevicesSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model
