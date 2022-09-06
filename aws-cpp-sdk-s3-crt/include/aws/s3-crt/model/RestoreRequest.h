@@ -275,25 +275,25 @@ namespace Model
   private:
 
     int m_days;
-    bool m_daysHasBeenSet;
+    bool m_daysHasBeenSet = false;
 
     GlacierJobParameters m_glacierJobParameters;
-    bool m_glacierJobParametersHasBeenSet;
+    bool m_glacierJobParametersHasBeenSet = false;
 
     RestoreRequestType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Tier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SelectParameters m_selectParameters;
-    bool m_selectParametersHasBeenSet;
+    bool m_selectParametersHasBeenSet = false;
 
     OutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
   };
 
 } // namespace Model

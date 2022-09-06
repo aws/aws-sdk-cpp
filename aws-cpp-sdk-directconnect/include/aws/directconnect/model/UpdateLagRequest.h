@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_lagId;
-    bool m_lagIdHasBeenSet;
+    bool m_lagIdHasBeenSet = false;
 
     Aws::String m_lagName;
-    bool m_lagNameHasBeenSet;
+    bool m_lagNameHasBeenSet = false;
 
     int m_minimumLinks;
-    bool m_minimumLinksHasBeenSet;
+    bool m_minimumLinksHasBeenSet = false;
 
     Aws::String m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
   };
 
 } // namespace Model

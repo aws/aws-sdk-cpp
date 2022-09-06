@@ -139,10 +139,10 @@ namespace Model
   private:
 
     double m_minSegmentConfidence;
-    bool m_minSegmentConfidenceHasBeenSet;
+    bool m_minSegmentConfidenceHasBeenSet = false;
 
     BlackFrame m_blackFrame;
-    bool m_blackFrameHasBeenSet;
+    bool m_blackFrameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -399,31 +399,31 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_associationVersion;
-    bool m_associationVersionHasBeenSet;
+    bool m_associationVersionHasBeenSet = false;
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_detailedStatus;
-    bool m_detailedStatusHasBeenSet;
+    bool m_detailedStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastExecutionDate;
-    bool m_lastExecutionDateHasBeenSet;
+    bool m_lastExecutionDateHasBeenSet = false;
 
     OutputSource m_outputSource;
-    bool m_outputSourceHasBeenSet;
+    bool m_outputSourceHasBeenSet = false;
   };
 
 } // namespace Model

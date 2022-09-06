@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     IdentityProvider m_identityProvider;
-    bool m_identityProviderHasBeenSet;
+    bool m_identityProviderHasBeenSet = false;
 
     Aws::String m_product;
-    bool m_productHasBeenSet;
+    bool m_productHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

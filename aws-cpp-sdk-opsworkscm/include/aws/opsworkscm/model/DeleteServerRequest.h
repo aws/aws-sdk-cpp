@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
   };
 
 } // namespace Model

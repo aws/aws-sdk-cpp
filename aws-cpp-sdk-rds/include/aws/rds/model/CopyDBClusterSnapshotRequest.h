@@ -874,25 +874,25 @@ namespace Model
   private:
 
     Aws::String m_sourceDBClusterSnapshotIdentifier;
-    bool m_sourceDBClusterSnapshotIdentifierHasBeenSet;
+    bool m_sourceDBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBClusterSnapshotIdentifier;
-    bool m_targetDBClusterSnapshotIdentifierHasBeenSet;
+    bool m_targetDBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

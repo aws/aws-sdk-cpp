@@ -273,22 +273,22 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     S3TableOutputOptions m_s3Options;
-    bool m_s3OptionsHasBeenSet;
+    bool m_s3OptionsHasBeenSet = false;
 
     DatabaseTableOutputOptions m_databaseOptions;
-    bool m_databaseOptionsHasBeenSet;
+    bool m_databaseOptionsHasBeenSet = false;
 
     bool m_overwrite;
-    bool m_overwriteHasBeenSet;
+    bool m_overwriteHasBeenSet = false;
   };
 
 } // namespace Model

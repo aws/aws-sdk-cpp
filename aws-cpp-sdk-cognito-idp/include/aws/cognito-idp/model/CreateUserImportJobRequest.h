@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
-    bool m_cloudWatchLogsRoleArnHasBeenSet;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

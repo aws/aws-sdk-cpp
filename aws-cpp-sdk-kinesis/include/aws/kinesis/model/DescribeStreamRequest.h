@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartShardId;
-    bool m_exclusiveStartShardIdHasBeenSet;
+    bool m_exclusiveStartShardIdHasBeenSet = false;
   };
 
 } // namespace Model

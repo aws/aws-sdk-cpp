@@ -237,16 +237,16 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAt;
-    bool m_expiresAtHasBeenSet;
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_registry;
-    bool m_registryHasBeenSet;
+    bool m_registryHasBeenSet = false;
   };
 
 } // namespace Model

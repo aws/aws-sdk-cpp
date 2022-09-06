@@ -96,7 +96,7 @@ MigrationHubStrategyRecommendationsClient::~MigrationHubStrategyRecommendationsC
 
 void MigrationHubStrategyRecommendationsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MigrationHubStrategy");
+  AWSClient::SetServiceClientName("MigrationHubStrategy");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

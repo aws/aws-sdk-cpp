@@ -318,25 +318,25 @@ namespace Model
   private:
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SchemaStatus m_schemaStatus;
-    bool m_schemaStatusHasBeenSet;
+    bool m_schemaStatusHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

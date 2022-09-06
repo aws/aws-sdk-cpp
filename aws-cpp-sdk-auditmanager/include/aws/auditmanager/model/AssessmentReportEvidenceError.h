@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_evidenceId;
-    bool m_evidenceIdHasBeenSet;
+    bool m_evidenceIdHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

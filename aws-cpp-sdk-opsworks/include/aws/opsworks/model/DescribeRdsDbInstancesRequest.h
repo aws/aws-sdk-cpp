@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rdsDbInstanceArns;
-    bool m_rdsDbInstanceArnsHasBeenSet;
+    bool m_rdsDbInstanceArnsHasBeenSet = false;
   };
 
 } // namespace Model

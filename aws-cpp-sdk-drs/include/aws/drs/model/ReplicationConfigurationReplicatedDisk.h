@@ -217,22 +217,22 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     long long m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_isBootDisk;
-    bool m_isBootDiskHasBeenSet;
+    bool m_isBootDiskHasBeenSet = false;
 
     ReplicationConfigurationReplicatedDiskStagingDiskType m_optimizedStagingDiskType;
-    bool m_optimizedStagingDiskTypeHasBeenSet;
+    bool m_optimizedStagingDiskTypeHasBeenSet = false;
 
     ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType;
-    bool m_stagingDiskTypeHasBeenSet;
+    bool m_stagingDiskTypeHasBeenSet = false;
 
     long long m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
   };
 
 } // namespace Model

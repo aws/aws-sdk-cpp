@@ -586,22 +586,22 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_secretBinary;
-    bool m_secretBinaryHasBeenSet;
+    bool m_secretBinaryHasBeenSet = false;
 
     Aws::String m_secretString;
-    bool m_secretStringHasBeenSet;
+    bool m_secretStringHasBeenSet = false;
   };
 
 } // namespace Model

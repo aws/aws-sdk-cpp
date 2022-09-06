@@ -173,16 +173,16 @@ namespace Model
   private:
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     OpenIDConnectConfig m_openIDConnectConfig;
-    bool m_openIDConnectConfigHasBeenSet;
+    bool m_openIDConnectConfigHasBeenSet = false;
 
     CognitoUserPoolConfig m_userPoolConfig;
-    bool m_userPoolConfigHasBeenSet;
+    bool m_userPoolConfigHasBeenSet = false;
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
-    bool m_lambdaAuthorizerConfigHasBeenSet;
+    bool m_lambdaAuthorizerConfigHasBeenSet = false;
   };
 
 } // namespace Model

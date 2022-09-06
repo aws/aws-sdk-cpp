@@ -107,7 +107,7 @@ DevOpsGuruClient::~DevOpsGuruClient()
 
 void DevOpsGuruClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DevOps Guru");
+  AWSClient::SetServiceClientName("DevOps Guru");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

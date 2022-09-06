@@ -318,13 +318,13 @@ namespace Model
   private:
 
     S3ServerSideEncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsEncryptionContext;
-    bool m_kmsEncryptionContextHasBeenSet;
+    bool m_kmsEncryptionContextHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

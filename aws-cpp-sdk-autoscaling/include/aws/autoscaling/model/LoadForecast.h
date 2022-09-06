@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-    bool m_timestampsHasBeenSet;
+    bool m_timestampsHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     PredictiveScalingMetricSpecification m_metricSpecification;
-    bool m_metricSpecificationHasBeenSet;
+    bool m_metricSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

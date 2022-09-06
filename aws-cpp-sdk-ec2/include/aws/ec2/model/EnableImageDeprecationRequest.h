@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecateAt;
-    bool m_deprecateAtHasBeenSet;
+    bool m_deprecateAtHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

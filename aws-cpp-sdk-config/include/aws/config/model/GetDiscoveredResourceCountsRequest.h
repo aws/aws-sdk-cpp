@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

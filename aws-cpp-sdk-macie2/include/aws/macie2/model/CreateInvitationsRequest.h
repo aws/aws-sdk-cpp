@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     bool m_disableEmailNotification;
-    bool m_disableEmailNotificationHasBeenSet;
+    bool m_disableEmailNotificationHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -931,22 +931,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_executableUsers;
-    bool m_executableUsersHasBeenSet;
+    bool m_executableUsersHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageIds;
-    bool m_imageIdsHasBeenSet;
+    bool m_imageIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_owners;
-    bool m_ownersHasBeenSet;
+    bool m_ownersHasBeenSet = false;
 
     bool m_includeDeprecated;
-    bool m_includeDeprecatedHasBeenSet;
+    bool m_includeDeprecatedHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

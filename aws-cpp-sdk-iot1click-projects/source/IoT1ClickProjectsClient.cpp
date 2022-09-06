@@ -92,7 +92,7 @@ IoT1ClickProjectsClient::~IoT1ClickProjectsClient()
 
 void IoT1ClickProjectsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT 1Click Projects");
+  AWSClient::SetServiceClientName("IoT 1Click Projects");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

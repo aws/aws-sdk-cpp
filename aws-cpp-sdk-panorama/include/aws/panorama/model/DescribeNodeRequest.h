@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
   };
 
 } // namespace Model

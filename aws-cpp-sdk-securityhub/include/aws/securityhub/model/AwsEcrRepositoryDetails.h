@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AwsEcrRepositoryImageScanningConfigurationDetails m_imageScanningConfiguration;
-    bool m_imageScanningConfigurationHasBeenSet;
+    bool m_imageScanningConfigurationHasBeenSet = false;
 
     Aws::String m_imageTagMutability;
-    bool m_imageTagMutabilityHasBeenSet;
+    bool m_imageTagMutabilityHasBeenSet = false;
 
     AwsEcrRepositoryLifecyclePolicyDetails m_lifecyclePolicy;
-    bool m_lifecyclePolicyHasBeenSet;
+    bool m_lifecyclePolicyHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_repositoryPolicyText;
-    bool m_repositoryPolicyTextHasBeenSet;
+    bool m_repositoryPolicyTextHasBeenSet = false;
   };
 
 } // namespace Model

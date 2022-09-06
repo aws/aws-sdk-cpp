@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
   };
 
 } // namespace Model

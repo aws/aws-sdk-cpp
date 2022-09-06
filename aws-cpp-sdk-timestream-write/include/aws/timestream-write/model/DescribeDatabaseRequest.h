@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
   };
 
 } // namespace Model

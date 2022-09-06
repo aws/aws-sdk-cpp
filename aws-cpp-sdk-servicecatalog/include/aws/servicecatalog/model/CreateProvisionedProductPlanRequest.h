@@ -592,37 +592,37 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_planName;
-    bool m_planNameHasBeenSet;
+    bool m_planNameHasBeenSet = false;
 
     ProvisionedProductPlanType m_planType;
-    bool m_planTypeHasBeenSet;
+    bool m_planTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationArns;
-    bool m_notificationArnsHasBeenSet;
+    bool m_notificationArnsHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::Vector<UpdateProvisioningParameter> m_provisioningParameters;
-    bool m_provisioningParametersHasBeenSet;
+    bool m_provisioningParametersHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

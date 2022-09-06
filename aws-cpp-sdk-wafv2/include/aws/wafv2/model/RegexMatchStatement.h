@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_regexString;
-    bool m_regexStringHasBeenSet;
+    bool m_regexStringHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
   };
 
 } // namespace Model

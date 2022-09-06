@@ -133,10 +133,10 @@ namespace Model
   private:
 
     AssetHierarchyInfo m_hierarchyInfo;
-    bool m_hierarchyInfoHasBeenSet;
+    bool m_hierarchyInfoHasBeenSet = false;
 
     AssetRelationshipType m_relationshipType;
-    bool m_relationshipTypeHasBeenSet;
+    bool m_relationshipTypeHasBeenSet = false;
   };
 
 } // namespace Model

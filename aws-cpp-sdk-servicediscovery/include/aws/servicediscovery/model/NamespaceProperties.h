@@ -109,10 +109,10 @@ namespace Model
   private:
 
     DnsProperties m_dnsProperties;
-    bool m_dnsPropertiesHasBeenSet;
+    bool m_dnsPropertiesHasBeenSet = false;
 
     HttpProperties m_httpProperties;
-    bool m_httpPropertiesHasBeenSet;
+    bool m_httpPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::String m_branchInterfaceId;
-    bool m_branchInterfaceIdHasBeenSet;
+    bool m_branchInterfaceIdHasBeenSet = false;
 
     Aws::String m_trunkInterfaceId;
-    bool m_trunkInterfaceIdHasBeenSet;
+    bool m_trunkInterfaceIdHasBeenSet = false;
 
     int m_vlanId;
-    bool m_vlanIdHasBeenSet;
+    bool m_vlanIdHasBeenSet = false;
 
     int m_greKey;
-    bool m_greKeyHasBeenSet;
+    bool m_greKeyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

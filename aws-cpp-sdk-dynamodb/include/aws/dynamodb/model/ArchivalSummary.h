@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_archivalDateTime;
-    bool m_archivalDateTimeHasBeenSet;
+    bool m_archivalDateTimeHasBeenSet = false;
 
     Aws::String m_archivalReason;
-    bool m_archivalReasonHasBeenSet;
+    bool m_archivalReasonHasBeenSet = false;
 
     Aws::String m_archivalBackupArn;
-    bool m_archivalBackupArnHasBeenSet;
+    bool m_archivalBackupArnHasBeenSet = false;
   };
 
 } // namespace Model

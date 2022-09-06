@@ -382,28 +382,28 @@ namespace Model
   private:
 
     Aws::String m_tapeARN;
-    bool m_tapeARNHasBeenSet;
+    bool m_tapeARNHasBeenSet = false;
 
     Aws::String m_tapeBarcode;
-    bool m_tapeBarcodeHasBeenSet;
+    bool m_tapeBarcodeHasBeenSet = false;
 
     long long m_tapeSizeInBytes;
-    bool m_tapeSizeInBytesHasBeenSet;
+    bool m_tapeSizeInBytesHasBeenSet = false;
 
     Aws::String m_tapeStatus;
-    bool m_tapeStatusHasBeenSet;
+    bool m_tapeStatusHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_retentionStartDate;
-    bool m_retentionStartDateHasBeenSet;
+    bool m_retentionStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_poolEntryDate;
-    bool m_poolEntryDateHasBeenSet;
+    bool m_poolEntryDateHasBeenSet = false;
   };
 
 } // namespace Model

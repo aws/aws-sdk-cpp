@@ -689,37 +689,37 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_newDBInstanceIdentifier;
-    bool m_newDBInstanceIdentifierHasBeenSet;
+    bool m_newDBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_cACertificateIdentifier;
-    bool m_cACertificateIdentifierHasBeenSet;
+    bool m_cACertificateIdentifierHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
-    bool m_enablePerformanceInsightsHasBeenSet;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

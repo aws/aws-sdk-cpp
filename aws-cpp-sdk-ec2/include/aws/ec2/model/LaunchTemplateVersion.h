@@ -311,28 +311,28 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_versionDescription;
-    bool m_versionDescriptionHasBeenSet;
+    bool m_versionDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     bool m_defaultVersion;
-    bool m_defaultVersionHasBeenSet;
+    bool m_defaultVersionHasBeenSet = false;
 
     ResponseLaunchTemplateData m_launchTemplateData;
-    bool m_launchTemplateDataHasBeenSet;
+    bool m_launchTemplateDataHasBeenSet = false;
   };
 
 } // namespace Model

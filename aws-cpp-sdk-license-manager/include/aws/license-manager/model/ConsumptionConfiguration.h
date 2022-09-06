@@ -134,13 +134,13 @@ namespace Model
   private:
 
     RenewType m_renewType;
-    bool m_renewTypeHasBeenSet;
+    bool m_renewTypeHasBeenSet = false;
 
     ProvisionalConfiguration m_provisionalConfiguration;
-    bool m_provisionalConfigurationHasBeenSet;
+    bool m_provisionalConfigurationHasBeenSet = false;
 
     BorrowConfiguration m_borrowConfiguration;
-    bool m_borrowConfigurationHasBeenSet;
+    bool m_borrowConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

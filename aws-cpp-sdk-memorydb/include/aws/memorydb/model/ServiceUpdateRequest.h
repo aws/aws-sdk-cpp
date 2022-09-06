@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_serviceUpdateNameToApply;
-    bool m_serviceUpdateNameToApplyHasBeenSet;
+    bool m_serviceUpdateNameToApplyHasBeenSet = false;
   };
 
 } // namespace Model

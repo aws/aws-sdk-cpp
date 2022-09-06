@@ -103,10 +103,10 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::Vector<SyntaxToken> m_syntaxTokens;
-    bool m_syntaxTokensHasBeenSet;
+    bool m_syntaxTokensHasBeenSet = false;
   };
 
 } // namespace Model

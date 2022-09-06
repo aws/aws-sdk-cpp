@@ -120,10 +120,10 @@ namespace Model
   private:
 
     PipelineDeclaration m_pipeline;
-    bool m_pipelineHasBeenSet;
+    bool m_pipelineHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

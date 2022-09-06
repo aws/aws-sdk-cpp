@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_messageText;
-    bool m_messageTextHasBeenSet;
+    bool m_messageTextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_workerIds;
-    bool m_workerIdsHasBeenSet;
+    bool m_workerIdsHasBeenSet = false;
   };
 
 } // namespace Model

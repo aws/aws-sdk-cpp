@@ -138,16 +138,16 @@ namespace Model
   private:
 
     CollectorStatus m_collectorStatus;
-    bool m_collectorStatusHasBeenSet;
+    bool m_collectorStatusHasBeenSet = false;
 
     bool m_localCollectorS3Access;
-    bool m_localCollectorS3AccessHasBeenSet;
+    bool m_localCollectorS3AccessHasBeenSet = false;
 
     bool m_webCollectorS3Access;
-    bool m_webCollectorS3AccessHasBeenSet;
+    bool m_webCollectorS3AccessHasBeenSet = false;
 
     bool m_webCollectorGrantedRoleBasedAccess;
-    bool m_webCollectorGrantedRoleBasedAccessHasBeenSet;
+    bool m_webCollectorGrantedRoleBasedAccessHasBeenSet = false;
   };
 
 } // namespace Model

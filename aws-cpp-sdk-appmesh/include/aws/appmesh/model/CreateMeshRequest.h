@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     MeshSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::Vector<TagRef> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

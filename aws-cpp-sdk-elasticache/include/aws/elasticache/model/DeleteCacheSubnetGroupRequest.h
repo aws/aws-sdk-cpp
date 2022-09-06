@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_cacheSubnetGroupName;
-    bool m_cacheSubnetGroupNameHasBeenSet;
+    bool m_cacheSubnetGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

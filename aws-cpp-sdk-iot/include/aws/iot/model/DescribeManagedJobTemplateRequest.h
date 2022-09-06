@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateVersion;
-    bool m_templateVersionHasBeenSet;
+    bool m_templateVersionHasBeenSet = false;
   };
 
 } // namespace Model

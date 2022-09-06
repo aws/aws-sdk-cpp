@@ -496,31 +496,31 @@ include an explanation of why the HarvestJob failed.
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_originEndpointId;
-    bool m_originEndpointIdHasBeenSet;
+    bool m_originEndpointIdHasBeenSet = false;
 
     S3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

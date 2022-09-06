@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_crawlerNames;
-    bool m_crawlerNamesHasBeenSet;
+    bool m_crawlerNamesHasBeenSet = false;
   };
 
 } // namespace Model

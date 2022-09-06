@@ -203,16 +203,16 @@ namespace Model
   private:
 
     LaunchStopDesiredState m_desiredState;
-    bool m_desiredStateHasBeenSet;
+    bool m_desiredStateHasBeenSet = false;
 
     Aws::String m_launch;
-    bool m_launchHasBeenSet;
+    bool m_launchHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

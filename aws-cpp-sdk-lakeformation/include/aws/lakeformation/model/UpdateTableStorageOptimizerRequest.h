@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Map<OptimizerType, Aws::Map<Aws::String, Aws::String>> m_storageOptimizerConfig;
-    bool m_storageOptimizerConfigHasBeenSet;
+    bool m_storageOptimizerConfigHasBeenSet = false;
   };
 
 } // namespace Model

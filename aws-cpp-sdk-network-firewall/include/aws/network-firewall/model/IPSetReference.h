@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::String m_referenceArn;
-    bool m_referenceArnHasBeenSet;
+    bool m_referenceArnHasBeenSet = false;
   };
 
 } // namespace Model

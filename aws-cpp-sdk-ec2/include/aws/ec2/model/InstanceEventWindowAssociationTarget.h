@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dedicatedHostIds;
-    bool m_dedicatedHostIdsHasBeenSet;
+    bool m_dedicatedHostIdsHasBeenSet = false;
   };
 
 } // namespace Model

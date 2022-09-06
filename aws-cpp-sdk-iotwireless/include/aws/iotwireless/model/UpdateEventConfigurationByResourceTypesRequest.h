@@ -223,19 +223,19 @@ namespace Model
   private:
 
     DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;
-    bool m_deviceRegistrationStateHasBeenSet;
+    bool m_deviceRegistrationStateHasBeenSet = false;
 
     ProximityResourceTypeEventConfiguration m_proximity;
-    bool m_proximityHasBeenSet;
+    bool m_proximityHasBeenSet = false;
 
     JoinResourceTypeEventConfiguration m_join;
-    bool m_joinHasBeenSet;
+    bool m_joinHasBeenSet = false;
 
     ConnectionStatusResourceTypeEventConfiguration m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
 
     MessageDeliveryStatusResourceTypeEventConfiguration m_messageDeliveryStatus;
-    bool m_messageDeliveryStatusHasBeenSet;
+    bool m_messageDeliveryStatusHasBeenSet = false;
   };
 
 } // namespace Model

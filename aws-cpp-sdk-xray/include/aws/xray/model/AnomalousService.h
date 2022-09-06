@@ -59,7 +59,7 @@ namespace Model
   private:
 
     ServiceId m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
   };
 
 } // namespace Model

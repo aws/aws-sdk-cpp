@@ -123,7 +123,7 @@ NimbleStudioClient::~NimbleStudioClient()
 
 void NimbleStudioClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("nimble");
+  AWSClient::SetServiceClientName("nimble");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

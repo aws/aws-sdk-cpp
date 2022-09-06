@@ -183,10 +183,10 @@ namespace Model
   private:
 
     SettingName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
   };
 
 } // namespace Model

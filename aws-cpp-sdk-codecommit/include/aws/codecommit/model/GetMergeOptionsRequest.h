@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_sourceCommitSpecifier;
-    bool m_sourceCommitSpecifierHasBeenSet;
+    bool m_sourceCommitSpecifierHasBeenSet = false;
 
     Aws::String m_destinationCommitSpecifier;
-    bool m_destinationCommitSpecifierHasBeenSet;
+    bool m_destinationCommitSpecifierHasBeenSet = false;
 
     ConflictDetailLevelTypeEnum m_conflictDetailLevel;
-    bool m_conflictDetailLevelHasBeenSet;
+    bool m_conflictDetailLevelHasBeenSet = false;
 
     ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy;
-    bool m_conflictResolutionStrategyHasBeenSet;
+    bool m_conflictResolutionStrategyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -251,16 +251,16 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::Vector<RestoreOpenZFSVolumeOption> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

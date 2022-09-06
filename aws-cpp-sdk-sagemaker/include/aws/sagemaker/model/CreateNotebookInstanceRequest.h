@@ -1084,52 +1084,52 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceName;
-    bool m_notebookInstanceNameHasBeenSet;
+    bool m_notebookInstanceNameHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_lifecycleConfigName;
-    bool m_lifecycleConfigNameHasBeenSet;
+    bool m_lifecycleConfigNameHasBeenSet = false;
 
     DirectInternetAccess m_directInternetAccess;
-    bool m_directInternetAccessHasBeenSet;
+    bool m_directInternetAccessHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceAcceleratorType> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
 
     Aws::String m_defaultCodeRepository;
-    bool m_defaultCodeRepositoryHasBeenSet;
+    bool m_defaultCodeRepositoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
-    bool m_additionalCodeRepositoriesHasBeenSet;
+    bool m_additionalCodeRepositoriesHasBeenSet = false;
 
     RootAccess m_rootAccess;
-    bool m_rootAccessHasBeenSet;
+    bool m_rootAccessHasBeenSet = false;
 
     Aws::String m_platformIdentifier;
-    bool m_platformIdentifierHasBeenSet;
+    bool m_platformIdentifierHasBeenSet = false;
 
     InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
-    bool m_instanceMetadataServiceConfigurationHasBeenSet;
+    bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

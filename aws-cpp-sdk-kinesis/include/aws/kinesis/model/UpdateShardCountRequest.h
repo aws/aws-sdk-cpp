@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     int m_targetShardCount;
-    bool m_targetShardCountHasBeenSet;
+    bool m_targetShardCountHasBeenSet = false;
 
     ScalingType m_scalingType;
-    bool m_scalingTypeHasBeenSet;
+    bool m_scalingTypeHasBeenSet = false;
   };
 
 } // namespace Model

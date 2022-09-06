@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ResourceRecord m_resourceRecord;
-    bool m_resourceRecordHasBeenSet;
+    bool m_resourceRecordHasBeenSet = false;
   };
 
 } // namespace Model

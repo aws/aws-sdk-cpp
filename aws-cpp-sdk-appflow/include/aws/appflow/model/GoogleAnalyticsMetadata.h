@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_oAuthScopes;
-    bool m_oAuthScopesHasBeenSet;
+    bool m_oAuthScopesHasBeenSet = false;
   };
 
 } // namespace Model

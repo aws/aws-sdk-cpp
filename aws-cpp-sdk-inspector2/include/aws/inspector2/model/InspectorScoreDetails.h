@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CvssScoreDetails m_adjustedCvss;
-    bool m_adjustedCvssHasBeenSet;
+    bool m_adjustedCvssHasBeenSet = false;
   };
 
 } // namespace Model

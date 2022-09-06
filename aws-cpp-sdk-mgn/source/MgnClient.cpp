@@ -109,7 +109,7 @@ MgnClient::~MgnClient()
 
 void MgnClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("mgn");
+  AWSClient::SetServiceClientName("mgn");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

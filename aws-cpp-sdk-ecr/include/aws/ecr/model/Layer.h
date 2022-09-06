@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_layerDigest;
-    bool m_layerDigestHasBeenSet;
+    bool m_layerDigestHasBeenSet = false;
 
     LayerAvailability m_layerAvailability;
-    bool m_layerAvailabilityHasBeenSet;
+    bool m_layerAvailabilityHasBeenSet = false;
 
     long long m_layerSize;
-    bool m_layerSizeHasBeenSet;
+    bool m_layerSizeHasBeenSet = false;
 
     Aws::String m_mediaType;
-    bool m_mediaTypeHasBeenSet;
+    bool m_mediaTypeHasBeenSet = false;
   };
 
 } // namespace Model

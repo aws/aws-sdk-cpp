@@ -409,28 +409,28 @@ namespace Model
   private:
 
     StackSetDriftStatus m_driftStatus;
-    bool m_driftStatusHasBeenSet;
+    bool m_driftStatusHasBeenSet = false;
 
     StackSetDriftDetectionStatus m_driftDetectionStatus;
-    bool m_driftDetectionStatusHasBeenSet;
+    bool m_driftDetectionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
-    bool m_lastDriftCheckTimestampHasBeenSet;
+    bool m_lastDriftCheckTimestampHasBeenSet = false;
 
     int m_totalStackInstancesCount;
-    bool m_totalStackInstancesCountHasBeenSet;
+    bool m_totalStackInstancesCountHasBeenSet = false;
 
     int m_driftedStackInstancesCount;
-    bool m_driftedStackInstancesCountHasBeenSet;
+    bool m_driftedStackInstancesCountHasBeenSet = false;
 
     int m_inSyncStackInstancesCount;
-    bool m_inSyncStackInstancesCountHasBeenSet;
+    bool m_inSyncStackInstancesCountHasBeenSet = false;
 
     int m_inProgressStackInstancesCount;
-    bool m_inProgressStackInstancesCountHasBeenSet;
+    bool m_inProgressStackInstancesCountHasBeenSet = false;
 
     int m_failedStackInstancesCount;
-    bool m_failedStackInstancesCountHasBeenSet;
+    bool m_failedStackInstancesCountHasBeenSet = false;
   };
 
 } // namespace Model

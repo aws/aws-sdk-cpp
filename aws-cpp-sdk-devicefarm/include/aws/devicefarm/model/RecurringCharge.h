@@ -103,10 +103,10 @@ namespace Model
   private:
 
     MonetaryAmount m_cost;
-    bool m_costHasBeenSet;
+    bool m_costHasBeenSet = false;
 
     RecurringChargeFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
   };
 
 } // namespace Model

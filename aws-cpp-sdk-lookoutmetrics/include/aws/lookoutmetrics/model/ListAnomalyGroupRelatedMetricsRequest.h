@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_anomalyGroupId;
-    bool m_anomalyGroupIdHasBeenSet;
+    bool m_anomalyGroupIdHasBeenSet = false;
 
     RelationshipType m_relationshipTypeFilter;
-    bool m_relationshipTypeFilterHasBeenSet;
+    bool m_relationshipTypeFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

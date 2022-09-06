@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_scriptLocation;
-    bool m_scriptLocationHasBeenSet;
+    bool m_scriptLocationHasBeenSet = false;
 
     Aws::String m_pythonVersion;
-    bool m_pythonVersionHasBeenSet;
+    bool m_pythonVersionHasBeenSet = false;
   };
 
 } // namespace Model

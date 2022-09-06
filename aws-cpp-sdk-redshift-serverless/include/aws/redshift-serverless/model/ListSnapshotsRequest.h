@@ -312,25 +312,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_namespaceArn;
-    bool m_namespaceArnHasBeenSet;
+    bool m_namespaceArnHasBeenSet = false;
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_beginOffsetInclusive;
-    bool m_beginOffsetInclusiveHasBeenSet;
+    bool m_beginOffsetInclusiveHasBeenSet = false;
 
     int m_endOffsetExclusive;
-    bool m_endOffsetExclusiveHasBeenSet;
+    bool m_endOffsetExclusiveHasBeenSet = false;
   };
 
 } // namespace Model

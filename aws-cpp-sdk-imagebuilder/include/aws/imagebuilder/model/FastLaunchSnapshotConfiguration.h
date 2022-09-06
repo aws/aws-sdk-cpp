@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_targetResourceCount;
-    bool m_targetResourceCountHasBeenSet;
+    bool m_targetResourceCountHasBeenSet = false;
   };
 
 } // namespace Model

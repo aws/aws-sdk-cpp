@@ -369,28 +369,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     AccountLevel m_accountLevel;
-    bool m_accountLevelHasBeenSet;
+    bool m_accountLevelHasBeenSet = false;
 
     Include m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     Exclude m_exclude;
-    bool m_excludeHasBeenSet;
+    bool m_excludeHasBeenSet = false;
 
     StorageLensDataExport m_dataExport;
-    bool m_dataExportHasBeenSet;
+    bool m_dataExportHasBeenSet = false;
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
 
     StorageLensAwsOrg m_awsOrg;
-    bool m_awsOrgHasBeenSet;
+    bool m_awsOrgHasBeenSet = false;
 
     Aws::String m_storageLensArn;
-    bool m_storageLensArnHasBeenSet;
+    bool m_storageLensArnHasBeenSet = false;
   };
 
 } // namespace Model

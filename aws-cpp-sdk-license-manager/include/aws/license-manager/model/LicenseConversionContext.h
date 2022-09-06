@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_usageOperation;
-    bool m_usageOperationHasBeenSet;
+    bool m_usageOperationHasBeenSet = false;
   };
 
 } // namespace Model

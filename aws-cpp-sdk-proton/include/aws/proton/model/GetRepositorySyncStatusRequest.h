@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryProvider m_repositoryProvider;
-    bool m_repositoryProviderHasBeenSet;
+    bool m_repositoryProviderHasBeenSet = false;
 
     SyncType m_syncType;
-    bool m_syncTypeHasBeenSet;
+    bool m_syncTypeHasBeenSet = false;
   };
 
 } // namespace Model

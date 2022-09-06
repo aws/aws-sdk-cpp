@@ -239,16 +239,16 @@ namespace Model
   private:
 
     Aws::String m_whatIfAnalysisName;
-    bool m_whatIfAnalysisNameHasBeenSet;
+    bool m_whatIfAnalysisNameHasBeenSet = false;
 
     Aws::String m_forecastArn;
-    bool m_forecastArnHasBeenSet;
+    bool m_forecastArnHasBeenSet = false;
 
     TimeSeriesSelector m_timeSeriesSelector;
-    bool m_timeSeriesSelectorHasBeenSet;
+    bool m_timeSeriesSelectorHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_gatewayName;
-    bool m_gatewayNameHasBeenSet;
+    bool m_gatewayNameHasBeenSet = false;
   };
 
 } // namespace Model

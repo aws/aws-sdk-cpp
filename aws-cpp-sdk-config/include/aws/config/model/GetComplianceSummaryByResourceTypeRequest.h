@@ -122,7 +122,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
   };
 
 } // namespace Model

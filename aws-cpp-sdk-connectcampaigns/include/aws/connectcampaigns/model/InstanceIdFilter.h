@@ -84,10 +84,10 @@ namespace Model
   private:
 
     InstanceIdFilterOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

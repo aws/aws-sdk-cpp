@@ -359,25 +359,25 @@ namespace Model
   private:
 
     Aws::String m_extensionIdentifier;
-    bool m_extensionIdentifierHasBeenSet;
+    bool m_extensionIdentifierHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_invocationId;
-    bool m_invocationIdHasBeenSet;
+    bool m_invocationIdHasBeenSet = false;
   };
 
 } // namespace Model

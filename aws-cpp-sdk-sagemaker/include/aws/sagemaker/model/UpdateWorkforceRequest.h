@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     SourceIpConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
 
     OidcConfig m_oidcConfig;
-    bool m_oidcConfigHasBeenSet;
+    bool m_oidcConfigHasBeenSet = false;
 
     WorkforceVpcConfigRequest m_workforceVpcConfig;
-    bool m_workforceVpcConfigHasBeenSet;
+    bool m_workforceVpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

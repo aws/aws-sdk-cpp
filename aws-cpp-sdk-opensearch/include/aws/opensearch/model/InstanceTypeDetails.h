@@ -148,25 +148,25 @@ namespace Model
   private:
 
     OpenSearchPartitionInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     bool m_encryptionEnabled;
-    bool m_encryptionEnabledHasBeenSet;
+    bool m_encryptionEnabledHasBeenSet = false;
 
     bool m_cognitoEnabled;
-    bool m_cognitoEnabledHasBeenSet;
+    bool m_cognitoEnabledHasBeenSet = false;
 
     bool m_appLogsEnabled;
-    bool m_appLogsEnabledHasBeenSet;
+    bool m_appLogsEnabledHasBeenSet = false;
 
     bool m_advancedSecurityEnabled;
-    bool m_advancedSecurityEnabledHasBeenSet;
+    bool m_advancedSecurityEnabledHasBeenSet = false;
 
     bool m_warmEnabled;
-    bool m_warmEnabledHasBeenSet;
+    bool m_warmEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceRole;
-    bool m_instanceRoleHasBeenSet;
+    bool m_instanceRoleHasBeenSet = false;
   };
 
 } // namespace Model

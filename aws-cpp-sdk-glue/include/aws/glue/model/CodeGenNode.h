@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::Vector<CodeGenNodeArg> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
 
     int m_lineNumber;
-    bool m_lineNumberHasBeenSet;
+    bool m_lineNumberHasBeenSet = false;
   };
 
 } // namespace Model

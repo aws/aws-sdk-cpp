@@ -85,10 +85,10 @@ namespace Model
   private:
 
     int m_cappedCount;
-    bool m_cappedCountHasBeenSet;
+    bool m_cappedCountHasBeenSet = false;
 
     bool m_capExceeded;
-    bool m_capExceededHasBeenSet;
+    bool m_capExceededHasBeenSet = false;
   };
 
 } // namespace Model

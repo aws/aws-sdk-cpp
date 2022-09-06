@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     CommsProtocol m_commsProtocol;
-    bool m_commsProtocolHasBeenSet;
+    bool m_commsProtocolHasBeenSet = false;
   };
 
 } // namespace Model

@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_queryText;
-    bool m_queryTextHasBeenSet;
+    bool m_queryTextHasBeenSet = false;
   };
 
 } // namespace Model

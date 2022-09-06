@@ -100,7 +100,7 @@ MigrationHubRefactorSpacesClient::~MigrationHubRefactorSpacesClient()
 
 void MigrationHubRefactorSpacesClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Migration Hub Refactor Spaces");
+  AWSClient::SetServiceClientName("Migration Hub Refactor Spaces");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -536,16 +536,16 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
-    bool m_encryptionContextHasBeenSet;
+    bool m_encryptionContextHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     DataKeyPairSpec m_keyPairSpec;
-    bool m_keyPairSpecHasBeenSet;
+    bool m_keyPairSpecHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
   };
 
 } // namespace Model

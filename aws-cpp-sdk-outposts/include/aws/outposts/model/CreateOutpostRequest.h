@@ -314,25 +314,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     SupportedHardwareType m_supportedHardwareType;
-    bool m_supportedHardwareTypeHasBeenSet;
+    bool m_supportedHardwareTypeHasBeenSet = false;
   };
 
 } // namespace Model

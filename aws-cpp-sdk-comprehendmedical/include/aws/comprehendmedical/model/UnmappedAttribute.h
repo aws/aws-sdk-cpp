@@ -121,10 +121,10 @@ namespace Model
   private:
 
     EntityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Attribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1249,55 +1249,55 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_defaultRootObject;
-    bool m_defaultRootObjectHasBeenSet;
+    bool m_defaultRootObjectHasBeenSet = false;
 
     Origins m_origins;
-    bool m_originsHasBeenSet;
+    bool m_originsHasBeenSet = false;
 
     OriginGroups m_originGroups;
-    bool m_originGroupsHasBeenSet;
+    bool m_originGroupsHasBeenSet = false;
 
     DefaultCacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     CacheBehaviors m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     CustomErrorResponses m_customErrorResponses;
-    bool m_customErrorResponsesHasBeenSet;
+    bool m_customErrorResponsesHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     LoggingConfig m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     ViewerCertificate m_viewerCertificate;
-    bool m_viewerCertificateHasBeenSet;
+    bool m_viewerCertificateHasBeenSet = false;
 
     Restrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     HttpVersion m_httpVersion;
-    bool m_httpVersionHasBeenSet;
+    bool m_httpVersionHasBeenSet = false;
 
     bool m_isIPV6Enabled;
-    bool m_isIPV6EnabledHasBeenSet;
+    bool m_isIPV6EnabledHasBeenSet = false;
   };
 
 } // namespace Model

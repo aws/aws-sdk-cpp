@@ -78,7 +78,7 @@ namespace Model
   private:
 
     StorageClassAnalysisDataExport m_dataExport;
-    bool m_dataExportHasBeenSet;
+    bool m_dataExportHasBeenSet = false;
   };
 
 } // namespace Model

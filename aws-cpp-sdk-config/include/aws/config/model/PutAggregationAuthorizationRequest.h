@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_authorizedAccountId;
-    bool m_authorizedAccountIdHasBeenSet;
+    bool m_authorizedAccountIdHasBeenSet = false;
 
     Aws::String m_authorizedAwsRegion;
-    bool m_authorizedAwsRegionHasBeenSet;
+    bool m_authorizedAwsRegionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

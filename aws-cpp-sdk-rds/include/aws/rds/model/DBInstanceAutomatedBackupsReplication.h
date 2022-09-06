@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceAutomatedBackupsArn;
-    bool m_dBInstanceAutomatedBackupsArnHasBeenSet;
+    bool m_dBInstanceAutomatedBackupsArnHasBeenSet = false;
   };
 
 } // namespace Model

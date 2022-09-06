@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RevisionLocation m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

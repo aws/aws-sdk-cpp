@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_eventDataStore;
-    bool m_eventDataStoreHasBeenSet;
+    bool m_eventDataStoreHasBeenSet = false;
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxQueryResults;
-    bool m_maxQueryResultsHasBeenSet;
+    bool m_maxQueryResultsHasBeenSet = false;
   };
 
 } // namespace Model

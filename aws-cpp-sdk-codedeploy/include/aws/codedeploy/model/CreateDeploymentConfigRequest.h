@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     MinimumHealthyHosts m_minimumHealthyHosts;
-    bool m_minimumHealthyHostsHasBeenSet;
+    bool m_minimumHealthyHostsHasBeenSet = false;
 
     TrafficRoutingConfig m_trafficRoutingConfig;
-    bool m_trafficRoutingConfigHasBeenSet;
+    bool m_trafficRoutingConfigHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
   };
 
 } // namespace Model

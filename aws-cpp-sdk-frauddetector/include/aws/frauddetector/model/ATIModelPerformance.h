@@ -83,7 +83,7 @@ namespace Model
   private:
 
     double m_asi;
-    bool m_asiHasBeenSet;
+    bool m_asiHasBeenSet = false;
   };
 
 } // namespace Model

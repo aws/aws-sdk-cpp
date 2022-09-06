@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_suggestedQueryText;
-    bool m_suggestedQueryTextHasBeenSet;
+    bool m_suggestedQueryTextHasBeenSet = false;
 
     Aws::Vector<Correction> m_corrections;
-    bool m_correctionsHasBeenSet;
+    bool m_correctionsHasBeenSet = false;
   };
 
 } // namespace Model

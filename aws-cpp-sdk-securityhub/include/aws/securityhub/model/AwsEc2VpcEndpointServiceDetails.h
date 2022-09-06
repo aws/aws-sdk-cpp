@@ -501,37 +501,37 @@ namespace Model
   private:
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_baseEndpointDnsNames;
-    bool m_baseEndpointDnsNamesHasBeenSet;
+    bool m_baseEndpointDnsNamesHasBeenSet = false;
 
     bool m_managesVpcEndpoints;
-    bool m_managesVpcEndpointsHasBeenSet;
+    bool m_managesVpcEndpointsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-    bool m_gatewayLoadBalancerArnsHasBeenSet;
+    bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-    bool m_networkLoadBalancerArnsHasBeenSet;
+    bool m_networkLoadBalancerArnsHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceState;
-    bool m_serviceStateHasBeenSet;
+    bool m_serviceStateHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpcEndpointServiceServiceTypeDetails> m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

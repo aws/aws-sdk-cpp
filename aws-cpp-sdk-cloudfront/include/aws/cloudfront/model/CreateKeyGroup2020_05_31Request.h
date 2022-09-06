@@ -65,7 +65,7 @@ namespace Model
   private:
 
     KeyGroupConfig m_keyGroupConfig;
-    bool m_keyGroupConfigHasBeenSet;
+    bool m_keyGroupConfigHasBeenSet = false;
   };
 
 } // namespace Model

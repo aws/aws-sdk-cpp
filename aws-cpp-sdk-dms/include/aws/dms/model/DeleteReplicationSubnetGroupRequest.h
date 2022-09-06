@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_replicationSubnetGroupIdentifier;
-    bool m_replicationSubnetGroupIdentifierHasBeenSet;
+    bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

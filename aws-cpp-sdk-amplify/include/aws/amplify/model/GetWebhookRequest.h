@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_webhookId;
-    bool m_webhookIdHasBeenSet;
+    bool m_webhookIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -756,52 +756,52 @@ namespace Model
   private:
 
     Aws::String m_apiEndpoint;
-    bool m_apiEndpointHasBeenSet;
+    bool m_apiEndpointHasBeenSet = false;
 
     bool m_apiGatewayManaged;
-    bool m_apiGatewayManagedHasBeenSet;
+    bool m_apiGatewayManagedHasBeenSet = false;
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_apiKeySelectionExpression;
-    bool m_apiKeySelectionExpressionHasBeenSet;
+    bool m_apiKeySelectionExpressionHasBeenSet = false;
 
     Cors m_corsConfiguration;
-    bool m_corsConfigurationHasBeenSet;
+    bool m_corsConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_disableSchemaValidation;
-    bool m_disableSchemaValidationHasBeenSet;
+    bool m_disableSchemaValidationHasBeenSet = false;
 
     bool m_disableExecuteApiEndpoint;
-    bool m_disableExecuteApiEndpointHasBeenSet;
+    bool m_disableExecuteApiEndpointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_importInfo;
-    bool m_importInfoHasBeenSet;
+    bool m_importInfoHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProtocolType m_protocolType;
-    bool m_protocolTypeHasBeenSet;
+    bool m_protocolTypeHasBeenSet = false;
 
     Aws::String m_routeSelectionExpression;
-    bool m_routeSelectionExpressionHasBeenSet;
+    bool m_routeSelectionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_warnings;
-    bool m_warningsHasBeenSet;
+    bool m_warningsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     MetricsSource m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
   };
 
 } // namespace Model

@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_skewedColumnNames;
-    bool m_skewedColumnNamesHasBeenSet;
+    bool m_skewedColumnNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_skewedColumnValues;
-    bool m_skewedColumnValuesHasBeenSet;
+    bool m_skewedColumnValuesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_skewedColumnValueLocationMaps;
-    bool m_skewedColumnValueLocationMapsHasBeenSet;
+    bool m_skewedColumnValueLocationMapsHasBeenSet = false;
   };
 
 } // namespace Model

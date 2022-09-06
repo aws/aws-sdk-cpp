@@ -430,25 +430,25 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     ApplicationRevisionSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     ListStateFilterAction m_deployed;
-    bool m_deployedHasBeenSet;
+    bool m_deployedHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

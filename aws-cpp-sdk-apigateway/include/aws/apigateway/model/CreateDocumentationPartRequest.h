@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     DocumentationPartLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

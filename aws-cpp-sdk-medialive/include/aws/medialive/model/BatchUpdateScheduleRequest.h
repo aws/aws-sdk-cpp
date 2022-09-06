@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     BatchScheduleActionCreateRequest m_creates;
-    bool m_createsHasBeenSet;
+    bool m_createsHasBeenSet = false;
 
     BatchScheduleActionDeleteRequest m_deletes;
-    bool m_deletesHasBeenSet;
+    bool m_deletesHasBeenSet = false;
   };
 
 } // namespace Model

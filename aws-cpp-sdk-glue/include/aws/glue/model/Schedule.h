@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     ScheduleState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

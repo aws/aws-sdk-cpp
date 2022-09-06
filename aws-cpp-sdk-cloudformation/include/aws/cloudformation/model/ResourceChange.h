@@ -544,31 +544,31 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     Aws::String m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Replacement m_replacement;
-    bool m_replacementHasBeenSet;
+    bool m_replacementHasBeenSet = false;
 
     Aws::Vector<ResourceAttribute> m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<ResourceChangeDetail> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Aws::String m_changeSetId;
-    bool m_changeSetIdHasBeenSet;
+    bool m_changeSetIdHasBeenSet = false;
 
     ModuleInfo m_moduleInfo;
-    bool m_moduleInfoHasBeenSet;
+    bool m_moduleInfoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     EventSourceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     PushNotificationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

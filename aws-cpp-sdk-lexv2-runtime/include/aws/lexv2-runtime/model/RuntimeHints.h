@@ -169,7 +169,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>> m_slotHints;
-    bool m_slotHintsHasBeenSet;
+    bool m_slotHintsHasBeenSet = false;
   };
 
 } // namespace Model

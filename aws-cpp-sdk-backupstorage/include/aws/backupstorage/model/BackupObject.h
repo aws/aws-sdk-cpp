@@ -256,22 +256,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_chunksCount;
-    bool m_chunksCountHasBeenSet;
+    bool m_chunksCountHasBeenSet = false;
 
     Aws::String m_metadataString;
-    bool m_metadataStringHasBeenSet;
+    bool m_metadataStringHasBeenSet = false;
 
     Aws::String m_objectChecksum;
-    bool m_objectChecksumHasBeenSet;
+    bool m_objectChecksumHasBeenSet = false;
 
     SummaryChecksumAlgorithm m_objectChecksumAlgorithm;
-    bool m_objectChecksumAlgorithmHasBeenSet;
+    bool m_objectChecksumAlgorithmHasBeenSet = false;
 
     Aws::String m_objectToken;
-    bool m_objectTokenHasBeenSet;
+    bool m_objectTokenHasBeenSet = false;
   };
 
 } // namespace Model

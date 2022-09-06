@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<TaskTemplateDefaultFieldValue> m_defaultFieldValues;
-    bool m_defaultFieldValuesHasBeenSet;
+    bool m_defaultFieldValuesHasBeenSet = false;
   };
 
 } // namespace Model

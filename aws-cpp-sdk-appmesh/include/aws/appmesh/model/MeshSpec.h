@@ -91,10 +91,10 @@ namespace Model
   private:
 
     EgressFilter m_egressFilter;
-    bool m_egressFilterHasBeenSet;
+    bool m_egressFilterHasBeenSet = false;
 
     MeshServiceDiscovery m_serviceDiscovery;
-    bool m_serviceDiscoveryHasBeenSet;
+    bool m_serviceDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

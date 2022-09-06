@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsS3BucketNotificationConfigurationDetail> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
   };
 
 } // namespace Model

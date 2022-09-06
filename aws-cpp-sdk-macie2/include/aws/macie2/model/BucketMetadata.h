@@ -1136,76 +1136,76 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads;
-    bool m_allowsUnencryptedObjectUploadsHasBeenSet;
+    bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_bucketCreatedAt;
-    bool m_bucketCreatedAtHasBeenSet;
+    bool m_bucketCreatedAtHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     long long m_classifiableObjectCount;
-    bool m_classifiableObjectCountHasBeenSet;
+    bool m_classifiableObjectCountHasBeenSet = false;
 
     long long m_classifiableSizeInBytes;
-    bool m_classifiableSizeInBytesHasBeenSet;
+    bool m_classifiableSizeInBytesHasBeenSet = false;
 
     BucketMetadataErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     JobDetails m_jobDetails;
-    bool m_jobDetailsHasBeenSet;
+    bool m_jobDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     long long m_objectCount;
-    bool m_objectCountHasBeenSet;
+    bool m_objectCountHasBeenSet = false;
 
     ObjectCountByEncryptionType m_objectCountByEncryptionType;
-    bool m_objectCountByEncryptionTypeHasBeenSet;
+    bool m_objectCountByEncryptionTypeHasBeenSet = false;
 
     BucketPublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     ReplicationDetails m_replicationDetails;
-    bool m_replicationDetailsHasBeenSet;
+    bool m_replicationDetailsHasBeenSet = false;
 
     BucketServerSideEncryption m_serverSideEncryption;
-    bool m_serverSideEncryptionHasBeenSet;
+    bool m_serverSideEncryptionHasBeenSet = false;
 
     SharedAccess m_sharedAccess;
-    bool m_sharedAccessHasBeenSet;
+    bool m_sharedAccessHasBeenSet = false;
 
     long long m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
 
     long long m_sizeInBytesCompressed;
-    bool m_sizeInBytesCompressedHasBeenSet;
+    bool m_sizeInBytesCompressedHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectCount;
-    bool m_unclassifiableObjectCountHasBeenSet;
+    bool m_unclassifiableObjectCountHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
-    bool m_unclassifiableObjectSizeInBytesHasBeenSet;
+    bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
 
     bool m_versioning;
-    bool m_versioningHasBeenSet;
+    bool m_versioningHasBeenSet = false;
   };
 
 } // namespace Model

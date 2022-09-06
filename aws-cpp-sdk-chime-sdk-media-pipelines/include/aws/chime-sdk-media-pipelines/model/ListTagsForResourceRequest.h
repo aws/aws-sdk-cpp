@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
   };
 
 } // namespace Model

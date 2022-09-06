@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_subscriptionDefinitionId;
-    bool m_subscriptionDefinitionIdHasBeenSet;
+    bool m_subscriptionDefinitionIdHasBeenSet = false;
   };
 
 } // namespace Model

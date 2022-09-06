@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     NotificationConfigurationFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

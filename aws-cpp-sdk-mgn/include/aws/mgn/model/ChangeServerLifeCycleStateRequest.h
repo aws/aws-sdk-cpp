@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ChangeServerLifeCycleStateSourceServerLifecycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

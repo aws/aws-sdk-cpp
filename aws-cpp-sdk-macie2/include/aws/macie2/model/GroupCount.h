@@ -110,10 +110,10 @@ namespace Model
   private:
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_groupKey;
-    bool m_groupKeyHasBeenSet;
+    bool m_groupKeyHasBeenSet = false;
   };
 
 } // namespace Model

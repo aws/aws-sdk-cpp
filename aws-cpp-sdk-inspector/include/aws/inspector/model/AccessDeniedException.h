@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     AccessDeniedErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     bool m_canRetry;
-    bool m_canRetryHasBeenSet;
+    bool m_canRetryHasBeenSet = false;
   };
 
 } // namespace Model

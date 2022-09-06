@@ -80,7 +80,7 @@ Route53RecoveryClusterClient::~Route53RecoveryClusterClient()
 
 void Route53RecoveryClusterClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Route53 Recovery Cluster");
+  AWSClient::SetServiceClientName("Route53 Recovery Cluster");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

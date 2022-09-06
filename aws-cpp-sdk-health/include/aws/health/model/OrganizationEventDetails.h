@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Event m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_eventDescription;
-    bool m_eventDescriptionHasBeenSet;
+    bool m_eventDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_eventMetadata;
-    bool m_eventMetadataHasBeenSet;
+    bool m_eventMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -411,22 +411,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     Aws::String m_s3KmsKeyArn;
-    bool m_s3KmsKeyArnHasBeenSet;
+    bool m_s3KmsKeyArnHasBeenSet = false;
 
     Aws::String m_snsTopicARN;
-    bool m_snsTopicARNHasBeenSet;
+    bool m_snsTopicARNHasBeenSet = false;
 
     ConfigSnapshotDeliveryProperties m_configSnapshotDeliveryProperties;
-    bool m_configSnapshotDeliveryPropertiesHasBeenSet;
+    bool m_configSnapshotDeliveryPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

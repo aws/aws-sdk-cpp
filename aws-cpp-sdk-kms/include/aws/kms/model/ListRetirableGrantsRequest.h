@@ -251,13 +251,13 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_retiringPrincipal;
-    bool m_retiringPrincipalHasBeenSet;
+    bool m_retiringPrincipalHasBeenSet = false;
   };
 
 } // namespace Model

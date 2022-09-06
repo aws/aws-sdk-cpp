@@ -336,16 +336,16 @@ namespace Model
   private:
 
     Repository m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     KMSKeyDetails m_kMSKeyDetails;
-    bool m_kMSKeyDetailsHasBeenSet;
+    bool m_kMSKeyDetailsHasBeenSet = false;
   };
 
 } // namespace Model

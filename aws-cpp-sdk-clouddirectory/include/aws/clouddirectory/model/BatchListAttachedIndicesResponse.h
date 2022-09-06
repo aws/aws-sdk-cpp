@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<IndexAttachment> m_indexAttachments;
-    bool m_indexAttachmentsHasBeenSet;
+    bool m_indexAttachmentsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

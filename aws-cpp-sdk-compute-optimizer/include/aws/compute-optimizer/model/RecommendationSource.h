@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_recommendationSourceArn;
-    bool m_recommendationSourceArnHasBeenSet;
+    bool m_recommendationSourceArnHasBeenSet = false;
 
     RecommendationSourceType m_recommendationSourceType;
-    bool m_recommendationSourceTypeHasBeenSet;
+    bool m_recommendationSourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

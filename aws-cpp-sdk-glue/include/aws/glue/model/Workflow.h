@@ -420,31 +420,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultRunProperties;
-    bool m_defaultRunPropertiesHasBeenSet;
+    bool m_defaultRunPropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     WorkflowRun m_lastRun;
-    bool m_lastRunHasBeenSet;
+    bool m_lastRunHasBeenSet = false;
 
     WorkflowGraph m_graph;
-    bool m_graphHasBeenSet;
+    bool m_graphHasBeenSet = false;
 
     int m_maxConcurrentRuns;
-    bool m_maxConcurrentRunsHasBeenSet;
+    bool m_maxConcurrentRunsHasBeenSet = false;
 
     BlueprintDetails m_blueprintDetails;
-    bool m_blueprintDetailsHasBeenSet;
+    bool m_blueprintDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -421,28 +421,28 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     S3Origin m_s3Origin;
-    bool m_s3OriginHasBeenSet;
+    bool m_s3OriginHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     StreamingLoggingConfig m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     TrustedSigners m_trustedSigners;
-    bool m_trustedSignersHasBeenSet;
+    bool m_trustedSignersHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

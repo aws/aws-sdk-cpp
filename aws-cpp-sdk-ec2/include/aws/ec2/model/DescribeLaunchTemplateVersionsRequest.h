@@ -707,31 +707,31 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
 
     Aws::String m_minVersion;
-    bool m_minVersionHasBeenSet;
+    bool m_minVersionHasBeenSet = false;
 
     Aws::String m_maxVersion;
-    bool m_maxVersionHasBeenSet;
+    bool m_maxVersionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

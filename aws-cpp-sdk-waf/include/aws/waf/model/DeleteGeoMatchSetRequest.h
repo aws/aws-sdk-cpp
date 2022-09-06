@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_geoMatchSetId;
-    bool m_geoMatchSetIdHasBeenSet;
+    bool m_geoMatchSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -207,19 +207,19 @@ namespace Model
   private:
 
     Aws::String m_alertArn;
-    bool m_alertArnHasBeenSet;
+    bool m_alertArnHasBeenSet = false;
 
     Aws::String m_alertDescription;
-    bool m_alertDescriptionHasBeenSet;
+    bool m_alertDescriptionHasBeenSet = false;
 
     int m_alertSensitivityThreshold;
-    bool m_alertSensitivityThresholdHasBeenSet;
+    bool m_alertSensitivityThresholdHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     AlertFilters m_alertFilters;
-    bool m_alertFiltersHasBeenSet;
+    bool m_alertFiltersHasBeenSet = false;
   };
 
 } // namespace Model

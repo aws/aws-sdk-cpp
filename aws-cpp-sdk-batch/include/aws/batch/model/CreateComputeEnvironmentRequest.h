@@ -746,25 +746,25 @@ namespace Model
   private:
 
     Aws::String m_computeEnvironmentName;
-    bool m_computeEnvironmentNameHasBeenSet;
+    bool m_computeEnvironmentNameHasBeenSet = false;
 
     CEType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CEState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_unmanagedvCpus;
-    bool m_unmanagedvCpusHasBeenSet;
+    bool m_unmanagedvCpusHasBeenSet = false;
 
     ComputeResource m_computeResources;
-    bool m_computeResourcesHasBeenSet;
+    bool m_computeResourcesHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

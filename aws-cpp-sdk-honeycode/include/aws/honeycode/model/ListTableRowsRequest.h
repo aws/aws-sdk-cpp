@@ -299,19 +299,19 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rowIds;
-    bool m_rowIdsHasBeenSet;
+    bool m_rowIdsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

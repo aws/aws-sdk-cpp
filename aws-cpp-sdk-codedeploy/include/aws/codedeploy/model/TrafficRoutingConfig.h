@@ -179,13 +179,13 @@ namespace Model
   private:
 
     TrafficRoutingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TimeBasedCanary m_timeBasedCanary;
-    bool m_timeBasedCanaryHasBeenSet;
+    bool m_timeBasedCanaryHasBeenSet = false;
 
     TimeBasedLinear m_timeBasedLinear;
-    bool m_timeBasedLinearHasBeenSet;
+    bool m_timeBasedLinearHasBeenSet = false;
   };
 
 } // namespace Model

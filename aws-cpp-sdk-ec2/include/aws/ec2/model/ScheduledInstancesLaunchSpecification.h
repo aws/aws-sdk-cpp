@@ -595,46 +595,46 @@ namespace Model
   private:
 
     Aws::Vector<ScheduledInstancesBlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     ScheduledInstancesIamInstanceProfile m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     ScheduledInstancesMonitoring m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
 
     Aws::Vector<ScheduledInstancesNetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     ScheduledInstancesPlacement m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
+    bool m_ramdiskIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
   };
 
 } // namespace Model

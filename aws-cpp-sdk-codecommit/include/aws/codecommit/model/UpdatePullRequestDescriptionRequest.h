@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

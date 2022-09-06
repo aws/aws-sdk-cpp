@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

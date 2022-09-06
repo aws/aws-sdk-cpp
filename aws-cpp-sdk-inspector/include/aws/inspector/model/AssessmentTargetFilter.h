@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_assessmentTargetNamePattern;
-    bool m_assessmentTargetNamePatternHasBeenSet;
+    bool m_assessmentTargetNamePatternHasBeenSet = false;
   };
 
 } // namespace Model

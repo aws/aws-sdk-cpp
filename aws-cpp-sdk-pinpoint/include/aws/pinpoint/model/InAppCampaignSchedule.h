@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     CampaignEventFilter m_eventFilter;
-    bool m_eventFilterHasBeenSet;
+    bool m_eventFilterHasBeenSet = false;
 
     QuietTime m_quietTime;
-    bool m_quietTimeHasBeenSet;
+    bool m_quietTimeHasBeenSet = false;
   };
 
 } // namespace Model

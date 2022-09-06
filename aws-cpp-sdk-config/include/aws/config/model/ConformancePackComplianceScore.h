@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

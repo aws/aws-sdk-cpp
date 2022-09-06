@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_appInstanceArn;
-    bool m_appInstanceArnHasBeenSet;
+    bool m_appInstanceArnHasBeenSet = false;
 
     AppInstanceRetentionSettings m_appInstanceRetentionSettings;
-    bool m_appInstanceRetentionSettingsHasBeenSet;
+    bool m_appInstanceRetentionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

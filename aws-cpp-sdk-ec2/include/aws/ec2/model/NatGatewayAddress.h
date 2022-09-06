@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_privateIp;
-    bool m_privateIpHasBeenSet;
+    bool m_privateIpHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
   };
 
 } // namespace Model

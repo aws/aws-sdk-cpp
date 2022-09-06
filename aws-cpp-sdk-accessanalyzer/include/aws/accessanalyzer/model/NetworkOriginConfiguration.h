@@ -104,10 +104,10 @@ namespace Model
   private:
 
     InternetConfiguration m_internetConfiguration;
-    bool m_internetConfigurationHasBeenSet;
+    bool m_internetConfigurationHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

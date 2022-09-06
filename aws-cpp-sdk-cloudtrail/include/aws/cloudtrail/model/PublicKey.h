@@ -176,16 +176,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Utils::DateTime m_validityStartTime;
-    bool m_validityStartTimeHasBeenSet;
+    bool m_validityStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_validityEndTime;
-    bool m_validityEndTimeHasBeenSet;
+    bool m_validityEndTimeHasBeenSet = false;
 
     Aws::String m_fingerprint;
-    bool m_fingerprintHasBeenSet;
+    bool m_fingerprintHasBeenSet = false;
   };
 
 } // namespace Model

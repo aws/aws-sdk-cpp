@@ -182,16 +182,16 @@ namespace Model
   private:
 
     AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails m_dockerVolumeConfiguration;
-    bool m_dockerVolumeConfigurationHasBeenSet;
+    bool m_dockerVolumeConfigurationHasBeenSet = false;
 
     AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails m_efsVolumeConfiguration;
-    bool m_efsVolumeConfigurationHasBeenSet;
+    bool m_efsVolumeConfigurationHasBeenSet = false;
 
     AwsEcsTaskDefinitionVolumesHostDetails m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

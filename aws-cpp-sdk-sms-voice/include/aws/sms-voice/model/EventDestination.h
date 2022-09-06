@@ -196,22 +196,22 @@ namespace Model
   private:
 
     CloudWatchLogsDestination m_cloudWatchLogsDestination;
-    bool m_cloudWatchLogsDestinationHasBeenSet;
+    bool m_cloudWatchLogsDestinationHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     KinesisFirehoseDestination m_kinesisFirehoseDestination;
-    bool m_kinesisFirehoseDestinationHasBeenSet;
+    bool m_kinesisFirehoseDestinationHasBeenSet = false;
 
     Aws::Vector<EventType> m_matchingEventTypes;
-    bool m_matchingEventTypesHasBeenSet;
+    bool m_matchingEventTypesHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SnsDestination m_snsDestination;
-    bool m_snsDestinationHasBeenSet;
+    bool m_snsDestinationHasBeenSet = false;
   };
 
 } // namespace Model

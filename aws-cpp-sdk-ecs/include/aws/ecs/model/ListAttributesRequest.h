@@ -349,22 +349,22 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     TargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

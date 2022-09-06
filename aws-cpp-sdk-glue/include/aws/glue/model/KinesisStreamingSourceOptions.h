@@ -685,58 +685,58 @@ namespace Model
   private:
 
     Aws::String m_endpointUrl;
-    bool m_endpointUrlHasBeenSet;
+    bool m_endpointUrlHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     StartingPosition m_startingPosition;
-    bool m_startingPositionHasBeenSet;
+    bool m_startingPositionHasBeenSet = false;
 
     long long m_maxFetchTimeInMs;
-    bool m_maxFetchTimeInMsHasBeenSet;
+    bool m_maxFetchTimeInMsHasBeenSet = false;
 
     long long m_maxFetchRecordsPerShard;
-    bool m_maxFetchRecordsPerShardHasBeenSet;
+    bool m_maxFetchRecordsPerShardHasBeenSet = false;
 
     long long m_maxRecordPerRead;
-    bool m_maxRecordPerReadHasBeenSet;
+    bool m_maxRecordPerReadHasBeenSet = false;
 
     bool m_addIdleTimeBetweenReads;
-    bool m_addIdleTimeBetweenReadsHasBeenSet;
+    bool m_addIdleTimeBetweenReadsHasBeenSet = false;
 
     long long m_idleTimeBetweenReadsInMs;
-    bool m_idleTimeBetweenReadsInMsHasBeenSet;
+    bool m_idleTimeBetweenReadsInMsHasBeenSet = false;
 
     long long m_describeShardInterval;
-    bool m_describeShardIntervalHasBeenSet;
+    bool m_describeShardIntervalHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
 
     long long m_retryIntervalMs;
-    bool m_retryIntervalMsHasBeenSet;
+    bool m_retryIntervalMsHasBeenSet = false;
 
     long long m_maxRetryIntervalMs;
-    bool m_maxRetryIntervalMsHasBeenSet;
+    bool m_maxRetryIntervalMsHasBeenSet = false;
 
     bool m_avoidEmptyBatches;
-    bool m_avoidEmptyBatchesHasBeenSet;
+    bool m_avoidEmptyBatchesHasBeenSet = false;
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_roleSessionName;
-    bool m_roleSessionNameHasBeenSet;
+    bool m_roleSessionNameHasBeenSet = false;
   };
 
 } // namespace Model

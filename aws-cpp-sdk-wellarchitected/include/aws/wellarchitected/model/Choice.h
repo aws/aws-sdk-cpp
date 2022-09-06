@@ -236,22 +236,22 @@ namespace Model
   private:
 
     Aws::String m_choiceId;
-    bool m_choiceIdHasBeenSet;
+    bool m_choiceIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ChoiceContent m_helpfulResource;
-    bool m_helpfulResourceHasBeenSet;
+    bool m_helpfulResourceHasBeenSet = false;
 
     ChoiceContent m_improvementPlan;
-    bool m_improvementPlanHasBeenSet;
+    bool m_improvementPlanHasBeenSet = false;
 
     Aws::Vector<AdditionalResources> m_additionalResources;
-    bool m_additionalResourcesHasBeenSet;
+    bool m_additionalResourcesHasBeenSet = false;
   };
 
 } // namespace Model

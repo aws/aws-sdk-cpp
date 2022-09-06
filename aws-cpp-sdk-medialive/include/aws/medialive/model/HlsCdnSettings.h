@@ -138,19 +138,19 @@ namespace Model
   private:
 
     HlsAkamaiSettings m_hlsAkamaiSettings;
-    bool m_hlsAkamaiSettingsHasBeenSet;
+    bool m_hlsAkamaiSettingsHasBeenSet = false;
 
     HlsBasicPutSettings m_hlsBasicPutSettings;
-    bool m_hlsBasicPutSettingsHasBeenSet;
+    bool m_hlsBasicPutSettingsHasBeenSet = false;
 
     HlsMediaStoreSettings m_hlsMediaStoreSettings;
-    bool m_hlsMediaStoreSettingsHasBeenSet;
+    bool m_hlsMediaStoreSettingsHasBeenSet = false;
 
     HlsS3Settings m_hlsS3Settings;
-    bool m_hlsS3SettingsHasBeenSet;
+    bool m_hlsS3SettingsHasBeenSet = false;
 
     HlsWebdavSettings m_hlsWebdavSettings;
-    bool m_hlsWebdavSettingsHasBeenSet;
+    bool m_hlsWebdavSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,10 +85,10 @@ namespace Model
   private:
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     bool m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

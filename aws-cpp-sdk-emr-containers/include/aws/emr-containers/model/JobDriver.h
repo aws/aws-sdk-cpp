@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SparkSubmitJobDriver m_sparkSubmitJobDriver;
-    bool m_sparkSubmitJobDriverHasBeenSet;
+    bool m_sparkSubmitJobDriverHasBeenSet = false;
   };
 
 } // namespace Model

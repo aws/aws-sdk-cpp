@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_matchCriteria;
-    bool m_matchCriteriaHasBeenSet;
+    bool m_matchCriteriaHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
   };
 
 } // namespace Model

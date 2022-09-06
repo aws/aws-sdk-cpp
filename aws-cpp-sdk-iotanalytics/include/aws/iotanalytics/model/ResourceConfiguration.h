@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
   };
 
 } // namespace Model

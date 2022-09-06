@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_templatedPathList;
-    bool m_templatedPathListHasBeenSet;
+    bool m_templatedPathListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_historicalDataPathList;
-    bool m_historicalDataPathListHasBeenSet;
+    bool m_historicalDataPathListHasBeenSet = false;
 
     FileFormatDescriptor m_fileFormatDescriptor;
-    bool m_fileFormatDescriptorHasBeenSet;
+    bool m_fileFormatDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

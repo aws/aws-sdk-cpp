@@ -1001,28 +1001,28 @@ namespace Model
   private:
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     RawMessage m_rawMessage;
-    bool m_rawMessageHasBeenSet;
+    bool m_rawMessageHasBeenSet = false;
 
     Aws::String m_fromArn;
-    bool m_fromArnHasBeenSet;
+    bool m_fromArnHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_returnPathArn;
-    bool m_returnPathArnHasBeenSet;
+    bool m_returnPathArnHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
   };
 
 } // namespace Model

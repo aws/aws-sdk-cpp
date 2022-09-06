@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_fleetName;
-    bool m_fleetNameHasBeenSet;
+    bool m_fleetNameHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
   };
 
 } // namespace Model

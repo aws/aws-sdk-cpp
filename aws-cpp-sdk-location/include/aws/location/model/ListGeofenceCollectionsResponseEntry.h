@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

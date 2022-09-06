@@ -268,19 +268,19 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_queryAsOfTime;
-    bool m_queryAsOfTimeHasBeenSet;
+    bool m_queryAsOfTimeHasBeenSet = false;
   };
 
 } // namespace Model

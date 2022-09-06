@@ -70,7 +70,7 @@ namespace Model
   private:
 
     EndpointInput m_endpointInput;
-    bool m_endpointInputHasBeenSet;
+    bool m_endpointInputHasBeenSet = false;
   };
 
 } // namespace Model

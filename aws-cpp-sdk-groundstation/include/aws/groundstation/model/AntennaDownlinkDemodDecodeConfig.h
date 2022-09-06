@@ -135,13 +135,13 @@ namespace Model
   private:
 
     DecodeConfig m_decodeConfig;
-    bool m_decodeConfigHasBeenSet;
+    bool m_decodeConfigHasBeenSet = false;
 
     DemodulationConfig m_demodulationConfig;
-    bool m_demodulationConfigHasBeenSet;
+    bool m_demodulationConfigHasBeenSet = false;
 
     SpectrumConfig m_spectrumConfig;
-    bool m_spectrumConfigHasBeenSet;
+    bool m_spectrumConfigHasBeenSet = false;
   };
 
 } // namespace Model

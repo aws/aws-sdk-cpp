@@ -303,22 +303,22 @@ namespace Model
   private:
 
     AccessibilityType m_accessibility;
-    bool m_accessibilityHasBeenSet;
+    bool m_accessibilityHasBeenSet = false;
 
     Aws::String m_captionSelectorName;
-    bool m_captionSelectorNameHasBeenSet;
+    bool m_captionSelectorNameHasBeenSet = false;
 
     CaptionDestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageDescription;
-    bool m_languageDescriptionHasBeenSet;
+    bool m_languageDescriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

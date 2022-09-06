@@ -680,37 +680,37 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_previousContactId;
-    bool m_previousContactIdHasBeenSet;
+    bool m_previousContactIdHasBeenSet = false;
 
     Aws::String m_contactFlowId;
-    bool m_contactFlowIdHasBeenSet;
+    bool m_contactFlowIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Reference> m_references;
-    bool m_referencesHasBeenSet;
+    bool m_referencesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
 
     Aws::String m_taskTemplateId;
-    bool m_taskTemplateIdHasBeenSet;
+    bool m_taskTemplateIdHasBeenSet = false;
 
     Aws::String m_quickConnectId;
-    bool m_quickConnectIdHasBeenSet;
+    bool m_quickConnectIdHasBeenSet = false;
   };
 
 } // namespace Model

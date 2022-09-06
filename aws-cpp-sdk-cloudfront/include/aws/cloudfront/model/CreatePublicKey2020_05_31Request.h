@@ -65,7 +65,7 @@ namespace Model
   private:
 
     PublicKeyConfig m_publicKeyConfig;
-    bool m_publicKeyConfigHasBeenSet;
+    bool m_publicKeyConfigHasBeenSet = false;
   };
 
 } // namespace Model

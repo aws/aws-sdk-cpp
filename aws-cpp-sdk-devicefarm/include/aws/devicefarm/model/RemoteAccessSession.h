@@ -1006,67 +1006,67 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ExecutionResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_started;
-    bool m_startedHasBeenSet;
+    bool m_startedHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopped;
-    bool m_stoppedHasBeenSet;
+    bool m_stoppedHasBeenSet = false;
 
     Device m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     bool m_remoteDebugEnabled;
-    bool m_remoteDebugEnabledHasBeenSet;
+    bool m_remoteDebugEnabledHasBeenSet = false;
 
     bool m_remoteRecordEnabled;
-    bool m_remoteRecordEnabledHasBeenSet;
+    bool m_remoteRecordEnabledHasBeenSet = false;
 
     Aws::String m_remoteRecordAppArn;
-    bool m_remoteRecordAppArnHasBeenSet;
+    bool m_remoteRecordAppArnHasBeenSet = false;
 
     Aws::String m_hostAddress;
-    bool m_hostAddressHasBeenSet;
+    bool m_hostAddressHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     BillingMethod m_billingMethod;
-    bool m_billingMethodHasBeenSet;
+    bool m_billingMethodHasBeenSet = false;
 
     DeviceMinutes m_deviceMinutes;
-    bool m_deviceMinutesHasBeenSet;
+    bool m_deviceMinutesHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_deviceUdid;
-    bool m_deviceUdidHasBeenSet;
+    bool m_deviceUdidHasBeenSet = false;
 
     InteractionMode m_interactionMode;
-    bool m_interactionModeHasBeenSet;
+    bool m_interactionModeHasBeenSet = false;
 
     bool m_skipAppResign;
-    bool m_skipAppResignHasBeenSet;
+    bool m_skipAppResignHasBeenSet = false;
   };
 
 } // namespace Model

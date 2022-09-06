@@ -98,10 +98,10 @@ namespace Model
   private:
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     double m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

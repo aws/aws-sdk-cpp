@@ -89,7 +89,7 @@ Cloud9Client::~Cloud9Client()
 
 void Cloud9Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Cloud9");
+  AWSClient::SetServiceClientName("Cloud9");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

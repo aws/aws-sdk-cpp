@@ -83,7 +83,7 @@ IoTDataPlaneClient::~IoTDataPlaneClient()
 
 void IoTDataPlaneClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT Data Plane");
+  AWSClient::SetServiceClientName("IoT Data Plane");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

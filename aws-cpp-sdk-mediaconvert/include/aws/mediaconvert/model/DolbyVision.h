@@ -251,16 +251,16 @@ namespace Model
   private:
 
     DolbyVisionLevel6Metadata m_l6Metadata;
-    bool m_l6MetadataHasBeenSet;
+    bool m_l6MetadataHasBeenSet = false;
 
     DolbyVisionLevel6Mode m_l6Mode;
-    bool m_l6ModeHasBeenSet;
+    bool m_l6ModeHasBeenSet = false;
 
     DolbyVisionMapping m_mapping;
-    bool m_mappingHasBeenSet;
+    bool m_mappingHasBeenSet = false;
 
     DolbyVisionProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
   };
 
 } // namespace Model

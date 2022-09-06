@@ -166,16 +166,16 @@ namespace Model
   private:
 
     GrpcTimeout m_grpc;
-    bool m_grpcHasBeenSet;
+    bool m_grpcHasBeenSet = false;
 
     HttpTimeout m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     HttpTimeout m_http2;
-    bool m_http2HasBeenSet;
+    bool m_http2HasBeenSet = false;
 
     TcpTimeout m_tcp;
-    bool m_tcpHasBeenSet;
+    bool m_tcpHasBeenSet = false;
   };
 
 } // namespace Model

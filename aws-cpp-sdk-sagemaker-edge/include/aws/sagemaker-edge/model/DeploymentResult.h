@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     Aws::String m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_deploymentStatusMessage;
-    bool m_deploymentStatusMessageHasBeenSet;
+    bool m_deploymentStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_deploymentStartTime;
-    bool m_deploymentStartTimeHasBeenSet;
+    bool m_deploymentStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deploymentEndTime;
-    bool m_deploymentEndTimeHasBeenSet;
+    bool m_deploymentEndTimeHasBeenSet = false;
 
     Aws::Vector<DeploymentModel> m_deploymentModels;
-    bool m_deploymentModelsHasBeenSet;
+    bool m_deploymentModelsHasBeenSet = false;
   };
 
 } // namespace Model

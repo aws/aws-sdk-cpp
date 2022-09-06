@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::String m_codeRepositoryName;
-    bool m_codeRepositoryNameHasBeenSet;
+    bool m_codeRepositoryNameHasBeenSet = false;
 
     GitConfig m_gitConfig;
-    bool m_gitConfigHasBeenSet;
+    bool m_gitConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

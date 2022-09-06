@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     AppType m_appType;
-    bool m_appTypeHasBeenSet;
+    bool m_appTypeHasBeenSet = false;
 
     Aws::String m_appName;
-    bool m_appNameHasBeenSet;
+    bool m_appNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ResourceSpec m_resourceSpec;
-    bool m_resourceSpecHasBeenSet;
+    bool m_resourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

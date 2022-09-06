@@ -95,7 +95,7 @@ namespace Model
   private:
 
     LocationType m_locationType;
-    bool m_locationTypeHasBeenSet;
+    bool m_locationTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -140,13 +140,13 @@ namespace Model
   private:
 
     TrafficRoutingConfig m_trafficRoutingConfiguration;
-    bool m_trafficRoutingConfigurationHasBeenSet;
+    bool m_trafficRoutingConfigurationHasBeenSet = false;
 
     int m_terminationWaitInSeconds;
-    bool m_terminationWaitInSecondsHasBeenSet;
+    bool m_terminationWaitInSecondsHasBeenSet = false;
 
     int m_maximumExecutionTimeoutInSeconds;
-    bool m_maximumExecutionTimeoutInSecondsHasBeenSet;
+    bool m_maximumExecutionTimeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

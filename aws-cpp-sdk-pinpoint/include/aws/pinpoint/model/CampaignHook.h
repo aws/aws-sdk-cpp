@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_lambdaFunctionName;
-    bool m_lambdaFunctionNameHasBeenSet;
+    bool m_lambdaFunctionNameHasBeenSet = false;
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_webUrl;
-    bool m_webUrlHasBeenSet;
+    bool m_webUrlHasBeenSet = false;
   };
 
 } // namespace Model

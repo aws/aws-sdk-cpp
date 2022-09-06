@@ -810,37 +810,37 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_authorizerCredentialsArn;
-    bool m_authorizerCredentialsArnHasBeenSet;
+    bool m_authorizerCredentialsArnHasBeenSet = false;
 
     Aws::String m_authorizerPayloadFormatVersion;
-    bool m_authorizerPayloadFormatVersionHasBeenSet;
+    bool m_authorizerPayloadFormatVersionHasBeenSet = false;
 
     int m_authorizerResultTtlInSeconds;
-    bool m_authorizerResultTtlInSecondsHasBeenSet;
+    bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
     AuthorizerType m_authorizerType;
-    bool m_authorizerTypeHasBeenSet;
+    bool m_authorizerTypeHasBeenSet = false;
 
     Aws::String m_authorizerUri;
-    bool m_authorizerUriHasBeenSet;
+    bool m_authorizerUriHasBeenSet = false;
 
     bool m_enableSimpleResponses;
-    bool m_enableSimpleResponsesHasBeenSet;
+    bool m_enableSimpleResponsesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_identitySource;
-    bool m_identitySourceHasBeenSet;
+    bool m_identitySourceHasBeenSet = false;
 
     Aws::String m_identityValidationExpression;
-    bool m_identityValidationExpressionHasBeenSet;
+    bool m_identityValidationExpressionHasBeenSet = false;
 
     JWTConfiguration m_jwtConfiguration;
-    bool m_jwtConfigurationHasBeenSet;
+    bool m_jwtConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

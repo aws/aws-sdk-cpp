@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_filename;
-    bool m_filenameHasBeenSet;
+    bool m_filenameHasBeenSet = false;
 
     TestGridSessionArtifactType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

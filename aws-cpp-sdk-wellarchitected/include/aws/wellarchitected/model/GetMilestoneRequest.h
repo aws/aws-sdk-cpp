@@ -75,10 +75,10 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     int m_milestoneNumber;
-    bool m_milestoneNumberHasBeenSet;
+    bool m_milestoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

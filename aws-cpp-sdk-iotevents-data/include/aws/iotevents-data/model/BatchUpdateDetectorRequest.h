@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<UpdateDetectorRequest> m_detectors;
-    bool m_detectorsHasBeenSet;
+    bool m_detectorsHasBeenSet = false;
   };
 
 } // namespace Model

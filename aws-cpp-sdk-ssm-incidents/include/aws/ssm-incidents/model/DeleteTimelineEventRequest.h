@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_incidentRecordArn;
-    bool m_incidentRecordArnHasBeenSet;
+    bool m_incidentRecordArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -222,10 +222,10 @@ namespace Model
   private:
 
     AnomalyMonitor m_anomalyMonitor;
-    bool m_anomalyMonitorHasBeenSet;
+    bool m_anomalyMonitorHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

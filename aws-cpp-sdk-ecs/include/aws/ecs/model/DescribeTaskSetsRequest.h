@@ -239,16 +239,16 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_taskSets;
-    bool m_taskSetsHasBeenSet;
+    bool m_taskSetsHasBeenSet = false;
 
     Aws::Vector<TaskSetField> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

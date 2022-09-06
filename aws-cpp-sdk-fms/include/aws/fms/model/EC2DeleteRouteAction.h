@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_destinationPrefixListId;
-    bool m_destinationPrefixListIdHasBeenSet;
+    bool m_destinationPrefixListIdHasBeenSet = false;
 
     Aws::String m_destinationIpv6CidrBlock;
-    bool m_destinationIpv6CidrBlockHasBeenSet;
+    bool m_destinationIpv6CidrBlockHasBeenSet = false;
 
     ActionTarget m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
   };
 
 } // namespace Model

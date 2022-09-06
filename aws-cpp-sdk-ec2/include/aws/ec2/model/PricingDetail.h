@@ -81,10 +81,10 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
   };
 
 } // namespace Model

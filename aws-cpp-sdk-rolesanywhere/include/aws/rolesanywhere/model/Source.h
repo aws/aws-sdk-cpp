@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SourceData m_sourceData;
-    bool m_sourceDataHasBeenSet;
+    bool m_sourceDataHasBeenSet = false;
 
     TrustAnchorType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

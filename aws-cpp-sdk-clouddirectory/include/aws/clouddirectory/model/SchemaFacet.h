@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_facetName;
-    bool m_facetNameHasBeenSet;
+    bool m_facetNameHasBeenSet = false;
   };
 
 } // namespace Model

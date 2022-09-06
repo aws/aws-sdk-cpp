@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeRangeLowerBound;
-    bool m_timeRangeLowerBoundHasBeenSet;
+    bool m_timeRangeLowerBoundHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeRangeUpperBound;
-    bool m_timeRangeUpperBoundHasBeenSet;
+    bool m_timeRangeUpperBoundHasBeenSet = false;
 
     Aws::String m_exclusiveStartBackupArn;
-    bool m_exclusiveStartBackupArnHasBeenSet;
+    bool m_exclusiveStartBackupArnHasBeenSet = false;
 
     BackupTypeFilter m_backupType;
-    bool m_backupTypeHasBeenSet;
+    bool m_backupTypeHasBeenSet = false;
   };
 
 } // namespace Model

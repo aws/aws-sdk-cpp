@@ -215,10 +215,10 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     ContainerCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
   };
 
 } // namespace Model

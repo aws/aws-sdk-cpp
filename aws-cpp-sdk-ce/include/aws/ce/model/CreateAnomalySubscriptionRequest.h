@@ -230,10 +230,10 @@ namespace Model
   private:
 
     AnomalySubscription m_anomalySubscription;
-    bool m_anomalySubscriptionHasBeenSet;
+    bool m_anomalySubscriptionHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

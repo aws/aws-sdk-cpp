@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_policyRevision;
-    bool m_policyRevisionHasBeenSet;
+    bool m_policyRevisionHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
   };
 
 } // namespace Model

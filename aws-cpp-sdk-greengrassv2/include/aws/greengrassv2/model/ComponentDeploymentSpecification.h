@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     ComponentConfigurationUpdate m_configurationUpdate;
-    bool m_configurationUpdateHasBeenSet;
+    bool m_configurationUpdateHasBeenSet = false;
 
     ComponentRunWith m_runWith;
-    bool m_runWithHasBeenSet;
+    bool m_runWithHasBeenSet = false;
   };
 
 } // namespace Model

@@ -288,34 +288,34 @@ namespace Model
   private:
 
     SubscribeToShardEvent m_subscribeToShardEvent;
-    bool m_subscribeToShardEventHasBeenSet;
+    bool m_subscribeToShardEventHasBeenSet = false;
 
     ResourceNotFoundException m_resourceNotFoundException;
-    bool m_resourceNotFoundExceptionHasBeenSet;
+    bool m_resourceNotFoundExceptionHasBeenSet = false;
 
     ResourceInUseException m_resourceInUseException;
-    bool m_resourceInUseExceptionHasBeenSet;
+    bool m_resourceInUseExceptionHasBeenSet = false;
 
     KMSDisabledException m_kMSDisabledException;
-    bool m_kMSDisabledExceptionHasBeenSet;
+    bool m_kMSDisabledExceptionHasBeenSet = false;
 
     KMSInvalidStateException m_kMSInvalidStateException;
-    bool m_kMSInvalidStateExceptionHasBeenSet;
+    bool m_kMSInvalidStateExceptionHasBeenSet = false;
 
     KMSAccessDeniedException m_kMSAccessDeniedException;
-    bool m_kMSAccessDeniedExceptionHasBeenSet;
+    bool m_kMSAccessDeniedExceptionHasBeenSet = false;
 
     KMSNotFoundException m_kMSNotFoundException;
-    bool m_kMSNotFoundExceptionHasBeenSet;
+    bool m_kMSNotFoundExceptionHasBeenSet = false;
 
     KMSOptInRequired m_kMSOptInRequired;
-    bool m_kMSOptInRequiredHasBeenSet;
+    bool m_kMSOptInRequiredHasBeenSet = false;
 
     KMSThrottlingException m_kMSThrottlingException;
-    bool m_kMSThrottlingExceptionHasBeenSet;
+    bool m_kMSThrottlingExceptionHasBeenSet = false;
 
     InternalFailureException m_internalFailureException;
-    bool m_internalFailureExceptionHasBeenSet;
+    bool m_internalFailureExceptionHasBeenSet = false;
   };
 
 } // namespace Model

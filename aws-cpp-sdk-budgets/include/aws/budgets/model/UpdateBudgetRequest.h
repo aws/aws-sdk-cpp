@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Budget m_newBudget;
-    bool m_newBudgetHasBeenSet;
+    bool m_newBudgetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -318,25 +318,25 @@ namespace Model
   private:
 
     KeyLocation m_keyLocation;
-    bool m_keyLocationHasBeenSet;
+    bool m_keyLocationHasBeenSet = false;
 
     Aws::String m_uRL;
-    bool m_uRLHasBeenSet;
+    bool m_uRLHasBeenSet = false;
 
     Aws::String m_secretManagerArn;
-    bool m_secretManagerArnHasBeenSet;
+    bool m_secretManagerArnHasBeenSet = false;
 
     Aws::String m_userNameAttributeField;
-    bool m_userNameAttributeFieldHasBeenSet;
+    bool m_userNameAttributeFieldHasBeenSet = false;
 
     Aws::String m_groupAttributeField;
-    bool m_groupAttributeFieldHasBeenSet;
+    bool m_groupAttributeFieldHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_claimRegex;
-    bool m_claimRegexHasBeenSet;
+    bool m_claimRegexHasBeenSet = false;
   };
 
 } // namespace Model

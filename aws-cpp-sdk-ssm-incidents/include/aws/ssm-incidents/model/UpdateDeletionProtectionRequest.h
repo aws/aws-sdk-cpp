@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_deletionProtected;
-    bool m_deletionProtectedHasBeenSet;
+    bool m_deletionProtectedHasBeenSet = false;
   };
 
 } // namespace Model

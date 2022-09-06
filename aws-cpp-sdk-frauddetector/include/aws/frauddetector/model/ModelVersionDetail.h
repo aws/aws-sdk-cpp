@@ -539,43 +539,43 @@ namespace Model
   private:
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     ModelTypeEnum m_modelType;
-    bool m_modelTypeHasBeenSet;
+    bool m_modelTypeHasBeenSet = false;
 
     Aws::String m_modelVersionNumber;
-    bool m_modelVersionNumberHasBeenSet;
+    bool m_modelVersionNumberHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     TrainingDataSourceEnum m_trainingDataSource;
-    bool m_trainingDataSourceHasBeenSet;
+    bool m_trainingDataSourceHasBeenSet = false;
 
     TrainingDataSchema m_trainingDataSchema;
-    bool m_trainingDataSchemaHasBeenSet;
+    bool m_trainingDataSchemaHasBeenSet = false;
 
     ExternalEventsDetail m_externalEventsDetail;
-    bool m_externalEventsDetailHasBeenSet;
+    bool m_externalEventsDetailHasBeenSet = false;
 
     IngestedEventsDetail m_ingestedEventsDetail;
-    bool m_ingestedEventsDetailHasBeenSet;
+    bool m_ingestedEventsDetailHasBeenSet = false;
 
     TrainingResult m_trainingResult;
-    bool m_trainingResultHasBeenSet;
+    bool m_trainingResultHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     TrainingResultV2 m_trainingResultV2;
-    bool m_trainingResultV2HasBeenSet;
+    bool m_trainingResultV2HasBeenSet = false;
   };
 
 } // namespace Model

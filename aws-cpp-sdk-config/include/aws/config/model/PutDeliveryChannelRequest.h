@@ -77,7 +77,7 @@ namespace Model
   private:
 
     DeliveryChannel m_deliveryChannel;
-    bool m_deliveryChannelHasBeenSet;
+    bool m_deliveryChannelHasBeenSet = false;
   };
 
 } // namespace Model

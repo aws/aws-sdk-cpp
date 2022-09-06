@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
-    bool m_associatedPortalArnsHasBeenSet;
+    bool m_associatedPortalArnsHasBeenSet = false;
 
     Aws::String m_browserPolicy;
-    bool m_browserPolicyHasBeenSet;
+    bool m_browserPolicyHasBeenSet = false;
 
     Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet;
+    bool m_browserSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

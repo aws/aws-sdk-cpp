@@ -212,22 +212,22 @@ namespace Model
   private:
 
     int m_criticalCount;
-    bool m_criticalCountHasBeenSet;
+    bool m_criticalCountHasBeenSet = false;
 
     int m_highCount;
-    bool m_highCountHasBeenSet;
+    bool m_highCountHasBeenSet = false;
 
     int m_mediumCount;
-    bool m_mediumCountHasBeenSet;
+    bool m_mediumCountHasBeenSet = false;
 
     int m_lowCount;
-    bool m_lowCountHasBeenSet;
+    bool m_lowCountHasBeenSet = false;
 
     int m_informationalCount;
-    bool m_informationalCountHasBeenSet;
+    bool m_informationalCountHasBeenSet = false;
 
     int m_unspecifiedCount;
-    bool m_unspecifiedCountHasBeenSet;
+    bool m_unspecifiedCountHasBeenSet = false;
   };
 
 } // namespace Model

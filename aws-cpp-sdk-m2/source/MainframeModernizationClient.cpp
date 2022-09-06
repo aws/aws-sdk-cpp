@@ -108,7 +108,7 @@ MainframeModernizationClient::~MainframeModernizationClient()
 
 void MainframeModernizationClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("m2");
+  AWSClient::SetServiceClientName("m2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_clusterOperationArn;
-    bool m_clusterOperationArnHasBeenSet;
+    bool m_clusterOperationArnHasBeenSet = false;
   };
 
 } // namespace Model

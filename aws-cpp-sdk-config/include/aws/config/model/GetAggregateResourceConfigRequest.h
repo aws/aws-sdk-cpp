@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_configurationAggregatorName;
-    bool m_configurationAggregatorNameHasBeenSet;
+    bool m_configurationAggregatorNameHasBeenSet = false;
 
     AggregateResourceIdentifier m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

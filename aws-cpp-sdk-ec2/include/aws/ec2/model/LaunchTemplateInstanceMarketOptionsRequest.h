@@ -105,10 +105,10 @@ namespace Model
   private:
 
     MarketType m_marketType;
-    bool m_marketTypeHasBeenSet;
+    bool m_marketTypeHasBeenSet = false;
 
     LaunchTemplateSpotMarketOptionsRequest m_spotOptions;
-    bool m_spotOptionsHasBeenSet;
+    bool m_spotOptionsHasBeenSet = false;
   };
 
 } // namespace Model

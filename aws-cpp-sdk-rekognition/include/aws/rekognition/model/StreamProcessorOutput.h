@@ -117,10 +117,10 @@ namespace Model
   private:
 
     KinesisDataStream m_kinesisDataStream;
-    bool m_kinesisDataStreamHasBeenSet;
+    bool m_kinesisDataStreamHasBeenSet = false;
 
     S3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

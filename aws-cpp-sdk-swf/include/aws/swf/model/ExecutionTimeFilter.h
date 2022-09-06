@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_oldestDate;
-    bool m_oldestDateHasBeenSet;
+    bool m_oldestDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestDate;
-    bool m_latestDateHasBeenSet;
+    bool m_latestDateHasBeenSet = false;
   };
 
 } // namespace Model

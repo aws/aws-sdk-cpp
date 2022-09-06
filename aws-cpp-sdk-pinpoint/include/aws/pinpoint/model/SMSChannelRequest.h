@@ -159,13 +159,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_shortCode;
-    bool m_shortCodeHasBeenSet;
+    bool m_shortCodeHasBeenSet = false;
   };
 
 } // namespace Model

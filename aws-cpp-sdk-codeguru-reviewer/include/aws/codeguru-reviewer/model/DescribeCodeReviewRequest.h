@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_codeReviewArn;
-    bool m_codeReviewArnHasBeenSet;
+    bool m_codeReviewArnHasBeenSet = false;
   };
 
 } // namespace Model

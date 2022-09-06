@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     int m_mtu;
-    bool m_mtuHasBeenSet;
+    bool m_mtuHasBeenSet = false;
 
     bool m_enableSiteLink;
-    bool m_enableSiteLinkHasBeenSet;
+    bool m_enableSiteLinkHasBeenSet = false;
 
     Aws::String m_virtualInterfaceName;
-    bool m_virtualInterfaceNameHasBeenSet;
+    bool m_virtualInterfaceNameHasBeenSet = false;
   };
 
 } // namespace Model

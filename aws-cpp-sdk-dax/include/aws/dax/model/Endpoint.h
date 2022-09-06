@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_uRL;
-    bool m_uRLHasBeenSet;
+    bool m_uRLHasBeenSet = false;
   };
 
 } // namespace Model

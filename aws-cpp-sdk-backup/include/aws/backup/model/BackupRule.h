@@ -608,34 +608,34 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_targetBackupVaultName;
-    bool m_targetBackupVaultNameHasBeenSet;
+    bool m_targetBackupVaultNameHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     long long m_startWindowMinutes;
-    bool m_startWindowMinutesHasBeenSet;
+    bool m_startWindowMinutesHasBeenSet = false;
 
     long long m_completionWindowMinutes;
-    bool m_completionWindowMinutesHasBeenSet;
+    bool m_completionWindowMinutesHasBeenSet = false;
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
-    bool m_recoveryPointTagsHasBeenSet;
+    bool m_recoveryPointTagsHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::Vector<CopyAction> m_copyActions;
-    bool m_copyActionsHasBeenSet;
+    bool m_copyActionsHasBeenSet = false;
 
     bool m_enableContinuousBackup;
-    bool m_enableContinuousBackupHasBeenSet;
+    bool m_enableContinuousBackupHasBeenSet = false;
   };
 
 } // namespace Model

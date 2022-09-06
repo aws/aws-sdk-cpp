@@ -78,7 +78,7 @@ PersonalizeRuntimeClient::~PersonalizeRuntimeClient()
 
 void PersonalizeRuntimeClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Personalize Runtime");
+  AWSClient::SetServiceClientName("Personalize Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

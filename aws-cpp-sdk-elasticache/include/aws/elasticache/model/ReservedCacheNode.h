@@ -1064,43 +1064,43 @@ namespace Model
   private:
 
     Aws::String m_reservedCacheNodeId;
-    bool m_reservedCacheNodeIdHasBeenSet;
+    bool m_reservedCacheNodeIdHasBeenSet = false;
 
     Aws::String m_reservedCacheNodesOfferingId;
-    bool m_reservedCacheNodesOfferingIdHasBeenSet;
+    bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     int m_cacheNodeCount;
-    bool m_cacheNodeCountHasBeenSet;
+    bool m_cacheNodeCountHasBeenSet = false;
 
     Aws::String m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
 
     Aws::String m_reservationARN;
-    bool m_reservationARNHasBeenSet;
+    bool m_reservationARNHasBeenSet = false;
   };
 
 } // namespace Model

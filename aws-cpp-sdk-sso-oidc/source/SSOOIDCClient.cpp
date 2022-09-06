@@ -79,7 +79,7 @@ SSOOIDCClient::~SSOOIDCClient()
 
 void SSOOIDCClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SSO OIDC");
+  AWSClient::SetServiceClientName("SSO OIDC");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

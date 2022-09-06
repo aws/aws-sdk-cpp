@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     DatasetChanges m_changes;
-    bool m_changesHasBeenSet;
+    bool m_changesHasBeenSet = false;
   };
 
 } // namespace Model

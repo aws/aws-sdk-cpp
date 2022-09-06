@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_serviceActionId;
-    bool m_serviceActionIdHasBeenSet;
+    bool m_serviceActionIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
   };
 
 } // namespace Model

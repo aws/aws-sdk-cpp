@@ -115,10 +115,10 @@ namespace Model
   private:
 
     SegmentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
   };
 
 } // namespace Model

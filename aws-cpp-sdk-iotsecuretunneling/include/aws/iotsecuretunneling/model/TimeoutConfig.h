@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_maxLifetimeTimeoutMinutes;
-    bool m_maxLifetimeTimeoutMinutesHasBeenSet;
+    bool m_maxLifetimeTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

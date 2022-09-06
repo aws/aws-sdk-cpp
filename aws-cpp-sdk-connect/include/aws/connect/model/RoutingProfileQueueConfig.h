@@ -137,13 +137,13 @@ namespace Model
   private:
 
     RoutingProfileQueueReference m_queueReference;
-    bool m_queueReferenceHasBeenSet;
+    bool m_queueReferenceHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     int m_delay;
-    bool m_delayHasBeenSet;
+    bool m_delayHasBeenSet = false;
   };
 
 } // namespace Model

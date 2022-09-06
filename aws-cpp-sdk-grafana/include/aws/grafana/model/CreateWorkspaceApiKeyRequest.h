@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::String m_keyRole;
-    bool m_keyRoleHasBeenSet;
+    bool m_keyRoleHasBeenSet = false;
 
     int m_secondsToLive;
-    bool m_secondsToLiveHasBeenSet;
+    bool m_secondsToLiveHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

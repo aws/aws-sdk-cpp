@@ -269,25 +269,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_attachTime;
-    bool m_attachTimeHasBeenSet;
+    bool m_attachTimeHasBeenSet = false;
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     VolumeAttachmentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

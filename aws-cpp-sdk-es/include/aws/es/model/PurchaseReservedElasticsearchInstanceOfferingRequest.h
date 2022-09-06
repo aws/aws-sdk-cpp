@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_reservedElasticsearchInstanceOfferingId;
-    bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet;
+    bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
 
     Aws::String m_reservationName;
-    bool m_reservationNameHasBeenSet;
+    bool m_reservationNameHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -177,13 +177,13 @@ namespace Model
   private:
 
     int m_normalized;
-    bool m_normalizedHasBeenSet;
+    bool m_normalizedHasBeenSet = false;
 
     double m_product;
-    bool m_productHasBeenSet;
+    bool m_productHasBeenSet = false;
 
     SeverityLabel m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

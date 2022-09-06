@@ -238,13 +238,13 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -314,19 +314,19 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_queryAsOfTime;
-    bool m_queryAsOfTimeHasBeenSet;
+    bool m_queryAsOfTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryParameters;
-    bool m_queryParametersHasBeenSet;
+    bool m_queryParametersHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
   };
 
 } // namespace Model

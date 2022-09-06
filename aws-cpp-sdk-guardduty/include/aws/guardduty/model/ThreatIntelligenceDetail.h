@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_threatListName;
-    bool m_threatListNameHasBeenSet;
+    bool m_threatListNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_threatNames;
-    bool m_threatNamesHasBeenSet;
+    bool m_threatNamesHasBeenSet = false;
   };
 
 } // namespace Model

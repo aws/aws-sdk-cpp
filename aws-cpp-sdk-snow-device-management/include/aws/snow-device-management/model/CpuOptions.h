@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_coreCount;
-    bool m_coreCountHasBeenSet;
+    bool m_coreCountHasBeenSet = false;
 
     int m_threadsPerCore;
-    bool m_threadsPerCoreHasBeenSet;
+    bool m_threadsPerCoreHasBeenSet = false;
   };
 
 } // namespace Model

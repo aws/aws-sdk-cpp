@@ -138,10 +138,10 @@ namespace Model
   private:
 
     AutoTuneDesiredState m_desiredState;
-    bool m_desiredStateHasBeenSet;
+    bool m_desiredStateHasBeenSet = false;
 
     Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
-    bool m_maintenanceSchedulesHasBeenSet;
+    bool m_maintenanceSchedulesHasBeenSet = false;
   };
 
 } // namespace Model

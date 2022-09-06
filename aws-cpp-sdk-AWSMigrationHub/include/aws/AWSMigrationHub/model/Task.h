@@ -149,13 +149,13 @@ namespace Model
   private:
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetail;
-    bool m_statusDetailHasBeenSet;
+    bool m_statusDetailHasBeenSet = false;
 
     int m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
   };
 
 } // namespace Model

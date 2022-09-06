@@ -144,10 +144,10 @@ namespace Model
   private:
 
     AwsEfsAccessPointRootDirectoryCreationInfoDetails m_creationInfo;
-    bool m_creationInfoHasBeenSet;
+    bool m_creationInfoHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

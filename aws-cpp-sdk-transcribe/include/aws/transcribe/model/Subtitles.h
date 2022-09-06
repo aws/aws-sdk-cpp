@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::Vector<SubtitleFormat> m_formats;
-    bool m_formatsHasBeenSet;
+    bool m_formatsHasBeenSet = false;
 
     int m_outputStartIndex;
-    bool m_outputStartIndexHasBeenSet;
+    bool m_outputStartIndexHasBeenSet = false;
   };
 
 } // namespace Model

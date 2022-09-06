@@ -58,7 +58,7 @@ namespace Model
   private:
 
     Aws::Vector<unsigned char> m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

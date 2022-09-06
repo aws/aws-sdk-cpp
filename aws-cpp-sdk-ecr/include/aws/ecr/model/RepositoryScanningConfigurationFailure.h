@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     ScanningConfigurationFailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

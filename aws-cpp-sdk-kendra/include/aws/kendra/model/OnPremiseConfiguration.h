@@ -216,13 +216,13 @@ namespace Model
   private:
 
     Aws::String m_hostUrl;
-    bool m_hostUrlHasBeenSet;
+    bool m_hostUrlHasBeenSet = false;
 
     Aws::String m_organizationName;
-    bool m_organizationNameHasBeenSet;
+    bool m_organizationNameHasBeenSet = false;
 
     S3Path m_sslCertificateS3Path;
-    bool m_sslCertificateS3PathHasBeenSet;
+    bool m_sslCertificateS3PathHasBeenSet = false;
   };
 
 } // namespace Model

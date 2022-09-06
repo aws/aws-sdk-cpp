@@ -152,7 +152,7 @@ namespace Model
   private:
 
     Aws::String m_vectorType;
-    bool m_vectorTypeHasBeenSet;
+    bool m_vectorTypeHasBeenSet = false;
   };
 
 } // namespace Model

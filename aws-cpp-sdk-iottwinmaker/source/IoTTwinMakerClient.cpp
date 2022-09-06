@@ -102,7 +102,7 @@ IoTTwinMakerClient::~IoTTwinMakerClient()
 
 void IoTTwinMakerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoTTwinMaker");
+  AWSClient::SetServiceClientName("IoTTwinMaker");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   if (config.endpointOverride.empty())

@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     bool m_resolved;
-    bool m_resolvedHasBeenSet;
+    bool m_resolvedHasBeenSet = false;
   };
 
 } // namespace Model

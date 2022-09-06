@@ -81,7 +81,7 @@ LexRuntimeServiceClient::~LexRuntimeServiceClient()
 
 void LexRuntimeServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Lex Runtime Service");
+  AWSClient::SetServiceClientName("Lex Runtime Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

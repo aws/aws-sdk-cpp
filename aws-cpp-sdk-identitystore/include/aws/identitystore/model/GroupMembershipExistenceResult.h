@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     MemberId m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     bool m_membershipExists;
-    bool m_membershipExistsHasBeenSet;
+    bool m_membershipExistsHasBeenSet = false;
   };
 
 } // namespace Model

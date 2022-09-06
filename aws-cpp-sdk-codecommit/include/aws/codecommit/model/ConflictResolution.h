@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<ReplaceContentEntry> m_replaceContents;
-    bool m_replaceContentsHasBeenSet;
+    bool m_replaceContentsHasBeenSet = false;
 
     Aws::Vector<DeleteFileEntry> m_deleteFiles;
-    bool m_deleteFilesHasBeenSet;
+    bool m_deleteFilesHasBeenSet = false;
 
     Aws::Vector<SetFileModeEntry> m_setFileModes;
-    bool m_setFileModesHasBeenSet;
+    bool m_setFileModesHasBeenSet = false;
   };
 
 } // namespace Model

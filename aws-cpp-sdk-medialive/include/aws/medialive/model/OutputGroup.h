@@ -140,13 +140,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OutputGroupSettings m_outputGroupSettings;
-    bool m_outputGroupSettingsHasBeenSet;
+    bool m_outputGroupSettingsHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -462,25 +462,25 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_responseContentType;
-    bool m_responseContentTypeHasBeenSet;
+    bool m_responseContentTypeHasBeenSet = false;
 
     SessionState m_sessionState;
-    bool m_sessionStateHasBeenSet;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::Vector<Message> m_welcomeMessages;
-    bool m_welcomeMessagesHasBeenSet;
+    bool m_welcomeMessagesHasBeenSet = false;
 
     bool m_disablePlayback;
-    bool m_disablePlaybackHasBeenSet;
+    bool m_disablePlaybackHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     long long m_clientTimestampMillis;
-    bool m_clientTimestampMillisHasBeenSet;
+    bool m_clientTimestampMillisHasBeenSet = false;
   };
 
 } // namespace Model

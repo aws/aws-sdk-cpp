@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_logGroupNamePrefix;
-    bool m_logGroupNamePrefixHasBeenSet;
+    bool m_logGroupNamePrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_appInstanceUserArn;
-    bool m_appInstanceUserArnHasBeenSet;
+    bool m_appInstanceUserArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AppInstanceUserEndpointType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     AllowMessages m_allowMessages;
-    bool m_allowMessagesHasBeenSet;
+    bool m_allowMessagesHasBeenSet = false;
 
     EndpointState m_endpointState;
-    bool m_endpointStateHasBeenSet;
+    bool m_endpointStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -264,22 +264,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_dataSetName;
-    bool m_dataSetNameHasBeenSet;
+    bool m_dataSetNameHasBeenSet = false;
 
     Aws::String m_dataSetOrg;
-    bool m_dataSetOrgHasBeenSet;
+    bool m_dataSetOrgHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastReferencedTime;
-    bool m_lastReferencedTimeHasBeenSet;
+    bool m_lastReferencedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

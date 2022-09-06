@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

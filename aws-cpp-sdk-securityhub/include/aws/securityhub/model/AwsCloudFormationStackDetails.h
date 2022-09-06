@@ -631,49 +631,49 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_disableRollback;
-    bool m_disableRollbackHasBeenSet;
+    bool m_disableRollbackHasBeenSet = false;
 
     AwsCloudFormationStackDriftInformationDetails m_driftInformation;
-    bool m_driftInformationHasBeenSet;
+    bool m_driftInformationHasBeenSet = false;
 
     bool m_enableTerminationProtection;
-    bool m_enableTerminationProtectionHasBeenSet;
+    bool m_enableTerminationProtectionHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationArns;
-    bool m_notificationArnsHasBeenSet;
+    bool m_notificationArnsHasBeenSet = false;
 
     Aws::Vector<AwsCloudFormationStackOutputsDetails> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_stackStatus;
-    bool m_stackStatusHasBeenSet;
+    bool m_stackStatusHasBeenSet = false;
 
     Aws::String m_stackStatusReason;
-    bool m_stackStatusReasonHasBeenSet;
+    bool m_stackStatusReasonHasBeenSet = false;
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

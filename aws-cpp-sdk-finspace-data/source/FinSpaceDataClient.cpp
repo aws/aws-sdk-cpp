@@ -107,7 +107,7 @@ FinSpaceDataClient::~FinSpaceDataClient()
 
 void FinSpaceDataClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("finspace data");
+  AWSClient::SetServiceClientName("finspace data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

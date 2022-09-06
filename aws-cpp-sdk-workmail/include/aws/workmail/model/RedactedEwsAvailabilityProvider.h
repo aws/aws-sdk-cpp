@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_ewsEndpoint;
-    bool m_ewsEndpointHasBeenSet;
+    bool m_ewsEndpointHasBeenSet = false;
 
     Aws::String m_ewsUsername;
-    bool m_ewsUsernameHasBeenSet;
+    bool m_ewsUsernameHasBeenSet = false;
   };
 
 } // namespace Model

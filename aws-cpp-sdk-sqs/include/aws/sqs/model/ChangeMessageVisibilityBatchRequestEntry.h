@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
 
     int m_visibilityTimeout;
-    bool m_visibilityTimeoutHasBeenSet;
+    bool m_visibilityTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

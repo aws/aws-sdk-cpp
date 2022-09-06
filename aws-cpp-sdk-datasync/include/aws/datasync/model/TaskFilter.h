@@ -183,13 +183,13 @@ namespace Model
   private:
 
     TaskFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Operator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

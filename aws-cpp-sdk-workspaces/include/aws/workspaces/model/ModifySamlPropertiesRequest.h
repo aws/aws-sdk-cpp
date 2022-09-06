@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     SamlProperties m_samlProperties;
-    bool m_samlPropertiesHasBeenSet;
+    bool m_samlPropertiesHasBeenSet = false;
 
     Aws::Vector<DeletableSamlProperty> m_propertiesToDelete;
-    bool m_propertiesToDeleteHasBeenSet;
+    bool m_propertiesToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

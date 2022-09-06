@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Telemetry m_telemetry;
-    bool m_telemetryHasBeenSet;
+    bool m_telemetryHasBeenSet = false;
   };
 
 } // namespace Model

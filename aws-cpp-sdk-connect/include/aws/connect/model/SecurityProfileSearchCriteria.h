@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::Vector<SecurityProfileSearchCriteria> m_orConditions;
-    bool m_orConditionsHasBeenSet;
+    bool m_orConditionsHasBeenSet = false;
 
     Aws::Vector<SecurityProfileSearchCriteria> m_andConditions;
-    bool m_andConditionsHasBeenSet;
+    bool m_andConditionsHasBeenSet = false;
 
     StringCondition m_stringCondition;
-    bool m_stringConditionHasBeenSet;
+    bool m_stringConditionHasBeenSet = false;
   };
 
 } // namespace Model

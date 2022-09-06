@@ -297,19 +297,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessTime;
-    bool m_lastAccessTimeHasBeenSet;
+    bool m_lastAccessTimeHasBeenSet = false;
 
     StorageDescriptor m_storageDescriptor;
-    bool m_storageDescriptorHasBeenSet;
+    bool m_storageDescriptorHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTime;
-    bool m_lastAnalyzedTimeHasBeenSet;
+    bool m_lastAnalyzedTimeHasBeenSet = false;
   };
 
 } // namespace Model

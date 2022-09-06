@@ -353,22 +353,22 @@ namespace Model
   private:
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::String m_monitorName;
-    bool m_monitorNameHasBeenSet;
+    bool m_monitorNameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

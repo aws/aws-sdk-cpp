@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_adminAccountId;
-    bool m_adminAccountIdHasBeenSet;
+    bool m_adminAccountIdHasBeenSet = false;
 
     AdminStatus m_adminStatus;
-    bool m_adminStatusHasBeenSet;
+    bool m_adminStatusHasBeenSet = false;
   };
 
 } // namespace Model

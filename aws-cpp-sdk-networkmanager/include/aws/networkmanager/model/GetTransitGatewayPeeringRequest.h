@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_peeringId;
-    bool m_peeringIdHasBeenSet;
+    bool m_peeringIdHasBeenSet = false;
   };
 
 } // namespace Model

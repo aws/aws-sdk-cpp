@@ -1715,67 +1715,67 @@ namespace Model
   private:
 
     bool m_associatePublicIpAddress;
-    bool m_associatePublicIpAddressHasBeenSet;
+    bool m_associatePublicIpAddressHasBeenSet = false;
 
     Aws::String m_customDomain;
-    bool m_customDomainHasBeenSet;
+    bool m_customDomainHasBeenSet = false;
 
     Aws::String m_customCertificate;
-    bool m_customCertificateHasBeenSet;
+    bool m_customCertificateHasBeenSet = false;
 
     Aws::String m_customPrivateKey;
-    bool m_customPrivateKeyHasBeenSet;
+    bool m_customPrivateKeyHasBeenSet = false;
 
     bool m_disableAutomatedBackup;
-    bool m_disableAutomatedBackupHasBeenSet;
+    bool m_disableAutomatedBackupHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineModel;
-    bool m_engineModelHasBeenSet;
+    bool m_engineModelHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::Vector<EngineAttribute> m_engineAttributes;
-    bool m_engineAttributesHasBeenSet;
+    bool m_engineAttributesHasBeenSet = false;
 
     int m_backupRetentionCount;
-    bool m_backupRetentionCountHasBeenSet;
+    bool m_backupRetentionCountHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_instanceProfileArn;
-    bool m_instanceProfileArnHasBeenSet;
+    bool m_instanceProfileArnHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_keyPair;
-    bool m_keyPairHasBeenSet;
+    bool m_keyPairHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::Vector<CustomerNodeEndpoint> m_customerNodeEndpointList;
-    bool m_customerNodeEndpointListHasBeenSet;
+    bool m_customerNodeEndpointListHasBeenSet = false;
   };
 
 } // namespace Model

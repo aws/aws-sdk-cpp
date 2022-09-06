@@ -610,7 +610,7 @@ EC2Client::~EC2Client()
 
 void EC2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EC2");
+  AWSClient::SetServiceClientName("EC2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

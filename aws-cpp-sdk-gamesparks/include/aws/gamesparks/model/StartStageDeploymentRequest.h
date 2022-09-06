@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
   };
 
 } // namespace Model

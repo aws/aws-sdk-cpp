@@ -144,13 +144,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
 
     ClientVpnEndpointAttributeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

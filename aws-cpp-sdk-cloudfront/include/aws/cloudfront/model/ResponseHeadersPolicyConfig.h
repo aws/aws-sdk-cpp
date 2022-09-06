@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ResponseHeadersPolicyCorsConfig m_corsConfig;
-    bool m_corsConfigHasBeenSet;
+    bool m_corsConfigHasBeenSet = false;
 
     ResponseHeadersPolicySecurityHeadersConfig m_securityHeadersConfig;
-    bool m_securityHeadersConfigHasBeenSet;
+    bool m_securityHeadersConfigHasBeenSet = false;
 
     ResponseHeadersPolicyServerTimingHeadersConfig m_serverTimingHeadersConfig;
-    bool m_serverTimingHeadersConfigHasBeenSet;
+    bool m_serverTimingHeadersConfigHasBeenSet = false;
 
     ResponseHeadersPolicyCustomHeadersConfig m_customHeadersConfig;
-    bool m_customHeadersConfigHasBeenSet;
+    bool m_customHeadersConfigHasBeenSet = false;
   };
 
 } // namespace Model

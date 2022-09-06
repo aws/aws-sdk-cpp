@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
   };
 
 } // namespace Model

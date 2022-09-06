@@ -494,43 +494,43 @@ namespace Model
   private:
 
     PromptSpecification m_promptSpecification;
-    bool m_promptSpecificationHasBeenSet;
+    bool m_promptSpecificationHasBeenSet = false;
 
     ResponseSpecification m_declinationResponse;
-    bool m_declinationResponseHasBeenSet;
+    bool m_declinationResponseHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     ResponseSpecification m_confirmationResponse;
-    bool m_confirmationResponseHasBeenSet;
+    bool m_confirmationResponseHasBeenSet = false;
 
     DialogState m_confirmationNextStep;
-    bool m_confirmationNextStepHasBeenSet;
+    bool m_confirmationNextStepHasBeenSet = false;
 
     ConditionalSpecification m_confirmationConditional;
-    bool m_confirmationConditionalHasBeenSet;
+    bool m_confirmationConditionalHasBeenSet = false;
 
     DialogState m_declinationNextStep;
-    bool m_declinationNextStepHasBeenSet;
+    bool m_declinationNextStepHasBeenSet = false;
 
     ConditionalSpecification m_declinationConditional;
-    bool m_declinationConditionalHasBeenSet;
+    bool m_declinationConditionalHasBeenSet = false;
 
     ResponseSpecification m_failureResponse;
-    bool m_failureResponseHasBeenSet;
+    bool m_failureResponseHasBeenSet = false;
 
     DialogState m_failureNextStep;
-    bool m_failureNextStepHasBeenSet;
+    bool m_failureNextStepHasBeenSet = false;
 
     ConditionalSpecification m_failureConditional;
-    bool m_failureConditionalHasBeenSet;
+    bool m_failureConditionalHasBeenSet = false;
 
     DialogCodeHookInvocationSetting m_codeHook;
-    bool m_codeHookHasBeenSet;
+    bool m_codeHookHasBeenSet = false;
 
     ElicitationCodeHookInvocationSetting m_elicitationCodeHook;
-    bool m_elicitationCodeHookHasBeenSet;
+    bool m_elicitationCodeHookHasBeenSet = false;
   };
 
 } // namespace Model

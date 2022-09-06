@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_targetMultiMeasureName;
-    bool m_targetMultiMeasureNameHasBeenSet;
+    bool m_targetMultiMeasureNameHasBeenSet = false;
 
     Aws::Vector<MultiMeasureAttributeMapping> m_multiMeasureAttributeMappings;
-    bool m_multiMeasureAttributeMappingsHasBeenSet;
+    bool m_multiMeasureAttributeMappingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_modelArn;
-    bool m_modelArnHasBeenSet;
+    bool m_modelArnHasBeenSet = false;
 
     EndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeBefore;
-    bool m_creationTimeBeforeHasBeenSet;
+    bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeAfter;
-    bool m_creationTimeAfterHasBeenSet;
+    bool m_creationTimeAfterHasBeenSet = false;
   };
 
 } // namespace Model

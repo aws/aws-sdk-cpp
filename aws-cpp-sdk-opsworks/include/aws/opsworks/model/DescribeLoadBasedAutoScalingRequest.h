@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_layerIds;
-    bool m_layerIdsHasBeenSet;
+    bool m_layerIdsHasBeenSet = false;
   };
 
 } // namespace Model

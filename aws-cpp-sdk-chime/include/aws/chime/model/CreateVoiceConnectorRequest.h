@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     VoiceConnectorAwsRegion m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     bool m_requireEncryption;
-    bool m_requireEncryptionHasBeenSet;
+    bool m_requireEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

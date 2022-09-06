@@ -234,19 +234,19 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventUpdatedTime;
-    bool m_eventUpdatedTimeHasBeenSet;
+    bool m_eventUpdatedTimeHasBeenSet = false;
 
     Aws::String m_incidentRecordArn;
-    bool m_incidentRecordArnHasBeenSet;
+    bool m_incidentRecordArnHasBeenSet = false;
   };
 
 } // namespace Model

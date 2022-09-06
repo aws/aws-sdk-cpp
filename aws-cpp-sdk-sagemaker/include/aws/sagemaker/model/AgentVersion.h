@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     long long m_agentCount;
-    bool m_agentCountHasBeenSet;
+    bool m_agentCountHasBeenSet = false;
   };
 
 } // namespace Model

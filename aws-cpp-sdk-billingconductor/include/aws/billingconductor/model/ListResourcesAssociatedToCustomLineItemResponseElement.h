@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     CustomLineItemRelationship m_relationship;
-    bool m_relationshipHasBeenSet;
+    bool m_relationshipHasBeenSet = false;
   };
 
 } // namespace Model

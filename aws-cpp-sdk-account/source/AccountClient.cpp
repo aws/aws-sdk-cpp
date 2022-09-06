@@ -81,7 +81,7 @@ AccountClient::~AccountClient()
 
 void AccountClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Account");
+  AWSClient::SetServiceClientName("Account");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

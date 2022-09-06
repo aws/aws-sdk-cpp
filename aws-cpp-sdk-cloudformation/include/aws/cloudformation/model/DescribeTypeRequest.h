@@ -353,22 +353,22 @@ namespace Model
   private:
 
     RegistryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_publicVersionNumber;
-    bool m_publicVersionNumberHasBeenSet;
+    bool m_publicVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     long long m_imageSizeInBytes;
-    bool m_imageSizeInBytesHasBeenSet;
+    bool m_imageSizeInBytesHasBeenSet = false;
 
     Aws::Utils::DateTime m_imagePushedAt;
-    bool m_imagePushedAtHasBeenSet;
+    bool m_imagePushedAtHasBeenSet = false;
 
     Aws::String m_imageManifestMediaType;
-    bool m_imageManifestMediaTypeHasBeenSet;
+    bool m_imageManifestMediaTypeHasBeenSet = false;
 
     Aws::String m_artifactMediaType;
-    bool m_artifactMediaTypeHasBeenSet;
+    bool m_artifactMediaTypeHasBeenSet = false;
   };
 
 } // namespace Model

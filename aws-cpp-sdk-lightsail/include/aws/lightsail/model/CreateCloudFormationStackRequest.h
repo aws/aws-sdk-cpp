@@ -102,7 +102,7 @@ namespace Model
   private:
 
     Aws::Vector<InstanceEntry> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -222,19 +222,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_intervalStartTime;
-    bool m_intervalStartTimeHasBeenSet;
+    bool m_intervalStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_intervalEndTime;
-    bool m_intervalEndTimeHasBeenSet;
+    bool m_intervalEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

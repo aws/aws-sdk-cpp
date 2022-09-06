@@ -601,43 +601,43 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     long long m_classifiableObjectCount;
-    bool m_classifiableObjectCountHasBeenSet;
+    bool m_classifiableObjectCountHasBeenSet = false;
 
     long long m_classifiableSizeInBytes;
-    bool m_classifiableSizeInBytesHasBeenSet;
+    bool m_classifiableSizeInBytesHasBeenSet = false;
 
     BucketMetadataErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     JobDetails m_jobDetails;
-    bool m_jobDetailsHasBeenSet;
+    bool m_jobDetailsHasBeenSet = false;
 
     long long m_objectCount;
-    bool m_objectCountHasBeenSet;
+    bool m_objectCountHasBeenSet = false;
 
     ObjectCountByEncryptionType m_objectCountByEncryptionType;
-    bool m_objectCountByEncryptionTypeHasBeenSet;
+    bool m_objectCountByEncryptionTypeHasBeenSet = false;
 
     long long m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
 
     long long m_sizeInBytesCompressed;
-    bool m_sizeInBytesCompressedHasBeenSet;
+    bool m_sizeInBytesCompressedHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectCount;
-    bool m_unclassifiableObjectCountHasBeenSet;
+    bool m_unclassifiableObjectCountHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
-    bool m_unclassifiableObjectSizeInBytesHasBeenSet;
+    bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

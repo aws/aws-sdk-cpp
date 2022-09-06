@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_certificateAuthorityArns;
-    bool m_certificateAuthorityArnsHasBeenSet;
+    bool m_certificateAuthorityArnsHasBeenSet = false;
   };
 
 } // namespace Model

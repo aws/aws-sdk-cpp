@@ -81,7 +81,7 @@ namespace Model
   private:
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
   };
 
 } // namespace Model

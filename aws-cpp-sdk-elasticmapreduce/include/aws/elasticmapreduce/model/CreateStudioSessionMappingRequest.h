@@ -382,19 +382,19 @@ namespace Model
   private:
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_identityName;
-    bool m_identityNameHasBeenSet;
+    bool m_identityNameHasBeenSet = false;
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_sessionPolicyArn;
-    bool m_sessionPolicyArnHasBeenSet;
+    bool m_sessionPolicyArnHasBeenSet = false;
   };
 
 } // namespace Model

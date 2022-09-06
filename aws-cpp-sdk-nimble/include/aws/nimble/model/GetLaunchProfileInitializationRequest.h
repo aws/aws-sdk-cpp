@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_launchProfileProtocolVersions;
-    bool m_launchProfileProtocolVersionsHasBeenSet;
+    bool m_launchProfileProtocolVersionsHasBeenSet = false;
 
     Aws::String m_launchPurpose;
-    bool m_launchPurposeHasBeenSet;
+    bool m_launchPurposeHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

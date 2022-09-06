@@ -427,31 +427,31 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_contactFlowId;
-    bool m_contactFlowIdHasBeenSet;
+    bool m_contactFlowIdHasBeenSet = false;
 
     TaskTemplateConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     TaskTemplateDefaults m_defaults;
-    bool m_defaultsHasBeenSet;
+    bool m_defaultsHasBeenSet = false;
 
     TaskTemplateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<TaskTemplateField> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

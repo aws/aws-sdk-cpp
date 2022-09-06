@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     FindingPublishingFrequency m_findingPublishingFrequency;
-    bool m_findingPublishingFrequencyHasBeenSet;
+    bool m_findingPublishingFrequencyHasBeenSet = false;
 
     MacieStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

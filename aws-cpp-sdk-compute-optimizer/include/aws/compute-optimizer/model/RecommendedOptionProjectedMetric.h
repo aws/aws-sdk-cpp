@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_recommendedInstanceType;
-    bool m_recommendedInstanceTypeHasBeenSet;
+    bool m_recommendedInstanceTypeHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     Aws::Vector<ProjectedMetric> m_projectedMetrics;
-    bool m_projectedMetricsHasBeenSet;
+    bool m_projectedMetricsHasBeenSet = false;
   };
 
 } // namespace Model

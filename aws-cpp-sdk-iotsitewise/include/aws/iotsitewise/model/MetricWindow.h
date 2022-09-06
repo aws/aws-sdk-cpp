@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TumblingWindow m_tumbling;
-    bool m_tumblingHasBeenSet;
+    bool m_tumblingHasBeenSet = false;
   };
 
 } // namespace Model

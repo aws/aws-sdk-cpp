@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_hierarchyId;
-    bool m_hierarchyIdHasBeenSet;
+    bool m_hierarchyIdHasBeenSet = false;
   };
 
 } // namespace Model

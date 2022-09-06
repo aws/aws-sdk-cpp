@@ -124,10 +124,10 @@ namespace Model
   private:
 
     DatasourcePackageIngestState m_datasourcePackageIngestState;
-    bool m_datasourcePackageIngestStateHasBeenSet;
+    bool m_datasourcePackageIngestStateHasBeenSet = false;
 
     Aws::Map<DatasourcePackageIngestState, TimestampForCollection> m_lastIngestStateChange;
-    bool m_lastIngestStateChangeHasBeenSet;
+    bool m_lastIngestStateChangeHasBeenSet = false;
   };
 
 } // namespace Model

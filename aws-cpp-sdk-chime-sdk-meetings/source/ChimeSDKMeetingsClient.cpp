@@ -92,7 +92,7 @@ ChimeSDKMeetingsClient::~ChimeSDKMeetingsClient()
 
 void ChimeSDKMeetingsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Chime SDK Meetings");
+  AWSClient::SetServiceClientName("Chime SDK Meetings");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

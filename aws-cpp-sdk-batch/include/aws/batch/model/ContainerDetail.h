@@ -1545,82 +1545,82 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     int m_vcpus;
-    bool m_vcpusHasBeenSet;
+    bool m_vcpusHasBeenSet = false;
 
     int m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_jobRoleArn;
-    bool m_jobRoleArnHasBeenSet;
+    bool m_jobRoleArnHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::Vector<Volume> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<MountPoint> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     bool m_readonlyRootFilesystem;
-    bool m_readonlyRootFilesystemHasBeenSet;
+    bool m_readonlyRootFilesystemHasBeenSet = false;
 
     Aws::Vector<Ulimit> m_ulimits;
-    bool m_ulimitsHasBeenSet;
+    bool m_ulimitsHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     int m_exitCode;
-    bool m_exitCodeHasBeenSet;
+    bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_containerInstanceArn;
-    bool m_containerInstanceArnHasBeenSet;
+    bool m_containerInstanceArnHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
 
     LinuxParameters m_linuxParameters;
-    bool m_linuxParametersHasBeenSet;
+    bool m_linuxParametersHasBeenSet = false;
 
     LogConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     Aws::Vector<Secret> m_secrets;
-    bool m_secretsHasBeenSet;
+    bool m_secretsHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     FargatePlatformConfiguration m_fargatePlatformConfiguration;
-    bool m_fargatePlatformConfigurationHasBeenSet;
+    bool m_fargatePlatformConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

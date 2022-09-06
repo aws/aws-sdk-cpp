@@ -133,13 +133,13 @@ namespace Model
   private:
 
     FileModeTypeEnum m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     FileModeTypeEnum m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     FileModeTypeEnum m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

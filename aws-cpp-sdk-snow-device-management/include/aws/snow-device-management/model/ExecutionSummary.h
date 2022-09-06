@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::String m_managedDeviceId;
-    bool m_managedDeviceIdHasBeenSet;
+    bool m_managedDeviceIdHasBeenSet = false;
 
     ExecutionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
   };
 
 } // namespace Model

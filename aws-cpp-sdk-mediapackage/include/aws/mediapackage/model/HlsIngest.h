@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<IngestEndpoint> m_ingestEndpoints;
-    bool m_ingestEndpointsHasBeenSet;
+    bool m_ingestEndpointsHasBeenSet = false;
   };
 
 } // namespace Model

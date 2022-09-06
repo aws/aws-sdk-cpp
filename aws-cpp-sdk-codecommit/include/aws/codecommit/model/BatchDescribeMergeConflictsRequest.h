@@ -468,34 +468,34 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_destinationCommitSpecifier;
-    bool m_destinationCommitSpecifierHasBeenSet;
+    bool m_destinationCommitSpecifierHasBeenSet = false;
 
     Aws::String m_sourceCommitSpecifier;
-    bool m_sourceCommitSpecifierHasBeenSet;
+    bool m_sourceCommitSpecifierHasBeenSet = false;
 
     MergeOptionTypeEnum m_mergeOption;
-    bool m_mergeOptionHasBeenSet;
+    bool m_mergeOptionHasBeenSet = false;
 
     int m_maxMergeHunks;
-    bool m_maxMergeHunksHasBeenSet;
+    bool m_maxMergeHunksHasBeenSet = false;
 
     int m_maxConflictFiles;
-    bool m_maxConflictFilesHasBeenSet;
+    bool m_maxConflictFilesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filePaths;
-    bool m_filePathsHasBeenSet;
+    bool m_filePathsHasBeenSet = false;
 
     ConflictDetailLevelTypeEnum m_conflictDetailLevel;
-    bool m_conflictDetailLevelHasBeenSet;
+    bool m_conflictDetailLevelHasBeenSet = false;
 
     ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy;
-    bool m_conflictResolutionStrategyHasBeenSet;
+    bool m_conflictResolutionStrategyHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

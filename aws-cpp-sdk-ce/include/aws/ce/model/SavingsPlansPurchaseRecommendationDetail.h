@@ -806,52 +806,52 @@ namespace Model
   private:
 
     SavingsPlansDetails m_savingsPlansDetails;
-    bool m_savingsPlansDetailsHasBeenSet;
+    bool m_savingsPlansDetailsHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_upfrontCost;
-    bool m_upfrontCostHasBeenSet;
+    bool m_upfrontCostHasBeenSet = false;
 
     Aws::String m_estimatedROI;
-    bool m_estimatedROIHasBeenSet;
+    bool m_estimatedROIHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::String m_estimatedSPCost;
-    bool m_estimatedSPCostHasBeenSet;
+    bool m_estimatedSPCostHasBeenSet = false;
 
     Aws::String m_estimatedOnDemandCost;
-    bool m_estimatedOnDemandCostHasBeenSet;
+    bool m_estimatedOnDemandCostHasBeenSet = false;
 
     Aws::String m_estimatedOnDemandCostWithCurrentCommitment;
-    bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet;
+    bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = false;
 
     Aws::String m_estimatedSavingsAmount;
-    bool m_estimatedSavingsAmountHasBeenSet;
+    bool m_estimatedSavingsAmountHasBeenSet = false;
 
     Aws::String m_estimatedSavingsPercentage;
-    bool m_estimatedSavingsPercentageHasBeenSet;
+    bool m_estimatedSavingsPercentageHasBeenSet = false;
 
     Aws::String m_hourlyCommitmentToPurchase;
-    bool m_hourlyCommitmentToPurchaseHasBeenSet;
+    bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
 
     Aws::String m_estimatedAverageUtilization;
-    bool m_estimatedAverageUtilizationHasBeenSet;
+    bool m_estimatedAverageUtilizationHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavingsAmount;
-    bool m_estimatedMonthlySavingsAmountHasBeenSet;
+    bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
     Aws::String m_currentMinimumHourlyOnDemandSpend;
-    bool m_currentMinimumHourlyOnDemandSpendHasBeenSet;
+    bool m_currentMinimumHourlyOnDemandSpendHasBeenSet = false;
 
     Aws::String m_currentMaximumHourlyOnDemandSpend;
-    bool m_currentMaximumHourlyOnDemandSpendHasBeenSet;
+    bool m_currentMaximumHourlyOnDemandSpendHasBeenSet = false;
 
     Aws::String m_currentAverageHourlyOnDemandSpend;
-    bool m_currentAverageHourlyOnDemandSpendHasBeenSet;
+    bool m_currentAverageHourlyOnDemandSpendHasBeenSet = false;
   };
 
 } // namespace Model

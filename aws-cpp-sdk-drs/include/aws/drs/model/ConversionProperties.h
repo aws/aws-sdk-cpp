@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_dataTimestamp;
-    bool m_dataTimestampHasBeenSet;
+    bool m_dataTimestampHasBeenSet = false;
 
     bool m_forceUefi;
-    bool m_forceUefiHasBeenSet;
+    bool m_forceUefiHasBeenSet = false;
 
     Aws::String m_rootVolumeName;
-    bool m_rootVolumeNameHasBeenSet;
+    bool m_rootVolumeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_volumeToConversionMap;
-    bool m_volumeToConversionMapHasBeenSet;
+    bool m_volumeToConversionMapHasBeenSet = false;
 
     Aws::Map<Aws::String, long long> m_volumeToVolumeSize;
-    bool m_volumeToVolumeSizeHasBeenSet;
+    bool m_volumeToVolumeSizeHasBeenSet = false;
   };
 
 } // namespace Model

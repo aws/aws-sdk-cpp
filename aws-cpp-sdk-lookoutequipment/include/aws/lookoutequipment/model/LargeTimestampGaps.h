@@ -119,13 +119,13 @@ namespace Model
   private:
 
     StatisticalIssueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_numberOfLargeTimestampGaps;
-    bool m_numberOfLargeTimestampGapsHasBeenSet;
+    bool m_numberOfLargeTimestampGapsHasBeenSet = false;
 
     int m_maxTimestampGapInDays;
-    bool m_maxTimestampGapInDaysHasBeenSet;
+    bool m_maxTimestampGapInDaysHasBeenSet = false;
   };
 
 } // namespace Model

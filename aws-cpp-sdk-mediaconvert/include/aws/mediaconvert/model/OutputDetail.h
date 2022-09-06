@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_durationInMs;
-    bool m_durationInMsHasBeenSet;
+    bool m_durationInMsHasBeenSet = false;
 
     VideoDetail m_videoDetails;
-    bool m_videoDetailsHasBeenSet;
+    bool m_videoDetailsHasBeenSet = false;
   };
 
 } // namespace Model

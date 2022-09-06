@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_currentRevisionId;
-    bool m_currentRevisionIdHasBeenSet;
+    bool m_currentRevisionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_s3Etags;
-    bool m_s3EtagsHasBeenSet;
+    bool m_s3EtagsHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
   };
 
 } // namespace Model

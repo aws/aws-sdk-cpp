@@ -279,22 +279,22 @@ namespace Model
   private:
 
     TranscriptEvent m_transcriptEvent;
-    bool m_transcriptEventHasBeenSet;
+    bool m_transcriptEventHasBeenSet = false;
 
     BadRequestException m_badRequestException;
-    bool m_badRequestExceptionHasBeenSet;
+    bool m_badRequestExceptionHasBeenSet = false;
 
     LimitExceededException m_limitExceededException;
-    bool m_limitExceededExceptionHasBeenSet;
+    bool m_limitExceededExceptionHasBeenSet = false;
 
     InternalFailureException m_internalFailureException;
-    bool m_internalFailureExceptionHasBeenSet;
+    bool m_internalFailureExceptionHasBeenSet = false;
 
     ConflictException m_conflictException;
-    bool m_conflictExceptionHasBeenSet;
+    bool m_conflictExceptionHasBeenSet = false;
 
     ServiceUnavailableException m_serviceUnavailableException;
-    bool m_serviceUnavailableExceptionHasBeenSet;
+    bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_multiplexId;
-    bool m_multiplexIdHasBeenSet;
+    bool m_multiplexIdHasBeenSet = false;
 
     MultiplexSettings m_multiplexSettings;
-    bool m_multiplexSettingsHasBeenSet;
+    bool m_multiplexSettingsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

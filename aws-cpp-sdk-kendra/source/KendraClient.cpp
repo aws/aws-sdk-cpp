@@ -136,7 +136,7 @@ KendraClient::~KendraClient()
 
 void KendraClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("kendra");
+  AWSClient::SetServiceClientName("kendra");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -162,16 +162,16 @@ namespace Model
   private:
 
     SpendLimitName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_enforcedLimit;
-    bool m_enforcedLimitHasBeenSet;
+    bool m_enforcedLimitHasBeenSet = false;
 
     long long m_maxLimit;
-    bool m_maxLimitHasBeenSet;
+    bool m_maxLimitHasBeenSet = false;
 
     bool m_overridden;
-    bool m_overriddenHasBeenSet;
+    bool m_overriddenHasBeenSet = false;
   };
 
 } // namespace Model

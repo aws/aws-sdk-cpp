@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
   };
 
 } // namespace Model

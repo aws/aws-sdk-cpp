@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_configurationIds;
-    bool m_configurationIdsHasBeenSet;
+    bool m_configurationIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

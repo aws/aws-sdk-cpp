@@ -342,31 +342,31 @@ namespace Model
   private:
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     Aws::Vector<DataValue> m_listValue;
-    bool m_listValueHasBeenSet;
+    bool m_listValueHasBeenSet = false;
 
     long long m_longValue;
-    bool m_longValueHasBeenSet;
+    bool m_longValueHasBeenSet = false;
 
     Aws::Map<Aws::String, DataValue> m_mapValue;
-    bool m_mapValueHasBeenSet;
+    bool m_mapValueHasBeenSet = false;
 
     RelationshipValue m_relationshipValue;
-    bool m_relationshipValueHasBeenSet;
+    bool m_relationshipValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
   };
 
 } // namespace Model

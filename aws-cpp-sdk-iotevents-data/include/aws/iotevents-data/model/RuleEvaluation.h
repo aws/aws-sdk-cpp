@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SimpleRuleEvaluation m_simpleRuleEvaluation;
-    bool m_simpleRuleEvaluationHasBeenSet;
+    bool m_simpleRuleEvaluationHasBeenSet = false;
   };
 
 } // namespace Model

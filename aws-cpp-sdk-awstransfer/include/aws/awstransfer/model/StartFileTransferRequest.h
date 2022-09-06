@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sendFilePaths;
-    bool m_sendFilePathsHasBeenSet;
+    bool m_sendFilePathsHasBeenSet = false;
   };
 
 } // namespace Model

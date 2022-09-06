@@ -166,16 +166,16 @@ namespace Model
   private:
 
     TaskType m_taskRunType;
-    bool m_taskRunTypeHasBeenSet;
+    bool m_taskRunTypeHasBeenSet = false;
 
     TaskStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedBefore;
-    bool m_startedBeforeHasBeenSet;
+    bool m_startedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAfter;
-    bool m_startedAfterHasBeenSet;
+    bool m_startedAfterHasBeenSet = false;
   };
 
 } // namespace Model

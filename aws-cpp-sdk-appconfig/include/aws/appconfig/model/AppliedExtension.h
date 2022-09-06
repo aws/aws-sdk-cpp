@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_extensionId;
-    bool m_extensionIdHasBeenSet;
+    bool m_extensionIdHasBeenSet = false;
 
     Aws::String m_extensionAssociationId;
-    bool m_extensionAssociationIdHasBeenSet;
+    bool m_extensionAssociationIdHasBeenSet = false;
 
     int m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

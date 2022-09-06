@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_grantPermissions;
-    bool m_grantPermissionsHasBeenSet;
+    bool m_grantPermissionsHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_revokePermissions;
-    bool m_revokePermissionsHasBeenSet;
+    bool m_revokePermissionsHasBeenSet = false;
   };
 
 } // namespace Model

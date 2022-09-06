@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryUrl;
-    bool m_repositoryUrlHasBeenSet;
+    bool m_repositoryUrlHasBeenSet = false;
 
     SourceCodeVersion m_sourceCodeVersion;
-    bool m_sourceCodeVersionHasBeenSet;
+    bool m_sourceCodeVersionHasBeenSet = false;
 
     CodeConfiguration m_codeConfiguration;
-    bool m_codeConfigurationHasBeenSet;
+    bool m_codeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

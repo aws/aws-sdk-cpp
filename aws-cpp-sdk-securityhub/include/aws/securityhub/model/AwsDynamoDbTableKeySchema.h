@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
   };
 
 } // namespace Model

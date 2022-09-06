@@ -532,22 +532,22 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AddressConfiguration> m_addresses;
-    bool m_addressesHasBeenSet;
+    bool m_addressesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::Map<Aws::String, EndpointSendConfiguration> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     DirectMessageConfiguration m_messageConfiguration;
-    bool m_messageConfigurationHasBeenSet;
+    bool m_messageConfigurationHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;
-    bool m_templateConfigurationHasBeenSet;
+    bool m_templateConfigurationHasBeenSet = false;
 
     Aws::String m_traceId;
-    bool m_traceIdHasBeenSet;
+    bool m_traceIdHasBeenSet = false;
   };
 
 } // namespace Model

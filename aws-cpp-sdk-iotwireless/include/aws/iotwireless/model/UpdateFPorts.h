@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Positioning m_positioning;
-    bool m_positioningHasBeenSet;
+    bool m_positioningHasBeenSet = false;
   };
 
 } // namespace Model

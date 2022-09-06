@@ -96,10 +96,10 @@ namespace Model
   private:
 
     TechnicalCueType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -186,13 +186,13 @@ namespace Model
   private:
 
     int m_maxAverageBitrate;
-    bool m_maxAverageBitrateHasBeenSet;
+    bool m_maxAverageBitrateHasBeenSet = false;
 
     int m_qvbrQualityLevel;
-    bool m_qvbrQualityLevelHasBeenSet;
+    bool m_qvbrQualityLevelHasBeenSet = false;
 
     double m_qvbrQualityLevelFineTune;
-    bool m_qvbrQualityLevelFineTuneHasBeenSet;
+    bool m_qvbrQualityLevelFineTuneHasBeenSet = false;
   };
 
 } // namespace Model

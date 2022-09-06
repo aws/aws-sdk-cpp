@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_blueprintName;
-    bool m_blueprintNameHasBeenSet;
+    bool m_blueprintNameHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
   };
 
 } // namespace Model

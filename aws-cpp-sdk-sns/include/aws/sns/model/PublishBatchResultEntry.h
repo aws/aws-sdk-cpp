@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
   };
 
 } // namespace Model

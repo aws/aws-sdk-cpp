@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

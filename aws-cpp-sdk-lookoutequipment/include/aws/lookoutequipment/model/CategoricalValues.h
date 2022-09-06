@@ -98,10 +98,10 @@ namespace Model
   private:
 
     StatisticalIssueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_numberOfCategory;
-    bool m_numberOfCategoryHasBeenSet;
+    bool m_numberOfCategoryHasBeenSet = false;
   };
 
 } // namespace Model

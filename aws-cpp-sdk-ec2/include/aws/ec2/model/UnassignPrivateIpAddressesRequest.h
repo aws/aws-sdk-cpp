@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_privateIpAddresses;
-    bool m_privateIpAddressesHasBeenSet;
+    bool m_privateIpAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv4Prefixes;
-    bool m_ipv4PrefixesHasBeenSet;
+    bool m_ipv4PrefixesHasBeenSet = false;
   };
 
 } // namespace Model

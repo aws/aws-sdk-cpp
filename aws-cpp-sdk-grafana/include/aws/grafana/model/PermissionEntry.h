@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Role m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     User m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
   };
 
 } // namespace Model

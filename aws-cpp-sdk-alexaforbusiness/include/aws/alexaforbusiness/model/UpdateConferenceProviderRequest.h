@@ -205,19 +205,19 @@ namespace Model
   private:
 
     Aws::String m_conferenceProviderArn;
-    bool m_conferenceProviderArnHasBeenSet;
+    bool m_conferenceProviderArnHasBeenSet = false;
 
     ConferenceProviderType m_conferenceProviderType;
-    bool m_conferenceProviderTypeHasBeenSet;
+    bool m_conferenceProviderTypeHasBeenSet = false;
 
     IPDialIn m_iPDialIn;
-    bool m_iPDialInHasBeenSet;
+    bool m_iPDialInHasBeenSet = false;
 
     PSTNDialIn m_pSTNDialIn;
-    bool m_pSTNDialInHasBeenSet;
+    bool m_pSTNDialInHasBeenSet = false;
 
     MeetingSetting m_meetingSetting;
-    bool m_meetingSettingHasBeenSet;
+    bool m_meetingSettingHasBeenSet = false;
   };
 
 } // namespace Model

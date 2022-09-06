@@ -171,13 +171,13 @@ namespace Model
   private:
 
     ConfigurationType m_configurationTypeUpdate;
-    bool m_configurationTypeUpdateHasBeenSet;
+    bool m_configurationTypeUpdateHasBeenSet = false;
 
     MetricsLevel m_metricsLevelUpdate;
-    bool m_metricsLevelUpdateHasBeenSet;
+    bool m_metricsLevelUpdateHasBeenSet = false;
 
     LogLevel m_logLevelUpdate;
-    bool m_logLevelUpdateHasBeenSet;
+    bool m_logLevelUpdateHasBeenSet = false;
   };
 
 } // namespace Model

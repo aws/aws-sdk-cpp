@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_amazonId;
-    bool m_amazonIdHasBeenSet;
+    bool m_amazonIdHasBeenSet = false;
 
     Aws::String m_fingerprint;
-    bool m_fingerprintHasBeenSet;
+    bool m_fingerprintHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -501,10 +501,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_transformations;
-    bool m_transformationsHasBeenSet;
+    bool m_transformationsHasBeenSet = false;
   };
 
 } // namespace Model

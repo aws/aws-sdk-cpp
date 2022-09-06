@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

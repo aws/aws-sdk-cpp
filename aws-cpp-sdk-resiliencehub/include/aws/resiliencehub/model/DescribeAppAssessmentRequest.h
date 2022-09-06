@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::String m_assessmentArn;
-    bool m_assessmentArnHasBeenSet;
+    bool m_assessmentArnHasBeenSet = false;
   };
 
 } // namespace Model

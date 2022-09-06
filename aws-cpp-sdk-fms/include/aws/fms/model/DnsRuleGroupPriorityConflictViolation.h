@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_violationTargetDescription;
-    bool m_violationTargetDescriptionHasBeenSet;
+    bool m_violationTargetDescriptionHasBeenSet = false;
 
     int m_conflictingPriority;
-    bool m_conflictingPriorityHasBeenSet;
+    bool m_conflictingPriorityHasBeenSet = false;
 
     Aws::String m_conflictingPolicyId;
-    bool m_conflictingPolicyIdHasBeenSet;
+    bool m_conflictingPolicyIdHasBeenSet = false;
 
     Aws::Vector<int> m_unavailablePriorities;
-    bool m_unavailablePrioritiesHasBeenSet;
+    bool m_unavailablePrioritiesHasBeenSet = false;
   };
 
 } // namespace Model

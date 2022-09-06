@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SupportedHardwareType m_supportedHardwareType;
-    bool m_supportedHardwareTypeHasBeenSet;
+    bool m_supportedHardwareTypeHasBeenSet = false;
   };
 
 } // namespace Model

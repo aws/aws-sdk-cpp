@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_findingAggregatorArn;
-    bool m_findingAggregatorArnHasBeenSet;
+    bool m_findingAggregatorArnHasBeenSet = false;
   };
 
 } // namespace Model

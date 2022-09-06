@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_imageBuildVersionArn;
-    bool m_imageBuildVersionArnHasBeenSet;
+    bool m_imageBuildVersionArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

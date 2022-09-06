@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     WorkflowExecution m_externalWorkflowExecution;
-    bool m_externalWorkflowExecutionHasBeenSet;
+    bool m_externalWorkflowExecutionHasBeenSet = false;
 
     long long m_externalInitiatedEventId;
-    bool m_externalInitiatedEventIdHasBeenSet;
+    bool m_externalInitiatedEventIdHasBeenSet = false;
 
     WorkflowExecutionCancelRequestedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

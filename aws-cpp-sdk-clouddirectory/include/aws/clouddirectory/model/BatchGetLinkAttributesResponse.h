@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AttributeKeyAndValue> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

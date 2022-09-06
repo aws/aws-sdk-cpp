@@ -132,16 +132,16 @@ namespace Model
   private:
 
     AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
-    bool m_answerMachineDetectionConfigHasBeenSet;
+    bool m_answerMachineDetectionConfigHasBeenSet = false;
 
     Aws::String m_connectContactFlowId;
-    bool m_connectContactFlowIdHasBeenSet;
+    bool m_connectContactFlowIdHasBeenSet = false;
 
     Aws::String m_connectSourcePhoneNumber;
-    bool m_connectSourcePhoneNumberHasBeenSet;
+    bool m_connectSourcePhoneNumberHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

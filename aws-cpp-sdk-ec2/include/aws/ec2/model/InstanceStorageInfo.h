@@ -169,16 +169,16 @@ namespace Model
   private:
 
     long long m_totalSizeInGB;
-    bool m_totalSizeInGBHasBeenSet;
+    bool m_totalSizeInGBHasBeenSet = false;
 
     Aws::Vector<DiskInfo> m_disks;
-    bool m_disksHasBeenSet;
+    bool m_disksHasBeenSet = false;
 
     EphemeralNvmeSupport m_nvmeSupport;
-    bool m_nvmeSupportHasBeenSet;
+    bool m_nvmeSupportHasBeenSet = false;
 
     InstanceStorageEncryptionSupport m_encryptionSupport;
-    bool m_encryptionSupportHasBeenSet;
+    bool m_encryptionSupportHasBeenSet = false;
   };
 
 } // namespace Model

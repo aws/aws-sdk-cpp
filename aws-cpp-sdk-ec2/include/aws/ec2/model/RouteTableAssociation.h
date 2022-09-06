@@ -267,22 +267,22 @@ namespace Model
   private:
 
     bool m_main;
-    bool m_mainHasBeenSet;
+    bool m_mainHasBeenSet = false;
 
     Aws::String m_routeTableAssociationId;
-    bool m_routeTableAssociationIdHasBeenSet;
+    bool m_routeTableAssociationIdHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     RouteTableAssociationState m_associationState;
-    bool m_associationStateHasBeenSet;
+    bool m_associationStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,7 +58,7 @@ namespace Model
   private:
 
     long long m_timeInMillis;
-    bool m_timeInMillisHasBeenSet;
+    bool m_timeInMillisHasBeenSet = false;
   };
 
 } // namespace Model

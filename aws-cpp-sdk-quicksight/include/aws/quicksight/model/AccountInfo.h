@@ -281,19 +281,19 @@ namespace Model
   private:
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
 
     Aws::String m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     Aws::String m_accountSubscriptionStatus;
-    bool m_accountSubscriptionStatusHasBeenSet;
+    bool m_accountSubscriptionStatusHasBeenSet = false;
   };
 
 } // namespace Model

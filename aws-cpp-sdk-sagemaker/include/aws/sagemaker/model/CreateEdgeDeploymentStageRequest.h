@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_edgeDeploymentPlanName;
-    bool m_edgeDeploymentPlanNameHasBeenSet;
+    bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
     Aws::Vector<DeploymentStage> m_stages;
-    bool m_stagesHasBeenSet;
+    bool m_stagesHasBeenSet = false;
   };
 
 } // namespace Model

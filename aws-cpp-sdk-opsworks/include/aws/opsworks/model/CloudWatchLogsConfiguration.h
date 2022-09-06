@@ -103,10 +103,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<CloudWatchLogsLogStream> m_logStreams;
-    bool m_logStreamsHasBeenSet;
+    bool m_logStreamsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_maxTimeToLiveInMinutes;
-    bool m_maxTimeToLiveInMinutesHasBeenSet;
+    bool m_maxTimeToLiveInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

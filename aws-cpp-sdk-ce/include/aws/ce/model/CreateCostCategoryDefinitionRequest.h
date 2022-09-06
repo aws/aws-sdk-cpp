@@ -369,22 +369,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CostCategoryRuleVersion m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::Vector<CostCategoryRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-    bool m_splitChargeRulesHasBeenSet;
+    bool m_splitChargeRulesHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

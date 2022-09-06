@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     RegistrationStatus m_registrationStatus;
-    bool m_registrationStatusHasBeenSet;
+    bool m_registrationStatusHasBeenSet = false;
 
     int m_maximumPageSize;
-    bool m_maximumPageSizeHasBeenSet;
+    bool m_maximumPageSizeHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
   };
 
 } // namespace Model

@@ -272,19 +272,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StreamProcessorSettingsForUpdate m_settingsForUpdate;
-    bool m_settingsForUpdateHasBeenSet;
+    bool m_settingsForUpdateHasBeenSet = false;
 
     Aws::Vector<RegionOfInterest> m_regionsOfInterestForUpdate;
-    bool m_regionsOfInterestForUpdateHasBeenSet;
+    bool m_regionsOfInterestForUpdateHasBeenSet = false;
 
     StreamProcessorDataSharingPreference m_dataSharingPreferenceForUpdate;
-    bool m_dataSharingPreferenceForUpdateHasBeenSet;
+    bool m_dataSharingPreferenceForUpdateHasBeenSet = false;
 
     Aws::Vector<StreamProcessorParameterToDelete> m_parametersToDelete;
-    bool m_parametersToDeleteHasBeenSet;
+    bool m_parametersToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

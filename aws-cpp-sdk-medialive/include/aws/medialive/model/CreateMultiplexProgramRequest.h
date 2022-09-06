@@ -209,16 +209,16 @@ resources.
   private:
 
     Aws::String m_multiplexId;
-    bool m_multiplexIdHasBeenSet;
+    bool m_multiplexIdHasBeenSet = false;
 
     MultiplexProgramSettings m_multiplexProgramSettings;
-    bool m_multiplexProgramSettingsHasBeenSet;
+    bool m_multiplexProgramSettingsHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::Vector<QueueSearchCriteria> m_orConditions;
-    bool m_orConditionsHasBeenSet;
+    bool m_orConditionsHasBeenSet = false;
 
     Aws::Vector<QueueSearchCriteria> m_andConditions;
-    bool m_andConditionsHasBeenSet;
+    bool m_andConditionsHasBeenSet = false;
 
     StringCondition m_stringCondition;
-    bool m_stringConditionHasBeenSet;
+    bool m_stringConditionHasBeenSet = false;
 
     SearchableQueueType m_queueTypeCondition;
-    bool m_queueTypeConditionHasBeenSet;
+    bool m_queueTypeConditionHasBeenSet = false;
   };
 
 } // namespace Model

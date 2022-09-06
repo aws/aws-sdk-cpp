@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

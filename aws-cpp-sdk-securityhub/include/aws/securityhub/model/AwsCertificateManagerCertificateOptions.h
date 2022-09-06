@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_certificateTransparencyLoggingPreference;
-    bool m_certificateTransparencyLoggingPreferenceHasBeenSet;
+    bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

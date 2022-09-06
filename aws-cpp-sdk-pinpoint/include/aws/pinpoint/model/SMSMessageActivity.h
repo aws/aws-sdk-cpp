@@ -289,16 +289,16 @@ namespace Model
   private:
 
     JourneySMSMessage m_messageConfig;
-    bool m_messageConfigHasBeenSet;
+    bool m_messageConfigHasBeenSet = false;
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateVersion;
-    bool m_templateVersionHasBeenSet;
+    bool m_templateVersionHasBeenSet = false;
   };
 
 } // namespace Model

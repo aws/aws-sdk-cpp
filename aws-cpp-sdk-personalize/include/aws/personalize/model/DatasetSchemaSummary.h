@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Domain m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
   };
 
 } // namespace Model

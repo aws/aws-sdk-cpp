@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_labelGroupName;
-    bool m_labelGroupNameHasBeenSet;
+    bool m_labelGroupNameHasBeenSet = false;
 
     Aws::String m_labelId;
-    bool m_labelIdHasBeenSet;
+    bool m_labelIdHasBeenSet = false;
   };
 
 } // namespace Model

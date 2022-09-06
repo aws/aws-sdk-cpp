@@ -217,10 +217,10 @@ namespace Model
   private:
 
     Aws::String m_accessPointId;
-    bool m_accessPointIdHasBeenSet;
+    bool m_accessPointIdHasBeenSet = false;
 
     EFSAuthorizationConfigIAM m_iam;
-    bool m_iamHasBeenSet;
+    bool m_iamHasBeenSet = false;
   };
 
 } // namespace Model

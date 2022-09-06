@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
 
     Aws::String m_reactionUserArn;
-    bool m_reactionUserArnHasBeenSet;
+    bool m_reactionUserArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

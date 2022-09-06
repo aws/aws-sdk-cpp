@@ -177,22 +177,22 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_pillarId;
-    bool m_pillarIdHasBeenSet;
+    bool m_pillarIdHasBeenSet = false;
 
     int m_milestoneNumber;
-    bool m_milestoneNumberHasBeenSet;
+    bool m_milestoneNumberHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

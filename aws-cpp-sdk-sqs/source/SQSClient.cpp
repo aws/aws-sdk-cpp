@@ -97,7 +97,7 @@ SQSClient::~SQSClient()
 
 void SQSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SQS");
+  AWSClient::SetServiceClientName("SQS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

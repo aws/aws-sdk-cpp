@@ -177,13 +177,13 @@ namespace Model
   private:
 
     ConfigTypeData m_configData;
-    bool m_configDataHasBeenSet;
+    bool m_configDataHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

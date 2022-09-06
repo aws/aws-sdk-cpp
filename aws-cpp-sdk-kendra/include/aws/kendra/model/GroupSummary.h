@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     long long m_orderingId;
-    bool m_orderingIdHasBeenSet;
+    bool m_orderingIdHasBeenSet = false;
   };
 
 } // namespace Model

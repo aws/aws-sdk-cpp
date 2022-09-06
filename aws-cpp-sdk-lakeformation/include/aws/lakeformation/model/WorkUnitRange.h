@@ -127,13 +127,13 @@ namespace Model
   private:
 
     long long m_workUnitIdMax;
-    bool m_workUnitIdMaxHasBeenSet;
+    bool m_workUnitIdMaxHasBeenSet = false;
 
     long long m_workUnitIdMin;
-    bool m_workUnitIdMinHasBeenSet;
+    bool m_workUnitIdMinHasBeenSet = false;
 
     Aws::String m_workUnitToken;
-    bool m_workUnitTokenHasBeenSet;
+    bool m_workUnitTokenHasBeenSet = false;
   };
 
 } // namespace Model

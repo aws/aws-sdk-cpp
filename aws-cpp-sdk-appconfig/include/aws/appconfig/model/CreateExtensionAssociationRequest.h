@@ -326,19 +326,19 @@ namespace Model
   private:
 
     Aws::String m_extensionIdentifier;
-    bool m_extensionIdentifierHasBeenSet;
+    bool m_extensionIdentifierHasBeenSet = false;
 
     int m_extensionVersionNumber;
-    bool m_extensionVersionNumberHasBeenSet;
+    bool m_extensionVersionNumberHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

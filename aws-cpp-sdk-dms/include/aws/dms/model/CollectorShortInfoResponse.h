@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_collectorReferencedId;
-    bool m_collectorReferencedIdHasBeenSet;
+    bool m_collectorReferencedIdHasBeenSet = false;
 
     Aws::String m_collectorName;
-    bool m_collectorNameHasBeenSet;
+    bool m_collectorNameHasBeenSet = false;
   };
 
 } // namespace Model

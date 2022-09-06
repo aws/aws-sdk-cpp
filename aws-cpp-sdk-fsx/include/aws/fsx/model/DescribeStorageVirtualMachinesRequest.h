@@ -163,16 +163,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_storageVirtualMachineIds;
-    bool m_storageVirtualMachineIdsHasBeenSet;
+    bool m_storageVirtualMachineIdsHasBeenSet = false;
 
     Aws::Vector<StorageVirtualMachineFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

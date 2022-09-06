@@ -144,10 +144,10 @@ namespace Model
   private:
 
     RoleType m_roleType;
-    bool m_roleTypeHasBeenSet;
+    bool m_roleTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

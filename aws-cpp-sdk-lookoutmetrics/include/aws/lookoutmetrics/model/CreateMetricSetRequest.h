@@ -511,37 +511,37 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_metricSetName;
-    bool m_metricSetNameHasBeenSet;
+    bool m_metricSetNameHasBeenSet = false;
 
     Aws::String m_metricSetDescription;
-    bool m_metricSetDescriptionHasBeenSet;
+    bool m_metricSetDescriptionHasBeenSet = false;
 
     Aws::Vector<Metric> m_metricList;
-    bool m_metricListHasBeenSet;
+    bool m_metricListHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     TimestampColumn m_timestampColumn;
-    bool m_timestampColumnHasBeenSet;
+    bool m_timestampColumnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dimensionList;
-    bool m_dimensionListHasBeenSet;
+    bool m_dimensionListHasBeenSet = false;
 
     Frequency m_metricSetFrequency;
-    bool m_metricSetFrequencyHasBeenSet;
+    bool m_metricSetFrequencyHasBeenSet = false;
 
     MetricSource m_metricSource;
-    bool m_metricSourceHasBeenSet;
+    bool m_metricSourceHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

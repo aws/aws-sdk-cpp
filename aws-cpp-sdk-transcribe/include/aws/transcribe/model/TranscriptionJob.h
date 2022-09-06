@@ -1618,73 +1618,73 @@ namespace Model
   private:
 
     Aws::String m_transcriptionJobName;
-    bool m_transcriptionJobNameHasBeenSet;
+    bool m_transcriptionJobNameHasBeenSet = false;
 
     TranscriptionJobStatus m_transcriptionJobStatus;
-    bool m_transcriptionJobStatusHasBeenSet;
+    bool m_transcriptionJobStatusHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaFormat m_mediaFormat;
-    bool m_mediaFormatHasBeenSet;
+    bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     Transcript m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Settings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     ModelSettings m_modelSettings;
-    bool m_modelSettingsHasBeenSet;
+    bool m_modelSettingsHasBeenSet = false;
 
     JobExecutionSettings m_jobExecutionSettings;
-    bool m_jobExecutionSettingsHasBeenSet;
+    bool m_jobExecutionSettingsHasBeenSet = false;
 
     ContentRedaction m_contentRedaction;
-    bool m_contentRedactionHasBeenSet;
+    bool m_contentRedactionHasBeenSet = false;
 
     bool m_identifyLanguage;
-    bool m_identifyLanguageHasBeenSet;
+    bool m_identifyLanguageHasBeenSet = false;
 
     bool m_identifyMultipleLanguages;
-    bool m_identifyMultipleLanguagesHasBeenSet;
+    bool m_identifyMultipleLanguagesHasBeenSet = false;
 
     Aws::Vector<LanguageCode> m_languageOptions;
-    bool m_languageOptionsHasBeenSet;
+    bool m_languageOptionsHasBeenSet = false;
 
     double m_identifiedLanguageScore;
-    bool m_identifiedLanguageScoreHasBeenSet;
+    bool m_identifiedLanguageScoreHasBeenSet = false;
 
     Aws::Vector<LanguageCodeItem> m_languageCodes;
-    bool m_languageCodesHasBeenSet;
+    bool m_languageCodesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     SubtitlesOutput m_subtitles;
-    bool m_subtitlesHasBeenSet;
+    bool m_subtitlesHasBeenSet = false;
 
     Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
-    bool m_languageIdSettingsHasBeenSet;
+    bool m_languageIdSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet;
+    bool m_nextMarkerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

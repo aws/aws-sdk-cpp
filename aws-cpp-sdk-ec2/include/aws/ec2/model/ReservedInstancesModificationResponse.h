@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
 
     ReservedInstancesConfiguration m_targetConfiguration;
-    bool m_targetConfigurationHasBeenSet;
+    bool m_targetConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

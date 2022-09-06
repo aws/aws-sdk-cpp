@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
   };
 
 } // namespace Model

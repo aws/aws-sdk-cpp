@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
   };
 
 } // namespace Model

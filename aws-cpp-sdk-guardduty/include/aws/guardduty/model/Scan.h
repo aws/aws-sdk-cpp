@@ -544,46 +544,46 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_adminDetectorId;
-    bool m_adminDetectorIdHasBeenSet;
+    bool m_adminDetectorIdHasBeenSet = false;
 
     Aws::String m_scanId;
-    bool m_scanIdHasBeenSet;
+    bool m_scanIdHasBeenSet = false;
 
     ScanStatus m_scanStatus;
-    bool m_scanStatusHasBeenSet;
+    bool m_scanStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_scanStartTime;
-    bool m_scanStartTimeHasBeenSet;
+    bool m_scanStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_scanEndTime;
-    bool m_scanEndTimeHasBeenSet;
+    bool m_scanEndTimeHasBeenSet = false;
 
     TriggerDetails m_triggerDetails;
-    bool m_triggerDetailsHasBeenSet;
+    bool m_triggerDetailsHasBeenSet = false;
 
     ResourceDetails m_resourceDetails;
-    bool m_resourceDetailsHasBeenSet;
+    bool m_resourceDetailsHasBeenSet = false;
 
     ScanResultDetails m_scanResultDetails;
-    bool m_scanResultDetailsHasBeenSet;
+    bool m_scanResultDetailsHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     long long m_totalBytes;
-    bool m_totalBytesHasBeenSet;
+    bool m_totalBytesHasBeenSet = false;
 
     long long m_fileCount;
-    bool m_fileCountHasBeenSet;
+    bool m_fileCountHasBeenSet = false;
 
     Aws::Vector<VolumeDetail> m_attachedVolumes;
-    bool m_attachedVolumesHasBeenSet;
+    bool m_attachedVolumesHasBeenSet = false;
   };
 
 } // namespace Model

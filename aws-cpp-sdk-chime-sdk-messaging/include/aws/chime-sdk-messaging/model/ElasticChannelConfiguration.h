@@ -114,13 +114,13 @@ namespace Model
   private:
 
     int m_maximumSubChannels;
-    bool m_maximumSubChannelsHasBeenSet;
+    bool m_maximumSubChannelsHasBeenSet = false;
 
     int m_targetMembershipsPerSubChannel;
-    bool m_targetMembershipsPerSubChannelHasBeenSet;
+    bool m_targetMembershipsPerSubChannelHasBeenSet = false;
 
     int m_minimumMembershipPercentage;
-    bool m_minimumMembershipPercentageHasBeenSet;
+    bool m_minimumMembershipPercentageHasBeenSet = false;
   };
 
 } // namespace Model

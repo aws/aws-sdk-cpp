@@ -476,31 +476,31 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::String m_meetingHostId;
-    bool m_meetingHostIdHasBeenSet;
+    bool m_meetingHostIdHasBeenSet = false;
 
     Aws::String m_externalMeetingId;
-    bool m_externalMeetingIdHasBeenSet;
+    bool m_externalMeetingIdHasBeenSet = false;
 
     Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet;
+    bool m_mediaRegionHasBeenSet = false;
 
     MediaPlacement m_mediaPlacement;
-    bool m_mediaPlacementHasBeenSet;
+    bool m_mediaPlacementHasBeenSet = false;
 
     MeetingFeaturesConfiguration m_meetingFeatures;
-    bool m_meetingFeaturesHasBeenSet;
+    bool m_meetingFeaturesHasBeenSet = false;
 
     Aws::String m_primaryMeetingId;
-    bool m_primaryMeetingIdHasBeenSet;
+    bool m_primaryMeetingIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tenantIds;
-    bool m_tenantIdsHasBeenSet;
+    bool m_tenantIdsHasBeenSet = false;
 
     Aws::String m_meetingArn;
-    bool m_meetingArnHasBeenSet;
+    bool m_meetingArnHasBeenSet = false;
   };
 
 } // namespace Model

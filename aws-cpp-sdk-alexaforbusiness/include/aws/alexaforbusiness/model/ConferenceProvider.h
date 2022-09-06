@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ConferenceProviderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     IPDialIn m_iPDialIn;
-    bool m_iPDialInHasBeenSet;
+    bool m_iPDialInHasBeenSet = false;
 
     PSTNDialIn m_pSTNDialIn;
-    bool m_pSTNDialInHasBeenSet;
+    bool m_pSTNDialInHasBeenSet = false;
 
     MeetingSetting m_meetingSetting;
-    bool m_meetingSettingHasBeenSet;
+    bool m_meetingSettingHasBeenSet = false;
   };
 
 } // namespace Model

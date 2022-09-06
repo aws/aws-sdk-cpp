@@ -778,34 +778,34 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Vector<DocumentRequires> m_requires;
-    bool m_requiresHasBeenSet;
+    bool m_requiresHasBeenSet = false;
 
     Aws::Vector<AttachmentsSource> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     DocumentType m_documentType;
-    bool m_documentTypeHasBeenSet;
+    bool m_documentTypeHasBeenSet = false;
 
     DocumentFormat m_documentFormat;
-    bool m_documentFormatHasBeenSet;
+    bool m_documentFormatHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

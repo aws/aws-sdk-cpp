@@ -1393,67 +1393,67 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_imageArn;
-    bool m_imageArnHasBeenSet;
+    bool m_imageArnHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     FleetType m_fleetType;
-    bool m_fleetTypeHasBeenSet;
+    bool m_fleetTypeHasBeenSet = false;
 
     ComputeCapacity m_computeCapacity;
-    bool m_computeCapacityHasBeenSet;
+    bool m_computeCapacityHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     int m_maxUserDurationInSeconds;
-    bool m_maxUserDurationInSecondsHasBeenSet;
+    bool m_maxUserDurationInSecondsHasBeenSet = false;
 
     int m_disconnectTimeoutInSeconds;
-    bool m_disconnectTimeoutInSecondsHasBeenSet;
+    bool m_disconnectTimeoutInSecondsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     bool m_enableDefaultInternetAccess;
-    bool m_enableDefaultInternetAccessHasBeenSet;
+    bool m_enableDefaultInternetAccessHasBeenSet = false;
 
     DomainJoinInfo m_domainJoinInfo;
-    bool m_domainJoinInfoHasBeenSet;
+    bool m_domainJoinInfoHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_idleDisconnectTimeoutInSeconds;
-    bool m_idleDisconnectTimeoutInSecondsHasBeenSet;
+    bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     StreamView m_streamView;
-    bool m_streamViewHasBeenSet;
+    bool m_streamViewHasBeenSet = false;
 
     PlatformType m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     int m_maxConcurrentSessions;
-    bool m_maxConcurrentSessionsHasBeenSet;
+    bool m_maxConcurrentSessionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
-    bool m_usbDeviceFilterStringsHasBeenSet;
+    bool m_usbDeviceFilterStringsHasBeenSet = false;
 
     S3Location m_sessionScriptS3Location;
-    bool m_sessionScriptS3LocationHasBeenSet;
+    bool m_sessionScriptS3LocationHasBeenSet = false;
   };
 
 } // namespace Model

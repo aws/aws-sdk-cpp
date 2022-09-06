@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_idleTimeoutMinutes;
-    bool m_idleTimeoutMinutesHasBeenSet;
+    bool m_idleTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

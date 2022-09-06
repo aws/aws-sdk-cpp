@@ -245,16 +245,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     PrincipalType m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
   };
 
 } // namespace Model

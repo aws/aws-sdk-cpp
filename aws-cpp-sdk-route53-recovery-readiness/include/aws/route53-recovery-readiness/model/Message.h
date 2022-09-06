@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_messageText;
-    bool m_messageTextHasBeenSet;
+    bool m_messageTextHasBeenSet = false;
   };
 
 } // namespace Model

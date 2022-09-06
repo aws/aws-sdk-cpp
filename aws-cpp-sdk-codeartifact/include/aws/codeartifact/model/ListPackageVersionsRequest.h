@@ -521,37 +521,37 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
-    bool m_packageHasBeenSet;
+    bool m_packageHasBeenSet = false;
 
     PackageVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PackageVersionSortType m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     PackageVersionOriginType m_originType;
-    bool m_originTypeHasBeenSet;
+    bool m_originTypeHasBeenSet = false;
   };
 
 } // namespace Model

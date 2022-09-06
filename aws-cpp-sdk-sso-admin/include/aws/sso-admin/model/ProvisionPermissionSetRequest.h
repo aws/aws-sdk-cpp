@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     ProvisionTargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
   };
 
 } // namespace Model

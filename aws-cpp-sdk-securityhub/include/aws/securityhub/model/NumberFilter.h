@@ -112,13 +112,13 @@ namespace Model
   private:
 
     double m_gte;
-    bool m_gteHasBeenSet;
+    bool m_gteHasBeenSet = false;
 
     double m_lte;
-    bool m_lteHasBeenSet;
+    bool m_lteHasBeenSet = false;
 
     double m_eq;
-    bool m_eqHasBeenSet;
+    bool m_eqHasBeenSet = false;
   };
 
 } // namespace Model

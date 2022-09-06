@@ -277,16 +277,16 @@ namespace Model
   private:
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

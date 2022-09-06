@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
   };
 
 } // namespace Model

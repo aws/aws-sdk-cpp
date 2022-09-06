@@ -117,7 +117,7 @@ ECRClient::~ECRClient()
 
 void ECRClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ECR");
+  AWSClient::SetServiceClientName("ECR");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

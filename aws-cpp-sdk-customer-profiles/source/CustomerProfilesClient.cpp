@@ -114,7 +114,7 @@ CustomerProfilesClient::~CustomerProfilesClient()
 
 void CustomerProfilesClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Customer Profiles");
+  AWSClient::SetServiceClientName("Customer Profiles");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

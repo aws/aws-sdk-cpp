@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     double m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -395,28 +395,28 @@ namespace Model
   private:
 
     Aws::String m_bgpAsn;
-    bool m_bgpAsnHasBeenSet;
+    bool m_bgpAsnHasBeenSet = false;
 
     Aws::String m_customerGatewayId;
-    bool m_customerGatewayIdHasBeenSet;
+    bool m_customerGatewayIdHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

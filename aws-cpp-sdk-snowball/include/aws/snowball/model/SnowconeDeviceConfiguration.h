@@ -71,7 +71,7 @@ namespace Model
   private:
 
     WirelessConnection m_wirelessConnection;
-    bool m_wirelessConnectionHasBeenSet;
+    bool m_wirelessConnectionHasBeenSet = false;
   };
 
 } // namespace Model

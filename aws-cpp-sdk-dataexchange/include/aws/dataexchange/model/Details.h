@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ImportAssetFromSignedUrlJobErrorDetails m_importAssetFromSignedUrlJobErrorDetails;
-    bool m_importAssetFromSignedUrlJobErrorDetailsHasBeenSet;
+    bool m_importAssetFromSignedUrlJobErrorDetailsHasBeenSet = false;
 
     Aws::Vector<AssetSourceEntry> m_importAssetsFromS3JobErrorDetails;
-    bool m_importAssetsFromS3JobErrorDetailsHasBeenSet;
+    bool m_importAssetsFromS3JobErrorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

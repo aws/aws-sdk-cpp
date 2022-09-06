@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     S3WordsList m_s3WordsList;
-    bool m_s3WordsListHasBeenSet;
+    bool m_s3WordsListHasBeenSet = false;
   };
 
 } // namespace Model

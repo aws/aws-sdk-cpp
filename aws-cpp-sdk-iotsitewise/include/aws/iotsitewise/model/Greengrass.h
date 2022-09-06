@@ -142,7 +142,7 @@ namespace Model
   private:
 
     Aws::String m_groupArn;
-    bool m_groupArnHasBeenSet;
+    bool m_groupArnHasBeenSet = false;
   };
 
 } // namespace Model

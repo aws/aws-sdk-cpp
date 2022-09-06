@@ -316,19 +316,19 @@ namespace Model
   private:
 
     DeliveryStatus m_deliveryStatus;
-    bool m_deliveryStatusHasBeenSet;
+    bool m_deliveryStatusHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     int m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_updatedToken;
-    bool m_updatedTokenHasBeenSet;
+    bool m_updatedTokenHasBeenSet = false;
   };
 
 } // namespace Model

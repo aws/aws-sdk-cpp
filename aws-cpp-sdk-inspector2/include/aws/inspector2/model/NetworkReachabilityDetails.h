@@ -147,13 +147,13 @@ namespace Model
   private:
 
     NetworkPath m_networkPath;
-    bool m_networkPathHasBeenSet;
+    bool m_networkPathHasBeenSet = false;
 
     PortRange m_openPortRange;
-    bool m_openPortRangeHasBeenSet;
+    bool m_openPortRangeHasBeenSet = false;
 
     NetworkProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

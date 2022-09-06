@@ -570,34 +570,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     IndexEdition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
-    bool m_userTokenConfigurationsHasBeenSet;
+    bool m_userTokenConfigurationsHasBeenSet = false;
 
     UserContextPolicy m_userContextPolicy;
-    bool m_userContextPolicyHasBeenSet;
+    bool m_userContextPolicyHasBeenSet = false;
 
     UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
-    bool m_userGroupResolutionConfigurationHasBeenSet;
+    bool m_userGroupResolutionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

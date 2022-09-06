@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<JobPostLaunchActionsLaunchStatus> m_postLaunchActionsLaunchStatusList;
-    bool m_postLaunchActionsLaunchStatusListHasBeenSet;
+    bool m_postLaunchActionsLaunchStatusListHasBeenSet = false;
 
     Aws::String m_ssmAgentDiscoveryDatetime;
-    bool m_ssmAgentDiscoveryDatetimeHasBeenSet;
+    bool m_ssmAgentDiscoveryDatetimeHasBeenSet = false;
   };
 
 } // namespace Model

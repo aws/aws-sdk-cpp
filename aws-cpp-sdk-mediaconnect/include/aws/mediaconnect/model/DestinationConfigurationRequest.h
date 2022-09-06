@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_destinationIp;
-    bool m_destinationIpHasBeenSet;
+    bool m_destinationIpHasBeenSet = false;
 
     int m_destinationPort;
-    bool m_destinationPortHasBeenSet;
+    bool m_destinationPortHasBeenSet = false;
 
     InterfaceRequest m_interface;
-    bool m_interfaceHasBeenSet;
+    bool m_interfaceHasBeenSet = false;
   };
 
 } // namespace Model

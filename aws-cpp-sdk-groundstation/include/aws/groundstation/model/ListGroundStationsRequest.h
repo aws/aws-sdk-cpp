@@ -154,13 +154,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_satelliteId;
-    bool m_satelliteIdHasBeenSet;
+    bool m_satelliteIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DashboardBehavior m_availabilityStatus;
-    bool m_availabilityStatusHasBeenSet;
+    bool m_availabilityStatusHasBeenSet = false;
   };
 
 } // namespace Model

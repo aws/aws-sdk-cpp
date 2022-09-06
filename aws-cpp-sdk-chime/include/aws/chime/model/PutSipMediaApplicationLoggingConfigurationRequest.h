@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_sipMediaApplicationId;
-    bool m_sipMediaApplicationIdHasBeenSet;
+    bool m_sipMediaApplicationIdHasBeenSet = false;
 
     SipMediaApplicationLoggingConfiguration m_sipMediaApplicationLoggingConfiguration;
-    bool m_sipMediaApplicationLoggingConfigurationHasBeenSet;
+    bool m_sipMediaApplicationLoggingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

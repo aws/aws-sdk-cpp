@@ -348,25 +348,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_startArns;
-    bool m_startArnsHasBeenSet;
+    bool m_startArnsHasBeenSet = false;
 
     Direction m_direction;
-    bool m_directionHasBeenSet;
+    bool m_directionHasBeenSet = false;
 
     bool m_includeEdges;
-    bool m_includeEdgesHasBeenSet;
+    bool m_includeEdgesHasBeenSet = false;
 
     QueryFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxDepth;
-    bool m_maxDepthHasBeenSet;
+    bool m_maxDepthHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

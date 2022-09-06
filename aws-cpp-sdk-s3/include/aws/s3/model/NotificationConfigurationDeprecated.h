@@ -153,13 +153,13 @@ namespace Model
   private:
 
     TopicConfigurationDeprecated m_topicConfiguration;
-    bool m_topicConfigurationHasBeenSet;
+    bool m_topicConfigurationHasBeenSet = false;
 
     QueueConfigurationDeprecated m_queueConfiguration;
-    bool m_queueConfigurationHasBeenSet;
+    bool m_queueConfigurationHasBeenSet = false;
 
     CloudFunctionConfiguration m_cloudFunctionConfiguration;
-    bool m_cloudFunctionConfigurationHasBeenSet;
+    bool m_cloudFunctionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

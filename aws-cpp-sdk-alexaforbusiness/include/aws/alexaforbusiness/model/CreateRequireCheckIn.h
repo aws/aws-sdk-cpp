@@ -86,10 +86,10 @@ namespace Model
   private:
 
     int m_releaseAfterMinutes;
-    bool m_releaseAfterMinutesHasBeenSet;
+    bool m_releaseAfterMinutesHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

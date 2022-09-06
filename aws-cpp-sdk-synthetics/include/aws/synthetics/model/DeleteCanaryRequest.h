@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_deleteLambda;
-    bool m_deleteLambdaHasBeenSet;
+    bool m_deleteLambdaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,13 +133,13 @@ namespace Model
   private:
 
     EthernetPayload m_ethernet0;
-    bool m_ethernet0HasBeenSet;
+    bool m_ethernet0HasBeenSet = false;
 
     EthernetPayload m_ethernet1;
-    bool m_ethernet1HasBeenSet;
+    bool m_ethernet1HasBeenSet = false;
 
     NtpPayload m_ntp;
-    bool m_ntpHasBeenSet;
+    bool m_ntpHasBeenSet = false;
   };
 
 } // namespace Model

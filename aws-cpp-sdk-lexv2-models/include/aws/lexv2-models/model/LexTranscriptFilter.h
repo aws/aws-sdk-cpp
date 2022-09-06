@@ -83,7 +83,7 @@ namespace Model
   private:
 
     DateRangeFilter m_dateRangeFilter;
-    bool m_dateRangeFilterHasBeenSet;
+    bool m_dateRangeFilterHasBeenSet = false;
   };
 
 } // namespace Model

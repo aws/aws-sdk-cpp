@@ -109,10 +109,10 @@ namespace Model
   private:
 
     AddOnType m_addOnType;
-    bool m_addOnTypeHasBeenSet;
+    bool m_addOnTypeHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -443,25 +443,25 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::String m_ipV4CidrBlock;
-    bool m_ipV4CidrBlockHasBeenSet;
+    bool m_ipV4CidrBlockHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
     VpcPeeringConnectionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet;
+    bool m_peerVpcIdHasBeenSet = false;
 
     Aws::String m_gameLiftVpcId;
-    bool m_gameLiftVpcIdHasBeenSet;
+    bool m_gameLiftVpcIdHasBeenSet = false;
   };
 
 } // namespace Model

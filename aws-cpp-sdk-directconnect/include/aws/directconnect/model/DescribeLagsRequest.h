@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_lagId;
-    bool m_lagIdHasBeenSet;
+    bool m_lagIdHasBeenSet = false;
   };
 
 } // namespace Model

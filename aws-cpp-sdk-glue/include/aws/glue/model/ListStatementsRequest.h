@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_requestOrigin;
-    bool m_requestOriginHasBeenSet;
+    bool m_requestOriginHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -245,13 +245,13 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<IpRoute> m_ipRoutes;
-    bool m_ipRoutesHasBeenSet;
+    bool m_ipRoutesHasBeenSet = false;
 
     bool m_updateSecurityGroupForDirectoryControllers;
-    bool m_updateSecurityGroupForDirectoryControllersHasBeenSet;
+    bool m_updateSecurityGroupForDirectoryControllersHasBeenSet = false;
   };
 
 } // namespace Model

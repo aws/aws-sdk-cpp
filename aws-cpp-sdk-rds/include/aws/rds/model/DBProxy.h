@@ -710,49 +710,49 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_dBProxyArn;
-    bool m_dBProxyArnHasBeenSet;
+    bool m_dBProxyArnHasBeenSet = false;
 
     DBProxyStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_engineFamily;
-    bool m_engineFamilyHasBeenSet;
+    bool m_engineFamilyHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnetIds;
-    bool m_vpcSubnetIdsHasBeenSet;
+    bool m_vpcSubnetIdsHasBeenSet = false;
 
     Aws::Vector<UserAuthConfigInfo> m_auth;
-    bool m_authHasBeenSet;
+    bool m_authHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     bool m_requireTLS;
-    bool m_requireTLSHasBeenSet;
+    bool m_requireTLSHasBeenSet = false;
 
     int m_idleClientTimeout;
-    bool m_idleClientTimeoutHasBeenSet;
+    bool m_idleClientTimeoutHasBeenSet = false;
 
     bool m_debugLogging;
-    bool m_debugLoggingHasBeenSet;
+    bool m_debugLoggingHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedDate;
-    bool m_updatedDateHasBeenSet;
+    bool m_updatedDateHasBeenSet = false;
   };
 
 } // namespace Model

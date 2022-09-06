@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_sourceOptionGroupIdentifier;
-    bool m_sourceOptionGroupIdentifierHasBeenSet;
+    bool m_sourceOptionGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetOptionGroupIdentifier;
-    bool m_targetOptionGroupIdentifierHasBeenSet;
+    bool m_targetOptionGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetOptionGroupDescription;
-    bool m_targetOptionGroupDescriptionHasBeenSet;
+    bool m_targetOptionGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

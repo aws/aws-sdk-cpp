@@ -326,22 +326,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_healthCheckIds;
-    bool m_healthCheckIdsHasBeenSet;
+    bool m_healthCheckIdsHasBeenSet = false;
 
     Aws::String m_protectionArn;
-    bool m_protectionArnHasBeenSet;
+    bool m_protectionArnHasBeenSet = false;
 
     ApplicationLayerAutomaticResponseConfiguration m_applicationLayerAutomaticResponseConfiguration;
-    bool m_applicationLayerAutomaticResponseConfigurationHasBeenSet;
+    bool m_applicationLayerAutomaticResponseConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

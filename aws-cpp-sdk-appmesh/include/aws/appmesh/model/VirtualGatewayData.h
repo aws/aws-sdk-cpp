@@ -206,19 +206,19 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     ResourceMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     VirtualGatewaySpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     VirtualGatewayStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_virtualGatewayName;
-    bool m_virtualGatewayNameHasBeenSet;
+    bool m_virtualGatewayNameHasBeenSet = false;
   };
 
 } // namespace Model

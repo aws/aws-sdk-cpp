@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_layerId;
-    bool m_layerIdHasBeenSet;
+    bool m_layerIdHasBeenSet = false;
   };
 
 } // namespace Model

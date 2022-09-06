@@ -317,25 +317,25 @@ namespace Model
   private:
 
     AssumedRole m_assumedRole;
-    bool m_assumedRoleHasBeenSet;
+    bool m_assumedRoleHasBeenSet = false;
 
     AwsAccount m_awsAccount;
-    bool m_awsAccountHasBeenSet;
+    bool m_awsAccountHasBeenSet = false;
 
     AwsService m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
 
     FederatedUser m_federatedUser;
-    bool m_federatedUserHasBeenSet;
+    bool m_federatedUserHasBeenSet = false;
 
     IamUser m_iamUser;
-    bool m_iamUserHasBeenSet;
+    bool m_iamUserHasBeenSet = false;
 
     UserIdentityRoot m_root;
-    bool m_rootHasBeenSet;
+    bool m_rootHasBeenSet = false;
 
     UserIdentityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

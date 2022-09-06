@@ -525,22 +525,22 @@ namespace Model
   private:
 
     ContentHandlingStrategy m_contentHandlingStrategy;
-    bool m_contentHandlingStrategyHasBeenSet;
+    bool m_contentHandlingStrategyHasBeenSet = false;
 
     Aws::String m_integrationResponseId;
-    bool m_integrationResponseIdHasBeenSet;
+    bool m_integrationResponseIdHasBeenSet = false;
 
     Aws::String m_integrationResponseKey;
-    bool m_integrationResponseKeyHasBeenSet;
+    bool m_integrationResponseKeyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-    bool m_responseTemplatesHasBeenSet;
+    bool m_responseTemplatesHasBeenSet = false;
 
     Aws::String m_templateSelectionExpression;
-    bool m_templateSelectionExpressionHasBeenSet;
+    bool m_templateSelectionExpressionHasBeenSet = false;
   };
 
 } // namespace Model

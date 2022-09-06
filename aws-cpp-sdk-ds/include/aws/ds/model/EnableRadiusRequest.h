@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     RadiusSettings m_radiusSettings;
-    bool m_radiusSettingsHasBeenSet;
+    bool m_radiusSettingsHasBeenSet = false;
   };
 
 } // namespace Model

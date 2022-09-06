@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
 
     Aws::String m_userCode;
-    bool m_userCodeHasBeenSet;
+    bool m_userCodeHasBeenSet = false;
 
     Aws::String m_friendlyDeviceName;
-    bool m_friendlyDeviceNameHasBeenSet;
+    bool m_friendlyDeviceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_datasetArns;
-    bool m_datasetArnsHasBeenSet;
+    bool m_datasetArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_logBucket;
-    bool m_logBucketHasBeenSet;
+    bool m_logBucketHasBeenSet = false;
   };
 
 } // namespace Model

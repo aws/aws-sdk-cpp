@@ -208,16 +208,16 @@ namespace Model
   private:
 
     LogsConfigStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     BucketOwnerAccess m_bucketOwnerAccess;
-    bool m_bucketOwnerAccessHasBeenSet;
+    bool m_bucketOwnerAccessHasBeenSet = false;
   };
 
 } // namespace Model

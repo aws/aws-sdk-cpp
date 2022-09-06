@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     IngestionInputConfiguration m_ingestionInputConfiguration;
-    bool m_ingestionInputConfigurationHasBeenSet;
+    bool m_ingestionInputConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

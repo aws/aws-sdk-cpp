@@ -116,16 +116,16 @@ namespace Model
   private:
 
     int m_fuota;
-    bool m_fuotaHasBeenSet;
+    bool m_fuotaHasBeenSet = false;
 
     int m_multicast;
-    bool m_multicastHasBeenSet;
+    bool m_multicastHasBeenSet = false;
 
     int m_clockSync;
-    bool m_clockSyncHasBeenSet;
+    bool m_clockSyncHasBeenSet = false;
 
     Positioning m_positioning;
-    bool m_positioningHasBeenSet;
+    bool m_positioningHasBeenSet = false;
   };
 
 } // namespace Model

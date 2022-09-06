@@ -224,19 +224,19 @@ namespace Model
   private:
 
     Aws::String m_httpURL;
-    bool m_httpURLHasBeenSet;
+    bool m_httpURLHasBeenSet = false;
 
     int m_httpStatus;
-    bool m_httpStatusHasBeenSet;
+    bool m_httpStatusHasBeenSet = false;
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_userAgent;
-    bool m_userAgentHasBeenSet;
+    bool m_userAgentHasBeenSet = false;
 
     Aws::String m_clientIp;
-    bool m_clientIpHasBeenSet;
+    bool m_clientIpHasBeenSet = false;
   };
 
 } // namespace Model

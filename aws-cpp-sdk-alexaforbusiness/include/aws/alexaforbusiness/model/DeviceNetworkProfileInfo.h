@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_certificateExpirationTime;
-    bool m_certificateExpirationTimeHasBeenSet;
+    bool m_certificateExpirationTimeHasBeenSet = false;
   };
 
 } // namespace Model

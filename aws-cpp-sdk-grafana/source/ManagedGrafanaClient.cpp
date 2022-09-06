@@ -92,7 +92,7 @@ ManagedGrafanaClient::~ManagedGrafanaClient()
 
 void ManagedGrafanaClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("grafana");
+  AWSClient::SetServiceClientName("grafana");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

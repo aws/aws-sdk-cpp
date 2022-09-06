@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_messageTtlSeconds;
-    bool m_messageTtlSecondsHasBeenSet;
+    bool m_messageTtlSecondsHasBeenSet = false;
   };
 
 } // namespace Model

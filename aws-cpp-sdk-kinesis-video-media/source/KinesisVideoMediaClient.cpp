@@ -77,7 +77,7 @@ KinesisVideoMediaClient::~KinesisVideoMediaClient()
 
 void KinesisVideoMediaClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Kinesis Video Media");
+  AWSClient::SetServiceClientName("Kinesis Video Media");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

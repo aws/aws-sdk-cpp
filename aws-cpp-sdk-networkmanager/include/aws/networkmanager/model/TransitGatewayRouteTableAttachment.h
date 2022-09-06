@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Attachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_peeringId;
-    bool m_peeringIdHasBeenSet;
+    bool m_peeringIdHasBeenSet = false;
 
     Aws::String m_transitGatewayRouteTableArn;
-    bool m_transitGatewayRouteTableArnHasBeenSet;
+    bool m_transitGatewayRouteTableArnHasBeenSet = false;
   };
 
 } // namespace Model

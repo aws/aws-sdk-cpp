@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::Vector<PortRange> m_portRanges;
-    bool m_portRangesHasBeenSet;
+    bool m_portRangesHasBeenSet = false;
   };
 
 } // namespace Model

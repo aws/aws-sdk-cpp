@@ -291,22 +291,22 @@ namespace Model
   private:
 
     double m_areaUnderPRCurve;
-    bool m_areaUnderPRCurveHasBeenSet;
+    bool m_areaUnderPRCurveHasBeenSet = false;
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_recall;
-    bool m_recallHasBeenSet;
+    bool m_recallHasBeenSet = false;
 
     double m_f1;
-    bool m_f1HasBeenSet;
+    bool m_f1HasBeenSet = false;
 
     ConfusionMatrix m_confusionMatrix;
-    bool m_confusionMatrixHasBeenSet;
+    bool m_confusionMatrixHasBeenSet = false;
 
     Aws::Vector<ColumnImportance> m_columnImportances;
-    bool m_columnImportancesHasBeenSet;
+    bool m_columnImportancesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_aliasArn;
-    bool m_aliasArnHasBeenSet;
+    bool m_aliasArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::Vector<MultiConditionalBranch> m_branches;
-    bool m_branchesHasBeenSet;
+    bool m_branchesHasBeenSet = false;
 
     Aws::String m_defaultActivity;
-    bool m_defaultActivityHasBeenSet;
+    bool m_defaultActivityHasBeenSet = false;
 
     WaitTime m_evaluationWaitTime;
-    bool m_evaluationWaitTimeHasBeenSet;
+    bool m_evaluationWaitTimeHasBeenSet = false;
   };
 
 } // namespace Model

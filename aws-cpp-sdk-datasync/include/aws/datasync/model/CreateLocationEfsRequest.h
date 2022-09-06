@@ -412,25 +412,25 @@ namespace Model
   private:
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_efsFilesystemArn;
-    bool m_efsFilesystemArnHasBeenSet;
+    bool m_efsFilesystemArnHasBeenSet = false;
 
     Ec2Config m_ec2Config;
-    bool m_ec2ConfigHasBeenSet;
+    bool m_ec2ConfigHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
 
     Aws::String m_fileSystemAccessRoleArn;
-    bool m_fileSystemAccessRoleArnHasBeenSet;
+    bool m_fileSystemAccessRoleArnHasBeenSet = false;
 
     EfsInTransitEncryption m_inTransitEncryption;
-    bool m_inTransitEncryptionHasBeenSet;
+    bool m_inTransitEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

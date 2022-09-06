@@ -318,19 +318,19 @@ namespace Model
   private:
 
     DestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet;
+    bool m_destinationConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_recordingReconnectWindowSeconds;
-    bool m_recordingReconnectWindowSecondsHasBeenSet;
+    bool m_recordingReconnectWindowSecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ThumbnailConfiguration m_thumbnailConfiguration;
-    bool m_thumbnailConfigurationHasBeenSet;
+    bool m_thumbnailConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

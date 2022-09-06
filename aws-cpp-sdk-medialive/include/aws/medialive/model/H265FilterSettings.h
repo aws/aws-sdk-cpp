@@ -58,7 +58,7 @@ namespace Model
   private:
 
     TemporalFilterSettings m_temporalFilterSettings;
-    bool m_temporalFilterSettingsHasBeenSet;
+    bool m_temporalFilterSettingsHasBeenSet = false;
   };
 
 } // namespace Model

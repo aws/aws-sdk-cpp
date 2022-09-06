@@ -550,40 +550,40 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ImageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_osVersion;
-    bool m_osVersionHasBeenSet;
+    bool m_osVersionHasBeenSet = false;
 
     ImageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     OutputResources m_outputResources;
-    bool m_outputResourcesHasBeenSet;
+    bool m_outputResourcesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     BuildType m_buildType;
-    bool m_buildTypeHasBeenSet;
+    bool m_buildTypeHasBeenSet = false;
   };
 
 } // namespace Model

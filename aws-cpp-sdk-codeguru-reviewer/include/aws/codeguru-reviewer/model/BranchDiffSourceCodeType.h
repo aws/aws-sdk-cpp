@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_sourceBranchName;
-    bool m_sourceBranchNameHasBeenSet;
+    bool m_sourceBranchNameHasBeenSet = false;
 
     Aws::String m_destinationBranchName;
-    bool m_destinationBranchNameHasBeenSet;
+    bool m_destinationBranchNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,16 +179,16 @@ namespace Model
   private:
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
   };
 
 } // namespace Model

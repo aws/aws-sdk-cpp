@@ -323,25 +323,25 @@ namespace Model
   private:
 
     MediaPipelineSourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     MediaPipelineSinkType m_sinkType;
-    bool m_sinkTypeHasBeenSet;
+    bool m_sinkTypeHasBeenSet = false;
 
     Aws::String m_sinkArn;
-    bool m_sinkArnHasBeenSet;
+    bool m_sinkArnHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
-    bool m_chimeSdkMeetingConfigurationHasBeenSet;
+    bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

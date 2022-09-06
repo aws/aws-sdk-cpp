@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SSOIdentity m_ssoIdentity;
-    bool m_ssoIdentityHasBeenSet;
+    bool m_ssoIdentityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_channelIds;
-    bool m_channelIdsHasBeenSet;
+    bool m_channelIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputIds;
-    bool m_inputIdsHasBeenSet;
+    bool m_inputIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputSecurityGroupIds;
-    bool m_inputSecurityGroupIdsHasBeenSet;
+    bool m_inputSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_multiplexIds;
-    bool m_multiplexIdsHasBeenSet;
+    bool m_multiplexIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -386,31 +386,31 @@ namespace Model
   private:
 
     Aws::String m_labelGroupName;
-    bool m_labelGroupNameHasBeenSet;
+    bool m_labelGroupNameHasBeenSet = false;
 
     Aws::String m_labelId;
-    bool m_labelIdHasBeenSet;
+    bool m_labelIdHasBeenSet = false;
 
     Aws::String m_labelGroupArn;
-    bool m_labelGroupArnHasBeenSet;
+    bool m_labelGroupArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     LabelRating m_rating;
-    bool m_ratingHasBeenSet;
+    bool m_ratingHasBeenSet = false;
 
     Aws::String m_faultCode;
-    bool m_faultCodeHasBeenSet;
+    bool m_faultCodeHasBeenSet = false;
 
     Aws::String m_equipment;
-    bool m_equipmentHasBeenSet;
+    bool m_equipmentHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

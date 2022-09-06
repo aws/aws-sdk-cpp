@@ -445,31 +445,31 @@ namespace Model
   private:
 
     StatusValues m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     PrincipalType m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
   };
 
 } // namespace Model

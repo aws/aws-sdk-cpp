@@ -149,13 +149,13 @@ namespace Model
   private:
 
     SMSMfaSettingsType m_sMSMfaSettings;
-    bool m_sMSMfaSettingsHasBeenSet;
+    bool m_sMSMfaSettingsHasBeenSet = false;
 
     SoftwareTokenMfaSettingsType m_softwareTokenMfaSettings;
-    bool m_softwareTokenMfaSettingsHasBeenSet;
+    bool m_softwareTokenMfaSettingsHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

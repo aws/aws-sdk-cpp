@@ -78,7 +78,7 @@ namespace Model
   private:
 
     ReplacementTemplate m_replacementTemplate;
-    bool m_replacementTemplateHasBeenSet;
+    bool m_replacementTemplateHasBeenSet = false;
   };
 
 } // namespace Model

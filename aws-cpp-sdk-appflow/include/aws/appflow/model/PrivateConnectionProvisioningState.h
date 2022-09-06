@@ -145,13 +145,13 @@ namespace Model
   private:
 
     PrivateConnectionProvisioningStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     PrivateConnectionProvisioningFailureCause m_failureCause;
-    bool m_failureCauseHasBeenSet;
+    bool m_failureCauseHasBeenSet = false;
   };
 
 } // namespace Model

@@ -366,28 +366,28 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_trackedClusterId;
-    bool m_trackedClusterIdHasBeenSet;
+    bool m_trackedClusterIdHasBeenSet = false;
 
     Aws::String m_rdsResourceId;
-    bool m_rdsResourceIdHasBeenSet;
+    bool m_rdsResourceIdHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     TargetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TargetRole m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     TargetHealth m_targetHealth;
-    bool m_targetHealthHasBeenSet;
+    bool m_targetHealthHasBeenSet = false;
   };
 
 } // namespace Model

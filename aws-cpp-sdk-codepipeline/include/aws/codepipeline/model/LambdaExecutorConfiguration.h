@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
   };
 
 } // namespace Model

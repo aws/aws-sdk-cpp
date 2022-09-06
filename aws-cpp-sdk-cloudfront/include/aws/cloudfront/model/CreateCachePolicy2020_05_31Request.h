@@ -65,7 +65,7 @@ namespace Model
   private:
 
     CachePolicyConfig m_cachePolicyConfig;
-    bool m_cachePolicyConfigHasBeenSet;
+    bool m_cachePolicyConfigHasBeenSet = false;
   };
 
 } // namespace Model

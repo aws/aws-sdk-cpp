@@ -358,22 +358,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_variableType;
-    bool m_variableTypeHasBeenSet;
+    bool m_variableTypeHasBeenSet = false;
   };
 
 } // namespace Model

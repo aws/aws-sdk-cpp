@@ -102,10 +102,10 @@ namespace Model
   private:
 
     EntityPropertyReference m_propertyReference;
-    bool m_propertyReferenceHasBeenSet;
+    bool m_propertyReferenceHasBeenSet = false;
 
     DataValue m_propertyValue;
-    bool m_propertyValueHasBeenSet;
+    bool m_propertyValueHasBeenSet = false;
   };
 
 } // namespace Model

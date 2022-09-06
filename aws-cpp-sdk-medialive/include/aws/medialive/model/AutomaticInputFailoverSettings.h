@@ -206,16 +206,16 @@ namespace Model
   private:
 
     int m_errorClearTimeMsec;
-    bool m_errorClearTimeMsecHasBeenSet;
+    bool m_errorClearTimeMsecHasBeenSet = false;
 
     Aws::Vector<FailoverCondition> m_failoverConditions;
-    bool m_failoverConditionsHasBeenSet;
+    bool m_failoverConditionsHasBeenSet = false;
 
     InputPreference m_inputPreference;
-    bool m_inputPreferenceHasBeenSet;
+    bool m_inputPreferenceHasBeenSet = false;
 
     Aws::String m_secondaryInputId;
-    bool m_secondaryInputIdHasBeenSet;
+    bool m_secondaryInputIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     AlternateIdentifier m_alternateIdentifier;
-    bool m_alternateIdentifierHasBeenSet;
+    bool m_alternateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

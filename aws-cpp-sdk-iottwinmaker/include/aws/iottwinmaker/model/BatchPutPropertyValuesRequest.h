@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::Vector<PropertyValueEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -563,25 +563,25 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAuthenticated;
-    bool m_lastAuthenticatedHasBeenSet;
+    bool m_lastAuthenticatedHasBeenSet = false;
 
     Aws::String m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_lastAuthenticatedEntity;
-    bool m_lastAuthenticatedEntityHasBeenSet;
+    bool m_lastAuthenticatedEntityHasBeenSet = false;
 
     Aws::String m_lastAuthenticatedRegion;
-    bool m_lastAuthenticatedRegionHasBeenSet;
+    bool m_lastAuthenticatedRegionHasBeenSet = false;
 
     int m_totalAuthenticatedEntities;
-    bool m_totalAuthenticatedEntitiesHasBeenSet;
+    bool m_totalAuthenticatedEntitiesHasBeenSet = false;
 
     Aws::Vector<TrackedActionLastAccessed> m_trackedActionsLastAccessed;
-    bool m_trackedActionsLastAccessedHasBeenSet;
+    bool m_trackedActionsLastAccessedHasBeenSet = false;
   };
 
 } // namespace Model

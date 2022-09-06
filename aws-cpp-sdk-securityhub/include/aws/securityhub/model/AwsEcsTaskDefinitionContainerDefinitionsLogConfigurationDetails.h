@@ -268,13 +268,13 @@ namespace Model
   private:
 
     Aws::String m_logDriver;
-    bool m_logDriverHasBeenSet;
+    bool m_logDriverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails> m_secretOptions;
-    bool m_secretOptionsHasBeenSet;
+    bool m_secretOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     AggregateConformancePackCompliance m_compliance;
-    bool m_complianceHasBeenSet;
+    bool m_complianceHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -309,22 +309,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     InputSecurityGroupState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<InputWhitelistRule> m_whitelistRules;
-    bool m_whitelistRulesHasBeenSet;
+    bool m_whitelistRulesHasBeenSet = false;
   };
 
 } // namespace Model

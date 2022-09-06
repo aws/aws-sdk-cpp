@@ -240,13 +240,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentVariables;
-    bool m_runtimeEnvironmentVariablesHasBeenSet;
+    bool m_runtimeEnvironmentVariablesHasBeenSet = false;
 
     Aws::String m_startCommand;
-    bool m_startCommandHasBeenSet;
+    bool m_startCommandHasBeenSet = false;
 
     Aws::String m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

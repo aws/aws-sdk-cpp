@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_streamType;
-    bool m_streamTypeHasBeenSet;
+    bool m_streamTypeHasBeenSet = false;
 
     KinesisStreamConfig m_kinesisStreamConfig;
-    bool m_kinesisStreamConfigHasBeenSet;
+    bool m_kinesisStreamConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
 
     bool m_includeInactive;
-    bool m_includeInactiveHasBeenSet;
+    bool m_includeInactiveHasBeenSet = false;
   };
 
 } // namespace Model

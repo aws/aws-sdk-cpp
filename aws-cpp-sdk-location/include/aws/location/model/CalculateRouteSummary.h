@@ -321,19 +321,19 @@ namespace Model
   private:
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     double m_distance;
-    bool m_distanceHasBeenSet;
+    bool m_distanceHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     double m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::Vector<double> m_routeBBox;
-    bool m_routeBBoxHasBeenSet;
+    bool m_routeBBoxHasBeenSet = false;
   };
 
 } // namespace Model

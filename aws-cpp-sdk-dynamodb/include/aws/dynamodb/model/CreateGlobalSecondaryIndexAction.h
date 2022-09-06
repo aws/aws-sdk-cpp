@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     Projection m_projection;
-    bool m_projectionHasBeenSet;
+    bool m_projectionHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
   };
 
 } // namespace Model

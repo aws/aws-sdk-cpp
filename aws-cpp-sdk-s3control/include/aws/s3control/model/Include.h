@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_buckets;
-    bool m_bucketsHasBeenSet;
+    bool m_bucketsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

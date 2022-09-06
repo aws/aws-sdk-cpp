@@ -63,7 +63,7 @@ namespace Model
   private:
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

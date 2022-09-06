@@ -139,13 +139,13 @@ namespace Model
   private:
 
     int m_finishedCount;
-    bool m_finishedCountHasBeenSet;
+    bool m_finishedCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_succeededWorlds;
-    bool m_succeededWorldsHasBeenSet;
+    bool m_succeededWorldsHasBeenSet = false;
 
     FailureSummary m_failureSummary;
-    bool m_failureSummaryHasBeenSet;
+    bool m_failureSummaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ContinuousBackupsStatus m_continuousBackupsStatus;
-    bool m_continuousBackupsStatusHasBeenSet;
+    bool m_continuousBackupsStatusHasBeenSet = false;
 
     PointInTimeRecoveryDescription m_pointInTimeRecoveryDescription;
-    bool m_pointInTimeRecoveryDescriptionHasBeenSet;
+    bool m_pointInTimeRecoveryDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

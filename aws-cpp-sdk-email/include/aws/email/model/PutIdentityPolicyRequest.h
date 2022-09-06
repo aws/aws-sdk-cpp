@@ -240,13 +240,13 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_show;
-    bool m_showHasBeenSet;
+    bool m_showHasBeenSet = false;
   };
 
 } // namespace Model

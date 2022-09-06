@@ -222,16 +222,16 @@ pushed to.
   private:
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
 
     Aws::String m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     InputDestinationVpc m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
   };
 
 } // namespace Model

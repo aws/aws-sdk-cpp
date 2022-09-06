@@ -288,16 +288,16 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Expression m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
 
     CostCategoryInheritedValueDimension m_inheritedValue;
-    bool m_inheritedValueHasBeenSet;
+    bool m_inheritedValueHasBeenSet = false;
 
     CostCategoryRuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

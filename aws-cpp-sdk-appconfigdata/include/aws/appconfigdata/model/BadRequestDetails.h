@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, InvalidParameterDetail> m_invalidParameters;
-    bool m_invalidParametersHasBeenSet;
+    bool m_invalidParametersHasBeenSet = false;
   };
 
 } // namespace Model

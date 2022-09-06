@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addSubnetIds;
-    bool m_addSubnetIdsHasBeenSet;
+    bool m_addSubnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeSubnetIds;
-    bool m_removeSubnetIdsHasBeenSet;
+    bool m_removeSubnetIdsHasBeenSet = false;
 
     ModifyTransitGatewayVpcAttachmentRequestOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

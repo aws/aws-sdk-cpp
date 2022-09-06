@@ -504,34 +504,34 @@ namespace Model
   private:
 
     FlexCacheEndpointType m_flexCacheEndpointType;
-    bool m_flexCacheEndpointTypeHasBeenSet;
+    bool m_flexCacheEndpointTypeHasBeenSet = false;
 
     Aws::String m_junctionPath;
-    bool m_junctionPathHasBeenSet;
+    bool m_junctionPathHasBeenSet = false;
 
     SecurityStyle m_securityStyle;
-    bool m_securityStyleHasBeenSet;
+    bool m_securityStyleHasBeenSet = false;
 
     int m_sizeInMegabytes;
-    bool m_sizeInMegabytesHasBeenSet;
+    bool m_sizeInMegabytesHasBeenSet = false;
 
     bool m_storageEfficiencyEnabled;
-    bool m_storageEfficiencyEnabledHasBeenSet;
+    bool m_storageEfficiencyEnabledHasBeenSet = false;
 
     Aws::String m_storageVirtualMachineId;
-    bool m_storageVirtualMachineIdHasBeenSet;
+    bool m_storageVirtualMachineIdHasBeenSet = false;
 
     bool m_storageVirtualMachineRoot;
-    bool m_storageVirtualMachineRootHasBeenSet;
+    bool m_storageVirtualMachineRootHasBeenSet = false;
 
     TieringPolicy m_tieringPolicy;
-    bool m_tieringPolicyHasBeenSet;
+    bool m_tieringPolicyHasBeenSet = false;
 
     Aws::String m_uUID;
-    bool m_uUIDHasBeenSet;
+    bool m_uUIDHasBeenSet = false;
 
     OntapVolumeType m_ontapVolumeType;
-    bool m_ontapVolumeTypeHasBeenSet;
+    bool m_ontapVolumeTypeHasBeenSet = false;
   };
 
 } // namespace Model

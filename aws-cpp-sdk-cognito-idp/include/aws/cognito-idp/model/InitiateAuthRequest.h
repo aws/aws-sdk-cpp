@@ -962,22 +962,22 @@ namespace Model
   private:
 
     AuthFlowType m_authFlow;
-    bool m_authFlowHasBeenSet;
+    bool m_authFlowHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_authParameters;
-    bool m_authParametersHasBeenSet;
+    bool m_authParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     AnalyticsMetadataType m_analyticsMetadata;
-    bool m_analyticsMetadataHasBeenSet;
+    bool m_analyticsMetadataHasBeenSet = false;
 
     UserContextDataType m_userContextData;
-    bool m_userContextDataHasBeenSet;
+    bool m_userContextDataHasBeenSet = false;
   };
 
 } // namespace Model

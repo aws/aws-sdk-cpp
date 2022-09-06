@@ -206,28 +206,28 @@ namespace Model
   private:
 
     int m_totalActions;
-    bool m_totalActionsHasBeenSet;
+    bool m_totalActionsHasBeenSet = false;
 
     int m_timeoutActions;
-    bool m_timeoutActionsHasBeenSet;
+    bool m_timeoutActionsHasBeenSet = false;
 
     int m_failedActions;
-    bool m_failedActionsHasBeenSet;
+    bool m_failedActionsHasBeenSet = false;
 
     int m_stoppedActions;
-    bool m_stoppedActionsHasBeenSet;
+    bool m_stoppedActionsHasBeenSet = false;
 
     int m_succeededActions;
-    bool m_succeededActionsHasBeenSet;
+    bool m_succeededActionsHasBeenSet = false;
 
     int m_runningActions;
-    bool m_runningActionsHasBeenSet;
+    bool m_runningActionsHasBeenSet = false;
 
     int m_erroredActions;
-    bool m_erroredActionsHasBeenSet;
+    bool m_erroredActionsHasBeenSet = false;
 
     int m_waitingActions;
-    bool m_waitingActionsHasBeenSet;
+    bool m_waitingActionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -291,16 +291,16 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
-    bool m_packageHasBeenSet;
+    bool m_packageHasBeenSet = false;
 
     Aws::String m_dependencyType;
-    bool m_dependencyTypeHasBeenSet;
+    bool m_dependencyTypeHasBeenSet = false;
 
     Aws::String m_versionRequirement;
-    bool m_versionRequirementHasBeenSet;
+    bool m_versionRequirementHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,7 +113,7 @@ AthenaClient::~AthenaClient()
 
 void AthenaClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Athena");
+  AWSClient::SetServiceClientName("Athena");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

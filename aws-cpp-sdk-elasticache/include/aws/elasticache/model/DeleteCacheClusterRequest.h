@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_finalSnapshotIdentifier;
-    bool m_finalSnapshotIdentifierHasBeenSet;
+    bool m_finalSnapshotIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

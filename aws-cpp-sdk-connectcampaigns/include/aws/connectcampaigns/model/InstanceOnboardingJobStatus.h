@@ -104,13 +104,13 @@ namespace Model
   private:
 
     Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet;
+    bool m_connectInstanceIdHasBeenSet = false;
 
     InstanceOnboardingJobFailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     InstanceOnboardingJobStatusCode m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

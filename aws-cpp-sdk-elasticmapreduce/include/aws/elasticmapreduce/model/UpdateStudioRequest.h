@@ -291,19 +291,19 @@ namespace Model
   private:
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_defaultS3Location;
-    bool m_defaultS3LocationHasBeenSet;
+    bool m_defaultS3LocationHasBeenSet = false;
   };
 
 } // namespace Model

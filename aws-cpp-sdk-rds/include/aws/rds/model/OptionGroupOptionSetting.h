@@ -349,28 +349,28 @@ namespace Model
   private:
 
     Aws::String m_settingName;
-    bool m_settingNameHasBeenSet;
+    bool m_settingNameHasBeenSet = false;
 
     Aws::String m_settingDescription;
-    bool m_settingDescriptionHasBeenSet;
+    bool m_settingDescriptionHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_applyType;
-    bool m_applyTypeHasBeenSet;
+    bool m_applyTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     bool m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     bool m_isRequired;
-    bool m_isRequiredHasBeenSet;
+    bool m_isRequiredHasBeenSet = false;
 
     Aws::Vector<MinimumEngineVersionPerAllowedValue> m_minimumEngineVersionPerAllowedValue;
-    bool m_minimumEngineVersionPerAllowedValueHasBeenSet;
+    bool m_minimumEngineVersionPerAllowedValueHasBeenSet = false;
   };
 
 } // namespace Model

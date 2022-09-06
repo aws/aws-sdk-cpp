@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<DeleteOpenZFSVolumeOption> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

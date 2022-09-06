@@ -291,13 +291,13 @@ namespace Model
   private:
 
     Aws::Vector<SubtitleFormat> m_formats;
-    bool m_formatsHasBeenSet;
+    bool m_formatsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subtitleFileUris;
-    bool m_subtitleFileUrisHasBeenSet;
+    bool m_subtitleFileUrisHasBeenSet = false;
 
     int m_outputStartIndex;
-    bool m_outputStartIndexHasBeenSet;
+    bool m_outputStartIndexHasBeenSet = false;
   };
 
 } // namespace Model

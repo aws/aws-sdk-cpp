@@ -180,19 +180,19 @@ namespace Model
   private:
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_sharedWithPrefix;
-    bool m_sharedWithPrefixHasBeenSet;
+    bool m_sharedWithPrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

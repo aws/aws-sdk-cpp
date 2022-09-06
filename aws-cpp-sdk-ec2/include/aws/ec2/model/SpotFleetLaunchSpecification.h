@@ -971,61 +971,61 @@ namespace Model
   private:
 
     Aws::Vector<GroupIdentifier> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_addressingType;
-    bool m_addressingTypeHasBeenSet;
+    bool m_addressingTypeHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     IamInstanceProfileSpecification m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     SpotFleetMonitoring m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
 
     Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     SpotPlacement m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
+    bool m_ramdiskIdHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     double m_weightedCapacity;
-    bool m_weightedCapacityHasBeenSet;
+    bool m_weightedCapacityHasBeenSet = false;
 
     Aws::Vector<SpotFleetTagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     InstanceRequirements m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

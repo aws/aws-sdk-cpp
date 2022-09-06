@@ -109,10 +109,10 @@ namespace Model
   private:
 
     CriterionKey m_criterionKey;
-    bool m_criterionKeyHasBeenSet;
+    bool m_criterionKeyHasBeenSet = false;
 
     FilterCondition m_filterCondition;
-    bool m_filterConditionHasBeenSet;
+    bool m_filterConditionHasBeenSet = false;
   };
 
 } // namespace Model

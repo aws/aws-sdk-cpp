@@ -102,7 +102,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, IPSetReference> m_iPSetReferences;
-    bool m_iPSetReferencesHasBeenSet;
+    bool m_iPSetReferencesHasBeenSet = false;
   };
 
 } // namespace Model

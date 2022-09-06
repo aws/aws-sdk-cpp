@@ -115,10 +115,10 @@ namespace Model
   private:
 
     SubjectAlternativeNames m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     ListenerTlsValidationContextTrust m_trust;
-    bool m_trustHasBeenSet;
+    bool m_trustHasBeenSet = false;
   };
 
 } // namespace Model

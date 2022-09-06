@@ -113,10 +113,10 @@ namespace Model
   private:
 
     DetectionFilter m_wordFilter;
-    bool m_wordFilterHasBeenSet;
+    bool m_wordFilterHasBeenSet = false;
 
     Aws::Vector<RegionOfInterest> m_regionsOfInterest;
-    bool m_regionsOfInterestHasBeenSet;
+    bool m_regionsOfInterestHasBeenSet = false;
   };
 
 } // namespace Model

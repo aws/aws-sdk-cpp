@@ -63,7 +63,7 @@ namespace Model
   private:
 
     Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet;
+    bool m_connectInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

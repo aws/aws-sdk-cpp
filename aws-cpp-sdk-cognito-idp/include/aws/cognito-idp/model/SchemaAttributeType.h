@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AttributeDataType m_attributeDataType;
-    bool m_attributeDataTypeHasBeenSet;
+    bool m_attributeDataTypeHasBeenSet = false;
 
     bool m_developerOnlyAttribute;
-    bool m_developerOnlyAttributeHasBeenSet;
+    bool m_developerOnlyAttributeHasBeenSet = false;
 
     bool m_mutable;
-    bool m_mutableHasBeenSet;
+    bool m_mutableHasBeenSet = false;
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
 
     NumberAttributeConstraintsType m_numberAttributeConstraints;
-    bool m_numberAttributeConstraintsHasBeenSet;
+    bool m_numberAttributeConstraintsHasBeenSet = false;
 
     StringAttributeConstraintsType m_stringAttributeConstraints;
-    bool m_stringAttributeConstraintsHasBeenSet;
+    bool m_stringAttributeConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

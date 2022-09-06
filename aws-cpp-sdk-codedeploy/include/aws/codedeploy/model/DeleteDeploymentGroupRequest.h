@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

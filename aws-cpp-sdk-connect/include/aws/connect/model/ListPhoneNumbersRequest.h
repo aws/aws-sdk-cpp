@@ -248,19 +248,19 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<PhoneNumberType> m_phoneNumberTypes;
-    bool m_phoneNumberTypesHasBeenSet;
+    bool m_phoneNumberTypesHasBeenSet = false;
 
     Aws::Vector<PhoneNumberCountryCode> m_phoneNumberCountryCodes;
-    bool m_phoneNumberCountryCodesHasBeenSet;
+    bool m_phoneNumberCountryCodesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

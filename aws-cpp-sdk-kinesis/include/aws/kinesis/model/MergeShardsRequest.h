@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_shardToMerge;
-    bool m_shardToMergeHasBeenSet;
+    bool m_shardToMergeHasBeenSet = false;
 
     Aws::String m_adjacentShardToMerge;
-    bool m_adjacentShardToMergeHasBeenSet;
+    bool m_adjacentShardToMergeHasBeenSet = false;
   };
 
 } // namespace Model

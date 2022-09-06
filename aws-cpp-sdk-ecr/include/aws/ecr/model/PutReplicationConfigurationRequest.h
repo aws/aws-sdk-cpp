@@ -67,7 +67,7 @@ namespace Model
   private:
 
     ReplicationConfiguration m_replicationConfiguration;
-    bool m_replicationConfigurationHasBeenSet;
+    bool m_replicationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

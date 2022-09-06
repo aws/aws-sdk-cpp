@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
 
     NodeLogPublishingConfiguration m_logPublishingConfiguration;
-    bool m_logPublishingConfigurationHasBeenSet;
+    bool m_logPublishingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

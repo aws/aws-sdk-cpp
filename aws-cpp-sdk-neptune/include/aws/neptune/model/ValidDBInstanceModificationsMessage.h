@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<ValidStorageOptions> m_storage;
-    bool m_storageHasBeenSet;
+    bool m_storageHasBeenSet = false;
   };
 
 } // namespace Model

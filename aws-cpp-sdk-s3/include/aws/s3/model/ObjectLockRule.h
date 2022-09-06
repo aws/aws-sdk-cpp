@@ -94,7 +94,7 @@ namespace Model
   private:
 
     DefaultRetention m_defaultRetention;
-    bool m_defaultRetentionHasBeenSet;
+    bool m_defaultRetentionHasBeenSet = false;
   };
 
 } // namespace Model

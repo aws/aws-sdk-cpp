@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_loggerDefinitionId;
-    bool m_loggerDefinitionIdHasBeenSet;
+    bool m_loggerDefinitionIdHasBeenSet = false;
   };
 
 } // namespace Model

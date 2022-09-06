@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     AnalyticsFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     StorageClassAnalysis m_storageClassAnalysis;
-    bool m_storageClassAnalysisHasBeenSet;
+    bool m_storageClassAnalysisHasBeenSet = false;
   };
 
 } // namespace Model

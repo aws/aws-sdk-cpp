@@ -363,22 +363,22 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ImageTagMutability m_imageTagMutability;
-    bool m_imageTagMutabilityHasBeenSet;
+    bool m_imageTagMutabilityHasBeenSet = false;
 
     ImageScanningConfiguration m_imageScanningConfiguration;
-    bool m_imageScanningConfigurationHasBeenSet;
+    bool m_imageScanningConfigurationHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

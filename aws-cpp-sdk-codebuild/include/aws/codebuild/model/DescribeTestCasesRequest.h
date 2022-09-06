@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_reportArn;
-    bool m_reportArnHasBeenSet;
+    bool m_reportArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     TestCaseFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

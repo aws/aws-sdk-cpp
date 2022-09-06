@@ -246,13 +246,13 @@ namespace Model
   private:
 
     Aws::String m_truststoreUri;
-    bool m_truststoreUriHasBeenSet;
+    bool m_truststoreUriHasBeenSet = false;
 
     Aws::String m_truststoreVersion;
-    bool m_truststoreVersionHasBeenSet;
+    bool m_truststoreVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_truststoreWarnings;
-    bool m_truststoreWarningsHasBeenSet;
+    bool m_truststoreWarningsHasBeenSet = false;
   };
 
 } // namespace Model

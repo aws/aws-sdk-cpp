@@ -155,16 +155,16 @@ namespace Model
   private:
 
     PreferredChannelPipeline m_preferredChannelPipeline;
-    bool m_preferredChannelPipelineHasBeenSet;
+    bool m_preferredChannelPipelineHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     MultiplexProgramServiceDescriptor m_serviceDescriptor;
-    bool m_serviceDescriptorHasBeenSet;
+    bool m_serviceDescriptorHasBeenSet = false;
 
     MultiplexVideoSettings m_videoSettings;
-    bool m_videoSettingsHasBeenSet;
+    bool m_videoSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_ruleArn;
-    bool m_ruleArnHasBeenSet;
+    bool m_ruleArnHasBeenSet = false;
 
     Aws::Vector<RuleCondition> m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -308,16 +308,16 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_ruleState;
-    bool m_ruleStateHasBeenSet;
+    bool m_ruleStateHasBeenSet = false;
 
     Aws::String m_ruleDefinition;
-    bool m_ruleDefinitionHasBeenSet;
+    bool m_ruleDefinitionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

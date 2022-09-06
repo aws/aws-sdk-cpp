@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
   };
 
 } // namespace Model

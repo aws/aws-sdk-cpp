@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_localConsolePassword;
-    bool m_localConsolePasswordHasBeenSet;
+    bool m_localConsolePasswordHasBeenSet = false;
   };
 
 } // namespace Model

@@ -115,10 +115,10 @@ namespace Model
   private:
 
     CloudWatchLogsConfig m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     S3LogsConfig m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
   };
 
 } // namespace Model

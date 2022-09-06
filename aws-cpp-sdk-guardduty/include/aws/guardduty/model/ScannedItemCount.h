@@ -100,13 +100,13 @@ namespace Model
   private:
 
     int m_totalGb;
-    bool m_totalGbHasBeenSet;
+    bool m_totalGbHasBeenSet = false;
 
     int m_files;
-    bool m_filesHasBeenSet;
+    bool m_filesHasBeenSet = false;
 
     int m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
   };
 
 } // namespace Model

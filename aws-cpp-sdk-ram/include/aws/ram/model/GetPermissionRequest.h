@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::String m_permissionArn;
-    bool m_permissionArnHasBeenSet;
+    bool m_permissionArnHasBeenSet = false;
 
     int m_permissionVersion;
-    bool m_permissionVersionHasBeenSet;
+    bool m_permissionVersionHasBeenSet = false;
   };
 
 } // namespace Model

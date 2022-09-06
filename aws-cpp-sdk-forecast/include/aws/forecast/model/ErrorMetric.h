@@ -165,19 +165,19 @@ namespace Model
   private:
 
     Aws::String m_forecastType;
-    bool m_forecastTypeHasBeenSet;
+    bool m_forecastTypeHasBeenSet = false;
 
     double m_wAPE;
-    bool m_wAPEHasBeenSet;
+    bool m_wAPEHasBeenSet = false;
 
     double m_rMSE;
-    bool m_rMSEHasBeenSet;
+    bool m_rMSEHasBeenSet = false;
 
     double m_mASE;
-    bool m_mASEHasBeenSet;
+    bool m_mASEHasBeenSet = false;
 
     double m_mAPE;
-    bool m_mAPEHasBeenSet;
+    bool m_mAPEHasBeenSet = false;
   };
 
 } // namespace Model

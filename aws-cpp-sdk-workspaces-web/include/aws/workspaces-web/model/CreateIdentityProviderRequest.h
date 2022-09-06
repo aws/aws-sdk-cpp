@@ -609,19 +609,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_identityProviderDetails;
-    bool m_identityProviderDetailsHasBeenSet;
+    bool m_identityProviderDetailsHasBeenSet = false;
 
     Aws::String m_identityProviderName;
-    bool m_identityProviderNameHasBeenSet;
+    bool m_identityProviderNameHasBeenSet = false;
 
     IdentityProviderType m_identityProviderType;
-    bool m_identityProviderTypeHasBeenSet;
+    bool m_identityProviderTypeHasBeenSet = false;
 
     Aws::String m_portalArn;
-    bool m_portalArnHasBeenSet;
+    bool m_portalArnHasBeenSet = false;
   };
 
 } // namespace Model

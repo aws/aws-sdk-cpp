@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
   };
 
 } // namespace Model

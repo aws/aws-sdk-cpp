@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::String m_endpointGroupRegion;
-    bool m_endpointGroupRegionHasBeenSet;
+    bool m_endpointGroupRegionHasBeenSet = false;
 
     Aws::Vector<CustomRoutingDestinationConfiguration> m_destinationConfigurations;
-    bool m_destinationConfigurationsHasBeenSet;
+    bool m_destinationConfigurationsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

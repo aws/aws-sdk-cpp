@@ -119,7 +119,7 @@ PinpointSMSVoiceV2Client::~PinpointSMSVoiceV2Client()
 
 void PinpointSMSVoiceV2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Pinpoint SMS Voice V2");
+  AWSClient::SetServiceClientName("Pinpoint SMS Voice V2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

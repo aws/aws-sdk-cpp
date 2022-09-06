@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_domainExecutionRoleArn;
-    bool m_domainExecutionRoleArnHasBeenSet;
+    bool m_domainExecutionRoleArnHasBeenSet = false;
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

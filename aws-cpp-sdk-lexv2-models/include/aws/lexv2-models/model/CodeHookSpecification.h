@@ -59,7 +59,7 @@ namespace Model
   private:
 
     LambdaCodeHook m_lambdaCodeHook;
-    bool m_lambdaCodeHookHasBeenSet;
+    bool m_lambdaCodeHookHasBeenSet = false;
   };
 
 } // namespace Model

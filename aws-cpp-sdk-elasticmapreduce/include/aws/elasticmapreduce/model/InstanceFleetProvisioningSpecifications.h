@@ -143,10 +143,10 @@ namespace Model
   private:
 
     SpotProvisioningSpecification m_spotSpecification;
-    bool m_spotSpecificationHasBeenSet;
+    bool m_spotSpecificationHasBeenSet = false;
 
     OnDemandProvisioningSpecification m_onDemandSpecification;
-    bool m_onDemandSpecificationHasBeenSet;
+    bool m_onDemandSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

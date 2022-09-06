@@ -165,16 +165,16 @@ namespace Model
   private:
 
     ClientTlsCertificate m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     bool m_enforce;
-    bool m_enforceHasBeenSet;
+    bool m_enforceHasBeenSet = false;
 
     Aws::Vector<int> m_ports;
-    bool m_portsHasBeenSet;
+    bool m_portsHasBeenSet = false;
 
     TlsValidationContext m_validation;
-    bool m_validationHasBeenSet;
+    bool m_validationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -341,25 +341,25 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_prefixListName;
-    bool m_prefixListNameHasBeenSet;
+    bool m_prefixListNameHasBeenSet = false;
 
     Aws::Vector<AddPrefixListEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     int m_maxEntries;
-    bool m_maxEntriesHasBeenSet;
+    bool m_maxEntriesHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

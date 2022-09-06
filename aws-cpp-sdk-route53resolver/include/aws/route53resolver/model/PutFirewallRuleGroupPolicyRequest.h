@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_firewallRuleGroupPolicy;
-    bool m_firewallRuleGroupPolicyHasBeenSet;
+    bool m_firewallRuleGroupPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -292,19 +292,19 @@ namespace Model
   private:
 
     ReservedNodeExchangeActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

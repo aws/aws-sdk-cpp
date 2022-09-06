@@ -223,13 +223,13 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_blockIndex;
-    bool m_blockIndexHasBeenSet;
+    bool m_blockIndexHasBeenSet = false;
 
     Aws::String m_blockToken;
-    bool m_blockTokenHasBeenSet;
+    bool m_blockTokenHasBeenSet = false;
   };
 
 } // namespace Model

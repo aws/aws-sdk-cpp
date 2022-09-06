@@ -604,13 +604,13 @@ namespace Model
   private:
 
     Aws::String m_eventDescription;
-    bool m_eventDescriptionHasBeenSet;
+    bool m_eventDescriptionHasBeenSet = false;
 
     Aws::String m_eventSubType;
-    bool m_eventSubTypeHasBeenSet;
+    bool m_eventSubTypeHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

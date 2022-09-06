@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_usePreviousValue;
-    bool m_usePreviousValueHasBeenSet;
+    bool m_usePreviousValueHasBeenSet = false;
   };
 
 } // namespace Model

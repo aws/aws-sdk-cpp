@@ -343,22 +343,22 @@ namespace Model
   private:
 
     Aws::String m_continentCode;
-    bool m_continentCodeHasBeenSet;
+    bool m_continentCodeHasBeenSet = false;
 
     Aws::String m_continentName;
-    bool m_continentNameHasBeenSet;
+    bool m_continentNameHasBeenSet = false;
 
     Aws::String m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_countryName;
-    bool m_countryNameHasBeenSet;
+    bool m_countryNameHasBeenSet = false;
 
     Aws::String m_subdivisionCode;
-    bool m_subdivisionCodeHasBeenSet;
+    bool m_subdivisionCodeHasBeenSet = false;
 
     Aws::String m_subdivisionName;
-    bool m_subdivisionNameHasBeenSet;
+    bool m_subdivisionNameHasBeenSet = false;
   };
 
 } // namespace Model

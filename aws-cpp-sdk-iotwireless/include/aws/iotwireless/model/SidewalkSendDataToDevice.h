@@ -104,13 +104,13 @@ namespace Model
   private:
 
     int m_seq;
-    bool m_seqHasBeenSet;
+    bool m_seqHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     int m_ackModeRetryDurationSecs;
-    bool m_ackModeRetryDurationSecsHasBeenSet;
+    bool m_ackModeRetryDurationSecsHasBeenSet = false;
   };
 
 } // namespace Model

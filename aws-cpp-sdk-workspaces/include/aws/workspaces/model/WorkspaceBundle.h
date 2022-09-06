@@ -423,34 +423,34 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     RootStorage m_rootStorage;
-    bool m_rootStorageHasBeenSet;
+    bool m_rootStorageHasBeenSet = false;
 
     UserStorage m_userStorage;
-    bool m_userStorageHasBeenSet;
+    bool m_userStorageHasBeenSet = false;
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

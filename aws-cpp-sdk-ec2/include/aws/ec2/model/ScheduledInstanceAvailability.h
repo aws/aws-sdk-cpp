@@ -469,43 +469,43 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     int m_availableInstanceCount;
-    bool m_availableInstanceCountHasBeenSet;
+    bool m_availableInstanceCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstSlotStartTime;
-    bool m_firstSlotStartTimeHasBeenSet;
+    bool m_firstSlotStartTimeHasBeenSet = false;
 
     Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
+    bool m_hourlyPriceHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_maxTermDurationInDays;
-    bool m_maxTermDurationInDaysHasBeenSet;
+    bool m_maxTermDurationInDaysHasBeenSet = false;
 
     int m_minTermDurationInDays;
-    bool m_minTermDurationInDaysHasBeenSet;
+    bool m_minTermDurationInDaysHasBeenSet = false;
 
     Aws::String m_networkPlatform;
-    bool m_networkPlatformHasBeenSet;
+    bool m_networkPlatformHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_purchaseToken;
-    bool m_purchaseTokenHasBeenSet;
+    bool m_purchaseTokenHasBeenSet = false;
 
     ScheduledInstanceRecurrence m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
 
     int m_slotDurationInHours;
-    bool m_slotDurationInHoursHasBeenSet;
+    bool m_slotDurationInHoursHasBeenSet = false;
 
     int m_totalScheduledInstanceHours;
-    bool m_totalScheduledInstanceHoursHasBeenSet;
+    bool m_totalScheduledInstanceHoursHasBeenSet = false;
   };
 
 } // namespace Model

@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_glueConnectionName;
-    bool m_glueConnectionNameHasBeenSet;
+    bool m_glueConnectionNameHasBeenSet = false;
 
     DatabaseTableOutputOptions m_databaseOptions;
-    bool m_databaseOptionsHasBeenSet;
+    bool m_databaseOptionsHasBeenSet = false;
 
     DatabaseOutputMode m_databaseOutputMode;
-    bool m_databaseOutputModeHasBeenSet;
+    bool m_databaseOutputModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
   };
 
 } // namespace Model

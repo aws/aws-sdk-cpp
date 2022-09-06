@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::String m_initQueryFile;
-    bool m_initQueryFileHasBeenSet;
+    bool m_initQueryFileHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

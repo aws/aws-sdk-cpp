@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_nwkSKey;
-    bool m_nwkSKeyHasBeenSet;
+    bool m_nwkSKeyHasBeenSet = false;
 
     Aws::String m_appSKey;
-    bool m_appSKeyHasBeenSet;
+    bool m_appSKeyHasBeenSet = false;
   };
 
 } // namespace Model

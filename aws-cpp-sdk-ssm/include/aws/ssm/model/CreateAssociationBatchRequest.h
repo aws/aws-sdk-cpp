@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<CreateAssociationBatchRequestEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
   };
 
 } // namespace Model

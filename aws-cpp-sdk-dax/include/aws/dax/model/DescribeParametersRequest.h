@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

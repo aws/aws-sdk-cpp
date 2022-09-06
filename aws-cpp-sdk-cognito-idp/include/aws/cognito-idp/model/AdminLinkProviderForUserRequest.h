@@ -332,13 +332,13 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     ProviderUserIdentifierType m_destinationUser;
-    bool m_destinationUserHasBeenSet;
+    bool m_destinationUserHasBeenSet = false;
 
     ProviderUserIdentifierType m_sourceUser;
-    bool m_sourceUserHasBeenSet;
+    bool m_sourceUserHasBeenSet = false;
   };
 
 } // namespace Model

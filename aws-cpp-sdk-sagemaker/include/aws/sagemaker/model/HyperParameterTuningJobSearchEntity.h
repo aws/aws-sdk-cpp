@@ -536,52 +536,52 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
     Aws::String m_hyperParameterTuningJobArn;
-    bool m_hyperParameterTuningJobArnHasBeenSet;
+    bool m_hyperParameterTuningJobArnHasBeenSet = false;
 
     HyperParameterTuningJobConfig m_hyperParameterTuningJobConfig;
-    bool m_hyperParameterTuningJobConfigHasBeenSet;
+    bool m_hyperParameterTuningJobConfigHasBeenSet = false;
 
     HyperParameterTrainingJobDefinition m_trainingJobDefinition;
-    bool m_trainingJobDefinitionHasBeenSet;
+    bool m_trainingJobDefinitionHasBeenSet = false;
 
     Aws::Vector<HyperParameterTrainingJobDefinition> m_trainingJobDefinitions;
-    bool m_trainingJobDefinitionsHasBeenSet;
+    bool m_trainingJobDefinitionsHasBeenSet = false;
 
     HyperParameterTuningJobStatus m_hyperParameterTuningJobStatus;
-    bool m_hyperParameterTuningJobStatusHasBeenSet;
+    bool m_hyperParameterTuningJobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_hyperParameterTuningEndTime;
-    bool m_hyperParameterTuningEndTimeHasBeenSet;
+    bool m_hyperParameterTuningEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     TrainingJobStatusCounters m_trainingJobStatusCounters;
-    bool m_trainingJobStatusCountersHasBeenSet;
+    bool m_trainingJobStatusCountersHasBeenSet = false;
 
     ObjectiveStatusCounters m_objectiveStatusCounters;
-    bool m_objectiveStatusCountersHasBeenSet;
+    bool m_objectiveStatusCountersHasBeenSet = false;
 
     HyperParameterTrainingJobSummary m_bestTrainingJob;
-    bool m_bestTrainingJobHasBeenSet;
+    bool m_bestTrainingJobHasBeenSet = false;
 
     HyperParameterTrainingJobSummary m_overallBestTrainingJob;
-    bool m_overallBestTrainingJobHasBeenSet;
+    bool m_overallBestTrainingJobHasBeenSet = false;
 
     HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
-    bool m_warmStartConfigHasBeenSet;
+    bool m_warmStartConfigHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -212,13 +212,13 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
   };
 
 } // namespace Model

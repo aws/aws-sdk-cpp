@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_sessionArn;
-    bool m_sessionArnHasBeenSet;
+    bool m_sessionArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_commitDigest;
-    bool m_commitDigestHasBeenSet;
+    bool m_commitDigestHasBeenSet = false;
   };
 
 } // namespace Model

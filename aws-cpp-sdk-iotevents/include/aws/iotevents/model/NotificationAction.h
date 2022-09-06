@@ -175,13 +175,13 @@ namespace Model
   private:
 
     NotificationTargetActions m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<SMSConfiguration> m_smsConfigurations;
-    bool m_smsConfigurationsHasBeenSet;
+    bool m_smsConfigurationsHasBeenSet = false;
 
     Aws::Vector<EmailConfiguration> m_emailConfigurations;
-    bool m_emailConfigurationsHasBeenSet;
+    bool m_emailConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

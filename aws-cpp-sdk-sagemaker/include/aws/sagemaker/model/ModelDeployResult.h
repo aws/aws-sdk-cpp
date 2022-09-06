@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
   };
 
 } // namespace Model

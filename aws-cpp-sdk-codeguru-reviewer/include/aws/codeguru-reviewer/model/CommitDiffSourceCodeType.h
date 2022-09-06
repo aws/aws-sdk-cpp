@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_sourceCommit;
-    bool m_sourceCommitHasBeenSet;
+    bool m_sourceCommitHasBeenSet = false;
 
     Aws::String m_destinationCommit;
-    bool m_destinationCommitHasBeenSet;
+    bool m_destinationCommitHasBeenSet = false;
 
     Aws::String m_mergeBaseCommit;
-    bool m_mergeBaseCommitHasBeenSet;
+    bool m_mergeBaseCommitHasBeenSet = false;
   };
 
 } // namespace Model

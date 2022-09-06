@@ -139,10 +139,10 @@ namespace Model
   private:
 
     DomainEntryPoint m_domainEntryPoint;
-    bool m_domainEntryPointHasBeenSet;
+    bool m_domainEntryPointHasBeenSet = false;
 
     PackageVersionOriginType m_originType;
-    bool m_originTypeHasBeenSet;
+    bool m_originTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_sAMLAssertion;
-    bool m_sAMLAssertionHasBeenSet;
+    bool m_sAMLAssertionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

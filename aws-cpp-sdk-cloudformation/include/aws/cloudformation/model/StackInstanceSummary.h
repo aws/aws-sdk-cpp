@@ -620,34 +620,34 @@ namespace Model
   private:
 
     Aws::String m_stackSetId;
-    bool m_stackSetIdHasBeenSet;
+    bool m_stackSetIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     StackInstanceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     StackInstanceComprehensiveStatus m_stackInstanceStatus;
-    bool m_stackInstanceStatusHasBeenSet;
+    bool m_stackInstanceStatusHasBeenSet = false;
 
     Aws::String m_organizationalUnitId;
-    bool m_organizationalUnitIdHasBeenSet;
+    bool m_organizationalUnitIdHasBeenSet = false;
 
     StackDriftStatus m_driftStatus;
-    bool m_driftStatusHasBeenSet;
+    bool m_driftStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
-    bool m_lastDriftCheckTimestampHasBeenSet;
+    bool m_lastDriftCheckTimestampHasBeenSet = false;
   };
 
 } // namespace Model

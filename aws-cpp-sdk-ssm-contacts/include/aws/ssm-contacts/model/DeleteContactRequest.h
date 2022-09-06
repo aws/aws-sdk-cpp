@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
   };
 
 } // namespace Model

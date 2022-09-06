@@ -103,10 +103,10 @@ namespace Model
   private:
 
     LiveConnectorSinkType m_sinkType;
-    bool m_sinkTypeHasBeenSet;
+    bool m_sinkTypeHasBeenSet = false;
 
     LiveConnectorRTMPConfiguration m_rTMPConfiguration;
-    bool m_rTMPConfigurationHasBeenSet;
+    bool m_rTMPConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -331,13 +331,13 @@ namespace Model
   private:
 
     Aws::Map<AgentParameterField, Aws::String> m_agentParameters;
-    bool m_agentParametersHasBeenSet;
+    bool m_agentParametersHasBeenSet = false;
 
     int m_periodInSeconds;
-    bool m_periodInSecondsHasBeenSet;
+    bool m_periodInSecondsHasBeenSet = false;
 
     bool m_shouldProfile;
-    bool m_shouldProfileHasBeenSet;
+    bool m_shouldProfileHasBeenSet = false;
   };
 
 } // namespace Model

@@ -168,16 +168,16 @@ namespace Model
   private:
 
     ConditionCheck m_conditionCheck;
-    bool m_conditionCheckHasBeenSet;
+    bool m_conditionCheckHasBeenSet = false;
 
     Put m_put;
-    bool m_putHasBeenSet;
+    bool m_putHasBeenSet = false;
 
     Delete m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
 
     Update m_update;
-    bool m_updateHasBeenSet;
+    bool m_updateHasBeenSet = false;
   };
 
 } // namespace Model

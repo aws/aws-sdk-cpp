@@ -561,46 +561,46 @@ namespace Model
   private:
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sendingIps;
-    bool m_sendingIpsHasBeenSet;
+    bool m_sendingIpsHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstSeenDateTime;
-    bool m_firstSeenDateTimeHasBeenSet;
+    bool m_firstSeenDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenDateTime;
-    bool m_lastSeenDateTimeHasBeenSet;
+    bool m_lastSeenDateTimeHasBeenSet = false;
 
     long long m_inboxCount;
-    bool m_inboxCountHasBeenSet;
+    bool m_inboxCountHasBeenSet = false;
 
     long long m_spamCount;
-    bool m_spamCountHasBeenSet;
+    bool m_spamCountHasBeenSet = false;
 
     double m_readRate;
-    bool m_readRateHasBeenSet;
+    bool m_readRateHasBeenSet = false;
 
     double m_deleteRate;
-    bool m_deleteRateHasBeenSet;
+    bool m_deleteRateHasBeenSet = false;
 
     double m_readDeleteRate;
-    bool m_readDeleteRateHasBeenSet;
+    bool m_readDeleteRateHasBeenSet = false;
 
     long long m_projectedVolume;
-    bool m_projectedVolumeHasBeenSet;
+    bool m_projectedVolumeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_esps;
-    bool m_espsHasBeenSet;
+    bool m_espsHasBeenSet = false;
   };
 
 } // namespace Model

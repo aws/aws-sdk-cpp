@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
   };
 
 } // namespace Model

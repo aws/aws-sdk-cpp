@@ -337,28 +337,28 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     FileLocation m_initialFileLocation;
-    bool m_initialFileLocationHasBeenSet;
+    bool m_initialFileLocationHasBeenSet = false;
 
     ServiceMetadata m_serviceMetadata;
-    bool m_serviceMetadataHasBeenSet;
+    bool m_serviceMetadataHasBeenSet = false;
 
     Aws::String m_executionRole;
-    bool m_executionRoleHasBeenSet;
+    bool m_executionRoleHasBeenSet = false;
 
     LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     PosixProfile m_posixProfile;
-    bool m_posixProfileHasBeenSet;
+    bool m_posixProfileHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ExecutionResults m_results;
-    bool m_resultsHasBeenSet;
+    bool m_resultsHasBeenSet = false;
   };
 
 } // namespace Model

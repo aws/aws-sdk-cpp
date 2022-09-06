@@ -218,10 +218,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_authCode;
-    bool m_authCodeHasBeenSet;
+    bool m_authCodeHasBeenSet = false;
   };
 
 } // namespace Model

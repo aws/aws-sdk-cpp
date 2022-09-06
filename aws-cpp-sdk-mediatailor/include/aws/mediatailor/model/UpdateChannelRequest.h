@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     SlateSource m_fillerSlate;
-    bool m_fillerSlateHasBeenSet;
+    bool m_fillerSlateHasBeenSet = false;
 
     Aws::Vector<RequestOutputItem> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -349,22 +349,22 @@ namespace Model
   private:
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     Aws::String m_securityProfileDescription;
-    bool m_securityProfileDescriptionHasBeenSet;
+    bool m_securityProfileDescriptionHasBeenSet = false;
 
     Aws::Vector<Behavior> m_behaviors;
-    bool m_behaviorsHasBeenSet;
+    bool m_behaviorsHasBeenSet = false;
 
     Aws::Map<AlertTargetType, AlertTarget> m_alertTargets;
-    bool m_alertTargetsHasBeenSet;
+    bool m_alertTargetsHasBeenSet = false;
 
     Aws::Vector<MetricToRetain> m_additionalMetricsToRetainV2;
-    bool m_additionalMetricsToRetainV2HasBeenSet;
+    bool m_additionalMetricsToRetainV2HasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

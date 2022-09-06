@@ -95,7 +95,7 @@ namespace Model
   private:
 
     GreenFleetProvisioningAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -145,13 +145,13 @@ namespace Model
   private:
 
     SidewalkUpdateAccount m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
 
     Aws::String m_partnerAccountId;
-    bool m_partnerAccountIdHasBeenSet;
+    bool m_partnerAccountIdHasBeenSet = false;
 
     PartnerType m_partnerType;
-    bool m_partnerTypeHasBeenSet;
+    bool m_partnerTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_metricSetArn;
-    bool m_metricSetArnHasBeenSet;
+    bool m_metricSetArnHasBeenSet = false;
   };
 
 } // namespace Model

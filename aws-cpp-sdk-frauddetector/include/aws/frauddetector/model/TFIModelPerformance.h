@@ -67,7 +67,7 @@ namespace Model
   private:
 
     double m_auc;
-    bool m_aucHasBeenSet;
+    bool m_aucHasBeenSet = false;
   };
 
 } // namespace Model

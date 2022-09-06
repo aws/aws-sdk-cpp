@@ -96,7 +96,7 @@ KinesisAnalyticsClient::~KinesisAnalyticsClient()
 
 void KinesisAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Kinesis Analytics");
+  AWSClient::SetServiceClientName("Kinesis Analytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

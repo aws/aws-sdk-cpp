@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_authorizerId;
-    bool m_authorizerIdHasBeenSet;
+    bool m_authorizerIdHasBeenSet = false;
   };
 
 } // namespace Model

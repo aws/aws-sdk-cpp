@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_authenticationProfileName;
-    bool m_authenticationProfileNameHasBeenSet;
+    bool m_authenticationProfileNameHasBeenSet = false;
   };
 
 } // namespace Model

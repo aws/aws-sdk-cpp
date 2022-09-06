@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_solutionStackName;
-    bool m_solutionStackNameHasBeenSet;
+    bool m_solutionStackNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_permittedFileTypes;
-    bool m_permittedFileTypesHasBeenSet;
+    bool m_permittedFileTypesHasBeenSet = false;
   };
 
 } // namespace Model

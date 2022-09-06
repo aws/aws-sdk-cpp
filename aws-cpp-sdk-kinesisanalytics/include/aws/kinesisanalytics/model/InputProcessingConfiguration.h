@@ -92,7 +92,7 @@ namespace Model
   private:
 
     InputLambdaProcessor m_inputLambdaProcessor;
-    bool m_inputLambdaProcessorHasBeenSet;
+    bool m_inputLambdaProcessorHasBeenSet = false;
   };
 
 } // namespace Model

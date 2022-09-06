@@ -58,7 +58,7 @@ namespace Model
   private:
 
     StaticKeySettings m_staticKeySettings;
-    bool m_staticKeySettingsHasBeenSet;
+    bool m_staticKeySettingsHasBeenSet = false;
   };
 
 } // namespace Model

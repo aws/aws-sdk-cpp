@@ -279,10 +279,10 @@ namespace Model
   private:
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

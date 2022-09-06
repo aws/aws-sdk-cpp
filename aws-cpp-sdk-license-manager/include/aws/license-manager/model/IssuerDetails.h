@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_signKey;
-    bool m_signKeyHasBeenSet;
+    bool m_signKeyHasBeenSet = false;
 
     Aws::String m_keyFingerprint;
-    bool m_keyFingerprintHasBeenSet;
+    bool m_keyFingerprintHasBeenSet = false;
   };
 
 } // namespace Model

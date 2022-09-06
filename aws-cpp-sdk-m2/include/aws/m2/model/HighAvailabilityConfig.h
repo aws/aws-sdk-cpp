@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
   };
 
 } // namespace Model

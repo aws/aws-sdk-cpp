@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     RightsizingRecommendationConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
   };
 
 } // namespace Model

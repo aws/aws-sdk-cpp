@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     AuditMitigationActionsExecutionStatus m_actionStatus;
-    bool m_actionStatusHasBeenSet;
+    bool m_actionStatusHasBeenSet = false;
 
     Aws::String m_findingId;
-    bool m_findingIdHasBeenSet;
+    bool m_findingIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

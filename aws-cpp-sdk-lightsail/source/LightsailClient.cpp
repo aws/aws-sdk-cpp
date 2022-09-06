@@ -230,7 +230,7 @@ LightsailClient::~LightsailClient()
 
 void LightsailClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Lightsail");
+  AWSClient::SetServiceClientName("Lightsail");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

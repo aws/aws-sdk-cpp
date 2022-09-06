@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::Map<HashAlgorithm, Aws::String> m_hashes;
-    bool m_hashesHasBeenSet;
+    bool m_hashesHasBeenSet = false;
   };
 
 } // namespace Model

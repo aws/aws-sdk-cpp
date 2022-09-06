@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_displayLanguageCode;
-    bool m_displayLanguageCodeHasBeenSet;
+    bool m_displayLanguageCodeHasBeenSet = false;
   };
 
 } // namespace Model

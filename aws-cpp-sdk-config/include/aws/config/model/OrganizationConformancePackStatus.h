@@ -399,19 +399,19 @@ namespace Model
   private:
 
     Aws::String m_organizationConformancePackName;
-    bool m_organizationConformancePackNameHasBeenSet;
+    bool m_organizationConformancePackNameHasBeenSet = false;
 
     OrganizationResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

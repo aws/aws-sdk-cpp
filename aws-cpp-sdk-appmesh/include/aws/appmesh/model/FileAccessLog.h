@@ -174,10 +174,10 @@ namespace Model
   private:
 
     LoggingFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

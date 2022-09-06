@@ -97,10 +97,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     CelebrityDetail m_celebrity;
-    bool m_celebrityHasBeenSet;
+    bool m_celebrityHasBeenSet = false;
   };
 
 } // namespace Model

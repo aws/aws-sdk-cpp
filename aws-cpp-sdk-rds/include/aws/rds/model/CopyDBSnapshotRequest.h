@@ -1068,31 +1068,31 @@ namespace Model
   private:
 
     Aws::String m_sourceDBSnapshotIdentifier;
-    bool m_sourceDBSnapshotIdentifierHasBeenSet;
+    bool m_sourceDBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBSnapshotIdentifier;
-    bool m_targetDBSnapshotIdentifierHasBeenSet;
+    bool m_targetDBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_targetCustomAvailabilityZone;
-    bool m_targetCustomAvailabilityZoneHasBeenSet;
+    bool m_targetCustomAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

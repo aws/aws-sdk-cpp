@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_layerId;
-    bool m_layerIdHasBeenSet;
+    bool m_layerIdHasBeenSet = false;
 
     bool m_enable;
-    bool m_enableHasBeenSet;
+    bool m_enableHasBeenSet = false;
 
     AutoScalingThresholds m_upScaling;
-    bool m_upScalingHasBeenSet;
+    bool m_upScalingHasBeenSet = false;
 
     AutoScalingThresholds m_downScaling;
-    bool m_downScalingHasBeenSet;
+    bool m_downScalingHasBeenSet = false;
   };
 
 } // namespace Model

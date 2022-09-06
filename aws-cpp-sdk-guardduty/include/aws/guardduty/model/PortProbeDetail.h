@@ -135,13 +135,13 @@ namespace Model
   private:
 
     LocalPortDetails m_localPortDetails;
-    bool m_localPortDetailsHasBeenSet;
+    bool m_localPortDetailsHasBeenSet = false;
 
     LocalIpDetails m_localIpDetails;
-    bool m_localIpDetailsHasBeenSet;
+    bool m_localIpDetailsHasBeenSet = false;
 
     RemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
   };
 
 } // namespace Model

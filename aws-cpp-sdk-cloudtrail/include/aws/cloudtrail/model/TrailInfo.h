@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_trailARN;
-    bool m_trailARNHasBeenSet;
+    bool m_trailARNHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
   };
 
 } // namespace Model

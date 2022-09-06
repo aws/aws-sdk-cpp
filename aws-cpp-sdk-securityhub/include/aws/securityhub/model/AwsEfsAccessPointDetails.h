@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_accessPointId;
-    bool m_accessPointIdHasBeenSet;
+    bool m_accessPointIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     AwsEfsAccessPointPosixUserDetails m_posixUser;
-    bool m_posixUserHasBeenSet;
+    bool m_posixUserHasBeenSet = false;
 
     AwsEfsAccessPointRootDirectoryDetails m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

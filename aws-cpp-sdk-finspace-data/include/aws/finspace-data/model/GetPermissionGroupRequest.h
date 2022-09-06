@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_permissionGroupId;
-    bool m_permissionGroupIdHasBeenSet;
+    bool m_permissionGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

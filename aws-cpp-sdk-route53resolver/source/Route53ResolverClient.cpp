@@ -139,7 +139,7 @@ Route53ResolverClient::~Route53ResolverClient()
 
 void Route53ResolverClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Route53Resolver");
+  AWSClient::SetServiceClientName("Route53Resolver");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

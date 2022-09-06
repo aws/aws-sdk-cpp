@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<AdditionalConstraintsElement> m_additionalConstraints;
-    bool m_additionalConstraintsHasBeenSet;
+    bool m_additionalConstraintsHasBeenSet = false;
 
     double m_minimumLength;
-    bool m_minimumLengthHasBeenSet;
+    bool m_minimumLengthHasBeenSet = false;
   };
 
 } // namespace Model

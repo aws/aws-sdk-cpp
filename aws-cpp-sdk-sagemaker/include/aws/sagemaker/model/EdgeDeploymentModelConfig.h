@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_modelHandle;
-    bool m_modelHandleHasBeenSet;
+    bool m_modelHandleHasBeenSet = false;
 
     Aws::String m_edgePackagingJobName;
-    bool m_edgePackagingJobNameHasBeenSet;
+    bool m_edgePackagingJobNameHasBeenSet = false;
   };
 
 } // namespace Model

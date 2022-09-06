@@ -296,25 +296,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     Aws::String m_quoteSymbol;
-    bool m_quoteSymbolHasBeenSet;
+    bool m_quoteSymbolHasBeenSet = false;
 
     CsvHeaderOption m_containsHeader;
-    bool m_containsHeaderHasBeenSet;
+    bool m_containsHeaderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_header;
-    bool m_headerHasBeenSet;
+    bool m_headerHasBeenSet = false;
 
     bool m_disableValueTrimming;
-    bool m_disableValueTrimmingHasBeenSet;
+    bool m_disableValueTrimmingHasBeenSet = false;
 
     bool m_allowSingleColumn;
-    bool m_allowSingleColumnHasBeenSet;
+    bool m_allowSingleColumnHasBeenSet = false;
   };
 
 } // namespace Model

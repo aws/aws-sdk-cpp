@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<TextLogSetting> m_textLogSettings;
-    bool m_textLogSettingsHasBeenSet;
+    bool m_textLogSettingsHasBeenSet = false;
 
     Aws::Vector<AudioLogSetting> m_audioLogSettings;
-    bool m_audioLogSettingsHasBeenSet;
+    bool m_audioLogSettingsHasBeenSet = false;
   };
 
 } // namespace Model

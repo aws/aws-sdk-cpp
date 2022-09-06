@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

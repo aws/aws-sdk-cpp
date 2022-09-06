@@ -607,22 +607,22 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<ClusterSetting> m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     ClusterConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capacityProviders;
-    bool m_capacityProvidersHasBeenSet;
+    bool m_capacityProvidersHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_defaultCapacityProviderStrategy;
-    bool m_defaultCapacityProviderStrategyHasBeenSet;
+    bool m_defaultCapacityProviderStrategyHasBeenSet = false;
   };
 
 } // namespace Model

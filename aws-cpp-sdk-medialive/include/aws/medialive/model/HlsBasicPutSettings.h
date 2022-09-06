@@ -133,16 +133,16 @@ namespace Model
   private:
 
     int m_connectionRetryInterval;
-    bool m_connectionRetryIntervalHasBeenSet;
+    bool m_connectionRetryIntervalHasBeenSet = false;
 
     int m_filecacheDuration;
-    bool m_filecacheDurationHasBeenSet;
+    bool m_filecacheDurationHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
 
     int m_restartDelay;
-    bool m_restartDelayHasBeenSet;
+    bool m_restartDelayHasBeenSet = false;
   };
 
 } // namespace Model

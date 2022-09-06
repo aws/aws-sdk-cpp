@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3ReportLocation m_s3ReportLocation;
-    bool m_s3ReportLocationHasBeenSet;
+    bool m_s3ReportLocationHasBeenSet = false;
   };
 
 } // namespace Model

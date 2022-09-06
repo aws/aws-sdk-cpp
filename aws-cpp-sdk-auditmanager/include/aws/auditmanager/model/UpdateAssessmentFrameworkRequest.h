@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_frameworkId;
-    bool m_frameworkIdHasBeenSet;
+    bool m_frameworkIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::Vector<UpdateAssessmentFrameworkControlSet> m_controlSets;
-    bool m_controlSetsHasBeenSet;
+    bool m_controlSetsHasBeenSet = false;
   };
 
 } // namespace Model

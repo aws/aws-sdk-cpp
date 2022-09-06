@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_numberOfTrues;
-    bool m_numberOfTruesHasBeenSet;
+    bool m_numberOfTruesHasBeenSet = false;
 
     long long m_numberOfFalses;
-    bool m_numberOfFalsesHasBeenSet;
+    bool m_numberOfFalsesHasBeenSet = false;
 
     long long m_numberOfNulls;
-    bool m_numberOfNullsHasBeenSet;
+    bool m_numberOfNullsHasBeenSet = false;
   };
 
 } // namespace Model

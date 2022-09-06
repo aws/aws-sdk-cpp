@@ -406,10 +406,10 @@ namespace Model
   private:
 
     Aws::String m_uiTemplateS3Uri;
-    bool m_uiTemplateS3UriHasBeenSet;
+    bool m_uiTemplateS3UriHasBeenSet = false;
 
     Aws::String m_humanTaskUiArn;
-    bool m_humanTaskUiArnHasBeenSet;
+    bool m_humanTaskUiArnHasBeenSet = false;
   };
 
 } // namespace Model

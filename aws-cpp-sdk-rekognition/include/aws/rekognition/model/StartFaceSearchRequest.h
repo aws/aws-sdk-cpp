@@ -324,22 +324,22 @@ namespace Model
   private:
 
     Video m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     double m_faceMatchThreshold;
-    bool m_faceMatchThresholdHasBeenSet;
+    bool m_faceMatchThresholdHasBeenSet = false;
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     NotificationChannel m_notificationChannel;
-    bool m_notificationChannelHasBeenSet;
+    bool m_notificationChannelHasBeenSet = false;
 
     Aws::String m_jobTag;
-    bool m_jobTagHasBeenSet;
+    bool m_jobTagHasBeenSet = false;
   };
 
 } // namespace Model

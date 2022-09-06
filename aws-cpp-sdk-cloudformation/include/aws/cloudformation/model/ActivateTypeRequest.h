@@ -535,34 +535,34 @@ namespace Model
   private:
 
     ThirdPartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_publicTypeArn;
-    bool m_publicTypeArnHasBeenSet;
+    bool m_publicTypeArnHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_typeNameAlias;
-    bool m_typeNameAliasHasBeenSet;
+    bool m_typeNameAliasHasBeenSet = false;
 
     bool m_autoUpdate;
-    bool m_autoUpdateHasBeenSet;
+    bool m_autoUpdateHasBeenSet = false;
 
     LoggingConfig m_loggingConfig;
-    bool m_loggingConfigHasBeenSet;
+    bool m_loggingConfigHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     VersionBump m_versionBump;
-    bool m_versionBumpHasBeenSet;
+    bool m_versionBumpHasBeenSet = false;
 
     long long m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
   };
 
 } // namespace Model

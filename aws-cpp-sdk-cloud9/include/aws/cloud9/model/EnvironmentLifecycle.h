@@ -198,13 +198,13 @@ namespace Model
   private:
 
     EnvironmentLifecycleStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_failureResource;
-    bool m_failureResourceHasBeenSet;
+    bool m_failureResourceHasBeenSet = false;
   };
 
 } // namespace Model

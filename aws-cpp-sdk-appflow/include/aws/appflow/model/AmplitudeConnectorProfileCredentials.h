@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     Aws::String m_secretKey;
-    bool m_secretKeyHasBeenSet;
+    bool m_secretKeyHasBeenSet = false;
   };
 
 } // namespace Model

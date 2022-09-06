@@ -467,40 +467,40 @@ namespace Model
   private:
 
     Aws::String m_trialName;
-    bool m_trialNameHasBeenSet;
+    bool m_trialNameHasBeenSet = false;
 
     Aws::String m_trialArn;
-    bool m_trialArnHasBeenSet;
+    bool m_trialArnHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_experimentName;
-    bool m_experimentNameHasBeenSet;
+    bool m_experimentNameHasBeenSet = false;
 
     TrialSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     MetadataProperties m_metadataProperties;
-    bool m_metadataPropertiesHasBeenSet;
+    bool m_metadataPropertiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<TrialComponentSimpleSummary> m_trialComponentSummaries;
-    bool m_trialComponentSummariesHasBeenSet;
+    bool m_trialComponentSummariesHasBeenSet = false;
   };
 
 } // namespace Model

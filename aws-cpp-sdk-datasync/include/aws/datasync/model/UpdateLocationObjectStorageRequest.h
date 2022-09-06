@@ -391,25 +391,25 @@ namespace Model
   private:
 
     Aws::String m_locationArn;
-    bool m_locationArnHasBeenSet;
+    bool m_locationArnHasBeenSet = false;
 
     int m_serverPort;
-    bool m_serverPortHasBeenSet;
+    bool m_serverPortHasBeenSet = false;
 
     ObjectStorageServerProtocol m_serverProtocol;
-    bool m_serverProtocolHasBeenSet;
+    bool m_serverProtocolHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_accessKey;
-    bool m_accessKeyHasBeenSet;
+    bool m_accessKeyHasBeenSet = false;
 
     Aws::String m_secretKey;
-    bool m_secretKeyHasBeenSet;
+    bool m_secretKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
   };
 
 } // namespace Model

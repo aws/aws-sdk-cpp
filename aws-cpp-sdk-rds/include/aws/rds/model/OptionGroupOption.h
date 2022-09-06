@@ -614,52 +614,52 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     Aws::String m_majorEngineVersion;
-    bool m_majorEngineVersionHasBeenSet;
+    bool m_majorEngineVersionHasBeenSet = false;
 
     Aws::String m_minimumRequiredMinorEngineVersion;
-    bool m_minimumRequiredMinorEngineVersionHasBeenSet;
+    bool m_minimumRequiredMinorEngineVersionHasBeenSet = false;
 
     bool m_portRequired;
-    bool m_portRequiredHasBeenSet;
+    bool m_portRequiredHasBeenSet = false;
 
     int m_defaultPort;
-    bool m_defaultPortHasBeenSet;
+    bool m_defaultPortHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_optionsDependedOn;
-    bool m_optionsDependedOnHasBeenSet;
+    bool m_optionsDependedOnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_optionsConflictsWith;
-    bool m_optionsConflictsWithHasBeenSet;
+    bool m_optionsConflictsWithHasBeenSet = false;
 
     bool m_persistent;
-    bool m_persistentHasBeenSet;
+    bool m_persistentHasBeenSet = false;
 
     bool m_permanent;
-    bool m_permanentHasBeenSet;
+    bool m_permanentHasBeenSet = false;
 
     bool m_requiresAutoMinorEngineVersionUpgrade;
-    bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet;
+    bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = false;
 
     bool m_vpcOnly;
-    bool m_vpcOnlyHasBeenSet;
+    bool m_vpcOnlyHasBeenSet = false;
 
     bool m_supportsOptionVersionDowngrade;
-    bool m_supportsOptionVersionDowngradeHasBeenSet;
+    bool m_supportsOptionVersionDowngradeHasBeenSet = false;
 
     Aws::Vector<OptionGroupOptionSetting> m_optionGroupOptionSettings;
-    bool m_optionGroupOptionSettingsHasBeenSet;
+    bool m_optionGroupOptionSettingsHasBeenSet = false;
 
     Aws::Vector<OptionVersion> m_optionGroupOptionVersions;
-    bool m_optionGroupOptionVersionsHasBeenSet;
+    bool m_optionGroupOptionVersionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_maximumEventAgeInSeconds;
-    bool m_maximumEventAgeInSecondsHasBeenSet;
+    bool m_maximumEventAgeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

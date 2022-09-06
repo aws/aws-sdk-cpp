@@ -441,34 +441,34 @@ namespace Model
   private:
 
     Aws::String m_channelClass;
-    bool m_channelClassHasBeenSet;
+    bool m_channelClassHasBeenSet = false;
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_maximumBitrate;
-    bool m_maximumBitrateHasBeenSet;
+    bool m_maximumBitrateHasBeenSet = false;
 
     Aws::String m_maximumFramerate;
-    bool m_maximumFramerateHasBeenSet;
+    bool m_maximumFramerateHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_specialFeature;
-    bool m_specialFeatureHasBeenSet;
+    bool m_specialFeatureHasBeenSet = false;
 
     Aws::String m_videoQuality;
-    bool m_videoQualityHasBeenSet;
+    bool m_videoQualityHasBeenSet = false;
   };
 
 } // namespace Model

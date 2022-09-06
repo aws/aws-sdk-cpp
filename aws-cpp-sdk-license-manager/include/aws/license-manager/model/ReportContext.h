@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_licenseConfigurationArns;
-    bool m_licenseConfigurationArnsHasBeenSet;
+    bool m_licenseConfigurationArnsHasBeenSet = false;
   };
 
 } // namespace Model

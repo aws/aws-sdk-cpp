@@ -346,28 +346,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_crlArn;
-    bool m_crlArnHasBeenSet;
+    bool m_crlArnHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_crlData;
-    bool m_crlDataHasBeenSet;
+    bool m_crlDataHasBeenSet = false;
 
     Aws::String m_crlId;
-    bool m_crlIdHasBeenSet;
+    bool m_crlIdHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_trustAnchorArn;
-    bool m_trustAnchorArnHasBeenSet;
+    bool m_trustAnchorArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

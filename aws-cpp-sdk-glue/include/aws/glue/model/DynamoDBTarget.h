@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     bool m_scanAll;
-    bool m_scanAllHasBeenSet;
+    bool m_scanAllHasBeenSet = false;
 
     double m_scanRate;
-    bool m_scanRateHasBeenSet;
+    bool m_scanRateHasBeenSet = false;
   };
 
 } // namespace Model

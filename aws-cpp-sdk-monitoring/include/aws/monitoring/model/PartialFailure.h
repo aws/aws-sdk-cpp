@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_failureResource;
-    bool m_failureResourceHasBeenSet;
+    bool m_failureResourceHasBeenSet = false;
 
     Aws::String m_exceptionType;
-    bool m_exceptionTypeHasBeenSet;
+    bool m_exceptionTypeHasBeenSet = false;
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureDescription;
-    bool m_failureDescriptionHasBeenSet;
+    bool m_failureDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

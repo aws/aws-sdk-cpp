@@ -71,7 +71,7 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
   };
 
 } // namespace Model

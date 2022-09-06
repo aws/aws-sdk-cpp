@@ -307,25 +307,25 @@ namespace Model
   private:
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<PublicIpv4PoolRange> m_poolAddressRanges;
-    bool m_poolAddressRangesHasBeenSet;
+    bool m_poolAddressRangesHasBeenSet = false;
 
     int m_totalAddressCount;
-    bool m_totalAddressCountHasBeenSet;
+    bool m_totalAddressCountHasBeenSet = false;
 
     int m_totalAvailableAddressCount;
-    bool m_totalAvailableAddressCountHasBeenSet;
+    bool m_totalAvailableAddressCountHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

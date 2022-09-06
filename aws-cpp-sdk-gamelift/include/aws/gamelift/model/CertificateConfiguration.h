@@ -94,7 +94,7 @@ namespace Model
   private:
 
     CertificateType m_certificateType;
-    bool m_certificateTypeHasBeenSet;
+    bool m_certificateTypeHasBeenSet = false;
   };
 
 } // namespace Model

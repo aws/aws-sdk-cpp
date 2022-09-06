@@ -88,10 +88,10 @@ namespace Model
   private:
 
     long long m_boundedSize;
-    bool m_boundedSizeHasBeenSet;
+    bool m_boundedSizeHasBeenSet = false;
 
     long long m_boundedFiles;
-    bool m_boundedFilesHasBeenSet;
+    bool m_boundedFilesHasBeenSet = false;
   };
 
 } // namespace Model

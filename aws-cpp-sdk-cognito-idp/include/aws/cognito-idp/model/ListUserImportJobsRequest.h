@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_paginationToken;
-    bool m_paginationTokenHasBeenSet;
+    bool m_paginationTokenHasBeenSet = false;
   };
 
 } // namespace Model

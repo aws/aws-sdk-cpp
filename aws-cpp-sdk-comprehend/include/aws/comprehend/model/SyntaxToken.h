@@ -197,19 +197,19 @@ namespace Model
   private:
 
     int m_tokenId;
-    bool m_tokenIdHasBeenSet;
+    bool m_tokenIdHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     PartOfSpeechTag m_partOfSpeech;
-    bool m_partOfSpeechHasBeenSet;
+    bool m_partOfSpeechHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,13 +163,13 @@ namespace Model
   private:
 
     AncillaryConvert608To708 m_convert608To708;
-    bool m_convert608To708HasBeenSet;
+    bool m_convert608To708HasBeenSet = false;
 
     int m_sourceAncillaryChannelNumber;
-    bool m_sourceAncillaryChannelNumberHasBeenSet;
+    bool m_sourceAncillaryChannelNumberHasBeenSet = false;
 
     AncillaryTerminateCaptions m_terminateCaptions;
-    bool m_terminateCaptionsHasBeenSet;
+    bool m_terminateCaptionsHasBeenSet = false;
   };
 
 } // namespace Model

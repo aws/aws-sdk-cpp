@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_iD;
-    bool m_iDHasBeenSet;
+    bool m_iDHasBeenSet = false;
   };
 
 } // namespace Model

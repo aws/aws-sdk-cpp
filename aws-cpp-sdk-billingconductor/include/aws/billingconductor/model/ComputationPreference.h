@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_pricingPlanArn;
-    bool m_pricingPlanArnHasBeenSet;
+    bool m_pricingPlanArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -365,31 +365,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
     bool m_hasChildEntities;
-    bool m_hasChildEntitiesHasBeenSet;
+    bool m_hasChildEntitiesHasBeenSet = false;
 
     Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
+    bool m_parentEntityIdHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet;
+    bool m_updateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

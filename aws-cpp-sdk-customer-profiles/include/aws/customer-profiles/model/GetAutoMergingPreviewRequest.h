@@ -170,16 +170,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Consolidation m_consolidation;
-    bool m_consolidationHasBeenSet;
+    bool m_consolidationHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
 
     double m_minAllowedConfidenceScoreForMerging;
-    bool m_minAllowedConfidenceScoreForMergingHasBeenSet;
+    bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 
 } // namespace Model

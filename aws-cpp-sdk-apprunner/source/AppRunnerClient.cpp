@@ -106,7 +106,7 @@ AppRunnerClient::~AppRunnerClient()
 
 void AppRunnerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AppRunner");
+  AWSClient::SetServiceClientName("AppRunner");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_transformId;
-    bool m_transformIdHasBeenSet;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_taskRunId;
-    bool m_taskRunIdHasBeenSet;
+    bool m_taskRunIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::Vector<PriceScheduleSpecification> m_priceSchedules;
-    bool m_priceSchedulesHasBeenSet;
+    bool m_priceSchedulesHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
   };
 
 } // namespace Model

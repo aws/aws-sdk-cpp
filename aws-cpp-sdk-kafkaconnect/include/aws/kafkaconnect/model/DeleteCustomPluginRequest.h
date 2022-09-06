@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_customPluginArn;
-    bool m_customPluginArnHasBeenSet;
+    bool m_customPluginArnHasBeenSet = false;
   };
 
 } // namespace Model

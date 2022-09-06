@@ -392,25 +392,25 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_sourceProductArn;
-    bool m_sourceProductArnHasBeenSet;
+    bool m_sourceProductArnHasBeenSet = false;
 
     Aws::String m_targetProductId;
-    bool m_targetProductIdHasBeenSet;
+    bool m_targetProductIdHasBeenSet = false;
 
     Aws::String m_targetProductName;
-    bool m_targetProductNameHasBeenSet;
+    bool m_targetProductNameHasBeenSet = false;
 
     Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>> m_sourceProvisioningArtifactIdentifiers;
-    bool m_sourceProvisioningArtifactIdentifiersHasBeenSet;
+    bool m_sourceProvisioningArtifactIdentifiersHasBeenSet = false;
 
     Aws::Vector<CopyOption> m_copyOptions;
-    bool m_copyOptionsHasBeenSet;
+    bool m_copyOptionsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

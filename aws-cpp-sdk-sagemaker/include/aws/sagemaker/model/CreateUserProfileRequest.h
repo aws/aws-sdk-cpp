@@ -347,22 +347,22 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     Aws::String m_singleSignOnUserIdentifier;
-    bool m_singleSignOnUserIdentifierHasBeenSet;
+    bool m_singleSignOnUserIdentifierHasBeenSet = false;
 
     Aws::String m_singleSignOnUserValue;
-    bool m_singleSignOnUserValueHasBeenSet;
+    bool m_singleSignOnUserValueHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     UserSettings m_userSettings;
-    bool m_userSettingsHasBeenSet;
+    bool m_userSettingsHasBeenSet = false;
   };
 
 } // namespace Model

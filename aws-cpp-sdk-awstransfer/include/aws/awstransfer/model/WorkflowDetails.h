@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::Vector<WorkflowDetail> m_onUpload;
-    bool m_onUploadHasBeenSet;
+    bool m_onUploadHasBeenSet = false;
   };
 
 } // namespace Model

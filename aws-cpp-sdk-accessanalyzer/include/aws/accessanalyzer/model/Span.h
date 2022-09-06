@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Position m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Position m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

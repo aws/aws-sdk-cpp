@@ -84,7 +84,7 @@ IoTSecureTunnelingClient::~IoTSecureTunnelingClient()
 
 void IoTSecureTunnelingClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoTSecureTunneling");
+  AWSClient::SetServiceClientName("IoTSecureTunneling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

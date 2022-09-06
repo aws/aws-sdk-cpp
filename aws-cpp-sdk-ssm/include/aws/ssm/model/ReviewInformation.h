@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_reviewedTime;
-    bool m_reviewedTimeHasBeenSet;
+    bool m_reviewedTimeHasBeenSet = false;
 
     ReviewStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reviewer;
-    bool m_reviewerHasBeenSet;
+    bool m_reviewerHasBeenSet = false;
   };
 
 } // namespace Model

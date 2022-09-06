@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     JobState m_jobState;
-    bool m_jobStateHasBeenSet;
+    bool m_jobStateHasBeenSet = false;
 
     bool m_isMaster;
-    bool m_isMasterHasBeenSet;
+    bool m_isMasterHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     SnowballType m_snowballType;
-    bool m_snowballTypeHasBeenSet;
+    bool m_snowballTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

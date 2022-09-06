@@ -461,37 +461,37 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     SitePlan m_currentPlan;
-    bool m_currentPlanHasBeenSet;
+    bool m_currentPlanHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_networkArn;
-    bool m_networkArnHasBeenSet;
+    bool m_networkArnHasBeenSet = false;
 
     Aws::String m_networkSiteArn;
-    bool m_networkSiteArnHasBeenSet;
+    bool m_networkSiteArnHasBeenSet = false;
 
     Aws::String m_networkSiteName;
-    bool m_networkSiteNameHasBeenSet;
+    bool m_networkSiteNameHasBeenSet = false;
 
     SitePlan m_pendingPlan;
-    bool m_pendingPlanHasBeenSet;
+    bool m_pendingPlanHasBeenSet = false;
 
     NetworkSiteStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

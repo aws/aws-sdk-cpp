@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_jsonPath;
-    bool m_jsonPathHasBeenSet;
+    bool m_jsonPathHasBeenSet = false;
 
     long long m_recordIndex;
-    bool m_recordIndexHasBeenSet;
+    bool m_recordIndexHasBeenSet = false;
   };
 
 } // namespace Model

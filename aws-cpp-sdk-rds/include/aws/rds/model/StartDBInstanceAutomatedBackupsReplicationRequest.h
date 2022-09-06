@@ -415,19 +415,19 @@ namespace Model
   private:
 
     Aws::String m_sourceDBInstanceArn;
-    bool m_sourceDBInstanceArnHasBeenSet;
+    bool m_sourceDBInstanceArnHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

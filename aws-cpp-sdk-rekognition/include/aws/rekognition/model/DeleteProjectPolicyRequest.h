@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyRevisionId;
-    bool m_policyRevisionIdHasBeenSet;
+    bool m_policyRevisionIdHasBeenSet = false;
   };
 
 } // namespace Model

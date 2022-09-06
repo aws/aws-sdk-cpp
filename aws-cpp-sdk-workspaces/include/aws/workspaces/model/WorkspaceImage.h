@@ -481,37 +481,37 @@ namespace Model
   private:
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     WorkspaceImageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     WorkspaceImageRequiredTenancy m_requiredTenancy;
-    bool m_requiredTenancyHasBeenSet;
+    bool m_requiredTenancyHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     UpdateResult m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
   };
 
 } // namespace Model

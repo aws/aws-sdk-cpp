@@ -309,22 +309,22 @@ namespace Model
   private:
 
     Aws::String m_locationCode;
-    bool m_locationCodeHasBeenSet;
+    bool m_locationCodeHasBeenSet = false;
 
     Aws::String m_locationName;
-    bool m_locationNameHasBeenSet;
+    bool m_locationNameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availablePortSpeeds;
-    bool m_availablePortSpeedsHasBeenSet;
+    bool m_availablePortSpeedsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availableProviders;
-    bool m_availableProvidersHasBeenSet;
+    bool m_availableProvidersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availableMacSecPortSpeeds;
-    bool m_availableMacSecPortSpeedsHasBeenSet;
+    bool m_availableMacSecPortSpeedsHasBeenSet = false;
   };
 
 } // namespace Model

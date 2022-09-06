@@ -100,10 +100,10 @@ namespace Model
   private:
 
     RequestDetails m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

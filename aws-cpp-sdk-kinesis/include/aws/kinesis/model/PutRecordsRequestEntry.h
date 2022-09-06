@@ -236,13 +236,13 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_explicitHashKey;
-    bool m_explicitHashKeyHasBeenSet;
+    bool m_explicitHashKeyHasBeenSet = false;
 
     Aws::String m_partitionKey;
-    bool m_partitionKeyHasBeenSet;
+    bool m_partitionKeyHasBeenSet = false;
   };
 
 } // namespace Model

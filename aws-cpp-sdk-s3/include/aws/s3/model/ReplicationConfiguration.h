@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::Vector<ReplicationRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

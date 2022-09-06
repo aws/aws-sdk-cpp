@@ -416,22 +416,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_administratorId;
-    bool m_administratorIdHasBeenSet;
+    bool m_administratorIdHasBeenSet = false;
 
     Aws::String m_memberStatus;
-    bool m_memberStatusHasBeenSet;
+    bool m_memberStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitedAt;
-    bool m_invitedAtHasBeenSet;
+    bool m_invitedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

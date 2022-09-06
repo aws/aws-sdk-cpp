@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_tunnelId;
-    bool m_tunnelIdHasBeenSet;
+    bool m_tunnelIdHasBeenSet = false;
 
     ClientMode m_clientMode;
-    bool m_clientModeHasBeenSet;
+    bool m_clientModeHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
   };
 
 } // namespace Model

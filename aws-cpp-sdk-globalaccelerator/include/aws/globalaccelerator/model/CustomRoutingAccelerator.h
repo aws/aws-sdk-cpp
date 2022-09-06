@@ -471,31 +471,31 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<IpSet> m_ipSets;
-    bool m_ipSetsHasBeenSet;
+    bool m_ipSetsHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     CustomRoutingAcceleratorStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

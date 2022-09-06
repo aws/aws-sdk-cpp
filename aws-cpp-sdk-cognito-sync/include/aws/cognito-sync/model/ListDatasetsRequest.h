@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

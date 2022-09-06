@@ -409,31 +409,31 @@ namespace Model
   private:
 
     Aws::String m_absoluteTime;
-    bool m_absoluteTimeHasBeenSet;
+    bool m_absoluteTimeHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ChatItemType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_participantId;
-    bool m_participantIdHasBeenSet;
+    bool m_participantIdHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     ParticipantRole m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
 
     Aws::Vector<AttachmentItem> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
   };
 
 } // namespace Model

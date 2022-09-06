@@ -203,13 +203,13 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_originRequestPolicyId;
-    bool m_originRequestPolicyIdHasBeenSet;
+    bool m_originRequestPolicyIdHasBeenSet = false;
   };
 
 } // namespace Model

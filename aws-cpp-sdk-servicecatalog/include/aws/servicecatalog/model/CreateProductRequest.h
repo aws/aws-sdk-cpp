@@ -553,40 +553,40 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_distributor;
-    bool m_distributorHasBeenSet;
+    bool m_distributorHasBeenSet = false;
 
     Aws::String m_supportDescription;
-    bool m_supportDescriptionHasBeenSet;
+    bool m_supportDescriptionHasBeenSet = false;
 
     Aws::String m_supportEmail;
-    bool m_supportEmailHasBeenSet;
+    bool m_supportEmailHasBeenSet = false;
 
     Aws::String m_supportUrl;
-    bool m_supportUrlHasBeenSet;
+    bool m_supportUrlHasBeenSet = false;
 
     ProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ProvisioningArtifactProperties m_provisioningArtifactParameters;
-    bool m_provisioningArtifactParametersHasBeenSet;
+    bool m_provisioningArtifactParametersHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

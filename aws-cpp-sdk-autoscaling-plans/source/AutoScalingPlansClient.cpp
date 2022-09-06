@@ -82,7 +82,7 @@ AutoScalingPlansClient::~AutoScalingPlansClient()
 
 void AutoScalingPlansClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Auto Scaling Plans");
+  AWSClient::SetServiceClientName("Auto Scaling Plans");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

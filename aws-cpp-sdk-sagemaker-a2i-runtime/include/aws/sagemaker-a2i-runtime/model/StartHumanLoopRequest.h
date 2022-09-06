@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_humanLoopName;
-    bool m_humanLoopNameHasBeenSet;
+    bool m_humanLoopNameHasBeenSet = false;
 
     Aws::String m_flowDefinitionArn;
-    bool m_flowDefinitionArnHasBeenSet;
+    bool m_flowDefinitionArnHasBeenSet = false;
 
     HumanLoopInput m_humanLoopInput;
-    bool m_humanLoopInputHasBeenSet;
+    bool m_humanLoopInputHasBeenSet = false;
 
     HumanLoopDataAttributes m_dataAttributes;
-    bool m_dataAttributesHasBeenSet;
+    bool m_dataAttributesHasBeenSet = false;
   };
 
 } // namespace Model

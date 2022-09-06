@@ -635,34 +635,34 @@ namespace Model
   private:
 
     Aws::String m_destinationPhoneNumber;
-    bool m_destinationPhoneNumberHasBeenSet;
+    bool m_destinationPhoneNumberHasBeenSet = false;
 
     Aws::String m_contactFlowId;
-    bool m_contactFlowIdHasBeenSet;
+    bool m_contactFlowIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_sourcePhoneNumber;
-    bool m_sourcePhoneNumberHasBeenSet;
+    bool m_sourcePhoneNumberHasBeenSet = false;
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
-    bool m_answerMachineDetectionConfigHasBeenSet;
+    bool m_answerMachineDetectionConfigHasBeenSet = false;
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     TrafficType m_trafficType;
-    bool m_trafficTypeHasBeenSet;
+    bool m_trafficTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorFilterId;
-    bool m_trafficMirrorFilterIdHasBeenSet;
+    bool m_trafficMirrorFilterIdHasBeenSet = false;
 
     Aws::Vector<TrafficMirrorNetworkService> m_addNetworkServices;
-    bool m_addNetworkServicesHasBeenSet;
+    bool m_addNetworkServicesHasBeenSet = false;
 
     Aws::Vector<TrafficMirrorNetworkService> m_removeNetworkServices;
-    bool m_removeNetworkServicesHasBeenSet;
+    bool m_removeNetworkServicesHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

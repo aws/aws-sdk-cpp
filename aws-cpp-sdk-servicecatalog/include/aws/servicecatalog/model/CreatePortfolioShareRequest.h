@@ -274,19 +274,19 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_portfolioId;
-    bool m_portfolioIdHasBeenSet;
+    bool m_portfolioIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     OrganizationNode m_organizationNode;
-    bool m_organizationNodeHasBeenSet;
+    bool m_organizationNodeHasBeenSet = false;
 
     bool m_shareTagOptions;
-    bool m_shareTagOptionsHasBeenSet;
+    bool m_shareTagOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -470,31 +470,31 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     EncodingType m_encodingType;
-    bool m_encodingTypeHasBeenSet;
+    bool m_encodingTypeHasBeenSet = false;
 
     Aws::String m_keyMarker;
-    bool m_keyMarkerHasBeenSet;
+    bool m_keyMarkerHasBeenSet = false;
 
     int m_maxKeys;
-    bool m_maxKeysHasBeenSet;
+    bool m_maxKeysHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_versionIdMarker;
-    bool m_versionIdMarkerHasBeenSet;
+    bool m_versionIdMarkerHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

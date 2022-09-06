@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::Vector<ClusterEndpoint> m_clusterEndpoints;
-    bool m_clusterEndpointsHasBeenSet;
+    bool m_clusterEndpointsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

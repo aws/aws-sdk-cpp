@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ValueHolder m_blockAddress;
-    bool m_blockAddressHasBeenSet;
+    bool m_blockAddressHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     ValueHolder m_digestTipAddress;
-    bool m_digestTipAddressHasBeenSet;
+    bool m_digestTipAddressHasBeenSet = false;
   };
 
 } // namespace Model

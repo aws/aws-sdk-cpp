@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     DocumentFormat m_documentFormat;
-    bool m_documentFormatHasBeenSet;
+    bool m_documentFormatHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,7 +79,7 @@ namespace Model
   private:
 
     InputLambdaProcessorDescription m_inputLambdaProcessorDescription;
-    bool m_inputLambdaProcessorDescriptionHasBeenSet;
+    bool m_inputLambdaProcessorDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

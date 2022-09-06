@@ -111,7 +111,7 @@ MemoryDBClient::~MemoryDBClient()
 
 void MemoryDBClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MemoryDB");
+  AWSClient::SetServiceClientName("MemoryDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_modelType;
-    bool m_modelTypeHasBeenSet;
+    bool m_modelTypeHasBeenSet = false;
 
     Aws::Vector<ModelVersionEvaluation> m_evaluations;
-    bool m_evaluationsHasBeenSet;
+    bool m_evaluationsHasBeenSet = false;
   };
 
 } // namespace Model

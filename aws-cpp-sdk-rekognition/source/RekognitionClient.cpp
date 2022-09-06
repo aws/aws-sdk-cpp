@@ -139,7 +139,7 @@ RekognitionClient::~RekognitionClient()
 
 void RekognitionClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Rekognition");
+  AWSClient::SetServiceClientName("Rekognition");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

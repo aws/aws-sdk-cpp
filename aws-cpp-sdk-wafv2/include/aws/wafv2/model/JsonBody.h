@@ -347,16 +347,16 @@ namespace Model
   private:
 
     JsonMatchPattern m_matchPattern;
-    bool m_matchPatternHasBeenSet;
+    bool m_matchPatternHasBeenSet = false;
 
     JsonMatchScope m_matchScope;
-    bool m_matchScopeHasBeenSet;
+    bool m_matchScopeHasBeenSet = false;
 
     BodyParsingFallbackBehavior m_invalidFallbackBehavior;
-    bool m_invalidFallbackBehaviorHasBeenSet;
+    bool m_invalidFallbackBehaviorHasBeenSet = false;
 
     OversizeHandling m_oversizeHandling;
-    bool m_oversizeHandlingHasBeenSet;
+    bool m_oversizeHandlingHasBeenSet = false;
   };
 
 } // namespace Model

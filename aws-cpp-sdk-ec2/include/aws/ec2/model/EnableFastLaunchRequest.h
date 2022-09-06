@@ -282,22 +282,22 @@ namespace Model
   private:
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     FastLaunchSnapshotConfigurationRequest m_snapshotConfiguration;
-    bool m_snapshotConfigurationHasBeenSet;
+    bool m_snapshotConfigurationHasBeenSet = false;
 
     FastLaunchLaunchTemplateSpecificationRequest m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     int m_maxParallelLaunches;
-    bool m_maxParallelLaunchesHasBeenSet;
+    bool m_maxParallelLaunchesHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

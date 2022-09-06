@@ -377,31 +377,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<CredentialSummary> m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<InstanceProperty> m_instanceProperties;
-    bool m_instancePropertiesHasBeenSet;
+    bool m_instancePropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenAt;
-    bool m_lastSeenAtHasBeenSet;
+    bool m_lastSeenAtHasBeenSet = false;
 
     Aws::String m_subjectArn;
-    bool m_subjectArnHasBeenSet;
+    bool m_subjectArnHasBeenSet = false;
 
     Aws::String m_subjectId;
-    bool m_subjectIdHasBeenSet;
+    bool m_subjectIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_x509Subject;
-    bool m_x509SubjectHasBeenSet;
+    bool m_x509SubjectHasBeenSet = false;
   };
 
 } // namespace Model

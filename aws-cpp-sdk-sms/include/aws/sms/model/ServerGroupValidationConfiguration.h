@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_serverGroupId;
-    bool m_serverGroupIdHasBeenSet;
+    bool m_serverGroupIdHasBeenSet = false;
 
     Aws::Vector<ServerValidationConfiguration> m_serverValidationConfigurations;
-    bool m_serverValidationConfigurationsHasBeenSet;
+    bool m_serverValidationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_codeRepositoryName;
-    bool m_codeRepositoryNameHasBeenSet;
+    bool m_codeRepositoryNameHasBeenSet = false;
   };
 
 } // namespace Model

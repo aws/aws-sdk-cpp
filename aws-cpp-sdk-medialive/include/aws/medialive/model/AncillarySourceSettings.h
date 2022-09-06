@@ -74,7 +74,7 @@ namespace Model
   private:
 
     int m_sourceAncillaryChannelNumber;
-    bool m_sourceAncillaryChannelNumberHasBeenSet;
+    bool m_sourceAncillaryChannelNumberHasBeenSet = false;
   };
 
 } // namespace Model

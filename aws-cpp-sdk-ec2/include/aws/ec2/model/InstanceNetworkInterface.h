@@ -760,58 +760,58 @@ namespace Model
   private:
 
     InstanceNetworkInterfaceAssociation m_association;
-    bool m_associationHasBeenSet;
+    bool m_associationHasBeenSet = false;
 
     InstanceNetworkInterfaceAttachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<GroupIdentifier> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::Vector<InstancePrivateIpAddress> m_privateIpAddresses;
-    bool m_privateIpAddressesHasBeenSet;
+    bool m_privateIpAddressesHasBeenSet = false;
 
     bool m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
+    bool m_sourceDestCheckHasBeenSet = false;
 
     NetworkInterfaceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_interfaceType;
-    bool m_interfaceTypeHasBeenSet;
+    bool m_interfaceTypeHasBeenSet = false;
 
     Aws::Vector<InstanceIpv4Prefix> m_ipv4Prefixes;
-    bool m_ipv4PrefixesHasBeenSet;
+    bool m_ipv4PrefixesHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Prefix> m_ipv6Prefixes;
-    bool m_ipv6PrefixesHasBeenSet;
+    bool m_ipv6PrefixesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -95,10 +95,10 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -344,19 +344,19 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dashSignaledSystemIds;
-    bool m_dashSignaledSystemIdsHasBeenSet;
+    bool m_dashSignaledSystemIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hlsSignaledSystemIds;
-    bool m_hlsSignaledSystemIdsHasBeenSet;
+    bool m_hlsSignaledSystemIdsHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

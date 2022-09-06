@@ -357,28 +357,28 @@ namespace Model
   private:
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_managedPolicyArns;
-    bool m_managedPolicyArnsHasBeenSet;
+    bool m_managedPolicyArnsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_requireInstanceProperties;
-    bool m_requireInstancePropertiesHasBeenSet;
+    bool m_requireInstancePropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roleArns;
-    bool m_roleArnsHasBeenSet;
+    bool m_roleArnsHasBeenSet = false;
 
     Aws::String m_sessionPolicy;
-    bool m_sessionPolicyHasBeenSet;
+    bool m_sessionPolicyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

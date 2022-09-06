@@ -336,22 +336,22 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     PrincipalType m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -270,25 +270,25 @@ namespace Model
   private:
 
     Aws::String m_suiteDefinitionId;
-    bool m_suiteDefinitionIdHasBeenSet;
+    bool m_suiteDefinitionIdHasBeenSet = false;
 
     Aws::String m_suiteDefinitionName;
-    bool m_suiteDefinitionNameHasBeenSet;
+    bool m_suiteDefinitionNameHasBeenSet = false;
 
     Aws::Vector<DeviceUnderTest> m_defaultDevices;
-    bool m_defaultDevicesHasBeenSet;
+    bool m_defaultDevicesHasBeenSet = false;
 
     bool m_intendedForQualification;
-    bool m_intendedForQualificationHasBeenSet;
+    bool m_intendedForQualificationHasBeenSet = false;
 
     bool m_isLongDurationTest;
-    bool m_isLongDurationTestHasBeenSet;
+    bool m_isLongDurationTestHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

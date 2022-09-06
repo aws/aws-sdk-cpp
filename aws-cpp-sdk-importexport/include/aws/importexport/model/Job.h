@@ -119,16 +119,16 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_isCanceled;
-    bool m_isCanceledHasBeenSet;
+    bool m_isCanceledHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

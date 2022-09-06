@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

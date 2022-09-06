@@ -1352,73 +1352,73 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     FleetType m_fleetType;
-    bool m_fleetTypeHasBeenSet;
+    bool m_fleetTypeHasBeenSet = false;
 
     EC2InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminationTime;
-    bool m_terminationTimeHasBeenSet;
+    bool m_terminationTimeHasBeenSet = false;
 
     FleetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_buildId;
-    bool m_buildIdHasBeenSet;
+    bool m_buildIdHasBeenSet = false;
 
     Aws::String m_buildArn;
-    bool m_buildArnHasBeenSet;
+    bool m_buildArnHasBeenSet = false;
 
     Aws::String m_scriptId;
-    bool m_scriptIdHasBeenSet;
+    bool m_scriptIdHasBeenSet = false;
 
     Aws::String m_scriptArn;
-    bool m_scriptArnHasBeenSet;
+    bool m_scriptArnHasBeenSet = false;
 
     Aws::String m_serverLaunchPath;
-    bool m_serverLaunchPathHasBeenSet;
+    bool m_serverLaunchPathHasBeenSet = false;
 
     Aws::String m_serverLaunchParameters;
-    bool m_serverLaunchParametersHasBeenSet;
+    bool m_serverLaunchParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logPaths;
-    bool m_logPathsHasBeenSet;
+    bool m_logPathsHasBeenSet = false;
 
     ProtectionPolicy m_newGameSessionProtectionPolicy;
-    bool m_newGameSessionProtectionPolicyHasBeenSet;
+    bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
-    bool m_resourceCreationLimitPolicyHasBeenSet;
+    bool m_resourceCreationLimitPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metricGroups;
-    bool m_metricGroupsHasBeenSet;
+    bool m_metricGroupsHasBeenSet = false;
 
     Aws::Vector<FleetAction> m_stoppedActions;
-    bool m_stoppedActionsHasBeenSet;
+    bool m_stoppedActionsHasBeenSet = false;
 
     Aws::String m_instanceRoleArn;
-    bool m_instanceRoleArnHasBeenSet;
+    bool m_instanceRoleArnHasBeenSet = false;
 
     CertificateConfiguration m_certificateConfiguration;
-    bool m_certificateConfigurationHasBeenSet;
+    bool m_certificateConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

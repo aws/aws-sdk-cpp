@@ -1055,49 +1055,49 @@ namespace Model
   private:
 
     ByteMatchStatement m_byteMatchStatement;
-    bool m_byteMatchStatementHasBeenSet;
+    bool m_byteMatchStatementHasBeenSet = false;
 
     SqliMatchStatement m_sqliMatchStatement;
-    bool m_sqliMatchStatementHasBeenSet;
+    bool m_sqliMatchStatementHasBeenSet = false;
 
     XssMatchStatement m_xssMatchStatement;
-    bool m_xssMatchStatementHasBeenSet;
+    bool m_xssMatchStatementHasBeenSet = false;
 
     SizeConstraintStatement m_sizeConstraintStatement;
-    bool m_sizeConstraintStatementHasBeenSet;
+    bool m_sizeConstraintStatementHasBeenSet = false;
 
     GeoMatchStatement m_geoMatchStatement;
-    bool m_geoMatchStatementHasBeenSet;
+    bool m_geoMatchStatementHasBeenSet = false;
 
     RuleGroupReferenceStatement m_ruleGroupReferenceStatement;
-    bool m_ruleGroupReferenceStatementHasBeenSet;
+    bool m_ruleGroupReferenceStatementHasBeenSet = false;
 
     IPSetReferenceStatement m_iPSetReferenceStatement;
-    bool m_iPSetReferenceStatementHasBeenSet;
+    bool m_iPSetReferenceStatementHasBeenSet = false;
 
     RegexPatternSetReferenceStatement m_regexPatternSetReferenceStatement;
-    bool m_regexPatternSetReferenceStatementHasBeenSet;
+    bool m_regexPatternSetReferenceStatementHasBeenSet = false;
 
     std::shared_ptr<RateBasedStatement> m_rateBasedStatement;
-    bool m_rateBasedStatementHasBeenSet;
+    bool m_rateBasedStatementHasBeenSet = false;
 
     std::shared_ptr<AndStatement> m_andStatement;
-    bool m_andStatementHasBeenSet;
+    bool m_andStatementHasBeenSet = false;
 
     std::shared_ptr<OrStatement> m_orStatement;
-    bool m_orStatementHasBeenSet;
+    bool m_orStatementHasBeenSet = false;
 
     std::shared_ptr<NotStatement> m_notStatement;
-    bool m_notStatementHasBeenSet;
+    bool m_notStatementHasBeenSet = false;
 
     std::shared_ptr<ManagedRuleGroupStatement> m_managedRuleGroupStatement;
-    bool m_managedRuleGroupStatementHasBeenSet;
+    bool m_managedRuleGroupStatementHasBeenSet = false;
 
     LabelMatchStatement m_labelMatchStatement;
-    bool m_labelMatchStatementHasBeenSet;
+    bool m_labelMatchStatementHasBeenSet = false;
 
     RegexMatchStatement m_regexMatchStatement;
-    bool m_regexMatchStatementHasBeenSet;
+    bool m_regexMatchStatementHasBeenSet = false;
   };
 
 } // namespace Model

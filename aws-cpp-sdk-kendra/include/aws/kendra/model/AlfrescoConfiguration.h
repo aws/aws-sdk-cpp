@@ -836,43 +836,43 @@ namespace Model
   private:
 
     Aws::String m_siteUrl;
-    bool m_siteUrlHasBeenSet;
+    bool m_siteUrlHasBeenSet = false;
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     S3Path m_sslCertificateS3Path;
-    bool m_sslCertificateS3PathHasBeenSet;
+    bool m_sslCertificateS3PathHasBeenSet = false;
 
     bool m_crawlSystemFolders;
-    bool m_crawlSystemFoldersHasBeenSet;
+    bool m_crawlSystemFoldersHasBeenSet = false;
 
     bool m_crawlComments;
-    bool m_crawlCommentsHasBeenSet;
+    bool m_crawlCommentsHasBeenSet = false;
 
     Aws::Vector<AlfrescoEntity> m_entityFilter;
-    bool m_entityFilterHasBeenSet;
+    bool m_entityFilterHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_documentLibraryFieldMappings;
-    bool m_documentLibraryFieldMappingsHasBeenSet;
+    bool m_documentLibraryFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_blogFieldMappings;
-    bool m_blogFieldMappingsHasBeenSet;
+    bool m_blogFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_wikiFieldMappings;
-    bool m_wikiFieldMappingsHasBeenSet;
+    bool m_wikiFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -137,10 +137,10 @@ namespace Model
   private:
 
     CostCategoryInheritedValueDimensionName m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     Aws::String m_dimensionKey;
-    bool m_dimensionKeyHasBeenSet;
+    bool m_dimensionKeyHasBeenSet = false;
   };
 
 } // namespace Model

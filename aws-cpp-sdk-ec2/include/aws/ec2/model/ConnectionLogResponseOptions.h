@@ -165,13 +165,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_cloudwatchLogGroup;
-    bool m_cloudwatchLogGroupHasBeenSet;
+    bool m_cloudwatchLogGroupHasBeenSet = false;
 
     Aws::String m_cloudwatchLogStream;
-    bool m_cloudwatchLogStreamHasBeenSet;
+    bool m_cloudwatchLogStreamHasBeenSet = false;
   };
 
 } // namespace Model

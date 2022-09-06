@@ -141,13 +141,13 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_ipv6Native;
-    bool m_ipv6NativeHasBeenSet;
+    bool m_ipv6NativeHasBeenSet = false;
   };
 
 } // namespace Model

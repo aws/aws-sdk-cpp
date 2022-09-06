@@ -137,10 +137,10 @@ namespace Model
   private:
 
     int m_numNodes;
-    bool m_numNodesHasBeenSet;
+    bool m_numNodesHasBeenSet = false;
 
     Aws::Vector<NodePropertyOverride> m_nodePropertyOverrides;
-    bool m_nodePropertyOverridesHasBeenSet;
+    bool m_nodePropertyOverridesHasBeenSet = false;
   };
 
 } // namespace Model

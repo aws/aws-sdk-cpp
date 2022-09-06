@@ -287,25 +287,25 @@ namespace Model
   private:
 
     Aws::String m_containerProviderId;
-    bool m_containerProviderIdHasBeenSet;
+    bool m_containerProviderIdHasBeenSet = false;
 
     ContainerProviderType m_containerProviderType;
-    bool m_containerProviderTypeHasBeenSet;
+    bool m_containerProviderTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Vector<VirtualClusterState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -314,19 +314,19 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_hierarchyId;
-    bool m_hierarchyIdHasBeenSet;
+    bool m_hierarchyIdHasBeenSet = false;
 
     TraversalDirection m_traversalDirection;
-    bool m_traversalDirectionHasBeenSet;
+    bool m_traversalDirectionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

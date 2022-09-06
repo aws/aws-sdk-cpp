@@ -290,19 +290,19 @@ namespace Model
   private:
 
     Aws::String m_analyzerName;
-    bool m_analyzerNameHasBeenSet;
+    bool m_analyzerNameHasBeenSet = false;
 
     Aws::Vector<InlineArchiveRule> m_archiveRules;
-    bool m_archiveRulesHasBeenSet;
+    bool m_archiveRulesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

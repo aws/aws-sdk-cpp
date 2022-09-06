@@ -170,10 +170,10 @@ namespace Model
   private:
 
     ManagedRuleGroupStatement m_managedRuleGroupStatement;
-    bool m_managedRuleGroupStatementHasBeenSet;
+    bool m_managedRuleGroupStatementHasBeenSet = false;
 
     RuleGroupReferenceStatement m_ruleGroupReferenceStatement;
-    bool m_ruleGroupReferenceStatementHasBeenSet;
+    bool m_ruleGroupReferenceStatementHasBeenSet = false;
   };
 
 } // namespace Model

@@ -142,10 +142,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     RegexMatchTuple m_regexMatchTuple;
-    bool m_regexMatchTupleHasBeenSet;
+    bool m_regexMatchTupleHasBeenSet = false;
   };
 
 } // namespace Model

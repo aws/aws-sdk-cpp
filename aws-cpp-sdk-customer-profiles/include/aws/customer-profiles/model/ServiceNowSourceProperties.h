@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

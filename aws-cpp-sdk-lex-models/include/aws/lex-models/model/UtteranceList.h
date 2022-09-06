@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::Vector<UtteranceData> m_utterances;
-    bool m_utterancesHasBeenSet;
+    bool m_utterancesHasBeenSet = false;
   };
 
 } // namespace Model

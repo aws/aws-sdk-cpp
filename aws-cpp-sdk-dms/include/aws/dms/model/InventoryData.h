@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_numberOfDatabases;
-    bool m_numberOfDatabasesHasBeenSet;
+    bool m_numberOfDatabasesHasBeenSet = false;
 
     int m_numberOfSchemas;
-    bool m_numberOfSchemasHasBeenSet;
+    bool m_numberOfSchemasHasBeenSet = false;
   };
 
 } // namespace Model

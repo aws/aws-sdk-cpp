@@ -203,13 +203,13 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
   };
 
 } // namespace Model

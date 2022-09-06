@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_latestLaunchTime;
-    bool m_latestLaunchTimeHasBeenSet;
+    bool m_latestLaunchTimeHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
   };
 
 } // namespace Model

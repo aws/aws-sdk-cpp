@@ -75,7 +75,7 @@ namespace Model
 
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
   };
 
 } // namespace Model

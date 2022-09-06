@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<AccountDetails> m_accountDetails;
-    bool m_accountDetailsHasBeenSet;
+    bool m_accountDetailsHasBeenSet = false;
   };
 
 } // namespace Model

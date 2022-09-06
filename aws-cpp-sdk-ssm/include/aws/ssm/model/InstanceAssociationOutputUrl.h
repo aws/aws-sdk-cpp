@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3OutputUrl m_s3OutputUrl;
-    bool m_s3OutputUrlHasBeenSet;
+    bool m_s3OutputUrlHasBeenSet = false;
   };
 
 } // namespace Model

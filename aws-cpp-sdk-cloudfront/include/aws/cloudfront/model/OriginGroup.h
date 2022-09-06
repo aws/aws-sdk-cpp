@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     OriginGroupFailoverCriteria m_failoverCriteria;
-    bool m_failoverCriteriaHasBeenSet;
+    bool m_failoverCriteriaHasBeenSet = false;
 
     OriginGroupMembers m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
   };
 
 } // namespace Model

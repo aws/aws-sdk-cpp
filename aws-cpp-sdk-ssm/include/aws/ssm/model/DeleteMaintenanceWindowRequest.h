@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
   };
 
 } // namespace Model

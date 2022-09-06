@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
   };
 
 } // namespace Model

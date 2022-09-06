@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
 
     int m_minProvisionedTPS;
-    bool m_minProvisionedTPSHasBeenSet;
+    bool m_minProvisionedTPSHasBeenSet = false;
 
     CampaignConfig m_campaignConfig;
-    bool m_campaignConfigHasBeenSet;
+    bool m_campaignConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

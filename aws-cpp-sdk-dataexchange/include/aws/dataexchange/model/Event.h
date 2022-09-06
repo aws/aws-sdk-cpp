@@ -70,7 +70,7 @@ namespace Model
   private:
 
     RevisionPublished m_revisionPublished;
-    bool m_revisionPublishedHasBeenSet;
+    bool m_revisionPublishedHasBeenSet = false;
   };
 
 } // namespace Model

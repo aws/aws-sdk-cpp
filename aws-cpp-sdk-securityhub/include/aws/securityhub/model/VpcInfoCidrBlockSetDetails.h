@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
   };
 
 } // namespace Model

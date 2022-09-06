@@ -91,10 +91,10 @@ namespace Model
   private:
 
     DialogState m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     ResponseSpecification m_response;
-    bool m_responseHasBeenSet;
+    bool m_responseHasBeenSet = false;
   };
 
 } // namespace Model

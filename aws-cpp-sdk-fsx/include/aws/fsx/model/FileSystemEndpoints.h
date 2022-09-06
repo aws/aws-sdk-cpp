@@ -115,10 +115,10 @@ namespace Model
   private:
 
     FileSystemEndpoint m_intercluster;
-    bool m_interclusterHasBeenSet;
+    bool m_interclusterHasBeenSet = false;
 
     FileSystemEndpoint m_management;
-    bool m_managementHasBeenSet;
+    bool m_managementHasBeenSet = false;
   };
 
 } // namespace Model

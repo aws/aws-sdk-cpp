@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<SupportedPlatform> m_supportedPlatforms;
-    bool m_supportedPlatformsHasBeenSet;
+    bool m_supportedPlatformsHasBeenSet = false;
   };
 
 } // namespace Model

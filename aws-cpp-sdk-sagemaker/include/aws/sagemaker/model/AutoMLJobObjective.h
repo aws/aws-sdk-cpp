@@ -389,7 +389,7 @@ namespace Model
   private:
 
     AutoMLMetricEnum m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
   };
 
 } // namespace Model

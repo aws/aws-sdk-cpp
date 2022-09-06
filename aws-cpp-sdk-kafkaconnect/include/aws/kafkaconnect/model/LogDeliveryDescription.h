@@ -76,7 +76,7 @@ namespace Model
   private:
 
     WorkerLogDeliveryDescription m_workerLogDelivery;
-    bool m_workerLogDeliveryHasBeenSet;
+    bool m_workerLogDeliveryHasBeenSet = false;
   };
 
 } // namespace Model

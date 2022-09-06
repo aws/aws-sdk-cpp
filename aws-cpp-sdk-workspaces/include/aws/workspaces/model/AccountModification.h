@@ -289,22 +289,22 @@ namespace Model
   private:
 
     DedicatedTenancyModificationStateEnum m_modificationState;
-    bool m_modificationStateHasBeenSet;
+    bool m_modificationStateHasBeenSet = false;
 
     DedicatedTenancySupportResultEnum m_dedicatedTenancySupport;
-    bool m_dedicatedTenancySupportHasBeenSet;
+    bool m_dedicatedTenancySupportHasBeenSet = false;
 
     Aws::String m_dedicatedTenancyManagementCidrRange;
-    bool m_dedicatedTenancyManagementCidrRangeHasBeenSet;
+    bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

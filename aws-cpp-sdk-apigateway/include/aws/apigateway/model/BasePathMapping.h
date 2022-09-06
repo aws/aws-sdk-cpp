@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_basePath;
-    bool m_basePathHasBeenSet;
+    bool m_basePathHasBeenSet = false;
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

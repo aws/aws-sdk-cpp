@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::Vector<UsageAccountResult> m_sumByAccount;
-    bool m_sumByAccountHasBeenSet;
+    bool m_sumByAccountHasBeenSet = false;
 
     Aws::Vector<UsageDataSourceResult> m_sumByDataSource;
-    bool m_sumByDataSourceHasBeenSet;
+    bool m_sumByDataSourceHasBeenSet = false;
 
     Aws::Vector<UsageResourceResult> m_sumByResource;
-    bool m_sumByResourceHasBeenSet;
+    bool m_sumByResourceHasBeenSet = false;
 
     Aws::Vector<UsageResourceResult> m_topResources;
-    bool m_topResourcesHasBeenSet;
+    bool m_topResourcesHasBeenSet = false;
   };
 
 } // namespace Model

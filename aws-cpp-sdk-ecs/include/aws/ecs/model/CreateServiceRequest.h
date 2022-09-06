@@ -2029,70 +2029,70 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::Vector<ServiceRegistry> m_serviceRegistries;
-    bool m_serviceRegistriesHasBeenSet;
+    bool m_serviceRegistriesHasBeenSet = false;
 
     int m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     DeploymentConfiguration m_deploymentConfiguration;
-    bool m_deploymentConfigurationHasBeenSet;
+    bool m_deploymentConfigurationHasBeenSet = false;
 
     Aws::Vector<PlacementConstraint> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
-    bool m_placementStrategyHasBeenSet;
+    bool m_placementStrategyHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     int m_healthCheckGracePeriodSeconds;
-    bool m_healthCheckGracePeriodSecondsHasBeenSet;
+    bool m_healthCheckGracePeriodSecondsHasBeenSet = false;
 
     SchedulingStrategy m_schedulingStrategy;
-    bool m_schedulingStrategyHasBeenSet;
+    bool m_schedulingStrategyHasBeenSet = false;
 
     DeploymentController m_deploymentController;
-    bool m_deploymentControllerHasBeenSet;
+    bool m_deploymentControllerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableECSManagedTags;
-    bool m_enableECSManagedTagsHasBeenSet;
+    bool m_enableECSManagedTagsHasBeenSet = false;
 
     PropagateTags m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     bool m_enableExecuteCommand;
-    bool m_enableExecuteCommandHasBeenSet;
+    bool m_enableExecuteCommandHasBeenSet = false;
   };
 
 } // namespace Model

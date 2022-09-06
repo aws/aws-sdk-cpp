@@ -96,10 +96,10 @@ namespace Model
   private:
 
     bool m_avoidFerries;
-    bool m_avoidFerriesHasBeenSet;
+    bool m_avoidFerriesHasBeenSet = false;
 
     bool m_avoidTolls;
-    bool m_avoidTollsHasBeenSet;
+    bool m_avoidTollsHasBeenSet = false;
   };
 
 } // namespace Model

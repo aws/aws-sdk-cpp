@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Persona m_persona;
-    bool m_personaHasBeenSet;
+    bool m_personaHasBeenSet = false;
   };
 
 } // namespace Model

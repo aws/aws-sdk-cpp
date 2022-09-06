@@ -93,10 +93,10 @@ namespace Model
   private:
 
     ComputeLocation m_computeLocation;
-    bool m_computeLocationHasBeenSet;
+    bool m_computeLocationHasBeenSet = false;
 
     ForwardingConfig m_forwardingConfig;
-    bool m_forwardingConfigHasBeenSet;
+    bool m_forwardingConfigHasBeenSet = false;
   };
 
 } // namespace Model

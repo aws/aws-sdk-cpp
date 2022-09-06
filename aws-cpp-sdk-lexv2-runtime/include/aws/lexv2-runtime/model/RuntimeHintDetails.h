@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<RuntimeHintValue> m_runtimeHintValues;
-    bool m_runtimeHintValuesHasBeenSet;
+    bool m_runtimeHintValuesHasBeenSet = false;
   };
 
 } // namespace Model

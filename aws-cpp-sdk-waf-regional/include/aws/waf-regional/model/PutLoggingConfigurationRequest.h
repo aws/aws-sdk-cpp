@@ -97,7 +97,7 @@ namespace Model
   private:
 
     LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

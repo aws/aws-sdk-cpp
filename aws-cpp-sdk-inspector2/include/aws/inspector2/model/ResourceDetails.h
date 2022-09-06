@@ -115,10 +115,10 @@ namespace Model
   private:
 
     AwsEc2InstanceDetails m_awsEc2Instance;
-    bool m_awsEc2InstanceHasBeenSet;
+    bool m_awsEc2InstanceHasBeenSet = false;
 
     AwsEcrContainerImageDetails m_awsEcrContainerImage;
-    bool m_awsEcrContainerImageHasBeenSet;
+    bool m_awsEcrContainerImageHasBeenSet = false;
   };
 
 } // namespace Model

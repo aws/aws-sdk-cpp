@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<ColumnName> m_columnNames;
-    bool m_columnNamesHasBeenSet;
+    bool m_columnNamesHasBeenSet = false;
   };
 
 } // namespace Model

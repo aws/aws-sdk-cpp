@@ -142,16 +142,16 @@ namespace Model
   private:
 
     double m_fpr;
-    bool m_fprHasBeenSet;
+    bool m_fprHasBeenSet = false;
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_tpr;
-    bool m_tprHasBeenSet;
+    bool m_tprHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
   };
 
 } // namespace Model

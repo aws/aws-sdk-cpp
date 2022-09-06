@@ -71,7 +71,7 @@ namespace Model
   private:
 
     EventNotificationTopicStatus m_devEuiEventTopic;
-    bool m_devEuiEventTopicHasBeenSet;
+    bool m_devEuiEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

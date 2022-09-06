@@ -108,10 +108,10 @@ namespace Model
   private:
 
     RevisionLocation m_revisionLocation;
-    bool m_revisionLocationHasBeenSet;
+    bool m_revisionLocationHasBeenSet = false;
 
     GenericRevisionInfo m_genericRevisionInfo;
-    bool m_genericRevisionInfoHasBeenSet;
+    bool m_genericRevisionInfoHasBeenSet = false;
   };
 
 } // namespace Model

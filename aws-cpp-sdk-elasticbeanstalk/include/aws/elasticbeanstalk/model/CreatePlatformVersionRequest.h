@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_platformName;
-    bool m_platformNameHasBeenSet;
+    bool m_platformNameHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     S3Location m_platformDefinitionBundle;
-    bool m_platformDefinitionBundleHasBeenSet;
+    bool m_platformDefinitionBundleHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

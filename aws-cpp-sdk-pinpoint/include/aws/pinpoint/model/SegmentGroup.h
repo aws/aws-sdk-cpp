@@ -269,16 +269,16 @@ namespace Model
   private:
 
     Aws::Vector<SegmentDimensions> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::Vector<SegmentReference> m_sourceSegments;
-    bool m_sourceSegmentsHasBeenSet;
+    bool m_sourceSegmentsHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

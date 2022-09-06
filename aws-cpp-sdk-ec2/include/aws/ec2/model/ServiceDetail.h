@@ -613,49 +613,49 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::Vector<ServiceTypeDetail> m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_baseEndpointDnsNames;
-    bool m_baseEndpointDnsNamesHasBeenSet;
+    bool m_baseEndpointDnsNamesHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::Vector<PrivateDnsDetails> m_privateDnsNames;
-    bool m_privateDnsNamesHasBeenSet;
+    bool m_privateDnsNamesHasBeenSet = false;
 
     bool m_vpcEndpointPolicySupported;
-    bool m_vpcEndpointPolicySupportedHasBeenSet;
+    bool m_vpcEndpointPolicySupportedHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     bool m_managesVpcEndpoints;
-    bool m_managesVpcEndpointsHasBeenSet;
+    bool m_managesVpcEndpointsHasBeenSet = false;
 
     PayerResponsibility m_payerResponsibility;
-    bool m_payerResponsibilityHasBeenSet;
+    bool m_payerResponsibilityHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     DnsNameState m_privateDnsNameVerificationState;
-    bool m_privateDnsNameVerificationStateHasBeenSet;
+    bool m_privateDnsNameVerificationStateHasBeenSet = false;
 
     Aws::Vector<ServiceConnectivityType> m_supportedIpAddressTypes;
-    bool m_supportedIpAddressTypesHasBeenSet;
+    bool m_supportedIpAddressTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -634,43 +634,43 @@ namespace Model
   private:
 
     Aws::String m_importTaskId;
-    bool m_importTaskIdHasBeenSet;
+    bool m_importTaskIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_importUrl;
-    bool m_importUrlHasBeenSet;
+    bool m_importUrlHasBeenSet = false;
 
     ImportStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_importRequestTime;
-    bool m_importRequestTimeHasBeenSet;
+    bool m_importRequestTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_importCompletionTime;
-    bool m_importCompletionTimeHasBeenSet;
+    bool m_importCompletionTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_importDeletedTime;
-    bool m_importDeletedTimeHasBeenSet;
+    bool m_importDeletedTimeHasBeenSet = false;
 
     int m_serverImportSuccess;
-    bool m_serverImportSuccessHasBeenSet;
+    bool m_serverImportSuccessHasBeenSet = false;
 
     int m_serverImportFailure;
-    bool m_serverImportFailureHasBeenSet;
+    bool m_serverImportFailureHasBeenSet = false;
 
     int m_applicationImportSuccess;
-    bool m_applicationImportSuccessHasBeenSet;
+    bool m_applicationImportSuccessHasBeenSet = false;
 
     int m_applicationImportFailure;
-    bool m_applicationImportFailureHasBeenSet;
+    bool m_applicationImportFailureHasBeenSet = false;
 
     Aws::String m_errorsAndFailedEntriesZip;
-    bool m_errorsAndFailedEntriesZipHasBeenSet;
+    bool m_errorsAndFailedEntriesZipHasBeenSet = false;
   };
 
 } // namespace Model

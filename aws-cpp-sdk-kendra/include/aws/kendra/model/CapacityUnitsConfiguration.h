@@ -129,10 +129,10 @@ namespace Model
   private:
 
     int m_storageCapacityUnits;
-    bool m_storageCapacityUnitsHasBeenSet;
+    bool m_storageCapacityUnitsHasBeenSet = false;
 
     int m_queryCapacityUnits;
-    bool m_queryCapacityUnitsHasBeenSet;
+    bool m_queryCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

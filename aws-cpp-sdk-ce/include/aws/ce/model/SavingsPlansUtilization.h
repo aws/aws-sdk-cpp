@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_totalCommitment;
-    bool m_totalCommitmentHasBeenSet;
+    bool m_totalCommitmentHasBeenSet = false;
 
     Aws::String m_usedCommitment;
-    bool m_usedCommitmentHasBeenSet;
+    bool m_usedCommitmentHasBeenSet = false;
 
     Aws::String m_unusedCommitment;
-    bool m_unusedCommitmentHasBeenSet;
+    bool m_unusedCommitmentHasBeenSet = false;
 
     Aws::String m_utilizationPercentage;
-    bool m_utilizationPercentageHasBeenSet;
+    bool m_utilizationPercentageHasBeenSet = false;
   };
 
 } // namespace Model

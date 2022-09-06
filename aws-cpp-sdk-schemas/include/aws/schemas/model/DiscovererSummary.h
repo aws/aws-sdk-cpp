@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::String m_discovererArn;
-    bool m_discovererArnHasBeenSet;
+    bool m_discovererArnHasBeenSet = false;
 
     Aws::String m_discovererId;
-    bool m_discovererIdHasBeenSet;
+    bool m_discovererIdHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     DiscovererState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_crossAccount;
-    bool m_crossAccountHasBeenSet;
+    bool m_crossAccountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

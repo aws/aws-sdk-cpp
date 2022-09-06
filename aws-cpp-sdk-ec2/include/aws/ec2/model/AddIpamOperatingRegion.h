@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
   };
 
 } // namespace Model

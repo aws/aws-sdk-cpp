@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_additionalAuditContext;
-    bool m_additionalAuditContextHasBeenSet;
+    bool m_additionalAuditContextHasBeenSet = false;
   };
 
 } // namespace Model

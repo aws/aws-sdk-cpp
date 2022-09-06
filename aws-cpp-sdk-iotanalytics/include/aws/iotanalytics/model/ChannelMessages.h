@@ -131,7 +131,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_s3Paths;
-    bool m_s3PathsHasBeenSet;
+    bool m_s3PathsHasBeenSet = false;
   };
 
 } // namespace Model

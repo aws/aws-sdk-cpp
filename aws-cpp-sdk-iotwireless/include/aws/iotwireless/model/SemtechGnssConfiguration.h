@@ -103,10 +103,10 @@ namespace Model
   private:
 
     PositionConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PositionConfigurationFec m_fec;
-    bool m_fecHasBeenSet;
+    bool m_fecHasBeenSet = false;
   };
 
 } // namespace Model

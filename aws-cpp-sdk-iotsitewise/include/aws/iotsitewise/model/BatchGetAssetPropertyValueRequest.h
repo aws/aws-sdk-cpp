@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::Vector<BatchGetAssetPropertyValueEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

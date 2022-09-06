@@ -147,13 +147,13 @@ namespace Model
   private:
 
     AudioNormalizationAlgorithm m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     AudioNormalizationAlgorithmControl m_algorithmControl;
-    bool m_algorithmControlHasBeenSet;
+    bool m_algorithmControlHasBeenSet = false;
 
     double m_targetLkfs;
-    bool m_targetLkfsHasBeenSet;
+    bool m_targetLkfsHasBeenSet = false;
   };
 
 } // namespace Model

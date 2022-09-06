@@ -347,28 +347,28 @@ namespace Model
   private:
 
     Aws::String m_windowExecutionId;
-    bool m_windowExecutionIdHasBeenSet;
+    bool m_windowExecutionIdHasBeenSet = false;
 
     Aws::String m_taskExecutionId;
-    bool m_taskExecutionIdHasBeenSet;
+    bool m_taskExecutionIdHasBeenSet = false;
 
     MaintenanceWindowExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     MaintenanceWindowTaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
   };
 
 } // namespace Model

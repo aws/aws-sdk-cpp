@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_targetAddress;
-    bool m_targetAddressHasBeenSet;
+    bool m_targetAddressHasBeenSet = false;
 
     bool m_forceUnsubscribeAll;
-    bool m_forceUnsubscribeAllHasBeenSet;
+    bool m_forceUnsubscribeAllHasBeenSet = false;
   };
 
 } // namespace Model

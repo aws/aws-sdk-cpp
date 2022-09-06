@@ -113,10 +113,10 @@ namespace Model
   private:
 
     RouteAnalysisCompletion m_completionStatus;
-    bool m_completionStatusHasBeenSet;
+    bool m_completionStatusHasBeenSet = false;
 
     Aws::Vector<PathComponent> m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

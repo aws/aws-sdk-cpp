@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, int> m_statusSummary;
-    bool m_statusSummaryHasBeenSet;
+    bool m_statusSummaryHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

@@ -100,10 +100,10 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Event m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
   };
 
 } // namespace Model

@@ -428,34 +428,34 @@ namespace Model
   private:
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     ProtocolEnum m_healthCheckProtocol;
-    bool m_healthCheckProtocolHasBeenSet;
+    bool m_healthCheckProtocolHasBeenSet = false;
 
     Aws::String m_healthCheckPort;
-    bool m_healthCheckPortHasBeenSet;
+    bool m_healthCheckPortHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
-    bool m_healthCheckPathHasBeenSet;
+    bool m_healthCheckPathHasBeenSet = false;
 
     bool m_healthCheckEnabled;
-    bool m_healthCheckEnabledHasBeenSet;
+    bool m_healthCheckEnabledHasBeenSet = false;
 
     int m_healthCheckIntervalSeconds;
-    bool m_healthCheckIntervalSecondsHasBeenSet;
+    bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
     int m_healthCheckTimeoutSeconds;
-    bool m_healthCheckTimeoutSecondsHasBeenSet;
+    bool m_healthCheckTimeoutSecondsHasBeenSet = false;
 
     int m_healthyThresholdCount;
-    bool m_healthyThresholdCountHasBeenSet;
+    bool m_healthyThresholdCountHasBeenSet = false;
 
     int m_unhealthyThresholdCount;
-    bool m_unhealthyThresholdCountHasBeenSet;
+    bool m_unhealthyThresholdCountHasBeenSet = false;
 
     Matcher m_matcher;
-    bool m_matcherHasBeenSet;
+    bool m_matcherHasBeenSet = false;
   };
 
 } // namespace Model

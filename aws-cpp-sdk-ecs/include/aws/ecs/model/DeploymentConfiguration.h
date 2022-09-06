@@ -384,13 +384,13 @@ namespace Model
   private:
 
     DeploymentCircuitBreaker m_deploymentCircuitBreaker;
-    bool m_deploymentCircuitBreakerHasBeenSet;
+    bool m_deploymentCircuitBreakerHasBeenSet = false;
 
     int m_maximumPercent;
-    bool m_maximumPercentHasBeenSet;
+    bool m_maximumPercentHasBeenSet = false;
 
     int m_minimumHealthyPercent;
-    bool m_minimumHealthyPercentHasBeenSet;
+    bool m_minimumHealthyPercentHasBeenSet = false;
   };
 
 } // namespace Model

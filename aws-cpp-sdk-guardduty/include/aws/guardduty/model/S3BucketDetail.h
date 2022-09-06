@@ -333,28 +333,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Owner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     DefaultServerSideEncryption m_defaultServerSideEncryption;
-    bool m_defaultServerSideEncryptionHasBeenSet;
+    bool m_defaultServerSideEncryptionHasBeenSet = false;
 
     PublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
   };
 
 } // namespace Model

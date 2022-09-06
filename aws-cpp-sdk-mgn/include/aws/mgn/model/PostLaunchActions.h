@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLogGroupName;
-    bool m_cloudWatchLogGroupNameHasBeenSet;
+    bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
     PostLaunchActionsDeploymentType m_deployment;
-    bool m_deploymentHasBeenSet;
+    bool m_deploymentHasBeenSet = false;
 
     Aws::String m_s3LogBucket;
-    bool m_s3LogBucketHasBeenSet;
+    bool m_s3LogBucketHasBeenSet = false;
 
     Aws::String m_s3OutputKeyPrefix;
-    bool m_s3OutputKeyPrefixHasBeenSet;
+    bool m_s3OutputKeyPrefixHasBeenSet = false;
 
     Aws::Vector<SsmDocument> m_ssmDocuments;
-    bool m_ssmDocumentsHasBeenSet;
+    bool m_ssmDocumentsHasBeenSet = false;
   };
 
 } // namespace Model

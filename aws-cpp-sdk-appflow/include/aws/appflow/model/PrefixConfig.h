@@ -110,10 +110,10 @@ namespace Model
   private:
 
     PrefixType m_prefixType;
-    bool m_prefixTypeHasBeenSet;
+    bool m_prefixTypeHasBeenSet = false;
 
     PrefixFormat m_prefixFormat;
-    bool m_prefixFormatHasBeenSet;
+    bool m_prefixFormatHasBeenSet = false;
   };
 
 } // namespace Model

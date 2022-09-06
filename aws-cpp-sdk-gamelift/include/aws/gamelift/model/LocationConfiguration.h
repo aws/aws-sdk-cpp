@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

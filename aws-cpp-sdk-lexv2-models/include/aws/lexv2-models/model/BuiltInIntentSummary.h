@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_intentSignature;
-    bool m_intentSignatureHasBeenSet;
+    bool m_intentSignatureHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

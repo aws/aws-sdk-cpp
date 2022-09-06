@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_detailedStatus;
-    bool m_detailedStatusHasBeenSet;
+    bool m_detailedStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_associationStatusAggregatedCount;
-    bool m_associationStatusAggregatedCountHasBeenSet;
+    bool m_associationStatusAggregatedCountHasBeenSet = false;
   };
 
 } // namespace Model

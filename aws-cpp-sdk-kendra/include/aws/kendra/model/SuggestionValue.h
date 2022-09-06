@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SuggestionTextWithHighlights m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

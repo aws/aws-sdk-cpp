@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     bool m_preserve;
-    bool m_preserveHasBeenSet;
+    bool m_preserveHasBeenSet = false;
   };
 
 } // namespace Model

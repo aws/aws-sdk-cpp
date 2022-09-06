@@ -168,16 +168,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_attachTime;
-    bool m_attachTimeHasBeenSet;
+    bool m_attachTimeHasBeenSet = false;
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     AttachmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
   };
 
 } // namespace Model

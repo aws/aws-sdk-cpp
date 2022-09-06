@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_measureName;
-    bool m_measureNameHasBeenSet;
+    bool m_measureNameHasBeenSet = false;
 
     Aws::String m_sourceColumn;
-    bool m_sourceColumnHasBeenSet;
+    bool m_sourceColumnHasBeenSet = false;
 
     Aws::String m_targetMeasureName;
-    bool m_targetMeasureNameHasBeenSet;
+    bool m_targetMeasureNameHasBeenSet = false;
 
     MeasureValueType m_measureValueType;
-    bool m_measureValueTypeHasBeenSet;
+    bool m_measureValueTypeHasBeenSet = false;
 
     Aws::Vector<MultiMeasureAttributeMapping> m_multiMeasureAttributeMappings;
-    bool m_multiMeasureAttributeMappingsHasBeenSet;
+    bool m_multiMeasureAttributeMappingsHasBeenSet = false;
   };
 
 } // namespace Model

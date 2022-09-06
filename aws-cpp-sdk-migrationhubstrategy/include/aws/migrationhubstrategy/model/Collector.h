@@ -326,25 +326,25 @@ namespace Model
   private:
 
     CollectorHealth m_collectorHealth;
-    bool m_collectorHealthHasBeenSet;
+    bool m_collectorHealthHasBeenSet = false;
 
     Aws::String m_collectorId;
-    bool m_collectorIdHasBeenSet;
+    bool m_collectorIdHasBeenSet = false;
 
     Aws::String m_collectorVersion;
-    bool m_collectorVersionHasBeenSet;
+    bool m_collectorVersionHasBeenSet = false;
 
     Aws::String m_hostName;
-    bool m_hostNameHasBeenSet;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_lastActivityTimeStamp;
-    bool m_lastActivityTimeStampHasBeenSet;
+    bool m_lastActivityTimeStampHasBeenSet = false;
 
     Aws::String m_registeredTimeStamp;
-    bool m_registeredTimeStampHasBeenSet;
+    bool m_registeredTimeStampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     AutoTuneOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     AutoTuneStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

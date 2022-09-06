@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_computerId;
-    bool m_computerIdHasBeenSet;
+    bool m_computerIdHasBeenSet = false;
 
     Aws::String m_computerName;
-    bool m_computerNameHasBeenSet;
+    bool m_computerNameHasBeenSet = false;
 
     Aws::Vector<Attribute> m_computerAttributes;
-    bool m_computerAttributesHasBeenSet;
+    bool m_computerAttributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -455,22 +455,22 @@ namespace Model
   private:
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     bool m_privilegedMode;
-    bool m_privilegedModeHasBeenSet;
+    bool m_privilegedModeHasBeenSet = false;
 
     Aws::String m_imagePullCredentialsType;
-    bool m_imagePullCredentialsTypeHasBeenSet;
+    bool m_imagePullCredentialsTypeHasBeenSet = false;
 
     AwsCodeBuildProjectEnvironmentRegistryCredential m_registryCredential;
-    bool m_registryCredentialHasBeenSet;
+    bool m_registryCredentialHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

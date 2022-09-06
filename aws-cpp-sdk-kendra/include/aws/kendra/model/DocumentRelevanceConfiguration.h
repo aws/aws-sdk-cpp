@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Relevance m_relevance;
-    bool m_relevanceHasBeenSet;
+    bool m_relevanceHasBeenSet = false;
   };
 
 } // namespace Model

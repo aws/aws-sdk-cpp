@@ -376,25 +376,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
 
     AggregationPeriod m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

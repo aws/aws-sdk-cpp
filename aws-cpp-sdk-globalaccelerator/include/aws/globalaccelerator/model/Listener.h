@@ -285,16 +285,16 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::Vector<PortRange> m_portRanges;
-    bool m_portRangesHasBeenSet;
+    bool m_portRangesHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     ClientAffinity m_clientAffinity;
-    bool m_clientAffinityHasBeenSet;
+    bool m_clientAffinityHasBeenSet = false;
   };
 
 } // namespace Model

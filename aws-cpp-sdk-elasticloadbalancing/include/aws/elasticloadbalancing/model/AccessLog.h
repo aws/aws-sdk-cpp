@@ -186,16 +186,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     int m_emitInterval;
-    bool m_emitIntervalHasBeenSet;
+    bool m_emitIntervalHasBeenSet = false;
 
     Aws::String m_s3BucketPrefix;
-    bool m_s3BucketPrefixHasBeenSet;
+    bool m_s3BucketPrefixHasBeenSet = false;
   };
 
 } // namespace Model

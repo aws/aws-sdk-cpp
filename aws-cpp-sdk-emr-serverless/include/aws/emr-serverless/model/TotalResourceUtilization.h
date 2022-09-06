@@ -114,13 +114,13 @@ namespace Model
   private:
 
     double m_vCPUHour;
-    bool m_vCPUHourHasBeenSet;
+    bool m_vCPUHourHasBeenSet = false;
 
     double m_memoryGBHour;
-    bool m_memoryGBHourHasBeenSet;
+    bool m_memoryGBHourHasBeenSet = false;
 
     double m_storageGBHour;
-    bool m_storageGBHourHasBeenSet;
+    bool m_storageGBHourHasBeenSet = false;
   };
 
 } // namespace Model

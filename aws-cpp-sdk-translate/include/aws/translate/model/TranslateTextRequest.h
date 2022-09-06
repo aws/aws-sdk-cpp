@@ -364,19 +364,19 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminologyNames;
-    bool m_terminologyNamesHasBeenSet;
+    bool m_terminologyNamesHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::String m_targetLanguageCode;
-    bool m_targetLanguageCodeHasBeenSet;
+    bool m_targetLanguageCodeHasBeenSet = false;
 
     TranslationSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

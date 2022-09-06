@@ -78,10 +78,10 @@ namespace Model
   private:
 
     M2tsSettings m_m2tsSettings;
-    bool m_m2tsSettingsHasBeenSet;
+    bool m_m2tsSettingsHasBeenSet = false;
 
     RawSettings m_rawSettings;
-    bool m_rawSettingsHasBeenSet;
+    bool m_rawSettingsHasBeenSet = false;
   };
 
 } // namespace Model

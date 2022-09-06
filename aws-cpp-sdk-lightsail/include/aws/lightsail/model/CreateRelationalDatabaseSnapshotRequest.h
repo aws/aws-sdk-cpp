@@ -193,13 +193,13 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     Aws::String m_relationalDatabaseSnapshotName;
-    bool m_relationalDatabaseSnapshotNameHasBeenSet;
+    bool m_relationalDatabaseSnapshotNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

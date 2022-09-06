@@ -88,7 +88,7 @@ ChimeSDKMediaPipelinesClient::~ChimeSDKMediaPipelinesClient()
 
 void ChimeSDKMediaPipelinesClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Chime SDK Media Pipelines");
+  AWSClient::SetServiceClientName("Chime SDK Media Pipelines");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

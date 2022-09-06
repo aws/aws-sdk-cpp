@@ -357,13 +357,13 @@ namespace Model
   private:
 
     Aws::String m_fontStack;
-    bool m_fontStackHasBeenSet;
+    bool m_fontStackHasBeenSet = false;
 
     Aws::String m_fontUnicodeRange;
-    bool m_fontUnicodeRangeHasBeenSet;
+    bool m_fontUnicodeRangeHasBeenSet = false;
 
     Aws::String m_mapName;
-    bool m_mapNameHasBeenSet;
+    bool m_mapNameHasBeenSet = false;
   };
 
 } // namespace Model

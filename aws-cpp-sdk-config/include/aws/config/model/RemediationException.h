@@ -238,19 +238,19 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
   };
 
 } // namespace Model

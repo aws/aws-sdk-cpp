@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_instanceProfileName;
-    bool m_instanceProfileNameHasBeenSet;
+    bool m_instanceProfileNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

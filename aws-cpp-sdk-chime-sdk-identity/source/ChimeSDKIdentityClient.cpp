@@ -100,7 +100,7 @@ ChimeSDKIdentityClient::~ChimeSDKIdentityClient()
 
 void ChimeSDKIdentityClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Chime SDK Identity");
+  AWSClient::SetServiceClientName("Chime SDK Identity");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -179,10 +179,10 @@ namespace Model
   private:
 
     OutboundConnectionStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

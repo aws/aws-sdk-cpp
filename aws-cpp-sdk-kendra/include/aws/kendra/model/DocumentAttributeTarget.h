@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_targetDocumentAttributeKey;
-    bool m_targetDocumentAttributeKeyHasBeenSet;
+    bool m_targetDocumentAttributeKeyHasBeenSet = false;
 
     bool m_targetDocumentAttributeValueDeletion;
-    bool m_targetDocumentAttributeValueDeletionHasBeenSet;
+    bool m_targetDocumentAttributeValueDeletionHasBeenSet = false;
 
     DocumentAttributeValue m_targetDocumentAttributeValue;
-    bool m_targetDocumentAttributeValueHasBeenSet;
+    bool m_targetDocumentAttributeValueHasBeenSet = false;
   };
 
 } // namespace Model

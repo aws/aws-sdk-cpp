@@ -647,40 +647,40 @@ namespace Model
   private:
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ChatChannel m_chatChannel;
-    bool m_chatChannelHasBeenSet;
+    bool m_chatChannelHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_engagements;
-    bool m_engagementsHasBeenSet;
+    bool m_engagementsHasBeenSet = false;
 
     Aws::String m_incidentTemplateDedupeString;
-    bool m_incidentTemplateDedupeStringHasBeenSet;
+    bool m_incidentTemplateDedupeStringHasBeenSet = false;
 
     int m_incidentTemplateImpact;
-    bool m_incidentTemplateImpactHasBeenSet;
+    bool m_incidentTemplateImpactHasBeenSet = false;
 
     Aws::Vector<NotificationTargetItem> m_incidentTemplateNotificationTargets;
-    bool m_incidentTemplateNotificationTargetsHasBeenSet;
+    bool m_incidentTemplateNotificationTargetsHasBeenSet = false;
 
     Aws::String m_incidentTemplateSummary;
-    bool m_incidentTemplateSummaryHasBeenSet;
+    bool m_incidentTemplateSummaryHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_incidentTemplateTags;
-    bool m_incidentTemplateTagsHasBeenSet;
+    bool m_incidentTemplateTagsHasBeenSet = false;
 
     Aws::String m_incidentTemplateTitle;
-    bool m_incidentTemplateTitleHasBeenSet;
+    bool m_incidentTemplateTitleHasBeenSet = false;
   };
 
 } // namespace Model

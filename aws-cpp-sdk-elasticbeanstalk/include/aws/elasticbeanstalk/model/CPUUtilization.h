@@ -239,28 +239,28 @@ namespace Model
   private:
 
     double m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     double m_nice;
-    bool m_niceHasBeenSet;
+    bool m_niceHasBeenSet = false;
 
     double m_system;
-    bool m_systemHasBeenSet;
+    bool m_systemHasBeenSet = false;
 
     double m_idle;
-    bool m_idleHasBeenSet;
+    bool m_idleHasBeenSet = false;
 
     double m_iOWait;
-    bool m_iOWaitHasBeenSet;
+    bool m_iOWaitHasBeenSet = false;
 
     double m_iRQ;
-    bool m_iRQHasBeenSet;
+    bool m_iRQHasBeenSet = false;
 
     double m_softIRQ;
-    bool m_softIRQHasBeenSet;
+    bool m_softIRQHasBeenSet = false;
 
     double m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
   };
 
 } // namespace Model

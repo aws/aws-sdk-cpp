@@ -209,19 +209,19 @@ namespace Model
   private:
 
     long long m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     ParticipantRole m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
 
     AbsoluteTimeRange m_absoluteTimeRange;
-    bool m_absoluteTimeRangeHasBeenSet;
+    bool m_absoluteTimeRangeHasBeenSet = false;
 
     RelativeTimeRange m_relativeTimeRange;
-    bool m_relativeTimeRangeHasBeenSet;
+    bool m_relativeTimeRangeHasBeenSet = false;
 
     bool m_negate;
-    bool m_negateHasBeenSet;
+    bool m_negateHasBeenSet = false;
   };
 
 } // namespace Model

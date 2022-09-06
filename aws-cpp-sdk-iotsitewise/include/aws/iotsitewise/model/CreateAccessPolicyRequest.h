@@ -312,19 +312,19 @@ namespace Model
   private:
 
     Identity m_accessPolicyIdentity;
-    bool m_accessPolicyIdentityHasBeenSet;
+    bool m_accessPolicyIdentityHasBeenSet = false;
 
     Resource m_accessPolicyResource;
-    bool m_accessPolicyResourceHasBeenSet;
+    bool m_accessPolicyResourceHasBeenSet = false;
 
     Permission m_accessPolicyPermission;
-    bool m_accessPolicyPermissionHasBeenSet;
+    bool m_accessPolicyPermissionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

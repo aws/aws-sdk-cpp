@@ -106,7 +106,7 @@ KinesisClient::~KinesisClient()
 
 void KinesisClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Kinesis");
+  AWSClient::SetServiceClientName("Kinesis");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

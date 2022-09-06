@@ -259,22 +259,22 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberOrderId;
-    bool m_phoneNumberOrderIdHasBeenSet;
+    bool m_phoneNumberOrderIdHasBeenSet = false;
 
     PhoneNumberProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     PhoneNumberOrderStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<OrderedPhoneNumber> m_orderedPhoneNumbers;
-    bool m_orderedPhoneNumbersHasBeenSet;
+    bool m_orderedPhoneNumbersHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

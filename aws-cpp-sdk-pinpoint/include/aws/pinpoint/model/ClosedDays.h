@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::Vector<ClosedDaysRule> m_eMAIL;
-    bool m_eMAILHasBeenSet;
+    bool m_eMAILHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_sMS;
-    bool m_sMSHasBeenSet;
+    bool m_sMSHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_pUSH;
-    bool m_pUSHHasBeenSet;
+    bool m_pUSHHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_vOICE;
-    bool m_vOICEHasBeenSet;
+    bool m_vOICEHasBeenSet = false;
 
     Aws::Vector<ClosedDaysRule> m_cUSTOM;
-    bool m_cUSTOMHasBeenSet;
+    bool m_cUSTOMHasBeenSet = false;
   };
 
 } // namespace Model

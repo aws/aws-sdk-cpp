@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_dBClusterArn;
-    bool m_dBClusterArnHasBeenSet;
+    bool m_dBClusterArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readers;
-    bool m_readersHasBeenSet;
+    bool m_readersHasBeenSet = false;
 
     bool m_isWriter;
-    bool m_isWriterHasBeenSet;
+    bool m_isWriterHasBeenSet = false;
   };
 
 } // namespace Model

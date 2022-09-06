@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::String m_optionName;
-    bool m_optionNameHasBeenSet;
+    bool m_optionNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_optionVersion;
-    bool m_optionVersionHasBeenSet;
+    bool m_optionVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dBSecurityGroupMemberships;
-    bool m_dBSecurityGroupMembershipsHasBeenSet;
+    bool m_dBSecurityGroupMembershipsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupMemberships;
-    bool m_vpcSecurityGroupMembershipsHasBeenSet;
+    bool m_vpcSecurityGroupMembershipsHasBeenSet = false;
 
     Aws::Vector<OptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

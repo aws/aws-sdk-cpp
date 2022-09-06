@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

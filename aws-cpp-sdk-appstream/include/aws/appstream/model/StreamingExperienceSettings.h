@@ -78,7 +78,7 @@ namespace Model
   private:
 
     PreferredProtocol m_preferredProtocol;
-    bool m_preferredProtocolHasBeenSet;
+    bool m_preferredProtocolHasBeenSet = false;
   };
 
 } // namespace Model

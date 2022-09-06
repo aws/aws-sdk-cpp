@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     AquaConfigurationStatus m_aquaConfigurationStatus;
-    bool m_aquaConfigurationStatusHasBeenSet;
+    bool m_aquaConfigurationStatusHasBeenSet = false;
   };
 
 } // namespace Model

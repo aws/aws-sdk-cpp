@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_violationTargetDescription;
-    bool m_violationTargetDescriptionHasBeenSet;
+    bool m_violationTargetDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

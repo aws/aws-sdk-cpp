@@ -257,22 +257,22 @@ namespace Model
   private:
 
     ManifestLayout m_manifestLayout;
-    bool m_manifestLayoutHasBeenSet;
+    bool m_manifestLayoutHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     int m_minBufferTimeSeconds;
-    bool m_minBufferTimeSecondsHasBeenSet;
+    bool m_minBufferTimeSecondsHasBeenSet = false;
 
     Profile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     ScteMarkersSource m_scteMarkersSource;
-    bool m_scteMarkersSourceHasBeenSet;
+    bool m_scteMarkersSourceHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

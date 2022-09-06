@@ -451,25 +451,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_kafkaVersions;
-    bool m_kafkaVersionsHasBeenSet;
+    bool m_kafkaVersionsHasBeenSet = false;
 
     ConfigurationRevision m_latestRevision;
-    bool m_latestRevisionHasBeenSet;
+    bool m_latestRevisionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ConfigurationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

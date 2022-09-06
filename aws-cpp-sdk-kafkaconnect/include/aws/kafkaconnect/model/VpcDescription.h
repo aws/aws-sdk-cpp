@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
   };
 
 } // namespace Model

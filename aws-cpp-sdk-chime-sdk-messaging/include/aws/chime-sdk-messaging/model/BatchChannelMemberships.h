@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Identity m_invitedBy;
-    bool m_invitedByHasBeenSet;
+    bool m_invitedByHasBeenSet = false;
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Identity> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

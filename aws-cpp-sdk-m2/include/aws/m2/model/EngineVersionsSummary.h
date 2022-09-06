@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
   };
 
 } // namespace Model

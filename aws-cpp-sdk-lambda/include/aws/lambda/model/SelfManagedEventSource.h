@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::Map<EndPointType, Aws::Vector<Aws::String>> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

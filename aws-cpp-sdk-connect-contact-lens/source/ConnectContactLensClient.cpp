@@ -77,7 +77,7 @@ ConnectContactLensClient::~ConnectContactLensClient()
 
 void ConnectContactLensClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Connect Contact Lens");
+  AWSClient::SetServiceClientName("Connect Contact Lens");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -159,13 +159,13 @@ namespace Model
   private:
 
     CloudWatchLogsDestinationConfig m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     S3DestinationConfig m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

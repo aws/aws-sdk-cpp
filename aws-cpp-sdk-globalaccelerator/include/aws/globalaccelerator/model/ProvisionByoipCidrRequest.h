@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     CidrAuthorizationContext m_cidrAuthorizationContext;
-    bool m_cidrAuthorizationContextHasBeenSet;
+    bool m_cidrAuthorizationContextHasBeenSet = false;
   };
 
 } // namespace Model

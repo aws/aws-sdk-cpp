@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     DiskImageFormat m_diskImageFormat;
-    bool m_diskImageFormatHasBeenSet;
+    bool m_diskImageFormatHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

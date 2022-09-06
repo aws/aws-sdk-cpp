@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_skillGroupArn;
-    bool m_skillGroupArnHasBeenSet;
+    bool m_skillGroupArnHasBeenSet = false;
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
   };
 
 } // namespace Model

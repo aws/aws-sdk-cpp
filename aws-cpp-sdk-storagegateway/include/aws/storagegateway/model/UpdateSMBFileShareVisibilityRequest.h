@@ -82,10 +82,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     bool m_fileSharesVisible;
-    bool m_fileSharesVisibleHasBeenSet;
+    bool m_fileSharesVisibleHasBeenSet = false;
   };
 
 } // namespace Model

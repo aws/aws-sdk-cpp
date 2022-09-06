@@ -396,25 +396,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MessageReviewHandler m_messageReviewHandler;
-    bool m_messageReviewHandlerHasBeenSet;
+    bool m_messageReviewHandlerHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_exclusiveStartGlobalTableName;
-    bool m_exclusiveStartGlobalTableNameHasBeenSet;
+    bool m_exclusiveStartGlobalTableNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
   };
 
 } // namespace Model

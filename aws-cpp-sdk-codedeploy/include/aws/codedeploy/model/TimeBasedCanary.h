@@ -90,10 +90,10 @@ namespace Model
   private:
 
     int m_canaryPercentage;
-    bool m_canaryPercentageHasBeenSet;
+    bool m_canaryPercentageHasBeenSet = false;
 
     int m_canaryInterval;
-    bool m_canaryIntervalHasBeenSet;
+    bool m_canaryIntervalHasBeenSet = false;
   };
 
 } // namespace Model

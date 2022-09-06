@@ -485,19 +485,19 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-    bool m_instanceDefinitionsHasBeenSet;
+    bool m_instanceDefinitionsHasBeenSet = false;
 
     GameServerProtectionPolicy m_gameServerProtectionPolicy;
-    bool m_gameServerProtectionPolicyHasBeenSet;
+    bool m_gameServerProtectionPolicyHasBeenSet = false;
 
     BalancingStrategy m_balancingStrategy;
-    bool m_balancingStrategyHasBeenSet;
+    bool m_balancingStrategyHasBeenSet = false;
   };
 
 } // namespace Model

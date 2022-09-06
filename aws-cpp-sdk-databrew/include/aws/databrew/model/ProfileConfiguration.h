@@ -256,16 +256,16 @@ namespace Model
   private:
 
     StatisticsConfiguration m_datasetStatisticsConfiguration;
-    bool m_datasetStatisticsConfigurationHasBeenSet;
+    bool m_datasetStatisticsConfigurationHasBeenSet = false;
 
     Aws::Vector<ColumnSelector> m_profileColumns;
-    bool m_profileColumnsHasBeenSet;
+    bool m_profileColumnsHasBeenSet = false;
 
     Aws::Vector<ColumnStatisticsConfiguration> m_columnStatisticsConfigurations;
-    bool m_columnStatisticsConfigurationsHasBeenSet;
+    bool m_columnStatisticsConfigurationsHasBeenSet = false;
 
     EntityDetectorConfiguration m_entityDetectorConfiguration;
-    bool m_entityDetectorConfigurationHasBeenSet;
+    bool m_entityDetectorConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

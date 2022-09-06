@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_fleetName;
-    bool m_fleetNameHasBeenSet;
+    bool m_fleetNameHasBeenSet = false;
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

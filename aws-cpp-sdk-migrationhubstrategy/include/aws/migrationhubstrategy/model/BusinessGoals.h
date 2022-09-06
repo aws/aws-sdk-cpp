@@ -129,16 +129,16 @@ namespace Model
   private:
 
     int m_licenseCostReduction;
-    bool m_licenseCostReductionHasBeenSet;
+    bool m_licenseCostReductionHasBeenSet = false;
 
     int m_modernizeInfrastructureWithCloudNativeTechnologies;
-    bool m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet;
+    bool m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet = false;
 
     int m_reduceOperationalOverheadWithManagedServices;
-    bool m_reduceOperationalOverheadWithManagedServicesHasBeenSet;
+    bool m_reduceOperationalOverheadWithManagedServicesHasBeenSet = false;
 
     int m_speedOfMigration;
-    bool m_speedOfMigrationHasBeenSet;
+    bool m_speedOfMigrationHasBeenSet = false;
   };
 
 } // namespace Model

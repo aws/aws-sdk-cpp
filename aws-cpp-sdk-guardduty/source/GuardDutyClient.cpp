@@ -138,7 +138,7 @@ GuardDutyClient::~GuardDutyClient()
 
 void GuardDutyClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("GuardDuty");
+  AWSClient::SetServiceClientName("GuardDuty");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

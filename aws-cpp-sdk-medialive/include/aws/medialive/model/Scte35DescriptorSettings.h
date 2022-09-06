@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Scte35SegmentationDescriptor m_segmentationDescriptorScte35DescriptorSettings;
-    bool m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet;
+    bool m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet = false;
   };
 
 } // namespace Model

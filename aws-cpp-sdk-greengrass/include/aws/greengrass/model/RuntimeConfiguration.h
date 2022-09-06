@@ -70,7 +70,7 @@ namespace Model
   private:
 
     TelemetryConfiguration m_telemetryConfiguration;
-    bool m_telemetryConfigurationHasBeenSet;
+    bool m_telemetryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

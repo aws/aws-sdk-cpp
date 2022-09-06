@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     ResourceRegionScope m_resourceRegionScope;
-    bool m_resourceRegionScopeHasBeenSet;
+    bool m_resourceRegionScopeHasBeenSet = false;
   };
 
 } // namespace Model

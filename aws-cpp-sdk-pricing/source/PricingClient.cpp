@@ -79,7 +79,7 @@ PricingClient::~PricingClient()
 
 void PricingClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Pricing");
+  AWSClient::SetServiceClientName("Pricing");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

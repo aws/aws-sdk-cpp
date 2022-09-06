@@ -153,16 +153,16 @@ namespace Model
   private:
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     int m_sizeInGB;
-    bool m_sizeInGBHasBeenSet;
+    bool m_sizeInGBHasBeenSet = false;
 
     int m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
   };
 
 } // namespace Model

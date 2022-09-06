@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
   };
 
 } // namespace Model

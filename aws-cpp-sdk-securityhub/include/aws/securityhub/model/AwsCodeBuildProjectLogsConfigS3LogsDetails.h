@@ -143,13 +143,13 @@ namespace Model
   private:
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

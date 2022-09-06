@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
   };
 
 } // namespace Model

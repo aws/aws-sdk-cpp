@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::Vector<InputUpdate> m_inputUpdates;
-    bool m_inputUpdatesHasBeenSet;
+    bool m_inputUpdatesHasBeenSet = false;
 
     Aws::String m_applicationCodeUpdate;
-    bool m_applicationCodeUpdateHasBeenSet;
+    bool m_applicationCodeUpdateHasBeenSet = false;
 
     Aws::Vector<OutputUpdate> m_outputUpdates;
-    bool m_outputUpdatesHasBeenSet;
+    bool m_outputUpdatesHasBeenSet = false;
 
     Aws::Vector<ReferenceDataSourceUpdate> m_referenceDataSourceUpdates;
-    bool m_referenceDataSourceUpdatesHasBeenSet;
+    bool m_referenceDataSourceUpdatesHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
-    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet;
+    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

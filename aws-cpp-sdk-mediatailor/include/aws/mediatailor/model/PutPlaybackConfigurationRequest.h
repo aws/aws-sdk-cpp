@@ -800,46 +800,46 @@ namespace Model
   private:
 
     Aws::String m_adDecisionServerUrl;
-    bool m_adDecisionServerUrlHasBeenSet;
+    bool m_adDecisionServerUrlHasBeenSet = false;
 
     AvailSuppression m_availSuppression;
-    bool m_availSuppressionHasBeenSet;
+    bool m_availSuppressionHasBeenSet = false;
 
     Bumper m_bumper;
-    bool m_bumperHasBeenSet;
+    bool m_bumperHasBeenSet = false;
 
     CdnConfiguration m_cdnConfiguration;
-    bool m_cdnConfigurationHasBeenSet;
+    bool m_cdnConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_configurationAliases;
-    bool m_configurationAliasesHasBeenSet;
+    bool m_configurationAliasesHasBeenSet = false;
 
     DashConfigurationForPut m_dashConfiguration;
-    bool m_dashConfigurationHasBeenSet;
+    bool m_dashConfigurationHasBeenSet = false;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
-    bool m_livePreRollConfigurationHasBeenSet;
+    bool m_livePreRollConfigurationHasBeenSet = false;
 
     ManifestProcessingRules m_manifestProcessingRules;
-    bool m_manifestProcessingRulesHasBeenSet;
+    bool m_manifestProcessingRulesHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_personalizationThresholdSeconds;
-    bool m_personalizationThresholdSecondsHasBeenSet;
+    bool m_personalizationThresholdSecondsHasBeenSet = false;
 
     Aws::String m_slateAdUrl;
-    bool m_slateAdUrlHasBeenSet;
+    bool m_slateAdUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_transcodeProfileName;
-    bool m_transcodeProfileNameHasBeenSet;
+    bool m_transcodeProfileNameHasBeenSet = false;
 
     Aws::String m_videoContentSourceUrl;
-    bool m_videoContentSourceUrlHasBeenSet;
+    bool m_videoContentSourceUrlHasBeenSet = false;
   };
 
 } // namespace Model

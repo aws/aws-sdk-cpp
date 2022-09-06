@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_textList;
-    bool m_textListHasBeenSet;
+    bool m_textListHasBeenSet = false;
   };
 
 } // namespace Model

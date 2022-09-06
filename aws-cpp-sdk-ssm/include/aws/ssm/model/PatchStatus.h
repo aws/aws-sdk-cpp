@@ -140,13 +140,13 @@ namespace Model
   private:
 
     PatchDeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     PatchComplianceLevel m_complianceLevel;
-    bool m_complianceLevelHasBeenSet;
+    bool m_complianceLevelHasBeenSet = false;
 
     Aws::Utils::DateTime m_approvalDate;
-    bool m_approvalDateHasBeenSet;
+    bool m_approvalDateHasBeenSet = false;
   };
 
 } // namespace Model

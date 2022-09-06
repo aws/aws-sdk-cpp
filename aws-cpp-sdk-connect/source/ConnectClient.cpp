@@ -230,7 +230,7 @@ ConnectClient::~ConnectClient()
 
 void ConnectClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Connect");
+  AWSClient::SetServiceClientName("Connect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

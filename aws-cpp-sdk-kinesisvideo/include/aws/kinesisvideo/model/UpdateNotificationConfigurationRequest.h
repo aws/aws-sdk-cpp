@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

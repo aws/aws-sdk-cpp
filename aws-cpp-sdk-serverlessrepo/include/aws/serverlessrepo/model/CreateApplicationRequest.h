@@ -897,49 +897,49 @@ namespace Model
   private:
 
     Aws::String m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_homePageUrl;
-    bool m_homePageUrlHasBeenSet;
+    bool m_homePageUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_licenseBody;
-    bool m_licenseBodyHasBeenSet;
+    bool m_licenseBodyHasBeenSet = false;
 
     Aws::String m_licenseUrl;
-    bool m_licenseUrlHasBeenSet;
+    bool m_licenseUrlHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_readmeBody;
-    bool m_readmeBodyHasBeenSet;
+    bool m_readmeBodyHasBeenSet = false;
 
     Aws::String m_readmeUrl;
-    bool m_readmeUrlHasBeenSet;
+    bool m_readmeUrlHasBeenSet = false;
 
     Aws::String m_semanticVersion;
-    bool m_semanticVersionHasBeenSet;
+    bool m_semanticVersionHasBeenSet = false;
 
     Aws::String m_sourceCodeArchiveUrl;
-    bool m_sourceCodeArchiveUrlHasBeenSet;
+    bool m_sourceCodeArchiveUrlHasBeenSet = false;
 
     Aws::String m_sourceCodeUrl;
-    bool m_sourceCodeUrlHasBeenSet;
+    bool m_sourceCodeUrlHasBeenSet = false;
 
     Aws::String m_spdxLicenseId;
-    bool m_spdxLicenseIdHasBeenSet;
+    bool m_spdxLicenseIdHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_templateUrl;
-    bool m_templateUrlHasBeenSet;
+    bool m_templateUrlHasBeenSet = false;
   };
 
 } // namespace Model

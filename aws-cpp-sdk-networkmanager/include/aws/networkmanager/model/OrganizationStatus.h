@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_organizationAwsServiceAccessStatus;
-    bool m_organizationAwsServiceAccessStatusHasBeenSet;
+    bool m_organizationAwsServiceAccessStatusHasBeenSet = false;
 
     Aws::String m_sLRDeploymentStatus;
-    bool m_sLRDeploymentStatusHasBeenSet;
+    bool m_sLRDeploymentStatusHasBeenSet = false;
 
     Aws::Vector<AccountStatus> m_accountStatusList;
-    bool m_accountStatusListHasBeenSet;
+    bool m_accountStatusListHasBeenSet = false;
   };
 
 } // namespace Model

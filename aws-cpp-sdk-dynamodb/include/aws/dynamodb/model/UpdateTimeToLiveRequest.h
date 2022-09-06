@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     TimeToLiveSpecification m_timeToLiveSpecification;
-    bool m_timeToLiveSpecificationHasBeenSet;
+    bool m_timeToLiveSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

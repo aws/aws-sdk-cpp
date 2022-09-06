@@ -169,10 +169,10 @@ namespace Model
   private:
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
   };
 
 } // namespace Model

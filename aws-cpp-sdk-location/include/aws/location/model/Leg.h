@@ -341,22 +341,22 @@ namespace Model
   private:
 
     double m_distance;
-    bool m_distanceHasBeenSet;
+    bool m_distanceHasBeenSet = false;
 
     double m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::Vector<double> m_endPosition;
-    bool m_endPositionHasBeenSet;
+    bool m_endPositionHasBeenSet = false;
 
     LegGeometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
 
     Aws::Vector<double> m_startPosition;
-    bool m_startPositionHasBeenSet;
+    bool m_startPositionHasBeenSet = false;
 
     Aws::Vector<Step> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
   };
 
 } // namespace Model

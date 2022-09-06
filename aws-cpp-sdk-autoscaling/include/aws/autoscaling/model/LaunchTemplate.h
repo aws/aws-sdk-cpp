@@ -148,10 +148,10 @@ namespace Model
   private:
 
     LaunchTemplateSpecification m_launchTemplateSpecification;
-    bool m_launchTemplateSpecificationHasBeenSet;
+    bool m_launchTemplateSpecificationHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateOverrides> m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model

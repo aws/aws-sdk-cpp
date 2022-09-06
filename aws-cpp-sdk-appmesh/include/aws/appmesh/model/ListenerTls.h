@@ -165,13 +165,13 @@ namespace Model
   private:
 
     ListenerTlsCertificate m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     ListenerTlsMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     ListenerTlsValidationContext m_validation;
-    bool m_validationHasBeenSet;
+    bool m_validationHasBeenSet = false;
   };
 
 } // namespace Model

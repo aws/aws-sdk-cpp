@@ -384,16 +384,16 @@ namespace Model
   private:
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_weightedCapacity;
-    bool m_weightedCapacityHasBeenSet;
+    bool m_weightedCapacityHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplateSpecification;
-    bool m_launchTemplateSpecificationHasBeenSet;
+    bool m_launchTemplateSpecificationHasBeenSet = false;
 
     InstanceRequirements m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

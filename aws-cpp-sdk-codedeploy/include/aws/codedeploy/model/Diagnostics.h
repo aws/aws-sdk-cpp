@@ -245,16 +245,16 @@ namespace Model
   private:
 
     LifecycleErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_scriptName;
-    bool m_scriptNameHasBeenSet;
+    bool m_scriptNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_logTail;
-    bool m_logTailHasBeenSet;
+    bool m_logTailHasBeenSet = false;
   };
 
 } // namespace Model

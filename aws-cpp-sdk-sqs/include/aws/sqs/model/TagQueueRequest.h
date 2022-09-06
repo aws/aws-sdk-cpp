@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

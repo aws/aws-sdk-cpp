@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

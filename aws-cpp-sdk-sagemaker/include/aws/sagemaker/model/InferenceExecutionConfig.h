@@ -89,7 +89,7 @@ namespace Model
   private:
 
     InferenceExecutionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_observabilityConfigurationName;
-    bool m_observabilityConfigurationNameHasBeenSet;
+    bool m_observabilityConfigurationNameHasBeenSet = false;
 
     bool m_latestOnly;
-    bool m_latestOnlyHasBeenSet;
+    bool m_latestOnlyHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

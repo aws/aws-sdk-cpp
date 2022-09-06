@@ -380,28 +380,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     long long m_timeCommitmentInSeconds;
-    bool m_timeCommitmentInSecondsHasBeenSet;
+    bool m_timeCommitmentInSecondsHasBeenSet = false;
 
     AutoRenew m_autoRenew;
-    bool m_autoRenewHasBeenSet;
+    bool m_autoRenewHasBeenSet = false;
 
     Aws::Vector<Limit> m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     ProactiveEngagementStatus m_proactiveEngagementStatus;
-    bool m_proactiveEngagementStatusHasBeenSet;
+    bool m_proactiveEngagementStatusHasBeenSet = false;
 
     SubscriptionLimits m_subscriptionLimits;
-    bool m_subscriptionLimitsHasBeenSet;
+    bool m_subscriptionLimitsHasBeenSet = false;
 
     Aws::String m_subscriptionArn;
-    bool m_subscriptionArnHasBeenSet;
+    bool m_subscriptionArnHasBeenSet = false;
   };
 
 } // namespace Model

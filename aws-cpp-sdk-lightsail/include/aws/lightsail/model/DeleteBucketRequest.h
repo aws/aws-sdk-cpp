@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

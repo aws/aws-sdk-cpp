@@ -314,25 +314,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_uid;
-    bool m_uidHasBeenSet;
+    bool m_uidHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     bool m_hostNetwork;
-    bool m_hostNetworkHasBeenSet;
+    bool m_hostNetworkHasBeenSet = false;
 
     Aws::Vector<Container> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     Aws::Vector<Volume> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
   };
 
 } // namespace Model

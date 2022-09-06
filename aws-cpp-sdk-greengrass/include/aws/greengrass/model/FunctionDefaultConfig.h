@@ -60,7 +60,7 @@ namespace Model
   private:
 
     FunctionDefaultExecutionConfig m_execution;
-    bool m_executionHasBeenSet;
+    bool m_executionHasBeenSet = false;
   };
 
 } // namespace Model

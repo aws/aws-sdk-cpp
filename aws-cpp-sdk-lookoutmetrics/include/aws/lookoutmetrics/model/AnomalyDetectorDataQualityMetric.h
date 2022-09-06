@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     Aws::Vector<MetricSetDataQualityMetric> m_metricSetDataQualityMetricList;
-    bool m_metricSetDataQualityMetricListHasBeenSet;
+    bool m_metricSetDataQualityMetricListHasBeenSet = false;
   };
 
 } // namespace Model

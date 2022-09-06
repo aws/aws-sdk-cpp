@@ -183,13 +183,13 @@ namespace Model
   private:
 
     SidewalkAccountInfo m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

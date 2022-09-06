@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     RawMessageContent m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

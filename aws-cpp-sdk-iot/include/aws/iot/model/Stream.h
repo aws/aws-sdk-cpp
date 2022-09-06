@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     int m_fileId;
-    bool m_fileIdHasBeenSet;
+    bool m_fileIdHasBeenSet = false;
   };
 
 } // namespace Model

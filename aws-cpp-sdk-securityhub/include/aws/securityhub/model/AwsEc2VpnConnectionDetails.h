@@ -556,37 +556,37 @@ namespace Model
   private:
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_customerGatewayId;
-    bool m_customerGatewayIdHasBeenSet;
+    bool m_customerGatewayIdHasBeenSet = false;
 
     Aws::String m_customerGatewayConfiguration;
-    bool m_customerGatewayConfigurationHasBeenSet;
+    bool m_customerGatewayConfigurationHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vpnGatewayId;
-    bool m_vpnGatewayIdHasBeenSet;
+    bool m_vpnGatewayIdHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpnConnectionVgwTelemetryDetails> m_vgwTelemetry;
-    bool m_vgwTelemetryHasBeenSet;
+    bool m_vgwTelemetryHasBeenSet = false;
 
     AwsEc2VpnConnectionOptionsDetails m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpnConnectionRoutesDetails> m_routes;
-    bool m_routesHasBeenSet;
+    bool m_routesHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

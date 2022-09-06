@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     AuditPolicyState m_auditPolicyState;
-    bool m_auditPolicyStateHasBeenSet;
+    bool m_auditPolicyStateHasBeenSet = false;
   };
 
 } // namespace Model

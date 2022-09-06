@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     LogAnomalyType m_logAnomalyType;
-    bool m_logAnomalyTypeHasBeenSet;
+    bool m_logAnomalyTypeHasBeenSet = false;
 
     Aws::String m_logAnomalyToken;
-    bool m_logAnomalyTokenHasBeenSet;
+    bool m_logAnomalyTokenHasBeenSet = false;
 
     Aws::String m_logEventId;
-    bool m_logEventIdHasBeenSet;
+    bool m_logEventIdHasBeenSet = false;
 
     Aws::String m_explanation;
-    bool m_explanationHasBeenSet;
+    bool m_explanationHasBeenSet = false;
 
     int m_numberOfLogLinesOccurrences;
-    bool m_numberOfLogLinesOccurrencesHasBeenSet;
+    bool m_numberOfLogLinesOccurrencesHasBeenSet = false;
 
     Aws::Utils::DateTime m_logEventTimestamp;
-    bool m_logEventTimestampHasBeenSet;
+    bool m_logEventTimestampHasBeenSet = false;
   };
 
 } // namespace Model

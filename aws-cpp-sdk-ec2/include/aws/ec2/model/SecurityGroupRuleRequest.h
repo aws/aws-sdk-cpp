@@ -399,28 +399,28 @@ namespace Model
   private:
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::String m_cidrIpv4;
-    bool m_cidrIpv4HasBeenSet;
+    bool m_cidrIpv4HasBeenSet = false;
 
     Aws::String m_cidrIpv6;
-    bool m_cidrIpv6HasBeenSet;
+    bool m_cidrIpv6HasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_referencedGroupId;
-    bool m_referencedGroupIdHasBeenSet;
+    bool m_referencedGroupIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

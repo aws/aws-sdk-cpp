@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_replicationConfigurationTemplateID;
-    bool m_replicationConfigurationTemplateIDHasBeenSet;
+    bool m_replicationConfigurationTemplateIDHasBeenSet = false;
   };
 
 } // namespace Model

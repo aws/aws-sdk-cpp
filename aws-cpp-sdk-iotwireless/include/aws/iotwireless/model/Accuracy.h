@@ -83,10 +83,10 @@ namespace Model
   private:
 
     double m_horizontalAccuracy;
-    bool m_horizontalAccuracyHasBeenSet;
+    bool m_horizontalAccuracyHasBeenSet = false;
 
     double m_verticalAccuracy;
-    bool m_verticalAccuracyHasBeenSet;
+    bool m_verticalAccuracyHasBeenSet = false;
   };
 
 } // namespace Model

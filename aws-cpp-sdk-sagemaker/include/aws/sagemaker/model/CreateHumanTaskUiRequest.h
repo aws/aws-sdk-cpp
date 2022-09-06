@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_humanTaskUiName;
-    bool m_humanTaskUiNameHasBeenSet;
+    bool m_humanTaskUiNameHasBeenSet = false;
 
     UiTemplate m_uiTemplate;
-    bool m_uiTemplateHasBeenSet;
+    bool m_uiTemplateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

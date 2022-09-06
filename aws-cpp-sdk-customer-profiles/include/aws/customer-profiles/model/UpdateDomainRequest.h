@@ -387,22 +387,22 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     int m_defaultExpirationDays;
-    bool m_defaultExpirationDaysHasBeenSet;
+    bool m_defaultExpirationDaysHasBeenSet = false;
 
     Aws::String m_defaultEncryptionKey;
-    bool m_defaultEncryptionKeyHasBeenSet;
+    bool m_defaultEncryptionKeyHasBeenSet = false;
 
     Aws::String m_deadLetterQueueUrl;
-    bool m_deadLetterQueueUrlHasBeenSet;
+    bool m_deadLetterQueueUrlHasBeenSet = false;
 
     MatchingRequest m_matching;
-    bool m_matchingHasBeenSet;
+    bool m_matchingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

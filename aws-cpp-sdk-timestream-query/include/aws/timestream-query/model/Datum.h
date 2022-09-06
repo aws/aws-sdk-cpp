@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::String m_scalarValue;
-    bool m_scalarValueHasBeenSet;
+    bool m_scalarValueHasBeenSet = false;
 
     Aws::Vector<TimeSeriesDataPoint> m_timeSeriesValue;
-    bool m_timeSeriesValueHasBeenSet;
+    bool m_timeSeriesValueHasBeenSet = false;
 
     Aws::Vector<Datum> m_arrayValue;
-    bool m_arrayValueHasBeenSet;
+    bool m_arrayValueHasBeenSet = false;
 
     std::shared_ptr<Row> m_rowValue;
-    bool m_rowValueHasBeenSet;
+    bool m_rowValueHasBeenSet = false;
 
     bool m_nullValue;
-    bool m_nullValueHasBeenSet;
+    bool m_nullValueHasBeenSet = false;
   };
 
 } // namespace Model

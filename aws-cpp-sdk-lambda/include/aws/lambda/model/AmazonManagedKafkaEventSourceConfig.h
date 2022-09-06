@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_consumerGroupId;
-    bool m_consumerGroupIdHasBeenSet;
+    bool m_consumerGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -105,10 +105,10 @@ namespace Model
   private:
 
     BlockAction m_block;
-    bool m_blockHasBeenSet;
+    bool m_blockHasBeenSet = false;
 
     AllowAction m_allow;
-    bool m_allowHasBeenSet;
+    bool m_allowHasBeenSet = false;
   };
 
 } // namespace Model

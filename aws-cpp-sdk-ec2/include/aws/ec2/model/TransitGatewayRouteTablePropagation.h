@@ -234,19 +234,19 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     TransitGatewayAttachmentResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     TransitGatewayPropagationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_transitGatewayRouteTableAnnouncementId;
-    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
   };
 
 } // namespace Model

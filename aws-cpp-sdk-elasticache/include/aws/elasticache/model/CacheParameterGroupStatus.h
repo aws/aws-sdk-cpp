@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheNodeIdsToReboot;
-    bool m_cacheNodeIdsToRebootHasBeenSet;
+    bool m_cacheNodeIdsToRebootHasBeenSet = false;
   };
 
 } // namespace Model

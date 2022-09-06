@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_tunnelId;
-    bool m_tunnelIdHasBeenSet;
+    bool m_tunnelIdHasBeenSet = false;
 
     Aws::String m_tunnelArn;
-    bool m_tunnelArnHasBeenSet;
+    bool m_tunnelArnHasBeenSet = false;
 
     TunnelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

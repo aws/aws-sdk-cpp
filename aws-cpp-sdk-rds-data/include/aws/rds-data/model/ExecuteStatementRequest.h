@@ -567,37 +567,37 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_sql;
-    bool m_sqlHasBeenSet;
+    bool m_sqlHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::Vector<SqlParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     bool m_includeResultMetadata;
-    bool m_includeResultMetadataHasBeenSet;
+    bool m_includeResultMetadataHasBeenSet = false;
 
     bool m_continueAfterTimeout;
-    bool m_continueAfterTimeoutHasBeenSet;
+    bool m_continueAfterTimeoutHasBeenSet = false;
 
     ResultSetOptions m_resultSetOptions;
-    bool m_resultSetOptionsHasBeenSet;
+    bool m_resultSetOptionsHasBeenSet = false;
 
     RecordsFormatType m_formatRecordsAs;
-    bool m_formatRecordsAsHasBeenSet;
+    bool m_formatRecordsAsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -311,22 +311,22 @@ namespace Model
   private:
 
     TranscriptFilterType m_transcriptFilterType;
-    bool m_transcriptFilterTypeHasBeenSet;
+    bool m_transcriptFilterTypeHasBeenSet = false;
 
     AbsoluteTimeRange m_absoluteTimeRange;
-    bool m_absoluteTimeRangeHasBeenSet;
+    bool m_absoluteTimeRangeHasBeenSet = false;
 
     RelativeTimeRange m_relativeTimeRange;
-    bool m_relativeTimeRangeHasBeenSet;
+    bool m_relativeTimeRangeHasBeenSet = false;
 
     ParticipantRole m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
 
     bool m_negate;
-    bool m_negateHasBeenSet;
+    bool m_negateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_dataLocation;
-    bool m_dataLocationHasBeenSet;
+    bool m_dataLocationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     DeltaTime m_deltaTime;
-    bool m_deltaTimeHasBeenSet;
+    bool m_deltaTimeHasBeenSet = false;
   };
 
 } // namespace Model

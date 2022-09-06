@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_sheetId;
-    bool m_sheetIdHasBeenSet;
+    bool m_sheetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

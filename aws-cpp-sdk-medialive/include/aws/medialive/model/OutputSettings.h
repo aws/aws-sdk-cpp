@@ -198,28 +198,28 @@ namespace Model
   private:
 
     ArchiveOutputSettings m_archiveOutputSettings;
-    bool m_archiveOutputSettingsHasBeenSet;
+    bool m_archiveOutputSettingsHasBeenSet = false;
 
     FrameCaptureOutputSettings m_frameCaptureOutputSettings;
-    bool m_frameCaptureOutputSettingsHasBeenSet;
+    bool m_frameCaptureOutputSettingsHasBeenSet = false;
 
     HlsOutputSettings m_hlsOutputSettings;
-    bool m_hlsOutputSettingsHasBeenSet;
+    bool m_hlsOutputSettingsHasBeenSet = false;
 
     MediaPackageOutputSettings m_mediaPackageOutputSettings;
-    bool m_mediaPackageOutputSettingsHasBeenSet;
+    bool m_mediaPackageOutputSettingsHasBeenSet = false;
 
     MsSmoothOutputSettings m_msSmoothOutputSettings;
-    bool m_msSmoothOutputSettingsHasBeenSet;
+    bool m_msSmoothOutputSettingsHasBeenSet = false;
 
     MultiplexOutputSettings m_multiplexOutputSettings;
-    bool m_multiplexOutputSettingsHasBeenSet;
+    bool m_multiplexOutputSettingsHasBeenSet = false;
 
     RtmpOutputSettings m_rtmpOutputSettings;
-    bool m_rtmpOutputSettingsHasBeenSet;
+    bool m_rtmpOutputSettingsHasBeenSet = false;
 
     UdpOutputSettings m_udpOutputSettings;
-    bool m_udpOutputSettingsHasBeenSet;
+    bool m_udpOutputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

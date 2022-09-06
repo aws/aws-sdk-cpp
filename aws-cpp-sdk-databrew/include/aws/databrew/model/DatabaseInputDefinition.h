@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_glueConnectionName;
-    bool m_glueConnectionNameHasBeenSet;
+    bool m_glueConnectionNameHasBeenSet = false;
 
     Aws::String m_databaseTableName;
-    bool m_databaseTableNameHasBeenSet;
+    bool m_databaseTableNameHasBeenSet = false;
 
     S3Location m_tempDirectory;
-    bool m_tempDirectoryHasBeenSet;
+    bool m_tempDirectoryHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
   };
 
 } // namespace Model

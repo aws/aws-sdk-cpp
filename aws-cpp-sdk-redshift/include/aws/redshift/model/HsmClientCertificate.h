@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_hsmClientCertificateIdentifier;
-    bool m_hsmClientCertificateIdentifierHasBeenSet;
+    bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
     Aws::String m_hsmClientCertificatePublicKey;
-    bool m_hsmClientCertificatePublicKeyHasBeenSet;
+    bool m_hsmClientCertificatePublicKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

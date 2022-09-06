@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     int m_maxLabels;
-    bool m_maxLabelsHasBeenSet;
+    bool m_maxLabelsHasBeenSet = false;
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -282,19 +282,19 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     GettablePolicyStateValues m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     PolicyTypeValues m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
   };
 
 } // namespace Model

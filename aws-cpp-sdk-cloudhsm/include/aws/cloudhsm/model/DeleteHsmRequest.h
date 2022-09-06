@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_hsmArn;
-    bool m_hsmArnHasBeenSet;
+    bool m_hsmArnHasBeenSet = false;
   };
 
 } // namespace Model

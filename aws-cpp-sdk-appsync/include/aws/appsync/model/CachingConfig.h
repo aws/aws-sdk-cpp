@@ -130,10 +130,10 @@ namespace Model
   private:
 
     long long m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cachingKeys;
-    bool m_cachingKeysHasBeenSet;
+    bool m_cachingKeysHasBeenSet = false;
   };
 
 } // namespace Model

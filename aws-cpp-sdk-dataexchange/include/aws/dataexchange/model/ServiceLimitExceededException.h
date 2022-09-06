@@ -134,13 +134,13 @@ namespace Model
   private:
 
     LimitName m_limitName;
-    bool m_limitNameHasBeenSet;
+    bool m_limitNameHasBeenSet = false;
 
     double m_limitValue;
-    bool m_limitValueHasBeenSet;
+    bool m_limitValueHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

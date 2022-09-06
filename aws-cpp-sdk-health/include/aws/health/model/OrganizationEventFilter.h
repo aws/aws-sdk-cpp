@@ -521,37 +521,37 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventTypeCodes;
-    bool m_eventTypeCodesHasBeenSet;
+    bool m_eventTypeCodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_awsAccountIds;
-    bool m_awsAccountIdsHasBeenSet;
+    bool m_awsAccountIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
 
     DateTimeRange m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     DateTimeRange m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     DateTimeRange m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityArns;
-    bool m_entityArnsHasBeenSet;
+    bool m_entityArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityValues;
-    bool m_entityValuesHasBeenSet;
+    bool m_entityValuesHasBeenSet = false;
 
     Aws::Vector<EventTypeCategory> m_eventTypeCategories;
-    bool m_eventTypeCategoriesHasBeenSet;
+    bool m_eventTypeCategoriesHasBeenSet = false;
 
     Aws::Vector<EventStatusCode> m_eventStatusCodes;
-    bool m_eventStatusCodesHasBeenSet;
+    bool m_eventStatusCodesHasBeenSet = false;
   };
 
 } // namespace Model

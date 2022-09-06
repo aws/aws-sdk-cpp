@@ -217,19 +217,19 @@ namespace Model
   private:
 
     LoggerComponent m_component;
-    bool m_componentHasBeenSet;
+    bool m_componentHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     LoggerLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     int m_space;
-    bool m_spaceHasBeenSet;
+    bool m_spaceHasBeenSet = false;
 
     LoggerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

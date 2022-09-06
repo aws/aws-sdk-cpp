@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

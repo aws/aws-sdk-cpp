@@ -148,10 +148,10 @@ namespace Model
   private:
 
     EncryptionMode m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

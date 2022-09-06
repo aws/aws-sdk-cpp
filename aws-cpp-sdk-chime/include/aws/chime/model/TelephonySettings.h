@@ -102,13 +102,13 @@ namespace Model
   private:
 
     bool m_inboundCalling;
-    bool m_inboundCallingHasBeenSet;
+    bool m_inboundCallingHasBeenSet = false;
 
     bool m_outboundCalling;
-    bool m_outboundCallingHasBeenSet;
+    bool m_outboundCallingHasBeenSet = false;
 
     bool m_sMS;
-    bool m_sMSHasBeenSet;
+    bool m_sMSHasBeenSet = false;
   };
 
 } // namespace Model

@@ -435,34 +435,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_definitionArn;
-    bool m_definitionArnHasBeenSet;
+    bool m_definitionArnHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskCreatedAt;
-    bool m_taskCreatedAtHasBeenSet;
+    bool m_taskCreatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Volume> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
 
     Aws::Vector<Container> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     BackTestConfiguration m_backTestConfiguration;
-    bool m_backTestConfigurationHasBeenSet;
+    bool m_backTestConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::String m_after;
-    bool m_afterHasBeenSet;
+    bool m_afterHasBeenSet = false;
 
     ReceiptRule m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
   };
 
 } // namespace Model

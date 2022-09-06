@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::String m_itemId;
-    bool m_itemIdHasBeenSet;
+    bool m_itemIdHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

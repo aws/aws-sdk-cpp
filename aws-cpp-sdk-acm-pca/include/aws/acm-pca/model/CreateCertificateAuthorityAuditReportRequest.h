@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     AuditReportResponseFormat m_auditReportResponseFormat;
-    bool m_auditReportResponseFormatHasBeenSet;
+    bool m_auditReportResponseFormatHasBeenSet = false;
   };
 
 } // namespace Model

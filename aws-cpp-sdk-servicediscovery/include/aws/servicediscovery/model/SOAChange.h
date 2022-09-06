@@ -59,7 +59,7 @@ namespace Model
   private:
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
   };
 
 } // namespace Model

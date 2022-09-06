@@ -163,13 +163,13 @@ namespace Model
   private:
 
     DomainInformation m_sourceDomainInfo;
-    bool m_sourceDomainInfoHasBeenSet;
+    bool m_sourceDomainInfoHasBeenSet = false;
 
     DomainInformation m_destinationDomainInfo;
-    bool m_destinationDomainInfoHasBeenSet;
+    bool m_destinationDomainInfoHasBeenSet = false;
 
     Aws::String m_connectionAlias;
-    bool m_connectionAliasHasBeenSet;
+    bool m_connectionAliasHasBeenSet = false;
   };
 
 } // namespace Model

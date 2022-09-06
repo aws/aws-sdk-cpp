@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

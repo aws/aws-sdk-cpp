@@ -616,28 +616,28 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3BucketName;
-    bool m_databaseInstallationFilesS3BucketNameHasBeenSet;
+    bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3Prefix;
-    bool m_databaseInstallationFilesS3PrefixHasBeenSet;
+    bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet;
+    bool m_kMSKeyIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_manifest;
-    bool m_manifestHasBeenSet;
+    bool m_manifestHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

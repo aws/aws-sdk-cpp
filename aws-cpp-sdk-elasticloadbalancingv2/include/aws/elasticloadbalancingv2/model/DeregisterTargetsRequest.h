@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     Aws::Vector<TargetDescription> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
   };
 
 } // namespace Model

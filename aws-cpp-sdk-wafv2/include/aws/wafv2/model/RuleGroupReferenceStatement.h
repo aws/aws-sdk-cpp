@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::Vector<ExcludedRule> m_excludedRules;
-    bool m_excludedRulesHasBeenSet;
+    bool m_excludedRulesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -746,52 +746,52 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_cname;
-    bool m_cnameHasBeenSet;
+    bool m_cnameHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::String m_dateUpdated;
-    bool m_dateUpdatedHasBeenSet;
+    bool m_dateUpdatedHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_endpointUrl;
-    bool m_endpointUrlHasBeenSet;
+    bool m_endpointUrlHasBeenSet = false;
 
     Aws::String m_environmentArn;
-    bool m_environmentArnHasBeenSet;
+    bool m_environmentArnHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink> m_environmentLinks;
-    bool m_environmentLinksHasBeenSet;
+    bool m_environmentLinksHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
 
     Aws::String m_platformArn;
-    bool m_platformArnHasBeenSet;
+    bool m_platformArnHasBeenSet = false;
 
     Aws::String m_solutionStackName;
-    bool m_solutionStackNameHasBeenSet;
+    bool m_solutionStackNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AwsElasticBeanstalkEnvironmentTier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     Aws::String m_versionLabel;
-    bool m_versionLabelHasBeenSet;
+    bool m_versionLabelHasBeenSet = false;
   };
 
 } // namespace Model

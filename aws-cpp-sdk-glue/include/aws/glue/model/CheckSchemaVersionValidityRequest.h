@@ -115,10 +115,10 @@ namespace Model
   private:
 
     DataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     Aws::String m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,7 +91,7 @@ HoneycodeClient::~HoneycodeClient()
 
 void HoneycodeClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Honeycode");
+  AWSClient::SetServiceClientName("Honeycode");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

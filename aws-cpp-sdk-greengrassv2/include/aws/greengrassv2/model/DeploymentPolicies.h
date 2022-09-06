@@ -165,13 +165,13 @@ namespace Model
   private:
 
     DeploymentFailureHandlingPolicy m_failureHandlingPolicy;
-    bool m_failureHandlingPolicyHasBeenSet;
+    bool m_failureHandlingPolicyHasBeenSet = false;
 
     DeploymentComponentUpdatePolicy m_componentUpdatePolicy;
-    bool m_componentUpdatePolicyHasBeenSet;
+    bool m_componentUpdatePolicyHasBeenSet = false;
 
     DeploymentConfigurationValidationPolicy m_configurationValidationPolicy;
-    bool m_configurationValidationPolicyHasBeenSet;
+    bool m_configurationValidationPolicyHasBeenSet = false;
   };
 
 } // namespace Model

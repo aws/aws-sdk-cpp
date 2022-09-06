@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_componentVersionArn;
-    bool m_componentVersionArnHasBeenSet;
+    bool m_componentVersionArnHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
   };
 
 } // namespace Model

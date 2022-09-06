@@ -538,43 +538,43 @@ namespace Model
   private:
 
     int m_baseCapacity;
-    bool m_baseCapacityHasBeenSet;
+    bool m_baseCapacityHasBeenSet = false;
 
     Aws::Vector<ConfigParameter> m_configParameters;
-    bool m_configParametersHasBeenSet;
+    bool m_configParametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Endpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     WorkgroupStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_workgroupArn;
-    bool m_workgroupArnHasBeenSet;
+    bool m_workgroupArnHasBeenSet = false;
 
     Aws::String m_workgroupId;
-    bool m_workgroupIdHasBeenSet;
+    bool m_workgroupIdHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

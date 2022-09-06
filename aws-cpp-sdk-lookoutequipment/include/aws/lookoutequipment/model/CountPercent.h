@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
   };
 
 } // namespace Model

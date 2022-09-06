@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ClientPolicyTls m_tls;
-    bool m_tlsHasBeenSet;
+    bool m_tlsHasBeenSet = false;
   };
 
 } // namespace Model

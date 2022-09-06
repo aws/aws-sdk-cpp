@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     int m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

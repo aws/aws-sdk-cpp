@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_webACLArn;
-    bool m_webACLArnHasBeenSet;
+    bool m_webACLArnHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_gatewayName;
-    bool m_gatewayNameHasBeenSet;
+    bool m_gatewayNameHasBeenSet = false;
 
     Aws::String m_gatewayTimezone;
-    bool m_gatewayTimezoneHasBeenSet;
+    bool m_gatewayTimezoneHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupARN;
-    bool m_cloudWatchLogGroupARNHasBeenSet;
+    bool m_cloudWatchLogGroupARNHasBeenSet = false;
 
     GatewayCapacity m_gatewayCapacity;
-    bool m_gatewayCapacityHasBeenSet;
+    bool m_gatewayCapacityHasBeenSet = false;
   };
 
 } // namespace Model

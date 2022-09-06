@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_certificateSigningRequest;
-    bool m_certificateSigningRequestHasBeenSet;
+    bool m_certificateSigningRequestHasBeenSet = false;
 
     bool m_setAsActive;
-    bool m_setAsActiveHasBeenSet;
+    bool m_setAsActiveHasBeenSet = false;
   };
 
 } // namespace Model

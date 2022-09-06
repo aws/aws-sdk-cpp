@@ -179,13 +179,13 @@ namespace Model
   private:
 
     DatasetSource m_datasetSource;
-    bool m_datasetSourceHasBeenSet;
+    bool m_datasetSourceHasBeenSet = false;
 
     DatasetType m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
   };
 
 } // namespace Model

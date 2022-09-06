@@ -375,16 +375,16 @@ namespace Model
   private:
 
     Aws::String m_homeDirectory;
-    bool m_homeDirectoryHasBeenSet;
+    bool m_homeDirectoryHasBeenSet = false;
 
     HomeDirectoryType m_homeDirectoryType;
-    bool m_homeDirectoryTypeHasBeenSet;
+    bool m_homeDirectoryTypeHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

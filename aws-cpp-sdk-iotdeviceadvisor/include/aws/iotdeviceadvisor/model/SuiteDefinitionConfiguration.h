@@ -279,25 +279,25 @@ namespace Model
   private:
 
     Aws::String m_suiteDefinitionName;
-    bool m_suiteDefinitionNameHasBeenSet;
+    bool m_suiteDefinitionNameHasBeenSet = false;
 
     Aws::Vector<DeviceUnderTest> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
 
     bool m_intendedForQualification;
-    bool m_intendedForQualificationHasBeenSet;
+    bool m_intendedForQualificationHasBeenSet = false;
 
     bool m_isLongDurationTest;
-    bool m_isLongDurationTestHasBeenSet;
+    bool m_isLongDurationTestHasBeenSet = false;
 
     Aws::String m_rootGroup;
-    bool m_rootGroupHasBeenSet;
+    bool m_rootGroupHasBeenSet = false;
 
     Aws::String m_devicePermissionRoleArn;
-    bool m_devicePermissionRoleArnHasBeenSet;
+    bool m_devicePermissionRoleArnHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

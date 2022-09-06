@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_maxNumberOfTrainingJobs;
-    bool m_maxNumberOfTrainingJobsHasBeenSet;
+    bool m_maxNumberOfTrainingJobsHasBeenSet = false;
 
     int m_maxParallelTrainingJobs;
-    bool m_maxParallelTrainingJobsHasBeenSet;
+    bool m_maxParallelTrainingJobsHasBeenSet = false;
   };
 
 } // namespace Model

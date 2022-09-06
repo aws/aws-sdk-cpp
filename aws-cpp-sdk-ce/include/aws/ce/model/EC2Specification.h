@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OfferingClass m_offeringClass;
-    bool m_offeringClassHasBeenSet;
+    bool m_offeringClassHasBeenSet = false;
   };
 
 } // namespace Model

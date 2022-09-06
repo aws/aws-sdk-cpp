@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     TableStatus m_tableStatus;
-    bool m_tableStatusHasBeenSet;
+    bool m_tableStatusHasBeenSet = false;
 
     Aws::Vector<ReplicaAutoScalingDescription> m_replicas;
-    bool m_replicasHasBeenSet;
+    bool m_replicasHasBeenSet = false;
   };
 
 } // namespace Model

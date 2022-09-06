@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     TlsPolicy m_tlsPolicy;
-    bool m_tlsPolicyHasBeenSet;
+    bool m_tlsPolicyHasBeenSet = false;
 
     Aws::String m_sendingPoolName;
-    bool m_sendingPoolNameHasBeenSet;
+    bool m_sendingPoolNameHasBeenSet = false;
   };
 
 } // namespace Model

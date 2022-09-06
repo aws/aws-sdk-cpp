@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     NotificationType m_notificationType;
-    bool m_notificationTypeHasBeenSet;
+    bool m_notificationTypeHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

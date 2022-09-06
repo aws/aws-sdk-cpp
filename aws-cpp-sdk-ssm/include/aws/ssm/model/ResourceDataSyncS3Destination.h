@@ -296,22 +296,22 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     ResourceDataSyncS3Format m_syncFormat;
-    bool m_syncFormatHasBeenSet;
+    bool m_syncFormatHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_aWSKMSKeyARN;
-    bool m_aWSKMSKeyARNHasBeenSet;
+    bool m_aWSKMSKeyARNHasBeenSet = false;
 
     ResourceDataSyncDestinationDataSharing m_destinationDataSharing;
-    bool m_destinationDataSharingHasBeenSet;
+    bool m_destinationDataSharingHasBeenSet = false;
   };
 
 } // namespace Model

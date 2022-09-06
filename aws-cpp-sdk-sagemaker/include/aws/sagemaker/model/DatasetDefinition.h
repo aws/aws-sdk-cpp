@@ -246,19 +246,19 @@ namespace Model
   private:
 
     AthenaDatasetDefinition m_athenaDatasetDefinition;
-    bool m_athenaDatasetDefinitionHasBeenSet;
+    bool m_athenaDatasetDefinitionHasBeenSet = false;
 
     RedshiftDatasetDefinition m_redshiftDatasetDefinition;
-    bool m_redshiftDatasetDefinitionHasBeenSet;
+    bool m_redshiftDatasetDefinitionHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     DataDistributionType m_dataDistributionType;
-    bool m_dataDistributionTypeHasBeenSet;
+    bool m_dataDistributionTypeHasBeenSet = false;
 
     InputMode m_inputMode;
-    bool m_inputModeHasBeenSet;
+    bool m_inputModeHasBeenSet = false;
   };
 
 } // namespace Model

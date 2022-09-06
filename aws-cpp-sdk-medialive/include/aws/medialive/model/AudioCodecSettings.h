@@ -158,22 +158,22 @@ namespace Model
   private:
 
     AacSettings m_aacSettings;
-    bool m_aacSettingsHasBeenSet;
+    bool m_aacSettingsHasBeenSet = false;
 
     Ac3Settings m_ac3Settings;
-    bool m_ac3SettingsHasBeenSet;
+    bool m_ac3SettingsHasBeenSet = false;
 
     Eac3Settings m_eac3Settings;
-    bool m_eac3SettingsHasBeenSet;
+    bool m_eac3SettingsHasBeenSet = false;
 
     Mp2Settings m_mp2Settings;
-    bool m_mp2SettingsHasBeenSet;
+    bool m_mp2SettingsHasBeenSet = false;
 
     PassThroughSettings m_passThroughSettings;
-    bool m_passThroughSettingsHasBeenSet;
+    bool m_passThroughSettingsHasBeenSet = false;
 
     WavSettings m_wavSettings;
-    bool m_wavSettingsHasBeenSet;
+    bool m_wavSettingsHasBeenSet = false;
   };
 
 } // namespace Model

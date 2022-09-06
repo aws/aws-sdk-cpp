@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
 
     HumanLoopConfig m_humanLoopConfig;
-    bool m_humanLoopConfigHasBeenSet;
+    bool m_humanLoopConfigHasBeenSet = false;
   };
 
 } // namespace Model

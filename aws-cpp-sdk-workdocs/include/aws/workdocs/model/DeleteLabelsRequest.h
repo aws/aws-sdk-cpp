@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     bool m_deleteAll;
-    bool m_deleteAllHasBeenSet;
+    bool m_deleteAllHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableAnnouncementId;
-    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

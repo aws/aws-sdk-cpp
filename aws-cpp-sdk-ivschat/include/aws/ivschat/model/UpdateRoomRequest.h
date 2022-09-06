@@ -214,19 +214,19 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     int m_maximumMessageLength;
-    bool m_maximumMessageLengthHasBeenSet;
+    bool m_maximumMessageLengthHasBeenSet = false;
 
     int m_maximumMessageRatePerSecond;
-    bool m_maximumMessageRatePerSecondHasBeenSet;
+    bool m_maximumMessageRatePerSecondHasBeenSet = false;
 
     MessageReviewHandler m_messageReviewHandler;
-    bool m_messageReviewHandlerHasBeenSet;
+    bool m_messageReviewHandlerHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

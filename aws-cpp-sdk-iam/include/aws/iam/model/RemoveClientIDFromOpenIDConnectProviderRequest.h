@@ -184,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_openIDConnectProviderArn;
-    bool m_openIDConnectProviderArnHasBeenSet;
+    bool m_openIDConnectProviderArnHasBeenSet = false;
 
     Aws::String m_clientID;
-    bool m_clientIDHasBeenSet;
+    bool m_clientIDHasBeenSet = false;
   };
 
 } // namespace Model

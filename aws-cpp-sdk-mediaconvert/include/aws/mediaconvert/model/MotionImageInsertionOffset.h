@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_imageX;
-    bool m_imageXHasBeenSet;
+    bool m_imageXHasBeenSet = false;
 
     int m_imageY;
-    bool m_imageYHasBeenSet;
+    bool m_imageYHasBeenSet = false;
   };
 
 } // namespace Model

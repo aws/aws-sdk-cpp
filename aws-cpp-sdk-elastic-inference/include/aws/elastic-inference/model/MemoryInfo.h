@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_sizeInMiB;
-    bool m_sizeInMiBHasBeenSet;
+    bool m_sizeInMiBHasBeenSet = false;
   };
 
 } // namespace Model

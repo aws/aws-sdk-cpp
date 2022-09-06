@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Criterion> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -242,16 +242,16 @@ namespace Model
   private:
 
     ReplicationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastReplicatedTimestamp;
-    bool m_lastReplicatedTimestampHasBeenSet;
+    bool m_lastReplicatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

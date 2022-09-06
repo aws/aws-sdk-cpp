@@ -445,22 +445,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_lockToken;
-    bool m_lockTokenHasBeenSet;
+    bool m_lockTokenHasBeenSet = false;
 
     Aws::String m_recommendedVersion;
-    bool m_recommendedVersionHasBeenSet;
+    bool m_recommendedVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, VersionToPublish> m_versionsToPublish;
-    bool m_versionsToPublishHasBeenSet;
+    bool m_versionsToPublishHasBeenSet = false;
   };
 
 } // namespace Model

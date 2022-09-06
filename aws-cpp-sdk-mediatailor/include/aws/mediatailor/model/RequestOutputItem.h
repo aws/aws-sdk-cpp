@@ -201,16 +201,16 @@ namespace Model
   private:
 
     DashPlaylistSettings m_dashPlaylistSettings;
-    bool m_dashPlaylistSettingsHasBeenSet;
+    bool m_dashPlaylistSettingsHasBeenSet = false;
 
     HlsPlaylistSettings m_hlsPlaylistSettings;
-    bool m_hlsPlaylistSettingsHasBeenSet;
+    bool m_hlsPlaylistSettingsHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     Aws::String m_sourceGroup;
-    bool m_sourceGroupHasBeenSet;
+    bool m_sourceGroupHasBeenSet = false;
   };
 
 } // namespace Model

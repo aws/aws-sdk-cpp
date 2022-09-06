@@ -172,7 +172,7 @@ namespace Model
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
-    bool m_cpuVendorArchitecturesHasBeenSet;
+    bool m_cpuVendorArchitecturesHasBeenSet = false;
   };
 
 } // namespace Model

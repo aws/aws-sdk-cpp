@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_networkInBytesPerSecond;
-    bool m_networkInBytesPerSecondHasBeenSet;
+    bool m_networkInBytesPerSecondHasBeenSet = false;
 
     Aws::String m_networkOutBytesPerSecond;
-    bool m_networkOutBytesPerSecondHasBeenSet;
+    bool m_networkOutBytesPerSecondHasBeenSet = false;
 
     Aws::String m_networkPacketsInPerSecond;
-    bool m_networkPacketsInPerSecondHasBeenSet;
+    bool m_networkPacketsInPerSecondHasBeenSet = false;
 
     Aws::String m_networkPacketsOutPerSecond;
-    bool m_networkPacketsOutPerSecondHasBeenSet;
+    bool m_networkPacketsOutPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

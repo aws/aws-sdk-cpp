@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
   };
 
 } // namespace Model

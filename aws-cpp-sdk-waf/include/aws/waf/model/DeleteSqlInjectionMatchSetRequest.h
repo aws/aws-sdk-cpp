@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_sqlInjectionMatchSetId;
-    bool m_sqlInjectionMatchSetIdHasBeenSet;
+    bool m_sqlInjectionMatchSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

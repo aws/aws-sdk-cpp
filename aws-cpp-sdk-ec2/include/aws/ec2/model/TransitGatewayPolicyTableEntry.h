@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_policyRuleNumber;
-    bool m_policyRuleNumberHasBeenSet;
+    bool m_policyRuleNumberHasBeenSet = false;
 
     TransitGatewayPolicyRule m_policyRule;
-    bool m_policyRuleHasBeenSet;
+    bool m_policyRuleHasBeenSet = false;
 
     Aws::String m_targetRouteTableId;
-    bool m_targetRouteTableIdHasBeenSet;
+    bool m_targetRouteTableIdHasBeenSet = false;
   };
 
 } // namespace Model

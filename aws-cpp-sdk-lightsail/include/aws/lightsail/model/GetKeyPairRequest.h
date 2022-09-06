@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_keyPairName;
-    bool m_keyPairNameHasBeenSet;
+    bool m_keyPairNameHasBeenSet = false;
   };
 
 } // namespace Model

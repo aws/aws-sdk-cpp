@@ -124,10 +124,10 @@ namespace Model
   private:
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     TimeUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

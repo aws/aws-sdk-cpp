@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<RecoveryOptionType> m_recoveryMechanisms;
-    bool m_recoveryMechanismsHasBeenSet;
+    bool m_recoveryMechanismsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -237,22 +237,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PriceWithCurrency m_registrationPrice;
-    bool m_registrationPriceHasBeenSet;
+    bool m_registrationPriceHasBeenSet = false;
 
     PriceWithCurrency m_transferPrice;
-    bool m_transferPriceHasBeenSet;
+    bool m_transferPriceHasBeenSet = false;
 
     PriceWithCurrency m_renewalPrice;
-    bool m_renewalPriceHasBeenSet;
+    bool m_renewalPriceHasBeenSet = false;
 
     PriceWithCurrency m_changeOwnershipPrice;
-    bool m_changeOwnershipPriceHasBeenSet;
+    bool m_changeOwnershipPriceHasBeenSet = false;
 
     PriceWithCurrency m_restorationPrice;
-    bool m_restorationPriceHasBeenSet;
+    bool m_restorationPriceHasBeenSet = false;
   };
 
 } // namespace Model

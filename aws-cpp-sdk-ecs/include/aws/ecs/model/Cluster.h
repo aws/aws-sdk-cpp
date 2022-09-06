@@ -979,49 +979,49 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     ClusterConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_registeredContainerInstancesCount;
-    bool m_registeredContainerInstancesCountHasBeenSet;
+    bool m_registeredContainerInstancesCountHasBeenSet = false;
 
     int m_runningTasksCount;
-    bool m_runningTasksCountHasBeenSet;
+    bool m_runningTasksCountHasBeenSet = false;
 
     int m_pendingTasksCount;
-    bool m_pendingTasksCountHasBeenSet;
+    bool m_pendingTasksCountHasBeenSet = false;
 
     int m_activeServicesCount;
-    bool m_activeServicesCountHasBeenSet;
+    bool m_activeServicesCountHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<ClusterSetting> m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capacityProviders;
-    bool m_capacityProvidersHasBeenSet;
+    bool m_capacityProvidersHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_defaultCapacityProviderStrategy;
-    bool m_defaultCapacityProviderStrategyHasBeenSet;
+    bool m_defaultCapacityProviderStrategyHasBeenSet = false;
 
     Aws::Vector<Attachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::String m_attachmentsStatus;
-    bool m_attachmentsStatusHasBeenSet;
+    bool m_attachmentsStatusHasBeenSet = false;
   };
 
 } // namespace Model

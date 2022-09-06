@@ -253,13 +253,13 @@ namespace Model
   private:
 
     EBSMetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     MetricStatistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

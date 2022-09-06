@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_includeDeprecated;
-    bool m_includeDeprecatedHasBeenSet;
+    bool m_includeDeprecatedHasBeenSet = false;
   };
 
 } // namespace Model

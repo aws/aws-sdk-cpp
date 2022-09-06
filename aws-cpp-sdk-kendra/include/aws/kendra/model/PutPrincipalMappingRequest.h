@@ -413,22 +413,22 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     GroupMembers m_groupMembers;
-    bool m_groupMembersHasBeenSet;
+    bool m_groupMembersHasBeenSet = false;
 
     long long m_orderingId;
-    bool m_orderingIdHasBeenSet;
+    bool m_orderingIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

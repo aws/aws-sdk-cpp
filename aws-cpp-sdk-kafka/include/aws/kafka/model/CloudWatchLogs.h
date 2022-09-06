@@ -72,10 +72,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_logGroup;
-    bool m_logGroupHasBeenSet;
+    bool m_logGroupHasBeenSet = false;
   };
 
 } // namespace Model

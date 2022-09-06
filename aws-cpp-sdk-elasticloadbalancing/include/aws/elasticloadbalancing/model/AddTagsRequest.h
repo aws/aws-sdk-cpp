@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_loadBalancerNames;
-    bool m_loadBalancerNamesHasBeenSet;
+    bool m_loadBalancerNamesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

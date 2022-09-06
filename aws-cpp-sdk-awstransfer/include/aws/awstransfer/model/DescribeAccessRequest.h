@@ -206,10 +206,10 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

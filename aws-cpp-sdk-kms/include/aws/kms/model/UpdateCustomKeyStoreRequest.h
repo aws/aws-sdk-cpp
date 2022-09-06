@@ -344,16 +344,16 @@ namespace Model
   private:
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     Aws::String m_newCustomKeyStoreName;
-    bool m_newCustomKeyStoreNameHasBeenSet;
+    bool m_newCustomKeyStoreNameHasBeenSet = false;
 
     Aws::String m_keyStorePassword;
-    bool m_keyStorePasswordHasBeenSet;
+    bool m_keyStorePasswordHasBeenSet = false;
 
     Aws::String m_cloudHsmClusterId;
-    bool m_cloudHsmClusterIdHasBeenSet;
+    bool m_cloudHsmClusterIdHasBeenSet = false;
   };
 
 } // namespace Model

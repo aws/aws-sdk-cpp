@@ -222,19 +222,19 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Tag m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
 
     long long m_objectSizeGreaterThan;
-    bool m_objectSizeGreaterThanHasBeenSet;
+    bool m_objectSizeGreaterThanHasBeenSet = false;
 
     long long m_objectSizeLessThan;
-    bool m_objectSizeLessThanHasBeenSet;
+    bool m_objectSizeLessThanHasBeenSet = false;
 
     LifecycleRuleAndOperator m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
   };
 
 } // namespace Model

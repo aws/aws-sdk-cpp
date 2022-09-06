@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     TracingConfiguration m_tracingConfiguration;
-    bool m_tracingConfigurationHasBeenSet;
+    bool m_tracingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

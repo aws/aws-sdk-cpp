@@ -2225,55 +2225,55 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Select m_select;
-    bool m_selectHasBeenSet;
+    bool m_selectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributesToGet;
-    bool m_attributesToGetHasBeenSet;
+    bool m_attributesToGetHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
 
     Aws::Map<Aws::String, Condition> m_keyConditions;
-    bool m_keyConditionsHasBeenSet;
+    bool m_keyConditionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Condition> m_queryFilter;
-    bool m_queryFilterHasBeenSet;
+    bool m_queryFilterHasBeenSet = false;
 
     ConditionalOperator m_conditionalOperator;
-    bool m_conditionalOperatorHasBeenSet;
+    bool m_conditionalOperatorHasBeenSet = false;
 
     bool m_scanIndexForward;
-    bool m_scanIndexForwardHasBeenSet;
+    bool m_scanIndexForwardHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_exclusiveStartKey;
-    bool m_exclusiveStartKeyHasBeenSet;
+    bool m_exclusiveStartKeyHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     Aws::String m_projectionExpression;
-    bool m_projectionExpressionHasBeenSet;
+    bool m_projectionExpressionHasBeenSet = false;
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     Aws::String m_keyConditionExpression;
-    bool m_keyConditionExpressionHasBeenSet;
+    bool m_keyConditionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

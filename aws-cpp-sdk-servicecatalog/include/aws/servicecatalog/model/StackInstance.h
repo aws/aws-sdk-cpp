@@ -253,13 +253,13 @@ namespace Model
   private:
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     StackInstanceStatus m_stackInstanceStatus;
-    bool m_stackInstanceStatusHasBeenSet;
+    bool m_stackInstanceStatusHasBeenSet = false;
   };
 
 } // namespace Model

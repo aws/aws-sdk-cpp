@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

@@ -213,19 +213,19 @@ namespace Model
   private:
 
     ModuleLoggingConfiguration m_dagProcessingLogs;
-    bool m_dagProcessingLogsHasBeenSet;
+    bool m_dagProcessingLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_schedulerLogs;
-    bool m_schedulerLogsHasBeenSet;
+    bool m_schedulerLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_taskLogs;
-    bool m_taskLogsHasBeenSet;
+    bool m_taskLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_webserverLogs;
-    bool m_webserverLogsHasBeenSet;
+    bool m_webserverLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_workerLogs;
-    bool m_workerLogsHasBeenSet;
+    bool m_workerLogsHasBeenSet = false;
   };
 
 } // namespace Model

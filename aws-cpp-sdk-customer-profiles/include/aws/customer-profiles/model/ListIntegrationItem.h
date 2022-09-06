@@ -477,28 +477,28 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
-    bool m_objectTypeNamesHasBeenSet;
+    bool m_objectTypeNamesHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
   };
 
 } // namespace Model

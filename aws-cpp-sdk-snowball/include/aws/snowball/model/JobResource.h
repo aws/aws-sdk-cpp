@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::Vector<S3Resource> m_s3Resources;
-    bool m_s3ResourcesHasBeenSet;
+    bool m_s3ResourcesHasBeenSet = false;
 
     Aws::Vector<LambdaResource> m_lambdaResources;
-    bool m_lambdaResourcesHasBeenSet;
+    bool m_lambdaResourcesHasBeenSet = false;
 
     Aws::Vector<Ec2AmiResource> m_ec2AmiResources;
-    bool m_ec2AmiResourcesHasBeenSet;
+    bool m_ec2AmiResourcesHasBeenSet = false;
   };
 
 } // namespace Model

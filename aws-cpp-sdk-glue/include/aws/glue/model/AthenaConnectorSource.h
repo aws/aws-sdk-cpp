@@ -353,25 +353,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_connectorName;
-    bool m_connectorNameHasBeenSet;
+    bool m_connectorNameHasBeenSet = false;
 
     Aws::String m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_connectionTable;
-    bool m_connectionTableHasBeenSet;
+    bool m_connectionTableHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

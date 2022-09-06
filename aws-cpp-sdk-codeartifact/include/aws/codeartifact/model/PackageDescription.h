@@ -225,16 +225,16 @@ namespace Model
   private:
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PackageOriginConfiguration m_originConfiguration;
-    bool m_originConfigurationHasBeenSet;
+    bool m_originConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

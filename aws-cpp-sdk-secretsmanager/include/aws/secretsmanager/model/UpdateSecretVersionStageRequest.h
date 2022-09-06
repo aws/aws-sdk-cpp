@@ -296,16 +296,16 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_versionStage;
-    bool m_versionStageHasBeenSet;
+    bool m_versionStageHasBeenSet = false;
 
     Aws::String m_removeFromVersionId;
-    bool m_removeFromVersionIdHasBeenSet;
+    bool m_removeFromVersionIdHasBeenSet = false;
 
     Aws::String m_moveToVersionId;
-    bool m_moveToVersionIdHasBeenSet;
+    bool m_moveToVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

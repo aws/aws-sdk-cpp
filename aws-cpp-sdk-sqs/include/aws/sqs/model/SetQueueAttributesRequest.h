@@ -1485,10 +1485,10 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     Aws::Map<QueueAttributeName, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

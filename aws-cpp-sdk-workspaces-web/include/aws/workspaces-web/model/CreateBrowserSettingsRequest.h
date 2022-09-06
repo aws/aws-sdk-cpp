@@ -324,19 +324,19 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-    bool m_additionalEncryptionContextHasBeenSet;
+    bool m_additionalEncryptionContextHasBeenSet = false;
 
     Aws::String m_browserPolicy;
-    bool m_browserPolicyHasBeenSet;
+    bool m_browserPolicyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_customerManagedKey;
-    bool m_customerManagedKeyHasBeenSet;
+    bool m_customerManagedKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

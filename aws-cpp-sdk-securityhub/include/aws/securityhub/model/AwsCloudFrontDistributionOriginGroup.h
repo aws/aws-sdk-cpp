@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsCloudFrontDistributionOriginGroupFailover m_failoverCriteria;
-    bool m_failoverCriteriaHasBeenSet;
+    bool m_failoverCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

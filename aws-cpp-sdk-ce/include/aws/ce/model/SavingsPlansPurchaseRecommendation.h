@@ -312,25 +312,25 @@ namespace Model
   private:
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     SupportedSavingsPlansType m_savingsPlansType;
-    bool m_savingsPlansTypeHasBeenSet;
+    bool m_savingsPlansTypeHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Aws::Vector<SavingsPlansPurchaseRecommendationDetail> m_savingsPlansPurchaseRecommendationDetails;
-    bool m_savingsPlansPurchaseRecommendationDetailsHasBeenSet;
+    bool m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = false;
 
     SavingsPlansPurchaseRecommendationSummary m_savingsPlansPurchaseRecommendationSummary;
-    bool m_savingsPlansPurchaseRecommendationSummaryHasBeenSet;
+    bool m_savingsPlansPurchaseRecommendationSummaryHasBeenSet = false;
   };
 
 } // namespace Model

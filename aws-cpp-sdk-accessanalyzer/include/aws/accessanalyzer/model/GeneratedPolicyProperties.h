@@ -149,13 +149,13 @@ namespace Model
   private:
 
     CloudTrailProperties m_cloudTrailProperties;
-    bool m_cloudTrailPropertiesHasBeenSet;
+    bool m_cloudTrailPropertiesHasBeenSet = false;
 
     bool m_isComplete;
-    bool m_isCompleteHasBeenSet;
+    bool m_isCompleteHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
   };
 
 } // namespace Model

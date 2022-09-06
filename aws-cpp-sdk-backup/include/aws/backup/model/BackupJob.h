@@ -1112,64 +1112,64 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_backupVaultArn;
-    bool m_backupVaultArnHasBeenSet;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     BackupJobState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_percentDone;
-    bool m_percentDoneHasBeenSet;
+    bool m_percentDoneHasBeenSet = false;
 
     long long m_backupSizeInBytes;
-    bool m_backupSizeInBytesHasBeenSet;
+    bool m_backupSizeInBytesHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     RecoveryPointCreator m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_expectedCompletionDate;
-    bool m_expectedCompletionDateHasBeenSet;
+    bool m_expectedCompletionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startBy;
-    bool m_startByHasBeenSet;
+    bool m_startByHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_bytesTransferred;
-    bool m_bytesTransferredHasBeenSet;
+    bool m_bytesTransferredHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
-    bool m_backupOptionsHasBeenSet;
+    bool m_backupOptionsHasBeenSet = false;
 
     Aws::String m_backupType;
-    bool m_backupTypeHasBeenSet;
+    bool m_backupTypeHasBeenSet = false;
   };
 
 } // namespace Model

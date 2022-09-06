@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::Vector<Feature> m_features;
-    bool m_featuresHasBeenSet;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model

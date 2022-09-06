@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_mitigationName;
-    bool m_mitigationNameHasBeenSet;
+    bool m_mitigationNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_speakerId;
-    bool m_speakerIdHasBeenSet;
+    bool m_speakerIdHasBeenSet = false;
   };
 
 } // namespace Model

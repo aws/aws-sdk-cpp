@@ -165,16 +165,16 @@ namespace Model
   private:
 
     int m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ApplicationVersionLifecycle m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

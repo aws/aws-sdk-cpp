@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_sourceVolume;
-    bool m_sourceVolumeHasBeenSet;
+    bool m_sourceVolumeHasBeenSet = false;
 
     Aws::String m_containerPath;
-    bool m_containerPathHasBeenSet;
+    bool m_containerPathHasBeenSet = false;
   };
 
 } // namespace Model

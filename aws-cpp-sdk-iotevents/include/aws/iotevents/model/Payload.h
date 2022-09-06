@@ -163,10 +163,10 @@ namespace Model
   private:
 
     Aws::String m_contentExpression;
-    bool m_contentExpressionHasBeenSet;
+    bool m_contentExpressionHasBeenSet = false;
 
     PayloadType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

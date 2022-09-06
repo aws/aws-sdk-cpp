@@ -81,10 +81,10 @@ namespace Model
   private:
 
     long long m_faultCountHigh;
-    bool m_faultCountHighHasBeenSet;
+    bool m_faultCountHighHasBeenSet = false;
 
     long long m_faultCountLow;
-    bool m_faultCountLowHasBeenSet;
+    bool m_faultCountLowHasBeenSet = false;
   };
 
 } // namespace Model

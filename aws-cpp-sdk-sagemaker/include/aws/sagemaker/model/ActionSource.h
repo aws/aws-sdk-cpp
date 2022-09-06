@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_sourceUri;
-    bool m_sourceUriHasBeenSet;
+    bool m_sourceUriHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
   };
 
 } // namespace Model

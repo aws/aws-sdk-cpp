@@ -224,13 +224,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_serviceSpecificCredentialId;
-    bool m_serviceSpecificCredentialIdHasBeenSet;
+    bool m_serviceSpecificCredentialIdHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

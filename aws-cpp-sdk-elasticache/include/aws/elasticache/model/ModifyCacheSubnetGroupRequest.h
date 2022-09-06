@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_cacheSubnetGroupName;
-    bool m_cacheSubnetGroupNameHasBeenSet;
+    bool m_cacheSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_cacheSubnetGroupDescription;
-    bool m_cacheSubnetGroupDescriptionHasBeenSet;
+    bool m_cacheSubnetGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

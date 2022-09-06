@@ -91,7 +91,7 @@ CloudHSMV2Client::~CloudHSMV2Client()
 
 void CloudHSMV2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudHSM V2");
+  AWSClient::SetServiceClientName("CloudHSM V2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

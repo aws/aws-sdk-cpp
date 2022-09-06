@@ -296,25 +296,25 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<Landmark> m_landmarks;
-    bool m_landmarksHasBeenSet;
+    bool m_landmarksHasBeenSet = false;
 
     Pose m_pose;
-    bool m_poseHasBeenSet;
+    bool m_poseHasBeenSet = false;
 
     ImageQuality m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
 
     Aws::Vector<Emotion> m_emotions;
-    bool m_emotionsHasBeenSet;
+    bool m_emotionsHasBeenSet = false;
 
     Smile m_smile;
-    bool m_smileHasBeenSet;
+    bool m_smileHasBeenSet = false;
   };
 
 } // namespace Model

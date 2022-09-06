@@ -313,25 +313,25 @@ namespace Model
   private:
 
     Aws::String m_instanceEventWindowId;
-    bool m_instanceEventWindowIdHasBeenSet;
+    bool m_instanceEventWindowIdHasBeenSet = false;
 
     Aws::Vector<InstanceEventWindowTimeRange> m_timeRanges;
-    bool m_timeRangesHasBeenSet;
+    bool m_timeRangesHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_cronExpression;
-    bool m_cronExpressionHasBeenSet;
+    bool m_cronExpressionHasBeenSet = false;
 
     InstanceEventWindowAssociationTarget m_associationTarget;
-    bool m_associationTargetHasBeenSet;
+    bool m_associationTargetHasBeenSet = false;
 
     InstanceEventWindowState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

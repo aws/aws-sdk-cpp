@@ -257,13 +257,13 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Aws::String m_mailFromDomain;
-    bool m_mailFromDomainHasBeenSet;
+    bool m_mailFromDomainHasBeenSet = false;
 
     BehaviorOnMXFailure m_behaviorOnMXFailure;
-    bool m_behaviorOnMXFailureHasBeenSet;
+    bool m_behaviorOnMXFailureHasBeenSet = false;
   };
 
 } // namespace Model

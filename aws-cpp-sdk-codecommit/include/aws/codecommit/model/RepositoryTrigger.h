@@ -301,19 +301,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_customData;
-    bool m_customDataHasBeenSet;
+    bool m_customDataHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_branches;
-    bool m_branchesHasBeenSet;
+    bool m_branchesHasBeenSet = false;
 
     Aws::Vector<RepositoryTriggerEventEnum> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

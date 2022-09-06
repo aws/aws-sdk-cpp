@@ -744,52 +744,52 @@ namespace Model
   private:
 
     Aws::String m_featureGroupArn;
-    bool m_featureGroupArnHasBeenSet;
+    bool m_featureGroupArnHasBeenSet = false;
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierFeatureName;
-    bool m_recordIdentifierFeatureNameHasBeenSet;
+    bool m_recordIdentifierFeatureNameHasBeenSet = false;
 
     Aws::String m_eventTimeFeatureName;
-    bool m_eventTimeFeatureNameHasBeenSet;
+    bool m_eventTimeFeatureNameHasBeenSet = false;
 
     Aws::Vector<FeatureDefinition> m_featureDefinitions;
-    bool m_featureDefinitionsHasBeenSet;
+    bool m_featureDefinitionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     OnlineStoreConfig m_onlineStoreConfig;
-    bool m_onlineStoreConfigHasBeenSet;
+    bool m_onlineStoreConfigHasBeenSet = false;
 
     OfflineStoreConfig m_offlineStoreConfig;
-    bool m_offlineStoreConfigHasBeenSet;
+    bool m_offlineStoreConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     FeatureGroupStatus m_featureGroupStatus;
-    bool m_featureGroupStatusHasBeenSet;
+    bool m_featureGroupStatusHasBeenSet = false;
 
     OfflineStoreStatus m_offlineStoreStatus;
-    bool m_offlineStoreStatusHasBeenSet;
+    bool m_offlineStoreStatusHasBeenSet = false;
 
     LastUpdateStatus m_lastUpdateStatus;
-    bool m_lastUpdateStatusHasBeenSet;
+    bool m_lastUpdateStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

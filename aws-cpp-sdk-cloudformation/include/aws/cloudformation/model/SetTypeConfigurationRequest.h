@@ -398,19 +398,19 @@ namespace Model
   private:
 
     Aws::String m_typeArn;
-    bool m_typeArnHasBeenSet;
+    bool m_typeArnHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_configurationAlias;
-    bool m_configurationAliasHasBeenSet;
+    bool m_configurationAliasHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     ThirdPartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

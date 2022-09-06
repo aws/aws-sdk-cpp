@@ -76,7 +76,7 @@ namespace Model
   private:
 
     RouteActivationState m_activationState;
-    bool m_activationStateHasBeenSet;
+    bool m_activationStateHasBeenSet = false;
   };
 
 } // namespace Model

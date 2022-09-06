@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<PathToObjectIdentifiers> m_pathToObjectIdentifiersList;
-    bool m_pathToObjectIdentifiersListHasBeenSet;
+    bool m_pathToObjectIdentifiersListHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

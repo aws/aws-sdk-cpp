@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Get m_get;
-    bool m_getHasBeenSet;
+    bool m_getHasBeenSet = false;
   };
 
 } // namespace Model

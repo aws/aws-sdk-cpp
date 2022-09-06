@@ -110,10 +110,10 @@ namespace Model
   private:
 
     PolicyQualifierId m_policyQualifierId;
-    bool m_policyQualifierIdHasBeenSet;
+    bool m_policyQualifierIdHasBeenSet = false;
 
     Qualifier m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
   };
 
 } // namespace Model

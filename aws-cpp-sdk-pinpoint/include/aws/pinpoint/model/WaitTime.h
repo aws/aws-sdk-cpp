@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_waitFor;
-    bool m_waitForHasBeenSet;
+    bool m_waitForHasBeenSet = false;
 
     Aws::String m_waitUntil;
-    bool m_waitUntilHasBeenSet;
+    bool m_waitUntilHasBeenSet = false;
   };
 
 } // namespace Model

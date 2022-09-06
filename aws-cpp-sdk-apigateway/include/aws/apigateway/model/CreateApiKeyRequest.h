@@ -403,28 +403,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_generateDistinctId;
-    bool m_generateDistinctIdHasBeenSet;
+    bool m_generateDistinctIdHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Vector<StageKey> m_stageKeys;
-    bool m_stageKeysHasBeenSet;
+    bool m_stageKeysHasBeenSet = false;
 
     Aws::String m_customerId;
-    bool m_customerIdHasBeenSet;
+    bool m_customerIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

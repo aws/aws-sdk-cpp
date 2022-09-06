@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Device m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_stdEvent;
-    bool m_stdEventHasBeenSet;
+    bool m_stdEventHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     BlockPublicAccess m_blockPublicAccess;
-    bool m_blockPublicAccessHasBeenSet;
+    bool m_blockPublicAccessHasBeenSet = false;
   };
 
 } // namespace Model

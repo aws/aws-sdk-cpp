@@ -688,40 +688,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CanaryCodeInput m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_runtimeVersion;
-    bool m_runtimeVersionHasBeenSet;
+    bool m_runtimeVersionHasBeenSet = false;
 
     CanaryScheduleInput m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     CanaryRunConfigInput m_runConfig;
-    bool m_runConfigHasBeenSet;
+    bool m_runConfigHasBeenSet = false;
 
     int m_successRetentionPeriodInDays;
-    bool m_successRetentionPeriodInDaysHasBeenSet;
+    bool m_successRetentionPeriodInDaysHasBeenSet = false;
 
     int m_failureRetentionPeriodInDays;
-    bool m_failureRetentionPeriodInDaysHasBeenSet;
+    bool m_failureRetentionPeriodInDaysHasBeenSet = false;
 
     VpcConfigInput m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     VisualReferenceInput m_visualReference;
-    bool m_visualReferenceHasBeenSet;
+    bool m_visualReferenceHasBeenSet = false;
 
     Aws::String m_artifactS3Location;
-    bool m_artifactS3LocationHasBeenSet;
+    bool m_artifactS3LocationHasBeenSet = false;
 
     ArtifactConfigInput m_artifactConfig;
-    bool m_artifactConfigHasBeenSet;
+    bool m_artifactConfigHasBeenSet = false;
   };
 
 } // namespace Model

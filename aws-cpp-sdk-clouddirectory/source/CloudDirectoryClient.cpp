@@ -142,7 +142,7 @@ CloudDirectoryClient::~CloudDirectoryClient()
 
 void CloudDirectoryClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudDirectory");
+  AWSClient::SetServiceClientName("CloudDirectory");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

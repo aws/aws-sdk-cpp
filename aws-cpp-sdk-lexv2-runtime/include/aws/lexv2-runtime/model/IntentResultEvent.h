@@ -332,22 +332,22 @@ namespace Model
   private:
 
     InputMode m_inputMode;
-    bool m_inputModeHasBeenSet;
+    bool m_inputModeHasBeenSet = false;
 
     Aws::Vector<Interpretation> m_interpretations;
-    bool m_interpretationsHasBeenSet;
+    bool m_interpretationsHasBeenSet = false;
 
     SessionState m_sessionState;
-    bool m_sessionStateHasBeenSet;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -334,25 +334,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_hostArn;
-    bool m_hostArnHasBeenSet;
+    bool m_hostArnHasBeenSet = false;
 
     ProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     Aws::String m_providerEndpoint;
-    bool m_providerEndpointHasBeenSet;
+    bool m_providerEndpointHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

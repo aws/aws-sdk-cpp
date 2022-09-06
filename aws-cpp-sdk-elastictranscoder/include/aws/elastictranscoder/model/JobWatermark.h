@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_presetWatermarkId;
-    bool m_presetWatermarkIdHasBeenSet;
+    bool m_presetWatermarkIdHasBeenSet = false;
 
     Aws::String m_inputKey;
-    bool m_inputKeyHasBeenSet;
+    bool m_inputKeyHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

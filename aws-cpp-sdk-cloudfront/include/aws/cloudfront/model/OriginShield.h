@@ -189,10 +189,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_originShieldRegion;
-    bool m_originShieldRegionHasBeenSet;
+    bool m_originShieldRegionHasBeenSet = false;
   };
 
 } // namespace Model

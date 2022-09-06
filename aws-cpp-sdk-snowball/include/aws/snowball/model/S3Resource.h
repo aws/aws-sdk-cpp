@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     KeyRange m_keyRange;
-    bool m_keyRangeHasBeenSet;
+    bool m_keyRangeHasBeenSet = false;
 
     Aws::Vector<TargetOnDeviceService> m_targetOnDeviceServices;
-    bool m_targetOnDeviceServicesHasBeenSet;
+    bool m_targetOnDeviceServicesHasBeenSet = false;
   };
 
 } // namespace Model

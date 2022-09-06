@@ -95,7 +95,7 @@ namespace Model
   private:
 
     EcrRescanDuration m_rescanDuration;
-    bool m_rescanDurationHasBeenSet;
+    bool m_rescanDurationHasBeenSet = false;
   };
 
 } // namespace Model

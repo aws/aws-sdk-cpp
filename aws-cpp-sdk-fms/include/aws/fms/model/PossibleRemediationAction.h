@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<RemediationActionWithOrder> m_orderedRemediationActions;
-    bool m_orderedRemediationActionsHasBeenSet;
+    bool m_orderedRemediationActionsHasBeenSet = false;
 
     bool m_isDefaultAction;
-    bool m_isDefaultActionHasBeenSet;
+    bool m_isDefaultActionHasBeenSet = false;
   };
 
 } // namespace Model

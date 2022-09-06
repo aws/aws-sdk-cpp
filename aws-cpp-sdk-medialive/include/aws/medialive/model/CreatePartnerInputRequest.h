@@ -211,13 +211,13 @@ exactly once
   private:
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -144,7 +144,7 @@ namespace Model
   private:
 
     Aws::String m_suffix;
-    bool m_suffixHasBeenSet;
+    bool m_suffixHasBeenSet = false;
   };
 
 } // namespace Model

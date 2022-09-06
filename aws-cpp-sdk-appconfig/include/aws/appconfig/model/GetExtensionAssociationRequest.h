@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_extensionAssociationId;
-    bool m_extensionAssociationIdHasBeenSet;
+    bool m_extensionAssociationIdHasBeenSet = false;
   };
 
 } // namespace Model

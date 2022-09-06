@@ -303,16 +303,16 @@ namespace Model
   private:
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     long long m_profilingIntervalInMilliseconds;
-    bool m_profilingIntervalInMillisecondsHasBeenSet;
+    bool m_profilingIntervalInMillisecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_profilingParameters;
-    bool m_profilingParametersHasBeenSet;
+    bool m_profilingParametersHasBeenSet = false;
 
     bool m_disableProfiler;
-    bool m_disableProfilerHasBeenSet;
+    bool m_disableProfilerHasBeenSet = false;
   };
 
 } // namespace Model

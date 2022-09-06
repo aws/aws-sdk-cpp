@@ -643,49 +643,49 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     AgeRange m_ageRange;
-    bool m_ageRangeHasBeenSet;
+    bool m_ageRangeHasBeenSet = false;
 
     Smile m_smile;
-    bool m_smileHasBeenSet;
+    bool m_smileHasBeenSet = false;
 
     Eyeglasses m_eyeglasses;
-    bool m_eyeglassesHasBeenSet;
+    bool m_eyeglassesHasBeenSet = false;
 
     Sunglasses m_sunglasses;
-    bool m_sunglassesHasBeenSet;
+    bool m_sunglassesHasBeenSet = false;
 
     Gender m_gender;
-    bool m_genderHasBeenSet;
+    bool m_genderHasBeenSet = false;
 
     Beard m_beard;
-    bool m_beardHasBeenSet;
+    bool m_beardHasBeenSet = false;
 
     Mustache m_mustache;
-    bool m_mustacheHasBeenSet;
+    bool m_mustacheHasBeenSet = false;
 
     EyeOpen m_eyesOpen;
-    bool m_eyesOpenHasBeenSet;
+    bool m_eyesOpenHasBeenSet = false;
 
     MouthOpen m_mouthOpen;
-    bool m_mouthOpenHasBeenSet;
+    bool m_mouthOpenHasBeenSet = false;
 
     Aws::Vector<Emotion> m_emotions;
-    bool m_emotionsHasBeenSet;
+    bool m_emotionsHasBeenSet = false;
 
     Aws::Vector<Landmark> m_landmarks;
-    bool m_landmarksHasBeenSet;
+    bool m_landmarksHasBeenSet = false;
 
     Pose m_pose;
-    bool m_poseHasBeenSet;
+    bool m_poseHasBeenSet = false;
 
     ImageQuality m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

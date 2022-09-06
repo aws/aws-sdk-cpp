@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

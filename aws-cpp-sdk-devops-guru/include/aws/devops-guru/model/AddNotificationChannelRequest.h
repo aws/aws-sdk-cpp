@@ -77,7 +77,7 @@ namespace Model
   private:
 
     NotificationChannelConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
   };
 
 } // namespace Model

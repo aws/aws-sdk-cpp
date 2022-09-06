@@ -293,16 +293,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -585,52 +585,52 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet;
+    bool m_findingArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
 
     double m_inspectorScore;
-    bool m_inspectorScoreHasBeenSet;
+    bool m_inspectorScoreHasBeenSet = false;
 
     InspectorScoreDetails m_inspectorScoreDetails;
-    bool m_inspectorScoreDetailsHasBeenSet;
+    bool m_inspectorScoreDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     NetworkReachabilityDetails m_networkReachabilityDetails;
-    bool m_networkReachabilityDetailsHasBeenSet;
+    bool m_networkReachabilityDetailsHasBeenSet = false;
 
     PackageVulnerabilityDetails m_packageVulnerabilityDetails;
-    bool m_packageVulnerabilityDetailsHasBeenSet;
+    bool m_packageVulnerabilityDetailsHasBeenSet = false;
 
     Remediation m_remediation;
-    bool m_remediationHasBeenSet;
+    bool m_remediationHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Severity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     FindingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     FindingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

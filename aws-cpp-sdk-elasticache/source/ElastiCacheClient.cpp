@@ -142,7 +142,7 @@ ElastiCacheClient::~ElastiCacheClient()
 
 void ElastiCacheClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ElastiCache");
+  AWSClient::SetServiceClientName("ElastiCache");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

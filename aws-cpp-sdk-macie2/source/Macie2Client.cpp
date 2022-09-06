@@ -142,7 +142,7 @@ Macie2Client::~Macie2Client()
 
 void Macie2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Macie2");
+  AWSClient::SetServiceClientName("Macie2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

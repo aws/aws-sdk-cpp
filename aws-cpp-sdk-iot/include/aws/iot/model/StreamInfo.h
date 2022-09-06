@@ -330,28 +330,28 @@ namespace Model
   private:
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     int m_streamVersion;
-    bool m_streamVersionHasBeenSet;
+    bool m_streamVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<StreamFile> m_files;
-    bool m_filesHasBeenSet;
+    bool m_filesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

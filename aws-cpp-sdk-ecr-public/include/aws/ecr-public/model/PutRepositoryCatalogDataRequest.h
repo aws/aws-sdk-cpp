@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryCatalogDataInput m_catalogData;
-    bool m_catalogDataHasBeenSet;
+    bool m_catalogDataHasBeenSet = false;
   };
 
 } // namespace Model

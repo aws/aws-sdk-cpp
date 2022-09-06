@@ -431,28 +431,28 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_homePageUrl;
-    bool m_homePageUrlHasBeenSet;
+    bool m_homePageUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_spdxLicenseId;
-    bool m_spdxLicenseIdHasBeenSet;
+    bool m_spdxLicenseIdHasBeenSet = false;
   };
 
 } // namespace Model

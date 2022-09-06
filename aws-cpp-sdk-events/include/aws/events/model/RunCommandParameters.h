@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<RunCommandTarget> m_runCommandTargets;
-    bool m_runCommandTargetsHasBeenSet;
+    bool m_runCommandTargetsHasBeenSet = false;
   };
 
 } // namespace Model

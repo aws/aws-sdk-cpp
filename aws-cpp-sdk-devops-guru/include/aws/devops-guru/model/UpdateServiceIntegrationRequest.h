@@ -77,7 +77,7 @@ namespace Model
   private:
 
     UpdateServiceIntegrationConfig m_serviceIntegration;
-    bool m_serviceIntegrationHasBeenSet;
+    bool m_serviceIntegrationHasBeenSet = false;
   };
 
 } // namespace Model

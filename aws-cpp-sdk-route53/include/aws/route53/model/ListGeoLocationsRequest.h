@@ -384,16 +384,16 @@ namespace Model
   private:
 
     Aws::String m_startContinentCode;
-    bool m_startContinentCodeHasBeenSet;
+    bool m_startContinentCodeHasBeenSet = false;
 
     Aws::String m_startCountryCode;
-    bool m_startCountryCodeHasBeenSet;
+    bool m_startCountryCodeHasBeenSet = false;
 
     Aws::String m_startSubdivisionCode;
-    bool m_startSubdivisionCodeHasBeenSet;
+    bool m_startSubdivisionCodeHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

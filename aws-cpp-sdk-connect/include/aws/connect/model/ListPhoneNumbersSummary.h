@@ -284,22 +284,22 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_phoneNumberArn;
-    bool m_phoneNumberArnHasBeenSet;
+    bool m_phoneNumberArnHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     PhoneNumberCountryCode m_phoneNumberCountryCode;
-    bool m_phoneNumberCountryCodeHasBeenSet;
+    bool m_phoneNumberCountryCodeHasBeenSet = false;
 
     PhoneNumberType m_phoneNumberType;
-    bool m_phoneNumberTypeHasBeenSet;
+    bool m_phoneNumberTypeHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
   };
 
 } // namespace Model

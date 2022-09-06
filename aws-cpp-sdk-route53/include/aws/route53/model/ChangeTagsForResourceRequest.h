@@ -245,16 +245,16 @@ namespace Model
   private:
 
     TagResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_addTags;
-    bool m_addTagsHasBeenSet;
+    bool m_addTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeTagKeys;
-    bool m_removeTagKeysHasBeenSet;
+    bool m_removeTagKeysHasBeenSet = false;
   };
 
 } // namespace Model

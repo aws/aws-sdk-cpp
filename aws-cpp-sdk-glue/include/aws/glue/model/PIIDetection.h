@@ -400,28 +400,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     PiiType m_piiType;
-    bool m_piiTypeHasBeenSet;
+    bool m_piiTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityTypesToDetect;
-    bool m_entityTypesToDetectHasBeenSet;
+    bool m_entityTypesToDetectHasBeenSet = false;
 
     Aws::String m_outputColumnName;
-    bool m_outputColumnNameHasBeenSet;
+    bool m_outputColumnNameHasBeenSet = false;
 
     double m_sampleFraction;
-    bool m_sampleFractionHasBeenSet;
+    bool m_sampleFractionHasBeenSet = false;
 
     double m_thresholdFraction;
-    bool m_thresholdFractionHasBeenSet;
+    bool m_thresholdFractionHasBeenSet = false;
 
     Aws::String m_maskValue;
-    bool m_maskValueHasBeenSet;
+    bool m_maskValueHasBeenSet = false;
   };
 
 } // namespace Model

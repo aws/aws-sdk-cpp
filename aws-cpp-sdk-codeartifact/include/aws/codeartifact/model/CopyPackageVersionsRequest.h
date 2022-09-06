@@ -656,37 +656,37 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_sourceRepository;
-    bool m_sourceRepositoryHasBeenSet;
+    bool m_sourceRepositoryHasBeenSet = false;
 
     Aws::String m_destinationRepository;
-    bool m_destinationRepositoryHasBeenSet;
+    bool m_destinationRepositoryHasBeenSet = false;
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
-    bool m_packageHasBeenSet;
+    bool m_packageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_versionRevisions;
-    bool m_versionRevisionsHasBeenSet;
+    bool m_versionRevisionsHasBeenSet = false;
 
     bool m_allowOverwrite;
-    bool m_allowOverwriteHasBeenSet;
+    bool m_allowOverwriteHasBeenSet = false;
 
     bool m_includeFromUpstream;
-    bool m_includeFromUpstreamHasBeenSet;
+    bool m_includeFromUpstreamHasBeenSet = false;
   };
 
 } // namespace Model

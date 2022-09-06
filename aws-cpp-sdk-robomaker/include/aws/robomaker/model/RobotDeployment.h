@@ -286,25 +286,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_deploymentStartTime;
-    bool m_deploymentStartTimeHasBeenSet;
+    bool m_deploymentStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deploymentFinishTime;
-    bool m_deploymentFinishTimeHasBeenSet;
+    bool m_deploymentFinishTimeHasBeenSet = false;
 
     RobotStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ProgressDetail m_progressDetail;
-    bool m_progressDetailHasBeenSet;
+    bool m_progressDetailHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     DeploymentJobErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
   };
 
 } // namespace Model

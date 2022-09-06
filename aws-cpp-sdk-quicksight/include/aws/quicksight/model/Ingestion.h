@@ -364,37 +364,37 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_ingestionId;
-    bool m_ingestionIdHasBeenSet;
+    bool m_ingestionIdHasBeenSet = false;
 
     IngestionStatus m_ingestionStatus;
-    bool m_ingestionStatusHasBeenSet;
+    bool m_ingestionStatusHasBeenSet = false;
 
     ErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
 
     RowInfo m_rowInfo;
-    bool m_rowInfoHasBeenSet;
+    bool m_rowInfoHasBeenSet = false;
 
     QueueInfo m_queueInfo;
-    bool m_queueInfoHasBeenSet;
+    bool m_queueInfoHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     long long m_ingestionTimeInSeconds;
-    bool m_ingestionTimeInSecondsHasBeenSet;
+    bool m_ingestionTimeInSecondsHasBeenSet = false;
 
     long long m_ingestionSizeInBytes;
-    bool m_ingestionSizeInBytesHasBeenSet;
+    bool m_ingestionSizeInBytesHasBeenSet = false;
 
     IngestionRequestSource m_requestSource;
-    bool m_requestSourceHasBeenSet;
+    bool m_requestSourceHasBeenSet = false;
 
     IngestionRequestType m_requestType;
-    bool m_requestTypeHasBeenSet;
+    bool m_requestTypeHasBeenSet = false;
   };
 
 } // namespace Model

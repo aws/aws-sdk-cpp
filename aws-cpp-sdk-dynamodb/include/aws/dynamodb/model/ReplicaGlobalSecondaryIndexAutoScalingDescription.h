@@ -176,16 +176,16 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     IndexStatus m_indexStatus;
-    bool m_indexStatusHasBeenSet;
+    bool m_indexStatusHasBeenSet = false;
 
     AutoScalingSettingsDescription m_provisionedReadCapacityAutoScalingSettings;
-    bool m_provisionedReadCapacityAutoScalingSettingsHasBeenSet;
+    bool m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
 
     AutoScalingSettingsDescription m_provisionedWriteCapacityAutoScalingSettings;
-    bool m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet;
+    bool m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
   };
 
 } // namespace Model

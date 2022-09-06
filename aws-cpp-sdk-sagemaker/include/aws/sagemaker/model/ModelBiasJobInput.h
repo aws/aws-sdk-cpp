@@ -90,10 +90,10 @@ namespace Model
   private:
 
     EndpointInput m_endpointInput;
-    bool m_endpointInputHasBeenSet;
+    bool m_endpointInputHasBeenSet = false;
 
     MonitoringGroundTruthS3Input m_groundTruthS3Input;
-    bool m_groundTruthS3InputHasBeenSet;
+    bool m_groundTruthS3InputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,7 +84,7 @@ ConnectParticipantClient::~ConnectParticipantClient()
 
 void ConnectParticipantClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ConnectParticipant");
+  AWSClient::SetServiceClientName("ConnectParticipant");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

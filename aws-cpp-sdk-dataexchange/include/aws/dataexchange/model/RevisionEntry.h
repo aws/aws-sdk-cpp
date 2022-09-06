@@ -470,37 +470,37 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     bool m_finalized;
-    bool m_finalizedHasBeenSet;
+    bool m_finalizedHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_revocationComment;
-    bool m_revocationCommentHasBeenSet;
+    bool m_revocationCommentHasBeenSet = false;
 
     bool m_revoked;
-    bool m_revokedHasBeenSet;
+    bool m_revokedHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -740,61 +740,61 @@ namespace Model
   private:
 
     Aws::String m_importArn;
-    bool m_importArnHasBeenSet;
+    bool m_importArnHasBeenSet = false;
 
     ImportStatus m_importStatus;
-    bool m_importStatusHasBeenSet;
+    bool m_importStatusHasBeenSet = false;
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     S3BucketSource m_s3BucketSource;
-    bool m_s3BucketSourceHasBeenSet;
+    bool m_s3BucketSourceHasBeenSet = false;
 
     long long m_errorCount;
-    bool m_errorCountHasBeenSet;
+    bool m_errorCountHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupArn;
-    bool m_cloudWatchLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
     InputFormat m_inputFormat;
-    bool m_inputFormatHasBeenSet;
+    bool m_inputFormatHasBeenSet = false;
 
     InputFormatOptions m_inputFormatOptions;
-    bool m_inputFormatOptionsHasBeenSet;
+    bool m_inputFormatOptionsHasBeenSet = false;
 
     InputCompressionType m_inputCompressionType;
-    bool m_inputCompressionTypeHasBeenSet;
+    bool m_inputCompressionTypeHasBeenSet = false;
 
     TableCreationParameters m_tableCreationParameters;
-    bool m_tableCreationParametersHasBeenSet;
+    bool m_tableCreationParametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     long long m_processedSizeBytes;
-    bool m_processedSizeBytesHasBeenSet;
+    bool m_processedSizeBytesHasBeenSet = false;
 
     long long m_processedItemCount;
-    bool m_processedItemCountHasBeenSet;
+    bool m_processedItemCountHasBeenSet = false;
 
     long long m_importedItemCount;
-    bool m_importedItemCountHasBeenSet;
+    bool m_importedItemCountHasBeenSet = false;
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -809,49 +809,49 @@ namespace Model
   private:
 
     Aws::String m_jobFlowId;
-    bool m_jobFlowIdHasBeenSet;
+    bool m_jobFlowIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
 
     Aws::String m_logEncryptionKmsKeyId;
-    bool m_logEncryptionKmsKeyIdHasBeenSet;
+    bool m_logEncryptionKmsKeyIdHasBeenSet = false;
 
     Aws::String m_amiVersion;
-    bool m_amiVersionHasBeenSet;
+    bool m_amiVersionHasBeenSet = false;
 
     JobFlowExecutionStatusDetail m_executionStatusDetail;
-    bool m_executionStatusDetailHasBeenSet;
+    bool m_executionStatusDetailHasBeenSet = false;
 
     JobFlowInstancesDetail m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::Vector<StepDetail> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
 
     Aws::Vector<BootstrapActionDetail> m_bootstrapActions;
-    bool m_bootstrapActionsHasBeenSet;
+    bool m_bootstrapActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedProducts;
-    bool m_supportedProductsHasBeenSet;
+    bool m_supportedProductsHasBeenSet = false;
 
     bool m_visibleToAllUsers;
-    bool m_visibleToAllUsersHasBeenSet;
+    bool m_visibleToAllUsersHasBeenSet = false;
 
     Aws::String m_jobFlowRole;
-    bool m_jobFlowRoleHasBeenSet;
+    bool m_jobFlowRoleHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::String m_autoScalingRole;
-    bool m_autoScalingRoleHasBeenSet;
+    bool m_autoScalingRoleHasBeenSet = false;
 
     ScaleDownBehavior m_scaleDownBehavior;
-    bool m_scaleDownBehaviorHasBeenSet;
+    bool m_scaleDownBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

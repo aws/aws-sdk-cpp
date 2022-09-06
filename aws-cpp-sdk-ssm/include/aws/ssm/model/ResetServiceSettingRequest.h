@@ -145,7 +145,7 @@ namespace Model
   private:
 
     Aws::String m_settingId;
-    bool m_settingIdHasBeenSet;
+    bool m_settingIdHasBeenSet = false;
   };
 
 } // namespace Model

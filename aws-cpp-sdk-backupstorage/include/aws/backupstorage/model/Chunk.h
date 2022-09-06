@@ -195,19 +195,19 @@ namespace Model
   private:
 
     long long m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     long long m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     DataChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::String m_chunkToken;
-    bool m_chunkTokenHasBeenSet;
+    bool m_chunkTokenHasBeenSet = false;
   };
 
 } // namespace Model

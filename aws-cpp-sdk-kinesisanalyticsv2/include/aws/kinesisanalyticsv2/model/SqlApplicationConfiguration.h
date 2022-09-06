@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::Vector<Input> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::Vector<ReferenceDataSource> m_referenceDataSources;
-    bool m_referenceDataSourcesHasBeenSet;
+    bool m_referenceDataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

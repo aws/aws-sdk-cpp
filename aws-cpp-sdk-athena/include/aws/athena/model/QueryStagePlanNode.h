@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::Vector<QueryStagePlanNode> m_children;
-    bool m_childrenHasBeenSet;
+    bool m_childrenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_remoteSources;
-    bool m_remoteSourcesHasBeenSet;
+    bool m_remoteSourcesHasBeenSet = false;
   };
 
 } // namespace Model

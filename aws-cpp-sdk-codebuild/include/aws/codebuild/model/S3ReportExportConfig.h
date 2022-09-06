@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_bucketOwner;
-    bool m_bucketOwnerHasBeenSet;
+    bool m_bucketOwnerHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     ReportPackagingType m_packaging;
-    bool m_packagingHasBeenSet;
+    bool m_packagingHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
   };
 
 } // namespace Model

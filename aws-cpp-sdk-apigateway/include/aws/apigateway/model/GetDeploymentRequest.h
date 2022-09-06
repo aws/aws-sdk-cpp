@@ -254,13 +254,13 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_embed;
-    bool m_embedHasBeenSet;
+    bool m_embedHasBeenSet = false;
   };
 
 } // namespace Model

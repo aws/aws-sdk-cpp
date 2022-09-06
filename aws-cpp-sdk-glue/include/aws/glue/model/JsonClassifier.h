@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_jsonPath;
-    bool m_jsonPathHasBeenSet;
+    bool m_jsonPathHasBeenSet = false;
   };
 
 } // namespace Model

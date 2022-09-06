@@ -172,19 +172,19 @@ namespace Model
   private:
 
     long long m_customerManaged;
-    bool m_customerManagedHasBeenSet;
+    bool m_customerManagedHasBeenSet = false;
 
     long long m_kmsManaged;
-    bool m_kmsManagedHasBeenSet;
+    bool m_kmsManagedHasBeenSet = false;
 
     long long m_s3Managed;
-    bool m_s3ManagedHasBeenSet;
+    bool m_s3ManagedHasBeenSet = false;
 
     long long m_unencrypted;
-    bool m_unencryptedHasBeenSet;
+    bool m_unencryptedHasBeenSet = false;
 
     long long m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,7 +103,7 @@ SSMContactsClient::~SSMContactsClient()
 
 void SSMContactsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SSM Contacts");
+  AWSClient::SetServiceClientName("SSM Contacts");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

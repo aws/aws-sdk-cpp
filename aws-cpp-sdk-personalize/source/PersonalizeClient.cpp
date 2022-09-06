@@ -136,7 +136,7 @@ PersonalizeClient::~PersonalizeClient()
 
 void PersonalizeClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Personalize");
+  AWSClient::SetServiceClientName("Personalize");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

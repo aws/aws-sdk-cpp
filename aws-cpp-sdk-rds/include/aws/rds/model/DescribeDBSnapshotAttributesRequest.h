@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

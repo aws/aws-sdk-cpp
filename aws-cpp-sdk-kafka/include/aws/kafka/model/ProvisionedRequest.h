@@ -462,31 +462,31 @@ namespace Model
   private:
 
     BrokerNodeGroupInfo m_brokerNodeGroupInfo;
-    bool m_brokerNodeGroupInfoHasBeenSet;
+    bool m_brokerNodeGroupInfoHasBeenSet = false;
 
     ClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
 
     ConfigurationInfo m_configurationInfo;
-    bool m_configurationInfoHasBeenSet;
+    bool m_configurationInfoHasBeenSet = false;
 
     EncryptionInfo m_encryptionInfo;
-    bool m_encryptionInfoHasBeenSet;
+    bool m_encryptionInfoHasBeenSet = false;
 
     EnhancedMonitoring m_enhancedMonitoring;
-    bool m_enhancedMonitoringHasBeenSet;
+    bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoringInfo m_openMonitoring;
-    bool m_openMonitoringHasBeenSet;
+    bool m_openMonitoringHasBeenSet = false;
 
     Aws::String m_kafkaVersion;
-    bool m_kafkaVersionHasBeenSet;
+    bool m_kafkaVersionHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
 
     int m_numberOfBrokerNodes;
-    bool m_numberOfBrokerNodesHasBeenSet;
+    bool m_numberOfBrokerNodesHasBeenSet = false;
   };
 
 } // namespace Model

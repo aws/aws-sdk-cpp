@@ -81,10 +81,10 @@ namespace Model
   private:
 
     int m_minRange;
-    bool m_minRangeHasBeenSet;
+    bool m_minRangeHasBeenSet = false;
 
     int m_maxRange;
-    bool m_maxRangeHasBeenSet;
+    bool m_maxRangeHasBeenSet = false;
   };
 
 } // namespace Model

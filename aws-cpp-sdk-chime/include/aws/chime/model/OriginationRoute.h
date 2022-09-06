@@ -193,19 +193,19 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     OriginationRouteProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
   };
 
 } // namespace Model

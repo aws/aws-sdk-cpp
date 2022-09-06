@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::Vector<ConfigurationSetAttribute> m_configurationSetAttributeNames;
-    bool m_configurationSetAttributeNamesHasBeenSet;
+    bool m_configurationSetAttributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

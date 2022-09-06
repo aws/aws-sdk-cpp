@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     AssociationStatus m_associationStatus;
-    bool m_associationStatusHasBeenSet;
+    bool m_associationStatusHasBeenSet = false;
   };
 
 } // namespace Model

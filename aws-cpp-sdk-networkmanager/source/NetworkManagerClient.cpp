@@ -161,7 +161,7 @@ NetworkManagerClient::~NetworkManagerClient()
 
 void NetworkManagerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("NetworkManager");
+  AWSClient::SetServiceClientName("NetworkManager");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

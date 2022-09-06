@@ -410,34 +410,34 @@ namespace Model
   private:
 
     Aws::String m_crawlId;
-    bool m_crawlIdHasBeenSet;
+    bool m_crawlIdHasBeenSet = false;
 
     CrawlerHistoryState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_logGroup;
-    bool m_logGroupHasBeenSet;
+    bool m_logGroupHasBeenSet = false;
 
     Aws::String m_logStream;
-    bool m_logStreamHasBeenSet;
+    bool m_logStreamHasBeenSet = false;
 
     Aws::String m_messagePrefix;
-    bool m_messagePrefixHasBeenSet;
+    bool m_messagePrefixHasBeenSet = false;
 
     double m_dPUHour;
-    bool m_dPUHourHasBeenSet;
+    bool m_dPUHourHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_targetNodes;
-    bool m_targetNodesHasBeenSet;
+    bool m_targetNodesHasBeenSet = false;
 
     ContainerOverrides m_containerOverrides;
-    bool m_containerOverridesHasBeenSet;
+    bool m_containerOverridesHasBeenSet = false;
   };
 
 } // namespace Model

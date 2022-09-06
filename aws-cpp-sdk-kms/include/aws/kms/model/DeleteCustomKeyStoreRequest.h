@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
   };
 
 } // namespace Model

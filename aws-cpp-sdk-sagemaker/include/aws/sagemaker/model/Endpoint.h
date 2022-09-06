@@ -501,37 +501,37 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     Aws::Vector<ProductionVariantSummary> m_productionVariants;
-    bool m_productionVariantsHasBeenSet;
+    bool m_productionVariantsHasBeenSet = false;
 
     DataCaptureConfigSummary m_dataCaptureConfig;
-    bool m_dataCaptureConfigHasBeenSet;
+    bool m_dataCaptureConfigHasBeenSet = false;
 
     EndpointStatus m_endpointStatus;
-    bool m_endpointStatusHasBeenSet;
+    bool m_endpointStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<MonitoringSchedule> m_monitoringSchedules;
-    bool m_monitoringSchedulesHasBeenSet;
+    bool m_monitoringSchedulesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

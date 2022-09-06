@@ -118,13 +118,13 @@ namespace Model
   private:
 
     double m_bitDepth;
-    bool m_bitDepthHasBeenSet;
+    bool m_bitDepthHasBeenSet = false;
 
     WavCodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     double m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

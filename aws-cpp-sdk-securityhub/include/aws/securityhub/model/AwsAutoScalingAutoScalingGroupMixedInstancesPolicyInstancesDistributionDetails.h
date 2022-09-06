@@ -277,22 +277,22 @@ namespace Model
   private:
 
     Aws::String m_onDemandAllocationStrategy;
-    bool m_onDemandAllocationStrategyHasBeenSet;
+    bool m_onDemandAllocationStrategyHasBeenSet = false;
 
     int m_onDemandBaseCapacity;
-    bool m_onDemandBaseCapacityHasBeenSet;
+    bool m_onDemandBaseCapacityHasBeenSet = false;
 
     int m_onDemandPercentageAboveBaseCapacity;
-    bool m_onDemandPercentageAboveBaseCapacityHasBeenSet;
+    bool m_onDemandPercentageAboveBaseCapacityHasBeenSet = false;
 
     Aws::String m_spotAllocationStrategy;
-    bool m_spotAllocationStrategyHasBeenSet;
+    bool m_spotAllocationStrategyHasBeenSet = false;
 
     int m_spotInstancePools;
-    bool m_spotInstancePoolsHasBeenSet;
+    bool m_spotInstancePoolsHasBeenSet = false;
 
     Aws::String m_spotMaxPrice;
-    bool m_spotMaxPriceHasBeenSet;
+    bool m_spotMaxPriceHasBeenSet = false;
   };
 
 } // namespace Model

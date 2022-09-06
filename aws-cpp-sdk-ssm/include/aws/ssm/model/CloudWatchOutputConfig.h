@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLogGroupName;
-    bool m_cloudWatchLogGroupNameHasBeenSet;
+    bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
     bool m_cloudWatchOutputEnabled;
-    bool m_cloudWatchOutputEnabledHasBeenSet;
+    bool m_cloudWatchOutputEnabledHasBeenSet = false;
   };
 
 } // namespace Model

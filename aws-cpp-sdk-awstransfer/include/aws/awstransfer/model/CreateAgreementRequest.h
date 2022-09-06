@@ -467,28 +467,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_localProfileId;
-    bool m_localProfileIdHasBeenSet;
+    bool m_localProfileIdHasBeenSet = false;
 
     Aws::String m_partnerProfileId;
-    bool m_partnerProfileIdHasBeenSet;
+    bool m_partnerProfileIdHasBeenSet = false;
 
     Aws::String m_baseDirectory;
-    bool m_baseDirectoryHasBeenSet;
+    bool m_baseDirectoryHasBeenSet = false;
 
     Aws::String m_accessRole;
-    bool m_accessRoleHasBeenSet;
+    bool m_accessRoleHasBeenSet = false;
 
     AgreementStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

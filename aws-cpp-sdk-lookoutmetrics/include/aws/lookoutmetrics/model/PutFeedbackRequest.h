@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     AnomalyGroupTimeSeriesFeedback m_anomalyGroupTimeSeriesFeedback;
-    bool m_anomalyGroupTimeSeriesFeedbackHasBeenSet;
+    bool m_anomalyGroupTimeSeriesFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

@@ -334,19 +334,19 @@ namespace Model
   private:
 
     FileSourceConvert608To708 m_convert608To708;
-    bool m_convert608To708HasBeenSet;
+    bool m_convert608To708HasBeenSet = false;
 
     CaptionSourceFramerate m_framerate;
-    bool m_framerateHasBeenSet;
+    bool m_framerateHasBeenSet = false;
 
     Aws::String m_sourceFile;
-    bool m_sourceFileHasBeenSet;
+    bool m_sourceFileHasBeenSet = false;
 
     int m_timeDelta;
-    bool m_timeDeltaHasBeenSet;
+    bool m_timeDeltaHasBeenSet = false;
 
     FileSourceTimeDeltaUnits m_timeDeltaUnits;
-    bool m_timeDeltaUnitsHasBeenSet;
+    bool m_timeDeltaUnitsHasBeenSet = false;
   };
 
 } // namespace Model

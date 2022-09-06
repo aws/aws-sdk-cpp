@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_trialName;
-    bool m_trialNameHasBeenSet;
+    bool m_trialNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

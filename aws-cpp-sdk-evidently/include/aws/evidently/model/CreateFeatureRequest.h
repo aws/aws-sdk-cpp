@@ -609,28 +609,28 @@ namespace Model
   private:
 
     Aws::String m_defaultVariation;
-    bool m_defaultVariationHasBeenSet;
+    bool m_defaultVariationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_entityOverrides;
-    bool m_entityOverridesHasBeenSet;
+    bool m_entityOverridesHasBeenSet = false;
 
     FeatureEvaluationStrategy m_evaluationStrategy;
-    bool m_evaluationStrategyHasBeenSet;
+    bool m_evaluationStrategyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<VariationConfig> m_variations;
-    bool m_variationsHasBeenSet;
+    bool m_variationsHasBeenSet = false;
   };
 
 } // namespace Model

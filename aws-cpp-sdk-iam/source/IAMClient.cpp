@@ -235,7 +235,7 @@ IAMClient::~IAMClient()
 
 void IAMClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IAM");
+  AWSClient::SetServiceClientName("IAM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

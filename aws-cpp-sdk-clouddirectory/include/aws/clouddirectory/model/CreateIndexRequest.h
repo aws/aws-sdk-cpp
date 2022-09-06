@@ -226,19 +226,19 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::Vector<AttributeKey> m_orderedIndexedAttributeList;
-    bool m_orderedIndexedAttributeListHasBeenSet;
+    bool m_orderedIndexedAttributeListHasBeenSet = false;
 
     bool m_isUnique;
-    bool m_isUniqueHasBeenSet;
+    bool m_isUniqueHasBeenSet = false;
 
     ObjectReference m_parentReference;
-    bool m_parentReferenceHasBeenSet;
+    bool m_parentReferenceHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
   };
 
 } // namespace Model

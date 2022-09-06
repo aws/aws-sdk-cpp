@@ -79,7 +79,7 @@ MigrationHubConfigClient::~MigrationHubConfigClient()
 
 void MigrationHubConfigClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MigrationHub Config");
+  AWSClient::SetServiceClientName("MigrationHub Config");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

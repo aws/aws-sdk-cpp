@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_parentFolderId;
-    bool m_parentFolderIdHasBeenSet;
+    bool m_parentFolderIdHasBeenSet = false;
 
     ResourceStateType m_resourceState;
-    bool m_resourceStateHasBeenSet;
+    bool m_resourceStateHasBeenSet = false;
   };
 
 } // namespace Model

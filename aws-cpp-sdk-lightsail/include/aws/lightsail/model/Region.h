@@ -302,22 +302,22 @@ namespace Model
   private:
 
     Aws::String m_continentCode;
-    bool m_continentCodeHasBeenSet;
+    bool m_continentCodeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     RegionName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_relationalDatabaseAvailabilityZones;
-    bool m_relationalDatabaseAvailabilityZonesHasBeenSet;
+    bool m_relationalDatabaseAvailabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

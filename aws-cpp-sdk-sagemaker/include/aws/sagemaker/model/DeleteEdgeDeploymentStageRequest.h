@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_edgeDeploymentPlanName;
-    bool m_edgeDeploymentPlanNameHasBeenSet;
+    bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
   };
 
 } // namespace Model

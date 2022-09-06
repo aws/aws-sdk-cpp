@@ -917,55 +917,55 @@ namespace Model
   private:
 
     AttributeBooleanValue m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
+    bool m_sourceDestCheckHasBeenSet = false;
 
     InstanceAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::Vector<InstanceBlockDeviceMappingSpecification> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     AttributeBooleanValue m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet;
+    bool m_disableApiTerminationHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     AttributeBooleanValue m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     AttributeBooleanValue m_enaSupport;
-    bool m_enaSupportHasBeenSet;
+    bool m_enaSupportHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     AttributeValue m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     AttributeValue m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     AttributeValue m_kernel;
-    bool m_kernelHasBeenSet;
+    bool m_kernelHasBeenSet = false;
 
     AttributeValue m_ramdisk;
-    bool m_ramdiskHasBeenSet;
+    bool m_ramdiskHasBeenSet = false;
 
     AttributeValue m_sriovNetSupport;
-    bool m_sriovNetSupportHasBeenSet;
+    bool m_sriovNetSupportHasBeenSet = false;
 
     BlobAttributeValue m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AttributeBooleanValue m_disableApiStop;
-    bool m_disableApiStopHasBeenSet;
+    bool m_disableApiStopHasBeenSet = false;
   };
 
 } // namespace Model

@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_organizationName;
-    bool m_organizationNameHasBeenSet;
+    bool m_organizationNameHasBeenSet = false;
 
     Aws::String m_contactEmail;
-    bool m_contactEmailHasBeenSet;
+    bool m_contactEmailHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_privateSkillIds;
-    bool m_privateSkillIdsHasBeenSet;
+    bool m_privateSkillIdsHasBeenSet = false;
   };
 
 } // namespace Model

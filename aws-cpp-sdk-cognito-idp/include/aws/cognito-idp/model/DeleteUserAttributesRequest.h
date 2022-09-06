@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_userAttributeNames;
-    bool m_userAttributeNamesHasBeenSet;
+    bool m_userAttributeNamesHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -417,34 +417,34 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     Aws::String m_dhcpOptionsId;
-    bool m_dhcpOptionsIdHasBeenSet;
+    bool m_dhcpOptionsIdHasBeenSet = false;
 
     VpcState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Tenancy m_instanceTenancy;
-    bool m_instanceTenancyHasBeenSet;
+    bool m_instanceTenancyHasBeenSet = false;
 
     Aws::Vector<VpcIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-    bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+    bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 
     Aws::Vector<VpcCidrBlockAssociation> m_cidrBlockAssociationSet;
-    bool m_cidrBlockAssociationSetHasBeenSet;
+    bool m_cidrBlockAssociationSetHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

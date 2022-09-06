@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_ruleConfigurationName;
-    bool m_ruleConfigurationNameHasBeenSet;
+    bool m_ruleConfigurationNameHasBeenSet = false;
 
     Aws::String m_ruleEvaluationJobArn;
-    bool m_ruleEvaluationJobArnHasBeenSet;
+    bool m_ruleEvaluationJobArnHasBeenSet = false;
 
     RuleEvaluationStatus m_ruleEvaluationStatus;
-    bool m_ruleEvaluationStatusHasBeenSet;
+    bool m_ruleEvaluationStatusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

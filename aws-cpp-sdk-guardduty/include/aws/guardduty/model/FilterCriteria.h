@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<FilterCriterion> m_filterCriterion;
-    bool m_filterCriterionHasBeenSet;
+    bool m_filterCriterionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_queuePolicy;
-    bool m_queuePolicyHasBeenSet;
+    bool m_queuePolicyHasBeenSet = false;
   };
 
 } // namespace Model

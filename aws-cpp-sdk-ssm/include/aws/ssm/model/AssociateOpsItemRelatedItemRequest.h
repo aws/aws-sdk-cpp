@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceUri;
-    bool m_resourceUriHasBeenSet;
+    bool m_resourceUriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_sessionArn;
-    bool m_sessionArnHasBeenSet;
+    bool m_sessionArnHasBeenSet = false;
 
     int m_maxResult;
-    bool m_maxResultHasBeenSet;
+    bool m_maxResultHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

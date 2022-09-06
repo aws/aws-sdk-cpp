@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_jobRunId;
-    bool m_jobRunIdHasBeenSet;
+    bool m_jobRunIdHasBeenSet = false;
   };
 
 } // namespace Model

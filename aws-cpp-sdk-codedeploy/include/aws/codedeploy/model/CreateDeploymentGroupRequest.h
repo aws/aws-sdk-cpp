@@ -993,58 +993,58 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     Aws::Vector<EC2TagFilter> m_ec2TagFilters;
-    bool m_ec2TagFiltersHasBeenSet;
+    bool m_ec2TagFiltersHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_onPremisesInstanceTagFilters;
-    bool m_onPremisesInstanceTagFiltersHasBeenSet;
+    bool m_onPremisesInstanceTagFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     Aws::Vector<TriggerConfig> m_triggerConfigurations;
-    bool m_triggerConfigurationsHasBeenSet;
+    bool m_triggerConfigurationsHasBeenSet = false;
 
     AlarmConfiguration m_alarmConfiguration;
-    bool m_alarmConfigurationHasBeenSet;
+    bool m_alarmConfigurationHasBeenSet = false;
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
 
     OutdatedInstancesStrategy m_outdatedInstancesStrategy;
-    bool m_outdatedInstancesStrategyHasBeenSet;
+    bool m_outdatedInstancesStrategyHasBeenSet = false;
 
     DeploymentStyle m_deploymentStyle;
-    bool m_deploymentStyleHasBeenSet;
+    bool m_deploymentStyleHasBeenSet = false;
 
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
-    bool m_blueGreenDeploymentConfigurationHasBeenSet;
+    bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
 
     LoadBalancerInfo m_loadBalancerInfo;
-    bool m_loadBalancerInfoHasBeenSet;
+    bool m_loadBalancerInfoHasBeenSet = false;
 
     EC2TagSet m_ec2TagSet;
-    bool m_ec2TagSetHasBeenSet;
+    bool m_ec2TagSetHasBeenSet = false;
 
     Aws::Vector<ECSService> m_ecsServices;
-    bool m_ecsServicesHasBeenSet;
+    bool m_ecsServicesHasBeenSet = false;
 
     OnPremisesTagSet m_onPremisesTagSet;
-    bool m_onPremisesTagSetHasBeenSet;
+    bool m_onPremisesTagSetHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

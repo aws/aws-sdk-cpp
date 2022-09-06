@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_credential;
-    bool m_credentialHasBeenSet;
+    bool m_credentialHasBeenSet = false;
 
     CredentialProviderType m_credentialProvider;
-    bool m_credentialProviderHasBeenSet;
+    bool m_credentialProviderHasBeenSet = false;
   };
 
 } // namespace Model

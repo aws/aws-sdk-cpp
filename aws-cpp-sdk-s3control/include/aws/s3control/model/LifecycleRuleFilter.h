@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     S3Tag m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
 
     LifecycleRuleAndOperator m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
   };
 
 } // namespace Model

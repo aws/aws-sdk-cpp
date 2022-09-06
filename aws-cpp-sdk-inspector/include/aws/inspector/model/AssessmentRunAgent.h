@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_agentId;
-    bool m_agentIdHasBeenSet;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
 
     AgentHealth m_agentHealth;
-    bool m_agentHealthHasBeenSet;
+    bool m_agentHealthHasBeenSet = false;
 
     AgentHealthCode m_agentHealthCode;
-    bool m_agentHealthCodeHasBeenSet;
+    bool m_agentHealthCodeHasBeenSet = false;
 
     Aws::String m_agentHealthDetails;
-    bool m_agentHealthDetailsHasBeenSet;
+    bool m_agentHealthDetailsHasBeenSet = false;
 
     Aws::String m_autoScalingGroup;
-    bool m_autoScalingGroupHasBeenSet;
+    bool m_autoScalingGroupHasBeenSet = false;
 
     Aws::Vector<TelemetryMetadata> m_telemetryMetadata;
-    bool m_telemetryMetadataHasBeenSet;
+    bool m_telemetryMetadataHasBeenSet = false;
   };
 
 } // namespace Model

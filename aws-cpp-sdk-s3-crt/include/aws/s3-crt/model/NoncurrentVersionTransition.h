@@ -157,13 +157,13 @@ namespace Model
   private:
 
     int m_noncurrentDays;
-    bool m_noncurrentDaysHasBeenSet;
+    bool m_noncurrentDaysHasBeenSet = false;
 
     TransitionStorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     int m_newerNoncurrentVersions;
-    bool m_newerNoncurrentVersionsHasBeenSet;
+    bool m_newerNoncurrentVersionsHasBeenSet = false;
   };
 
 } // namespace Model

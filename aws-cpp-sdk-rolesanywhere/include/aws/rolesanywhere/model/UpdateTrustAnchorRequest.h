@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_trustAnchorId;
-    bool m_trustAnchorIdHasBeenSet;
+    bool m_trustAnchorIdHasBeenSet = false;
   };
 
 } // namespace Model

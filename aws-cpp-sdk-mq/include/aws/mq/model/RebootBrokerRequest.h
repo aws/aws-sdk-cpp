@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_brokerId;
-    bool m_brokerIdHasBeenSet;
+    bool m_brokerIdHasBeenSet = false;
   };
 
 } // namespace Model

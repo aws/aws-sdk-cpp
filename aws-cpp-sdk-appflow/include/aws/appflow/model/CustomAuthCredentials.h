@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_customAuthenticationType;
-    bool m_customAuthenticationTypeHasBeenSet;
+    bool m_customAuthenticationTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_credentialsMap;
-    bool m_credentialsMapHasBeenSet;
+    bool m_credentialsMapHasBeenSet = false;
   };
 
 } // namespace Model

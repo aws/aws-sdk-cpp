@@ -168,10 +168,10 @@ namespace Model
   private:
 
     bool m_observabilityEnabled;
-    bool m_observabilityEnabledHasBeenSet;
+    bool m_observabilityEnabledHasBeenSet = false;
 
     Aws::String m_observabilityConfigurationArn;
-    bool m_observabilityConfigurationArnHasBeenSet;
+    bool m_observabilityConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

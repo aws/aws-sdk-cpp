@@ -217,22 +217,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     long long m_maxCount;
-    bool m_maxCountHasBeenSet;
+    bool m_maxCountHasBeenSet = false;
 
     bool m_overage;
-    bool m_overageHasBeenSet;
+    bool m_overageHasBeenSet = false;
 
     EntitlementUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     bool m_allowCheckIn;
-    bool m_allowCheckInHasBeenSet;
+    bool m_allowCheckInHasBeenSet = false;
   };
 
 } // namespace Model

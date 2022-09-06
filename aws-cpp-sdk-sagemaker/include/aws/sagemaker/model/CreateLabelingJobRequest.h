@@ -1119,34 +1119,34 @@ namespace Model
   private:
 
     Aws::String m_labelingJobName;
-    bool m_labelingJobNameHasBeenSet;
+    bool m_labelingJobNameHasBeenSet = false;
 
     Aws::String m_labelAttributeName;
-    bool m_labelAttributeNameHasBeenSet;
+    bool m_labelAttributeNameHasBeenSet = false;
 
     LabelingJobInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
+    bool m_inputConfigHasBeenSet = false;
 
     LabelingJobOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_labelCategoryConfigS3Uri;
-    bool m_labelCategoryConfigS3UriHasBeenSet;
+    bool m_labelCategoryConfigS3UriHasBeenSet = false;
 
     LabelingJobStoppingConditions m_stoppingConditions;
-    bool m_stoppingConditionsHasBeenSet;
+    bool m_stoppingConditionsHasBeenSet = false;
 
     LabelingJobAlgorithmsConfig m_labelingJobAlgorithmsConfig;
-    bool m_labelingJobAlgorithmsConfigHasBeenSet;
+    bool m_labelingJobAlgorithmsConfigHasBeenSet = false;
 
     HumanTaskConfig m_humanTaskConfig;
-    bool m_humanTaskConfigHasBeenSet;
+    bool m_humanTaskConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

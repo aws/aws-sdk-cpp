@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_deadline;
-    bool m_deadlineHasBeenSet;
+    bool m_deadlineHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     bool m_useLongIds;
-    bool m_useLongIdsHasBeenSet;
+    bool m_useLongIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,10 +92,10 @@ namespace Model
   private:
 
     Aws::Vector<Notification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
   };
 
 } // namespace Model

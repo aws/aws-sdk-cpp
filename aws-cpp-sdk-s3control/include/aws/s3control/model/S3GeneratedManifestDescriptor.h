@@ -92,10 +92,10 @@ namespace Model
   private:
 
     GeneratedManifestFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     JobManifestLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

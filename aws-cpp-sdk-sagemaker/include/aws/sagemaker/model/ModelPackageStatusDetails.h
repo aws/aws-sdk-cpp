@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::Vector<ModelPackageStatusItem> m_validationStatuses;
-    bool m_validationStatusesHasBeenSet;
+    bool m_validationStatusesHasBeenSet = false;
 
     Aws::Vector<ModelPackageStatusItem> m_imageScanStatuses;
-    bool m_imageScanStatusesHasBeenSet;
+    bool m_imageScanStatusesHasBeenSet = false;
   };
 
 } // namespace Model

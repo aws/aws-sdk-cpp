@@ -305,25 +305,25 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     int m_activeServerProcessCount;
-    bool m_activeServerProcessCountHasBeenSet;
+    bool m_activeServerProcessCountHasBeenSet = false;
 
     int m_activeGameSessionCount;
-    bool m_activeGameSessionCountHasBeenSet;
+    bool m_activeGameSessionCountHasBeenSet = false;
 
     int m_currentPlayerSessionCount;
-    bool m_currentPlayerSessionCountHasBeenSet;
+    bool m_currentPlayerSessionCountHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

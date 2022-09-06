@@ -115,10 +115,10 @@ namespace Model
   private:
 
     CancelSpotFleetRequestsError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
+    bool m_spotFleetRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

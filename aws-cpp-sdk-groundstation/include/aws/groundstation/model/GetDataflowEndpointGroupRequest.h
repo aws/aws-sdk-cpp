@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_dataflowEndpointGroupId;
-    bool m_dataflowEndpointGroupIdHasBeenSet;
+    bool m_dataflowEndpointGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

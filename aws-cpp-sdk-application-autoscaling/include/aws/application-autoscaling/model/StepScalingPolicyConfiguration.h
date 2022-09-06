@@ -386,19 +386,19 @@ namespace Model
   private:
 
     AdjustmentType m_adjustmentType;
-    bool m_adjustmentTypeHasBeenSet;
+    bool m_adjustmentTypeHasBeenSet = false;
 
     Aws::Vector<StepAdjustment> m_stepAdjustments;
-    bool m_stepAdjustmentsHasBeenSet;
+    bool m_stepAdjustmentsHasBeenSet = false;
 
     int m_minAdjustmentMagnitude;
-    bool m_minAdjustmentMagnitudeHasBeenSet;
+    bool m_minAdjustmentMagnitudeHasBeenSet = false;
 
     int m_cooldown;
-    bool m_cooldownHasBeenSet;
+    bool m_cooldownHasBeenSet = false;
 
     MetricAggregationType m_metricAggregationType;
-    bool m_metricAggregationTypeHasBeenSet;
+    bool m_metricAggregationTypeHasBeenSet = false;
   };
 
 } // namespace Model

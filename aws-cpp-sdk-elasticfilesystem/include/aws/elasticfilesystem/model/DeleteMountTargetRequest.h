@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_mountTargetId;
-    bool m_mountTargetIdHasBeenSet;
+    bool m_mountTargetIdHasBeenSet = false;
   };
 
 } // namespace Model

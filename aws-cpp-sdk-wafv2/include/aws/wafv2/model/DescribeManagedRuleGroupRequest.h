@@ -265,16 +265,16 @@ namespace Model
   private:
 
     Aws::String m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
   };
 
 } // namespace Model

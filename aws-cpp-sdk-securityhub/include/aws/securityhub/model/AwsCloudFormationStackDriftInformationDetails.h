@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_stackDriftStatus;
-    bool m_stackDriftStatusHasBeenSet;
+    bool m_stackDriftStatusHasBeenSet = false;
   };
 
 } // namespace Model

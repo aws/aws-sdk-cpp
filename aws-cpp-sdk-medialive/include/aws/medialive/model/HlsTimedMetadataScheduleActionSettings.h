@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_id3;
-    bool m_id3HasBeenSet;
+    bool m_id3HasBeenSet = false;
   };
 
 } // namespace Model

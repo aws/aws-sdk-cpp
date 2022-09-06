@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Fmtp m_fmtp;
-    bool m_fmtpHasBeenSet;
+    bool m_fmtpHasBeenSet = false;
 
     Aws::String m_lang;
-    bool m_langHasBeenSet;
+    bool m_langHasBeenSet = false;
   };
 
 } // namespace Model

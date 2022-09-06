@@ -78,7 +78,7 @@ namespace Model
   private:
 
     ScheduledTriggerProperties m_scheduled;
-    bool m_scheduledHasBeenSet;
+    bool m_scheduledHasBeenSet = false;
   };
 
 } // namespace Model

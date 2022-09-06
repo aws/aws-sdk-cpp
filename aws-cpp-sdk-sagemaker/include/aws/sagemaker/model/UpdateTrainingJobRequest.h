@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_trainingJobName;
-    bool m_trainingJobNameHasBeenSet;
+    bool m_trainingJobNameHasBeenSet = false;
 
     ProfilerConfigForUpdate m_profilerConfig;
-    bool m_profilerConfigHasBeenSet;
+    bool m_profilerConfigHasBeenSet = false;
 
     Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
-    bool m_profilerRuleConfigurationsHasBeenSet;
+    bool m_profilerRuleConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

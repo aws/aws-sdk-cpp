@@ -566,31 +566,31 @@ namespace Model
   private:
 
     Aws::String m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<ReservationFleetInstanceSpecification> m_instanceTypeSpecifications;
-    bool m_instanceTypeSpecificationsHasBeenSet;
+    bool m_instanceTypeSpecificationsHasBeenSet = false;
 
     FleetCapacityReservationTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     int m_totalTargetCapacity;
-    bool m_totalTargetCapacityHasBeenSet;
+    bool m_totalTargetCapacityHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     FleetInstanceMatchCriteria m_instanceMatchCriteria;
-    bool m_instanceMatchCriteriaHasBeenSet;
+    bool m_instanceMatchCriteriaHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

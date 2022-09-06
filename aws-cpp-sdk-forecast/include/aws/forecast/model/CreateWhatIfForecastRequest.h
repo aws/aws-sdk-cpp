@@ -343,19 +343,19 @@ namespace Model
   private:
 
     Aws::String m_whatIfForecastName;
-    bool m_whatIfForecastNameHasBeenSet;
+    bool m_whatIfForecastNameHasBeenSet = false;
 
     Aws::String m_whatIfAnalysisArn;
-    bool m_whatIfAnalysisArnHasBeenSet;
+    bool m_whatIfAnalysisArnHasBeenSet = false;
 
     Aws::Vector<TimeSeriesTransformation> m_timeSeriesTransformations;
-    bool m_timeSeriesTransformationsHasBeenSet;
+    bool m_timeSeriesTransformationsHasBeenSet = false;
 
     TimeSeriesReplacementsDataSource m_timeSeriesReplacementsDataSource;
-    bool m_timeSeriesReplacementsDataSourceHasBeenSet;
+    bool m_timeSeriesReplacementsDataSourceHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -319,31 +319,31 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::String m_clusterRoleArn;
-    bool m_clusterRoleArnHasBeenSet;
+    bool m_clusterRoleArnHasBeenSet = false;
 
     Aws::String m_outputS3Uri;
-    bool m_outputS3UriHasBeenSet;
+    bool m_outputS3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     RedshiftResultFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     RedshiftResultCompressionType m_outputCompression;
-    bool m_outputCompressionHasBeenSet;
+    bool m_outputCompressionHasBeenSet = false;
   };
 
 } // namespace Model

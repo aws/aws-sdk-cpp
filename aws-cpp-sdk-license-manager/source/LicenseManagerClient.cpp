@@ -124,7 +124,7 @@ LicenseManagerClient::~LicenseManagerClient()
 
 void LicenseManagerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("License Manager");
+  AWSClient::SetServiceClientName("License Manager");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

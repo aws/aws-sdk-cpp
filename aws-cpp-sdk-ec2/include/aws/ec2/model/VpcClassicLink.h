@@ -151,13 +151,13 @@ namespace Model
   private:
 
     bool m_classicLinkEnabled;
-    bool m_classicLinkEnabledHasBeenSet;
+    bool m_classicLinkEnabledHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

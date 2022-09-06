@@ -387,25 +387,25 @@ namespace Model
   private:
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::Vector<AwsEc2SecurityGroupUserIdGroupPair> m_userIdGroupPairs;
-    bool m_userIdGroupPairsHasBeenSet;
+    bool m_userIdGroupPairsHasBeenSet = false;
 
     Aws::Vector<AwsEc2SecurityGroupIpRange> m_ipRanges;
-    bool m_ipRangesHasBeenSet;
+    bool m_ipRangesHasBeenSet = false;
 
     Aws::Vector<AwsEc2SecurityGroupIpv6Range> m_ipv6Ranges;
-    bool m_ipv6RangesHasBeenSet;
+    bool m_ipv6RangesHasBeenSet = false;
 
     Aws::Vector<AwsEc2SecurityGroupPrefixListId> m_prefixListIds;
-    bool m_prefixListIdsHasBeenSet;
+    bool m_prefixListIdsHasBeenSet = false;
   };
 
 } // namespace Model

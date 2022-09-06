@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     UsageReportSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastGeneratedReportDate;
-    bool m_lastGeneratedReportDateHasBeenSet;
+    bool m_lastGeneratedReportDateHasBeenSet = false;
 
     Aws::Vector<LastReportGenerationExecutionError> m_subscriptionErrors;
-    bool m_subscriptionErrorsHasBeenSet;
+    bool m_subscriptionErrorsHasBeenSet = false;
   };
 
 } // namespace Model

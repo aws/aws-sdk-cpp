@@ -472,19 +472,19 @@ namespace Model
   private:
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_templateURL;
-    bool m_templateURLHasBeenSet;
+    bool m_templateURLHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

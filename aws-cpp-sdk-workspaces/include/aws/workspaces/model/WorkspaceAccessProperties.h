@@ -314,28 +314,28 @@ namespace Model
   private:
 
     AccessPropertyValue m_deviceTypeWindows;
-    bool m_deviceTypeWindowsHasBeenSet;
+    bool m_deviceTypeWindowsHasBeenSet = false;
 
     AccessPropertyValue m_deviceTypeOsx;
-    bool m_deviceTypeOsxHasBeenSet;
+    bool m_deviceTypeOsxHasBeenSet = false;
 
     AccessPropertyValue m_deviceTypeWeb;
-    bool m_deviceTypeWebHasBeenSet;
+    bool m_deviceTypeWebHasBeenSet = false;
 
     AccessPropertyValue m_deviceTypeIos;
-    bool m_deviceTypeIosHasBeenSet;
+    bool m_deviceTypeIosHasBeenSet = false;
 
     AccessPropertyValue m_deviceTypeAndroid;
-    bool m_deviceTypeAndroidHasBeenSet;
+    bool m_deviceTypeAndroidHasBeenSet = false;
 
     AccessPropertyValue m_deviceTypeChromeOs;
-    bool m_deviceTypeChromeOsHasBeenSet;
+    bool m_deviceTypeChromeOsHasBeenSet = false;
 
     AccessPropertyValue m_deviceTypeZeroClient;
-    bool m_deviceTypeZeroClientHasBeenSet;
+    bool m_deviceTypeZeroClientHasBeenSet = false;
 
     AccessPropertyValue m_deviceTypeLinux;
-    bool m_deviceTypeLinuxHasBeenSet;
+    bool m_deviceTypeLinuxHasBeenSet = false;
   };
 
 } // namespace Model

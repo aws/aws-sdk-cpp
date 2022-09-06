@@ -178,16 +178,16 @@ namespace Model
   private:
 
     InstanceHealthCheckType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     InstanceHealthCheckState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusChange;
-    bool m_lastStatusChangeHasBeenSet;
+    bool m_lastStatusChangeHasBeenSet = false;
   };
 
 } // namespace Model

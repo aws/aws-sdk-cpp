@@ -368,25 +368,25 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stackIds;
-    bool m_stackIdsHasBeenSet;
+    bool m_stackIdsHasBeenSet = false;
 
     Aws::String m_stackIdsUrl;
-    bool m_stackIdsUrlHasBeenSet;
+    bool m_stackIdsUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
-    bool m_operationPreferencesHasBeenSet;
+    bool m_operationPreferencesHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

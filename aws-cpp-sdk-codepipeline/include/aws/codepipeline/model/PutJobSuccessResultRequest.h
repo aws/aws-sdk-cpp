@@ -331,19 +331,19 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     CurrentRevision m_currentRevision;
-    bool m_currentRevisionHasBeenSet;
+    bool m_currentRevisionHasBeenSet = false;
 
     Aws::String m_continuationToken;
-    bool m_continuationTokenHasBeenSet;
+    bool m_continuationTokenHasBeenSet = false;
 
     ExecutionDetails m_executionDetails;
-    bool m_executionDetailsHasBeenSet;
+    bool m_executionDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_outputVariables;
-    bool m_outputVariablesHasBeenSet;
+    bool m_outputVariablesHasBeenSet = false;
   };
 
 } // namespace Model

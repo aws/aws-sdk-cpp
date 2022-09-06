@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     Aws::Vector<Change> m_changeSet;
-    bool m_changeSetHasBeenSet;
+    bool m_changeSetHasBeenSet = false;
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

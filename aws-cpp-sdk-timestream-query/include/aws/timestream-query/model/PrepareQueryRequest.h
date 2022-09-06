@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     bool m_validateOnly;
-    bool m_validateOnlyHasBeenSet;
+    bool m_validateOnlyHasBeenSet = false;
   };
 
 } // namespace Model

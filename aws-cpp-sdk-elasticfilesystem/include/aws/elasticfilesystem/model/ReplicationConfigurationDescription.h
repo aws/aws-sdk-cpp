@@ -305,22 +305,22 @@ namespace Model
   private:
 
     Aws::String m_sourceFileSystemId;
-    bool m_sourceFileSystemIdHasBeenSet;
+    bool m_sourceFileSystemIdHasBeenSet = false;
 
     Aws::String m_sourceFileSystemRegion;
-    bool m_sourceFileSystemRegionHasBeenSet;
+    bool m_sourceFileSystemRegionHasBeenSet = false;
 
     Aws::String m_sourceFileSystemArn;
-    bool m_sourceFileSystemArnHasBeenSet;
+    bool m_sourceFileSystemArnHasBeenSet = false;
 
     Aws::String m_originalSourceFileSystemArn;
-    bool m_originalSourceFileSystemArnHasBeenSet;
+    bool m_originalSourceFileSystemArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Destination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
   };
 
 } // namespace Model

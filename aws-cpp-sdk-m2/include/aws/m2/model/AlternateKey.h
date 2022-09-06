@@ -158,16 +158,16 @@ namespace Model
   private:
 
     bool m_allowDuplicates;
-    bool m_allowDuplicatesHasBeenSet;
+    bool m_allowDuplicatesHasBeenSet = false;
 
     int m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
   };
 
 } // namespace Model

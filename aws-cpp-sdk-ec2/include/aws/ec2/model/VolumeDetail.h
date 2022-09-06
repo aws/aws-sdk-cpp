@@ -60,7 +60,7 @@ namespace Model
   private:
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

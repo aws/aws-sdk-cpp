@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

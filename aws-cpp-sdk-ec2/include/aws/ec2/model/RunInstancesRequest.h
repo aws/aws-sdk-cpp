@@ -2318,124 +2318,124 @@ namespace Model
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_ipv6AddressCount;
-    bool m_ipv6AddressCountHasBeenSet;
+    bool m_ipv6AddressCountHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     int m_maxCount;
-    bool m_maxCountHasBeenSet;
+    bool m_maxCountHasBeenSet = false;
 
     int m_minCount;
-    bool m_minCountHasBeenSet;
+    bool m_minCountHasBeenSet = false;
 
     RunInstancesMonitoringEnabled m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
 
     Placement m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
+    bool m_ramdiskIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet;
+    bool m_disableApiTerminationHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     IamInstanceProfileSpecification m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecification;
-    bool m_elasticGpuSpecificationHasBeenSet;
+    bool m_elasticGpuSpecificationHasBeenSet = false;
 
     Aws::Vector<ElasticInferenceAccelerator> m_elasticInferenceAccelerators;
-    bool m_elasticInferenceAcceleratorsHasBeenSet;
+    bool m_elasticInferenceAcceleratorsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     InstanceMarketOptionsRequest m_instanceMarketOptions;
-    bool m_instanceMarketOptionsHasBeenSet;
+    bool m_instanceMarketOptionsHasBeenSet = false;
 
     CreditSpecificationRequest m_creditSpecification;
-    bool m_creditSpecificationHasBeenSet;
+    bool m_creditSpecificationHasBeenSet = false;
 
     CpuOptionsRequest m_cpuOptions;
-    bool m_cpuOptionsHasBeenSet;
+    bool m_cpuOptionsHasBeenSet = false;
 
     CapacityReservationSpecification m_capacityReservationSpecification;
-    bool m_capacityReservationSpecificationHasBeenSet;
+    bool m_capacityReservationSpecificationHasBeenSet = false;
 
     HibernationOptionsRequest m_hibernationOptions;
-    bool m_hibernationOptionsHasBeenSet;
+    bool m_hibernationOptionsHasBeenSet = false;
 
     Aws::Vector<LicenseConfigurationRequest> m_licenseSpecifications;
-    bool m_licenseSpecificationsHasBeenSet;
+    bool m_licenseSpecificationsHasBeenSet = false;
 
     InstanceMetadataOptionsRequest m_metadataOptions;
-    bool m_metadataOptionsHasBeenSet;
+    bool m_metadataOptionsHasBeenSet = false;
 
     EnclaveOptionsRequest m_enclaveOptions;
-    bool m_enclaveOptionsHasBeenSet;
+    bool m_enclaveOptionsHasBeenSet = false;
 
     PrivateDnsNameOptionsRequest m_privateDnsNameOptions;
-    bool m_privateDnsNameOptionsHasBeenSet;
+    bool m_privateDnsNameOptionsHasBeenSet = false;
 
     InstanceMaintenanceOptionsRequest m_maintenanceOptions;
-    bool m_maintenanceOptionsHasBeenSet;
+    bool m_maintenanceOptionsHasBeenSet = false;
 
     bool m_disableApiStop;
-    bool m_disableApiStopHasBeenSet;
+    bool m_disableApiStopHasBeenSet = false;
   };
 
 } // namespace Model

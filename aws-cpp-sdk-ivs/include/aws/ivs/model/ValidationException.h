@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_exceptionMessage;
-    bool m_exceptionMessageHasBeenSet;
+    bool m_exceptionMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -651,46 +651,46 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Utils::DateTime m_analyzedAt;
-    bool m_analyzedAtHasBeenSet;
+    bool m_analyzedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     bool m_isPublic;
-    bool m_isPublicHasBeenSet;
+    bool m_isPublicHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_resourceOwnerAccount;
-    bool m_resourceOwnerAccountHasBeenSet;
+    bool m_resourceOwnerAccountHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<FindingSource> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     FindingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

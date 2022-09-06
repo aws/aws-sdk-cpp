@@ -165,22 +165,22 @@ namespace Model
   private:
 
     bool m_inboundCall;
-    bool m_inboundCallHasBeenSet;
+    bool m_inboundCallHasBeenSet = false;
 
     bool m_outboundCall;
-    bool m_outboundCallHasBeenSet;
+    bool m_outboundCallHasBeenSet = false;
 
     bool m_inboundSMS;
-    bool m_inboundSMSHasBeenSet;
+    bool m_inboundSMSHasBeenSet = false;
 
     bool m_outboundSMS;
-    bool m_outboundSMSHasBeenSet;
+    bool m_outboundSMSHasBeenSet = false;
 
     bool m_inboundMMS;
-    bool m_inboundMMSHasBeenSet;
+    bool m_inboundMMSHasBeenSet = false;
 
     bool m_outboundMMS;
-    bool m_outboundMMSHasBeenSet;
+    bool m_outboundMMSHasBeenSet = false;
   };
 
 } // namespace Model

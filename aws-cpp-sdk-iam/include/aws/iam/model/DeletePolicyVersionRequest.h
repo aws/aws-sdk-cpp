@@ -200,10 +200,10 @@ namespace Model
   private:
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

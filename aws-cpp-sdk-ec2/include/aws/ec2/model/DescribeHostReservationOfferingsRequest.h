@@ -298,22 +298,22 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     int m_maxDuration;
-    bool m_maxDurationHasBeenSet;
+    bool m_maxDurationHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     int m_minDuration;
-    bool m_minDurationHasBeenSet;
+    bool m_minDurationHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
   };
 
 } // namespace Model

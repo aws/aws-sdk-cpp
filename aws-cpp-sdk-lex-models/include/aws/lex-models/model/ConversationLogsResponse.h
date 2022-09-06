@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<LogSettingsResponse> m_logSettings;
-    bool m_logSettingsHasBeenSet;
+    bool m_logSettingsHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

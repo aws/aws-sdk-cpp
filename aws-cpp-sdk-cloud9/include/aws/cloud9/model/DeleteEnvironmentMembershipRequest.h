@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
   };
 
 } // namespace Model

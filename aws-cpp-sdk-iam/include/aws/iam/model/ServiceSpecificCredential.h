@@ -347,25 +347,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceUserName;
-    bool m_serviceUserNameHasBeenSet;
+    bool m_serviceUserNameHasBeenSet = false;
 
     Aws::String m_servicePassword;
-    bool m_servicePasswordHasBeenSet;
+    bool m_servicePasswordHasBeenSet = false;
 
     Aws::String m_serviceSpecificCredentialId;
-    bool m_serviceSpecificCredentialIdHasBeenSet;
+    bool m_serviceSpecificCredentialIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

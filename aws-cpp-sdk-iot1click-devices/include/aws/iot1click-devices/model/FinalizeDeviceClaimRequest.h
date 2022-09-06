@@ -233,10 +233,10 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

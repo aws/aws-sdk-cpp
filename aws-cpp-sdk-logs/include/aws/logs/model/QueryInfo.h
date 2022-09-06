@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     QueryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

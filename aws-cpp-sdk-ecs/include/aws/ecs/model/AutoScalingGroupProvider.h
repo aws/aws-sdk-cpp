@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupArn;
-    bool m_autoScalingGroupArnHasBeenSet;
+    bool m_autoScalingGroupArnHasBeenSet = false;
 
     ManagedScaling m_managedScaling;
-    bool m_managedScalingHasBeenSet;
+    bool m_managedScalingHasBeenSet = false;
 
     ManagedTerminationProtection m_managedTerminationProtection;
-    bool m_managedTerminationProtectionHasBeenSet;
+    bool m_managedTerminationProtectionHasBeenSet = false;
   };
 
 } // namespace Model

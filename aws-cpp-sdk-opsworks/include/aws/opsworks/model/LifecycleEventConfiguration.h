@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ShutdownEventConfiguration m_shutdown;
-    bool m_shutdownHasBeenSet;
+    bool m_shutdownHasBeenSet = false;
   };
 
 } // namespace Model

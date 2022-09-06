@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_variableName;
-    bool m_variableNameHasBeenSet;
+    bool m_variableNameHasBeenSet = false;
 
     Aws::String m_variableType;
-    bool m_variableTypeHasBeenSet;
+    bool m_variableTypeHasBeenSet = false;
 
     double m_variableImportance;
-    bool m_variableImportanceHasBeenSet;
+    bool m_variableImportanceHasBeenSet = false;
   };
 
 } // namespace Model

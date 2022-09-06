@@ -177,13 +177,13 @@ namespace Model
   private:
 
     ConfidenceScore m_nluConfidence;
-    bool m_nluConfidenceHasBeenSet;
+    bool m_nluConfidenceHasBeenSet = false;
 
     SentimentResponse m_sentimentResponse;
-    bool m_sentimentResponseHasBeenSet;
+    bool m_sentimentResponseHasBeenSet = false;
 
     Intent m_intent;
-    bool m_intentHasBeenSet;
+    bool m_intentHasBeenSet = false;
   };
 
 } // namespace Model

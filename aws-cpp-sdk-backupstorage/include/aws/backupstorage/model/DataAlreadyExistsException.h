@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     Aws::String m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

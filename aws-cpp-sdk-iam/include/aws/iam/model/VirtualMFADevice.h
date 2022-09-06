@@ -319,22 +319,22 @@ namespace Model
   private:
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_base32StringSeed;
-    bool m_base32StringSeedHasBeenSet;
+    bool m_base32StringSeedHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_qRCodePNG;
-    bool m_qRCodePNGHasBeenSet;
+    bool m_qRCodePNGHasBeenSet = false;
 
     User m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::Utils::DateTime m_enableDate;
-    bool m_enableDateHasBeenSet;
+    bool m_enableDateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -104,10 +104,10 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_purchaseToken;
-    bool m_purchaseTokenHasBeenSet;
+    bool m_purchaseTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     HttpUrlDestinationConfiguration m_httpUrlConfiguration;
-    bool m_httpUrlConfigurationHasBeenSet;
+    bool m_httpUrlConfigurationHasBeenSet = false;
 
     VpcDestinationConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

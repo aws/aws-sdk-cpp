@@ -320,25 +320,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     bool m_privateRepository;
-    bool m_privateRepositoryHasBeenSet;
+    bool m_privateRepositoryHasBeenSet = false;
 
     bool m_issuesEnabled;
-    bool m_issuesEnabledHasBeenSet;
+    bool m_issuesEnabledHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
   };
 
 } // namespace Model

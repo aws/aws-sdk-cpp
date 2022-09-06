@@ -112,10 +112,10 @@ namespace Model
   private:
 
     DataReplicationErrorString m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_rawError;
-    bool m_rawErrorHasBeenSet;
+    bool m_rawErrorHasBeenSet = false;
   };
 
 } // namespace Model

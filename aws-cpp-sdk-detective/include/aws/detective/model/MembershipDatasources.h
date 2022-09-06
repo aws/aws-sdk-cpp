@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::Map<DatasourcePackage, Aws::Map<DatasourcePackageIngestState, TimestampForCollection>> m_datasourcePackageIngestHistory;
-    bool m_datasourcePackageIngestHistoryHasBeenSet;
+    bool m_datasourcePackageIngestHistoryHasBeenSet = false;
   };
 
 } // namespace Model

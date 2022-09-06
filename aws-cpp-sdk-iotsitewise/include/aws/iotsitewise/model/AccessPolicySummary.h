@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Identity m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Resource m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Permission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateDate;
-    bool m_lastUpdateDateHasBeenSet;
+    bool m_lastUpdateDateHasBeenSet = false;
   };
 
 } // namespace Model

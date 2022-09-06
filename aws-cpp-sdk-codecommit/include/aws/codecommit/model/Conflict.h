@@ -122,10 +122,10 @@ namespace Model
   private:
 
     ConflictMetadata m_conflictMetadata;
-    bool m_conflictMetadataHasBeenSet;
+    bool m_conflictMetadataHasBeenSet = false;
 
     Aws::Vector<MergeHunk> m_mergeHunks;
-    bool m_mergeHunksHasBeenSet;
+    bool m_mergeHunksHasBeenSet = false;
   };
 
 } // namespace Model

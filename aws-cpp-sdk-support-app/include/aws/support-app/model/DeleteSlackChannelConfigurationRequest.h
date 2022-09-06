@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::String m_teamId;
-    bool m_teamIdHasBeenSet;
+    bool m_teamIdHasBeenSet = false;
   };
 
 } // namespace Model

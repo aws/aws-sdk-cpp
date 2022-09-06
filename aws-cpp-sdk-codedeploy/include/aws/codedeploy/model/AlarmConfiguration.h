@@ -152,13 +152,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_ignorePollAlarmFailure;
-    bool m_ignorePollAlarmFailureHasBeenSet;
+    bool m_ignorePollAlarmFailureHasBeenSet = false;
 
     Aws::Vector<Alarm> m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -95,7 +95,7 @@ IdentityStoreClient::~IdentityStoreClient()
 
 void IdentityStoreClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("identitystore");
+  AWSClient::SetServiceClientName("identitystore");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

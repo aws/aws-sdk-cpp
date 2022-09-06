@@ -97,7 +97,7 @@ PrometheusServiceClient::~PrometheusServiceClient()
 
 void PrometheusServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("amp");
+  AWSClient::SetServiceClientName("amp");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

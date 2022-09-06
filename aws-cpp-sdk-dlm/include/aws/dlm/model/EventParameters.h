@@ -226,13 +226,13 @@ namespace Model
   private:
 
     EventTypeValues m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_snapshotOwner;
-    bool m_snapshotOwnerHasBeenSet;
+    bool m_snapshotOwnerHasBeenSet = false;
 
     Aws::String m_descriptionRegex;
-    bool m_descriptionRegexHasBeenSet;
+    bool m_descriptionRegexHasBeenSet = false;
   };
 
 } // namespace Model

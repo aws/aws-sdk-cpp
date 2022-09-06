@@ -80,7 +80,7 @@ MarketplaceMeteringClient::~MarketplaceMeteringClient()
 
 void MarketplaceMeteringClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Marketplace Metering");
+  AWSClient::SetServiceClientName("Marketplace Metering");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

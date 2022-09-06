@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_storageVirtualMachineId;
-    bool m_storageVirtualMachineIdHasBeenSet;
+    bool m_storageVirtualMachineIdHasBeenSet = false;
   };
 
 } // namespace Model

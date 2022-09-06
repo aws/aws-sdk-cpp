@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
-    bool m_resourceLifecycleConfigHasBeenSet;
+    bool m_resourceLifecycleConfigHasBeenSet = false;
   };
 
 } // namespace Model

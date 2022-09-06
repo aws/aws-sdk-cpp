@@ -915,25 +915,25 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_granteePrincipal;
-    bool m_granteePrincipalHasBeenSet;
+    bool m_granteePrincipalHasBeenSet = false;
 
     Aws::String m_retiringPrincipal;
-    bool m_retiringPrincipalHasBeenSet;
+    bool m_retiringPrincipalHasBeenSet = false;
 
     Aws::Vector<GrantOperation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
 
     GrantConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

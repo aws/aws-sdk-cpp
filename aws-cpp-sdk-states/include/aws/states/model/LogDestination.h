@@ -82,7 +82,7 @@ namespace Model
   private:
 
     CloudWatchLogsLogGroup m_cloudWatchLogsLogGroup;
-    bool m_cloudWatchLogsLogGroupHasBeenSet;
+    bool m_cloudWatchLogsLogGroupHasBeenSet = false;
   };
 
 } // namespace Model

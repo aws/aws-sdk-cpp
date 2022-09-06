@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
   };
 
 } // namespace Model

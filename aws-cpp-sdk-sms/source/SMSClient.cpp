@@ -111,7 +111,7 @@ SMSClient::~SMSClient()
 
 void SMSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SMS");
+  AWSClient::SetServiceClientName("SMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

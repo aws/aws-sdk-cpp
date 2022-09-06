@@ -94,7 +94,7 @@ namespace Model
   private:
 
     ContainerServiceECRImagePullerRole m_ecrImagePullerRole;
-    bool m_ecrImagePullerRoleHasBeenSet;
+    bool m_ecrImagePullerRoleHasBeenSet = false;
   };
 
 } // namespace Model

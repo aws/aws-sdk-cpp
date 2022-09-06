@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     Aws::String m_mapName;
-    bool m_mapNameHasBeenSet;
+    bool m_mapNameHasBeenSet = false;
   };
 
 } // namespace Model

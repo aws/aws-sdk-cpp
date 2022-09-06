@@ -115,10 +115,10 @@ namespace Model
   private:
 
     RelationalDatabaseSourceType m_relationalDatabaseSourceType;
-    bool m_relationalDatabaseSourceTypeHasBeenSet;
+    bool m_relationalDatabaseSourceTypeHasBeenSet = false;
 
     RdsHttpEndpointConfig m_rdsHttpEndpointConfig;
-    bool m_rdsHttpEndpointConfigHasBeenSet;
+    bool m_rdsHttpEndpointConfigHasBeenSet = false;
   };
 
 } // namespace Model

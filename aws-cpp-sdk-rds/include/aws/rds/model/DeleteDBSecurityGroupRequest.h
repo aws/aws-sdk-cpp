@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::String m_dBSecurityGroupName;
-    bool m_dBSecurityGroupNameHasBeenSet;
+    bool m_dBSecurityGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

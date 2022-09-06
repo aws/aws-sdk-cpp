@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_jobTemplateArn;
-    bool m_jobTemplateArnHasBeenSet;
+    bool m_jobTemplateArnHasBeenSet = false;
 
     Aws::String m_jobTemplateId;
-    bool m_jobTemplateIdHasBeenSet;
+    bool m_jobTemplateIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

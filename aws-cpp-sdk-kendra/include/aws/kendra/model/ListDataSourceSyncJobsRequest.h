@@ -280,22 +280,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     TimeRange m_startTimeFilter;
-    bool m_startTimeFilterHasBeenSet;
+    bool m_startTimeFilterHasBeenSet = false;
 
     DataSourceSyncJobStatus m_statusFilter;
-    bool m_statusFilterHasBeenSet;
+    bool m_statusFilterHasBeenSet = false;
   };
 
 } // namespace Model

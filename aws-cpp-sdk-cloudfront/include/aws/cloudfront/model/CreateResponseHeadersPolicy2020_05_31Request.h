@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ResponseHeadersPolicyConfig m_responseHeadersPolicyConfig;
-    bool m_responseHeadersPolicyConfigHasBeenSet;
+    bool m_responseHeadersPolicyConfigHasBeenSet = false;
   };
 
 } // namespace Model

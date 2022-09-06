@@ -352,16 +352,16 @@ namespace Model
   private:
 
     IsDefinedInJob m_isDefinedInJob;
-    bool m_isDefinedInJobHasBeenSet;
+    bool m_isDefinedInJobHasBeenSet = false;
 
     IsMonitoredByJob m_isMonitoredByJob;
-    bool m_isMonitoredByJobHasBeenSet;
+    bool m_isMonitoredByJobHasBeenSet = false;
 
     Aws::String m_lastJobId;
-    bool m_lastJobIdHasBeenSet;
+    bool m_lastJobIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastJobRunTime;
-    bool m_lastJobRunTimeHasBeenSet;
+    bool m_lastJobRunTimeHasBeenSet = false;
   };
 
 } // namespace Model

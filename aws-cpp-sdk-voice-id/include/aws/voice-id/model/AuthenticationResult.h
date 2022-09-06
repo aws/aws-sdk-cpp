@@ -407,28 +407,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_audioAggregationEndedAt;
-    bool m_audioAggregationEndedAtHasBeenSet;
+    bool m_audioAggregationEndedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_audioAggregationStartedAt;
-    bool m_audioAggregationStartedAtHasBeenSet;
+    bool m_audioAggregationStartedAtHasBeenSet = false;
 
     Aws::String m_authenticationResultId;
-    bool m_authenticationResultIdHasBeenSet;
+    bool m_authenticationResultIdHasBeenSet = false;
 
     AuthenticationConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_customerSpeakerId;
-    bool m_customerSpeakerIdHasBeenSet;
+    bool m_customerSpeakerIdHasBeenSet = false;
 
     AuthenticationDecision m_decision;
-    bool m_decisionHasBeenSet;
+    bool m_decisionHasBeenSet = false;
 
     Aws::String m_generatedSpeakerId;
-    bool m_generatedSpeakerIdHasBeenSet;
+    bool m_generatedSpeakerIdHasBeenSet = false;
 
     int m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

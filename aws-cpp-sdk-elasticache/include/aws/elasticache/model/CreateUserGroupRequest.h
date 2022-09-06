@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_userGroupId;
-    bool m_userGroupIdHasBeenSet;
+    bool m_userGroupIdHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

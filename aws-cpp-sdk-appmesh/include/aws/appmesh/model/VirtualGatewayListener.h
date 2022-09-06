@@ -173,16 +173,16 @@ namespace Model
   private:
 
     VirtualGatewayConnectionPool m_connectionPool;
-    bool m_connectionPoolHasBeenSet;
+    bool m_connectionPoolHasBeenSet = false;
 
     VirtualGatewayHealthCheckPolicy m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     VirtualGatewayPortMapping m_portMapping;
-    bool m_portMappingHasBeenSet;
+    bool m_portMappingHasBeenSet = false;
 
     VirtualGatewayListenerTls m_tls;
-    bool m_tlsHasBeenSet;
+    bool m_tlsHasBeenSet = false;
   };
 
 } // namespace Model

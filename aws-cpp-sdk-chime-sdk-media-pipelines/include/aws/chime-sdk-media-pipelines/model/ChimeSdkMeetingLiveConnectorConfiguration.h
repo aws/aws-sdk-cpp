@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     LiveConnectorMuxType m_muxType;
-    bool m_muxTypeHasBeenSet;
+    bool m_muxTypeHasBeenSet = false;
 
     CompositedVideoArtifactsConfiguration m_compositedVideo;
-    bool m_compositedVideoHasBeenSet;
+    bool m_compositedVideoHasBeenSet = false;
 
     SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet;
+    bool m_sourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

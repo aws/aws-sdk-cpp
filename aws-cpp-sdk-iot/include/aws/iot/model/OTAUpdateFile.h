@@ -278,22 +278,22 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     int m_fileType;
-    bool m_fileTypeHasBeenSet;
+    bool m_fileTypeHasBeenSet = false;
 
     Aws::String m_fileVersion;
-    bool m_fileVersionHasBeenSet;
+    bool m_fileVersionHasBeenSet = false;
 
     FileLocation m_fileLocation;
-    bool m_fileLocationHasBeenSet;
+    bool m_fileLocationHasBeenSet = false;
 
     CodeSigning m_codeSigning;
-    bool m_codeSigningHasBeenSet;
+    bool m_codeSigningHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

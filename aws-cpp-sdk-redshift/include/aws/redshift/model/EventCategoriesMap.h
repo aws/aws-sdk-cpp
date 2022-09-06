@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Vector<EventInfoMap> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

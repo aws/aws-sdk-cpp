@@ -77,7 +77,7 @@ namespace Model
   private:
 
     KafkaClusterClientAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

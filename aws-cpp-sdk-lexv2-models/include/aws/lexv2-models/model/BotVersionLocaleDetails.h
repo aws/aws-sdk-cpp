@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_sourceBotVersion;
-    bool m_sourceBotVersionHasBeenSet;
+    bool m_sourceBotVersionHasBeenSet = false;
   };
 
 } // namespace Model

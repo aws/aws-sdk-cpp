@@ -89,7 +89,7 @@ namespace Model
   private:
 
     AudioChannelTag m_channelTag;
-    bool m_channelTagHasBeenSet;
+    bool m_channelTagHasBeenSet = false;
   };
 
 } // namespace Model

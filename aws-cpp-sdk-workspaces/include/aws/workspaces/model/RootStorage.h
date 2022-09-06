@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
   };
 
 } // namespace Model

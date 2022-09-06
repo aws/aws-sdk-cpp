@@ -1353,76 +1353,76 @@ namespace Model
   private:
 
     Aws::String m_commandId;
-    bool m_commandIdHasBeenSet;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAfter;
-    bool m_expiresAfterHasBeenSet;
+    bool m_expiresAfterHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedDateTime;
-    bool m_requestedDateTimeHasBeenSet;
+    bool m_requestedDateTimeHasBeenSet = false;
 
     CommandStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::String m_outputS3Region;
-    bool m_outputS3RegionHasBeenSet;
+    bool m_outputS3RegionHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     int m_targetCount;
-    bool m_targetCountHasBeenSet;
+    bool m_targetCountHasBeenSet = false;
 
     int m_completedCount;
-    bool m_completedCountHasBeenSet;
+    bool m_completedCountHasBeenSet = false;
 
     int m_errorCount;
-    bool m_errorCountHasBeenSet;
+    bool m_errorCountHasBeenSet = false;
 
     int m_deliveryTimedOutCount;
-    bool m_deliveryTimedOutCountHasBeenSet;
+    bool m_deliveryTimedOutCountHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     NotificationConfig m_notificationConfig;
-    bool m_notificationConfigHasBeenSet;
+    bool m_notificationConfigHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
-    bool m_cloudWatchOutputConfigHasBeenSet;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
   };
 
 } // namespace Model

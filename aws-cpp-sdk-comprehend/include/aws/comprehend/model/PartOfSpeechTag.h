@@ -98,10 +98,10 @@ namespace Model
   private:
 
     PartOfSpeechTagType m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

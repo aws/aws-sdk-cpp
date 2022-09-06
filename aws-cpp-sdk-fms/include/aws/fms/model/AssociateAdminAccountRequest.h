@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::String m_adminAccount;
-    bool m_adminAccountHasBeenSet;
+    bool m_adminAccountHasBeenSet = false;
   };
 
 } // namespace Model

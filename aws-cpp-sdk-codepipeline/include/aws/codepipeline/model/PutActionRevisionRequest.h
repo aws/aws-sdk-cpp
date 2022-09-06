@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     ActionRevision m_actionRevision;
-    bool m_actionRevisionHasBeenSet;
+    bool m_actionRevisionHasBeenSet = false;
   };
 
 } // namespace Model

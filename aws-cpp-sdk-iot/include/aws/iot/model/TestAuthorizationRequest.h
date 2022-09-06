@@ -356,22 +356,22 @@ namespace Model
   private:
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_cognitoIdentityPoolId;
-    bool m_cognitoIdentityPoolIdHasBeenSet;
+    bool m_cognitoIdentityPoolIdHasBeenSet = false;
 
     Aws::Vector<AuthInfo> m_authInfos;
-    bool m_authInfosHasBeenSet;
+    bool m_authInfosHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNamesToAdd;
-    bool m_policyNamesToAddHasBeenSet;
+    bool m_policyNamesToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNamesToSkip;
-    bool m_policyNamesToSkipHasBeenSet;
+    bool m_policyNamesToSkipHasBeenSet = false;
   };
 
 } // namespace Model

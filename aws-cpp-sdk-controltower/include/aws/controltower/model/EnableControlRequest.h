@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_controlIdentifier;
-    bool m_controlIdentifierHasBeenSet;
+    bool m_controlIdentifierHasBeenSet = false;
 
     Aws::String m_targetIdentifier;
-    bool m_targetIdentifierHasBeenSet;
+    bool m_targetIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

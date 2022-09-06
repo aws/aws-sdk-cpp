@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_eventArn;
-    bool m_eventArnHasBeenSet;
+    bool m_eventArnHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

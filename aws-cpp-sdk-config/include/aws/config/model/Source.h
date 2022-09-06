@@ -363,16 +363,16 @@ namespace Model
   private:
 
     Owner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_sourceIdentifier;
-    bool m_sourceIdentifierHasBeenSet;
+    bool m_sourceIdentifierHasBeenSet = false;
 
     Aws::Vector<SourceDetail> m_sourceDetails;
-    bool m_sourceDetailsHasBeenSet;
+    bool m_sourceDetailsHasBeenSet = false;
 
     CustomPolicyDetails m_customPolicyDetails;
-    bool m_customPolicyDetailsHasBeenSet;
+    bool m_customPolicyDetailsHasBeenSet = false;
   };
 
 } // namespace Model

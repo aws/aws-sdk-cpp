@@ -118,10 +118,10 @@ namespace Model
   private:
 
     CPUArchitecture m_cpuArchitecture;
-    bool m_cpuArchitectureHasBeenSet;
+    bool m_cpuArchitectureHasBeenSet = false;
 
     OSFamily m_operatingSystemFamily;
-    bool m_operatingSystemFamilyHasBeenSet;
+    bool m_operatingSystemFamilyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -289,16 +289,16 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     bool m_skipFinalSnapshot;
-    bool m_skipFinalSnapshotHasBeenSet;
+    bool m_skipFinalSnapshotHasBeenSet = false;
 
     Aws::String m_finalDBSnapshotIdentifier;
-    bool m_finalDBSnapshotIdentifierHasBeenSet;
+    bool m_finalDBSnapshotIdentifierHasBeenSet = false;
 
     bool m_deleteAutomatedBackups;
-    bool m_deleteAutomatedBackupsHasBeenSet;
+    bool m_deleteAutomatedBackupsHasBeenSet = false;
   };
 
 } // namespace Model

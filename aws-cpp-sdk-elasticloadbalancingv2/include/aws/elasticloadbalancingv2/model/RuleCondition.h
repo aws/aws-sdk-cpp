@@ -556,28 +556,28 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     HostHeaderConditionConfig m_hostHeaderConfig;
-    bool m_hostHeaderConfigHasBeenSet;
+    bool m_hostHeaderConfigHasBeenSet = false;
 
     PathPatternConditionConfig m_pathPatternConfig;
-    bool m_pathPatternConfigHasBeenSet;
+    bool m_pathPatternConfigHasBeenSet = false;
 
     HttpHeaderConditionConfig m_httpHeaderConfig;
-    bool m_httpHeaderConfigHasBeenSet;
+    bool m_httpHeaderConfigHasBeenSet = false;
 
     QueryStringConditionConfig m_queryStringConfig;
-    bool m_queryStringConfigHasBeenSet;
+    bool m_queryStringConfigHasBeenSet = false;
 
     HttpRequestMethodConditionConfig m_httpRequestMethodConfig;
-    bool m_httpRequestMethodConfigHasBeenSet;
+    bool m_httpRequestMethodConfigHasBeenSet = false;
 
     SourceIpConditionConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
   };
 
 } // namespace Model

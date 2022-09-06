@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_projectVersionArn;
-    bool m_projectVersionArnHasBeenSet;
+    bool m_projectVersionArnHasBeenSet = false;
 
     int m_minInferenceUnits;
-    bool m_minInferenceUnitsHasBeenSet;
+    bool m_minInferenceUnitsHasBeenSet = false;
 
     int m_maxInferenceUnits;
-    bool m_maxInferenceUnitsHasBeenSet;
+    bool m_maxInferenceUnitsHasBeenSet = false;
   };
 
 } // namespace Model

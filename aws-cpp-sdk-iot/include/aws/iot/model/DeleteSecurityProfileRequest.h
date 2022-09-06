@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
   };
 
 } // namespace Model

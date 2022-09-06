@@ -150,16 +150,16 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

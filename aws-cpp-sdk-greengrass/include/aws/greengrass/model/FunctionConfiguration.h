@@ -274,25 +274,25 @@ namespace Model
   private:
 
     EncodingType m_encodingType;
-    bool m_encodingTypeHasBeenSet;
+    bool m_encodingTypeHasBeenSet = false;
 
     FunctionConfigurationEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_execArgs;
-    bool m_execArgsHasBeenSet;
+    bool m_execArgsHasBeenSet = false;
 
     Aws::String m_executable;
-    bool m_executableHasBeenSet;
+    bool m_executableHasBeenSet = false;
 
     int m_memorySize;
-    bool m_memorySizeHasBeenSet;
+    bool m_memorySizeHasBeenSet = false;
 
     bool m_pinned;
-    bool m_pinnedHasBeenSet;
+    bool m_pinnedHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

@@ -606,37 +606,37 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_datetimeFormat;
-    bool m_datetimeFormatHasBeenSet;
+    bool m_datetimeFormatHasBeenSet = false;
 
     CloudWatchLogsTimeZone m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
 
     Aws::String m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     Aws::String m_fileFingerprintLines;
-    bool m_fileFingerprintLinesHasBeenSet;
+    bool m_fileFingerprintLinesHasBeenSet = false;
 
     Aws::String m_multiLineStartPattern;
-    bool m_multiLineStartPatternHasBeenSet;
+    bool m_multiLineStartPatternHasBeenSet = false;
 
     CloudWatchLogsInitialPosition m_initialPosition;
-    bool m_initialPositionHasBeenSet;
+    bool m_initialPositionHasBeenSet = false;
 
     CloudWatchLogsEncoding m_encoding;
-    bool m_encodingHasBeenSet;
+    bool m_encodingHasBeenSet = false;
 
     int m_bufferDuration;
-    bool m_bufferDurationHasBeenSet;
+    bool m_bufferDurationHasBeenSet = false;
 
     int m_batchCount;
-    bool m_batchCountHasBeenSet;
+    bool m_batchCountHasBeenSet = false;
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
   };
 
 } // namespace Model

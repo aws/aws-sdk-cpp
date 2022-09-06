@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_assignmentName;
-    bool m_assignmentNameHasBeenSet;
+    bool m_assignmentNameHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
   };
 
 } // namespace Model

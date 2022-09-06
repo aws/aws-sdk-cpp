@@ -84,7 +84,7 @@ DLMClient::~DLMClient()
 
 void DLMClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DLM");
+  AWSClient::SetServiceClientName("DLM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

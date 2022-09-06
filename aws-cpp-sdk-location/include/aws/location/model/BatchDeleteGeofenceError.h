@@ -113,10 +113,10 @@ namespace Model
   private:
 
     BatchItemError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_geofenceId;
-    bool m_geofenceIdHasBeenSet;
+    bool m_geofenceIdHasBeenSet = false;
   };
 
 } // namespace Model

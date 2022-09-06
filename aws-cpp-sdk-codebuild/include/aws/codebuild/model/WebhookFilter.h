@@ -410,13 +410,13 @@ namespace Model
   private:
 
     WebhookFilterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     bool m_excludeMatchedPattern;
-    bool m_excludeMatchedPatternHasBeenSet;
+    bool m_excludeMatchedPatternHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ImageConfig m_imageConfig;
-    bool m_imageConfigHasBeenSet;
+    bool m_imageConfigHasBeenSet = false;
 
     ImageConfigError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

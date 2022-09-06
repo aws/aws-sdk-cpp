@@ -320,25 +320,25 @@ namespace Model
   private:
 
     Aws::String m_connectAttachmentId;
-    bool m_connectAttachmentIdHasBeenSet;
+    bool m_connectAttachmentIdHasBeenSet = false;
 
     Aws::String m_coreNetworkAddress;
-    bool m_coreNetworkAddressHasBeenSet;
+    bool m_coreNetworkAddressHasBeenSet = false;
 
     Aws::String m_peerAddress;
-    bool m_peerAddressHasBeenSet;
+    bool m_peerAddressHasBeenSet = false;
 
     BgpOptions m_bgpOptions;
-    bool m_bgpOptionsHasBeenSet;
+    bool m_bgpOptionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insideCidrBlocks;
-    bool m_insideCidrBlocksHasBeenSet;
+    bool m_insideCidrBlocksHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

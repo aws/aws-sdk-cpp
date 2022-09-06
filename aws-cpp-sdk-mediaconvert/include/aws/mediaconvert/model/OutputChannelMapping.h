@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<int> m_inputChannels;
-    bool m_inputChannelsHasBeenSet;
+    bool m_inputChannelsHasBeenSet = false;
 
     Aws::Vector<double> m_inputChannelsFineTune;
-    bool m_inputChannelsFineTuneHasBeenSet;
+    bool m_inputChannelsFineTuneHasBeenSet = false;
   };
 
 } // namespace Model

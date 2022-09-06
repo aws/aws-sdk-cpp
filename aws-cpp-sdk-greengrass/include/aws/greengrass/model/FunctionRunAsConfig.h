@@ -85,10 +85,10 @@ namespace Model
   private:
 
     int m_gid;
-    bool m_gidHasBeenSet;
+    bool m_gidHasBeenSet = false;
 
     int m_uid;
-    bool m_uidHasBeenSet;
+    bool m_uidHasBeenSet = false;
   };
 
 } // namespace Model

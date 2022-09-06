@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     long long m_objectSizeGreaterThan;
-    bool m_objectSizeGreaterThanHasBeenSet;
+    bool m_objectSizeGreaterThanHasBeenSet = false;
 
     long long m_objectSizeLessThan;
-    bool m_objectSizeLessThanHasBeenSet;
+    bool m_objectSizeLessThanHasBeenSet = false;
   };
 
 } // namespace Model

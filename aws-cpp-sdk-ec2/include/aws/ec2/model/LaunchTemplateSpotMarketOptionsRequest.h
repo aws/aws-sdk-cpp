@@ -287,19 +287,19 @@ namespace Model
   private:
 
     Aws::String m_maxPrice;
-    bool m_maxPriceHasBeenSet;
+    bool m_maxPriceHasBeenSet = false;
 
     SpotInstanceType m_spotInstanceType;
-    bool m_spotInstanceTypeHasBeenSet;
+    bool m_spotInstanceTypeHasBeenSet = false;
 
     int m_blockDurationMinutes;
-    bool m_blockDurationMinutesHasBeenSet;
+    bool m_blockDurationMinutesHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

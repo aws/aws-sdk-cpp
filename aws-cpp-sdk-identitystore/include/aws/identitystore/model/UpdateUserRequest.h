@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::Vector<AttributeOperation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
   };
 
 } // namespace Model

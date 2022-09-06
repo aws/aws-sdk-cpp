@@ -211,19 +211,19 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     int m_datasetCount;
-    bool m_datasetCountHasBeenSet;
+    bool m_datasetCountHasBeenSet = false;
 
     long long m_dataStorage;
-    bool m_dataStorageHasBeenSet;
+    bool m_dataStorageHasBeenSet = false;
   };
 
 } // namespace Model

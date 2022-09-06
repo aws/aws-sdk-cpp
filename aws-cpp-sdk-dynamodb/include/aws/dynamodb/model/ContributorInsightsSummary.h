@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     ContributorInsightsStatus m_contributorInsightsStatus;
-    bool m_contributorInsightsStatusHasBeenSet;
+    bool m_contributorInsightsStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_spotInstanceRequestIds;
-    bool m_spotInstanceRequestIdsHasBeenSet;
+    bool m_spotInstanceRequestIdsHasBeenSet = false;
   };
 
 } // namespace Model

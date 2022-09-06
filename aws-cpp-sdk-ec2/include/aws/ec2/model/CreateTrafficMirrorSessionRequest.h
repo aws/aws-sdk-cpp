@@ -451,34 +451,34 @@ namespace Model
   private:
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_trafficMirrorTargetId;
-    bool m_trafficMirrorTargetIdHasBeenSet;
+    bool m_trafficMirrorTargetIdHasBeenSet = false;
 
     Aws::String m_trafficMirrorFilterId;
-    bool m_trafficMirrorFilterIdHasBeenSet;
+    bool m_trafficMirrorFilterIdHasBeenSet = false;
 
     int m_packetLength;
-    bool m_packetLengthHasBeenSet;
+    bool m_packetLengthHasBeenSet = false;
 
     int m_sessionNumber;
-    bool m_sessionNumberHasBeenSet;
+    bool m_sessionNumberHasBeenSet = false;
 
     int m_virtualNetworkId;
-    bool m_virtualNetworkIdHasBeenSet;
+    bool m_virtualNetworkIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

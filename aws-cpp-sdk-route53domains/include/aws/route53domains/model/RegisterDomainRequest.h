@@ -597,34 +597,34 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_idnLangCode;
-    bool m_idnLangCodeHasBeenSet;
+    bool m_idnLangCodeHasBeenSet = false;
 
     int m_durationInYears;
-    bool m_durationInYearsHasBeenSet;
+    bool m_durationInYearsHasBeenSet = false;
 
     bool m_autoRenew;
-    bool m_autoRenewHasBeenSet;
+    bool m_autoRenewHasBeenSet = false;
 
     ContactDetail m_adminContact;
-    bool m_adminContactHasBeenSet;
+    bool m_adminContactHasBeenSet = false;
 
     ContactDetail m_registrantContact;
-    bool m_registrantContactHasBeenSet;
+    bool m_registrantContactHasBeenSet = false;
 
     ContactDetail m_techContact;
-    bool m_techContactHasBeenSet;
+    bool m_techContactHasBeenSet = false;
 
     bool m_privacyProtectAdminContact;
-    bool m_privacyProtectAdminContactHasBeenSet;
+    bool m_privacyProtectAdminContactHasBeenSet = false;
 
     bool m_privacyProtectRegistrantContact;
-    bool m_privacyProtectRegistrantContactHasBeenSet;
+    bool m_privacyProtectRegistrantContactHasBeenSet = false;
 
     bool m_privacyProtectTechContact;
-    bool m_privacyProtectTechContactHasBeenSet;
+    bool m_privacyProtectTechContactHasBeenSet = false;
   };
 
 } // namespace Model

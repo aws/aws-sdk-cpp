@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_reference;
-    bool m_referenceHasBeenSet;
+    bool m_referenceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetViolationReasons;
-    bool m_targetViolationReasonsHasBeenSet;
+    bool m_targetViolationReasonsHasBeenSet = false;
   };
 
 } // namespace Model

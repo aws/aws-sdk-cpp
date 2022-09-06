@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_metadataKey;
-    bool m_metadataKeyHasBeenSet;
+    bool m_metadataKeyHasBeenSet = false;
   };
 
 } // namespace Model

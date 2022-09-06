@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_usagePlanId;
-    bool m_usagePlanIdHasBeenSet;
+    bool m_usagePlanIdHasBeenSet = false;
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nameQuery;
-    bool m_nameQueryHasBeenSet;
+    bool m_nameQueryHasBeenSet = false;
   };
 
 } // namespace Model

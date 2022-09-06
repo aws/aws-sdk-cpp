@@ -116,10 +116,10 @@ namespace Model
   private:
 
     SimpleCriterionForJob m_simpleCriterion;
-    bool m_simpleCriterionHasBeenSet;
+    bool m_simpleCriterionHasBeenSet = false;
 
     TagCriterionForJob m_tagCriterion;
-    bool m_tagCriterionHasBeenSet;
+    bool m_tagCriterionHasBeenSet = false;
   };
 
 } // namespace Model

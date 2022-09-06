@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     NotificationContext m_notificationContext;
-    bool m_notificationContextHasBeenSet;
+    bool m_notificationContextHasBeenSet = false;
   };
 
 } // namespace Model

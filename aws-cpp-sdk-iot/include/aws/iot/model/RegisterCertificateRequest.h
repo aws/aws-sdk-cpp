@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_certificatePem;
-    bool m_certificatePemHasBeenSet;
+    bool m_certificatePemHasBeenSet = false;
 
     Aws::String m_caCertificatePem;
-    bool m_caCertificatePemHasBeenSet;
+    bool m_caCertificatePemHasBeenSet = false;
 
     CertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

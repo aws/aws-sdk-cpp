@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_crossAccountAuthorization;
-    bool m_crossAccountAuthorizationHasBeenSet;
+    bool m_crossAccountAuthorizationHasBeenSet = false;
   };
 
 } // namespace Model

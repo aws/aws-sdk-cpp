@@ -285,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_formatted;
-    bool m_formattedHasBeenSet;
+    bool m_formattedHasBeenSet = false;
 
     Aws::String m_familyName;
-    bool m_familyNameHasBeenSet;
+    bool m_familyNameHasBeenSet = false;
 
     Aws::String m_givenName;
-    bool m_givenNameHasBeenSet;
+    bool m_givenNameHasBeenSet = false;
 
     Aws::String m_middleName;
-    bool m_middleNameHasBeenSet;
+    bool m_middleNameHasBeenSet = false;
 
     Aws::String m_honorificPrefix;
-    bool m_honorificPrefixHasBeenSet;
+    bool m_honorificPrefixHasBeenSet = false;
 
     Aws::String m_honorificSuffix;
-    bool m_honorificSuffixHasBeenSet;
+    bool m_honorificSuffixHasBeenSet = false;
   };
 
 } // namespace Model

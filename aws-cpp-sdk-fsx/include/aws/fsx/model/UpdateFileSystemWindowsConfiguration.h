@@ -323,22 +323,22 @@ namespace Model
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;
-    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
     WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
-    bool m_auditLogConfigurationHasBeenSet;
+    bool m_auditLogConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

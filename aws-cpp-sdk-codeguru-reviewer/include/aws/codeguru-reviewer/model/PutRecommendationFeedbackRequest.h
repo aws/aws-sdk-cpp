@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_codeReviewArn;
-    bool m_codeReviewArnHasBeenSet;
+    bool m_codeReviewArnHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::Vector<Reaction> m_reactions;
-    bool m_reactionsHasBeenSet;
+    bool m_reactionsHasBeenSet = false;
   };
 
 } // namespace Model

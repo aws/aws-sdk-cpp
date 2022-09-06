@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     Aws::Vector<Subscriber> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
   };
 
 } // namespace Model

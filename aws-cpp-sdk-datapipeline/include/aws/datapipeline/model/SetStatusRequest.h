@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_objectIds;
-    bool m_objectIdsHasBeenSet;
+    bool m_objectIdsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

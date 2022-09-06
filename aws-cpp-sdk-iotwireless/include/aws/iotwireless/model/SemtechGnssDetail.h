@@ -166,16 +166,16 @@ namespace Model
   private:
 
     PositionSolverProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     PositionSolverType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     PositionConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PositionConfigurationFec m_fec;
-    bool m_fecHasBeenSet;
+    bool m_fecHasBeenSet = false;
   };
 
 } // namespace Model

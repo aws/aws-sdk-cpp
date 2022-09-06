@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_testS3Uri;
-    bool m_testS3UriHasBeenSet;
+    bool m_testS3UriHasBeenSet = false;
   };
 
 } // namespace Model

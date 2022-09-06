@@ -220,16 +220,16 @@ namespace Model
   private:
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
   };
 
 } // namespace Model

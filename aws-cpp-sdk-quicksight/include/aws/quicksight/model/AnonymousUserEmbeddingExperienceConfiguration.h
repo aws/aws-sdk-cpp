@@ -115,10 +115,10 @@ namespace Model
   private:
 
     AnonymousUserDashboardEmbeddingConfiguration m_dashboard;
-    bool m_dashboardHasBeenSet;
+    bool m_dashboardHasBeenSet = false;
 
     AnonymousUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
-    bool m_dashboardVisualHasBeenSet;
+    bool m_dashboardVisualHasBeenSet = false;
   };
 
 } // namespace Model

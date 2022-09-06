@@ -204,13 +204,13 @@ namespace Model
   private:
 
     bool m_excludeBootVolume;
-    bool m_excludeBootVolumeHasBeenSet;
+    bool m_excludeBootVolumeHasBeenSet = false;
 
     bool m_noReboot;
-    bool m_noRebootHasBeenSet;
+    bool m_noRebootHasBeenSet = false;
 
     Aws::Vector<Tag> m_excludeDataVolumeTags;
-    bool m_excludeDataVolumeTagsHasBeenSet;
+    bool m_excludeDataVolumeTagsHasBeenSet = false;
   };
 
 } // namespace Model

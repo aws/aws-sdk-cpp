@@ -304,19 +304,19 @@ namespace Model
   private:
 
     ImageSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     bool m_isAnomalous;
-    bool m_isAnomalousHasBeenSet;
+    bool m_isAnomalousHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<Anomaly> m_anomalies;
-    bool m_anomaliesHasBeenSet;
+    bool m_anomaliesHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_anomalyMask;
-    bool m_anomalyMaskHasBeenSet;
+    bool m_anomalyMaskHasBeenSet = false;
   };
 
 } // namespace Model

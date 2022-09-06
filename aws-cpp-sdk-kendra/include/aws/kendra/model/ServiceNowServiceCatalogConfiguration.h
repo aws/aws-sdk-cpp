@@ -424,22 +424,22 @@ namespace Model
   private:
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeAttachmentFilePatterns;
-    bool m_includeAttachmentFilePatternsHasBeenSet;
+    bool m_includeAttachmentFilePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeAttachmentFilePatterns;
-    bool m_excludeAttachmentFilePatternsHasBeenSet;
+    bool m_excludeAttachmentFilePatternsHasBeenSet = false;
 
     Aws::String m_documentDataFieldName;
-    bool m_documentDataFieldNameHasBeenSet;
+    bool m_documentDataFieldNameHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

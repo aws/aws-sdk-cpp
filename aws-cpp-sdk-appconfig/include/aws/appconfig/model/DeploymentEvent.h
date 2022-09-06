@@ -261,19 +261,19 @@ namespace Model
   private:
 
     DeploymentEventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     TriggeredBy m_triggeredBy;
-    bool m_triggeredByHasBeenSet;
+    bool m_triggeredByHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ActionInvocation> m_actionInvocations;
-    bool m_actionInvocationsHasBeenSet;
+    bool m_actionInvocationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_occurredAt;
-    bool m_occurredAtHasBeenSet;
+    bool m_occurredAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -325,25 +325,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_datasetTitle;
-    bool m_datasetTitleHasBeenSet;
+    bool m_datasetTitleHasBeenSet = false;
 
     DatasetKind m_kind;
-    bool m_kindHasBeenSet;
+    bool m_kindHasBeenSet = false;
 
     Aws::String m_datasetDescription;
-    bool m_datasetDescriptionHasBeenSet;
+    bool m_datasetDescriptionHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     SchemaUnion m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

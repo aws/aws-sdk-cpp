@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_billingGroupName;
-    bool m_billingGroupNameHasBeenSet;
+    bool m_billingGroupNameHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
   };
 
 } // namespace Model

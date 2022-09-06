@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<Result> m_results;
-    bool m_resultsHasBeenSet;
+    bool m_resultsHasBeenSet = false;
   };
 
 } // namespace Model

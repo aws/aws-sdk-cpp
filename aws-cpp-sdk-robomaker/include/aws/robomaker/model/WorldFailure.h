@@ -183,13 +183,13 @@ namespace Model
   private:
 
     WorldGenerationJobErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_sampleFailureReason;
-    bool m_sampleFailureReasonHasBeenSet;
+    bool m_sampleFailureReasonHasBeenSet = false;
 
     int m_failureCount;
-    bool m_failureCountHasBeenSet;
+    bool m_failureCountHasBeenSet = false;
   };
 
 } // namespace Model

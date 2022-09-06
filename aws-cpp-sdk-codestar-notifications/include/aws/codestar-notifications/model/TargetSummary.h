@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_targetAddress;
-    bool m_targetAddressHasBeenSet;
+    bool m_targetAddressHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     TargetStatus m_targetStatus;
-    bool m_targetStatusHasBeenSet;
+    bool m_targetStatusHasBeenSet = false;
   };
 
 } // namespace Model

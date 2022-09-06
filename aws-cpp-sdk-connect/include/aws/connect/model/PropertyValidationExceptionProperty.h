@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_propertyPath;
-    bool m_propertyPathHasBeenSet;
+    bool m_propertyPathHasBeenSet = false;
 
     PropertyValidationExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -134,13 +134,13 @@ namespace Model
   private:
 
     LifeCycleLastCutoverFinalized m_finalized;
-    bool m_finalizedHasBeenSet;
+    bool m_finalizedHasBeenSet = false;
 
     LifeCycleLastCutoverInitiated m_initiated;
-    bool m_initiatedHasBeenSet;
+    bool m_initiatedHasBeenSet = false;
 
     LifeCycleLastCutoverReverted m_reverted;
-    bool m_revertedHasBeenSet;
+    bool m_revertedHasBeenSet = false;
   };
 
 } // namespace Model

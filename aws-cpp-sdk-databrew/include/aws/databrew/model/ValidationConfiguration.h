@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_rulesetArn;
-    bool m_rulesetArnHasBeenSet;
+    bool m_rulesetArnHasBeenSet = false;
 
     ValidationMode m_validationMode;
-    bool m_validationModeHasBeenSet;
+    bool m_validationModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_callbackToken;
-    bool m_callbackTokenHasBeenSet;
+    bool m_callbackTokenHasBeenSet = false;
 
     Aws::Vector<OutputParameter> m_outputParameters;
-    bool m_outputParametersHasBeenSet;
+    bool m_outputParametersHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

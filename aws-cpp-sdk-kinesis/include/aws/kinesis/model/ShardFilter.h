@@ -287,13 +287,13 @@ namespace Model
   private:
 
     ShardFilterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

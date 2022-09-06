@@ -2752,106 +2752,106 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupDescription;
-    bool m_replicationGroupDescriptionHasBeenSet;
+    bool m_replicationGroupDescriptionHasBeenSet = false;
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     Aws::String m_primaryClusterId;
-    bool m_primaryClusterIdHasBeenSet;
+    bool m_primaryClusterIdHasBeenSet = false;
 
     bool m_automaticFailoverEnabled;
-    bool m_automaticFailoverEnabledHasBeenSet;
+    bool m_automaticFailoverEnabledHasBeenSet = false;
 
     bool m_multiAZEnabled;
-    bool m_multiAZEnabledHasBeenSet;
+    bool m_multiAZEnabledHasBeenSet = false;
 
     int m_numCacheClusters;
-    bool m_numCacheClustersHasBeenSet;
+    bool m_numCacheClustersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_preferredCacheClusterAZs;
-    bool m_preferredCacheClusterAZsHasBeenSet;
+    bool m_preferredCacheClusterAZsHasBeenSet = false;
 
     int m_numNodeGroups;
-    bool m_numNodeGroupsHasBeenSet;
+    bool m_numNodeGroupsHasBeenSet = false;
 
     int m_replicasPerNodeGroup;
-    bool m_replicasPerNodeGroupHasBeenSet;
+    bool m_replicasPerNodeGroupHasBeenSet = false;
 
     Aws::Vector<NodeGroupConfiguration> m_nodeGroupConfiguration;
-    bool m_nodeGroupConfigurationHasBeenSet;
+    bool m_nodeGroupConfigurationHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::String m_cacheSubnetGroupName;
-    bool m_cacheSubnetGroupNameHasBeenSet;
+    bool m_cacheSubnetGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
-    bool m_cacheSecurityGroupNamesHasBeenSet;
+    bool m_cacheSecurityGroupNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_snapshotArns;
-    bool m_snapshotArnsHasBeenSet;
+    bool m_snapshotArnsHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_notificationTopicArn;
-    bool m_notificationTopicArnHasBeenSet;
+    bool m_notificationTopicArnHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     Aws::String m_authToken;
-    bool m_authTokenHasBeenSet;
+    bool m_authTokenHasBeenSet = false;
 
     bool m_transitEncryptionEnabled;
-    bool m_transitEncryptionEnabledHasBeenSet;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
 
     bool m_atRestEncryptionEnabled;
-    bool m_atRestEncryptionEnabledHasBeenSet;
+    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroupIds;
-    bool m_userGroupIdsHasBeenSet;
+    bool m_userGroupIdsHasBeenSet = false;
 
     Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
 
     bool m_dataTieringEnabled;
-    bool m_dataTieringEnabledHasBeenSet;
+    bool m_dataTieringEnabledHasBeenSet = false;
   };
 
 } // namespace Model

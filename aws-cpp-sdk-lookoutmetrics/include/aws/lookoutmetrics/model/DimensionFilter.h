@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dimensionValueList;
-    bool m_dimensionValueListHasBeenSet;
+    bool m_dimensionValueListHasBeenSet = false;
   };
 
 } // namespace Model

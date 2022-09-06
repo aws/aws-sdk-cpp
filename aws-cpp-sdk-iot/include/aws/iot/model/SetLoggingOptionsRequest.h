@@ -68,7 +68,7 @@ namespace Model
   private:
 
     LoggingOptionsPayload m_loggingOptionsPayload;
-    bool m_loggingOptionsPayloadHasBeenSet;
+    bool m_loggingOptionsPayloadHasBeenSet = false;
   };
 
 } // namespace Model

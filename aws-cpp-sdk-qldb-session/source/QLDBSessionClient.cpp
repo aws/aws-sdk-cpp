@@ -77,7 +77,7 @@ QLDBSessionClient::~QLDBSessionClient()
 
 void QLDBSessionClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("QLDB Session");
+  AWSClient::SetServiceClientName("QLDB Session");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

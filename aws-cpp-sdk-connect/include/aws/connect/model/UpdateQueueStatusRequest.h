@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     QueueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

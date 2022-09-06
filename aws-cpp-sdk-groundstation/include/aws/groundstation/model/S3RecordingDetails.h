@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     Aws::String m_keyTemplate;
-    bool m_keyTemplateHasBeenSet;
+    bool m_keyTemplateHasBeenSet = false;
   };
 
 } // namespace Model

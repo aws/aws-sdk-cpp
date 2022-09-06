@@ -72,7 +72,7 @@ namespace Model
   private:
 
     Criticality m_autotrack;
-    bool m_autotrackHasBeenSet;
+    bool m_autotrackHasBeenSet = false;
   };
 
 } // namespace Model

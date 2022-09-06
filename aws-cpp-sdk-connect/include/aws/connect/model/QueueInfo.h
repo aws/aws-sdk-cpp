@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_enqueueTimestamp;
-    bool m_enqueueTimestampHasBeenSet;
+    bool m_enqueueTimestampHasBeenSet = false;
   };
 
 } // namespace Model

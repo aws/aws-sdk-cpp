@@ -351,19 +351,19 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_originationNumber;
-    bool m_originationNumberHasBeenSet;
+    bool m_originationNumberHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
 
     Aws::String m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
   };
 
 } // namespace Model
