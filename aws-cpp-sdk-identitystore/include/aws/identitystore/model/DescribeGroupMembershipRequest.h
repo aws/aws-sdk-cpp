@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline DescribeGroupMembershipRequest& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline DescribeGroupMembershipRequest& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for a <code>GroupMembership</code> in the identity store.</p>
+     * <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
      */
     inline DescribeGroupMembershipRequest& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
 

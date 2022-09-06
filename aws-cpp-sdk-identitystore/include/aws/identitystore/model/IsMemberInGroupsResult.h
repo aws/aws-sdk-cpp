@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>An object containing results of batch <code>IsMemberInGroups</code> call.</p>
+     * <p>A list containing the results of membership existence checks.</p>
      */
     inline const Aws::Vector<GroupMembershipExistenceResult>& GetResults() const{ return m_results; }
 
     /**
-     * <p>An object containing results of batch <code>IsMemberInGroups</code> call.</p>
+     * <p>A list containing the results of membership existence checks.</p>
      */
     inline void SetResults(const Aws::Vector<GroupMembershipExistenceResult>& value) { m_results = value; }
 
     /**
-     * <p>An object containing results of batch <code>IsMemberInGroups</code> call.</p>
+     * <p>A list containing the results of membership existence checks.</p>
      */
     inline void SetResults(Aws::Vector<GroupMembershipExistenceResult>&& value) { m_results = std::move(value); }
 
     /**
-     * <p>An object containing results of batch <code>IsMemberInGroups</code> call.</p>
+     * <p>A list containing the results of membership existence checks.</p>
      */
     inline IsMemberInGroupsResult& WithResults(const Aws::Vector<GroupMembershipExistenceResult>& value) { SetResults(value); return *this;}
 
     /**
-     * <p>An object containing results of batch <code>IsMemberInGroups</code> call.</p>
+     * <p>A list containing the results of membership existence checks.</p>
      */
     inline IsMemberInGroupsResult& WithResults(Aws::Vector<GroupMembershipExistenceResult>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
-     * <p>An object containing results of batch <code>IsMemberInGroups</code> call.</p>
+     * <p>A list containing the results of membership existence checks.</p>
      */
     inline IsMemberInGroupsResult& AddResults(const GroupMembershipExistenceResult& value) { m_results.push_back(value); return *this; }
 
     /**
-     * <p>An object containing results of batch <code>IsMemberInGroups</code> call.</p>
+     * <p>A list containing the results of membership existence checks.</p>
      */
     inline IsMemberInGroupsResult& AddResults(GroupMembershipExistenceResult&& value) { m_results.push_back(std::move(value)); return *this; }
 

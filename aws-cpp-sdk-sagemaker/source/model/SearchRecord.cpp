@@ -30,7 +30,8 @@ SearchRecord::SearchRecord() :
     m_pipelineExecutionHasBeenSet(false),
     m_featureGroupHasBeenSet(false),
     m_projectHasBeenSet(false),
-    m_featureMetadataHasBeenSet(false)
+    m_featureMetadataHasBeenSet(false),
+    m_hyperParameterTuningJobHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ SearchRecord::SearchRecord(JsonView jsonValue) :
     m_pipelineExecutionHasBeenSet(false),
     m_featureGroupHasBeenSet(false),
     m_projectHasBeenSet(false),
-    m_featureMetadataHasBeenSet(false)
+    m_featureMetadataHasBeenSet(false),
+    m_hyperParameterTuningJobHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +139,13 @@ SearchRecord& SearchRecord::operator =(JsonView jsonValue)
     m_featureMetadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HyperParameterTuningJob"))
+  {
+    m_hyperParameterTuningJob = jsonValue.GetObject("HyperParameterTuningJob");
+
+    m_hyperParameterTuningJobHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue SearchRecord::Jsonize() const
   if(m_featureMetadataHasBeenSet)
   {
    payload.WithObject("FeatureMetadata", m_featureMetadata.Jsonize());
+
+  }
+
+  if(m_hyperParameterTuningJobHasBeenSet)
+  {
+   payload.WithObject("HyperParameterTuningJob", m_hyperParameterTuningJob.Jsonize());
 
   }
 

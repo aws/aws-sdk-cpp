@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The name of the user.</p><p><h3>See Also:</h3>   <a
+   * <p>The full name of the user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/Name">AWS
    * API Reference</a></p>
    */
