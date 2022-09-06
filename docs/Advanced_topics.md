@@ -1,6 +1,7 @@
 # Advance Topics and tips
 
 __This section includes the following topics:__
+* [Generating Code for Service Clients from Models](#Code-Generation)
 * [Uninstalling (auto build only)](#Uninstalling)
 * [Overriding Your HTTP Client](#Overriding-your-Http-Client)
 * [Error Handling](#Error-Handling)
@@ -8,7 +9,12 @@ __This section includes the following topics:__
 * [Controlling IOStreams used by the HttpClient and the AWSClient](#Controlling-IOStreams-used-by-the-HttpClient-and-the-AWSClient)
 * [Known Limitations](#Known-Limitations)
 
-
+### Code Generation
+Most service clients in the SDK are code generating from model files defining the service API. 
+Model files can be found in `tools/code-generation/api-descriptions`.
+The generator used for processing the models is based in Apache Velocity and requires to install extra dependencies. 
+To set up the generator environment and run it to regenerate the service clients code, the `tools/scripts/run_code_generation.py` script can be used. 
+The script requires Python 3.8 and usage help can be obtained by calling the script with `-h` argument.
 
 ### Uninstalling:
 To uninstall these libraries:
