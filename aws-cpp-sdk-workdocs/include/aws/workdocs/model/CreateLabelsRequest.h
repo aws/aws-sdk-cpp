@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
   };
 
 } // namespace Model

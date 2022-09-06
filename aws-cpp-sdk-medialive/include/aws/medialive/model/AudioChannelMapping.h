@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::Vector<InputChannelLevel> m_inputChannelLevels;
-    bool m_inputChannelLevelsHasBeenSet;
+    bool m_inputChannelLevelsHasBeenSet = false;
 
     int m_outputChannel;
-    bool m_outputChannelHasBeenSet;
+    bool m_outputChannelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_featureName;
-    bool m_featureNameHasBeenSet;
+    bool m_featureNameHasBeenSet = false;
   };
 
 } // namespace Model

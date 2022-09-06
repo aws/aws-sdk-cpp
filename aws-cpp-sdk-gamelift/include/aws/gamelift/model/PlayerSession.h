@@ -707,40 +707,40 @@ namespace Model
   private:
 
     Aws::String m_playerSessionId;
-    bool m_playerSessionIdHasBeenSet;
+    bool m_playerSessionIdHasBeenSet = false;
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminationTime;
-    bool m_terminationTimeHasBeenSet;
+    bool m_terminationTimeHasBeenSet = false;
 
     PlayerSessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_playerData;
-    bool m_playerDataHasBeenSet;
+    bool m_playerDataHasBeenSet = false;
   };
 
 } // namespace Model

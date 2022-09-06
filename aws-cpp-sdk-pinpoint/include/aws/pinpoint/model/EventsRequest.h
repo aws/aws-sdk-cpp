@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, EventsBatch> m_batchItem;
-    bool m_batchItemHasBeenSet;
+    bool m_batchItemHasBeenSet = false;
   };
 
 } // namespace Model

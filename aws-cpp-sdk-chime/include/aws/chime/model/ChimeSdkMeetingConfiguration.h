@@ -104,10 +104,10 @@ namespace Model
   private:
 
     SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet;
+    bool m_sourceConfigurationHasBeenSet = false;
 
     ArtifactsConfiguration m_artifactsConfiguration;
-    bool m_artifactsConfigurationHasBeenSet;
+    bool m_artifactsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

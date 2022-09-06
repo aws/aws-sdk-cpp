@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_opsMetadataArn;
-    bool m_opsMetadataArnHasBeenSet;
+    bool m_opsMetadataArnHasBeenSet = false;
   };
 
 } // namespace Model

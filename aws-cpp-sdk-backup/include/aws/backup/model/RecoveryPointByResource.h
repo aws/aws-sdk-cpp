@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     RecoveryPointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     long long m_backupSizeBytes;
-    bool m_backupSizeBytesHasBeenSet;
+    bool m_backupSizeBytesHasBeenSet = false;
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
   };
 
 } // namespace Model

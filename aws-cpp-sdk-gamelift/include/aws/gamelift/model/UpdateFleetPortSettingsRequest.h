@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_inboundPermissionAuthorizations;
-    bool m_inboundPermissionAuthorizationsHasBeenSet;
+    bool m_inboundPermissionAuthorizationsHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_inboundPermissionRevocations;
-    bool m_inboundPermissionRevocationsHasBeenSet;
+    bool m_inboundPermissionRevocationsHasBeenSet = false;
   };
 
 } // namespace Model

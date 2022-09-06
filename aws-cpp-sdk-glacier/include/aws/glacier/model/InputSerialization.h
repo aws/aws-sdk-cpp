@@ -70,7 +70,7 @@ namespace Model
   private:
 
     CSVInput m_csv;
-    bool m_csvHasBeenSet;
+    bool m_csvHasBeenSet = false;
   };
 
 } // namespace Model

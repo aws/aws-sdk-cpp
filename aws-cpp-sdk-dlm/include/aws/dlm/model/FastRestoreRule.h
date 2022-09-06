@@ -167,16 +167,16 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     RetentionIntervalUnitValues m_intervalUnit;
-    bool m_intervalUnitHasBeenSet;
+    bool m_intervalUnitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

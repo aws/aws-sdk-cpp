@@ -154,13 +154,13 @@ namespace Model
   private:
 
     NotifyWorkersFailureCode m_notifyWorkersFailureCode;
-    bool m_notifyWorkersFailureCodeHasBeenSet;
+    bool m_notifyWorkersFailureCodeHasBeenSet = false;
 
     Aws::String m_notifyWorkersFailureMessage;
-    bool m_notifyWorkersFailureMessageHasBeenSet;
+    bool m_notifyWorkersFailureMessageHasBeenSet = false;
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
   };
 
 } // namespace Model

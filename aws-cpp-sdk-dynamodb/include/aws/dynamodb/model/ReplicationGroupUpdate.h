@@ -144,13 +144,13 @@ namespace Model
   private:
 
     CreateReplicationGroupMemberAction m_create;
-    bool m_createHasBeenSet;
+    bool m_createHasBeenSet = false;
 
     UpdateReplicationGroupMemberAction m_update;
-    bool m_updateHasBeenSet;
+    bool m_updateHasBeenSet = false;
 
     DeleteReplicationGroupMemberAction m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
   };
 
 } // namespace Model

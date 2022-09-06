@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ValueType m_valueType;
-    bool m_valueTypeHasBeenSet;
+    bool m_valueTypeHasBeenSet = false;
   };
 
 } // namespace Model

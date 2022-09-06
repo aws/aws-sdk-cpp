@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_recommenderArn;
-    bool m_recommenderArnHasBeenSet;
+    bool m_recommenderArnHasBeenSet = false;
 
     RecommenderConfig m_recommenderConfig;
-    bool m_recommenderConfigHasBeenSet;
+    bool m_recommenderConfigHasBeenSet = false;
   };
 
 } // namespace Model

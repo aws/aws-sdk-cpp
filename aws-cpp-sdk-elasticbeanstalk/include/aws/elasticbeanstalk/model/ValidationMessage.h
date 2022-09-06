@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ValidationSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_optionName;
-    bool m_optionNameHasBeenSet;
+    bool m_optionNameHasBeenSet = false;
   };
 
 } // namespace Model

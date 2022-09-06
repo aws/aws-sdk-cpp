@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_portalId;
-    bool m_portalIdHasBeenSet;
+    bool m_portalIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

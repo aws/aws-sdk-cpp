@@ -319,19 +319,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::Vector<S3KeyOutput> m_s3Keys;
-    bool m_s3KeysHasBeenSet;
+    bool m_s3KeysHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

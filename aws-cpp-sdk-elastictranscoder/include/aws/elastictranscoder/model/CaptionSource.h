@@ -336,19 +336,19 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_timeOffset;
-    bool m_timeOffsetHasBeenSet;
+    bool m_timeOffsetHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

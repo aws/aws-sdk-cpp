@@ -302,19 +302,19 @@ namespace Model
   private:
 
     Aws::String m_typeArn;
-    bool m_typeArnHasBeenSet;
+    bool m_typeArnHasBeenSet = false;
 
     Aws::String m_typeConfigurationAlias;
-    bool m_typeConfigurationAliasHasBeenSet;
+    bool m_typeConfigurationAliasHasBeenSet = false;
 
     Aws::String m_typeConfigurationArn;
-    bool m_typeConfigurationArnHasBeenSet;
+    bool m_typeConfigurationArnHasBeenSet = false;
 
     ThirdPartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
   };
 
 } // namespace Model

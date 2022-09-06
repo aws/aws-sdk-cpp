@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

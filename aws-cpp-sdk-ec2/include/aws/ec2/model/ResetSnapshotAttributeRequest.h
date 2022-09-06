@@ -150,13 +150,13 @@ namespace Model
   private:
 
     SnapshotAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

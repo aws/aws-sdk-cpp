@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<DistributeDataset> m_datasets;
-    bool m_datasetsHasBeenSet;
+    bool m_datasetsHasBeenSet = false;
   };
 
 } // namespace Model

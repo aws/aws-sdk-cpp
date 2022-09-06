@@ -302,16 +302,16 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_codeSha256;
-    bool m_codeSha256HasBeenSet;
+    bool m_codeSha256HasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

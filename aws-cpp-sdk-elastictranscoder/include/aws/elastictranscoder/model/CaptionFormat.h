@@ -344,13 +344,13 @@ namespace Model
   private:
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

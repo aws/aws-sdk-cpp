@@ -240,28 +240,28 @@ namespace Model
   private:
 
     double m_p999;
-    bool m_p999HasBeenSet;
+    bool m_p999HasBeenSet = false;
 
     double m_p99;
-    bool m_p99HasBeenSet;
+    bool m_p99HasBeenSet = false;
 
     double m_p95;
-    bool m_p95HasBeenSet;
+    bool m_p95HasBeenSet = false;
 
     double m_p90;
-    bool m_p90HasBeenSet;
+    bool m_p90HasBeenSet = false;
 
     double m_p85;
-    bool m_p85HasBeenSet;
+    bool m_p85HasBeenSet = false;
 
     double m_p75;
-    bool m_p75HasBeenSet;
+    bool m_p75HasBeenSet = false;
 
     double m_p50;
-    bool m_p50HasBeenSet;
+    bool m_p50HasBeenSet = false;
 
     double m_p10;
-    bool m_p10HasBeenSet;
+    bool m_p10HasBeenSet = false;
   };
 
 } // namespace Model

@@ -168,16 +168,16 @@ namespace Model
   private:
 
     int m_errorCategory;
-    bool m_errorCategoryHasBeenSet;
+    bool m_errorCategoryHasBeenSet = false;
 
     int m_errorType;
-    bool m_errorTypeHasBeenSet;
+    bool m_errorTypeHasBeenSet = false;
 
     bool m_retryable;
-    bool m_retryableHasBeenSet;
+    bool m_retryableHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedProperties;
-    bool m_selectedPropertiesHasBeenSet;
+    bool m_selectedPropertiesHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -183,13 +183,13 @@ namespace Model
   private:
 
     JobExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

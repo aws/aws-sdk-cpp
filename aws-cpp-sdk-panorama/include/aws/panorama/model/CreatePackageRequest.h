@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

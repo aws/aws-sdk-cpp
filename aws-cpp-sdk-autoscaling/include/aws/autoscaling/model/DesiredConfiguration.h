@@ -83,10 +83,10 @@ namespace Model
   private:
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     MixedInstancesPolicy m_mixedInstancesPolicy;
-    bool m_mixedInstancesPolicyHasBeenSet;
+    bool m_mixedInstancesPolicyHasBeenSet = false;
   };
 
 } // namespace Model

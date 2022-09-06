@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_allowedGroupsColumnName;
-    bool m_allowedGroupsColumnNameHasBeenSet;
+    bool m_allowedGroupsColumnNameHasBeenSet = false;
   };
 
 } // namespace Model

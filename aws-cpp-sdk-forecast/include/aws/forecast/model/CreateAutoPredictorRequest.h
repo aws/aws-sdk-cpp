@@ -875,43 +875,43 @@ namespace Model
   private:
 
     Aws::String m_predictorName;
-    bool m_predictorNameHasBeenSet;
+    bool m_predictorNameHasBeenSet = false;
 
     int m_forecastHorizon;
-    bool m_forecastHorizonHasBeenSet;
+    bool m_forecastHorizonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
-    bool m_forecastTypesHasBeenSet;
+    bool m_forecastTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastDimensions;
-    bool m_forecastDimensionsHasBeenSet;
+    bool m_forecastDimensionsHasBeenSet = false;
 
     Aws::String m_forecastFrequency;
-    bool m_forecastFrequencyHasBeenSet;
+    bool m_forecastFrequencyHasBeenSet = false;
 
     DataConfig m_dataConfig;
-    bool m_dataConfigHasBeenSet;
+    bool m_dataConfigHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
 
     Aws::String m_referencePredictorArn;
-    bool m_referencePredictorArnHasBeenSet;
+    bool m_referencePredictorArnHasBeenSet = false;
 
     OptimizationMetric m_optimizationMetric;
-    bool m_optimizationMetricHasBeenSet;
+    bool m_optimizationMetricHasBeenSet = false;
 
     bool m_explainPredictor;
-    bool m_explainPredictorHasBeenSet;
+    bool m_explainPredictorHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     MonitorConfig m_monitorConfig;
-    bool m_monitorConfigHasBeenSet;
+    bool m_monitorConfigHasBeenSet = false;
 
     TimeAlignmentBoundary m_timeAlignmentBoundary;
-    bool m_timeAlignmentBoundaryHasBeenSet;
+    bool m_timeAlignmentBoundaryHasBeenSet = false;
   };
 
 } // namespace Model

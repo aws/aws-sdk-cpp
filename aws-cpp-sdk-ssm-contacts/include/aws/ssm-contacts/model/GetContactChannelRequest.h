@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_contactChannelId;
-    bool m_contactChannelIdHasBeenSet;
+    bool m_contactChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

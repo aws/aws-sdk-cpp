@@ -119,10 +119,10 @@ namespace Model
   private:
 
     int m_noncurrentDays;
-    bool m_noncurrentDaysHasBeenSet;
+    bool m_noncurrentDaysHasBeenSet = false;
 
     int m_newerNoncurrentVersions;
-    bool m_newerNoncurrentVersionsHasBeenSet;
+    bool m_newerNoncurrentVersionsHasBeenSet = false;
   };
 
 } // namespace Model

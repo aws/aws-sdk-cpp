@@ -760,34 +760,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     DefaultAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
 
     Aws::String m_lockToken;
-    bool m_lockTokenHasBeenSet;
+    bool m_lockTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
-    bool m_customResponseBodiesHasBeenSet;
+    bool m_customResponseBodiesHasBeenSet = false;
 
     CaptchaConfig m_captchaConfig;
-    bool m_captchaConfigHasBeenSet;
+    bool m_captchaConfigHasBeenSet = false;
   };
 
 } // namespace Model

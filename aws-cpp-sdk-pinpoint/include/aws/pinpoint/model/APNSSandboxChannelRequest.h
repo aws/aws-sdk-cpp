@@ -412,28 +412,28 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_defaultAuthenticationMethod;
-    bool m_defaultAuthenticationMethodHasBeenSet;
+    bool m_defaultAuthenticationMethodHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
 
     Aws::String m_teamId;
-    bool m_teamIdHasBeenSet;
+    bool m_teamIdHasBeenSet = false;
 
     Aws::String m_tokenKey;
-    bool m_tokenKeyHasBeenSet;
+    bool m_tokenKeyHasBeenSet = false;
 
     Aws::String m_tokenKeyId;
-    bool m_tokenKeyIdHasBeenSet;
+    bool m_tokenKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

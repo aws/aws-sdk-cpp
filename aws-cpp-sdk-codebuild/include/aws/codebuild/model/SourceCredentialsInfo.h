@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ServerType m_serverType;
-    bool m_serverTypeHasBeenSet;
+    bool m_serverTypeHasBeenSet = false;
 
     AuthType m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

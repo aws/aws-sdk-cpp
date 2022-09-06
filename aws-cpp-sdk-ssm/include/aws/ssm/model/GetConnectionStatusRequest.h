@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

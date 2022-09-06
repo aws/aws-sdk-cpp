@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_memberAccountId;
-    bool m_memberAccountIdHasBeenSet;
+    bool m_memberAccountIdHasBeenSet = false;
 
     Aws::Vector<S3ResourceClassification> m_s3Resources;
-    bool m_s3ResourcesHasBeenSet;
+    bool m_s3ResourcesHasBeenSet = false;
   };
 
 } // namespace Model

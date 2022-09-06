@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     long long m_tableCount;
-    bool m_tableCountHasBeenSet;
+    bool m_tableCountHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     long long m_found;
-    bool m_foundHasBeenSet;
+    bool m_foundHasBeenSet = false;
 
     Aws::Vector<SuggestionMatch> m_suggestions;
-    bool m_suggestionsHasBeenSet;
+    bool m_suggestionsHasBeenSet = false;
   };
 
 } // namespace Model

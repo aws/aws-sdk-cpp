@@ -271,22 +271,22 @@ namespace Model
   private:
 
     int m_acceleratorPort;
-    bool m_acceleratorPortHasBeenSet;
+    bool m_acceleratorPortHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     SocketAddress m_destinationSocketAddress;
-    bool m_destinationSocketAddressHasBeenSet;
+    bool m_destinationSocketAddressHasBeenSet = false;
 
     Aws::Vector<CustomRoutingProtocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     CustomRoutingDestinationTrafficState m_destinationTrafficState;
-    bool m_destinationTrafficStateHasBeenSet;
+    bool m_destinationTrafficStateHasBeenSet = false;
   };
 
 } // namespace Model

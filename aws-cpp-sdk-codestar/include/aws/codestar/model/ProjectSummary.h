@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     StreamNameCondition m_streamNameCondition;
-    bool m_streamNameConditionHasBeenSet;
+    bool m_streamNameConditionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -119,10 +119,10 @@ namespace Model
   private:
 
     DefaultGatewayRouteRewrite m_defaultPrefix;
-    bool m_defaultPrefixHasBeenSet;
+    bool m_defaultPrefixHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

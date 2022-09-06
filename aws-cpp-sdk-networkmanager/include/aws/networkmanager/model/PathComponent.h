@@ -133,13 +133,13 @@ namespace Model
   private:
 
     int m_sequence;
-    bool m_sequenceHasBeenSet;
+    bool m_sequenceHasBeenSet = false;
 
     NetworkResourceSummary m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
   };
 
 } // namespace Model

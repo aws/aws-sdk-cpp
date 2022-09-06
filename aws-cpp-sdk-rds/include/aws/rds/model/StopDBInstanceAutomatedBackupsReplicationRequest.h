@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::String m_sourceDBInstanceArn;
-    bool m_sourceDBInstanceArnHasBeenSet;
+    bool m_sourceDBInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model

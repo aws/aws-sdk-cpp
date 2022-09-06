@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_itemName;
-    bool m_itemNameHasBeenSet;
+    bool m_itemNameHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     UpdateCondition m_expected;
-    bool m_expectedHasBeenSet;
+    bool m_expectedHasBeenSet = false;
   };
 
 } // namespace Model

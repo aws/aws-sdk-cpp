@@ -390,28 +390,28 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     OutboundCallerConfig m_outboundCallerConfig;
-    bool m_outboundCallerConfigHasBeenSet;
+    bool m_outboundCallerConfigHasBeenSet = false;
 
     Aws::String m_hoursOfOperationId;
-    bool m_hoursOfOperationIdHasBeenSet;
+    bool m_hoursOfOperationIdHasBeenSet = false;
 
     int m_maxContacts;
-    bool m_maxContactsHasBeenSet;
+    bool m_maxContactsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_quickConnectIds;
-    bool m_quickConnectIdsHasBeenSet;
+    bool m_quickConnectIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

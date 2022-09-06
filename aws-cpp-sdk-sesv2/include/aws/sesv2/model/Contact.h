@@ -222,19 +222,19 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::Vector<TopicPreference> m_topicPreferences;
-    bool m_topicPreferencesHasBeenSet;
+    bool m_topicPreferencesHasBeenSet = false;
 
     Aws::Vector<TopicPreference> m_topicDefaultPreferences;
-    bool m_topicDefaultPreferencesHasBeenSet;
+    bool m_topicDefaultPreferencesHasBeenSet = false;
 
     bool m_unsubscribeAll;
-    bool m_unsubscribeAllHasBeenSet;
+    bool m_unsubscribeAllHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

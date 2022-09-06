@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

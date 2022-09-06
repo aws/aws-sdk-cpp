@@ -1468,49 +1468,49 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_templateURL;
-    bool m_templateURLHasBeenSet;
+    bool m_templateURLHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_administrationRoleARN;
-    bool m_administrationRoleARNHasBeenSet;
+    bool m_administrationRoleARNHasBeenSet = false;
 
     Aws::String m_executionRoleName;
-    bool m_executionRoleNameHasBeenSet;
+    bool m_executionRoleNameHasBeenSet = false;
 
     PermissionModels m_permissionModel;
-    bool m_permissionModelHasBeenSet;
+    bool m_permissionModelHasBeenSet = false;
 
     AutoDeployment m_autoDeployment;
-    bool m_autoDeploymentHasBeenSet;
+    bool m_autoDeploymentHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     ManagedExecution m_managedExecution;
-    bool m_managedExecutionHasBeenSet;
+    bool m_managedExecutionHasBeenSet = false;
   };
 
 } // namespace Model

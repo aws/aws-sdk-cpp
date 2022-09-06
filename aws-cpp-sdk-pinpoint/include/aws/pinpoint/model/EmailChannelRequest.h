@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::String m_configurationSet;
-    bool m_configurationSetHasBeenSet;
+    bool m_configurationSetHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

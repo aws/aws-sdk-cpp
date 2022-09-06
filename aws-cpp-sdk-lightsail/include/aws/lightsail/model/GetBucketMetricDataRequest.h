@@ -496,25 +496,25 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     BucketMetricName m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::Vector<MetricStatistic> m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     MetricUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ When this field is defined, ConstantBitrate must
   private:
 
     int m_constantBitrate;
-    bool m_constantBitrateHasBeenSet;
+    bool m_constantBitrateHasBeenSet = false;
 
     MultiplexStatmuxVideoSettings m_statmuxSettings;
-    bool m_statmuxSettingsHasBeenSet;
+    bool m_statmuxSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -456,16 +456,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_searchString;
-    bool m_searchStringHasBeenSet;
+    bool m_searchStringHasBeenSet = false;
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
 
     PositionalConstraint m_positionalConstraint;
-    bool m_positionalConstraintHasBeenSet;
+    bool m_positionalConstraintHasBeenSet = false;
   };
 
 } // namespace Model

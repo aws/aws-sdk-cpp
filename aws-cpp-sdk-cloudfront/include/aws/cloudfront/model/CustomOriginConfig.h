@@ -304,22 +304,22 @@ namespace Model
   private:
 
     int m_hTTPPort;
-    bool m_hTTPPortHasBeenSet;
+    bool m_hTTPPortHasBeenSet = false;
 
     int m_hTTPSPort;
-    bool m_hTTPSPortHasBeenSet;
+    bool m_hTTPSPortHasBeenSet = false;
 
     OriginProtocolPolicy m_originProtocolPolicy;
-    bool m_originProtocolPolicyHasBeenSet;
+    bool m_originProtocolPolicyHasBeenSet = false;
 
     OriginSslProtocols m_originSslProtocols;
-    bool m_originSslProtocolsHasBeenSet;
+    bool m_originSslProtocolsHasBeenSet = false;
 
     int m_originReadTimeout;
-    bool m_originReadTimeoutHasBeenSet;
+    bool m_originReadTimeoutHasBeenSet = false;
 
     int m_originKeepaliveTimeout;
-    bool m_originKeepaliveTimeoutHasBeenSet;
+    bool m_originKeepaliveTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheNodeIdsToReboot;
-    bool m_cacheNodeIdsToRebootHasBeenSet;
+    bool m_cacheNodeIdsToRebootHasBeenSet = false;
   };
 
 } // namespace Model

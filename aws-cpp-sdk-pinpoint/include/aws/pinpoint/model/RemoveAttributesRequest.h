@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
 
     UpdateAttributesRequest m_updateAttributesRequest;
-    bool m_updateAttributesRequestHasBeenSet;
+    bool m_updateAttributesRequestHasBeenSet = false;
   };
 
 } // namespace Model

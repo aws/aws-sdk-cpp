@@ -295,25 +295,25 @@ namespace Model
   private:
 
     Aws::String m_virtualClusterId;
-    bool m_virtualClusterIdHasBeenSet;
+    bool m_virtualClusterIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     Aws::Vector<EndpointState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

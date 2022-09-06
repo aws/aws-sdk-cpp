@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::String m_activityId;
-    bool m_activityIdHasBeenSet;
+    bool m_activityIdHasBeenSet = false;
   };
 
 } // namespace Model

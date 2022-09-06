@@ -707,34 +707,34 @@ namespace Model
   private:
 
     AlphaBehavior m_alphaBehavior;
-    bool m_alphaBehaviorHasBeenSet;
+    bool m_alphaBehaviorHasBeenSet = false;
 
     ColorSpace m_colorSpace;
-    bool m_colorSpaceHasBeenSet;
+    bool m_colorSpaceHasBeenSet = false;
 
     ColorSpaceUsage m_colorSpaceUsage;
-    bool m_colorSpaceUsageHasBeenSet;
+    bool m_colorSpaceUsageHasBeenSet = false;
 
     EmbeddedTimecodeOverride m_embeddedTimecodeOverride;
-    bool m_embeddedTimecodeOverrideHasBeenSet;
+    bool m_embeddedTimecodeOverrideHasBeenSet = false;
 
     Hdr10Metadata m_hdr10Metadata;
-    bool m_hdr10MetadataHasBeenSet;
+    bool m_hdr10MetadataHasBeenSet = false;
 
     PadVideo m_padVideo;
-    bool m_padVideoHasBeenSet;
+    bool m_padVideoHasBeenSet = false;
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     InputRotate m_rotate;
-    bool m_rotateHasBeenSet;
+    bool m_rotateHasBeenSet = false;
 
     InputSampleRange m_sampleRange;
-    bool m_sampleRangeHasBeenSet;
+    bool m_sampleRangeHasBeenSet = false;
   };
 
 } // namespace Model

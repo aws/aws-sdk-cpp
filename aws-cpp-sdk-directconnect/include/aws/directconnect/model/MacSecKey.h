@@ -276,16 +276,16 @@ namespace Model
   private:
 
     Aws::String m_secretARN;
-    bool m_secretARNHasBeenSet;
+    bool m_secretARNHasBeenSet = false;
 
     Aws::String m_ckn;
-    bool m_cknHasBeenSet;
+    bool m_cknHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_startOn;
-    bool m_startOnHasBeenSet;
+    bool m_startOnHasBeenSet = false;
   };
 
 } // namespace Model

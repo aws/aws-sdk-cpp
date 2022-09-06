@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

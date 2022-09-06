@@ -129,13 +129,13 @@ namespace Model
   private:
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     ReportFormat m_reportFormat;
-    bool m_reportFormatHasBeenSet;
+    bool m_reportFormatHasBeenSet = false;
 
     Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

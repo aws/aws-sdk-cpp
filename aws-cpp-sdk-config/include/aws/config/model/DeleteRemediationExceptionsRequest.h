@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::Vector<RemediationExceptionResourceKey> m_resourceKeys;
-    bool m_resourceKeysHasBeenSet;
+    bool m_resourceKeysHasBeenSet = false;
   };
 
 } // namespace Model

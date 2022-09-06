@@ -1190,28 +1190,28 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     ChallengeNameType m_challengeName;
-    bool m_challengeNameHasBeenSet;
+    bool m_challengeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_challengeResponses;
-    bool m_challengeResponsesHasBeenSet;
+    bool m_challengeResponsesHasBeenSet = false;
 
     Aws::String m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
 
     AnalyticsMetadataType m_analyticsMetadata;
-    bool m_analyticsMetadataHasBeenSet;
+    bool m_analyticsMetadataHasBeenSet = false;
 
     ContextDataType m_contextData;
-    bool m_contextDataHasBeenSet;
+    bool m_contextDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
   };
 
 } // namespace Model

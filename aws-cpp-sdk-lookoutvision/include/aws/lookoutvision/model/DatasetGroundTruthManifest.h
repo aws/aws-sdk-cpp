@@ -71,7 +71,7 @@ namespace Model
   private:
 
     InputS3Object m_s3Object;
-    bool m_s3ObjectHasBeenSet;
+    bool m_s3ObjectHasBeenSet = false;
   };
 
 } // namespace Model

@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
   };
 
 } // namespace Model

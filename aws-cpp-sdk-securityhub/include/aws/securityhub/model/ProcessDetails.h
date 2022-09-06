@@ -310,22 +310,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
 
     int m_parentPid;
-    bool m_parentPidHasBeenSet;
+    bool m_parentPidHasBeenSet = false;
 
     Aws::String m_launchedAt;
-    bool m_launchedAtHasBeenSet;
+    bool m_launchedAtHasBeenSet = false;
 
     Aws::String m_terminatedAt;
-    bool m_terminatedAtHasBeenSet;
+    bool m_terminatedAtHasBeenSet = false;
   };
 
 } // namespace Model

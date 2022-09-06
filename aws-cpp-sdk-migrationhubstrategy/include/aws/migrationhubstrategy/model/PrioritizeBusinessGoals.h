@@ -70,7 +70,7 @@ namespace Model
   private:
 
     BusinessGoals m_businessGoals;
-    bool m_businessGoalsHasBeenSet;
+    bool m_businessGoalsHasBeenSet = false;
   };
 
 } // namespace Model

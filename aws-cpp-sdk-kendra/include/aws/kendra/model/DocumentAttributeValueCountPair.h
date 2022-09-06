@@ -204,13 +204,13 @@ namespace Model
   private:
 
     DocumentAttributeValue m_documentAttributeValue;
-    bool m_documentAttributeValueHasBeenSet;
+    bool m_documentAttributeValueHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::Vector<FacetResult> m_facetResults;
-    bool m_facetResultsHasBeenSet;
+    bool m_facetResultsHasBeenSet = false;
   };
 
 } // namespace Model

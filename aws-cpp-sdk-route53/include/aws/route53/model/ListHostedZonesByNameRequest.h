@@ -320,13 +320,13 @@ namespace Model
   private:
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

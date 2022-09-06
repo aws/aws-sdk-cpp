@@ -398,28 +398,28 @@ namespace Model
   private:
 
     Aws::Vector<AwsIamAttachedManagedPolicy> m_attachedManagedPolicies;
-    bool m_attachedManagedPoliciesHasBeenSet;
+    bool m_attachedManagedPoliciesHasBeenSet = false;
 
     Aws::String m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupList;
-    bool m_groupListHasBeenSet;
+    bool m_groupListHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     AwsIamPermissionsBoundary m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::Vector<AwsIamUserPolicy> m_userPolicyList;
-    bool m_userPolicyListHasBeenSet;
+    bool m_userPolicyListHasBeenSet = false;
   };
 
 } // namespace Model

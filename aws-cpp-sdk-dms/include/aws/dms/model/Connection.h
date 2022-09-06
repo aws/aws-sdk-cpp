@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
-    bool m_lastFailureMessageHasBeenSet;
+    bool m_lastFailureMessageHasBeenSet = false;
 
     Aws::String m_endpointIdentifier;
-    bool m_endpointIdentifierHasBeenSet;
+    bool m_endpointIdentifierHasBeenSet = false;
 
     Aws::String m_replicationInstanceIdentifier;
-    bool m_replicationInstanceIdentifierHasBeenSet;
+    bool m_replicationInstanceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

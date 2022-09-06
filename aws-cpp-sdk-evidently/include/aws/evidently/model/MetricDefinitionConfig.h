@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_entityIdKey;
-    bool m_entityIdKeyHasBeenSet;
+    bool m_entityIdKeyHasBeenSet = false;
 
     Aws::String m_eventPattern;
-    bool m_eventPatternHasBeenSet;
+    bool m_eventPatternHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_unitLabel;
-    bool m_unitLabelHasBeenSet;
+    bool m_unitLabelHasBeenSet = false;
 
     Aws::String m_valueKey;
-    bool m_valueKeyHasBeenSet;
+    bool m_valueKeyHasBeenSet = false;
   };
 
 } // namespace Model

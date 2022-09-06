@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_dataSetPlaceholder;
-    bool m_dataSetPlaceholderHasBeenSet;
+    bool m_dataSetPlaceholderHasBeenSet = false;
 
     Aws::String m_dataSetArn;
-    bool m_dataSetArnHasBeenSet;
+    bool m_dataSetArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_linearPercentage;
-    bool m_linearPercentageHasBeenSet;
+    bool m_linearPercentageHasBeenSet = false;
 
     int m_linearInterval;
-    bool m_linearIntervalHasBeenSet;
+    bool m_linearIntervalHasBeenSet = false;
   };
 
 } // namespace Model

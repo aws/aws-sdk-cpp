@@ -113,10 +113,10 @@ namespace Model
   private:
 
     TaskTemplateFieldIdentifier m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

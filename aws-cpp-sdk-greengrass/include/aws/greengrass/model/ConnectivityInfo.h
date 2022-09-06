@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_hostAddress;
-    bool m_hostAddressHasBeenSet;
+    bool m_hostAddressHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     int m_portNumber;
-    bool m_portNumberHasBeenSet;
+    bool m_portNumberHasBeenSet = false;
   };
 
 } // namespace Model

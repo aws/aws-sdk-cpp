@@ -361,31 +361,31 @@ namespace Model
   private:
 
     CustomDeliveryConfiguration m_customDeliveryConfiguration;
-    bool m_customDeliveryConfigurationHasBeenSet;
+    bool m_customDeliveryConfigurationHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MessageConfiguration m_messageConfiguration;
-    bool m_messageConfigurationHasBeenSet;
+    bool m_messageConfigurationHasBeenSet = false;
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     int m_sizePercent;
-    bool m_sizePercentHasBeenSet;
+    bool m_sizePercentHasBeenSet = false;
 
     CampaignState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;
-    bool m_templateConfigurationHasBeenSet;
+    bool m_templateConfigurationHasBeenSet = false;
 
     Aws::String m_treatmentDescription;
-    bool m_treatmentDescriptionHasBeenSet;
+    bool m_treatmentDescriptionHasBeenSet = false;
 
     Aws::String m_treatmentName;
-    bool m_treatmentNameHasBeenSet;
+    bool m_treatmentNameHasBeenSet = false;
   };
 
 } // namespace Model

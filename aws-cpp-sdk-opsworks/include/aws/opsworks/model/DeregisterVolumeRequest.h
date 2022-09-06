@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
   };
 
 } // namespace Model

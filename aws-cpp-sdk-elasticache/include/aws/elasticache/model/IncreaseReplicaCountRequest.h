@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     int m_newReplicaCount;
-    bool m_newReplicaCountHasBeenSet;
+    bool m_newReplicaCountHasBeenSet = false;
 
     Aws::Vector<ConfigureShard> m_replicaConfiguration;
-    bool m_replicaConfigurationHasBeenSet;
+    bool m_replicaConfigurationHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
   };
 
 } // namespace Model

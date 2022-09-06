@@ -290,16 +290,16 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     long long m_minRetentionDays;
-    bool m_minRetentionDaysHasBeenSet;
+    bool m_minRetentionDaysHasBeenSet = false;
 
     long long m_maxRetentionDays;
-    bool m_maxRetentionDaysHasBeenSet;
+    bool m_maxRetentionDaysHasBeenSet = false;
 
     long long m_changeableForDays;
-    bool m_changeableForDaysHasBeenSet;
+    bool m_changeableForDaysHasBeenSet = false;
   };
 
 } // namespace Model

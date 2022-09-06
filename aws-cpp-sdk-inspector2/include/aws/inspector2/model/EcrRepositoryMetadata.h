@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EcrScanFrequency m_scanFrequency;
-    bool m_scanFrequencyHasBeenSet;
+    bool m_scanFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

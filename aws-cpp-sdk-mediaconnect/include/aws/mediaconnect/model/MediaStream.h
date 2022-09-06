@@ -309,28 +309,28 @@ namespace Model
   private:
 
     MediaStreamAttributes m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     int m_clockRate;
-    bool m_clockRateHasBeenSet;
+    bool m_clockRateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_fmt;
-    bool m_fmtHasBeenSet;
+    bool m_fmtHasBeenSet = false;
 
     int m_mediaStreamId;
-    bool m_mediaStreamIdHasBeenSet;
+    bool m_mediaStreamIdHasBeenSet = false;
 
     Aws::String m_mediaStreamName;
-    bool m_mediaStreamNameHasBeenSet;
+    bool m_mediaStreamNameHasBeenSet = false;
 
     MediaStreamType m_mediaStreamType;
-    bool m_mediaStreamTypeHasBeenSet;
+    bool m_mediaStreamTypeHasBeenSet = false;
 
     Aws::String m_videoFormat;
-    bool m_videoFormatHasBeenSet;
+    bool m_videoFormatHasBeenSet = false;
   };
 
 } // namespace Model

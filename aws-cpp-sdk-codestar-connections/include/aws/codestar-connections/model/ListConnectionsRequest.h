@@ -201,16 +201,16 @@ namespace Model
   private:
 
     ProviderType m_providerTypeFilter;
-    bool m_providerTypeFilterHasBeenSet;
+    bool m_providerTypeFilterHasBeenSet = false;
 
     Aws::String m_hostArnFilter;
-    bool m_hostArnFilterHasBeenSet;
+    bool m_hostArnFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

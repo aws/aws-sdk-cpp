@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ApacheKafkaClusterDescription m_apacheKafkaCluster;
-    bool m_apacheKafkaClusterHasBeenSet;
+    bool m_apacheKafkaClusterHasBeenSet = false;
   };
 
 } // namespace Model

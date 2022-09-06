@@ -71,7 +71,7 @@ namespace Model
   private:
 
     VoiceRecordingTrack m_voiceRecordingTrack;
-    bool m_voiceRecordingTrackHasBeenSet;
+    bool m_voiceRecordingTrackHasBeenSet = false;
   };
 
 } // namespace Model

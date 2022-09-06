@@ -193,13 +193,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_archiveId;
-    bool m_archiveIdHasBeenSet;
+    bool m_archiveIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ArtifactLocationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     S3ArtifactLocation m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

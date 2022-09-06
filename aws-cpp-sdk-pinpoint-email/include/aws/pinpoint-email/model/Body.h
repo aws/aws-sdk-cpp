@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Content m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Content m_html;
-    bool m_htmlHasBeenSet;
+    bool m_htmlHasBeenSet = false;
   };
 
 } // namespace Model

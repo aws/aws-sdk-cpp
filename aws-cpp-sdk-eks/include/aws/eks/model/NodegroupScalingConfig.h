@@ -175,13 +175,13 @@ namespace Model
   private:
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     int m_desiredSize;
-    bool m_desiredSizeHasBeenSet;
+    bool m_desiredSizeHasBeenSet = false;
   };
 
 } // namespace Model

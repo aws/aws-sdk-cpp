@@ -237,22 +237,22 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_workloadName;
-    bool m_workloadNameHasBeenSet;
+    bool m_workloadNameHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
 
     Aws::String m_currentLensVersion;
-    bool m_currentLensVersionHasBeenSet;
+    bool m_currentLensVersionHasBeenSet = false;
 
     Aws::String m_latestLensVersion;
-    bool m_latestLensVersionHasBeenSet;
+    bool m_latestLensVersionHasBeenSet = false;
   };
 
 } // namespace Model

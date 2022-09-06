@@ -437,28 +437,28 @@ namespace Model
   private:
 
     Aws::Vector<MsSmoothAdditionalManifest> m_additionalManifests;
-    bool m_additionalManifestsHasBeenSet;
+    bool m_additionalManifestsHasBeenSet = false;
 
     MsSmoothAudioDeduplication m_audioDeduplication;
-    bool m_audioDeduplicationHasBeenSet;
+    bool m_audioDeduplicationHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     MsSmoothEncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_fragmentLength;
-    bool m_fragmentLengthHasBeenSet;
+    bool m_fragmentLengthHasBeenSet = false;
 
     MsSmoothFragmentLengthControl m_fragmentLengthControl;
-    bool m_fragmentLengthControlHasBeenSet;
+    bool m_fragmentLengthControlHasBeenSet = false;
 
     MsSmoothManifestEncoding m_manifestEncoding;
-    bool m_manifestEncodingHasBeenSet;
+    bool m_manifestEncodingHasBeenSet = false;
   };
 
 } // namespace Model

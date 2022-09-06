@@ -299,25 +299,25 @@ namespace Model
   private:
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
+    bool m_hourlyPriceHasBeenSet = false;
 
     Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::String m_upfrontPrice;
-    bool m_upfrontPriceHasBeenSet;
+    bool m_upfrontPriceHasBeenSet = false;
   };
 
 } // namespace Model

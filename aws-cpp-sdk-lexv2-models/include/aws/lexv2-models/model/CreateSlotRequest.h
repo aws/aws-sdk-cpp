@@ -525,34 +525,34 @@ namespace Model
   private:
 
     Aws::String m_slotName;
-    bool m_slotNameHasBeenSet;
+    bool m_slotNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_slotTypeId;
-    bool m_slotTypeIdHasBeenSet;
+    bool m_slotTypeIdHasBeenSet = false;
 
     SlotValueElicitationSetting m_valueElicitationSetting;
-    bool m_valueElicitationSettingHasBeenSet;
+    bool m_valueElicitationSettingHasBeenSet = false;
 
     ObfuscationSetting m_obfuscationSetting;
-    bool m_obfuscationSettingHasBeenSet;
+    bool m_obfuscationSettingHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     MultipleValuesSetting m_multipleValuesSetting;
-    bool m_multipleValuesSettingHasBeenSet;
+    bool m_multipleValuesSettingHasBeenSet = false;
   };
 
 } // namespace Model

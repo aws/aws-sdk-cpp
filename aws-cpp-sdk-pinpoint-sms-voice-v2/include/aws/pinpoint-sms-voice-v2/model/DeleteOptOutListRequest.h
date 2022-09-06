@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
   };
 
 } // namespace Model

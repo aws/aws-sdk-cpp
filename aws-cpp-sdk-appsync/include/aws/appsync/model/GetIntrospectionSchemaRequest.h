@@ -138,13 +138,13 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     OutputType m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     bool m_includeDirectives;
-    bool m_includeDirectivesHasBeenSet;
+    bool m_includeDirectivesHasBeenSet = false;
   };
 
 } // namespace Model

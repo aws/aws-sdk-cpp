@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::Map<ScanCriterionKey, ScanCondition> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     Aws::Map<ScanCriterionKey, ScanCondition> m_exclude;
-    bool m_excludeHasBeenSet;
+    bool m_excludeHasBeenSet = false;
   };
 
 } // namespace Model

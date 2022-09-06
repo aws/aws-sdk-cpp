@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::String m_deviceModel;
-    bool m_deviceModelHasBeenSet;
+    bool m_deviceModelHasBeenSet = false;
 
     Aws::String m_deviceOperatingSystem;
-    bool m_deviceOperatingSystemHasBeenSet;
+    bool m_deviceOperatingSystemHasBeenSet = false;
 
     Aws::String m_deviceUserAgent;
-    bool m_deviceUserAgentHasBeenSet;
+    bool m_deviceUserAgentHasBeenSet = false;
   };
 
 } // namespace Model

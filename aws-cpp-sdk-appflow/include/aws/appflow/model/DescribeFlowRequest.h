@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
   };
 
 } // namespace Model

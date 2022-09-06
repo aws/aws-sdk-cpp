@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DnsConfigChange m_dnsConfig;
-    bool m_dnsConfigHasBeenSet;
+    bool m_dnsConfigHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
   };
 
 } // namespace Model

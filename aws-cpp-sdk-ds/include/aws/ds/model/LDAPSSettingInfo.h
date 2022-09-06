@@ -145,13 +145,13 @@ namespace Model
   private:
 
     LDAPSStatus m_lDAPSStatus;
-    bool m_lDAPSStatusHasBeenSet;
+    bool m_lDAPSStatusHasBeenSet = false;
 
     Aws::String m_lDAPSStatusReason;
-    bool m_lDAPSStatusReasonHasBeenSet;
+    bool m_lDAPSStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

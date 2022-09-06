@@ -404,25 +404,25 @@ namespace Model
   private:
 
     Aws::String m_eventID;
-    bool m_eventIDHasBeenSet;
+    bool m_eventIDHasBeenSet = false;
 
     OperationType m_eventName;
-    bool m_eventNameHasBeenSet;
+    bool m_eventNameHasBeenSet = false;
 
     Aws::String m_eventVersion;
-    bool m_eventVersionHasBeenSet;
+    bool m_eventVersionHasBeenSet = false;
 
     Aws::String m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     StreamRecord m_dynamodb;
-    bool m_dynamodbHasBeenSet;
+    bool m_dynamodbHasBeenSet = false;
 
     Identity m_userIdentity;
-    bool m_userIdentityHasBeenSet;
+    bool m_userIdentityHasBeenSet = false;
   };
 
 } // namespace Model

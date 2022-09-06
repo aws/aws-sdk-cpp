@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::Vector<DataItem> m_dataItems;
-    bool m_dataItemsHasBeenSet;
+    bool m_dataItemsHasBeenSet = false;
   };
 
 } // namespace Model

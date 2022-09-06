@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     TypedLinkSpecifier m_typedLinkSpecifier;
-    bool m_typedLinkSpecifierHasBeenSet;
+    bool m_typedLinkSpecifierHasBeenSet = false;
 
     Aws::Vector<LinkAttributeUpdate> m_attributeUpdates;
-    bool m_attributeUpdatesHasBeenSet;
+    bool m_attributeUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

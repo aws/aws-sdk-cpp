@@ -209,10 +209,10 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_organizationArn;
-    bool m_organizationArnHasBeenSet;
+    bool m_organizationArnHasBeenSet = false;
   };
 
 } // namespace Model

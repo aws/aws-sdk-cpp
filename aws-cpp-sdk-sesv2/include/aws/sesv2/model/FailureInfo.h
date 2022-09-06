@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_failedRecordsS3Url;
-    bool m_failedRecordsS3UrlHasBeenSet;
+    bool m_failedRecordsS3UrlHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

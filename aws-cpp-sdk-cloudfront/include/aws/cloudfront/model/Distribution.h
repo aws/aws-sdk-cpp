@@ -573,34 +573,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     int m_inProgressInvalidationBatches;
-    bool m_inProgressInvalidationBatchesHasBeenSet;
+    bool m_inProgressInvalidationBatchesHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ActiveTrustedSigners m_activeTrustedSigners;
-    bool m_activeTrustedSignersHasBeenSet;
+    bool m_activeTrustedSignersHasBeenSet = false;
 
     ActiveTrustedKeyGroups m_activeTrustedKeyGroups;
-    bool m_activeTrustedKeyGroupsHasBeenSet;
+    bool m_activeTrustedKeyGroupsHasBeenSet = false;
 
     DistributionConfig m_distributionConfig;
-    bool m_distributionConfigHasBeenSet;
+    bool m_distributionConfigHasBeenSet = false;
 
     Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
-    bool m_aliasICPRecordalsHasBeenSet;
+    bool m_aliasICPRecordalsHasBeenSet = false;
   };
 
 } // namespace Model

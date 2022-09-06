@@ -180,16 +180,16 @@ namespace Model
   private:
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

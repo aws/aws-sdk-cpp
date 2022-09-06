@@ -113,10 +113,10 @@ namespace Model
   private:
 
     TimeToLiveStatus m_timeToLiveStatus;
-    bool m_timeToLiveStatusHasBeenSet;
+    bool m_timeToLiveStatusHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
   };
 
 } // namespace Model

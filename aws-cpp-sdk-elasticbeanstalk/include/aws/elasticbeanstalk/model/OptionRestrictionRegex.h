@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

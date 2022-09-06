@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_indexedTextDocumentsCount;
-    bool m_indexedTextDocumentsCountHasBeenSet;
+    bool m_indexedTextDocumentsCountHasBeenSet = false;
 
     long long m_indexedTextBytes;
-    bool m_indexedTextBytesHasBeenSet;
+    bool m_indexedTextBytesHasBeenSet = false;
   };
 
 } // namespace Model

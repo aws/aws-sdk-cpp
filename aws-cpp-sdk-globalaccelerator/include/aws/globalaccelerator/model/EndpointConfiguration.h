@@ -231,13 +231,13 @@ namespace Model
   private:
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
 
     bool m_clientIPPreservationEnabled;
-    bool m_clientIPPreservationEnabledHasBeenSet;
+    bool m_clientIPPreservationEnabledHasBeenSet = false;
   };
 
 } // namespace Model

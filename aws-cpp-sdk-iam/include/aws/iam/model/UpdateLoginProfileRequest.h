@@ -265,13 +265,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     bool m_passwordResetRequired;
-    bool m_passwordResetRequiredHasBeenSet;
+    bool m_passwordResetRequiredHasBeenSet = false;
   };
 
 } // namespace Model

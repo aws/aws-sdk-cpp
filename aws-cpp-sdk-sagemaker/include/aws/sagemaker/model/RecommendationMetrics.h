@@ -125,16 +125,16 @@ namespace Model
   private:
 
     double m_costPerHour;
-    bool m_costPerHourHasBeenSet;
+    bool m_costPerHourHasBeenSet = false;
 
     double m_costPerInference;
-    bool m_costPerInferenceHasBeenSet;
+    bool m_costPerInferenceHasBeenSet = false;
 
     int m_maxInvocations;
-    bool m_maxInvocationsHasBeenSet;
+    bool m_maxInvocationsHasBeenSet = false;
 
     int m_modelLatency;
-    bool m_modelLatencyHasBeenSet;
+    bool m_modelLatencyHasBeenSet = false;
   };
 
 } // namespace Model

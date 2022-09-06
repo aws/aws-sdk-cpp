@@ -176,10 +176,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_brokerIds;
-    bool m_brokerIdsHasBeenSet;
+    bool m_brokerIdsHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
   };
 
 } // namespace Model

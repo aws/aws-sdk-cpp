@@ -120,10 +120,10 @@ namespace Model
   private:
 
     bool m_global;
-    bool m_globalHasBeenSet;
+    bool m_globalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_trackedIsps;
-    bool m_trackedIspsHasBeenSet;
+    bool m_trackedIspsHasBeenSet = false;
   };
 
 } // namespace Model

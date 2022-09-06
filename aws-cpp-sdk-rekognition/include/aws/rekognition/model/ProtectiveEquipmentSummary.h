@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::Vector<int> m_personsWithRequiredEquipment;
-    bool m_personsWithRequiredEquipmentHasBeenSet;
+    bool m_personsWithRequiredEquipmentHasBeenSet = false;
 
     Aws::Vector<int> m_personsWithoutRequiredEquipment;
-    bool m_personsWithoutRequiredEquipmentHasBeenSet;
+    bool m_personsWithoutRequiredEquipmentHasBeenSet = false;
 
     Aws::Vector<int> m_personsIndeterminate;
-    bool m_personsIndeterminateHasBeenSet;
+    bool m_personsIndeterminateHasBeenSet = false;
   };
 
 } // namespace Model

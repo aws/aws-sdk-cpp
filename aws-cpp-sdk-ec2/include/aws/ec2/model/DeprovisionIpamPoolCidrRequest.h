@@ -153,13 +153,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet;
+    bool m_ipamPoolIdHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
   };
 
 } // namespace Model

@@ -129,10 +129,10 @@ namespace Model
   private:
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
   };
 
 } // namespace Model

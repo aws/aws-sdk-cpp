@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

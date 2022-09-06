@@ -253,13 +253,13 @@ namespace Model
   private:
 
     Aws::String m_serviceIpv4Cidr;
-    bool m_serviceIpv4CidrHasBeenSet;
+    bool m_serviceIpv4CidrHasBeenSet = false;
 
     Aws::String m_serviceIpv6Cidr;
-    bool m_serviceIpv6CidrHasBeenSet;
+    bool m_serviceIpv6CidrHasBeenSet = false;
 
     IpFamily m_ipFamily;
-    bool m_ipFamilyHasBeenSet;
+    bool m_ipFamilyHasBeenSet = false;
   };
 
 } // namespace Model

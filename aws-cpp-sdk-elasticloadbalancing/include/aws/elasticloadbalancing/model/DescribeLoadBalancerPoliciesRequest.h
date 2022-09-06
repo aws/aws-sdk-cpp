@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNames;
-    bool m_policyNamesHasBeenSet;
+    bool m_policyNamesHasBeenSet = false;
   };
 
 } // namespace Model

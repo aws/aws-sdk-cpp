@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

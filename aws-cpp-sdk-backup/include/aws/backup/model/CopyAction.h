@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_destinationBackupVaultArn;
-    bool m_destinationBackupVaultArnHasBeenSet;
+    bool m_destinationBackupVaultArnHasBeenSet = false;
   };
 
 } // namespace Model

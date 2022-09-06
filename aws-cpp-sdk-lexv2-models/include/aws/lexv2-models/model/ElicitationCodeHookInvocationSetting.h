@@ -110,10 +110,10 @@ namespace Model
   private:
 
     bool m_enableCodeHookInvocation;
-    bool m_enableCodeHookInvocationHasBeenSet;
+    bool m_enableCodeHookInvocationHasBeenSet = false;
 
     Aws::String m_invocationLabel;
-    bool m_invocationLabelHasBeenSet;
+    bool m_invocationLabelHasBeenSet = false;
   };
 
 } // namespace Model

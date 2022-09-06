@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<State> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     Aws::String m_initialStateName;
-    bool m_initialStateNameHasBeenSet;
+    bool m_initialStateNameHasBeenSet = false;
   };
 
 } // namespace Model

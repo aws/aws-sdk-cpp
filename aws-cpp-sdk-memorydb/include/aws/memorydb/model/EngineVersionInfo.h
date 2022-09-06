@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_enginePatchVersion;
-    bool m_enginePatchVersionHasBeenSet;
+    bool m_enginePatchVersionHasBeenSet = false;
 
     Aws::String m_parameterGroupFamily;
-    bool m_parameterGroupFamilyHasBeenSet;
+    bool m_parameterGroupFamilyHasBeenSet = false;
   };
 
 } // namespace Model

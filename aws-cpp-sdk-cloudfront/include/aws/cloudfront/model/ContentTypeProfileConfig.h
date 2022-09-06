@@ -108,10 +108,10 @@ namespace Model
   private:
 
     bool m_forwardWhenContentTypeIsUnknown;
-    bool m_forwardWhenContentTypeIsUnknownHasBeenSet;
+    bool m_forwardWhenContentTypeIsUnknownHasBeenSet = false;
 
     ContentTypeProfiles m_contentTypeProfiles;
-    bool m_contentTypeProfilesHasBeenSet;
+    bool m_contentTypeProfilesHasBeenSet = false;
   };
 
 } // namespace Model

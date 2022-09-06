@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_iso2CountryCode;
-    bool m_iso2CountryCodeHasBeenSet;
+    bool m_iso2CountryCodeHasBeenSet = false;
 
     RouteType m_routeType;
-    bool m_routeTypeHasBeenSet;
+    bool m_routeTypeHasBeenSet = false;
 
     Aws::Vector<NumberCapability> m_numberCapabilities;
-    bool m_numberCapabilitiesHasBeenSet;
+    bool m_numberCapabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

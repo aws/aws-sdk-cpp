@@ -553,43 +553,43 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     ContactStatus m_contactStatus;
-    bool m_contactStatusHasBeenSet;
+    bool m_contactStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_groundStation;
-    bool m_groundStationHasBeenSet;
+    bool m_groundStationHasBeenSet = false;
 
     Elevation m_maximumElevation;
-    bool m_maximumElevationHasBeenSet;
+    bool m_maximumElevationHasBeenSet = false;
 
     Aws::String m_missionProfileArn;
-    bool m_missionProfileArnHasBeenSet;
+    bool m_missionProfileArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_postPassEndTime;
-    bool m_postPassEndTimeHasBeenSet;
+    bool m_postPassEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_prePassStartTime;
-    bool m_prePassStartTimeHasBeenSet;
+    bool m_prePassStartTimeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_satelliteArn;
-    bool m_satelliteArnHasBeenSet;
+    bool m_satelliteArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

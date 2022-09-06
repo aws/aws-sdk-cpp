@@ -60,7 +60,7 @@ namespace Model
   private:
 
     SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;
-    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

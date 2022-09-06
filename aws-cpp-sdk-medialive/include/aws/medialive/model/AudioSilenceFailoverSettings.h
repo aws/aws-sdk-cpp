@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_audioSelectorName;
-    bool m_audioSelectorNameHasBeenSet;
+    bool m_audioSelectorNameHasBeenSet = false;
 
     int m_audioSilenceThresholdMsec;
-    bool m_audioSilenceThresholdMsecHasBeenSet;
+    bool m_audioSilenceThresholdMsecHasBeenSet = false;
   };
 
 } // namespace Model

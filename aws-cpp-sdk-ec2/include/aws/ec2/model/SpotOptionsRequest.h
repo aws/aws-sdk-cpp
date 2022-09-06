@@ -487,28 +487,28 @@ namespace Model
   private:
 
     SpotAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     FleetSpotMaintenanceStrategiesRequest m_maintenanceStrategies;
-    bool m_maintenanceStrategiesHasBeenSet;
+    bool m_maintenanceStrategiesHasBeenSet = false;
 
     SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
     int m_instancePoolsToUseCount;
-    bool m_instancePoolsToUseCountHasBeenSet;
+    bool m_instancePoolsToUseCountHasBeenSet = false;
 
     bool m_singleInstanceType;
-    bool m_singleInstanceTypeHasBeenSet;
+    bool m_singleInstanceTypeHasBeenSet = false;
 
     bool m_singleAvailabilityZone;
-    bool m_singleAvailabilityZoneHasBeenSet;
+    bool m_singleAvailabilityZoneHasBeenSet = false;
 
     int m_minTargetCapacity;
-    bool m_minTargetCapacityHasBeenSet;
+    bool m_minTargetCapacityHasBeenSet = false;
 
     Aws::String m_maxTotalPrice;
-    bool m_maxTotalPriceHasBeenSet;
+    bool m_maxTotalPriceHasBeenSet = false;
   };
 
 } // namespace Model

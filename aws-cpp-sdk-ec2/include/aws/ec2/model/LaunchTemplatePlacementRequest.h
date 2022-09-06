@@ -366,28 +366,28 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_affinity;
-    bool m_affinityHasBeenSet;
+    bool m_affinityHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_hostId;
-    bool m_hostIdHasBeenSet;
+    bool m_hostIdHasBeenSet = false;
 
     Tenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     Aws::String m_spreadDomain;
-    bool m_spreadDomainHasBeenSet;
+    bool m_spreadDomainHasBeenSet = false;
 
     Aws::String m_hostResourceGroupArn;
-    bool m_hostResourceGroupArnHasBeenSet;
+    bool m_hostResourceGroupArnHasBeenSet = false;
 
     int m_partitionNumber;
-    bool m_partitionNumberHasBeenSet;
+    bool m_partitionNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     EventNotificationTopicStatus m_gatewayEuiEventTopic;
-    bool m_gatewayEuiEventTopicHasBeenSet;
+    bool m_gatewayEuiEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

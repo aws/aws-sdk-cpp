@@ -186,13 +186,13 @@ namespace Model
   private:
 
     int m_hardLimit;
-    bool m_hardLimitHasBeenSet;
+    bool m_hardLimitHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_softLimit;
-    bool m_softLimitHasBeenSet;
+    bool m_softLimitHasBeenSet = false;
   };
 
 } // namespace Model

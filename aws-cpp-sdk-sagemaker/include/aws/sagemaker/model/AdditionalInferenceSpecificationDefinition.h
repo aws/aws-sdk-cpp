@@ -382,25 +382,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ModelPackageContainerDefinition> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     Aws::Vector<TransformInstanceType> m_supportedTransformInstanceTypes;
-    bool m_supportedTransformInstanceTypesHasBeenSet;
+    bool m_supportedTransformInstanceTypesHasBeenSet = false;
 
     Aws::Vector<ProductionVariantInstanceType> m_supportedRealtimeInferenceInstanceTypes;
-    bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet;
+    bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedContentTypes;
-    bool m_supportedContentTypesHasBeenSet;
+    bool m_supportedContentTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedResponseMIMETypes;
-    bool m_supportedResponseMIMETypesHasBeenSet;
+    bool m_supportedResponseMIMETypesHasBeenSet = false;
   };
 
 } // namespace Model

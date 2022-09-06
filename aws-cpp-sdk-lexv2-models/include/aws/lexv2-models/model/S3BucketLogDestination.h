@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_s3BucketArn;
-    bool m_s3BucketArnHasBeenSet;
+    bool m_s3BucketArnHasBeenSet = false;
 
     Aws::String m_logPrefix;
-    bool m_logPrefixHasBeenSet;
+    bool m_logPrefixHasBeenSet = false;
   };
 
 } // namespace Model

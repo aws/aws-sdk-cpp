@@ -154,13 +154,13 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

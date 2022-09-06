@@ -392,31 +392,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_eventDate;
-    bool m_eventDateHasBeenSet;
+    bool m_eventDateHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_versionLabel;
-    bool m_versionLabelHasBeenSet;
+    bool m_versionLabelHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_platformArn;
-    bool m_platformArnHasBeenSet;
+    bool m_platformArnHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     EventSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -242,13 +242,13 @@ namespace Model
   private:
 
     Aws::String m_lambdaFunctionARN;
-    bool m_lambdaFunctionARNHasBeenSet;
+    bool m_lambdaFunctionARNHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     bool m_includeBody;
-    bool m_includeBodyHasBeenSet;
+    bool m_includeBodyHasBeenSet = false;
   };
 
 } // namespace Model

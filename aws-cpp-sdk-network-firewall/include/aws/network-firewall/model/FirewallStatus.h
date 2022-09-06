@@ -350,16 +350,16 @@ namespace Model
   private:
 
     FirewallStatusValue m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ConfigurationSyncState m_configurationSyncStateSummary;
-    bool m_configurationSyncStateSummaryHasBeenSet;
+    bool m_configurationSyncStateSummaryHasBeenSet = false;
 
     Aws::Map<Aws::String, SyncState> m_syncStates;
-    bool m_syncStatesHasBeenSet;
+    bool m_syncStatesHasBeenSet = false;
 
     CapacityUsageSummary m_capacityUsageSummary;
-    bool m_capacityUsageSummaryHasBeenSet;
+    bool m_capacityUsageSummaryHasBeenSet = false;
   };
 
 } // namespace Model

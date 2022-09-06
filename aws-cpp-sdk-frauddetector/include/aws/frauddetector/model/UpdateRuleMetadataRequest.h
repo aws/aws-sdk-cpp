@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Rule m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

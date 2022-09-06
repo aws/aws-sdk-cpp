@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     AvailabilityProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     RedactedEwsAvailabilityProvider m_ewsProvider;
-    bool m_ewsProviderHasBeenSet;
+    bool m_ewsProviderHasBeenSet = false;
 
     LambdaAvailabilityProvider m_lambdaProvider;
-    bool m_lambdaProviderHasBeenSet;
+    bool m_lambdaProviderHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateModified;
-    bool m_dateModifiedHasBeenSet;
+    bool m_dateModifiedHasBeenSet = false;
   };
 
 } // namespace Model

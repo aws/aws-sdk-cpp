@@ -102,10 +102,10 @@ namespace Model
   private:
 
     SeverityDescription m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     long long m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

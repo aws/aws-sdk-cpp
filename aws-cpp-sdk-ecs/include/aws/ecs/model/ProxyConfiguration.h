@@ -331,13 +331,13 @@ namespace Model
   private:
 
     ProxyConfigurationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     TagStatus m_tagStatus;
-    bool m_tagStatusHasBeenSet;
+    bool m_tagStatusHasBeenSet = false;
   };
 
 } // namespace Model

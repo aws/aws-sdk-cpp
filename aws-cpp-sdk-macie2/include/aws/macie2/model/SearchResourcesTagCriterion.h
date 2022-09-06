@@ -129,10 +129,10 @@ namespace Model
   private:
 
     SearchResourcesComparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     Aws::Vector<SearchResourcesTagCriterionPair> m_tagValues;
-    bool m_tagValuesHasBeenSet;
+    bool m_tagValuesHasBeenSet = false;
   };
 
 } // namespace Model

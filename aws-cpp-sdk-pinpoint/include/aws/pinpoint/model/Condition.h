@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::Vector<SimpleCondition> m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
 
     Operator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -340,22 +340,22 @@ namespace Model
   private:
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ContainerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_accessLoggingEnabled;
-    bool m_accessLoggingEnabledHasBeenSet;
+    bool m_accessLoggingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

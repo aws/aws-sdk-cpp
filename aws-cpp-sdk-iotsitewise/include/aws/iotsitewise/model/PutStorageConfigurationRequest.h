@@ -251,16 +251,16 @@ namespace Model
   private:
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     MultiLayerStorage m_multiLayerStorage;
-    bool m_multiLayerStorageHasBeenSet;
+    bool m_multiLayerStorageHasBeenSet = false;
 
     DisassociatedDataStorageState m_disassociatedDataStorage;
-    bool m_disassociatedDataStorageHasBeenSet;
+    bool m_disassociatedDataStorageHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

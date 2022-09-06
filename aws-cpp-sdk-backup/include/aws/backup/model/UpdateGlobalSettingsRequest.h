@@ -127,7 +127,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_globalSettings;
-    bool m_globalSettingsHasBeenSet;
+    bool m_globalSettingsHasBeenSet = false;
   };
 
 } // namespace Model

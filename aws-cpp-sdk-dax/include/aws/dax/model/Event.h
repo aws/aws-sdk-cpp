@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
   };
 
 } // namespace Model

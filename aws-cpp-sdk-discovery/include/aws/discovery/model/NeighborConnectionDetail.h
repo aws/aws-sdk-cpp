@@ -204,19 +204,19 @@ namespace Model
   private:
 
     Aws::String m_sourceServerId;
-    bool m_sourceServerIdHasBeenSet;
+    bool m_sourceServerIdHasBeenSet = false;
 
     Aws::String m_destinationServerId;
-    bool m_destinationServerIdHasBeenSet;
+    bool m_destinationServerIdHasBeenSet = false;
 
     int m_destinationPort;
-    bool m_destinationPortHasBeenSet;
+    bool m_destinationPortHasBeenSet = false;
 
     Aws::String m_transportProtocol;
-    bool m_transportProtocolHasBeenSet;
+    bool m_transportProtocolHasBeenSet = false;
 
     long long m_connectionsCount;
-    bool m_connectionsCountHasBeenSet;
+    bool m_connectionsCountHasBeenSet = false;
   };
 
 } // namespace Model

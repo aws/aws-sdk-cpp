@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_ecrRepositoryPrefix;
-    bool m_ecrRepositoryPrefixHasBeenSet;
+    bool m_ecrRepositoryPrefixHasBeenSet = false;
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -358,19 +358,19 @@ namespace Model
   private:
 
     Aws::String m_dBSecurityGroupName;
-    bool m_dBSecurityGroupNameHasBeenSet;
+    bool m_dBSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_cIDRIP;
-    bool m_cIDRIPHasBeenSet;
+    bool m_cIDRIPHasBeenSet = false;
 
     Aws::String m_eC2SecurityGroupName;
-    bool m_eC2SecurityGroupNameHasBeenSet;
+    bool m_eC2SecurityGroupNameHasBeenSet = false;
 
     Aws::String m_eC2SecurityGroupId;
-    bool m_eC2SecurityGroupIdHasBeenSet;
+    bool m_eC2SecurityGroupIdHasBeenSet = false;
 
     Aws::String m_eC2SecurityGroupOwnerId;
-    bool m_eC2SecurityGroupOwnerIdHasBeenSet;
+    bool m_eC2SecurityGroupOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

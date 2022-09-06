@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DeltaTimeSessionWindowConfiguration m_deltaTimeSessionWindowConfiguration;
-    bool m_deltaTimeSessionWindowConfigurationHasBeenSet;
+    bool m_deltaTimeSessionWindowConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

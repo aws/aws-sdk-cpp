@@ -260,13 +260,13 @@ namespace Model
   private:
 
     int m_containerPort;
-    bool m_containerPortHasBeenSet;
+    bool m_containerPortHasBeenSet = false;
 
     int m_hostPort;
-    bool m_hostPortHasBeenSet;
+    bool m_hostPortHasBeenSet = false;
 
     TransportProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

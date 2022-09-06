@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_kendraIndex;
-    bool m_kendraIndexHasBeenSet;
+    bool m_kendraIndexHasBeenSet = false;
 
     bool m_queryFilterStringEnabled;
-    bool m_queryFilterStringEnabledHasBeenSet;
+    bool m_queryFilterStringEnabledHasBeenSet = false;
 
     Aws::String m_queryFilterString;
-    bool m_queryFilterStringHasBeenSet;
+    bool m_queryFilterStringHasBeenSet = false;
   };
 
 } // namespace Model

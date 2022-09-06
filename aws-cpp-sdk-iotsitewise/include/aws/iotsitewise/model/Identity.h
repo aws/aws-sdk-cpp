@@ -171,16 +171,16 @@ namespace Model
   private:
 
     UserIdentity m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     GroupIdentity m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     IAMUserIdentity m_iamUser;
-    bool m_iamUserHasBeenSet;
+    bool m_iamUserHasBeenSet = false;
 
     IAMRoleIdentity m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
   };
 
 } // namespace Model

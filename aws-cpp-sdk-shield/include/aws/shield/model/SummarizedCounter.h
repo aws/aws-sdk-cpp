@@ -205,22 +205,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     double m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     int m_n;
-    bool m_nHasBeenSet;
+    bool m_nHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

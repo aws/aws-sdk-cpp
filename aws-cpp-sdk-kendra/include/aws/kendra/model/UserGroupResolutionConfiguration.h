@@ -106,7 +106,7 @@ namespace Model
   private:
 
     UserGroupResolutionMode m_userGroupResolutionMode;
-    bool m_userGroupResolutionModeHasBeenSet;
+    bool m_userGroupResolutionModeHasBeenSet = false;
   };
 
 } // namespace Model

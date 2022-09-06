@@ -207,25 +207,25 @@ namespace Model
   private:
 
     double m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
 
     double m_sampleCount;
-    bool m_sampleCountHasBeenSet;
+    bool m_sampleCountHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     MetricUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

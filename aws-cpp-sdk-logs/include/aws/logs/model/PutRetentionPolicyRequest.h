@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     int m_retentionInDays;
-    bool m_retentionInDaysHasBeenSet;
+    bool m_retentionInDaysHasBeenSet = false;
   };
 
 } // namespace Model

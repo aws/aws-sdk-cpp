@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

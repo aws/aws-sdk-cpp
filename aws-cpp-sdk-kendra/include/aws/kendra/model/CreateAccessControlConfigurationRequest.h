@@ -358,22 +358,22 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Principal> m_accessControlList;
-    bool m_accessControlListHasBeenSet;
+    bool m_accessControlListHasBeenSet = false;
 
     Aws::Vector<HierarchicalPrincipal> m_hierarchicalAccessControlList;
-    bool m_hierarchicalAccessControlListHasBeenSet;
+    bool m_hierarchicalAccessControlListHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

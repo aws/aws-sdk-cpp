@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_invalidParameter;
-    bool m_invalidParameterHasBeenSet;
+    bool m_invalidParameterHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

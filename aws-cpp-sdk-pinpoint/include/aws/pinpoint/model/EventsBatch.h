@@ -135,10 +135,10 @@ namespace Model
   private:
 
     PublicEndpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Map<Aws::String, Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

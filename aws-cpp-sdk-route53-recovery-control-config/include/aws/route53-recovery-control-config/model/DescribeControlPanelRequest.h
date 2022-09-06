@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_metricList;
-    bool m_metricListHasBeenSet;
+    bool m_metricListHasBeenSet = false;
 
     Aws::Vector<DimensionFilter> m_dimensionFilterList;
-    bool m_dimensionFilterListHasBeenSet;
+    bool m_dimensionFilterListHasBeenSet = false;
   };
 
 } // namespace Model

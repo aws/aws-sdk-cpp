@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ObfuscationSettingType m_obfuscationSettingType;
-    bool m_obfuscationSettingTypeHasBeenSet;
+    bool m_obfuscationSettingTypeHasBeenSet = false;
   };
 
 } // namespace Model

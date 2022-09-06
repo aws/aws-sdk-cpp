@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_mediaPipelineArn;
-    bool m_mediaPipelineArnHasBeenSet;
+    bool m_mediaPipelineArnHasBeenSet = false;
 
     ChimeSdkMeetingConcatenationConfiguration m_chimeSdkMeetingConfiguration;
-    bool m_chimeSdkMeetingConfigurationHasBeenSet;
+    bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

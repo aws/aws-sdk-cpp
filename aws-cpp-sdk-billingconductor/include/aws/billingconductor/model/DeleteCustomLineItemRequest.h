@@ -95,10 +95,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     CustomLineItemBillingPeriodRange m_billingPeriodRange;
-    bool m_billingPeriodRangeHasBeenSet;
+    bool m_billingPeriodRangeHasBeenSet = false;
   };
 
 } // namespace Model

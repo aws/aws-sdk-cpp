@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_distributorId;
-    bool m_distributorIdHasBeenSet;
+    bool m_distributorIdHasBeenSet = false;
 
     NielsenPcmToId3TaggingState m_nielsenPcmToId3Tagging;
-    bool m_nielsenPcmToId3TaggingHasBeenSet;
+    bool m_nielsenPcmToId3TaggingHasBeenSet = false;
   };
 
 } // namespace Model

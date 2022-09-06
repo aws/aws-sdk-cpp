@@ -1231,67 +1231,67 @@ namespace Model
   private:
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_opsItemType;
-    bool m_opsItemTypeHasBeenSet;
+    bool m_opsItemTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<OpsItemNotification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<RelatedOpsItem> m_relatedOpsItems;
-    bool m_relatedOpsItemsHasBeenSet;
+    bool m_relatedOpsItemsHasBeenSet = false;
 
     OpsItemStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
-    bool m_operationalDataHasBeenSet;
+    bool m_operationalDataHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualStartTime;
-    bool m_actualStartTimeHasBeenSet;
+    bool m_actualStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualEndTime;
-    bool m_actualEndTimeHasBeenSet;
+    bool m_actualEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedStartTime;
-    bool m_plannedStartTimeHasBeenSet;
+    bool m_plannedStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedEndTime;
-    bool m_plannedEndTimeHasBeenSet;
+    bool m_plannedEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

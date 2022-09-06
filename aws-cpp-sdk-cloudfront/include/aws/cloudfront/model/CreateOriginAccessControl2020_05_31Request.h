@@ -65,7 +65,7 @@ namespace Model
   private:
 
     OriginAccessControlConfig m_originAccessControlConfig;
-    bool m_originAccessControlConfigHasBeenSet;
+    bool m_originAccessControlConfigHasBeenSet = false;
   };
 
 } // namespace Model

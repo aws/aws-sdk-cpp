@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

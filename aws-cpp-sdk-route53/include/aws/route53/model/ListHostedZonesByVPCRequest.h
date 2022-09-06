@@ -286,16 +286,16 @@ namespace Model
   private:
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
 
     VPCRegion m_vPCRegion;
-    bool m_vPCRegionHasBeenSet;
+    bool m_vPCRegionHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_slotId;
-    bool m_slotIdHasBeenSet;
+    bool m_slotIdHasBeenSet = false;
   };
 
 } // namespace Model

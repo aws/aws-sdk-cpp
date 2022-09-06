@@ -130,13 +130,13 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     long long m_ingestionTime;
-    bool m_ingestionTimeHasBeenSet;
+    bool m_ingestionTimeHasBeenSet = false;
   };
 
 } // namespace Model

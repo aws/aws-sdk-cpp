@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AutoScalingUpdate m_autoScaling;
-    bool m_autoScalingHasBeenSet;
+    bool m_autoScalingHasBeenSet = false;
 
     ProvisionedCapacityUpdate m_provisionedCapacity;
-    bool m_provisionedCapacityHasBeenSet;
+    bool m_provisionedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

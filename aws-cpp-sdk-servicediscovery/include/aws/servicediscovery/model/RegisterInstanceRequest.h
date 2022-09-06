@@ -1219,16 +1219,16 @@ namespace Model
   private:
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

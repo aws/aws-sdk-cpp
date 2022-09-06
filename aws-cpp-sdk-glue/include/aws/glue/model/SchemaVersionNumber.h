@@ -80,10 +80,10 @@ namespace Model
   private:
 
     bool m_latestVersion;
-    bool m_latestVersionHasBeenSet;
+    bool m_latestVersionHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

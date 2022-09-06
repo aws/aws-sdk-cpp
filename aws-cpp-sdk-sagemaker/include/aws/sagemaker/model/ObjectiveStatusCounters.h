@@ -120,13 +120,13 @@ namespace Model
   private:
 
     int m_succeeded;
-    bool m_succeededHasBeenSet;
+    bool m_succeededHasBeenSet = false;
 
     int m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
 
     int m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
   };
 
 } // namespace Model

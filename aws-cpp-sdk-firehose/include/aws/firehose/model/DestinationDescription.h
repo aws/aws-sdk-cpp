@@ -293,28 +293,28 @@ namespace Model
   private:
 
     Aws::String m_destinationId;
-    bool m_destinationIdHasBeenSet;
+    bool m_destinationIdHasBeenSet = false;
 
     S3DestinationDescription m_s3DestinationDescription;
-    bool m_s3DestinationDescriptionHasBeenSet;
+    bool m_s3DestinationDescriptionHasBeenSet = false;
 
     ExtendedS3DestinationDescription m_extendedS3DestinationDescription;
-    bool m_extendedS3DestinationDescriptionHasBeenSet;
+    bool m_extendedS3DestinationDescriptionHasBeenSet = false;
 
     RedshiftDestinationDescription m_redshiftDestinationDescription;
-    bool m_redshiftDestinationDescriptionHasBeenSet;
+    bool m_redshiftDestinationDescriptionHasBeenSet = false;
 
     ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;
-    bool m_elasticsearchDestinationDescriptionHasBeenSet;
+    bool m_elasticsearchDestinationDescriptionHasBeenSet = false;
 
     AmazonopensearchserviceDestinationDescription m_amazonopensearchserviceDestinationDescription;
-    bool m_amazonopensearchserviceDestinationDescriptionHasBeenSet;
+    bool m_amazonopensearchserviceDestinationDescriptionHasBeenSet = false;
 
     SplunkDestinationDescription m_splunkDestinationDescription;
-    bool m_splunkDestinationDescriptionHasBeenSet;
+    bool m_splunkDestinationDescriptionHasBeenSet = false;
 
     HttpEndpointDestinationDescription m_httpEndpointDestinationDescription;
-    bool m_httpEndpointDestinationDescriptionHasBeenSet;
+    bool m_httpEndpointDestinationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

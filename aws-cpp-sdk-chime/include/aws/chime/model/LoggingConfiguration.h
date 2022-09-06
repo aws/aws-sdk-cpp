@@ -89,10 +89,10 @@ namespace Model
   private:
 
     bool m_enableSIPLogs;
-    bool m_enableSIPLogsHasBeenSet;
+    bool m_enableSIPLogsHasBeenSet = false;
 
     bool m_enableMediaMetricLogs;
-    bool m_enableMediaMetricLogsHasBeenSet;
+    bool m_enableMediaMetricLogsHasBeenSet = false;
   };
 
 } // namespace Model

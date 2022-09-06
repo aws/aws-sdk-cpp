@@ -399,34 +399,34 @@ namespace Model
   private:
 
     Aws::String m_stepName;
-    bool m_stepNameHasBeenSet;
+    bool m_stepNameHasBeenSet = false;
 
     Aws::String m_stepDisplayName;
-    bool m_stepDisplayNameHasBeenSet;
+    bool m_stepDisplayNameHasBeenSet = false;
 
     Aws::String m_stepDescription;
-    bool m_stepDescriptionHasBeenSet;
+    bool m_stepDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     StepStatus m_stepStatus;
-    bool m_stepStatusHasBeenSet;
+    bool m_stepStatusHasBeenSet = false;
 
     CacheHitResult m_cacheHitResult;
-    bool m_cacheHitResultHasBeenSet;
+    bool m_cacheHitResultHasBeenSet = false;
 
     int m_attemptCount;
-    bool m_attemptCountHasBeenSet;
+    bool m_attemptCountHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     PipelineExecutionStepMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

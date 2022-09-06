@@ -475,37 +475,37 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_installedCount;
-    bool m_installedCountHasBeenSet;
+    bool m_installedCountHasBeenSet = false;
 
     int m_missingCount;
-    bool m_missingCountHasBeenSet;
+    bool m_missingCountHasBeenSet = false;
 
     int m_failedCount;
-    bool m_failedCountHasBeenSet;
+    bool m_failedCountHasBeenSet = false;
 
     int m_installedOtherCount;
-    bool m_installedOtherCountHasBeenSet;
+    bool m_installedOtherCountHasBeenSet = false;
 
     int m_installedRejectedCount;
-    bool m_installedRejectedCountHasBeenSet;
+    bool m_installedRejectedCountHasBeenSet = false;
 
     int m_installedPendingReboot;
-    bool m_installedPendingRebootHasBeenSet;
+    bool m_installedPendingRebootHasBeenSet = false;
 
     Aws::String m_operationStartTime;
-    bool m_operationStartTimeHasBeenSet;
+    bool m_operationStartTimeHasBeenSet = false;
 
     Aws::String m_operationEndTime;
-    bool m_operationEndTimeHasBeenSet;
+    bool m_operationEndTimeHasBeenSet = false;
 
     Aws::String m_rebootOption;
-    bool m_rebootOptionHasBeenSet;
+    bool m_rebootOptionHasBeenSet = false;
 
     Aws::String m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
   };
 
 } // namespace Model

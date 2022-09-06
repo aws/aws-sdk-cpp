@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Spend m_budgetedAmount;
-    bool m_budgetedAmountHasBeenSet;
+    bool m_budgetedAmountHasBeenSet = false;
 
     Spend m_actualAmount;
-    bool m_actualAmountHasBeenSet;
+    bool m_actualAmountHasBeenSet = false;
 
     TimePeriod m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
   };
 
 } // namespace Model

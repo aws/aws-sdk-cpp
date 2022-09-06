@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     NetworkFirewallPolicyDescription m_currentPolicyDescription;
-    bool m_currentPolicyDescriptionHasBeenSet;
+    bool m_currentPolicyDescriptionHasBeenSet = false;
 
     NetworkFirewallPolicyDescription m_expectedPolicyDescription;
-    bool m_expectedPolicyDescriptionHasBeenSet;
+    bool m_expectedPolicyDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     ClusterState m_clusterState;
-    bool m_clusterStateHasBeenSet;
+    bool m_clusterStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

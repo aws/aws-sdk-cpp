@@ -124,10 +124,10 @@ namespace Model
   private:
 
     bool m_bypassGovernanceRetention;
-    bool m_bypassGovernanceRetentionHasBeenSet;
+    bool m_bypassGovernanceRetentionHasBeenSet = false;
 
     S3Retention m_retention;
-    bool m_retentionHasBeenSet;
+    bool m_retentionHasBeenSet = false;
   };
 
 } // namespace Model

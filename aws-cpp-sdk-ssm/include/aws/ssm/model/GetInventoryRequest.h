@@ -273,19 +273,19 @@ namespace Model
   private:
 
     Aws::Vector<InventoryFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<InventoryAggregator> m_aggregators;
-    bool m_aggregatorsHasBeenSet;
+    bool m_aggregatorsHasBeenSet = false;
 
     Aws::Vector<ResultAttribute> m_resultAttributes;
-    bool m_resultAttributesHasBeenSet;
+    bool m_resultAttributesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

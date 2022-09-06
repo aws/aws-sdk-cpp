@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_usernames;
-    bool m_usernamesHasBeenSet;
+    bool m_usernamesHasBeenSet = false;
   };
 
 } // namespace Model

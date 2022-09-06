@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_conditionalToken;
-    bool m_conditionalTokenHasBeenSet;
+    bool m_conditionalTokenHasBeenSet = false;
   };
 
 } // namespace Model

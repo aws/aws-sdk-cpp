@@ -216,13 +216,13 @@ namespace Model
   private:
 
     Aws::String m_baseImage;
-    bool m_baseImageHasBeenSet;
+    bool m_baseImageHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
   };
 
 } // namespace Model

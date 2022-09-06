@@ -130,10 +130,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Predicate m_predicate;
-    bool m_predicateHasBeenSet;
+    bool m_predicateHasBeenSet = false;
   };
 
 } // namespace Model

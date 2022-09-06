@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_spendCoveredBySavingsPlans;
-    bool m_spendCoveredBySavingsPlansHasBeenSet;
+    bool m_spendCoveredBySavingsPlansHasBeenSet = false;
 
     Aws::String m_onDemandCost;
-    bool m_onDemandCostHasBeenSet;
+    bool m_onDemandCostHasBeenSet = false;
 
     Aws::String m_totalCost;
-    bool m_totalCostHasBeenSet;
+    bool m_totalCostHasBeenSet = false;
 
     Aws::String m_coveragePercentage;
-    bool m_coveragePercentageHasBeenSet;
+    bool m_coveragePercentageHasBeenSet = false;
   };
 
 } // namespace Model

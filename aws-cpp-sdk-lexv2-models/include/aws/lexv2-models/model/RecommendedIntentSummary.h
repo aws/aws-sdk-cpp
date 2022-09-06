@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     int m_sampleUtterancesCount;
-    bool m_sampleUtterancesCountHasBeenSet;
+    bool m_sampleUtterancesCountHasBeenSet = false;
   };
 
 } // namespace Model

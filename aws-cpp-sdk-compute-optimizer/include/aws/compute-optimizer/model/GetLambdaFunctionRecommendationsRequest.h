@@ -357,19 +357,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_functionArns;
-    bool m_functionArnsHasBeenSet;
+    bool m_functionArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionRecommendationFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

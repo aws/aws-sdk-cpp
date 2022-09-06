@@ -174,16 +174,16 @@ namespace Model
   private:
 
     int m_memorySizeInKB;
-    bool m_memorySizeInKBHasBeenSet;
+    bool m_memorySizeInKBHasBeenSet = false;
 
     bool m_mountROSysfs;
-    bool m_mountROSysfsHasBeenSet;
+    bool m_mountROSysfsHasBeenSet = false;
 
     Aws::Vector<LambdaVolumeMount> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
 
     Aws::Vector<LambdaDeviceMount> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -146,13 +146,13 @@ namespace Model
   private:
 
     CapacityReservationFleetState m_currentFleetState;
-    bool m_currentFleetStateHasBeenSet;
+    bool m_currentFleetStateHasBeenSet = false;
 
     CapacityReservationFleetState m_previousFleetState;
-    bool m_previousFleetStateHasBeenSet;
+    bool m_previousFleetStateHasBeenSet = false;
 
     Aws::String m_capacityReservationFleetId;
-    bool m_capacityReservationFleetIdHasBeenSet;
+    bool m_capacityReservationFleetIdHasBeenSet = false;
   };
 
 } // namespace Model

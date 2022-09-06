@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PatchRule> m_patchRules;
-    bool m_patchRulesHasBeenSet;
+    bool m_patchRulesHasBeenSet = false;
   };
 
 } // namespace Model

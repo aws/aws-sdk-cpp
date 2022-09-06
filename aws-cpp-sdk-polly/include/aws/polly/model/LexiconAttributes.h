@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::String m_alphabet;
-    bool m_alphabetHasBeenSet;
+    bool m_alphabetHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_lexiconArn;
-    bool m_lexiconArnHasBeenSet;
+    bool m_lexiconArnHasBeenSet = false;
 
     int m_lexemesCount;
-    bool m_lexemesCountHasBeenSet;
+    bool m_lexemesCountHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

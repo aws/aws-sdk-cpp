@@ -475,25 +475,25 @@ namespace Model
   private:
 
     DialogActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     Aws::String m_slotToElicit;
-    bool m_slotToElicitHasBeenSet;
+    bool m_slotToElicitHasBeenSet = false;
 
     FulfillmentState m_fulfillmentState;
-    bool m_fulfillmentStateHasBeenSet;
+    bool m_fulfillmentStateHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     MessageFormatType m_messageFormat;
-    bool m_messageFormatHasBeenSet;
+    bool m_messageFormatHasBeenSet = false;
   };
 
 } // namespace Model

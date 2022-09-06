@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

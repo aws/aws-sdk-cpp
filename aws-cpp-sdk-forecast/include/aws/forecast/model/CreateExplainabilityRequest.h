@@ -514,31 +514,31 @@ namespace Model
   private:
 
     Aws::String m_explainabilityName;
-    bool m_explainabilityNameHasBeenSet;
+    bool m_explainabilityNameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ExplainabilityConfig m_explainabilityConfig;
-    bool m_explainabilityConfigHasBeenSet;
+    bool m_explainabilityConfigHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Schema m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     bool m_enableVisualization;
-    bool m_enableVisualizationHasBeenSet;
+    bool m_enableVisualizationHasBeenSet = false;
 
     Aws::String m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::String m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

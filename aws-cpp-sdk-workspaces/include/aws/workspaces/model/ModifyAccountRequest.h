@@ -149,10 +149,10 @@ namespace Model
   private:
 
     DedicatedTenancySupportEnum m_dedicatedTenancySupport;
-    bool m_dedicatedTenancySupportHasBeenSet;
+    bool m_dedicatedTenancySupportHasBeenSet = false;
 
     Aws::String m_dedicatedTenancyManagementCidrRange;
-    bool m_dedicatedTenancyManagementCidrRangeHasBeenSet;
+    bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
   };
 
 } // namespace Model

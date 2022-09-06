@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_deviceKey;
-    bool m_deviceKeyHasBeenSet;
+    bool m_deviceKeyHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_deviceAttributes;
-    bool m_deviceAttributesHasBeenSet;
+    bool m_deviceAttributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceCreateDate;
-    bool m_deviceCreateDateHasBeenSet;
+    bool m_deviceCreateDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceLastModifiedDate;
-    bool m_deviceLastModifiedDateHasBeenSet;
+    bool m_deviceLastModifiedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceLastAuthenticatedDate;
-    bool m_deviceLastAuthenticatedDateHasBeenSet;
+    bool m_deviceLastAuthenticatedDateHasBeenSet = false;
   };
 
 } // namespace Model

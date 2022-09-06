@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_flowExecutionId;
-    bool m_flowExecutionIdHasBeenSet;
+    bool m_flowExecutionIdHasBeenSet = false;
 
     FlowExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_systemInstanceId;
-    bool m_systemInstanceIdHasBeenSet;
+    bool m_systemInstanceIdHasBeenSet = false;
 
     Aws::String m_flowTemplateId;
-    bool m_flowTemplateIdHasBeenSet;
+    bool m_flowTemplateIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

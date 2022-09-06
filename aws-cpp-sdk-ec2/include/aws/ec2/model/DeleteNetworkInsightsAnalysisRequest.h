@@ -112,10 +112,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_networkInsightsAnalysisId;
-    bool m_networkInsightsAnalysisIdHasBeenSet;
+    bool m_networkInsightsAnalysisIdHasBeenSet = false;
   };
 
 } // namespace Model

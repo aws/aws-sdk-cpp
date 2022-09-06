@@ -687,40 +687,40 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     int m_maxParts;
-    bool m_maxPartsHasBeenSet;
+    bool m_maxPartsHasBeenSet = false;
 
     int m_partNumberMarker;
-    bool m_partNumberMarkerHasBeenSet;
+    bool m_partNumberMarkerHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Vector<ObjectAttributes> m_objectAttributes;
-    bool m_objectAttributesHasBeenSet;
+    bool m_objectAttributesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

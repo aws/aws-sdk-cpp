@@ -450,31 +450,31 @@ namespace Model
   private:
 
     Aws::String m_workteamArn;
-    bool m_workteamArnHasBeenSet;
+    bool m_workteamArnHasBeenSet = false;
 
     Aws::String m_humanTaskUiArn;
-    bool m_humanTaskUiArnHasBeenSet;
+    bool m_humanTaskUiArnHasBeenSet = false;
 
     Aws::String m_taskTitle;
-    bool m_taskTitleHasBeenSet;
+    bool m_taskTitleHasBeenSet = false;
 
     Aws::String m_taskDescription;
-    bool m_taskDescriptionHasBeenSet;
+    bool m_taskDescriptionHasBeenSet = false;
 
     int m_taskCount;
-    bool m_taskCountHasBeenSet;
+    bool m_taskCountHasBeenSet = false;
 
     int m_taskAvailabilityLifetimeInSeconds;
-    bool m_taskAvailabilityLifetimeInSecondsHasBeenSet;
+    bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
 
     int m_taskTimeLimitInSeconds;
-    bool m_taskTimeLimitInSecondsHasBeenSet;
+    bool m_taskTimeLimitInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_taskKeywords;
-    bool m_taskKeywordsHasBeenSet;
+    bool m_taskKeywordsHasBeenSet = false;
 
     PublicWorkforceTaskPrice m_publicWorkforceTaskPrice;
-    bool m_publicWorkforceTaskPriceHasBeenSet;
+    bool m_publicWorkforceTaskPriceHasBeenSet = false;
   };
 
 } // namespace Model

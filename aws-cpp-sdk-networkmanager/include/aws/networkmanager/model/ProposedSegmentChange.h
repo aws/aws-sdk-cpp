@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_attachmentPolicyRuleNumber;
-    bool m_attachmentPolicyRuleNumberHasBeenSet;
+    bool m_attachmentPolicyRuleNumberHasBeenSet = false;
 
     Aws::String m_segmentName;
-    bool m_segmentNameHasBeenSet;
+    bool m_segmentNameHasBeenSet = false;
   };
 
 } // namespace Model

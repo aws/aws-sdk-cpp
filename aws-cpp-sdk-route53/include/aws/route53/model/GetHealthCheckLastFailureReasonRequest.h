@@ -127,7 +127,7 @@ namespace Model
   private:
 
     Aws::String m_healthCheckId;
-    bool m_healthCheckIdHasBeenSet;
+    bool m_healthCheckIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -310,16 +310,16 @@ namespace Model
   private:
 
     Aws::String m_locationArn;
-    bool m_locationArnHasBeenSet;
+    bool m_locationArnHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     OnPremConfig m_onPremConfig;
-    bool m_onPremConfigHasBeenSet;
+    bool m_onPremConfigHasBeenSet = false;
 
     NfsMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
   };
 
 } // namespace Model

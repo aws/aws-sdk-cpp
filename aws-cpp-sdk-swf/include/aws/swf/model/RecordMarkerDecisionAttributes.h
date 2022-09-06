@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_markerName;
-    bool m_markerNameHasBeenSet;
+    bool m_markerNameHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

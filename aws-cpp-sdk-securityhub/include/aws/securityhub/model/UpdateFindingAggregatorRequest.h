@@ -344,13 +344,13 @@ namespace Model
   private:
 
     Aws::String m_findingAggregatorArn;
-    bool m_findingAggregatorArnHasBeenSet;
+    bool m_findingAggregatorArnHasBeenSet = false;
 
     Aws::String m_regionLinkingMode;
-    bool m_regionLinkingModeHasBeenSet;
+    bool m_regionLinkingModeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

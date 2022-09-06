@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     FeedbackValueType m_feedbackValue;
-    bool m_feedbackValueHasBeenSet;
+    bool m_feedbackValueHasBeenSet = false;
   };
 
 } // namespace Model

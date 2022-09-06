@@ -416,25 +416,25 @@ namespace Model
   private:
 
     Aws::Vector<ContainerOverride> m_containerOverrides;
-    bool m_containerOverridesHasBeenSet;
+    bool m_containerOverridesHasBeenSet = false;
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::Vector<InferenceAcceleratorOverride> m_inferenceAcceleratorOverrides;
-    bool m_inferenceAcceleratorOverridesHasBeenSet;
+    bool m_inferenceAcceleratorOverridesHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_taskRoleArn;
-    bool m_taskRoleArnHasBeenSet;
+    bool m_taskRoleArnHasBeenSet = false;
 
     EphemeralStorage m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

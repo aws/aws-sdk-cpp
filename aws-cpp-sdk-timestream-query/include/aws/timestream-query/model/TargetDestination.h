@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TimestreamDestination m_timestreamDestination;
-    bool m_timestreamDestinationHasBeenSet;
+    bool m_timestreamDestinationHasBeenSet = false;
   };
 
 } // namespace Model

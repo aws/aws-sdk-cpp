@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     bool m_publicSharingEnabled;
-    bool m_publicSharingEnabledHasBeenSet;
+    bool m_publicSharingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

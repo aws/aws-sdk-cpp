@@ -356,19 +356,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     OriginAccessControlSigningProtocols m_signingProtocol;
-    bool m_signingProtocolHasBeenSet;
+    bool m_signingProtocolHasBeenSet = false;
 
     OriginAccessControlSigningBehaviors m_signingBehavior;
-    bool m_signingBehaviorHasBeenSet;
+    bool m_signingBehaviorHasBeenSet = false;
 
     OriginAccessControlOriginTypes m_originAccessControlOriginType;
-    bool m_originAccessControlOriginTypeHasBeenSet;
+    bool m_originAccessControlOriginTypeHasBeenSet = false;
   };
 
 } // namespace Model

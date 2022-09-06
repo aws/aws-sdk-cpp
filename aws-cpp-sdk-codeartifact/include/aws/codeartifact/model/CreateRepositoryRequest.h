@@ -329,22 +329,22 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<UpstreamRepository> m_upstreams;
-    bool m_upstreamsHasBeenSet;
+    bool m_upstreamsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

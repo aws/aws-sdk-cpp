@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Vector<PublishBatchRequestEntry> m_publishBatchRequestEntries;
-    bool m_publishBatchRequestEntriesHasBeenSet;
+    bool m_publishBatchRequestEntriesHasBeenSet = false;
   };
 
 } // namespace Model

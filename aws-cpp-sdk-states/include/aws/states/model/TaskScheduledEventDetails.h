@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     long long m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     long long m_heartbeatInSeconds;
-    bool m_heartbeatInSecondsHasBeenSet;
+    bool m_heartbeatInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -432,22 +432,22 @@ namespace Model
   private:
 
     CertificateAuthorityConfiguration m_certificateAuthorityConfiguration;
-    bool m_certificateAuthorityConfigurationHasBeenSet;
+    bool m_certificateAuthorityConfigurationHasBeenSet = false;
 
     RevocationConfiguration m_revocationConfiguration;
-    bool m_revocationConfigurationHasBeenSet;
+    bool m_revocationConfigurationHasBeenSet = false;
 
     CertificateAuthorityType m_certificateAuthorityType;
-    bool m_certificateAuthorityTypeHasBeenSet;
+    bool m_certificateAuthorityTypeHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     KeyStorageSecurityStandard m_keyStorageSecurityStandard;
-    bool m_keyStorageSecurityStandardHasBeenSet;
+    bool m_keyStorageSecurityStandardHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

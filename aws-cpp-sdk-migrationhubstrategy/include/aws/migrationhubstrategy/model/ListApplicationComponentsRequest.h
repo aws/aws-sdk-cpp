@@ -318,22 +318,22 @@ namespace Model
   private:
 
     ApplicationComponentCriteria m_applicationComponentCriteria;
-    bool m_applicationComponentCriteriaHasBeenSet;
+    bool m_applicationComponentCriteriaHasBeenSet = false;
 
     Aws::String m_filterValue;
-    bool m_filterValueHasBeenSet;
+    bool m_filterValueHasBeenSet = false;
 
     Aws::Vector<Group> m_groupIdFilter;
-    bool m_groupIdFilterHasBeenSet;
+    bool m_groupIdFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     SortOrder m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
   };
 
 } // namespace Model

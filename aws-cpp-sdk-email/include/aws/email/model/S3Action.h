@@ -498,16 +498,16 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_objectKeyPrefix;
-    bool m_objectKeyPrefixHasBeenSet;
+    bool m_objectKeyPrefixHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

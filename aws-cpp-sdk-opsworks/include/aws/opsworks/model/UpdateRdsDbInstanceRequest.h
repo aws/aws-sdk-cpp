@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_rdsDbInstanceArn;
-    bool m_rdsDbInstanceArnHasBeenSet;
+    bool m_rdsDbInstanceArnHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_dbPassword;
-    bool m_dbPasswordHasBeenSet;
+    bool m_dbPasswordHasBeenSet = false;
   };
 
 } // namespace Model

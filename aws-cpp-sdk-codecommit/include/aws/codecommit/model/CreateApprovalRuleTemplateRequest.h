@@ -375,13 +375,13 @@ namespace Model
   private:
 
     Aws::String m_approvalRuleTemplateName;
-    bool m_approvalRuleTemplateNameHasBeenSet;
+    bool m_approvalRuleTemplateNameHasBeenSet = false;
 
     Aws::String m_approvalRuleTemplateContent;
-    bool m_approvalRuleTemplateContentHasBeenSet;
+    bool m_approvalRuleTemplateContentHasBeenSet = false;
 
     Aws::String m_approvalRuleTemplateDescription;
-    bool m_approvalRuleTemplateDescriptionHasBeenSet;
+    bool m_approvalRuleTemplateDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

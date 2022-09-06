@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

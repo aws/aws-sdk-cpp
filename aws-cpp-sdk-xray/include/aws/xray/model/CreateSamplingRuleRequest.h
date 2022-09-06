@@ -196,10 +196,10 @@ namespace Model
   private:
 
     SamplingRule m_samplingRule;
-    bool m_samplingRuleHasBeenSet;
+    bool m_samplingRuleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -276,13 +276,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_complianceResourceIds;
-    bool m_complianceResourceIdsHasBeenSet;
+    bool m_complianceResourceIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_complianceResourceTypes;
-    bool m_complianceResourceTypesHasBeenSet;
+    bool m_complianceResourceTypesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

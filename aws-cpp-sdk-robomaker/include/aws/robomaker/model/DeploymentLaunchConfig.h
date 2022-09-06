@@ -300,19 +300,19 @@ namespace Model
   private:
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::String m_preLaunchFile;
-    bool m_preLaunchFileHasBeenSet;
+    bool m_preLaunchFileHasBeenSet = false;
 
     Aws::String m_launchFile;
-    bool m_launchFileHasBeenSet;
+    bool m_launchFileHasBeenSet = false;
 
     Aws::String m_postLaunchFile;
-    bool m_postLaunchFileHasBeenSet;
+    bool m_postLaunchFileHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
   };
 
 } // namespace Model

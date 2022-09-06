@@ -73,7 +73,7 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
   };
 
 } // namespace Model

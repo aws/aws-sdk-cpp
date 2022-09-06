@@ -171,13 +171,13 @@ namespace Model
   private:
 
     AssetPropertyVariant m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AssetPropertyTimestamp m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
   };
 
 } // namespace Model

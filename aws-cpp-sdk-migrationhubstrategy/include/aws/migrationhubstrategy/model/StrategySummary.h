@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Strategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
   };
 
 } // namespace Model

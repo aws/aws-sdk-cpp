@@ -301,13 +301,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

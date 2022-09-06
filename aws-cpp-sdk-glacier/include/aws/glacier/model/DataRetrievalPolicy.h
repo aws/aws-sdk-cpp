@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::Vector<DataRetrievalRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

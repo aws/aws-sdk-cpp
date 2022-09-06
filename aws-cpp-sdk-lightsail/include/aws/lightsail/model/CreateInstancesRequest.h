@@ -618,31 +618,31 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceNames;
-    bool m_instanceNamesHasBeenSet;
+    bool m_instanceNamesHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_blueprintId;
-    bool m_blueprintIdHasBeenSet;
+    bool m_blueprintIdHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_keyPairName;
-    bool m_keyPairNameHasBeenSet;
+    bool m_keyPairNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AddOnRequest> m_addOns;
-    bool m_addOnsHasBeenSet;
+    bool m_addOnsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     UpdateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     UpdateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<UpdateParam> m_params;
-    bool m_paramsHasBeenSet;
+    bool m_paramsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<ErrorDetail> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

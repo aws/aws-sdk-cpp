@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_portfolioShareToken;
-    bool m_portfolioShareTokenHasBeenSet;
+    bool m_portfolioShareTokenHasBeenSet = false;
   };
 
 } // namespace Model

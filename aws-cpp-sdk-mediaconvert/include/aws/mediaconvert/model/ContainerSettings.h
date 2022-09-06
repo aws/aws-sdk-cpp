@@ -416,31 +416,31 @@ namespace Model
   private:
 
     CmfcSettings m_cmfcSettings;
-    bool m_cmfcSettingsHasBeenSet;
+    bool m_cmfcSettingsHasBeenSet = false;
 
     ContainerType m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     F4vSettings m_f4vSettings;
-    bool m_f4vSettingsHasBeenSet;
+    bool m_f4vSettingsHasBeenSet = false;
 
     M2tsSettings m_m2tsSettings;
-    bool m_m2tsSettingsHasBeenSet;
+    bool m_m2tsSettingsHasBeenSet = false;
 
     M3u8Settings m_m3u8Settings;
-    bool m_m3u8SettingsHasBeenSet;
+    bool m_m3u8SettingsHasBeenSet = false;
 
     MovSettings m_movSettings;
-    bool m_movSettingsHasBeenSet;
+    bool m_movSettingsHasBeenSet = false;
 
     Mp4Settings m_mp4Settings;
-    bool m_mp4SettingsHasBeenSet;
+    bool m_mp4SettingsHasBeenSet = false;
 
     MpdSettings m_mpdSettings;
-    bool m_mpdSettingsHasBeenSet;
+    bool m_mpdSettingsHasBeenSet = false;
 
     MxfSettings m_mxfSettings;
-    bool m_mxfSettingsHasBeenSet;
+    bool m_mxfSettingsHasBeenSet = false;
   };
 
 } // namespace Model

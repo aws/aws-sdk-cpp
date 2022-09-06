@@ -309,7 +309,7 @@ IoTClient::~IoTClient()
 
 void IoTClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT");
+  AWSClient::SetServiceClientName("IoT");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

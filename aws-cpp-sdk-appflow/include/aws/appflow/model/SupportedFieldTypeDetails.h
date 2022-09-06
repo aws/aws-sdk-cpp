@@ -78,7 +78,7 @@ namespace Model
   private:
 
     FieldTypeDetails m_v1;
-    bool m_v1HasBeenSet;
+    bool m_v1HasBeenSet = false;
   };
 
 } // namespace Model

@@ -329,28 +329,28 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet;
+    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_deviceProfileId;
-    bool m_deviceProfileIdHasBeenSet;
+    bool m_deviceProfileIdHasBeenSet = false;
 
     Aws::String m_serviceProfileId;
-    bool m_serviceProfileIdHasBeenSet;
+    bool m_serviceProfileIdHasBeenSet = false;
 
     WirelessDeviceType m_wirelessDeviceType;
-    bool m_wirelessDeviceTypeHasBeenSet;
+    bool m_wirelessDeviceTypeHasBeenSet = false;
 
     Aws::String m_fuotaTaskId;
-    bool m_fuotaTaskIdHasBeenSet;
+    bool m_fuotaTaskIdHasBeenSet = false;
 
     Aws::String m_multicastGroupId;
-    bool m_multicastGroupIdHasBeenSet;
+    bool m_multicastGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

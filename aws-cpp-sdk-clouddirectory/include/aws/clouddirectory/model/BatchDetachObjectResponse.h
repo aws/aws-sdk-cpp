@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_detachedObjectIdentifier;
-    bool m_detachedObjectIdentifierHasBeenSet;
+    bool m_detachedObjectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

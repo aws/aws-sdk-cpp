@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

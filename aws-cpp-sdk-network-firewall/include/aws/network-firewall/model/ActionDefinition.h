@@ -107,7 +107,7 @@ namespace Model
   private:
 
     PublishMetricAction m_publishMetricAction;
-    bool m_publishMetricActionHasBeenSet;
+    bool m_publishMetricActionHasBeenSet = false;
   };
 
 } // namespace Model

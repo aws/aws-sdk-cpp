@@ -654,40 +654,40 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_sshPublicKey;
-    bool m_sshPublicKeyHasBeenSet;
+    bool m_sshPublicKeyHasBeenSet = false;
 
     bool m_remoteDebugEnabled;
-    bool m_remoteDebugEnabledHasBeenSet;
+    bool m_remoteDebugEnabledHasBeenSet = false;
 
     bool m_remoteRecordEnabled;
-    bool m_remoteRecordEnabledHasBeenSet;
+    bool m_remoteRecordEnabledHasBeenSet = false;
 
     Aws::String m_remoteRecordAppArn;
-    bool m_remoteRecordAppArnHasBeenSet;
+    bool m_remoteRecordAppArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     CreateRemoteAccessSessionConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     InteractionMode m_interactionMode;
-    bool m_interactionModeHasBeenSet;
+    bool m_interactionModeHasBeenSet = false;
 
     bool m_skipAppResign;
-    bool m_skipAppResignHasBeenSet;
+    bool m_skipAppResignHasBeenSet = false;
   };
 
 } // namespace Model

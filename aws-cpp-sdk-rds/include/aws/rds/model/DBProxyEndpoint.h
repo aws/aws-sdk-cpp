@@ -538,37 +538,37 @@ namespace Model
   private:
 
     Aws::String m_dBProxyEndpointName;
-    bool m_dBProxyEndpointNameHasBeenSet;
+    bool m_dBProxyEndpointNameHasBeenSet = false;
 
     Aws::String m_dBProxyEndpointArn;
-    bool m_dBProxyEndpointArnHasBeenSet;
+    bool m_dBProxyEndpointArnHasBeenSet = false;
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     DBProxyEndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnetIds;
-    bool m_vpcSubnetIdsHasBeenSet;
+    bool m_vpcSubnetIdsHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     DBProxyEndpointTargetRole m_targetRole;
-    bool m_targetRoleHasBeenSet;
+    bool m_targetRoleHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
   };
 
 } // namespace Model

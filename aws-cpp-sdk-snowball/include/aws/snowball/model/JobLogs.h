@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::String m_jobCompletionReportURI;
-    bool m_jobCompletionReportURIHasBeenSet;
+    bool m_jobCompletionReportURIHasBeenSet = false;
 
     Aws::String m_jobSuccessLogURI;
-    bool m_jobSuccessLogURIHasBeenSet;
+    bool m_jobSuccessLogURIHasBeenSet = false;
 
     Aws::String m_jobFailureLogURI;
-    bool m_jobFailureLogURIHasBeenSet;
+    bool m_jobFailureLogURIHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,7 +130,7 @@ DocDBClient::~DocDBClient()
 
 void DocDBClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DocDB");
+  AWSClient::SetServiceClientName("DocDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_useDualStack = config.useDualStack;
   if (config.endpointOverride.empty())

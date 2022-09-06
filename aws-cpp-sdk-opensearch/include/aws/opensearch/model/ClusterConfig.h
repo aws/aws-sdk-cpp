@@ -368,37 +368,37 @@ namespace Model
   private:
 
     OpenSearchPartitionInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     bool m_dedicatedMasterEnabled;
-    bool m_dedicatedMasterEnabledHasBeenSet;
+    bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     bool m_zoneAwarenessEnabled;
-    bool m_zoneAwarenessEnabledHasBeenSet;
+    bool m_zoneAwarenessEnabledHasBeenSet = false;
 
     ZoneAwarenessConfig m_zoneAwarenessConfig;
-    bool m_zoneAwarenessConfigHasBeenSet;
+    bool m_zoneAwarenessConfigHasBeenSet = false;
 
     OpenSearchPartitionInstanceType m_dedicatedMasterType;
-    bool m_dedicatedMasterTypeHasBeenSet;
+    bool m_dedicatedMasterTypeHasBeenSet = false;
 
     int m_dedicatedMasterCount;
-    bool m_dedicatedMasterCountHasBeenSet;
+    bool m_dedicatedMasterCountHasBeenSet = false;
 
     bool m_warmEnabled;
-    bool m_warmEnabledHasBeenSet;
+    bool m_warmEnabledHasBeenSet = false;
 
     OpenSearchWarmPartitionInstanceType m_warmType;
-    bool m_warmTypeHasBeenSet;
+    bool m_warmTypeHasBeenSet = false;
 
     int m_warmCount;
-    bool m_warmCountHasBeenSet;
+    bool m_warmCountHasBeenSet = false;
 
     ColdStorageOptions m_coldStorageOptions;
-    bool m_coldStorageOptionsHasBeenSet;
+    bool m_coldStorageOptionsHasBeenSet = false;
   };
 
 } // namespace Model

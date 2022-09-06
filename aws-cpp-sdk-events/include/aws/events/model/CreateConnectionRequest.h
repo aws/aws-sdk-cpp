@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ConnectionAuthorizationType m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     CreateConnectionAuthRequestParameters m_authParameters;
-    bool m_authParametersHasBeenSet;
+    bool m_authParametersHasBeenSet = false;
   };
 
 } // namespace Model

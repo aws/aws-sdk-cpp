@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<LogAnomalyClass> m_logAnomalyClasses;
-    bool m_logAnomalyClassesHasBeenSet;
+    bool m_logAnomalyClassesHasBeenSet = false;
   };
 
 } // namespace Model

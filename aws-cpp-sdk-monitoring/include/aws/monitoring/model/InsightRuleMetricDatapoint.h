@@ -286,28 +286,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     double m_uniqueContributors;
-    bool m_uniqueContributorsHasBeenSet;
+    bool m_uniqueContributorsHasBeenSet = false;
 
     double m_maxContributorValue;
-    bool m_maxContributorValueHasBeenSet;
+    bool m_maxContributorValueHasBeenSet = false;
 
     double m_sampleCount;
-    bool m_sampleCountHasBeenSet;
+    bool m_sampleCountHasBeenSet = false;
 
     double m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
   };
 
 } // namespace Model

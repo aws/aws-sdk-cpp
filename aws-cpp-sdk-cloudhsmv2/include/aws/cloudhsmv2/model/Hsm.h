@@ -359,28 +359,28 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_eniId;
-    bool m_eniIdHasBeenSet;
+    bool m_eniIdHasBeenSet = false;
 
     Aws::String m_eniIp;
-    bool m_eniIpHasBeenSet;
+    bool m_eniIpHasBeenSet = false;
 
     Aws::String m_hsmId;
-    bool m_hsmIdHasBeenSet;
+    bool m_hsmIdHasBeenSet = false;
 
     HsmState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;
-    bool m_stateMessageHasBeenSet;
+    bool m_stateMessageHasBeenSet = false;
   };
 
 } // namespace Model

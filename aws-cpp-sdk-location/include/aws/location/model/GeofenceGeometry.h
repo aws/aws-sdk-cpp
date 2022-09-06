@@ -189,10 +189,10 @@ namespace Model
   private:
 
     Circle m_circle;
-    bool m_circleHasBeenSet;
+    bool m_circleHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_polygon;
-    bool m_polygonHasBeenSet;
+    bool m_polygonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     Aws::String m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -303,19 +303,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Command m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
   };
 
 } // namespace Model

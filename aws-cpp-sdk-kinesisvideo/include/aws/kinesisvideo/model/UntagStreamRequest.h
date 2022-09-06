@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeyList;
-    bool m_tagKeyListHasBeenSet;
+    bool m_tagKeyListHasBeenSet = false;
   };
 
 } // namespace Model

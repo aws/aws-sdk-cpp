@@ -434,34 +434,34 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet;
+    bool m_ipamPoolIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_autoImport;
-    bool m_autoImportHasBeenSet;
+    bool m_autoImportHasBeenSet = false;
 
     int m_allocationMinNetmaskLength;
-    bool m_allocationMinNetmaskLengthHasBeenSet;
+    bool m_allocationMinNetmaskLengthHasBeenSet = false;
 
     int m_allocationMaxNetmaskLength;
-    bool m_allocationMaxNetmaskLengthHasBeenSet;
+    bool m_allocationMaxNetmaskLengthHasBeenSet = false;
 
     int m_allocationDefaultNetmaskLength;
-    bool m_allocationDefaultNetmaskLengthHasBeenSet;
+    bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
 
     bool m_clearAllocationDefaultNetmaskLength;
-    bool m_clearAllocationDefaultNetmaskLengthHasBeenSet;
+    bool m_clearAllocationDefaultNetmaskLengthHasBeenSet = false;
 
     Aws::Vector<RequestIpamResourceTag> m_addAllocationResourceTags;
-    bool m_addAllocationResourceTagsHasBeenSet;
+    bool m_addAllocationResourceTagsHasBeenSet = false;
 
     Aws::Vector<RequestIpamResourceTag> m_removeAllocationResourceTags;
-    bool m_removeAllocationResourceTagsHasBeenSet;
+    bool m_removeAllocationResourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

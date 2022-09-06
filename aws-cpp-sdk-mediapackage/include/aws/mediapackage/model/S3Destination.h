@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_manifestKey;
-    bool m_manifestKeyHasBeenSet;
+    bool m_manifestKeyHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
   };
 
 } // namespace Model

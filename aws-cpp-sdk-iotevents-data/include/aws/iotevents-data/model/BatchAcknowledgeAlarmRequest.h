@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<AcknowledgeAlarmActionRequest> m_acknowledgeActionRequests;
-    bool m_acknowledgeActionRequestsHasBeenSet;
+    bool m_acknowledgeActionRequestsHasBeenSet = false;
   };
 
 } // namespace Model

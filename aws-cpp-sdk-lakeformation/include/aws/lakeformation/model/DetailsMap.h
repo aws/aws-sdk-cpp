@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceShare;
-    bool m_resourceShareHasBeenSet;
+    bool m_resourceShareHasBeenSet = false;
   };
 
 } // namespace Model

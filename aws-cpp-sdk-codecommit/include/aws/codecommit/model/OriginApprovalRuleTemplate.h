@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_approvalRuleTemplateId;
-    bool m_approvalRuleTemplateIdHasBeenSet;
+    bool m_approvalRuleTemplateIdHasBeenSet = false;
 
     Aws::String m_approvalRuleTemplateName;
-    bool m_approvalRuleTemplateNameHasBeenSet;
+    bool m_approvalRuleTemplateNameHasBeenSet = false;
   };
 
 } // namespace Model

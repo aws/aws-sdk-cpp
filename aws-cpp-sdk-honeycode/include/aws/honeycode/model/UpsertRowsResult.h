@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_rowIds;
-    bool m_rowIdsHasBeenSet;
+    bool m_rowIdsHasBeenSet = false;
 
     UpsertAction m_upsertAction;
-    bool m_upsertActionHasBeenSet;
+    bool m_upsertActionHasBeenSet = false;
   };
 
 } // namespace Model

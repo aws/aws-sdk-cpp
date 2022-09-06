@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

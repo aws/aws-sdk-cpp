@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_databaseRevision;
-    bool m_databaseRevisionHasBeenSet;
+    bool m_databaseRevisionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_databaseRevisionReleaseDate;
-    bool m_databaseRevisionReleaseDateHasBeenSet;
+    bool m_databaseRevisionReleaseDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_userPool;
-    bool m_userPoolHasBeenSet;
+    bool m_userPoolHasBeenSet = false;
 
     Aws::String m_userGroup;
-    bool m_userGroupHasBeenSet;
+    bool m_userGroupHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
   };
 
 } // namespace Model

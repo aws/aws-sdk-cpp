@@ -122,10 +122,10 @@ namespace Model
   private:
 
     CodeSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     CodeDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

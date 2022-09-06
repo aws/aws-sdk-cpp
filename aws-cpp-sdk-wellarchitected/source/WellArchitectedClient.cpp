@@ -116,7 +116,7 @@ WellArchitectedClient::~WellArchitectedClient()
 
 void WellArchitectedClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("WellArchitected");
+  AWSClient::SetServiceClientName("WellArchitected");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

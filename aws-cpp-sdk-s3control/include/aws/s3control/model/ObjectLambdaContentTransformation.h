@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AwsLambdaTransformation m_awsLambda;
-    bool m_awsLambdaHasBeenSet;
+    bool m_awsLambdaHasBeenSet = false;
   };
 
 } // namespace Model

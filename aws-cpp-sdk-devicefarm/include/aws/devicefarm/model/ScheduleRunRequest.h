@@ -364,28 +364,28 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_devicePoolArn;
-    bool m_devicePoolArnHasBeenSet;
+    bool m_devicePoolArnHasBeenSet = false;
 
     DeviceSelectionConfiguration m_deviceSelectionConfiguration;
-    bool m_deviceSelectionConfigurationHasBeenSet;
+    bool m_deviceSelectionConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ScheduleRunTest m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     ScheduleRunConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     ExecutionConfiguration m_executionConfiguration;
-    bool m_executionConfigurationHasBeenSet;
+    bool m_executionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

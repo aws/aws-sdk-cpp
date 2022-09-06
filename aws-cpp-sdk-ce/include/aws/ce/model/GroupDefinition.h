@@ -113,10 +113,10 @@ namespace Model
   private:
 
     GroupDefinitionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -249,22 +249,22 @@ namespace Model
   private:
 
     int m_allMatchesCount;
-    bool m_allMatchesCountHasBeenSet;
+    bool m_allMatchesCountHasBeenSet = false;
 
     double m_allMatchesSum;
-    bool m_allMatchesSumHasBeenSet;
+    bool m_allMatchesSumHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Pattern m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Vector<Match> m_topMatches;
-    bool m_topMatchesHasBeenSet;
+    bool m_topMatchesHasBeenSet = false;
   };
 
 } // namespace Model

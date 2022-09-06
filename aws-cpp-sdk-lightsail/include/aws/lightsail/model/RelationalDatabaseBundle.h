@@ -273,31 +273,31 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     double m_ramSizeInGb;
-    bool m_ramSizeInGbHasBeenSet;
+    bool m_ramSizeInGbHasBeenSet = false;
 
     int m_diskSizeInGb;
-    bool m_diskSizeInGbHasBeenSet;
+    bool m_diskSizeInGbHasBeenSet = false;
 
     int m_transferPerMonthInGb;
-    bool m_transferPerMonthInGbHasBeenSet;
+    bool m_transferPerMonthInGbHasBeenSet = false;
 
     int m_cpuCount;
-    bool m_cpuCountHasBeenSet;
+    bool m_cpuCountHasBeenSet = false;
 
     bool m_isEncrypted;
-    bool m_isEncryptedHasBeenSet;
+    bool m_isEncryptedHasBeenSet = false;
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
   };
 
 } // namespace Model

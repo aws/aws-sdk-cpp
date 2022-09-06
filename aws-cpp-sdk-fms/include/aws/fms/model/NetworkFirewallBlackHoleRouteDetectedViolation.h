@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Route> m_violatingRoutes;
-    bool m_violatingRoutesHasBeenSet;
+    bool m_violatingRoutesHasBeenSet = false;
   };
 
 } // namespace Model

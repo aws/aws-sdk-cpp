@@ -183,16 +183,16 @@ namespace Model
   private:
 
     double m_baseScore;
-    bool m_baseScoreHasBeenSet;
+    bool m_baseScoreHasBeenSet = false;
 
     Aws::String m_scoringVector;
-    bool m_scoringVectorHasBeenSet;
+    bool m_scoringVectorHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

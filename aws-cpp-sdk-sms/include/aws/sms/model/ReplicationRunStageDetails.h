@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_stageProgress;
-    bool m_stageProgressHasBeenSet;
+    bool m_stageProgressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     bool m_linkedToGitHub;
-    bool m_linkedToGitHubHasBeenSet;
+    bool m_linkedToGitHubHasBeenSet = false;
 
     Aws::String m_gitHubAccountName;
-    bool m_gitHubAccountNameHasBeenSet;
+    bool m_gitHubAccountNameHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
   };
 
 } // namespace Model

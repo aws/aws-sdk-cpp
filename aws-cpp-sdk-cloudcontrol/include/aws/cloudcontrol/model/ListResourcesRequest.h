@@ -414,22 +414,22 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_typeVersionId;
-    bool m_typeVersionIdHasBeenSet;
+    bool m_typeVersionIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_resourceModel;
-    bool m_resourceModelHasBeenSet;
+    bool m_resourceModelHasBeenSet = false;
   };
 
 } // namespace Model

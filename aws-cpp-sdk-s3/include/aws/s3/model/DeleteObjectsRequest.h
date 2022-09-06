@@ -555,28 +555,28 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Delete m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
 
     Aws::String m_mFA;
-    bool m_mFAHasBeenSet;
+    bool m_mFAHasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     bool m_bypassGovernanceRetention;
-    bool m_bypassGovernanceRetentionHasBeenSet;
+    bool m_bypassGovernanceRetentionHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_reservedInstancesIds;
-    bool m_reservedInstancesIdsHasBeenSet;
+    bool m_reservedInstancesIdsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<ReservedInstancesConfiguration> m_targetConfigurations;
-    bool m_targetConfigurationsHasBeenSet;
+    bool m_targetConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

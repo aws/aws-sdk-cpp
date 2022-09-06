@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

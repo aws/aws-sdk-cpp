@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventTypeCodes;
-    bool m_eventTypeCodesHasBeenSet;
+    bool m_eventTypeCodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     Aws::Vector<EventTypeCategory> m_eventTypeCategories;
-    bool m_eventTypeCategoriesHasBeenSet;
+    bool m_eventTypeCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

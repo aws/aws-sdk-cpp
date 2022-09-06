@@ -457,25 +457,25 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_mediaUrl;
-    bool m_mediaUrlHasBeenSet;
+    bool m_mediaUrlHasBeenSet = false;
 
     Aws::String m_rawContent;
-    bool m_rawContentHasBeenSet;
+    bool m_rawContentHasBeenSet = false;
 
     Aws::String m_sound;
-    bool m_soundHasBeenSet;
+    bool m_soundHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

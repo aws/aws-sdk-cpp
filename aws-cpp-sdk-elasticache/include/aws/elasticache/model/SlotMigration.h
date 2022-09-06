@@ -61,7 +61,7 @@ namespace Model
   private:
 
     double m_progressPercentage;
-    bool m_progressPercentageHasBeenSet;
+    bool m_progressPercentageHasBeenSet = false;
   };
 
 } // namespace Model

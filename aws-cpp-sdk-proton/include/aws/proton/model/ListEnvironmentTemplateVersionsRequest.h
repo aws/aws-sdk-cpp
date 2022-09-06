@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ConnectorProvisioningType m_connectorProvisioningType;
-    bool m_connectorProvisioningTypeHasBeenSet;
+    bool m_connectorProvisioningTypeHasBeenSet = false;
 
     ConnectorProvisioningConfig m_connectorProvisioningConfig;
-    bool m_connectorProvisioningConfigHasBeenSet;
+    bool m_connectorProvisioningConfigHasBeenSet = false;
   };
 
 } // namespace Model

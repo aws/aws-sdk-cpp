@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ParameterExceptionField m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_parameter;
-    bool m_parameterHasBeenSet;
+    bool m_parameterHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

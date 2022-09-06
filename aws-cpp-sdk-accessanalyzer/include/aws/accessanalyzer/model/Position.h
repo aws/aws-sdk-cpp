@@ -104,13 +104,13 @@ namespace Model
   private:
 
     int m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     int m_line;
-    bool m_lineHasBeenSet;
+    bool m_lineHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
   };
 
 } // namespace Model

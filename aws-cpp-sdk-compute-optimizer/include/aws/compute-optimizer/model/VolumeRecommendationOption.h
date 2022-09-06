@@ -189,16 +189,16 @@ namespace Model
   private:
 
     VolumeConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     double m_performanceRisk;
-    bool m_performanceRiskHasBeenSet;
+    bool m_performanceRiskHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
   };
 
 } // namespace Model

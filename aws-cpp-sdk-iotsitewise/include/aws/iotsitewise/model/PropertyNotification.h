@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     PropertyNotificationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

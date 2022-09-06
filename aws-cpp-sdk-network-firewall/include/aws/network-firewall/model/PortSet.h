@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

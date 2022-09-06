@@ -215,10 +215,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PermissionsMode m_permissionsMode;
-    bool m_permissionsModeHasBeenSet;
+    bool m_permissionsModeHasBeenSet = false;
   };
 
 } // namespace Model

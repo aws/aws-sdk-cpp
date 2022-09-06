@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BatchReadSuccessfulResponse m_successfulResponse;
-    bool m_successfulResponseHasBeenSet;
+    bool m_successfulResponseHasBeenSet = false;
 
     BatchReadException m_exceptionResponse;
-    bool m_exceptionResponseHasBeenSet;
+    bool m_exceptionResponseHasBeenSet = false;
   };
 
 } // namespace Model

@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     long long m_stepTimeoutInMinutes;
-    bool m_stepTimeoutInMinutesHasBeenSet;
+    bool m_stepTimeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

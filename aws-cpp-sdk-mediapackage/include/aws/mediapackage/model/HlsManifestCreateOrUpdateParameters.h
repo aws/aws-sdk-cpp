@@ -507,31 +507,31 @@ it will
   private:
 
     AdMarkers m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
-    bool m_adTriggersHasBeenSet;
+    bool m_adTriggersHasBeenSet = false;
 
     AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
-    bool m_adsOnDeliveryRestrictionsHasBeenSet;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     PlaylistType m_playlistType;
-    bool m_playlistTypeHasBeenSet;
+    bool m_playlistTypeHasBeenSet = false;
 
     int m_playlistWindowSeconds;
-    bool m_playlistWindowSecondsHasBeenSet;
+    bool m_playlistWindowSecondsHasBeenSet = false;
 
     int m_programDateTimeIntervalSeconds;
-    bool m_programDateTimeIntervalSecondsHasBeenSet;
+    bool m_programDateTimeIntervalSecondsHasBeenSet = false;
   };
 
 } // namespace Model

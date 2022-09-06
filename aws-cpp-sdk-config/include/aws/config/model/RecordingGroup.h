@@ -286,13 +286,13 @@ namespace Model
   private:
 
     bool m_allSupported;
-    bool m_allSupportedHasBeenSet;
+    bool m_allSupportedHasBeenSet = false;
 
     bool m_includeGlobalResourceTypes;
-    bool m_includeGlobalResourceTypesHasBeenSet;
+    bool m_includeGlobalResourceTypesHasBeenSet = false;
 
     Aws::Vector<ResourceType> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
   };
 
 } // namespace Model

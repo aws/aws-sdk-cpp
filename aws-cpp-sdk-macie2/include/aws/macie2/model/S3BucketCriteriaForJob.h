@@ -115,10 +115,10 @@ namespace Model
   private:
 
     CriteriaBlockForJob m_excludes;
-    bool m_excludesHasBeenSet;
+    bool m_excludesHasBeenSet = false;
 
     CriteriaBlockForJob m_includes;
-    bool m_includesHasBeenSet;
+    bool m_includesHasBeenSet = false;
   };
 
 } // namespace Model

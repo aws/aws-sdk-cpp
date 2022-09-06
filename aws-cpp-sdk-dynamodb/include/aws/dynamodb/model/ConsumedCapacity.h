@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     double m_capacityUnits;
-    bool m_capacityUnitsHasBeenSet;
+    bool m_capacityUnitsHasBeenSet = false;
 
     double m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     double m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
 
     Capacity m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::Map<Aws::String, Capacity> m_localSecondaryIndexes;
-    bool m_localSecondaryIndexesHasBeenSet;
+    bool m_localSecondaryIndexesHasBeenSet = false;
 
     Aws::Map<Aws::String, Capacity> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
   };
 
 } // namespace Model

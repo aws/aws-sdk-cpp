@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::Vector<GenericAttachment> m_genericAttachments;
-    bool m_genericAttachmentsHasBeenSet;
+    bool m_genericAttachmentsHasBeenSet = false;
   };
 
 } // namespace Model

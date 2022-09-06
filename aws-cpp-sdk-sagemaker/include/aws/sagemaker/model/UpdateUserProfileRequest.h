@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     UserSettings m_userSettings;
-    bool m_userSettingsHasBeenSet;
+    bool m_userSettingsHasBeenSet = false;
   };
 
 } // namespace Model

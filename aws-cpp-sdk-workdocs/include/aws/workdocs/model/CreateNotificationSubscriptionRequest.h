@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     SubscriptionProtocolType m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     SubscriptionType m_subscriptionType;
-    bool m_subscriptionTypeHasBeenSet;
+    bool m_subscriptionTypeHasBeenSet = false;
   };
 
 } // namespace Model

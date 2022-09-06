@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrIps;
-    bool m_cidrIpsHasBeenSet;
+    bool m_cidrIpsHasBeenSet = false;
   };
 
 } // namespace Model

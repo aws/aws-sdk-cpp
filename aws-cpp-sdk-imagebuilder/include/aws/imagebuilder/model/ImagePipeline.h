@@ -750,55 +750,55 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     bool m_enhancedImageMetadataEnabled;
-    bool m_enhancedImageMetadataEnabledHasBeenSet;
+    bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
     Aws::String m_imageRecipeArn;
-    bool m_imageRecipeArnHasBeenSet;
+    bool m_imageRecipeArnHasBeenSet = false;
 
     Aws::String m_containerRecipeArn;
-    bool m_containerRecipeArnHasBeenSet;
+    bool m_containerRecipeArnHasBeenSet = false;
 
     Aws::String m_infrastructureConfigurationArn;
-    bool m_infrastructureConfigurationArnHasBeenSet;
+    bool m_infrastructureConfigurationArnHasBeenSet = false;
 
     Aws::String m_distributionConfigurationArn;
-    bool m_distributionConfigurationArnHasBeenSet;
+    bool m_distributionConfigurationArnHasBeenSet = false;
 
     ImageTestsConfiguration m_imageTestsConfiguration;
-    bool m_imageTestsConfigurationHasBeenSet;
+    bool m_imageTestsConfigurationHasBeenSet = false;
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     PipelineStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::String m_dateUpdated;
-    bool m_dateUpdatedHasBeenSet;
+    bool m_dateUpdatedHasBeenSet = false;
 
     Aws::String m_dateLastRun;
-    bool m_dateLastRunHasBeenSet;
+    bool m_dateLastRunHasBeenSet = false;
 
     Aws::String m_dateNextRun;
-    bool m_dateNextRunHasBeenSet;
+    bool m_dateNextRunHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,13 +123,13 @@ namespace Model
   private:
 
     bool m_inverted;
-    bool m_invertedHasBeenSet;
+    bool m_invertedHasBeenSet = false;
 
     int m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     RuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -125,10 +125,10 @@ namespace Model
   private:
 
     IPAddressVersion m_iPAddressVersion;
-    bool m_iPAddressVersionHasBeenSet;
+    bool m_iPAddressVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addresses;
-    bool m_addressesHasBeenSet;
+    bool m_addressesHasBeenSet = false;
   };
 
 } // namespace Model

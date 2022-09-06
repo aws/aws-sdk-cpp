@@ -261,19 +261,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
+    bool m_packageIdHasBeenSet = false;
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

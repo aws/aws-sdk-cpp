@@ -175,10 +175,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     ResourceRecordSet m_resourceRecordSet;
-    bool m_resourceRecordSetHasBeenSet;
+    bool m_resourceRecordSetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     IngestedEventsTimeWindow m_ingestedEventsTimeWindow;
-    bool m_ingestedEventsTimeWindowHasBeenSet;
+    bool m_ingestedEventsTimeWindowHasBeenSet = false;
   };
 
 } // namespace Model

@@ -318,19 +318,19 @@ namespace Model
   private:
 
     LocationValues m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     IntervalUnitValues m_intervalUnit;
-    bool m_intervalUnitHasBeenSet;
+    bool m_intervalUnitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_times;
-    bool m_timesHasBeenSet;
+    bool m_timesHasBeenSet = false;
 
     Aws::String m_cronExpression;
-    bool m_cronExpressionHasBeenSet;
+    bool m_cronExpressionHasBeenSet = false;
   };
 
 } // namespace Model

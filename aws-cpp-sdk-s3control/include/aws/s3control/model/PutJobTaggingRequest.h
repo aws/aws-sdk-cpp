@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::Vector<S3Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

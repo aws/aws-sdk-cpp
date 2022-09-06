@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_blockedIPRangeList;
-    bool m_blockedIPRangeListHasBeenSet;
+    bool m_blockedIPRangeListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_skippedIPRangeList;
-    bool m_skippedIPRangeListHasBeenSet;
+    bool m_skippedIPRangeListHasBeenSet = false;
   };
 
 } // namespace Model

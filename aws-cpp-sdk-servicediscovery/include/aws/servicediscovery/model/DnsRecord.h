@@ -455,10 +455,10 @@ namespace Model
   private:
 
     RecordType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
   };
 
 } // namespace Model

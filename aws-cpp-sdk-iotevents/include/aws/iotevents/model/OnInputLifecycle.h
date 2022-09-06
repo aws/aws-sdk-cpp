@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::Vector<TransitionEvent> m_transitionEvents;
-    bool m_transitionEventsHasBeenSet;
+    bool m_transitionEventsHasBeenSet = false;
   };
 
 } // namespace Model

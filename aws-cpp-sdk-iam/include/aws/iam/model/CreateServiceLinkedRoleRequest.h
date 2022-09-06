@@ -289,13 +289,13 @@ namespace Model
   private:
 
     Aws::String m_aWSServiceName;
-    bool m_aWSServiceNameHasBeenSet;
+    bool m_aWSServiceNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_customSuffix;
-    bool m_customSuffixHasBeenSet;
+    bool m_customSuffixHasBeenSet = false;
   };
 
 } // namespace Model

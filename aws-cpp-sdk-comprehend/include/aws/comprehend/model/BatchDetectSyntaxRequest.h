@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_textList;
-    bool m_textListHasBeenSet;
+    bool m_textListHasBeenSet = false;
 
     SyntaxLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

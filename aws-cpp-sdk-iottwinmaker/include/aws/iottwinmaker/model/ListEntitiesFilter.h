@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
+    bool m_parentEntityIdHasBeenSet = false;
   };
 
 } // namespace Model

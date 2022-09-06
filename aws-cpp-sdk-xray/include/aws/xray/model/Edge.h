@@ -239,22 +239,22 @@ namespace Model
   private:
 
     int m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     EdgeStatistics m_summaryStatistics;
-    bool m_summaryStatisticsHasBeenSet;
+    bool m_summaryStatisticsHasBeenSet = false;
 
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
-    bool m_responseTimeHistogramHasBeenSet;
+    bool m_responseTimeHistogramHasBeenSet = false;
 
     Aws::Vector<Alias> m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
   };
 
 } // namespace Model

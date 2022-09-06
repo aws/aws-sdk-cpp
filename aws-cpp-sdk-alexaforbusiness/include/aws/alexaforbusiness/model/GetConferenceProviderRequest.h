@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_conferenceProviderArn;
-    bool m_conferenceProviderArnHasBeenSet;
+    bool m_conferenceProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

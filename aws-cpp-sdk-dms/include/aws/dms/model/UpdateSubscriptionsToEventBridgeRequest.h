@@ -70,7 +70,7 @@ namespace Model
   private:
 
     bool m_forceMove;
-    bool m_forceMoveHasBeenSet;
+    bool m_forceMoveHasBeenSet = false;
   };
 
 } // namespace Model

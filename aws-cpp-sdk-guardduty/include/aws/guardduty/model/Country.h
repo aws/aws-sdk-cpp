@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_countryName;
-    bool m_countryNameHasBeenSet;
+    bool m_countryNameHasBeenSet = false;
   };
 
 } // namespace Model

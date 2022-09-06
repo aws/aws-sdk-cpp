@@ -388,10 +388,10 @@ namespace Model
   private:
 
     KeywordInputType m_keywordInputType;
-    bool m_keywordInputTypeHasBeenSet;
+    bool m_keywordInputTypeHasBeenSet = false;
 
     Aws::String m_keywordValue;
-    bool m_keywordValueHasBeenSet;
+    bool m_keywordValueHasBeenSet = false;
   };
 
 } // namespace Model

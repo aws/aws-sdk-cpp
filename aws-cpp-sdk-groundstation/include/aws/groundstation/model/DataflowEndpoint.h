@@ -165,16 +165,16 @@ namespace Model
   private:
 
     SocketAddress m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     int m_mtu;
-    bool m_mtuHasBeenSet;
+    bool m_mtuHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -100,10 +100,10 @@ namespace Model
   private:
 
     VPCRegion m_vPCRegion;
-    bool m_vPCRegionHasBeenSet;
+    bool m_vPCRegionHasBeenSet = false;
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
   };
 
 } // namespace Model

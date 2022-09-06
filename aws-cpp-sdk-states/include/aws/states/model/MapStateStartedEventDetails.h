@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
   };
 
 } // namespace Model

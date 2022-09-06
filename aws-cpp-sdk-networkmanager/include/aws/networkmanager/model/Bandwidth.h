@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_uploadSpeed;
-    bool m_uploadSpeedHasBeenSet;
+    bool m_uploadSpeedHasBeenSet = false;
 
     int m_downloadSpeed;
-    bool m_downloadSpeedHasBeenSet;
+    bool m_downloadSpeedHasBeenSet = false;
   };
 
 } // namespace Model

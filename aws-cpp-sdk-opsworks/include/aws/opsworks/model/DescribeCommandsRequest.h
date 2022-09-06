@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_commandIds;
-    bool m_commandIdsHasBeenSet;
+    bool m_commandIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     StartTechnicalCueDetectionFilter m_technicalCueFilter;
-    bool m_technicalCueFilterHasBeenSet;
+    bool m_technicalCueFilterHasBeenSet = false;
 
     StartShotDetectionFilter m_shotFilter;
-    bool m_shotFilterHasBeenSet;
+    bool m_shotFilterHasBeenSet = false;
   };
 
 } // namespace Model

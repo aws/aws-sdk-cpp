@@ -280,19 +280,19 @@ namespace Model
   private:
 
     Aws::String m_diskName;
-    bool m_diskNameHasBeenSet;
+    bool m_diskNameHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AddOnRequest> m_addOns;
-    bool m_addOnsHasBeenSet;
+    bool m_addOnsHasBeenSet = false;
   };
 
 } // namespace Model

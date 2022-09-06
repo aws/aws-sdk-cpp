@@ -89,7 +89,7 @@ HealthLakeClient::~HealthLakeClient()
 
 void HealthLakeClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("HealthLake");
+  AWSClient::SetServiceClientName("HealthLake");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

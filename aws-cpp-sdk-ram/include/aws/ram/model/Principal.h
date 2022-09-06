@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     bool m_external;
-    bool m_externalHasBeenSet;
+    bool m_externalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -185,13 +185,13 @@ namespace Model
   private:
 
     ActionGroup m_actionGroup;
-    bool m_actionGroupHasBeenSet;
+    bool m_actionGroupHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

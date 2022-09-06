@@ -122,16 +122,16 @@ namespace Model
   private:
 
     long long m_maximumLength;
-    bool m_maximumLengthHasBeenSet;
+    bool m_maximumLengthHasBeenSet = false;
 
     double m_averageLength;
-    bool m_averageLengthHasBeenSet;
+    bool m_averageLengthHasBeenSet = false;
 
     long long m_numberOfNulls;
-    bool m_numberOfNullsHasBeenSet;
+    bool m_numberOfNullsHasBeenSet = false;
 
     long long m_numberOfDistinctValues;
-    bool m_numberOfDistinctValuesHasBeenSet;
+    bool m_numberOfDistinctValuesHasBeenSet = false;
   };
 
 } // namespace Model

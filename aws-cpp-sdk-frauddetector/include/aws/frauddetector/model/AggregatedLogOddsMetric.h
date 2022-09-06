@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_variableNames;
-    bool m_variableNamesHasBeenSet;
+    bool m_variableNamesHasBeenSet = false;
 
     double m_aggregatedVariablesImportance;
-    bool m_aggregatedVariablesImportanceHasBeenSet;
+    bool m_aggregatedVariablesImportanceHasBeenSet = false;
   };
 
 } // namespace Model

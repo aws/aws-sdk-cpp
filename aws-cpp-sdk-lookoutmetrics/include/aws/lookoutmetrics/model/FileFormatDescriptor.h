@@ -109,10 +109,10 @@ namespace Model
   private:
 
     CsvFormatDescriptor m_csvFormatDescriptor;
-    bool m_csvFormatDescriptorHasBeenSet;
+    bool m_csvFormatDescriptorHasBeenSet = false;
 
     JsonFormatDescriptor m_jsonFormatDescriptor;
-    bool m_jsonFormatDescriptorHasBeenSet;
+    bool m_jsonFormatDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

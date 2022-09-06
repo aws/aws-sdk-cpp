@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_outputNode;
-    bool m_outputNodeHasBeenSet;
+    bool m_outputNodeHasBeenSet = false;
   };
 
 } // namespace Model

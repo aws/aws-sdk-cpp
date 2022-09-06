@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     AssignmentStatus m_assignmentStatus;
-    bool m_assignmentStatusHasBeenSet;
+    bool m_assignmentStatusHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

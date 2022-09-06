@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_keyArn;
-    bool m_keyArnHasBeenSet;
+    bool m_keyArnHasBeenSet = false;
   };
 
 } // namespace Model

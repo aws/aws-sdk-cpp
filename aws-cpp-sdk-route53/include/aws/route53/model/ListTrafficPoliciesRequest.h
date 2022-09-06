@@ -231,10 +231,10 @@ namespace Model
   private:
 
     Aws::String m_trafficPolicyIdMarker;
-    bool m_trafficPolicyIdMarkerHasBeenSet;
+    bool m_trafficPolicyIdMarkerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_inlineDocument;
-    bool m_inlineDocumentHasBeenSet;
+    bool m_inlineDocumentHasBeenSet = false;
   };
 
 } // namespace Model

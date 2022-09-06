@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_httpHeaderName;
-    bool m_httpHeaderNameHasBeenSet;
+    bool m_httpHeaderNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,10 +151,10 @@ namespace Model
   private:
 
     bool m_option;
-    bool m_optionHasBeenSet;
+    bool m_optionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_queryStringsAllowList;
-    bool m_queryStringsAllowListHasBeenSet;
+    bool m_queryStringsAllowListHasBeenSet = false;
   };
 
 } // namespace Model

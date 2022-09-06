@@ -126,10 +126,10 @@ namespace Model
   private:
 
     ActionCondition m_actionCondition;
-    bool m_actionConditionHasBeenSet;
+    bool m_actionConditionHasBeenSet = false;
 
     LabelNameCondition m_labelNameCondition;
-    bool m_labelNameConditionHasBeenSet;
+    bool m_labelNameConditionHasBeenSet = false;
   };
 
 } // namespace Model

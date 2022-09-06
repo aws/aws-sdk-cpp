@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
   };
 
 } // namespace Model

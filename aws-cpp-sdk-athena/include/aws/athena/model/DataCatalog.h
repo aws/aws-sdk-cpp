@@ -556,16 +556,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DataCatalogType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

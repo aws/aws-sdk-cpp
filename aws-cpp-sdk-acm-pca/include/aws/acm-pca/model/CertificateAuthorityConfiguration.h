@@ -208,16 +208,16 @@ namespace Model
   private:
 
     KeyAlgorithm m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     SigningAlgorithm m_signingAlgorithm;
-    bool m_signingAlgorithmHasBeenSet;
+    bool m_signingAlgorithmHasBeenSet = false;
 
     ASN1Subject m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     CsrExtensions m_csrExtensions;
-    bool m_csrExtensionsHasBeenSet;
+    bool m_csrExtensionsHasBeenSet = false;
   };
 
 } // namespace Model

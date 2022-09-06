@@ -343,25 +343,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessTime;
-    bool m_lastAccessTimeHasBeenSet;
+    bool m_lastAccessTimeHasBeenSet = false;
 
     Aws::String m_tableType;
-    bool m_tableTypeHasBeenSet;
+    bool m_tableTypeHasBeenSet = false;
 
     Aws::Vector<Column> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
 
     Aws::Vector<Column> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

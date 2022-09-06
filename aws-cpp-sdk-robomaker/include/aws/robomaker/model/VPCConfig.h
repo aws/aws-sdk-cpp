@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     bool m_assignPublicIp;
-    bool m_assignPublicIpHasBeenSet;
+    bool m_assignPublicIpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Stream m_stream;
-    bool m_streamHasBeenSet;
+    bool m_streamHasBeenSet = false;
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

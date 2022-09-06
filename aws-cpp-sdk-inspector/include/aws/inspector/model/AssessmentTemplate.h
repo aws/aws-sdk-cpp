@@ -412,31 +412,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_assessmentTargetArn;
-    bool m_assessmentTargetArnHasBeenSet;
+    bool m_assessmentTargetArnHasBeenSet = false;
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     Aws::Vector<Attribute> m_userAttributesForFindings;
-    bool m_userAttributesForFindingsHasBeenSet;
+    bool m_userAttributesForFindingsHasBeenSet = false;
 
     Aws::String m_lastAssessmentRunArn;
-    bool m_lastAssessmentRunArnHasBeenSet;
+    bool m_lastAssessmentRunArnHasBeenSet = false;
 
     int m_assessmentRunCount;
-    bool m_assessmentRunCountHasBeenSet;
+    bool m_assessmentRunCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

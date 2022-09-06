@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_backupRetentionEnabled;
-    bool m_backupRetentionEnabledHasBeenSet;
+    bool m_backupRetentionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

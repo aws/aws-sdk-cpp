@@ -314,19 +314,19 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
 
     Aws::Vector<OptionSpecification> m_optionsToRemove;
-    bool m_optionsToRemoveHasBeenSet;
+    bool m_optionsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

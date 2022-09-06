@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_masteringMonitorNits;
-    bool m_masteringMonitorNitsHasBeenSet;
+    bool m_masteringMonitorNitsHasBeenSet = false;
 
     int m_targetMonitorNits;
-    bool m_targetMonitorNitsHasBeenSet;
+    bool m_targetMonitorNitsHasBeenSet = false;
   };
 
 } // namespace Model

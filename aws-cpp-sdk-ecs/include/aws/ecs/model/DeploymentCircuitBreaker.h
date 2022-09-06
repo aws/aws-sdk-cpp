@@ -105,10 +105,10 @@ namespace Model
   private:
 
     bool m_enable;
-    bool m_enableHasBeenSet;
+    bool m_enableHasBeenSet = false;
 
     bool m_rollback;
-    bool m_rollbackHasBeenSet;
+    bool m_rollbackHasBeenSet = false;
   };
 
 } // namespace Model

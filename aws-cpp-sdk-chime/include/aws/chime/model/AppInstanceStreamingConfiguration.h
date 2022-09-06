@@ -113,10 +113,10 @@ namespace Model
   private:
 
     AppInstanceDataType m_appInstanceDataType;
-    bool m_appInstanceDataTypeHasBeenSet;
+    bool m_appInstanceDataTypeHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

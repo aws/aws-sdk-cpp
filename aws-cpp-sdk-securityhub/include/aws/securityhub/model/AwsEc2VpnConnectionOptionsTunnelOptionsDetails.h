@@ -678,52 +678,52 @@ namespace Model
   private:
 
     int m_dpdTimeoutSeconds;
-    bool m_dpdTimeoutSecondsHasBeenSet;
+    bool m_dpdTimeoutSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ikeVersions;
-    bool m_ikeVersionsHasBeenSet;
+    bool m_ikeVersionsHasBeenSet = false;
 
     Aws::String m_outsideIpAddress;
-    bool m_outsideIpAddressHasBeenSet;
+    bool m_outsideIpAddressHasBeenSet = false;
 
     Aws::Vector<int> m_phase1DhGroupNumbers;
-    bool m_phase1DhGroupNumbersHasBeenSet;
+    bool m_phase1DhGroupNumbersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phase1EncryptionAlgorithms;
-    bool m_phase1EncryptionAlgorithmsHasBeenSet;
+    bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phase1IntegrityAlgorithms;
-    bool m_phase1IntegrityAlgorithmsHasBeenSet;
+    bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
 
     int m_phase1LifetimeSeconds;
-    bool m_phase1LifetimeSecondsHasBeenSet;
+    bool m_phase1LifetimeSecondsHasBeenSet = false;
 
     Aws::Vector<int> m_phase2DhGroupNumbers;
-    bool m_phase2DhGroupNumbersHasBeenSet;
+    bool m_phase2DhGroupNumbersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phase2EncryptionAlgorithms;
-    bool m_phase2EncryptionAlgorithmsHasBeenSet;
+    bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phase2IntegrityAlgorithms;
-    bool m_phase2IntegrityAlgorithmsHasBeenSet;
+    bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
 
     int m_phase2LifetimeSeconds;
-    bool m_phase2LifetimeSecondsHasBeenSet;
+    bool m_phase2LifetimeSecondsHasBeenSet = false;
 
     Aws::String m_preSharedKey;
-    bool m_preSharedKeyHasBeenSet;
+    bool m_preSharedKeyHasBeenSet = false;
 
     int m_rekeyFuzzPercentage;
-    bool m_rekeyFuzzPercentageHasBeenSet;
+    bool m_rekeyFuzzPercentageHasBeenSet = false;
 
     int m_rekeyMarginTimeSeconds;
-    bool m_rekeyMarginTimeSecondsHasBeenSet;
+    bool m_rekeyMarginTimeSecondsHasBeenSet = false;
 
     int m_replayWindowSize;
-    bool m_replayWindowSizeHasBeenSet;
+    bool m_replayWindowSizeHasBeenSet = false;
 
     Aws::String m_tunnelInsideCidr;
-    bool m_tunnelInsideCidrHasBeenSet;
+    bool m_tunnelInsideCidrHasBeenSet = false;
   };
 
 } // namespace Model

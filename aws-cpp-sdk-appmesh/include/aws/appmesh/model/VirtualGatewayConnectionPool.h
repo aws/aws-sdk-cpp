@@ -138,13 +138,13 @@ namespace Model
   private:
 
     VirtualGatewayGrpcConnectionPool m_grpc;
-    bool m_grpcHasBeenSet;
+    bool m_grpcHasBeenSet = false;
 
     VirtualGatewayHttpConnectionPool m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     VirtualGatewayHttp2ConnectionPool m_http2;
-    bool m_http2HasBeenSet;
+    bool m_http2HasBeenSet = false;
   };
 
 } // namespace Model

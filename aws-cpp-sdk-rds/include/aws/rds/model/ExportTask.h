@@ -744,52 +744,52 @@ namespace Model
   private:
 
     Aws::String m_exportTaskIdentifier;
-    bool m_exportTaskIdentifierHasBeenSet;
+    bool m_exportTaskIdentifierHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exportOnly;
-    bool m_exportOnlyHasBeenSet;
+    bool m_exportOnlyHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotTime;
-    bool m_snapshotTimeHasBeenSet;
+    bool m_snapshotTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskStartTime;
-    bool m_taskStartTimeHasBeenSet;
+    bool m_taskStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskEndTime;
-    bool m_taskEndTimeHasBeenSet;
+    bool m_taskEndTimeHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_percentProgress;
-    bool m_percentProgressHasBeenSet;
+    bool m_percentProgressHasBeenSet = false;
 
     int m_totalExtractedDataInGB;
-    bool m_totalExtractedDataInGBHasBeenSet;
+    bool m_totalExtractedDataInGBHasBeenSet = false;
 
     Aws::String m_failureCause;
-    bool m_failureCauseHasBeenSet;
+    bool m_failureCauseHasBeenSet = false;
 
     Aws::String m_warningMessage;
-    bool m_warningMessageHasBeenSet;
+    bool m_warningMessageHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

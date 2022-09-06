@@ -195,16 +195,16 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_relationshipName;
-    bool m_relationshipNameHasBeenSet;
+    bool m_relationshipNameHasBeenSet = false;
   };
 
 } // namespace Model

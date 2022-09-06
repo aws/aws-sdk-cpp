@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_includeQuerySpellCheckSuggestions;
-    bool m_includeQuerySpellCheckSuggestionsHasBeenSet;
+    bool m_includeQuerySpellCheckSuggestionsHasBeenSet = false;
   };
 
 } // namespace Model

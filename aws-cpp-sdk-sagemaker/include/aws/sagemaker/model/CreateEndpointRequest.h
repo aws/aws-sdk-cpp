@@ -245,16 +245,16 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     DeploymentConfig m_deploymentConfig;
-    bool m_deploymentConfigHasBeenSet;
+    bool m_deploymentConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

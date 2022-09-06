@@ -512,43 +512,43 @@ namespace Model
   private:
 
     Aws::String m_raidArrayId;
-    bool m_raidArrayIdHasBeenSet;
+    bool m_raidArrayIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_raidLevel;
-    bool m_raidLevelHasBeenSet;
+    bool m_raidLevelHasBeenSet = false;
 
     int m_numberOfDisks;
-    bool m_numberOfDisksHasBeenSet;
+    bool m_numberOfDisksHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_mountPoint;
-    bool m_mountPointHasBeenSet;
+    bool m_mountPointHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
   };
 
 } // namespace Model

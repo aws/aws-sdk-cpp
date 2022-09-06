@@ -336,22 +336,22 @@ namespace Model
   private:
 
     Aws::String m_savingsPlanOfferingId;
-    bool m_savingsPlanOfferingIdHasBeenSet;
+    bool m_savingsPlanOfferingIdHasBeenSet = false;
 
     Aws::String m_commitment;
-    bool m_commitmentHasBeenSet;
+    bool m_commitmentHasBeenSet = false;
 
     Aws::String m_upfrontPaymentAmount;
-    bool m_upfrontPaymentAmountHasBeenSet;
+    bool m_upfrontPaymentAmountHasBeenSet = false;
 
     Aws::Utils::DateTime m_purchaseTime;
-    bool m_purchaseTimeHasBeenSet;
+    bool m_purchaseTimeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

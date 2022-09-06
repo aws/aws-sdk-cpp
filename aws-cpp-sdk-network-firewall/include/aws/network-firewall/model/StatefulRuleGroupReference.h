@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     StatefulRuleGroupOverride m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
   };
 
 } // namespace Model

@@ -293,19 +293,19 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     AccessRules m_accessRules;
-    bool m_accessRulesHasBeenSet;
+    bool m_accessRulesHasBeenSet = false;
 
     Aws::String m_versioning;
-    bool m_versioningHasBeenSet;
+    bool m_versioningHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readonlyAccessAccounts;
-    bool m_readonlyAccessAccountsHasBeenSet;
+    bool m_readonlyAccessAccountsHasBeenSet = false;
 
     BucketAccessLogConfig m_accessLogConfig;
-    bool m_accessLogConfigHasBeenSet;
+    bool m_accessLogConfigHasBeenSet = false;
   };
 
 } // namespace Model

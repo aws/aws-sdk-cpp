@@ -92,7 +92,7 @@ ElasticTranscoderClient::~ElasticTranscoderClient()
 
 void ElasticTranscoderClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Elastic Transcoder");
+  AWSClient::SetServiceClientName("Elastic Transcoder");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

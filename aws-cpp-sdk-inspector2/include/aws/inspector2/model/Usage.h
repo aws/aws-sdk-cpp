@@ -145,16 +145,16 @@ namespace Model
   private:
 
     Currency m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     double m_estimatedMonthlyCost;
-    bool m_estimatedMonthlyCostHasBeenSet;
+    bool m_estimatedMonthlyCostHasBeenSet = false;
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     UsageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

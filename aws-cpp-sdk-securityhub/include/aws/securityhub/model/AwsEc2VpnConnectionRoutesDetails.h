@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

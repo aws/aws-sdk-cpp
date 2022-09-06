@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
   };
 
 } // namespace Model

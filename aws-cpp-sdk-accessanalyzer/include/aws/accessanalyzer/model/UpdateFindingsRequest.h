@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ids;
-    bool m_idsHasBeenSet;
+    bool m_idsHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     FindingStatusUpdate m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

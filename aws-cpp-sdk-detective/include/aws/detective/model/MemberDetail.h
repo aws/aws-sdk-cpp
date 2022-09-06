@@ -729,37 +729,37 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::String m_administratorId;
-    bool m_administratorIdHasBeenSet;
+    bool m_administratorIdHasBeenSet = false;
 
     MemberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     MemberDisabledReason m_disabledReason;
-    bool m_disabledReasonHasBeenSet;
+    bool m_disabledReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitedTime;
-    bool m_invitedTimeHasBeenSet;
+    bool m_invitedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
 
     InvitationType m_invitationType;
-    bool m_invitationTypeHasBeenSet;
+    bool m_invitationTypeHasBeenSet = false;
 
     Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo> m_volumeUsageByDatasourcePackage;
-    bool m_volumeUsageByDatasourcePackageHasBeenSet;
+    bool m_volumeUsageByDatasourcePackageHasBeenSet = false;
 
     Aws::Map<DatasourcePackage, DatasourcePackageIngestState> m_datasourcePackageIngestStates;
-    bool m_datasourcePackageIngestStatesHasBeenSet;
+    bool m_datasourcePackageIngestStatesHasBeenSet = false;
   };
 
 } // namespace Model

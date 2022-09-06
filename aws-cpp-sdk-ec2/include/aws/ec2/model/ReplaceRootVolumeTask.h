@@ -361,22 +361,22 @@ namespace Model
   private:
 
     Aws::String m_replaceRootVolumeTaskId;
-    bool m_replaceRootVolumeTaskIdHasBeenSet;
+    bool m_replaceRootVolumeTaskIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     ReplaceRootVolumeTaskState m_taskState;
-    bool m_taskStateHasBeenSet;
+    bool m_taskStateHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_completeTime;
-    bool m_completeTimeHasBeenSet;
+    bool m_completeTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

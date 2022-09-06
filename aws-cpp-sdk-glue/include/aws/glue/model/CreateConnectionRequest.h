@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     ConnectionInput m_connectionInput;
-    bool m_connectionInputHasBeenSet;
+    bool m_connectionInputHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

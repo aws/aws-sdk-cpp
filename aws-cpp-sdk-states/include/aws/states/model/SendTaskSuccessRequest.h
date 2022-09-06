@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_taskToken;
-    bool m_taskTokenHasBeenSet;
+    bool m_taskTokenHasBeenSet = false;
 
     Aws::String m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
   };
 
 } // namespace Model

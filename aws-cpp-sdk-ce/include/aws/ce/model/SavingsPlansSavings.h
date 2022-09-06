@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_netSavings;
-    bool m_netSavingsHasBeenSet;
+    bool m_netSavingsHasBeenSet = false;
 
     Aws::String m_onDemandCostEquivalent;
-    bool m_onDemandCostEquivalentHasBeenSet;
+    bool m_onDemandCostEquivalentHasBeenSet = false;
   };
 
 } // namespace Model

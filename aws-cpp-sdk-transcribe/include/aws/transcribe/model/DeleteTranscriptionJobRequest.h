@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_transcriptionJobName;
-    bool m_transcriptionJobNameHasBeenSet;
+    bool m_transcriptionJobNameHasBeenSet = false;
   };
 
 } // namespace Model

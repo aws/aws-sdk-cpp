@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceIdList;
-    bool m_resourceIdListHasBeenSet;
+    bool m_resourceIdListHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

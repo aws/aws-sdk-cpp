@@ -114,10 +114,10 @@ namespace Model
   private:
 
     bool m_useLakeFormationCredentials;
-    bool m_useLakeFormationCredentialsHasBeenSet;
+    bool m_useLakeFormationCredentialsHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

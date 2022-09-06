@@ -127,13 +127,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

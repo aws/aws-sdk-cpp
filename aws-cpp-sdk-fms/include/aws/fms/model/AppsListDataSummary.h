@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_listArn;
-    bool m_listArnHasBeenSet;
+    bool m_listArnHasBeenSet = false;
 
     Aws::String m_listId;
-    bool m_listIdHasBeenSet;
+    bool m_listIdHasBeenSet = false;
 
     Aws::String m_listName;
-    bool m_listNameHasBeenSet;
+    bool m_listNameHasBeenSet = false;
 
     Aws::Vector<App> m_appsList;
-    bool m_appsListHasBeenSet;
+    bool m_appsListHasBeenSet = false;
   };
 
 } // namespace Model

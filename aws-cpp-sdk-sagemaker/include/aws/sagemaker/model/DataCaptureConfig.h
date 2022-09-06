@@ -329,22 +329,22 @@ namespace Model
   private:
 
     bool m_enableCapture;
-    bool m_enableCaptureHasBeenSet;
+    bool m_enableCaptureHasBeenSet = false;
 
     int m_initialSamplingPercentage;
-    bool m_initialSamplingPercentageHasBeenSet;
+    bool m_initialSamplingPercentageHasBeenSet = false;
 
     Aws::String m_destinationS3Uri;
-    bool m_destinationS3UriHasBeenSet;
+    bool m_destinationS3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<CaptureOption> m_captureOptions;
-    bool m_captureOptionsHasBeenSet;
+    bool m_captureOptionsHasBeenSet = false;
 
     CaptureContentTypeHeader m_captureContentTypeHeader;
-    bool m_captureContentTypeHeaderHasBeenSet;
+    bool m_captureContentTypeHeaderHasBeenSet = false;
   };
 
 } // namespace Model

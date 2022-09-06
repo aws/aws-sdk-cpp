@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

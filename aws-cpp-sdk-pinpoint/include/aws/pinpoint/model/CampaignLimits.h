@@ -188,19 +188,19 @@ namespace Model
   private:
 
     int m_daily;
-    bool m_dailyHasBeenSet;
+    bool m_dailyHasBeenSet = false;
 
     int m_maximumDuration;
-    bool m_maximumDurationHasBeenSet;
+    bool m_maximumDurationHasBeenSet = false;
 
     int m_messagesPerSecond;
-    bool m_messagesPerSecondHasBeenSet;
+    bool m_messagesPerSecondHasBeenSet = false;
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     int m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
   };
 
 } // namespace Model

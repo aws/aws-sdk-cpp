@@ -482,37 +482,37 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     SnapshotState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
   };
 
 } // namespace Model

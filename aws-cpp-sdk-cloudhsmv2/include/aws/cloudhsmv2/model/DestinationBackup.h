@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_sourceBackup;
-    bool m_sourceBackupHasBeenSet;
+    bool m_sourceBackupHasBeenSet = false;
 
     Aws::String m_sourceCluster;
-    bool m_sourceClusterHasBeenSet;
+    bool m_sourceClusterHasBeenSet = false;
   };
 
 } // namespace Model

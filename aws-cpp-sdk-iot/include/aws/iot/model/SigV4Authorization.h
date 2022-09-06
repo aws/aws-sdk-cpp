@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_signingRegion;
-    bool m_signingRegionHasBeenSet;
+    bool m_signingRegionHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

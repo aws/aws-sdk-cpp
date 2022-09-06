@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_sipMediaApplicationId;
-    bool m_sipMediaApplicationIdHasBeenSet;
+    bool m_sipMediaApplicationIdHasBeenSet = false;
   };
 
 } // namespace Model

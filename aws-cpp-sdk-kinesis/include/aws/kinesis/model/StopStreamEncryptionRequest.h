@@ -246,13 +246,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     EncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
   };
 
 } // namespace Model

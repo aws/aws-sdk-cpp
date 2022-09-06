@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_networkArn;
-    bool m_networkArnHasBeenSet;
+    bool m_networkArnHasBeenSet = false;
 
     Aws::String m_networkName;
-    bool m_networkNameHasBeenSet;
+    bool m_networkNameHasBeenSet = false;
 
     NetworkStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

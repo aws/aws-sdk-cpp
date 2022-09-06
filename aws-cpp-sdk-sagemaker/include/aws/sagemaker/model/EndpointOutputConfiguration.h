@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_variantName;
-    bool m_variantNameHasBeenSet;
+    bool m_variantNameHasBeenSet = false;
 
     ProductionVariantInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_initialInstanceCount;
-    bool m_initialInstanceCountHasBeenSet;
+    bool m_initialInstanceCountHasBeenSet = false;
   };
 
 } // namespace Model

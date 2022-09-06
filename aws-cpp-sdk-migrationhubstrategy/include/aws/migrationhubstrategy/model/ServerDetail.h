@@ -529,43 +529,43 @@ namespace Model
   private:
 
     S3Object m_antipatternReportS3Object;
-    bool m_antipatternReportS3ObjectHasBeenSet;
+    bool m_antipatternReportS3ObjectHasBeenSet = false;
 
     AntipatternReportStatus m_antipatternReportStatus;
-    bool m_antipatternReportStatusHasBeenSet;
+    bool m_antipatternReportStatusHasBeenSet = false;
 
     Aws::String m_antipatternReportStatusMessage;
-    bool m_antipatternReportStatusMessageHasBeenSet;
+    bool m_antipatternReportStatusMessageHasBeenSet = false;
 
     Aws::Vector<StrategySummary> m_applicationComponentStrategySummary;
-    bool m_applicationComponentStrategySummaryHasBeenSet;
+    bool m_applicationComponentStrategySummaryHasBeenSet = false;
 
     RunTimeAssessmentStatus m_dataCollectionStatus;
-    bool m_dataCollectionStatusHasBeenSet;
+    bool m_dataCollectionStatusHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTimestamp;
-    bool m_lastAnalyzedTimestampHasBeenSet;
+    bool m_lastAnalyzedTimestampHasBeenSet = false;
 
     Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
-    bool m_listAntipatternSeveritySummaryHasBeenSet;
+    bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RecommendationSet m_recommendationSet;
-    bool m_recommendationSetHasBeenSet;
+    bool m_recommendationSetHasBeenSet = false;
 
     Aws::String m_serverType;
-    bool m_serverTypeHasBeenSet;
+    bool m_serverTypeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     SystemInfo m_systemInfo;
-    bool m_systemInfoHasBeenSet;
+    bool m_systemInfoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ReservationPlanSettings m_reservationPlanSettings;
-    bool m_reservationPlanSettingsHasBeenSet;
+    bool m_reservationPlanSettingsHasBeenSet = false;
 
     QueueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

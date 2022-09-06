@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet;
+    bool m_trackerNameHasBeenSet = false;
 
     Aws::Vector<DevicePositionUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
   };
 
 } // namespace Model

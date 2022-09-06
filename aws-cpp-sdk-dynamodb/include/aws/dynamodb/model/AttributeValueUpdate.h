@@ -428,10 +428,10 @@ namespace Model
   private:
 
     AttributeValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AttributeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

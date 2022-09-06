@@ -192,16 +192,16 @@ namespace Model
   private:
 
     FindingCriteria m_findingCriteria;
-    bool m_findingCriteriaHasBeenSet;
+    bool m_findingCriteriaHasBeenSet = false;
 
     GroupBy m_groupBy;
-    bool m_groupByHasBeenSet;
+    bool m_groupByHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     FindingStatisticsSortCriteria m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

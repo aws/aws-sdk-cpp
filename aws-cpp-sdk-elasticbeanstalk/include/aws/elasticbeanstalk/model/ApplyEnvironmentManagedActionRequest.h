@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::String m_comparisonValue;
-    bool m_comparisonValueHasBeenSet;
+    bool m_comparisonValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -95,10 +95,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_unscaledValue;
-    bool m_unscaledValueHasBeenSet;
+    bool m_unscaledValueHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
   };
 
 } // namespace Model

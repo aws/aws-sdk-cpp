@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_accountPassword;
-    bool m_accountPasswordHasBeenSet;
+    bool m_accountPasswordHasBeenSet = false;
   };
 
 } // namespace Model

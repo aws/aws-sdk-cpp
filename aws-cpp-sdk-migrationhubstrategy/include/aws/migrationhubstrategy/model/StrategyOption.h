@@ -172,16 +172,16 @@ namespace Model
   private:
 
     bool m_isPreferred;
-    bool m_isPreferredHasBeenSet;
+    bool m_isPreferredHasBeenSet = false;
 
     Strategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     TargetDestination m_targetDestination;
-    bool m_targetDestinationHasBeenSet;
+    bool m_targetDestinationHasBeenSet = false;
 
     TransformationToolName m_toolName;
-    bool m_toolNameHasBeenSet;
+    bool m_toolNameHasBeenSet = false;
   };
 
 } // namespace Model

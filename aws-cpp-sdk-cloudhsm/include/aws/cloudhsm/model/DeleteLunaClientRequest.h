@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_clientArn;
-    bool m_clientArnHasBeenSet;
+    bool m_clientArnHasBeenSet = false;
   };
 
 } // namespace Model

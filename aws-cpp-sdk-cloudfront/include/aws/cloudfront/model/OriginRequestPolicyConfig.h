@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OriginRequestPolicyHeadersConfig m_headersConfig;
-    bool m_headersConfigHasBeenSet;
+    bool m_headersConfigHasBeenSet = false;
 
     OriginRequestPolicyCookiesConfig m_cookiesConfig;
-    bool m_cookiesConfigHasBeenSet;
+    bool m_cookiesConfigHasBeenSet = false;
 
     OriginRequestPolicyQueryStringsConfig m_queryStringsConfig;
-    bool m_queryStringsConfigHasBeenSet;
+    bool m_queryStringsConfigHasBeenSet = false;
   };
 
 } // namespace Model

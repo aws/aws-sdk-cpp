@@ -77,7 +77,7 @@ namespace Model
   private:
 
     IngestionS3InputConfiguration m_s3InputConfiguration;
-    bool m_s3InputConfigurationHasBeenSet;
+    bool m_s3InputConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_snapshotCopyGrantName;
-    bool m_snapshotCopyGrantNameHasBeenSet;
+    bool m_snapshotCopyGrantNameHasBeenSet = false;
   };
 
 } // namespace Model

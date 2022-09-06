@@ -70,7 +70,7 @@ namespace Model
   private:
 
     OTAJobConfig m_oTAJobConfig;
-    bool m_oTAJobConfigHasBeenSet;
+    bool m_oTAJobConfigHasBeenSet = false;
   };
 
 } // namespace Model

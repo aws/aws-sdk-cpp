@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_deploymentIds;
-    bool m_deploymentIdsHasBeenSet;
+    bool m_deploymentIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_observationId;
-    bool m_observationIdHasBeenSet;
+    bool m_observationIdHasBeenSet = false;
   };
 
 } // namespace Model

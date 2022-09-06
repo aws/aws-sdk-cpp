@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<ReplaceableAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

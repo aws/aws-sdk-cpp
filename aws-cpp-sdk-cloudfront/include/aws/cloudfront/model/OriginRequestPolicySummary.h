@@ -114,10 +114,10 @@ namespace Model
   private:
 
     OriginRequestPolicyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     OriginRequestPolicy m_originRequestPolicy;
-    bool m_originRequestPolicyHasBeenSet;
+    bool m_originRequestPolicyHasBeenSet = false;
   };
 
 } // namespace Model

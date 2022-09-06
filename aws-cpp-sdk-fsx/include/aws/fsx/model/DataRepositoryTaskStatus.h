@@ -155,16 +155,16 @@ namespace Model
   private:
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
 
     long long m_succeededCount;
-    bool m_succeededCountHasBeenSet;
+    bool m_succeededCountHasBeenSet = false;
 
     long long m_failedCount;
-    bool m_failedCountHasBeenSet;
+    bool m_failedCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

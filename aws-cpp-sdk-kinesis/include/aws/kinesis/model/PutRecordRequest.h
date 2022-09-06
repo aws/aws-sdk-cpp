@@ -358,19 +358,19 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_partitionKey;
-    bool m_partitionKeyHasBeenSet;
+    bool m_partitionKeyHasBeenSet = false;
 
     Aws::String m_explicitHashKey;
-    bool m_explicitHashKeyHasBeenSet;
+    bool m_explicitHashKeyHasBeenSet = false;
 
     Aws::String m_sequenceNumberForOrdering;
-    bool m_sequenceNumberForOrderingHasBeenSet;
+    bool m_sequenceNumberForOrderingHasBeenSet = false;
   };
 
 } // namespace Model

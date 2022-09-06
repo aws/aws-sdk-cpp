@@ -218,19 +218,19 @@ namespace Model
   private:
 
     bool m_isAwsOrgEnabled;
-    bool m_isAwsOrgEnabledHasBeenSet;
+    bool m_isAwsOrgEnabledHasBeenSet = false;
 
     Aws::String m_snsTopic;
-    bool m_snsTopicHasBeenSet;
+    bool m_snsTopicHasBeenSet = false;
 
     AssessmentReportsDestination m_defaultAssessmentReportsDestination;
-    bool m_defaultAssessmentReportsDestinationHasBeenSet;
+    bool m_defaultAssessmentReportsDestinationHasBeenSet = false;
 
     Aws::Vector<Role> m_defaultProcessOwners;
-    bool m_defaultProcessOwnersHasBeenSet;
+    bool m_defaultProcessOwnersHasBeenSet = false;
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
   };
 
 } // namespace Model

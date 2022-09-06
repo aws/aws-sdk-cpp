@@ -211,19 +211,19 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ServiceCode m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
   };
 
 } // namespace Model

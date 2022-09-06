@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_newApplicationName;
-    bool m_newApplicationNameHasBeenSet;
+    bool m_newApplicationNameHasBeenSet = false;
   };
 
 } // namespace Model

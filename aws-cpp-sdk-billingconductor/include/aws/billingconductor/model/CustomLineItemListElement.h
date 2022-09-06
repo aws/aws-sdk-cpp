@@ -399,34 +399,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ListCustomLineItemChargeDetails m_chargeDetails;
-    bool m_chargeDetailsHasBeenSet;
+    bool m_chargeDetailsHasBeenSet = false;
 
     CurrencyCode m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::String m_billingGroupArn;
-    bool m_billingGroupArnHasBeenSet;
+    bool m_billingGroupArnHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     long long m_associationSize;
-    bool m_associationSizeHasBeenSet;
+    bool m_associationSizeHasBeenSet = false;
   };
 
 } // namespace Model

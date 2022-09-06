@@ -354,22 +354,22 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     InstanceSpecification m_instanceSpecification;
-    bool m_instanceSpecificationHasBeenSet;
+    bool m_instanceSpecificationHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     CopyTagsFromSource m_copyTagsFromSource;
-    bool m_copyTagsFromSourceHasBeenSet;
+    bool m_copyTagsFromSourceHasBeenSet = false;
   };
 
 } // namespace Model

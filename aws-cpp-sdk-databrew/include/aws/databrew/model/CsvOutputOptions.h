@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
   };
 
 } // namespace Model

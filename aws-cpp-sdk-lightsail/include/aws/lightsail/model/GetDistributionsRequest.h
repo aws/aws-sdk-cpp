@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_distributionName;
-    bool m_distributionNameHasBeenSet;
+    bool m_distributionNameHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

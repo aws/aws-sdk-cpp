@@ -271,19 +271,19 @@ namespace Model
   private:
 
     Aws::String m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     Aws::Vector<int> m_occurrenceDays;
-    bool m_occurrenceDaysHasBeenSet;
+    bool m_occurrenceDaysHasBeenSet = false;
 
     bool m_occurrenceRelativeToEnd;
-    bool m_occurrenceRelativeToEndHasBeenSet;
+    bool m_occurrenceRelativeToEndHasBeenSet = false;
 
     Aws::String m_occurrenceUnit;
-    bool m_occurrenceUnitHasBeenSet;
+    bool m_occurrenceUnitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

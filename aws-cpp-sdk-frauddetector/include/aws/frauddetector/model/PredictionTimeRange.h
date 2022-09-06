@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

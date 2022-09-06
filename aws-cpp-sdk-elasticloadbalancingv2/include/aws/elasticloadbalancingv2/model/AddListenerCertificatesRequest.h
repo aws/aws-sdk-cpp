@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::Vector<Certificate> m_certificates;
-    bool m_certificatesHasBeenSet;
+    bool m_certificatesHasBeenSet = false;
   };
 
 } // namespace Model

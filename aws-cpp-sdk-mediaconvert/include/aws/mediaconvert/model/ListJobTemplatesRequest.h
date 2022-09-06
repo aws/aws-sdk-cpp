@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     JobTemplateListBy m_listBy;
-    bool m_listByHasBeenSet;
+    bool m_listByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Order m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

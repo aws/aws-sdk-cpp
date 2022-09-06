@@ -1225,67 +1225,67 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_launchConfigurationName;
-    bool m_launchConfigurationNameHasBeenSet;
+    bool m_launchConfigurationNameHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     MixedInstancesPolicy m_mixedInstancesPolicy;
-    bool m_mixedInstancesPolicyHasBeenSet;
+    bool m_mixedInstancesPolicyHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     int m_defaultCooldown;
-    bool m_defaultCooldownHasBeenSet;
+    bool m_defaultCooldownHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::String m_healthCheckType;
-    bool m_healthCheckTypeHasBeenSet;
+    bool m_healthCheckTypeHasBeenSet = false;
 
     int m_healthCheckGracePeriod;
-    bool m_healthCheckGracePeriodHasBeenSet;
+    bool m_healthCheckGracePeriodHasBeenSet = false;
 
     Aws::String m_placementGroup;
-    bool m_placementGroupHasBeenSet;
+    bool m_placementGroupHasBeenSet = false;
 
     Aws::String m_vPCZoneIdentifier;
-    bool m_vPCZoneIdentifierHasBeenSet;
+    bool m_vPCZoneIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminationPolicies;
-    bool m_terminationPoliciesHasBeenSet;
+    bool m_terminationPoliciesHasBeenSet = false;
 
     bool m_newInstancesProtectedFromScaleIn;
-    bool m_newInstancesProtectedFromScaleInHasBeenSet;
+    bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
 
     Aws::String m_serviceLinkedRoleARN;
-    bool m_serviceLinkedRoleARNHasBeenSet;
+    bool m_serviceLinkedRoleARNHasBeenSet = false;
 
     int m_maxInstanceLifetime;
-    bool m_maxInstanceLifetimeHasBeenSet;
+    bool m_maxInstanceLifetimeHasBeenSet = false;
 
     bool m_capacityRebalance;
-    bool m_capacityRebalanceHasBeenSet;
+    bool m_capacityRebalanceHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_desiredCapacityType;
-    bool m_desiredCapacityTypeHasBeenSet;
+    bool m_desiredCapacityTypeHasBeenSet = false;
 
     int m_defaultInstanceWarmup;
-    bool m_defaultInstanceWarmupHasBeenSet;
+    bool m_defaultInstanceWarmupHasBeenSet = false;
   };
 
 } // namespace Model

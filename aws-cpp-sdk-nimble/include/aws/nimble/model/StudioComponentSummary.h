@@ -371,31 +371,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_studioComponentId;
-    bool m_studioComponentIdHasBeenSet;
+    bool m_studioComponentIdHasBeenSet = false;
 
     StudioComponentSubtype m_subtype;
-    bool m_subtypeHasBeenSet;
+    bool m_subtypeHasBeenSet = false;
 
     StudioComponentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
-    bool m_updatedByHasBeenSet;
+    bool m_updatedByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_guardDutyFindingId;
-    bool m_guardDutyFindingIdHasBeenSet;
+    bool m_guardDutyFindingIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

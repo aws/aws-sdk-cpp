@@ -249,10 +249,10 @@ namespace Model
   private:
 
     ServerSideEncryption m_sSEAlgorithm;
-    bool m_sSEAlgorithmHasBeenSet;
+    bool m_sSEAlgorithmHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyID;
-    bool m_kMSMasterKeyIDHasBeenSet;
+    bool m_kMSMasterKeyIDHasBeenSet = false;
   };
 
 } // namespace Model

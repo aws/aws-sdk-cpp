@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
   };
 
 } // namespace Model

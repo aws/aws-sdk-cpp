@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_roomId;
-    bool m_roomIdHasBeenSet;
+    bool m_roomIdHasBeenSet = false;
 
     Aws::Vector<MembershipItem> m_membershipItemList;
-    bool m_membershipItemListHasBeenSet;
+    bool m_membershipItemListHasBeenSet = false;
   };
 
 } // namespace Model

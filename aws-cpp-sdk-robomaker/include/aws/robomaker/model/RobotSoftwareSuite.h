@@ -103,10 +103,10 @@ namespace Model
   private:
 
     RobotSoftwareSuiteType m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RobotSoftwareSuiteVersionType m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

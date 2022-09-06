@@ -172,16 +172,16 @@ namespace Model
   private:
 
     RtmpOutputCertificateMode m_certificateMode;
-    bool m_certificateModeHasBeenSet;
+    bool m_certificateModeHasBeenSet = false;
 
     int m_connectionRetryInterval;
-    bool m_connectionRetryIntervalHasBeenSet;
+    bool m_connectionRetryIntervalHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
   };
 
 } // namespace Model

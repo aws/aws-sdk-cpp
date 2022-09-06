@@ -212,13 +212,13 @@ namespace Model
   private:
 
     LogsConfigStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -277,22 +277,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_savingsPlanArns;
-    bool m_savingsPlanArnsHasBeenSet;
+    bool m_savingsPlanArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_savingsPlanIds;
-    bool m_savingsPlanIdsHasBeenSet;
+    bool m_savingsPlanIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<SavingsPlanState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     Aws::Vector<SavingsPlanFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

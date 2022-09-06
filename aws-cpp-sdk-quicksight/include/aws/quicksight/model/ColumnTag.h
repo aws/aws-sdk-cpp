@@ -105,10 +105,10 @@ namespace Model
   private:
 
     GeoSpatialDataRole m_columnGeographicRole;
-    bool m_columnGeographicRoleHasBeenSet;
+    bool m_columnGeographicRoleHasBeenSet = false;
 
     ColumnDescription m_columnDescription;
-    bool m_columnDescriptionHasBeenSet;
+    bool m_columnDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

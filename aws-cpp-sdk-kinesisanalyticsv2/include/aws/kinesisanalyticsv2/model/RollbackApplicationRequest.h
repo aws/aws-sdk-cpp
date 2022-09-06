@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -168,19 +168,19 @@ namespace Model
   private:
 
     Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet;
+    bool m_connectInstanceIdHasBeenSet = false;
 
     DialerConfig m_dialerConfig;
-    bool m_dialerConfigHasBeenSet;
+    bool m_dialerConfigHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OutboundCallConfig m_outboundCallConfig;
-    bool m_outboundCallConfigHasBeenSet;
+    bool m_outboundCallConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

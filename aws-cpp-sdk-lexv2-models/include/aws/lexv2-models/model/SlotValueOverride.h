@@ -179,13 +179,13 @@ namespace Model
   private:
 
     SlotShape m_shape;
-    bool m_shapeHasBeenSet;
+    bool m_shapeHasBeenSet = false;
 
     SlotValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Vector<SlotValueOverride> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

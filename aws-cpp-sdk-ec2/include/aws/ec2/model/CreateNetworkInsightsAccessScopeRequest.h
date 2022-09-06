@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::Vector<AccessScopePathRequest> m_matchPaths;
-    bool m_matchPathsHasBeenSet;
+    bool m_matchPathsHasBeenSet = false;
 
     Aws::Vector<AccessScopePathRequest> m_excludePaths;
-    bool m_excludePathsHasBeenSet;
+    bool m_excludePathsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

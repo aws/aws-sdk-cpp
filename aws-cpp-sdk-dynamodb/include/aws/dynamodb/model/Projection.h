@@ -186,10 +186,10 @@ namespace Model
   private:
 
     ProjectionType m_projectionType;
-    bool m_projectionTypeHasBeenSet;
+    bool m_projectionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nonKeyAttributes;
-    bool m_nonKeyAttributesHasBeenSet;
+    bool m_nonKeyAttributesHasBeenSet = false;
   };
 
 } // namespace Model

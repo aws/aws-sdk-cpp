@@ -107,10 +107,10 @@ namespace Model
   private:
 
     bool m_hasMoreErrors;
-    bool m_hasMoreErrorsHasBeenSet;
+    bool m_hasMoreErrorsHasBeenSet = false;
 
     Aws::Vector<ResourceError> m_resourceErrors;
-    bool m_resourceErrorsHasBeenSet;
+    bool m_resourceErrorsHasBeenSet = false;
   };
 
 } // namespace Model

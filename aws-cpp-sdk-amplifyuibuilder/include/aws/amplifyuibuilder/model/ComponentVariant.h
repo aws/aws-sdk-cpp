@@ -205,10 +205,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variantValues;
-    bool m_variantValuesHasBeenSet;
+    bool m_variantValuesHasBeenSet = false;
   };
 
 } // namespace Model

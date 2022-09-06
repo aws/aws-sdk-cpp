@@ -310,25 +310,25 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_connectAttachmentId;
-    bool m_connectAttachmentIdHasBeenSet;
+    bool m_connectAttachmentIdHasBeenSet = false;
 
     Aws::String m_connectPeerId;
-    bool m_connectPeerIdHasBeenSet;
+    bool m_connectPeerIdHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     ConnectPeerState m_connectPeerState;
-    bool m_connectPeerStateHasBeenSet;
+    bool m_connectPeerStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

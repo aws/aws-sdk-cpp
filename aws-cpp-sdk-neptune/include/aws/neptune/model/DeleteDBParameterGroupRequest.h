@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::String m_dBParameterGroupName;
-    bool m_dBParameterGroupNameHasBeenSet;
+    bool m_dBParameterGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

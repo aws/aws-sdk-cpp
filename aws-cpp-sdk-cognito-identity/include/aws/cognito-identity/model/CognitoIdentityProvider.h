@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     bool m_serverSideTokenCheck;
-    bool m_serverSideTokenCheckHasBeenSet;
+    bool m_serverSideTokenCheckHasBeenSet = false;
   };
 
 } // namespace Model

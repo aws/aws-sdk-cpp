@@ -502,37 +502,37 @@ namespace Model
   private:
 
     Aws::String m_parentVolumeId;
-    bool m_parentVolumeIdHasBeenSet;
+    bool m_parentVolumeIdHasBeenSet = false;
 
     Aws::String m_volumePath;
-    bool m_volumePathHasBeenSet;
+    bool m_volumePathHasBeenSet = false;
 
     int m_storageCapacityReservationGiB;
-    bool m_storageCapacityReservationGiBHasBeenSet;
+    bool m_storageCapacityReservationGiBHasBeenSet = false;
 
     int m_storageCapacityQuotaGiB;
-    bool m_storageCapacityQuotaGiBHasBeenSet;
+    bool m_storageCapacityQuotaGiBHasBeenSet = false;
 
     int m_recordSizeKiB;
-    bool m_recordSizeKiBHasBeenSet;
+    bool m_recordSizeKiBHasBeenSet = false;
 
     OpenZFSDataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     bool m_copyTagsToSnapshots;
-    bool m_copyTagsToSnapshotsHasBeenSet;
+    bool m_copyTagsToSnapshotsHasBeenSet = false;
 
     OpenZFSOriginSnapshotConfiguration m_originSnapshot;
-    bool m_originSnapshotHasBeenSet;
+    bool m_originSnapshotHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
 
     Aws::Vector<OpenZFSNfsExport> m_nfsExports;
-    bool m_nfsExportsHasBeenSet;
+    bool m_nfsExportsHasBeenSet = false;
 
     Aws::Vector<OpenZFSUserOrGroupQuota> m_userAndGroupQuotas;
-    bool m_userAndGroupQuotasHasBeenSet;
+    bool m_userAndGroupQuotasHasBeenSet = false;
   };
 
 } // namespace Model

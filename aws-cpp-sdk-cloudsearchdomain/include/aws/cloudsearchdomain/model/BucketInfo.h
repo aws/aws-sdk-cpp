@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Bucket> m_buckets;
-    bool m_bucketsHasBeenSet;
+    bool m_bucketsHasBeenSet = false;
   };
 
 } // namespace Model

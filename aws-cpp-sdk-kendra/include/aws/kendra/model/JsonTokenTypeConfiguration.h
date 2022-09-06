@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_userNameAttributeField;
-    bool m_userNameAttributeFieldHasBeenSet;
+    bool m_userNameAttributeFieldHasBeenSet = false;
 
     Aws::String m_groupAttributeField;
-    bool m_groupAttributeFieldHasBeenSet;
+    bool m_groupAttributeFieldHasBeenSet = false;
   };
 
 } // namespace Model

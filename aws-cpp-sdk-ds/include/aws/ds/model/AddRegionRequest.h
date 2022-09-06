@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     DirectoryVpcSettings m_vPCSettings;
-    bool m_vPCSettingsHasBeenSet;
+    bool m_vPCSettingsHasBeenSet = false;
   };
 
 } // namespace Model

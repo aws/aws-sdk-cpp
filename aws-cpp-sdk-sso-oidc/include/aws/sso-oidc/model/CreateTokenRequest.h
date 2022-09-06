@@ -457,28 +457,28 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_grantType;
-    bool m_grantTypeHasBeenSet;
+    bool m_grantTypeHasBeenSet = false;
 
     Aws::String m_deviceCode;
-    bool m_deviceCodeHasBeenSet;
+    bool m_deviceCodeHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_redirectUri;
-    bool m_redirectUriHasBeenSet;
+    bool m_redirectUriHasBeenSet = false;
   };
 
 } // namespace Model

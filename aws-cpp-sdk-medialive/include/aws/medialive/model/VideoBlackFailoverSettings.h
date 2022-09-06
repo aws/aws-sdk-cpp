@@ -116,10 +116,10 @@ namespace Model
   private:
 
     double m_blackDetectThreshold;
-    bool m_blackDetectThresholdHasBeenSet;
+    bool m_blackDetectThresholdHasBeenSet = false;
 
     int m_videoBlackThresholdMsec;
-    bool m_videoBlackThresholdMsecHasBeenSet;
+    bool m_videoBlackThresholdMsecHasBeenSet = false;
   };
 
 } // namespace Model

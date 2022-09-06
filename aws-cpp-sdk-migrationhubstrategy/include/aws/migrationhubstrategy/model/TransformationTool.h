@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     TransformationToolName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_tranformationToolInstallationLink;
-    bool m_tranformationToolInstallationLinkHasBeenSet;
+    bool m_tranformationToolInstallationLinkHasBeenSet = false;
   };
 
 } // namespace Model

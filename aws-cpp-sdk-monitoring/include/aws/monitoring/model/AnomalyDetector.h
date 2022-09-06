@@ -189,16 +189,16 @@ namespace Model
   private:
 
     AnomalyDetectorConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     AnomalyDetectorStateValue m_stateValue;
-    bool m_stateValueHasBeenSet;
+    bool m_stateValueHasBeenSet = false;
 
     SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-    bool m_singleMetricAnomalyDetectorHasBeenSet;
+    bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
     MetricMathAnomalyDetector m_metricMathAnomalyDetector;
-    bool m_metricMathAnomalyDetectorHasBeenSet;
+    bool m_metricMathAnomalyDetectorHasBeenSet = false;
   };
 
 } // namespace Model

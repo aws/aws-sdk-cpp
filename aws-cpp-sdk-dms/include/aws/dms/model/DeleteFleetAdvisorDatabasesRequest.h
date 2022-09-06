@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_databaseIds;
-    bool m_databaseIdsHasBeenSet;
+    bool m_databaseIdsHasBeenSet = false;
   };
 
 } // namespace Model

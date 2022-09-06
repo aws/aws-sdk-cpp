@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     EndpointBatchRequest m_endpointBatchRequest;
-    bool m_endpointBatchRequestHasBeenSet;
+    bool m_endpointBatchRequestHasBeenSet = false;
   };
 
 } // namespace Model

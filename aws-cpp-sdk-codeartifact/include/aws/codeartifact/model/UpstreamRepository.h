@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule> m_filterRules;
-    bool m_filterRulesHasBeenSet;
+    bool m_filterRulesHasBeenSet = false;
   };
 
 } // namespace Model

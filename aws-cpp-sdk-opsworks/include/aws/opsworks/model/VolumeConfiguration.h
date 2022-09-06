@@ -330,25 +330,25 @@ namespace Model
   private:
 
     Aws::String m_mountPoint;
-    bool m_mountPointHasBeenSet;
+    bool m_mountPointHasBeenSet = false;
 
     int m_raidLevel;
-    bool m_raidLevelHasBeenSet;
+    bool m_raidLevelHasBeenSet = false;
 
     int m_numberOfDisks;
-    bool m_numberOfDisksHasBeenSet;
+    bool m_numberOfDisksHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
   };
 
 } // namespace Model

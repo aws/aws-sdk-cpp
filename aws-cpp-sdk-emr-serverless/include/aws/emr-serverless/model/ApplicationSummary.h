@@ -381,31 +381,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_releaseLabel;
-    bool m_releaseLabelHasBeenSet;
+    bool m_releaseLabelHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ApplicationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateDetails;
-    bool m_stateDetailsHasBeenSet;
+    bool m_stateDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

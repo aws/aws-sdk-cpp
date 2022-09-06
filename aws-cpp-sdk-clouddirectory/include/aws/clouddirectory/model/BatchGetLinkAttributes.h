@@ -120,10 +120,10 @@ namespace Model
   private:
 
     TypedLinkSpecifier m_typedLinkSpecifier;
-    bool m_typedLinkSpecifierHasBeenSet;
+    bool m_typedLinkSpecifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_discoveredIntentCount;
-    bool m_discoveredIntentCountHasBeenSet;
+    bool m_discoveredIntentCountHasBeenSet = false;
   };
 
 } // namespace Model

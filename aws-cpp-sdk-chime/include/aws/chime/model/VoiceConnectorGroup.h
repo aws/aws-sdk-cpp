@@ -284,22 +284,22 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorGroupId;
-    bool m_voiceConnectorGroupIdHasBeenSet;
+    bool m_voiceConnectorGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<VoiceConnectorItem> m_voiceConnectorItems;
-    bool m_voiceConnectorItemsHasBeenSet;
+    bool m_voiceConnectorItemsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_voiceConnectorGroupArn;
-    bool m_voiceConnectorGroupArnHasBeenSet;
+    bool m_voiceConnectorGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     TransformType m_transformType;
-    bool m_transformTypeHasBeenSet;
+    bool m_transformTypeHasBeenSet = false;
 
     FindMatchesMetrics m_findMatchesMetrics;
-    bool m_findMatchesMetricsHasBeenSet;
+    bool m_findMatchesMetricsHasBeenSet = false;
   };
 
 } // namespace Model

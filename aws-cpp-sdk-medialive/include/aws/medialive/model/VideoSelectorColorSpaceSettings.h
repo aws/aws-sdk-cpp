@@ -58,7 +58,7 @@ namespace Model
   private:
 
     Hdr10Settings m_hdr10Settings;
-    bool m_hdr10SettingsHasBeenSet;
+    bool m_hdr10SettingsHasBeenSet = false;
   };
 
 } // namespace Model

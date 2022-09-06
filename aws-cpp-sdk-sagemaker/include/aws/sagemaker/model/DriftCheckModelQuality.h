@@ -102,10 +102,10 @@ namespace Model
   private:
 
     MetricsSource m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     MetricsSource m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
   };
 
 } // namespace Model

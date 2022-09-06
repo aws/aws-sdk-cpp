@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     RStudioServerProDomainSettings m_rStudioServerProDomainSettings;
-    bool m_rStudioServerProDomainSettingsHasBeenSet;
+    bool m_rStudioServerProDomainSettingsHasBeenSet = false;
 
     ExecutionRoleIdentityConfig m_executionRoleIdentityConfig;
-    bool m_executionRoleIdentityConfigHasBeenSet;
+    bool m_executionRoleIdentityConfigHasBeenSet = false;
   };
 
 } // namespace Model

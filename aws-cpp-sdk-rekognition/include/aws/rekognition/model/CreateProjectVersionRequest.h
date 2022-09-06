@@ -466,25 +466,25 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     OutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     TrainingData m_trainingData;
-    bool m_trainingDataHasBeenSet;
+    bool m_trainingDataHasBeenSet = false;
 
     TestingData m_testingData;
-    bool m_testingDataHasBeenSet;
+    bool m_testingDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

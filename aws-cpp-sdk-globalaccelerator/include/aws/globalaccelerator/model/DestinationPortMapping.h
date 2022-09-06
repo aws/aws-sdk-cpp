@@ -382,28 +382,28 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     Aws::Vector<SocketAddress> m_acceleratorSocketAddresses;
-    bool m_acceleratorSocketAddressesHasBeenSet;
+    bool m_acceleratorSocketAddressesHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_endpointGroupRegion;
-    bool m_endpointGroupRegionHasBeenSet;
+    bool m_endpointGroupRegionHasBeenSet = false;
 
     SocketAddress m_destinationSocketAddress;
-    bool m_destinationSocketAddressHasBeenSet;
+    bool m_destinationSocketAddressHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     CustomRoutingDestinationTrafficState m_destinationTrafficState;
-    bool m_destinationTrafficStateHasBeenSet;
+    bool m_destinationTrafficStateHasBeenSet = false;
   };
 
 } // namespace Model

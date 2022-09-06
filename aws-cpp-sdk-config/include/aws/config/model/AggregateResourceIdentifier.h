@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::String m_sourceAccountId;
-    bool m_sourceAccountIdHasBeenSet;
+    bool m_sourceAccountIdHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model

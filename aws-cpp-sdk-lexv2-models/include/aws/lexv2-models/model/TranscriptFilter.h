@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LexTranscriptFilter m_lexTranscriptFilter;
-    bool m_lexTranscriptFilterHasBeenSet;
+    bool m_lexTranscriptFilterHasBeenSet = false;
   };
 
 } // namespace Model

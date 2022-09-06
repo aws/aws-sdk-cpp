@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

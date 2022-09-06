@@ -83,7 +83,7 @@ namespace Model
   private:
 
     CloudWatchAlarmDefinition m_cloudWatchAlarmDefinition;
-    bool m_cloudWatchAlarmDefinitionHasBeenSet;
+    bool m_cloudWatchAlarmDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

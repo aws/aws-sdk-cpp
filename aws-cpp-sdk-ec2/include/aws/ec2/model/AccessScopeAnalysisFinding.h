@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_networkInsightsAccessScopeAnalysisId;
-    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet;
+    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
     Aws::String m_networkInsightsAccessScopeId;
-    bool m_networkInsightsAccessScopeIdHasBeenSet;
+    bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
     Aws::String m_findingId;
-    bool m_findingIdHasBeenSet;
+    bool m_findingIdHasBeenSet = false;
 
     Aws::Vector<PathComponent> m_findingComponents;
-    bool m_findingComponentsHasBeenSet;
+    bool m_findingComponentsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -196,10 +196,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
-    bool m_itemExplorationConfigHasBeenSet;
+    bool m_itemExplorationConfigHasBeenSet = false;
 
     int m_minRecommendationRequestsPerSecond;
-    bool m_minRecommendationRequestsPerSecondHasBeenSet;
+    bool m_minRecommendationRequestsPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

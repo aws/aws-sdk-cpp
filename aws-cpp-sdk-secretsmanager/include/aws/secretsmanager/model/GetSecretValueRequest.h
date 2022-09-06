@@ -271,13 +271,13 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_versionStage;
-    bool m_versionStageHasBeenSet;
+    bool m_versionStageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -285,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_fleetName;
-    bool m_fleetNameHasBeenSet;
+    bool m_fleetNameHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

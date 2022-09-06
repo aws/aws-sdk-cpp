@@ -313,25 +313,25 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_linkIds;
-    bool m_linkIdsHasBeenSet;
+    bool m_linkIdsHasBeenSet = false;
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

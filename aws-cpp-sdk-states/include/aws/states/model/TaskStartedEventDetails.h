@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
   };
 
 } // namespace Model

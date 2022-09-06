@@ -172,16 +172,16 @@ namespace Model
   private:
 
     RemediationActionType m_remediationActionType;
-    bool m_remediationActionTypeHasBeenSet;
+    bool m_remediationActionTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SecurityGroupRuleDescription m_remediationResult;
-    bool m_remediationResultHasBeenSet;
+    bool m_remediationResultHasBeenSet = false;
 
     bool m_isDefaultAction;
-    bool m_isDefaultActionHasBeenSet;
+    bool m_isDefaultActionHasBeenSet = false;
   };
 
 } // namespace Model

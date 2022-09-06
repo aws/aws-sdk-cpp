@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     SequenceNumberRange m_sequenceNumberRange;
-    bool m_sequenceNumberRangeHasBeenSet;
+    bool m_sequenceNumberRangeHasBeenSet = false;
 
     Aws::String m_parentShardId;
-    bool m_parentShardIdHasBeenSet;
+    bool m_parentShardIdHasBeenSet = false;
   };
 
 } // namespace Model

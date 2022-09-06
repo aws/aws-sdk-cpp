@@ -211,13 +211,13 @@ namespace Model
   private:
 
     ChannelMapping m_channelMapping;
-    bool m_channelMappingHasBeenSet;
+    bool m_channelMappingHasBeenSet = false;
 
     int m_channelsIn;
-    bool m_channelsInHasBeenSet;
+    bool m_channelsInHasBeenSet = false;
 
     int m_channelsOut;
-    bool m_channelsOutHasBeenSet;
+    bool m_channelsOutHasBeenSet = false;
   };
 
 } // namespace Model

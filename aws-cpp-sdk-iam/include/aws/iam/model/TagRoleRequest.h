@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

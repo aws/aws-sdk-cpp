@@ -248,16 +248,16 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

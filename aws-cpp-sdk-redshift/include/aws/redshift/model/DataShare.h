@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::String m_dataShareArn;
-    bool m_dataShareArnHasBeenSet;
+    bool m_dataShareArnHasBeenSet = false;
 
     Aws::String m_producerArn;
-    bool m_producerArnHasBeenSet;
+    bool m_producerArnHasBeenSet = false;
 
     bool m_allowPubliclyAccessibleConsumers;
-    bool m_allowPubliclyAccessibleConsumersHasBeenSet;
+    bool m_allowPubliclyAccessibleConsumersHasBeenSet = false;
 
     Aws::Vector<DataShareAssociation> m_dataShareAssociations;
-    bool m_dataShareAssociationsHasBeenSet;
+    bool m_dataShareAssociationsHasBeenSet = false;
 
     Aws::String m_managedBy;
-    bool m_managedByHasBeenSet;
+    bool m_managedByHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

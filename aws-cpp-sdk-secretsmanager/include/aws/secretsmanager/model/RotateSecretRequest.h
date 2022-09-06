@@ -381,19 +381,19 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_rotationLambdaARN;
-    bool m_rotationLambdaARNHasBeenSet;
+    bool m_rotationLambdaARNHasBeenSet = false;
 
     RotationRulesType m_rotationRules;
-    bool m_rotationRulesHasBeenSet;
+    bool m_rotationRulesHasBeenSet = false;
 
     bool m_rotateImmediately;
-    bool m_rotateImmediatelyHasBeenSet;
+    bool m_rotateImmediatelyHasBeenSet = false;
   };
 
 } // namespace Model

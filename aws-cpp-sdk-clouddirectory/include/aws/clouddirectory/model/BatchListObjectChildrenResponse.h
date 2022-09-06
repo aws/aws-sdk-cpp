@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_children;
-    bool m_childrenHasBeenSet;
+    bool m_childrenHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

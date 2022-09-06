@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
 
     long long m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::String m_snapshotCopyGrantName;
-    bool m_snapshotCopyGrantNameHasBeenSet;
+    bool m_snapshotCopyGrantNameHasBeenSet = false;
   };
 
 } // namespace Model

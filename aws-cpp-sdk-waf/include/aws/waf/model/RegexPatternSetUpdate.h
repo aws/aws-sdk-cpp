@@ -131,10 +131,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_regexPatternString;
-    bool m_regexPatternStringHasBeenSet;
+    bool m_regexPatternStringHasBeenSet = false;
   };
 
 } // namespace Model

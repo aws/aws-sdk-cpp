@@ -67,7 +67,7 @@ namespace Model
   private:
 
     Address m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_contactChannelId;
-    bool m_contactChannelIdHasBeenSet;
+    bool m_contactChannelIdHasBeenSet = false;
 
     int m_retryIntervalInMinutes;
-    bool m_retryIntervalInMinutesHasBeenSet;
+    bool m_retryIntervalInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -218,13 +218,13 @@ namespace Model
   private:
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
 
     RoutingControlState m_routingControlState;
-    bool m_routingControlStateHasBeenSet;
+    bool m_routingControlStateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_safetyRulesToOverride;
-    bool m_safetyRulesToOverrideHasBeenSet;
+    bool m_safetyRulesToOverrideHasBeenSet = false;
   };
 
 } // namespace Model

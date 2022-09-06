@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

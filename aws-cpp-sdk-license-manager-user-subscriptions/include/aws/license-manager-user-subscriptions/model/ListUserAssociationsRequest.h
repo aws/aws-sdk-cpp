@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     IdentityProvider m_identityProvider;
-    bool m_identityProviderHasBeenSet;
+    bool m_identityProviderHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -255,13 +255,13 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     int m_suggestionCount;
-    bool m_suggestionCountHasBeenSet;
+    bool m_suggestionCountHasBeenSet = false;
 
     bool m_onlyAvailable;
-    bool m_onlyAvailableHasBeenSet;
+    bool m_onlyAvailableHasBeenSet = false;
   };
 
 } // namespace Model

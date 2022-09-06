@@ -376,28 +376,28 @@ namespace Model
   private:
 
     Aws::String m_scheduledActionName;
-    bool m_scheduledActionNameHasBeenSet;
+    bool m_scheduledActionNameHasBeenSet = false;
 
     ScheduledActionTypeValues m_targetActionType;
-    bool m_targetActionTypeHasBeenSet;
+    bool m_targetActionTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     Aws::Vector<ScheduledActionFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
   };
 
 } // namespace Model

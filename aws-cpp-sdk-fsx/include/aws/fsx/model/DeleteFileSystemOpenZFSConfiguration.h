@@ -181,13 +181,13 @@ namespace Model
   private:
 
     bool m_skipFinalBackup;
-    bool m_skipFinalBackupHasBeenSet;
+    bool m_skipFinalBackupHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;
-    bool m_finalBackupTagsHasBeenSet;
+    bool m_finalBackupTagsHasBeenSet = false;
 
     Aws::Vector<DeleteFileSystemOpenZFSOption> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

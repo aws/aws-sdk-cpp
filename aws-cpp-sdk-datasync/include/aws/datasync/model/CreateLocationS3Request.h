@@ -401,22 +401,22 @@ namespace Model
   private:
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_s3BucketArn;
-    bool m_s3BucketArnHasBeenSet;
+    bool m_s3BucketArnHasBeenSet = false;
 
     S3StorageClass m_s3StorageClass;
-    bool m_s3StorageClassHasBeenSet;
+    bool m_s3StorageClassHasBeenSet = false;
 
     S3Config m_s3Config;
-    bool m_s3ConfigHasBeenSet;
+    bool m_s3ConfigHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

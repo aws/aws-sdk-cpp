@@ -330,22 +330,22 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_beforeCommitId;
-    bool m_beforeCommitIdHasBeenSet;
+    bool m_beforeCommitIdHasBeenSet = false;
 
     Aws::String m_afterCommitId;
-    bool m_afterCommitIdHasBeenSet;
+    bool m_afterCommitIdHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

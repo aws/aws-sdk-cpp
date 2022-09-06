@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     ApplicationConfigurationUpdate m_applicationConfigurationUpdate;
-    bool m_applicationConfigurationUpdateHasBeenSet;
+    bool m_applicationConfigurationUpdateHasBeenSet = false;
 
     Aws::String m_serviceExecutionRoleUpdate;
-    bool m_serviceExecutionRoleUpdateHasBeenSet;
+    bool m_serviceExecutionRoleUpdateHasBeenSet = false;
 
     RunConfigurationUpdate m_runConfigurationUpdate;
-    bool m_runConfigurationUpdateHasBeenSet;
+    bool m_runConfigurationUpdateHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
-    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet;
+    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet = false;
 
     Aws::String m_conditionalToken;
-    bool m_conditionalTokenHasBeenSet;
+    bool m_conditionalTokenHasBeenSet = false;
   };
 
 } // namespace Model

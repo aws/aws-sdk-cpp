@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     ListContactsFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

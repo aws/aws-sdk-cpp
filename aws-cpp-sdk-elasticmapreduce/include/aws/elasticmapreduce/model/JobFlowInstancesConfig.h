@@ -903,55 +903,55 @@ namespace Model
   private:
 
     Aws::String m_masterInstanceType;
-    bool m_masterInstanceTypeHasBeenSet;
+    bool m_masterInstanceTypeHasBeenSet = false;
 
     Aws::String m_slaveInstanceType;
-    bool m_slaveInstanceTypeHasBeenSet;
+    bool m_slaveInstanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;
-    bool m_instanceGroupsHasBeenSet;
+    bool m_instanceGroupsHasBeenSet = false;
 
     Aws::Vector<InstanceFleetConfig> m_instanceFleets;
-    bool m_instanceFleetsHasBeenSet;
+    bool m_instanceFleetsHasBeenSet = false;
 
     Aws::String m_ec2KeyName;
-    bool m_ec2KeyNameHasBeenSet;
+    bool m_ec2KeyNameHasBeenSet = false;
 
     PlacementType m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     bool m_keepJobFlowAliveWhenNoSteps;
-    bool m_keepJobFlowAliveWhenNoStepsHasBeenSet;
+    bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
 
     bool m_terminationProtected;
-    bool m_terminationProtectedHasBeenSet;
+    bool m_terminationProtectedHasBeenSet = false;
 
     Aws::String m_hadoopVersion;
-    bool m_hadoopVersionHasBeenSet;
+    bool m_hadoopVersionHasBeenSet = false;
 
     Aws::String m_ec2SubnetId;
-    bool m_ec2SubnetIdHasBeenSet;
+    bool m_ec2SubnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2SubnetIds;
-    bool m_ec2SubnetIdsHasBeenSet;
+    bool m_ec2SubnetIdsHasBeenSet = false;
 
     Aws::String m_emrManagedMasterSecurityGroup;
-    bool m_emrManagedMasterSecurityGroupHasBeenSet;
+    bool m_emrManagedMasterSecurityGroupHasBeenSet = false;
 
     Aws::String m_emrManagedSlaveSecurityGroup;
-    bool m_emrManagedSlaveSecurityGroupHasBeenSet;
+    bool m_emrManagedSlaveSecurityGroupHasBeenSet = false;
 
     Aws::String m_serviceAccessSecurityGroup;
-    bool m_serviceAccessSecurityGroupHasBeenSet;
+    bool m_serviceAccessSecurityGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalMasterSecurityGroups;
-    bool m_additionalMasterSecurityGroupsHasBeenSet;
+    bool m_additionalMasterSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalSlaveSecurityGroups;
-    bool m_additionalSlaveSecurityGroupsHasBeenSet;
+    bool m_additionalSlaveSecurityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

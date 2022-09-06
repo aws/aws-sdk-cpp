@@ -445,25 +445,25 @@ namespace Model
   private:
 
     Aws::String m_locationArn;
-    bool m_locationArnHasBeenSet;
+    bool m_locationArnHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
 
     SmbMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_listenerPort;
-    bool m_listenerPortHasBeenSet;
+    bool m_listenerPortHasBeenSet = false;
 
     int m_endpointPort;
-    bool m_endpointPortHasBeenSet;
+    bool m_endpointPortHasBeenSet = false;
   };
 
 } // namespace Model

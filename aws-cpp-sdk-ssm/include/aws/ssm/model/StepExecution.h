@@ -971,70 +971,70 @@ namespace Model
   private:
 
     Aws::String m_stepName;
-    bool m_stepNameHasBeenSet;
+    bool m_stepNameHasBeenSet = false;
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     long long m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
 
     Aws::String m_onFailure;
-    bool m_onFailureHasBeenSet;
+    bool m_onFailureHasBeenSet = false;
 
     int m_maxAttempts;
-    bool m_maxAttemptsHasBeenSet;
+    bool m_maxAttemptsHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionStartTime;
-    bool m_executionStartTimeHasBeenSet;
+    bool m_executionStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionEndTime;
-    bool m_executionEndTimeHasBeenSet;
+    bool m_executionEndTimeHasBeenSet = false;
 
     AutomationExecutionStatus m_stepStatus;
-    bool m_stepStatusHasBeenSet;
+    bool m_stepStatusHasBeenSet = false;
 
     Aws::String m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_response;
-    bool m_responseHasBeenSet;
+    bool m_responseHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     FailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     Aws::String m_stepExecutionId;
-    bool m_stepExecutionIdHasBeenSet;
+    bool m_stepExecutionIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_overriddenParameters;
-    bool m_overriddenParametersHasBeenSet;
+    bool m_overriddenParametersHasBeenSet = false;
 
     bool m_isEnd;
-    bool m_isEndHasBeenSet;
+    bool m_isEndHasBeenSet = false;
 
     Aws::String m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     bool m_isCritical;
-    bool m_isCriticalHasBeenSet;
+    bool m_isCriticalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_validNextSteps;
-    bool m_validNextStepsHasBeenSet;
+    bool m_validNextStepsHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     TargetLocation m_targetLocation;
-    bool m_targetLocationHasBeenSet;
+    bool m_targetLocationHasBeenSet = false;
   };
 
 } // namespace Model

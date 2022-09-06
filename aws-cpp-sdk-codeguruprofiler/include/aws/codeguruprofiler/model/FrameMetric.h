@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_frameName;
-    bool m_frameNameHasBeenSet;
+    bool m_frameNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_threadStates;
-    bool m_threadStatesHasBeenSet;
+    bool m_threadStatesHasBeenSet = false;
 
     MetricType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

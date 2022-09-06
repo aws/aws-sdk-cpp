@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
   };
 
 } // namespace Model

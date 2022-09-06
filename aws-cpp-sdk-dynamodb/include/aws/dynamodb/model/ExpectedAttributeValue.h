@@ -995,16 +995,16 @@ namespace Model
   private:
 
     AttributeValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_exists;
-    bool m_existsHasBeenSet;
+    bool m_existsHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_attributeValueList;
-    bool m_attributeValueListHasBeenSet;
+    bool m_attributeValueListHasBeenSet = false;
   };
 
 } // namespace Model

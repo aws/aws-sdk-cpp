@@ -81,10 +81,10 @@ namespace Model
   private:
 
     double m_latitude;
-    bool m_latitudeHasBeenSet;
+    bool m_latitudeHasBeenSet = false;
 
     double m_longitude;
-    bool m_longitudeHasBeenSet;
+    bool m_longitudeHasBeenSet = false;
   };
 
 } // namespace Model

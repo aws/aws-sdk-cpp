@@ -92,10 +92,10 @@ namespace Model
   private:
 
     RemediationAction m_remediationAction;
-    bool m_remediationActionHasBeenSet;
+    bool m_remediationActionHasBeenSet = false;
 
     int m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

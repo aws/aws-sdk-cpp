@@ -198,10 +198,10 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::Vector<ResourceMapping> m_resourceMappings;
-    bool m_resourceMappingsHasBeenSet;
+    bool m_resourceMappingsHasBeenSet = false;
   };
 
 } // namespace Model

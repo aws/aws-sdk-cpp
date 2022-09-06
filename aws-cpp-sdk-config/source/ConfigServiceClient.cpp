@@ -164,7 +164,7 @@ ConfigServiceClient::~ConfigServiceClient()
 
 void ConfigServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Config Service");
+  AWSClient::SetServiceClientName("Config Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

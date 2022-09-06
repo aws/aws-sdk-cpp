@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
 
     Aws::Vector<Locale> m_supportedLocales;
-    bool m_supportedLocalesHasBeenSet;
+    bool m_supportedLocalesHasBeenSet = false;
   };
 
 } // namespace Model

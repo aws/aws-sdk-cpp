@@ -121,10 +121,10 @@ namespace Model
   private:
 
     double m_percentageValue;
-    bool m_percentageValueHasBeenSet;
+    bool m_percentageValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedValues;
-    bool m_associatedValuesHasBeenSet;
+    bool m_associatedValuesHasBeenSet = false;
   };
 
 } // namespace Model

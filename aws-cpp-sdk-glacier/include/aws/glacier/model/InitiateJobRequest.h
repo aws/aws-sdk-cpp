@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     JobParameters m_jobParameters;
-    bool m_jobParametersHasBeenSet;
+    bool m_jobParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_actionNames;
-    bool m_actionNamesHasBeenSet;
+    bool m_actionNamesHasBeenSet = false;
   };
 
 } // namespace Model

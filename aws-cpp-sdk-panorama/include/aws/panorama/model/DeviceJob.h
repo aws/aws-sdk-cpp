@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
   };
 
 } // namespace Model

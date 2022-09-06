@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_s3bucketForAnalysisData;
-    bool m_s3bucketForAnalysisDataHasBeenSet;
+    bool m_s3bucketForAnalysisDataHasBeenSet = false;
 
     Aws::String m_s3bucketForReportData;
-    bool m_s3bucketForReportDataHasBeenSet;
+    bool m_s3bucketForReportDataHasBeenSet = false;
   };
 
 } // namespace Model

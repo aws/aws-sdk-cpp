@@ -571,28 +571,28 @@ namespace Model
   private:
 
     Aws::String m_associationArn;
-    bool m_associationArnHasBeenSet;
+    bool m_associationArnHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimeStamp;
-    bool m_lastUpdatedTimeStampHasBeenSet;
+    bool m_lastUpdatedTimeStampHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     ProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     RepositoryAssociationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

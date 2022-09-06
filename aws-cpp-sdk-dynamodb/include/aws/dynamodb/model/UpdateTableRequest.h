@@ -584,31 +584,31 @@ namespace Model
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-    bool m_attributeDefinitionsHasBeenSet;
+    bool m_attributeDefinitionsHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     BillingMode m_billingMode;
-    bool m_billingModeHasBeenSet;
+    bool m_billingModeHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
 
     Aws::Vector<GlobalSecondaryIndexUpdate> m_globalSecondaryIndexUpdates;
-    bool m_globalSecondaryIndexUpdatesHasBeenSet;
+    bool m_globalSecondaryIndexUpdatesHasBeenSet = false;
 
     StreamSpecification m_streamSpecification;
-    bool m_streamSpecificationHasBeenSet;
+    bool m_streamSpecificationHasBeenSet = false;
 
     SSESpecification m_sSESpecification;
-    bool m_sSESpecificationHasBeenSet;
+    bool m_sSESpecificationHasBeenSet = false;
 
     Aws::Vector<ReplicationGroupUpdate> m_replicaUpdates;
-    bool m_replicaUpdatesHasBeenSet;
+    bool m_replicaUpdatesHasBeenSet = false;
 
     TableClass m_tableClass;
-    bool m_tableClassHasBeenSet;
+    bool m_tableClassHasBeenSet = false;
   };
 
 } // namespace Model

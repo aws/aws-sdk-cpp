@@ -199,16 +199,16 @@ namespace Model
   private:
 
     FilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_arns;
-    bool m_arnsHasBeenSet;
+    bool m_arnsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

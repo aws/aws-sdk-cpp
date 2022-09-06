@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStreamName;
-    bool m_progressUpdateStreamNameHasBeenSet;
+    bool m_progressUpdateStreamNameHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

@@ -693,46 +693,46 @@ namespace Model
   private:
 
     Aws::String m_carrier;
-    bool m_carrierHasBeenSet;
+    bool m_carrierHasBeenSet = false;
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_cleansedPhoneNumberE164;
-    bool m_cleansedPhoneNumberE164HasBeenSet;
+    bool m_cleansedPhoneNumberE164HasBeenSet = false;
 
     Aws::String m_cleansedPhoneNumberNational;
-    bool m_cleansedPhoneNumberNationalHasBeenSet;
+    bool m_cleansedPhoneNumberNationalHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_countryCodeIso2;
-    bool m_countryCodeIso2HasBeenSet;
+    bool m_countryCodeIso2HasBeenSet = false;
 
     Aws::String m_countryCodeNumeric;
-    bool m_countryCodeNumericHasBeenSet;
+    bool m_countryCodeNumericHasBeenSet = false;
 
     Aws::String m_county;
-    bool m_countyHasBeenSet;
+    bool m_countyHasBeenSet = false;
 
     Aws::String m_originalCountryCodeIso2;
-    bool m_originalCountryCodeIso2HasBeenSet;
+    bool m_originalCountryCodeIso2HasBeenSet = false;
 
     Aws::String m_originalPhoneNumber;
-    bool m_originalPhoneNumberHasBeenSet;
+    bool m_originalPhoneNumberHasBeenSet = false;
 
     Aws::String m_phoneType;
-    bool m_phoneTypeHasBeenSet;
+    bool m_phoneTypeHasBeenSet = false;
 
     int m_phoneTypeCode;
-    bool m_phoneTypeCodeHasBeenSet;
+    bool m_phoneTypeCodeHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     Aws::String m_zipCode;
-    bool m_zipCodeHasBeenSet;
+    bool m_zipCodeHasBeenSet = false;
   };
 
 } // namespace Model

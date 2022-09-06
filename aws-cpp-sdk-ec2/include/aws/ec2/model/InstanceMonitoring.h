@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Monitoring m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
   };
 
 } // namespace Model

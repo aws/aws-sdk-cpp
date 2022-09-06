@@ -344,22 +344,22 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_externalMeetingId;
-    bool m_externalMeetingIdHasBeenSet;
+    bool m_externalMeetingIdHasBeenSet = false;
 
     Aws::String m_meetingHostId;
-    bool m_meetingHostIdHasBeenSet;
+    bool m_meetingHostIdHasBeenSet = false;
 
     Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet;
+    bool m_mediaRegionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     MeetingNotificationConfiguration m_notificationsConfiguration;
-    bool m_notificationsConfigurationHasBeenSet;
+    bool m_notificationsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

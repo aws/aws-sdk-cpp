@@ -179,7 +179,7 @@ namespace Model
   private:
 
     WorkflowStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

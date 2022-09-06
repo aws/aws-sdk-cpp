@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::Vector<NewLaunchProfileMember> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     FindingActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     ApiCallDetails m_apiCallDetails;
-    bool m_apiCallDetailsHasBeenSet;
+    bool m_apiCallDetailsHasBeenSet = false;
   };
 
 } // namespace Model

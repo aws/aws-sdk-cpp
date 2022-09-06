@@ -334,28 +334,28 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_participantPhoneNumbers;
-    bool m_participantPhoneNumbersHasBeenSet;
+    bool m_participantPhoneNumbersHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_expiryMinutes;
-    bool m_expiryMinutesHasBeenSet;
+    bool m_expiryMinutesHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     NumberSelectionBehavior m_numberSelectionBehavior;
-    bool m_numberSelectionBehaviorHasBeenSet;
+    bool m_numberSelectionBehaviorHasBeenSet = false;
 
     GeoMatchLevel m_geoMatchLevel;
-    bool m_geoMatchLevelHasBeenSet;
+    bool m_geoMatchLevelHasBeenSet = false;
 
     GeoMatchParams m_geoMatchParams;
-    bool m_geoMatchParamsHasBeenSet;
+    bool m_geoMatchParamsHasBeenSet = false;
   };
 
 } // namespace Model

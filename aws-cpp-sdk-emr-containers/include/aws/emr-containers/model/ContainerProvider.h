@@ -150,13 +150,13 @@ namespace Model
   private:
 
     ContainerProviderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ContainerInfo m_info;
-    bool m_infoHasBeenSet;
+    bool m_infoHasBeenSet = false;
   };
 
 } // namespace Model

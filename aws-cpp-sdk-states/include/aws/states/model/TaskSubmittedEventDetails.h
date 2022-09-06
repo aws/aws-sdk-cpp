@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     HistoryEventExecutionDataDetails m_outputDetails;
-    bool m_outputDetailsHasBeenSet;
+    bool m_outputDetailsHasBeenSet = false;
   };
 
 } // namespace Model

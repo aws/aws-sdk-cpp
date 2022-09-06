@@ -195,16 +195,16 @@ namespace Model
   private:
 
     PredefinedMetricSpecification m_predefinedMetricSpecification;
-    bool m_predefinedMetricSpecificationHasBeenSet;
+    bool m_predefinedMetricSpecificationHasBeenSet = false;
 
     CustomizedMetricSpecification m_customizedMetricSpecification;
-    bool m_customizedMetricSpecificationHasBeenSet;
+    bool m_customizedMetricSpecificationHasBeenSet = false;
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
 
     bool m_disableScaleIn;
-    bool m_disableScaleInHasBeenSet;
+    bool m_disableScaleInHasBeenSet = false;
   };
 
 } // namespace Model

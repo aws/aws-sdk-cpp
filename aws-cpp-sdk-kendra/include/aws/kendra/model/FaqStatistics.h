@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_indexedQuestionAnswersCount;
-    bool m_indexedQuestionAnswersCountHasBeenSet;
+    bool m_indexedQuestionAnswersCountHasBeenSet = false;
   };
 
 } // namespace Model

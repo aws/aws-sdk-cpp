@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<DataSetImportItem> m_dataSets;
-    bool m_dataSetsHasBeenSet;
+    bool m_dataSetsHasBeenSet = false;
 
     Aws::String m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

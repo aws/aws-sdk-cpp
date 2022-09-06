@@ -142,10 +142,10 @@ namespace Model
   private:
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

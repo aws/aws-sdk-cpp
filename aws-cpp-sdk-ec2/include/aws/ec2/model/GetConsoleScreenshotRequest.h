@@ -137,13 +137,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     bool m_wakeUp;
-    bool m_wakeUpHasBeenSet;
+    bool m_wakeUpHasBeenSet = false;
   };
 
 } // namespace Model

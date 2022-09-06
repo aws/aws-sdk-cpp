@@ -432,37 +432,37 @@ namespace Model
   private:
 
     Aws::String m_capacityReservationId;
-    bool m_capacityReservationIdHasBeenSet;
+    bool m_capacityReservationIdHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     CapacityReservationInstancePlatform m_instancePlatform;
-    bool m_instancePlatformHasBeenSet;
+    bool m_instancePlatformHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     int m_totalInstanceCount;
-    bool m_totalInstanceCountHasBeenSet;
+    bool m_totalInstanceCountHasBeenSet = false;
 
     double m_fulfilledCapacity;
-    bool m_fulfilledCapacityHasBeenSet;
+    bool m_fulfilledCapacityHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     double m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

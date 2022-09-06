@@ -333,22 +333,22 @@ namespace Model
   private:
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
 
     InvitationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     NetworkSummary m_networkSummary;
-    bool m_networkSummaryHasBeenSet;
+    bool m_networkSummaryHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

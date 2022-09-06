@@ -180,10 +180,10 @@ namespace Model
   private:
 
     SystemsManagerAgent m_systemsManagerAgent;
-    bool m_systemsManagerAgentHasBeenSet;
+    bool m_systemsManagerAgentHasBeenSet = false;
 
     Aws::String m_userDataOverride;
-    bool m_userDataOverrideHasBeenSet;
+    bool m_userDataOverrideHasBeenSet = false;
   };
 
 } // namespace Model

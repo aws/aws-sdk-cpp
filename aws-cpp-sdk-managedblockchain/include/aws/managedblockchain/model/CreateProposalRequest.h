@@ -515,22 +515,22 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     ProposalActions m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

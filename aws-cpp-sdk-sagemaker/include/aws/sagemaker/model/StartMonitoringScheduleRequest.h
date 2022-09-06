@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_monitoringScheduleName;
-    bool m_monitoringScheduleNameHasBeenSet;
+    bool m_monitoringScheduleNameHasBeenSet = false;
   };
 
 } // namespace Model

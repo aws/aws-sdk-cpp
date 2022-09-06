@@ -108,10 +108,10 @@ namespace Model
   private:
 
     bool m_enableTerminationProtection;
-    bool m_enableTerminationProtectionHasBeenSet;
+    bool m_enableTerminationProtectionHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
   };
 
 } // namespace Model

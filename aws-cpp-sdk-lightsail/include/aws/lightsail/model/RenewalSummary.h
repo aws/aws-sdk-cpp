@@ -280,16 +280,16 @@ namespace Model
   private:
 
     Aws::Vector<DomainValidationRecord> m_domainValidationRecords;
-    bool m_domainValidationRecordsHasBeenSet;
+    bool m_domainValidationRecordsHasBeenSet = false;
 
     RenewalStatus m_renewalStatus;
-    bool m_renewalStatusHasBeenSet;
+    bool m_renewalStatusHasBeenSet = false;
 
     Aws::String m_renewalStatusReason;
-    bool m_renewalStatusReasonHasBeenSet;
+    bool m_renewalStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

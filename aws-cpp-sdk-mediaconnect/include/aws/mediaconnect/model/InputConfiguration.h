@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_inputIp;
-    bool m_inputIpHasBeenSet;
+    bool m_inputIpHasBeenSet = false;
 
     int m_inputPort;
-    bool m_inputPortHasBeenSet;
+    bool m_inputPortHasBeenSet = false;
 
     Interface m_interface;
-    bool m_interfaceHasBeenSet;
+    bool m_interfaceHasBeenSet = false;
   };
 
 } // namespace Model

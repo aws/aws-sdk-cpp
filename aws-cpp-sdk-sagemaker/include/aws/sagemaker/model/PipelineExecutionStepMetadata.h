@@ -634,43 +634,43 @@ namespace Model
   private:
 
     TrainingJobStepMetadata m_trainingJob;
-    bool m_trainingJobHasBeenSet;
+    bool m_trainingJobHasBeenSet = false;
 
     ProcessingJobStepMetadata m_processingJob;
-    bool m_processingJobHasBeenSet;
+    bool m_processingJobHasBeenSet = false;
 
     TransformJobStepMetadata m_transformJob;
-    bool m_transformJobHasBeenSet;
+    bool m_transformJobHasBeenSet = false;
 
     TuningJobStepMetaData m_tuningJob;
-    bool m_tuningJobHasBeenSet;
+    bool m_tuningJobHasBeenSet = false;
 
     ModelStepMetadata m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     RegisterModelStepMetadata m_registerModel;
-    bool m_registerModelHasBeenSet;
+    bool m_registerModelHasBeenSet = false;
 
     ConditionStepMetadata m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     CallbackStepMetadata m_callback;
-    bool m_callbackHasBeenSet;
+    bool m_callbackHasBeenSet = false;
 
     LambdaStepMetadata m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
 
     QualityCheckStepMetadata m_qualityCheck;
-    bool m_qualityCheckHasBeenSet;
+    bool m_qualityCheckHasBeenSet = false;
 
     ClarifyCheckStepMetadata m_clarifyCheck;
-    bool m_clarifyCheckHasBeenSet;
+    bool m_clarifyCheckHasBeenSet = false;
 
     EMRStepMetadata m_eMR;
-    bool m_eMRHasBeenSet;
+    bool m_eMRHasBeenSet = false;
 
     FailStepMetadata m_fail;
-    bool m_failHasBeenSet;
+    bool m_failHasBeenSet = false;
   };
 
 } // namespace Model

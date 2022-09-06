@@ -119,10 +119,10 @@ namespace Model
   private:
 
     FraudDetectionAction m_fraudDetectionAction;
-    bool m_fraudDetectionActionHasBeenSet;
+    bool m_fraudDetectionActionHasBeenSet = false;
 
     int m_riskThreshold;
-    bool m_riskThresholdHasBeenSet;
+    bool m_riskThresholdHasBeenSet = false;
   };
 
 } // namespace Model

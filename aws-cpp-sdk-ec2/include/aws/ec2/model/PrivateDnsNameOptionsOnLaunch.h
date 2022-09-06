@@ -146,13 +146,13 @@ namespace Model
   private:
 
     HostnameType m_hostnameType;
-    bool m_hostnameTypeHasBeenSet;
+    bool m_hostnameTypeHasBeenSet = false;
 
     bool m_enableResourceNameDnsARecord;
-    bool m_enableResourceNameDnsARecordHasBeenSet;
+    bool m_enableResourceNameDnsARecordHasBeenSet = false;
 
     bool m_enableResourceNameDnsAAAARecord;
-    bool m_enableResourceNameDnsAAAARecordHasBeenSet;
+    bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
   };
 
 } // namespace Model

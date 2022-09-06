@@ -109,10 +109,10 @@ namespace Model
   private:
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
 
     Aws::String m_sourceContainer;
-    bool m_sourceContainerHasBeenSet;
+    bool m_sourceContainerHasBeenSet = false;
   };
 
 } // namespace Model

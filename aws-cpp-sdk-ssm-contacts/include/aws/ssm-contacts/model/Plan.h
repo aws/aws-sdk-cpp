@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Stage> m_stages;
-    bool m_stagesHasBeenSet;
+    bool m_stagesHasBeenSet = false;
   };
 
 } // namespace Model

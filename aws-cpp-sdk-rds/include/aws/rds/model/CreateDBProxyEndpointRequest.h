@@ -312,22 +312,22 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_dBProxyEndpointName;
-    bool m_dBProxyEndpointNameHasBeenSet;
+    bool m_dBProxyEndpointNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnetIds;
-    bool m_vpcSubnetIdsHasBeenSet;
+    bool m_vpcSubnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     DBProxyEndpointTargetRole m_targetRole;
-    bool m_targetRoleHasBeenSet;
+    bool m_targetRoleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ BackupStorageClient::~BackupStorageClient()
 
 void BackupStorageClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("BackupStorage");
+  AWSClient::SetServiceClientName("BackupStorage");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

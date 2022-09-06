@@ -261,19 +261,19 @@ namespace Model
   private:
 
     Aws::String m_lastDecreaseDateTime;
-    bool m_lastDecreaseDateTimeHasBeenSet;
+    bool m_lastDecreaseDateTimeHasBeenSet = false;
 
     Aws::String m_lastIncreaseDateTime;
-    bool m_lastIncreaseDateTimeHasBeenSet;
+    bool m_lastIncreaseDateTimeHasBeenSet = false;
 
     int m_numberOfDecreasesToday;
-    bool m_numberOfDecreasesTodayHasBeenSet;
+    bool m_numberOfDecreasesTodayHasBeenSet = false;
 
     int m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     int m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

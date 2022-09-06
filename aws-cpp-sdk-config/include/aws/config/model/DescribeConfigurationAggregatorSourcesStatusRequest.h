@@ -218,16 +218,16 @@ namespace Model
   private:
 
     Aws::String m_configurationAggregatorName;
-    bool m_configurationAggregatorNameHasBeenSet;
+    bool m_configurationAggregatorNameHasBeenSet = false;
 
     Aws::Vector<AggregatedSourceStatusType> m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

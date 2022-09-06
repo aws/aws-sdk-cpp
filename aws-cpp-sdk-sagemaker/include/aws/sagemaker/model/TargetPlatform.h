@@ -226,13 +226,13 @@ namespace Model
   private:
 
     TargetPlatformOs m_os;
-    bool m_osHasBeenSet;
+    bool m_osHasBeenSet = false;
 
     TargetPlatformArch m_arch;
-    bool m_archHasBeenSet;
+    bool m_archHasBeenSet = false;
 
     TargetPlatformAccelerator m_accelerator;
-    bool m_acceleratorHasBeenSet;
+    bool m_acceleratorHasBeenSet = false;
   };
 
 } // namespace Model

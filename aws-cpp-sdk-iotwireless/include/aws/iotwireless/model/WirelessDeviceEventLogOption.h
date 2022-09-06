@@ -84,10 +84,10 @@ namespace Model
   private:
 
     WirelessDeviceEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

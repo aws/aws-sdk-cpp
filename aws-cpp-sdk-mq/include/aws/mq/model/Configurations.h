@@ -143,13 +143,13 @@ namespace Model
   private:
 
     ConfigurationId m_current;
-    bool m_currentHasBeenSet;
+    bool m_currentHasBeenSet = false;
 
     Aws::Vector<ConfigurationId> m_history;
-    bool m_historyHasBeenSet;
+    bool m_historyHasBeenSet = false;
 
     ConfigurationId m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
   };
 
 } // namespace Model

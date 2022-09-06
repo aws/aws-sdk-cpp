@@ -101,10 +101,10 @@ namespace Model
   private:
 
     long long m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_workerConfigurationArn;
-    bool m_workerConfigurationArnHasBeenSet;
+    bool m_workerConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

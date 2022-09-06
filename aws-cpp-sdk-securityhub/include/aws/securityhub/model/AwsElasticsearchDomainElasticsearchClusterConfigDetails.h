@@ -352,25 +352,25 @@ namespace Model
   private:
 
     int m_dedicatedMasterCount;
-    bool m_dedicatedMasterCountHasBeenSet;
+    bool m_dedicatedMasterCountHasBeenSet = false;
 
     bool m_dedicatedMasterEnabled;
-    bool m_dedicatedMasterEnabledHasBeenSet;
+    bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     Aws::String m_dedicatedMasterType;
-    bool m_dedicatedMasterTypeHasBeenSet;
+    bool m_dedicatedMasterTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
-    bool m_zoneAwarenessConfigHasBeenSet;
+    bool m_zoneAwarenessConfigHasBeenSet = false;
 
     bool m_zoneAwarenessEnabled;
-    bool m_zoneAwarenessEnabledHasBeenSet;
+    bool m_zoneAwarenessEnabledHasBeenSet = false;
   };
 
 } // namespace Model

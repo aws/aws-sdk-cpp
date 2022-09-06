@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_assignmentId;
-    bool m_assignmentIdHasBeenSet;
+    bool m_assignmentIdHasBeenSet = false;
 
     Aws::String m_requesterFeedback;
-    bool m_requesterFeedbackHasBeenSet;
+    bool m_requesterFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

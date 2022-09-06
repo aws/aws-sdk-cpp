@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SSMOutput m_ssmOutput;
-    bool m_ssmOutputHasBeenSet;
+    bool m_ssmOutputHasBeenSet = false;
   };
 
 } // namespace Model

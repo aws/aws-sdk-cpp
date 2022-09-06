@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     int m_mailboxQuota;
-    bool m_mailboxQuotaHasBeenSet;
+    bool m_mailboxQuotaHasBeenSet = false;
   };
 
 } // namespace Model

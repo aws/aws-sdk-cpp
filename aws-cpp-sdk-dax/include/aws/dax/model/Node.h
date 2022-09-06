@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
 
     Endpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeCreateTime;
-    bool m_nodeCreateTimeHasBeenSet;
+    bool m_nodeCreateTimeHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_nodeStatus;
-    bool m_nodeStatusHasBeenSet;
+    bool m_nodeStatusHasBeenSet = false;
 
     Aws::String m_parameterGroupStatus;
-    bool m_parameterGroupStatusHasBeenSet;
+    bool m_parameterGroupStatusHasBeenSet = false;
   };
 
 } // namespace Model

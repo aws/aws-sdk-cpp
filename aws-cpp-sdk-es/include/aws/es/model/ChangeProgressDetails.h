@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_changeId;
-    bool m_changeIdHasBeenSet;
+    bool m_changeIdHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

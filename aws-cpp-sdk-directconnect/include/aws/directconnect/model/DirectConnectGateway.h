@@ -302,22 +302,22 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::String m_directConnectGatewayName;
-    bool m_directConnectGatewayNameHasBeenSet;
+    bool m_directConnectGatewayNameHasBeenSet = false;
 
     long long m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     DirectConnectGatewayState m_directConnectGatewayState;
-    bool m_directConnectGatewayStateHasBeenSet;
+    bool m_directConnectGatewayStateHasBeenSet = false;
 
     Aws::String m_stateChangeError;
-    bool m_stateChangeErrorHasBeenSet;
+    bool m_stateChangeErrorHasBeenSet = false;
   };
 
 } // namespace Model

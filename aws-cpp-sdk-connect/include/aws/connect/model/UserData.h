@@ -398,28 +398,28 @@ namespace Model
   private:
 
     UserReference m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     RoutingProfileReference m_routingProfile;
-    bool m_routingProfileHasBeenSet;
+    bool m_routingProfileHasBeenSet = false;
 
     HierarchyPathReference m_hierarchyPath;
-    bool m_hierarchyPathHasBeenSet;
+    bool m_hierarchyPathHasBeenSet = false;
 
     AgentStatusReference m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Channel, int> m_availableSlotsByChannel;
-    bool m_availableSlotsByChannelHasBeenSet;
+    bool m_availableSlotsByChannelHasBeenSet = false;
 
     Aws::Map<Channel, int> m_maxSlotsByChannel;
-    bool m_maxSlotsByChannelHasBeenSet;
+    bool m_maxSlotsByChannelHasBeenSet = false;
 
     Aws::Map<Channel, int> m_activeSlotsByChannel;
-    bool m_activeSlotsByChannelHasBeenSet;
+    bool m_activeSlotsByChannelHasBeenSet = false;
 
     Aws::Vector<AgentContactReference> m_contacts;
-    bool m_contactsHasBeenSet;
+    bool m_contactsHasBeenSet = false;
   };
 
 } // namespace Model

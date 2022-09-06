@@ -1180,55 +1180,55 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_documentHash;
-    bool m_documentHashHasBeenSet;
+    bool m_documentHashHasBeenSet = false;
 
     DocumentHashType m_documentHashType;
-    bool m_documentHashTypeHasBeenSet;
+    bool m_documentHashTypeHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_outputS3Region;
-    bool m_outputS3RegionHasBeenSet;
+    bool m_outputS3RegionHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     NotificationConfig m_notificationConfig;
-    bool m_notificationConfigHasBeenSet;
+    bool m_notificationConfigHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
-    bool m_cloudWatchOutputConfigHasBeenSet;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
   };
 
 } // namespace Model

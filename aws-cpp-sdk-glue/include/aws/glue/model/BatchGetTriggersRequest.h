@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_triggerNames;
-    bool m_triggerNamesHasBeenSet;
+    bool m_triggerNamesHasBeenSet = false;
   };
 
 } // namespace Model

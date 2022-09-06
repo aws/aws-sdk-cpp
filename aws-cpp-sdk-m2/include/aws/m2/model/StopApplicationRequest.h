@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     bool m_forceStop;
-    bool m_forceStopHasBeenSet;
+    bool m_forceStopHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,7 +92,7 @@ namespace Model
   private:
 
     FirewallDeploymentModel m_firewallDeploymentModel;
-    bool m_firewallDeploymentModelHasBeenSet;
+    bool m_firewallDeploymentModelHasBeenSet = false;
   };
 
 } // namespace Model

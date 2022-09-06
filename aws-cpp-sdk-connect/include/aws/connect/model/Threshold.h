@@ -92,10 +92,10 @@ namespace Model
   private:
 
     Comparison m_comparison;
-    bool m_comparisonHasBeenSet;
+    bool m_comparisonHasBeenSet = false;
 
     double m_thresholdValue;
-    bool m_thresholdValueHasBeenSet;
+    bool m_thresholdValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_awsSignerJobId;
-    bool m_awsSignerJobIdHasBeenSet;
+    bool m_awsSignerJobIdHasBeenSet = false;
 
     StartSigningJobParameter m_startSigningJobParameter;
-    bool m_startSigningJobParameterHasBeenSet;
+    bool m_startSigningJobParameterHasBeenSet = false;
 
     CustomCodeSigning m_customCodeSigning;
-    bool m_customCodeSigningHasBeenSet;
+    bool m_customCodeSigningHasBeenSet = false;
   };
 
 } // namespace Model

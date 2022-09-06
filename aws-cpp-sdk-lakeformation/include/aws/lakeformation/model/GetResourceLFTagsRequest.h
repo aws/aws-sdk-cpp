@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Resource m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     bool m_showAssignedLFTags;
-    bool m_showAssignedLFTagsHasBeenSet;
+    bool m_showAssignedLFTagsHasBeenSet = false;
   };
 
 } // namespace Model

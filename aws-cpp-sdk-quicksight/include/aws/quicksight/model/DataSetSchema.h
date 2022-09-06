@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<ColumnSchema> m_columnSchemaList;
-    bool m_columnSchemaListHasBeenSet;
+    bool m_columnSchemaListHasBeenSet = false;
   };
 
 } // namespace Model

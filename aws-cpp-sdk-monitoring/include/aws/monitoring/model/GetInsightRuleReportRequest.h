@@ -474,25 +474,25 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     int m_maxContributorCount;
-    bool m_maxContributorCountHasBeenSet;
+    bool m_maxContributorCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

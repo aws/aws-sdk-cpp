@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DocumentAttributeValueType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Relevance m_relevance;
-    bool m_relevanceHasBeenSet;
+    bool m_relevanceHasBeenSet = false;
 
     Search m_search;
-    bool m_searchHasBeenSet;
+    bool m_searchHasBeenSet = false;
   };
 
 } // namespace Model

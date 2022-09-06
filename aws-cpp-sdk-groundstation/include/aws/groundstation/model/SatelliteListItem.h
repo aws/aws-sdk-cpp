@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_groundStations;
-    bool m_groundStationsHasBeenSet;
+    bool m_groundStationsHasBeenSet = false;
 
     int m_noradSatelliteID;
-    bool m_noradSatelliteIDHasBeenSet;
+    bool m_noradSatelliteIDHasBeenSet = false;
 
     Aws::String m_satelliteArn;
-    bool m_satelliteArnHasBeenSet;
+    bool m_satelliteArnHasBeenSet = false;
 
     Aws::String m_satelliteId;
-    bool m_satelliteIdHasBeenSet;
+    bool m_satelliteIdHasBeenSet = false;
   };
 
 } // namespace Model

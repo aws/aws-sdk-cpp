@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_fromTime;
-    bool m_fromTimeHasBeenSet;
+    bool m_fromTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_toTime;
-    bool m_toTimeHasBeenSet;
+    bool m_toTimeHasBeenSet = false;
   };
 
 } // namespace Model

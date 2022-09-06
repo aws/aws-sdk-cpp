@@ -175,10 +175,10 @@ namespace Model
   private:
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

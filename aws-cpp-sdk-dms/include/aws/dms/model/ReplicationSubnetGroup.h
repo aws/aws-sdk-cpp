@@ -248,19 +248,19 @@ namespace Model
   private:
 
     Aws::String m_replicationSubnetGroupIdentifier;
-    bool m_replicationSubnetGroupIdentifierHasBeenSet;
+    bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
 
     Aws::String m_replicationSubnetGroupDescription;
-    bool m_replicationSubnetGroupDescriptionHasBeenSet;
+    bool m_replicationSubnetGroupDescriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetGroupStatus;
-    bool m_subnetGroupStatusHasBeenSet;
+    bool m_subnetGroupStatusHasBeenSet = false;
 
     Aws::Vector<Subnet> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::String m_monitorName;
-    bool m_monitorNameHasBeenSet;
+    bool m_monitorNameHasBeenSet = false;
   };
 
 } // namespace Model

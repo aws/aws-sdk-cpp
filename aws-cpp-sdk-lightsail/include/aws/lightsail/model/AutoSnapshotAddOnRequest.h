@@ -135,7 +135,7 @@ namespace Model
   private:
 
     Aws::String m_snapshotTimeOfDay;
-    bool m_snapshotTimeOfDayHasBeenSet;
+    bool m_snapshotTimeOfDayHasBeenSet = false;
   };
 
 } // namespace Model

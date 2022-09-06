@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_binaryPrefixLocation;
-    bool m_binaryPrefixLocationHasBeenSet;
+    bool m_binaryPrefixLocationHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_generatedPrefixLocation;
-    bool m_generatedPrefixLocationHasBeenSet;
+    bool m_generatedPrefixLocationHasBeenSet = false;
 
     Aws::String m_manifestPrefixLocation;
-    bool m_manifestPrefixLocationHasBeenSet;
+    bool m_manifestPrefixLocationHasBeenSet = false;
 
     Aws::String m_repoPrefixLocation;
-    bool m_repoPrefixLocationHasBeenSet;
+    bool m_repoPrefixLocationHasBeenSet = false;
   };
 
 } // namespace Model

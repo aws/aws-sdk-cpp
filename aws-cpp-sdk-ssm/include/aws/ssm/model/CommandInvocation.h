@@ -1030,52 +1030,52 @@ namespace Model
   private:
 
     Aws::String m_commandId;
-    bool m_commandIdHasBeenSet;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedDateTime;
-    bool m_requestedDateTimeHasBeenSet;
+    bool m_requestedDateTimeHasBeenSet = false;
 
     CommandInvocationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::String m_traceOutput;
-    bool m_traceOutputHasBeenSet;
+    bool m_traceOutputHasBeenSet = false;
 
     Aws::String m_standardOutputUrl;
-    bool m_standardOutputUrlHasBeenSet;
+    bool m_standardOutputUrlHasBeenSet = false;
 
     Aws::String m_standardErrorUrl;
-    bool m_standardErrorUrlHasBeenSet;
+    bool m_standardErrorUrlHasBeenSet = false;
 
     Aws::Vector<CommandPlugin> m_commandPlugins;
-    bool m_commandPluginsHasBeenSet;
+    bool m_commandPluginsHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     NotificationConfig m_notificationConfig;
-    bool m_notificationConfigHasBeenSet;
+    bool m_notificationConfigHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
-    bool m_cloudWatchOutputConfigHasBeenSet;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
   };
 
 } // namespace Model

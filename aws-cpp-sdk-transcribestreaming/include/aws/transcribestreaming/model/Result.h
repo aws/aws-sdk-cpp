@@ -366,28 +366,28 @@ namespace Model
   private:
 
     Aws::String m_resultId;
-    bool m_resultIdHasBeenSet;
+    bool m_resultIdHasBeenSet = false;
 
     double m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     double m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     bool m_isPartial;
-    bool m_isPartialHasBeenSet;
+    bool m_isPartialHasBeenSet = false;
 
     Aws::Vector<Alternative> m_alternatives;
-    bool m_alternativesHasBeenSet;
+    bool m_alternativesHasBeenSet = false;
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::Vector<LanguageWithScore> m_languageIdentification;
-    bool m_languageIdentificationHasBeenSet;
+    bool m_languageIdentificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     LiveConnectorSourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     ChimeSdkMeetingLiveConnectorConfiguration m_chimeSdkMeetingLiveConnectorConfiguration;
-    bool m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet;
+    bool m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

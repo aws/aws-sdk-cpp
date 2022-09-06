@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_namedQueryIds;
-    bool m_namedQueryIdsHasBeenSet;
+    bool m_namedQueryIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_dataLakePrincipalIdentifier;
-    bool m_dataLakePrincipalIdentifierHasBeenSet;
+    bool m_dataLakePrincipalIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

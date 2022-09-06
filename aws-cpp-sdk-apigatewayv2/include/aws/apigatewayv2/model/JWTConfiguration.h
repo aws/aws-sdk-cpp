@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_audience;
-    bool m_audienceHasBeenSet;
+    bool m_audienceHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
   };
 
 } // namespace Model

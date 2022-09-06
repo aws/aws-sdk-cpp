@@ -70,7 +70,7 @@ namespace Model
   private:
 
     KinesisVideoStream m_kinesisVideoStream;
-    bool m_kinesisVideoStreamHasBeenSet;
+    bool m_kinesisVideoStreamHasBeenSet = false;
   };
 
 } // namespace Model

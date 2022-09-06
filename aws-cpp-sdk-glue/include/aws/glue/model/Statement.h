@@ -229,25 +229,25 @@ namespace Model
   private:
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     StatementState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StatementOutput m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     double m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     long long m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     long long m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
   };
 
 } // namespace Model

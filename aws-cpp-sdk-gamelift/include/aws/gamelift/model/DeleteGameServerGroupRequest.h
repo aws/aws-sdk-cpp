@@ -159,10 +159,10 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     GameServerGroupDeleteOption m_deleteOption;
-    bool m_deleteOptionHasBeenSet;
+    bool m_deleteOptionHasBeenSet = false;
   };
 
 } // namespace Model

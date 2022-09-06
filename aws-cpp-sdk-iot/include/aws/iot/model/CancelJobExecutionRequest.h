@@ -309,19 +309,19 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     bool m_force;
-    bool m_forceHasBeenSet;
+    bool m_forceHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
   };
 
 } // namespace Model

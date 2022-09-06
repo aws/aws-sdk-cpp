@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::Vector<ExpectedRoute> m_expectedRoutes;
-    bool m_expectedRoutesHasBeenSet;
+    bool m_expectedRoutesHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

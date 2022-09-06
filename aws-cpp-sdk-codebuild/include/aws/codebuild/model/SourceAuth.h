@@ -127,10 +127,10 @@ namespace Model
   private:
 
     SourceAuthType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
   };
 
 } // namespace Model

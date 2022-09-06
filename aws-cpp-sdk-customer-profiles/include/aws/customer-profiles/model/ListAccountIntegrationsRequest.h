@@ -168,16 +168,16 @@ namespace Model
   private:
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_includeHidden;
-    bool m_includeHiddenHasBeenSet;
+    bool m_includeHiddenHasBeenSet = false;
   };
 
 } // namespace Model

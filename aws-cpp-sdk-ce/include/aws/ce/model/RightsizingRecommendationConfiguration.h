@@ -112,10 +112,10 @@ namespace Model
   private:
 
     RecommendationTarget m_recommendationTarget;
-    bool m_recommendationTargetHasBeenSet;
+    bool m_recommendationTargetHasBeenSet = false;
 
     bool m_benefitsConsidered;
-    bool m_benefitsConsideredHasBeenSet;
+    bool m_benefitsConsideredHasBeenSet = false;
   };
 
 } // namespace Model

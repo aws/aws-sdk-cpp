@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     DeliveryOptions m_deliveryOptions;
-    bool m_deliveryOptionsHasBeenSet;
+    bool m_deliveryOptionsHasBeenSet = false;
   };
 
 } // namespace Model

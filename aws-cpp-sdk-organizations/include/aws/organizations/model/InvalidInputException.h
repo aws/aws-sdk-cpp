@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     InvalidInputExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

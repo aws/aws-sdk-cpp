@@ -292,28 +292,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_deploymentDurationInMinutes;
-    bool m_deploymentDurationInMinutesHasBeenSet;
+    bool m_deploymentDurationInMinutesHasBeenSet = false;
 
     GrowthType m_growthType;
-    bool m_growthTypeHasBeenSet;
+    bool m_growthTypeHasBeenSet = false;
 
     double m_growthFactor;
-    bool m_growthFactorHasBeenSet;
+    bool m_growthFactorHasBeenSet = false;
 
     int m_finalBakeTimeInMinutes;
-    bool m_finalBakeTimeInMinutesHasBeenSet;
+    bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
     ReplicateTo m_replicateTo;
-    bool m_replicateToHasBeenSet;
+    bool m_replicateToHasBeenSet = false;
   };
 
 } // namespace Model

@@ -216,22 +216,22 @@ namespace Model
   private:
 
     StageStatus m_stageStatus;
-    bool m_stageStatusHasBeenSet;
+    bool m_stageStatusHasBeenSet = false;
 
     int m_edgeDeploymentSuccessInStage;
-    bool m_edgeDeploymentSuccessInStageHasBeenSet;
+    bool m_edgeDeploymentSuccessInStageHasBeenSet = false;
 
     int m_edgeDeploymentPendingInStage;
-    bool m_edgeDeploymentPendingInStageHasBeenSet;
+    bool m_edgeDeploymentPendingInStageHasBeenSet = false;
 
     int m_edgeDeploymentFailedInStage;
-    bool m_edgeDeploymentFailedInStageHasBeenSet;
+    bool m_edgeDeploymentFailedInStageHasBeenSet = false;
 
     Aws::String m_edgeDeploymentStatusMessage;
-    bool m_edgeDeploymentStatusMessageHasBeenSet;
+    bool m_edgeDeploymentStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_edgeDeploymentStageStartTime;
-    bool m_edgeDeploymentStageStartTimeHasBeenSet;
+    bool m_edgeDeploymentStageStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

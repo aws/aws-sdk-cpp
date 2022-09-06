@@ -282,22 +282,22 @@ namespace Model
   private:
 
     Aws::Vector<EdgeMetric> m_agentMetrics;
-    bool m_agentMetricsHasBeenSet;
+    bool m_agentMetricsHasBeenSet = false;
 
     Aws::Vector<Model> m_models;
-    bool m_modelsHasBeenSet;
+    bool m_modelsHasBeenSet = false;
 
     Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet;
+    bool m_agentVersionHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_deviceFleetName;
-    bool m_deviceFleetNameHasBeenSet;
+    bool m_deviceFleetNameHasBeenSet = false;
 
     DeploymentResult m_deploymentResult;
-    bool m_deploymentResultHasBeenSet;
+    bool m_deploymentResultHasBeenSet = false;
   };
 
 } // namespace Model

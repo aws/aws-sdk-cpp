@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RegistryAliasStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_primaryRegistryAlias;
-    bool m_primaryRegistryAliasHasBeenSet;
+    bool m_primaryRegistryAliasHasBeenSet = false;
 
     bool m_defaultRegistryAlias;
-    bool m_defaultRegistryAliasHasBeenSet;
+    bool m_defaultRegistryAliasHasBeenSet = false;
   };
 
 } // namespace Model

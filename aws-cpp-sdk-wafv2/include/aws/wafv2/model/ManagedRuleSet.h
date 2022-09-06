@@ -473,25 +473,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, ManagedRuleSetVersion> m_publishedVersions;
-    bool m_publishedVersionsHasBeenSet;
+    bool m_publishedVersionsHasBeenSet = false;
 
     Aws::String m_recommendedVersion;
-    bool m_recommendedVersionHasBeenSet;
+    bool m_recommendedVersionHasBeenSet = false;
 
     Aws::String m_labelNamespace;
-    bool m_labelNamespaceHasBeenSet;
+    bool m_labelNamespaceHasBeenSet = false;
   };
 
 } // namespace Model

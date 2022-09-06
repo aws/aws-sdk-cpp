@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARNUpdate;
-    bool m_resourceARNUpdateHasBeenSet;
+    bool m_resourceARNUpdateHasBeenSet = false;
 
     Aws::String m_roleARNUpdate;
-    bool m_roleARNUpdateHasBeenSet;
+    bool m_roleARNUpdateHasBeenSet = false;
   };
 
 } // namespace Model

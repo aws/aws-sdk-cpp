@@ -259,16 +259,16 @@ namespace Model
   private:
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

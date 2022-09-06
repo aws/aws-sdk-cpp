@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     ControlOperationType m_operationType;
-    bool m_operationTypeHasBeenSet;
+    bool m_operationTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     ControlOperationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

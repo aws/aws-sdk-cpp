@@ -239,22 +239,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     TestGridSessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_ended;
-    bool m_endedHasBeenSet;
+    bool m_endedHasBeenSet = false;
 
     double m_billingMinutes;
-    bool m_billingMinutesHasBeenSet;
+    bool m_billingMinutesHasBeenSet = false;
 
     Aws::String m_seleniumProperties;
-    bool m_seleniumPropertiesHasBeenSet;
+    bool m_seleniumPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

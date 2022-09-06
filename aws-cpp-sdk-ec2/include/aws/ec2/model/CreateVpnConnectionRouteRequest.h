@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

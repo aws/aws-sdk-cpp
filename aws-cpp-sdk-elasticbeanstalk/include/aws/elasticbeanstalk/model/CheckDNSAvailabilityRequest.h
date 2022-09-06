@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_cNAMEPrefix;
-    bool m_cNAMEPrefixHasBeenSet;
+    bool m_cNAMEPrefixHasBeenSet = false;
   };
 
 } // namespace Model

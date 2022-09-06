@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_identityPoolName;
-    bool m_identityPoolNameHasBeenSet;
+    bool m_identityPoolNameHasBeenSet = false;
 
     bool m_unauthenticatedLogin;
-    bool m_unauthenticatedLoginHasBeenSet;
+    bool m_unauthenticatedLoginHasBeenSet = false;
   };
 
 } // namespace Model

@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_buildId;
-    bool m_buildIdHasBeenSet;
+    bool m_buildIdHasBeenSet = false;
   };
 
 } // namespace Model

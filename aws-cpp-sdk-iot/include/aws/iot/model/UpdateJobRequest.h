@@ -395,28 +395,28 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PresignedUrlConfig m_presignedUrlConfig;
-    bool m_presignedUrlConfigHasBeenSet;
+    bool m_presignedUrlConfigHasBeenSet = false;
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-    bool m_jobExecutionsRolloutConfigHasBeenSet;
+    bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
     AbortConfig m_abortConfig;
-    bool m_abortConfigHasBeenSet;
+    bool m_abortConfigHasBeenSet = false;
 
     TimeoutConfig m_timeoutConfig;
-    bool m_timeoutConfigHasBeenSet;
+    bool m_timeoutConfigHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
 
     JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-    bool m_jobExecutionsRetryConfigHasBeenSet;
+    bool m_jobExecutionsRetryConfigHasBeenSet = false;
   };
 
 } // namespace Model

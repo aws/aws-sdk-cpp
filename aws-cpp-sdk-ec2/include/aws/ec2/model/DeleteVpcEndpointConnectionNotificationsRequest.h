@@ -118,10 +118,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectionNotificationIds;
-    bool m_connectionNotificationIdsHasBeenSet;
+    bool m_connectionNotificationIdsHasBeenSet = false;
   };
 
 } // namespace Model

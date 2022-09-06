@@ -123,7 +123,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_gatewayAdmins;
-    bool m_gatewayAdminsHasBeenSet;
+    bool m_gatewayAdminsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -193,19 +193,19 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
 
     Aws::String m_trialComponentArn;
-    bool m_trialComponentArnHasBeenSet;
+    bool m_trialComponentArnHasBeenSet = false;
 
     TrialComponentSource m_trialComponentSource;
-    bool m_trialComponentSourceHasBeenSet;
+    bool m_trialComponentSourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

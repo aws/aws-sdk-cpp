@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_reportingMta;
-    bool m_reportingMtaHasBeenSet;
+    bool m_reportingMtaHasBeenSet = false;
 
     Aws::Utils::DateTime m_arrivalDate;
-    bool m_arrivalDateHasBeenSet;
+    bool m_arrivalDateHasBeenSet = false;
 
     Aws::Vector<ExtensionField> m_extensionFields;
-    bool m_extensionFieldsHasBeenSet;
+    bool m_extensionFieldsHasBeenSet = false;
   };
 
 } // namespace Model

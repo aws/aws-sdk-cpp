@@ -325,13 +325,13 @@ namespace Model
   private:
 
     Aws::String m_appBoundaryKey;
-    bool m_appBoundaryKeyHasBeenSet;
+    bool m_appBoundaryKeyHasBeenSet = false;
 
     Aws::String m_tagValue;
-    bool m_tagValueHasBeenSet;
+    bool m_tagValueHasBeenSet = false;
 
     InsightHealth m_insight;
-    bool m_insightHasBeenSet;
+    bool m_insightHasBeenSet = false;
   };
 
 } // namespace Model

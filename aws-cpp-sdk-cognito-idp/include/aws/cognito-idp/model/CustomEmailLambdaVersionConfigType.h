@@ -133,10 +133,10 @@ namespace Model
   private:
 
     CustomEmailSenderLambdaVersionType m_lambdaVersion;
-    bool m_lambdaVersionHasBeenSet;
+    bool m_lambdaVersionHasBeenSet = false;
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

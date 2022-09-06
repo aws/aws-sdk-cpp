@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceLifecycleConfigName;
-    bool m_notebookInstanceLifecycleConfigNameHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceLifecycleHook> m_onCreate;
-    bool m_onCreateHasBeenSet;
+    bool m_onCreateHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceLifecycleHook> m_onStart;
-    bool m_onStartHasBeenSet;
+    bool m_onStartHasBeenSet = false;
   };
 
 } // namespace Model

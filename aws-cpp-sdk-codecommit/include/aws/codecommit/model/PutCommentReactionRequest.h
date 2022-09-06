@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
 
     Aws::String m_reactionValue;
-    bool m_reactionValueHasBeenSet;
+    bool m_reactionValueHasBeenSet = false;
   };
 
 } // namespace Model

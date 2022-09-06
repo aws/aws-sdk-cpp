@@ -350,28 +350,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAt;
-    bool m_expiresAtHasBeenSet;
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     StreamingSessionStreamState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StreamingSessionStreamStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

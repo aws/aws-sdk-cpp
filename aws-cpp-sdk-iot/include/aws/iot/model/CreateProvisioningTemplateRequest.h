@@ -396,28 +396,28 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_provisioningRoleArn;
-    bool m_provisioningRoleArnHasBeenSet;
+    bool m_provisioningRoleArnHasBeenSet = false;
 
     ProvisioningHook m_preProvisioningHook;
-    bool m_preProvisioningHookHasBeenSet;
+    bool m_preProvisioningHookHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     TemplateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -571,31 +571,31 @@ namespace Model
   private:
 
     ClientData m_clientData;
-    bool m_clientDataHasBeenSet;
+    bool m_clientDataHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SnapshotDiskContainer m_diskContainer;
-    bool m_diskContainerHasBeenSet;
+    bool m_diskContainerHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

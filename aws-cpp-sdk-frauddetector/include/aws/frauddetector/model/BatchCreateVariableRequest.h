@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Vector<VariableEntry> m_variableEntries;
-    bool m_variableEntriesHasBeenSet;
+    bool m_variableEntriesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

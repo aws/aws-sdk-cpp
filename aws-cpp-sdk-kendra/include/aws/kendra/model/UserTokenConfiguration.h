@@ -103,10 +103,10 @@ namespace Model
   private:
 
     JwtTokenTypeConfiguration m_jwtTokenTypeConfiguration;
-    bool m_jwtTokenTypeConfigurationHasBeenSet;
+    bool m_jwtTokenTypeConfigurationHasBeenSet = false;
 
     JsonTokenTypeConfiguration m_jsonTokenTypeConfiguration;
-    bool m_jsonTokenTypeConfigurationHasBeenSet;
+    bool m_jsonTokenTypeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

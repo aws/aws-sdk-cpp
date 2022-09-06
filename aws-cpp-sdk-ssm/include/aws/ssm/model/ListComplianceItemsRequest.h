@@ -275,19 +275,19 @@ namespace Model
   private:
 
     Aws::Vector<ComplianceStringFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

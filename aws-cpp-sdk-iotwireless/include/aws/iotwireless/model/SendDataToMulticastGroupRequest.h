@@ -104,13 +104,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_payloadData;
-    bool m_payloadDataHasBeenSet;
+    bool m_payloadDataHasBeenSet = false;
 
     MulticastWirelessMetadata m_wirelessMetadata;
-    bool m_wirelessMetadataHasBeenSet;
+    bool m_wirelessMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_repInterval;
-    bool m_repIntervalHasBeenSet;
+    bool m_repIntervalHasBeenSet = false;
   };
 
 } // namespace Model

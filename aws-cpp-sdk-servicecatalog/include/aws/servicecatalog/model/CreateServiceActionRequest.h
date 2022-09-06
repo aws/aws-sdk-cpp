@@ -502,22 +502,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServiceActionDefinitionType m_definitionType;
-    bool m_definitionTypeHasBeenSet;
+    bool m_definitionTypeHasBeenSet = false;
 
     Aws::Map<ServiceActionDefinitionKey, Aws::String> m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

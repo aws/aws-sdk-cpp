@@ -564,46 +564,46 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     bool m_associateDefaultSecurityGroup;
-    bool m_associateDefaultSecurityGroupHasBeenSet;
+    bool m_associateDefaultSecurityGroupHasBeenSet = false;
 
     long long m_bandwidthThrottling;
-    bool m_bandwidthThrottlingHasBeenSet;
+    bool m_bandwidthThrottlingHasBeenSet = false;
 
     bool m_createPublicIP;
-    bool m_createPublicIPHasBeenSet;
+    bool m_createPublicIPHasBeenSet = false;
 
     ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting;
-    bool m_dataPlaneRoutingHasBeenSet;
+    bool m_dataPlaneRoutingHasBeenSet = false;
 
     ReplicationConfigurationDefaultLargeStagingDiskType m_defaultLargeStagingDiskType;
-    bool m_defaultLargeStagingDiskTypeHasBeenSet;
+    bool m_defaultLargeStagingDiskTypeHasBeenSet = false;
 
     ReplicationConfigurationEbsEncryption m_ebsEncryption;
-    bool m_ebsEncryptionHasBeenSet;
+    bool m_ebsEncryptionHasBeenSet = false;
 
     Aws::String m_ebsEncryptionKeyArn;
-    bool m_ebsEncryptionKeyArnHasBeenSet;
+    bool m_ebsEncryptionKeyArnHasBeenSet = false;
 
     Aws::String m_replicationConfigurationTemplateID;
-    bool m_replicationConfigurationTemplateIDHasBeenSet;
+    bool m_replicationConfigurationTemplateIDHasBeenSet = false;
 
     Aws::String m_replicationServerInstanceType;
-    bool m_replicationServerInstanceTypeHasBeenSet;
+    bool m_replicationServerInstanceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationServersSecurityGroupsIDs;
-    bool m_replicationServersSecurityGroupsIDsHasBeenSet;
+    bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
 
     Aws::String m_stagingAreaSubnetId;
-    bool m_stagingAreaSubnetIdHasBeenSet;
+    bool m_stagingAreaSubnetIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stagingAreaTags;
-    bool m_stagingAreaTagsHasBeenSet;
+    bool m_stagingAreaTagsHasBeenSet = false;
 
     bool m_useDedicatedReplicationServer;
-    bool m_useDedicatedReplicationServerHasBeenSet;
+    bool m_useDedicatedReplicationServerHasBeenSet = false;
   };
 
 } // namespace Model

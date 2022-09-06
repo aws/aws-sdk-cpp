@@ -354,28 +354,28 @@ namespace Model
   private:
 
     Aws::String m_variantName;
-    bool m_variantNameHasBeenSet;
+    bool m_variantNameHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     int m_initialInstanceCount;
-    bool m_initialInstanceCountHasBeenSet;
+    bool m_initialInstanceCountHasBeenSet = false;
 
     ProductionVariantInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     double m_initialVariantWeight;
-    bool m_initialVariantWeightHasBeenSet;
+    bool m_initialVariantWeightHasBeenSet = false;
 
     ProductionVariantAcceleratorType m_acceleratorType;
-    bool m_acceleratorTypeHasBeenSet;
+    bool m_acceleratorTypeHasBeenSet = false;
 
     ProductionVariantCoreDumpConfig m_coreDumpConfig;
-    bool m_coreDumpConfigHasBeenSet;
+    bool m_coreDumpConfigHasBeenSet = false;
 
     ProductionVariantServerlessConfig m_serverlessConfig;
-    bool m_serverlessConfigHasBeenSet;
+    bool m_serverlessConfigHasBeenSet = false;
   };
 
 } // namespace Model

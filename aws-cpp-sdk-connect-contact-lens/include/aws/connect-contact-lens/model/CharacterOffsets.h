@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_beginOffsetChar;
-    bool m_beginOffsetCharHasBeenSet;
+    bool m_beginOffsetCharHasBeenSet = false;
 
     int m_endOffsetChar;
-    bool m_endOffsetCharHasBeenSet;
+    bool m_endOffsetCharHasBeenSet = false;
   };
 
 } // namespace Model

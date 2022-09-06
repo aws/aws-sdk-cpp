@@ -333,16 +333,16 @@ namespace Model
   private:
 
     Aws::String m_sourceEnvironmentId;
-    bool m_sourceEnvironmentIdHasBeenSet;
+    bool m_sourceEnvironmentIdHasBeenSet = false;
 
     Aws::String m_sourceEnvironmentName;
-    bool m_sourceEnvironmentNameHasBeenSet;
+    bool m_sourceEnvironmentNameHasBeenSet = false;
 
     Aws::String m_destinationEnvironmentId;
-    bool m_destinationEnvironmentIdHasBeenSet;
+    bool m_destinationEnvironmentIdHasBeenSet = false;
 
     Aws::String m_destinationEnvironmentName;
-    bool m_destinationEnvironmentNameHasBeenSet;
+    bool m_destinationEnvironmentNameHasBeenSet = false;
   };
 
 } // namespace Model

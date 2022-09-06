@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     bool m_affiliated;
-    bool m_affiliatedHasBeenSet;
+    bool m_affiliatedHasBeenSet = false;
   };
 
 } // namespace Model

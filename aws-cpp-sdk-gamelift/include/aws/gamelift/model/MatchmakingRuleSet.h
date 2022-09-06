@@ -289,16 +289,16 @@ namespace Model
   private:
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::String m_ruleSetArn;
-    bool m_ruleSetArnHasBeenSet;
+    bool m_ruleSetArnHasBeenSet = false;
 
     Aws::String m_ruleSetBody;
-    bool m_ruleSetBodyHasBeenSet;
+    bool m_ruleSetBodyHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

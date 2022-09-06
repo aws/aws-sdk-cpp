@@ -90,7 +90,7 @@ ServerlessApplicationRepositoryClient::~ServerlessApplicationRepositoryClient()
 
 void ServerlessApplicationRepositoryClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ServerlessApplicationRepository");
+  AWSClient::SetServiceClientName("ServerlessApplicationRepository");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

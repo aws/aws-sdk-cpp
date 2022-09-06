@@ -329,19 +329,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ignoreWords;
-    bool m_ignoreWordsHasBeenSet;
+    bool m_ignoreWordsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     int m_maximumMatchDistance;
-    bool m_maximumMatchDistanceHasBeenSet;
+    bool m_maximumMatchDistanceHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     Aws::String m_sampleText;
-    bool m_sampleTextHasBeenSet;
+    bool m_sampleTextHasBeenSet = false;
   };
 
 } // namespace Model

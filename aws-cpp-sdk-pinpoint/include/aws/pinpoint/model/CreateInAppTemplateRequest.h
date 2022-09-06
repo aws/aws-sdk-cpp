@@ -119,10 +119,10 @@ namespace Model
   private:
 
     InAppTemplateRequest m_inAppTemplateRequest;
-    bool m_inAppTemplateRequestHasBeenSet;
+    bool m_inAppTemplateRequestHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

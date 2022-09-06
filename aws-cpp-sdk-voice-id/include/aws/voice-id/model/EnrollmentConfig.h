@@ -127,10 +127,10 @@ namespace Model
   private:
 
     ExistingEnrollmentAction m_existingEnrollmentAction;
-    bool m_existingEnrollmentActionHasBeenSet;
+    bool m_existingEnrollmentActionHasBeenSet = false;
 
     EnrollmentJobFraudDetectionConfig m_fraudDetectionConfig;
-    bool m_fraudDetectionConfigHasBeenSet;
+    bool m_fraudDetectionConfigHasBeenSet = false;
   };
 
 } // namespace Model

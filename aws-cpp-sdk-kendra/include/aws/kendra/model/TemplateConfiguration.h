@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::Utils::Document m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -353,19 +353,19 @@ namespace Model
   private:
 
     FsxProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
 
     Aws::String m_storageVirtualMachineArn;
-    bool m_storageVirtualMachineArnHasBeenSet;
+    bool m_storageVirtualMachineArnHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

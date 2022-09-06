@@ -86,10 +86,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

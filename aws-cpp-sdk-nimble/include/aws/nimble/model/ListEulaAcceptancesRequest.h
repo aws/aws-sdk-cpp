@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eulaIds;
-    bool m_eulaIdsHasBeenSet;
+    bool m_eulaIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

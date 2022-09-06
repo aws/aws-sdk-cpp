@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -394,28 +394,28 @@ namespace Model
   private:
 
     Aws::String m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     Aws::String m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     ResourceStatus m_resourceStatus;
-    bool m_resourceStatusHasBeenSet;
+    bool m_resourceStatusHasBeenSet = false;
 
     Aws::String m_resourceStatusReason;
-    bool m_resourceStatusReasonHasBeenSet;
+    bool m_resourceStatusReasonHasBeenSet = false;
 
     StackResourceDriftInformationSummary m_driftInformation;
-    bool m_driftInformationHasBeenSet;
+    bool m_driftInformationHasBeenSet = false;
 
     ModuleInfo m_moduleInfo;
-    bool m_moduleInfoHasBeenSet;
+    bool m_moduleInfoHasBeenSet = false;
   };
 
 } // namespace Model

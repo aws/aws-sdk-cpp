@@ -160,10 +160,10 @@ namespace Model
   private:
 
     ContainerLevelMetrics m_containerLevelMetrics;
-    bool m_containerLevelMetricsHasBeenSet;
+    bool m_containerLevelMetricsHasBeenSet = false;
 
     Aws::Vector<MetricPolicyRule> m_metricPolicyRules;
-    bool m_metricPolicyRulesHasBeenSet;
+    bool m_metricPolicyRulesHasBeenSet = false;
   };
 
 } // namespace Model

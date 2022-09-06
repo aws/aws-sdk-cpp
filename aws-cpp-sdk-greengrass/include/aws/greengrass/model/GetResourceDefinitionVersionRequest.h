@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_resourceDefinitionId;
-    bool m_resourceDefinitionIdHasBeenSet;
+    bool m_resourceDefinitionIdHasBeenSet = false;
 
     Aws::String m_resourceDefinitionVersionId;
-    bool m_resourceDefinitionVersionIdHasBeenSet;
+    bool m_resourceDefinitionVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

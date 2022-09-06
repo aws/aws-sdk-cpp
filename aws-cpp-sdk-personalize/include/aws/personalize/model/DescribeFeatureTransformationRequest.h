@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_featureTransformationArn;
-    bool m_featureTransformationArnHasBeenSet;
+    bool m_featureTransformationArnHasBeenSet = false;
   };
 
 } // namespace Model

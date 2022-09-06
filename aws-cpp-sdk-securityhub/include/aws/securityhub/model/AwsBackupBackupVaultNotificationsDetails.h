@@ -190,10 +190,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_backupVaultEvents;
-    bool m_backupVaultEventsHasBeenSet;
+    bool m_backupVaultEventsHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet;
+    bool m_networkSettingsArnHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_updateId;
-    bool m_updateIdHasBeenSet;
+    bool m_updateIdHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -160,19 +160,19 @@ namespace Model
   private:
 
     long long m_totalFindingsCount;
-    bool m_totalFindingsCountHasBeenSet;
+    bool m_totalFindingsCountHasBeenSet = false;
 
     long long m_failedFindingsCount;
-    bool m_failedFindingsCountHasBeenSet;
+    bool m_failedFindingsCountHasBeenSet = false;
 
     long long m_succeededFindingsCount;
-    bool m_succeededFindingsCountHasBeenSet;
+    bool m_succeededFindingsCountHasBeenSet = false;
 
     long long m_skippedFindingsCount;
-    bool m_skippedFindingsCountHasBeenSet;
+    bool m_skippedFindingsCountHasBeenSet = false;
 
     long long m_canceledFindingsCount;
-    bool m_canceledFindingsCountHasBeenSet;
+    bool m_canceledFindingsCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     RetryBuildBatchType m_retryType;
-    bool m_retryTypeHasBeenSet;
+    bool m_retryTypeHasBeenSet = false;
   };
 
 } // namespace Model

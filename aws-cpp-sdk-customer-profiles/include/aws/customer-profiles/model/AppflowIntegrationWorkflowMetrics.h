@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_recordsProcessed;
-    bool m_recordsProcessedHasBeenSet;
+    bool m_recordsProcessedHasBeenSet = false;
 
     long long m_stepsCompleted;
-    bool m_stepsCompletedHasBeenSet;
+    bool m_stepsCompletedHasBeenSet = false;
 
     long long m_totalSteps;
-    bool m_totalStepsHasBeenSet;
+    bool m_totalStepsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -271,16 +271,16 @@ namespace Model
   private:
 
     ThirdPartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_publicVersionNumber;
-    bool m_publicVersionNumberHasBeenSet;
+    bool m_publicVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

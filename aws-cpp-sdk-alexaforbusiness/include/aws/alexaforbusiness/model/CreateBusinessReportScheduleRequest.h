@@ -368,28 +368,28 @@ namespace Model
   private:
 
     Aws::String m_scheduleName;
-    bool m_scheduleNameHasBeenSet;
+    bool m_scheduleNameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     BusinessReportFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     BusinessReportContentRange m_contentRange;
-    bool m_contentRangeHasBeenSet;
+    bool m_contentRangeHasBeenSet = false;
 
     BusinessReportRecurrence m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

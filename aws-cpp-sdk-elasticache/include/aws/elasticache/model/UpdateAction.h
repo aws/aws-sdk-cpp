@@ -702,55 +702,55 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_serviceUpdateReleaseDate;
-    bool m_serviceUpdateReleaseDateHasBeenSet;
+    bool m_serviceUpdateReleaseDateHasBeenSet = false;
 
     ServiceUpdateSeverity m_serviceUpdateSeverity;
-    bool m_serviceUpdateSeverityHasBeenSet;
+    bool m_serviceUpdateSeverityHasBeenSet = false;
 
     ServiceUpdateStatus m_serviceUpdateStatus;
-    bool m_serviceUpdateStatusHasBeenSet;
+    bool m_serviceUpdateStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_serviceUpdateRecommendedApplyByDate;
-    bool m_serviceUpdateRecommendedApplyByDateHasBeenSet;
+    bool m_serviceUpdateRecommendedApplyByDateHasBeenSet = false;
 
     ServiceUpdateType m_serviceUpdateType;
-    bool m_serviceUpdateTypeHasBeenSet;
+    bool m_serviceUpdateTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateActionAvailableDate;
-    bool m_updateActionAvailableDateHasBeenSet;
+    bool m_updateActionAvailableDateHasBeenSet = false;
 
     UpdateActionStatus m_updateActionStatus;
-    bool m_updateActionStatusHasBeenSet;
+    bool m_updateActionStatusHasBeenSet = false;
 
     Aws::String m_nodesUpdated;
-    bool m_nodesUpdatedHasBeenSet;
+    bool m_nodesUpdatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateActionStatusModifiedDate;
-    bool m_updateActionStatusModifiedDateHasBeenSet;
+    bool m_updateActionStatusModifiedDateHasBeenSet = false;
 
     SlaMet m_slaMet;
-    bool m_slaMetHasBeenSet;
+    bool m_slaMetHasBeenSet = false;
 
     Aws::Vector<NodeGroupUpdateStatus> m_nodeGroupUpdateStatus;
-    bool m_nodeGroupUpdateStatusHasBeenSet;
+    bool m_nodeGroupUpdateStatusHasBeenSet = false;
 
     Aws::Vector<CacheNodeUpdateStatus> m_cacheNodeUpdateStatus;
-    bool m_cacheNodeUpdateStatusHasBeenSet;
+    bool m_cacheNodeUpdateStatusHasBeenSet = false;
 
     Aws::String m_estimatedUpdateTime;
-    bool m_estimatedUpdateTimeHasBeenSet;
+    bool m_estimatedUpdateTimeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

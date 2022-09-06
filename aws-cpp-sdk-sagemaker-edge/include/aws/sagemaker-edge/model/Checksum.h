@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ChecksumType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     double m_savingsOpportunityPercentage;
-    bool m_savingsOpportunityPercentageHasBeenSet;
+    bool m_savingsOpportunityPercentageHasBeenSet = false;
 
     EstimatedMonthlySavings m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
   };
 
 } // namespace Model

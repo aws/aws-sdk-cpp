@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_computeEnvironment;
-    bool m_computeEnvironmentHasBeenSet;
+    bool m_computeEnvironmentHasBeenSet = false;
   };
 
 } // namespace Model

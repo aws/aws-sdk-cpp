@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Quality m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
 
     Aggregates m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -185,16 +185,16 @@ namespace Model
   private:
 
     DestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     TargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

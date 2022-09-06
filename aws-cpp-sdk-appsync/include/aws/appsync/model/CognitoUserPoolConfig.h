@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_appIdClientRegex;
-    bool m_appIdClientRegexHasBeenSet;
+    bool m_appIdClientRegexHasBeenSet = false;
   };
 
 } // namespace Model

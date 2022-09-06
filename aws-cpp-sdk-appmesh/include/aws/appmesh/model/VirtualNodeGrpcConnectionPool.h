@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_maxRequests;
-    bool m_maxRequestsHasBeenSet;
+    bool m_maxRequestsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -109,10 +109,10 @@ namespace Model
   private:
 
     ObjectReference m_policyReference;
-    bool m_policyReferenceHasBeenSet;
+    bool m_policyReferenceHasBeenSet = false;
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
   };
 
 } // namespace Model

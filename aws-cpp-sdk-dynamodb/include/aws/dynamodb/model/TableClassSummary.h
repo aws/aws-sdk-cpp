@@ -108,10 +108,10 @@ namespace Model
   private:
 
     TableClass m_tableClass;
-    bool m_tableClassHasBeenSet;
+    bool m_tableClassHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateDateTime;
-    bool m_lastUpdateDateTimeHasBeenSet;
+    bool m_lastUpdateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

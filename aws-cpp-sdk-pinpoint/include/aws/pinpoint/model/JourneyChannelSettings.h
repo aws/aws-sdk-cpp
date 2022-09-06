@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_connectCampaignArn;
-    bool m_connectCampaignArnHasBeenSet;
+    bool m_connectCampaignArnHasBeenSet = false;
 
     Aws::String m_connectCampaignExecutionRoleArn;
-    bool m_connectCampaignExecutionRoleArnHasBeenSet;
+    bool m_connectCampaignExecutionRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<InferenceDeviceInfo> m_accelerators;
-    bool m_acceleratorsHasBeenSet;
+    bool m_acceleratorsHasBeenSet = false;
   };
 
 } // namespace Model

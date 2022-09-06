@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     TranscriptSourceSetting m_transcriptSourceSetting;
-    bool m_transcriptSourceSettingHasBeenSet;
+    bool m_transcriptSourceSettingHasBeenSet = false;
 
     EncryptionSetting m_encryptionSetting;
-    bool m_encryptionSettingHasBeenSet;
+    bool m_encryptionSettingHasBeenSet = false;
   };
 
 } // namespace Model

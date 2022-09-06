@@ -139,10 +139,10 @@ namespace Model
   private:
 
     RuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

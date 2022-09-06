@@ -307,25 +307,25 @@ namespace Model
   private:
 
     SnapshotAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     CreateVolumePermissionModifications m_createVolumePermission;
-    bool m_createVolumePermissionHasBeenSet;
+    bool m_createVolumePermissionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupNames;
-    bool m_groupNamesHasBeenSet;
+    bool m_groupNamesHasBeenSet = false;
 
     OperationType m_operationType;
-    bool m_operationTypeHasBeenSet;
+    bool m_operationTypeHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

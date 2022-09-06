@@ -250,22 +250,22 @@ namespace Model
   private:
 
     NodeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_uniqueId;
-    bool m_uniqueIdHasBeenSet;
+    bool m_uniqueIdHasBeenSet = false;
 
     TriggerNodeDetails m_triggerDetails;
-    bool m_triggerDetailsHasBeenSet;
+    bool m_triggerDetailsHasBeenSet = false;
 
     JobNodeDetails m_jobDetails;
-    bool m_jobDetailsHasBeenSet;
+    bool m_jobDetailsHasBeenSet = false;
 
     CrawlerNodeDetails m_crawlerDetails;
-    bool m_crawlerDetailsHasBeenSet;
+    bool m_crawlerDetailsHasBeenSet = false;
   };
 
 } // namespace Model

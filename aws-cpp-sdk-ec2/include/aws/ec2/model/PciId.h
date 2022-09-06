@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_vendorId;
-    bool m_vendorIdHasBeenSet;
+    bool m_vendorIdHasBeenSet = false;
 
     Aws::String m_subsystemId;
-    bool m_subsystemIdHasBeenSet;
+    bool m_subsystemIdHasBeenSet = false;
 
     Aws::String m_subsystemVendorId;
-    bool m_subsystemVendorIdHasBeenSet;
+    bool m_subsystemVendorIdHasBeenSet = false;
   };
 
 } // namespace Model

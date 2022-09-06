@@ -113,7 +113,7 @@ SSOAdminClient::~SSOAdminClient()
 
 void SSOAdminClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SSO Admin");
+  AWSClient::SetServiceClientName("SSO Admin");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

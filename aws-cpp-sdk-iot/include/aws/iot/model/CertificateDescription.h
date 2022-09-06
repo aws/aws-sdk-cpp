@@ -624,46 +624,46 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::String m_caCertificateId;
-    bool m_caCertificateIdHasBeenSet;
+    bool m_caCertificateIdHasBeenSet = false;
 
     CertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_certificatePem;
-    bool m_certificatePemHasBeenSet;
+    bool m_certificatePemHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     Aws::String m_previousOwnedBy;
-    bool m_previousOwnedByHasBeenSet;
+    bool m_previousOwnedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     int m_customerVersion;
-    bool m_customerVersionHasBeenSet;
+    bool m_customerVersionHasBeenSet = false;
 
     TransferData m_transferData;
-    bool m_transferDataHasBeenSet;
+    bool m_transferDataHasBeenSet = false;
 
     Aws::String m_generationId;
-    bool m_generationIdHasBeenSet;
+    bool m_generationIdHasBeenSet = false;
 
     CertificateValidity m_validity;
-    bool m_validityHasBeenSet;
+    bool m_validityHasBeenSet = false;
 
     CertificateMode m_certificateMode;
-    bool m_certificateModeHasBeenSet;
+    bool m_certificateModeHasBeenSet = false;
   };
 
 } // namespace Model

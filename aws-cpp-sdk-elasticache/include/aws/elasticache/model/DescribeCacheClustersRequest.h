@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_showCacheNodeInfo;
-    bool m_showCacheNodeInfoHasBeenSet;
+    bool m_showCacheNodeInfoHasBeenSet = false;
 
     bool m_showCacheClustersNotInReplicationGroups;
-    bool m_showCacheClustersNotInReplicationGroupsHasBeenSet;
+    bool m_showCacheClustersNotInReplicationGroupsHasBeenSet = false;
   };
 
 } // namespace Model

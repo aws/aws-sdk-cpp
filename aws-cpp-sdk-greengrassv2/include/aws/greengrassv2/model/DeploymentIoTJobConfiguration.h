@@ -153,13 +153,13 @@ namespace Model
   private:
 
     IoTJobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-    bool m_jobExecutionsRolloutConfigHasBeenSet;
+    bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
     IoTJobAbortConfig m_abortConfig;
-    bool m_abortConfigHasBeenSet;
+    bool m_abortConfigHasBeenSet = false;
 
     IoTJobTimeoutConfig m_timeoutConfig;
-    bool m_timeoutConfigHasBeenSet;
+    bool m_timeoutConfigHasBeenSet = false;
   };
 
 } // namespace Model

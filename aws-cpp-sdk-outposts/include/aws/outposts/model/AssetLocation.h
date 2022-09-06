@@ -59,7 +59,7 @@ namespace Model
   private:
 
     double m_rackElevation;
-    bool m_rackElevationHasBeenSet;
+    bool m_rackElevationHasBeenSet = false;
   };
 
 } // namespace Model

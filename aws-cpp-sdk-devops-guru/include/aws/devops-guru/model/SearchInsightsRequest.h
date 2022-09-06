@@ -226,19 +226,19 @@ namespace Model
   private:
 
     StartTimeRange m_startTimeRange;
-    bool m_startTimeRangeHasBeenSet;
+    bool m_startTimeRangeHasBeenSet = false;
 
     SearchInsightsFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     InsightType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

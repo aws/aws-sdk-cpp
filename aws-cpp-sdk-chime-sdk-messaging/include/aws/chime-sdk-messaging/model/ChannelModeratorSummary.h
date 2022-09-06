@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Identity m_moderator;
-    bool m_moderatorHasBeenSet;
+    bool m_moderatorHasBeenSet = false;
   };
 
 } // namespace Model

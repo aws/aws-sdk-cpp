@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_configArn;
-    bool m_configArnHasBeenSet;
+    bool m_configArnHasBeenSet = false;
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     ConfigCapabilityType m_configType;
-    bool m_configTypeHasBeenSet;
+    bool m_configTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

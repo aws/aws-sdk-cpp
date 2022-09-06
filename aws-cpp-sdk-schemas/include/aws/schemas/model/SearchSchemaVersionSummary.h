@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

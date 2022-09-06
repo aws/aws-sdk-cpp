@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     DatasetActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
   };
 
 } // namespace Model

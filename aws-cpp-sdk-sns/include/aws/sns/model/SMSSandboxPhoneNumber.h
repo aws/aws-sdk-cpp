@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     SMSSandboxPhoneNumberVerificationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

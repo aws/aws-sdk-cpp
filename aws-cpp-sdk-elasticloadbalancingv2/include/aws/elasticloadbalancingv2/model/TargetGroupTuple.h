@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
   };
 
 } // namespace Model

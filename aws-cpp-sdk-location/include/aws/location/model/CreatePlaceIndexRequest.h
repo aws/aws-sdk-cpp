@@ -560,19 +560,19 @@ namespace Model
   private:
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     DataSourceConfiguration m_dataSourceConfiguration;
-    bool m_dataSourceConfigurationHasBeenSet;
+    bool m_dataSourceConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -445,34 +445,34 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     int m_activeServicesCount;
-    bool m_activeServicesCountHasBeenSet;
+    bool m_activeServicesCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capacityProviders;
-    bool m_capacityProvidersHasBeenSet;
+    bool m_capacityProvidersHasBeenSet = false;
 
     Aws::Vector<AwsEcsClusterClusterSettingsDetails> m_clusterSettings;
-    bool m_clusterSettingsHasBeenSet;
+    bool m_clusterSettingsHasBeenSet = false;
 
     AwsEcsClusterConfigurationDetails m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<AwsEcsClusterDefaultCapacityProviderStrategyDetails> m_defaultCapacityProviderStrategy;
-    bool m_defaultCapacityProviderStrategyHasBeenSet;
+    bool m_defaultCapacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     int m_registeredContainerInstancesCount;
-    bool m_registeredContainerInstancesCountHasBeenSet;
+    bool m_registeredContainerInstancesCountHasBeenSet = false;
 
     int m_runningTasksCount;
-    bool m_runningTasksCountHasBeenSet;
+    bool m_runningTasksCountHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

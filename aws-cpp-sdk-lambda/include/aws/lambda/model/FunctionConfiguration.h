@@ -1346,103 +1346,103 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     Runtime m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_handler;
-    bool m_handlerHasBeenSet;
+    bool m_handlerHasBeenSet = false;
 
     long long m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_memorySize;
-    bool m_memorySizeHasBeenSet;
+    bool m_memorySizeHasBeenSet = false;
 
     Aws::String m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_codeSha256;
-    bool m_codeSha256HasBeenSet;
+    bool m_codeSha256HasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     VpcConfigResponse m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     DeadLetterConfig m_deadLetterConfig;
-    bool m_deadLetterConfigHasBeenSet;
+    bool m_deadLetterConfigHasBeenSet = false;
 
     EnvironmentResponse m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_kMSKeyArn;
-    bool m_kMSKeyArnHasBeenSet;
+    bool m_kMSKeyArnHasBeenSet = false;
 
     TracingConfigResponse m_tracingConfig;
-    bool m_tracingConfigHasBeenSet;
+    bool m_tracingConfigHasBeenSet = false;
 
     Aws::String m_masterArn;
-    bool m_masterArnHasBeenSet;
+    bool m_masterArnHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::Vector<Layer> m_layers;
-    bool m_layersHasBeenSet;
+    bool m_layersHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     StateReasonCode m_stateReasonCode;
-    bool m_stateReasonCodeHasBeenSet;
+    bool m_stateReasonCodeHasBeenSet = false;
 
     LastUpdateStatus m_lastUpdateStatus;
-    bool m_lastUpdateStatusHasBeenSet;
+    bool m_lastUpdateStatusHasBeenSet = false;
 
     Aws::String m_lastUpdateStatusReason;
-    bool m_lastUpdateStatusReasonHasBeenSet;
+    bool m_lastUpdateStatusReasonHasBeenSet = false;
 
     LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode;
-    bool m_lastUpdateStatusReasonCodeHasBeenSet;
+    bool m_lastUpdateStatusReasonCodeHasBeenSet = false;
 
     Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
-    bool m_fileSystemConfigsHasBeenSet;
+    bool m_fileSystemConfigsHasBeenSet = false;
 
     PackageType m_packageType;
-    bool m_packageTypeHasBeenSet;
+    bool m_packageTypeHasBeenSet = false;
 
     ImageConfigResponse m_imageConfigResponse;
-    bool m_imageConfigResponseHasBeenSet;
+    bool m_imageConfigResponseHasBeenSet = false;
 
     Aws::String m_signingProfileVersionArn;
-    bool m_signingProfileVersionArnHasBeenSet;
+    bool m_signingProfileVersionArnHasBeenSet = false;
 
     Aws::String m_signingJobArn;
-    bool m_signingJobArnHasBeenSet;
+    bool m_signingJobArnHasBeenSet = false;
 
     Aws::Vector<Architecture> m_architectures;
-    bool m_architecturesHasBeenSet;
+    bool m_architecturesHasBeenSet = false;
 
     EphemeralStorage m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

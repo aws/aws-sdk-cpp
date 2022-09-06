@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_scheduledActionName;
-    bool m_scheduledActionNameHasBeenSet;
+    bool m_scheduledActionNameHasBeenSet = false;
   };
 
 } // namespace Model

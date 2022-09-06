@@ -326,28 +326,28 @@ namespace Model
   private:
 
     Aws::String m_datastoreName;
-    bool m_datastoreNameHasBeenSet;
+    bool m_datastoreNameHasBeenSet = false;
 
     DatastoreStorageSummary m_datastoreStorage;
-    bool m_datastoreStorageHasBeenSet;
+    bool m_datastoreStorageHasBeenSet = false;
 
     DatastoreStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastMessageArrivalTime;
-    bool m_lastMessageArrivalTimeHasBeenSet;
+    bool m_lastMessageArrivalTimeHasBeenSet = false;
 
     FileFormatType m_fileFormatType;
-    bool m_fileFormatTypeHasBeenSet;
+    bool m_fileFormatTypeHasBeenSet = false;
 
     DatastorePartitions m_datastorePartitions;
-    bool m_datastorePartitionsHasBeenSet;
+    bool m_datastorePartitionsHasBeenSet = false;
   };
 
 } // namespace Model

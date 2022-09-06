@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_portfolioId;
-    bool m_portfolioIdHasBeenSet;
+    bool m_portfolioIdHasBeenSet = false;
 
     DescribePortfolioShareType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

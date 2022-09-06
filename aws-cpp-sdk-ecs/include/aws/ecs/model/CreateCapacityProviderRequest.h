@@ -304,13 +304,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AutoScalingGroupProvider m_autoScalingGroupProvider;
-    bool m_autoScalingGroupProviderHasBeenSet;
+    bool m_autoScalingGroupProviderHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_distributionId;
-    bool m_distributionIdHasBeenSet;
+    bool m_distributionIdHasBeenSet = false;
 
     MonitoringSubscription m_monitoringSubscription;
-    bool m_monitoringSubscriptionHasBeenSet;
+    bool m_monitoringSubscriptionHasBeenSet = false;
   };
 
 } // namespace Model

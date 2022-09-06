@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet;
+    bool m_severityCountsHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_vulnerabilityId;
-    bool m_vulnerabilityIdHasBeenSet;
+    bool m_vulnerabilityIdHasBeenSet = false;
   };
 
 } // namespace Model

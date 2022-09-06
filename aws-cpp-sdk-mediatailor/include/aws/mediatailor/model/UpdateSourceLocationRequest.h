@@ -228,19 +228,19 @@ namespace Model
   private:
 
     AccessConfiguration m_accessConfiguration;
-    bool m_accessConfigurationHasBeenSet;
+    bool m_accessConfigurationHasBeenSet = false;
 
     DefaultSegmentDeliveryConfiguration m_defaultSegmentDeliveryConfiguration;
-    bool m_defaultSegmentDeliveryConfigurationHasBeenSet;
+    bool m_defaultSegmentDeliveryConfigurationHasBeenSet = false;
 
     HttpConfiguration m_httpConfiguration;
-    bool m_httpConfigurationHasBeenSet;
+    bool m_httpConfigurationHasBeenSet = false;
 
     Aws::Vector<SegmentDeliveryConfiguration> m_segmentDeliveryConfigurations;
-    bool m_segmentDeliveryConfigurationsHasBeenSet;
+    bool m_segmentDeliveryConfigurationsHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
   };
 
 } // namespace Model

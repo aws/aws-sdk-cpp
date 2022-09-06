@@ -110,10 +110,10 @@ namespace Model
   private:
 
     AppsListData m_appsList;
-    bool m_appsListHasBeenSet;
+    bool m_appsListHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

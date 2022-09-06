@@ -248,22 +248,22 @@ namespace Model
   private:
 
     Aws::String m_backgroundColor;
-    bool m_backgroundColorHasBeenSet;
+    bool m_backgroundColorHasBeenSet = false;
 
     InAppMessageBodyConfig m_bodyConfig;
-    bool m_bodyConfigHasBeenSet;
+    bool m_bodyConfigHasBeenSet = false;
 
     InAppMessageHeaderConfig m_headerConfig;
-    bool m_headerConfigHasBeenSet;
+    bool m_headerConfigHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     InAppMessageButton m_primaryBtn;
-    bool m_primaryBtnHasBeenSet;
+    bool m_primaryBtnHasBeenSet = false;
 
     InAppMessageButton m_secondaryBtn;
-    bool m_secondaryBtnHasBeenSet;
+    bool m_secondaryBtnHasBeenSet = false;
   };
 
 } // namespace Model

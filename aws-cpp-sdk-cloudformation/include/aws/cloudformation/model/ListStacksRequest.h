@@ -157,10 +157,10 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<StackStatus> m_stackStatusFilter;
-    bool m_stackStatusFilterHasBeenSet;
+    bool m_stackStatusFilterHasBeenSet = false;
   };
 
 } // namespace Model

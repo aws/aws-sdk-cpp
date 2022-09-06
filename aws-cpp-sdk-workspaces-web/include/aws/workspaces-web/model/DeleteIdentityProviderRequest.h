@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_identityProviderArn;
-    bool m_identityProviderArnHasBeenSet;
+    bool m_identityProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_subjectPart;
-    bool m_subjectPartHasBeenSet;
+    bool m_subjectPartHasBeenSet = false;
 
     Aws::String m_textPart;
-    bool m_textPartHasBeenSet;
+    bool m_textPartHasBeenSet = false;
 
     Aws::String m_htmlPart;
-    bool m_htmlPartHasBeenSet;
+    bool m_htmlPartHasBeenSet = false;
   };
 
 } // namespace Model

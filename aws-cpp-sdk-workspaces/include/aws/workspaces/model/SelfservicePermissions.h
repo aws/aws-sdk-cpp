@@ -216,19 +216,19 @@ namespace Model
   private:
 
     ReconnectEnum m_restartWorkspace;
-    bool m_restartWorkspaceHasBeenSet;
+    bool m_restartWorkspaceHasBeenSet = false;
 
     ReconnectEnum m_increaseVolumeSize;
-    bool m_increaseVolumeSizeHasBeenSet;
+    bool m_increaseVolumeSizeHasBeenSet = false;
 
     ReconnectEnum m_changeComputeType;
-    bool m_changeComputeTypeHasBeenSet;
+    bool m_changeComputeTypeHasBeenSet = false;
 
     ReconnectEnum m_switchRunningMode;
-    bool m_switchRunningModeHasBeenSet;
+    bool m_switchRunningModeHasBeenSet = false;
 
     ReconnectEnum m_rebuildWorkspace;
-    bool m_rebuildWorkspaceHasBeenSet;
+    bool m_rebuildWorkspaceHasBeenSet = false;
   };
 
 } // namespace Model

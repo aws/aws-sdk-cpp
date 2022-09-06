@@ -472,34 +472,34 @@ namespace Model
   private:
 
     Aws::String m_appPackageName;
-    bool m_appPackageNameHasBeenSet;
+    bool m_appPackageNameHasBeenSet = false;
 
     Aws::String m_appTitle;
-    bool m_appTitleHasBeenSet;
+    bool m_appTitleHasBeenSet = false;
 
     Aws::String m_appVersionCode;
-    bool m_appVersionCodeHasBeenSet;
+    bool m_appVersionCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_clientSdkVersion;
-    bool m_clientSdkVersionHasBeenSet;
+    bool m_clientSdkVersionHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_sdkName;
-    bool m_sdkNameHasBeenSet;
+    bool m_sdkNameHasBeenSet = false;
 
     Session m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

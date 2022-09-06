@@ -89,7 +89,7 @@ SnowDeviceManagementClient::~SnowDeviceManagementClient()
 
 void SnowDeviceManagementClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Snow Device Management");
+  AWSClient::SetServiceClientName("Snow Device Management");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

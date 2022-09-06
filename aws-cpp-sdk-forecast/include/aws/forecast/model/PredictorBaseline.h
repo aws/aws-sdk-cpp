@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::Vector<BaselineMetric> m_baselineMetrics;
-    bool m_baselineMetricsHasBeenSet;
+    bool m_baselineMetricsHasBeenSet = false;
   };
 
 } // namespace Model

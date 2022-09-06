@@ -79,10 +79,10 @@ namespace Model
   private:
 
     bool m_allowEarlyCheckIn;
-    bool m_allowEarlyCheckInHasBeenSet;
+    bool m_allowEarlyCheckInHasBeenSet = false;
 
     int m_maxTimeToLiveInMinutes;
-    bool m_maxTimeToLiveInMinutesHasBeenSet;
+    bool m_maxTimeToLiveInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

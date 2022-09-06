@@ -288,19 +288,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     ComplianceSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     ComplianceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

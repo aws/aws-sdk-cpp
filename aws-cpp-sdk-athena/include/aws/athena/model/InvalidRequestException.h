@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_athenaErrorCode;
-    bool m_athenaErrorCodeHasBeenSet;
+    bool m_athenaErrorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -256,19 +256,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowedOrganizations;
-    bool m_allowedOrganizationsHasBeenSet;
+    bool m_allowedOrganizationsHasBeenSet = false;
 
     AssertionAttributes m_assertionAttributes;
-    bool m_assertionAttributesHasBeenSet;
+    bool m_assertionAttributesHasBeenSet = false;
 
     IdpMetadata m_idpMetadata;
-    bool m_idpMetadataHasBeenSet;
+    bool m_idpMetadataHasBeenSet = false;
 
     int m_loginValidityDuration;
-    bool m_loginValidityDurationHasBeenSet;
+    bool m_loginValidityDurationHasBeenSet = false;
 
     RoleValues m_roleValues;
-    bool m_roleValuesHasBeenSet;
+    bool m_roleValuesHasBeenSet = false;
   };
 
 } // namespace Model

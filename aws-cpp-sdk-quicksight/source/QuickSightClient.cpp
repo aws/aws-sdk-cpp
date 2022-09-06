@@ -196,7 +196,7 @@ QuickSightClient::~QuickSightClient()
 
 void QuickSightClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("QuickSight");
+  AWSClient::SetServiceClientName("QuickSight");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

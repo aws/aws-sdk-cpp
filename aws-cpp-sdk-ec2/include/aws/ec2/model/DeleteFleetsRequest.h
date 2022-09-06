@@ -163,13 +163,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fleetIds;
-    bool m_fleetIdsHasBeenSet;
+    bool m_fleetIdsHasBeenSet = false;
 
     bool m_terminateInstances;
-    bool m_terminateInstancesHasBeenSet;
+    bool m_terminateInstancesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -106,10 +106,10 @@ namespace Model
   private:
 
     CurrentMetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Unit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

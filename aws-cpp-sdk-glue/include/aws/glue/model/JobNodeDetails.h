@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<JobRun> m_jobRuns;
-    bool m_jobRunsHasBeenSet;
+    bool m_jobRunsHasBeenSet = false;
   };
 
 } // namespace Model

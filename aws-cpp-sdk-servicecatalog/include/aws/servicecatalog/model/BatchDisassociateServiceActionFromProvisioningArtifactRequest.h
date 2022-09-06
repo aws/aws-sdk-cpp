@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::Vector<ServiceActionAssociation> m_serviceActionAssociations;
-    bool m_serviceActionAssociationsHasBeenSet;
+    bool m_serviceActionAssociationsHasBeenSet = false;
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
   };
 
 } // namespace Model

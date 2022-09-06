@@ -205,13 +205,13 @@ namespace Model
   private:
 
     Aws::String m_launchPath;
-    bool m_launchPathHasBeenSet;
+    bool m_launchPathHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     int m_concurrentExecutions;
-    bool m_concurrentExecutionsHasBeenSet;
+    bool m_concurrentExecutionsHasBeenSet = false;
   };
 
 } // namespace Model

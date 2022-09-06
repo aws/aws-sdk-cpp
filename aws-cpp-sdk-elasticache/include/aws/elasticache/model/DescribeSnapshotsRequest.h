@@ -385,25 +385,25 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     Aws::String m_snapshotSource;
-    bool m_snapshotSourceHasBeenSet;
+    bool m_snapshotSourceHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     bool m_showNodeGroupConfig;
-    bool m_showNodeGroupConfigHasBeenSet;
+    bool m_showNodeGroupConfigHasBeenSet = false;
   };
 
 } // namespace Model

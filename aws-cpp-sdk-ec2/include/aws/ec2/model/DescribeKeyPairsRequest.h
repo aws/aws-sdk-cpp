@@ -311,19 +311,19 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keyNames;
-    bool m_keyNamesHasBeenSet;
+    bool m_keyNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keyPairIds;
-    bool m_keyPairIdsHasBeenSet;
+    bool m_keyPairIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_includePublicKey;
-    bool m_includePublicKeyHasBeenSet;
+    bool m_includePublicKeyHasBeenSet = false;
   };
 
 } // namespace Model

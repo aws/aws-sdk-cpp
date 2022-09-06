@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     DestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     DestinationProperties m_destinationProperties;
-    bool m_destinationPropertiesHasBeenSet;
+    bool m_destinationPropertiesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::Vector<TopicPreference> m_topicPreferences;
-    bool m_topicPreferencesHasBeenSet;
+    bool m_topicPreferencesHasBeenSet = false;
 
     bool m_unsubscribeAll;
-    bool m_unsubscribeAllHasBeenSet;
+    bool m_unsubscribeAllHasBeenSet = false;
 
     Aws::String m_attributesData;
-    bool m_attributesDataHasBeenSet;
+    bool m_attributesDataHasBeenSet = false;
   };
 
 } // namespace Model

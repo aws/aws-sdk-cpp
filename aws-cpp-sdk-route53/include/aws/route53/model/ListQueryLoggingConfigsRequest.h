@@ -299,13 +299,13 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

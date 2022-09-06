@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_configurationId;
-    bool m_configurationIdHasBeenSet;
+    bool m_configurationIdHasBeenSet = false;
 
     Aws::String m_configurationRevision;
-    bool m_configurationRevisionHasBeenSet;
+    bool m_configurationRevisionHasBeenSet = false;
   };
 
 } // namespace Model

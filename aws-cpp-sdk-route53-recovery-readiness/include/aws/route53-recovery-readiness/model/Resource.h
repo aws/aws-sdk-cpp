@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     DNSTargetResource m_dnsTargetResource;
-    bool m_dnsTargetResourceHasBeenSet;
+    bool m_dnsTargetResourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readinessScopes;
-    bool m_readinessScopesHasBeenSet;
+    bool m_readinessScopesHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

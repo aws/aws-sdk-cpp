@@ -407,31 +407,31 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     JobExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     long long m_stepTimeoutInMinutes;
-    bool m_stepTimeoutInMinutesHasBeenSet;
+    bool m_stepTimeoutInMinutesHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
 
     bool m_includeJobExecutionState;
-    bool m_includeJobExecutionStateHasBeenSet;
+    bool m_includeJobExecutionStateHasBeenSet = false;
 
     bool m_includeJobDocument;
-    bool m_includeJobDocumentHasBeenSet;
+    bool m_includeJobDocumentHasBeenSet = false;
 
     long long m_executionNumber;
-    bool m_executionNumberHasBeenSet;
+    bool m_executionNumberHasBeenSet = false;
   };
 
 } // namespace Model

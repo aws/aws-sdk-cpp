@@ -237,16 +237,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ScheduleLambdaFunctionFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -144,10 +144,10 @@ namespace Model
   private:
 
     KeyUsage m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     Aws::Vector<AccessDescription> m_subjectInformationAccess;
-    bool m_subjectInformationAccessHasBeenSet;
+    bool m_subjectInformationAccessHasBeenSet = false;
   };
 
 } // namespace Model

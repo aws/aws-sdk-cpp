@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_licenseConfigurationArn;
-    bool m_licenseConfigurationArnHasBeenSet;
+    bool m_licenseConfigurationArnHasBeenSet = false;
 
     Aws::String m_amiAssociationScope;
-    bool m_amiAssociationScopeHasBeenSet;
+    bool m_amiAssociationScopeHasBeenSet = false;
   };
 
 } // namespace Model

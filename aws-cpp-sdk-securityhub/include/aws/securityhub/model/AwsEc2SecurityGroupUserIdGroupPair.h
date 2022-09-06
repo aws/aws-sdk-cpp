@@ -318,22 +318,22 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_peeringStatus;
-    bool m_peeringStatusHasBeenSet;
+    bool m_peeringStatusHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

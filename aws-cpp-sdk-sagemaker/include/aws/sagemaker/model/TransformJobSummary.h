@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_transformJobName;
-    bool m_transformJobNameHasBeenSet;
+    bool m_transformJobNameHasBeenSet = false;
 
     Aws::String m_transformJobArn;
-    bool m_transformJobArnHasBeenSet;
+    bool m_transformJobArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_transformEndTime;
-    bool m_transformEndTimeHasBeenSet;
+    bool m_transformEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     TransformJobStatus m_transformJobStatus;
-    bool m_transformJobStatusHasBeenSet;
+    bool m_transformJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

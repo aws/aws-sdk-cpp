@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_dataSourceArn;
-    bool m_dataSourceArnHasBeenSet;
+    bool m_dataSourceArnHasBeenSet = false;
 
     UploadSettings m_uploadSettings;
-    bool m_uploadSettingsHasBeenSet;
+    bool m_uploadSettingsHasBeenSet = false;
 
     Aws::Vector<InputColumn> m_inputColumns;
-    bool m_inputColumnsHasBeenSet;
+    bool m_inputColumnsHasBeenSet = false;
   };
 
 } // namespace Model

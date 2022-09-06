@@ -129,13 +129,13 @@ namespace Model
   private:
 
     int m_maxCandidates;
-    bool m_maxCandidatesHasBeenSet;
+    bool m_maxCandidatesHasBeenSet = false;
 
     int m_maxRuntimePerTrainingJobInSeconds;
-    bool m_maxRuntimePerTrainingJobInSecondsHasBeenSet;
+    bool m_maxRuntimePerTrainingJobInSecondsHasBeenSet = false;
 
     int m_maxAutoMLJobRuntimeInSeconds;
-    bool m_maxAutoMLJobRuntimeInSecondsHasBeenSet;
+    bool m_maxAutoMLJobRuntimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

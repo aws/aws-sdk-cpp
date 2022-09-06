@@ -521,37 +521,37 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     FastSnapshotRestoreStateCode m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateTransitionReason;
-    bool m_stateTransitionReasonHasBeenSet;
+    bool m_stateTransitionReasonHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_ownerAlias;
-    bool m_ownerAliasHasBeenSet;
+    bool m_ownerAliasHasBeenSet = false;
 
     Aws::Utils::DateTime m_enablingTime;
-    bool m_enablingTimeHasBeenSet;
+    bool m_enablingTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_optimizingTime;
-    bool m_optimizingTimeHasBeenSet;
+    bool m_optimizingTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_enabledTime;
-    bool m_enabledTimeHasBeenSet;
+    bool m_enabledTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_disablingTime;
-    bool m_disablingTimeHasBeenSet;
+    bool m_disablingTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_disabledTime;
-    bool m_disabledTimeHasBeenSet;
+    bool m_disabledTimeHasBeenSet = false;
   };
 
 } // namespace Model

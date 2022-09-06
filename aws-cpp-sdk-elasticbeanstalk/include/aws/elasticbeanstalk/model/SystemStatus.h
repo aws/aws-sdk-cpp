@@ -131,10 +131,10 @@ namespace Model
   private:
 
     CPUUtilization m_cPUUtilization;
-    bool m_cPUUtilizationHasBeenSet;
+    bool m_cPUUtilizationHasBeenSet = false;
 
     Aws::Vector<double> m_loadAverage;
-    bool m_loadAverageHasBeenSet;
+    bool m_loadAverageHasBeenSet = false;
   };
 
 } // namespace Model

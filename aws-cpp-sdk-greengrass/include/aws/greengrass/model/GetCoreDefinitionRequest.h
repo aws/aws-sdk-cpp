@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_coreDefinitionId;
-    bool m_coreDefinitionIdHasBeenSet;
+    bool m_coreDefinitionIdHasBeenSet = false;
   };
 
 } // namespace Model

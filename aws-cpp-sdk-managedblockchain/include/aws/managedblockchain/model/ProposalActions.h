@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Vector<InviteAction> m_invitations;
-    bool m_invitationsHasBeenSet;
+    bool m_invitationsHasBeenSet = false;
 
     Aws::Vector<RemoveAction> m_removals;
-    bool m_removalsHasBeenSet;
+    bool m_removalsHasBeenSet = false;
   };
 
 } // namespace Model

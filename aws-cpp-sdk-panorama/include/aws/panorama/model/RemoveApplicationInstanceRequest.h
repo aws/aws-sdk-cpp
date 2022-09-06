@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_applicationInstanceId;
-    bool m_applicationInstanceIdHasBeenSet;
+    bool m_applicationInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

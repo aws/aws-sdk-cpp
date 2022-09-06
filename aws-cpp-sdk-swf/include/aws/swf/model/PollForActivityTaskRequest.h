@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     TaskList m_taskList;
-    bool m_taskListHasBeenSet;
+    bool m_taskListHasBeenSet = false;
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
   };
 
 } // namespace Model

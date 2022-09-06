@@ -384,28 +384,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ReportType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ReportExportConfig m_exportConfig;
-    bool m_exportConfigHasBeenSet;
+    bool m_exportConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ReportGroupStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

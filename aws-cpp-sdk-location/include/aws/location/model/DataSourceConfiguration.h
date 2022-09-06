@@ -104,7 +104,7 @@ namespace Model
   private:
 
     IntendedUse m_intendedUse;
-    bool m_intendedUseHasBeenSet;
+    bool m_intendedUseHasBeenSet = false;
   };
 
 } // namespace Model

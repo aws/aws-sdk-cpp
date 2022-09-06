@@ -137,13 +137,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
 
     Aws::String m_instanceEventWindowId;
-    bool m_instanceEventWindowIdHasBeenSet;
+    bool m_instanceEventWindowIdHasBeenSet = false;
   };
 
 } // namespace Model

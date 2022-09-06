@@ -360,28 +360,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_assessmentName;
-    bool m_assessmentNameHasBeenSet;
+    bool m_assessmentNameHasBeenSet = false;
 
     Aws::String m_controlSetId;
-    bool m_controlSetIdHasBeenSet;
+    bool m_controlSetIdHasBeenSet = false;
 
     Aws::String m_controlSetName;
-    bool m_controlSetNameHasBeenSet;
+    bool m_controlSetNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

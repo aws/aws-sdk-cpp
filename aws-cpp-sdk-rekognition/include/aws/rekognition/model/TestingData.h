@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::Vector<Asset> m_assets;
-    bool m_assetsHasBeenSet;
+    bool m_assetsHasBeenSet = false;
 
     bool m_autoCreate;
-    bool m_autoCreateHasBeenSet;
+    bool m_autoCreateHasBeenSet = false;
   };
 
 } // namespace Model

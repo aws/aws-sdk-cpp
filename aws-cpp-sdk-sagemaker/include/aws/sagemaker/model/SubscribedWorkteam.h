@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_workteamArn;
-    bool m_workteamArnHasBeenSet;
+    bool m_workteamArnHasBeenSet = false;
 
     Aws::String m_marketplaceTitle;
-    bool m_marketplaceTitleHasBeenSet;
+    bool m_marketplaceTitleHasBeenSet = false;
 
     Aws::String m_sellerName;
-    bool m_sellerNameHasBeenSet;
+    bool m_sellerNameHasBeenSet = false;
 
     Aws::String m_marketplaceDescription;
-    bool m_marketplaceDescriptionHasBeenSet;
+    bool m_marketplaceDescriptionHasBeenSet = false;
 
     Aws::String m_listingId;
-    bool m_listingIdHasBeenSet;
+    bool m_listingIdHasBeenSet = false;
   };
 
 } // namespace Model

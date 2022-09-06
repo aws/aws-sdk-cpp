@@ -135,13 +135,13 @@ namespace Model
   private:
 
     SamplingRule m_samplingRule;
-    bool m_samplingRuleHasBeenSet;
+    bool m_samplingRuleHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet;
+    bool m_modifiedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
 
     WarmupStatus m_warmupStatus;
-    bool m_warmupStatusHasBeenSet;
+    bool m_warmupStatusHasBeenSet = false;
 
     int m_warmupPercentage;
-    bool m_warmupPercentageHasBeenSet;
+    bool m_warmupPercentageHasBeenSet = false;
 
     Aws::String m_poolName;
-    bool m_poolNameHasBeenSet;
+    bool m_poolNameHasBeenSet = false;
   };
 
 } // namespace Model

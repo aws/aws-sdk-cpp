@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

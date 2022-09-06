@@ -190,13 +190,13 @@ namespace Model
   private:
 
     long long m_evaluationOrder;
-    bool m_evaluationOrderHasBeenSet;
+    bool m_evaluationOrderHasBeenSet = false;
 
     Aws::String m_segment;
-    bool m_segmentHasBeenSet;
+    bool m_segmentHasBeenSet = false;
 
     Aws::Map<Aws::String, long long> m_weights;
-    bool m_weightsHasBeenSet;
+    bool m_weightsHasBeenSet = false;
   };
 
 } // namespace Model

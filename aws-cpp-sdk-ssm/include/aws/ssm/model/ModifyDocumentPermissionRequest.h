@@ -311,19 +311,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DocumentPermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIdsToAdd;
-    bool m_accountIdsToAddHasBeenSet;
+    bool m_accountIdsToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIdsToRemove;
-    bool m_accountIdsToRemoveHasBeenSet;
+    bool m_accountIdsToRemoveHasBeenSet = false;
 
     Aws::String m_sharedDocumentVersion;
-    bool m_sharedDocumentVersionHasBeenSet;
+    bool m_sharedDocumentVersionHasBeenSet = false;
   };
 
 } // namespace Model

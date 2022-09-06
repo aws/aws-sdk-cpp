@@ -72,7 +72,7 @@ namespace Model
   private:
 
     AwsSsmPatch m_patch;
-    bool m_patchHasBeenSet;
+    bool m_patchHasBeenSet = false;
   };
 
 } // namespace Model

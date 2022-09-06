@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -284,19 +284,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<CatalogItemClass> m_itemClassFilter;
-    bool m_itemClassFilterHasBeenSet;
+    bool m_itemClassFilterHasBeenSet = false;
 
     Aws::Vector<SupportedStorageEnum> m_supportedStorageFilter;
-    bool m_supportedStorageFilterHasBeenSet;
+    bool m_supportedStorageFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eC2FamilyFilter;
-    bool m_eC2FamilyFilterHasBeenSet;
+    bool m_eC2FamilyFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_deliveryStream;
-    bool m_deliveryStreamHasBeenSet;
+    bool m_deliveryStreamHasBeenSet = false;
   };
 
 } // namespace Model

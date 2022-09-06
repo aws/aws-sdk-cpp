@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_finalSnapshotName;
-    bool m_finalSnapshotNameHasBeenSet;
+    bool m_finalSnapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

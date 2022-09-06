@@ -304,22 +304,22 @@ namespace Model
   private:
 
     MailType m_mailType;
-    bool m_mailTypeHasBeenSet;
+    bool m_mailTypeHasBeenSet = false;
 
     Aws::String m_websiteURL;
-    bool m_websiteURLHasBeenSet;
+    bool m_websiteURLHasBeenSet = false;
 
     ContactLanguage m_contactLanguage;
-    bool m_contactLanguageHasBeenSet;
+    bool m_contactLanguageHasBeenSet = false;
 
     Aws::String m_useCaseDescription;
-    bool m_useCaseDescriptionHasBeenSet;
+    bool m_useCaseDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalContactEmailAddresses;
-    bool m_additionalContactEmailAddressesHasBeenSet;
+    bool m_additionalContactEmailAddressesHasBeenSet = false;
 
     bool m_productionAccessEnabled;
-    bool m_productionAccessEnabledHasBeenSet;
+    bool m_productionAccessEnabledHasBeenSet = false;
   };
 
 } // namespace Model

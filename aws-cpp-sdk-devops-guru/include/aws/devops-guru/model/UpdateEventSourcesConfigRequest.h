@@ -71,7 +71,7 @@ namespace Model
   private:
 
     EventSourcesConfig m_eventSources;
-    bool m_eventSourcesHasBeenSet;
+    bool m_eventSourcesHasBeenSet = false;
   };
 
 } // namespace Model

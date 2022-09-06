@@ -83,7 +83,7 @@ namespace Model
   private:
 
     OwnerOverride m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

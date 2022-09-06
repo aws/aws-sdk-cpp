@@ -97,10 +97,10 @@ namespace Model
   private:
 
     int m_dataRate;
-    bool m_dataRateHasBeenSet;
+    bool m_dataRateHasBeenSet = false;
 
     Aws::Vector<int> m_frequencies;
-    bool m_frequenciesHasBeenSet;
+    bool m_frequenciesHasBeenSet = false;
   };
 
 } // namespace Model

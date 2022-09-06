@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails> m_operands;
-    bool m_operandsHasBeenSet;
+    bool m_operandsHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

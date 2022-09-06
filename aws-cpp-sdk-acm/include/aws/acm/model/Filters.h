@@ -214,13 +214,13 @@ namespace Model
   private:
 
     Aws::Vector<ExtendedKeyUsageName> m_extendedKeyUsage;
-    bool m_extendedKeyUsageHasBeenSet;
+    bool m_extendedKeyUsageHasBeenSet = false;
 
     Aws::Vector<KeyUsageName> m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     Aws::Vector<KeyAlgorithm> m_keyTypes;
-    bool m_keyTypesHasBeenSet;
+    bool m_keyTypesHasBeenSet = false;
   };
 
 } // namespace Model

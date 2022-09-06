@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OverrideAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

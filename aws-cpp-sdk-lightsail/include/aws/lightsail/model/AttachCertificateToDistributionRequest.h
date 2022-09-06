@@ -198,10 +198,10 @@ namespace Model
   private:
 
     Aws::String m_distributionName;
-    bool m_distributionNameHasBeenSet;
+    bool m_distributionNameHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
   };
 
 } // namespace Model

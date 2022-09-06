@@ -259,10 +259,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     AlternateContactType m_alternateContactType;
-    bool m_alternateContactTypeHasBeenSet;
+    bool m_alternateContactTypeHasBeenSet = false;
   };
 
 } // namespace Model

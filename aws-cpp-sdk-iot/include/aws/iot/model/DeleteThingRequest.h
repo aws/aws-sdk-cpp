@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
   };
 
 } // namespace Model

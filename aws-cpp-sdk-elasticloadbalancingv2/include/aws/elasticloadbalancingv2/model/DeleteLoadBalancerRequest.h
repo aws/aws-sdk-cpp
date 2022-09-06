@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerArn;
-    bool m_loadBalancerArnHasBeenSet;
+    bool m_loadBalancerArnHasBeenSet = false;
   };
 
 } // namespace Model

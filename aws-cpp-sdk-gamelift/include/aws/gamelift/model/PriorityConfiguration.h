@@ -251,10 +251,10 @@ namespace Model
   private:
 
     Aws::Vector<PriorityType> m_priorityOrder;
-    bool m_priorityOrderHasBeenSet;
+    bool m_priorityOrderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_locationOrder;
-    bool m_locationOrderHasBeenSet;
+    bool m_locationOrderHasBeenSet = false;
   };
 
 } // namespace Model

@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::Vector<FilterCondition> m_filterConditions;
-    bool m_filterConditionsHasBeenSet;
+    bool m_filterConditionsHasBeenSet = false;
 
     SortCondition m_sortCondition;
-    bool m_sortConditionHasBeenSet;
+    bool m_sortConditionHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

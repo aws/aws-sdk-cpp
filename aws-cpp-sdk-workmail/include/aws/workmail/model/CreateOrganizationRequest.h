@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Domain> m_domains;
-    bool m_domainsHasBeenSet;
+    bool m_domainsHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     bool m_enableInteroperability;
-    bool m_enableInteroperabilityHasBeenSet;
+    bool m_enableInteroperabilityHasBeenSet = false;
   };
 
 } // namespace Model

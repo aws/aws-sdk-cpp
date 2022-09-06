@@ -89,10 +89,10 @@ namespace Model
   private:
 
     bool m_imageTestsEnabled;
-    bool m_imageTestsEnabledHasBeenSet;
+    bool m_imageTestsEnabledHasBeenSet = false;
 
     int m_timeoutMinutes;
-    bool m_timeoutMinutesHasBeenSet;
+    bool m_timeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

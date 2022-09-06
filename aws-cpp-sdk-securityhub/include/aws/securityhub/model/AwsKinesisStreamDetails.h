@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AwsKinesisStreamStreamEncryptionDetails m_streamEncryption;
-    bool m_streamEncryptionHasBeenSet;
+    bool m_streamEncryptionHasBeenSet = false;
 
     int m_shardCount;
-    bool m_shardCountHasBeenSet;
+    bool m_shardCountHasBeenSet = false;
 
     int m_retentionPeriodHours;
-    bool m_retentionPeriodHoursHasBeenSet;
+    bool m_retentionPeriodHoursHasBeenSet = false;
   };
 
 } // namespace Model

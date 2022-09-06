@@ -808,40 +808,40 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerInstances;
-    bool m_containerInstancesHasBeenSet;
+    bool m_containerInstancesHasBeenSet = false;
 
     bool m_enableECSManagedTags;
-    bool m_enableECSManagedTagsHasBeenSet;
+    bool m_enableECSManagedTagsHasBeenSet = false;
 
     bool m_enableExecuteCommand;
-    bool m_enableExecuteCommandHasBeenSet;
+    bool m_enableExecuteCommandHasBeenSet = false;
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     TaskOverride m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
 
     PropagateTags m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

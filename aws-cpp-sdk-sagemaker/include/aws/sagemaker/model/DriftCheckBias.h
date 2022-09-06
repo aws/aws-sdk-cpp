@@ -134,13 +134,13 @@ namespace Model
   private:
 
     FileSource m_configFile;
-    bool m_configFileHasBeenSet;
+    bool m_configFileHasBeenSet = false;
 
     MetricsSource m_preTrainingConstraints;
-    bool m_preTrainingConstraintsHasBeenSet;
+    bool m_preTrainingConstraintsHasBeenSet = false;
 
     MetricsSource m_postTrainingConstraints;
-    bool m_postTrainingConstraintsHasBeenSet;
+    bool m_postTrainingConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

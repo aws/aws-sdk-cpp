@@ -119,10 +119,10 @@ namespace Model
   private:
 
     BillingMethod m_billingMethod;
-    bool m_billingMethodHasBeenSet;
+    bool m_billingMethodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpceConfigurationArns;
-    bool m_vpceConfigurationArnsHasBeenSet;
+    bool m_vpceConfigurationArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -827,43 +827,43 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowListIds;
-    bool m_allowListIdsHasBeenSet;
+    bool m_allowListIdsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customDataIdentifierIds;
-    bool m_customDataIdentifierIdsHasBeenSet;
+    bool m_customDataIdentifierIdsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_initialRun;
-    bool m_initialRunHasBeenSet;
+    bool m_initialRunHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_managedDataIdentifierIds;
-    bool m_managedDataIdentifierIdsHasBeenSet;
+    bool m_managedDataIdentifierIdsHasBeenSet = false;
 
     ManagedDataIdentifierSelector m_managedDataIdentifierSelector;
-    bool m_managedDataIdentifierSelectorHasBeenSet;
+    bool m_managedDataIdentifierSelectorHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     S3JobDefinition m_s3JobDefinition;
-    bool m_s3JobDefinitionHasBeenSet;
+    bool m_s3JobDefinitionHasBeenSet = false;
 
     int m_samplingPercentage;
-    bool m_samplingPercentageHasBeenSet;
+    bool m_samplingPercentageHasBeenSet = false;
 
     JobScheduleFrequency m_scheduleFrequency;
-    bool m_scheduleFrequencyHasBeenSet;
+    bool m_scheduleFrequencyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

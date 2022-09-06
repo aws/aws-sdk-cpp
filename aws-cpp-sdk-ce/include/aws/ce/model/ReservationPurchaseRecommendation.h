@@ -304,25 +304,25 @@ namespace Model
   private:
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     ServiceSpecification m_serviceSpecification;
-    bool m_serviceSpecificationHasBeenSet;
+    bool m_serviceSpecificationHasBeenSet = false;
 
     Aws::Vector<ReservationPurchaseRecommendationDetail> m_recommendationDetails;
-    bool m_recommendationDetailsHasBeenSet;
+    bool m_recommendationDetailsHasBeenSet = false;
 
     ReservationPurchaseRecommendationSummary m_recommendationSummary;
-    bool m_recommendationSummaryHasBeenSet;
+    bool m_recommendationSummaryHasBeenSet = false;
   };
 
 } // namespace Model

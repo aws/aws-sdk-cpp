@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::Vector<CidrBlockAssociation> m_cidrBlockAssociationSet;
-    bool m_cidrBlockAssociationSetHasBeenSet;
+    bool m_cidrBlockAssociationSetHasBeenSet = false;
 
     Aws::Vector<Ipv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-    bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+    bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 
     Aws::String m_dhcpOptionsId;
-    bool m_dhcpOptionsIdHasBeenSet;
+    bool m_dhcpOptionsIdHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

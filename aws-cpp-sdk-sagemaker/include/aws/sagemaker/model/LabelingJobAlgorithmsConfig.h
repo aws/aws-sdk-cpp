@@ -259,13 +259,13 @@ namespace Model
   private:
 
     Aws::String m_labelingJobAlgorithmSpecificationArn;
-    bool m_labelingJobAlgorithmSpecificationArnHasBeenSet;
+    bool m_labelingJobAlgorithmSpecificationArnHasBeenSet = false;
 
     Aws::String m_initialActiveLearningModelArn;
-    bool m_initialActiveLearningModelArnHasBeenSet;
+    bool m_initialActiveLearningModelArnHasBeenSet = false;
 
     LabelingJobResourceConfig m_labelingJobResourceConfig;
-    bool m_labelingJobResourceConfigHasBeenSet;
+    bool m_labelingJobResourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

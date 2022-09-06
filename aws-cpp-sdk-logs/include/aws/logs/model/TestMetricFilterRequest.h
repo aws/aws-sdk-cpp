@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_filterPattern;
-    bool m_filterPatternHasBeenSet;
+    bool m_filterPatternHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logEventMessages;
-    bool m_logEventMessagesHasBeenSet;
+    bool m_logEventMessagesHasBeenSet = false;
   };
 
 } // namespace Model

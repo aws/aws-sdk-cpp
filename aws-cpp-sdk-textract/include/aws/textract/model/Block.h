@@ -849,49 +849,49 @@ namespace Model
   private:
 
     BlockType m_blockType;
-    bool m_blockTypeHasBeenSet;
+    bool m_blockTypeHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     TextType m_textType;
-    bool m_textTypeHasBeenSet;
+    bool m_textTypeHasBeenSet = false;
 
     int m_rowIndex;
-    bool m_rowIndexHasBeenSet;
+    bool m_rowIndexHasBeenSet = false;
 
     int m_columnIndex;
-    bool m_columnIndexHasBeenSet;
+    bool m_columnIndexHasBeenSet = false;
 
     int m_rowSpan;
-    bool m_rowSpanHasBeenSet;
+    bool m_rowSpanHasBeenSet = false;
 
     int m_columnSpan;
-    bool m_columnSpanHasBeenSet;
+    bool m_columnSpanHasBeenSet = false;
 
     Geometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Relationship> m_relationships;
-    bool m_relationshipsHasBeenSet;
+    bool m_relationshipsHasBeenSet = false;
 
     Aws::Vector<EntityType> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
 
     SelectionStatus m_selectionStatus;
-    bool m_selectionStatusHasBeenSet;
+    bool m_selectionStatusHasBeenSet = false;
 
     int m_page;
-    bool m_pageHasBeenSet;
+    bool m_pageHasBeenSet = false;
 
     Query m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
   };
 
 } // namespace Model

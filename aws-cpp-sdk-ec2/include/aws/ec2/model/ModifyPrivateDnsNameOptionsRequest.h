@@ -218,19 +218,19 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     HostnameType m_privateDnsHostnameType;
-    bool m_privateDnsHostnameTypeHasBeenSet;
+    bool m_privateDnsHostnameTypeHasBeenSet = false;
 
     bool m_enableResourceNameDnsARecord;
-    bool m_enableResourceNameDnsARecordHasBeenSet;
+    bool m_enableResourceNameDnsARecordHasBeenSet = false;
 
     bool m_enableResourceNameDnsAAAARecord;
-    bool m_enableResourceNameDnsAAAARecordHasBeenSet;
+    bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
   };
 
 } // namespace Model

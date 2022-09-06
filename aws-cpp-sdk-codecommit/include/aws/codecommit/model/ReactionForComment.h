@@ -161,13 +161,13 @@ namespace Model
   private:
 
     ReactionValueFormats m_reaction;
-    bool m_reactionHasBeenSet;
+    bool m_reactionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reactionUsers;
-    bool m_reactionUsersHasBeenSet;
+    bool m_reactionUsersHasBeenSet = false;
 
     int m_reactionsFromDeletedUsersCount;
-    bool m_reactionsFromDeletedUsersCountHasBeenSet;
+    bool m_reactionsFromDeletedUsersCountHasBeenSet = false;
   };
 
 } // namespace Model

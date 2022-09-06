@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_endpointUri;
-    bool m_endpointUriHasBeenSet;
+    bool m_endpointUriHasBeenSet = false;
 
     int m_fullLoadErrorPercentage;
-    bool m_fullLoadErrorPercentageHasBeenSet;
+    bool m_fullLoadErrorPercentageHasBeenSet = false;
 
     int m_errorRetryDuration;
-    bool m_errorRetryDurationHasBeenSet;
+    bool m_errorRetryDurationHasBeenSet = false;
 
     bool m_useNewMappingType;
-    bool m_useNewMappingTypeHasBeenSet;
+    bool m_useNewMappingTypeHasBeenSet = false;
   };
 
 } // namespace Model

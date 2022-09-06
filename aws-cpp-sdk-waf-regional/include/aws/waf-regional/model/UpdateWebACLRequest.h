@@ -317,16 +317,16 @@ namespace Model
   private:
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::Vector<WebACLUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     WafAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
   };
 
 } // namespace Model

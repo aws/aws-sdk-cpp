@@ -383,22 +383,22 @@ namespace Model
   private:
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     QueryExecutionContext m_queryExecutionContext;
-    bool m_queryExecutionContextHasBeenSet;
+    bool m_queryExecutionContextHasBeenSet = false;
 
     ResultConfiguration m_resultConfiguration;
-    bool m_resultConfigurationHasBeenSet;
+    bool m_resultConfigurationHasBeenSet = false;
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_executionParameters;
-    bool m_executionParametersHasBeenSet;
+    bool m_executionParametersHasBeenSet = false;
   };
 
 } // namespace Model

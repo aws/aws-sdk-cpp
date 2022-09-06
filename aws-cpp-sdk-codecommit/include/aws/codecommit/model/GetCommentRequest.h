@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
   };
 
 } // namespace Model

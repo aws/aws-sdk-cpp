@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_retryAfterSeconds;
-    bool m_retryAfterSecondsHasBeenSet;
+    bool m_retryAfterSecondsHasBeenSet = false;
   };
 
 } // namespace Model

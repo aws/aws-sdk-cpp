@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_predictedLabel;
-    bool m_predictedLabelHasBeenSet;
+    bool m_predictedLabelHasBeenSet = false;
 
     double m_predictedValue;
-    bool m_predictedValueHasBeenSet;
+    bool m_predictedValueHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_predictedScores;
-    bool m_predictedScoresHasBeenSet;
+    bool m_predictedScoresHasBeenSet = false;
 
     Aws::Map<DetailsAttributes, Aws::String> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

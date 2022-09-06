@@ -1615,40 +1615,40 @@ namespace Model
   private:
 
     Aws::String m_policySourceArn;
-    bool m_policySourceArnHasBeenSet;
+    bool m_policySourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyInputList;
-    bool m_policyInputListHasBeenSet;
+    bool m_policyInputListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_permissionsBoundaryPolicyInputList;
-    bool m_permissionsBoundaryPolicyInputListHasBeenSet;
+    bool m_permissionsBoundaryPolicyInputListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actionNames;
-    bool m_actionNamesHasBeenSet;
+    bool m_actionNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::String m_resourcePolicy;
-    bool m_resourcePolicyHasBeenSet;
+    bool m_resourcePolicyHasBeenSet = false;
 
     Aws::String m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
 
     Aws::String m_callerArn;
-    bool m_callerArnHasBeenSet;
+    bool m_callerArnHasBeenSet = false;
 
     Aws::Vector<ContextEntry> m_contextEntries;
-    bool m_contextEntriesHasBeenSet;
+    bool m_contextEntriesHasBeenSet = false;
 
     Aws::String m_resourceHandlingOption;
-    bool m_resourceHandlingOptionHasBeenSet;
+    bool m_resourceHandlingOptionHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

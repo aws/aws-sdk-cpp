@@ -174,13 +174,13 @@ namespace Model
   private:
 
     EncodingName m_encodingName;
-    bool m_encodingNameHasBeenSet;
+    bool m_encodingNameHasBeenSet = false;
 
     Aws::Vector<InputConfigurationRequest> m_inputConfigurations;
-    bool m_inputConfigurationsHasBeenSet;
+    bool m_inputConfigurationsHasBeenSet = false;
 
     Aws::String m_mediaStreamName;
-    bool m_mediaStreamNameHasBeenSet;
+    bool m_mediaStreamNameHasBeenSet = false;
   };
 
 } // namespace Model

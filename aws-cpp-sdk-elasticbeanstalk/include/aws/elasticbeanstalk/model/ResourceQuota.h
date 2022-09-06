@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
   };
 
 } // namespace Model

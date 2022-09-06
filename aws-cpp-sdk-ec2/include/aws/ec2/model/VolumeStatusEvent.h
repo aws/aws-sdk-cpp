@@ -268,22 +268,22 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_workerName;
-    bool m_workerNameHasBeenSet;
+    bool m_workerNameHasBeenSet = false;
   };
 
 } // namespace Model

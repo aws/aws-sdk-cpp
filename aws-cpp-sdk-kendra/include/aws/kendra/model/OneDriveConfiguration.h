@@ -472,25 +472,25 @@ namespace Model
   private:
 
     Aws::String m_tenantDomain;
-    bool m_tenantDomainHasBeenSet;
+    bool m_tenantDomainHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     OneDriveUsers m_oneDriveUsers;
-    bool m_oneDriveUsersHasBeenSet;
+    bool m_oneDriveUsersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     bool m_disableLocalGroups;
-    bool m_disableLocalGroupsHasBeenSet;
+    bool m_disableLocalGroupsHasBeenSet = false;
   };
 
 } // namespace Model

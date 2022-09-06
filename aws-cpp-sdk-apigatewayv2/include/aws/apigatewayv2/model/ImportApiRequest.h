@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_basepath;
-    bool m_basepathHasBeenSet;
+    bool m_basepathHasBeenSet = false;
 
     bool m_failOnWarnings;
-    bool m_failOnWarningsHasBeenSet;
+    bool m_failOnWarningsHasBeenSet = false;
 
     Aws::String m_requestBody;
-    bool m_requestBodyHasBeenSet;
+    bool m_requestBodyHasBeenSet = false;
   };
 
 } // namespace Model

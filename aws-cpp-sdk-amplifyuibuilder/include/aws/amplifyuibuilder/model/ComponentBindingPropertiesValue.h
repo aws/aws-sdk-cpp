@@ -156,13 +156,13 @@ namespace Model
   private:
 
     ComponentBindingPropertiesValueProperties m_bindingProperties;
-    bool m_bindingPropertiesHasBeenSet;
+    bool m_bindingPropertiesHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_executionID;
-    bool m_executionIDHasBeenSet;
+    bool m_executionIDHasBeenSet = false;
 
     PostLaunchActionExecutionStatus m_executionStatus;
-    bool m_executionStatusHasBeenSet;
+    bool m_executionStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     SsmDocument m_ssmDocument;
-    bool m_ssmDocumentHasBeenSet;
+    bool m_ssmDocumentHasBeenSet = false;
 
     SsmDocumentType m_ssmDocumentType;
-    bool m_ssmDocumentTypeHasBeenSet;
+    bool m_ssmDocumentTypeHasBeenSet = false;
   };
 
 } // namespace Model

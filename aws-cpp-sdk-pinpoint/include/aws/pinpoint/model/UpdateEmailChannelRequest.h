@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     EmailChannelRequest m_emailChannelRequest;
-    bool m_emailChannelRequestHasBeenSet;
+    bool m_emailChannelRequestHasBeenSet = false;
   };
 
 } // namespace Model

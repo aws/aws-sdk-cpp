@@ -360,31 +360,31 @@ namespace Model
   private:
 
     Aws::String m_licenseConversionTaskId;
-    bool m_licenseConversionTaskIdHasBeenSet;
+    bool m_licenseConversionTaskIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     LicenseConversionContext m_sourceLicenseContext;
-    bool m_sourceLicenseContextHasBeenSet;
+    bool m_sourceLicenseContextHasBeenSet = false;
 
     LicenseConversionContext m_destinationLicenseContext;
-    bool m_destinationLicenseContextHasBeenSet;
+    bool m_destinationLicenseContextHasBeenSet = false;
 
     LicenseConversionTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_licenseConversionTime;
-    bool m_licenseConversionTimeHasBeenSet;
+    bool m_licenseConversionTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

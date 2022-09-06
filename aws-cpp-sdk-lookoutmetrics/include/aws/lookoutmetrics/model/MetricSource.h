@@ -219,22 +219,22 @@ namespace Model
   private:
 
     S3SourceConfig m_s3SourceConfig;
-    bool m_s3SourceConfigHasBeenSet;
+    bool m_s3SourceConfigHasBeenSet = false;
 
     AppFlowConfig m_appFlowConfig;
-    bool m_appFlowConfigHasBeenSet;
+    bool m_appFlowConfigHasBeenSet = false;
 
     CloudWatchConfig m_cloudWatchConfig;
-    bool m_cloudWatchConfigHasBeenSet;
+    bool m_cloudWatchConfigHasBeenSet = false;
 
     RDSSourceConfig m_rDSSourceConfig;
-    bool m_rDSSourceConfigHasBeenSet;
+    bool m_rDSSourceConfigHasBeenSet = false;
 
     RedshiftSourceConfig m_redshiftSourceConfig;
-    bool m_redshiftSourceConfigHasBeenSet;
+    bool m_redshiftSourceConfigHasBeenSet = false;
 
     AthenaSourceConfig m_athenaSourceConfig;
-    bool m_athenaSourceConfigHasBeenSet;
+    bool m_athenaSourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

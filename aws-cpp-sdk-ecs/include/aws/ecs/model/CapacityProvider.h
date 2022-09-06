@@ -477,25 +477,25 @@ namespace Model
   private:
 
     Aws::String m_capacityProviderArn;
-    bool m_capacityProviderArnHasBeenSet;
+    bool m_capacityProviderArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CapacityProviderStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AutoScalingGroupProvider m_autoScalingGroupProvider;
-    bool m_autoScalingGroupProviderHasBeenSet;
+    bool m_autoScalingGroupProviderHasBeenSet = false;
 
     CapacityProviderUpdateStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_updateStatusReason;
-    bool m_updateStatusReasonHasBeenSet;
+    bool m_updateStatusReasonHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

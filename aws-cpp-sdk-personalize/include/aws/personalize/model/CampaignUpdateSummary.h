@@ -303,25 +303,25 @@ namespace Model
   private:
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
 
     int m_minProvisionedTPS;
-    bool m_minProvisionedTPSHasBeenSet;
+    bool m_minProvisionedTPSHasBeenSet = false;
 
     CampaignConfig m_campaignConfig;
-    bool m_campaignConfigHasBeenSet;
+    bool m_campaignConfigHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

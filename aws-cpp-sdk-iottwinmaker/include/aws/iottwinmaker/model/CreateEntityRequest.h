@@ -380,25 +380,25 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, ComponentRequest> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
     Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
+    bool m_parentEntityIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

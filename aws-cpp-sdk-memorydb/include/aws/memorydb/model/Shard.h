@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     Aws::Vector<Node> m_nodes;
-    bool m_nodesHasBeenSet;
+    bool m_nodesHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
   };
 
 } // namespace Model

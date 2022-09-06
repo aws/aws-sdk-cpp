@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_runBackTestMode;
-    bool m_runBackTestModeHasBeenSet;
+    bool m_runBackTestModeHasBeenSet = false;
   };
 
 } // namespace Model

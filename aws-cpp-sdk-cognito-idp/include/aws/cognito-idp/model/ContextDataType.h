@@ -271,19 +271,19 @@ namespace Model
   private:
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_serverPath;
-    bool m_serverPathHasBeenSet;
+    bool m_serverPathHasBeenSet = false;
 
     Aws::Vector<HttpHeader> m_httpHeaders;
-    bool m_httpHeadersHasBeenSet;
+    bool m_httpHeadersHasBeenSet = false;
 
     Aws::String m_encodedData;
-    bool m_encodedDataHasBeenSet;
+    bool m_encodedDataHasBeenSet = false;
   };
 
 } // namespace Model

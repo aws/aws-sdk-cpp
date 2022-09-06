@@ -445,22 +445,22 @@ namespace Model
   private:
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     Condition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

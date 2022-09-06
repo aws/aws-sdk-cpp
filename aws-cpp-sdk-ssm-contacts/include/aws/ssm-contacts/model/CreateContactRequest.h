@@ -309,22 +309,22 @@ namespace Model
   private:
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     ContactType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Plan m_plan;
-    bool m_planHasBeenSet;
+    bool m_planHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,10 +92,10 @@ namespace Model
   private:
 
     AppType m_appType;
-    bool m_appTypeHasBeenSet;
+    bool m_appTypeHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

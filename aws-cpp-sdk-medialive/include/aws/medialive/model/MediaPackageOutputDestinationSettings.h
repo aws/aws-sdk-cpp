@@ -112,7 +112,7 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
   };
 
 } // namespace Model

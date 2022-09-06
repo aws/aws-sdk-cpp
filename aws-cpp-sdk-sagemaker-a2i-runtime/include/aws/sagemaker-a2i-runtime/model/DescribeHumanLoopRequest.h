@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_humanLoopName;
-    bool m_humanLoopNameHasBeenSet;
+    bool m_humanLoopNameHasBeenSet = false;
   };
 
 } // namespace Model

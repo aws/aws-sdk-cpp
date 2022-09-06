@@ -231,10 +231,10 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
   };
 
 } // namespace Model

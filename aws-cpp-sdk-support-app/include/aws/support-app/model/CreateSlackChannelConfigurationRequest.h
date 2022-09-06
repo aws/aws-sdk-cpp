@@ -451,28 +451,28 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_channelRoleArn;
-    bool m_channelRoleArnHasBeenSet;
+    bool m_channelRoleArnHasBeenSet = false;
 
     bool m_notifyOnAddCorrespondenceToCase;
-    bool m_notifyOnAddCorrespondenceToCaseHasBeenSet;
+    bool m_notifyOnAddCorrespondenceToCaseHasBeenSet = false;
 
     NotificationSeverityLevel m_notifyOnCaseSeverity;
-    bool m_notifyOnCaseSeverityHasBeenSet;
+    bool m_notifyOnCaseSeverityHasBeenSet = false;
 
     bool m_notifyOnCreateOrReopenCase;
-    bool m_notifyOnCreateOrReopenCaseHasBeenSet;
+    bool m_notifyOnCreateOrReopenCaseHasBeenSet = false;
 
     bool m_notifyOnResolveCase;
-    bool m_notifyOnResolveCaseHasBeenSet;
+    bool m_notifyOnResolveCaseHasBeenSet = false;
 
     Aws::String m_teamId;
-    bool m_teamIdHasBeenSet;
+    bool m_teamIdHasBeenSet = false;
   };
 
 } // namespace Model

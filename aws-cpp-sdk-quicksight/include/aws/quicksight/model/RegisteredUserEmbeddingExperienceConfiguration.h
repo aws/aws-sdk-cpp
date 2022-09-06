@@ -350,16 +350,16 @@ namespace Model
   private:
 
     RegisteredUserDashboardEmbeddingConfiguration m_dashboard;
-    bool m_dashboardHasBeenSet;
+    bool m_dashboardHasBeenSet = false;
 
     RegisteredUserQuickSightConsoleEmbeddingConfiguration m_quickSightConsole;
-    bool m_quickSightConsoleHasBeenSet;
+    bool m_quickSightConsoleHasBeenSet = false;
 
     RegisteredUserQSearchBarEmbeddingConfiguration m_qSearchBar;
-    bool m_qSearchBarHasBeenSet;
+    bool m_qSearchBarHasBeenSet = false;
 
     RegisteredUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
-    bool m_dashboardVisualHasBeenSet;
+    bool m_dashboardVisualHasBeenSet = false;
   };
 
 } // namespace Model

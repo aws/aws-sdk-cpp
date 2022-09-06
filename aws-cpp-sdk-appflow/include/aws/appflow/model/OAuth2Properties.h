@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_tokenUrl;
-    bool m_tokenUrlHasBeenSet;
+    bool m_tokenUrlHasBeenSet = false;
 
     OAuth2GrantType m_oAuth2GrantType;
-    bool m_oAuth2GrantTypeHasBeenSet;
+    bool m_oAuth2GrantTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tokenUrlCustomProperties;
-    bool m_tokenUrlCustomPropertiesHasBeenSet;
+    bool m_tokenUrlCustomPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

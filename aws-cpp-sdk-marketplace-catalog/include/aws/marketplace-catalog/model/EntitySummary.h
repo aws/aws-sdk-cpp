@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_entityType;
-    bool m_entityTypeHasBeenSet;
+    bool m_entityTypeHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_entityArn;
-    bool m_entityArnHasBeenSet;
+    bool m_entityArnHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_visibility;
-    bool m_visibilityHasBeenSet;
+    bool m_visibilityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PackageVersionInputConfig m_packageVersionInputConfig;
-    bool m_packageVersionInputConfigHasBeenSet;
+    bool m_packageVersionInputConfigHasBeenSet = false;
   };
 
 } // namespace Model

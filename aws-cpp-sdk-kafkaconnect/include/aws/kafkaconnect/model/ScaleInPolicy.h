@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_cpuUtilizationPercentage;
-    bool m_cpuUtilizationPercentageHasBeenSet;
+    bool m_cpuUtilizationPercentageHasBeenSet = false;
   };
 
 } // namespace Model

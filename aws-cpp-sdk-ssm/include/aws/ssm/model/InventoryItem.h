@@ -408,22 +408,22 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_captureTime;
-    bool m_captureTimeHasBeenSet;
+    bool m_captureTimeHasBeenSet = false;
 
     Aws::String m_contentHash;
-    bool m_contentHashHasBeenSet;
+    bool m_contentHashHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

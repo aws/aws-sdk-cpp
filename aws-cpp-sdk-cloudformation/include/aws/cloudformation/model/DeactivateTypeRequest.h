@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     ThirdPartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

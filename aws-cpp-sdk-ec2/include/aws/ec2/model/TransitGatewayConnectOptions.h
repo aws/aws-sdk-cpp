@@ -72,7 +72,7 @@ namespace Model
   private:
 
     ProtocolValue m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

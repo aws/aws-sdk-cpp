@@ -343,13 +343,13 @@ namespace Model
   private:
 
     Aws::String m_snsCallerArn;
-    bool m_snsCallerArnHasBeenSet;
+    bool m_snsCallerArnHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_snsRegion;
-    bool m_snsRegionHasBeenSet;
+    bool m_snsRegionHasBeenSet = false;
   };
 
 } // namespace Model

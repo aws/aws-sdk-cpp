@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::Vector<Summary> m_summaries;
-    bool m_summariesHasBeenSet;
+    bool m_summariesHasBeenSet = false;
 
     RecommendationSourceType m_recommendationResourceType;
-    bool m_recommendationResourceTypeHasBeenSet;
+    bool m_recommendationResourceTypeHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
 
     CurrentPerformanceRiskRatings m_currentPerformanceRiskRatings;
-    bool m_currentPerformanceRiskRatingsHasBeenSet;
+    bool m_currentPerformanceRiskRatingsHasBeenSet = false;
   };
 
 } // namespace Model

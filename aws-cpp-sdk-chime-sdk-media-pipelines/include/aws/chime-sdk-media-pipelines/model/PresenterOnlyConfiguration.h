@@ -77,7 +77,7 @@ namespace Model
   private:
 
     PresenterPosition m_presenterPosition;
-    bool m_presenterPositionHasBeenSet;
+    bool m_presenterPositionHasBeenSet = false;
   };
 
 } // namespace Model

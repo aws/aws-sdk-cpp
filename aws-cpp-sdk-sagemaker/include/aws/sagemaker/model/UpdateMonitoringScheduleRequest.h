@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_monitoringScheduleName;
-    bool m_monitoringScheduleNameHasBeenSet;
+    bool m_monitoringScheduleNameHasBeenSet = false;
 
     MonitoringScheduleConfig m_monitoringScheduleConfig;
-    bool m_monitoringScheduleConfigHasBeenSet;
+    bool m_monitoringScheduleConfigHasBeenSet = false;
   };
 
 } // namespace Model

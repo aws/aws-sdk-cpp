@@ -381,31 +381,31 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_violationId;
-    bool m_violationIdHasBeenSet;
+    bool m_violationIdHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionStartDate;
-    bool m_executionStartDateHasBeenSet;
+    bool m_executionStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionEndDate;
-    bool m_executionEndDateHasBeenSet;
+    bool m_executionEndDateHasBeenSet = false;
 
     DetectMitigationActionExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

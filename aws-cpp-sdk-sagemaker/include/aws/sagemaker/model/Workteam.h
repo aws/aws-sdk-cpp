@@ -482,34 +482,34 @@ namespace Model
   private:
 
     Aws::String m_workteamName;
-    bool m_workteamNameHasBeenSet;
+    bool m_workteamNameHasBeenSet = false;
 
     Aws::Vector<MemberDefinition> m_memberDefinitions;
-    bool m_memberDefinitionsHasBeenSet;
+    bool m_memberDefinitionsHasBeenSet = false;
 
     Aws::String m_workteamArn;
-    bool m_workteamArnHasBeenSet;
+    bool m_workteamArnHasBeenSet = false;
 
     Aws::String m_workforceArn;
-    bool m_workforceArnHasBeenSet;
+    bool m_workforceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_productListingIds;
-    bool m_productListingIdsHasBeenSet;
+    bool m_productListingIdsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_subDomain;
-    bool m_subDomainHasBeenSet;
+    bool m_subDomainHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -471,34 +471,34 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ServiceEndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     LambdaEndpointInput m_lambdaEndpoint;
-    bool m_lambdaEndpointHasBeenSet;
+    bool m_lambdaEndpointHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     UrlEndpointInput m_urlEndpoint;
-    bool m_urlEndpointHasBeenSet;
+    bool m_urlEndpointHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

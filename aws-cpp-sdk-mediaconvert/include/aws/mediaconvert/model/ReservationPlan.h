@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Commitment m_commitment;
-    bool m_commitmentHasBeenSet;
+    bool m_commitmentHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAt;
-    bool m_expiresAtHasBeenSet;
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_purchasedAt;
-    bool m_purchasedAtHasBeenSet;
+    bool m_purchasedAtHasBeenSet = false;
 
     RenewalType m_renewalType;
-    bool m_renewalTypeHasBeenSet;
+    bool m_renewalTypeHasBeenSet = false;
 
     int m_reservedSlots;
-    bool m_reservedSlotsHasBeenSet;
+    bool m_reservedSlotsHasBeenSet = false;
 
     ReservationPlanStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

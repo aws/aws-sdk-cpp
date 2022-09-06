@@ -189,10 +189,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scalingProcesses;
-    bool m_scalingProcessesHasBeenSet;
+    bool m_scalingProcessesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_scheduledAuditName;
-    bool m_scheduledAuditNameHasBeenSet;
+    bool m_scheduledAuditNameHasBeenSet = false;
   };
 
 } // namespace Model

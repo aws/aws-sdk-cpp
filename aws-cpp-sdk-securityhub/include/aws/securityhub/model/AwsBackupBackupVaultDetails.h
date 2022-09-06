@@ -292,19 +292,19 @@ namespace Model
   private:
 
     Aws::String m_backupVaultArn;
-    bool m_backupVaultArnHasBeenSet;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     AwsBackupBackupVaultNotificationsDetails m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     Aws::String m_accessPolicy;
-    bool m_accessPolicyHasBeenSet;
+    bool m_accessPolicyHasBeenSet = false;
   };
 
 } // namespace Model

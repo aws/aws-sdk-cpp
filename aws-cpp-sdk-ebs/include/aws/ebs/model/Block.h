@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_blockIndex;
-    bool m_blockIndexHasBeenSet;
+    bool m_blockIndexHasBeenSet = false;
 
     Aws::String m_blockToken;
-    bool m_blockTokenHasBeenSet;
+    bool m_blockTokenHasBeenSet = false;
   };
 
 } // namespace Model

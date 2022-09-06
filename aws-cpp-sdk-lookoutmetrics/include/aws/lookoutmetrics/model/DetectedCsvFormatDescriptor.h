@@ -225,22 +225,22 @@ namespace Model
   private:
 
     DetectedField m_fileCompression;
-    bool m_fileCompressionHasBeenSet;
+    bool m_fileCompressionHasBeenSet = false;
 
     DetectedField m_charset;
-    bool m_charsetHasBeenSet;
+    bool m_charsetHasBeenSet = false;
 
     DetectedField m_containsHeader;
-    bool m_containsHeaderHasBeenSet;
+    bool m_containsHeaderHasBeenSet = false;
 
     DetectedField m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     DetectedField m_headerList;
-    bool m_headerListHasBeenSet;
+    bool m_headerListHasBeenSet = false;
 
     DetectedField m_quoteSymbol;
-    bool m_quoteSymbolHasBeenSet;
+    bool m_quoteSymbolHasBeenSet = false;
   };
 
 } // namespace Model

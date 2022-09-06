@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

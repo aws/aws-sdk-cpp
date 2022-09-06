@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_customObjectIdentifier;
-    bool m_customObjectIdentifierHasBeenSet;
+    bool m_customObjectIdentifierHasBeenSet = false;
 
     AccessMethodType m_accessMethodType;
-    bool m_accessMethodTypeHasBeenSet;
+    bool m_accessMethodTypeHasBeenSet = false;
   };
 
 } // namespace Model

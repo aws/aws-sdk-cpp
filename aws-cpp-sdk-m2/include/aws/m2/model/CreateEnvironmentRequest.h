@@ -622,43 +622,43 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     HighAvailabilityConfig m_highAvailabilityConfig;
-    bool m_highAvailabilityConfigHasBeenSet;
+    bool m_highAvailabilityConfigHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<StorageConfiguration> m_storageConfigurations;
-    bool m_storageConfigurationsHasBeenSet;
+    bool m_storageConfigurationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

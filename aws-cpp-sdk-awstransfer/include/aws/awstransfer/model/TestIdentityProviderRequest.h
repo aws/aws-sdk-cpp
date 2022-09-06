@@ -258,19 +258,19 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Protocol m_serverProtocol;
-    bool m_serverProtocolHasBeenSet;
+    bool m_serverProtocolHasBeenSet = false;
 
     Aws::String m_sourceIp;
-    bool m_sourceIpHasBeenSet;
+    bool m_sourceIpHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_userPassword;
-    bool m_userPasswordHasBeenSet;
+    bool m_userPasswordHasBeenSet = false;
   };
 
 } // namespace Model

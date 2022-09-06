@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_serverArn;
-    bool m_serverArnHasBeenSet;
+    bool m_serverArnHasBeenSet = false;
   };
 
 } // namespace Model

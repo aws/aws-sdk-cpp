@@ -450,31 +450,31 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     bool m_labeled;
-    bool m_labeledHasBeenSet;
+    bool m_labeledHasBeenSet = false;
 
     Aws::String m_anomalyClass;
-    bool m_anomalyClassHasBeenSet;
+    bool m_anomalyClassHasBeenSet = false;
 
     Aws::Utils::DateTime m_beforeCreationDate;
-    bool m_beforeCreationDateHasBeenSet;
+    bool m_beforeCreationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_afterCreationDate;
-    bool m_afterCreationDateHasBeenSet;
+    bool m_afterCreationDateHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_sourceRefContains;
-    bool m_sourceRefContainsHasBeenSet;
+    bool m_sourceRefContainsHasBeenSet = false;
   };
 
 } // namespace Model

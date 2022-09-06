@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     AssistantAssociationInputData m_association;
-    bool m_associationHasBeenSet;
+    bool m_associationHasBeenSet = false;
 
     AssociationType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

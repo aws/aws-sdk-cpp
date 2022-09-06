@@ -300,25 +300,25 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     long long m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_prefixListName;
-    bool m_prefixListNameHasBeenSet;
+    bool m_prefixListNameHasBeenSet = false;
 
     Aws::Vector<AddPrefixListEntry> m_addEntries;
-    bool m_addEntriesHasBeenSet;
+    bool m_addEntriesHasBeenSet = false;
 
     Aws::Vector<RemovePrefixListEntry> m_removeEntries;
-    bool m_removeEntriesHasBeenSet;
+    bool m_removeEntriesHasBeenSet = false;
 
     int m_maxEntries;
-    bool m_maxEntriesHasBeenSet;
+    bool m_maxEntriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parentShards;
-    bool m_parentShardsHasBeenSet;
+    bool m_parentShardsHasBeenSet = false;
 
     HashKeyRange m_hashKeyRange;
-    bool m_hashKeyRangeHasBeenSet;
+    bool m_hashKeyRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -150,13 +150,13 @@ namespace Model
   private:
 
     DataConnector m_implementedBy;
-    bool m_implementedByHasBeenSet;
+    bool m_implementedByHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requiredProperties;
-    bool m_requiredPropertiesHasBeenSet;
+    bool m_requiredPropertiesHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

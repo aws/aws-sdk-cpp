@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

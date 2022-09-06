@@ -334,25 +334,25 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrBlocks;
-    bool m_cidrBlocksHasBeenSet;
+    bool m_cidrBlocksHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_vpcName;
-    bool m_vpcNameHasBeenSet;
+    bool m_vpcNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_replicaKmsKeyID;
-    bool m_replicaKmsKeyIDHasBeenSet;
+    bool m_replicaKmsKeyIDHasBeenSet = false;
   };
 
 } // namespace Model

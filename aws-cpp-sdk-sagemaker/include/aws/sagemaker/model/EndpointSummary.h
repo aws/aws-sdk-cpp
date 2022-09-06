@@ -354,19 +354,19 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     EndpointStatus m_endpointStatus;
-    bool m_endpointStatusHasBeenSet;
+    bool m_endpointStatusHasBeenSet = false;
   };
 
 } // namespace Model

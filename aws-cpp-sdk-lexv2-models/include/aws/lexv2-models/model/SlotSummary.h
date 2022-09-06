@@ -314,25 +314,25 @@ namespace Model
   private:
 
     Aws::String m_slotId;
-    bool m_slotIdHasBeenSet;
+    bool m_slotIdHasBeenSet = false;
 
     Aws::String m_slotName;
-    bool m_slotNameHasBeenSet;
+    bool m_slotNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SlotConstraint m_slotConstraint;
-    bool m_slotConstraintHasBeenSet;
+    bool m_slotConstraintHasBeenSet = false;
 
     Aws::String m_slotTypeId;
-    bool m_slotTypeIdHasBeenSet;
+    bool m_slotTypeIdHasBeenSet = false;
 
     PromptSpecification m_valueElicitationPromptSpecification;
-    bool m_valueElicitationPromptSpecificationHasBeenSet;
+    bool m_valueElicitationPromptSpecificationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

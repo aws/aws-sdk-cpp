@@ -366,22 +366,22 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_screenId;
-    bool m_screenIdHasBeenSet;
+    bool m_screenIdHasBeenSet = false;
 
     Aws::Map<Aws::String, VariableValue> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<LogType> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet;
+    bool m_modifiedAtHasBeenSet = false;
 
     LoggingConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_workspace;
-    bool m_workspaceHasBeenSet;
+    bool m_workspaceHasBeenSet = false;
   };
 
 } // namespace Model

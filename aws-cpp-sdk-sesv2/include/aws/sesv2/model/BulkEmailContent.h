@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Template m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
   };
 
 } // namespace Model

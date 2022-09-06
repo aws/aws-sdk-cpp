@@ -139,10 +139,10 @@ namespace Model
   private:
 
     ObjectLockEnabled m_objectLockEnabled;
-    bool m_objectLockEnabledHasBeenSet;
+    bool m_objectLockEnabledHasBeenSet = false;
 
     ObjectLockRule m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -964,37 +964,37 @@ namespace Model
   private:
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replyToAddresses;
-    bool m_replyToAddressesHasBeenSet;
+    bool m_replyToAddressesHasBeenSet = false;
 
     Aws::String m_returnPath;
-    bool m_returnPathHasBeenSet;
+    bool m_returnPathHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_returnPathArn;
-    bool m_returnPathArnHasBeenSet;
+    bool m_returnPathArnHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
 
     Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_templateData;
-    bool m_templateDataHasBeenSet;
+    bool m_templateDataHasBeenSet = false;
   };
 
 } // namespace Model

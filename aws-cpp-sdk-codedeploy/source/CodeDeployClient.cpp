@@ -119,7 +119,7 @@ CodeDeployClient::~CodeDeployClient()
 
 void CodeDeployClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CodeDeploy");
+  AWSClient::SetServiceClientName("CodeDeploy");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

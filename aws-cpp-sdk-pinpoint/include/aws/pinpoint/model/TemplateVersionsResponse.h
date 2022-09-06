@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::Vector<TemplateVersionResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestID;
-    bool m_requestIDHasBeenSet;
+    bool m_requestIDHasBeenSet = false;
   };
 
 } // namespace Model

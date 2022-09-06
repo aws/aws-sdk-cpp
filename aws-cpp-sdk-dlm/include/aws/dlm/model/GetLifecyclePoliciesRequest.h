@@ -280,19 +280,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_policyIds;
-    bool m_policyIdsHasBeenSet;
+    bool m_policyIdsHasBeenSet = false;
 
     GettablePolicyStateValues m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<ResourceTypeValues> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetTags;
-    bool m_targetTagsHasBeenSet;
+    bool m_targetTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagsToAdd;
-    bool m_tagsToAddHasBeenSet;
+    bool m_tagsToAddHasBeenSet = false;
   };
 
 } // namespace Model

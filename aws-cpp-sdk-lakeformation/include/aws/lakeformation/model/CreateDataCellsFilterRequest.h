@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DataCellsFilter m_tableData;
-    bool m_tableDataHasBeenSet;
+    bool m_tableDataHasBeenSet = false;
   };
 
 } // namespace Model

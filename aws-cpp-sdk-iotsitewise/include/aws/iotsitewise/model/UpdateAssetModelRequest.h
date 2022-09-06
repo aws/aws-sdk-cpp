@@ -470,25 +470,25 @@ namespace Model
   private:
 
     Aws::String m_assetModelId;
-    bool m_assetModelIdHasBeenSet;
+    bool m_assetModelIdHasBeenSet = false;
 
     Aws::String m_assetModelName;
-    bool m_assetModelNameHasBeenSet;
+    bool m_assetModelNameHasBeenSet = false;
 
     Aws::String m_assetModelDescription;
-    bool m_assetModelDescriptionHasBeenSet;
+    bool m_assetModelDescriptionHasBeenSet = false;
 
     Aws::Vector<AssetModelProperty> m_assetModelProperties;
-    bool m_assetModelPropertiesHasBeenSet;
+    bool m_assetModelPropertiesHasBeenSet = false;
 
     Aws::Vector<AssetModelHierarchy> m_assetModelHierarchies;
-    bool m_assetModelHierarchiesHasBeenSet;
+    bool m_assetModelHierarchiesHasBeenSet = false;
 
     Aws::Vector<AssetModelCompositeModel> m_assetModelCompositeModels;
-    bool m_assetModelCompositeModelsHasBeenSet;
+    bool m_assetModelCompositeModelsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

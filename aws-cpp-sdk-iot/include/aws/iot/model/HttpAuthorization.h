@@ -82,7 +82,7 @@ namespace Model
   private:
 
     SigV4Authorization m_sigv4;
-    bool m_sigv4HasBeenSet;
+    bool m_sigv4HasBeenSet = false;
   };
 
 } // namespace Model

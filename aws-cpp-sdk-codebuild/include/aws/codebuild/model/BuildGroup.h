@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dependsOn;
-    bool m_dependsOnHasBeenSet;
+    bool m_dependsOnHasBeenSet = false;
 
     bool m_ignoreFailure;
-    bool m_ignoreFailureHasBeenSet;
+    bool m_ignoreFailureHasBeenSet = false;
 
     BuildSummary m_currentBuildSummary;
-    bool m_currentBuildSummaryHasBeenSet;
+    bool m_currentBuildSummaryHasBeenSet = false;
 
     Aws::Vector<BuildSummary> m_priorBuildSummaryList;
-    bool m_priorBuildSummaryListHasBeenSet;
+    bool m_priorBuildSummaryListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     EbsInstanceBlockDevice m_ebs;
-    bool m_ebsHasBeenSet;
+    bool m_ebsHasBeenSet = false;
   };
 
 } // namespace Model

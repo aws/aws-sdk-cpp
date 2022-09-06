@@ -105,10 +105,10 @@ namespace Model
   private:
 
     ClassicLoadBalancersConfig m_classicLoadBalancersConfig;
-    bool m_classicLoadBalancersConfigHasBeenSet;
+    bool m_classicLoadBalancersConfigHasBeenSet = false;
 
     TargetGroupsConfig m_targetGroupsConfig;
-    bool m_targetGroupsConfigHasBeenSet;
+    bool m_targetGroupsConfigHasBeenSet = false;
   };
 
 } // namespace Model

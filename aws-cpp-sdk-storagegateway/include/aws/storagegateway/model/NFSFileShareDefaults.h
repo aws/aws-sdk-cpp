@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
 
     Aws::String m_directoryMode;
-    bool m_directoryModeHasBeenSet;
+    bool m_directoryModeHasBeenSet = false;
 
     long long m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     long long m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
   };
 
 } // namespace Model

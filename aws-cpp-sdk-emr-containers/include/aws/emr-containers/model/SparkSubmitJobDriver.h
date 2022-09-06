@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entryPointArguments;
-    bool m_entryPointArgumentsHasBeenSet;
+    bool m_entryPointArgumentsHasBeenSet = false;
 
     Aws::String m_sparkSubmitParameters;
-    bool m_sparkSubmitParametersHasBeenSet;
+    bool m_sparkSubmitParametersHasBeenSet = false;
   };
 
 } // namespace Model

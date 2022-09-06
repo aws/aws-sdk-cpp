@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PillarDifference> m_pillarDifferences;
-    bool m_pillarDifferencesHasBeenSet;
+    bool m_pillarDifferencesHasBeenSet = false;
   };
 
 } // namespace Model

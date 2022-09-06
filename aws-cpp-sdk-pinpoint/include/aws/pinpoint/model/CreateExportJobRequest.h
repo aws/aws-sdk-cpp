@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     ExportJobRequest m_exportJobRequest;
-    bool m_exportJobRequestHasBeenSet;
+    bool m_exportJobRequestHasBeenSet = false;
   };
 
 } // namespace Model

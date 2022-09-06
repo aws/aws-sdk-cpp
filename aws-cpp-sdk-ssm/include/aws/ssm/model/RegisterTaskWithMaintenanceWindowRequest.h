@@ -1112,49 +1112,49 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     MaintenanceWindowTaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
-    bool m_taskParametersHasBeenSet;
+    bool m_taskParametersHasBeenSet = false;
 
     MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
-    bool m_taskInvocationParametersHasBeenSet;
+    bool m_taskInvocationParametersHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
-    bool m_cutoffBehaviorHasBeenSet;
+    bool m_cutoffBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

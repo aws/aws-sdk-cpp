@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

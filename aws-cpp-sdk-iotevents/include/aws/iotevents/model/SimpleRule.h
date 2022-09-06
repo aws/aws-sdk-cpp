@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_inputProperty;
-    bool m_inputPropertyHasBeenSet;
+    bool m_inputPropertyHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::String m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
   };
 
 } // namespace Model

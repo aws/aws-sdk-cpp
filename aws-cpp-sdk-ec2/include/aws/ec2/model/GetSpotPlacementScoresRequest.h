@@ -434,31 +434,31 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceTypes;
-    bool m_instanceTypesHasBeenSet;
+    bool m_instanceTypesHasBeenSet = false;
 
     int m_targetCapacity;
-    bool m_targetCapacityHasBeenSet;
+    bool m_targetCapacityHasBeenSet = false;
 
     TargetCapacityUnitType m_targetCapacityUnitType;
-    bool m_targetCapacityUnitTypeHasBeenSet;
+    bool m_targetCapacityUnitTypeHasBeenSet = false;
 
     bool m_singleAvailabilityZone;
-    bool m_singleAvailabilityZoneHasBeenSet;
+    bool m_singleAvailabilityZoneHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regionNames;
-    bool m_regionNamesHasBeenSet;
+    bool m_regionNamesHasBeenSet = false;
 
     InstanceRequirementsWithMetadataRequest m_instanceRequirementsWithMetadata;
-    bool m_instanceRequirementsWithMetadataHasBeenSet;
+    bool m_instanceRequirementsWithMetadataHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

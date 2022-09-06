@@ -176,10 +176,10 @@ namespace Model
   private:
 
     Aws::String m_dashboardName;
-    bool m_dashboardNameHasBeenSet;
+    bool m_dashboardNameHasBeenSet = false;
 
     Aws::String m_dashboardBody;
-    bool m_dashboardBodyHasBeenSet;
+    bool m_dashboardBodyHasBeenSet = false;
   };
 
 } // namespace Model

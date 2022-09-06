@@ -116,10 +116,10 @@ namespace Model
   private:
 
     ResultSetMetadata m_resultSetMetadata;
-    bool m_resultSetMetadataHasBeenSet;
+    bool m_resultSetMetadataHasBeenSet = false;
 
     Aws::Vector<Record> m_records;
-    bool m_recordsHasBeenSet;
+    bool m_recordsHasBeenSet = false;
   };
 
 } // namespace Model

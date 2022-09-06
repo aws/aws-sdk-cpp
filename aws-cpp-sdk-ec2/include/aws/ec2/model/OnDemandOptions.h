@@ -286,22 +286,22 @@ namespace Model
   private:
 
     FleetOnDemandAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     CapacityReservationOptions m_capacityReservationOptions;
-    bool m_capacityReservationOptionsHasBeenSet;
+    bool m_capacityReservationOptionsHasBeenSet = false;
 
     bool m_singleInstanceType;
-    bool m_singleInstanceTypeHasBeenSet;
+    bool m_singleInstanceTypeHasBeenSet = false;
 
     bool m_singleAvailabilityZone;
-    bool m_singleAvailabilityZoneHasBeenSet;
+    bool m_singleAvailabilityZoneHasBeenSet = false;
 
     int m_minTargetCapacity;
-    bool m_minTargetCapacityHasBeenSet;
+    bool m_minTargetCapacityHasBeenSet = false;
 
     Aws::String m_maxTotalPrice;
-    bool m_maxTotalPriceHasBeenSet;
+    bool m_maxTotalPriceHasBeenSet = false;
   };
 
 } // namespace Model

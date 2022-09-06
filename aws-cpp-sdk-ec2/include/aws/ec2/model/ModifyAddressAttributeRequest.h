@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

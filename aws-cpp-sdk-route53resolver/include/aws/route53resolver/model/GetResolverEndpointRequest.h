@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_resolverEndpointId;
-    bool m_resolverEndpointIdHasBeenSet;
+    bool m_resolverEndpointIdHasBeenSet = false;
   };
 
 } // namespace Model

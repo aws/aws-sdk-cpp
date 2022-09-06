@@ -176,16 +176,16 @@ namespace Model
   private:
 
     bool m_isClusterWriter;
-    bool m_isClusterWriterHasBeenSet;
+    bool m_isClusterWriterHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     Aws::String m_dbInstanceIdentifier;
-    bool m_dbInstanceIdentifierHasBeenSet;
+    bool m_dbInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dbClusterParameterGroupStatus;
-    bool m_dbClusterParameterGroupStatusHasBeenSet;
+    bool m_dbClusterParameterGroupStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
 
     Aws::String m_recoveryGroupName;
-    bool m_recoveryGroupNameHasBeenSet;
+    bool m_recoveryGroupNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

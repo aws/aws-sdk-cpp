@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     SyntaxLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

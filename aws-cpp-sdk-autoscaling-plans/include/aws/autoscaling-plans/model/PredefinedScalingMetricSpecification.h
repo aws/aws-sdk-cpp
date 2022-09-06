@@ -255,10 +255,10 @@ namespace Model
   private:
 
     ScalingMetricType m_predefinedScalingMetricType;
-    bool m_predefinedScalingMetricTypeHasBeenSet;
+    bool m_predefinedScalingMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;
-    bool m_resourceLabelHasBeenSet;
+    bool m_resourceLabelHasBeenSet = false;
   };
 
 } // namespace Model

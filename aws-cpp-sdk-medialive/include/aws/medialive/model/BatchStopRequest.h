@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_channelIds;
-    bool m_channelIdsHasBeenSet;
+    bool m_channelIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_multiplexIds;
-    bool m_multiplexIdsHasBeenSet;
+    bool m_multiplexIdsHasBeenSet = false;
   };
 
 } // namespace Model

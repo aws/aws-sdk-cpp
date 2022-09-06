@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

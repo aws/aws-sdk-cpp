@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     int m_concurrency;
-    bool m_concurrencyHasBeenSet;
+    bool m_concurrencyHasBeenSet = false;
   };
 
 } // namespace Model

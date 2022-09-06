@@ -270,16 +270,16 @@ namespace Model
   private:
 
     Aws::String m_rulesString;
-    bool m_rulesStringHasBeenSet;
+    bool m_rulesStringHasBeenSet = false;
 
     RulesSourceList m_rulesSourceList;
-    bool m_rulesSourceListHasBeenSet;
+    bool m_rulesSourceListHasBeenSet = false;
 
     Aws::Vector<StatefulRule> m_statefulRules;
-    bool m_statefulRulesHasBeenSet;
+    bool m_statefulRulesHasBeenSet = false;
 
     StatelessRulesAndCustomActions m_statelessRulesAndCustomActions;
-    bool m_statelessRulesAndCustomActionsHasBeenSet;
+    bool m_statelessRulesAndCustomActionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,7 +121,7 @@ namespace Model
   private:
 
     Aws::String m_configurationToken;
-    bool m_configurationTokenHasBeenSet;
+    bool m_configurationTokenHasBeenSet = false;
   };
 
 } // namespace Model

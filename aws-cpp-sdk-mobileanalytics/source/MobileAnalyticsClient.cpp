@@ -77,7 +77,7 @@ MobileAnalyticsClient::~MobileAnalyticsClient()
 
 void MobileAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("mobileanalytics");
+  AWSClient::SetServiceClientName("mobileanalytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

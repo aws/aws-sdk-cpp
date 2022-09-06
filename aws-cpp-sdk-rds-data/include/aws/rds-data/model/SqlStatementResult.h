@@ -96,10 +96,10 @@ namespace Model
   private:
 
     ResultFrame m_resultFrame;
-    bool m_resultFrameHasBeenSet;
+    bool m_resultFrameHasBeenSet = false;
 
     long long m_numberOfRecordsUpdated;
-    bool m_numberOfRecordsUpdatedHasBeenSet;
+    bool m_numberOfRecordsUpdatedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_sqlQuery;
-    bool m_sqlQueryHasBeenSet;
+    bool m_sqlQueryHasBeenSet = false;
 
     Aws::Vector<QueryFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

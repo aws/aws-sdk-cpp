@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Igmpv2SupportValue m_igmpv2Support;
-    bool m_igmpv2SupportHasBeenSet;
+    bool m_igmpv2SupportHasBeenSet = false;
 
     StaticSourcesSupportValue m_staticSourcesSupport;
-    bool m_staticSourcesSupportHasBeenSet;
+    bool m_staticSourcesSupportHasBeenSet = false;
 
     AutoAcceptSharedAssociationsValue m_autoAcceptSharedAssociations;
-    bool m_autoAcceptSharedAssociationsHasBeenSet;
+    bool m_autoAcceptSharedAssociationsHasBeenSet = false;
   };
 
 } // namespace Model

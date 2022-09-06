@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ImportDataSourceConfig m_dataSourceConfig;
-    bool m_dataSourceConfigHasBeenSet;
+    bool m_dataSourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

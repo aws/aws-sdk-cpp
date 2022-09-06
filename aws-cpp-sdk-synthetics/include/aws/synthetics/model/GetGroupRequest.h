@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_groupIdentifier;
-    bool m_groupIdentifierHasBeenSet;
+    bool m_groupIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -402,34 +402,34 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     ServiceSpecification m_serviceSpecification;
-    bool m_serviceSpecificationHasBeenSet;
+    bool m_serviceSpecificationHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
   };
 
 } // namespace Model

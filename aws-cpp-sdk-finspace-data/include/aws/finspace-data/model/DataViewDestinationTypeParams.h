@@ -234,13 +234,13 @@ namespace Model
   private:
 
     Aws::String m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     ExportFileFormat m_s3DestinationExportFileFormat;
-    bool m_s3DestinationExportFileFormatHasBeenSet;
+    bool m_s3DestinationExportFileFormatHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_s3DestinationExportFileFormatOptions;
-    bool m_s3DestinationExportFileFormatOptionsHasBeenSet;
+    bool m_s3DestinationExportFileFormatOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -190,10 +190,10 @@ namespace Model
   private:
 
     Aws::String m_eventPattern;
-    bool m_eventPatternHasBeenSet;
+    bool m_eventPatternHasBeenSet = false;
 
     Aws::String m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
   };
 
 } // namespace Model

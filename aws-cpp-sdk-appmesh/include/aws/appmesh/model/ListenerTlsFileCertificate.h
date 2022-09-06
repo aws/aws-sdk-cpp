@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
   };
 
 } // namespace Model

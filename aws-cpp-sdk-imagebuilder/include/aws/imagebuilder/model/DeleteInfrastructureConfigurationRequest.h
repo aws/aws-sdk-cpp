@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_infrastructureConfigurationArn;
-    bool m_infrastructureConfigurationArnHasBeenSet;
+    bool m_infrastructureConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

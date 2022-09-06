@@ -649,28 +649,28 @@ namespace Model
   private:
 
     Aws::String m_activationKey;
-    bool m_activationKeyHasBeenSet;
+    bool m_activationKeyHasBeenSet = false;
 
     Aws::String m_gatewayName;
-    bool m_gatewayNameHasBeenSet;
+    bool m_gatewayNameHasBeenSet = false;
 
     Aws::String m_gatewayTimezone;
-    bool m_gatewayTimezoneHasBeenSet;
+    bool m_gatewayTimezoneHasBeenSet = false;
 
     Aws::String m_gatewayRegion;
-    bool m_gatewayRegionHasBeenSet;
+    bool m_gatewayRegionHasBeenSet = false;
 
     Aws::String m_gatewayType;
-    bool m_gatewayTypeHasBeenSet;
+    bool m_gatewayTypeHasBeenSet = false;
 
     Aws::String m_tapeDriveType;
-    bool m_tapeDriveTypeHasBeenSet;
+    bool m_tapeDriveTypeHasBeenSet = false;
 
     Aws::String m_mediumChangerType;
-    bool m_mediumChangerTypeHasBeenSet;
+    bool m_mediumChangerTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

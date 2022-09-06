@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_columnIndex;
-    bool m_columnIndexHasBeenSet;
+    bool m_columnIndexHasBeenSet = false;
   };
 
 } // namespace Model

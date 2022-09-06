@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_catalogItemId;
-    bool m_catalogItemIdHasBeenSet;
+    bool m_catalogItemIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -159,10 +159,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Term> m_terms;
-    bool m_termsHasBeenSet;
+    bool m_termsHasBeenSet = false;
   };
 
 } // namespace Model

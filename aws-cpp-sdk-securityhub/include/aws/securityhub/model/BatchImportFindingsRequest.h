@@ -108,7 +108,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsSecurityFinding> m_findings;
-    bool m_findingsHasBeenSet;
+    bool m_findingsHasBeenSet = false;
   };
 
 } // namespace Model

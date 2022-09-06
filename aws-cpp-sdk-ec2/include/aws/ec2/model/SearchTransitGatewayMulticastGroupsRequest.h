@@ -345,19 +345,19 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayMulticastDomainId;
-    bool m_transitGatewayMulticastDomainIdHasBeenSet;
+    bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

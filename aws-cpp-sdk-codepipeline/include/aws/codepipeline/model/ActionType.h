@@ -209,19 +209,19 @@ namespace Model
   private:
 
     ActionTypeId m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ActionTypeSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     Aws::Vector<ActionConfigurationProperty> m_actionConfigurationProperties;
-    bool m_actionConfigurationPropertiesHasBeenSet;
+    bool m_actionConfigurationPropertiesHasBeenSet = false;
 
     ArtifactDetails m_inputArtifactDetails;
-    bool m_inputArtifactDetailsHasBeenSet;
+    bool m_inputArtifactDetailsHasBeenSet = false;
 
     ArtifactDetails m_outputArtifactDetails;
-    bool m_outputArtifactDetailsHasBeenSet;
+    bool m_outputArtifactDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyRevisionId;
-    bool m_policyRevisionIdHasBeenSet;
+    bool m_policyRevisionIdHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

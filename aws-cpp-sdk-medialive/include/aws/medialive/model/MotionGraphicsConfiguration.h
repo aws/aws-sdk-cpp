@@ -90,10 +90,10 @@ namespace Model
   private:
 
     MotionGraphicsInsertion m_motionGraphicsInsertion;
-    bool m_motionGraphicsInsertionHasBeenSet;
+    bool m_motionGraphicsInsertionHasBeenSet = false;
 
     MotionGraphicsSettings m_motionGraphicsSettings;
-    bool m_motionGraphicsSettingsHasBeenSet;
+    bool m_motionGraphicsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

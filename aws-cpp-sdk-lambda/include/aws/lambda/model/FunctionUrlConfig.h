@@ -341,22 +341,22 @@ namespace Model
   private:
 
     Aws::String m_functionUrl;
-    bool m_functionUrlHasBeenSet;
+    bool m_functionUrlHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Cors m_cors;
-    bool m_corsHasBeenSet;
+    bool m_corsHasBeenSet = false;
 
     FunctionUrlAuthType m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
   };
 
 } // namespace Model

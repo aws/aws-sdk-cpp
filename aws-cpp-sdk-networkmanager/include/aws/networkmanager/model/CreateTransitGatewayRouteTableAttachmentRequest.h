@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_peeringId;
-    bool m_peeringIdHasBeenSet;
+    bool m_peeringIdHasBeenSet = false;
 
     Aws::String m_transitGatewayRouteTableArn;
-    bool m_transitGatewayRouteTableArnHasBeenSet;
+    bool m_transitGatewayRouteTableArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

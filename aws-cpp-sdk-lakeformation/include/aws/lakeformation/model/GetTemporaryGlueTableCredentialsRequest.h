@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     AuditContext m_auditContext;
-    bool m_auditContextHasBeenSet;
+    bool m_auditContextHasBeenSet = false;
 
     Aws::Vector<PermissionType> m_supportedPermissionTypes;
-    bool m_supportedPermissionTypesHasBeenSet;
+    bool m_supportedPermissionTypesHasBeenSet = false;
   };
 
 } // namespace Model

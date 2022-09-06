@@ -74,7 +74,7 @@ namespace Model
   private:
 
     ReasonCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

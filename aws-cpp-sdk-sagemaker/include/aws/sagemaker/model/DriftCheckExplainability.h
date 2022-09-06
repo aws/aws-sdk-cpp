@@ -103,10 +103,10 @@ namespace Model
   private:
 
     MetricsSource m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     FileSource m_configFile;
-    bool m_configFileHasBeenSet;
+    bool m_configFileHasBeenSet = false;
   };
 
 } // namespace Model

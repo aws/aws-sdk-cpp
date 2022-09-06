@@ -72,7 +72,7 @@ namespace Model
   private:
 
     EgressConfiguration m_egressConfiguration;
-    bool m_egressConfigurationHasBeenSet;
+    bool m_egressConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

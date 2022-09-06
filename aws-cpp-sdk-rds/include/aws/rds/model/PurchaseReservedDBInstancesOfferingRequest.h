@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_reservedDBInstancesOfferingId;
-    bool m_reservedDBInstancesOfferingIdHasBeenSet;
+    bool m_reservedDBInstancesOfferingIdHasBeenSet = false;
 
     Aws::String m_reservedDBInstanceId;
-    bool m_reservedDBInstanceIdHasBeenSet;
+    bool m_reservedDBInstanceIdHasBeenSet = false;
 
     int m_dBInstanceCount;
-    bool m_dBInstanceCountHasBeenSet;
+    bool m_dBInstanceCountHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

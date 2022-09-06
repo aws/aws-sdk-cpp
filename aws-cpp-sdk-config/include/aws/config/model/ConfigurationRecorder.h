@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     RecordingGroup m_recordingGroup;
-    bool m_recordingGroupHasBeenSet;
+    bool m_recordingGroupHasBeenSet = false;
   };
 
 } // namespace Model

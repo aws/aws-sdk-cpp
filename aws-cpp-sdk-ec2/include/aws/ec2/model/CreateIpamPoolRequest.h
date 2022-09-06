@@ -781,49 +781,49 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamScopeId;
-    bool m_ipamScopeIdHasBeenSet;
+    bool m_ipamScopeIdHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_sourceIpamPoolId;
-    bool m_sourceIpamPoolIdHasBeenSet;
+    bool m_sourceIpamPoolIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     bool m_autoImport;
-    bool m_autoImportHasBeenSet;
+    bool m_autoImportHasBeenSet = false;
 
     bool m_publiclyAdvertisable;
-    bool m_publiclyAdvertisableHasBeenSet;
+    bool m_publiclyAdvertisableHasBeenSet = false;
 
     int m_allocationMinNetmaskLength;
-    bool m_allocationMinNetmaskLengthHasBeenSet;
+    bool m_allocationMinNetmaskLengthHasBeenSet = false;
 
     int m_allocationMaxNetmaskLength;
-    bool m_allocationMaxNetmaskLengthHasBeenSet;
+    bool m_allocationMaxNetmaskLengthHasBeenSet = false;
 
     int m_allocationDefaultNetmaskLength;
-    bool m_allocationDefaultNetmaskLengthHasBeenSet;
+    bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
 
     Aws::Vector<RequestIpamResourceTag> m_allocationResourceTags;
-    bool m_allocationResourceTagsHasBeenSet;
+    bool m_allocationResourceTagsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     IpamPoolAwsService m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
   };
 
 } // namespace Model

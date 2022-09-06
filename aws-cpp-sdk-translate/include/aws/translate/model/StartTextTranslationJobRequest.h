@@ -620,34 +620,34 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetLanguageCodes;
-    bool m_targetLanguageCodesHasBeenSet;
+    bool m_targetLanguageCodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminologyNames;
-    bool m_terminologyNamesHasBeenSet;
+    bool m_terminologyNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parallelDataNames;
-    bool m_parallelDataNamesHasBeenSet;
+    bool m_parallelDataNamesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     TranslationSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

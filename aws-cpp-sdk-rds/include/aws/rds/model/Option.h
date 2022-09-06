@@ -370,31 +370,31 @@ namespace Model
   private:
 
     Aws::String m_optionName;
-    bool m_optionNameHasBeenSet;
+    bool m_optionNameHasBeenSet = false;
 
     Aws::String m_optionDescription;
-    bool m_optionDescriptionHasBeenSet;
+    bool m_optionDescriptionHasBeenSet = false;
 
     bool m_persistent;
-    bool m_persistentHasBeenSet;
+    bool m_persistentHasBeenSet = false;
 
     bool m_permanent;
-    bool m_permanentHasBeenSet;
+    bool m_permanentHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_optionVersion;
-    bool m_optionVersionHasBeenSet;
+    bool m_optionVersionHasBeenSet = false;
 
     Aws::Vector<OptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
 
     Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroupMemberships;
-    bool m_dBSecurityGroupMembershipsHasBeenSet;
+    bool m_dBSecurityGroupMembershipsHasBeenSet = false;
 
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroupMemberships;
-    bool m_vpcSecurityGroupMembershipsHasBeenSet;
+    bool m_vpcSecurityGroupMembershipsHasBeenSet = false;
   };
 
 } // namespace Model

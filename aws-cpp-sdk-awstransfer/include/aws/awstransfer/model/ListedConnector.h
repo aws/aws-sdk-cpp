@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

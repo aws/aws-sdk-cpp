@@ -157,16 +157,16 @@ namespace Model
   private:
 
     CodeCommitRepository m_codeCommit;
-    bool m_codeCommitHasBeenSet;
+    bool m_codeCommitHasBeenSet = false;
 
     ThirdPartySourceRepository m_bitbucket;
-    bool m_bitbucketHasBeenSet;
+    bool m_bitbucketHasBeenSet = false;
 
     ThirdPartySourceRepository m_gitHubEnterpriseServer;
-    bool m_gitHubEnterpriseServerHasBeenSet;
+    bool m_gitHubEnterpriseServerHasBeenSet = false;
 
     S3Repository m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
   };
 
 } // namespace Model

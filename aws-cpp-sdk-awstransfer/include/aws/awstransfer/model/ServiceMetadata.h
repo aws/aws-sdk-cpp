@@ -77,7 +77,7 @@ namespace Model
   private:
 
     UserDetails m_userDetails;
-    bool m_userDetailsHasBeenSet;
+    bool m_userDetailsHasBeenSet = false;
   };
 
 } // namespace Model

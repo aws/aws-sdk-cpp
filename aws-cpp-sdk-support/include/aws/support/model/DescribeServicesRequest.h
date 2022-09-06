@@ -157,10 +157,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_serviceCodeList;
-    bool m_serviceCodeListHasBeenSet;
+    bool m_serviceCodeListHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

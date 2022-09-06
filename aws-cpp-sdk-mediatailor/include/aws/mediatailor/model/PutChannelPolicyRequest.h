@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

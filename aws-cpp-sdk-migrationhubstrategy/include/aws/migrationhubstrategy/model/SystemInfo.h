@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_cpuArchitecture;
-    bool m_cpuArchitectureHasBeenSet;
+    bool m_cpuArchitectureHasBeenSet = false;
 
     Aws::String m_fileSystemType;
-    bool m_fileSystemTypeHasBeenSet;
+    bool m_fileSystemTypeHasBeenSet = false;
 
     Aws::Vector<NetworkInfo> m_networkInfoList;
-    bool m_networkInfoListHasBeenSet;
+    bool m_networkInfoListHasBeenSet = false;
 
     OSInfo m_osInfo;
-    bool m_osInfoHasBeenSet;
+    bool m_osInfoHasBeenSet = false;
   };
 
 } // namespace Model

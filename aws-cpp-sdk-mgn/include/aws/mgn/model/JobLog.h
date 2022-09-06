@@ -144,13 +144,13 @@ namespace Model
   private:
 
     JobLogEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     JobLogEventData m_eventData;
-    bool m_eventDataHasBeenSet;
+    bool m_eventDataHasBeenSet = false;
 
     Aws::String m_logDateTime;
-    bool m_logDateTimeHasBeenSet;
+    bool m_logDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

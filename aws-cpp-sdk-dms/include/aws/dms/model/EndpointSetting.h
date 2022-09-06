@@ -375,31 +375,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EndpointSettingTypeValue m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enumValues;
-    bool m_enumValuesHasBeenSet;
+    bool m_enumValuesHasBeenSet = false;
 
     bool m_sensitive;
-    bool m_sensitiveHasBeenSet;
+    bool m_sensitiveHasBeenSet = false;
 
     Aws::String m_units;
-    bool m_unitsHasBeenSet;
+    bool m_unitsHasBeenSet = false;
 
     Aws::String m_applicability;
-    bool m_applicabilityHasBeenSet;
+    bool m_applicabilityHasBeenSet = false;
 
     int m_intValueMin;
-    bool m_intValueMinHasBeenSet;
+    bool m_intValueMinHasBeenSet = false;
 
     int m_intValueMax;
-    bool m_intValueMaxHasBeenSet;
+    bool m_intValueMaxHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

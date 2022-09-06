@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::String m_routerTypeIdentifier;
-    bool m_routerTypeIdentifierHasBeenSet;
+    bool m_routerTypeIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

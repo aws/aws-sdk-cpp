@@ -368,19 +368,19 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Metric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Granularity m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
 
     Expression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     int m_predictionIntervalLevel;
-    bool m_predictionIntervalLevelHasBeenSet;
+    bool m_predictionIntervalLevelHasBeenSet = false;
   };
 
 } // namespace Model

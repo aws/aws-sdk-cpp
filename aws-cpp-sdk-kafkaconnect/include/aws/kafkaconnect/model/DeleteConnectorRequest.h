@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_connectorArn;
-    bool m_connectorArnHasBeenSet;
+    bool m_connectorArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
   };
 
 } // namespace Model

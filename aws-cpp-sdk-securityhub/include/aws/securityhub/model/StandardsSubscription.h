@@ -297,19 +297,19 @@ namespace Model
   private:
 
     Aws::String m_standardsSubscriptionArn;
-    bool m_standardsSubscriptionArnHasBeenSet;
+    bool m_standardsSubscriptionArnHasBeenSet = false;
 
     Aws::String m_standardsArn;
-    bool m_standardsArnHasBeenSet;
+    bool m_standardsArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_standardsInput;
-    bool m_standardsInputHasBeenSet;
+    bool m_standardsInputHasBeenSet = false;
 
     StandardsStatus m_standardsStatus;
-    bool m_standardsStatusHasBeenSet;
+    bool m_standardsStatusHasBeenSet = false;
 
     StandardsStatusReason m_standardsStatusReason;
-    bool m_standardsStatusReasonHasBeenSet;
+    bool m_standardsStatusReasonHasBeenSet = false;
   };
 
 } // namespace Model

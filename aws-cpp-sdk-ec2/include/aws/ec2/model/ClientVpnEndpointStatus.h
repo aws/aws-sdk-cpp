@@ -168,10 +168,10 @@ namespace Model
   private:
 
     ClientVpnEndpointStatusCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

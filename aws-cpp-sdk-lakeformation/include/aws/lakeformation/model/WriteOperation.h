@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AddObjectInput m_addObject;
-    bool m_addObjectHasBeenSet;
+    bool m_addObjectHasBeenSet = false;
 
     DeleteObjectInput m_deleteObject;
-    bool m_deleteObjectHasBeenSet;
+    bool m_deleteObjectHasBeenSet = false;
   };
 
 } // namespace Model

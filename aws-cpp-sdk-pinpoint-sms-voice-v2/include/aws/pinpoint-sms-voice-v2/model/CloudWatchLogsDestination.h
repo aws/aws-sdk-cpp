@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

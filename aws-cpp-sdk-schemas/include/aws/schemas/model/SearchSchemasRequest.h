@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
   };
 
 } // namespace Model

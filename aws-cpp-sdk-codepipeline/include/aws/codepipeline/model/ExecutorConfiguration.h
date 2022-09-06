@@ -104,10 +104,10 @@ namespace Model
   private:
 
     LambdaExecutorConfiguration m_lambdaExecutorConfiguration;
-    bool m_lambdaExecutorConfigurationHasBeenSet;
+    bool m_lambdaExecutorConfigurationHasBeenSet = false;
 
     JobWorkerExecutorConfiguration m_jobWorkerExecutorConfiguration;
-    bool m_jobWorkerExecutorConfigurationHasBeenSet;
+    bool m_jobWorkerExecutorConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

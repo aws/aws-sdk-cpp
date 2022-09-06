@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     ScheduledAutoTuneActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     ScheduledAutoTuneSeverityType m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
   };
 
 } // namespace Model

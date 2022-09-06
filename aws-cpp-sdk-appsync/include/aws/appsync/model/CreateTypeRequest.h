@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     TypeDefinitionFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

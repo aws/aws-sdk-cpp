@@ -257,16 +257,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_protectionGroupIds;
-    bool m_protectionGroupIdsHasBeenSet;
+    bool m_protectionGroupIdsHasBeenSet = false;
 
     Aws::Vector<ProtectionGroupPattern> m_patterns;
-    bool m_patternsHasBeenSet;
+    bool m_patternsHasBeenSet = false;
 
     Aws::Vector<ProtectedResourceType> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::Vector<ProtectionGroupAggregation> m_aggregations;
-    bool m_aggregationsHasBeenSet;
+    bool m_aggregationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
 
     Aws::Vector<DevicePositionUpdate> m_devicePositionUpdates;
-    bool m_devicePositionUpdatesHasBeenSet;
+    bool m_devicePositionUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

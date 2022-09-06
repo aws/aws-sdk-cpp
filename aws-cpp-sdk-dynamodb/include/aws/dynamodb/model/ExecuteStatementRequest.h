@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::String m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

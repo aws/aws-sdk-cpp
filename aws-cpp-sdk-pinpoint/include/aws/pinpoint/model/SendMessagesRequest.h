@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     MessageRequest m_messageRequest;
-    bool m_messageRequestHasBeenSet;
+    bool m_messageRequestHasBeenSet = false;
   };
 
 } // namespace Model

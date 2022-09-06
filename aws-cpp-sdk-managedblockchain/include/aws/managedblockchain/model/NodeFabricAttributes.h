@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_peerEndpoint;
-    bool m_peerEndpointHasBeenSet;
+    bool m_peerEndpointHasBeenSet = false;
 
     Aws::String m_peerEventEndpoint;
-    bool m_peerEventEndpointHasBeenSet;
+    bool m_peerEventEndpointHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_route;
-    bool m_routeHasBeenSet;
+    bool m_routeHasBeenSet = false;
   };
 
 } // namespace Model

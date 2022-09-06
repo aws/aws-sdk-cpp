@@ -964,52 +964,52 @@ namespace Model
   private:
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     ClientData m_clientData;
-    bool m_clientDataHasBeenSet;
+    bool m_clientDataHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ImageDiskContainer> m_diskContainers;
-    bool m_diskContainersHasBeenSet;
+    bool m_diskContainersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_hypervisor;
-    bool m_hypervisorHasBeenSet;
+    bool m_hypervisorHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::Vector<ImportImageLicenseConfigurationRequest> m_licenseSpecifications;
-    bool m_licenseSpecificationsHasBeenSet;
+    bool m_licenseSpecificationsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_usageOperation;
-    bool m_usageOperationHasBeenSet;
+    bool m_usageOperationHasBeenSet = false;
 
     BootModeValues m_bootMode;
-    bool m_bootModeHasBeenSet;
+    bool m_bootModeHasBeenSet = false;
   };
 
 } // namespace Model

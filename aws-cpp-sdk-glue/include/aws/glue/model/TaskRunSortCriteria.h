@@ -115,10 +115,10 @@ namespace Model
   private:
 
     TaskRunSortColumnType m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     SortDirectionType m_sortDirection;
-    bool m_sortDirectionHasBeenSet;
+    bool m_sortDirectionHasBeenSet = false;
   };
 
 } // namespace Model

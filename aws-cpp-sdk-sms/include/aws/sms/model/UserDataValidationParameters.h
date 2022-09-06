@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     ScriptType m_scriptType;
-    bool m_scriptTypeHasBeenSet;
+    bool m_scriptTypeHasBeenSet = false;
   };
 
 } // namespace Model

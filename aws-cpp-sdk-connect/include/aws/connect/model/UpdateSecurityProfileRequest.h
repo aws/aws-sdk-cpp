@@ -239,16 +239,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::String m_securityProfileId;
-    bool m_securityProfileIdHasBeenSet;
+    bool m_securityProfileIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

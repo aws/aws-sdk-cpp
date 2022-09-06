@@ -104,10 +104,10 @@ namespace Model
   private:
 
     int m_sizeInMBs;
-    bool m_sizeInMBsHasBeenSet;
+    bool m_sizeInMBsHasBeenSet = false;
 
     int m_intervalInSeconds;
-    bool m_intervalInSecondsHasBeenSet;
+    bool m_intervalInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

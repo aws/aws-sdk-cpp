@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Vector<ConnectivityInfo> m_connectivityInfo;
-    bool m_connectivityInfoHasBeenSet;
+    bool m_connectivityInfoHasBeenSet = false;
   };
 
 } // namespace Model

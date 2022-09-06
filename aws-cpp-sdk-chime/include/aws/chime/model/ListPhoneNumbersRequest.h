@@ -239,22 +239,22 @@ namespace Model
   private:
 
     PhoneNumberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PhoneNumberProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     PhoneNumberAssociationName m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
 
     Aws::String m_filterValue;
-    bool m_filterValueHasBeenSet;
+    bool m_filterValueHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

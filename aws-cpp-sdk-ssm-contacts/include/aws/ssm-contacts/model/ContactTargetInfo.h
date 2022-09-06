@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     bool m_isEssential;
-    bool m_isEssentialHasBeenSet;
+    bool m_isEssentialHasBeenSet = false;
   };
 
 } // namespace Model

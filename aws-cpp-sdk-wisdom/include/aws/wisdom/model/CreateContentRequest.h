@@ -517,28 +517,28 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_overrideLinkOutUri;
-    bool m_overrideLinkOutUriHasBeenSet;
+    bool m_overrideLinkOutUriHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
   };
 
 } // namespace Model

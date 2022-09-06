@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::Vector<ScheduledSplitConfig> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
   };
 
 } // namespace Model

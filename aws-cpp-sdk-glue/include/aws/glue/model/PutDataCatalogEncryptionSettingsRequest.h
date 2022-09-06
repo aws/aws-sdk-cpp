@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     DataCatalogEncryptionSettings m_dataCatalogEncryptionSettings;
-    bool m_dataCatalogEncryptionSettingsHasBeenSet;
+    bool m_dataCatalogEncryptionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

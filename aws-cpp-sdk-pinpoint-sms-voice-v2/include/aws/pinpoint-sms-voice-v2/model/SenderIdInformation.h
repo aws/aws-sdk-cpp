@@ -279,19 +279,19 @@ namespace Model
   private:
 
     Aws::String m_senderIdArn;
-    bool m_senderIdArnHasBeenSet;
+    bool m_senderIdArnHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     Aws::Vector<MessageType> m_messageTypes;
-    bool m_messageTypesHasBeenSet;
+    bool m_messageTypesHasBeenSet = false;
 
     Aws::String m_monthlyLeasingPrice;
-    bool m_monthlyLeasingPriceHasBeenSet;
+    bool m_monthlyLeasingPriceHasBeenSet = false;
   };
 
 } // namespace Model

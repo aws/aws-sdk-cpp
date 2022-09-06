@@ -171,19 +171,19 @@ namespace Model
   private:
 
     int m_jobTimeoutMinutes;
-    bool m_jobTimeoutMinutesHasBeenSet;
+    bool m_jobTimeoutMinutesHasBeenSet = false;
 
     bool m_accountsCleanup;
-    bool m_accountsCleanupHasBeenSet;
+    bool m_accountsCleanupHasBeenSet = false;
 
     bool m_appPackagesCleanup;
-    bool m_appPackagesCleanupHasBeenSet;
+    bool m_appPackagesCleanupHasBeenSet = false;
 
     bool m_videoCapture;
-    bool m_videoCaptureHasBeenSet;
+    bool m_videoCaptureHasBeenSet = false;
 
     bool m_skipAppResign;
-    bool m_skipAppResignHasBeenSet;
+    bool m_skipAppResignHasBeenSet = false;
   };
 
 } // namespace Model

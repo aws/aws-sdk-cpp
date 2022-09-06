@@ -114,10 +114,10 @@ namespace Model
   private:
 
     int m_numberOfBacktestWindows;
-    bool m_numberOfBacktestWindowsHasBeenSet;
+    bool m_numberOfBacktestWindowsHasBeenSet = false;
 
     int m_backTestWindowOffset;
-    bool m_backTestWindowOffsetHasBeenSet;
+    bool m_backTestWindowOffsetHasBeenSet = false;
   };
 
 } // namespace Model

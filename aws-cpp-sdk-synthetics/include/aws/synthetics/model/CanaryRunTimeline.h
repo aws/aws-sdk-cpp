@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_started;
-    bool m_startedHasBeenSet;
+    bool m_startedHasBeenSet = false;
 
     Aws::Utils::DateTime m_completed;
-    bool m_completedHasBeenSet;
+    bool m_completedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -358,28 +358,28 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     SlotDateTimeRangeRequest m_firstSlotStartTimeRange;
-    bool m_firstSlotStartTimeRangeHasBeenSet;
+    bool m_firstSlotStartTimeRangeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     int m_maxSlotDurationInHours;
-    bool m_maxSlotDurationInHoursHasBeenSet;
+    bool m_maxSlotDurationInHoursHasBeenSet = false;
 
     int m_minSlotDurationInHours;
-    bool m_minSlotDurationInHoursHasBeenSet;
+    bool m_minSlotDurationInHoursHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ScheduledInstanceRecurrenceRequest m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
   };
 
 } // namespace Model

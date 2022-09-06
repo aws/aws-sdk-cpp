@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     LambdaFilesystemPermission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     bool m_addGroupOwner;
-    bool m_addGroupOwnerHasBeenSet;
+    bool m_addGroupOwnerHasBeenSet = false;
   };
 
 } // namespace Model

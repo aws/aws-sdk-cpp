@@ -100,13 +100,13 @@ namespace Model
   private:
 
     long long m_actionsExecuted;
-    bool m_actionsExecutedHasBeenSet;
+    bool m_actionsExecutedHasBeenSet = false;
 
     long long m_actionsSkipped;
-    bool m_actionsSkippedHasBeenSet;
+    bool m_actionsSkippedHasBeenSet = false;
 
     long long m_actionsFailed;
-    bool m_actionsFailedHasBeenSet;
+    bool m_actionsFailedHasBeenSet = false;
   };
 
 } // namespace Model

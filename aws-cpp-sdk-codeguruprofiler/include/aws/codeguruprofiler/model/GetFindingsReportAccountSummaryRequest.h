@@ -215,13 +215,13 @@ namespace Model
   private:
 
     bool m_dailyReportsOnly;
-    bool m_dailyReportsOnlyHasBeenSet;
+    bool m_dailyReportsOnlyHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

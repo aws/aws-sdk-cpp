@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     ApprovalResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
   };
 
 } // namespace Model

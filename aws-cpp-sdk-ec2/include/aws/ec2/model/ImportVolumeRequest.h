@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     DiskImageDetail m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     VolumeDetail m_volume;
-    bool m_volumeHasBeenSet;
+    bool m_volumeHasBeenSet = false;
   };
 
 } // namespace Model

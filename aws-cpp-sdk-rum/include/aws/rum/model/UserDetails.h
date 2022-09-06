@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

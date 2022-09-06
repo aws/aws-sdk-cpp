@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_copyProductToken;
-    bool m_copyProductTokenHasBeenSet;
+    bool m_copyProductTokenHasBeenSet = false;
   };
 
 } // namespace Model

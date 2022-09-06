@@ -346,31 +346,31 @@ namespace Model
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     PackageType m_packageType;
-    bool m_packageTypeHasBeenSet;
+    bool m_packageTypeHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     PackageStatus m_packageStatus;
-    bool m_packageStatusHasBeenSet;
+    bool m_packageStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_availablePackageVersion;
-    bool m_availablePackageVersionHasBeenSet;
+    bool m_availablePackageVersionHasBeenSet = false;
 
     ErrorDetails m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

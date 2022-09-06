@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     ConfigCapabilityType m_configType;
-    bool m_configTypeHasBeenSet;
+    bool m_configTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -227,10 +227,10 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

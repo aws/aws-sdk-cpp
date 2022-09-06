@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Monitor> m_monitors;
-    bool m_monitorsHasBeenSet;
+    bool m_monitorsHasBeenSet = false;
   };
 
 } // namespace Model

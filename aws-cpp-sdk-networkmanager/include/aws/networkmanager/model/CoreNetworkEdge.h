@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     long long m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insideCidrBlocks;
-    bool m_insideCidrBlocksHasBeenSet;
+    bool m_insideCidrBlocksHasBeenSet = false;
   };
 
 } // namespace Model

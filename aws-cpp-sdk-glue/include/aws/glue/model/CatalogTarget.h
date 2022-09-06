@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tables;
-    bool m_tablesHasBeenSet;
+    bool m_tablesHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
   };
 
 } // namespace Model

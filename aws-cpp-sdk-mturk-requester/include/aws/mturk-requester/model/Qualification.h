@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_grantTime;
-    bool m_grantTimeHasBeenSet;
+    bool m_grantTimeHasBeenSet = false;
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     Locale m_localeValue;
-    bool m_localeValueHasBeenSet;
+    bool m_localeValueHasBeenSet = false;
 
     QualificationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

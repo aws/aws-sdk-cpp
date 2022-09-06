@@ -311,22 +311,22 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ChannelType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ContactChannelAddress m_deliveryAddress;
-    bool m_deliveryAddressHasBeenSet;
+    bool m_deliveryAddressHasBeenSet = false;
 
     bool m_deferActivation;
-    bool m_deferActivationHasBeenSet;
+    bool m_deferActivationHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

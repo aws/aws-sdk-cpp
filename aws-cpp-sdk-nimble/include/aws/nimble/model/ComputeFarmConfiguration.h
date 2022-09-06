@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_activeDirectoryUser;
-    bool m_activeDirectoryUserHasBeenSet;
+    bool m_activeDirectoryUserHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
   };
 
 } // namespace Model

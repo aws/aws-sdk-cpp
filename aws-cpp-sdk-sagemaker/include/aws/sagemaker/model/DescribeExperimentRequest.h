@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_experimentName;
-    bool m_experimentNameHasBeenSet;
+    bool m_experimentNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
   };
 
 } // namespace Model

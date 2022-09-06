@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_maxResult;
-    bool m_maxResultHasBeenSet;
+    bool m_maxResultHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

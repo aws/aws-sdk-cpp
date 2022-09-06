@@ -308,22 +308,22 @@ namespace Model
   private:
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
 
     Aws::String m_localIpv4NetworkCidr;
-    bool m_localIpv4NetworkCidrHasBeenSet;
+    bool m_localIpv4NetworkCidrHasBeenSet = false;
 
     Aws::String m_remoteIpv4NetworkCidr;
-    bool m_remoteIpv4NetworkCidrHasBeenSet;
+    bool m_remoteIpv4NetworkCidrHasBeenSet = false;
 
     Aws::String m_localIpv6NetworkCidr;
-    bool m_localIpv6NetworkCidrHasBeenSet;
+    bool m_localIpv6NetworkCidrHasBeenSet = false;
 
     Aws::String m_remoteIpv6NetworkCidr;
-    bool m_remoteIpv6NetworkCidrHasBeenSet;
+    bool m_remoteIpv6NetworkCidrHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

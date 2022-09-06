@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     bool m_enable;
-    bool m_enableHasBeenSet;
+    bool m_enableHasBeenSet = false;
 
     FindingPublishingFrequency m_findingPublishingFrequency;
-    bool m_findingPublishingFrequencyHasBeenSet;
+    bool m_findingPublishingFrequencyHasBeenSet = false;
 
     DataSourceConfigurations m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

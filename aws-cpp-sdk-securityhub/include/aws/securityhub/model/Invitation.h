@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitedAt;
-    bool m_invitedAtHasBeenSet;
+    bool m_invitedAtHasBeenSet = false;
 
     Aws::String m_memberStatus;
-    bool m_memberStatusHasBeenSet;
+    bool m_memberStatusHasBeenSet = false;
   };
 
 } // namespace Model

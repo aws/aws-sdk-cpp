@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_queryName;
-    bool m_queryNameHasBeenSet;
+    bool m_queryNameHasBeenSet = false;
   };
 
 } // namespace Model

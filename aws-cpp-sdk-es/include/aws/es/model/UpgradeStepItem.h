@@ -209,16 +209,16 @@ namespace Model
   private:
 
     UpgradeStep m_upgradeStep;
-    bool m_upgradeStepHasBeenSet;
+    bool m_upgradeStepHasBeenSet = false;
 
     UpgradeStatus m_upgradeStepStatus;
-    bool m_upgradeStepStatusHasBeenSet;
+    bool m_upgradeStepStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_issues;
-    bool m_issuesHasBeenSet;
+    bool m_issuesHasBeenSet = false;
 
     double m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
   };
 
 } // namespace Model

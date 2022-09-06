@@ -428,10 +428,10 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<ProductInformationFilter> m_productInformationFilterList;
-    bool m_productInformationFilterListHasBeenSet;
+    bool m_productInformationFilterListHasBeenSet = false;
   };
 
 } // namespace Model

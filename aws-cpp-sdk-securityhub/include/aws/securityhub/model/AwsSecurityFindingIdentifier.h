@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_productArn;
-    bool m_productArnHasBeenSet;
+    bool m_productArnHasBeenSet = false;
   };
 
 } // namespace Model

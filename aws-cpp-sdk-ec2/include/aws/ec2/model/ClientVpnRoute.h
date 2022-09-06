@@ -351,25 +351,25 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_destinationCidr;
-    bool m_destinationCidrHasBeenSet;
+    bool m_destinationCidrHasBeenSet = false;
 
     Aws::String m_targetSubnet;
-    bool m_targetSubnetHasBeenSet;
+    bool m_targetSubnetHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     ClientVpnRouteStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

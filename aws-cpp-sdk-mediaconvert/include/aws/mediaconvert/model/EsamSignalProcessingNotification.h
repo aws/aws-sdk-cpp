@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_sccXml;
-    bool m_sccXmlHasBeenSet;
+    bool m_sccXmlHasBeenSet = false;
   };
 
 } // namespace Model

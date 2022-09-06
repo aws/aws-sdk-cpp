@@ -151,10 +151,10 @@ namespace Model
 
 
     Aws::String m_profileToken;
-    bool m_profileTokenHasBeenSet;
+    bool m_profileTokenHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

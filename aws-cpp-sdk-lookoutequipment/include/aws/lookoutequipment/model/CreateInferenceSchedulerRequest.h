@@ -524,34 +524,34 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     long long m_dataDelayOffsetInMinutes;
-    bool m_dataDelayOffsetInMinutesHasBeenSet;
+    bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
     DataUploadFrequency m_dataUploadFrequency;
-    bool m_dataUploadFrequencyHasBeenSet;
+    bool m_dataUploadFrequencyHasBeenSet = false;
 
     InferenceInputConfiguration m_dataInputConfiguration;
-    bool m_dataInputConfigurationHasBeenSet;
+    bool m_dataInputConfigurationHasBeenSet = false;
 
     InferenceOutputConfiguration m_dataOutputConfiguration;
-    bool m_dataOutputConfigurationHasBeenSet;
+    bool m_dataOutputConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_serverSideKmsKeyId;
-    bool m_serverSideKmsKeyIdHasBeenSet;
+    bool m_serverSideKmsKeyIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

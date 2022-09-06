@@ -152,10 +152,10 @@ namespace Model
   private:
 
     PostLaunchActions m_postLaunchActions;
-    bool m_postLaunchActionsHasBeenSet;
+    bool m_postLaunchActionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

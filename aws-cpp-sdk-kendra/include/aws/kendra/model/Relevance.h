@@ -393,19 +393,19 @@ namespace Model
   private:
 
     bool m_freshness;
-    bool m_freshnessHasBeenSet;
+    bool m_freshnessHasBeenSet = false;
 
     int m_importance;
-    bool m_importanceHasBeenSet;
+    bool m_importanceHasBeenSet = false;
 
     Aws::String m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Order m_rankOrder;
-    bool m_rankOrderHasBeenSet;
+    bool m_rankOrderHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_valueImportanceMap;
-    bool m_valueImportanceMapHasBeenSet;
+    bool m_valueImportanceMapHasBeenSet = false;
   };
 
 } // namespace Model

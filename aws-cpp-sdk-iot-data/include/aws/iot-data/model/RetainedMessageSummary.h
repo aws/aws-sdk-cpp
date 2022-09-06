@@ -147,16 +147,16 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     long long m_payloadSize;
-    bool m_payloadSizeHasBeenSet;
+    bool m_payloadSizeHasBeenSet = false;
 
     int m_qos;
-    bool m_qosHasBeenSet;
+    bool m_qosHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

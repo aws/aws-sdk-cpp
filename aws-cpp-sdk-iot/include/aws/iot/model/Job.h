@@ -1050,70 +1050,70 @@ namespace Model
   private:
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     TargetSelection m_targetSelection;
-    bool m_targetSelectionHasBeenSet;
+    bool m_targetSelectionHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_forceCanceled;
-    bool m_forceCanceledHasBeenSet;
+    bool m_forceCanceledHasBeenSet = false;
 
     Aws::String m_reasonCode;
-    bool m_reasonCodeHasBeenSet;
+    bool m_reasonCodeHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PresignedUrlConfig m_presignedUrlConfig;
-    bool m_presignedUrlConfigHasBeenSet;
+    bool m_presignedUrlConfigHasBeenSet = false;
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-    bool m_jobExecutionsRolloutConfigHasBeenSet;
+    bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
     AbortConfig m_abortConfig;
-    bool m_abortConfigHasBeenSet;
+    bool m_abortConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedAt;
-    bool m_completedAtHasBeenSet;
+    bool m_completedAtHasBeenSet = false;
 
     JobProcessDetails m_jobProcessDetails;
-    bool m_jobProcessDetailsHasBeenSet;
+    bool m_jobProcessDetailsHasBeenSet = false;
 
     TimeoutConfig m_timeoutConfig;
-    bool m_timeoutConfigHasBeenSet;
+    bool m_timeoutConfigHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
 
     Aws::String m_jobTemplateArn;
-    bool m_jobTemplateArnHasBeenSet;
+    bool m_jobTemplateArnHasBeenSet = false;
 
     JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-    bool m_jobExecutionsRetryConfigHasBeenSet;
+    bool m_jobExecutionsRetryConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_documentParameters;
-    bool m_documentParametersHasBeenSet;
+    bool m_documentParametersHasBeenSet = false;
 
     bool m_isConcurrent;
-    bool m_isConcurrentHasBeenSet;
+    bool m_isConcurrentHasBeenSet = false;
   };
 
 } // namespace Model

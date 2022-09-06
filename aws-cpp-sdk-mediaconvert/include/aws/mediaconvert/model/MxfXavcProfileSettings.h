@@ -146,10 +146,10 @@ namespace Model
   private:
 
     MxfXavcDurationMode m_durationMode;
-    bool m_durationModeHasBeenSet;
+    bool m_durationModeHasBeenSet = false;
 
     int m_maxAncDataSize;
-    bool m_maxAncDataSizeHasBeenSet;
+    bool m_maxAncDataSizeHasBeenSet = false;
   };
 
 } // namespace Model

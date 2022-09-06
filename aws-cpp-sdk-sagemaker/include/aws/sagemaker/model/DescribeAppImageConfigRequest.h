@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_appImageConfigName;
-    bool m_appImageConfigNameHasBeenSet;
+    bool m_appImageConfigNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_ispName;
-    bool m_ispNameHasBeenSet;
+    bool m_ispNameHasBeenSet = false;
 
     PlacementStatistics m_placementStatistics;
-    bool m_placementStatisticsHasBeenSet;
+    bool m_placementStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -248,19 +248,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_profileEndTime;
-    bool m_profileEndTimeHasBeenSet;
+    bool m_profileEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_profileStartTime;
-    bool m_profileStartTimeHasBeenSet;
+    bool m_profileStartTimeHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     int m_totalNumberOfFindings;
-    bool m_totalNumberOfFindingsHasBeenSet;
+    bool m_totalNumberOfFindingsHasBeenSet = false;
   };
 
 } // namespace Model

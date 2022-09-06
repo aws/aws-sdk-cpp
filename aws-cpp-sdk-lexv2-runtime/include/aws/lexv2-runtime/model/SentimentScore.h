@@ -138,16 +138,16 @@ namespace Model
   private:
 
     double m_positive;
-    bool m_positiveHasBeenSet;
+    bool m_positiveHasBeenSet = false;
 
     double m_negative;
-    bool m_negativeHasBeenSet;
+    bool m_negativeHasBeenSet = false;
 
     double m_neutral;
-    bool m_neutralHasBeenSet;
+    bool m_neutralHasBeenSet = false;
 
     double m_mixed;
-    bool m_mixedHasBeenSet;
+    bool m_mixedHasBeenSet = false;
   };
 
 } // namespace Model

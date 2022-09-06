@@ -226,13 +226,13 @@ namespace Model
   private:
 
     Category m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_typeNamePrefix;
-    bool m_typeNamePrefixHasBeenSet;
+    bool m_typeNamePrefixHasBeenSet = false;
   };
 
 } // namespace Model

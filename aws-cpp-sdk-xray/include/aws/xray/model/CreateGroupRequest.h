@@ -317,16 +317,16 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     InsightsConfiguration m_insightsConfiguration;
-    bool m_insightsConfigurationHasBeenSet;
+    bool m_insightsConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

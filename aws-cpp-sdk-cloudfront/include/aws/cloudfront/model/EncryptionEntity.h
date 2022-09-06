@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_publicKeyId;
-    bool m_publicKeyIdHasBeenSet;
+    bool m_publicKeyIdHasBeenSet = false;
 
     Aws::String m_providerId;
-    bool m_providerIdHasBeenSet;
+    bool m_providerIdHasBeenSet = false;
 
     FieldPatterns m_fieldPatterns;
-    bool m_fieldPatternsHasBeenSet;
+    bool m_fieldPatternsHasBeenSet = false;
   };
 
 } // namespace Model

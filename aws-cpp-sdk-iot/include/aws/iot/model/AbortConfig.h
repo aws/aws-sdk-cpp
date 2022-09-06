@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AbortCriteria> m_criteriaList;
-    bool m_criteriaListHasBeenSet;
+    bool m_criteriaListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_assetIds;
-    bool m_assetIdsHasBeenSet;
+    bool m_assetIdsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

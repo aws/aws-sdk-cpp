@@ -312,22 +312,22 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_sourceAccount;
-    bool m_sourceAccountHasBeenSet;
+    bool m_sourceAccountHasBeenSet = false;
 
     Aws::Vector<ActionType> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

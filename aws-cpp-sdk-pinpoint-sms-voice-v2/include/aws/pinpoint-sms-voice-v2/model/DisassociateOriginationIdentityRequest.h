@@ -257,16 +257,16 @@ namespace Model
   private:
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

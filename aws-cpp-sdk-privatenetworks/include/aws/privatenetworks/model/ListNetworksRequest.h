@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::Map<NetworkFilterKeys, Aws::Vector<Aws::String>> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_startToken;
-    bool m_startTokenHasBeenSet;
+    bool m_startTokenHasBeenSet = false;
   };
 
 } // namespace Model

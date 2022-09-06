@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_locationName;
-    bool m_locationNameHasBeenSet;
+    bool m_locationNameHasBeenSet = false;
 
     CidrCollectionChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrList;
-    bool m_cidrListHasBeenSet;
+    bool m_cidrListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<TypedLinkSpecifier> m_linkSpecifiers;
-    bool m_linkSpecifiersHasBeenSet;
+    bool m_linkSpecifiersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

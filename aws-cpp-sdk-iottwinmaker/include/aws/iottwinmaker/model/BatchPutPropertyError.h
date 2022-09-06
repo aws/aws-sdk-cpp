@@ -160,13 +160,13 @@ namespace Model
   private:
 
     PropertyValueEntry m_entry;
-    bool m_entryHasBeenSet;
+    bool m_entryHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

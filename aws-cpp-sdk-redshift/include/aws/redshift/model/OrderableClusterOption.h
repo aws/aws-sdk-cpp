@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     Aws::String m_clusterType;
-    bool m_clusterTypeHasBeenSet;
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

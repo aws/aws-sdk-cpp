@@ -505,37 +505,37 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     Aws::String m_dataSourceName;
-    bool m_dataSourceNameHasBeenSet;
+    bool m_dataSourceNameHasBeenSet = false;
 
     Aws::String m_requestMappingTemplate;
-    bool m_requestMappingTemplateHasBeenSet;
+    bool m_requestMappingTemplateHasBeenSet = false;
 
     Aws::String m_responseMappingTemplate;
-    bool m_responseMappingTemplateHasBeenSet;
+    bool m_responseMappingTemplateHasBeenSet = false;
 
     ResolverKind m_kind;
-    bool m_kindHasBeenSet;
+    bool m_kindHasBeenSet = false;
 
     PipelineConfig m_pipelineConfig;
-    bool m_pipelineConfigHasBeenSet;
+    bool m_pipelineConfigHasBeenSet = false;
 
     SyncConfig m_syncConfig;
-    bool m_syncConfigHasBeenSet;
+    bool m_syncConfigHasBeenSet = false;
 
     CachingConfig m_cachingConfig;
-    bool m_cachingConfigHasBeenSet;
+    bool m_cachingConfigHasBeenSet = false;
 
     int m_maxBatchSize;
-    bool m_maxBatchSizeHasBeenSet;
+    bool m_maxBatchSizeHasBeenSet = false;
   };
 
 } // namespace Model

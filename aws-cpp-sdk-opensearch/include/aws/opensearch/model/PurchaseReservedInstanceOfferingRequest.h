@@ -141,13 +141,13 @@ namespace Model
   private:
 
     Aws::String m_reservedInstanceOfferingId;
-    bool m_reservedInstanceOfferingIdHasBeenSet;
+    bool m_reservedInstanceOfferingIdHasBeenSet = false;
 
     Aws::String m_reservationName;
-    bool m_reservationNameHasBeenSet;
+    bool m_reservationNameHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
   };
 
 } // namespace Model

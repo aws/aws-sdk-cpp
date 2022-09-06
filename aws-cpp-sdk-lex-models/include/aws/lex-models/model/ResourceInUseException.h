@@ -84,10 +84,10 @@ namespace Model
   private:
 
     ReferenceType m_referenceType;
-    bool m_referenceTypeHasBeenSet;
+    bool m_referenceTypeHasBeenSet = false;
 
     ResourceReference m_exampleReference;
-    bool m_exampleReferenceHasBeenSet;
+    bool m_exampleReferenceHasBeenSet = false;
   };
 
 } // namespace Model

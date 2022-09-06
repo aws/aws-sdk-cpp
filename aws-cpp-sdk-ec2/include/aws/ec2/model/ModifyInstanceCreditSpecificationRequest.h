@@ -179,13 +179,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<InstanceCreditSpecificationRequest> m_instanceCreditSpecifications;
-    bool m_instanceCreditSpecificationsHasBeenSet;
+    bool m_instanceCreditSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

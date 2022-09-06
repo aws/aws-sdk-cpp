@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_cellName;
-    bool m_cellNameHasBeenSet;
+    bool m_cellNameHasBeenSet = false;
   };
 
 } // namespace Model

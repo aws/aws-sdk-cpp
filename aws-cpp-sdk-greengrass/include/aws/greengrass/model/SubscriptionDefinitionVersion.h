@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Subscription> m_subscriptions;
-    bool m_subscriptionsHasBeenSet;
+    bool m_subscriptionsHasBeenSet = false;
   };
 
 } // namespace Model

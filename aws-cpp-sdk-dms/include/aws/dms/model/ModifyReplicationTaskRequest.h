@@ -638,31 +638,31 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::String m_replicationTaskIdentifier;
-    bool m_replicationTaskIdentifierHasBeenSet;
+    bool m_replicationTaskIdentifierHasBeenSet = false;
 
     MigrationTypeValue m_migrationType;
-    bool m_migrationTypeHasBeenSet;
+    bool m_migrationTypeHasBeenSet = false;
 
     Aws::String m_tableMappings;
-    bool m_tableMappingsHasBeenSet;
+    bool m_tableMappingsHasBeenSet = false;
 
     Aws::String m_replicationTaskSettings;
-    bool m_replicationTaskSettingsHasBeenSet;
+    bool m_replicationTaskSettingsHasBeenSet = false;
 
     Aws::Utils::DateTime m_cdcStartTime;
-    bool m_cdcStartTimeHasBeenSet;
+    bool m_cdcStartTimeHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;
-    bool m_cdcStartPositionHasBeenSet;
+    bool m_cdcStartPositionHasBeenSet = false;
 
     Aws::String m_cdcStopPosition;
-    bool m_cdcStopPositionHasBeenSet;
+    bool m_cdcStopPositionHasBeenSet = false;
 
     Aws::String m_taskData;
-    bool m_taskDataHasBeenSet;
+    bool m_taskDataHasBeenSet = false;
   };
 
 } // namespace Model

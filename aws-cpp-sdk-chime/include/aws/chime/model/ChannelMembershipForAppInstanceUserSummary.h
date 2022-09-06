@@ -79,10 +79,10 @@ namespace Model
   private:
 
     ChannelSummary m_channelSummary;
-    bool m_channelSummaryHasBeenSet;
+    bool m_channelSummaryHasBeenSet = false;
 
     AppInstanceUserMembershipSummary m_appInstanceUserMembershipSummary;
-    bool m_appInstanceUserMembershipSummaryHasBeenSet;
+    bool m_appInstanceUserMembershipSummaryHasBeenSet = false;
   };
 
 } // namespace Model

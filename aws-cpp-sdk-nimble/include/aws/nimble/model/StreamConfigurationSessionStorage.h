@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<StreamingSessionStorageMode> m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     StreamingSessionStorageRoot m_root;
-    bool m_rootHasBeenSet;
+    bool m_rootHasBeenSet = false;
   };
 
 } // namespace Model

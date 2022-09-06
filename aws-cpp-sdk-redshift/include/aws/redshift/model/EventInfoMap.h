@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategories;
-    bool m_eventCategoriesHasBeenSet;
+    bool m_eventCategoriesHasBeenSet = false;
 
     Aws::String m_eventDescription;
-    bool m_eventDescriptionHasBeenSet;
+    bool m_eventDescriptionHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
   };
 
 } // namespace Model

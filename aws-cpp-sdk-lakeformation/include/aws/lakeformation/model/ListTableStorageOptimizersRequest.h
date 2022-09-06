@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     OptimizerType m_storageOptimizerType;
-    bool m_storageOptimizerTypeHasBeenSet;
+    bool m_storageOptimizerTypeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::Vector<BatchPutAssetPropertyError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

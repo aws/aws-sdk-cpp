@@ -396,28 +396,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_fingerprint;
-    bool m_fingerprintHasBeenSet;
+    bool m_fingerprintHasBeenSet = false;
   };
 
 } // namespace Model

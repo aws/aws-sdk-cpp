@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowOrigins;
-    bool m_allowOriginsHasBeenSet;
+    bool m_allowOriginsHasBeenSet = false;
 
     bool m_allowCredentials;
-    bool m_allowCredentialsHasBeenSet;
+    bool m_allowCredentialsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exposeHeaders;
-    bool m_exposeHeadersHasBeenSet;
+    bool m_exposeHeadersHasBeenSet = false;
 
     int m_maxAge;
-    bool m_maxAgeHasBeenSet;
+    bool m_maxAgeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowMethods;
-    bool m_allowMethodsHasBeenSet;
+    bool m_allowMethodsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowHeaders;
-    bool m_allowHeadersHasBeenSet;
+    bool m_allowHeadersHasBeenSet = false;
   };
 
 } // namespace Model

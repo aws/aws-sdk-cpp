@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

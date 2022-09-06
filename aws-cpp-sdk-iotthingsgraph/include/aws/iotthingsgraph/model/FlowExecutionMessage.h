@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     FlowExecutionEventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

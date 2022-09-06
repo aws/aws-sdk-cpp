@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_itemAttribute;
-    bool m_itemAttributeHasBeenSet;
+    bool m_itemAttributeHasBeenSet = false;
 
     ObjectiveSensitivity m_objectiveSensitivity;
-    bool m_objectiveSensitivityHasBeenSet;
+    bool m_objectiveSensitivityHasBeenSet = false;
   };
 
 } // namespace Model

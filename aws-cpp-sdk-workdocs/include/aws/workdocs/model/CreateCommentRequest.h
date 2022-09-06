@@ -365,28 +365,28 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_threadId;
-    bool m_threadIdHasBeenSet;
+    bool m_threadIdHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     CommentVisibilityType m_visibility;
-    bool m_visibilityHasBeenSet;
+    bool m_visibilityHasBeenSet = false;
 
     bool m_notifyCollaborators;
-    bool m_notifyCollaboratorsHasBeenSet;
+    bool m_notifyCollaboratorsHasBeenSet = false;
   };
 
 } // namespace Model

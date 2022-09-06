@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
 
     Aws::String m_monitoredResourceName;
-    bool m_monitoredResourceNameHasBeenSet;
+    bool m_monitoredResourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_aPIVersion;
-    bool m_aPIVersionHasBeenSet;
+    bool m_aPIVersionHasBeenSet = false;
   };
 
 } // namespace Model

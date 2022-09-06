@@ -309,25 +309,25 @@ namespace Model
   private:
 
     Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     TemplateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

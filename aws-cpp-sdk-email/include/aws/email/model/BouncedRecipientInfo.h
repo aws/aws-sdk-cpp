@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_recipient;
-    bool m_recipientHasBeenSet;
+    bool m_recipientHasBeenSet = false;
 
     Aws::String m_recipientArn;
-    bool m_recipientArnHasBeenSet;
+    bool m_recipientArnHasBeenSet = false;
 
     BounceType m_bounceType;
-    bool m_bounceTypeHasBeenSet;
+    bool m_bounceTypeHasBeenSet = false;
 
     RecipientDsnFields m_recipientDsnFields;
-    bool m_recipientDsnFieldsHasBeenSet;
+    bool m_recipientDsnFieldsHasBeenSet = false;
   };
 
 } // namespace Model

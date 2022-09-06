@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_gatewayName;
-    bool m_gatewayNameHasBeenSet;
+    bool m_gatewayNameHasBeenSet = false;
 
     GatewayPlatform m_gatewayPlatform;
-    bool m_gatewayPlatformHasBeenSet;
+    bool m_gatewayPlatformHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     RebootInputDeviceForce m_force;
-    bool m_forceHasBeenSet;
+    bool m_forceHasBeenSet = false;
 
     Aws::String m_inputDeviceId;
-    bool m_inputDeviceIdHasBeenSet;
+    bool m_inputDeviceIdHasBeenSet = false;
   };
 
 } // namespace Model

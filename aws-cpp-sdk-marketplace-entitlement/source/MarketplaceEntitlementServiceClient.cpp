@@ -77,7 +77,7 @@ MarketplaceEntitlementServiceClient::~MarketplaceEntitlementServiceClient()
 
 void MarketplaceEntitlementServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("entitlement.marketplace");
+  AWSClient::SetServiceClientName("entitlement.marketplace");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

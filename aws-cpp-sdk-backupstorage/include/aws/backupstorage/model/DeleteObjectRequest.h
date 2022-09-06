@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_objectName;
-    bool m_objectNameHasBeenSet;
+    bool m_objectNameHasBeenSet = false;
   };
 
 } // namespace Model

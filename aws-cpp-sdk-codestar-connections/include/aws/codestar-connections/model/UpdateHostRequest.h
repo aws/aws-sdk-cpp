@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_hostArn;
-    bool m_hostArnHasBeenSet;
+    bool m_hostArnHasBeenSet = false;
 
     Aws::String m_providerEndpoint;
-    bool m_providerEndpointHasBeenSet;
+    bool m_providerEndpointHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

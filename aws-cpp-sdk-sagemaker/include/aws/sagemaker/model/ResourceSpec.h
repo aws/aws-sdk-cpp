@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_sageMakerImageArn;
-    bool m_sageMakerImageArnHasBeenSet;
+    bool m_sageMakerImageArnHasBeenSet = false;
 
     Aws::String m_sageMakerImageVersionArn;
-    bool m_sageMakerImageVersionArnHasBeenSet;
+    bool m_sageMakerImageVersionArnHasBeenSet = false;
 
     AppInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_lifecycleConfigArn;
-    bool m_lifecycleConfigArnHasBeenSet;
+    bool m_lifecycleConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

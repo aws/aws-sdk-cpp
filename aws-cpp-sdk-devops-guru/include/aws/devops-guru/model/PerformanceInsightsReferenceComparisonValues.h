@@ -129,10 +129,10 @@ namespace Model
   private:
 
     PerformanceInsightsReferenceScalar m_referenceScalar;
-    bool m_referenceScalarHasBeenSet;
+    bool m_referenceScalarHasBeenSet = false;
 
     PerformanceInsightsReferenceMetric m_referenceMetric;
-    bool m_referenceMetricHasBeenSet;
+    bool m_referenceMetricHasBeenSet = false;
   };
 
 } // namespace Model

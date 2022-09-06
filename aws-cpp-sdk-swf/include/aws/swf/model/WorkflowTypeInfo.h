@@ -221,19 +221,19 @@ namespace Model
   private:
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     RegistrationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecationDate;
-    bool m_deprecationDateHasBeenSet;
+    bool m_deprecationDateHasBeenSet = false;
   };
 
 } // namespace Model

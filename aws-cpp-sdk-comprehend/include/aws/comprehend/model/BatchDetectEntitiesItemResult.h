@@ -112,10 +112,10 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::Vector<Entity> m_entities;
-    bool m_entitiesHasBeenSet;
+    bool m_entitiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,13 +130,13 @@ namespace Model
   private:
 
     LongTermPricingType m_longTermPricingType;
-    bool m_longTermPricingTypeHasBeenSet;
+    bool m_longTermPricingTypeHasBeenSet = false;
 
     bool m_isLongTermPricingAutoRenew;
-    bool m_isLongTermPricingAutoRenewHasBeenSet;
+    bool m_isLongTermPricingAutoRenewHasBeenSet = false;
 
     SnowballType m_snowballType;
-    bool m_snowballTypeHasBeenSet;
+    bool m_snowballTypeHasBeenSet = false;
   };
 
 } // namespace Model

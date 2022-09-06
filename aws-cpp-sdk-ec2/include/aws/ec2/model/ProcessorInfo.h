@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::Vector<ArchitectureType> m_supportedArchitectures;
-    bool m_supportedArchitecturesHasBeenSet;
+    bool m_supportedArchitecturesHasBeenSet = false;
 
     double m_sustainedClockSpeedInGhz;
-    bool m_sustainedClockSpeedInGhzHasBeenSet;
+    bool m_sustainedClockSpeedInGhzHasBeenSet = false;
   };
 
 } // namespace Model

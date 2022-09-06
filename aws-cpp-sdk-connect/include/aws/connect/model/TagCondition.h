@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::String m_tagValue;
-    bool m_tagValueHasBeenSet;
+    bool m_tagValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_volumeArn;
-    bool m_volumeArnHasBeenSet;
+    bool m_volumeArnHasBeenSet = false;
 
     Aws::String m_hash;
-    bool m_hashHasBeenSet;
+    bool m_hashHasBeenSet = false;
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
   };
 
 } // namespace Model

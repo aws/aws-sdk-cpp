@@ -1382,31 +1382,31 @@ namespace Model
   private:
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     KeyUsageType m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     KeySpec m_keySpec;
-    bool m_keySpecHasBeenSet;
+    bool m_keySpecHasBeenSet = false;
 
     OriginType m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     bool m_bypassPolicyLockoutSafetyCheck;
-    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
+    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_multiRegion;
-    bool m_multiRegionHasBeenSet;
+    bool m_multiRegionHasBeenSet = false;
   };
 
 } // namespace Model

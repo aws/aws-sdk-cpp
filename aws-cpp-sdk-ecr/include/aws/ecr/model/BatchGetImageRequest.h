@@ -266,16 +266,16 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::Vector<ImageIdentifier> m_imageIds;
-    bool m_imageIdsHasBeenSet;
+    bool m_imageIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_acceptedMediaTypes;
-    bool m_acceptedMediaTypesHasBeenSet;
+    bool m_acceptedMediaTypesHasBeenSet = false;
   };
 
 } // namespace Model

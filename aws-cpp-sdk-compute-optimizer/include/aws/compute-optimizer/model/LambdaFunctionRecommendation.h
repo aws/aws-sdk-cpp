@@ -782,40 +782,40 @@ namespace Model
   private:
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     Aws::String m_functionVersion;
-    bool m_functionVersionHasBeenSet;
+    bool m_functionVersionHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     int m_currentMemorySize;
-    bool m_currentMemorySizeHasBeenSet;
+    bool m_currentMemorySizeHasBeenSet = false;
 
     long long m_numberOfInvocations;
-    bool m_numberOfInvocationsHasBeenSet;
+    bool m_numberOfInvocationsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionUtilizationMetric> m_utilizationMetrics;
-    bool m_utilizationMetricsHasBeenSet;
+    bool m_utilizationMetricsHasBeenSet = false;
 
     double m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
-    bool m_lastRefreshTimestampHasBeenSet;
+    bool m_lastRefreshTimestampHasBeenSet = false;
 
     LambdaFunctionRecommendationFinding m_finding;
-    bool m_findingHasBeenSet;
+    bool m_findingHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionRecommendationFindingReasonCode> m_findingReasonCodes;
-    bool m_findingReasonCodesHasBeenSet;
+    bool m_findingReasonCodesHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionMemoryRecommendationOption> m_memorySizeRecommendationOptions;
-    bool m_memorySizeRecommendationOptionsHasBeenSet;
+    bool m_memorySizeRecommendationOptionsHasBeenSet = false;
 
     CurrentPerformanceRisk m_currentPerformanceRisk;
-    bool m_currentPerformanceRiskHasBeenSet;
+    bool m_currentPerformanceRiskHasBeenSet = false;
   };
 
 } // namespace Model

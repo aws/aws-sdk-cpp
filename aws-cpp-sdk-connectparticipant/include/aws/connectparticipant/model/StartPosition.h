@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_absoluteTime;
-    bool m_absoluteTimeHasBeenSet;
+    bool m_absoluteTimeHasBeenSet = false;
 
     int m_mostRecent;
-    bool m_mostRecentHasBeenSet;
+    bool m_mostRecentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -240,19 +240,19 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::Vector<NetworkRouteDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     RouteState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     RouteType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

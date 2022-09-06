@@ -429,34 +429,34 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Vector<ContainerStateChange> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     Aws::Vector<AttachmentStateChange> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::Vector<ManagedAgentStateChange> m_managedAgents;
-    bool m_managedAgentsHasBeenSet;
+    bool m_managedAgentsHasBeenSet = false;
 
     Aws::Utils::DateTime m_pullStartedAt;
-    bool m_pullStartedAtHasBeenSet;
+    bool m_pullStartedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_pullStoppedAt;
-    bool m_pullStoppedAtHasBeenSet;
+    bool m_pullStoppedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionStoppedAt;
-    bool m_executionStoppedAtHasBeenSet;
+    bool m_executionStoppedAtHasBeenSet = false;
   };
 
 } // namespace Model

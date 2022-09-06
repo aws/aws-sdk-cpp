@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     PortProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

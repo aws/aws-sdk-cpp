@@ -70,7 +70,7 @@ namespace Model
   private:
 
     MultiplexMediaConnectOutputDestinationSettings m_mediaConnectSettings;
-    bool m_mediaConnectSettingsHasBeenSet;
+    bool m_mediaConnectSettingsHasBeenSet = false;
   };
 
 } // namespace Model

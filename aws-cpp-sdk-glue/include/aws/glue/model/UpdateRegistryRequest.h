@@ -123,10 +123,10 @@ namespace Model
   private:
 
     RegistryId m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

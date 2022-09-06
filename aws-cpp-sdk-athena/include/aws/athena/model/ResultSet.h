@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::Vector<Row> m_rows;
-    bool m_rowsHasBeenSet;
+    bool m_rowsHasBeenSet = false;
 
     ResultSetMetadata m_resultSetMetadata;
-    bool m_resultSetMetadataHasBeenSet;
+    bool m_resultSetMetadataHasBeenSet = false;
   };
 
 } // namespace Model

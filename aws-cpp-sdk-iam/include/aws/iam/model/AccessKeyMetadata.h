@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
   };
 
 } // namespace Model

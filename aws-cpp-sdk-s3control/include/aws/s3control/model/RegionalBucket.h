@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     bool m_publicAccessBlockEnabled;
-    bool m_publicAccessBlockEnabledHasBeenSet;
+    bool m_publicAccessBlockEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
   };
 
 } // namespace Model

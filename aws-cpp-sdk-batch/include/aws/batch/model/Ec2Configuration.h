@@ -350,10 +350,10 @@ namespace Model
   private:
 
     Aws::String m_imageType;
-    bool m_imageTypeHasBeenSet;
+    bool m_imageTypeHasBeenSet = false;
 
     Aws::String m_imageIdOverride;
-    bool m_imageIdOverrideHasBeenSet;
+    bool m_imageIdOverrideHasBeenSet = false;
   };
 
 } // namespace Model

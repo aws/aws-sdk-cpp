@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     UserType m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

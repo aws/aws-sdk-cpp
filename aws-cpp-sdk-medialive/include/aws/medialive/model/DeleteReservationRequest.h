@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_reservationId;
-    bool m_reservationIdHasBeenSet;
+    bool m_reservationIdHasBeenSet = false;
   };
 
 } // namespace Model

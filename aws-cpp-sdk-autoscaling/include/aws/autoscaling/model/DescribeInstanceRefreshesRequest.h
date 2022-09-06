@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceRefreshIds;
-    bool m_instanceRefreshIdsHasBeenSet;
+    bool m_instanceRefreshIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
   };
 
 } // namespace Model

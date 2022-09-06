@@ -229,22 +229,22 @@ namespace Model
   private:
 
     CustomPluginContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     CustomPluginFileDescription m_fileDescription;
-    bool m_fileDescriptionHasBeenSet;
+    bool m_fileDescriptionHasBeenSet = false;
 
     CustomPluginLocationDescription m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     long long m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

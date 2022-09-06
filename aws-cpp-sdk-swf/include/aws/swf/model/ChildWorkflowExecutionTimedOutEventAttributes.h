@@ -211,19 +211,19 @@ namespace Model
   private:
 
     WorkflowExecution m_workflowExecution;
-    bool m_workflowExecutionHasBeenSet;
+    bool m_workflowExecutionHasBeenSet = false;
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     WorkflowExecutionTimeoutType m_timeoutType;
-    bool m_timeoutTypeHasBeenSet;
+    bool m_timeoutTypeHasBeenSet = false;
 
     long long m_initiatedEventId;
-    bool m_initiatedEventIdHasBeenSet;
+    bool m_initiatedEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

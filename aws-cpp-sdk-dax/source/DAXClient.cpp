@@ -97,7 +97,7 @@ DAXClient::~DAXClient()
 
 void DAXClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DAX");
+  AWSClient::SetServiceClientName("DAX");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

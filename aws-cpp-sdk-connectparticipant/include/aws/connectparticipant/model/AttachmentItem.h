@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     Aws::String m_attachmentName;
-    bool m_attachmentNameHasBeenSet;
+    bool m_attachmentNameHasBeenSet = false;
 
     ArtifactStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

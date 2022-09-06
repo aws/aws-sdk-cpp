@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::Vector<DatasourcePackage> m_datasourcePackages;
-    bool m_datasourcePackagesHasBeenSet;
+    bool m_datasourcePackagesHasBeenSet = false;
   };
 
 } // namespace Model

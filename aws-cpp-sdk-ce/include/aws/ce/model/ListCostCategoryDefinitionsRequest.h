@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_effectiveOn;
-    bool m_effectiveOnHasBeenSet;
+    bool m_effectiveOnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

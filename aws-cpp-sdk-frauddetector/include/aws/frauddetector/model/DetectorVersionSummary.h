@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     DetectorVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

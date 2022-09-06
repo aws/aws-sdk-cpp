@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     AutodefinedReverseFlag m_autodefinedReverseFlag;
-    bool m_autodefinedReverseFlagHasBeenSet;
+    bool m_autodefinedReverseFlagHasBeenSet = false;
   };
 
 } // namespace Model

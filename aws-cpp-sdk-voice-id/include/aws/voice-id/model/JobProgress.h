@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_percentComplete;
-    bool m_percentCompleteHasBeenSet;
+    bool m_percentCompleteHasBeenSet = false;
   };
 
 } // namespace Model

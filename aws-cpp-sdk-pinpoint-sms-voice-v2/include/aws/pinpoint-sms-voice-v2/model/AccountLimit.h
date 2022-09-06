@@ -113,13 +113,13 @@ namespace Model
   private:
 
     AccountLimitName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_used;
-    bool m_usedHasBeenSet;
+    bool m_usedHasBeenSet = false;
 
     long long m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

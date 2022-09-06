@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_anomalyId;
-    bool m_anomalyIdHasBeenSet;
+    bool m_anomalyIdHasBeenSet = false;
 
     AnomalyFeedbackType m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
   };
 
 } // namespace Model

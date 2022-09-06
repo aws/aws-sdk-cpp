@@ -100,13 +100,13 @@ namespace Model
   private:
 
     int m_tooNewLogEventStartIndex;
-    bool m_tooNewLogEventStartIndexHasBeenSet;
+    bool m_tooNewLogEventStartIndexHasBeenSet = false;
 
     int m_tooOldLogEventEndIndex;
-    bool m_tooOldLogEventEndIndexHasBeenSet;
+    bool m_tooOldLogEventEndIndexHasBeenSet = false;
 
     int m_expiredLogEventEndIndex;
-    bool m_expiredLogEventEndIndexHasBeenSet;
+    bool m_expiredLogEventEndIndexHasBeenSet = false;
   };
 
 } // namespace Model

@@ -292,19 +292,19 @@ namespace Model
   private:
 
     Aws::String m_findingDetails;
-    bool m_findingDetailsHasBeenSet;
+    bool m_findingDetailsHasBeenSet = false;
 
     ValidatePolicyFindingType m_findingType;
-    bool m_findingTypeHasBeenSet;
+    bool m_findingTypeHasBeenSet = false;
 
     Aws::String m_issueCode;
-    bool m_issueCodeHasBeenSet;
+    bool m_issueCodeHasBeenSet = false;
 
     Aws::String m_learnMoreLink;
-    bool m_learnMoreLinkHasBeenSet;
+    bool m_learnMoreLinkHasBeenSet = false;
 
     Aws::Vector<Location> m_locations;
-    bool m_locationsHasBeenSet;
+    bool m_locationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsS3BucketNotificationConfigurationS3KeyFilter m_s3KeyFilter;
-    bool m_s3KeyFilterHasBeenSet;
+    bool m_s3KeyFilterHasBeenSet = false;
   };
 
 } // namespace Model

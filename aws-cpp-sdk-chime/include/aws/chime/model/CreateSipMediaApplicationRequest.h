@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<SipMediaApplicationEndpoint> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

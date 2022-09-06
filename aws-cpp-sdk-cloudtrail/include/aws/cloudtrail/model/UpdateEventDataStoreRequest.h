@@ -273,25 +273,25 @@ namespace Model
   private:
 
     Aws::String m_eventDataStore;
-    bool m_eventDataStoreHasBeenSet;
+    bool m_eventDataStoreHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
-    bool m_advancedEventSelectorsHasBeenSet;
+    bool m_advancedEventSelectorsHasBeenSet = false;
 
     bool m_multiRegionEnabled;
-    bool m_multiRegionEnabledHasBeenSet;
+    bool m_multiRegionEnabledHasBeenSet = false;
 
     bool m_organizationEnabled;
-    bool m_organizationEnabledHasBeenSet;
+    bool m_organizationEnabledHasBeenSet = false;
 
     int m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     bool m_terminationProtectionEnabled;
-    bool m_terminationProtectionEnabledHasBeenSet;
+    bool m_terminationProtectionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

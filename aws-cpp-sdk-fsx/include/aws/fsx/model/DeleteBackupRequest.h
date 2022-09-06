@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastDeployTime;
-    bool m_lastDeployTimeHasBeenSet;
+    bool m_lastDeployTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_thumbnailUrl;
-    bool m_thumbnailUrlHasBeenSet;
+    bool m_thumbnailUrlHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
   };
 
 } // namespace Model

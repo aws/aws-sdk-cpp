@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_accessPolicyId;
-    bool m_accessPolicyIdHasBeenSet;
+    bool m_accessPolicyIdHasBeenSet = false;
   };
 
 } // namespace Model

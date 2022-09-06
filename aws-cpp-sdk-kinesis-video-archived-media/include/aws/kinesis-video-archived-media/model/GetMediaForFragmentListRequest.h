@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fragments;
-    bool m_fragmentsHasBeenSet;
+    bool m_fragmentsHasBeenSet = false;
   };
 
 } // namespace Model

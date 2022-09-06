@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_cbetCheckDigitString;
-    bool m_cbetCheckDigitStringHasBeenSet;
+    bool m_cbetCheckDigitStringHasBeenSet = false;
 
     NielsenWatermarksCbetStepaside m_cbetStepaside;
-    bool m_cbetStepasideHasBeenSet;
+    bool m_cbetStepasideHasBeenSet = false;
 
     Aws::String m_csid;
-    bool m_csidHasBeenSet;
+    bool m_csidHasBeenSet = false;
   };
 
 } // namespace Model

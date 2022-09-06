@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AccelerationMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
   };
 
 } // namespace Model

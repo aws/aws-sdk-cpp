@@ -408,31 +408,31 @@ namespace Model
   private:
 
     Aws::String m_agentLastSeenByServiceDateTime;
-    bool m_agentLastSeenByServiceDateTimeHasBeenSet;
+    bool m_agentLastSeenByServiceDateTimeHasBeenSet = false;
 
     Aws::String m_elapsedReplicationDuration;
-    bool m_elapsedReplicationDurationHasBeenSet;
+    bool m_elapsedReplicationDurationHasBeenSet = false;
 
     Aws::String m_failbackClientID;
-    bool m_failbackClientIDHasBeenSet;
+    bool m_failbackClientIDHasBeenSet = false;
 
     Aws::String m_failbackClientLastSeenByServiceDateTime;
-    bool m_failbackClientLastSeenByServiceDateTimeHasBeenSet;
+    bool m_failbackClientLastSeenByServiceDateTimeHasBeenSet = false;
 
     Aws::String m_failbackInitiationTime;
-    bool m_failbackInitiationTimeHasBeenSet;
+    bool m_failbackInitiationTimeHasBeenSet = false;
 
     Aws::String m_failbackJobID;
-    bool m_failbackJobIDHasBeenSet;
+    bool m_failbackJobIDHasBeenSet = false;
 
     bool m_failbackToOriginalServer;
-    bool m_failbackToOriginalServerHasBeenSet;
+    bool m_failbackToOriginalServerHasBeenSet = false;
 
     Aws::String m_firstByteDateTime;
-    bool m_firstByteDateTimeHasBeenSet;
+    bool m_firstByteDateTimeHasBeenSet = false;
 
     FailbackState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

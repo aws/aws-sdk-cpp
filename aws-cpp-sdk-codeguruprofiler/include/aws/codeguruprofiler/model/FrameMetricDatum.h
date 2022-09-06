@@ -96,10 +96,10 @@ namespace Model
   private:
 
     FrameMetric m_frameMetric;
-    bool m_frameMetricHasBeenSet;
+    bool m_frameMetricHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_labelGroupName;
-    bool m_labelGroupNameHasBeenSet;
+    bool m_labelGroupNameHasBeenSet = false;
 
     Aws::String m_labelGroupArn;
-    bool m_labelGroupArnHasBeenSet;
+    bool m_labelGroupArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

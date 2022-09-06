@@ -356,22 +356,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_launchTemplateIds;
-    bool m_launchTemplateIdsHasBeenSet;
+    bool m_launchTemplateIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_launchTemplateNames;
-    bool m_launchTemplateNamesHasBeenSet;
+    bool m_launchTemplateNamesHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

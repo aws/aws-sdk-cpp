@@ -394,31 +394,31 @@ namespace Model
   private:
 
     Aws::String m_userGroupId;
-    bool m_userGroupIdHasBeenSet;
+    bool m_userGroupIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
-    bool m_minimumEngineVersionHasBeenSet;
+    bool m_minimumEngineVersionHasBeenSet = false;
 
     UserGroupPendingChanges m_pendingChanges;
-    bool m_pendingChangesHasBeenSet;
+    bool m_pendingChangesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationGroups;
-    bool m_replicationGroupsHasBeenSet;
+    bool m_replicationGroupsHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

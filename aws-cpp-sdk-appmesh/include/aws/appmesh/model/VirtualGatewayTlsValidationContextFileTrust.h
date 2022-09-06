@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
   };
 
 } // namespace Model

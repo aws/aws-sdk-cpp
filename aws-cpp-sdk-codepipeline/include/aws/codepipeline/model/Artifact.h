@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     ArtifactLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

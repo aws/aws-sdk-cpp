@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, SourceDataColumnProperties> m_columnMap;
-    bool m_columnMapHasBeenSet;
+    bool m_columnMapHasBeenSet = false;
   };
 
 } // namespace Model

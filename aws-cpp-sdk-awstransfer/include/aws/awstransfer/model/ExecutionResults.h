@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::Vector<ExecutionStepResult> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
 
     Aws::Vector<ExecutionStepResult> m_onExceptionSteps;
-    bool m_onExceptionStepsHasBeenSet;
+    bool m_onExceptionStepsHasBeenSet = false;
   };
 
 } // namespace Model

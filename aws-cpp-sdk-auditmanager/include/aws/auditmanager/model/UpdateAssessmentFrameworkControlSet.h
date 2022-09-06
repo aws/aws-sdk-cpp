@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<CreateAssessmentFrameworkControl> m_controls;
-    bool m_controlsHasBeenSet;
+    bool m_controlsHasBeenSet = false;
   };
 
 } // namespace Model

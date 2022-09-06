@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_ruleArn;
-    bool m_ruleArnHasBeenSet;
+    bool m_ruleArnHasBeenSet = false;
 
     Aws::String m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<RuleCondition> m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
   };
 
 } // namespace Model

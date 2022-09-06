@@ -372,28 +372,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_ipPermissions;
-    bool m_ipPermissionsHasBeenSet;
+    bool m_ipPermissionsHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_ipPermissionsEgress;
-    bool m_ipPermissionsEgressHasBeenSet;
+    bool m_ipPermissionsEgressHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

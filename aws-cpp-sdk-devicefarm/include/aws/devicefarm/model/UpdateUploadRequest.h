@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     bool m_editContent;
-    bool m_editContentHasBeenSet;
+    bool m_editContentHasBeenSet = false;
   };
 
 } // namespace Model

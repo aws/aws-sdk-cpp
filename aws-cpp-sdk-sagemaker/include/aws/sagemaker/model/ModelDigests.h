@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_artifactDigest;
-    bool m_artifactDigestHasBeenSet;
+    bool m_artifactDigestHasBeenSet = false;
   };
 
 } // namespace Model

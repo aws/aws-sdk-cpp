@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::Vector<RecommendationRelatedAnomalyResource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::Vector<RecommendationRelatedAnomalySourceDetail> m_sourceDetails;
-    bool m_sourceDetailsHasBeenSet;
+    bool m_sourceDetailsHasBeenSet = false;
 
     Aws::String m_anomalyId;
-    bool m_anomalyIdHasBeenSet;
+    bool m_anomalyIdHasBeenSet = false;
   };
 
 } // namespace Model

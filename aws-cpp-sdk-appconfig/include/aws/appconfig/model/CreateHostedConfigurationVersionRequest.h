@@ -195,17 +195,17 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_configurationProfileId;
-    bool m_configurationProfileIdHasBeenSet;
+    bool m_configurationProfileIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
 
     int m_latestVersionNumber;
-    bool m_latestVersionNumberHasBeenSet;
+    bool m_latestVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

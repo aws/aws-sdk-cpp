@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_activityArn;
-    bool m_activityArnHasBeenSet;
+    bool m_activityArnHasBeenSet = false;
 
     Aws::String m_workerName;
-    bool m_workerNameHasBeenSet;
+    bool m_workerNameHasBeenSet = false;
   };
 
 } // namespace Model

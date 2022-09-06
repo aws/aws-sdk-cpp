@@ -316,25 +316,25 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     TargetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
-    bool m_lifecycleEventsHasBeenSet;
+    bool m_lifecycleEventsHasBeenSet = false;
 
     TargetLabel m_instanceLabel;
-    bool m_instanceLabelHasBeenSet;
+    bool m_instanceLabelHasBeenSet = false;
   };
 
 } // namespace Model

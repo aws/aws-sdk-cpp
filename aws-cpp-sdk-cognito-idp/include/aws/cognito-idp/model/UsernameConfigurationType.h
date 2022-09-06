@@ -98,7 +98,7 @@ namespace Model
   private:
 
     bool m_caseSensitive;
-    bool m_caseSensitiveHasBeenSet;
+    bool m_caseSensitiveHasBeenSet = false;
   };
 
 } // namespace Model

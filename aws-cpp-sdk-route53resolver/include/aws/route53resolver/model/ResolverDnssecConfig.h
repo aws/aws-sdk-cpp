@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ResolverDNSSECValidationStatus m_validationStatus;
-    bool m_validationStatusHasBeenSet;
+    bool m_validationStatusHasBeenSet = false;
   };
 
 } // namespace Model

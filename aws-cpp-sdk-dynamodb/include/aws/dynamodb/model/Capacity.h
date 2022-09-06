@@ -101,13 +101,13 @@ namespace Model
   private:
 
     double m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     double m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
 
     double m_capacityUnits;
-    bool m_capacityUnitsHasBeenSet;
+    bool m_capacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

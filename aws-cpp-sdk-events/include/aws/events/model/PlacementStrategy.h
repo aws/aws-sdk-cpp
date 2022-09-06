@@ -191,10 +191,10 @@ namespace Model
   private:
 
     PlacementStrategyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
   };
 
 } // namespace Model

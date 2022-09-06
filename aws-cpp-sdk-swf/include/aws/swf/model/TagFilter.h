@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
   };
 
 } // namespace Model

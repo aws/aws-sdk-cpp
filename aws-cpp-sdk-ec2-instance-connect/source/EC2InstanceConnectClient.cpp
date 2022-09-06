@@ -78,7 +78,7 @@ EC2InstanceConnectClient::~EC2InstanceConnectClient()
 
 void EC2InstanceConnectClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EC2 Instance Connect");
+  AWSClient::SetServiceClientName("EC2 Instance Connect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

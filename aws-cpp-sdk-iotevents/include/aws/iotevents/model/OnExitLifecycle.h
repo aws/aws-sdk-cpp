@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

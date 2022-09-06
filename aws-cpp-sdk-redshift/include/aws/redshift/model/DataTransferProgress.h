@@ -204,22 +204,22 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     double m_currentRateInMegaBytesPerSecond;
-    bool m_currentRateInMegaBytesPerSecondHasBeenSet;
+    bool m_currentRateInMegaBytesPerSecondHasBeenSet = false;
 
     long long m_totalDataInMegaBytes;
-    bool m_totalDataInMegaBytesHasBeenSet;
+    bool m_totalDataInMegaBytesHasBeenSet = false;
 
     long long m_dataTransferredInMegaBytes;
-    bool m_dataTransferredInMegaBytesHasBeenSet;
+    bool m_dataTransferredInMegaBytesHasBeenSet = false;
 
     long long m_estimatedTimeToCompletionInSeconds;
-    bool m_estimatedTimeToCompletionInSecondsHasBeenSet;
+    bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
 
     long long m_elapsedTimeInSeconds;
-    bool m_elapsedTimeInSecondsHasBeenSet;
+    bool m_elapsedTimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

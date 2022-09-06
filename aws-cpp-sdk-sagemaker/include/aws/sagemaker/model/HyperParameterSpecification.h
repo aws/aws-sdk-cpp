@@ -293,25 +293,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ParameterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ParameterRange m_range;
-    bool m_rangeHasBeenSet;
+    bool m_rangeHasBeenSet = false;
 
     bool m_isTunable;
-    bool m_isTunableHasBeenSet;
+    bool m_isTunableHasBeenSet = false;
 
     bool m_isRequired;
-    bool m_isRequiredHasBeenSet;
+    bool m_isRequiredHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

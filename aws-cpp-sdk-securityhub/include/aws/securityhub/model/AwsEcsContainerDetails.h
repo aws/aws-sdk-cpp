@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::Vector<AwsMountPoint> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
   };
 
 } // namespace Model

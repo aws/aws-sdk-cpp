@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
   };
 
 } // namespace Model

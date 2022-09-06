@@ -123,10 +123,10 @@ namespace Model
   private:
 
     ReusableDelegationSetLimitType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_delegationSetId;
-    bool m_delegationSetIdHasBeenSet;
+    bool m_delegationSetIdHasBeenSet = false;
   };
 
 } // namespace Model

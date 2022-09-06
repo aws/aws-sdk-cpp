@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<ResourcePathComponent> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
   };
 
 } // namespace Model

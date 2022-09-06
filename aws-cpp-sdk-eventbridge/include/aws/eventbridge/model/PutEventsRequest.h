@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::Vector<PutEventsRequestEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
   };
 
 } // namespace Model

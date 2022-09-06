@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::Vector<ObjectAttributeRange> m_rangesOnIndexedValues;
-    bool m_rangesOnIndexedValuesHasBeenSet;
+    bool m_rangesOnIndexedValuesHasBeenSet = false;
 
     ObjectReference m_indexReference;
-    bool m_indexReferenceHasBeenSet;
+    bool m_indexReferenceHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ConsistencyLevel m_consistencyLevel;
-    bool m_consistencyLevelHasBeenSet;
+    bool m_consistencyLevelHasBeenSet = false;
   };
 
 } // namespace Model

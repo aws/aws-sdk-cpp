@@ -894,46 +894,46 @@ namespace Model
   private:
 
     SharePointVersion m_sharePointVersion;
-    bool m_sharePointVersionHasBeenSet;
+    bool m_sharePointVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_urls;
-    bool m_urlsHasBeenSet;
+    bool m_urlsHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     bool m_disableLocalGroups;
-    bool m_disableLocalGroupsHasBeenSet;
+    bool m_disableLocalGroupsHasBeenSet = false;
 
     S3Path m_sslCertificateS3Path;
-    bool m_sslCertificateS3PathHasBeenSet;
+    bool m_sslCertificateS3PathHasBeenSet = false;
 
     SharePointOnlineAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     ProxyConfiguration m_proxyConfiguration;
-    bool m_proxyConfigurationHasBeenSet;
+    bool m_proxyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

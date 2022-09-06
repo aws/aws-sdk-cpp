@@ -522,19 +522,19 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_typeVersionId;
-    bool m_typeVersionIdHasBeenSet;
+    bool m_typeVersionIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_launchConfigurationTemplateID;
-    bool m_launchConfigurationTemplateIDHasBeenSet;
+    bool m_launchConfigurationTemplateIDHasBeenSet = false;
   };
 
 } // namespace Model

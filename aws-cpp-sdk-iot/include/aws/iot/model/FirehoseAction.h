@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Aws::String m_separator;
-    bool m_separatorHasBeenSet;
+    bool m_separatorHasBeenSet = false;
 
     bool m_batchMode;
-    bool m_batchModeHasBeenSet;
+    bool m_batchModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_subnetIdentifier;
-    bool m_subnetIdentifierHasBeenSet;
+    bool m_subnetIdentifierHasBeenSet = false;
 
     AvailabilityZone m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
 
     SubnetOutpost m_subnetOutpost;
-    bool m_subnetOutpostHasBeenSet;
+    bool m_subnetOutpostHasBeenSet = false;
   };
 
 } // namespace Model

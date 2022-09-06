@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Logger> m_loggers;
-    bool m_loggersHasBeenSet;
+    bool m_loggersHasBeenSet = false;
   };
 
 } // namespace Model

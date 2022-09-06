@@ -99,7 +99,7 @@ DetectiveClient::~DetectiveClient()
 
 void DetectiveClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Detective");
+  AWSClient::SetServiceClientName("Detective");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

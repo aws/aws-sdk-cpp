@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Aws::Vector<unsigned char> m_audioChunk;
-    bool m_audioChunkHasBeenSet;
+    bool m_audioChunkHasBeenSet = false;
   };
 
 } // namespace Model

@@ -361,25 +361,25 @@ namespace Model
   private:
 
     Aws::String m_configurationName;
-    bool m_configurationNameHasBeenSet;
+    bool m_configurationNameHasBeenSet = false;
 
     TraceContent m_traceContent;
-    bool m_traceContentHasBeenSet;
+    bool m_traceContentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_wirelessDevicesToAdd;
-    bool m_wirelessDevicesToAddHasBeenSet;
+    bool m_wirelessDevicesToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_wirelessDevicesToRemove;
-    bool m_wirelessDevicesToRemoveHasBeenSet;
+    bool m_wirelessDevicesToRemoveHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_wirelessGatewaysToAdd;
-    bool m_wirelessGatewaysToAddHasBeenSet;
+    bool m_wirelessGatewaysToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_wirelessGatewaysToRemove;
-    bool m_wirelessGatewaysToRemoveHasBeenSet;
+    bool m_wirelessGatewaysToRemoveHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

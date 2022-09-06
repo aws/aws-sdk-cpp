@@ -155,13 +155,13 @@ namespace Model
   private:
 
     ErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<DetailedError> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

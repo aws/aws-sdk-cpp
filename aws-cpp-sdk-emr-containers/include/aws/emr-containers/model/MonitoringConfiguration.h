@@ -134,13 +134,13 @@ namespace Model
   private:
 
     PersistentAppUI m_persistentAppUI;
-    bool m_persistentAppUIHasBeenSet;
+    bool m_persistentAppUIHasBeenSet = false;
 
     CloudWatchMonitoringConfiguration m_cloudWatchMonitoringConfiguration;
-    bool m_cloudWatchMonitoringConfigurationHasBeenSet;
+    bool m_cloudWatchMonitoringConfigurationHasBeenSet = false;
 
     S3MonitoringConfiguration m_s3MonitoringConfiguration;
-    bool m_s3MonitoringConfigurationHasBeenSet;
+    bool m_s3MonitoringConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

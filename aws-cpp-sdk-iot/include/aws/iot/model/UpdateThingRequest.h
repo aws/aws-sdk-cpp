@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     AttributePayload m_attributePayload;
-    bool m_attributePayloadHasBeenSet;
+    bool m_attributePayloadHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
 
     bool m_removeThingType;
-    bool m_removeThingTypeHasBeenSet;
+    bool m_removeThingTypeHasBeenSet = false;
   };
 
 } // namespace Model

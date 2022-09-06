@@ -170,16 +170,16 @@ namespace Model
   private:
 
     HistoricalMetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Threshold m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     Statistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     Unit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

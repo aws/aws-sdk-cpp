@@ -426,31 +426,31 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_deviceParameters;
-    bool m_deviceParametersHasBeenSet;
+    bool m_deviceParametersHasBeenSet = false;
 
     Aws::String m_jobToken;
-    bool m_jobTokenHasBeenSet;
+    bool m_jobTokenHasBeenSet = false;
 
     Aws::String m_outputS3Bucket;
-    bool m_outputS3BucketHasBeenSet;
+    bool m_outputS3BucketHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     long long m_shots;
-    bool m_shotsHasBeenSet;
+    bool m_shotsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

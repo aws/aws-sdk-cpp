@@ -146,16 +146,16 @@ namespace Model
   private:
 
     WeekDay m_startWeekDay;
-    bool m_startWeekDayHasBeenSet;
+    bool m_startWeekDayHasBeenSet = false;
 
     int m_startHour;
-    bool m_startHourHasBeenSet;
+    bool m_startHourHasBeenSet = false;
 
     WeekDay m_endWeekDay;
-    bool m_endWeekDayHasBeenSet;
+    bool m_endWeekDayHasBeenSet = false;
 
     int m_endHour;
-    bool m_endHourHasBeenSet;
+    bool m_endHourHasBeenSet = false;
   };
 
 } // namespace Model

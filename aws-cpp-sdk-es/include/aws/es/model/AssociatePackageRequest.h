@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

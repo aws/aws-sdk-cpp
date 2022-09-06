@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<AddonVersionInfo> m_addonVersions;
-    bool m_addonVersionsHasBeenSet;
+    bool m_addonVersionsHasBeenSet = false;
   };
 
 } // namespace Model

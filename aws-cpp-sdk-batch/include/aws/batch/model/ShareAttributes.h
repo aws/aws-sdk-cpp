@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::String m_shareIdentifier;
-    bool m_shareIdentifierHasBeenSet;
+    bool m_shareIdentifierHasBeenSet = false;
 
     double m_weightFactor;
-    bool m_weightFactorHasBeenSet;
+    bool m_weightFactorHasBeenSet = false;
   };
 
 } // namespace Model

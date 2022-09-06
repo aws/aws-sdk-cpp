@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_packageNames;
-    bool m_packageNamesHasBeenSet;
+    bool m_packageNamesHasBeenSet = false;
 
     PackageSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

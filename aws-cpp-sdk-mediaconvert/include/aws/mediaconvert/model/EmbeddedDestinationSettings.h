@@ -133,10 +133,10 @@ namespace Model
   private:
 
     int m_destination608ChannelNumber;
-    bool m_destination608ChannelNumberHasBeenSet;
+    bool m_destination608ChannelNumberHasBeenSet = false;
 
     int m_destination708ServiceNumber;
-    bool m_destination708ServiceNumberHasBeenSet;
+    bool m_destination708ServiceNumberHasBeenSet = false;
   };
 
 } // namespace Model

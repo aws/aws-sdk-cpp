@@ -301,13 +301,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_customerGatewayIds;
-    bool m_customerGatewayIdsHasBeenSet;
+    bool m_customerGatewayIdsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

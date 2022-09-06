@@ -114,10 +114,10 @@ namespace Model
   private:
 
     bool m_badgeEnabled;
-    bool m_badgeEnabledHasBeenSet;
+    bool m_badgeEnabledHasBeenSet = false;
 
     Aws::String m_badgeRequestUrl;
-    bool m_badgeRequestUrlHasBeenSet;
+    bool m_badgeRequestUrlHasBeenSet = false;
   };
 
 } // namespace Model

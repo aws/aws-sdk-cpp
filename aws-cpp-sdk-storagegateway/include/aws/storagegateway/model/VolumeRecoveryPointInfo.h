@@ -172,16 +172,16 @@ namespace Model
   private:
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
 
     long long m_volumeSizeInBytes;
-    bool m_volumeSizeInBytesHasBeenSet;
+    bool m_volumeSizeInBytesHasBeenSet = false;
 
     long long m_volumeUsageInBytes;
-    bool m_volumeUsageInBytesHasBeenSet;
+    bool m_volumeUsageInBytesHasBeenSet = false;
 
     Aws::String m_volumeRecoveryPointTime;
-    bool m_volumeRecoveryPointTimeHasBeenSet;
+    bool m_volumeRecoveryPointTimeHasBeenSet = false;
   };
 
 } // namespace Model

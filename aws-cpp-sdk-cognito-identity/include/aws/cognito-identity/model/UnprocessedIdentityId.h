@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

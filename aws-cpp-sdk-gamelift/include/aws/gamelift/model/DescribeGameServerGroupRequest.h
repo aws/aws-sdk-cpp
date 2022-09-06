@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

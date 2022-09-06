@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartDestinationId;
-    bool m_exclusiveStartDestinationIdHasBeenSet;
+    bool m_exclusiveStartDestinationIdHasBeenSet = false;
   };
 
 } // namespace Model

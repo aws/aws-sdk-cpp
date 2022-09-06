@@ -161,16 +161,16 @@ namespace Model
   private:
 
     int m_bufferMsec;
-    bool m_bufferMsecHasBeenSet;
+    bool m_bufferMsecHasBeenSet = false;
 
     UdpContainerSettings m_containerSettings;
-    bool m_containerSettingsHasBeenSet;
+    bool m_containerSettingsHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     FecOutputSettings m_fecOutputSettings;
-    bool m_fecOutputSettingsHasBeenSet;
+    bool m_fecOutputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

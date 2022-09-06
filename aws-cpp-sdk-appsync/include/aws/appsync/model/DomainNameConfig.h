@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_appsyncDomainName;
-    bool m_appsyncDomainNameHasBeenSet;
+    bool m_appsyncDomainNameHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

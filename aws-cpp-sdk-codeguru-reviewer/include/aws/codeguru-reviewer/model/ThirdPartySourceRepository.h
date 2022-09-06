@@ -227,13 +227,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -196,19 +196,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     SAMLIdp m_idp;
-    bool m_idpHasBeenSet;
+    bool m_idpHasBeenSet = false;
 
     Aws::String m_subjectKey;
-    bool m_subjectKeyHasBeenSet;
+    bool m_subjectKeyHasBeenSet = false;
 
     Aws::String m_rolesKey;
-    bool m_rolesKeyHasBeenSet;
+    bool m_rolesKeyHasBeenSet = false;
 
     int m_sessionTimeoutMinutes;
-    bool m_sessionTimeoutMinutesHasBeenSet;
+    bool m_sessionTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

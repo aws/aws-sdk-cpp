@@ -58,7 +58,7 @@ namespace Model
   private:
 
     Server m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
   };
 
 } // namespace Model

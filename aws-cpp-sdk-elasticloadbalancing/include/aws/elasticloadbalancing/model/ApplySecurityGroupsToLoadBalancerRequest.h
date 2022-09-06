@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

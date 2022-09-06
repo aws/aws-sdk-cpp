@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_hierarchyId;
-    bool m_hierarchyIdHasBeenSet;
+    bool m_hierarchyIdHasBeenSet = false;
 
     Aws::String m_childAssetId;
-    bool m_childAssetIdHasBeenSet;
+    bool m_childAssetIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

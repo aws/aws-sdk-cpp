@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_versioningSupported;
-    bool m_versioningSupportedHasBeenSet;
+    bool m_versioningSupportedHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

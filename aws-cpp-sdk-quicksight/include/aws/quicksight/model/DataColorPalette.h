@@ -193,13 +193,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_colors;
-    bool m_colorsHasBeenSet;
+    bool m_colorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_minMaxGradient;
-    bool m_minMaxGradientHasBeenSet;
+    bool m_minMaxGradientHasBeenSet = false;
 
     Aws::String m_emptyFillColor;
-    bool m_emptyFillColorHasBeenSet;
+    bool m_emptyFillColorHasBeenSet = false;
   };
 
 } // namespace Model

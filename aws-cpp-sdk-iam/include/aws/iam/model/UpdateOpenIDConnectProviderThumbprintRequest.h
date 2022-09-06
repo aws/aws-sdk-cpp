@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_openIDConnectProviderArn;
-    bool m_openIDConnectProviderArnHasBeenSet;
+    bool m_openIDConnectProviderArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_thumbprintList;
-    bool m_thumbprintListHasBeenSet;
+    bool m_thumbprintListHasBeenSet = false;
   };
 
 } // namespace Model

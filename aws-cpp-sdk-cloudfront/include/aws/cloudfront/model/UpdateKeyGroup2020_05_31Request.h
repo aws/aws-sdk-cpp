@@ -158,13 +158,13 @@ namespace Model
   private:
 
     KeyGroupConfig m_keyGroupConfig;
-    bool m_keyGroupConfigHasBeenSet;
+    bool m_keyGroupConfigHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
   };
 
 } // namespace Model

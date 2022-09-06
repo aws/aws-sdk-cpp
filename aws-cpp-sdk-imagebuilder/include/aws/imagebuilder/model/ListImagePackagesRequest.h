@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_imageBuildVersionArn;
-    bool m_imageBuildVersionArnHasBeenSet;
+    bool m_imageBuildVersionArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

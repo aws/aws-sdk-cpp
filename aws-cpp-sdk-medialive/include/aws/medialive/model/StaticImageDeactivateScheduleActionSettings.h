@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_fadeOut;
-    bool m_fadeOutHasBeenSet;
+    bool m_fadeOutHasBeenSet = false;
 
     int m_layer;
-    bool m_layerHasBeenSet;
+    bool m_layerHasBeenSet = false;
   };
 
 } // namespace Model

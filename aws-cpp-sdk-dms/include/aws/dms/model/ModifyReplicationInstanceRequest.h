@@ -602,37 +602,37 @@ namespace Model
   private:
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_replicationInstanceClass;
-    bool m_replicationInstanceClassHasBeenSet;
+    bool m_replicationInstanceClassHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_allowMajorVersionUpgrade;
-    bool m_allowMajorVersionUpgradeHasBeenSet;
+    bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_replicationInstanceIdentifier;
-    bool m_replicationInstanceIdentifierHasBeenSet;
+    bool m_replicationInstanceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

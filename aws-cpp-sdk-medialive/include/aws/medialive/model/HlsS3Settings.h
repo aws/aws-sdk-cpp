@@ -70,7 +70,7 @@ namespace Model
   private:
 
     S3CannedAcl m_cannedAcl;
-    bool m_cannedAclHasBeenSet;
+    bool m_cannedAclHasBeenSet = false;
   };
 
 } // namespace Model

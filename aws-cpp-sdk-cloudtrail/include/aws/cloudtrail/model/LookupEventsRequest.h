@@ -325,22 +325,22 @@ namespace Model
   private:
 
     Aws::Vector<LookupAttribute> m_lookupAttributes;
-    bool m_lookupAttributesHasBeenSet;
+    bool m_lookupAttributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     EventCategory m_eventCategory;
-    bool m_eventCategoryHasBeenSet;
+    bool m_eventCategoryHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

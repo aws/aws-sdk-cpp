@@ -81,10 +81,10 @@ namespace Model
   private:
 
     long long m_memoryStoreRetentionPeriodInHours;
-    bool m_memoryStoreRetentionPeriodInHoursHasBeenSet;
+    bool m_memoryStoreRetentionPeriodInHoursHasBeenSet = false;
 
     long long m_magneticStoreRetentionPeriodInDays;
-    bool m_magneticStoreRetentionPeriodInDaysHasBeenSet;
+    bool m_magneticStoreRetentionPeriodInDaysHasBeenSet = false;
   };
 
 } // namespace Model

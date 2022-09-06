@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_workteamName;
-    bool m_workteamNameHasBeenSet;
+    bool m_workteamNameHasBeenSet = false;
   };
 
 } // namespace Model

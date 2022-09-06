@@ -164,16 +164,16 @@ namespace Model
   private:
 
     OverrideButtonConfiguration m_android;
-    bool m_androidHasBeenSet;
+    bool m_androidHasBeenSet = false;
 
     DefaultButtonConfiguration m_defaultConfig;
-    bool m_defaultConfigHasBeenSet;
+    bool m_defaultConfigHasBeenSet = false;
 
     OverrideButtonConfiguration m_iOS;
-    bool m_iOSHasBeenSet;
+    bool m_iOSHasBeenSet = false;
 
     OverrideButtonConfiguration m_web;
-    bool m_webHasBeenSet;
+    bool m_webHasBeenSet = false;
   };
 
 } // namespace Model

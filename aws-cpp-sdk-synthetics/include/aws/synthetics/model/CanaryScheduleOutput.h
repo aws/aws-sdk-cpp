@@ -207,10 +207,10 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     long long m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

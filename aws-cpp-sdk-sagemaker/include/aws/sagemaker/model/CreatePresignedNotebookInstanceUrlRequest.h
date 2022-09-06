@@ -98,10 +98,10 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceName;
-    bool m_notebookInstanceNameHasBeenSet;
+    bool m_notebookInstanceNameHasBeenSet = false;
 
     int m_sessionExpirationDurationInSeconds;
-    bool m_sessionExpirationDurationInSecondsHasBeenSet;
+    bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

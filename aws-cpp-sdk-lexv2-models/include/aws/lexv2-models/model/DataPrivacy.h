@@ -149,7 +149,7 @@ namespace Model
   private:
 
     bool m_childDirected;
-    bool m_childDirectedHasBeenSet;
+    bool m_childDirectedHasBeenSet = false;
   };
 
 } // namespace Model

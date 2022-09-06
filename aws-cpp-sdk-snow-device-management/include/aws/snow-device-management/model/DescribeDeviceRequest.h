@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_managedDeviceId;
-    bool m_managedDeviceIdHasBeenSet;
+    bool m_managedDeviceIdHasBeenSet = false;
   };
 
 } // namespace Model

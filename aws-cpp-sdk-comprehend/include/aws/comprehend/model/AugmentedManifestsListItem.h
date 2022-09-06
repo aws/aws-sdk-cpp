@@ -426,22 +426,22 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Split m_split;
-    bool m_splitHasBeenSet;
+    bool m_splitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
 
     Aws::String m_annotationDataS3Uri;
-    bool m_annotationDataS3UriHasBeenSet;
+    bool m_annotationDataS3UriHasBeenSet = false;
 
     Aws::String m_sourceDocumentsS3Uri;
-    bool m_sourceDocumentsS3UriHasBeenSet;
+    bool m_sourceDocumentsS3UriHasBeenSet = false;
 
     AugmentedManifestsDocumentTypeFormat m_documentType;
-    bool m_documentTypeHasBeenSet;
+    bool m_documentTypeHasBeenSet = false;
   };
 
 } // namespace Model

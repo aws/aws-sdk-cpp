@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
 
     RoutingControlState m_routingControlState;
-    bool m_routingControlStateHasBeenSet;
+    bool m_routingControlStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -184,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

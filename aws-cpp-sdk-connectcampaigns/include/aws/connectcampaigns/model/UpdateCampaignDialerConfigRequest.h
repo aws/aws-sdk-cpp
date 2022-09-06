@@ -82,10 +82,10 @@ namespace Model
   private:
 
     DialerConfig m_dialerConfig;
-    bool m_dialerConfigHasBeenSet;
+    bool m_dialerConfigHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

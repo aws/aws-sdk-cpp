@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

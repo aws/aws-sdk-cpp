@@ -282,22 +282,22 @@ namespace Model
   private:
 
     Aws::String m_outputId;
-    bool m_outputIdHasBeenSet;
+    bool m_outputIdHasBeenSet = false;
 
     Aws::String m_nameUpdate;
-    bool m_nameUpdateHasBeenSet;
+    bool m_nameUpdateHasBeenSet = false;
 
     KinesisStreamsOutputUpdate m_kinesisStreamsOutputUpdate;
-    bool m_kinesisStreamsOutputUpdateHasBeenSet;
+    bool m_kinesisStreamsOutputUpdateHasBeenSet = false;
 
     KinesisFirehoseOutputUpdate m_kinesisFirehoseOutputUpdate;
-    bool m_kinesisFirehoseOutputUpdateHasBeenSet;
+    bool m_kinesisFirehoseOutputUpdateHasBeenSet = false;
 
     LambdaOutputUpdate m_lambdaOutputUpdate;
-    bool m_lambdaOutputUpdateHasBeenSet;
+    bool m_lambdaOutputUpdateHasBeenSet = false;
 
     DestinationSchema m_destinationSchemaUpdate;
-    bool m_destinationSchemaUpdateHasBeenSet;
+    bool m_destinationSchemaUpdateHasBeenSet = false;
   };
 
 } // namespace Model

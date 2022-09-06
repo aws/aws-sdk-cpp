@@ -127,10 +127,10 @@ namespace Model
   private:
 
     PermissionConfiguration m_permissionConfiguration;
-    bool m_permissionConfigurationHasBeenSet;
+    bool m_permissionConfigurationHasBeenSet = false;
 
     Aws::String m_effectivePermission;
-    bool m_effectivePermissionHasBeenSet;
+    bool m_effectivePermissionHasBeenSet = false;
   };
 
 } // namespace Model

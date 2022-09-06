@@ -550,16 +550,16 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientIDList;
-    bool m_clientIDListHasBeenSet;
+    bool m_clientIDListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_thumbprintList;
-    bool m_thumbprintListHasBeenSet;
+    bool m_thumbprintListHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

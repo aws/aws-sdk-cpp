@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_timestampFormat;
-    bool m_timestampFormatHasBeenSet;
+    bool m_timestampFormatHasBeenSet = false;
   };
 
 } // namespace Model

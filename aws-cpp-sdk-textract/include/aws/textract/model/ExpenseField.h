@@ -167,16 +167,16 @@ namespace Model
   private:
 
     ExpenseType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ExpenseDetection m_labelDetection;
-    bool m_labelDetectionHasBeenSet;
+    bool m_labelDetectionHasBeenSet = false;
 
     ExpenseDetection m_valueDetection;
-    bool m_valueDetectionHasBeenSet;
+    bool m_valueDetectionHasBeenSet = false;
 
     int m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
   };
 
 } // namespace Model

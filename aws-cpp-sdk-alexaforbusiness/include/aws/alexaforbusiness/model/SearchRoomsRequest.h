@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Sort> m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -746,40 +746,40 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
   };
 
 } // namespace Model

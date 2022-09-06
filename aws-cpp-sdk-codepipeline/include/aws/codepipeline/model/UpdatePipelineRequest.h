@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PipelineDeclaration m_pipeline;
-    bool m_pipelineHasBeenSet;
+    bool m_pipelineHasBeenSet = false;
   };
 
 } // namespace Model

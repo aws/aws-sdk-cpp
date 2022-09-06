@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_adminPrivacy;
-    bool m_adminPrivacyHasBeenSet;
+    bool m_adminPrivacyHasBeenSet = false;
 
     bool m_registrantPrivacy;
-    bool m_registrantPrivacyHasBeenSet;
+    bool m_registrantPrivacyHasBeenSet = false;
 
     bool m_techPrivacy;
-    bool m_techPrivacyHasBeenSet;
+    bool m_techPrivacyHasBeenSet = false;
   };
 
 } // namespace Model

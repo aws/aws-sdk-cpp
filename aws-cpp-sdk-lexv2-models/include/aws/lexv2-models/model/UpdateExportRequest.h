@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_exportId;
-    bool m_exportIdHasBeenSet;
+    bool m_exportIdHasBeenSet = false;
 
     Aws::String m_filePassword;
-    bool m_filePasswordHasBeenSet;
+    bool m_filePasswordHasBeenSet = false;
   };
 
 } // namespace Model

@@ -52,7 +52,7 @@ namespace Model
   private:
 
     double m_boxUsage;
-    bool m_boxUsageHasBeenSet;
+    bool m_boxUsageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -292,22 +292,22 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,7 +80,7 @@ IoTJobsDataPlaneClient::~IoTJobsDataPlaneClient()
 
 void IoTJobsDataPlaneClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT Jobs Data Plane");
+  AWSClient::SetServiceClientName("IoT Jobs Data Plane");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

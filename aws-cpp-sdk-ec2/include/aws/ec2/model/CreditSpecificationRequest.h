@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_cpuCredits;
-    bool m_cpuCreditsHasBeenSet;
+    bool m_cpuCreditsHasBeenSet = false;
   };
 
 } // namespace Model

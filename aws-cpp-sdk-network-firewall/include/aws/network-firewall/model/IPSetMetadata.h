@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_resolvedCIDRCount;
-    bool m_resolvedCIDRCountHasBeenSet;
+    bool m_resolvedCIDRCountHasBeenSet = false;
   };
 
 } // namespace Model

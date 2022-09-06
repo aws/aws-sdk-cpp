@@ -77,7 +77,7 @@ namespace Model
   private:
 
     VirtualServiceProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

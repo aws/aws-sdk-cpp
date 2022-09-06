@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_actionArn;
-    bool m_actionArnHasBeenSet;
+    bool m_actionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

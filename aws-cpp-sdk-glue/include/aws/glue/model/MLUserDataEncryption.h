@@ -131,10 +131,10 @@ namespace Model
   private:
 
     MLUserDataEncryptionModeString m_mlUserDataEncryptionMode;
-    bool m_mlUserDataEncryptionModeHasBeenSet;
+    bool m_mlUserDataEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     LoRaWANGatewayVersion m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
   };
 
 } // namespace Model

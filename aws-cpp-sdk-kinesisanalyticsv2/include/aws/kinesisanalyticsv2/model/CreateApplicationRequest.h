@@ -422,28 +422,28 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_applicationDescription;
-    bool m_applicationDescriptionHasBeenSet;
+    bool m_applicationDescriptionHasBeenSet = false;
 
     RuntimeEnvironment m_runtimeEnvironment;
-    bool m_runtimeEnvironmentHasBeenSet;
+    bool m_runtimeEnvironmentHasBeenSet = false;
 
     Aws::String m_serviceExecutionRole;
-    bool m_serviceExecutionRoleHasBeenSet;
+    bool m_serviceExecutionRoleHasBeenSet = false;
 
     ApplicationConfiguration m_applicationConfiguration;
-    bool m_applicationConfigurationHasBeenSet;
+    bool m_applicationConfigurationHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOption> m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ApplicationMode m_applicationMode;
-    bool m_applicationModeHasBeenSet;
+    bool m_applicationModeHasBeenSet = false;
   };
 
 } // namespace Model

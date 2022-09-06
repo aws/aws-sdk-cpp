@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::String m_ipv4Prefix;
-    bool m_ipv4PrefixHasBeenSet;
+    bool m_ipv4PrefixHasBeenSet = false;
   };
 
 } // namespace Model

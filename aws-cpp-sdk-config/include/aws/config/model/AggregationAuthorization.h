@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_aggregationAuthorizationArn;
-    bool m_aggregationAuthorizationArnHasBeenSet;
+    bool m_aggregationAuthorizationArnHasBeenSet = false;
 
     Aws::String m_authorizedAccountId;
-    bool m_authorizedAccountIdHasBeenSet;
+    bool m_authorizedAccountIdHasBeenSet = false;
 
     Aws::String m_authorizedAwsRegion;
-    bool m_authorizedAwsRegionHasBeenSet;
+    bool m_authorizedAwsRegionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

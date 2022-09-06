@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::Vector<ContactProtocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
   };
 
 } // namespace Model

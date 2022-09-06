@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AttributeKey m_attributeKey;
-    bool m_attributeKeyHasBeenSet;
+    bool m_attributeKeyHasBeenSet = false;
 
     LinkAttributeAction m_attributeAction;
-    bool m_attributeActionHasBeenSet;
+    bool m_attributeActionHasBeenSet = false;
   };
 
 } // namespace Model

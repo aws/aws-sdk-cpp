@@ -209,19 +209,19 @@ namespace Model
   private:
 
     City m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Country m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     GeoLocation m_geoLocation;
-    bool m_geoLocationHasBeenSet;
+    bool m_geoLocationHasBeenSet = false;
 
     Aws::String m_ipAddressV4;
-    bool m_ipAddressV4HasBeenSet;
+    bool m_ipAddressV4HasBeenSet = false;
 
     Organization m_organization;
-    bool m_organizationHasBeenSet;
+    bool m_organizationHasBeenSet = false;
   };
 
 } // namespace Model

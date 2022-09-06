@@ -272,22 +272,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet;
+    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
     Aws::Vector<FleetLaunchTemplateConfigRequest> m_launchTemplateConfigs;
-    bool m_launchTemplateConfigsHasBeenSet;
+    bool m_launchTemplateConfigsHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     TargetCapacitySpecificationRequest m_targetCapacitySpecification;
-    bool m_targetCapacitySpecificationHasBeenSet;
+    bool m_targetCapacitySpecificationHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

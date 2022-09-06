@@ -120,13 +120,13 @@ namespace Model
   private:
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     RequiredFlag m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

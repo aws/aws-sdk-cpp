@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_windowExecutionId;
-    bool m_windowExecutionIdHasBeenSet;
+    bool m_windowExecutionIdHasBeenSet = false;
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
   };
 
 } // namespace Model

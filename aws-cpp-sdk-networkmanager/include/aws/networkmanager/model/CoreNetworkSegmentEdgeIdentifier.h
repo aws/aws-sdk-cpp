@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_segmentName;
-    bool m_segmentNameHasBeenSet;
+    bool m_segmentNameHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
   };
 
 } // namespace Model

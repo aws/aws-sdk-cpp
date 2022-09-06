@@ -254,19 +254,19 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MetricsConfiguration m_metricsConfiguration;
-    bool m_metricsConfigurationHasBeenSet;
+    bool m_metricsConfigurationHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

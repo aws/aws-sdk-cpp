@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     StageExecution m_inboundExecution;
-    bool m_inboundExecutionHasBeenSet;
+    bool m_inboundExecutionHasBeenSet = false;
 
     TransitionState m_inboundTransitionState;
-    bool m_inboundTransitionStateHasBeenSet;
+    bool m_inboundTransitionStateHasBeenSet = false;
 
     Aws::Vector<ActionState> m_actionStates;
-    bool m_actionStatesHasBeenSet;
+    bool m_actionStatesHasBeenSet = false;
 
     StageExecution m_latestExecution;
-    bool m_latestExecutionHasBeenSet;
+    bool m_latestExecutionHasBeenSet = false;
   };
 
 } // namespace Model

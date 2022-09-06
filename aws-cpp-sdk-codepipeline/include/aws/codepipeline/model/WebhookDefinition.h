@@ -360,22 +360,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_targetPipeline;
-    bool m_targetPipelineHasBeenSet;
+    bool m_targetPipelineHasBeenSet = false;
 
     Aws::String m_targetAction;
-    bool m_targetActionHasBeenSet;
+    bool m_targetActionHasBeenSet = false;
 
     Aws::Vector<WebhookFilterRule> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     WebhookAuthenticationType m_authentication;
-    bool m_authenticationHasBeenSet;
+    bool m_authenticationHasBeenSet = false;
 
     WebhookAuthConfiguration m_authenticationConfiguration;
-    bool m_authenticationConfigurationHasBeenSet;
+    bool m_authenticationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

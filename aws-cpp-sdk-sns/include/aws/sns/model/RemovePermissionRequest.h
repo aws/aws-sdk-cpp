@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -53,7 +53,7 @@ namespace Model
   private:
 
     DetectorModelDefinition m_detectorModelDefinition;
-    bool m_detectorModelDefinitionHasBeenSet;
+    bool m_detectorModelDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

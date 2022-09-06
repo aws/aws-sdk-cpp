@@ -577,31 +577,31 @@ namespace Model
   private:
 
     Urls m_urls;
-    bool m_urlsHasBeenSet;
+    bool m_urlsHasBeenSet = false;
 
     int m_crawlDepth;
-    bool m_crawlDepthHasBeenSet;
+    bool m_crawlDepthHasBeenSet = false;
 
     int m_maxLinksPerPage;
-    bool m_maxLinksPerPageHasBeenSet;
+    bool m_maxLinksPerPageHasBeenSet = false;
 
     double m_maxContentSizePerPageInMegaBytes;
-    bool m_maxContentSizePerPageInMegaBytesHasBeenSet;
+    bool m_maxContentSizePerPageInMegaBytesHasBeenSet = false;
 
     int m_maxUrlsPerMinuteCrawlRate;
-    bool m_maxUrlsPerMinuteCrawlRateHasBeenSet;
+    bool m_maxUrlsPerMinuteCrawlRateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_urlInclusionPatterns;
-    bool m_urlInclusionPatternsHasBeenSet;
+    bool m_urlInclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_urlExclusionPatterns;
-    bool m_urlExclusionPatternsHasBeenSet;
+    bool m_urlExclusionPatternsHasBeenSet = false;
 
     ProxyConfiguration m_proxyConfiguration;
-    bool m_proxyConfigurationHasBeenSet;
+    bool m_proxyConfigurationHasBeenSet = false;
 
     AuthenticationConfiguration m_authenticationConfiguration;
-    bool m_authenticationConfigurationHasBeenSet;
+    bool m_authenticationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

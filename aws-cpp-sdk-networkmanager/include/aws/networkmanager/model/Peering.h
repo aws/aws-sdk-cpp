@@ -424,34 +424,34 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_coreNetworkArn;
-    bool m_coreNetworkArnHasBeenSet;
+    bool m_coreNetworkArnHasBeenSet = false;
 
     Aws::String m_peeringId;
-    bool m_peeringIdHasBeenSet;
+    bool m_peeringIdHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     PeeringType m_peeringType;
-    bool m_peeringTypeHasBeenSet;
+    bool m_peeringTypeHasBeenSet = false;
 
     PeeringState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

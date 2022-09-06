@@ -246,16 +246,16 @@ namespace Model
   private:
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     bool m_disableRollback;
-    bool m_disableRollbackHasBeenSet;
+    bool m_disableRollbackHasBeenSet = false;
   };
 
 } // namespace Model

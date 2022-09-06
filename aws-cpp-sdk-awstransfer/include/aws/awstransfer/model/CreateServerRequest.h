@@ -1513,49 +1513,49 @@ namespace Model
   private:
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Domain m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     EndpointDetails m_endpointDetails;
-    bool m_endpointDetailsHasBeenSet;
+    bool m_endpointDetailsHasBeenSet = false;
 
     EndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_hostKey;
-    bool m_hostKeyHasBeenSet;
+    bool m_hostKeyHasBeenSet = false;
 
     IdentityProviderDetails m_identityProviderDetails;
-    bool m_identityProviderDetailsHasBeenSet;
+    bool m_identityProviderDetailsHasBeenSet = false;
 
     IdentityProviderType m_identityProviderType;
-    bool m_identityProviderTypeHasBeenSet;
+    bool m_identityProviderTypeHasBeenSet = false;
 
     Aws::String m_loggingRole;
-    bool m_loggingRoleHasBeenSet;
+    bool m_loggingRoleHasBeenSet = false;
 
     Aws::String m_postAuthenticationLoginBanner;
-    bool m_postAuthenticationLoginBannerHasBeenSet;
+    bool m_postAuthenticationLoginBannerHasBeenSet = false;
 
     Aws::String m_preAuthenticationLoginBanner;
-    bool m_preAuthenticationLoginBannerHasBeenSet;
+    bool m_preAuthenticationLoginBannerHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     ProtocolDetails m_protocolDetails;
-    bool m_protocolDetailsHasBeenSet;
+    bool m_protocolDetailsHasBeenSet = false;
 
     Aws::String m_securityPolicyName;
-    bool m_securityPolicyNameHasBeenSet;
+    bool m_securityPolicyNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WorkflowDetails m_workflowDetails;
-    bool m_workflowDetailsHasBeenSet;
+    bool m_workflowDetailsHasBeenSet = false;
   };
 
 } // namespace Model

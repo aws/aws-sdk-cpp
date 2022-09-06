@@ -298,28 +298,28 @@ namespace Model
   private:
 
     double m_accuracy;
-    bool m_accuracyHasBeenSet;
+    bool m_accuracyHasBeenSet = false;
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_recall;
-    bool m_recallHasBeenSet;
+    bool m_recallHasBeenSet = false;
 
     double m_f1Score;
-    bool m_f1ScoreHasBeenSet;
+    bool m_f1ScoreHasBeenSet = false;
 
     double m_microPrecision;
-    bool m_microPrecisionHasBeenSet;
+    bool m_microPrecisionHasBeenSet = false;
 
     double m_microRecall;
-    bool m_microRecallHasBeenSet;
+    bool m_microRecallHasBeenSet = false;
 
     double m_microF1Score;
-    bool m_microF1ScoreHasBeenSet;
+    bool m_microF1ScoreHasBeenSet = false;
 
     double m_hammingLoss;
-    bool m_hammingLossHasBeenSet;
+    bool m_hammingLossHasBeenSet = false;
   };
 
 } // namespace Model

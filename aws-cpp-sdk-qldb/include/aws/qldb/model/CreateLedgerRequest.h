@@ -605,19 +605,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     PermissionsMode m_permissionsMode;
-    bool m_permissionsModeHasBeenSet;
+    bool m_permissionsModeHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
   };
 
 } // namespace Model

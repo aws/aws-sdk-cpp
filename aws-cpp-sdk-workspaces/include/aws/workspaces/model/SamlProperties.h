@@ -279,13 +279,13 @@ namespace Model
   private:
 
     SamlStatusEnum m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_userAccessUrl;
-    bool m_userAccessUrlHasBeenSet;
+    bool m_userAccessUrlHasBeenSet = false;
 
     Aws::String m_relayStateParameterName;
-    bool m_relayStateParameterNameHasBeenSet;
+    bool m_relayStateParameterNameHasBeenSet = false;
   };
 
 } // namespace Model

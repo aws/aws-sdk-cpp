@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     ExperimentReportName m_reportName;
-    bool m_reportNameHasBeenSet;
+    bool m_reportNameHasBeenSet = false;
 
     Aws::String m_treatmentName;
-    bool m_treatmentNameHasBeenSet;
+    bool m_treatmentNameHasBeenSet = false;
   };
 
 } // namespace Model

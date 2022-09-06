@@ -611,25 +611,25 @@ namespace Model
   private:
 
     Aws::Vector<DataLakePrincipal> m_dataLakeAdmins;
-    bool m_dataLakeAdminsHasBeenSet;
+    bool m_dataLakeAdminsHasBeenSet = false;
 
     Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
-    bool m_createDatabaseDefaultPermissionsHasBeenSet;
+    bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
 
     Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
-    bool m_createTableDefaultPermissionsHasBeenSet;
+    bool m_createTableDefaultPermissionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_trustedResourceOwners;
-    bool m_trustedResourceOwnersHasBeenSet;
+    bool m_trustedResourceOwnersHasBeenSet = false;
 
     bool m_allowExternalDataFiltering;
-    bool m_allowExternalDataFilteringHasBeenSet;
+    bool m_allowExternalDataFilteringHasBeenSet = false;
 
     Aws::Vector<DataLakePrincipal> m_externalDataFilteringAllowList;
-    bool m_externalDataFilteringAllowListHasBeenSet;
+    bool m_externalDataFilteringAllowListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedSessionTagValueList;
-    bool m_authorizedSessionTagValueListHasBeenSet;
+    bool m_authorizedSessionTagValueListHasBeenSet = false;
   };
 
 } // namespace Model

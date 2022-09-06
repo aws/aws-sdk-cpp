@@ -595,34 +595,34 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceName;
-    bool m_notebookInstanceNameHasBeenSet;
+    bool m_notebookInstanceNameHasBeenSet = false;
 
     Aws::String m_notebookInstanceArn;
-    bool m_notebookInstanceArnHasBeenSet;
+    bool m_notebookInstanceArnHasBeenSet = false;
 
     NotebookInstanceStatus m_notebookInstanceStatus;
-    bool m_notebookInstanceStatusHasBeenSet;
+    bool m_notebookInstanceStatusHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_notebookInstanceLifecycleConfigName;
-    bool m_notebookInstanceLifecycleConfigNameHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
     Aws::String m_defaultCodeRepository;
-    bool m_defaultCodeRepositoryHasBeenSet;
+    bool m_defaultCodeRepositoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
-    bool m_additionalCodeRepositoriesHasBeenSet;
+    bool m_additionalCodeRepositoriesHasBeenSet = false;
   };
 
 } // namespace Model

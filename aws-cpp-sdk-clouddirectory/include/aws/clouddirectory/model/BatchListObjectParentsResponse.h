@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<ObjectIdentifierAndLinkNameTuple> m_parentLinks;
-    bool m_parentLinksHasBeenSet;
+    bool m_parentLinksHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -187,16 +187,16 @@ namespace Model
   private:
 
     NetworkInterfaceAssociation m_association;
-    bool m_associationHasBeenSet;
+    bool m_associationHasBeenSet = false;
 
     bool m_primary;
-    bool m_primaryHasBeenSet;
+    bool m_primaryHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

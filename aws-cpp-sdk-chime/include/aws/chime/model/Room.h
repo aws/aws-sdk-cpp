@@ -266,22 +266,22 @@ namespace Model
   private:
 
     Aws::String m_roomId;
-    bool m_roomIdHasBeenSet;
+    bool m_roomIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

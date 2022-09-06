@@ -230,13 +230,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_serverProperties;
-    bool m_serverPropertiesHasBeenSet;
+    bool m_serverPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

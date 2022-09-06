@@ -112,10 +112,10 @@ namespace Model
   private:
 
     ExperimentActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

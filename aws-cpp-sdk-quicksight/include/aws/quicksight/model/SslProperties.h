@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_disableSsl;
-    bool m_disableSslHasBeenSet;
+    bool m_disableSslHasBeenSet = false;
   };
 
 } // namespace Model

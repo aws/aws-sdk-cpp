@@ -161,16 +161,16 @@ namespace Model
   private:
 
     FailoverMode m_failoverMode;
-    bool m_failoverModeHasBeenSet;
+    bool m_failoverModeHasBeenSet = false;
 
     int m_recoveryWindow;
-    bool m_recoveryWindowHasBeenSet;
+    bool m_recoveryWindowHasBeenSet = false;
 
     SourcePriority m_sourcePriority;
-    bool m_sourcePriorityHasBeenSet;
+    bool m_sourcePriorityHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

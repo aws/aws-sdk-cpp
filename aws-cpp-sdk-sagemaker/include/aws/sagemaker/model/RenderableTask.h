@@ -112,7 +112,7 @@ namespace Model
   private:
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
   };
 
 } // namespace Model

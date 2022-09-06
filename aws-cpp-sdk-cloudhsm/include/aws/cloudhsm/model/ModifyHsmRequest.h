@@ -326,22 +326,22 @@ namespace Model
   private:
 
     Aws::String m_hsmArn;
-    bool m_hsmArnHasBeenSet;
+    bool m_hsmArnHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_eniIp;
-    bool m_eniIpHasBeenSet;
+    bool m_eniIpHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_syslogIp;
-    bool m_syslogIpHasBeenSet;
+    bool m_syslogIpHasBeenSet = false;
   };
 
 } // namespace Model

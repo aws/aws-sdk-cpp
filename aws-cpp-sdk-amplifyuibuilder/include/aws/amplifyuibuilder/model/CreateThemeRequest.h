@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     CreateThemeData m_themeToCreate;
-    bool m_themeToCreateHasBeenSet;
+    bool m_themeToCreateHasBeenSet = false;
   };
 
 } // namespace Model

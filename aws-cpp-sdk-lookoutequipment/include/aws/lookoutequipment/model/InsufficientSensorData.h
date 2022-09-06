@@ -115,10 +115,10 @@ namespace Model
   private:
 
     MissingCompleteSensorData m_missingCompleteSensorData;
-    bool m_missingCompleteSensorDataHasBeenSet;
+    bool m_missingCompleteSensorDataHasBeenSet = false;
 
     SensorsWithShortDateRange m_sensorsWithShortDateRange;
-    bool m_sensorsWithShortDateRangeHasBeenSet;
+    bool m_sensorsWithShortDateRangeHasBeenSet = false;
   };
 
 } // namespace Model

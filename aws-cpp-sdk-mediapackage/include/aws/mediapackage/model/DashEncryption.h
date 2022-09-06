@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_keyRotationIntervalSeconds;
-    bool m_keyRotationIntervalSecondsHasBeenSet;
+    bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

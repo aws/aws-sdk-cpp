@@ -72,7 +72,7 @@ namespace Model
   private:
 
     DnsRecordIpType m_dnsRecordIpType;
-    bool m_dnsRecordIpTypeHasBeenSet;
+    bool m_dnsRecordIpTypeHasBeenSet = false;
   };
 
 } // namespace Model

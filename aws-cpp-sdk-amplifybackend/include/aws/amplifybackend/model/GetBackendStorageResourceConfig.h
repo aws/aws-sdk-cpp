@@ -165,16 +165,16 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     bool m_imported;
-    bool m_importedHasBeenSet;
+    bool m_importedHasBeenSet = false;
 
     BackendStoragePermissions m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     ServiceName m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

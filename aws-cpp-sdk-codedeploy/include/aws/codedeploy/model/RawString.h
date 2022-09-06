@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_sha256;
-    bool m_sha256HasBeenSet;
+    bool m_sha256HasBeenSet = false;
   };
 
 } // namespace Model

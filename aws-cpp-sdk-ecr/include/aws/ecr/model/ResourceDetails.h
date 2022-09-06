@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AwsEcrContainerImageDetails m_awsEcrContainerImage;
-    bool m_awsEcrContainerImageHasBeenSet;
+    bool m_awsEcrContainerImageHasBeenSet = false;
   };
 
 } // namespace Model

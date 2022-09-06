@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_zoneName;
-    bool m_zoneNameHasBeenSet;
+    bool m_zoneNameHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::Vector<LoadBalancerAddress> m_loadBalancerAddresses;
-    bool m_loadBalancerAddressesHasBeenSet;
+    bool m_loadBalancerAddressesHasBeenSet = false;
   };
 
 } // namespace Model

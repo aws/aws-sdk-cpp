@@ -637,31 +637,31 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     long long m_startWindowMinutes;
-    bool m_startWindowMinutesHasBeenSet;
+    bool m_startWindowMinutesHasBeenSet = false;
 
     long long m_completeWindowMinutes;
-    bool m_completeWindowMinutesHasBeenSet;
+    bool m_completeWindowMinutesHasBeenSet = false;
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
-    bool m_recoveryPointTagsHasBeenSet;
+    bool m_recoveryPointTagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
-    bool m_backupOptionsHasBeenSet;
+    bool m_backupOptionsHasBeenSet = false;
   };
 
 } // namespace Model

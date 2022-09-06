@@ -129,13 +129,13 @@ namespace Model
   private:
 
     Aws::Vector<DeviceFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_matchedDevicesCount;
-    bool m_matchedDevicesCountHasBeenSet;
+    bool m_matchedDevicesCountHasBeenSet = false;
 
     int m_maxDevices;
-    bool m_maxDevicesHasBeenSet;
+    bool m_maxDevicesHasBeenSet = false;
   };
 
 } // namespace Model

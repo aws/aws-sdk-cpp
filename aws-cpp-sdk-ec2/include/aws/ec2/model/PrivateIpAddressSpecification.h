@@ -108,10 +108,10 @@ namespace Model
   private:
 
     bool m_primary;
-    bool m_primaryHasBeenSet;
+    bool m_primaryHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

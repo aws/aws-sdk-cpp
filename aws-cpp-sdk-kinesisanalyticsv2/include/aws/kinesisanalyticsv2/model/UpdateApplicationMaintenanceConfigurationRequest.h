@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     ApplicationMaintenanceConfigurationUpdate m_applicationMaintenanceConfigurationUpdate;
-    bool m_applicationMaintenanceConfigurationUpdateHasBeenSet;
+    bool m_applicationMaintenanceConfigurationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

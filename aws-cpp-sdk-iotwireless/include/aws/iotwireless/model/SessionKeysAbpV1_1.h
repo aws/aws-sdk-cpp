@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_fNwkSIntKey;
-    bool m_fNwkSIntKeyHasBeenSet;
+    bool m_fNwkSIntKeyHasBeenSet = false;
 
     Aws::String m_sNwkSIntKey;
-    bool m_sNwkSIntKeyHasBeenSet;
+    bool m_sNwkSIntKeyHasBeenSet = false;
 
     Aws::String m_nwkSEncKey;
-    bool m_nwkSEncKeyHasBeenSet;
+    bool m_nwkSEncKeyHasBeenSet = false;
 
     Aws::String m_appSKey;
-    bool m_appSKeyHasBeenSet;
+    bool m_appSKeyHasBeenSet = false;
   };
 
 } // namespace Model

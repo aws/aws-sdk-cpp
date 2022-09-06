@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskName;
-    bool m_replicationTaskNameHasBeenSet;
+    bool m_replicationTaskNameHasBeenSet = false;
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     long long m_replicationInstanceTaskLogSize;
-    bool m_replicationInstanceTaskLogSizeHasBeenSet;
+    bool m_replicationInstanceTaskLogSizeHasBeenSet = false;
   };
 
 } // namespace Model

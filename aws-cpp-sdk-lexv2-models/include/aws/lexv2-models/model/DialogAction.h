@@ -142,13 +142,13 @@ namespace Model
   private:
 
     DialogActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_slotToElicit;
-    bool m_slotToElicitHasBeenSet;
+    bool m_slotToElicitHasBeenSet = false;
 
     bool m_suppressNextMessage;
-    bool m_suppressNextMessageHasBeenSet;
+    bool m_suppressNextMessageHasBeenSet = false;
   };
 
 } // namespace Model

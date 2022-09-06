@@ -107,10 +107,10 @@ namespace Model
   private:
 
     SentimentType m_sentiment;
-    bool m_sentimentHasBeenSet;
+    bool m_sentimentHasBeenSet = false;
 
     SentimentScore m_sentimentScore;
-    bool m_sentimentScoreHasBeenSet;
+    bool m_sentimentScoreHasBeenSet = false;
   };
 
 } // namespace Model

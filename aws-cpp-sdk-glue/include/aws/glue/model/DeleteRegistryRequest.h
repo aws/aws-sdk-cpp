@@ -73,7 +73,7 @@ namespace Model
   private:
 
     RegistryId m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
   };
 
 } // namespace Model

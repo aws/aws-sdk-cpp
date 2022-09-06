@@ -640,40 +640,40 @@ namespace Model
   private:
 
     AlgorithmSpecification m_algorithmSpecification;
-    bool m_algorithmSpecificationHasBeenSet;
+    bool m_algorithmSpecificationHasBeenSet = false;
 
     JobCheckpointConfig m_checkpointConfig;
-    bool m_checkpointConfigHasBeenSet;
+    bool m_checkpointConfigHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     DeviceConfig m_deviceConfig;
-    bool m_deviceConfigHasBeenSet;
+    bool m_deviceConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-    bool m_hyperParametersHasBeenSet;
+    bool m_hyperParametersHasBeenSet = false;
 
     Aws::Vector<InputFileConfig> m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     InstanceConfig m_instanceConfig;
-    bool m_instanceConfigHasBeenSet;
+    bool m_instanceConfigHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobOutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     JobStoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

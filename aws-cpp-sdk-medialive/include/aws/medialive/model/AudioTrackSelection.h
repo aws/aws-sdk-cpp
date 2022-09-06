@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<AudioTrack> m_tracks;
-    bool m_tracksHasBeenSet;
+    bool m_tracksHasBeenSet = false;
   };
 
 } // namespace Model

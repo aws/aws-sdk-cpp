@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::Vector<ComplianceType> m_complianceTypes;
-    bool m_complianceTypesHasBeenSet;
+    bool m_complianceTypesHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

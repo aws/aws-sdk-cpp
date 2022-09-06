@@ -109,10 +109,10 @@ namespace Model
   private:
 
     double m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
   };
 
 } // namespace Model

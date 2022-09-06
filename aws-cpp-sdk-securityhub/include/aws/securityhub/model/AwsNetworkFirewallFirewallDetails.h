@@ -419,34 +419,34 @@ namespace Model
   private:
 
     bool m_deleteProtection;
-    bool m_deleteProtectionHasBeenSet;
+    bool m_deleteProtectionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallId;
-    bool m_firewallIdHasBeenSet;
+    bool m_firewallIdHasBeenSet = false;
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::String m_firewallPolicyArn;
-    bool m_firewallPolicyArnHasBeenSet;
+    bool m_firewallPolicyArnHasBeenSet = false;
 
     bool m_firewallPolicyChangeProtection;
-    bool m_firewallPolicyChangeProtectionHasBeenSet;
+    bool m_firewallPolicyChangeProtectionHasBeenSet = false;
 
     bool m_subnetChangeProtection;
-    bool m_subnetChangeProtectionHasBeenSet;
+    bool m_subnetChangeProtectionHasBeenSet = false;
 
     Aws::Vector<AwsNetworkFirewallFirewallSubnetMappingsDetails> m_subnetMappings;
-    bool m_subnetMappingsHasBeenSet;
+    bool m_subnetMappingsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

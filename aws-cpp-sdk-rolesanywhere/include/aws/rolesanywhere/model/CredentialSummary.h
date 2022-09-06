@@ -266,22 +266,22 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::Utils::DateTime m_seenAt;
-    bool m_seenAtHasBeenSet;
+    bool m_seenAtHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_x509CertificateData;
-    bool m_x509CertificateDataHasBeenSet;
+    bool m_x509CertificateDataHasBeenSet = false;
   };
 
 } // namespace Model

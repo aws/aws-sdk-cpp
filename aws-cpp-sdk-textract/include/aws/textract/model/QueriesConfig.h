@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Query> m_queries;
-    bool m_queriesHasBeenSet;
+    bool m_queriesHasBeenSet = false;
   };
 
 } // namespace Model

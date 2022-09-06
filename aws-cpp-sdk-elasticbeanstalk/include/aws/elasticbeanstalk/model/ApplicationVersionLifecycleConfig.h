@@ -121,10 +121,10 @@ namespace Model
   private:
 
     MaxCountRule m_maxCountRule;
-    bool m_maxCountRuleHasBeenSet;
+    bool m_maxCountRuleHasBeenSet = false;
 
     MaxAgeRule m_maxAgeRule;
-    bool m_maxAgeRuleHasBeenSet;
+    bool m_maxAgeRuleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_resolutionId;
-    bool m_resolutionIdHasBeenSet;
+    bool m_resolutionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     int m_transmitMode;
-    bool m_transmitModeHasBeenSet;
+    bool m_transmitModeHasBeenSet = false;
 
     Aws::String m_receivedAt;
-    bool m_receivedAtHasBeenSet;
+    bool m_receivedAtHasBeenSet = false;
 
     LoRaWANSendDataToDevice m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

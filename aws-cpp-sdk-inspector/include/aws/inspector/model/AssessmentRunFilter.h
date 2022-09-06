@@ -412,25 +412,25 @@ namespace Model
   private:
 
     Aws::String m_namePattern;
-    bool m_namePatternHasBeenSet;
+    bool m_namePatternHasBeenSet = false;
 
     Aws::Vector<AssessmentRunState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     DurationRange m_durationRange;
-    bool m_durationRangeHasBeenSet;
+    bool m_durationRangeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     TimestampRange m_startTimeRange;
-    bool m_startTimeRangeHasBeenSet;
+    bool m_startTimeRangeHasBeenSet = false;
 
     TimestampRange m_completionTimeRange;
-    bool m_completionTimeRangeHasBeenSet;
+    bool m_completionTimeRangeHasBeenSet = false;
 
     TimestampRange m_stateChangeTimeRange;
-    bool m_stateChangeTimeRangeHasBeenSet;
+    bool m_stateChangeTimeRangeHasBeenSet = false;
   };
 
 } // namespace Model

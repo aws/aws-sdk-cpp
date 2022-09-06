@@ -92,10 +92,10 @@ namespace Model
   private:
 
     GPSCoordinates m_coordinates;
-    bool m_coordinatesHasBeenSet;
+    bool m_coordinatesHasBeenSet = false;
 
     double m_rangeInKilometers;
-    bool m_rangeInKilometersHasBeenSet;
+    bool m_rangeInKilometersHasBeenSet = false;
   };
 
 } // namespace Model

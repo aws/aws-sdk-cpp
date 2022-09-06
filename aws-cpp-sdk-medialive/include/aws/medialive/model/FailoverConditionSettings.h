@@ -152,13 +152,13 @@ namespace Model
   private:
 
     AudioSilenceFailoverSettings m_audioSilenceSettings;
-    bool m_audioSilenceSettingsHasBeenSet;
+    bool m_audioSilenceSettingsHasBeenSet = false;
 
     InputLossFailoverSettings m_inputLossSettings;
-    bool m_inputLossSettingsHasBeenSet;
+    bool m_inputLossSettingsHasBeenSet = false;
 
     VideoBlackFailoverSettings m_videoBlackSettings;
-    bool m_videoBlackSettingsHasBeenSet;
+    bool m_videoBlackSettingsHasBeenSet = false;
   };
 
 } // namespace Model

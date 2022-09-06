@@ -512,28 +512,28 @@ namespace Model
   private:
 
     Aws::Vector<VariationConfig> m_addOrUpdateVariations;
-    bool m_addOrUpdateVariationsHasBeenSet;
+    bool m_addOrUpdateVariationsHasBeenSet = false;
 
     Aws::String m_defaultVariation;
-    bool m_defaultVariationHasBeenSet;
+    bool m_defaultVariationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_entityOverrides;
-    bool m_entityOverridesHasBeenSet;
+    bool m_entityOverridesHasBeenSet = false;
 
     FeatureEvaluationStrategy m_evaluationStrategy;
-    bool m_evaluationStrategyHasBeenSet;
+    bool m_evaluationStrategyHasBeenSet = false;
 
     Aws::String m_feature;
-    bool m_featureHasBeenSet;
+    bool m_featureHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeVariations;
-    bool m_removeVariationsHasBeenSet;
+    bool m_removeVariationsHasBeenSet = false;
   };
 
 } // namespace Model

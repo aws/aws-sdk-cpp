@@ -202,10 +202,10 @@ namespace Model
   private:
 
     Aws::String m_adSegmentUrlPrefix;
-    bool m_adSegmentUrlPrefixHasBeenSet;
+    bool m_adSegmentUrlPrefixHasBeenSet = false;
 
     Aws::String m_contentSegmentUrlPrefix;
-    bool m_contentSegmentUrlPrefixHasBeenSet;
+    bool m_contentSegmentUrlPrefixHasBeenSet = false;
   };
 
 } // namespace Model

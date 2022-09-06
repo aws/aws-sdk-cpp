@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_analysisId;
-    bool m_analysisIdHasBeenSet;
+    bool m_analysisIdHasBeenSet = false;
 
     long long m_recoveryWindowInDays;
-    bool m_recoveryWindowInDaysHasBeenSet;
+    bool m_recoveryWindowInDaysHasBeenSet = false;
 
     bool m_forceDeleteWithoutRecovery;
-    bool m_forceDeleteWithoutRecoveryHasBeenSet;
+    bool m_forceDeleteWithoutRecoveryHasBeenSet = false;
   };
 
 } // namespace Model

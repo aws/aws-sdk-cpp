@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupFamily;
-    bool m_cacheParameterGroupFamilyHasBeenSet;
+    bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_isGlobal;
-    bool m_isGlobalHasBeenSet;
+    bool m_isGlobalHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
   };
 
 } // namespace Model

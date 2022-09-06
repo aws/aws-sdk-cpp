@@ -167,10 +167,10 @@ namespace Model
   private:
 
     ClusterSettingName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

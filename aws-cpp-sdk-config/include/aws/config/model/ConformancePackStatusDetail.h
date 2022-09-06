@@ -381,28 +381,28 @@ namespace Model
   private:
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     Aws::String m_conformancePackId;
-    bool m_conformancePackIdHasBeenSet;
+    bool m_conformancePackIdHasBeenSet = false;
 
     Aws::String m_conformancePackArn;
-    bool m_conformancePackArnHasBeenSet;
+    bool m_conformancePackArnHasBeenSet = false;
 
     ConformancePackState m_conformancePackState;
-    bool m_conformancePackStateHasBeenSet;
+    bool m_conformancePackStateHasBeenSet = false;
 
     Aws::String m_stackArn;
-    bool m_stackArnHasBeenSet;
+    bool m_stackArnHasBeenSet = false;
 
     Aws::String m_conformancePackStatusReason;
-    bool m_conformancePackStatusReasonHasBeenSet;
+    bool m_conformancePackStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateRequestedTime;
-    bool m_lastUpdateRequestedTimeHasBeenSet;
+    bool m_lastUpdateRequestedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateCompletedTime;
-    bool m_lastUpdateCompletedTimeHasBeenSet;
+    bool m_lastUpdateCompletedTimeHasBeenSet = false;
   };
 
 } // namespace Model

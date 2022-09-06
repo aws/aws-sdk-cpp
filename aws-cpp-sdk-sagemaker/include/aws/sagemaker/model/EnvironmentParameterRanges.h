@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<CategoricalParameter> m_categoricalParameterRanges;
-    bool m_categoricalParameterRangesHasBeenSet;
+    bool m_categoricalParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

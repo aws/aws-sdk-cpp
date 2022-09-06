@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_viewerProtocolPolicy;
-    bool m_viewerProtocolPolicyHasBeenSet;
+    bool m_viewerProtocolPolicyHasBeenSet = false;
   };
 
 } // namespace Model

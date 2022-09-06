@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
   };
 
 } // namespace Model

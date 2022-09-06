@@ -86,7 +86,7 @@ RedshiftDataAPIServiceClient::~RedshiftDataAPIServiceClient()
 
 void RedshiftDataAPIServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Redshift Data");
+  AWSClient::SetServiceClientName("Redshift Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

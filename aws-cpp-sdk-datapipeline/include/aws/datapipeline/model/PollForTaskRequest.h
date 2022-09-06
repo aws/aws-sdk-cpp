@@ -241,13 +241,13 @@ namespace Model
   private:
 
     Aws::String m_workerGroup;
-    bool m_workerGroupHasBeenSet;
+    bool m_workerGroupHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     InstanceIdentity m_instanceIdentity;
-    bool m_instanceIdentityHasBeenSet;
+    bool m_instanceIdentityHasBeenSet = false;
   };
 
 } // namespace Model

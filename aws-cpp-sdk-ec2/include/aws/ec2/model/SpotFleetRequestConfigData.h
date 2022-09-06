@@ -1651,82 +1651,82 @@ namespace Model
   private:
 
     AllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     OnDemandAllocationStrategy m_onDemandAllocationStrategy;
-    bool m_onDemandAllocationStrategyHasBeenSet;
+    bool m_onDemandAllocationStrategyHasBeenSet = false;
 
     SpotMaintenanceStrategies m_spotMaintenanceStrategies;
-    bool m_spotMaintenanceStrategiesHasBeenSet;
+    bool m_spotMaintenanceStrategiesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet;
+    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
     double m_fulfilledCapacity;
-    bool m_fulfilledCapacityHasBeenSet;
+    bool m_fulfilledCapacityHasBeenSet = false;
 
     double m_onDemandFulfilledCapacity;
-    bool m_onDemandFulfilledCapacityHasBeenSet;
+    bool m_onDemandFulfilledCapacityHasBeenSet = false;
 
     Aws::String m_iamFleetRole;
-    bool m_iamFleetRoleHasBeenSet;
+    bool m_iamFleetRoleHasBeenSet = false;
 
     Aws::Vector<SpotFleetLaunchSpecification> m_launchSpecifications;
-    bool m_launchSpecificationsHasBeenSet;
+    bool m_launchSpecificationsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateConfig> m_launchTemplateConfigs;
-    bool m_launchTemplateConfigsHasBeenSet;
+    bool m_launchTemplateConfigsHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     int m_targetCapacity;
-    bool m_targetCapacityHasBeenSet;
+    bool m_targetCapacityHasBeenSet = false;
 
     int m_onDemandTargetCapacity;
-    bool m_onDemandTargetCapacityHasBeenSet;
+    bool m_onDemandTargetCapacityHasBeenSet = false;
 
     Aws::String m_onDemandMaxTotalPrice;
-    bool m_onDemandMaxTotalPriceHasBeenSet;
+    bool m_onDemandMaxTotalPriceHasBeenSet = false;
 
     Aws::String m_spotMaxTotalPrice;
-    bool m_spotMaxTotalPriceHasBeenSet;
+    bool m_spotMaxTotalPriceHasBeenSet = false;
 
     bool m_terminateInstancesWithExpiration;
-    bool m_terminateInstancesWithExpirationHasBeenSet;
+    bool m_terminateInstancesWithExpirationHasBeenSet = false;
 
     FleetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     bool m_replaceUnhealthyInstances;
-    bool m_replaceUnhealthyInstancesHasBeenSet;
+    bool m_replaceUnhealthyInstancesHasBeenSet = false;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
     LoadBalancersConfig m_loadBalancersConfig;
-    bool m_loadBalancersConfigHasBeenSet;
+    bool m_loadBalancersConfigHasBeenSet = false;
 
     int m_instancePoolsToUseCount;
-    bool m_instancePoolsToUseCountHasBeenSet;
+    bool m_instancePoolsToUseCountHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     TargetCapacityUnitType m_targetCapacityUnitType;
-    bool m_targetCapacityUnitTypeHasBeenSet;
+    bool m_targetCapacityUnitTypeHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

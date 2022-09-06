@@ -96,10 +96,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     int m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
   };
 
 } // namespace Model

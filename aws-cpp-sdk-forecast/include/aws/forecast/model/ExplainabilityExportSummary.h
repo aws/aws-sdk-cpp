@@ -373,25 +373,25 @@ namespace Model
   private:
 
     Aws::String m_explainabilityExportArn;
-    bool m_explainabilityExportArnHasBeenSet;
+    bool m_explainabilityExportArnHasBeenSet = false;
 
     Aws::String m_explainabilityExportName;
-    bool m_explainabilityExportNameHasBeenSet;
+    bool m_explainabilityExportNameHasBeenSet = false;
 
     DataDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

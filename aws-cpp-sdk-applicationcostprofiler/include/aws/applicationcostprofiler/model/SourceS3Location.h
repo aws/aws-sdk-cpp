@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     S3BucketRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

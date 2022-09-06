@@ -280,16 +280,16 @@ namespace Model
   private:
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
-    bool m_enhancedInfrastructureMetricsHasBeenSet;
+    bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
     InferredWorkloadTypesPreference m_inferredWorkloadTypes;
-    bool m_inferredWorkloadTypesHasBeenSet;
+    bool m_inferredWorkloadTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -447,37 +447,37 @@ namespace Model
   private:
 
     Aws::String m_findingId;
-    bool m_findingIdHasBeenSet;
+    bool m_findingIdHasBeenSet = false;
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_checkName;
-    bool m_checkNameHasBeenSet;
+    bool m_checkNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskStartTime;
-    bool m_taskStartTimeHasBeenSet;
+    bool m_taskStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_findingTime;
-    bool m_findingTimeHasBeenSet;
+    bool m_findingTimeHasBeenSet = false;
 
     AuditFindingSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     NonCompliantResource m_nonCompliantResource;
-    bool m_nonCompliantResourceHasBeenSet;
+    bool m_nonCompliantResourceHasBeenSet = false;
 
     Aws::Vector<RelatedResource> m_relatedResources;
-    bool m_relatedResourcesHasBeenSet;
+    bool m_relatedResourcesHasBeenSet = false;
 
     Aws::String m_reasonForNonCompliance;
-    bool m_reasonForNonComplianceHasBeenSet;
+    bool m_reasonForNonComplianceHasBeenSet = false;
 
     Aws::String m_reasonForNonComplianceCode;
-    bool m_reasonForNonComplianceCodeHasBeenSet;
+    bool m_reasonForNonComplianceCodeHasBeenSet = false;
 
     bool m_isSuppressed;
-    bool m_isSuppressedHasBeenSet;
+    bool m_isSuppressedHasBeenSet = false;
   };
 
 } // namespace Model

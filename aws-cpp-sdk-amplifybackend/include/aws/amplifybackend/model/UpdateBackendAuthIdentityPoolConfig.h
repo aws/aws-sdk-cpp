@@ -64,7 +64,7 @@ namespace Model
   private:
 
     bool m_unauthenticatedLogin;
-    bool m_unauthenticatedLoginHasBeenSet;
+    bool m_unauthenticatedLoginHasBeenSet = false;
   };
 
 } // namespace Model

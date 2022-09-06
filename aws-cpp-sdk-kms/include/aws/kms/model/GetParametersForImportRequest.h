@@ -221,13 +221,13 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     AlgorithmSpec m_wrappingAlgorithm;
-    bool m_wrappingAlgorithmHasBeenSet;
+    bool m_wrappingAlgorithmHasBeenSet = false;
 
     WrappingKeySpec m_wrappingKeySpec;
-    bool m_wrappingKeySpecHasBeenSet;
+    bool m_wrappingKeySpecHasBeenSet = false;
   };
 
 } // namespace Model

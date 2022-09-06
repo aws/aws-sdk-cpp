@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

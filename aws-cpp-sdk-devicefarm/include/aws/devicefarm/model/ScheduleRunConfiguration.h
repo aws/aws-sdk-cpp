@@ -430,31 +430,31 @@ namespace Model
   private:
 
     Aws::String m_extraDataPackageArn;
-    bool m_extraDataPackageArnHasBeenSet;
+    bool m_extraDataPackageArnHasBeenSet = false;
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpceConfigurationArns;
-    bool m_vpceConfigurationArnsHasBeenSet;
+    bool m_vpceConfigurationArnsHasBeenSet = false;
 
     CustomerArtifactPaths m_customerArtifactPaths;
-    bool m_customerArtifactPathsHasBeenSet;
+    bool m_customerArtifactPathsHasBeenSet = false;
 
     Radios m_radios;
-    bool m_radiosHasBeenSet;
+    bool m_radiosHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_auxiliaryApps;
-    bool m_auxiliaryAppsHasBeenSet;
+    bool m_auxiliaryAppsHasBeenSet = false;
 
     BillingMethod m_billingMethod;
-    bool m_billingMethodHasBeenSet;
+    bool m_billingMethodHasBeenSet = false;
   };
 
 } // namespace Model

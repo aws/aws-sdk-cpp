@@ -348,16 +348,16 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

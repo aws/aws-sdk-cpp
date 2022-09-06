@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MessageFormat m_messageFormat;
-    bool m_messageFormatHasBeenSet;
+    bool m_messageFormatHasBeenSet = false;
   };
 
 } // namespace Model

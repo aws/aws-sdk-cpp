@@ -68,7 +68,7 @@ namespace Model
   private:
 
     DistributionConfig m_distributionConfig;
-    bool m_distributionConfigHasBeenSet;
+    bool m_distributionConfigHasBeenSet = false;
   };
 
 } // namespace Model

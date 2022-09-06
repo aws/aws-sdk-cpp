@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_logicalStackName;
-    bool m_logicalStackNameHasBeenSet;
+    bool m_logicalStackNameHasBeenSet = false;
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_terraformSourceName;
-    bool m_terraformSourceNameHasBeenSet;
+    bool m_terraformSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,10 +153,10 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

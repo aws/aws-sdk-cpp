@@ -104,10 +104,10 @@ namespace Model
   private:
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
   };
 
 } // namespace Model

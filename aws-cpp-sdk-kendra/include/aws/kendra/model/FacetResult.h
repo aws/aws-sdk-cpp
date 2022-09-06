@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_documentAttributeKey;
-    bool m_documentAttributeKeyHasBeenSet;
+    bool m_documentAttributeKeyHasBeenSet = false;
 
     DocumentAttributeValueType m_documentAttributeValueType;
-    bool m_documentAttributeValueTypeHasBeenSet;
+    bool m_documentAttributeValueTypeHasBeenSet = false;
 
     Aws::Vector<DocumentAttributeValueCountPair> m_documentAttributeValueCountPairs;
-    bool m_documentAttributeValueCountPairsHasBeenSet;
+    bool m_documentAttributeValueCountPairsHasBeenSet = false;
   };
 
 } // namespace Model

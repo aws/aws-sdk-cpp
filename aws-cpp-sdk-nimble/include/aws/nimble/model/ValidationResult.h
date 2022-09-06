@@ -182,16 +182,16 @@ namespace Model
   private:
 
     LaunchProfileValidationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     LaunchProfileValidationStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     LaunchProfileValidationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

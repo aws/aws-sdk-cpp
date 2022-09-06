@@ -260,22 +260,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     DatasetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     DatasetStatusMessageCode m_statusMessageCode;
-    bool m_statusMessageCodeHasBeenSet;
+    bool m_statusMessageCodeHasBeenSet = false;
 
     DatasetStats m_datasetStats;
-    bool m_datasetStatsHasBeenSet;
+    bool m_datasetStatsHasBeenSet = false;
   };
 
 } // namespace Model

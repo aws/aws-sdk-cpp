@@ -360,31 +360,31 @@ namespace Model
   private:
 
     ActivityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeStamp;
-    bool m_timeStampHasBeenSet;
+    bool m_timeStampHasBeenSet = false;
 
     bool m_isIndirectActivity;
-    bool m_isIndirectActivityHasBeenSet;
+    bool m_isIndirectActivityHasBeenSet = false;
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     UserMetadata m_initiator;
-    bool m_initiatorHasBeenSet;
+    bool m_initiatorHasBeenSet = false;
 
     Participants m_participants;
-    bool m_participantsHasBeenSet;
+    bool m_participantsHasBeenSet = false;
 
     ResourceMetadata m_resourceMetadata;
-    bool m_resourceMetadataHasBeenSet;
+    bool m_resourceMetadataHasBeenSet = false;
 
     ResourceMetadata m_originalParent;
-    bool m_originalParentHasBeenSet;
+    bool m_originalParentHasBeenSet = false;
 
     CommentMetadata m_commentMetadata;
-    bool m_commentMetadataHasBeenSet;
+    bool m_commentMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -253,19 +253,19 @@ namespace Model
   private:
 
     bool m_autoCreateTasks;
-    bool m_autoCreateTasksHasBeenSet;
+    bool m_autoCreateTasksHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     UpdateWirelessGatewayTaskCreate m_update;
-    bool m_updateHasBeenSet;
+    bool m_updateHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

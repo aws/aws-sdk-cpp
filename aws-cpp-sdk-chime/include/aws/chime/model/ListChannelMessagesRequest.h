@@ -295,25 +295,25 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
   };
 
 } // namespace Model

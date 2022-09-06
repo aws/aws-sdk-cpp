@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_knowledgeBaseArn;
-    bool m_knowledgeBaseArnHasBeenSet;
+    bool m_knowledgeBaseArnHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -222,19 +222,19 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_impactStartTime;
-    bool m_impactStartTimeHasBeenSet;
+    bool m_impactStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_impactEndTime;
-    bool m_impactEndTimeHasBeenSet;
+    bool m_impactEndTimeHasBeenSet = false;
 
     int m_numberOfLogLinesScanned;
-    bool m_numberOfLogLinesScannedHasBeenSet;
+    bool m_numberOfLogLinesScannedHasBeenSet = false;
 
     Aws::Vector<LogAnomalyShowcase> m_logAnomalyShowcases;
-    bool m_logAnomalyShowcasesHasBeenSet;
+    bool m_logAnomalyShowcasesHasBeenSet = false;
   };
 
 } // namespace Model

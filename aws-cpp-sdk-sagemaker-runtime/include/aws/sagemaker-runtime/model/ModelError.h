@@ -168,16 +168,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     int m_originalStatusCode;
-    bool m_originalStatusCodeHasBeenSet;
+    bool m_originalStatusCodeHasBeenSet = false;
 
     Aws::String m_originalMessage;
-    bool m_originalMessageHasBeenSet;
+    bool m_originalMessageHasBeenSet = false;
 
     Aws::String m_logStreamArn;
-    bool m_logStreamArnHasBeenSet;
+    bool m_logStreamArnHasBeenSet = false;
   };
 
 } // namespace Model

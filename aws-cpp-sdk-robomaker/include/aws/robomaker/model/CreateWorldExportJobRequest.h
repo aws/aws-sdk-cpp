@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_worlds;
-    bool m_worldsHasBeenSet;
+    bool m_worldsHasBeenSet = false;
 
     OutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     Aws::String m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

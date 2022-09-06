@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_outpostIdentifier;
-    bool m_outpostIdentifierHasBeenSet;
+    bool m_outpostIdentifierHasBeenSet = false;
 
     Aws::Vector<LineItemRequest> m_lineItems;
-    bool m_lineItemsHasBeenSet;
+    bool m_lineItemsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     PaymentTerm m_paymentTerm;
-    bool m_paymentTermHasBeenSet;
+    bool m_paymentTermHasBeenSet = false;
   };
 
 } // namespace Model

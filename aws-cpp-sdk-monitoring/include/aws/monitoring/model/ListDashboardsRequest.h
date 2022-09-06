@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_dashboardNamePrefix;
-    bool m_dashboardNamePrefixHasBeenSet;
+    bool m_dashboardNamePrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

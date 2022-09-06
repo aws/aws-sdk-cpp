@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_suiteDefinitionId;
-    bool m_suiteDefinitionIdHasBeenSet;
+    bool m_suiteDefinitionIdHasBeenSet = false;
 
     Aws::String m_suiteDefinitionVersion;
-    bool m_suiteDefinitionVersionHasBeenSet;
+    bool m_suiteDefinitionVersionHasBeenSet = false;
 
     SuiteRunConfiguration m_suiteRunConfiguration;
-    bool m_suiteRunConfigurationHasBeenSet;
+    bool m_suiteRunConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

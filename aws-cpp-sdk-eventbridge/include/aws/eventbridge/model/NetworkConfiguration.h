@@ -83,7 +83,7 @@ namespace Model
   private:
 
     AwsVpcConfiguration m_awsvpcConfiguration;
-    bool m_awsvpcConfigurationHasBeenSet;
+    bool m_awsvpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

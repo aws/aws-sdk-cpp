@@ -157,10 +157,10 @@ namespace Model
   private:
 
     FallbackResult m_fallbackResult;
-    bool m_fallbackResultHasBeenSet;
+    bool m_fallbackResultHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
   };
 
 } // namespace Model

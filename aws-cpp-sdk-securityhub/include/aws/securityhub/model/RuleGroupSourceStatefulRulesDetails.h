@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     RuleGroupSourceStatefulRulesHeaderDetails m_header;
-    bool m_headerHasBeenSet;
+    bool m_headerHasBeenSet = false;
 
     Aws::Vector<RuleGroupSourceStatefulRulesOptionsDetails> m_ruleOptions;
-    bool m_ruleOptionsHasBeenSet;
+    bool m_ruleOptionsHasBeenSet = false;
   };
 
 } // namespace Model

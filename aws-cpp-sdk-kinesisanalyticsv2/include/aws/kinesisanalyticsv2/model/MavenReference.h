@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_artifactId;
-    bool m_artifactIdHasBeenSet;
+    bool m_artifactIdHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

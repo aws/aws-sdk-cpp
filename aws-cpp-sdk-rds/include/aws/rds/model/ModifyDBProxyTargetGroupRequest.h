@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_targetGroupName;
-    bool m_targetGroupNameHasBeenSet;
+    bool m_targetGroupNameHasBeenSet = false;
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     ConnectionPoolConfiguration m_connectionPoolConfig;
-    bool m_connectionPoolConfigHasBeenSet;
+    bool m_connectionPoolConfigHasBeenSet = false;
 
     Aws::String m_newName;
-    bool m_newNameHasBeenSet;
+    bool m_newNameHasBeenSet = false;
   };
 
 } // namespace Model

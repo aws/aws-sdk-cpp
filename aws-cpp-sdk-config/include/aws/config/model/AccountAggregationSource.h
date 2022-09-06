@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     bool m_allAwsRegions;
-    bool m_allAwsRegionsHasBeenSet;
+    bool m_allAwsRegionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_awsRegions;
-    bool m_awsRegionsHasBeenSet;
+    bool m_awsRegionsHasBeenSet = false;
   };
 
 } // namespace Model

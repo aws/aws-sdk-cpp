@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_deviceProfileId;
-    bool m_deviceProfileIdHasBeenSet;
+    bool m_deviceProfileIdHasBeenSet = false;
 
     Aws::String m_serviceProfileId;
-    bool m_serviceProfileIdHasBeenSet;
+    bool m_serviceProfileIdHasBeenSet = false;
 
     UpdateAbpV1_1 m_abpV1_1;
-    bool m_abpV1_1HasBeenSet;
+    bool m_abpV1_1HasBeenSet = false;
 
     UpdateAbpV1_0_x m_abpV1_0_x;
-    bool m_abpV1_0_xHasBeenSet;
+    bool m_abpV1_0_xHasBeenSet = false;
 
     UpdateFPorts m_fPorts;
-    bool m_fPortsHasBeenSet;
+    bool m_fPortsHasBeenSet = false;
   };
 
 } // namespace Model

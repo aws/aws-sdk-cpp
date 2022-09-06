@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     IdentityProviderTypeType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

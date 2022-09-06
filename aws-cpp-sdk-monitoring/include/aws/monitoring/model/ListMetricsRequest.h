@@ -298,19 +298,19 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Vector<DimensionFilter> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     RecentlyActive m_recentlyActive;
-    bool m_recentlyActiveHasBeenSet;
+    bool m_recentlyActiveHasBeenSet = false;
   };
 
 } // namespace Model

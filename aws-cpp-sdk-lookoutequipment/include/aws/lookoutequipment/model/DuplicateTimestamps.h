@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_totalNumberOfDuplicateTimestamps;
-    bool m_totalNumberOfDuplicateTimestampsHasBeenSet;
+    bool m_totalNumberOfDuplicateTimestampsHasBeenSet = false;
   };
 
 } // namespace Model

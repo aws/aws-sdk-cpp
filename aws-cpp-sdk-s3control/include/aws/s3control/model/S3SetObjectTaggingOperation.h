@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<S3Tag> m_tagSet;
-    bool m_tagSetHasBeenSet;
+    bool m_tagSetHasBeenSet = false;
   };
 
 } // namespace Model

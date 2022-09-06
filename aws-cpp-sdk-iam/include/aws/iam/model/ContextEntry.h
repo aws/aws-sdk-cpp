@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::String m_contextKeyName;
-    bool m_contextKeyNameHasBeenSet;
+    bool m_contextKeyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_contextKeyValues;
-    bool m_contextKeyValuesHasBeenSet;
+    bool m_contextKeyValuesHasBeenSet = false;
 
     ContextKeyTypeEnum m_contextKeyType;
-    bool m_contextKeyTypeHasBeenSet;
+    bool m_contextKeyTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_inlineDocument;
-    bool m_inlineDocumentHasBeenSet;
+    bool m_inlineDocumentHasBeenSet = false;
   };
 
 } // namespace Model

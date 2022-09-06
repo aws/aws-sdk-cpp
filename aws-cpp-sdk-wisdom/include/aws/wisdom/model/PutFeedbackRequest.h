@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     FeedbackData m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -352,31 +352,31 @@ namespace Model
   private:
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::String m_monitorName;
-    bool m_monitorNameHasBeenSet;
+    bool m_monitorNameHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::String m_lastEvaluatedDate;
-    bool m_lastEvaluatedDateHasBeenSet;
+    bool m_lastEvaluatedDateHasBeenSet = false;
 
     MonitorType m_monitorType;
-    bool m_monitorTypeHasBeenSet;
+    bool m_monitorTypeHasBeenSet = false;
 
     MonitorDimension m_monitorDimension;
-    bool m_monitorDimensionHasBeenSet;
+    bool m_monitorDimensionHasBeenSet = false;
 
     Expression m_monitorSpecification;
-    bool m_monitorSpecificationHasBeenSet;
+    bool m_monitorSpecificationHasBeenSet = false;
 
     int m_dimensionalValueCount;
-    bool m_dimensionalValueCountHasBeenSet;
+    bool m_dimensionalValueCountHasBeenSet = false;
   };
 
 } // namespace Model

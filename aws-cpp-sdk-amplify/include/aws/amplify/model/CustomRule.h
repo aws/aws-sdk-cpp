@@ -259,16 +259,16 @@ namespace Model
   private:
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
   };
 
 } // namespace Model

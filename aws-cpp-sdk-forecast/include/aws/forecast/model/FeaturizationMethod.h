@@ -476,10 +476,10 @@ namespace Model
   private:
 
     FeaturizationMethodName m_featurizationMethodName;
-    bool m_featurizationMethodNameHasBeenSet;
+    bool m_featurizationMethodNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_featurizationMethodParameters;
-    bool m_featurizationMethodParametersHasBeenSet;
+    bool m_featurizationMethodParametersHasBeenSet = false;
   };
 
 } // namespace Model

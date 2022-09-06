@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_assetName;
-    bool m_assetNameHasBeenSet;
+    bool m_assetNameHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_md5Hash;
-    bool m_md5HashHasBeenSet;
+    bool m_md5HashHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_signedUrl;
-    bool m_signedUrlHasBeenSet;
+    bool m_signedUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_signedUrlExpiresAt;
-    bool m_signedUrlExpiresAtHasBeenSet;
+    bool m_signedUrlExpiresAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -88,7 +88,7 @@ KafkaConnectClient::~KafkaConnectClient()
 
 void KafkaConnectClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("KafkaConnect");
+  AWSClient::SetServiceClientName("KafkaConnect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

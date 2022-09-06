@@ -92,10 +92,10 @@ namespace Model
   private:
 
     AngleUnits m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

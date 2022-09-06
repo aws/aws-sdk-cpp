@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_trailName;
-    bool m_trailNameHasBeenSet;
+    bool m_trailNameHasBeenSet = false;
 
     Aws::Vector<InsightSelector> m_insightSelectors;
-    bool m_insightSelectorsHasBeenSet;
+    bool m_insightSelectorsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_daysAfterInitiation;
-    bool m_daysAfterInitiationHasBeenSet;
+    bool m_daysAfterInitiationHasBeenSet = false;
   };
 
 } // namespace Model

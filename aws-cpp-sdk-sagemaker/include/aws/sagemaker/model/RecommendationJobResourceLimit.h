@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_maxNumberOfTests;
-    bool m_maxNumberOfTestsHasBeenSet;
+    bool m_maxNumberOfTestsHasBeenSet = false;
 
     int m_maxParallelOfTests;
-    bool m_maxParallelOfTestsHasBeenSet;
+    bool m_maxParallelOfTestsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ProtectionGroupArbitraryPatternLimits m_arbitraryPatternLimits;
-    bool m_arbitraryPatternLimitsHasBeenSet;
+    bool m_arbitraryPatternLimitsHasBeenSet = false;
   };
 
 } // namespace Model

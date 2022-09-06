@@ -284,31 +284,31 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_processingTargets;
-    bool m_processingTargetsHasBeenSet;
+    bool m_processingTargetsHasBeenSet = false;
 
     int m_numberOfCanceledThings;
-    bool m_numberOfCanceledThingsHasBeenSet;
+    bool m_numberOfCanceledThingsHasBeenSet = false;
 
     int m_numberOfSucceededThings;
-    bool m_numberOfSucceededThingsHasBeenSet;
+    bool m_numberOfSucceededThingsHasBeenSet = false;
 
     int m_numberOfFailedThings;
-    bool m_numberOfFailedThingsHasBeenSet;
+    bool m_numberOfFailedThingsHasBeenSet = false;
 
     int m_numberOfRejectedThings;
-    bool m_numberOfRejectedThingsHasBeenSet;
+    bool m_numberOfRejectedThingsHasBeenSet = false;
 
     int m_numberOfQueuedThings;
-    bool m_numberOfQueuedThingsHasBeenSet;
+    bool m_numberOfQueuedThingsHasBeenSet = false;
 
     int m_numberOfInProgressThings;
-    bool m_numberOfInProgressThingsHasBeenSet;
+    bool m_numberOfInProgressThingsHasBeenSet = false;
 
     int m_numberOfRemovedThings;
-    bool m_numberOfRemovedThingsHasBeenSet;
+    bool m_numberOfRemovedThingsHasBeenSet = false;
 
     int m_numberOfTimedOutThings;
-    bool m_numberOfTimedOutThingsHasBeenSet;
+    bool m_numberOfTimedOutThingsHasBeenSet = false;
   };
 
 } // namespace Model

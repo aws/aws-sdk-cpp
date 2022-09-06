@@ -151,7 +151,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, ItemResponse> m_results;
-    bool m_resultsHasBeenSet;
+    bool m_resultsHasBeenSet = false;
   };
 
 } // namespace Model

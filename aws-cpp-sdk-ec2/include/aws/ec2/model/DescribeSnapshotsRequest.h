@@ -630,25 +630,25 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ownerIds;
-    bool m_ownerIdsHasBeenSet;
+    bool m_ownerIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_restorableByUserIds;
-    bool m_restorableByUserIdsHasBeenSet;
+    bool m_restorableByUserIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_snapshotIds;
-    bool m_snapshotIdsHasBeenSet;
+    bool m_snapshotIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

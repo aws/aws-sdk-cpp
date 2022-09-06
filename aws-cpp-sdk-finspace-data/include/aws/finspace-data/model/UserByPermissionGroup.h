@@ -477,31 +477,31 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     UserStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     UserType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ApiAccess m_apiAccess;
-    bool m_apiAccessHasBeenSet;
+    bool m_apiAccessHasBeenSet = false;
 
     Aws::String m_apiAccessPrincipalArn;
-    bool m_apiAccessPrincipalArnHasBeenSet;
+    bool m_apiAccessPrincipalArnHasBeenSet = false;
 
     PermissionGroupMembershipStatus m_membershipStatus;
-    bool m_membershipStatusHasBeenSet;
+    bool m_membershipStatusHasBeenSet = false;
   };
 
 } // namespace Model

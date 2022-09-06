@@ -386,28 +386,28 @@ namespace Model
   private:
 
     Aws::String m_reportArn;
-    bool m_reportArnHasBeenSet;
+    bool m_reportArnHasBeenSet = false;
 
     Aws::String m_testRawDataPath;
-    bool m_testRawDataPathHasBeenSet;
+    bool m_testRawDataPathHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_durationInNanoSeconds;
-    bool m_durationInNanoSecondsHasBeenSet;
+    bool m_durationInNanoSecondsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_expired;
-    bool m_expiredHasBeenSet;
+    bool m_expiredHasBeenSet = false;
   };
 
 } // namespace Model

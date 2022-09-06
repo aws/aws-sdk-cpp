@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

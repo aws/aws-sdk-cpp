@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_constraint;
-    bool m_constraintHasBeenSet;
+    bool m_constraintHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

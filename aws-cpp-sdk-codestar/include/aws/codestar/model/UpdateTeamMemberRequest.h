@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_projectRole;
-    bool m_projectRoleHasBeenSet;
+    bool m_projectRoleHasBeenSet = false;
 
     bool m_remoteAccessAllowed;
-    bool m_remoteAccessAllowedHasBeenSet;
+    bool m_remoteAccessAllowedHasBeenSet = false;
   };
 
 } // namespace Model

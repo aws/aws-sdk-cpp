@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_successTopic;
-    bool m_successTopicHasBeenSet;
+    bool m_successTopicHasBeenSet = false;
 
     Aws::String m_errorTopic;
-    bool m_errorTopicHasBeenSet;
+    bool m_errorTopicHasBeenSet = false;
   };
 
 } // namespace Model

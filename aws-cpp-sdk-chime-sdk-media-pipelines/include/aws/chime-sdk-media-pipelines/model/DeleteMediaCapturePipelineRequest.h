@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_mediaPipelineId;
-    bool m_mediaPipelineIdHasBeenSet;
+    bool m_mediaPipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProvisionedResourceEngine m_provisioningEngine;
-    bool m_provisioningEngineHasBeenSet;
+    bool m_provisioningEngineHasBeenSet = false;
   };
 
 } // namespace Model

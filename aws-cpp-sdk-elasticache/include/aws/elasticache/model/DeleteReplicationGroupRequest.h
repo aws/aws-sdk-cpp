@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     bool m_retainPrimaryCluster;
-    bool m_retainPrimaryClusterHasBeenSet;
+    bool m_retainPrimaryClusterHasBeenSet = false;
 
     Aws::String m_finalSnapshotIdentifier;
-    bool m_finalSnapshotIdentifierHasBeenSet;
+    bool m_finalSnapshotIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

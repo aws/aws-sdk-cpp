@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_humanLoopArn;
-    bool m_humanLoopArnHasBeenSet;
+    bool m_humanLoopArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_humanLoopActivationReasons;
-    bool m_humanLoopActivationReasonsHasBeenSet;
+    bool m_humanLoopActivationReasonsHasBeenSet = false;
 
     Aws::String m_humanLoopActivationConditionsEvaluationResults;
-    bool m_humanLoopActivationConditionsEvaluationResultsHasBeenSet;
+    bool m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = false;
   };
 
 } // namespace Model

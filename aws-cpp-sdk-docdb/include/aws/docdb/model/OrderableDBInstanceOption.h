@@ -269,22 +269,22 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     bool m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
   };
 
 } // namespace Model

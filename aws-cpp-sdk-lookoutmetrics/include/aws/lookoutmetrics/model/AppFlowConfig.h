@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
   };
 
 } // namespace Model

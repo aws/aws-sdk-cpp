@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_deliveryChannelName;
-    bool m_deliveryChannelNameHasBeenSet;
+    bool m_deliveryChannelNameHasBeenSet = false;
   };
 
 } // namespace Model

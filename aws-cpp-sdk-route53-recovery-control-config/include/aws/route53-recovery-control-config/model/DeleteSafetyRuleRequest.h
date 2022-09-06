@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_safetyRuleArn;
-    bool m_safetyRuleArnHasBeenSet;
+    bool m_safetyRuleArnHasBeenSet = false;
   };
 
 } // namespace Model

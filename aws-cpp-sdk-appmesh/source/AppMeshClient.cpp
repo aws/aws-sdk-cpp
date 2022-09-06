@@ -114,7 +114,7 @@ AppMeshClient::~AppMeshClient()
 
 void AppMeshClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("App Mesh");
+  AWSClient::SetServiceClientName("App Mesh");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

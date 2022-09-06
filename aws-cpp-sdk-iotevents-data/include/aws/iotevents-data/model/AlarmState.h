@@ -269,16 +269,16 @@ namespace Model
   private:
 
     AlarmStateName m_stateName;
-    bool m_stateNameHasBeenSet;
+    bool m_stateNameHasBeenSet = false;
 
     RuleEvaluation m_ruleEvaluation;
-    bool m_ruleEvaluationHasBeenSet;
+    bool m_ruleEvaluationHasBeenSet = false;
 
     CustomerAction m_customerAction;
-    bool m_customerActionHasBeenSet;
+    bool m_customerActionHasBeenSet = false;
 
     SystemEvent m_systemEvent;
-    bool m_systemEventHasBeenSet;
+    bool m_systemEventHasBeenSet = false;
   };
 
 } // namespace Model

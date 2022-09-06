@@ -171,16 +171,16 @@ namespace Model
   private:
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     int m_requestCount;
-    bool m_requestCountHasBeenSet;
+    bool m_requestCountHasBeenSet = false;
 
     StatusCodes m_statusCodes;
-    bool m_statusCodesHasBeenSet;
+    bool m_statusCodesHasBeenSet = false;
 
     Latency m_latency;
-    bool m_latencyHasBeenSet;
+    bool m_latencyHasBeenSet = false;
   };
 
 } // namespace Model

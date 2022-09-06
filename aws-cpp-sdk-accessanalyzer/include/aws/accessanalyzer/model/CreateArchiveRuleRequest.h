@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_analyzerName;
-    bool m_analyzerNameHasBeenSet;
+    bool m_analyzerNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Criterion> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
   };
 
 } // namespace Model

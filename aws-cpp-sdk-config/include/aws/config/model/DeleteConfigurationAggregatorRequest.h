@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_configurationAggregatorName;
-    bool m_configurationAggregatorNameHasBeenSet;
+    bool m_configurationAggregatorNameHasBeenSet = false;
   };
 
 } // namespace Model

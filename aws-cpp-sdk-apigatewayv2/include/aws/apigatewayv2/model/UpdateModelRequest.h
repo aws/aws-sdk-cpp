@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
   };
 
 } // namespace Model

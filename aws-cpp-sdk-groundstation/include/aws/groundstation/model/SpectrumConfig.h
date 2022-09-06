@@ -195,13 +195,13 @@ namespace Model
   private:
 
     FrequencyBandwidth m_bandwidth;
-    bool m_bandwidthHasBeenSet;
+    bool m_bandwidthHasBeenSet = false;
 
     Frequency m_centerFrequency;
-    bool m_centerFrequencyHasBeenSet;
+    bool m_centerFrequencyHasBeenSet = false;
 
     Polarization m_polarization;
-    bool m_polarizationHasBeenSet;
+    bool m_polarizationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_layerName;
-    bool m_layerNameHasBeenSet;
+    bool m_layerNameHasBeenSet = false;
 
     Aws::String m_layerArn;
-    bool m_layerArnHasBeenSet;
+    bool m_layerArnHasBeenSet = false;
 
     LayerVersionsListItem m_latestMatchingVersion;
-    bool m_latestMatchingVersionHasBeenSet;
+    bool m_latestMatchingVersionHasBeenSet = false;
   };
 
 } // namespace Model

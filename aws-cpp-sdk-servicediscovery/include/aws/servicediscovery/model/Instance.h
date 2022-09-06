@@ -1065,13 +1065,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

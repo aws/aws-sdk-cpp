@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_s3CanonicalUserId;
-    bool m_s3CanonicalUserIdHasBeenSet;
+    bool m_s3CanonicalUserIdHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

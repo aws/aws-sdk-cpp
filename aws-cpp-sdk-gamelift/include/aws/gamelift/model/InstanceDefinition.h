@@ -173,10 +173,10 @@ namespace Model
   private:
 
     GameServerGroupInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_weightedCapacity;
-    bool m_weightedCapacityHasBeenSet;
+    bool m_weightedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

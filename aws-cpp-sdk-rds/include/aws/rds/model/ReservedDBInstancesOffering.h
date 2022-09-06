@@ -375,34 +375,34 @@ namespace Model
   private:
 
     Aws::String m_reservedDBInstancesOfferingId;
-    bool m_reservedDBInstancesOfferingIdHasBeenSet;
+    bool m_reservedDBInstancesOfferingIdHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::String m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
   };
 
 } // namespace Model

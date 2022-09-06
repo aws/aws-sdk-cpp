@@ -428,19 +428,19 @@ namespace Model
   private:
 
     Aws::String m_synonyms;
-    bool m_synonymsHasBeenSet;
+    bool m_synonymsHasBeenSet = false;
 
     Aws::String m_stopwords;
-    bool m_stopwordsHasBeenSet;
+    bool m_stopwordsHasBeenSet = false;
 
     Aws::String m_stemmingDictionary;
-    bool m_stemmingDictionaryHasBeenSet;
+    bool m_stemmingDictionaryHasBeenSet = false;
 
     Aws::String m_japaneseTokenizationDictionary;
-    bool m_japaneseTokenizationDictionaryHasBeenSet;
+    bool m_japaneseTokenizationDictionaryHasBeenSet = false;
 
     AlgorithmicStemming m_algorithmicStemming;
-    bool m_algorithmicStemmingHasBeenSet;
+    bool m_algorithmicStemmingHasBeenSet = false;
   };
 
 } // namespace Model

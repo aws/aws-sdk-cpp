@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_currentApplyDate;
-    bool m_currentApplyDateHasBeenSet;
+    bool m_currentApplyDateHasBeenSet = false;
   };
 
 } // namespace Model

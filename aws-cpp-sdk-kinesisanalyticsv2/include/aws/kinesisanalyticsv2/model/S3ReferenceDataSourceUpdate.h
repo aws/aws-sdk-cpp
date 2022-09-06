@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_bucketARNUpdate;
-    bool m_bucketARNUpdateHasBeenSet;
+    bool m_bucketARNUpdateHasBeenSet = false;
 
     Aws::String m_fileKeyUpdate;
-    bool m_fileKeyUpdateHasBeenSet;
+    bool m_fileKeyUpdateHasBeenSet = false;
   };
 
 } // namespace Model

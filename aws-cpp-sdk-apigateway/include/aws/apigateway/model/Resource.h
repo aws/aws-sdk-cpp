@@ -266,19 +266,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_pathPart;
-    bool m_pathPartHasBeenSet;
+    bool m_pathPartHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Map<Aws::String, Method> m_resourceMethods;
-    bool m_resourceMethodsHasBeenSet;
+    bool m_resourceMethodsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -299,22 +299,22 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     int m_queryLogLookBackWindowInDays;
-    bool m_queryLogLookBackWindowInDaysHasBeenSet;
+    bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
 
     bool m_includeQueriesWithoutUserInformation;
-    bool m_includeQueriesWithoutUserInformationHasBeenSet;
+    bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
 
     int m_minimumNumberOfQueryingUsers;
-    bool m_minimumNumberOfQueryingUsersHasBeenSet;
+    bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
 
     int m_minimumQueryCount;
-    bool m_minimumQueryCountHasBeenSet;
+    bool m_minimumQueryCountHasBeenSet = false;
   };
 
 } // namespace Model

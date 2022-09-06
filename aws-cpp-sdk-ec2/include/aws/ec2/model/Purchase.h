@@ -357,28 +357,28 @@ namespace Model
   private:
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostIdSet;
-    bool m_hostIdSetHasBeenSet;
+    bool m_hostIdSetHasBeenSet = false;
 
     Aws::String m_hostReservationId;
-    bool m_hostReservationIdHasBeenSet;
+    bool m_hostReservationIdHasBeenSet = false;
 
     Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
+    bool m_hourlyPriceHasBeenSet = false;
 
     Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::String m_upfrontPrice;
-    bool m_upfrontPriceHasBeenSet;
+    bool m_upfrontPriceHasBeenSet = false;
   };
 
 } // namespace Model

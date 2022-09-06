@@ -77,7 +77,7 @@ namespace Model
   private:
 
     EcrRescanDurationState m_rescanDurationState;
-    bool m_rescanDurationStateHasBeenSet;
+    bool m_rescanDurationStateHasBeenSet = false;
   };
 
 } // namespace Model

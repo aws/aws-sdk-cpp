@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<PortMapping> m_portMappings;
-    bool m_portMappingsHasBeenSet;
+    bool m_portMappingsHasBeenSet = false;
   };
 
 } // namespace Model

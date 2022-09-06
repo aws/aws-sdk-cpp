@@ -525,16 +525,16 @@ namespace Model
   private:
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxRows;
-    bool m_maxRowsHasBeenSet;
+    bool m_maxRowsHasBeenSet = false;
   };
 
 } // namespace Model

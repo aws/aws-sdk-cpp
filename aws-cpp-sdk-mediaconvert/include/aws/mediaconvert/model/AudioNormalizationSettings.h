@@ -295,22 +295,22 @@ namespace Model
   private:
 
     AudioNormalizationAlgorithm m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     AudioNormalizationAlgorithmControl m_algorithmControl;
-    bool m_algorithmControlHasBeenSet;
+    bool m_algorithmControlHasBeenSet = false;
 
     int m_correctionGateLevel;
-    bool m_correctionGateLevelHasBeenSet;
+    bool m_correctionGateLevelHasBeenSet = false;
 
     AudioNormalizationLoudnessLogging m_loudnessLogging;
-    bool m_loudnessLoggingHasBeenSet;
+    bool m_loudnessLoggingHasBeenSet = false;
 
     AudioNormalizationPeakCalculation m_peakCalculation;
-    bool m_peakCalculationHasBeenSet;
+    bool m_peakCalculationHasBeenSet = false;
 
     double m_targetLkfs;
-    bool m_targetLkfsHasBeenSet;
+    bool m_targetLkfsHasBeenSet = false;
   };
 
 } // namespace Model

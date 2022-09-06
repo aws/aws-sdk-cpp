@@ -565,37 +565,37 @@ namespace Model
   private:
 
     Aws::String m_kmsMasterKeyId;
-    bool m_kmsMasterKeyIdHasBeenSet;
+    bool m_kmsMasterKeyIdHasBeenSet = false;
 
     Aws::Vector<AwsSnsTopicSubscription> m_subscription;
-    bool m_subscriptionHasBeenSet;
+    bool m_subscriptionHasBeenSet = false;
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_sqsSuccessFeedbackRoleArn;
-    bool m_sqsSuccessFeedbackRoleArnHasBeenSet;
+    bool m_sqsSuccessFeedbackRoleArnHasBeenSet = false;
 
     Aws::String m_sqsFailureFeedbackRoleArn;
-    bool m_sqsFailureFeedbackRoleArnHasBeenSet;
+    bool m_sqsFailureFeedbackRoleArnHasBeenSet = false;
 
     Aws::String m_applicationSuccessFeedbackRoleArn;
-    bool m_applicationSuccessFeedbackRoleArnHasBeenSet;
+    bool m_applicationSuccessFeedbackRoleArnHasBeenSet = false;
 
     Aws::String m_firehoseSuccessFeedbackRoleArn;
-    bool m_firehoseSuccessFeedbackRoleArnHasBeenSet;
+    bool m_firehoseSuccessFeedbackRoleArnHasBeenSet = false;
 
     Aws::String m_firehoseFailureFeedbackRoleArn;
-    bool m_firehoseFailureFeedbackRoleArnHasBeenSet;
+    bool m_firehoseFailureFeedbackRoleArnHasBeenSet = false;
 
     Aws::String m_httpSuccessFeedbackRoleArn;
-    bool m_httpSuccessFeedbackRoleArnHasBeenSet;
+    bool m_httpSuccessFeedbackRoleArnHasBeenSet = false;
 
     Aws::String m_httpFailureFeedbackRoleArn;
-    bool m_httpFailureFeedbackRoleArnHasBeenSet;
+    bool m_httpFailureFeedbackRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

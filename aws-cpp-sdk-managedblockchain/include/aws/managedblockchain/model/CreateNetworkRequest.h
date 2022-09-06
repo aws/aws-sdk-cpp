@@ -555,31 +555,31 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Framework m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
-    bool m_frameworkVersionHasBeenSet;
+    bool m_frameworkVersionHasBeenSet = false;
 
     NetworkFrameworkConfiguration m_frameworkConfiguration;
-    bool m_frameworkConfigurationHasBeenSet;
+    bool m_frameworkConfigurationHasBeenSet = false;
 
     VotingPolicy m_votingPolicy;
-    bool m_votingPolicyHasBeenSet;
+    bool m_votingPolicyHasBeenSet = false;
 
     MemberConfiguration m_memberConfiguration;
-    bool m_memberConfigurationHasBeenSet;
+    bool m_memberConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

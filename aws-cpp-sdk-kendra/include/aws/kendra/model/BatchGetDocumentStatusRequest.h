@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<DocumentInfo> m_documentInfoList;
-    bool m_documentInfoListHasBeenSet;
+    bool m_documentInfoListHasBeenSet = false;
   };
 
 } // namespace Model

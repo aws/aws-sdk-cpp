@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_metadataContent;
-    bool m_metadataContentHasBeenSet;
+    bool m_metadataContentHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
   };
 
 } // namespace Model

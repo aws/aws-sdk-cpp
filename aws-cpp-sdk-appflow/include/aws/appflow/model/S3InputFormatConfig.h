@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3InputFileType m_s3InputFileType;
-    bool m_s3InputFileTypeHasBeenSet;
+    bool m_s3InputFileTypeHasBeenSet = false;
   };
 
 } // namespace Model

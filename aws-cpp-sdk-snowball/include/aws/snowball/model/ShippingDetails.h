@@ -218,13 +218,13 @@ namespace Model
   private:
 
     ShippingOption m_shippingOption;
-    bool m_shippingOptionHasBeenSet;
+    bool m_shippingOptionHasBeenSet = false;
 
     Shipment m_inboundShipment;
-    bool m_inboundShipmentHasBeenSet;
+    bool m_inboundShipmentHasBeenSet = false;
 
     Shipment m_outboundShipment;
-    bool m_outboundShipmentHasBeenSet;
+    bool m_outboundShipmentHasBeenSet = false;
   };
 
 } // namespace Model

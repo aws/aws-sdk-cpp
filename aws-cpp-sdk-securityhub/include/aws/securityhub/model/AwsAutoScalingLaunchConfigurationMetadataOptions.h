@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     Aws::String m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
   };
 
 } // namespace Model

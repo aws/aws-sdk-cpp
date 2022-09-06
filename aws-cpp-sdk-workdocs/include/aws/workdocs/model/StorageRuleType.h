@@ -91,10 +91,10 @@ namespace Model
   private:
 
     long long m_storageAllocatedInBytes;
-    bool m_storageAllocatedInBytesHasBeenSet;
+    bool m_storageAllocatedInBytesHasBeenSet = false;
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

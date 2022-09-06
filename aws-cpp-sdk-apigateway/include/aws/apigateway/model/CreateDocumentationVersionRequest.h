@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_documentationVersion;
-    bool m_documentationVersionHasBeenSet;
+    bool m_documentationVersionHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

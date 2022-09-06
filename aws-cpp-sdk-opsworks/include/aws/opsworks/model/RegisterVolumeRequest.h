@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_ec2VolumeId;
-    bool m_ec2VolumeIdHasBeenSet;
+    bool m_ec2VolumeIdHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
   };
 
 } // namespace Model

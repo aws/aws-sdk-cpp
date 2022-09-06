@@ -350,25 +350,25 @@ namespace Model
   private:
 
     Aws::String m_organizationConformancePackName;
-    bool m_organizationConformancePackNameHasBeenSet;
+    bool m_organizationConformancePackNameHasBeenSet = false;
 
     Aws::String m_organizationConformancePackArn;
-    bool m_organizationConformancePackArnHasBeenSet;
+    bool m_organizationConformancePackArnHasBeenSet = false;
 
     Aws::String m_deliveryS3Bucket;
-    bool m_deliveryS3BucketHasBeenSet;
+    bool m_deliveryS3BucketHasBeenSet = false;
 
     Aws::String m_deliveryS3KeyPrefix;
-    bool m_deliveryS3KeyPrefixHasBeenSet;
+    bool m_deliveryS3KeyPrefixHasBeenSet = false;
 
     Aws::Vector<ConformancePackInputParameter> m_conformancePackInputParameters;
-    bool m_conformancePackInputParametersHasBeenSet;
+    bool m_conformancePackInputParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedAccounts;
-    bool m_excludedAccountsHasBeenSet;
+    bool m_excludedAccountsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

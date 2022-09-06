@@ -142,13 +142,13 @@ namespace Model
   private:
 
     long long m_allowsUnencryptedObjectUploads;
-    bool m_allowsUnencryptedObjectUploadsHasBeenSet;
+    bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
     long long m_deniesUnencryptedObjectUploads;
-    bool m_deniesUnencryptedObjectUploadsHasBeenSet;
+    bool m_deniesUnencryptedObjectUploadsHasBeenSet = false;
 
     long long m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
   };
 
 } // namespace Model

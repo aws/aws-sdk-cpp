@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_keyFormat;
-    bool m_keyFormatHasBeenSet;
+    bool m_keyFormatHasBeenSet = false;
 
     Aws::String m_keyFormatVersions;
-    bool m_keyFormatVersionsHasBeenSet;
+    bool m_keyFormatVersionsHasBeenSet = false;
 
     Aws::String m_staticKeyValue;
-    bool m_staticKeyValueHasBeenSet;
+    bool m_staticKeyValueHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

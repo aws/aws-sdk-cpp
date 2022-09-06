@@ -73,7 +73,7 @@ namespace Model
   private:
 
     bool m_enabledInBroker;
-    bool m_enabledInBrokerHasBeenSet;
+    bool m_enabledInBrokerHasBeenSet = false;
   };
 
 } // namespace Model

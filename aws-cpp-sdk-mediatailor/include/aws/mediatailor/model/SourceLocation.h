@@ -391,31 +391,31 @@ namespace Model
   private:
 
     AccessConfiguration m_accessConfiguration;
-    bool m_accessConfigurationHasBeenSet;
+    bool m_accessConfigurationHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     DefaultSegmentDeliveryConfiguration m_defaultSegmentDeliveryConfiguration;
-    bool m_defaultSegmentDeliveryConfigurationHasBeenSet;
+    bool m_defaultSegmentDeliveryConfigurationHasBeenSet = false;
 
     HttpConfiguration m_httpConfiguration;
-    bool m_httpConfigurationHasBeenSet;
+    bool m_httpConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<SegmentDeliveryConfiguration> m_segmentDeliveryConfigurations;
-    bool m_segmentDeliveryConfigurationsHasBeenSet;
+    bool m_segmentDeliveryConfigurationsHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

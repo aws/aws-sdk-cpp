@@ -131,13 +131,13 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     bool m_enableDynamicFieldUpdate;
-    bool m_enableDynamicFieldUpdateHasBeenSet;
+    bool m_enableDynamicFieldUpdateHasBeenSet = false;
 
     bool m_includeDeletedRecords;
-    bool m_includeDeletedRecordsHasBeenSet;
+    bool m_includeDeletedRecordsHasBeenSet = false;
   };
 
 } // namespace Model

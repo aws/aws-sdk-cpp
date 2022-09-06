@@ -135,13 +135,13 @@ namespace Model
   private:
 
     AwsManagedResources m_awsManagedResources;
-    bool m_awsManagedResourcesHasBeenSet;
+    bool m_awsManagedResourcesHasBeenSet = false;
 
     NoManagementPreference m_noPreference;
-    bool m_noPreferenceHasBeenSet;
+    bool m_noPreferenceHasBeenSet = false;
 
     SelfManageResources m_selfManageResources;
-    bool m_selfManageResourcesHasBeenSet;
+    bool m_selfManageResourcesHasBeenSet = false;
   };
 
 } // namespace Model

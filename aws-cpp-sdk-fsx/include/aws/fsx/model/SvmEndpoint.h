@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipAddresses;
-    bool m_ipAddressesHasBeenSet;
+    bool m_ipAddressesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     MemberType m_memberType;
-    bool m_memberTypeHasBeenSet;
+    bool m_memberTypeHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_fullName;
-    bool m_fullNameHasBeenSet;
+    bool m_fullNameHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

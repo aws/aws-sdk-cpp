@@ -103,10 +103,10 @@ namespace Model
   private:
 
     APNSChannelRequest m_aPNSChannelRequest;
-    bool m_aPNSChannelRequestHasBeenSet;
+    bool m_aPNSChannelRequestHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
   };
 
 } // namespace Model

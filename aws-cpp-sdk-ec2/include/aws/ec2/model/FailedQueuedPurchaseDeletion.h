@@ -115,10 +115,10 @@ namespace Model
   private:
 
     DeleteQueuedReservedInstancesError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
   };
 
 } // namespace Model

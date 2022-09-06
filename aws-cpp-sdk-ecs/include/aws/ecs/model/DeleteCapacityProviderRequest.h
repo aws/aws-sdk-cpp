@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_capacityProvider;
-    bool m_capacityProviderHasBeenSet;
+    bool m_capacityProviderHasBeenSet = false;
   };
 
 } // namespace Model

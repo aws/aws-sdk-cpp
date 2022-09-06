@@ -160,19 +160,19 @@ namespace Model
   private:
 
     FileShareType m_fileShareType;
-    bool m_fileShareTypeHasBeenSet;
+    bool m_fileShareTypeHasBeenSet = false;
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
 
     Aws::String m_fileShareId;
-    bool m_fileShareIdHasBeenSet;
+    bool m_fileShareIdHasBeenSet = false;
 
     Aws::String m_fileShareStatus;
-    bool m_fileShareStatusHasBeenSet;
+    bool m_fileShareStatusHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -110,10 +110,10 @@ namespace Model
   private:
 
     DeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     DeploymentOption m_deploymentOption;
-    bool m_deploymentOptionHasBeenSet;
+    bool m_deploymentOptionHasBeenSet = false;
   };
 
 } // namespace Model

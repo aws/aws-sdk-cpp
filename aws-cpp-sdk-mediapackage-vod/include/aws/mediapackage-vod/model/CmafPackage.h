@@ -175,16 +175,16 @@ rounded to the
   private:
 
     CmafEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::Vector<HlsManifest> m_hlsManifests;
-    bool m_hlsManifestsHasBeenSet;
+    bool m_hlsManifestsHasBeenSet = false;
 
     bool m_includeEncoderConfigurationInSegments;
-    bool m_includeEncoderConfigurationInSegmentsHasBeenSet;
+    bool m_includeEncoderConfigurationInSegmentsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

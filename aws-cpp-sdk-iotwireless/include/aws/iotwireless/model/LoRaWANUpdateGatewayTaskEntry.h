@@ -101,10 +101,10 @@ namespace Model
   private:
 
     LoRaWANGatewayVersion m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     LoRaWANGatewayVersion m_updateVersion;
-    bool m_updateVersionHasBeenSet;
+    bool m_updateVersionHasBeenSet = false;
   };
 
 } // namespace Model

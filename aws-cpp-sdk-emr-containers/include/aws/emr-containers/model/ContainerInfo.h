@@ -71,7 +71,7 @@ namespace Model
   private:
 
     EksInfo m_eksInfo;
-    bool m_eksInfoHasBeenSet;
+    bool m_eksInfoHasBeenSet = false;
   };
 
 } // namespace Model

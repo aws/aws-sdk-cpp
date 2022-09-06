@@ -70,7 +70,7 @@ namespace Model
   private:
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

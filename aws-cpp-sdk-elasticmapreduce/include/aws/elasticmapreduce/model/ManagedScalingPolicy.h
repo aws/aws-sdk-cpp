@@ -91,7 +91,7 @@ namespace Model
   private:
 
     ComputeLimits m_computeLimits;
-    bool m_computeLimitsHasBeenSet;
+    bool m_computeLimitsHasBeenSet = false;
   };
 
 } // namespace Model

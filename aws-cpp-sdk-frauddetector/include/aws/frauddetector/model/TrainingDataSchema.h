@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_modelVariables;
-    bool m_modelVariablesHasBeenSet;
+    bool m_modelVariablesHasBeenSet = false;
 
     LabelSchema m_labelSchema;
-    bool m_labelSchemaHasBeenSet;
+    bool m_labelSchemaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_cdnIdentifierSecret;
-    bool m_cdnIdentifierSecretHasBeenSet;
+    bool m_cdnIdentifierSecretHasBeenSet = false;
 
     Aws::String m_secretsRoleArn;
-    bool m_secretsRoleArnHasBeenSet;
+    bool m_secretsRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

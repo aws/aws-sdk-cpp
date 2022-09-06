@@ -374,22 +374,22 @@ namespace Model
   private:
 
     Aws::Vector<ProviderType> m_providerTypes;
-    bool m_providerTypesHasBeenSet;
+    bool m_providerTypesHasBeenSet = false;
 
     Aws::Vector<JobState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_repositoryNames;
-    bool m_repositoryNamesHasBeenSet;
+    bool m_repositoryNamesHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

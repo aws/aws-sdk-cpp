@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_snapshotIdentifierList;
-    bool m_snapshotIdentifierListHasBeenSet;
+    bool m_snapshotIdentifierListHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     bool m_force;
-    bool m_forceHasBeenSet;
+    bool m_forceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     int m_downlinkFrequency;
-    bool m_downlinkFrequencyHasBeenSet;
+    bool m_downlinkFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

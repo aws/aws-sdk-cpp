@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_policyRevisionId;
-    bool m_policyRevisionIdHasBeenSet;
+    bool m_policyRevisionIdHasBeenSet = false;
   };
 
 } // namespace Model

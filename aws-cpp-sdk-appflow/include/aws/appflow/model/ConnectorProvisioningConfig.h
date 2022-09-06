@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LambdaConnectorProvisioningConfig m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

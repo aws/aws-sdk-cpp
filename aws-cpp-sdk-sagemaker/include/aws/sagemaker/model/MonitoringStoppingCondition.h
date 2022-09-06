@@ -75,7 +75,7 @@ namespace Model
   private:
 
     int m_maxRuntimeInSeconds;
-    bool m_maxRuntimeInSecondsHasBeenSet;
+    bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

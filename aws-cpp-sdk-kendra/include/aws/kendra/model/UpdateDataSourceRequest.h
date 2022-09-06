@@ -537,34 +537,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     DataSourceConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
-    bool m_customDocumentEnrichmentConfigurationHasBeenSet;
+    bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

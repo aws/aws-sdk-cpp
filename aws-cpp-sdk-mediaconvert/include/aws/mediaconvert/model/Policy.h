@@ -135,13 +135,13 @@ namespace Model
   private:
 
     InputPolicy m_httpInputs;
-    bool m_httpInputsHasBeenSet;
+    bool m_httpInputsHasBeenSet = false;
 
     InputPolicy m_httpsInputs;
-    bool m_httpsInputsHasBeenSet;
+    bool m_httpsInputsHasBeenSet = false;
 
     InputPolicy m_s3Inputs;
-    bool m_s3InputsHasBeenSet;
+    bool m_s3InputsHasBeenSet = false;
   };
 
 } // namespace Model

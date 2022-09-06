@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_metadataValue;
-    bool m_metadataValueHasBeenSet;
+    bool m_metadataValueHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Vector<OtherMetadataValueListItem> m_otherMetadataValueList;
-    bool m_otherMetadataValueListHasBeenSet;
+    bool m_otherMetadataValueListHasBeenSet = false;
   };
 
 } // namespace Model

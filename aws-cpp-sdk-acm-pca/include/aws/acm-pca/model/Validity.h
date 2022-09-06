@@ -232,10 +232,10 @@ namespace Model
   private:
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ValidityPeriodType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

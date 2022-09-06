@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

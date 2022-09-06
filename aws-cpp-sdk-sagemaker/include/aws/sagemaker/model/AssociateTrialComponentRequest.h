@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
 
     Aws::String m_trialName;
-    bool m_trialNameHasBeenSet;
+    bool m_trialNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     GeoMatchConstraint m_geoMatchConstraint;
-    bool m_geoMatchConstraintHasBeenSet;
+    bool m_geoMatchConstraintHasBeenSet = false;
   };
 
 } // namespace Model

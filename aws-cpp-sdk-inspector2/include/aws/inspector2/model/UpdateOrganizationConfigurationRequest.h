@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AutoEnable m_autoEnable;
-    bool m_autoEnableHasBeenSet;
+    bool m_autoEnableHasBeenSet = false;
   };
 
 } // namespace Model

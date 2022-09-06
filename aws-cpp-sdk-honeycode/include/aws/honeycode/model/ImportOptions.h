@@ -109,10 +109,10 @@ namespace Model
   private:
 
     DestinationOptions m_destinationOptions;
-    bool m_destinationOptionsHasBeenSet;
+    bool m_destinationOptionsHasBeenSet = false;
 
     DelimitedTextImportOptions m_delimitedTextOptions;
-    bool m_delimitedTextOptionsHasBeenSet;
+    bool m_delimitedTextOptionsHasBeenSet = false;
   };
 
 } // namespace Model

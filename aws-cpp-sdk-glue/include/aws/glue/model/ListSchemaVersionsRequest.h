@@ -170,13 +170,13 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

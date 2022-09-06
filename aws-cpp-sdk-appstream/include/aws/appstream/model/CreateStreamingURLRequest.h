@@ -306,22 +306,22 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_fleetName;
-    bool m_fleetNameHasBeenSet;
+    bool m_fleetNameHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     long long m_validity;
-    bool m_validityHasBeenSet;
+    bool m_validityHasBeenSet = false;
 
     Aws::String m_sessionContext;
-    bool m_sessionContextHasBeenSet;
+    bool m_sessionContextHasBeenSet = false;
   };
 
 } // namespace Model

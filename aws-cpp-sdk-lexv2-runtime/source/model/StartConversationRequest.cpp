@@ -21,7 +21,7 @@ StartConversationRequest::StartConversationRequest() :
     m_sessionIdHasBeenSet(false),
     m_conversationMode(ConversationMode::NOT_SET),
     m_conversationModeHasBeenSet(false),
-    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
+    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
 

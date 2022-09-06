@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_scalingPlanName;
-    bool m_scalingPlanNameHasBeenSet;
+    bool m_scalingPlanNameHasBeenSet = false;
 
     long long m_scalingPlanVersion;
-    bool m_scalingPlanVersionHasBeenSet;
+    bool m_scalingPlanVersionHasBeenSet = false;
   };
 
 } // namespace Model

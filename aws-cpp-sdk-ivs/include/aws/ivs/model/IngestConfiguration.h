@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AudioConfiguration m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     VideoConfiguration m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
   };
 
 } // namespace Model

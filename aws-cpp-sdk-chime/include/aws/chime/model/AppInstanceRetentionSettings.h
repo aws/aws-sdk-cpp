@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ChannelRetentionSettings m_channelRetentionSettings;
-    bool m_channelRetentionSettingsHasBeenSet;
+    bool m_channelRetentionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

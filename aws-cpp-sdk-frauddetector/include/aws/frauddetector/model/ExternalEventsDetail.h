@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_dataLocation;
-    bool m_dataLocationHasBeenSet;
+    bool m_dataLocationHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

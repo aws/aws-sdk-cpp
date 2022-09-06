@@ -373,22 +373,22 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_targetVpcSubnetId;
-    bool m_targetVpcSubnetIdHasBeenSet;
+    bool m_targetVpcSubnetIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

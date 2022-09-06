@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
   };
 
 } // namespace Model

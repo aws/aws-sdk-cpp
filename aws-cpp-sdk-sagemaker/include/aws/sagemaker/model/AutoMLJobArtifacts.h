@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_candidateDefinitionNotebookLocation;
-    bool m_candidateDefinitionNotebookLocationHasBeenSet;
+    bool m_candidateDefinitionNotebookLocationHasBeenSet = false;
 
     Aws::String m_dataExplorationNotebookLocation;
-    bool m_dataExplorationNotebookLocationHasBeenSet;
+    bool m_dataExplorationNotebookLocationHasBeenSet = false;
   };
 
 } // namespace Model

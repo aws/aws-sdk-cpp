@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<LicenseSpecification> m_addLicenseSpecifications;
-    bool m_addLicenseSpecificationsHasBeenSet;
+    bool m_addLicenseSpecificationsHasBeenSet = false;
 
     Aws::Vector<LicenseSpecification> m_removeLicenseSpecifications;
-    bool m_removeLicenseSpecificationsHasBeenSet;
+    bool m_removeLicenseSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

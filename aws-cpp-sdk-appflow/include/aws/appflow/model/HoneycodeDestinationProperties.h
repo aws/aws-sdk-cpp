@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     ErrorHandlingConfig m_errorHandlingConfig;
-    bool m_errorHandlingConfigHasBeenSet;
+    bool m_errorHandlingConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -304,19 +304,19 @@ namespace Model
   private:
 
     AuthenticationStrategy m_authenticationStrategy;
-    bool m_authenticationStrategyHasBeenSet;
+    bool m_authenticationStrategyHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

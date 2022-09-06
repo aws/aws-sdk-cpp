@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::Vector<NewDhcpConfiguration> m_dhcpConfigurations;
-    bool m_dhcpConfigurationsHasBeenSet;
+    bool m_dhcpConfigurationsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

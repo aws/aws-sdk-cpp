@@ -129,10 +129,10 @@ namespace Model
   private:
 
     NotificationSpecification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     EventType m_testEventType;
-    bool m_testEventTypeHasBeenSet;
+    bool m_testEventTypeHasBeenSet = false;
   };
 
 } // namespace Model

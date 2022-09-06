@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_parameterValues;
-    bool m_parameterValuesHasBeenSet;
+    bool m_parameterValuesHasBeenSet = false;
 
     bool m_truncated;
-    bool m_truncatedHasBeenSet;
+    bool m_truncatedHasBeenSet = false;
   };
 
 } // namespace Model

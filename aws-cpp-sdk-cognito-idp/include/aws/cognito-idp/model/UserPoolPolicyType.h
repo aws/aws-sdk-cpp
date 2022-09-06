@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PasswordPolicyType m_passwordPolicy;
-    bool m_passwordPolicyHasBeenSet;
+    bool m_passwordPolicyHasBeenSet = false;
   };
 
 } // namespace Model

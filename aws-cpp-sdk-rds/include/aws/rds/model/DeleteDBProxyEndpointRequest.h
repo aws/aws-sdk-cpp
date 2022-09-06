@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_dBProxyEndpointName;
-    bool m_dBProxyEndpointNameHasBeenSet;
+    bool m_dBProxyEndpointNameHasBeenSet = false;
   };
 
 } // namespace Model

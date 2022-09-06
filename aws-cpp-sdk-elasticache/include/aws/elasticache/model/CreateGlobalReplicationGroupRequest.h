@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupIdSuffix;
-    bool m_globalReplicationGroupIdSuffixHasBeenSet;
+    bool m_globalReplicationGroupIdSuffixHasBeenSet = false;
 
     Aws::String m_globalReplicationGroupDescription;
-    bool m_globalReplicationGroupDescriptionHasBeenSet;
+    bool m_globalReplicationGroupDescriptionHasBeenSet = false;
 
     Aws::String m_primaryReplicationGroupId;
-    bool m_primaryReplicationGroupIdHasBeenSet;
+    bool m_primaryReplicationGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

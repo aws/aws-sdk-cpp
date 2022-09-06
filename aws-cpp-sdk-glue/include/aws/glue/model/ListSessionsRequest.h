@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestOrigin;
-    bool m_requestOriginHasBeenSet;
+    bool m_requestOriginHasBeenSet = false;
   };
 
 } // namespace Model

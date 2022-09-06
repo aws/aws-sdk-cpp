@@ -296,22 +296,22 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     bool m_includeDeletedResources;
-    bool m_includeDeletedResourcesHasBeenSet;
+    bool m_includeDeletedResourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

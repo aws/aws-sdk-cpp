@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     Aws::String m_alarmARN;
-    bool m_alarmARNHasBeenSet;
+    bool m_alarmARNHasBeenSet = false;
   };
 
 } // namespace Model

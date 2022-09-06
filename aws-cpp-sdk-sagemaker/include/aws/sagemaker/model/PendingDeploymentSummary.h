@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     Aws::Vector<PendingProductionVariantSummary> m_productionVariants;
-    bool m_productionVariantsHasBeenSet;
+    bool m_productionVariantsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

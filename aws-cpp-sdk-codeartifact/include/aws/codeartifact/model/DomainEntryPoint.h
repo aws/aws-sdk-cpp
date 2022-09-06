@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_externalConnectionName;
-    bool m_externalConnectionNameHasBeenSet;
+    bool m_externalConnectionNameHasBeenSet = false;
   };
 
 } // namespace Model

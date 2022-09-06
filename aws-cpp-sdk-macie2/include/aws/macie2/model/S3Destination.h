@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_keyPrefix;
-    bool m_keyPrefixHasBeenSet;
+    bool m_keyPrefixHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

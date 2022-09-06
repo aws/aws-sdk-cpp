@@ -153,13 +153,13 @@ namespace Model
   private:
 
     int m_noncompliantEvidenceCount;
-    bool m_noncompliantEvidenceCountHasBeenSet;
+    bool m_noncompliantEvidenceCountHasBeenSet = false;
 
     int m_compliantEvidenceCount;
-    bool m_compliantEvidenceCountHasBeenSet;
+    bool m_compliantEvidenceCountHasBeenSet = false;
 
     int m_inconclusiveEvidenceCount;
-    bool m_inconclusiveEvidenceCountHasBeenSet;
+    bool m_inconclusiveEvidenceCountHasBeenSet = false;
   };
 
 } // namespace Model

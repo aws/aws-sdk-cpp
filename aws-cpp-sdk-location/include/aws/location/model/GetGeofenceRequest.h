@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
 
     Aws::String m_geofenceId;
-    bool m_geofenceIdHasBeenSet;
+    bool m_geofenceIdHasBeenSet = false;
   };
 
 } // namespace Model

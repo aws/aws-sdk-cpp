@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     double m_nluIntentConfidenceThreshold;
-    bool m_nluIntentConfidenceThresholdHasBeenSet;
+    bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
     VoiceSettings m_voiceSettings;
-    bool m_voiceSettingsHasBeenSet;
+    bool m_voiceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

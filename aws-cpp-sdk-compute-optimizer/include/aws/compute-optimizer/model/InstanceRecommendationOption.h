@@ -1130,25 +1130,25 @@ namespace Model
   private:
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<UtilizationMetric> m_projectedUtilizationMetrics;
-    bool m_projectedUtilizationMetricsHasBeenSet;
+    bool m_projectedUtilizationMetricsHasBeenSet = false;
 
     Aws::Vector<PlatformDifference> m_platformDifferences;
-    bool m_platformDifferencesHasBeenSet;
+    bool m_platformDifferencesHasBeenSet = false;
 
     double m_performanceRisk;
-    bool m_performanceRiskHasBeenSet;
+    bool m_performanceRiskHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
 
     MigrationEffort m_migrationEffort;
-    bool m_migrationEffortHasBeenSet;
+    bool m_migrationEffortHasBeenSet = false;
   };
 
 } // namespace Model

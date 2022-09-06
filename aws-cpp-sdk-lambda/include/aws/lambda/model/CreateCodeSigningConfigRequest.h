@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AllowedPublishers m_allowedPublishers;
-    bool m_allowedPublishersHasBeenSet;
+    bool m_allowedPublishersHasBeenSet = false;
 
     CodeSigningPolicies m_codeSigningPolicies;
-    bool m_codeSigningPoliciesHasBeenSet;
+    bool m_codeSigningPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

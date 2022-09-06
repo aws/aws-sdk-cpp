@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_urls;
-    bool m_urlsHasBeenSet;
+    bool m_urlsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ComparedFace m_face;
-    bool m_faceHasBeenSet;
+    bool m_faceHasBeenSet = false;
 
     double m_matchConfidence;
-    bool m_matchConfidenceHasBeenSet;
+    bool m_matchConfidenceHasBeenSet = false;
 
     KnownGender m_knownGender;
-    bool m_knownGenderHasBeenSet;
+    bool m_knownGenderHasBeenSet = false;
   };
 
 } // namespace Model

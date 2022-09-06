@@ -693,46 +693,46 @@ namespace Model
   private:
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     Aws::String m_ec2VolumeId;
-    bool m_ec2VolumeIdHasBeenSet;
+    bool m_ec2VolumeIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_raidArrayId;
-    bool m_raidArrayIdHasBeenSet;
+    bool m_raidArrayIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_mountPoint;
-    bool m_mountPointHasBeenSet;
+    bool m_mountPointHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
   };
 
 } // namespace Model

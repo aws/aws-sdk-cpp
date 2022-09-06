@@ -146,10 +146,10 @@ namespace Model
   private:
 
     SeedUrlConfiguration m_seedUrlConfiguration;
-    bool m_seedUrlConfigurationHasBeenSet;
+    bool m_seedUrlConfigurationHasBeenSet = false;
 
     SiteMapsConfiguration m_siteMapsConfiguration;
-    bool m_siteMapsConfigurationHasBeenSet;
+    bool m_siteMapsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

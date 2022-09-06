@@ -1122,25 +1122,25 @@ namespace Model
   private:
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     int m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     SuspendedState m_suspendedState;
-    bool m_suspendedStateHasBeenSet;
+    bool m_suspendedStateHasBeenSet = false;
   };
 
 } // namespace Model

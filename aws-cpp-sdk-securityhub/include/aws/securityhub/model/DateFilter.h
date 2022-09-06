@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     DateRange m_dateRange;
-    bool m_dateRangeHasBeenSet;
+    bool m_dateRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -173,16 +173,16 @@ namespace Model
   private:
 
     Aws::Vector<ProtectiveEquipmentBodyPart> m_bodyParts;
-    bool m_bodyPartsHasBeenSet;
+    bool m_bodyPartsHasBeenSet = false;
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

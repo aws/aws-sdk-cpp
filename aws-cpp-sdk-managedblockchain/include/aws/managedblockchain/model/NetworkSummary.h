@@ -364,28 +364,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Framework m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
-    bool m_frameworkVersionHasBeenSet;
+    bool m_frameworkVersionHasBeenSet = false;
 
     NetworkStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ContentShareLayoutOption m_contentShareLayout;
-    bool m_contentShareLayoutHasBeenSet;
+    bool m_contentShareLayoutHasBeenSet = false;
 
     PresenterOnlyConfiguration m_presenterOnlyConfiguration;
-    bool m_presenterOnlyConfigurationHasBeenSet;
+    bool m_presenterOnlyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

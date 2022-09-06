@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_documentAttributeKey;
-    bool m_documentAttributeKeyHasBeenSet;
+    bool m_documentAttributeKeyHasBeenSet = false;
 
     Aws::Vector<Facet> m_facets;
-    bool m_facetsHasBeenSet;
+    bool m_facetsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

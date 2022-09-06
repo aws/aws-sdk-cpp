@@ -102,7 +102,7 @@ OutpostsClient::~OutpostsClient()
 
 void OutpostsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Outposts");
+  AWSClient::SetServiceClientName("Outposts");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_serverGroupId;
-    bool m_serverGroupIdHasBeenSet;
+    bool m_serverGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Server> m_serverList;
-    bool m_serverListHasBeenSet;
+    bool m_serverListHasBeenSet = false;
   };
 
 } // namespace Model

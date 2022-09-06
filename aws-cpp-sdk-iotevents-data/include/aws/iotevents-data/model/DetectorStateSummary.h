@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_stateName;
-    bool m_stateNameHasBeenSet;
+    bool m_stateNameHasBeenSet = false;
   };
 
 } // namespace Model

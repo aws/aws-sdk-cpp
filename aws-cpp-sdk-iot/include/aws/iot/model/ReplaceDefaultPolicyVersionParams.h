@@ -77,7 +77,7 @@ namespace Model
   private:
 
     PolicyTemplateName m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     Aws::String m_stopTimestamp;
-    bool m_stopTimestampHasBeenSet;
+    bool m_stopTimestampHasBeenSet = false;
   };
 
 } // namespace Model

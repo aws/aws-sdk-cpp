@@ -266,16 +266,16 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_granteeId;
-    bool m_granteeIdHasBeenSet;
+    bool m_granteeIdHasBeenSet = false;
 
     Aws::Vector<PermissionType> m_permissionValues;
-    bool m_permissionValuesHasBeenSet;
+    bool m_permissionValuesHasBeenSet = false;
   };
 
 } // namespace Model

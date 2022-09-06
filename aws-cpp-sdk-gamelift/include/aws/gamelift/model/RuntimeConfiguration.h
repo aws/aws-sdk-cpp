@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::Vector<ServerProcess> m_serverProcesses;
-    bool m_serverProcessesHasBeenSet;
+    bool m_serverProcessesHasBeenSet = false;
 
     int m_maxConcurrentGameSessionActivations;
-    bool m_maxConcurrentGameSessionActivationsHasBeenSet;
+    bool m_maxConcurrentGameSessionActivationsHasBeenSet = false;
 
     int m_gameSessionActivationTimeoutSeconds;
-    bool m_gameSessionActivationTimeoutSecondsHasBeenSet;
+    bool m_gameSessionActivationTimeoutSecondsHasBeenSet = false;
   };
 
 } // namespace Model

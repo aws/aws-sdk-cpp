@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::String m_adjustmentType;
-    bool m_adjustmentTypeHasBeenSet;
+    bool m_adjustmentTypeHasBeenSet = false;
   };
 
 } // namespace Model

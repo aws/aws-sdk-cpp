@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_eventTrackerArn;
-    bool m_eventTrackerArnHasBeenSet;
+    bool m_eventTrackerArnHasBeenSet = false;
   };
 
 } // namespace Model

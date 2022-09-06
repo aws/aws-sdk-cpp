@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategories;
-    bool m_eventCategoriesHasBeenSet;
+    bool m_eventCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

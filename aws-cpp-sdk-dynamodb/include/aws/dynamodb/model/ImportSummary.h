@@ -354,28 +354,28 @@ namespace Model
   private:
 
     Aws::String m_importArn;
-    bool m_importArnHasBeenSet;
+    bool m_importArnHasBeenSet = false;
 
     ImportStatus m_importStatus;
-    bool m_importStatusHasBeenSet;
+    bool m_importStatusHasBeenSet = false;
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     S3BucketSource m_s3BucketSource;
-    bool m_s3BucketSourceHasBeenSet;
+    bool m_s3BucketSourceHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupArn;
-    bool m_cloudWatchLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
     InputFormat m_inputFormat;
-    bool m_inputFormatHasBeenSet;
+    bool m_inputFormatHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

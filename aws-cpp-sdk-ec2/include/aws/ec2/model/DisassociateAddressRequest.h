@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

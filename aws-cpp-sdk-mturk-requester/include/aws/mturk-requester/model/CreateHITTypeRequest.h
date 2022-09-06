@@ -405,25 +405,25 @@ namespace Model
   private:
 
     long long m_autoApprovalDelayInSeconds;
-    bool m_autoApprovalDelayInSecondsHasBeenSet;
+    bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
     long long m_assignmentDurationInSeconds;
-    bool m_assignmentDurationInSecondsHasBeenSet;
+    bool m_assignmentDurationInSecondsHasBeenSet = false;
 
     Aws::String m_reward;
-    bool m_rewardHasBeenSet;
+    bool m_rewardHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
-    bool m_qualificationRequirementsHasBeenSet;
+    bool m_qualificationRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

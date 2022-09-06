@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::String m_suggester;
-    bool m_suggesterHasBeenSet;
+    bool m_suggesterHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_firewallDomainListId;
-    bool m_firewallDomainListIdHasBeenSet;
+    bool m_firewallDomainListIdHasBeenSet = false;
 
     FirewallDomainImportOperation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_domainFileUrl;
-    bool m_domainFileUrlHasBeenSet;
+    bool m_domainFileUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_bestRecipeArn;
-    bool m_bestRecipeArnHasBeenSet;
+    bool m_bestRecipeArnHasBeenSet = false;
   };
 
 } // namespace Model

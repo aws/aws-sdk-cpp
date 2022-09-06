@@ -129,7 +129,7 @@ SecurityHubClient::~SecurityHubClient()
 
 void SecurityHubClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SecurityHub");
+  AWSClient::SetServiceClientName("SecurityHub");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

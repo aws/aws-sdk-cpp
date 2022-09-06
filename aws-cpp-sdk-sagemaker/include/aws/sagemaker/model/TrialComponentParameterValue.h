@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     double m_numberValue;
-    bool m_numberValueHasBeenSet;
+    bool m_numberValueHasBeenSet = false;
   };
 
 } // namespace Model

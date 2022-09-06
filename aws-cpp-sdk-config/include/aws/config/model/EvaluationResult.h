@@ -304,22 +304,22 @@ namespace Model
   private:
 
     EvaluationResultIdentifier m_evaluationResultIdentifier;
-    bool m_evaluationResultIdentifierHasBeenSet;
+    bool m_evaluationResultIdentifierHasBeenSet = false;
 
     ComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_resultRecordedTime;
-    bool m_resultRecordedTimeHasBeenSet;
+    bool m_resultRecordedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_configRuleInvokedTime;
-    bool m_configRuleInvokedTimeHasBeenSet;
+    bool m_configRuleInvokedTimeHasBeenSet = false;
 
     Aws::String m_annotation;
-    bool m_annotationHasBeenSet;
+    bool m_annotationHasBeenSet = false;
 
     Aws::String m_resultToken;
-    bool m_resultTokenHasBeenSet;
+    bool m_resultTokenHasBeenSet = false;
   };
 
 } // namespace Model

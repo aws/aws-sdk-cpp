@@ -277,25 +277,25 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     BehaviorCriteriaType m_behaviorCriteriaType;
-    bool m_behaviorCriteriaTypeHasBeenSet;
+    bool m_behaviorCriteriaTypeHasBeenSet = false;
 
     bool m_listSuppressedAlerts;
-    bool m_listSuppressedAlertsHasBeenSet;
+    bool m_listSuppressedAlertsHasBeenSet = false;
 
     VerificationState m_verificationState;
-    bool m_verificationStateHasBeenSet;
+    bool m_verificationStateHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

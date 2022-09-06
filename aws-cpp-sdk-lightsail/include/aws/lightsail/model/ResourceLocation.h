@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     RegionName m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
   };
 
 } // namespace Model

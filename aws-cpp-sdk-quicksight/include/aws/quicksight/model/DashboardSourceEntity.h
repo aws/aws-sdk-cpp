@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DashboardSourceTemplate m_sourceTemplate;
-    bool m_sourceTemplateHasBeenSet;
+    bool m_sourceTemplateHasBeenSet = false;
   };
 
 } // namespace Model

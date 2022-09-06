@@ -257,16 +257,16 @@ namespace Model
   private:
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customerDnsIps;
-    bool m_customerDnsIpsHasBeenSet;
+    bool m_customerDnsIpsHasBeenSet = false;
 
     Aws::String m_customerUserName;
-    bool m_customerUserNameHasBeenSet;
+    bool m_customerUserNameHasBeenSet = false;
   };
 
 } // namespace Model

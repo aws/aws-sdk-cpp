@@ -336,28 +336,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_groundStation;
-    bool m_groundStationHasBeenSet;
+    bool m_groundStationHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_missionProfileArn;
-    bool m_missionProfileArnHasBeenSet;
+    bool m_missionProfileArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_satelliteArn;
-    bool m_satelliteArnHasBeenSet;
+    bool m_satelliteArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Vector<ContactStatus> m_statusList;
-    bool m_statusListHasBeenSet;
+    bool m_statusListHasBeenSet = false;
   };
 
 } // namespace Model

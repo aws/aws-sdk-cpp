@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
   };
 
 } // namespace Model

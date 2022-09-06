@@ -239,19 +239,19 @@ namespace Model
   private:
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::String m_sourceBucket;
-    bool m_sourceBucketHasBeenSet;
+    bool m_sourceBucketHasBeenSet = false;
 
     S3ManifestOutputLocation m_manifestOutputLocation;
-    bool m_manifestOutputLocationHasBeenSet;
+    bool m_manifestOutputLocationHasBeenSet = false;
 
     JobManifestGeneratorFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     bool m_enableManifestOutput;
-    bool m_enableManifestOutputHasBeenSet;
+    bool m_enableManifestOutputHasBeenSet = false;
   };
 
 } // namespace Model

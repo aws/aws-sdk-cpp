@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_manifestNameModifier;
-    bool m_manifestNameModifierHasBeenSet;
+    bool m_manifestNameModifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedOutputs;
-    bool m_selectedOutputsHasBeenSet;
+    bool m_selectedOutputsHasBeenSet = false;
   };
 
 } // namespace Model

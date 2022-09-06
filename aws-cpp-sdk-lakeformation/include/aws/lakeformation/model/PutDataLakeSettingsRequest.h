@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     DataLakeSettings m_dataLakeSettings;
-    bool m_dataLakeSettingsHasBeenSet;
+    bool m_dataLakeSettingsHasBeenSet = false;
   };
 
 } // namespace Model

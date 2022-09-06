@@ -206,19 +206,19 @@ namespace Model
   private:
 
     Operation m_op;
-    bool m_opHasBeenSet;
+    bool m_opHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     long long m_syncCount;
-    bool m_syncCountHasBeenSet;
+    bool m_syncCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceLastModifiedDate;
-    bool m_deviceLastModifiedDateHasBeenSet;
+    bool m_deviceLastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

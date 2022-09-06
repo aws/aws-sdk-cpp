@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_propertyNameHint;
-    bool m_propertyNameHintHasBeenSet;
+    bool m_propertyNameHintHasBeenSet = false;
   };
 
 } // namespace Model

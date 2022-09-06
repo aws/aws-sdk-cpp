@@ -210,22 +210,22 @@ namespace Model
   private:
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     int m_volumeBaselineIOPS;
-    bool m_volumeBaselineIOPSHasBeenSet;
+    bool m_volumeBaselineIOPSHasBeenSet = false;
 
     int m_volumeBurstIOPS;
-    bool m_volumeBurstIOPSHasBeenSet;
+    bool m_volumeBurstIOPSHasBeenSet = false;
 
     int m_volumeBaselineThroughput;
-    bool m_volumeBaselineThroughputHasBeenSet;
+    bool m_volumeBaselineThroughputHasBeenSet = false;
 
     int m_volumeBurstThroughput;
-    bool m_volumeBurstThroughputHasBeenSet;
+    bool m_volumeBurstThroughputHasBeenSet = false;
   };
 
 } // namespace Model

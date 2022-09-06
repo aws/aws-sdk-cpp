@@ -391,22 +391,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     bool m_authorized;
-    bool m_authorizedHasBeenSet;
+    bool m_authorizedHasBeenSet = false;
 
     ChannelLatencyMode m_latencyMode;
-    bool m_latencyModeHasBeenSet;
+    bool m_latencyModeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recordingConfigurationArn;
-    bool m_recordingConfigurationArnHasBeenSet;
+    bool m_recordingConfigurationArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

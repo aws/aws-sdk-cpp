@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_exceptionName;
-    bool m_exceptionNameHasBeenSet;
+    bool m_exceptionNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

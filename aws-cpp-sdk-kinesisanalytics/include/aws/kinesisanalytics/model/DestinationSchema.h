@@ -73,7 +73,7 @@ namespace Model
   private:
 
     RecordFormatType m_recordFormatType;
-    bool m_recordFormatTypeHasBeenSet;
+    bool m_recordFormatTypeHasBeenSet = false;
   };
 
 } // namespace Model

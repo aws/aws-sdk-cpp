@@ -170,16 +170,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_targetVersion;
-    bool m_targetVersionHasBeenSet;
+    bool m_targetVersionHasBeenSet = false;
 
     bool m_performCheckOnly;
-    bool m_performCheckOnlyHasBeenSet;
+    bool m_performCheckOnlyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
-    bool m_advancedOptionsHasBeenSet;
+    bool m_advancedOptionsHasBeenSet = false;
   };
 
 } // namespace Model

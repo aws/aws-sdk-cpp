@@ -272,13 +272,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_bundleIds;
-    bool m_bundleIdsHasBeenSet;
+    bool m_bundleIdsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

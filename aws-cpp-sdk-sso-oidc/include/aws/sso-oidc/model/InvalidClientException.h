@@ -92,10 +92,10 @@ namespace Model
   private:
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_error_description;
-    bool m_error_descriptionHasBeenSet;
+    bool m_error_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

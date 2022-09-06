@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::Vector<AlternateKey> m_alternateKeys;
-    bool m_alternateKeysHasBeenSet;
+    bool m_alternateKeysHasBeenSet = false;
 
     bool m_compressed;
-    bool m_compressedHasBeenSet;
+    bool m_compressedHasBeenSet = false;
 
     Aws::String m_encoding;
-    bool m_encodingHasBeenSet;
+    bool m_encodingHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     PrimaryKey m_primaryKey;
-    bool m_primaryKeyHasBeenSet;
+    bool m_primaryKeyHasBeenSet = false;
   };
 
 } // namespace Model

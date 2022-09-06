@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     IdentifierType m_identifierType;
-    bool m_identifierTypeHasBeenSet;
+    bool m_identifierTypeHasBeenSet = false;
 
     EventNotificationPartnerType m_partnerType;
-    bool m_partnerTypeHasBeenSet;
+    bool m_partnerTypeHasBeenSet = false;
   };
 
 } // namespace Model

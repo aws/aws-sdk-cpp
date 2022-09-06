@@ -116,10 +116,10 @@ namespace Model
   private:
 
     bool m_updateAvailable;
-    bool m_updateAvailableHasBeenSet;
+    bool m_updateAvailableHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

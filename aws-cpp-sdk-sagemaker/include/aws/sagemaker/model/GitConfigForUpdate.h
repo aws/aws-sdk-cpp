@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -100,10 +100,10 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     bool m_autoEnable;
-    bool m_autoEnableHasBeenSet;
+    bool m_autoEnableHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<BatchGetRecordIdentifier> m_identifiers;
-    bool m_identifiersHasBeenSet;
+    bool m_identifiersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_humanTaskUiName;
-    bool m_humanTaskUiNameHasBeenSet;
+    bool m_humanTaskUiNameHasBeenSet = false;
   };
 
 } // namespace Model

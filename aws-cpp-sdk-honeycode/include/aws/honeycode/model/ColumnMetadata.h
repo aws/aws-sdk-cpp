@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

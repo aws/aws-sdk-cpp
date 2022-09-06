@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     Aws::String m_sessionToken;
-    bool m_sessionTokenHasBeenSet;
+    bool m_sessionTokenHasBeenSet = false;
 
     long long m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
   };
 
 } // namespace Model

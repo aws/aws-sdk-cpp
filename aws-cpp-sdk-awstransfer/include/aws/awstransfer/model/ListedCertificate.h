@@ -359,28 +359,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     CertificateUsageType m_usage;
-    bool m_usageHasBeenSet;
+    bool m_usageHasBeenSet = false;
 
     CertificateStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_activeDate;
-    bool m_activeDateHasBeenSet;
+    bool m_activeDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_inactiveDate;
-    bool m_inactiveDateHasBeenSet;
+    bool m_inactiveDateHasBeenSet = false;
 
     CertificateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

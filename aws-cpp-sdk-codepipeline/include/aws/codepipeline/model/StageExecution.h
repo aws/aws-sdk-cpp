@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
 
     StageExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

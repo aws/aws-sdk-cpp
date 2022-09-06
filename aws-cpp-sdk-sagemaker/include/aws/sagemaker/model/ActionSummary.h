@@ -292,25 +292,25 @@ namespace Model
   private:
 
     Aws::String m_actionArn;
-    bool m_actionArnHasBeenSet;
+    bool m_actionArnHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     ActionSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     ActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

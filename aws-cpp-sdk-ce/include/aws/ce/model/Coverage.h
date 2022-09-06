@@ -141,13 +141,13 @@ namespace Model
   private:
 
     CoverageHours m_coverageHours;
-    bool m_coverageHoursHasBeenSet;
+    bool m_coverageHoursHasBeenSet = false;
 
     CoverageNormalizedUnits m_coverageNormalizedUnits;
-    bool m_coverageNormalizedUnitsHasBeenSet;
+    bool m_coverageNormalizedUnitsHasBeenSet = false;
 
     CoverageCost m_coverageCost;
-    bool m_coverageCostHasBeenSet;
+    bool m_coverageCostHasBeenSet = false;
   };
 
 } // namespace Model

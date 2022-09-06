@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_fromTime;
-    bool m_fromTimeHasBeenSet;
+    bool m_fromTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_toTime;
-    bool m_toTimeHasBeenSet;
+    bool m_toTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
   };
 
 } // namespace Model

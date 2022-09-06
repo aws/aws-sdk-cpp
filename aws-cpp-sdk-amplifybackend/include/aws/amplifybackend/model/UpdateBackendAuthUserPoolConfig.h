@@ -230,19 +230,19 @@ namespace Model
   private:
 
     UpdateBackendAuthForgotPasswordConfig m_forgotPassword;
-    bool m_forgotPasswordHasBeenSet;
+    bool m_forgotPasswordHasBeenSet = false;
 
     UpdateBackendAuthMFAConfig m_mfa;
-    bool m_mfaHasBeenSet;
+    bool m_mfaHasBeenSet = false;
 
     UpdateBackendAuthOAuthConfig m_oAuth;
-    bool m_oAuthHasBeenSet;
+    bool m_oAuthHasBeenSet = false;
 
     UpdateBackendAuthPasswordPolicyConfig m_passwordPolicy;
-    bool m_passwordPolicyHasBeenSet;
+    bool m_passwordPolicyHasBeenSet = false;
 
     UpdateBackendAuthVerificationMessageConfig m_verificationMessage;
-    bool m_verificationMessageHasBeenSet;
+    bool m_verificationMessageHasBeenSet = false;
   };
 
 } // namespace Model

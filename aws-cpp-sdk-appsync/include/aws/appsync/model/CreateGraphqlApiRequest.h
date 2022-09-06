@@ -384,31 +384,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LogConfig m_logConfig;
-    bool m_logConfigHasBeenSet;
+    bool m_logConfigHasBeenSet = false;
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     UserPoolConfig m_userPoolConfig;
-    bool m_userPoolConfigHasBeenSet;
+    bool m_userPoolConfigHasBeenSet = false;
 
     OpenIDConnectConfig m_openIDConnectConfig;
-    bool m_openIDConnectConfigHasBeenSet;
+    bool m_openIDConnectConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
-    bool m_additionalAuthenticationProvidersHasBeenSet;
+    bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
     bool m_xrayEnabled;
-    bool m_xrayEnabledHasBeenSet;
+    bool m_xrayEnabledHasBeenSet = false;
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
-    bool m_lambdaAuthorizerConfigHasBeenSet;
+    bool m_lambdaAuthorizerConfigHasBeenSet = false;
   };
 
 } // namespace Model

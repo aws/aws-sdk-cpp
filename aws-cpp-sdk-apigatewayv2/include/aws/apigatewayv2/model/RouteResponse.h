@@ -299,19 +299,19 @@ namespace Model
   private:
 
     Aws::String m_modelSelectionExpression;
-    bool m_modelSelectionExpressionHasBeenSet;
+    bool m_modelSelectionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseModels;
-    bool m_responseModelsHasBeenSet;
+    bool m_responseModelsHasBeenSet = false;
 
     Aws::Map<Aws::String, ParameterConstraints> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::String m_routeResponseId;
-    bool m_routeResponseIdHasBeenSet;
+    bool m_routeResponseIdHasBeenSet = false;
 
     Aws::String m_routeResponseKey;
-    bool m_routeResponseKeyHasBeenSet;
+    bool m_routeResponseKeyHasBeenSet = false;
   };
 
 } // namespace Model

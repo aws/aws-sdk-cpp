@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<ValidationError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

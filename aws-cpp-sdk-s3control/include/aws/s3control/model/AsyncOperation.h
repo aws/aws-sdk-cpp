@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     AsyncOperationName m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_requestTokenARN;
-    bool m_requestTokenARNHasBeenSet;
+    bool m_requestTokenARNHasBeenSet = false;
 
     AsyncRequestParameters m_requestParameters;
-    bool m_requestParametersHasBeenSet;
+    bool m_requestParametersHasBeenSet = false;
 
     Aws::String m_requestStatus;
-    bool m_requestStatusHasBeenSet;
+    bool m_requestStatusHasBeenSet = false;
 
     AsyncResponseDetails m_responseDetails;
-    bool m_responseDetailsHasBeenSet;
+    bool m_responseDetailsHasBeenSet = false;
   };
 
 } // namespace Model

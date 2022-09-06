@@ -121,10 +121,10 @@ namespace Model
   private:
 
     SimpleCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
   };
 
 } // namespace Model

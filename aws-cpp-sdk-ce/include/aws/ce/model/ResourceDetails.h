@@ -70,7 +70,7 @@ namespace Model
   private:
 
     EC2ResourceDetails m_eC2ResourceDetails;
-    bool m_eC2ResourceDetailsHasBeenSet;
+    bool m_eC2ResourceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

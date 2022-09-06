@@ -85,7 +85,7 @@ namespace Model
   private:
 
     StreamMode m_streamMode;
-    bool m_streamModeHasBeenSet;
+    bool m_streamModeHasBeenSet = false;
   };
 
 } // namespace Model

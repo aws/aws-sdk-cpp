@@ -385,25 +385,25 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_homePageUrl;
-    bool m_homePageUrlHasBeenSet;
+    bool m_homePageUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_readmeBody;
-    bool m_readmeBodyHasBeenSet;
+    bool m_readmeBodyHasBeenSet = false;
 
     Aws::String m_readmeUrl;
-    bool m_readmeUrlHasBeenSet;
+    bool m_readmeUrlHasBeenSet = false;
   };
 
 } // namespace Model

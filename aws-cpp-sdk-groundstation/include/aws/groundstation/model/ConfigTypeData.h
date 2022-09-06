@@ -306,25 +306,25 @@ namespace Model
   private:
 
     AntennaDownlinkConfig m_antennaDownlinkConfig;
-    bool m_antennaDownlinkConfigHasBeenSet;
+    bool m_antennaDownlinkConfigHasBeenSet = false;
 
     AntennaDownlinkDemodDecodeConfig m_antennaDownlinkDemodDecodeConfig;
-    bool m_antennaDownlinkDemodDecodeConfigHasBeenSet;
+    bool m_antennaDownlinkDemodDecodeConfigHasBeenSet = false;
 
     AntennaUplinkConfig m_antennaUplinkConfig;
-    bool m_antennaUplinkConfigHasBeenSet;
+    bool m_antennaUplinkConfigHasBeenSet = false;
 
     DataflowEndpointConfig m_dataflowEndpointConfig;
-    bool m_dataflowEndpointConfigHasBeenSet;
+    bool m_dataflowEndpointConfigHasBeenSet = false;
 
     S3RecordingConfig m_s3RecordingConfig;
-    bool m_s3RecordingConfigHasBeenSet;
+    bool m_s3RecordingConfigHasBeenSet = false;
 
     TrackingConfig m_trackingConfig;
-    bool m_trackingConfigHasBeenSet;
+    bool m_trackingConfigHasBeenSet = false;
 
     UplinkEchoConfig m_uplinkEchoConfig;
-    bool m_uplinkEchoConfigHasBeenSet;
+    bool m_uplinkEchoConfigHasBeenSet = false;
   };
 
 } // namespace Model

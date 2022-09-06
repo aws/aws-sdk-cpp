@@ -528,31 +528,31 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_pathWithQueryString;
-    bool m_pathWithQueryStringHasBeenSet;
+    bool m_pathWithQueryStringHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_multiValueHeaders;
-    bool m_multiValueHeadersHasBeenSet;
+    bool m_multiValueHeadersHasBeenSet = false;
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
-    bool m_stageVariablesHasBeenSet;
+    bool m_stageVariablesHasBeenSet = false;
 
     Aws::String m_requestBody;
-    bool m_requestBodyHasBeenSet;
+    bool m_requestBodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
-    bool m_requestHeadersHasBeenSet;
+    bool m_requestHeadersHasBeenSet = false;
   };
 
 } // namespace Model

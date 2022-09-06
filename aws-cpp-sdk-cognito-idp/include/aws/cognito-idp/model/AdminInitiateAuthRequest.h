@@ -1061,25 +1061,25 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     AuthFlowType m_authFlow;
-    bool m_authFlowHasBeenSet;
+    bool m_authFlowHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_authParameters;
-    bool m_authParametersHasBeenSet;
+    bool m_authParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
 
     AnalyticsMetadataType m_analyticsMetadata;
-    bool m_analyticsMetadataHasBeenSet;
+    bool m_analyticsMetadataHasBeenSet = false;
 
     ContextDataType m_contextData;
-    bool m_contextDataHasBeenSet;
+    bool m_contextDataHasBeenSet = false;
   };
 
 } // namespace Model

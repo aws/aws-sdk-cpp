@@ -50,7 +50,7 @@ namespace Model
   private:
 
     double m_bandwidthAllocation;
-    bool m_bandwidthAllocationHasBeenSet;
+    bool m_bandwidthAllocationHasBeenSet = false;
   };
 
 } // namespace Model

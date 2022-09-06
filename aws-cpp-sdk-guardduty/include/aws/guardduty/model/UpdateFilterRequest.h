@@ -260,22 +260,22 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     FilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     FindingCriteria m_findingCriteria;
-    bool m_findingCriteriaHasBeenSet;
+    bool m_findingCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

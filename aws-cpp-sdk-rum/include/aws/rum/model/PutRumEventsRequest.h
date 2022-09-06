@@ -235,19 +235,19 @@ namespace Model
   private:
 
     AppMonitorDetails m_appMonitorDetails;
-    bool m_appMonitorDetailsHasBeenSet;
+    bool m_appMonitorDetailsHasBeenSet = false;
 
     Aws::String m_batchId;
-    bool m_batchIdHasBeenSet;
+    bool m_batchIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<RumEvent> m_rumEvents;
-    bool m_rumEventsHasBeenSet;
+    bool m_rumEventsHasBeenSet = false;
 
     UserDetails m_userDetails;
-    bool m_userDetailsHasBeenSet;
+    bool m_userDetailsHasBeenSet = false;
   };
 
 } // namespace Model

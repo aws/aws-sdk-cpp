@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_s3RelativePath;
-    bool m_s3RelativePathHasBeenSet;
+    bool m_s3RelativePathHasBeenSet = false;
   };
 
 } // namespace Model

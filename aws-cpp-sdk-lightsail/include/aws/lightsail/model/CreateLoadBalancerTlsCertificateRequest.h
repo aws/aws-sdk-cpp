@@ -339,19 +339,19 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_certificateDomainName;
-    bool m_certificateDomainNameHasBeenSet;
+    bool m_certificateDomainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_certificateAlternativeNames;
-    bool m_certificateAlternativeNamesHasBeenSet;
+    bool m_certificateAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

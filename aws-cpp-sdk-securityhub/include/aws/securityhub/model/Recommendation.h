@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

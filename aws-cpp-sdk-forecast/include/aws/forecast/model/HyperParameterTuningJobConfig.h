@@ -79,7 +79,7 @@ namespace Model
   private:
 
     ParameterRanges m_parameterRanges;
-    bool m_parameterRangesHasBeenSet;
+    bool m_parameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

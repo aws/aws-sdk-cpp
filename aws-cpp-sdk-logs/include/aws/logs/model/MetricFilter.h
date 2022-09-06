@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
 
     Aws::String m_filterPattern;
-    bool m_filterPatternHasBeenSet;
+    bool m_filterPatternHasBeenSet = false;
 
     Aws::Vector<MetricTransformation> m_metricTransformations;
-    bool m_metricTransformationsHasBeenSet;
+    bool m_metricTransformationsHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

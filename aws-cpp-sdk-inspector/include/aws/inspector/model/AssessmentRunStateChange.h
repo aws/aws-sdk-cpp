@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_stateChangedAt;
-    bool m_stateChangedAtHasBeenSet;
+    bool m_stateChangedAtHasBeenSet = false;
 
     AssessmentRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

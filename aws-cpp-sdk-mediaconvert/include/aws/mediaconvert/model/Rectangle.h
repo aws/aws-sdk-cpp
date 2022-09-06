@@ -130,16 +130,16 @@ namespace Model
   private:
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     int m_x;
-    bool m_xHasBeenSet;
+    bool m_xHasBeenSet = false;
 
     int m_y;
-    bool m_yHasBeenSet;
+    bool m_yHasBeenSet = false;
   };
 
 } // namespace Model

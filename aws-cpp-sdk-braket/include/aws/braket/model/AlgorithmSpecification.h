@@ -104,10 +104,10 @@ namespace Model
   private:
 
     ContainerImage m_containerImage;
-    bool m_containerImageHasBeenSet;
+    bool m_containerImageHasBeenSet = false;
 
     ScriptModeConfig m_scriptModeConfig;
-    bool m_scriptModeConfigHasBeenSet;
+    bool m_scriptModeConfigHasBeenSet = false;
   };
 
 } // namespace Model

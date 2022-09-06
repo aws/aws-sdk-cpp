@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_edgeDeploymentPlanName;
-    bool m_edgeDeploymentPlanNameHasBeenSet;
+    bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
     Aws::Vector<EdgeDeploymentModelConfig> m_modelConfigs;
-    bool m_modelConfigsHasBeenSet;
+    bool m_modelConfigsHasBeenSet = false;
 
     Aws::String m_deviceFleetName;
-    bool m_deviceFleetNameHasBeenSet;
+    bool m_deviceFleetNameHasBeenSet = false;
 
     Aws::Vector<DeploymentStage> m_stages;
-    bool m_stagesHasBeenSet;
+    bool m_stagesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

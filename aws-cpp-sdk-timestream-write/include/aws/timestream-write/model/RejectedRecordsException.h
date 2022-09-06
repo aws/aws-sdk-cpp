@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<RejectedRecord> m_rejectedRecords;
-    bool m_rejectedRecordsHasBeenSet;
+    bool m_rejectedRecordsHasBeenSet = false;
   };
 
 } // namespace Model

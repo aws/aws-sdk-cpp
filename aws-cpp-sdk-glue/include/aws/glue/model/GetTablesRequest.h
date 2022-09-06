@@ -330,25 +330,25 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_queryAsOfTime;
-    bool m_queryAsOfTimeHasBeenSet;
+    bool m_queryAsOfTimeHasBeenSet = false;
   };
 
 } // namespace Model

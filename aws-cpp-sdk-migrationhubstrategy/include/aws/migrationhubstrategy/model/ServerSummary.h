@@ -92,10 +92,10 @@ namespace Model
   private:
 
     ServerOsType m_serverOsType;
-    bool m_serverOsTypeHasBeenSet;
+    bool m_serverOsTypeHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

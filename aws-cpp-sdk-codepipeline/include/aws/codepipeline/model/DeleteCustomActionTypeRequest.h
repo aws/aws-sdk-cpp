@@ -168,13 +168,13 @@ namespace Model
   private:
 
     ActionCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

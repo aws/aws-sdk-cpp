@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_roomIdentifier;
-    bool m_roomIdentifierHasBeenSet;
+    bool m_roomIdentifierHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

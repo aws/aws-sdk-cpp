@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::String m_timerId;
-    bool m_timerIdHasBeenSet;
+    bool m_timerIdHasBeenSet = false;
   };
 
 } // namespace Model

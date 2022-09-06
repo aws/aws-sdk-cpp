@@ -82,7 +82,7 @@ MarketplaceCatalogClient::~MarketplaceCatalogClient()
 
 void MarketplaceCatalogClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Marketplace Catalog");
+  AWSClient::SetServiceClientName("Marketplace Catalog");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PrincipalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ReadAccessType m_access;
-    bool m_accessHasBeenSet;
+    bool m_accessHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
   };
 
 } // namespace Model

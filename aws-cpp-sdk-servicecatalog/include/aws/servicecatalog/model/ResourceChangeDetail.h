@@ -157,13 +157,13 @@ namespace Model
   private:
 
     ResourceTargetDefinition m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     EvaluationType m_evaluation;
-    bool m_evaluationHasBeenSet;
+    bool m_evaluationHasBeenSet = false;
 
     Aws::String m_causingEntity;
-    bool m_causingEntityHasBeenSet;
+    bool m_causingEntityHasBeenSet = false;
   };
 
 } // namespace Model

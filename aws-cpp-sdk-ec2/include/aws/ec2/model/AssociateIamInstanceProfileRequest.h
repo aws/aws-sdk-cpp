@@ -111,10 +111,10 @@ namespace Model
   private:
 
     IamInstanceProfileSpecification m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

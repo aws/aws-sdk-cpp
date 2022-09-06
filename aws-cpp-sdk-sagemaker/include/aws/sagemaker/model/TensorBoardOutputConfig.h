@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::String m_controlPanelName;
-    bool m_controlPanelNameHasBeenSet;
+    bool m_controlPanelNameHasBeenSet = false;
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
 
     Aws::String m_routingControlName;
-    bool m_routingControlNameHasBeenSet;
+    bool m_routingControlNameHasBeenSet = false;
 
     RoutingControlState m_routingControlState;
-    bool m_routingControlStateHasBeenSet;
+    bool m_routingControlStateHasBeenSet = false;
   };
 
 } // namespace Model

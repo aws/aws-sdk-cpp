@@ -254,16 +254,16 @@ namespace Model
   private:
 
     LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;
-    bool m_launchTemplateAndOverridesHasBeenSet;
+    bool m_launchTemplateAndOverridesHasBeenSet = false;
 
     InstanceLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

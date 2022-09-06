@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     Aws::String m_parameterSpec;
-    bool m_parameterSpecHasBeenSet;
+    bool m_parameterSpecHasBeenSet = false;
 
     Aws::String m_blueprintLocation;
-    bool m_blueprintLocationHasBeenSet;
+    bool m_blueprintLocationHasBeenSet = false;
 
     Aws::String m_blueprintServiceLocation;
-    bool m_blueprintServiceLocationHasBeenSet;
+    bool m_blueprintServiceLocationHasBeenSet = false;
   };
 
 } // namespace Model

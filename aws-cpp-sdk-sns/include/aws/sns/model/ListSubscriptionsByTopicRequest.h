@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

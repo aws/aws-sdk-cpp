@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_distributionConfigurationArn;
-    bool m_distributionConfigurationArnHasBeenSet;
+    bool m_distributionConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

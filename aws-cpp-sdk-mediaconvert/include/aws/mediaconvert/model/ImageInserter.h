@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::Vector<InsertableImage> m_insertableImages;
-    bool m_insertableImagesHasBeenSet;
+    bool m_insertableImagesHasBeenSet = false;
   };
 
 } // namespace Model

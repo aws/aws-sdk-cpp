@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_referencedBy;
-    bool m_referencedByHasBeenSet;
+    bool m_referencedByHasBeenSet = false;
   };
 
 } // namespace Model

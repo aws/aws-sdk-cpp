@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     bool m_forceFailover;
-    bool m_forceFailoverHasBeenSet;
+    bool m_forceFailoverHasBeenSet = false;
   };
 
 } // namespace Model

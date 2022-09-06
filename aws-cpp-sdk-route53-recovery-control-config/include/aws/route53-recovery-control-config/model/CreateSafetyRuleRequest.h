@@ -227,16 +227,16 @@ namespace Model
   private:
 
     NewAssertionRule m_assertionRule;
-    bool m_assertionRuleHasBeenSet;
+    bool m_assertionRuleHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     NewGatingRule m_gatingRule;
-    bool m_gatingRuleHasBeenSet;
+    bool m_gatingRuleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

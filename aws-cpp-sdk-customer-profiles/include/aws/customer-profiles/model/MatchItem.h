@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_matchId;
-    bool m_matchIdHasBeenSet;
+    bool m_matchIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_profileIds;
-    bool m_profileIdsHasBeenSet;
+    bool m_profileIdsHasBeenSet = false;
 
     double m_confidenceScore;
-    bool m_confidenceScoreHasBeenSet;
+    bool m_confidenceScoreHasBeenSet = false;
   };
 
 } // namespace Model

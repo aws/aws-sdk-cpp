@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CharacterOffsets m_characterOffsets;
-    bool m_characterOffsetsHasBeenSet;
+    bool m_characterOffsetsHasBeenSet = false;
   };
 
 } // namespace Model

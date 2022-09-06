@@ -71,7 +71,7 @@ namespace Model
   private:
 
     QueryRecommendationTriggerData m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
   };
 
 } // namespace Model

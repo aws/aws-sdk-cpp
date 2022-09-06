@@ -154,13 +154,13 @@ namespace Model
   private:
 
     CandidateStepType m_candidateStepType;
-    bool m_candidateStepTypeHasBeenSet;
+    bool m_candidateStepTypeHasBeenSet = false;
 
     Aws::String m_candidateStepArn;
-    bool m_candidateStepArnHasBeenSet;
+    bool m_candidateStepArnHasBeenSet = false;
 
     Aws::String m_candidateStepName;
-    bool m_candidateStepNameHasBeenSet;
+    bool m_candidateStepNameHasBeenSet = false;
   };
 
 } // namespace Model

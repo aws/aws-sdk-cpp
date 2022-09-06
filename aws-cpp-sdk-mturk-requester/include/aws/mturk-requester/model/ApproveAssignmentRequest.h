@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_assignmentId;
-    bool m_assignmentIdHasBeenSet;
+    bool m_assignmentIdHasBeenSet = false;
 
     Aws::String m_requesterFeedback;
-    bool m_requesterFeedbackHasBeenSet;
+    bool m_requesterFeedbackHasBeenSet = false;
 
     bool m_overrideRejection;
-    bool m_overrideRejectionHasBeenSet;
+    bool m_overrideRejectionHasBeenSet = false;
   };
 
 } // namespace Model

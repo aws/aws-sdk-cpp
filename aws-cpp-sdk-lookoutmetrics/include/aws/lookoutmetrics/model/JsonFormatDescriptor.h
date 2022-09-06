@@ -113,10 +113,10 @@ namespace Model
   private:
 
     JsonFileCompression m_fileCompression;
-    bool m_fileCompressionHasBeenSet;
+    bool m_fileCompressionHasBeenSet = false;
 
     Aws::String m_charset;
-    bool m_charsetHasBeenSet;
+    bool m_charsetHasBeenSet = false;
   };
 
 } // namespace Model

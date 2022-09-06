@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::Vector<CountryCode> m_countryCodes;
-    bool m_countryCodesHasBeenSet;
+    bool m_countryCodesHasBeenSet = false;
 
     ForwardedIPConfig m_forwardedIPConfig;
-    bool m_forwardedIPConfigHasBeenSet;
+    bool m_forwardedIPConfigHasBeenSet = false;
   };
 
 } // namespace Model

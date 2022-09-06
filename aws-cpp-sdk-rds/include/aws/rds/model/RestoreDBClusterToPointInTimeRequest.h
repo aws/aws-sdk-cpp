@@ -1906,85 +1906,85 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_restoreType;
-    bool m_restoreTypeHasBeenSet;
+    bool m_restoreTypeHasBeenSet = false;
 
     Aws::String m_sourceDBClusterIdentifier;
-    bool m_sourceDBClusterIdentifierHasBeenSet;
+    bool m_sourceDBClusterIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreToTime;
-    bool m_restoreToTimeHasBeenSet;
+    bool m_restoreToTimeHasBeenSet = false;
 
     bool m_useLatestRestorableTime;
-    bool m_useLatestRestorableTimeHasBeenSet;
+    bool m_useLatestRestorableTimeHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     long long m_backtrackWindow;
-    bool m_backtrackWindowHasBeenSet;
+    bool m_backtrackWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     ScalingConfiguration m_scalingConfiguration;
-    bool m_scalingConfigurationHasBeenSet;
+    bool m_scalingConfigurationHasBeenSet = false;
 
     Aws::String m_engineMode;
-    bool m_engineModeHasBeenSet;
+    bool m_engineModeHasBeenSet = false;
 
     Aws::String m_dBClusterInstanceClass;
-    bool m_dBClusterInstanceClassHasBeenSet;
+    bool m_dBClusterInstanceClassHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

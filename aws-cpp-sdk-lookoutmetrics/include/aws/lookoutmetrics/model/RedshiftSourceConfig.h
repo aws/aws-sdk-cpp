@@ -353,28 +353,28 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_databaseHost;
-    bool m_databaseHostHasBeenSet;
+    bool m_databaseHostHasBeenSet = false;
 
     int m_databasePort;
-    bool m_databasePortHasBeenSet;
+    bool m_databasePortHasBeenSet = false;
 
     Aws::String m_secretManagerArn;
-    bool m_secretManagerArnHasBeenSet;
+    bool m_secretManagerArnHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -898,34 +898,34 @@ namespace Model
   private:
 
     SourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     int m_gitCloneDepth;
-    bool m_gitCloneDepthHasBeenSet;
+    bool m_gitCloneDepthHasBeenSet = false;
 
     GitSubmodulesConfig m_gitSubmodulesConfig;
-    bool m_gitSubmodulesConfigHasBeenSet;
+    bool m_gitSubmodulesConfigHasBeenSet = false;
 
     Aws::String m_buildspec;
-    bool m_buildspecHasBeenSet;
+    bool m_buildspecHasBeenSet = false;
 
     SourceAuth m_auth;
-    bool m_authHasBeenSet;
+    bool m_authHasBeenSet = false;
 
     bool m_reportBuildStatus;
-    bool m_reportBuildStatusHasBeenSet;
+    bool m_reportBuildStatusHasBeenSet = false;
 
     BuildStatusConfig m_buildStatusConfig;
-    bool m_buildStatusConfigHasBeenSet;
+    bool m_buildStatusConfigHasBeenSet = false;
 
     bool m_insecureSsl;
-    bool m_insecureSslHasBeenSet;
+    bool m_insecureSslHasBeenSet = false;
 
     Aws::String m_sourceIdentifier;
-    bool m_sourceIdentifierHasBeenSet;
+    bool m_sourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

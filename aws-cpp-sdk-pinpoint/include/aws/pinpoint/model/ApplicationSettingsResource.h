@@ -312,19 +312,19 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     CampaignHook m_campaignHook;
-    bool m_campaignHookHasBeenSet;
+    bool m_campaignHookHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     CampaignLimits m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     QuietTime m_quietTime;
-    bool m_quietTimeHasBeenSet;
+    bool m_quietTimeHasBeenSet = false;
   };
 
 } // namespace Model

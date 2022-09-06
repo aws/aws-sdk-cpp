@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     NewBGPPeer m_newBGPPeer;
-    bool m_newBGPPeerHasBeenSet;
+    bool m_newBGPPeerHasBeenSet = false;
   };
 
 } // namespace Model

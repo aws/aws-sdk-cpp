@@ -207,13 +207,13 @@ namespace Model
   private:
 
     long long m_bytes;
-    bool m_bytesHasBeenSet;
+    bool m_bytesHasBeenSet = false;
 
     DiskImageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_importManifestUrl;
-    bool m_importManifestUrlHasBeenSet;
+    bool m_importManifestUrlHasBeenSet = false;
   };
 
 } // namespace Model

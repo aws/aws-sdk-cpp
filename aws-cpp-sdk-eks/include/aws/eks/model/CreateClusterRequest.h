@@ -581,31 +581,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     VpcConfigRequest m_resourcesVpcConfig;
-    bool m_resourcesVpcConfigHasBeenSet;
+    bool m_resourcesVpcConfigHasBeenSet = false;
 
     KubernetesNetworkConfigRequest m_kubernetesNetworkConfig;
-    bool m_kubernetesNetworkConfigHasBeenSet;
+    bool m_kubernetesNetworkConfigHasBeenSet = false;
 
     Logging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<EncryptionConfig> m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

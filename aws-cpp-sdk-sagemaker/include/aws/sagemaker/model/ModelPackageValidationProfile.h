@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     TransformJobDefinition m_transformJobDefinition;
-    bool m_transformJobDefinitionHasBeenSet;
+    bool m_transformJobDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

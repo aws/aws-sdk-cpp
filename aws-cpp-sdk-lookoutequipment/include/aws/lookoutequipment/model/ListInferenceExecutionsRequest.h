@@ -254,22 +254,22 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataStartTimeAfter;
-    bool m_dataStartTimeAfterHasBeenSet;
+    bool m_dataStartTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataEndTimeBefore;
-    bool m_dataEndTimeBeforeHasBeenSet;
+    bool m_dataEndTimeBeforeHasBeenSet = false;
 
     InferenceExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

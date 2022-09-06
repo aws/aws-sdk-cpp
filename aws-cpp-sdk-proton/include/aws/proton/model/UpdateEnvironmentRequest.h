@@ -618,34 +618,34 @@ namespace Model
   private:
 
     Aws::String m_componentRoleArn;
-    bool m_componentRoleArnHasBeenSet;
+    bool m_componentRoleArnHasBeenSet = false;
 
     DeploymentUpdateType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_environmentAccountConnectionId;
-    bool m_environmentAccountConnectionIdHasBeenSet;
+    bool m_environmentAccountConnectionIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_protonServiceRoleArn;
-    bool m_protonServiceRoleArnHasBeenSet;
+    bool m_protonServiceRoleArnHasBeenSet = false;
 
     RepositoryBranchInput m_provisioningRepository;
-    bool m_provisioningRepositoryHasBeenSet;
+    bool m_provisioningRepositoryHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
   };
 
 } // namespace Model

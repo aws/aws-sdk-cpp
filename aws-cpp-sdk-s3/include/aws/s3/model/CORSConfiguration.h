@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::Vector<CORSRule> m_cORSRules;
-    bool m_cORSRulesHasBeenSet;
+    bool m_cORSRulesHasBeenSet = false;
   };
 
 } // namespace Model

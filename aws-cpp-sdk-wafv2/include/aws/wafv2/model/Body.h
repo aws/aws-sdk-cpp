@@ -144,7 +144,7 @@ namespace Model
   private:
 
     OversizeHandling m_oversizeHandling;
-    bool m_oversizeHandlingHasBeenSet;
+    bool m_oversizeHandlingHasBeenSet = false;
   };
 
 } // namespace Model

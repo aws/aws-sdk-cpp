@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet;
+    bool m_timingInformationHasBeenSet = false;
   };
 
 } // namespace Model

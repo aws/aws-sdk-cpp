@@ -291,13 +291,13 @@ namespace Model
   private:
 
     Aws::String m_continentCode;
-    bool m_continentCodeHasBeenSet;
+    bool m_continentCodeHasBeenSet = false;
 
     Aws::String m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_subdivisionCode;
-    bool m_subdivisionCodeHasBeenSet;
+    bool m_subdivisionCodeHasBeenSet = false;
   };
 
 } // namespace Model

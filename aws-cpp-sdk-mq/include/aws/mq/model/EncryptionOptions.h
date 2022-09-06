@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_useAwsOwnedKey;
-    bool m_useAwsOwnedKeyHasBeenSet;
+    bool m_useAwsOwnedKeyHasBeenSet = false;
   };
 
 } // namespace Model

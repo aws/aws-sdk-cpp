@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_placeholder;
-    bool m_placeholderHasBeenSet;
+    bool m_placeholderHasBeenSet = false;
 
     DataSetSchema m_dataSetSchema;
-    bool m_dataSetSchemaHasBeenSet;
+    bool m_dataSetSchemaHasBeenSet = false;
 
     Aws::Vector<ColumnGroupSchema> m_columnGroupSchemaList;
-    bool m_columnGroupSchemaListHasBeenSet;
+    bool m_columnGroupSchemaListHasBeenSet = false;
   };
 
 } // namespace Model

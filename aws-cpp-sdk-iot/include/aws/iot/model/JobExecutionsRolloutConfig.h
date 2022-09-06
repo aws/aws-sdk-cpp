@@ -101,10 +101,10 @@ namespace Model
   private:
 
     int m_maximumPerMinute;
-    bool m_maximumPerMinuteHasBeenSet;
+    bool m_maximumPerMinuteHasBeenSet = false;
 
     ExponentialRolloutRate m_exponentialRate;
-    bool m_exponentialRateHasBeenSet;
+    bool m_exponentialRateHasBeenSet = false;
   };
 
 } // namespace Model

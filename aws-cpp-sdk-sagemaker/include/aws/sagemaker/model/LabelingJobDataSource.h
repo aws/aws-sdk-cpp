@@ -128,10 +128,10 @@ namespace Model
   private:
 
     LabelingJobS3DataSource m_s3DataSource;
-    bool m_s3DataSourceHasBeenSet;
+    bool m_s3DataSourceHasBeenSet = false;
 
     LabelingJobSnsDataSource m_snsDataSource;
-    bool m_snsDataSourceHasBeenSet;
+    bool m_snsDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

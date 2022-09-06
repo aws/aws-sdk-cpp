@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Comparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
   };
 
 } // namespace Model

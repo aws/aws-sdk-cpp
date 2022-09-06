@@ -312,25 +312,25 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     DatasetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     DatasetImageStats m_imageStats;
-    bool m_imageStatsHasBeenSet;
+    bool m_imageStatsHasBeenSet = false;
   };
 
 } // namespace Model

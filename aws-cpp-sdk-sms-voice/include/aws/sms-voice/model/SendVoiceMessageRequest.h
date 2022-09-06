@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_callerId;
-    bool m_callerIdHasBeenSet;
+    bool m_callerIdHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     VoiceMessageContent m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_destinationPhoneNumber;
-    bool m_destinationPhoneNumberHasBeenSet;
+    bool m_destinationPhoneNumberHasBeenSet = false;
 
     Aws::String m_originationPhoneNumber;
-    bool m_originationPhoneNumberHasBeenSet;
+    bool m_originationPhoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

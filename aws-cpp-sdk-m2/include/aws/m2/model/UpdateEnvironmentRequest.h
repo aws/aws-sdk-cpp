@@ -268,22 +268,22 @@ namespace Model
   private:
 
     bool m_applyDuringMaintenanceWindow;
-    bool m_applyDuringMaintenanceWindowHasBeenSet;
+    bool m_applyDuringMaintenanceWindowHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
   };
 
 } // namespace Model

@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_provisionedProductId;
-    bool m_provisionedProductIdHasBeenSet;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outputKeys;
-    bool m_outputKeysHasBeenSet;
+    bool m_outputKeysHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

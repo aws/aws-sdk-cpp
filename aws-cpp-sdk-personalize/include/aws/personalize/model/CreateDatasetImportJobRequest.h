@@ -332,22 +332,22 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ImportMode m_importMode;
-    bool m_importModeHasBeenSet;
+    bool m_importModeHasBeenSet = false;
   };
 
 } // namespace Model

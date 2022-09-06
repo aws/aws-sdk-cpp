@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ItemIdentifier m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

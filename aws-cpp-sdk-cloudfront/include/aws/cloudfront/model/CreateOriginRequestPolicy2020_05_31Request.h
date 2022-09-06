@@ -65,7 +65,7 @@ namespace Model
   private:
 
     OriginRequestPolicyConfig m_originRequestPolicyConfig;
-    bool m_originRequestPolicyConfigHasBeenSet;
+    bool m_originRequestPolicyConfigHasBeenSet = false;
   };
 
 } // namespace Model

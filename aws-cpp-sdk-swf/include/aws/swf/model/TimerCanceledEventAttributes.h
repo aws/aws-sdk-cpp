@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_timerId;
-    bool m_timerIdHasBeenSet;
+    bool m_timerIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

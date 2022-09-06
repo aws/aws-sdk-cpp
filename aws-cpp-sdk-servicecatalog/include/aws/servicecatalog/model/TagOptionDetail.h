@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

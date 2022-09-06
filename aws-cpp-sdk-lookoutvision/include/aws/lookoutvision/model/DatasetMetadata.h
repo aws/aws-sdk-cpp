@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     DatasetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

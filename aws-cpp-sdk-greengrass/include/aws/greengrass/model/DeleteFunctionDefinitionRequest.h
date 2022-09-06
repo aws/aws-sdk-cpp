@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_functionDefinitionId;
-    bool m_functionDefinitionIdHasBeenSet;
+    bool m_functionDefinitionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_componentArn;
-    bool m_componentArnHasBeenSet;
+    bool m_componentArnHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

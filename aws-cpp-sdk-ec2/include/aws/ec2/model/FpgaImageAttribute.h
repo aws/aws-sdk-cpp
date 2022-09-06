@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_fpgaImageId;
-    bool m_fpgaImageIdHasBeenSet;
+    bool m_fpgaImageIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<LoadPermission> m_loadPermissions;
-    bool m_loadPermissionsHasBeenSet;
+    bool m_loadPermissionsHasBeenSet = false;
 
     Aws::Vector<ProductCode> m_productCodes;
-    bool m_productCodesHasBeenSet;
+    bool m_productCodesHasBeenSet = false;
   };
 
 } // namespace Model

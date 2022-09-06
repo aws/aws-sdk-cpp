@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

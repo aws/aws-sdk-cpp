@@ -166,16 +166,16 @@ namespace Model
   private:
 
     RangeMode m_startMode;
-    bool m_startModeHasBeenSet;
+    bool m_startModeHasBeenSet = false;
 
     TypedAttributeValue m_startValue;
-    bool m_startValueHasBeenSet;
+    bool m_startValueHasBeenSet = false;
 
     RangeMode m_endMode;
-    bool m_endModeHasBeenSet;
+    bool m_endModeHasBeenSet = false;
 
     TypedAttributeValue m_endValue;
-    bool m_endValueHasBeenSet;
+    bool m_endValueHasBeenSet = false;
   };
 
 } // namespace Model

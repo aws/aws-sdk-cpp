@@ -149,7 +149,7 @@ namespace Model
   private:
 
     Aws::String m_trailName;
-    bool m_trailNameHasBeenSet;
+    bool m_trailNameHasBeenSet = false;
   };
 
 } // namespace Model

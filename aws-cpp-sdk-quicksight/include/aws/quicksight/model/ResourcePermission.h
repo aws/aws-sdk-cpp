@@ -183,10 +183,10 @@ namespace Model
   private:
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

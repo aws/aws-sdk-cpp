@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     DefaultAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_appIdClientRegex;
-    bool m_appIdClientRegexHasBeenSet;
+    bool m_appIdClientRegexHasBeenSet = false;
   };
 
 } // namespace Model

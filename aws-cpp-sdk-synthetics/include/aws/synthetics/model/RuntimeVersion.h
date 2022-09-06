@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_releaseDate;
-    bool m_releaseDateHasBeenSet;
+    bool m_releaseDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecationDate;
-    bool m_deprecationDateHasBeenSet;
+    bool m_deprecationDateHasBeenSet = false;
   };
 
 } // namespace Model

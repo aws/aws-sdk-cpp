@@ -429,34 +429,34 @@ namespace Model
   private:
 
     Aws::Vector<AttributeFilter> m_andAllFilters;
-    bool m_andAllFiltersHasBeenSet;
+    bool m_andAllFiltersHasBeenSet = false;
 
     Aws::Vector<AttributeFilter> m_orAllFilters;
-    bool m_orAllFiltersHasBeenSet;
+    bool m_orAllFiltersHasBeenSet = false;
 
     Aws::Vector<AttributeFilter> m_notFilter;
-    bool m_notFilterHasBeenSet;
+    bool m_notFilterHasBeenSet = false;
 
     DocumentAttribute m_equalsTo;
-    bool m_equalsToHasBeenSet;
+    bool m_equalsToHasBeenSet = false;
 
     DocumentAttribute m_containsAll;
-    bool m_containsAllHasBeenSet;
+    bool m_containsAllHasBeenSet = false;
 
     DocumentAttribute m_containsAny;
-    bool m_containsAnyHasBeenSet;
+    bool m_containsAnyHasBeenSet = false;
 
     DocumentAttribute m_greaterThan;
-    bool m_greaterThanHasBeenSet;
+    bool m_greaterThanHasBeenSet = false;
 
     DocumentAttribute m_greaterThanOrEquals;
-    bool m_greaterThanOrEqualsHasBeenSet;
+    bool m_greaterThanOrEqualsHasBeenSet = false;
 
     DocumentAttribute m_lessThan;
-    bool m_lessThanHasBeenSet;
+    bool m_lessThanHasBeenSet = false;
 
     DocumentAttribute m_lessThanOrEquals;
-    bool m_lessThanOrEqualsHasBeenSet;
+    bool m_lessThanOrEqualsHasBeenSet = false;
   };
 
 } // namespace Model

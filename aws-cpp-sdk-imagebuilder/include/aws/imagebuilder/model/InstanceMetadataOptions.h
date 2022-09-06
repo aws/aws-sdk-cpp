@@ -169,10 +169,10 @@ namespace Model
   private:
 
     Aws::String m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     Aws::Vector<CorsRule> m_corsPolicy;
-    bool m_corsPolicyHasBeenSet;
+    bool m_corsPolicyHasBeenSet = false;
   };
 
 } // namespace Model

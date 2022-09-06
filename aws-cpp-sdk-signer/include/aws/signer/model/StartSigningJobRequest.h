@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_profileOwner;
-    bool m_profileOwnerHasBeenSet;
+    bool m_profileOwnerHasBeenSet = false;
   };
 
 } // namespace Model

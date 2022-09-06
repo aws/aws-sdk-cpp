@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     bool m_mustSucceedForCutover;
-    bool m_mustSucceedForCutoverHasBeenSet;
+    bool m_mustSucceedForCutoverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_ssmDocumentName;
-    bool m_ssmDocumentNameHasBeenSet;
+    bool m_ssmDocumentNameHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
   };
 
 } // namespace Model

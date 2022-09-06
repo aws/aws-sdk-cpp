@@ -768,49 +768,49 @@ namespace Model
   private:
 
     AndroidPushNotificationTemplate m_aDM;
-    bool m_aDMHasBeenSet;
+    bool m_aDMHasBeenSet = false;
 
     APNSPushNotificationTemplate m_aPNS;
-    bool m_aPNSHasBeenSet;
+    bool m_aPNSHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AndroidPushNotificationTemplate m_baidu;
-    bool m_baiduHasBeenSet;
+    bool m_baiduHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     DefaultPushNotificationTemplate m_default;
-    bool m_defaultHasBeenSet;
+    bool m_defaultHasBeenSet = false;
 
     Aws::String m_defaultSubstitutions;
-    bool m_defaultSubstitutionsHasBeenSet;
+    bool m_defaultSubstitutionsHasBeenSet = false;
 
     AndroidPushNotificationTemplate m_gCM;
-    bool m_gCMHasBeenSet;
+    bool m_gCMHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

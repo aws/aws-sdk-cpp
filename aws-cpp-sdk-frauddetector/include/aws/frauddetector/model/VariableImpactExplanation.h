@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_eventVariableName;
-    bool m_eventVariableNameHasBeenSet;
+    bool m_eventVariableNameHasBeenSet = false;
 
     Aws::String m_relativeImpact;
-    bool m_relativeImpactHasBeenSet;
+    bool m_relativeImpactHasBeenSet = false;
 
     double m_logOddsImpact;
-    bool m_logOddsImpactHasBeenSet;
+    bool m_logOddsImpactHasBeenSet = false;
   };
 
 } // namespace Model

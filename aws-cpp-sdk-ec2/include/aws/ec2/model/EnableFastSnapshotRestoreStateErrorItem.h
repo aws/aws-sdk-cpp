@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     EnableFastSnapshotRestoreStateError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

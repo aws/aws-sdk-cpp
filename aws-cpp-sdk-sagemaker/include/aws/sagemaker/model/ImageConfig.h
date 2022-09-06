@@ -146,10 +146,10 @@ namespace Model
   private:
 
     RepositoryAccessMode m_repositoryAccessMode;
-    bool m_repositoryAccessModeHasBeenSet;
+    bool m_repositoryAccessModeHasBeenSet = false;
 
     RepositoryAuthConfig m_repositoryAuthConfig;
-    bool m_repositoryAuthConfigHasBeenSet;
+    bool m_repositoryAuthConfigHasBeenSet = false;
   };
 
 } // namespace Model

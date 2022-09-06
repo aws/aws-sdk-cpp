@@ -181,10 +181,10 @@ namespace Model
   private:
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_applyStatus;
-    bool m_applyStatusHasBeenSet;
+    bool m_applyStatusHasBeenSet = false;
   };
 
 } // namespace Model

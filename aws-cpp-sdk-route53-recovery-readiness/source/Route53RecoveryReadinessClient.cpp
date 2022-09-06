@@ -108,7 +108,7 @@ Route53RecoveryReadinessClient::~Route53RecoveryReadinessClient()
 
 void Route53RecoveryReadinessClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Route53 Recovery Readiness");
+  AWSClient::SetServiceClientName("Route53 Recovery Readiness");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

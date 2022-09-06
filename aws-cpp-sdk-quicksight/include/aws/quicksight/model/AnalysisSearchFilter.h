@@ -173,13 +173,13 @@ namespace Model
   private:
 
     FilterOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     AnalysisFilterAttribute m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

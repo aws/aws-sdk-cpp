@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
   };
 
 } // namespace Model

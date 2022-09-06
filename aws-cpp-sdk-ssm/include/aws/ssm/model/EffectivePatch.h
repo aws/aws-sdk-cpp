@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Patch m_patch;
-    bool m_patchHasBeenSet;
+    bool m_patchHasBeenSet = false;
 
     PatchStatus m_patchStatus;
-    bool m_patchStatusHasBeenSet;
+    bool m_patchStatusHasBeenSet = false;
   };
 
 } // namespace Model

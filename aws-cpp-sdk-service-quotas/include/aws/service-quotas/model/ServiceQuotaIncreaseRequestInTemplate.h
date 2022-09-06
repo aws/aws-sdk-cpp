@@ -327,28 +327,28 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_quotaName;
-    bool m_quotaNameHasBeenSet;
+    bool m_quotaNameHasBeenSet = false;
 
     double m_desiredValue;
-    bool m_desiredValueHasBeenSet;
+    bool m_desiredValueHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     bool m_globalQuota;
-    bool m_globalQuotaHasBeenSet;
+    bool m_globalQuotaHasBeenSet = false;
   };
 
 } // namespace Model

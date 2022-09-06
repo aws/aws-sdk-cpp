@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     bool m_userDataShared;
-    bool m_userDataSharedHasBeenSet;
+    bool m_userDataSharedHasBeenSet = false;
   };
 
 } // namespace Model

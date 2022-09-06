@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::Vector<StackResourceDriftStatus> m_stackResourceDriftStatusFilters;
-    bool m_stackResourceDriftStatusFiltersHasBeenSet;
+    bool m_stackResourceDriftStatusFiltersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

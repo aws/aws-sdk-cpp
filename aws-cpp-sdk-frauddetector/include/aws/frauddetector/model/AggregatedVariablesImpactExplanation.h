@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventVariableNames;
-    bool m_eventVariableNamesHasBeenSet;
+    bool m_eventVariableNamesHasBeenSet = false;
 
     Aws::String m_relativeImpact;
-    bool m_relativeImpactHasBeenSet;
+    bool m_relativeImpactHasBeenSet = false;
 
     double m_logOddsImpact;
-    bool m_logOddsImpactHasBeenSet;
+    bool m_logOddsImpactHasBeenSet = false;
   };
 
 } // namespace Model

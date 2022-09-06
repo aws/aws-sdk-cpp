@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_eventDestinationName;
-    bool m_eventDestinationNameHasBeenSet;
+    bool m_eventDestinationNameHasBeenSet = false;
   };
 
 } // namespace Model

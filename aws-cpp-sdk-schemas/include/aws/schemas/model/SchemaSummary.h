@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     long long m_versionCount;
-    bool m_versionCountHasBeenSet;
+    bool m_versionCountHasBeenSet = false;
   };
 
 } // namespace Model

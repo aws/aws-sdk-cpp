@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

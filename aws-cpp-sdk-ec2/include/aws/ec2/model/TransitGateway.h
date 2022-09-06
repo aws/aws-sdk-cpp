@@ -344,28 +344,28 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_transitGatewayArn;
-    bool m_transitGatewayArnHasBeenSet;
+    bool m_transitGatewayArnHasBeenSet = false;
 
     TransitGatewayState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     TransitGatewayOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

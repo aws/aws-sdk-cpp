@@ -243,22 +243,22 @@ namespace Model
   private:
 
     int m_blockSizeBytes;
-    bool m_blockSizeBytesHasBeenSet;
+    bool m_blockSizeBytesHasBeenSet = false;
 
     int m_pageSizeBytes;
-    bool m_pageSizeBytesHasBeenSet;
+    bool m_pageSizeBytesHasBeenSet = false;
 
     ParquetCompression m_compression;
-    bool m_compressionHasBeenSet;
+    bool m_compressionHasBeenSet = false;
 
     bool m_enableDictionaryCompression;
-    bool m_enableDictionaryCompressionHasBeenSet;
+    bool m_enableDictionaryCompressionHasBeenSet = false;
 
     int m_maxPaddingBytes;
-    bool m_maxPaddingBytesHasBeenSet;
+    bool m_maxPaddingBytesHasBeenSet = false;
 
     ParquetWriterVersion m_writerVersion;
-    bool m_writerVersionHasBeenSet;
+    bool m_writerVersionHasBeenSet = false;
   };
 
 } // namespace Model

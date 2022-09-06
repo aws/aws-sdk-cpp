@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_servicePrincipal;
-    bool m_servicePrincipalHasBeenSet;
+    bool m_servicePrincipalHasBeenSet = false;
 
     Aws::Utils::DateTime m_delegationEnabledDate;
-    bool m_delegationEnabledDateHasBeenSet;
+    bool m_delegationEnabledDateHasBeenSet = false;
   };
 
 } // namespace Model

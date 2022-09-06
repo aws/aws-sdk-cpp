@@ -489,37 +489,37 @@ namespace Model
   private:
 
     Aws::String m_applicationInstanceId;
-    bool m_applicationInstanceIdHasBeenSet;
+    bool m_applicationInstanceIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDevice;
-    bool m_defaultRuntimeContextDeviceHasBeenSet;
+    bool m_defaultRuntimeContextDeviceHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDeviceName;
-    bool m_defaultRuntimeContextDeviceNameHasBeenSet;
+    bool m_defaultRuntimeContextDeviceNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ApplicationInstanceHealthStatus m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ApplicationInstanceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDescription;
-    bool m_statusDescriptionHasBeenSet;
+    bool m_statusDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

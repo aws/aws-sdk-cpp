@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_agreementName;
-    bool m_agreementNameHasBeenSet;
+    bool m_agreementNameHasBeenSet = false;
   };
 
 } // namespace Model

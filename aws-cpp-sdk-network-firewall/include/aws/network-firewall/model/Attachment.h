@@ -223,13 +223,13 @@ namespace Model
   private:
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     AttachmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

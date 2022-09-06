@@ -847,46 +847,46 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     AuthTypeValue m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
 
     AuthMechanismValue m_authMechanism;
-    bool m_authMechanismHasBeenSet;
+    bool m_authMechanismHasBeenSet = false;
 
     NestingLevelValue m_nestingLevel;
-    bool m_nestingLevelHasBeenSet;
+    bool m_nestingLevelHasBeenSet = false;
 
     Aws::String m_extractDocId;
-    bool m_extractDocIdHasBeenSet;
+    bool m_extractDocIdHasBeenSet = false;
 
     Aws::String m_docsToInvestigate;
-    bool m_docsToInvestigateHasBeenSet;
+    bool m_docsToInvestigateHasBeenSet = false;
 
     Aws::String m_authSource;
-    bool m_authSourceHasBeenSet;
+    bool m_authSourceHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
   };
 
 } // namespace Model

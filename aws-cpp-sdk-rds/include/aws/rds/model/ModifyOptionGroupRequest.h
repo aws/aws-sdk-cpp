@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::Vector<OptionConfiguration> m_optionsToInclude;
-    bool m_optionsToIncludeHasBeenSet;
+    bool m_optionsToIncludeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_optionsToRemove;
-    bool m_optionsToRemoveHasBeenSet;
+    bool m_optionsToRemoveHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_consumerIdentifier;
-    bool m_consumerIdentifierHasBeenSet;
+    bool m_consumerIdentifierHasBeenSet = false;
 
     DataShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_consumerRegion;
-    bool m_consumerRegionHasBeenSet;
+    bool m_consumerRegionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_statusChangeDate;
-    bool m_statusChangeDateHasBeenSet;
+    bool m_statusChangeDateHasBeenSet = false;
   };
 
 } // namespace Model

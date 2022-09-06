@@ -404,19 +404,19 @@ namespace Model
   private:
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::String m_groupIdentifier;
-    bool m_groupIdentifierHasBeenSet;
+    bool m_groupIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedDimensions;
-    bool m_requestedDimensionsHasBeenSet;
+    bool m_requestedDimensionsHasBeenSet = false;
   };
 
 } // namespace Model

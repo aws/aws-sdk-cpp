@@ -192,13 +192,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     SSEType m_sSEType;
-    bool m_sSETypeHasBeenSet;
+    bool m_sSETypeHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyId;
-    bool m_kMSMasterKeyIdHasBeenSet;
+    bool m_kMSMasterKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

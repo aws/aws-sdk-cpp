@@ -82,10 +82,10 @@ namespace Model
   private:
 
     int m_maxHumanLabeledObjectCount;
-    bool m_maxHumanLabeledObjectCountHasBeenSet;
+    bool m_maxHumanLabeledObjectCountHasBeenSet = false;
 
     int m_maxPercentageOfInputDatasetLabeled;
-    bool m_maxPercentageOfInputDatasetLabeledHasBeenSet;
+    bool m_maxPercentageOfInputDatasetLabeledHasBeenSet = false;
   };
 
 } // namespace Model

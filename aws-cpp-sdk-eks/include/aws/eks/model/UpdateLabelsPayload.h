@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_addOrUpdateLabels;
-    bool m_addOrUpdateLabelsHasBeenSet;
+    bool m_addOrUpdateLabelsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeLabels;
-    bool m_removeLabelsHasBeenSet;
+    bool m_removeLabelsHasBeenSet = false;
   };
 
 } // namespace Model

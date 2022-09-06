@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timeStamp;
-    bool m_timeStampHasBeenSet;
+    bool m_timeStampHasBeenSet = false;
 
     ImageError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_imageContent;
-    bool m_imageContentHasBeenSet;
+    bool m_imageContentHasBeenSet = false;
   };
 
 } // namespace Model

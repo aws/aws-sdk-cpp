@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
   };
 
 } // namespace Model

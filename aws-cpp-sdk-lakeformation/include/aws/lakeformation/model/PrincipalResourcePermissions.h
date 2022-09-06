@@ -239,19 +239,19 @@ namespace Model
   private:
 
     DataLakePrincipal m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Resource m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissionsWithGrantOption;
-    bool m_permissionsWithGrantOptionHasBeenSet;
+    bool m_permissionsWithGrantOptionHasBeenSet = false;
 
     DetailsMap m_additionalDetails;
-    bool m_additionalDetailsHasBeenSet;
+    bool m_additionalDetailsHasBeenSet = false;
   };
 
 } // namespace Model

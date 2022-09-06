@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

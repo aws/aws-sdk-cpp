@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Options m_overrideOptions;
-    bool m_overrideOptionsHasBeenSet;
+    bool m_overrideOptionsHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_includes;
-    bool m_includesHasBeenSet;
+    bool m_includesHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_excludes;
-    bool m_excludesHasBeenSet;
+    bool m_excludesHasBeenSet = false;
   };
 
 } // namespace Model

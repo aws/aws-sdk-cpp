@@ -143,10 +143,10 @@ namespace Model
   private:
 
     Aws::String m_authorizationToken;
-    bool m_authorizationTokenHasBeenSet;
+    bool m_authorizationTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAt;
-    bool m_expiresAtHasBeenSet;
+    bool m_expiresAtHasBeenSet = false;
   };
 
 } // namespace Model

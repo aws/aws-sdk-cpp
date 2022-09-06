@@ -321,19 +321,19 @@ namespace Model
   private:
 
     Aws::String m_portalId;
-    bool m_portalIdHasBeenSet;
+    bool m_portalIdHasBeenSet = false;
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_projectDescription;
-    bool m_projectDescriptionHasBeenSet;
+    bool m_projectDescriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

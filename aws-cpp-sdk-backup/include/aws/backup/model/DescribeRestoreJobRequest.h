@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_restoreJobId;
-    bool m_restoreJobIdHasBeenSet;
+    bool m_restoreJobIdHasBeenSet = false;
   };
 
 } // namespace Model

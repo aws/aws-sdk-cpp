@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ConcatenationSinkType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     S3BucketSinkConfiguration m_s3BucketSinkConfiguration;
-    bool m_s3BucketSinkConfigurationHasBeenSet;
+    bool m_s3BucketSinkConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

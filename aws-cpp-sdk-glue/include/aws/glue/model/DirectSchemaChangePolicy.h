@@ -187,16 +187,16 @@ namespace Model
   private:
 
     bool m_enableUpdateCatalog;
-    bool m_enableUpdateCatalogHasBeenSet;
+    bool m_enableUpdateCatalogHasBeenSet = false;
 
     UpdateCatalogBehavior m_updateBehavior;
-    bool m_updateBehaviorHasBeenSet;
+    bool m_updateBehaviorHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
   };
 
 } // namespace Model

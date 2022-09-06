@@ -121,10 +121,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcEndpointIds;
-    bool m_vpcEndpointIdsHasBeenSet;
+    bool m_vpcEndpointIdsHasBeenSet = false;
   };
 
 } // namespace Model

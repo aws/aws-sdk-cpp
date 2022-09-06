@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
   };
 
 } // namespace Model

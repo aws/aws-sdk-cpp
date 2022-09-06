@@ -118,10 +118,10 @@ namespace Model
   private:
 
     FollowPoint m_followPoint;
-    bool m_followPointHasBeenSet;
+    bool m_followPointHasBeenSet = false;
 
     Aws::String m_referenceActionName;
-    bool m_referenceActionNameHasBeenSet;
+    bool m_referenceActionNameHasBeenSet = false;
   };
 
 } // namespace Model

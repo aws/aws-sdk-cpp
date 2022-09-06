@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>> m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

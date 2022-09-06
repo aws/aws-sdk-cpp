@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LifeCycleLastLaunchInitiated m_initiated;
-    bool m_initiatedHasBeenSet;
+    bool m_initiatedHasBeenSet = false;
   };
 
 } // namespace Model

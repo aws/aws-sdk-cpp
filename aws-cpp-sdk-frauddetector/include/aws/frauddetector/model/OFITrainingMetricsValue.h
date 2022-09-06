@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<OFIMetricDataPoint> m_metricDataPoints;
-    bool m_metricDataPointsHasBeenSet;
+    bool m_metricDataPointsHasBeenSet = false;
 
     OFIModelPerformance m_modelPerformance;
-    bool m_modelPerformanceHasBeenSet;
+    bool m_modelPerformanceHasBeenSet = false;
   };
 
 } // namespace Model

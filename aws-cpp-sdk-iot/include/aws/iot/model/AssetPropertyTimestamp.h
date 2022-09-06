@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_timeInSeconds;
-    bool m_timeInSecondsHasBeenSet;
+    bool m_timeInSecondsHasBeenSet = false;
 
     Aws::String m_offsetInNanos;
-    bool m_offsetInNanosHasBeenSet;
+    bool m_offsetInNanosHasBeenSet = false;
   };
 
 } // namespace Model

@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::Vector<AttributeConfig> m_attributeConfigs;
-    bool m_attributeConfigsHasBeenSet;
+    bool m_attributeConfigsHasBeenSet = false;
 
     Aws::Vector<AdditionalDataset> m_additionalDatasets;
-    bool m_additionalDatasetsHasBeenSet;
+    bool m_additionalDatasetsHasBeenSet = false;
   };
 
 } // namespace Model

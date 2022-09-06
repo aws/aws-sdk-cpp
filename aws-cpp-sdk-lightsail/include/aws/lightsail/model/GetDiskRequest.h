@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_diskName;
-    bool m_diskNameHasBeenSet;
+    bool m_diskNameHasBeenSet = false;
   };
 
 } // namespace Model

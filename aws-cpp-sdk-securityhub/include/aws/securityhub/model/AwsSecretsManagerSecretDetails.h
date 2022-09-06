@@ -314,28 +314,28 @@ namespace Model
   private:
 
     AwsSecretsManagerSecretRotationRules m_rotationRules;
-    bool m_rotationRulesHasBeenSet;
+    bool m_rotationRulesHasBeenSet = false;
 
     bool m_rotationOccurredWithinFrequency;
-    bool m_rotationOccurredWithinFrequencyHasBeenSet;
+    bool m_rotationOccurredWithinFrequencyHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_rotationEnabled;
-    bool m_rotationEnabledHasBeenSet;
+    bool m_rotationEnabledHasBeenSet = false;
 
     Aws::String m_rotationLambdaArn;
-    bool m_rotationLambdaArnHasBeenSet;
+    bool m_rotationLambdaArnHasBeenSet = false;
 
     bool m_deleted;
-    bool m_deletedHasBeenSet;
+    bool m_deletedHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

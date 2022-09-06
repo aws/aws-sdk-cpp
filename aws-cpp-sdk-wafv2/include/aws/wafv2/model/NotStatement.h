@@ -73,7 +73,7 @@ namespace Model
   private:
 
     std::shared_ptr<Statement> m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
   };
 
 } // namespace Model

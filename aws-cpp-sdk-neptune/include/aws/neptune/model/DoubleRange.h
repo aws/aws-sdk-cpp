@@ -81,10 +81,10 @@ namespace Model
   private:
 
     double m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     double m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
   };
 
 } // namespace Model

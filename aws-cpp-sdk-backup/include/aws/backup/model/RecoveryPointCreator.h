@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_backupPlanId;
-    bool m_backupPlanIdHasBeenSet;
+    bool m_backupPlanIdHasBeenSet = false;
 
     Aws::String m_backupPlanArn;
-    bool m_backupPlanArnHasBeenSet;
+    bool m_backupPlanArnHasBeenSet = false;
 
     Aws::String m_backupPlanVersion;
-    bool m_backupPlanVersionHasBeenSet;
+    bool m_backupPlanVersionHasBeenSet = false;
 
     Aws::String m_backupRuleId;
-    bool m_backupRuleIdHasBeenSet;
+    bool m_backupRuleIdHasBeenSet = false;
   };
 
 } // namespace Model

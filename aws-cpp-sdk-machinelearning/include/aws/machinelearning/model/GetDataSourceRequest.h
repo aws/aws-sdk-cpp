@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     bool m_verbose;
-    bool m_verboseHasBeenSet;
+    bool m_verboseHasBeenSet = false;
   };
 
 } // namespace Model

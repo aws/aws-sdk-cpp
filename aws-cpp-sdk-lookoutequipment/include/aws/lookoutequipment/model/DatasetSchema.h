@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_inlineDataSchema;
-    bool m_inlineDataSchemaHasBeenSet;
+    bool m_inlineDataSchemaHasBeenSet = false;
   };
 
 } // namespace Model

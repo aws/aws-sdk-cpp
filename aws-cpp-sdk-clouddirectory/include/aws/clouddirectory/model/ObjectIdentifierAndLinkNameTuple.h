@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
   };
 
 } // namespace Model

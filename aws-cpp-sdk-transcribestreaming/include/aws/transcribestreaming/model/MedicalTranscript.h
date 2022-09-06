@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<MedicalResult> m_results;
-    bool m_resultsHasBeenSet;
+    bool m_resultsHasBeenSet = false;
   };
 
 } // namespace Model

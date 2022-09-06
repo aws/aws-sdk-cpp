@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_mfaAuthenticated;
-    bool m_mfaAuthenticatedHasBeenSet;
+    bool m_mfaAuthenticatedHasBeenSet = false;
   };
 
 } // namespace Model

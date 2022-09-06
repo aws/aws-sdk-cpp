@@ -530,31 +530,31 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     ObjectLockLegalHold m_legalHold;
-    bool m_legalHoldHasBeenSet;
+    bool m_legalHoldHasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
+    bool m_contentMD5HasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

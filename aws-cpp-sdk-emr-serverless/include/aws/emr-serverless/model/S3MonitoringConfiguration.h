@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

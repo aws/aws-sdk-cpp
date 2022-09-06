@@ -113,10 +113,10 @@ namespace Model
   private:
 
     AssessmentReportDestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

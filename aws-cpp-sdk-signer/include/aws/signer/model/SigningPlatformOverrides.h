@@ -145,10 +145,10 @@ namespace Model
   private:
 
     SigningConfigurationOverrides m_signingConfiguration;
-    bool m_signingConfigurationHasBeenSet;
+    bool m_signingConfigurationHasBeenSet = false;
 
     ImageFormat m_signingImageFormat;
-    bool m_signingImageFormatHasBeenSet;
+    bool m_signingImageFormatHasBeenSet = false;
   };
 
 } // namespace Model

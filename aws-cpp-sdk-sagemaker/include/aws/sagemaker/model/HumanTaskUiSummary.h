@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_humanTaskUiName;
-    bool m_humanTaskUiNameHasBeenSet;
+    bool m_humanTaskUiNameHasBeenSet = false;
 
     Aws::String m_humanTaskUiArn;
-    bool m_humanTaskUiArnHasBeenSet;
+    bool m_humanTaskUiArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

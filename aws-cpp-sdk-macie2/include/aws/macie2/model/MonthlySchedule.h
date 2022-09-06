@@ -79,7 +79,7 @@ namespace Model
   private:
 
     int m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
   };
 
 } // namespace Model

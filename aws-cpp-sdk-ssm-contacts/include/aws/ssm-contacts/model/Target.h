@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ChannelTargetInfo m_channelTargetInfo;
-    bool m_channelTargetInfoHasBeenSet;
+    bool m_channelTargetInfoHasBeenSet = false;
 
     ContactTargetInfo m_contactTargetInfo;
-    bool m_contactTargetInfoHasBeenSet;
+    bool m_contactTargetInfoHasBeenSet = false;
   };
 
 } // namespace Model

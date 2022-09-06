@@ -390,25 +390,25 @@ namespace Model
   private:
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     long long m_volumeSizeInBytes;
-    bool m_volumeSizeInBytesHasBeenSet;
+    bool m_volumeSizeInBytesHasBeenSet = false;
 
     Aws::String m_volumeAttachmentStatus;
-    bool m_volumeAttachmentStatusHasBeenSet;
+    bool m_volumeAttachmentStatusHasBeenSet = false;
   };
 
 } // namespace Model

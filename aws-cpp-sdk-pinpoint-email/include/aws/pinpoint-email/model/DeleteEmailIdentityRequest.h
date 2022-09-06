@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_emailIdentity;
-    bool m_emailIdentityHasBeenSet;
+    bool m_emailIdentityHasBeenSet = false;
   };
 
 } // namespace Model

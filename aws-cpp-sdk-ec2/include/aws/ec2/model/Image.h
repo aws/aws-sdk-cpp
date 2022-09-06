@@ -1328,91 +1328,91 @@ namespace Model
   private:
 
     ArchitectureValues m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_imageLocation;
-    bool m_imageLocationHasBeenSet;
+    bool m_imageLocationHasBeenSet = false;
 
     ImageTypeValues m_imageType;
-    bool m_imageTypeHasBeenSet;
+    bool m_imageTypeHasBeenSet = false;
 
     bool m_public;
-    bool m_publicHasBeenSet;
+    bool m_publicHasBeenSet = false;
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     PlatformValues m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_platformDetails;
-    bool m_platformDetailsHasBeenSet;
+    bool m_platformDetailsHasBeenSet = false;
 
     Aws::String m_usageOperation;
-    bool m_usageOperationHasBeenSet;
+    bool m_usageOperationHasBeenSet = false;
 
     Aws::Vector<ProductCode> m_productCodes;
-    bool m_productCodesHasBeenSet;
+    bool m_productCodesHasBeenSet = false;
 
     Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
+    bool m_ramdiskIdHasBeenSet = false;
 
     ImageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enaSupport;
-    bool m_enaSupportHasBeenSet;
+    bool m_enaSupportHasBeenSet = false;
 
     HypervisorType m_hypervisor;
-    bool m_hypervisorHasBeenSet;
+    bool m_hypervisorHasBeenSet = false;
 
     Aws::String m_imageOwnerAlias;
-    bool m_imageOwnerAliasHasBeenSet;
+    bool m_imageOwnerAliasHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_rootDeviceName;
-    bool m_rootDeviceNameHasBeenSet;
+    bool m_rootDeviceNameHasBeenSet = false;
 
     DeviceType m_rootDeviceType;
-    bool m_rootDeviceTypeHasBeenSet;
+    bool m_rootDeviceTypeHasBeenSet = false;
 
     Aws::String m_sriovNetSupport;
-    bool m_sriovNetSupportHasBeenSet;
+    bool m_sriovNetSupportHasBeenSet = false;
 
     StateReason m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VirtualizationType m_virtualizationType;
-    bool m_virtualizationTypeHasBeenSet;
+    bool m_virtualizationTypeHasBeenSet = false;
 
     BootModeValues m_bootMode;
-    bool m_bootModeHasBeenSet;
+    bool m_bootModeHasBeenSet = false;
 
     TpmSupportValues m_tpmSupport;
-    bool m_tpmSupportHasBeenSet;
+    bool m_tpmSupportHasBeenSet = false;
 
     Aws::String m_deprecationTime;
-    bool m_deprecationTimeHasBeenSet;
+    bool m_deprecationTimeHasBeenSet = false;
   };
 
 } // namespace Model

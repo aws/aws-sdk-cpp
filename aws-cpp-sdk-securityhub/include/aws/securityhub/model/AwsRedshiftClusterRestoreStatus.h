@@ -230,22 +230,22 @@ namespace Model
   private:
 
     double m_currentRestoreRateInMegaBytesPerSecond;
-    bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet;
+    bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = false;
 
     long long m_elapsedTimeInSeconds;
-    bool m_elapsedTimeInSecondsHasBeenSet;
+    bool m_elapsedTimeInSecondsHasBeenSet = false;
 
     long long m_estimatedTimeToCompletionInSeconds;
-    bool m_estimatedTimeToCompletionInSecondsHasBeenSet;
+    bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
 
     long long m_progressInMegaBytes;
-    bool m_progressInMegaBytesHasBeenSet;
+    bool m_progressInMegaBytesHasBeenSet = false;
 
     long long m_snapshotSizeInMegaBytes;
-    bool m_snapshotSizeInMegaBytesHasBeenSet;
+    bool m_snapshotSizeInMegaBytesHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_topicARN;
-    bool m_topicARNHasBeenSet;
+    bool m_topicARNHasBeenSet = false;
   };
 
 } // namespace Model

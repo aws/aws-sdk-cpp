@@ -71,7 +71,7 @@ namespace Model
   private:
 
     RelativeAggregationDuration m_relativeAggregationDuration;
-    bool m_relativeAggregationDurationHasBeenSet;
+    bool m_relativeAggregationDurationHasBeenSet = false;
   };
 
 } // namespace Model

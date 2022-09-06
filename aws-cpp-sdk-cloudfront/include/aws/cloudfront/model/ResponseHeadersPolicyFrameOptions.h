@@ -127,10 +127,10 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     FrameOptionsList m_frameOption;
-    bool m_frameOptionHasBeenSet;
+    bool m_frameOptionHasBeenSet = false;
   };
 
 } // namespace Model

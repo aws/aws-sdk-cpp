@@ -234,16 +234,16 @@ namespace Model
   private:
 
     bool m_accessSysfs;
-    bool m_accessSysfsHasBeenSet;
+    bool m_accessSysfsHasBeenSet = false;
 
     FunctionExecutionConfig m_execution;
-    bool m_executionHasBeenSet;
+    bool m_executionHasBeenSet = false;
 
     Aws::Vector<ResourceAccessPolicy> m_resourceAccessPolicies;
-    bool m_resourceAccessPoliciesHasBeenSet;
+    bool m_resourceAccessPoliciesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

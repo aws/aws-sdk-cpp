@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_objectPrefixes;
-    bool m_objectPrefixesHasBeenSet;
+    bool m_objectPrefixesHasBeenSet = false;
   };
 
 } // namespace Model

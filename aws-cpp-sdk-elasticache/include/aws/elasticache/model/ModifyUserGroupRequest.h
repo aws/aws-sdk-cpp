@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_userGroupId;
-    bool m_userGroupIdHasBeenSet;
+    bool m_userGroupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIdsToAdd;
-    bool m_userIdsToAddHasBeenSet;
+    bool m_userIdsToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIdsToRemove;
-    bool m_userIdsToRemoveHasBeenSet;
+    bool m_userIdsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

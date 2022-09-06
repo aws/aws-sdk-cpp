@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     Aws::String m_globalReplicationGroupMemberRole;
-    bool m_globalReplicationGroupMemberRoleHasBeenSet;
+    bool m_globalReplicationGroupMemberRoleHasBeenSet = false;
   };
 
 } // namespace Model

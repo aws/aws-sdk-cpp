@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_integrationId;
-    bool m_integrationIdHasBeenSet;
+    bool m_integrationIdHasBeenSet = false;
 
     Aws::String m_integrationResponseId;
-    bool m_integrationResponseIdHasBeenSet;
+    bool m_integrationResponseIdHasBeenSet = false;
   };
 
 } // namespace Model

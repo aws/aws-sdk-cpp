@@ -248,13 +248,13 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Map<TargetFilterName, Aws::Vector<Aws::String>> m_targetFilters;
-    bool m_targetFiltersHasBeenSet;
+    bool m_targetFiltersHasBeenSet = false;
   };
 
 } // namespace Model

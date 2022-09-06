@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<ScheduledUpdateGroupActionRequest> m_scheduledUpdateGroupActions;
-    bool m_scheduledUpdateGroupActionsHasBeenSet;
+    bool m_scheduledUpdateGroupActionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_hsmId;
-    bool m_hsmIdHasBeenSet;
+    bool m_hsmIdHasBeenSet = false;
 
     Aws::String m_eniId;
-    bool m_eniIdHasBeenSet;
+    bool m_eniIdHasBeenSet = false;
 
     Aws::String m_eniIp;
-    bool m_eniIpHasBeenSet;
+    bool m_eniIpHasBeenSet = false;
   };
 
 } // namespace Model

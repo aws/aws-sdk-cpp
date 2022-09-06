@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     AllRowsWildcard m_allRowsWildcard;
-    bool m_allRowsWildcardHasBeenSet;
+    bool m_allRowsWildcardHasBeenSet = false;
   };
 
 } // namespace Model

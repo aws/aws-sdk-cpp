@@ -218,16 +218,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_sslProtocols;
-    bool m_sslProtocolsHasBeenSet;
+    bool m_sslProtocolsHasBeenSet = false;
 
     Aws::Vector<Cipher> m_ciphers;
-    bool m_ciphersHasBeenSet;
+    bool m_ciphersHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedLoadBalancerTypes;
-    bool m_supportedLoadBalancerTypesHasBeenSet;
+    bool m_supportedLoadBalancerTypesHasBeenSet = false;
   };
 
 } // namespace Model

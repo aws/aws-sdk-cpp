@@ -197,19 +197,19 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     bool m_mustBeRequestable;
-    bool m_mustBeRequestableHasBeenSet;
+    bool m_mustBeRequestableHasBeenSet = false;
 
     bool m_mustBeOwnedByCaller;
-    bool m_mustBeOwnedByCallerHasBeenSet;
+    bool m_mustBeOwnedByCallerHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

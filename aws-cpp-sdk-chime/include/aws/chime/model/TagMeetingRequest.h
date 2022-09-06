@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

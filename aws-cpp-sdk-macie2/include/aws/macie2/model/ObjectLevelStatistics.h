@@ -126,13 +126,13 @@ namespace Model
   private:
 
     long long m_fileType;
-    bool m_fileTypeHasBeenSet;
+    bool m_fileTypeHasBeenSet = false;
 
     long long m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     long long m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

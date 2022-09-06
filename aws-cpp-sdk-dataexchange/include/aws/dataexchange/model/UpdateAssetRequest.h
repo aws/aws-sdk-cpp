@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

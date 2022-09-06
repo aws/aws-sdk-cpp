@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_attachedPolicyIds;
-    bool m_attachedPolicyIdsHasBeenSet;
+    bool m_attachedPolicyIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

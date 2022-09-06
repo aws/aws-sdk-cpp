@@ -277,13 +277,13 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     FallbackBehavior m_fallbackBehavior;
-    bool m_fallbackBehaviorHasBeenSet;
+    bool m_fallbackBehaviorHasBeenSet = false;
 
     ForwardedIPPosition m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
   };
 
 } // namespace Model

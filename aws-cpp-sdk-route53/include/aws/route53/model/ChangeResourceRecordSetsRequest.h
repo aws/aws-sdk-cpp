@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     ChangeBatch m_changeBatch;
-    bool m_changeBatchHasBeenSet;
+    bool m_changeBatchHasBeenSet = false;
   };
 
 } // namespace Model

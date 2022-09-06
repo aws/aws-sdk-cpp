@@ -112,10 +112,10 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::Vector<KeyPhrase> m_keyPhrases;
-    bool m_keyPhrasesHasBeenSet;
+    bool m_keyPhrasesHasBeenSet = false;
   };
 
 } // namespace Model

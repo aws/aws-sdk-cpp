@@ -75,7 +75,7 @@ namespace Model
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

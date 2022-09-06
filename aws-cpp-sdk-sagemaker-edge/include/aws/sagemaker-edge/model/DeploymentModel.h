@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_modelHandle;
-    bool m_modelHandleHasBeenSet;
+    bool m_modelHandleHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     ModelState m_desiredState;
-    bool m_desiredStateHasBeenSet;
+    bool m_desiredStateHasBeenSet = false;
 
     ModelState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     DeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_rollbackFailureReason;
-    bool m_rollbackFailureReasonHasBeenSet;
+    bool m_rollbackFailureReasonHasBeenSet = false;
   };
 
 } // namespace Model

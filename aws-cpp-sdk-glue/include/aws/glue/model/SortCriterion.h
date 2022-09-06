@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     Sort m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
   };
 
 } // namespace Model

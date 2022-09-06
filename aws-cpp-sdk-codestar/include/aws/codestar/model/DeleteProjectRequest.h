@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     bool m_deleteStack;
-    bool m_deleteStackHasBeenSet;
+    bool m_deleteStackHasBeenSet = false;
   };
 
 } // namespace Model

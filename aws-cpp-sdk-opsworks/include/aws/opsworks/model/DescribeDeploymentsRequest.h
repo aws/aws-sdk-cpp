@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentIds;
-    bool m_deploymentIdsHasBeenSet;
+    bool m_deploymentIdsHasBeenSet = false;
   };
 
 } // namespace Model

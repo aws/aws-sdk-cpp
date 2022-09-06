@@ -188,16 +188,16 @@ namespace Model
   private:
 
     ResponseSpecification m_closingResponse;
-    bool m_closingResponseHasBeenSet;
+    bool m_closingResponseHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     DialogState m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     ConditionalSpecification m_conditional;
-    bool m_conditionalHasBeenSet;
+    bool m_conditionalHasBeenSet = false;
   };
 
 } // namespace Model

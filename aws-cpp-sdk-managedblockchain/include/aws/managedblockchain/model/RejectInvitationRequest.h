@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
   };
 
 } // namespace Model

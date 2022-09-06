@@ -302,25 +302,25 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-    bool m_attributeDefinitionsHasBeenSet;
+    bool m_attributeDefinitionsHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     BillingMode m_billingMode;
-    bool m_billingModeHasBeenSet;
+    bool m_billingModeHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
 
     SSESpecification m_sSESpecification;
-    bool m_sSESpecificationHasBeenSet;
+    bool m_sSESpecificationHasBeenSet = false;
 
     Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
   };
 
 } // namespace Model

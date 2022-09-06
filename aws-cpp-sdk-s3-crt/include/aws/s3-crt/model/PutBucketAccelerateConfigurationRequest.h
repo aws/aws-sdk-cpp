@@ -301,19 +301,19 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     AccelerateConfiguration m_accelerateConfiguration;
-    bool m_accelerateConfigurationHasBeenSet;
+    bool m_accelerateConfigurationHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

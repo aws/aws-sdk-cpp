@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_finishTime;
-    bool m_finishTimeHasBeenSet;
+    bool m_finishTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
   };
 
 } // namespace Model

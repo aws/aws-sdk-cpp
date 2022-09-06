@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BackendStoragePermissions m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     ServiceName m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

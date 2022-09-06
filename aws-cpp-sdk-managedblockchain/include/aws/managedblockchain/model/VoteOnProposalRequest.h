@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_proposalId;
-    bool m_proposalIdHasBeenSet;
+    bool m_proposalIdHasBeenSet = false;
 
     Aws::String m_voterMemberId;
-    bool m_voterMemberIdHasBeenSet;
+    bool m_voterMemberIdHasBeenSet = false;
 
     VoteValue m_vote;
-    bool m_voteHasBeenSet;
+    bool m_voteHasBeenSet = false;
   };
 
 } // namespace Model

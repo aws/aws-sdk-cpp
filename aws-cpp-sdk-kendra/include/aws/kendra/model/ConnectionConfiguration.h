@@ -273,19 +273,19 @@ namespace Model
   private:
 
     Aws::String m_databaseHost;
-    bool m_databaseHostHasBeenSet;
+    bool m_databaseHostHasBeenSet = false;
 
     int m_databasePort;
-    bool m_databasePortHasBeenSet;
+    bool m_databasePortHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

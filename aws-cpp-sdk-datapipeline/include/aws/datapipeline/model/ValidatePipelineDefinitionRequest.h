@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Aws::Vector<PipelineObject> m_pipelineObjects;
-    bool m_pipelineObjectsHasBeenSet;
+    bool m_pipelineObjectsHasBeenSet = false;
 
     Aws::Vector<ParameterObject> m_parameterObjects;
-    bool m_parameterObjectsHasBeenSet;
+    bool m_parameterObjectsHasBeenSet = false;
 
     Aws::Vector<ParameterValue> m_parameterValues;
-    bool m_parameterValuesHasBeenSet;
+    bool m_parameterValuesHasBeenSet = false;
   };
 
 } // namespace Model

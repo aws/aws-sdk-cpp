@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AdvancedSecurityModeType m_advancedSecurityMode;
-    bool m_advancedSecurityModeHasBeenSet;
+    bool m_advancedSecurityModeHasBeenSet = false;
   };
 
 } // namespace Model

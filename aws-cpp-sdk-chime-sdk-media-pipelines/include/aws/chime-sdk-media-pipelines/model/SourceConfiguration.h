@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SelectedVideoStreams m_selectedVideoStreams;
-    bool m_selectedVideoStreamsHasBeenSet;
+    bool m_selectedVideoStreamsHasBeenSet = false;
   };
 
 } // namespace Model

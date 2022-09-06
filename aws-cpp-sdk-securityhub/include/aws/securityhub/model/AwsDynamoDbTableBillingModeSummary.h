@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_billingMode;
-    bool m_billingModeHasBeenSet;
+    bool m_billingModeHasBeenSet = false;
 
     Aws::String m_lastUpdateToPayPerRequestDateTime;
-    bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet;
+    bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,10 +91,10 @@ namespace Model
   private:
 
     long long m_workerCount;
-    bool m_workerCountHasBeenSet;
+    bool m_workerCountHasBeenSet = false;
 
     WorkerResourceConfig m_workerConfiguration;
-    bool m_workerConfigurationHasBeenSet;
+    bool m_workerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_controlName;
-    bool m_controlNameHasBeenSet;
+    bool m_controlNameHasBeenSet = false;
 
     Aws::Vector<ControlInputParameter> m_controlInputParameters;
-    bool m_controlInputParametersHasBeenSet;
+    bool m_controlInputParametersHasBeenSet = false;
 
     ControlScope m_controlScope;
-    bool m_controlScopeHasBeenSet;
+    bool m_controlScopeHasBeenSet = false;
   };
 
 } // namespace Model

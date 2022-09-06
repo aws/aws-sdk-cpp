@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::Vector<TypeConfigurationIdentifier> m_typeConfigurationIdentifiers;
-    bool m_typeConfigurationIdentifiersHasBeenSet;
+    bool m_typeConfigurationIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

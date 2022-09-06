@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_lsaAnalysisId;
-    bool m_lsaAnalysisIdHasBeenSet;
+    bool m_lsaAnalysisIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

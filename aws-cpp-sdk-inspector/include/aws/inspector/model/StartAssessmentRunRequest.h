@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_assessmentTemplateArn;
-    bool m_assessmentTemplateArnHasBeenSet;
+    bool m_assessmentTemplateArnHasBeenSet = false;
 
     Aws::String m_assessmentRunName;
-    bool m_assessmentRunNameHasBeenSet;
+    bool m_assessmentRunNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::String m_rejectReason;
-    bool m_rejectReasonHasBeenSet;
+    bool m_rejectReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -342,25 +342,25 @@ namespace Model
   private:
 
     CreateSvmActiveDirectoryConfiguration m_activeDirectoryConfiguration;
-    bool m_activeDirectoryConfigurationHasBeenSet;
+    bool m_activeDirectoryConfigurationHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_svmAdminPassword;
-    bool m_svmAdminPasswordHasBeenSet;
+    bool m_svmAdminPasswordHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     StorageVirtualMachineRootVolumeSecurityStyle m_rootVolumeSecurityStyle;
-    bool m_rootVolumeSecurityStyleHasBeenSet;
+    bool m_rootVolumeSecurityStyleHasBeenSet = false;
   };
 
 } // namespace Model

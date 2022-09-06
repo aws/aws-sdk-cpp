@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     AssociatedNetworkType m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

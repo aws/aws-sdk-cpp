@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_eventActionId;
-    bool m_eventActionIdHasBeenSet;
+    bool m_eventActionIdHasBeenSet = false;
   };
 
 } // namespace Model

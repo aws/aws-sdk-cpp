@@ -85,7 +85,7 @@ PollyClient::~PollyClient()
 
 void PollyClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Polly");
+  AWSClient::SetServiceClientName("Polly");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -373,25 +373,25 @@ NONE: MediaLive does not clip the input video and does not include the
   private:
 
     VideoCodecSettings m_codecSettings;
-    bool m_codecSettingsHasBeenSet;
+    bool m_codecSettingsHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     VideoDescriptionRespondToAfd m_respondToAfd;
-    bool m_respondToAfdHasBeenSet;
+    bool m_respondToAfdHasBeenSet = false;
 
     VideoDescriptionScalingBehavior m_scalingBehavior;
-    bool m_scalingBehaviorHasBeenSet;
+    bool m_scalingBehaviorHasBeenSet = false;
 
     int m_sharpness;
-    bool m_sharpnessHasBeenSet;
+    bool m_sharpnessHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

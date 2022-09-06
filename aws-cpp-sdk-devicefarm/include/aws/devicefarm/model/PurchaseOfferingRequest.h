@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::String m_offeringPromotionId;
-    bool m_offeringPromotionIdHasBeenSet;
+    bool m_offeringPromotionIdHasBeenSet = false;
   };
 
 } // namespace Model

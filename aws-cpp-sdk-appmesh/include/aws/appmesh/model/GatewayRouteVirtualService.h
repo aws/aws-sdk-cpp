@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_virtualServiceName;
-    bool m_virtualServiceNameHasBeenSet;
+    bool m_virtualServiceNameHasBeenSet = false;
   };
 
 } // namespace Model

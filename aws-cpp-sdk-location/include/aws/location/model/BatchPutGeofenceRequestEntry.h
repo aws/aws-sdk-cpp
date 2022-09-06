@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_geofenceId;
-    bool m_geofenceIdHasBeenSet;
+    bool m_geofenceIdHasBeenSet = false;
 
     GeofenceGeometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
   };
 
 } // namespace Model

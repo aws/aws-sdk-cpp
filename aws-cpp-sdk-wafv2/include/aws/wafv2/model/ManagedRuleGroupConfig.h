@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_loginPath;
-    bool m_loginPathHasBeenSet;
+    bool m_loginPathHasBeenSet = false;
 
     PayloadType m_payloadType;
-    bool m_payloadTypeHasBeenSet;
+    bool m_payloadTypeHasBeenSet = false;
 
     UsernameField m_usernameField;
-    bool m_usernameFieldHasBeenSet;
+    bool m_usernameFieldHasBeenSet = false;
 
     PasswordField m_passwordField;
-    bool m_passwordFieldHasBeenSet;
+    bool m_passwordFieldHasBeenSet = false;
   };
 
 } // namespace Model

@@ -185,10 +185,10 @@ namespace Model
   private:
 
     AccountDetail m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

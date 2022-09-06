@@ -78,10 +78,10 @@ namespace Model
   private:
 
     Scte35SpliceInsert m_scte35SpliceInsert;
-    bool m_scte35SpliceInsertHasBeenSet;
+    bool m_scte35SpliceInsertHasBeenSet = false;
 
     Scte35TimeSignalApos m_scte35TimeSignalApos;
-    bool m_scte35TimeSignalAposHasBeenSet;
+    bool m_scte35TimeSignalAposHasBeenSet = false;
   };
 
 } // namespace Model

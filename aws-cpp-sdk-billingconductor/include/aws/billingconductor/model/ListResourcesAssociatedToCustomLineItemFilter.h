@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CustomLineItemRelationship m_relationship;
-    bool m_relationshipHasBeenSet;
+    bool m_relationshipHasBeenSet = false;
   };
 
 } // namespace Model

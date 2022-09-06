@@ -317,25 +317,25 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     TrackingOptions m_trackingOptions;
-    bool m_trackingOptionsHasBeenSet;
+    bool m_trackingOptionsHasBeenSet = false;
 
     DeliveryOptions m_deliveryOptions;
-    bool m_deliveryOptionsHasBeenSet;
+    bool m_deliveryOptionsHasBeenSet = false;
 
     ReputationOptions m_reputationOptions;
-    bool m_reputationOptionsHasBeenSet;
+    bool m_reputationOptionsHasBeenSet = false;
 
     SendingOptions m_sendingOptions;
-    bool m_sendingOptionsHasBeenSet;
+    bool m_sendingOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     SuppressionOptions m_suppressionOptions;
-    bool m_suppressionOptionsHasBeenSet;
+    bool m_suppressionOptionsHasBeenSet = false;
   };
 
 } // namespace Model

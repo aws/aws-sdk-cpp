@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -378,28 +378,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_exportImageTaskId;
-    bool m_exportImageTaskIdHasBeenSet;
+    bool m_exportImageTaskIdHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     ExportTaskS3Location m_s3ExportLocation;
-    bool m_s3ExportLocationHasBeenSet;
+    bool m_s3ExportLocationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

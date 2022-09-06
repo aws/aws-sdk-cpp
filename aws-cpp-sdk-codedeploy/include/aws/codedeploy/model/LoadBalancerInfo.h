@@ -222,13 +222,13 @@ namespace Model
   private:
 
     Aws::Vector<ELBInfo> m_elbInfoList;
-    bool m_elbInfoListHasBeenSet;
+    bool m_elbInfoListHasBeenSet = false;
 
     Aws::Vector<TargetGroupInfo> m_targetGroupInfoList;
-    bool m_targetGroupInfoListHasBeenSet;
+    bool m_targetGroupInfoListHasBeenSet = false;
 
     Aws::Vector<TargetGroupPairInfo> m_targetGroupPairInfoList;
-    bool m_targetGroupPairInfoListHasBeenSet;
+    bool m_targetGroupPairInfoListHasBeenSet = false;
   };
 
 } // namespace Model

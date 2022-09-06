@@ -4889,7 +4889,7 @@ namespace Model
   private:
 
     Aws::String m_annotationConsolidationLambdaArn;
-    bool m_annotationConsolidationLambdaArnHasBeenSet;
+    bool m_annotationConsolidationLambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

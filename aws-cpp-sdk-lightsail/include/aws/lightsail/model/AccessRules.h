@@ -195,10 +195,10 @@ namespace Model
   private:
 
     AccessType m_getObject;
-    bool m_getObjectHasBeenSet;
+    bool m_getObjectHasBeenSet = false;
 
     bool m_allowPublicOverrides;
-    bool m_allowPublicOverridesHasBeenSet;
+    bool m_allowPublicOverridesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::Vector<AddOutputRequest> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

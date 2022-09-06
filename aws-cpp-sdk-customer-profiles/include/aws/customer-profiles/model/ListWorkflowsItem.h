@@ -248,22 +248,22 @@ namespace Model
   private:
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDescription;
-    bool m_statusDescriptionHasBeenSet;
+    bool m_statusDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

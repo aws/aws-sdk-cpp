@@ -590,31 +590,31 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sourceImageId;
-    bool m_sourceImageIdHasBeenSet;
+    bool m_sourceImageIdHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_destinationOutpostArn;
-    bool m_destinationOutpostArnHasBeenSet;
+    bool m_destinationOutpostArnHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

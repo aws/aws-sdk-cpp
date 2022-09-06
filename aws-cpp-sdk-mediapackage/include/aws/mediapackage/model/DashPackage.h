@@ -622,52 +622,52 @@ rounded to the
   private:
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
-    bool m_adTriggersHasBeenSet;
+    bool m_adTriggersHasBeenSet = false;
 
     AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
-    bool m_adsOnDeliveryRestrictionsHasBeenSet;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
     DashEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     ManifestLayout m_manifestLayout;
-    bool m_manifestLayoutHasBeenSet;
+    bool m_manifestLayoutHasBeenSet = false;
 
     int m_manifestWindowSeconds;
-    bool m_manifestWindowSecondsHasBeenSet;
+    bool m_manifestWindowSecondsHasBeenSet = false;
 
     int m_minBufferTimeSeconds;
-    bool m_minBufferTimeSecondsHasBeenSet;
+    bool m_minBufferTimeSecondsHasBeenSet = false;
 
     int m_minUpdatePeriodSeconds;
-    bool m_minUpdatePeriodSecondsHasBeenSet;
+    bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
     Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
-    bool m_periodTriggersHasBeenSet;
+    bool m_periodTriggersHasBeenSet = false;
 
     Profile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     SegmentTemplateFormat m_segmentTemplateFormat;
-    bool m_segmentTemplateFormatHasBeenSet;
+    bool m_segmentTemplateFormatHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
 
     int m_suggestedPresentationDelaySeconds;
-    bool m_suggestedPresentationDelaySecondsHasBeenSet;
+    bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
 
     UtcTiming m_utcTiming;
-    bool m_utcTimingHasBeenSet;
+    bool m_utcTimingHasBeenSet = false;
 
     Aws::String m_utcTimingUri;
-    bool m_utcTimingUriHasBeenSet;
+    bool m_utcTimingUriHasBeenSet = false;
   };
 
 } // namespace Model

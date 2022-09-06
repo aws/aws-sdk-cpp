@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsCloudFrontDistributionOriginItem> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

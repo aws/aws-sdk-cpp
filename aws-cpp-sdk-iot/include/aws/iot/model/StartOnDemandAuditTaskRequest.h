@@ -117,7 +117,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_targetCheckNames;
-    bool m_targetCheckNamesHasBeenSet;
+    bool m_targetCheckNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Vector<int> m_pages;
-    bool m_pagesHasBeenSet;
+    bool m_pagesHasBeenSet = false;
   };
 
 } // namespace Model

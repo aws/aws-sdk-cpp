@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_ingestionJobId;
-    bool m_ingestionJobIdHasBeenSet;
+    bool m_ingestionJobIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

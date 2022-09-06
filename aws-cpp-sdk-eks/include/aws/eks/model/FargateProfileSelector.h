@@ -174,10 +174,10 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
   };
 
 } // namespace Model

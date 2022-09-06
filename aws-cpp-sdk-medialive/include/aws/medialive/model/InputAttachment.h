@@ -199,16 +199,16 @@ namespace Model
   private:
 
     AutomaticInputFailoverSettings m_automaticInputFailoverSettings;
-    bool m_automaticInputFailoverSettingsHasBeenSet;
+    bool m_automaticInputFailoverSettingsHasBeenSet = false;
 
     Aws::String m_inputAttachmentName;
-    bool m_inputAttachmentNameHasBeenSet;
+    bool m_inputAttachmentNameHasBeenSet = false;
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     InputSettings m_inputSettings;
-    bool m_inputSettingsHasBeenSet;
+    bool m_inputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

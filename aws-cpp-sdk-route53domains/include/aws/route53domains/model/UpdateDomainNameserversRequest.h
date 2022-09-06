@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Nameserver> m_nameservers;
-    bool m_nameserversHasBeenSet;
+    bool m_nameserversHasBeenSet = false;
   };
 
 } // namespace Model

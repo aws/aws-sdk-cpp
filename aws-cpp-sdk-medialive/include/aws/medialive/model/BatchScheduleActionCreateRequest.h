@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<ScheduleAction> m_scheduleActions;
-    bool m_scheduleActionsHasBeenSet;
+    bool m_scheduleActionsHasBeenSet = false;
   };
 
 } // namespace Model

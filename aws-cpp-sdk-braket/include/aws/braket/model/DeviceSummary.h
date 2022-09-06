@@ -226,19 +226,19 @@ namespace Model
   private:
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     DeviceStatus m_deviceStatus;
-    bool m_deviceStatusHasBeenSet;
+    bool m_deviceStatusHasBeenSet = false;
 
     DeviceType m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
   };
 
 } // namespace Model

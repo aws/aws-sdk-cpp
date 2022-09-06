@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_releaseNotes;
-    bool m_releaseNotesHasBeenSet;
+    bool m_releaseNotesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

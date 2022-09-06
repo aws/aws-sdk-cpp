@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     int m_reservedConcurrentExecutions;
-    bool m_reservedConcurrentExecutionsHasBeenSet;
+    bool m_reservedConcurrentExecutionsHasBeenSet = false;
   };
 
 } // namespace Model

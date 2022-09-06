@@ -421,34 +421,34 @@ namespace Model
   private:
 
     Aws::String m_longTermPricingId;
-    bool m_longTermPricingIdHasBeenSet;
+    bool m_longTermPricingIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_longTermPricingEndDate;
-    bool m_longTermPricingEndDateHasBeenSet;
+    bool m_longTermPricingEndDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_longTermPricingStartDate;
-    bool m_longTermPricingStartDateHasBeenSet;
+    bool m_longTermPricingStartDateHasBeenSet = false;
 
     LongTermPricingType m_longTermPricingType;
-    bool m_longTermPricingTypeHasBeenSet;
+    bool m_longTermPricingTypeHasBeenSet = false;
 
     Aws::String m_currentActiveJob;
-    bool m_currentActiveJobHasBeenSet;
+    bool m_currentActiveJobHasBeenSet = false;
 
     Aws::String m_replacementJob;
-    bool m_replacementJobHasBeenSet;
+    bool m_replacementJobHasBeenSet = false;
 
     bool m_isLongTermPricingAutoRenew;
-    bool m_isLongTermPricingAutoRenewHasBeenSet;
+    bool m_isLongTermPricingAutoRenewHasBeenSet = false;
 
     Aws::String m_longTermPricingStatus;
-    bool m_longTermPricingStatusHasBeenSet;
+    bool m_longTermPricingStatusHasBeenSet = false;
 
     SnowballType m_snowballType;
-    bool m_snowballTypeHasBeenSet;
+    bool m_snowballTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jobIds;
-    bool m_jobIdsHasBeenSet;
+    bool m_jobIdsHasBeenSet = false;
   };
 
 } // namespace Model

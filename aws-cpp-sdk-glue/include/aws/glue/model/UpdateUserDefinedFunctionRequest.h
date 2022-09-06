@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     UserDefinedFunctionInput m_functionInput;
-    bool m_functionInputHasBeenSet;
+    bool m_functionInputHasBeenSet = false;
   };
 
 } // namespace Model

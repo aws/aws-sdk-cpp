@@ -991,49 +991,49 @@ namespace Model
   private:
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     AuthenticationMethodOption m_authenticationMethod;
-    bool m_authenticationMethodHasBeenSet;
+    bool m_authenticationMethodHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
 
     Aws::String m_activeDirectoryName;
-    bool m_activeDirectoryNameHasBeenSet;
+    bool m_activeDirectoryNameHasBeenSet = false;
 
     Aws::String m_realm;
-    bool m_realmHasBeenSet;
+    bool m_realmHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_adminGroup;
-    bool m_adminGroupHasBeenSet;
+    bool m_adminGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorGroup;
-    bool m_authorGroupHasBeenSet;
+    bool m_authorGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readerGroup;
-    bool m_readerGroupHasBeenSet;
+    bool m_readerGroupHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_contactNumber;
-    bool m_contactNumberHasBeenSet;
+    bool m_contactNumberHasBeenSet = false;
   };
 
 } // namespace Model

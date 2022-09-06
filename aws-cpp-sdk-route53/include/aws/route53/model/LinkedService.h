@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_servicePrincipal;
-    bool m_servicePrincipalHasBeenSet;
+    bool m_servicePrincipalHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

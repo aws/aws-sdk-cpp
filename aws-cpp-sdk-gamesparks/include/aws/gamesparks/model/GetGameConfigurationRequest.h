@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sections;
-    bool m_sectionsHasBeenSet;
+    bool m_sectionsHasBeenSet = false;
   };
 
 } // namespace Model

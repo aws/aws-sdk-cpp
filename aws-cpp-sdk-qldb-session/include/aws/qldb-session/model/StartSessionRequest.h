@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_ledgerName;
-    bool m_ledgerNameHasBeenSet;
+    bool m_ledgerNameHasBeenSet = false;
   };
 
 } // namespace Model

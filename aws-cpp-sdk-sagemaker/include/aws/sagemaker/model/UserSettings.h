@@ -401,28 +401,28 @@ namespace Model
   private:
 
     Aws::String m_executionRole;
-    bool m_executionRoleHasBeenSet;
+    bool m_executionRoleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     SharingSettings m_sharingSettings;
-    bool m_sharingSettingsHasBeenSet;
+    bool m_sharingSettingsHasBeenSet = false;
 
     JupyterServerAppSettings m_jupyterServerAppSettings;
-    bool m_jupyterServerAppSettingsHasBeenSet;
+    bool m_jupyterServerAppSettingsHasBeenSet = false;
 
     KernelGatewayAppSettings m_kernelGatewayAppSettings;
-    bool m_kernelGatewayAppSettingsHasBeenSet;
+    bool m_kernelGatewayAppSettingsHasBeenSet = false;
 
     TensorBoardAppSettings m_tensorBoardAppSettings;
-    bool m_tensorBoardAppSettingsHasBeenSet;
+    bool m_tensorBoardAppSettingsHasBeenSet = false;
 
     RStudioServerProAppSettings m_rStudioServerProAppSettings;
-    bool m_rStudioServerProAppSettingsHasBeenSet;
+    bool m_rStudioServerProAppSettingsHasBeenSet = false;
 
     RSessionAppSettings m_rSessionAppSettings;
-    bool m_rSessionAppSettingsHasBeenSet;
+    bool m_rSessionAppSettingsHasBeenSet = false;
   };
 
 } // namespace Model

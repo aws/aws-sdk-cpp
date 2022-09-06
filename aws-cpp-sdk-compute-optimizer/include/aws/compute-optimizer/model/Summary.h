@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Finding m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Vector<ReasonCodeSummary> m_reasonCodeSummaries;
-    bool m_reasonCodeSummariesHasBeenSet;
+    bool m_reasonCodeSummariesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,7 +121,7 @@ namespace Model
   private:
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
   };
 
 } // namespace Model

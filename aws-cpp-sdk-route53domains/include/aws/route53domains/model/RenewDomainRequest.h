@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     int m_durationInYears;
-    bool m_durationInYearsHasBeenSet;
+    bool m_durationInYearsHasBeenSet = false;
 
     int m_currentExpiryYear;
-    bool m_currentExpiryYearHasBeenSet;
+    bool m_currentExpiryYearHasBeenSet = false;
   };
 
 } // namespace Model

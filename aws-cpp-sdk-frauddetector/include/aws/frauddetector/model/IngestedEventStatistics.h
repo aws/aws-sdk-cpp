@@ -204,19 +204,19 @@ namespace Model
   private:
 
     long long m_numberOfEvents;
-    bool m_numberOfEventsHasBeenSet;
+    bool m_numberOfEventsHasBeenSet = false;
 
     long long m_eventDataSizeInBytes;
-    bool m_eventDataSizeInBytesHasBeenSet;
+    bool m_eventDataSizeInBytesHasBeenSet = false;
 
     Aws::String m_leastRecentEvent;
-    bool m_leastRecentEventHasBeenSet;
+    bool m_leastRecentEventHasBeenSet = false;
 
     Aws::String m_mostRecentEvent;
-    bool m_mostRecentEventHasBeenSet;
+    bool m_mostRecentEventHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -371,34 +371,34 @@ namespace Model
   private:
 
     ChannelActivity m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     LambdaActivity m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
 
     DatastoreActivity m_datastore;
-    bool m_datastoreHasBeenSet;
+    bool m_datastoreHasBeenSet = false;
 
     AddAttributesActivity m_addAttributes;
-    bool m_addAttributesHasBeenSet;
+    bool m_addAttributesHasBeenSet = false;
 
     RemoveAttributesActivity m_removeAttributes;
-    bool m_removeAttributesHasBeenSet;
+    bool m_removeAttributesHasBeenSet = false;
 
     SelectAttributesActivity m_selectAttributes;
-    bool m_selectAttributesHasBeenSet;
+    bool m_selectAttributesHasBeenSet = false;
 
     FilterActivity m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     MathActivity m_math;
-    bool m_mathHasBeenSet;
+    bool m_mathHasBeenSet = false;
 
     DeviceRegistryEnrichActivity m_deviceRegistryEnrich;
-    bool m_deviceRegistryEnrichHasBeenSet;
+    bool m_deviceRegistryEnrichHasBeenSet = false;
 
     DeviceShadowEnrichActivity m_deviceShadowEnrich;
-    bool m_deviceShadowEnrichHasBeenSet;
+    bool m_deviceShadowEnrichHasBeenSet = false;
   };
 
 } // namespace Model

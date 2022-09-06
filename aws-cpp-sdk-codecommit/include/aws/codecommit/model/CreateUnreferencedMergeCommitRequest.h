@@ -519,37 +519,37 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_sourceCommitSpecifier;
-    bool m_sourceCommitSpecifierHasBeenSet;
+    bool m_sourceCommitSpecifierHasBeenSet = false;
 
     Aws::String m_destinationCommitSpecifier;
-    bool m_destinationCommitSpecifierHasBeenSet;
+    bool m_destinationCommitSpecifierHasBeenSet = false;
 
     MergeOptionTypeEnum m_mergeOption;
-    bool m_mergeOptionHasBeenSet;
+    bool m_mergeOptionHasBeenSet = false;
 
     ConflictDetailLevelTypeEnum m_conflictDetailLevel;
-    bool m_conflictDetailLevelHasBeenSet;
+    bool m_conflictDetailLevelHasBeenSet = false;
 
     ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy;
-    bool m_conflictResolutionStrategyHasBeenSet;
+    bool m_conflictResolutionStrategyHasBeenSet = false;
 
     Aws::String m_authorName;
-    bool m_authorNameHasBeenSet;
+    bool m_authorNameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
 
     bool m_keepEmptyFolders;
-    bool m_keepEmptyFoldersHasBeenSet;
+    bool m_keepEmptyFoldersHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
   };
 
 } // namespace Model

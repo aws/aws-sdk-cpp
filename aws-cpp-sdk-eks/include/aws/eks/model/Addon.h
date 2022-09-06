@@ -487,34 +487,34 @@ namespace Model
   private:
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     AddonStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_addonVersion;
-    bool m_addonVersionHasBeenSet;
+    bool m_addonVersionHasBeenSet = false;
 
     AddonHealth m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
 
     Aws::String m_addonArn;
-    bool m_addonArnHasBeenSet;
+    bool m_addonArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet;
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_serviceAccountRoleArn;
-    bool m_serviceAccountRoleArnHasBeenSet;
+    bool m_serviceAccountRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

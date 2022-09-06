@@ -72,7 +72,7 @@ namespace Model
   private:
 
     SlotMigration m_slotMigration;
-    bool m_slotMigrationHasBeenSet;
+    bool m_slotMigrationHasBeenSet = false;
   };
 
 } // namespace Model

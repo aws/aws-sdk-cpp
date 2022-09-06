@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_slotTypeId;
-    bool m_slotTypeIdHasBeenSet;
+    bool m_slotTypeIdHasBeenSet = false;
 
     Aws::String m_slotTypeName;
-    bool m_slotTypeNameHasBeenSet;
+    bool m_slotTypeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_parentSlotTypeSignature;
-    bool m_parentSlotTypeSignatureHasBeenSet;
+    bool m_parentSlotTypeSignatureHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     SlotTypeCategory m_slotTypeCategory;
-    bool m_slotTypeCategoryHasBeenSet;
+    bool m_slotTypeCategoryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -165,19 +165,19 @@ namespace Model
   private:
 
     double m_elevation;
-    bool m_elevationHasBeenSet;
+    bool m_elevationHasBeenSet = false;
 
     ElevationReference m_elevationReference;
-    bool m_elevationReferenceHasBeenSet;
+    bool m_elevationReferenceHasBeenSet = false;
 
     ElevationUnit m_elevationUnit;
-    bool m_elevationUnitHasBeenSet;
+    bool m_elevationUnitHasBeenSet = false;
 
     double m_latitude;
-    bool m_latitudeHasBeenSet;
+    bool m_latitudeHasBeenSet = false;
 
     double m_longitude;
-    bool m_longitudeHasBeenSet;
+    bool m_longitudeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -67,7 +67,7 @@ namespace Model
   private:
 
     Aws::String m_expectedSequenceToken;
-    bool m_expectedSequenceTokenHasBeenSet;
+    bool m_expectedSequenceTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -449,37 +449,37 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     ChannelMessageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastEditedTimestamp;
-    bool m_lastEditedTimestampHasBeenSet;
+    bool m_lastEditedTimestampHasBeenSet = false;
 
     Identity m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
 
     bool m_redacted;
-    bool m_redactedHasBeenSet;
+    bool m_redactedHasBeenSet = false;
 
     ChannelMessageStatusStructure m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
   };
 
 } // namespace Model

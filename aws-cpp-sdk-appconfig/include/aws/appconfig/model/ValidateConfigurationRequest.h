@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_configurationProfileId;
-    bool m_configurationProfileIdHasBeenSet;
+    bool m_configurationProfileIdHasBeenSet = false;
 
     Aws::String m_configurationVersion;
-    bool m_configurationVersionHasBeenSet;
+    bool m_configurationVersionHasBeenSet = false;
   };
 
 } // namespace Model

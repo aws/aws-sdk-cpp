@@ -995,58 +995,58 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_newDBClusterIdentifier;
-    bool m_newDBClusterIdentifierHasBeenSet;
+    bool m_newDBClusterIdentifierHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
-    bool m_cloudwatchLogsExportConfigurationHasBeenSet;
+    bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_allowMajorVersionUpgrade;
-    bool m_allowMajorVersionUpgradeHasBeenSet;
+    bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_dBInstanceParameterGroupName;
-    bool m_dBInstanceParameterGroupNameHasBeenSet;
+    bool m_dBInstanceParameterGroupNameHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
   };
 
 } // namespace Model

@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_raidArrayId;
-    bool m_raidArrayIdHasBeenSet;
+    bool m_raidArrayIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_volumeIds;
-    bool m_volumeIdsHasBeenSet;
+    bool m_volumeIdsHasBeenSet = false;
   };
 
 } // namespace Model

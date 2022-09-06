@@ -403,25 +403,25 @@ namespace Model
   private:
 
     Aws::String m_datasetImportJobArn;
-    bool m_datasetImportJobArnHasBeenSet;
+    bool m_datasetImportJobArnHasBeenSet = false;
 
     Aws::String m_datasetImportJobName;
-    bool m_datasetImportJobNameHasBeenSet;
+    bool m_datasetImportJobNameHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

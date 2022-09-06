@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     DiskImageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_importManifestUrl;
-    bool m_importManifestUrlHasBeenSet;
+    bool m_importManifestUrlHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

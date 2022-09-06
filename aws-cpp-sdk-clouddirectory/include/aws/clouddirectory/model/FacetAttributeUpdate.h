@@ -103,10 +103,10 @@ namespace Model
   private:
 
     FacetAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     UpdateActionType m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

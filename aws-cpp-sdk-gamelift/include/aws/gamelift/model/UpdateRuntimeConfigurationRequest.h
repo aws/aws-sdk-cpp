@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     RuntimeConfiguration m_runtimeConfiguration;
-    bool m_runtimeConfigurationHasBeenSet;
+    bool m_runtimeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

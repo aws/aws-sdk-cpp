@@ -322,28 +322,28 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_checkName;
-    bool m_checkNameHasBeenSet;
+    bool m_checkNameHasBeenSet = false;
 
     ResourceIdentifier m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     bool m_listSuppressedFindings;
-    bool m_listSuppressedFindingsHasBeenSet;
+    bool m_listSuppressedFindingsHasBeenSet = false;
   };
 
 } // namespace Model

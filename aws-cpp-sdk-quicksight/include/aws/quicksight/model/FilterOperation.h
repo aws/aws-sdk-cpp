@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_conditionExpression;
-    bool m_conditionExpressionHasBeenSet;
+    bool m_conditionExpressionHasBeenSet = false;
   };
 
 } // namespace Model

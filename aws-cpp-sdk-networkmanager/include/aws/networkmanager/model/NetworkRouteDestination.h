@@ -285,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkAttachmentId;
-    bool m_coreNetworkAttachmentIdHasBeenSet;
+    bool m_coreNetworkAttachmentIdHasBeenSet = false;
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     Aws::String m_segmentName;
-    bool m_segmentNameHasBeenSet;
+    bool m_segmentNameHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -262,25 +262,25 @@ namespace Model
   private:
 
     ExportAssetToSignedUrlRequestDetails m_exportAssetToSignedUrl;
-    bool m_exportAssetToSignedUrlHasBeenSet;
+    bool m_exportAssetToSignedUrlHasBeenSet = false;
 
     ExportAssetsToS3RequestDetails m_exportAssetsToS3;
-    bool m_exportAssetsToS3HasBeenSet;
+    bool m_exportAssetsToS3HasBeenSet = false;
 
     ExportRevisionsToS3RequestDetails m_exportRevisionsToS3;
-    bool m_exportRevisionsToS3HasBeenSet;
+    bool m_exportRevisionsToS3HasBeenSet = false;
 
     ImportAssetFromSignedUrlRequestDetails m_importAssetFromSignedUrl;
-    bool m_importAssetFromSignedUrlHasBeenSet;
+    bool m_importAssetFromSignedUrlHasBeenSet = false;
 
     ImportAssetsFromS3RequestDetails m_importAssetsFromS3;
-    bool m_importAssetsFromS3HasBeenSet;
+    bool m_importAssetsFromS3HasBeenSet = false;
 
     ImportAssetsFromRedshiftDataSharesRequestDetails m_importAssetsFromRedshiftDataShares;
-    bool m_importAssetsFromRedshiftDataSharesHasBeenSet;
+    bool m_importAssetsFromRedshiftDataSharesHasBeenSet = false;
 
     ImportAssetFromApiGatewayApiRequestDetails m_importAssetFromApiGatewayApi;
-    bool m_importAssetFromApiGatewayApiHasBeenSet;
+    bool m_importAssetFromApiGatewayApiHasBeenSet = false;
   };
 
 } // namespace Model

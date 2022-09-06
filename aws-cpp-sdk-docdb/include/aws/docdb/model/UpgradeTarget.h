@@ -219,19 +219,19 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_autoUpgrade;
-    bool m_autoUpgradeHasBeenSet;
+    bool m_autoUpgradeHasBeenSet = false;
 
     bool m_isMajorVersionUpgrade;
-    bool m_isMajorVersionUpgradeHasBeenSet;
+    bool m_isMajorVersionUpgradeHasBeenSet = false;
   };
 
 } // namespace Model

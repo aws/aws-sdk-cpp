@@ -266,16 +266,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
   };
 
 } // namespace Model

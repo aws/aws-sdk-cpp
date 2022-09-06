@@ -240,10 +240,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

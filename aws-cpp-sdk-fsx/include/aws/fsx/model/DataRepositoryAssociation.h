@@ -650,40 +650,40 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     DataRepositoryLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     DataRepositoryFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     Aws::String m_fileSystemPath;
-    bool m_fileSystemPathHasBeenSet;
+    bool m_fileSystemPathHasBeenSet = false;
 
     Aws::String m_dataRepositoryPath;
-    bool m_dataRepositoryPathHasBeenSet;
+    bool m_dataRepositoryPathHasBeenSet = false;
 
     bool m_batchImportMetaDataOnCreate;
-    bool m_batchImportMetaDataOnCreateHasBeenSet;
+    bool m_batchImportMetaDataOnCreateHasBeenSet = false;
 
     int m_importedFileChunkSize;
-    bool m_importedFileChunkSizeHasBeenSet;
+    bool m_importedFileChunkSizeHasBeenSet = false;
 
     S3DataRepositoryConfiguration m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

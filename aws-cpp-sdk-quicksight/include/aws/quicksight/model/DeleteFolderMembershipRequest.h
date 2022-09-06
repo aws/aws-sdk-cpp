@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_folderId;
-    bool m_folderIdHasBeenSet;
+    bool m_folderIdHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     MemberType m_memberType;
-    bool m_memberTypeHasBeenSet;
+    bool m_memberTypeHasBeenSet = false;
   };
 
 } // namespace Model

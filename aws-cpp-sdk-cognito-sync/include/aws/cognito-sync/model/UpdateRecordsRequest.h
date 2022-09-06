@@ -369,25 +369,25 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::Vector<RecordPatch> m_recordPatches;
-    bool m_recordPatchesHasBeenSet;
+    bool m_recordPatchesHasBeenSet = false;
 
     Aws::String m_syncSessionToken;
-    bool m_syncSessionTokenHasBeenSet;
+    bool m_syncSessionTokenHasBeenSet = false;
 
     Aws::String m_clientContext;
-    bool m_clientContextHasBeenSet;
+    bool m_clientContextHasBeenSet = false;
   };
 
 } // namespace Model

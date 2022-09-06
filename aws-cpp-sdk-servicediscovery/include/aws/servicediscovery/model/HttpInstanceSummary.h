@@ -316,19 +316,19 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     HealthStatus m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

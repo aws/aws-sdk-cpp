@@ -345,25 +345,25 @@ namespace Model
   private:
 
     Aws::String m_flowDefinitionName;
-    bool m_flowDefinitionNameHasBeenSet;
+    bool m_flowDefinitionNameHasBeenSet = false;
 
     HumanLoopRequestSource m_humanLoopRequestSource;
-    bool m_humanLoopRequestSourceHasBeenSet;
+    bool m_humanLoopRequestSourceHasBeenSet = false;
 
     HumanLoopActivationConfig m_humanLoopActivationConfig;
-    bool m_humanLoopActivationConfigHasBeenSet;
+    bool m_humanLoopActivationConfigHasBeenSet = false;
 
     HumanLoopConfig m_humanLoopConfig;
-    bool m_humanLoopConfigHasBeenSet;
+    bool m_humanLoopConfigHasBeenSet = false;
 
     FlowDefinitionOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

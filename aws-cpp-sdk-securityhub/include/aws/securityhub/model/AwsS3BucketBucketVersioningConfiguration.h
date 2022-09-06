@@ -117,10 +117,10 @@ namespace Model
   private:
 
     bool m_isMfaDeleteEnabled;
-    bool m_isMfaDeleteEnabledHasBeenSet;
+    bool m_isMfaDeleteEnabledHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

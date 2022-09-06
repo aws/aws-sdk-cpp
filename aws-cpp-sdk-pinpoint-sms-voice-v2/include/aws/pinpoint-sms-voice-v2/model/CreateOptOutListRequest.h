@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

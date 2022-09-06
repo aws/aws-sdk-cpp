@@ -511,34 +511,34 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     ProcessingS3InputMode m_s3InputMode;
-    bool m_s3InputModeHasBeenSet;
+    bool m_s3InputModeHasBeenSet = false;
 
     ProcessingS3DataDistributionType m_s3DataDistributionType;
-    bool m_s3DataDistributionTypeHasBeenSet;
+    bool m_s3DataDistributionTypeHasBeenSet = false;
 
     Aws::String m_featuresAttribute;
-    bool m_featuresAttributeHasBeenSet;
+    bool m_featuresAttributeHasBeenSet = false;
 
     Aws::String m_inferenceAttribute;
-    bool m_inferenceAttributeHasBeenSet;
+    bool m_inferenceAttributeHasBeenSet = false;
 
     Aws::String m_probabilityAttribute;
-    bool m_probabilityAttributeHasBeenSet;
+    bool m_probabilityAttributeHasBeenSet = false;
 
     double m_probabilityThresholdAttribute;
-    bool m_probabilityThresholdAttributeHasBeenSet;
+    bool m_probabilityThresholdAttributeHasBeenSet = false;
 
     Aws::String m_startTimeOffset;
-    bool m_startTimeOffsetHasBeenSet;
+    bool m_startTimeOffsetHasBeenSet = false;
 
     Aws::String m_endTimeOffset;
-    bool m_endTimeOffsetHasBeenSet;
+    bool m_endTimeOffsetHasBeenSet = false;
   };
 
 } // namespace Model

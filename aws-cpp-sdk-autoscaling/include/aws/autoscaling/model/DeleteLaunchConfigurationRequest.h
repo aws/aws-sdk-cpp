@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_launchConfigurationName;
-    bool m_launchConfigurationNameHasBeenSet;
+    bool m_launchConfigurationNameHasBeenSet = false;
   };
 
 } // namespace Model

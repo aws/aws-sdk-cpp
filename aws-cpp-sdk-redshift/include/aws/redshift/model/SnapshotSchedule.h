@@ -347,28 +347,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_scheduleDefinitions;
-    bool m_scheduleDefinitionsHasBeenSet;
+    bool m_scheduleDefinitionsHasBeenSet = false;
 
     Aws::String m_scheduleIdentifier;
-    bool m_scheduleIdentifierHasBeenSet;
+    bool m_scheduleIdentifierHasBeenSet = false;
 
     Aws::String m_scheduleDescription;
-    bool m_scheduleDescriptionHasBeenSet;
+    bool m_scheduleDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
-    bool m_nextInvocationsHasBeenSet;
+    bool m_nextInvocationsHasBeenSet = false;
 
     int m_associatedClusterCount;
-    bool m_associatedClusterCountHasBeenSet;
+    bool m_associatedClusterCountHasBeenSet = false;
 
     Aws::Vector<ClusterAssociatedToSchedule> m_associatedClusters;
-    bool m_associatedClustersHasBeenSet;
+    bool m_associatedClustersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_digest;
-    bool m_digestHasBeenSet;
+    bool m_digestHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

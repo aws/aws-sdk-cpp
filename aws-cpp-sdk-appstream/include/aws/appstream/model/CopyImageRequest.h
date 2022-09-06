@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_sourceImageName;
-    bool m_sourceImageNameHasBeenSet;
+    bool m_sourceImageNameHasBeenSet = false;
 
     Aws::String m_destinationImageName;
-    bool m_destinationImageNameHasBeenSet;
+    bool m_destinationImageNameHasBeenSet = false;
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
 
     Aws::String m_destinationImageDescription;
-    bool m_destinationImageDescriptionHasBeenSet;
+    bool m_destinationImageDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

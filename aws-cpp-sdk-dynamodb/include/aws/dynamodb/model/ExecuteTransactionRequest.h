@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::Vector<ParameterizedStatement> m_transactStatements;
-    bool m_transactStatementsHasBeenSet;
+    bool m_transactStatementsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

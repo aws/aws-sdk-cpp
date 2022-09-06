@@ -317,25 +317,25 @@ namespace Model
   private:
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

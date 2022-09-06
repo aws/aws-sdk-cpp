@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_oauthScopes;
-    bool m_oauthScopesHasBeenSet;
+    bool m_oauthScopesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokenUrls;
-    bool m_tokenUrlsHasBeenSet;
+    bool m_tokenUrlsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authCodeUrls;
-    bool m_authCodeUrlsHasBeenSet;
+    bool m_authCodeUrlsHasBeenSet = false;
 
     Aws::Vector<OAuth2GrantType> m_oauth2GrantTypesSupported;
-    bool m_oauth2GrantTypesSupportedHasBeenSet;
+    bool m_oauth2GrantTypesSupportedHasBeenSet = false;
 
     Aws::Vector<OAuth2CustomParameter> m_oauth2CustomProperties;
-    bool m_oauth2CustomPropertiesHasBeenSet;
+    bool m_oauth2CustomPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -740,34 +740,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_homeDirectory;
-    bool m_homeDirectoryHasBeenSet;
+    bool m_homeDirectoryHasBeenSet = false;
 
     Aws::Vector<HomeDirectoryMapEntry> m_homeDirectoryMappings;
-    bool m_homeDirectoryMappingsHasBeenSet;
+    bool m_homeDirectoryMappingsHasBeenSet = false;
 
     HomeDirectoryType m_homeDirectoryType;
-    bool m_homeDirectoryTypeHasBeenSet;
+    bool m_homeDirectoryTypeHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     PosixProfile m_posixProfile;
-    bool m_posixProfileHasBeenSet;
+    bool m_posixProfileHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::Vector<SshPublicKey> m_sshPublicKeys;
-    bool m_sshPublicKeysHasBeenSet;
+    bool m_sshPublicKeysHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
   };
 
 } // namespace Model

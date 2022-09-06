@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     bool m_deleteDirectory;
-    bool m_deleteDirectoryHasBeenSet;
+    bool m_deleteDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

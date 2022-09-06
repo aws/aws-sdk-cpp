@@ -750,52 +750,52 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_destinationIpv6CidrBlock;
-    bool m_destinationIpv6CidrBlockHasBeenSet;
+    bool m_destinationIpv6CidrBlockHasBeenSet = false;
 
     Aws::String m_destinationPrefixListId;
-    bool m_destinationPrefixListIdHasBeenSet;
+    bool m_destinationPrefixListIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_egressOnlyInternetGatewayId;
-    bool m_egressOnlyInternetGatewayIdHasBeenSet;
+    bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_natGatewayId;
-    bool m_natGatewayIdHasBeenSet;
+    bool m_natGatewayIdHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_localGatewayId;
-    bool m_localGatewayIdHasBeenSet;
+    bool m_localGatewayIdHasBeenSet = false;
 
     Aws::String m_carrierGatewayId;
-    bool m_carrierGatewayIdHasBeenSet;
+    bool m_carrierGatewayIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
     Aws::String m_coreNetworkArn;
-    bool m_coreNetworkArnHasBeenSet;
+    bool m_coreNetworkArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -268,19 +268,19 @@ namespace Model
   private:
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clusterNames;
-    bool m_clusterNamesHasBeenSet;
+    bool m_clusterNamesHasBeenSet = false;
 
     Aws::Vector<ServiceUpdateStatus> m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

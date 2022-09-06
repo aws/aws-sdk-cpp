@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     RequestImpactStatistics m_clientRequestImpactStatistics;
-    bool m_clientRequestImpactStatisticsHasBeenSet;
+    bool m_clientRequestImpactStatisticsHasBeenSet = false;
 
     RequestImpactStatistics m_rootCauseServiceRequestImpactStatistics;
-    bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet;
+    bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet = false;
 
     Aws::Vector<AnomalousService> m_topAnomalousServices;
-    bool m_topAnomalousServicesHasBeenSet;
+    bool m_topAnomalousServicesHasBeenSet = false;
   };
 
 } // namespace Model

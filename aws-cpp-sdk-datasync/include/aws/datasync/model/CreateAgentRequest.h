@@ -513,22 +513,22 @@ namespace Model
   private:
 
     Aws::String m_activationKey;
-    bool m_activationKeyHasBeenSet;
+    bool m_activationKeyHasBeenSet = false;
 
     Aws::String m_agentName;
-    bool m_agentNameHasBeenSet;
+    bool m_agentNameHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetArns;
-    bool m_subnetArnsHasBeenSet;
+    bool m_subnetArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

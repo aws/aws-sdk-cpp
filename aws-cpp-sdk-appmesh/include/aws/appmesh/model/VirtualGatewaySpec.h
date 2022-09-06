@@ -142,13 +142,13 @@ namespace Model
   private:
 
     VirtualGatewayBackendDefaults m_backendDefaults;
-    bool m_backendDefaultsHasBeenSet;
+    bool m_backendDefaultsHasBeenSet = false;
 
     Aws::Vector<VirtualGatewayListener> m_listeners;
-    bool m_listenersHasBeenSet;
+    bool m_listenersHasBeenSet = false;
 
     VirtualGatewayLogging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
   };
 
 } // namespace Model

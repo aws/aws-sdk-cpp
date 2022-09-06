@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     TrainingJob m_trainingJob;
-    bool m_trainingJobHasBeenSet;
+    bool m_trainingJobHasBeenSet = false;
 
     ProcessingJob m_processingJob;
-    bool m_processingJobHasBeenSet;
+    bool m_processingJobHasBeenSet = false;
 
     TransformJob m_transformJob;
-    bool m_transformJobHasBeenSet;
+    bool m_transformJobHasBeenSet = false;
   };
 
 } // namespace Model

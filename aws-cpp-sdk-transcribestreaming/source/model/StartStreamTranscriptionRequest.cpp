@@ -49,7 +49,7 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_preferredLanguageHasBeenSet(false),
     m_vocabularyNamesHasBeenSet(false),
     m_vocabularyFilterNamesHasBeenSet(false),
-    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
+    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
 

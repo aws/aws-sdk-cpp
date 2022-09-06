@@ -823,10 +823,10 @@ namespace Model
   private:
 
     Aws::Vector<AttributeValue> m_attributeValueList;
-    bool m_attributeValueListHasBeenSet;
+    bool m_attributeValueListHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -226,19 +226,19 @@ namespace Model
   private:
 
     AuthInfo m_authInfo;
-    bool m_authInfoHasBeenSet;
+    bool m_authInfoHasBeenSet = false;
 
     Allowed m_allowed;
-    bool m_allowedHasBeenSet;
+    bool m_allowedHasBeenSet = false;
 
     Denied m_denied;
-    bool m_deniedHasBeenSet;
+    bool m_deniedHasBeenSet = false;
 
     AuthDecision m_authDecision;
-    bool m_authDecisionHasBeenSet;
+    bool m_authDecisionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingContextValues;
-    bool m_missingContextValuesHasBeenSet;
+    bool m_missingContextValuesHasBeenSet = false;
   };
 
 } // namespace Model

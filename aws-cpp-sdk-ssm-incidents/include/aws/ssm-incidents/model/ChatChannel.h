@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_chatbotSns;
-    bool m_chatbotSnsHasBeenSet;
+    bool m_chatbotSnsHasBeenSet = false;
 
     EmptyChatChannel m_empty;
-    bool m_emptyHasBeenSet;
+    bool m_emptyHasBeenSet = false;
   };
 
 } // namespace Model

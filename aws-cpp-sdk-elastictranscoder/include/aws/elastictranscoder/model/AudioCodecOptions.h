@@ -387,16 +387,16 @@ namespace Model
   private:
 
     Aws::String m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     Aws::String m_bitDepth;
-    bool m_bitDepthHasBeenSet;
+    bool m_bitDepthHasBeenSet = false;
 
     Aws::String m_bitOrder;
-    bool m_bitOrderHasBeenSet;
+    bool m_bitOrderHasBeenSet = false;
 
     Aws::String m_signed;
-    bool m_signedHasBeenSet;
+    bool m_signedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<CostAllocationTagStatusEntry> m_costAllocationTagsStatus;
-    bool m_costAllocationTagsStatusHasBeenSet;
+    bool m_costAllocationTagsStatusHasBeenSet = false;
   };
 
 } // namespace Model

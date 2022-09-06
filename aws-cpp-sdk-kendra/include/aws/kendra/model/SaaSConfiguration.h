@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_organizationName;
-    bool m_organizationNameHasBeenSet;
+    bool m_organizationNameHasBeenSet = false;
 
     Aws::String m_hostUrl;
-    bool m_hostUrlHasBeenSet;
+    bool m_hostUrlHasBeenSet = false;
   };
 
 } // namespace Model

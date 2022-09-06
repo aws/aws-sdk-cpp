@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_withDecryption;
-    bool m_withDecryptionHasBeenSet;
+    bool m_withDecryptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -423,28 +423,28 @@ namespace Model
   private:
 
     Aws::String m_aWSAccountId;
-    bool m_aWSAccountIdHasBeenSet;
+    bool m_aWSAccountIdHasBeenSet = false;
 
     double m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_keyManager;
-    bool m_keyManagerHasBeenSet;
+    bool m_keyManagerHasBeenSet = false;
 
     Aws::String m_keyState;
-    bool m_keyStateHasBeenSet;
+    bool m_keyStateHasBeenSet = false;
 
     Aws::String m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_keyRotationStatus;
-    bool m_keyRotationStatusHasBeenSet;
+    bool m_keyRotationStatusHasBeenSet = false;
   };
 
 } // namespace Model

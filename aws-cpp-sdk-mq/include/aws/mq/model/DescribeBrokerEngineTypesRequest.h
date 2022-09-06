@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

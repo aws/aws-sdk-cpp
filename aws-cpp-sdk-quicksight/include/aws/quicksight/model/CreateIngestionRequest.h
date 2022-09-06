@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_ingestionId;
-    bool m_ingestionIdHasBeenSet;
+    bool m_ingestionIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     IngestionType m_ingestionType;
-    bool m_ingestionTypeHasBeenSet;
+    bool m_ingestionTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,10 +79,10 @@ namespace Model
   private:
 
     AnalyzeIDDetections m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     AnalyzeIDDetections m_valueDetection;
-    bool m_valueDetectionHasBeenSet;
+    bool m_valueDetectionHasBeenSet = false;
   };
 
 } // namespace Model

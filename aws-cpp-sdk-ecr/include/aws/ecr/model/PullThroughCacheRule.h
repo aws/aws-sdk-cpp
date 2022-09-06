@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_ecrRepositoryPrefix;
-    bool m_ecrRepositoryPrefixHasBeenSet;
+    bool m_ecrRepositoryPrefixHasBeenSet = false;
 
     Aws::String m_upstreamRegistryUrl;
-    bool m_upstreamRegistryUrlHasBeenSet;
+    bool m_upstreamRegistryUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
   };
 
 } // namespace Model

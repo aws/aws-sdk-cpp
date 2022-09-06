@@ -112,7 +112,7 @@ CodeArtifactClient::~CodeArtifactClient()
 
 void CodeArtifactClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("codeartifact");
+  AWSClient::SetServiceClientName("codeartifact");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

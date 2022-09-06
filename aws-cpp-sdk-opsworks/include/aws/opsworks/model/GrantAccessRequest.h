@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     int m_validForInMinutes;
-    bool m_validForInMinutesHasBeenSet;
+    bool m_validForInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

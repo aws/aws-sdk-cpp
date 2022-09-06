@@ -99,10 +99,10 @@ namespace Model
   private:
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     long long m_spliceEventId;
-    bool m_spliceEventIdHasBeenSet;
+    bool m_spliceEventIdHasBeenSet = false;
   };
 
 } // namespace Model

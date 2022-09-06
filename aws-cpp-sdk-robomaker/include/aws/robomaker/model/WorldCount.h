@@ -86,10 +86,10 @@ namespace Model
   private:
 
     int m_floorplanCount;
-    bool m_floorplanCountHasBeenSet;
+    bool m_floorplanCountHasBeenSet = false;
 
     int m_interiorCountPerFloorplan;
-    bool m_interiorCountPerFloorplanHasBeenSet;
+    bool m_interiorCountPerFloorplanHasBeenSet = false;
   };
 
 } // namespace Model

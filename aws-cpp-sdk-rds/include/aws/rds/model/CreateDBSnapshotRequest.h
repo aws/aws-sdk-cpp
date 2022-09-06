@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

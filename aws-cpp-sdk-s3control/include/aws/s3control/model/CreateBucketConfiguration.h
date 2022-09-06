@@ -90,7 +90,7 @@ namespace Model
   private:
 
     BucketLocationConstraint m_locationConstraint;
-    bool m_locationConstraintHasBeenSet;
+    bool m_locationConstraintHasBeenSet = false;
   };
 
 } // namespace Model

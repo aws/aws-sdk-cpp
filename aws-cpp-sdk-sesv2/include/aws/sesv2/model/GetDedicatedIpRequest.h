@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
   };
 
 } // namespace Model

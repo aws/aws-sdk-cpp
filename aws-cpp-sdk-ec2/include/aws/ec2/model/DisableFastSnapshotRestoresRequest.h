@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceSnapshotIds;
-    bool m_sourceSnapshotIdsHasBeenSet;
+    bool m_sourceSnapshotIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

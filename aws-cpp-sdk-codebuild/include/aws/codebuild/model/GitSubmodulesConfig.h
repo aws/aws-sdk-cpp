@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_fetchSubmodules;
-    bool m_fetchSubmodulesHasBeenSet;
+    bool m_fetchSubmodulesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -391,28 +391,28 @@ namespace Model
   private:
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_agentId;
-    bool m_agentIdHasBeenSet;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_autoScalingGroup;
-    bool m_autoScalingGroupHasBeenSet;
+    bool m_autoScalingGroupHasBeenSet = false;
 
     AgentHealth m_agentHealth;
-    bool m_agentHealthHasBeenSet;
+    bool m_agentHealthHasBeenSet = false;
 
     Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet;
+    bool m_agentVersionHasBeenSet = false;
 
     Aws::String m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     Aws::String m_kernelVersion;
-    bool m_kernelVersionHasBeenSet;
+    bool m_kernelVersionHasBeenSet = false;
 
     Aws::String m_ipv4Address;
-    bool m_ipv4AddressHasBeenSet;
+    bool m_ipv4AddressHasBeenSet = false;
   };
 
 } // namespace Model

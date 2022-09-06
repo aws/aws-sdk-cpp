@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_oneTimePassword;
-    bool m_oneTimePasswordHasBeenSet;
+    bool m_oneTimePasswordHasBeenSet = false;
   };
 
 } // namespace Model

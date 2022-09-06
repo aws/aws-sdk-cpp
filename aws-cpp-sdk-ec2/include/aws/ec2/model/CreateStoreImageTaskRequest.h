@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::Vector<S3ObjectTag> m_s3ObjectTags;
-    bool m_s3ObjectTagsHasBeenSet;
+    bool m_s3ObjectTagsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

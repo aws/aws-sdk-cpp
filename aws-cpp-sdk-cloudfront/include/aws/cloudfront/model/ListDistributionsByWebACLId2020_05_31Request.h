@@ -231,13 +231,13 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
   };
 
 } // namespace Model

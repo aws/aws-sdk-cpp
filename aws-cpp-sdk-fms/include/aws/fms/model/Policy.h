@@ -1075,40 +1075,40 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyUpdateToken;
-    bool m_policyUpdateTokenHasBeenSet;
+    bool m_policyUpdateTokenHasBeenSet = false;
 
     SecurityServicePolicyData m_securityServicePolicyData;
-    bool m_securityServicePolicyDataHasBeenSet;
+    bool m_securityServicePolicyDataHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypeList;
-    bool m_resourceTypeListHasBeenSet;
+    bool m_resourceTypeListHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     bool m_excludeResourceTags;
-    bool m_excludeResourceTagsHasBeenSet;
+    bool m_excludeResourceTagsHasBeenSet = false;
 
     bool m_remediationEnabled;
-    bool m_remediationEnabledHasBeenSet;
+    bool m_remediationEnabledHasBeenSet = false;
 
     bool m_deleteUnusedFMManagedResources;
-    bool m_deleteUnusedFMManagedResourcesHasBeenSet;
+    bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
 
     Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_includeMap;
-    bool m_includeMapHasBeenSet;
+    bool m_includeMapHasBeenSet = false;
 
     Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_excludeMap;
-    bool m_excludeMapHasBeenSet;
+    bool m_excludeMapHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,10 +179,10 @@ namespace Model
   private:
 
     Aws::Vector<UpdateRoutingControlStateEntry> m_updateRoutingControlStateEntries;
-    bool m_updateRoutingControlStateEntriesHasBeenSet;
+    bool m_updateRoutingControlStateEntriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_safetyRulesToOverride;
-    bool m_safetyRulesToOverrideHasBeenSet;
+    bool m_safetyRulesToOverrideHasBeenSet = false;
   };
 
 } // namespace Model

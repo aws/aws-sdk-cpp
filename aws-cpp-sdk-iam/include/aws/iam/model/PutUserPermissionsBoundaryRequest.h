@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
   };
 
 } // namespace Model

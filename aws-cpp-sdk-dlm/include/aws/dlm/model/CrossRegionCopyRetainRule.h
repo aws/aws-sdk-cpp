@@ -110,10 +110,10 @@ namespace Model
   private:
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     RetentionIntervalUnitValues m_intervalUnit;
-    bool m_intervalUnitHasBeenSet;
+    bool m_intervalUnitHasBeenSet = false;
   };
 
 } // namespace Model

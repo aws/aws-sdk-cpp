@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_tunnelId;
-    bool m_tunnelIdHasBeenSet;
+    bool m_tunnelIdHasBeenSet = false;
 
     bool m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
   };
 
 } // namespace Model

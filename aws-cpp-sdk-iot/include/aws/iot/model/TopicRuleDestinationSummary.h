@@ -382,25 +382,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     TopicRuleDestinationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     HttpUrlDestinationSummary m_httpUrlSummary;
-    bool m_httpUrlSummaryHasBeenSet;
+    bool m_httpUrlSummaryHasBeenSet = false;
 
     VpcDestinationSummary m_vpcDestinationSummary;
-    bool m_vpcDestinationSummaryHasBeenSet;
+    bool m_vpcDestinationSummaryHasBeenSet = false;
   };
 
 } // namespace Model

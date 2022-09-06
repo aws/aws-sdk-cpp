@@ -415,31 +415,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_deviceIdentifierArn;
-    bool m_deviceIdentifierArnHasBeenSet;
+    bool m_deviceIdentifierArnHasBeenSet = false;
 
     Aws::String m_iccid;
-    bool m_iccidHasBeenSet;
+    bool m_iccidHasBeenSet = false;
 
     Aws::String m_imsi;
-    bool m_imsiHasBeenSet;
+    bool m_imsiHasBeenSet = false;
 
     Aws::String m_networkArn;
-    bool m_networkArnHasBeenSet;
+    bool m_networkArnHasBeenSet = false;
 
     Aws::String m_orderArn;
-    bool m_orderArnHasBeenSet;
+    bool m_orderArnHasBeenSet = false;
 
     DeviceIdentifierStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_trafficGroupArn;
-    bool m_trafficGroupArnHasBeenSet;
+    bool m_trafficGroupArnHasBeenSet = false;
 
     Aws::String m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
   };
 
 } // namespace Model

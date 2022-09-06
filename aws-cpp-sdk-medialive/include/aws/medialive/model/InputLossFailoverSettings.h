@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_inputLossThresholdMsec;
-    bool m_inputLossThresholdMsecHasBeenSet;
+    bool m_inputLossThresholdMsecHasBeenSet = false;
   };
 
 } // namespace Model

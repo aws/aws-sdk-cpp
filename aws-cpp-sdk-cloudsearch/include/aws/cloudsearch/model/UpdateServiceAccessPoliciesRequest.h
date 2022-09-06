@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_accessPolicies;
-    bool m_accessPoliciesHasBeenSet;
+    bool m_accessPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

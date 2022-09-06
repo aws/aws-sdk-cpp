@@ -378,31 +378,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_applyType;
-    bool m_applyTypeHasBeenSet;
+    bool m_applyTypeHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     bool m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     bool m_isCollection;
-    bool m_isCollectionHasBeenSet;
+    bool m_isCollectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -303,22 +303,22 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<PhoneNumberCountryCode> m_phoneNumberCountryCodes;
-    bool m_phoneNumberCountryCodesHasBeenSet;
+    bool m_phoneNumberCountryCodesHasBeenSet = false;
 
     Aws::Vector<PhoneNumberType> m_phoneNumberTypes;
-    bool m_phoneNumberTypesHasBeenSet;
+    bool m_phoneNumberTypesHasBeenSet = false;
 
     Aws::String m_phoneNumberPrefix;
-    bool m_phoneNumberPrefixHasBeenSet;
+    bool m_phoneNumberPrefixHasBeenSet = false;
   };
 
 } // namespace Model

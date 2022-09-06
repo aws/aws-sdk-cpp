@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     QueryArgProfileConfig m_queryArgProfileConfig;
-    bool m_queryArgProfileConfigHasBeenSet;
+    bool m_queryArgProfileConfigHasBeenSet = false;
 
     ContentTypeProfileConfig m_contentTypeProfileConfig;
-    bool m_contentTypeProfileConfigHasBeenSet;
+    bool m_contentTypeProfileConfigHasBeenSet = false;
   };
 
 } // namespace Model

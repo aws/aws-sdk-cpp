@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_assessmentTemplateArn;
-    bool m_assessmentTemplateArnHasBeenSet;
+    bool m_assessmentTemplateArnHasBeenSet = false;
   };
 
 } // namespace Model

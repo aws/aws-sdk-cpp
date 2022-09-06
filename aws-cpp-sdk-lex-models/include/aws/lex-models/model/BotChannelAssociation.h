@@ -495,31 +495,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     ChannelType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_botConfiguration;
-    bool m_botConfigurationHasBeenSet;
+    bool m_botConfigurationHasBeenSet = false;
 
     ChannelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

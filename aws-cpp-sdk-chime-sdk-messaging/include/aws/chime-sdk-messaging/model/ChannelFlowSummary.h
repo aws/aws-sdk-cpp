@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_channelFlowArn;
-    bool m_channelFlowArnHasBeenSet;
+    bool m_channelFlowArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Processor> m_processors;
-    bool m_processorsHasBeenSet;
+    bool m_processorsHasBeenSet = false;
   };
 
 } // namespace Model

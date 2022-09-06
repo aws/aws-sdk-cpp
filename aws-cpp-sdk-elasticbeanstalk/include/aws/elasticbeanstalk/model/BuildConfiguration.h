@@ -311,19 +311,19 @@ namespace Model
   private:
 
     Aws::String m_artifactName;
-    bool m_artifactNameHasBeenSet;
+    bool m_artifactNameHasBeenSet = false;
 
     Aws::String m_codeBuildServiceRole;
-    bool m_codeBuildServiceRoleHasBeenSet;
+    bool m_codeBuildServiceRoleHasBeenSet = false;
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

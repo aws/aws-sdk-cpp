@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::String m_providerAttributeName;
-    bool m_providerAttributeNameHasBeenSet;
+    bool m_providerAttributeNameHasBeenSet = false;
 
     Aws::String m_providerAttributeValue;
-    bool m_providerAttributeValueHasBeenSet;
+    bool m_providerAttributeValueHasBeenSet = false;
   };
 
 } // namespace Model

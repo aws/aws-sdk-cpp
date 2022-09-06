@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_identifiedUserName;
-    bool m_identifiedUserNameHasBeenSet;
+    bool m_identifiedUserNameHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
   };
 
 } // namespace Model

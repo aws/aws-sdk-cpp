@@ -1417,58 +1417,58 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     NodegroupScalingConfig m_scalingConfig;
-    bool m_scalingConfigHasBeenSet;
+    bool m_scalingConfigHasBeenSet = false;
 
     int m_diskSize;
-    bool m_diskSizeHasBeenSet;
+    bool m_diskSizeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTypes;
-    bool m_instanceTypesHasBeenSet;
+    bool m_instanceTypesHasBeenSet = false;
 
     AMITypes m_amiType;
-    bool m_amiTypeHasBeenSet;
+    bool m_amiTypeHasBeenSet = false;
 
     RemoteAccessConfig m_remoteAccess;
-    bool m_remoteAccessHasBeenSet;
+    bool m_remoteAccessHasBeenSet = false;
 
     Aws::String m_nodeRole;
-    bool m_nodeRoleHasBeenSet;
+    bool m_nodeRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::Vector<Taint> m_taints;
-    bool m_taintsHasBeenSet;
+    bool m_taintsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     NodegroupUpdateConfig m_updateConfig;
-    bool m_updateConfigHasBeenSet;
+    bool m_updateConfigHasBeenSet = false;
 
     CapacityTypes m_capacityType;
-    bool m_capacityTypeHasBeenSet;
+    bool m_capacityTypeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
   };
 
 } // namespace Model

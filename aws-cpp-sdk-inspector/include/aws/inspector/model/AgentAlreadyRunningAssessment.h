@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_agentId;
-    bool m_agentIdHasBeenSet;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
   };
 
 } // namespace Model

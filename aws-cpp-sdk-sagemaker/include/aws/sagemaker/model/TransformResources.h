@@ -306,13 +306,13 @@ namespace Model
   private:
 
     TransformInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

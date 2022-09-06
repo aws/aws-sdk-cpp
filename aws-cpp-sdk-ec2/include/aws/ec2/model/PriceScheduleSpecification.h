@@ -124,13 +124,13 @@ namespace Model
   private:
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     long long m_term;
-    bool m_termHasBeenSet;
+    bool m_termHasBeenSet = false;
   };
 
 } // namespace Model

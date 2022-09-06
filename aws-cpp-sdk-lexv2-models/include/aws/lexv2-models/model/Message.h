@@ -173,16 +173,16 @@ namespace Model
   private:
 
     PlainTextMessage m_plainTextMessage;
-    bool m_plainTextMessageHasBeenSet;
+    bool m_plainTextMessageHasBeenSet = false;
 
     CustomPayload m_customPayload;
-    bool m_customPayloadHasBeenSet;
+    bool m_customPayloadHasBeenSet = false;
 
     SSMLMessage m_ssmlMessage;
-    bool m_ssmlMessageHasBeenSet;
+    bool m_ssmlMessageHasBeenSet = false;
 
     ImageResponseCard m_imageResponseCard;
-    bool m_imageResponseCardHasBeenSet;
+    bool m_imageResponseCardHasBeenSet = false;
   };
 
 } // namespace Model

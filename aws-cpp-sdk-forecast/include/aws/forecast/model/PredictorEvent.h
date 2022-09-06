@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_detail;
-    bool m_detailHasBeenSet;
+    bool m_detailHasBeenSet = false;
 
     Aws::Utils::DateTime m_datetime;
-    bool m_datetimeHasBeenSet;
+    bool m_datetimeHasBeenSet = false;
   };
 
 } // namespace Model

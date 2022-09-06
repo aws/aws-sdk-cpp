@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_errorDocument;
-    bool m_errorDocumentHasBeenSet;
+    bool m_errorDocumentHasBeenSet = false;
 
     Aws::String m_indexDocumentSuffix;
-    bool m_indexDocumentSuffixHasBeenSet;
+    bool m_indexDocumentSuffixHasBeenSet = false;
 
     AwsS3BucketWebsiteConfigurationRedirectTo m_redirectAllRequestsTo;
-    bool m_redirectAllRequestsToHasBeenSet;
+    bool m_redirectAllRequestsToHasBeenSet = false;
 
     Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule> m_routingRules;
-    bool m_routingRulesHasBeenSet;
+    bool m_routingRulesHasBeenSet = false;
   };
 
 } // namespace Model

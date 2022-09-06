@@ -240,13 +240,13 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcIds;
-    bool m_vpcIdsHasBeenSet;
+    bool m_vpcIdsHasBeenSet = false;
   };
 
 } // namespace Model

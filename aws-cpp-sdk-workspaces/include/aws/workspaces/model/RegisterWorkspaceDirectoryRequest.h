@@ -361,22 +361,22 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     bool m_enableWorkDocs;
-    bool m_enableWorkDocsHasBeenSet;
+    bool m_enableWorkDocsHasBeenSet = false;
 
     bool m_enableSelfService;
-    bool m_enableSelfServiceHasBeenSet;
+    bool m_enableSelfServiceHasBeenSet = false;
 
     Tenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

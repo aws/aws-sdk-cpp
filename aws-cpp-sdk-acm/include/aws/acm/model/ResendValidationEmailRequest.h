@@ -303,13 +303,13 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_validationDomain;
-    bool m_validationDomainHasBeenSet;
+    bool m_validationDomainHasBeenSet = false;
   };
 
 } // namespace Model

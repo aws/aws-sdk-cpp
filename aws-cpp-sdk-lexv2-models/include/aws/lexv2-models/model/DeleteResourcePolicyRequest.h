@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_expectedRevisionId;
-    bool m_expectedRevisionIdHasBeenSet;
+    bool m_expectedRevisionIdHasBeenSet = false;
   };
 
 } // namespace Model

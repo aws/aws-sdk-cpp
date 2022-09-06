@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_login;
-    bool m_loginHasBeenSet;
+    bool m_loginHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_org;
-    bool m_orgHasBeenSet;
+    bool m_orgHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AppflowIntegrationWorkflowMetrics m_appflowIntegration;
-    bool m_appflowIntegrationHasBeenSet;
+    bool m_appflowIntegrationHasBeenSet = false;
   };
 
 } // namespace Model

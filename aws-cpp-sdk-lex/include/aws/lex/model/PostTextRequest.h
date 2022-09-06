@@ -630,25 +630,25 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-    bool m_sessionAttributesHasBeenSet;
+    bool m_sessionAttributesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_inputText;
-    bool m_inputTextHasBeenSet;
+    bool m_inputTextHasBeenSet = false;
 
     Aws::Vector<ActiveContext> m_activeContexts;
-    bool m_activeContextsHasBeenSet;
+    bool m_activeContextsHasBeenSet = false;
   };
 
 } // namespace Model

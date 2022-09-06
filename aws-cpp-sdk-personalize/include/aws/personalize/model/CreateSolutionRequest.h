@@ -439,28 +439,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_performHPO;
-    bool m_performHPOHasBeenSet;
+    bool m_performHPOHasBeenSet = false;
 
     bool m_performAutoML;
-    bool m_performAutoMLHasBeenSet;
+    bool m_performAutoMLHasBeenSet = false;
 
     Aws::String m_recipeArn;
-    bool m_recipeArnHasBeenSet;
+    bool m_recipeArnHasBeenSet = false;
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     SolutionConfig m_solutionConfig;
-    bool m_solutionConfigHasBeenSet;
+    bool m_solutionConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

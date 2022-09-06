@@ -88,7 +88,7 @@ namespace Model
   private:
 
     double m_minSegmentConfidence;
-    bool m_minSegmentConfidenceHasBeenSet;
+    bool m_minSegmentConfidenceHasBeenSet = false;
   };
 
 } // namespace Model

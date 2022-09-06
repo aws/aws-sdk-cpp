@@ -122,10 +122,10 @@ namespace Model
   private:
 
     ContentSourceConfiguration m_contentSourceConfiguration;
-    bool m_contentSourceConfigurationHasBeenSet;
+    bool m_contentSourceConfigurationHasBeenSet = false;
 
     UserIdentityConfiguration m_userIdentityConfiguration;
-    bool m_userIdentityConfigurationHasBeenSet;
+    bool m_userIdentityConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

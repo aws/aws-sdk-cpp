@@ -206,19 +206,19 @@ namespace Model
   private:
 
     int m_blackFrameMsec;
-    bool m_blackFrameMsecHasBeenSet;
+    bool m_blackFrameMsecHasBeenSet = false;
 
     Aws::String m_inputLossImageColor;
-    bool m_inputLossImageColorHasBeenSet;
+    bool m_inputLossImageColorHasBeenSet = false;
 
     InputLocation m_inputLossImageSlate;
-    bool m_inputLossImageSlateHasBeenSet;
+    bool m_inputLossImageSlateHasBeenSet = false;
 
     InputLossImageType m_inputLossImageType;
-    bool m_inputLossImageTypeHasBeenSet;
+    bool m_inputLossImageTypeHasBeenSet = false;
 
     int m_repeatFrameMsec;
-    bool m_repeatFrameMsecHasBeenSet;
+    bool m_repeatFrameMsecHasBeenSet = false;
   };
 
 } // namespace Model

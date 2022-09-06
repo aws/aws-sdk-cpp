@@ -190,10 +190,10 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::Vector<PipelineActivity> m_pipelineActivities;
-    bool m_pipelineActivitiesHasBeenSet;
+    bool m_pipelineActivitiesHasBeenSet = false;
   };
 
 } // namespace Model

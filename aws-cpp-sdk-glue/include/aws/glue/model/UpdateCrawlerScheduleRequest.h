@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_crawlerName;
-    bool m_crawlerNameHasBeenSet;
+    bool m_crawlerNameHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
   };
 
 } // namespace Model

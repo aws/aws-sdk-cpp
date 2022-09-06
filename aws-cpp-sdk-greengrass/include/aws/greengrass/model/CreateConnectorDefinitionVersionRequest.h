@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     Aws::String m_connectorDefinitionId;
-    bool m_connectorDefinitionIdHasBeenSet;
+    bool m_connectorDefinitionIdHasBeenSet = false;
 
     Aws::Vector<Connector> m_connectors;
-    bool m_connectorsHasBeenSet;
+    bool m_connectorsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -278,19 +278,19 @@ namespace Model
   private:
 
     Aws::String m_brokerId;
-    bool m_brokerIdHasBeenSet;
+    bool m_brokerIdHasBeenSet = false;
 
     bool m_consoleAccess;
-    bool m_consoleAccessHasBeenSet;
+    bool m_consoleAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

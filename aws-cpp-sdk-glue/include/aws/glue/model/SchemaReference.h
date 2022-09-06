@@ -148,13 +148,13 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_schemaVersionId;
-    bool m_schemaVersionIdHasBeenSet;
+    bool m_schemaVersionIdHasBeenSet = false;
 
     long long m_schemaVersionNumber;
-    bool m_schemaVersionNumberHasBeenSet;
+    bool m_schemaVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

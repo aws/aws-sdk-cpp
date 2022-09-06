@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,13 +123,13 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_volumeSizeInGb;
-    bool m_volumeSizeInGbHasBeenSet;
+    bool m_volumeSizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

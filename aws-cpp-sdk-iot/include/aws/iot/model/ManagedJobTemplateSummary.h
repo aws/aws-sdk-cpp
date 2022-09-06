@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_environments;
-    bool m_environmentsHasBeenSet;
+    bool m_environmentsHasBeenSet = false;
 
     Aws::String m_templateVersion;
-    bool m_templateVersionHasBeenSet;
+    bool m_templateVersionHasBeenSet = false;
   };
 
 } // namespace Model

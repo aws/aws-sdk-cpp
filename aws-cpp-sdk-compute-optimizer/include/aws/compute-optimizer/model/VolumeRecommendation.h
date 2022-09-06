@@ -428,31 +428,31 @@ namespace Model
   private:
 
     Aws::String m_volumeArn;
-    bool m_volumeArnHasBeenSet;
+    bool m_volumeArnHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     VolumeConfiguration m_currentConfiguration;
-    bool m_currentConfigurationHasBeenSet;
+    bool m_currentConfigurationHasBeenSet = false;
 
     EBSFinding m_finding;
-    bool m_findingHasBeenSet;
+    bool m_findingHasBeenSet = false;
 
     Aws::Vector<EBSUtilizationMetric> m_utilizationMetrics;
-    bool m_utilizationMetricsHasBeenSet;
+    bool m_utilizationMetricsHasBeenSet = false;
 
     double m_lookBackPeriodInDays;
-    bool m_lookBackPeriodInDaysHasBeenSet;
+    bool m_lookBackPeriodInDaysHasBeenSet = false;
 
     Aws::Vector<VolumeRecommendationOption> m_volumeRecommendationOptions;
-    bool m_volumeRecommendationOptionsHasBeenSet;
+    bool m_volumeRecommendationOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
-    bool m_lastRefreshTimestampHasBeenSet;
+    bool m_lastRefreshTimestampHasBeenSet = false;
 
     CurrentPerformanceRisk m_currentPerformanceRisk;
-    bool m_currentPerformanceRiskHasBeenSet;
+    bool m_currentPerformanceRiskHasBeenSet = false;
   };
 
 } // namespace Model

@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_accessRoleArn;
-    bool m_accessRoleArnHasBeenSet;
+    bool m_accessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

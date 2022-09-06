@@ -388,10 +388,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     StringFilterComparison m_comparison;
-    bool m_comparisonHasBeenSet;
+    bool m_comparisonHasBeenSet = false;
   };
 
 } // namespace Model

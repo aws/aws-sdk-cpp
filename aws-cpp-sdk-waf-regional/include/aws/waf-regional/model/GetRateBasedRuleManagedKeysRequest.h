@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet;
+    bool m_nextMarkerHasBeenSet = false;
   };
 
 } // namespace Model

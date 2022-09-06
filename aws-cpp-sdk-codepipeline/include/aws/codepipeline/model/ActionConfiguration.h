@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

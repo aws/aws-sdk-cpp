@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_recoveryPointId;
-    bool m_recoveryPointIdHasBeenSet;
+    bool m_recoveryPointIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_equals;
-    bool m_equalsHasBeenSet;
+    bool m_equalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEquals;
-    bool m_notEqualsHasBeenSet;
+    bool m_notEqualsHasBeenSet = false;
 
     long long m_greaterThan;
-    bool m_greaterThanHasBeenSet;
+    bool m_greaterThanHasBeenSet = false;
 
     long long m_greaterThanOrEqual;
-    bool m_greaterThanOrEqualHasBeenSet;
+    bool m_greaterThanOrEqualHasBeenSet = false;
 
     long long m_lessThan;
-    bool m_lessThanHasBeenSet;
+    bool m_lessThanHasBeenSet = false;
 
     long long m_lessThanOrEqual;
-    bool m_lessThanOrEqualHasBeenSet;
+    bool m_lessThanOrEqualHasBeenSet = false;
   };
 
 } // namespace Model

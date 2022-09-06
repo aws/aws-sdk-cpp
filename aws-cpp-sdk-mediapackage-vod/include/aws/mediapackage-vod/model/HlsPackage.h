@@ -180,19 +180,19 @@ rounded to the
   private:
 
     HlsEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::Vector<HlsManifest> m_hlsManifests;
-    bool m_hlsManifestsHasBeenSet;
+    bool m_hlsManifestsHasBeenSet = false;
 
     bool m_includeDvbSubtitles;
-    bool m_includeDvbSubtitlesHasBeenSet;
+    bool m_includeDvbSubtitlesHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     bool m_useAudioRenditionGroup;
-    bool m_useAudioRenditionGroupHasBeenSet;
+    bool m_useAudioRenditionGroupHasBeenSet = false;
   };
 
 } // namespace Model

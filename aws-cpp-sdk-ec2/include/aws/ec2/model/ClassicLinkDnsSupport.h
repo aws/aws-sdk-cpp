@@ -104,10 +104,10 @@ namespace Model
   private:
 
     bool m_classicLinkDnsSupported;
-    bool m_classicLinkDnsSupportedHasBeenSet;
+    bool m_classicLinkDnsSupportedHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

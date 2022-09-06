@@ -325,22 +325,22 @@ namespace Model
   private:
 
     Video m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     NotificationChannel m_notificationChannel;
-    bool m_notificationChannelHasBeenSet;
+    bool m_notificationChannelHasBeenSet = false;
 
     Aws::String m_jobTag;
-    bool m_jobTagHasBeenSet;
+    bool m_jobTagHasBeenSet = false;
 
     StartSegmentDetectionFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<SegmentType> m_segmentTypes;
-    bool m_segmentTypesHasBeenSet;
+    bool m_segmentTypesHasBeenSet = false;
   };
 
 } // namespace Model

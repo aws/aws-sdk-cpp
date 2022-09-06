@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
   };
 
 } // namespace Model

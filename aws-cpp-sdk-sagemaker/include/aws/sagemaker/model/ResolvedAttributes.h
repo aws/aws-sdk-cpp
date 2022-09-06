@@ -110,13 +110,13 @@ namespace Model
   private:
 
     AutoMLJobObjective m_autoMLJobObjective;
-    bool m_autoMLJobObjectiveHasBeenSet;
+    bool m_autoMLJobObjectiveHasBeenSet = false;
 
     ProblemType m_problemType;
-    bool m_problemTypeHasBeenSet;
+    bool m_problemTypeHasBeenSet = false;
 
     AutoMLJobCompletionCriteria m_completionCriteria;
-    bool m_completionCriteriaHasBeenSet;
+    bool m_completionCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

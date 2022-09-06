@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
   };
 
 } // namespace Model

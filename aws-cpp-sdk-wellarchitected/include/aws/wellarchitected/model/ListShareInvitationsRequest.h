@@ -195,19 +195,19 @@ namespace Model
   private:
 
     Aws::String m_workloadNamePrefix;
-    bool m_workloadNamePrefixHasBeenSet;
+    bool m_workloadNamePrefixHasBeenSet = false;
 
     Aws::String m_lensNamePrefix;
-    bool m_lensNamePrefixHasBeenSet;
+    bool m_lensNamePrefixHasBeenSet = false;
 
     ShareResourceType m_shareResourceType;
-    bool m_shareResourceTypeHasBeenSet;
+    bool m_shareResourceTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

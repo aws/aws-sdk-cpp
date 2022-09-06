@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Server m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
 
     ServerReplicationParameters m_serverReplicationParameters;
-    bool m_serverReplicationParametersHasBeenSet;
+    bool m_serverReplicationParametersHasBeenSet = false;
   };
 
 } // namespace Model

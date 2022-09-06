@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_artifactArn;
-    bool m_artifactArnHasBeenSet;
+    bool m_artifactArnHasBeenSet = false;
 
     ArtifactSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

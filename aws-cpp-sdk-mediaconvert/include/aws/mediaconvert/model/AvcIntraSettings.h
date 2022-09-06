@@ -730,34 +730,34 @@ namespace Model
   private:
 
     AvcIntraClass m_avcIntraClass;
-    bool m_avcIntraClassHasBeenSet;
+    bool m_avcIntraClassHasBeenSet = false;
 
     AvcIntraUhdSettings m_avcIntraUhdSettings;
-    bool m_avcIntraUhdSettingsHasBeenSet;
+    bool m_avcIntraUhdSettingsHasBeenSet = false;
 
     AvcIntraFramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     AvcIntraFramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     AvcIntraInterlaceMode m_interlaceMode;
-    bool m_interlaceModeHasBeenSet;
+    bool m_interlaceModeHasBeenSet = false;
 
     AvcIntraScanTypeConversionMode m_scanTypeConversionMode;
-    bool m_scanTypeConversionModeHasBeenSet;
+    bool m_scanTypeConversionModeHasBeenSet = false;
 
     AvcIntraSlowPal m_slowPal;
-    bool m_slowPalHasBeenSet;
+    bool m_slowPalHasBeenSet = false;
 
     AvcIntraTelecine m_telecine;
-    bool m_telecineHasBeenSet;
+    bool m_telecineHasBeenSet = false;
   };
 
 } // namespace Model

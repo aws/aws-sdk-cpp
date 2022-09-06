@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Xavc4kIntraCbgProfileClass m_xavcClass;
-    bool m_xavcClassHasBeenSet;
+    bool m_xavcClassHasBeenSet = false;
   };
 
 } // namespace Model

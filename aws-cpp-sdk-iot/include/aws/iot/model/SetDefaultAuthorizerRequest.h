@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_authorizerName;
-    bool m_authorizerNameHasBeenSet;
+    bool m_authorizerNameHasBeenSet = false;
   };
 
 } // namespace Model

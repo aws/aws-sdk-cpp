@@ -89,10 +89,10 @@ namespace Model
   private:
 
     int m_fPort;
-    bool m_fPortHasBeenSet;
+    bool m_fPortHasBeenSet = false;
 
     ParticipatingGateways m_participatingGateways;
-    bool m_participatingGatewaysHasBeenSet;
+    bool m_participatingGatewaysHasBeenSet = false;
   };
 
 } // namespace Model

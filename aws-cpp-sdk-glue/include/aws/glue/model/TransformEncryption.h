@@ -121,10 +121,10 @@ namespace Model
   private:
 
     MLUserDataEncryption m_mlUserDataEncryption;
-    bool m_mlUserDataEncryptionHasBeenSet;
+    bool m_mlUserDataEncryptionHasBeenSet = false;
 
     Aws::String m_taskRunSecurityConfigurationName;
-    bool m_taskRunSecurityConfigurationNameHasBeenSet;
+    bool m_taskRunSecurityConfigurationNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

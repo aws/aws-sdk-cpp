@@ -328,19 +328,19 @@ namespace Model
   private:
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     As2ConnectorConfig m_as2Config;
-    bool m_as2ConfigHasBeenSet;
+    bool m_as2ConfigHasBeenSet = false;
 
     Aws::String m_accessRole;
-    bool m_accessRoleHasBeenSet;
+    bool m_accessRoleHasBeenSet = false;
 
     Aws::String m_loggingRole;
-    bool m_loggingRoleHasBeenSet;
+    bool m_loggingRoleHasBeenSet = false;
   };
 
 } // namespace Model

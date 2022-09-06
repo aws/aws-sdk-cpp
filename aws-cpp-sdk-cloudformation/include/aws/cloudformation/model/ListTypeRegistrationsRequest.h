@@ -334,22 +334,22 @@ namespace Model
   private:
 
     RegistryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_typeArn;
-    bool m_typeArnHasBeenSet;
+    bool m_typeArnHasBeenSet = false;
 
     RegistrationStatus m_registrationStatusFilter;
-    bool m_registrationStatusFilterHasBeenSet;
+    bool m_registrationStatusFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

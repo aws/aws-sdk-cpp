@@ -69,7 +69,7 @@ namespace Model
   private:
 
     bool m_autoWarmupEnabled;
-    bool m_autoWarmupEnabledHasBeenSet;
+    bool m_autoWarmupEnabledHasBeenSet = false;
   };
 
 } // namespace Model

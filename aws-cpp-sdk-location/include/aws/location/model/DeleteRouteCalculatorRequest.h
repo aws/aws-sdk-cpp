@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_calculatorName;
-    bool m_calculatorNameHasBeenSet;
+    bool m_calculatorNameHasBeenSet = false;
   };
 
 } // namespace Model

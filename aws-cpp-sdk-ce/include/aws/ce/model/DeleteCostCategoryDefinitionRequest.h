@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_costCategoryArn;
-    bool m_costCategoryArnHasBeenSet;
+    bool m_costCategoryArnHasBeenSet = false;
   };
 
 } // namespace Model

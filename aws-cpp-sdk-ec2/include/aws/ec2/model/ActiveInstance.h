@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_spotInstanceRequestId;
-    bool m_spotInstanceRequestIdHasBeenSet;
+    bool m_spotInstanceRequestIdHasBeenSet = false;
 
     InstanceHealthStatus m_instanceHealth;
-    bool m_instanceHealthHasBeenSet;
+    bool m_instanceHealthHasBeenSet = false;
   };
 
 } // namespace Model

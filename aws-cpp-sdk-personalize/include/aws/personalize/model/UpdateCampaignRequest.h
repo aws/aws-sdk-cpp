@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_campaignArn;
-    bool m_campaignArnHasBeenSet;
+    bool m_campaignArnHasBeenSet = false;
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
 
     int m_minProvisionedTPS;
-    bool m_minProvisionedTPSHasBeenSet;
+    bool m_minProvisionedTPSHasBeenSet = false;
 
     CampaignConfig m_campaignConfig;
-    bool m_campaignConfigHasBeenSet;
+    bool m_campaignConfigHasBeenSet = false;
   };
 
 } // namespace Model

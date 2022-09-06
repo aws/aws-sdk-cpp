@@ -72,7 +72,7 @@ namespace Model
   private:
 
     EventNotificationTopicStatus m_amazonIdEventTopic;
-    bool m_amazonIdEventTopicHasBeenSet;
+    bool m_amazonIdEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::Vector<RedshiftDataShareAssetSourceEntry> m_assetSources;
-    bool m_assetSourcesHasBeenSet;
+    bool m_assetSourcesHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

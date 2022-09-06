@@ -131,10 +131,10 @@ namespace Model
   private:
 
     BackfillErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::Vector<PartitionValueList> m_partitions;
-    bool m_partitionsHasBeenSet;
+    bool m_partitionsHasBeenSet = false;
   };
 
 } // namespace Model

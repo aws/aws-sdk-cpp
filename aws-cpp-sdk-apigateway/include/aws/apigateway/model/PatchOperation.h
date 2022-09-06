@@ -340,16 +340,16 @@ namespace Model
   private:
 
     Op m_op;
-    bool m_opHasBeenSet;
+    bool m_opHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
   };
 
 } // namespace Model

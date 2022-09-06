@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     DomainEntry m_domainEntry;
-    bool m_domainEntryHasBeenSet;
+    bool m_domainEntryHasBeenSet = false;
   };
 
 } // namespace Model

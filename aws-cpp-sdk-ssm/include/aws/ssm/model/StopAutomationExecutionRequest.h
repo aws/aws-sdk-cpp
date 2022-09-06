@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_automationExecutionId;
-    bool m_automationExecutionIdHasBeenSet;
+    bool m_automationExecutionIdHasBeenSet = false;
 
     StopType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

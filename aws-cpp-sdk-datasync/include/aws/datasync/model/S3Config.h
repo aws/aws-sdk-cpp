@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_bucketAccessRoleArn;
-    bool m_bucketAccessRoleArnHasBeenSet;
+    bool m_bucketAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

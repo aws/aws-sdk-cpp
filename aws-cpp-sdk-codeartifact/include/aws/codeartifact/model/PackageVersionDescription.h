@@ -666,43 +666,43 @@ namespace Model
   private:
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_homePage;
-    bool m_homePageHasBeenSet;
+    bool m_homePageHasBeenSet = false;
 
     Aws::String m_sourceCodeRepository;
-    bool m_sourceCodeRepositoryHasBeenSet;
+    bool m_sourceCodeRepositoryHasBeenSet = false;
 
     Aws::Utils::DateTime m_publishedTime;
-    bool m_publishedTimeHasBeenSet;
+    bool m_publishedTimeHasBeenSet = false;
 
     Aws::Vector<LicenseInfo> m_licenses;
-    bool m_licensesHasBeenSet;
+    bool m_licensesHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     PackageVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PackageVersionOrigin m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
   };
 
 } // namespace Model

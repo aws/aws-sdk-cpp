@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_batchSegmentJobArn;
-    bool m_batchSegmentJobArnHasBeenSet;
+    bool m_batchSegmentJobArnHasBeenSet = false;
   };
 
 } // namespace Model

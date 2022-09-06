@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     LoginAuthConfigReqObj m_loginAuthConfig;
-    bool m_loginAuthConfigHasBeenSet;
+    bool m_loginAuthConfigHasBeenSet = false;
   };
 
 } // namespace Model

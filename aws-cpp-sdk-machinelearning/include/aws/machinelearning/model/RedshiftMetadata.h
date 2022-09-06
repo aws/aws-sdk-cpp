@@ -134,13 +134,13 @@ namespace Model
   private:
 
     RedshiftDatabase m_redshiftDatabase;
-    bool m_redshiftDatabaseHasBeenSet;
+    bool m_redshiftDatabaseHasBeenSet = false;
 
     Aws::String m_databaseUserName;
-    bool m_databaseUserNameHasBeenSet;
+    bool m_databaseUserNameHasBeenSet = false;
 
     Aws::String m_selectSqlQuery;
-    bool m_selectSqlQueryHasBeenSet;
+    bool m_selectSqlQueryHasBeenSet = false;
   };
 
 } // namespace Model

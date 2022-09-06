@@ -397,31 +397,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     bool m_defaultVersion;
-    bool m_defaultVersionHasBeenSet;
+    bool m_defaultVersionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     bool m_isResourceTypeDefault;
-    bool m_isResourceTypeDefaultHasBeenSet;
+    bool m_isResourceTypeDefaultHasBeenSet = false;
   };
 
 } // namespace Model

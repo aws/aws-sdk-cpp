@@ -425,28 +425,28 @@ namespace Model
   private:
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::Vector<PhoneNumber> m_phoneNumbers;
-    bool m_phoneNumbersHasBeenSet;
+    bool m_phoneNumbersHasBeenSet = false;
 
     Aws::Vector<SipAddress> m_sipAddresses;
-    bool m_sipAddressesHasBeenSet;
+    bool m_sipAddressesHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

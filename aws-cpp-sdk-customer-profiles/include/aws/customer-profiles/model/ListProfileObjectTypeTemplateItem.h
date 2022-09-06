@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
 
     Aws::String m_sourceObject;
-    bool m_sourceObjectHasBeenSet;
+    bool m_sourceObjectHasBeenSet = false;
   };
 
 } // namespace Model

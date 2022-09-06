@@ -286,22 +286,22 @@ namespace Model
   private:
 
     Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet;
+    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_accessPolicy;
-    bool m_accessPolicyHasBeenSet;
+    bool m_accessPolicyHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

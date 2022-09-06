@@ -79,7 +79,7 @@ ApiGatewayManagementApiClient::~ApiGatewayManagementApiClient()
 
 void ApiGatewayManagementApiClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ApiGatewayManagementApi");
+  AWSClient::SetServiceClientName("ApiGatewayManagementApi");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

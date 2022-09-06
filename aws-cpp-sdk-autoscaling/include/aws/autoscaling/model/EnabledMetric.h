@@ -307,10 +307,10 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::String m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
   };
 
 } // namespace Model

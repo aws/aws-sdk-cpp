@@ -71,7 +71,7 @@ namespace Model
   private:
 
     IpPreference m_ipPreference;
-    bool m_ipPreferenceHasBeenSet;
+    bool m_ipPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_ownerAlias;
-    bool m_ownerAliasHasBeenSet;
+    bool m_ownerAliasHasBeenSet = false;
   };
 
 } // namespace Model

@@ -720,49 +720,49 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deliverLogsErrorMessage;
-    bool m_deliverLogsErrorMessageHasBeenSet;
+    bool m_deliverLogsErrorMessageHasBeenSet = false;
 
     Aws::String m_deliverLogsPermissionArn;
-    bool m_deliverLogsPermissionArnHasBeenSet;
+    bool m_deliverLogsPermissionArnHasBeenSet = false;
 
     Aws::String m_deliverLogsStatus;
-    bool m_deliverLogsStatusHasBeenSet;
+    bool m_deliverLogsStatusHasBeenSet = false;
 
     Aws::String m_flowLogId;
-    bool m_flowLogIdHasBeenSet;
+    bool m_flowLogIdHasBeenSet = false;
 
     Aws::String m_flowLogStatus;
-    bool m_flowLogStatusHasBeenSet;
+    bool m_flowLogStatusHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     TrafficType m_trafficType;
-    bool m_trafficTypeHasBeenSet;
+    bool m_trafficTypeHasBeenSet = false;
 
     LogDestinationType m_logDestinationType;
-    bool m_logDestinationTypeHasBeenSet;
+    bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::String m_logDestination;
-    bool m_logDestinationHasBeenSet;
+    bool m_logDestinationHasBeenSet = false;
 
     Aws::String m_logFormat;
-    bool m_logFormatHasBeenSet;
+    bool m_logFormatHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_maxAggregationInterval;
-    bool m_maxAggregationIntervalHasBeenSet;
+    bool m_maxAggregationIntervalHasBeenSet = false;
 
     DestinationOptionsResponse m_destinationOptions;
-    bool m_destinationOptionsHasBeenSet;
+    bool m_destinationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

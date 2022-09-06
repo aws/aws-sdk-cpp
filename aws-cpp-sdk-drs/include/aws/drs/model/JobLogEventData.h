@@ -235,19 +235,19 @@ namespace Model
   private:
 
     ConversionProperties m_conversionProperties;
-    bool m_conversionPropertiesHasBeenSet;
+    bool m_conversionPropertiesHasBeenSet = false;
 
     Aws::String m_conversionServerID;
-    bool m_conversionServerIDHasBeenSet;
+    bool m_conversionServerIDHasBeenSet = false;
 
     Aws::String m_rawError;
-    bool m_rawErrorHasBeenSet;
+    bool m_rawErrorHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::String m_targetInstanceID;
-    bool m_targetInstanceIDHasBeenSet;
+    bool m_targetInstanceIDHasBeenSet = false;
   };
 
 } // namespace Model

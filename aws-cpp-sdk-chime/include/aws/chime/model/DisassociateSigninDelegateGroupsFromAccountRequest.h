@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupNames;
-    bool m_groupNamesHasBeenSet;
+    bool m_groupNamesHasBeenSet = false;
   };
 
 } // namespace Model

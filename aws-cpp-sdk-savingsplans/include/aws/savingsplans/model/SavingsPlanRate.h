@@ -333,28 +333,28 @@ namespace Model
   private:
 
     Aws::String m_rate;
-    bool m_rateHasBeenSet;
+    bool m_rateHasBeenSet = false;
 
     CurrencyCode m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     SavingsPlanRateUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     SavingsPlanProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     SavingsPlanRateServiceCode m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
 
     Aws::String m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::Vector<SavingsPlanRateProperty> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

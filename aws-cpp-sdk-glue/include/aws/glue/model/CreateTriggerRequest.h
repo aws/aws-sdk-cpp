@@ -518,34 +518,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet;
+    bool m_workflowNameHasBeenSet = false;
 
     TriggerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Predicate m_predicate;
-    bool m_predicateHasBeenSet;
+    bool m_predicateHasBeenSet = false;
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_startOnCreation;
-    bool m_startOnCreationHasBeenSet;
+    bool m_startOnCreationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     EventBatchingCondition m_eventBatchingCondition;
-    bool m_eventBatchingConditionHasBeenSet;
+    bool m_eventBatchingConditionHasBeenSet = false;
   };
 
 } // namespace Model

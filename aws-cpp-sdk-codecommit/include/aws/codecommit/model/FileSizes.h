@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     long long m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     long long m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

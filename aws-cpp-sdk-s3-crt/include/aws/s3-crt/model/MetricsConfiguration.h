@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MetricsFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

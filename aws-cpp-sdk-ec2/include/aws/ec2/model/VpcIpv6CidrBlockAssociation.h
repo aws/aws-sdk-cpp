@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     VpcCidrBlockState m_ipv6CidrBlockState;
-    bool m_ipv6CidrBlockStateHasBeenSet;
+    bool m_ipv6CidrBlockStateHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     Aws::String m_ipv6Pool;
-    bool m_ipv6PoolHasBeenSet;
+    bool m_ipv6PoolHasBeenSet = false;
   };
 
 } // namespace Model

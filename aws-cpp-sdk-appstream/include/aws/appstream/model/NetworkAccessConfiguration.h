@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_eniPrivateIpAddress;
-    bool m_eniPrivateIpAddressHasBeenSet;
+    bool m_eniPrivateIpAddressHasBeenSet = false;
 
     Aws::String m_eniId;
-    bool m_eniIdHasBeenSet;
+    bool m_eniIdHasBeenSet = false;
   };
 
 } // namespace Model

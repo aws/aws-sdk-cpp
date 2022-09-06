@@ -127,13 +127,13 @@ namespace Model
   private:
 
     int m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
 
     int m_remainingCount;
-    bool m_remainingCountHasBeenSet;
+    bool m_remainingCountHasBeenSet = false;
 
     Aws::Vector<InventoryDeletionSummaryItem> m_summaryItems;
-    bool m_summaryItemsHasBeenSet;
+    bool m_summaryItemsHasBeenSet = false;
   };
 
 } // namespace Model

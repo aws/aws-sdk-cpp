@@ -208,10 +208,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceARNList;
-    bool m_resourceARNListHasBeenSet;
+    bool m_resourceARNListHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

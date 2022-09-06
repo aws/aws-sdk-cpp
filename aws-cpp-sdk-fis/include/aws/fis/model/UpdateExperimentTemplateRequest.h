@@ -365,25 +365,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<UpdateExperimentTemplateStopConditionInput> m_stopConditions;
-    bool m_stopConditionsHasBeenSet;
+    bool m_stopConditionsHasBeenSet = false;
 
     Aws::Map<Aws::String, UpdateExperimentTemplateTargetInput> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Map<Aws::String, UpdateExperimentTemplateActionInputItem> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     UpdateExperimentTemplateLogConfigurationInput m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

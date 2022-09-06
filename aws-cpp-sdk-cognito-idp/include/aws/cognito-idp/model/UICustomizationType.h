@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::String m_cSS;
-    bool m_cSSHasBeenSet;
+    bool m_cSSHasBeenSet = false;
 
     Aws::String m_cSSVersion;
-    bool m_cSSVersionHasBeenSet;
+    bool m_cSSVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -362,28 +362,28 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorTargetId;
-    bool m_trafficMirrorTargetIdHasBeenSet;
+    bool m_trafficMirrorTargetIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_networkLoadBalancerArn;
-    bool m_networkLoadBalancerArnHasBeenSet;
+    bool m_networkLoadBalancerArnHasBeenSet = false;
 
     TrafficMirrorTargetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_gatewayLoadBalancerEndpointId;
-    bool m_gatewayLoadBalancerEndpointIdHasBeenSet;
+    bool m_gatewayLoadBalancerEndpointIdHasBeenSet = false;
   };
 
 } // namespace Model

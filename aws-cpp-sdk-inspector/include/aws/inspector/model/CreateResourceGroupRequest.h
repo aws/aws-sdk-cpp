@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::Vector<ResourceGroupTag> m_resourceGroupTags;
-    bool m_resourceGroupTagsHasBeenSet;
+    bool m_resourceGroupTagsHasBeenSet = false;
   };
 
 } // namespace Model

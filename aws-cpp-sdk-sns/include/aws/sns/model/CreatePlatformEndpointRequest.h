@@ -292,16 +292,16 @@ namespace Model
   private:
 
     Aws::String m_platformApplicationArn;
-    bool m_platformApplicationArnHasBeenSet;
+    bool m_platformApplicationArnHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_customUserData;
-    bool m_customUserDataHasBeenSet;
+    bool m_customUserDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

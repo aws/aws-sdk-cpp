@@ -288,22 +288,22 @@ namespace Model
   private:
 
     CognitoConfig m_cognitoConfig;
-    bool m_cognitoConfigHasBeenSet;
+    bool m_cognitoConfigHasBeenSet = false;
 
     OidcConfig m_oidcConfig;
-    bool m_oidcConfigHasBeenSet;
+    bool m_oidcConfigHasBeenSet = false;
 
     SourceIpConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WorkforceVpcConfigRequest m_workforceVpcConfig;
-    bool m_workforceVpcConfigHasBeenSet;
+    bool m_workforceVpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     DataSourcesFreeTrial m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

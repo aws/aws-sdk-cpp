@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_utterance;
-    bool m_utteranceHasBeenSet;
+    bool m_utteranceHasBeenSet = false;
   };
 
 } // namespace Model

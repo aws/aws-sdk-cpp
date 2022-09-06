@@ -146,13 +146,13 @@ namespace Model
   private:
 
     FleetStateCode m_currentFleetState;
-    bool m_currentFleetStateHasBeenSet;
+    bool m_currentFleetStateHasBeenSet = false;
 
     FleetStateCode m_previousFleetState;
-    bool m_previousFleetStateHasBeenSet;
+    bool m_previousFleetStateHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
   };
 
 } // namespace Model

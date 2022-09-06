@@ -104,10 +104,10 @@ namespace Model
   private:
 
     SnapshotAttributeToSortBy m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     SortByOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

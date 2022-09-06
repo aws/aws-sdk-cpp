@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_invalidSubnetId;
-    bool m_invalidSubnetIdHasBeenSet;
+    bool m_invalidSubnetIdHasBeenSet = false;
 
     Aws::String m_invalidSecurityGroupId;
-    bool m_invalidSecurityGroupIdHasBeenSet;
+    bool m_invalidSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_invalidRouteTableId;
-    bool m_invalidRouteTableIdHasBeenSet;
+    bool m_invalidRouteTableIdHasBeenSet = false;
   };
 
 } // namespace Model

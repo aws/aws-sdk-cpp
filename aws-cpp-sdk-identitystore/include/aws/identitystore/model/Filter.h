@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_attributePath;
-    bool m_attributePathHasBeenSet;
+    bool m_attributePathHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
   };
 
 } // namespace Model

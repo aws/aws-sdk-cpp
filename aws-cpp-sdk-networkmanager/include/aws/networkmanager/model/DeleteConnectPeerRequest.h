@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_connectPeerId;
-    bool m_connectPeerIdHasBeenSet;
+    bool m_connectPeerIdHasBeenSet = false;
   };
 
 } // namespace Model

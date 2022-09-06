@@ -176,10 +176,10 @@ namespace Model
   private:
 
     ComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     ComplianceContributorCount m_complianceContributorCount;
-    bool m_complianceContributorCountHasBeenSet;
+    bool m_complianceContributorCountHasBeenSet = false;
   };
 
 } // namespace Model

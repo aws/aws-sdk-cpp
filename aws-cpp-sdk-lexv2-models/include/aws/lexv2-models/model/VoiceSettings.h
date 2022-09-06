@@ -143,10 +143,10 @@ namespace Model
   private:
 
     Aws::String m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
 
     VoiceEngine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

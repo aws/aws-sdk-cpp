@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_fileSystemAssociationARNList;
-    bool m_fileSystemAssociationARNListHasBeenSet;
+    bool m_fileSystemAssociationARNListHasBeenSet = false;
   };
 
 } // namespace Model

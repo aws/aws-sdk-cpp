@@ -101,10 +101,10 @@ namespace Model
   private:
 
     int m_storageLimit;
-    bool m_storageLimitHasBeenSet;
+    bool m_storageLimitHasBeenSet = false;
 
     StorageUnit m_storageUnit;
-    bool m_storageUnitHasBeenSet;
+    bool m_storageUnitHasBeenSet = false;
   };
 
 } // namespace Model

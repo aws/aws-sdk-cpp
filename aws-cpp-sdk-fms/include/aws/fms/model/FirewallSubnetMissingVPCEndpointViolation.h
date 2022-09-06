@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_firewallSubnetId;
-    bool m_firewallSubnetIdHasBeenSet;
+    bool m_firewallSubnetIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_subnetAvailabilityZoneId;
-    bool m_subnetAvailabilityZoneIdHasBeenSet;
+    bool m_subnetAvailabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

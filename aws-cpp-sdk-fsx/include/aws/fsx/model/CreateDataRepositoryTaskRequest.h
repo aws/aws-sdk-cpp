@@ -353,22 +353,22 @@ namespace Model
   private:
 
     DataRepositoryTaskType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_paths;
-    bool m_pathsHasBeenSet;
+    bool m_pathsHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     CompletionReport m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

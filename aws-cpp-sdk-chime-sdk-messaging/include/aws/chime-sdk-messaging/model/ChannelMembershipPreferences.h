@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PushNotificationPreferences m_pushNotifications;
-    bool m_pushNotificationsHasBeenSet;
+    bool m_pushNotificationsHasBeenSet = false;
   };
 
 } // namespace Model

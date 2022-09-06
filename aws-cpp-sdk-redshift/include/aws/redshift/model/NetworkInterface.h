@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

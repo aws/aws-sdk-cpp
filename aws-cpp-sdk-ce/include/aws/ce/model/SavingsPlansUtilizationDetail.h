@@ -270,19 +270,19 @@ namespace Model
   private:
 
     Aws::String m_savingsPlanArn;
-    bool m_savingsPlanArnHasBeenSet;
+    bool m_savingsPlanArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SavingsPlansUtilization m_utilization;
-    bool m_utilizationHasBeenSet;
+    bool m_utilizationHasBeenSet = false;
 
     SavingsPlansSavings m_savings;
-    bool m_savingsHasBeenSet;
+    bool m_savingsHasBeenSet = false;
 
     SavingsPlansAmortizedCommitment m_amortizedCommitment;
-    bool m_amortizedCommitmentHasBeenSet;
+    bool m_amortizedCommitmentHasBeenSet = false;
   };
 
 } // namespace Model

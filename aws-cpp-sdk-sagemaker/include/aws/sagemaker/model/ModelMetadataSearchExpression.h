@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<ModelMetadataFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

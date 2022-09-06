@@ -167,16 +167,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
 
     bool m_isSystemDisk;
-    bool m_isSystemDiskHasBeenSet;
+    bool m_isSystemDiskHasBeenSet = false;
   };
 
 } // namespace Model

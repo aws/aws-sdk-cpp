@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_keyPath;
-    bool m_keyPathHasBeenSet;
+    bool m_keyPathHasBeenSet = false;
   };
 
 } // namespace Model

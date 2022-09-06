@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::String m_stackDriftDetectionId;
-    bool m_stackDriftDetectionIdHasBeenSet;
+    bool m_stackDriftDetectionIdHasBeenSet = false;
   };
 
 } // namespace Model

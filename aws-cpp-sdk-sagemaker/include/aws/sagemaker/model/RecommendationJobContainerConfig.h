@@ -424,25 +424,25 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
-    bool m_frameworkVersionHasBeenSet;
+    bool m_frameworkVersionHasBeenSet = false;
 
     RecommendationJobPayloadConfig m_payloadConfig;
-    bool m_payloadConfigHasBeenSet;
+    bool m_payloadConfigHasBeenSet = false;
 
     Aws::String m_nearestModelName;
-    bool m_nearestModelNameHasBeenSet;
+    bool m_nearestModelNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedInstanceTypes;
-    bool m_supportedInstanceTypesHasBeenSet;
+    bool m_supportedInstanceTypesHasBeenSet = false;
   };
 
 } // namespace Model

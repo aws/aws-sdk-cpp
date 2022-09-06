@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

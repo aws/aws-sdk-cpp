@@ -322,25 +322,25 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_filenameContains;
-    bool m_filenameContainsHasBeenSet;
+    bool m_filenameContainsHasBeenSet = false;
 
     long long m_fileLastWritten;
-    bool m_fileLastWrittenHasBeenSet;
+    bool m_fileLastWrittenHasBeenSet = false;
 
     long long m_fileSize;
-    bool m_fileSizeHasBeenSet;
+    bool m_fileSizeHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -326,28 +326,28 @@ namespace Model
   private:
 
     Aws::String m_certificateIdentifier;
-    bool m_certificateIdentifierHasBeenSet;
+    bool m_certificateIdentifierHasBeenSet = false;
 
     Aws::String m_certificateType;
-    bool m_certificateTypeHasBeenSet;
+    bool m_certificateTypeHasBeenSet = false;
 
     Aws::String m_thumbprint;
-    bool m_thumbprintHasBeenSet;
+    bool m_thumbprintHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validTill;
-    bool m_validTillHasBeenSet;
+    bool m_validTillHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     bool m_customerOverride;
-    bool m_customerOverrideHasBeenSet;
+    bool m_customerOverrideHasBeenSet = false;
 
     Aws::Utils::DateTime m_customerOverrideValidTill;
-    bool m_customerOverrideValidTillHasBeenSet;
+    bool m_customerOverrideValidTillHasBeenSet = false;
   };
 
 } // namespace Model

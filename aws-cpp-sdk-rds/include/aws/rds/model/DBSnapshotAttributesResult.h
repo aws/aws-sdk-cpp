@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
 
     Aws::Vector<DBSnapshotAttribute> m_dBSnapshotAttributes;
-    bool m_dBSnapshotAttributesHasBeenSet;
+    bool m_dBSnapshotAttributesHasBeenSet = false;
   };
 
 } // namespace Model

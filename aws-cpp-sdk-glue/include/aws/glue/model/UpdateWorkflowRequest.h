@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultRunProperties;
-    bool m_defaultRunPropertiesHasBeenSet;
+    bool m_defaultRunPropertiesHasBeenSet = false;
 
     int m_maxConcurrentRuns;
-    bool m_maxConcurrentRunsHasBeenSet;
+    bool m_maxConcurrentRunsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -144,13 +144,13 @@ namespace Model
   private:
 
     CreateAssociationBatchRequestEntry m_entry;
-    bool m_entryHasBeenSet;
+    bool m_entryHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Fault m_fault;
-    bool m_faultHasBeenSet;
+    bool m_faultHasBeenSet = false;
   };
 
 } // namespace Model

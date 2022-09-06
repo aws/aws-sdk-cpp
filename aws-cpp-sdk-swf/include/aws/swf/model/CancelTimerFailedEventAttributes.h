@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_timerId;
-    bool m_timerIdHasBeenSet;
+    bool m_timerIdHasBeenSet = false;
 
     CancelTimerFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

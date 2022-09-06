@@ -182,10 +182,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryUri;
-    bool m_deliveryUriHasBeenSet;
+    bool m_deliveryUriHasBeenSet = false;
 
     Aws::Vector<__EndpointTypesElement> m_endpointTypes;
-    bool m_endpointTypesHasBeenSet;
+    bool m_endpointTypesHasBeenSet = false;
   };
 
 } // namespace Model

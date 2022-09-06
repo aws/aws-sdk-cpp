@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     ThroughputMode m_throughputMode;
-    bool m_throughputModeHasBeenSet;
+    bool m_throughputModeHasBeenSet = false;
 
     double m_provisionedThroughputInMibps;
-    bool m_provisionedThroughputInMibpsHasBeenSet;
+    bool m_provisionedThroughputInMibpsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_diskIds;
-    bool m_diskIdsHasBeenSet;
+    bool m_diskIdsHasBeenSet = false;
   };
 
 } // namespace Model

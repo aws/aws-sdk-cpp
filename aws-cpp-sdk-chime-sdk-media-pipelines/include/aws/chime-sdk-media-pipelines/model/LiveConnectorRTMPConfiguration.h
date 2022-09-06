@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     AudioChannelsOption m_audioChannels;
-    bool m_audioChannelsHasBeenSet;
+    bool m_audioChannelsHasBeenSet = false;
 
     Aws::String m_audioSampleRate;
-    bool m_audioSampleRateHasBeenSet;
+    bool m_audioSampleRateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,10 +113,10 @@ namespace Model
   private:
 
     StatelessCustomActionDefinition m_actionDefinition;
-    bool m_actionDefinitionHasBeenSet;
+    bool m_actionDefinitionHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
   };
 
 } // namespace Model

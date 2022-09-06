@@ -130,13 +130,13 @@ namespace Model
   private:
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
 
     Aws::String m_base64String;
-    bool m_base64StringHasBeenSet;
+    bool m_base64StringHasBeenSet = false;
   };
 
 } // namespace Model

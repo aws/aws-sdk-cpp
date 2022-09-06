@@ -231,13 +231,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
   };
 
 } // namespace Model

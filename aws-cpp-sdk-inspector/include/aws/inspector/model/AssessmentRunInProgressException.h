@@ -174,16 +174,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_assessmentRunArns;
-    bool m_assessmentRunArnsHasBeenSet;
+    bool m_assessmentRunArnsHasBeenSet = false;
 
     bool m_assessmentRunArnsTruncated;
-    bool m_assessmentRunArnsTruncatedHasBeenSet;
+    bool m_assessmentRunArnsTruncatedHasBeenSet = false;
 
     bool m_canRetry;
-    bool m_canRetryHasBeenSet;
+    bool m_canRetryHasBeenSet = false;
   };
 
 } // namespace Model

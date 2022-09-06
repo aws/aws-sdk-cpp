@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_discoveredSlotTypeCount;
-    bool m_discoveredSlotTypeCountHasBeenSet;
+    bool m_discoveredSlotTypeCountHasBeenSet = false;
   };
 
 } // namespace Model

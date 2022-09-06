@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_availabilityZoneCount;
-    bool m_availabilityZoneCountHasBeenSet;
+    bool m_availabilityZoneCountHasBeenSet = false;
   };
 
 } // namespace Model

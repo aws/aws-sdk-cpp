@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     DetectTextFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

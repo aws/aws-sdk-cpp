@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_hostPath;
-    bool m_hostPathHasBeenSet;
+    bool m_hostPathHasBeenSet = false;
 
     Aws::String m_containerPath;
-    bool m_containerPathHasBeenSet;
+    bool m_containerPathHasBeenSet = false;
 
     Aws::Vector<DeviceCgroupPermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

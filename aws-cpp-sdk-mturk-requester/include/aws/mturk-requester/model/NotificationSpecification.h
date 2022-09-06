@@ -267,16 +267,16 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     NotificationTransport m_transport;
-    bool m_transportHasBeenSet;
+    bool m_transportHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<EventType> m_eventTypes;
-    bool m_eventTypesHasBeenSet;
+    bool m_eventTypesHasBeenSet = false;
   };
 
 } // namespace Model

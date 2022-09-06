@@ -355,28 +355,28 @@ namespace Model
   private:
 
     LifecycleExpiration m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
 
     Aws::String m_iD;
-    bool m_iDHasBeenSet;
+    bool m_iDHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     ExpirationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Transition m_transition;
-    bool m_transitionHasBeenSet;
+    bool m_transitionHasBeenSet = false;
 
     NoncurrentVersionTransition m_noncurrentVersionTransition;
-    bool m_noncurrentVersionTransitionHasBeenSet;
+    bool m_noncurrentVersionTransitionHasBeenSet = false;
 
     NoncurrentVersionExpiration m_noncurrentVersionExpiration;
-    bool m_noncurrentVersionExpirationHasBeenSet;
+    bool m_noncurrentVersionExpirationHasBeenSet = false;
 
     AbortIncompleteMultipartUpload m_abortIncompleteMultipartUpload;
-    bool m_abortIncompleteMultipartUploadHasBeenSet;
+    bool m_abortIncompleteMultipartUploadHasBeenSet = false;
   };
 
 } // namespace Model

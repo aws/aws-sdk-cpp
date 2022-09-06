@@ -83,7 +83,7 @@ namespace Model
   private:
 
     CrawlerLineageSettings m_crawlerLineageSettings;
-    bool m_crawlerLineageSettingsHasBeenSet;
+    bool m_crawlerLineageSettingsHasBeenSet = false;
   };
 
 } // namespace Model

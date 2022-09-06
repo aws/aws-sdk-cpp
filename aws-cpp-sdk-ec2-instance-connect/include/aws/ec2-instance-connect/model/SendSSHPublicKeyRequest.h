@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceOSUser;
-    bool m_instanceOSUserHasBeenSet;
+    bool m_instanceOSUserHasBeenSet = false;
 
     Aws::String m_sSHPublicKey;
-    bool m_sSHPublicKeyHasBeenSet;
+    bool m_sSHPublicKeyHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

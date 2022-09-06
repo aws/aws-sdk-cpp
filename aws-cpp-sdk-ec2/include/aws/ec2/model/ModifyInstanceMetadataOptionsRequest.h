@@ -387,25 +387,25 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     HttpTokensState m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     InstanceMetadataEndpointState m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     InstanceMetadataProtocolState m_httpProtocolIpv6;
-    bool m_httpProtocolIpv6HasBeenSet;
+    bool m_httpProtocolIpv6HasBeenSet = false;
 
     InstanceMetadataTagsState m_instanceMetadataTags;
-    bool m_instanceMetadataTagsHasBeenSet;
+    bool m_instanceMetadataTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -150,13 +150,13 @@ namespace Model
   private:
 
     long long m_ownerUid;
-    bool m_ownerUidHasBeenSet;
+    bool m_ownerUidHasBeenSet = false;
 
     long long m_ownerGid;
-    bool m_ownerGidHasBeenSet;
+    bool m_ownerGidHasBeenSet = false;
 
     Aws::String m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

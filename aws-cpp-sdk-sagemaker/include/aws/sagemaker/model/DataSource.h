@@ -102,10 +102,10 @@ namespace Model
   private:
 
     S3DataSource m_s3DataSource;
-    bool m_s3DataSourceHasBeenSet;
+    bool m_s3DataSourceHasBeenSet = false;
 
     FileSystemDataSource m_fileSystemDataSource;
-    bool m_fileSystemDataSourceHasBeenSet;
+    bool m_fileSystemDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

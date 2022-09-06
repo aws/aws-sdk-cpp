@@ -177,19 +177,19 @@ namespace Model
   private:
 
     long long m_okCount;
-    bool m_okCountHasBeenSet;
+    bool m_okCountHasBeenSet = false;
 
     ErrorStatistics m_errorStatistics;
-    bool m_errorStatisticsHasBeenSet;
+    bool m_errorStatisticsHasBeenSet = false;
 
     FaultStatistics m_faultStatistics;
-    bool m_faultStatisticsHasBeenSet;
+    bool m_faultStatisticsHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
 
     double m_totalResponseTime;
-    bool m_totalResponseTimeHasBeenSet;
+    bool m_totalResponseTimeHasBeenSet = false;
   };
 
 } // namespace Model

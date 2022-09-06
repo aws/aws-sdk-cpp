@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

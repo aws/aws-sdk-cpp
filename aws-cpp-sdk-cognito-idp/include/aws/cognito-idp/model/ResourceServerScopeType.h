@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_scopeName;
-    bool m_scopeNameHasBeenSet;
+    bool m_scopeNameHasBeenSet = false;
 
     Aws::String m_scopeDescription;
-    bool m_scopeDescriptionHasBeenSet;
+    bool m_scopeDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

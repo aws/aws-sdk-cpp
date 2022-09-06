@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     TargetTrackingConfiguration m_targetTrackingConfiguration;
-    bool m_targetTrackingConfigurationHasBeenSet;
+    bool m_targetTrackingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

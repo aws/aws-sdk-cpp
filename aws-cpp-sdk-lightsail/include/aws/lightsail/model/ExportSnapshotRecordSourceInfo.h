@@ -338,28 +338,28 @@ namespace Model
   private:
 
     ExportSnapshotRecordSourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_fromResourceName;
-    bool m_fromResourceNameHasBeenSet;
+    bool m_fromResourceNameHasBeenSet = false;
 
     Aws::String m_fromResourceArn;
-    bool m_fromResourceArnHasBeenSet;
+    bool m_fromResourceArnHasBeenSet = false;
 
     InstanceSnapshotInfo m_instanceSnapshotInfo;
-    bool m_instanceSnapshotInfoHasBeenSet;
+    bool m_instanceSnapshotInfoHasBeenSet = false;
 
     DiskSnapshotInfo m_diskSnapshotInfo;
-    bool m_diskSnapshotInfoHasBeenSet;
+    bool m_diskSnapshotInfoHasBeenSet = false;
   };
 
 } // namespace Model

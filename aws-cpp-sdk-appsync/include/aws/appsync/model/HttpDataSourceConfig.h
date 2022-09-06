@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     AuthorizationConfig m_authorizationConfig;
-    bool m_authorizationConfigHasBeenSet;
+    bool m_authorizationConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     ChannelMessages m_channelMessages;
-    bool m_channelMessagesHasBeenSet;
+    bool m_channelMessagesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitDistinguishedNames;
-    bool m_organizationalUnitDistinguishedNamesHasBeenSet;
+    bool m_organizationalUnitDistinguishedNamesHasBeenSet = false;
 
     ServiceAccountCredentials m_serviceAccountCredentials;
-    bool m_serviceAccountCredentialsHasBeenSet;
+    bool m_serviceAccountCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

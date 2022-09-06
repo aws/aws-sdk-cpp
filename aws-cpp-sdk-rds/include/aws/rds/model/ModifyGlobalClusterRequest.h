@@ -403,19 +403,19 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     Aws::String m_newGlobalClusterIdentifier;
-    bool m_newGlobalClusterIdentifierHasBeenSet;
+    bool m_newGlobalClusterIdentifierHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_allowMajorVersionUpgrade;
-    bool m_allowMajorVersionUpgradeHasBeenSet;
+    bool m_allowMajorVersionUpgradeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -104,10 +104,10 @@ namespace Model
   private:
 
     GdgAttributes m_gdg;
-    bool m_gdgHasBeenSet;
+    bool m_gdgHasBeenSet = false;
 
     VsamAttributes m_vsam;
-    bool m_vsamHasBeenSet;
+    bool m_vsamHasBeenSet = false;
   };
 
 } // namespace Model

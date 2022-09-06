@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     BatchEntryCompletionStatus m_completionStatus;
-    bool m_completionStatusHasBeenSet;
+    bool m_completionStatusHasBeenSet = false;
 
     BatchGetAssetPropertyAggregatesErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
   };
 
 } // namespace Model

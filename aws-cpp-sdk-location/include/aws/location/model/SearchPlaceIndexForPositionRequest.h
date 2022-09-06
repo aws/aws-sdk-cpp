@@ -309,16 +309,16 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
   };
 
 } // namespace Model

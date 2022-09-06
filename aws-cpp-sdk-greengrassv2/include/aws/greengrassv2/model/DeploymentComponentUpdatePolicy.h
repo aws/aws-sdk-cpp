@@ -183,10 +183,10 @@ namespace Model
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     DeploymentComponentUpdatePolicyAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

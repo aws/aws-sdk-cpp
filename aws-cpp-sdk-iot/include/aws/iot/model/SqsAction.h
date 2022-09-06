@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     bool m_useBase64;
-    bool m_useBase64HasBeenSet;
+    bool m_useBase64HasBeenSet = false;
   };
 
 } // namespace Model

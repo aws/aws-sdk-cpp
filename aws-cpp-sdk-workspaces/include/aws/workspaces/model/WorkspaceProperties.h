@@ -217,19 +217,19 @@ namespace Model
   private:
 
     RunningMode m_runningMode;
-    bool m_runningModeHasBeenSet;
+    bool m_runningModeHasBeenSet = false;
 
     int m_runningModeAutoStopTimeoutInMinutes;
-    bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet;
+    bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet = false;
 
     int m_rootVolumeSizeGib;
-    bool m_rootVolumeSizeGibHasBeenSet;
+    bool m_rootVolumeSizeGibHasBeenSet = false;
 
     int m_userVolumeSizeGib;
-    bool m_userVolumeSizeGibHasBeenSet;
+    bool m_userVolumeSizeGibHasBeenSet = false;
 
     Compute m_computeTypeName;
-    bool m_computeTypeNameHasBeenSet;
+    bool m_computeTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

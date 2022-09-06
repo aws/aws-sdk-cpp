@@ -298,10 +298,10 @@ namespace Model
   private:
 
     S3DataType m_s3DataType;
-    bool m_s3DataTypeHasBeenSet;
+    bool m_s3DataTypeHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -291,19 +291,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     Aws::String m_meshOwner;
-    bool m_meshOwnerHasBeenSet;
+    bool m_meshOwnerHasBeenSet = false;
 
     VirtualGatewaySpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::String m_virtualGatewayName;
-    bool m_virtualGatewayNameHasBeenSet;
+    bool m_virtualGatewayNameHasBeenSet = false;
   };
 
 } // namespace Model

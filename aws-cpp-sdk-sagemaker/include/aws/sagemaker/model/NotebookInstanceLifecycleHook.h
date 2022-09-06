@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -165,13 +165,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
+    bool m_sourceDestCheckHasBeenSet = false;
   };
 
 } // namespace Model

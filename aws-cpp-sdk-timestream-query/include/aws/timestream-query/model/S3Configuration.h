@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_objectKeyPrefix;
-    bool m_objectKeyPrefixHasBeenSet;
+    bool m_objectKeyPrefixHasBeenSet = false;
 
     S3EncryptionOption m_encryptionOption;
-    bool m_encryptionOptionHasBeenSet;
+    bool m_encryptionOptionHasBeenSet = false;
   };
 
 } // namespace Model

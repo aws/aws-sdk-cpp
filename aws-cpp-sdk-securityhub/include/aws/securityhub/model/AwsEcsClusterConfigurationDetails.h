@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AwsEcsClusterConfigurationExecuteCommandConfigurationDetails m_executeCommandConfiguration;
-    bool m_executeCommandConfigurationHasBeenSet;
+    bool m_executeCommandConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

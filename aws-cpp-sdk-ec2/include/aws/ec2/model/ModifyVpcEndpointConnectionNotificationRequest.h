@@ -209,16 +209,16 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_connectionNotificationId;
-    bool m_connectionNotificationIdHasBeenSet;
+    bool m_connectionNotificationIdHasBeenSet = false;
 
     Aws::String m_connectionNotificationArn;
-    bool m_connectionNotificationArnHasBeenSet;
+    bool m_connectionNotificationArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectionEvents;
-    bool m_connectionEventsHasBeenSet;
+    bool m_connectionEventsHasBeenSet = false;
   };
 
 } // namespace Model

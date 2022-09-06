@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_recoveryGroupName;
-    bool m_recoveryGroupNameHasBeenSet;
+    bool m_recoveryGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

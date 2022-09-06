@@ -97,7 +97,7 @@ SyntheticsClient::~SyntheticsClient()
 
 void SyntheticsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("synthetics");
+  AWSClient::SetServiceClientName("synthetics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

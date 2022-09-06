@@ -453,28 +453,28 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     long long m_tapeSizeInBytes;
-    bool m_tapeSizeInBytesHasBeenSet;
+    bool m_tapeSizeInBytesHasBeenSet = false;
 
     Aws::String m_tapeBarcode;
-    bool m_tapeBarcodeHasBeenSet;
+    bool m_tapeBarcodeHasBeenSet = false;
 
     bool m_kMSEncrypted;
-    bool m_kMSEncryptedHasBeenSet;
+    bool m_kMSEncryptedHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     bool m_worm;
-    bool m_wormHasBeenSet;
+    bool m_wormHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

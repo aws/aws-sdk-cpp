@@ -500,37 +500,37 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_assessmentName;
-    bool m_assessmentNameHasBeenSet;
+    bool m_assessmentNameHasBeenSet = false;
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     DelegationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     RoleType m_roleType;
-    bool m_roleTypeHasBeenSet;
+    bool m_roleTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_controlSetId;
-    bool m_controlSetIdHasBeenSet;
+    bool m_controlSetIdHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

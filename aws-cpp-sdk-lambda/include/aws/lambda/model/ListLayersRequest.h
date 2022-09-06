@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Runtime m_compatibleRuntime;
-    bool m_compatibleRuntimeHasBeenSet;
+    bool m_compatibleRuntimeHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Architecture m_compatibleArchitecture;
-    bool m_compatibleArchitectureHasBeenSet;
+    bool m_compatibleArchitectureHasBeenSet = false;
   };
 
 } // namespace Model

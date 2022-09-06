@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<ValueHolder> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
   };
 
 } // namespace Model

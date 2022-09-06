@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     IntelligentTieringFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     IntelligentTieringStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tiering> m_tierings;
-    bool m_tieringsHasBeenSet;
+    bool m_tieringsHasBeenSet = false;
   };
 
 } // namespace Model

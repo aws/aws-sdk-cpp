@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
 
     int m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     ScalingType m_scalingType;
-    bool m_scalingTypeHasBeenSet;
+    bool m_scalingTypeHasBeenSet = false;
   };
 
 } // namespace Model

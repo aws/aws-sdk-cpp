@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_commitId;
-    bool m_commitIdHasBeenSet;
+    bool m_commitIdHasBeenSet = false;
   };
 
 } // namespace Model

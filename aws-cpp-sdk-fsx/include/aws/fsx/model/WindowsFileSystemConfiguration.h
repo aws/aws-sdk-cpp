@@ -808,46 +808,46 @@ namespace Model
   private:
 
     Aws::String m_activeDirectoryId;
-    bool m_activeDirectoryIdHasBeenSet;
+    bool m_activeDirectoryIdHasBeenSet = false;
 
     SelfManagedActiveDirectoryAttributes m_selfManagedActiveDirectoryConfiguration;
-    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
     WindowsDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_remoteAdministrationEndpoint;
-    bool m_remoteAdministrationEndpointHasBeenSet;
+    bool m_remoteAdministrationEndpointHasBeenSet = false;
 
     Aws::String m_preferredSubnetId;
-    bool m_preferredSubnetIdHasBeenSet;
+    bool m_preferredSubnetIdHasBeenSet = false;
 
     Aws::String m_preferredFileServerIp;
-    bool m_preferredFileServerIpHasBeenSet;
+    bool m_preferredFileServerIpHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::Vector<FileSystemMaintenanceOperation> m_maintenanceOperationsInProgress;
-    bool m_maintenanceOperationsInProgressHasBeenSet;
+    bool m_maintenanceOperationsInProgressHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     Aws::Vector<Alias> m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     WindowsAuditLogConfiguration m_auditLogConfiguration;
-    bool m_auditLogConfigurationHasBeenSet;
+    bool m_auditLogConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

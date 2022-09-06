@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DiskImageDetail m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     VolumeDetail m_volume;
-    bool m_volumeHasBeenSet;
+    bool m_volumeHasBeenSet = false;
   };
 
 } // namespace Model

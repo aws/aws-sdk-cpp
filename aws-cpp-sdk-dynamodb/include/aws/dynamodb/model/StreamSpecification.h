@@ -150,10 +150,10 @@ namespace Model
   private:
 
     bool m_streamEnabled;
-    bool m_streamEnabledHasBeenSet;
+    bool m_streamEnabledHasBeenSet = false;
 
     StreamViewType m_streamViewType;
-    bool m_streamViewTypeHasBeenSet;
+    bool m_streamViewTypeHasBeenSet = false;
   };
 
 } // namespace Model

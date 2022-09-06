@@ -329,25 +329,25 @@ namespace Model
   private:
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_sha256sum;
-    bool m_sha256sumHasBeenSet;
+    bool m_sha256sumHasBeenSet = false;
 
     Aws::String m_md5sum;
-    bool m_md5sumHasBeenSet;
+    bool m_md5sumHasBeenSet = false;
 
     bool m_overrideArtifactName;
-    bool m_overrideArtifactNameHasBeenSet;
+    bool m_overrideArtifactNameHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     Aws::String m_artifactIdentifier;
-    bool m_artifactIdentifierHasBeenSet;
+    bool m_artifactIdentifierHasBeenSet = false;
 
     BucketOwnerAccess m_bucketOwnerAccess;
-    bool m_bucketOwnerAccessHasBeenSet;
+    bool m_bucketOwnerAccessHasBeenSet = false;
   };
 
 } // namespace Model

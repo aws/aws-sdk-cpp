@@ -188,19 +188,19 @@ namespace Model
   private:
 
     int m_maxGroupPreparedCapacity;
-    bool m_maxGroupPreparedCapacityHasBeenSet;
+    bool m_maxGroupPreparedCapacityHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     WarmPoolState m_poolState;
-    bool m_poolStateHasBeenSet;
+    bool m_poolStateHasBeenSet = false;
 
     WarmPoolStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     InstanceReusePolicy m_instanceReusePolicy;
-    bool m_instanceReusePolicyHasBeenSet;
+    bool m_instanceReusePolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<ColumnGroupColumnSchema> m_columnGroupColumnSchemaList;
-    bool m_columnGroupColumnSchemaListHasBeenSet;
+    bool m_columnGroupColumnSchemaListHasBeenSet = false;
   };
 
 } // namespace Model

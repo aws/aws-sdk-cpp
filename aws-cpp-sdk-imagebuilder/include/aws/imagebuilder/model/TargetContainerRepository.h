@@ -121,10 +121,10 @@ namespace Model
   private:
 
     ContainerRepositoryService m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
   };
 
 } // namespace Model

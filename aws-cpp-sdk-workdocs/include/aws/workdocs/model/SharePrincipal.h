@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     PrincipalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     RoleType m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
   };
 
 } // namespace Model

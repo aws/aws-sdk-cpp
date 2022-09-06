@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_tapeBarcodePrefix;
-    bool m_tapeBarcodePrefixHasBeenSet;
+    bool m_tapeBarcodePrefixHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     long long m_tapeSizeInBytes;
-    bool m_tapeSizeInBytesHasBeenSet;
+    bool m_tapeSizeInBytesHasBeenSet = false;
 
     int m_minimumNumTapes;
-    bool m_minimumNumTapesHasBeenSet;
+    bool m_minimumNumTapesHasBeenSet = false;
 
     bool m_worm;
-    bool m_wormHasBeenSet;
+    bool m_wormHasBeenSet = false;
   };
 
 } // namespace Model

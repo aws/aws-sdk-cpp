@@ -175,13 +175,13 @@ namespace Model
   private:
 
     AutoTuneDesiredState m_desiredState;
-    bool m_desiredStateHasBeenSet;
+    bool m_desiredStateHasBeenSet = false;
 
     RollbackOnDisable m_rollbackOnDisable;
-    bool m_rollbackOnDisableHasBeenSet;
+    bool m_rollbackOnDisableHasBeenSet = false;
 
     Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
-    bool m_maintenanceSchedulesHasBeenSet;
+    bool m_maintenanceSchedulesHasBeenSet = false;
   };
 
 } // namespace Model

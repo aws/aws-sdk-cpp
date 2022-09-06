@@ -798,55 +798,55 @@ namespace Model
   private:
 
     Aws::String m_definitionName;
-    bool m_definitionNameHasBeenSet;
+    bool m_definitionNameHasBeenSet = false;
 
     HyperParameterTuningJobObjective m_tuningObjective;
-    bool m_tuningObjectiveHasBeenSet;
+    bool m_tuningObjectiveHasBeenSet = false;
 
     ParameterRanges m_hyperParameterRanges;
-    bool m_hyperParameterRangesHasBeenSet;
+    bool m_hyperParameterRangesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_staticHyperParameters;
-    bool m_staticHyperParametersHasBeenSet;
+    bool m_staticHyperParametersHasBeenSet = false;
 
     HyperParameterAlgorithmSpecification m_algorithmSpecification;
-    bool m_algorithmSpecificationHasBeenSet;
+    bool m_algorithmSpecificationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Channel> m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ResourceConfig m_resourceConfig;
-    bool m_resourceConfigHasBeenSet;
+    bool m_resourceConfigHasBeenSet = false;
 
     StoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     bool m_enableNetworkIsolation;
-    bool m_enableNetworkIsolationHasBeenSet;
+    bool m_enableNetworkIsolationHasBeenSet = false;
 
     bool m_enableInterContainerTrafficEncryption;
-    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
     bool m_enableManagedSpotTraining;
-    bool m_enableManagedSpotTrainingHasBeenSet;
+    bool m_enableManagedSpotTrainingHasBeenSet = false;
 
     CheckpointConfig m_checkpointConfig;
-    bool m_checkpointConfigHasBeenSet;
+    bool m_checkpointConfigHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
 
     HyperParameterTuningResourceConfig m_hyperParameterTuningResourceConfig;
-    bool m_hyperParameterTuningResourceConfigHasBeenSet;
+    bool m_hyperParameterTuningResourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

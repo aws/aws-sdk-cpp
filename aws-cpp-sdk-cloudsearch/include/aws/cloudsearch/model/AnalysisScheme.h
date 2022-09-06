@@ -111,13 +111,13 @@ namespace Model
   private:
 
     Aws::String m_analysisSchemeName;
-    bool m_analysisSchemeNameHasBeenSet;
+    bool m_analysisSchemeNameHasBeenSet = false;
 
     AnalysisSchemeLanguage m_analysisSchemeLanguage;
-    bool m_analysisSchemeLanguageHasBeenSet;
+    bool m_analysisSchemeLanguageHasBeenSet = false;
 
     AnalysisOptions m_analysisOptions;
-    bool m_analysisOptionsHasBeenSet;
+    bool m_analysisOptionsHasBeenSet = false;
   };
 
 } // namespace Model

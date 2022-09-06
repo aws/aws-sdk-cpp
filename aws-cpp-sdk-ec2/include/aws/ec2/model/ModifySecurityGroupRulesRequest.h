@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::Vector<SecurityGroupRuleUpdate> m_securityGroupRules;
-    bool m_securityGroupRulesHasBeenSet;
+    bool m_securityGroupRulesHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

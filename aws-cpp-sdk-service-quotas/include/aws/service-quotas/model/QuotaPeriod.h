@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_periodValue;
-    bool m_periodValueHasBeenSet;
+    bool m_periodValueHasBeenSet = false;
 
     PeriodUnit m_periodUnit;
-    bool m_periodUnitHasBeenSet;
+    bool m_periodUnitHasBeenSet = false;
   };
 
 } // namespace Model

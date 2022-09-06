@@ -118,10 +118,10 @@ namespace Model
   private:
 
     long long m_cookieExpirationPeriod;
-    bool m_cookieExpirationPeriodHasBeenSet;
+    bool m_cookieExpirationPeriodHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
   };
 
 } // namespace Model

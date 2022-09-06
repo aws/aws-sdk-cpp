@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     ResourceQuery m_resourceQuery;
-    bool m_resourceQueryHasBeenSet;
+    bool m_resourceQueryHasBeenSet = false;
   };
 
 } // namespace Model

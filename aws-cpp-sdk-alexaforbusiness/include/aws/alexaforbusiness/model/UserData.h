@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     EnrollmentStatus m_enrollmentStatus;
-    bool m_enrollmentStatusHasBeenSet;
+    bool m_enrollmentStatusHasBeenSet = false;
 
     Aws::String m_enrollmentId;
-    bool m_enrollmentIdHasBeenSet;
+    bool m_enrollmentIdHasBeenSet = false;
   };
 
 } // namespace Model

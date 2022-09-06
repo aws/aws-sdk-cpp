@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_imageScanCompletedAt;
-    bool m_imageScanCompletedAtHasBeenSet;
+    bool m_imageScanCompletedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt;
-    bool m_vulnerabilitySourceUpdatedAtHasBeenSet;
+    bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
 
     Aws::Map<FindingSeverity, int> m_findingSeverityCounts;
-    bool m_findingSeverityCountsHasBeenSet;
+    bool m_findingSeverityCountsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_cloudFunction;
-    bool m_cloudFunctionHasBeenSet;
+    bool m_cloudFunctionHasBeenSet = false;
 
     Aws::String m_invocationRole;
-    bool m_invocationRoleHasBeenSet;
+    bool m_invocationRoleHasBeenSet = false;
   };
 
 } // namespace Model

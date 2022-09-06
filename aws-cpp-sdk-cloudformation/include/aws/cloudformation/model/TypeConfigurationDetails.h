@@ -399,25 +399,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_typeArn;
-    bool m_typeArnHasBeenSet;
+    bool m_typeArnHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     bool m_isDefaultConfiguration;
-    bool m_isDefaultConfigurationHasBeenSet;
+    bool m_isDefaultConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

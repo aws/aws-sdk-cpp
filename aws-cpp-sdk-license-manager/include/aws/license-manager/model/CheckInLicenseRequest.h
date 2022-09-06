@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_licenseConsumptionToken;
-    bool m_licenseConsumptionTokenHasBeenSet;
+    bool m_licenseConsumptionTokenHasBeenSet = false;
 
     Aws::String m_beneficiary;
-    bool m_beneficiaryHasBeenSet;
+    bool m_beneficiaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::String m_certificateBody;
-    bool m_certificateBodyHasBeenSet;
+    bool m_certificateBodyHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadDate;
-    bool m_uploadDateHasBeenSet;
+    bool m_uploadDateHasBeenSet = false;
   };
 
 } // namespace Model

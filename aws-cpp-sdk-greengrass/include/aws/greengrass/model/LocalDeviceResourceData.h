@@ -120,10 +120,10 @@ namespace Model
   private:
 
     GroupOwnerSetting m_groupOwnerSetting;
-    bool m_groupOwnerSettingHasBeenSet;
+    bool m_groupOwnerSettingHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

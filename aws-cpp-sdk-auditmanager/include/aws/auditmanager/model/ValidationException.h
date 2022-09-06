@@ -140,13 +140,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Vector<ValidationExceptionField> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

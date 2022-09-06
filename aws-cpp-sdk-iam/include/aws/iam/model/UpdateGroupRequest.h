@@ -273,13 +273,13 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_newPath;
-    bool m_newPathHasBeenSet;
+    bool m_newPathHasBeenSet = false;
 
     Aws::String m_newGroupName;
-    bool m_newGroupNameHasBeenSet;
+    bool m_newGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

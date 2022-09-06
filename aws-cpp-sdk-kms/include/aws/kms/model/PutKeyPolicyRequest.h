@@ -492,16 +492,16 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     bool m_bypassPolicyLockoutSafetyCheck;
-    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
+    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
   };
 
 } // namespace Model

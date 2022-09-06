@@ -320,28 +320,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_participantId;
-    bool m_participantIdHasBeenSet;
+    bool m_participantIdHasBeenSet = false;
 
     Aws::String m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     int m_beginOffsetMillis;
-    bool m_beginOffsetMillisHasBeenSet;
+    bool m_beginOffsetMillisHasBeenSet = false;
 
     int m_endOffsetMillis;
-    bool m_endOffsetMillisHasBeenSet;
+    bool m_endOffsetMillisHasBeenSet = false;
 
     SentimentValue m_sentiment;
-    bool m_sentimentHasBeenSet;
+    bool m_sentimentHasBeenSet = false;
 
     Aws::Vector<IssueDetected> m_issuesDetected;
-    bool m_issuesDetectedHasBeenSet;
+    bool m_issuesDetectedHasBeenSet = false;
   };
 
 } // namespace Model

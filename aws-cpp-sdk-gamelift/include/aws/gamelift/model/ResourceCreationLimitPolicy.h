@@ -90,10 +90,10 @@ namespace Model
   private:
 
     int m_newGameSessionsPerCreator;
-    bool m_newGameSessionsPerCreatorHasBeenSet;
+    bool m_newGameSessionsPerCreatorHasBeenSet = false;
 
     int m_policyPeriodInMinutes;
-    bool m_policyPeriodInMinutesHasBeenSet;
+    bool m_policyPeriodInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ namespace Model
   private:
 
     AddOnType m_addOnType;
-    bool m_addOnTypeHasBeenSet;
+    bool m_addOnTypeHasBeenSet = false;
 
     AutoSnapshotAddOnRequest m_autoSnapshotAddOnRequest;
-    bool m_autoSnapshotAddOnRequestHasBeenSet;
+    bool m_autoSnapshotAddOnRequestHasBeenSet = false;
   };
 
 } // namespace Model

@@ -181,16 +181,16 @@ namespace Model
   private:
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
 
     ConnectionState m_connectionState;
-    bool m_connectionStateHasBeenSet;
+    bool m_connectionStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectionStateCheckTimestamp;
-    bool m_connectionStateCheckTimestampHasBeenSet;
+    bool m_connectionStateCheckTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastKnownUserConnectionTimestamp;
-    bool m_lastKnownUserConnectionTimestampHasBeenSet;
+    bool m_lastKnownUserConnectionTimestampHasBeenSet = false;
   };
 
 } // namespace Model

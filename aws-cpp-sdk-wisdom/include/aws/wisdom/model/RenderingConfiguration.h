@@ -168,7 +168,7 @@ namespace Model
   private:
 
     Aws::String m_templateUri;
-    bool m_templateUriHasBeenSet;
+    bool m_templateUriHasBeenSet = false;
   };
 
 } // namespace Model

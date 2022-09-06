@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
 
     long long m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     UsageLimitBreachAction m_breachAction;
-    bool m_breachActionHasBeenSet;
+    bool m_breachActionHasBeenSet = false;
   };
 
 } // namespace Model

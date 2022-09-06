@@ -555,43 +555,43 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     SessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     SessionCommand m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-    bool m_defaultArgumentsHasBeenSet;
+    bool m_defaultArgumentsHasBeenSet = false;
 
     ConnectionsList m_connections;
-    bool m_connectionsHasBeenSet;
+    bool m_connectionsHasBeenSet = false;
 
     double m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
   };
 
 } // namespace Model

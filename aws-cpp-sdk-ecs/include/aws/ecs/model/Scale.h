@@ -100,10 +100,10 @@ namespace Model
   private:
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ScaleUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

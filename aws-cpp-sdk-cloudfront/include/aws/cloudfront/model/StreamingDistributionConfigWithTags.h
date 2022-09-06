@@ -103,10 +103,10 @@ namespace Model
   private:
 
     StreamingDistributionConfig m_streamingDistributionConfig;
-    bool m_streamingDistributionConfigHasBeenSet;
+    bool m_streamingDistributionConfigHasBeenSet = false;
 
     Tags m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

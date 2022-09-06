@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
   };
 
 } // namespace Model

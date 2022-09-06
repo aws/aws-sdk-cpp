@@ -203,10 +203,10 @@ namespace Model
   private:
 
     ExtendedKeyUsageName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_oID;
-    bool m_oIDHasBeenSet;
+    bool m_oIDHasBeenSet = false;
   };
 
 } // namespace Model

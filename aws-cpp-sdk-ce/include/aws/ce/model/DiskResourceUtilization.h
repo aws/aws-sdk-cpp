@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_diskReadOpsPerSecond;
-    bool m_diskReadOpsPerSecondHasBeenSet;
+    bool m_diskReadOpsPerSecondHasBeenSet = false;
 
     Aws::String m_diskWriteOpsPerSecond;
-    bool m_diskWriteOpsPerSecondHasBeenSet;
+    bool m_diskWriteOpsPerSecondHasBeenSet = false;
 
     Aws::String m_diskReadBytesPerSecond;
-    bool m_diskReadBytesPerSecondHasBeenSet;
+    bool m_diskReadBytesPerSecondHasBeenSet = false;
 
     Aws::String m_diskWriteBytesPerSecond;
-    bool m_diskWriteBytesPerSecondHasBeenSet;
+    bool m_diskWriteBytesPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

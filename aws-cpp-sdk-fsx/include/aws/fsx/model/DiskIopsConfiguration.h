@@ -108,10 +108,10 @@ namespace Model
   private:
 
     DiskIopsConfigurationMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     long long m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
   };
 
 } // namespace Model

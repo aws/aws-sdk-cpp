@@ -168,10 +168,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tagsToAdd;
-    bool m_tagsToAddHasBeenSet;
+    bool m_tagsToAddHasBeenSet = false;
   };
 
 } // namespace Model

@@ -98,10 +98,10 @@ namespace Model
   private:
 
     double m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     CurrencyCode m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

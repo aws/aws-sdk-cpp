@@ -256,19 +256,19 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     DatasetOrgAttributes m_datasetOrg;
-    bool m_datasetOrgHasBeenSet;
+    bool m_datasetOrgHasBeenSet = false;
 
     RecordLength m_recordLength;
-    bool m_recordLengthHasBeenSet;
+    bool m_recordLengthHasBeenSet = false;
 
     Aws::String m_relativePath;
-    bool m_relativePathHasBeenSet;
+    bool m_relativePathHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

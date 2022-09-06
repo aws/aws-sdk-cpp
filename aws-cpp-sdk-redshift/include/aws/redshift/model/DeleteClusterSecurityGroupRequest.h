@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_clusterSecurityGroupName;
-    bool m_clusterSecurityGroupNameHasBeenSet;
+    bool m_clusterSecurityGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

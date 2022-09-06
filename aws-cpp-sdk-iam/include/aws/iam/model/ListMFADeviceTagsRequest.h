@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

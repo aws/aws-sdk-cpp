@@ -116,10 +116,10 @@ namespace Model
   private:
 
     DuplicateRegistrationAction m_duplicateRegistrationAction;
-    bool m_duplicateRegistrationActionHasBeenSet;
+    bool m_duplicateRegistrationActionHasBeenSet = false;
 
     int m_fraudsterSimilarityThreshold;
-    bool m_fraudsterSimilarityThresholdHasBeenSet;
+    bool m_fraudsterSimilarityThresholdHasBeenSet = false;
   };
 
 } // namespace Model

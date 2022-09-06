@@ -67,7 +67,7 @@ namespace Model
   private:
 
     int m_riskThreshold;
-    bool m_riskThresholdHasBeenSet;
+    bool m_riskThresholdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -318,16 +318,16 @@ namespace Model
   private:
 
     Aws::String m_updateToken;
-    bool m_updateTokenHasBeenSet;
+    bool m_updateTokenHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

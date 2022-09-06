@@ -223,13 +223,13 @@ namespace Model
   private:
 
     CookieMatchPattern m_matchPattern;
-    bool m_matchPatternHasBeenSet;
+    bool m_matchPatternHasBeenSet = false;
 
     MapMatchScope m_matchScope;
-    bool m_matchScopeHasBeenSet;
+    bool m_matchScopeHasBeenSet = false;
 
     OversizeHandling m_oversizeHandling;
-    bool m_oversizeHandlingHasBeenSet;
+    bool m_oversizeHandlingHasBeenSet = false;
   };
 
 } // namespace Model

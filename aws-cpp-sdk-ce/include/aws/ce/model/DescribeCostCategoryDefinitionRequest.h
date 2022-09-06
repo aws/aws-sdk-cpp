@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_costCategoryArn;
-    bool m_costCategoryArnHasBeenSet;
+    bool m_costCategoryArnHasBeenSet = false;
 
     Aws::String m_effectiveOn;
-    bool m_effectiveOnHasBeenSet;
+    bool m_effectiveOnHasBeenSet = false;
   };
 
 } // namespace Model

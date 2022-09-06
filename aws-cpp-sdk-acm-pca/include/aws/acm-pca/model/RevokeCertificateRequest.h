@@ -254,13 +254,13 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_certificateSerial;
-    bool m_certificateSerialHasBeenSet;
+    bool m_certificateSerialHasBeenSet = false;
 
     RevocationReason m_revocationReason;
-    bool m_revocationReasonHasBeenSet;
+    bool m_revocationReasonHasBeenSet = false;
   };
 
 } // namespace Model

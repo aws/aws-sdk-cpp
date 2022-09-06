@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::Vector<AttendeeIdItem> m_excludedAttendeeIds;
-    bool m_excludedAttendeeIdsHasBeenSet;
+    bool m_excludedAttendeeIdsHasBeenSet = false;
 
     AttendeeCapabilities m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

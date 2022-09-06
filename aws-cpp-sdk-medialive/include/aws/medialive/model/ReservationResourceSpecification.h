@@ -295,28 +295,28 @@ namespace Model
   private:
 
     ChannelClass m_channelClass;
-    bool m_channelClassHasBeenSet;
+    bool m_channelClassHasBeenSet = false;
 
     ReservationCodec m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     ReservationMaximumBitrate m_maximumBitrate;
-    bool m_maximumBitrateHasBeenSet;
+    bool m_maximumBitrateHasBeenSet = false;
 
     ReservationMaximumFramerate m_maximumFramerate;
-    bool m_maximumFramerateHasBeenSet;
+    bool m_maximumFramerateHasBeenSet = false;
 
     ReservationResolution m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     ReservationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ReservationSpecialFeature m_specialFeature;
-    bool m_specialFeatureHasBeenSet;
+    bool m_specialFeatureHasBeenSet = false;
 
     ReservationVideoQuality m_videoQuality;
-    bool m_videoQualityHasBeenSet;
+    bool m_videoQualityHasBeenSet = false;
   };
 
 } // namespace Model

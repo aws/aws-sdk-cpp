@@ -346,28 +346,28 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     int m_startLine;
-    bool m_startLineHasBeenSet;
+    bool m_startLineHasBeenSet = false;
 
     int m_endLine;
-    bool m_endLineHasBeenSet;
+    bool m_endLineHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RecommendationCategory m_recommendationCategory;
-    bool m_recommendationCategoryHasBeenSet;
+    bool m_recommendationCategoryHasBeenSet = false;
 
     RuleMetadata m_ruleMetadata;
-    bool m_ruleMetadataHasBeenSet;
+    bool m_ruleMetadataHasBeenSet = false;
 
     Severity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
   };
 
 } // namespace Model

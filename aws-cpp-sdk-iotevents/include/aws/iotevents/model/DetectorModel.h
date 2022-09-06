@@ -102,10 +102,10 @@ namespace Model
   private:
 
     DetectorModelDefinition m_detectorModelDefinition;
-    bool m_detectorModelDefinitionHasBeenSet;
+    bool m_detectorModelDefinitionHasBeenSet = false;
 
     DetectorModelConfiguration m_detectorModelConfiguration;
-    bool m_detectorModelConfigurationHasBeenSet;
+    bool m_detectorModelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -297,22 +297,22 @@ namespace Model
   private:
 
     CustomerActionName m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     SnoozeActionConfiguration m_snoozeActionConfiguration;
-    bool m_snoozeActionConfigurationHasBeenSet;
+    bool m_snoozeActionConfigurationHasBeenSet = false;
 
     EnableActionConfiguration m_enableActionConfiguration;
-    bool m_enableActionConfigurationHasBeenSet;
+    bool m_enableActionConfigurationHasBeenSet = false;
 
     DisableActionConfiguration m_disableActionConfiguration;
-    bool m_disableActionConfigurationHasBeenSet;
+    bool m_disableActionConfigurationHasBeenSet = false;
 
     AcknowledgeActionConfiguration m_acknowledgeActionConfiguration;
-    bool m_acknowledgeActionConfigurationHasBeenSet;
+    bool m_acknowledgeActionConfigurationHasBeenSet = false;
 
     ResetActionConfiguration m_resetActionConfiguration;
-    bool m_resetActionConfigurationHasBeenSet;
+    bool m_resetActionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

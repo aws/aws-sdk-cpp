@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     PermissionsBoundary m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
   };
 
 } // namespace Model

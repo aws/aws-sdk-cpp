@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     Aws::Vector<RelationalDatabaseParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

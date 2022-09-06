@@ -128,10 +128,10 @@ namespace Model
   private:
 
     HdfsRpcProtection m_rpcProtection;
-    bool m_rpcProtectionHasBeenSet;
+    bool m_rpcProtectionHasBeenSet = false;
 
     HdfsDataTransferProtection m_dataTransferProtection;
-    bool m_dataTransferProtectionHasBeenSet;
+    bool m_dataTransferProtectionHasBeenSet = false;
   };
 
 } // namespace Model

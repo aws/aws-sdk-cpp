@@ -217,19 +217,19 @@ namespace Model
   private:
 
     ComputeLimitsUnitType m_unitType;
-    bool m_unitTypeHasBeenSet;
+    bool m_unitTypeHasBeenSet = false;
 
     int m_minimumCapacityUnits;
-    bool m_minimumCapacityUnitsHasBeenSet;
+    bool m_minimumCapacityUnitsHasBeenSet = false;
 
     int m_maximumCapacityUnits;
-    bool m_maximumCapacityUnitsHasBeenSet;
+    bool m_maximumCapacityUnitsHasBeenSet = false;
 
     int m_maximumOnDemandCapacityUnits;
-    bool m_maximumOnDemandCapacityUnitsHasBeenSet;
+    bool m_maximumOnDemandCapacityUnitsHasBeenSet = false;
 
     int m_maximumCoreCapacityUnits;
-    bool m_maximumCoreCapacityUnitsHasBeenSet;
+    bool m_maximumCoreCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

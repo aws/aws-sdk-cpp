@@ -59,7 +59,7 @@ namespace Model
   private:
 
     PortMapping m_portMapping;
-    bool m_portMappingHasBeenSet;
+    bool m_portMappingHasBeenSet = false;
   };
 
 } // namespace Model

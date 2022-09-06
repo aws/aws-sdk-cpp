@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_qualificationRequestId;
-    bool m_qualificationRequestIdHasBeenSet;
+    bool m_qualificationRequestIdHasBeenSet = false;
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
   };
 
 } // namespace Model

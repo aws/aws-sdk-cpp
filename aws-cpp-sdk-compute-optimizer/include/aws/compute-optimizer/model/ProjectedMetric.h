@@ -252,13 +252,13 @@ namespace Model
   private:
 
     MetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-    bool m_timestampsHasBeenSet;
+    bool m_timestampsHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

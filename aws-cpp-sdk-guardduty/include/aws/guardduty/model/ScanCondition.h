@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<ScanConditionPair> m_mapEquals;
-    bool m_mapEqualsHasBeenSet;
+    bool m_mapEqualsHasBeenSet = false;
   };
 
 } // namespace Model

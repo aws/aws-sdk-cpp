@@ -277,16 +277,16 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_logFileName;
-    bool m_logFileNameHasBeenSet;
+    bool m_logFileNameHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_numberOfLines;
-    bool m_numberOfLinesHasBeenSet;
+    bool m_numberOfLinesHasBeenSet = false;
   };
 
 } // namespace Model

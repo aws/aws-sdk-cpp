@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     SuppressionListReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_supportedRegions;
-    bool m_supportedRegionsHasBeenSet;
+    bool m_supportedRegionsHasBeenSet = false;
   };
 
 } // namespace Model

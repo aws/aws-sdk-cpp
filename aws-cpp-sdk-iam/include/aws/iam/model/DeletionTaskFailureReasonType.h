@@ -176,10 +176,10 @@ namespace Model
   private:
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Vector<RoleUsageType> m_roleUsageList;
-    bool m_roleUsageListHasBeenSet;
+    bool m_roleUsageListHasBeenSet = false;
   };
 
 } // namespace Model

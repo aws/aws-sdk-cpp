@@ -909,19 +909,19 @@ namespace Model
   private:
 
     Aws::String m_s3OutputLocation;
-    bool m_s3OutputLocationHasBeenSet;
+    bool m_s3OutputLocationHasBeenSet = false;
 
     TargetDevice m_targetDevice;
-    bool m_targetDeviceHasBeenSet;
+    bool m_targetDeviceHasBeenSet = false;
 
     TargetPlatform m_targetPlatform;
-    bool m_targetPlatformHasBeenSet;
+    bool m_targetPlatformHasBeenSet = false;
 
     Aws::String m_compilerOptions;
-    bool m_compilerOptionsHasBeenSet;
+    bool m_compilerOptionsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

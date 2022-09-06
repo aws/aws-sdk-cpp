@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelArn;
-    bool m_modelArnHasBeenSet;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ namespace Model
   private:
 
     PublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,13 +114,13 @@ namespace Model
   private:
 
     long long m_sizeInGB;
-    bool m_sizeInGBHasBeenSet;
+    bool m_sizeInGBHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     DiskType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

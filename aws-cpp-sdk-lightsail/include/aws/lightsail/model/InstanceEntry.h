@@ -437,19 +437,19 @@ namespace Model
   private:
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     PortInfoSourceType m_portInfoSource;
-    bool m_portInfoSourceHasBeenSet;
+    bool m_portInfoSourceHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

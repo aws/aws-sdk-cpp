@@ -178,16 +178,16 @@ namespace Model
   private:
 
     ObjectReference m_sourceObjectReference;
-    bool m_sourceObjectReferenceHasBeenSet;
+    bool m_sourceObjectReferenceHasBeenSet = false;
 
     ObjectReference m_targetObjectReference;
-    bool m_targetObjectReferenceHasBeenSet;
+    bool m_targetObjectReferenceHasBeenSet = false;
 
     TypedLinkSchemaAndFacetName m_typedLinkFacet;
-    bool m_typedLinkFacetHasBeenSet;
+    bool m_typedLinkFacetHasBeenSet = false;
 
     Aws::Vector<AttributeNameAndValue> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

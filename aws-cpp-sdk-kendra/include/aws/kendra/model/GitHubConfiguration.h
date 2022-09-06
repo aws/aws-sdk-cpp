@@ -1634,70 +1634,70 @@ namespace Model
   private:
 
     SaaSConfiguration m_saaSConfiguration;
-    bool m_saaSConfigurationHasBeenSet;
+    bool m_saaSConfigurationHasBeenSet = false;
 
     OnPremiseConfiguration m_onPremiseConfiguration;
-    bool m_onPremiseConfigurationHasBeenSet;
+    bool m_onPremiseConfigurationHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     GitHubDocumentCrawlProperties m_gitHubDocumentCrawlProperties;
-    bool m_gitHubDocumentCrawlPropertiesHasBeenSet;
+    bool m_gitHubDocumentCrawlPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_repositoryFilter;
-    bool m_repositoryFilterHasBeenSet;
+    bool m_repositoryFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionFolderNamePatterns;
-    bool m_inclusionFolderNamePatternsHasBeenSet;
+    bool m_inclusionFolderNamePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionFileTypePatterns;
-    bool m_inclusionFileTypePatternsHasBeenSet;
+    bool m_inclusionFileTypePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionFileNamePatterns;
-    bool m_inclusionFileNamePatternsHasBeenSet;
+    bool m_inclusionFileNamePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionFolderNamePatterns;
-    bool m_exclusionFolderNamePatternsHasBeenSet;
+    bool m_exclusionFolderNamePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionFileTypePatterns;
-    bool m_exclusionFileTypePatternsHasBeenSet;
+    bool m_exclusionFileTypePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionFileNamePatterns;
-    bool m_exclusionFileNamePatternsHasBeenSet;
+    bool m_exclusionFileNamePatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubRepositoryConfigurationFieldMappings;
-    bool m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubCommitConfigurationFieldMappings;
-    bool m_gitHubCommitConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubCommitConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueDocumentConfigurationFieldMappings;
-    bool m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueCommentConfigurationFieldMappings;
-    bool m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueAttachmentConfigurationFieldMappings;
-    bool m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestCommentConfigurationFieldMappings;
-    bool m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestDocumentConfigurationFieldMappings;
-    bool m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings;
-    bool m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

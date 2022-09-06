@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_detectorModelDescription;
-    bool m_detectorModelDescriptionHasBeenSet;
+    bool m_detectorModelDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

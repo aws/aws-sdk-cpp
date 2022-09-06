@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_logRoleArn;
-    bool m_logRoleArnHasBeenSet;
+    bool m_logRoleArnHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -272,13 +272,13 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

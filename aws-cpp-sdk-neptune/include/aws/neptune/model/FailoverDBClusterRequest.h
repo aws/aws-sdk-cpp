@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBInstanceIdentifier;
-    bool m_targetDBInstanceIdentifierHasBeenSet;
+    bool m_targetDBInstanceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

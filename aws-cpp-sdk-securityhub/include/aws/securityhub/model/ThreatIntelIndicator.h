@@ -308,22 +308,22 @@ namespace Model
   private:
 
     ThreatIntelIndicatorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ThreatIntelIndicatorCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_sourceUrl;
-    bool m_sourceUrlHasBeenSet;
+    bool m_sourceUrlHasBeenSet = false;
   };
 
 } // namespace Model

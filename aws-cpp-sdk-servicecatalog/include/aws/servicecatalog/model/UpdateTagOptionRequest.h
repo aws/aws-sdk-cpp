@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_optIn;
-    bool m_optInHasBeenSet;
+    bool m_optInHasBeenSet = false;
   };
 
 } // namespace Model

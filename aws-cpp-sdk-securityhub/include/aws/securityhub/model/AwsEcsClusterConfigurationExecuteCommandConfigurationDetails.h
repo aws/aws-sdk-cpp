@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     Aws::String m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
   };
 
 } // namespace Model

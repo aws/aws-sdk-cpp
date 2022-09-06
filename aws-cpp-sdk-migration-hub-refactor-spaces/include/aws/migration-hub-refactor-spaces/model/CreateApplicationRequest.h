@@ -357,25 +357,25 @@ namespace Model
   private:
 
     ApiGatewayProxyInput m_apiGatewayProxy;
-    bool m_apiGatewayProxyHasBeenSet;
+    bool m_apiGatewayProxyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProxyType m_proxyType;
-    bool m_proxyTypeHasBeenSet;
+    bool m_proxyTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

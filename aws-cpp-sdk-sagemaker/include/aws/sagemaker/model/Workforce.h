@@ -486,37 +486,37 @@ namespace Model
   private:
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     Aws::String m_workforceArn;
-    bool m_workforceArnHasBeenSet;
+    bool m_workforceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     SourceIpConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
 
     Aws::String m_subDomain;
-    bool m_subDomainHasBeenSet;
+    bool m_subDomainHasBeenSet = false;
 
     CognitoConfig m_cognitoConfig;
-    bool m_cognitoConfigHasBeenSet;
+    bool m_cognitoConfigHasBeenSet = false;
 
     OidcConfigForResponse m_oidcConfig;
-    bool m_oidcConfigHasBeenSet;
+    bool m_oidcConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     WorkforceVpcConfigResponse m_workforceVpcConfig;
-    bool m_workforceVpcConfigHasBeenSet;
+    bool m_workforceVpcConfigHasBeenSet = false;
 
     WorkforceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

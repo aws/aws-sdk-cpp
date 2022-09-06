@@ -170,10 +170,10 @@ namespace Model
   private:
 
     OriginRequestPolicyQueryStringBehavior m_queryStringBehavior;
-    bool m_queryStringBehaviorHasBeenSet;
+    bool m_queryStringBehaviorHasBeenSet = false;
 
     QueryStringNames m_queryStrings;
-    bool m_queryStringsHasBeenSet;
+    bool m_queryStringsHasBeenSet = false;
   };
 
 } // namespace Model

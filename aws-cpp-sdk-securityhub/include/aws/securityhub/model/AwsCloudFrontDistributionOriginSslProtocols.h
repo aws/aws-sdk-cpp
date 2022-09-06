@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
   };
 
 } // namespace Model

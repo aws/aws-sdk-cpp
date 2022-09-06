@@ -238,13 +238,13 @@ namespace Model
   private:
 
     Aws::String m_initialContactId;
-    bool m_initialContactIdHasBeenSet;
+    bool m_initialContactIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

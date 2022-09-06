@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_certificateAuthorityArnList;
-    bool m_certificateAuthorityArnListHasBeenSet;
+    bool m_certificateAuthorityArnListHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

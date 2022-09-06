@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_aCLToApply;
-    bool m_aCLToApplyHasBeenSet;
+    bool m_aCLToApplyHasBeenSet = false;
   };
 
 } // namespace Model

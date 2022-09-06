@@ -76,7 +76,7 @@ namespace Model
   private:
 
     FailoverConfig m_failoverConfig;
-    bool m_failoverConfigHasBeenSet;
+    bool m_failoverConfigHasBeenSet = false;
   };
 
 } // namespace Model

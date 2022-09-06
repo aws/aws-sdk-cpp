@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     Aws::String m_lifecyclePolicy;
-    bool m_lifecyclePolicyHasBeenSet;
+    bool m_lifecyclePolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
   };
 
 } // namespace Model

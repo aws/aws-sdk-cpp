@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLogGroupArn;
-    bool m_cloudWatchLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     LoggingLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,10 +153,10 @@ namespace Model
   private:
 
     int m_monitoringTimeInMinutes;
-    bool m_monitoringTimeInMinutesHasBeenSet;
+    bool m_monitoringTimeInMinutesHasBeenSet = false;
 
     Aws::Vector<RollbackTrigger> m_rollbackTriggers;
-    bool m_rollbackTriggersHasBeenSet;
+    bool m_rollbackTriggersHasBeenSet = false;
   };
 
 } // namespace Model

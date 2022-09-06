@@ -209,19 +209,19 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     int m_defaultSessionExpiryMinutes;
-    bool m_defaultSessionExpiryMinutesHasBeenSet;
+    bool m_defaultSessionExpiryMinutesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phoneNumberPoolCountries;
-    bool m_phoneNumberPoolCountriesHasBeenSet;
+    bool m_phoneNumberPoolCountriesHasBeenSet = false;
 
     Aws::String m_fallBackPhoneNumber;
-    bool m_fallBackPhoneNumberHasBeenSet;
+    bool m_fallBackPhoneNumberHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
   };
 
 } // namespace Model

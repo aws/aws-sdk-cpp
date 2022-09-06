@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_dataSourceArn;
-    bool m_dataSourceArnHasBeenSet;
+    bool m_dataSourceArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sqlQuery;
-    bool m_sqlQueryHasBeenSet;
+    bool m_sqlQueryHasBeenSet = false;
 
     Aws::Vector<InputColumn> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

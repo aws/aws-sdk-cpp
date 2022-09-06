@@ -1003,37 +1003,37 @@ namespace Model
   private:
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
 
     Spend m_budgetLimit;
-    bool m_budgetLimitHasBeenSet;
+    bool m_budgetLimitHasBeenSet = false;
 
     Aws::Map<Aws::String, Spend> m_plannedBudgetLimits;
-    bool m_plannedBudgetLimitsHasBeenSet;
+    bool m_plannedBudgetLimitsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
-    bool m_costFiltersHasBeenSet;
+    bool m_costFiltersHasBeenSet = false;
 
     CostTypes m_costTypes;
-    bool m_costTypesHasBeenSet;
+    bool m_costTypesHasBeenSet = false;
 
     TimeUnit m_timeUnit;
-    bool m_timeUnitHasBeenSet;
+    bool m_timeUnitHasBeenSet = false;
 
     TimePeriod m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     CalculatedSpend m_calculatedSpend;
-    bool m_calculatedSpendHasBeenSet;
+    bool m_calculatedSpendHasBeenSet = false;
 
     BudgetType m_budgetType;
-    bool m_budgetTypeHasBeenSet;
+    bool m_budgetTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     AutoAdjustData m_autoAdjustData;
-    bool m_autoAdjustDataHasBeenSet;
+    bool m_autoAdjustDataHasBeenSet = false;
   };
 
 } // namespace Model

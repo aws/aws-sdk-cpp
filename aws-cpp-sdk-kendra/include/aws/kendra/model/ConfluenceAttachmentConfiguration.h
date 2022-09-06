@@ -160,10 +160,10 @@ namespace Model
   private:
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<ConfluenceAttachmentToIndexFieldMapping> m_attachmentFieldMappings;
-    bool m_attachmentFieldMappingsHasBeenSet;
+    bool m_attachmentFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

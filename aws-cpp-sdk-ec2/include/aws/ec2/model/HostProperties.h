@@ -210,19 +210,19 @@ namespace Model
   private:
 
     int m_cores;
-    bool m_coresHasBeenSet;
+    bool m_coresHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
 
     int m_sockets;
-    bool m_socketsHasBeenSet;
+    bool m_socketsHasBeenSet = false;
 
     int m_totalVCpus;
-    bool m_totalVCpusHasBeenSet;
+    bool m_totalVCpusHasBeenSet = false;
   };
 
 } // namespace Model

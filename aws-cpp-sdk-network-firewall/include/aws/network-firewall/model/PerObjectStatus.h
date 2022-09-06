@@ -131,10 +131,10 @@ namespace Model
   private:
 
     PerObjectSyncStatus m_syncStatus;
-    bool m_syncStatusHasBeenSet;
+    bool m_syncStatusHasBeenSet = false;
 
     Aws::String m_updateToken;
-    bool m_updateTokenHasBeenSet;
+    bool m_updateTokenHasBeenSet = false;
   };
 
 } // namespace Model

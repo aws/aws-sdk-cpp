@@ -266,19 +266,19 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     Aws::String m_example;
-    bool m_exampleHasBeenSet;
+    bool m_exampleHasBeenSet = false;
 
     bool m_optional;
-    bool m_optionalHasBeenSet;
+    bool m_optionalHasBeenSet = false;
   };
 
 } // namespace Model

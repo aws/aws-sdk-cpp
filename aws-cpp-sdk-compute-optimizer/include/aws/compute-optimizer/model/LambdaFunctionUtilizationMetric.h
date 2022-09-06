@@ -214,13 +214,13 @@ namespace Model
   private:
 
     LambdaFunctionMetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LambdaFunctionMetricStatistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

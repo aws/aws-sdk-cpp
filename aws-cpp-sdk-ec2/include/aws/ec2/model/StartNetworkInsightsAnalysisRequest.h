@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_networkInsightsPathId;
-    bool m_networkInsightsPathIdHasBeenSet;
+    bool m_networkInsightsPathIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterInArns;
-    bool m_filterInArnsHasBeenSet;
+    bool m_filterInArnsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

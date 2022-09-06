@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_databaseId;
-    bool m_databaseIdHasBeenSet;
+    bool m_databaseIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_databaseIpAddress;
-    bool m_databaseIpAddressHasBeenSet;
+    bool m_databaseIpAddressHasBeenSet = false;
 
     Aws::String m_databaseEngine;
-    bool m_databaseEngineHasBeenSet;
+    bool m_databaseEngineHasBeenSet = false;
   };
 
 } // namespace Model

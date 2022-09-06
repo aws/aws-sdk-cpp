@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     IpamPoolCidrState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     IpamPoolCidrFailureReason m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

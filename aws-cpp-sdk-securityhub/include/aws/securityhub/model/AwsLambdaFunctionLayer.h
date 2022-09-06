@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     int m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
   };
 
 } // namespace Model

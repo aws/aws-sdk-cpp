@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::Vector<BatchWriteOperation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
   };
 
 } // namespace Model

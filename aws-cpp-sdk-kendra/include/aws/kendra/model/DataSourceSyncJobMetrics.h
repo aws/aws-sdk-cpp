@@ -286,19 +286,19 @@ namespace Model
   private:
 
     Aws::String m_documentsAdded;
-    bool m_documentsAddedHasBeenSet;
+    bool m_documentsAddedHasBeenSet = false;
 
     Aws::String m_documentsModified;
-    bool m_documentsModifiedHasBeenSet;
+    bool m_documentsModifiedHasBeenSet = false;
 
     Aws::String m_documentsDeleted;
-    bool m_documentsDeletedHasBeenSet;
+    bool m_documentsDeletedHasBeenSet = false;
 
     Aws::String m_documentsFailed;
-    bool m_documentsFailedHasBeenSet;
+    bool m_documentsFailedHasBeenSet = false;
 
     Aws::String m_documentsScanned;
-    bool m_documentsScannedHasBeenSet;
+    bool m_documentsScannedHasBeenSet = false;
   };
 
 } // namespace Model

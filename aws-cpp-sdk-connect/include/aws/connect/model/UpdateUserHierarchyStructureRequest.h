@@ -115,10 +115,10 @@ namespace Model
   private:
 
     HierarchyStructureUpdate m_hierarchyStructure;
-    bool m_hierarchyStructureHasBeenSet;
+    bool m_hierarchyStructureHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

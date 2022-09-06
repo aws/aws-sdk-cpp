@@ -446,19 +446,19 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_startRecordName;
-    bool m_startRecordNameHasBeenSet;
+    bool m_startRecordNameHasBeenSet = false;
 
     RRType m_startRecordType;
-    bool m_startRecordTypeHasBeenSet;
+    bool m_startRecordTypeHasBeenSet = false;
 
     Aws::String m_startRecordIdentifier;
-    bool m_startRecordIdentifierHasBeenSet;
+    bool m_startRecordIdentifierHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

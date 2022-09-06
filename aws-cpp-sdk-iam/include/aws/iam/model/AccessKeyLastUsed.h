@@ -284,13 +284,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastUsedDate;
-    bool m_lastUsedDateHasBeenSet;
+    bool m_lastUsedDateHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

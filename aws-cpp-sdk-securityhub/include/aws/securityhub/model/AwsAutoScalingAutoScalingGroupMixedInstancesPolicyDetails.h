@@ -127,10 +127,10 @@ namespace Model
   private:
 
     AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails m_instancesDistribution;
-    bool m_instancesDistributionHasBeenSet;
+    bool m_instancesDistributionHasBeenSet = false;
 
     AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
   };
 
 } // namespace Model

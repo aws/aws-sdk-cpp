@@ -131,10 +131,10 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
   };
 
 } // namespace Model

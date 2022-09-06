@@ -195,10 +195,10 @@ namespace Model
   private:
 
     All m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includedPaths;
-    bool m_includedPathsHasBeenSet;
+    bool m_includedPathsHasBeenSet = false;
   };
 
 } // namespace Model

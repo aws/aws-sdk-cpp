@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_attachmentSetId;
-    bool m_attachmentSetIdHasBeenSet;
+    bool m_attachmentSetIdHasBeenSet = false;
 
     Aws::Vector<Attachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
   };
 
 } // namespace Model

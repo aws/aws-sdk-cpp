@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     ApprovalStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

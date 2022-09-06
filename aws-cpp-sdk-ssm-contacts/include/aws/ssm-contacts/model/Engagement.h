@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::String m_engagementArn;
-    bool m_engagementArnHasBeenSet;
+    bool m_engagementArnHasBeenSet = false;
 
     Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet;
+    bool m_contactArnHasBeenSet = false;
 
     Aws::String m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
 
     Aws::String m_incidentId;
-    bool m_incidentIdHasBeenSet;
+    bool m_incidentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopTime;
-    bool m_stopTimeHasBeenSet;
+    bool m_stopTimeHasBeenSet = false;
   };
 
 } // namespace Model

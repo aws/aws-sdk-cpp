@@ -284,16 +284,16 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
 
     FunctionUrlAuthType m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
 
     Cors m_cors;
-    bool m_corsHasBeenSet;
+    bool m_corsHasBeenSet = false;
   };
 
 } // namespace Model

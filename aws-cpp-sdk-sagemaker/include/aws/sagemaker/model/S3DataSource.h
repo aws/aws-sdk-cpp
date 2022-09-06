@@ -570,19 +570,19 @@ namespace Model
   private:
 
     S3DataType m_s3DataType;
-    bool m_s3DataTypeHasBeenSet;
+    bool m_s3DataTypeHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     S3DataDistribution m_s3DataDistributionType;
-    bool m_s3DataDistributionTypeHasBeenSet;
+    bool m_s3DataDistributionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceGroupNames;
-    bool m_instanceGroupNamesHasBeenSet;
+    bool m_instanceGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

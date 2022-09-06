@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_offeringArn;
-    bool m_offeringArnHasBeenSet;
+    bool m_offeringArnHasBeenSet = false;
 
     Aws::String m_reservationName;
-    bool m_reservationNameHasBeenSet;
+    bool m_reservationNameHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

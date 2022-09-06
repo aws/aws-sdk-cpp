@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_deviceKey;
-    bool m_deviceKeyHasBeenSet;
+    bool m_deviceKeyHasBeenSet = false;
 
     DeviceRememberedStatusType m_deviceRememberedStatus;
-    bool m_deviceRememberedStatusHasBeenSet;
+    bool m_deviceRememberedStatusHasBeenSet = false;
   };
 
 } // namespace Model

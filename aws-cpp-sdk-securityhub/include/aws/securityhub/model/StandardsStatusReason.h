@@ -77,7 +77,7 @@ namespace Model
   private:
 
     StatusReasonCode m_statusReasonCode;
-    bool m_statusReasonCodeHasBeenSet;
+    bool m_statusReasonCodeHasBeenSet = false;
   };
 
 } // namespace Model

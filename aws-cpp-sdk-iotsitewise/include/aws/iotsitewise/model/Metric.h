@@ -253,16 +253,16 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::Vector<ExpressionVariable> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     MetricWindow m_window;
-    bool m_windowHasBeenSet;
+    bool m_windowHasBeenSet = false;
 
     MetricProcessingConfig m_processingConfig;
-    bool m_processingConfigHasBeenSet;
+    bool m_processingConfigHasBeenSet = false;
   };
 
 } // namespace Model

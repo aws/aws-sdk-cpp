@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     Aws::String m_cloudWatchLoggingOptionId;
-    bool m_cloudWatchLoggingOptionIdHasBeenSet;
+    bool m_cloudWatchLoggingOptionIdHasBeenSet = false;
 
     Aws::String m_conditionalToken;
-    bool m_conditionalTokenHasBeenSet;
+    bool m_conditionalTokenHasBeenSet = false;
   };
 
 } // namespace Model

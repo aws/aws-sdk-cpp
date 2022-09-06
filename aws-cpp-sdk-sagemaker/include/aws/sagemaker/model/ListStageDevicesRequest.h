@@ -209,19 +209,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_edgeDeploymentPlanName;
-    bool m_edgeDeploymentPlanNameHasBeenSet;
+    bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
     bool m_excludeDevicesDeployedInOtherStage;
-    bool m_excludeDevicesDeployedInOtherStageHasBeenSet;
+    bool m_excludeDevicesDeployedInOtherStageHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
   };
 
 } // namespace Model

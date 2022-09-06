@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_totalFailureCount;
-    bool m_totalFailureCountHasBeenSet;
+    bool m_totalFailureCountHasBeenSet = false;
 
     Aws::Vector<WorldFailure> m_failures;
-    bool m_failuresHasBeenSet;
+    bool m_failuresHasBeenSet = false;
   };
 
 } // namespace Model

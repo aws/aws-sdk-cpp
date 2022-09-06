@@ -100,13 +100,13 @@ namespace Model
   private:
 
     long long m_numberOfProfilesReviewed;
-    bool m_numberOfProfilesReviewedHasBeenSet;
+    bool m_numberOfProfilesReviewedHasBeenSet = false;
 
     long long m_numberOfMatchesFound;
-    bool m_numberOfMatchesFoundHasBeenSet;
+    bool m_numberOfMatchesFoundHasBeenSet = false;
 
     long long m_numberOfMergesDone;
-    bool m_numberOfMergesDoneHasBeenSet;
+    bool m_numberOfMergesDoneHasBeenSet = false;
   };
 
 } // namespace Model

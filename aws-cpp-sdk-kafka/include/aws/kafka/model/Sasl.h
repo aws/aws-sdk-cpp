@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Scram m_scram;
-    bool m_scramHasBeenSet;
+    bool m_scramHasBeenSet = false;
 
     Iam m_iam;
-    bool m_iamHasBeenSet;
+    bool m_iamHasBeenSet = false;
   };
 
 } // namespace Model

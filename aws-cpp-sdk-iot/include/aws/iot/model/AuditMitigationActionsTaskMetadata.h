@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     AuditMitigationActionsTaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
   };
 
 } // namespace Model

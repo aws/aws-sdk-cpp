@@ -234,7 +234,7 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
   };
 
 } // namespace Model

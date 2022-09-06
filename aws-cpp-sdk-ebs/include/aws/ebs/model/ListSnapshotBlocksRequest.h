@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     int m_startingBlockIndex;
-    bool m_startingBlockIndexHasBeenSet;
+    bool m_startingBlockIndexHasBeenSet = false;
   };
 
 } // namespace Model

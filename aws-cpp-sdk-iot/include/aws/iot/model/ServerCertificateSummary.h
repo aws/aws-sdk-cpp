@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_serverCertificateArn;
-    bool m_serverCertificateArnHasBeenSet;
+    bool m_serverCertificateArnHasBeenSet = false;
 
     ServerCertificateStatus m_serverCertificateStatus;
-    bool m_serverCertificateStatusHasBeenSet;
+    bool m_serverCertificateStatusHasBeenSet = false;
 
     Aws::String m_serverCertificateStatusDetail;
-    bool m_serverCertificateStatusDetailHasBeenSet;
+    bool m_serverCertificateStatusDetailHasBeenSet = false;
   };
 
 } // namespace Model

@@ -106,10 +106,10 @@ namespace Model
 
 
     ApiKeysFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     bool m_failOnWarnings;
-    bool m_failOnWarningsHasBeenSet;
+    bool m_failOnWarningsHasBeenSet = false;
   };
 
 } // namespace Model

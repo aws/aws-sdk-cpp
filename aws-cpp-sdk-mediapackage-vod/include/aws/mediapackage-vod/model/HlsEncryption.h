@@ -156,13 +156,13 @@ When not specified
   private:
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     EncryptionMethod m_encryptionMethod;
-    bool m_encryptionMethodHasBeenSet;
+    bool m_encryptionMethodHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

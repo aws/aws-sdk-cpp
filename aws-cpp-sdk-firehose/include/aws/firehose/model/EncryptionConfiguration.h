@@ -109,10 +109,10 @@ namespace Model
   private:
 
     NoEncryptionConfig m_noEncryptionConfig;
-    bool m_noEncryptionConfigHasBeenSet;
+    bool m_noEncryptionConfigHasBeenSet = false;
 
     KMSEncryptionConfig m_kMSEncryptionConfig;
-    bool m_kMSEncryptionConfigHasBeenSet;
+    bool m_kMSEncryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

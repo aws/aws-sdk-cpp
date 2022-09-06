@@ -615,43 +615,43 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     DataRepositoryTaskLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     DataRepositoryTaskType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_paths;
-    bool m_pathsHasBeenSet;
+    bool m_pathsHasBeenSet = false;
 
     DataRepositoryTaskFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     DataRepositoryTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CompletionReport m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
   };
 
 } // namespace Model

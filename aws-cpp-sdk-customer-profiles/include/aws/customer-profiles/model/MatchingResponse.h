@@ -168,16 +168,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     JobSchedule m_jobSchedule;
-    bool m_jobScheduleHasBeenSet;
+    bool m_jobScheduleHasBeenSet = false;
 
     AutoMerging m_autoMerging;
-    bool m_autoMergingHasBeenSet;
+    bool m_autoMergingHasBeenSet = false;
 
     ExportingConfig m_exportingConfig;
-    bool m_exportingConfigHasBeenSet;
+    bool m_exportingConfigHasBeenSet = false;
   };
 
 } // namespace Model

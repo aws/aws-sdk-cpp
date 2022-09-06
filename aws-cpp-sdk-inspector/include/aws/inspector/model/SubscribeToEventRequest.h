@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     InspectorEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

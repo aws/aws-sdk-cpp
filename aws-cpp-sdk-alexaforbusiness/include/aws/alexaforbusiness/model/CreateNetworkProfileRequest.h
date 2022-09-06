@@ -523,37 +523,37 @@ namespace Model
   private:
 
     Aws::String m_networkProfileName;
-    bool m_networkProfileNameHasBeenSet;
+    bool m_networkProfileNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ssid;
-    bool m_ssidHasBeenSet;
+    bool m_ssidHasBeenSet = false;
 
     NetworkSecurityType m_securityType;
-    bool m_securityTypeHasBeenSet;
+    bool m_securityTypeHasBeenSet = false;
 
     NetworkEapMethod m_eapMethod;
-    bool m_eapMethodHasBeenSet;
+    bool m_eapMethodHasBeenSet = false;
 
     Aws::String m_currentPassword;
-    bool m_currentPasswordHasBeenSet;
+    bool m_currentPasswordHasBeenSet = false;
 
     Aws::String m_nextPassword;
-    bool m_nextPasswordHasBeenSet;
+    bool m_nextPasswordHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_trustAnchors;
-    bool m_trustAnchorsHasBeenSet;
+    bool m_trustAnchorsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

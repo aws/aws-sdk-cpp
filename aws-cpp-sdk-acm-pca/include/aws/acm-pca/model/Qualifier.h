@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::String m_cpsUri;
-    bool m_cpsUriHasBeenSet;
+    bool m_cpsUriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -311,25 +311,25 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Statistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     Aws::String m_extendedStatistic;
-    bool m_extendedStatisticHasBeenSet;
+    bool m_extendedStatisticHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

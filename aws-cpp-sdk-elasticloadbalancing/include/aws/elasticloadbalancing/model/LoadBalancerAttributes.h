@@ -319,19 +319,19 @@ namespace Model
   private:
 
     CrossZoneLoadBalancing m_crossZoneLoadBalancing;
-    bool m_crossZoneLoadBalancingHasBeenSet;
+    bool m_crossZoneLoadBalancingHasBeenSet = false;
 
     AccessLog m_accessLog;
-    bool m_accessLogHasBeenSet;
+    bool m_accessLogHasBeenSet = false;
 
     ConnectionDraining m_connectionDraining;
-    bool m_connectionDrainingHasBeenSet;
+    bool m_connectionDrainingHasBeenSet = false;
 
     ConnectionSettings m_connectionSettings;
-    bool m_connectionSettingsHasBeenSet;
+    bool m_connectionSettingsHasBeenSet = false;
 
     Aws::Vector<AdditionalAttribute> m_additionalAttributes;
-    bool m_additionalAttributesHasBeenSet;
+    bool m_additionalAttributesHasBeenSet = false;
   };
 
 } // namespace Model

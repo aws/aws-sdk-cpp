@@ -278,28 +278,28 @@ namespace Model
   private:
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     Aws::String m_outputS3Uri;
-    bool m_outputS3UriHasBeenSet;
+    bool m_outputS3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     AthenaResultFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     AthenaResultCompressionType m_outputCompression;
-    bool m_outputCompressionHasBeenSet;
+    bool m_outputCompressionHasBeenSet = false;
   };
 
 } // namespace Model

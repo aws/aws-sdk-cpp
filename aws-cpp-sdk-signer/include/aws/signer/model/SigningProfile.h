@@ -516,37 +516,37 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_profileVersion;
-    bool m_profileVersionHasBeenSet;
+    bool m_profileVersionHasBeenSet = false;
 
     Aws::String m_profileVersionArn;
-    bool m_profileVersionArnHasBeenSet;
+    bool m_profileVersionArnHasBeenSet = false;
 
     SigningMaterial m_signingMaterial;
-    bool m_signingMaterialHasBeenSet;
+    bool m_signingMaterialHasBeenSet = false;
 
     SignatureValidityPeriod m_signatureValidityPeriod;
-    bool m_signatureValidityPeriodHasBeenSet;
+    bool m_signatureValidityPeriodHasBeenSet = false;
 
     Aws::String m_platformId;
-    bool m_platformIdHasBeenSet;
+    bool m_platformIdHasBeenSet = false;
 
     Aws::String m_platformDisplayName;
-    bool m_platformDisplayNameHasBeenSet;
+    bool m_platformDisplayNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_signingParameters;
-    bool m_signingParametersHasBeenSet;
+    bool m_signingParametersHasBeenSet = false;
 
     SigningProfileStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

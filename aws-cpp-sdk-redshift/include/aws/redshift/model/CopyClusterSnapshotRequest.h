@@ -281,16 +281,16 @@ namespace Model
   private:
 
     Aws::String m_sourceSnapshotIdentifier;
-    bool m_sourceSnapshotIdentifierHasBeenSet;
+    bool m_sourceSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_sourceSnapshotClusterIdentifier;
-    bool m_sourceSnapshotClusterIdentifierHasBeenSet;
+    bool m_sourceSnapshotClusterIdentifierHasBeenSet = false;
 
     Aws::String m_targetSnapshotIdentifier;
-    bool m_targetSnapshotIdentifierHasBeenSet;
+    bool m_targetSnapshotIdentifierHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

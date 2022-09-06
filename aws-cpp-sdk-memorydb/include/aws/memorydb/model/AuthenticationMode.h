@@ -126,10 +126,10 @@ namespace Model
   private:
 
     InputAuthenticationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_passwords;
-    bool m_passwordsHasBeenSet;
+    bool m_passwordsHasBeenSet = false;
   };
 
 } // namespace Model

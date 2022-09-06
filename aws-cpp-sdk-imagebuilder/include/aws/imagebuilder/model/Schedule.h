@@ -270,13 +270,13 @@ namespace Model
   private:
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     PipelineExecutionStartCondition m_pipelineExecutionStartCondition;
-    bool m_pipelineExecutionStartConditionHasBeenSet;
+    bool m_pipelineExecutionStartConditionHasBeenSet = false;
   };
 
 } // namespace Model

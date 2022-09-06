@@ -255,19 +255,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_eventData;
-    bool m_eventDataHasBeenSet;
+    bool m_eventDataHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_incidentRecordArn;
-    bool m_incidentRecordArnHasBeenSet;
+    bool m_incidentRecordArnHasBeenSet = false;
   };
 
 } // namespace Model

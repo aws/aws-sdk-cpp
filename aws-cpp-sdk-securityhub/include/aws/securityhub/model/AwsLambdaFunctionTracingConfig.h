@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

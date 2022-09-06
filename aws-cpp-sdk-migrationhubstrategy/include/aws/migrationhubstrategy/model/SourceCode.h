@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     VersionControl m_versionControl;
-    bool m_versionControlHasBeenSet;
+    bool m_versionControlHasBeenSet = false;
   };
 
 } // namespace Model

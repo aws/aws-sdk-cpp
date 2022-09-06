@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_controlIdentifier;
-    bool m_controlIdentifierHasBeenSet;
+    bool m_controlIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -524,34 +524,34 @@ namespace Model
   private:
 
     AccelerationSettings m_accelerationSettings;
-    bool m_accelerationSettingsHasBeenSet;
+    bool m_accelerationSettingsHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<HopDestination> m_hopDestinations;
-    bool m_hopDestinationsHasBeenSet;
+    bool m_hopDestinationsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
 
     JobTemplateSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     StatusUpdateInterval m_statusUpdateInterval;
-    bool m_statusUpdateIntervalHasBeenSet;
+    bool m_statusUpdateIntervalHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

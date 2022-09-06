@@ -183,10 +183,10 @@ namespace Model
   private:
 
     PlacementConstraintType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

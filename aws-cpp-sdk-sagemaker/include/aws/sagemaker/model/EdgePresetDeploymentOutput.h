@@ -192,16 +192,16 @@ namespace Model
   private:
 
     EdgePresetDeploymentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_artifact;
-    bool m_artifactHasBeenSet;
+    bool m_artifactHasBeenSet = false;
 
     EdgePresetDeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

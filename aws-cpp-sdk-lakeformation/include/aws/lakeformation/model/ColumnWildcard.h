@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_excludedColumnNames;
-    bool m_excludedColumnNamesHasBeenSet;
+    bool m_excludedColumnNamesHasBeenSet = false;
   };
 
 } // namespace Model

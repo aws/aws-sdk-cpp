@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_connectionToken;
-    bool m_connectionTokenHasBeenSet;
+    bool m_connectionTokenHasBeenSet = false;
 
     Aws::String m_expiry;
-    bool m_expiryHasBeenSet;
+    bool m_expiryHasBeenSet = false;
   };
 
 } // namespace Model

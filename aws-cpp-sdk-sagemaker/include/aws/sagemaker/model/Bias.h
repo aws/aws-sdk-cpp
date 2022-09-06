@@ -132,13 +132,13 @@ namespace Model
   private:
 
     MetricsSource m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
 
     MetricsSource m_preTrainingReport;
-    bool m_preTrainingReportHasBeenSet;
+    bool m_preTrainingReportHasBeenSet = false;
 
     MetricsSource m_postTrainingReport;
-    bool m_postTrainingReportHasBeenSet;
+    bool m_postTrainingReportHasBeenSet = false;
   };
 
 } // namespace Model

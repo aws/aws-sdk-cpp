@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     AwsS3BucketNotificationConfigurationFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

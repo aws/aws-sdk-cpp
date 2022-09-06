@@ -91,10 +91,10 @@ namespace Model
   private:
 
     CurrentMetric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -339,19 +339,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_provisionTime;
-    bool m_provisionTimeHasBeenSet;
+    bool m_provisionTimeHasBeenSet = false;
 
     Aws::String m_provisioned;
-    bool m_provisionedHasBeenSet;
+    bool m_provisionedHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestTime;
-    bool m_requestTimeHasBeenSet;
+    bool m_requestTimeHasBeenSet = false;
 
     Aws::String m_requested;
-    bool m_requestedHasBeenSet;
+    bool m_requestedHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

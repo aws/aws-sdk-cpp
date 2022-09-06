@@ -429,34 +429,34 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     UserFilterType m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     OrderType m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
 
     UserSortType m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

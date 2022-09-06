@@ -399,31 +399,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_attachedTo;
-    bool m_attachedToHasBeenSet;
+    bool m_attachedToHasBeenSet = false;
 
     bool m_isAttached;
-    bool m_isAttachedHasBeenSet;
+    bool m_isAttachedHasBeenSet = false;
   };
 
 } // namespace Model

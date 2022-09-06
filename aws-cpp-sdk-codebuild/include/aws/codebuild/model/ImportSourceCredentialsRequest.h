@@ -239,19 +239,19 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     ServerType m_serverType;
-    bool m_serverTypeHasBeenSet;
+    bool m_serverTypeHasBeenSet = false;
 
     AuthType m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
 
     bool m_shouldOverwrite;
-    bool m_shouldOverwriteHasBeenSet;
+    bool m_shouldOverwriteHasBeenSet = false;
   };
 
 } // namespace Model

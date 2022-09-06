@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
   };
 
 } // namespace Model

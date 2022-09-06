@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
   };
 
 } // namespace Model

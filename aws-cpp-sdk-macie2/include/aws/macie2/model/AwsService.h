@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_invokedBy;
-    bool m_invokedByHasBeenSet;
+    bool m_invokedByHasBeenSet = false;
   };
 
 } // namespace Model

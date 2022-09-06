@@ -254,22 +254,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_themeId;
-    bool m_themeIdHasBeenSet;
+    bool m_themeIdHasBeenSet = false;
 
     long long m_latestVersionNumber;
-    bool m_latestVersionNumberHasBeenSet;
+    bool m_latestVersionNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

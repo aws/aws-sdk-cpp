@@ -135,10 +135,10 @@ namespace Model
   private:
 
     FilterType m_filterType;
-    bool m_filterTypeHasBeenSet;
+    bool m_filterTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

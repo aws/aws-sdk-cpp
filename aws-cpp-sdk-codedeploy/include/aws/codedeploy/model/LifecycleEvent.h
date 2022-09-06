@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_lifecycleEventName;
-    bool m_lifecycleEventNameHasBeenSet;
+    bool m_lifecycleEventNameHasBeenSet = false;
 
     Diagnostics m_diagnostics;
-    bool m_diagnosticsHasBeenSet;
+    bool m_diagnosticsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     LifecycleEventStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

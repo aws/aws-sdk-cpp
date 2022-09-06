@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     RoomMembershipRole m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
   };
 
 } // namespace Model

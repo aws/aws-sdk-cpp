@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
   };
 
 } // namespace Model

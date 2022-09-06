@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     Aws::String m_sourceEngineName;
-    bool m_sourceEngineNameHasBeenSet;
+    bool m_sourceEngineNameHasBeenSet = false;
 
     Aws::String m_targetEngineName;
-    bool m_targetEngineNameHasBeenSet;
+    bool m_targetEngineNameHasBeenSet = false;
 
     MigrationTypeValue m_migrationType;
-    bool m_migrationTypeHasBeenSet;
+    bool m_migrationTypeHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

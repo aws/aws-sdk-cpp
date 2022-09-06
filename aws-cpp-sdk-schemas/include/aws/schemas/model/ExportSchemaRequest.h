@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

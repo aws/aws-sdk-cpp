@@ -421,25 +421,25 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     ComplianceExecutionSummary m_executionSummary;
-    bool m_executionSummaryHasBeenSet;
+    bool m_executionSummaryHasBeenSet = false;
 
     Aws::Vector<ComplianceItemEntry> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_itemContentHash;
-    bool m_itemContentHashHasBeenSet;
+    bool m_itemContentHashHasBeenSet = false;
 
     ComplianceUploadType m_uploadType;
-    bool m_uploadTypeHasBeenSet;
+    bool m_uploadTypeHasBeenSet = false;
   };
 
 } // namespace Model

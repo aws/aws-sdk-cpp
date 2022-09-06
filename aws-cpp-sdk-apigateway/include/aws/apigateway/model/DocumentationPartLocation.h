@@ -492,19 +492,19 @@ namespace Model
   private:
 
     DocumentationPartType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

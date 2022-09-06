@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupDesc;
-    bool m_groupDescHasBeenSet;
+    bool m_groupDescHasBeenSet = false;
 
     Aws::Vector<IpRuleItem> m_userRules;
-    bool m_userRulesHasBeenSet;
+    bool m_userRulesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

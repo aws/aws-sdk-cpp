@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

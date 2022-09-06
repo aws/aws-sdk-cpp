@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceLifecycleConfigName;
-    bool m_notebookInstanceLifecycleConfigNameHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
   };
 
 } // namespace Model

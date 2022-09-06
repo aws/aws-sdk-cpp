@@ -108,10 +108,10 @@ namespace Model
   private:
 
     FileBatchJobIdentifier m_fileBatchJobIdentifier;
-    bool m_fileBatchJobIdentifierHasBeenSet;
+    bool m_fileBatchJobIdentifierHasBeenSet = false;
 
     ScriptBatchJobIdentifier m_scriptBatchJobIdentifier;
-    bool m_scriptBatchJobIdentifierHasBeenSet;
+    bool m_scriptBatchJobIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

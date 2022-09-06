@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     bool m_force;
-    bool m_forceHasBeenSet;
+    bool m_forceHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
   };
 
 } // namespace Model

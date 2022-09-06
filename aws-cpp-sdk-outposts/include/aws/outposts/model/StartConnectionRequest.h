@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::String m_deviceSerialNumber;
-    bool m_deviceSerialNumberHasBeenSet;
+    bool m_deviceSerialNumberHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_clientPublicKey;
-    bool m_clientPublicKeyHasBeenSet;
+    bool m_clientPublicKeyHasBeenSet = false;
 
     int m_networkInterfaceDeviceIndex;
-    bool m_networkInterfaceDeviceIndexHasBeenSet;
+    bool m_networkInterfaceDeviceIndexHasBeenSet = false;
   };
 
 } // namespace Model

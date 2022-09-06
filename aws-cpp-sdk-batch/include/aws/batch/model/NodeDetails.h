@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_nodeIndex;
-    bool m_nodeIndexHasBeenSet;
+    bool m_nodeIndexHasBeenSet = false;
 
     bool m_isMainNode;
-    bool m_isMainNodeHasBeenSet;
+    bool m_isMainNodeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,13 +151,13 @@ namespace Model
   private:
 
     FieldNameString m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringValueList;
-    bool m_stringValueListHasBeenSet;
+    bool m_stringValueListHasBeenSet = false;
   };
 
 } // namespace Model

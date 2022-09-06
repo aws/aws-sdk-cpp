@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3JobManifestGenerator m_s3JobManifestGenerator;
-    bool m_s3JobManifestGeneratorHasBeenSet;
+    bool m_s3JobManifestGeneratorHasBeenSet = false;
   };
 
 } // namespace Model

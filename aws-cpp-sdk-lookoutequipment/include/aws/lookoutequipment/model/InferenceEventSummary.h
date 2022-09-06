@@ -264,22 +264,22 @@ namespace Model
   private:
 
     Aws::String m_inferenceSchedulerArn;
-    bool m_inferenceSchedulerArnHasBeenSet;
+    bool m_inferenceSchedulerArnHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventStartTime;
-    bool m_eventStartTimeHasBeenSet;
+    bool m_eventStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventEndTime;
-    bool m_eventEndTimeHasBeenSet;
+    bool m_eventEndTimeHasBeenSet = false;
 
     Aws::String m_diagnostics;
-    bool m_diagnosticsHasBeenSet;
+    bool m_diagnosticsHasBeenSet = false;
 
     long long m_eventDurationInSeconds;
-    bool m_eventDurationInSecondsHasBeenSet;
+    bool m_eventDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

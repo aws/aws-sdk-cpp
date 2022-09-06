@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     ResponseError m_responseError;
-    bool m_responseErrorHasBeenSet;
+    bool m_responseErrorHasBeenSet = false;
   };
 
 } // namespace Model

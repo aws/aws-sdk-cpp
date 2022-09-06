@@ -678,22 +678,22 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_serverCertificateName;
-    bool m_serverCertificateNameHasBeenSet;
+    bool m_serverCertificateNameHasBeenSet = false;
 
     Aws::String m_certificateBody;
-    bool m_certificateBodyHasBeenSet;
+    bool m_certificateBodyHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
 
     Aws::String m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

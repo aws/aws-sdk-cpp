@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SOAChange m_sOA;
-    bool m_sOAHasBeenSet;
+    bool m_sOAHasBeenSet = false;
   };
 
 } // namespace Model

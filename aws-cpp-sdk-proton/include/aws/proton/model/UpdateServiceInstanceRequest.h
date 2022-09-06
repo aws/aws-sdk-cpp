@@ -363,22 +363,22 @@ namespace Model
   private:
 
     DeploymentUpdateType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
   };
 
 } // namespace Model

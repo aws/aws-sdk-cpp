@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     bool m_apiKeyRequired;
-    bool m_apiKeyRequiredHasBeenSet;
+    bool m_apiKeyRequiredHasBeenSet = false;
   };
 
 } // namespace Model

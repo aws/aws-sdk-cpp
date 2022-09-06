@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
   };
 
 } // namespace Model

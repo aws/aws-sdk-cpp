@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate> m_globalSecondaryIndexUpdates;
-    bool m_globalSecondaryIndexUpdatesHasBeenSet;
+    bool m_globalSecondaryIndexUpdatesHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingUpdate;
-    bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet;
+    bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = false;
 
     Aws::Vector<ReplicaAutoScalingUpdate> m_replicaUpdates;
-    bool m_replicaUpdatesHasBeenSet;
+    bool m_replicaUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

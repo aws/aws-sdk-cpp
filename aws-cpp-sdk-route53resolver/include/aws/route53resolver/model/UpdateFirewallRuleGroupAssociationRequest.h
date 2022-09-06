@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_firewallRuleGroupAssociationId;
-    bool m_firewallRuleGroupAssociationIdHasBeenSet;
+    bool m_firewallRuleGroupAssociationIdHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     MutationProtectionStatus m_mutationProtection;
-    bool m_mutationProtectionHasBeenSet;
+    bool m_mutationProtectionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

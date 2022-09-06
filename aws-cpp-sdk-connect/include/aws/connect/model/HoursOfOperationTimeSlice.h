@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_hours;
-    bool m_hoursHasBeenSet;
+    bool m_hoursHasBeenSet = false;
 
     int m_minutes;
-    bool m_minutesHasBeenSet;
+    bool m_minutesHasBeenSet = false;
   };
 
 } // namespace Model

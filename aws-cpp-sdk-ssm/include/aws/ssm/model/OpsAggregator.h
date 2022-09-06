@@ -324,22 +324,22 @@ namespace Model
   private:
 
     Aws::String m_aggregatorType;
-    bool m_aggregatorTypeHasBeenSet;
+    bool m_aggregatorTypeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Vector<OpsFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<OpsAggregator> m_aggregators;
-    bool m_aggregatorsHasBeenSet;
+    bool m_aggregatorsHasBeenSet = false;
   };
 
 } // namespace Model

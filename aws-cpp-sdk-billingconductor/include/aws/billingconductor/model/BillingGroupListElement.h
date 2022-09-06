@@ -367,34 +367,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_primaryAccountId;
-    bool m_primaryAccountIdHasBeenSet;
+    bool m_primaryAccountIdHasBeenSet = false;
 
     ComputationPreference m_computationPreference;
-    bool m_computationPreferenceHasBeenSet;
+    bool m_computationPreferenceHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     BillingGroupStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

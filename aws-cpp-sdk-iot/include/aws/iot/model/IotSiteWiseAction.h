@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Vector<PutAssetPropertyValueEntry> m_putAssetPropertyValueEntries;
-    bool m_putAssetPropertyValueEntriesHasBeenSet;
+    bool m_putAssetPropertyValueEntriesHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

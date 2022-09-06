@@ -159,13 +159,13 @@ namespace Model
   private:
 
     AttackVolumeStatistics m_bitsPerSecond;
-    bool m_bitsPerSecondHasBeenSet;
+    bool m_bitsPerSecondHasBeenSet = false;
 
     AttackVolumeStatistics m_packetsPerSecond;
-    bool m_packetsPerSecondHasBeenSet;
+    bool m_packetsPerSecondHasBeenSet = false;
 
     AttackVolumeStatistics m_requestsPerSecond;
-    bool m_requestsPerSecondHasBeenSet;
+    bool m_requestsPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

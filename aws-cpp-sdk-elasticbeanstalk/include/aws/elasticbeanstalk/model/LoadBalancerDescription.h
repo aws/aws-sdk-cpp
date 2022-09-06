@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::Vector<Listener> m_listeners;
-    bool m_listenersHasBeenSet;
+    bool m_listenersHasBeenSet = false;
   };
 
 } // namespace Model

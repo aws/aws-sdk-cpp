@@ -157,10 +157,10 @@ namespace Model
   private:
 
     OpenXJsonSerDe m_openXJsonSerDe;
-    bool m_openXJsonSerDeHasBeenSet;
+    bool m_openXJsonSerDeHasBeenSet = false;
 
     HiveJsonSerDe m_hiveJsonSerDe;
-    bool m_hiveJsonSerDeHasBeenSet;
+    bool m_hiveJsonSerDeHasBeenSet = false;
   };
 
 } // namespace Model

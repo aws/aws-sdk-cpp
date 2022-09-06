@@ -84,7 +84,7 @@ namespace Model
   private:
 
     MeasurementProcessingConfig m_processingConfig;
-    bool m_processingConfigHasBeenSet;
+    bool m_processingConfigHasBeenSet = false;
   };
 
 } // namespace Model

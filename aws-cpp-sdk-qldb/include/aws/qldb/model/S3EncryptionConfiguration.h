@@ -178,10 +178,10 @@ namespace Model
   private:
 
     S3ObjectEncryptionType m_objectEncryptionType;
-    bool m_objectEncryptionTypeHasBeenSet;
+    bool m_objectEncryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

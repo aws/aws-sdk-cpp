@@ -110,13 +110,13 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     long long m_averageUploadRateLimitInBitsPerSec;
-    bool m_averageUploadRateLimitInBitsPerSecHasBeenSet;
+    bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
 
     long long m_averageDownloadRateLimitInBitsPerSec;
-    bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet;
+    bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;
   };
 
 } // namespace Model

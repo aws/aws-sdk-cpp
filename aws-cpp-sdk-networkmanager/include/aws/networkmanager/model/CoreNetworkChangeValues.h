@@ -322,25 +322,25 @@ namespace Model
   private:
 
     Aws::String m_segmentName;
-    bool m_segmentNameHasBeenSet;
+    bool m_segmentNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_edgeLocations;
-    bool m_edgeLocationsHasBeenSet;
+    bool m_edgeLocationsHasBeenSet = false;
 
     long long m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     Aws::String m_destinationIdentifier;
-    bool m_destinationIdentifierHasBeenSet;
+    bool m_destinationIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insideCidrBlocks;
-    bool m_insideCidrBlocksHasBeenSet;
+    bool m_insideCidrBlocksHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sharedSegments;
-    bool m_sharedSegmentsHasBeenSet;
+    bool m_sharedSegmentsHasBeenSet = false;
   };
 
 } // namespace Model

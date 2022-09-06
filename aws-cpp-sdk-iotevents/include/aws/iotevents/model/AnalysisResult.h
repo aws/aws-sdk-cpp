@@ -392,16 +392,16 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     AnalysisResultLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<AnalysisResultLocation> m_locations;
-    bool m_locationsHasBeenSet;
+    bool m_locationsHasBeenSet = false;
   };
 
 } // namespace Model

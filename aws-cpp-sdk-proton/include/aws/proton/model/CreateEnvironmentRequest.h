@@ -736,37 +736,37 @@ namespace Model
   private:
 
     Aws::String m_componentRoleArn;
-    bool m_componentRoleArnHasBeenSet;
+    bool m_componentRoleArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_environmentAccountConnectionId;
-    bool m_environmentAccountConnectionIdHasBeenSet;
+    bool m_environmentAccountConnectionIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_protonServiceRoleArn;
-    bool m_protonServiceRoleArnHasBeenSet;
+    bool m_protonServiceRoleArnHasBeenSet = false;
 
     RepositoryBranchInput m_provisioningRepository;
-    bool m_provisioningRepositoryHasBeenSet;
+    bool m_provisioningRepositoryHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

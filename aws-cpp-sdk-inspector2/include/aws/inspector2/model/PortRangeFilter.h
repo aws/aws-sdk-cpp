@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_beginInclusive;
-    bool m_beginInclusiveHasBeenSet;
+    bool m_beginInclusiveHasBeenSet = false;
 
     int m_endInclusive;
-    bool m_endInclusiveHasBeenSet;
+    bool m_endInclusiveHasBeenSet = false;
   };
 
 } // namespace Model

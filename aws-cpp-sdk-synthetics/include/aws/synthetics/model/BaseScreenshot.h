@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::String m_screenshotName;
-    bool m_screenshotNameHasBeenSet;
+    bool m_screenshotNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ignoreCoordinates;
-    bool m_ignoreCoordinatesHasBeenSet;
+    bool m_ignoreCoordinatesHasBeenSet = false;
   };
 
 } // namespace Model

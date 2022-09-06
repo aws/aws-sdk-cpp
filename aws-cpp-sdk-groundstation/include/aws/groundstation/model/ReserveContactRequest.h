@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_groundStation;
-    bool m_groundStationHasBeenSet;
+    bool m_groundStationHasBeenSet = false;
 
     Aws::String m_missionProfileArn;
-    bool m_missionProfileArnHasBeenSet;
+    bool m_missionProfileArnHasBeenSet = false;
 
     Aws::String m_satelliteArn;
-    bool m_satelliteArnHasBeenSet;
+    bool m_satelliteArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

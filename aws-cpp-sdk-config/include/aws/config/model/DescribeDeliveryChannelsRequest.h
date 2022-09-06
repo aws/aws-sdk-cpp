@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_deliveryChannelNames;
-    bool m_deliveryChannelNamesHasBeenSet;
+    bool m_deliveryChannelNamesHasBeenSet = false;
   };
 
 } // namespace Model

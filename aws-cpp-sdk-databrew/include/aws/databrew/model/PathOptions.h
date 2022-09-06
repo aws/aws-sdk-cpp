@@ -191,13 +191,13 @@ namespace Model
   private:
 
     FilterExpression m_lastModifiedDateCondition;
-    bool m_lastModifiedDateConditionHasBeenSet;
+    bool m_lastModifiedDateConditionHasBeenSet = false;
 
     FilesLimit m_filesLimit;
-    bool m_filesLimitHasBeenSet;
+    bool m_filesLimitHasBeenSet = false;
 
     Aws::Map<Aws::String, DatasetParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

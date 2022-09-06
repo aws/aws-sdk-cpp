@@ -140,13 +140,13 @@ namespace Model
   private:
 
     WorkflowExecution m_workflowExecution;
-    bool m_workflowExecutionHasBeenSet;
+    bool m_workflowExecutionHasBeenSet = false;
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     long long m_initiatedEventId;
-    bool m_initiatedEventIdHasBeenSet;
+    bool m_initiatedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

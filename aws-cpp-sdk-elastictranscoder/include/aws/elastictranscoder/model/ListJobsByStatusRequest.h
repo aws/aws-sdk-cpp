@@ -223,13 +223,13 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_ascending;
-    bool m_ascendingHasBeenSet;
+    bool m_ascendingHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     VirtualNodeServiceProvider m_virtualNode;
-    bool m_virtualNodeHasBeenSet;
+    bool m_virtualNodeHasBeenSet = false;
 
     VirtualRouterServiceProvider m_virtualRouter;
-    bool m_virtualRouterHasBeenSet;
+    bool m_virtualRouterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     int m_occurrenceCount;
-    bool m_occurrenceCountHasBeenSet;
+    bool m_occurrenceCountHasBeenSet = false;
   };
 
 } // namespace Model

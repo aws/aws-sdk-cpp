@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_maxNumberOfTrainingJobs;
-    bool m_maxNumberOfTrainingJobsHasBeenSet;
+    bool m_maxNumberOfTrainingJobsHasBeenSet = false;
 
     Aws::String m_maxParallelTrainingJobs;
-    bool m_maxParallelTrainingJobsHasBeenSet;
+    bool m_maxParallelTrainingJobsHasBeenSet = false;
   };
 
 } // namespace Model

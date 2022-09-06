@@ -187,13 +187,13 @@ namespace Model
   private:
 
     bool m_includeResourcePlaceholders;
-    bool m_includeResourcePlaceholdersHasBeenSet;
+    bool m_includeResourcePlaceholdersHasBeenSet = false;
 
     bool m_includeServiceLevelTemplate;
-    bool m_includeServiceLevelTemplateHasBeenSet;
+    bool m_includeServiceLevelTemplateHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
   };
 
 } // namespace Model

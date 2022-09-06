@@ -716,55 +716,55 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::String m_dBClusterSnapshotIdentifier;
-    bool m_dBClusterSnapshotIdentifierHasBeenSet;
+    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreateTime;
-    bool m_snapshotCreateTimeHasBeenSet;
+    bool m_snapshotCreateTimeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_clusterCreateTime;
-    bool m_clusterCreateTimeHasBeenSet;
+    bool m_clusterCreateTimeHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_snapshotType;
-    bool m_snapshotTypeHasBeenSet;
+    bool m_snapshotTypeHasBeenSet = false;
 
     int m_percentProgress;
-    bool m_percentProgressHasBeenSet;
+    bool m_percentProgressHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dBClusterSnapshotArn;
-    bool m_dBClusterSnapshotArnHasBeenSet;
+    bool m_dBClusterSnapshotArnHasBeenSet = false;
 
     Aws::String m_sourceDBClusterSnapshotArn;
-    bool m_sourceDBClusterSnapshotArnHasBeenSet;
+    bool m_sourceDBClusterSnapshotArnHasBeenSet = false;
   };
 
 } // namespace Model

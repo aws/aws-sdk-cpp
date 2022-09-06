@@ -237,22 +237,22 @@ namespace Model
   private:
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     Aws::String m_behaviorName;
-    bool m_behaviorNameHasBeenSet;
+    bool m_behaviorNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingDataCollectionStartDate;
-    bool m_trainingDataCollectionStartDateHasBeenSet;
+    bool m_trainingDataCollectionStartDateHasBeenSet = false;
 
     ModelStatus m_modelStatus;
-    bool m_modelStatusHasBeenSet;
+    bool m_modelStatusHasBeenSet = false;
 
     double m_datapointsCollectionPercentage;
-    bool m_datapointsCollectionPercentageHasBeenSet;
+    bool m_datapointsCollectionPercentageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModelRefreshDate;
-    bool m_lastModelRefreshDateHasBeenSet;
+    bool m_lastModelRefreshDateHasBeenSet = false;
   };
 
 } // namespace Model

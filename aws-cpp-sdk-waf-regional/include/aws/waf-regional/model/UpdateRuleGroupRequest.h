@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::Vector<RuleGroupUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

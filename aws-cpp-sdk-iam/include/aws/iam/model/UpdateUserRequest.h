@@ -273,13 +273,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_newPath;
-    bool m_newPathHasBeenSet;
+    bool m_newPathHasBeenSet = false;
 
     Aws::String m_newUserName;
-    bool m_newUserNameHasBeenSet;
+    bool m_newUserNameHasBeenSet = false;
   };
 
 } // namespace Model

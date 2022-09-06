@@ -156,13 +156,13 @@ namespace Model
   private:
 
     InstanceAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

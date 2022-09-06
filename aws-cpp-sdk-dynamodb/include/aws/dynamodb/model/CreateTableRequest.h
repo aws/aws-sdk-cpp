@@ -1194,37 +1194,37 @@ namespace Model
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-    bool m_attributeDefinitionsHasBeenSet;
+    bool m_attributeDefinitionsHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexes;
-    bool m_localSecondaryIndexesHasBeenSet;
+    bool m_localSecondaryIndexesHasBeenSet = false;
 
     Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     BillingMode m_billingMode;
-    bool m_billingModeHasBeenSet;
+    bool m_billingModeHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
 
     StreamSpecification m_streamSpecification;
-    bool m_streamSpecificationHasBeenSet;
+    bool m_streamSpecificationHasBeenSet = false;
 
     SSESpecification m_sSESpecification;
-    bool m_sSESpecificationHasBeenSet;
+    bool m_sSESpecificationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     TableClass m_tableClass;
-    bool m_tableClassHasBeenSet;
+    bool m_tableClassHasBeenSet = false;
   };
 
 } // namespace Model

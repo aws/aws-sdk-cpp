@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::Vector<HttpPackageConfiguration> m_httpPackageConfigurations;
-    bool m_httpPackageConfigurationsHasBeenSet;
+    bool m_httpPackageConfigurationsHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -264,16 +264,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principalOrgIDs;
-    bool m_principalOrgIDsHasBeenSet;
+    bool m_principalOrgIDsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
   };
 
 } // namespace Model

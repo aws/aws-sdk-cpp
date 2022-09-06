@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
   };
 
 } // namespace Model

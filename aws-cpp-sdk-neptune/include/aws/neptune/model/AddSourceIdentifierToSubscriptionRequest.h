@@ -184,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_subscriptionName;
-    bool m_subscriptionNameHasBeenSet;
+    bool m_subscriptionNameHasBeenSet = false;
 
     Aws::String m_sourceIdentifier;
-    bool m_sourceIdentifierHasBeenSet;
+    bool m_sourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

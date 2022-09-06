@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_thingGroupName;
-    bool m_thingGroupNameHasBeenSet;
+    bool m_thingGroupNameHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
   };
 
 } // namespace Model

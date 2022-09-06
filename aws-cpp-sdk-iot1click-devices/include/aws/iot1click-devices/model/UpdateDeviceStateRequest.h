@@ -100,10 +100,10 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

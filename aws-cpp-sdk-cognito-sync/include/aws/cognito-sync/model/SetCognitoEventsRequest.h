@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

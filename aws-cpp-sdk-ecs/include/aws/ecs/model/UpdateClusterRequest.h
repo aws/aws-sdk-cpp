@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::Vector<ClusterSetting> m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     ClusterConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

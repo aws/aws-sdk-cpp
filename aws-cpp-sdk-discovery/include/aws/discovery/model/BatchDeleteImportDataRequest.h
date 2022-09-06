@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_importTaskIds;
-    bool m_importTaskIdsHasBeenSet;
+    bool m_importTaskIdsHasBeenSet = false;
   };
 
 } // namespace Model

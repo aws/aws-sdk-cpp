@@ -157,10 +157,10 @@ namespace Model
   private:
 
     DecimalReturnType m_decimalReturnType;
-    bool m_decimalReturnTypeHasBeenSet;
+    bool m_decimalReturnTypeHasBeenSet = false;
 
     LongReturnType m_longReturnType;
-    bool m_longReturnTypeHasBeenSet;
+    bool m_longReturnTypeHasBeenSet = false;
   };
 
 } // namespace Model

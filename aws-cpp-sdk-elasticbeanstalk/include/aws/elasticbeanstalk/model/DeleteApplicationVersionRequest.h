@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_versionLabel;
-    bool m_versionLabelHasBeenSet;
+    bool m_versionLabelHasBeenSet = false;
 
     bool m_deleteSourceBundle;
-    bool m_deleteSourceBundleHasBeenSet;
+    bool m_deleteSourceBundleHasBeenSet = false;
   };
 
 } // namespace Model

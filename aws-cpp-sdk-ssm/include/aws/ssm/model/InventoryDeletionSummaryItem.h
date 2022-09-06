@@ -123,13 +123,13 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     int m_remainingCount;
-    bool m_remainingCountHasBeenSet;
+    bool m_remainingCountHasBeenSet = false;
   };
 
 } // namespace Model

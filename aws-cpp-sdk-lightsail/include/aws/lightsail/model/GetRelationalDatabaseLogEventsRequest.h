@@ -347,22 +347,22 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     bool m_startFromHead;
-    bool m_startFromHeadHasBeenSet;
+    bool m_startFromHeadHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

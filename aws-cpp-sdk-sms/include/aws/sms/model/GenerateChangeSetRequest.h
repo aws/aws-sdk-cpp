@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     OutputFormat m_changesetFormat;
-    bool m_changesetFormatHasBeenSet;
+    bool m_changesetFormatHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1265,71 +1265,71 @@ namespace Model
   private:
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaEncoding m_mediaEncoding;
-    bool m_mediaEncodingHasBeenSet;
+    bool m_mediaEncodingHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     std::shared_ptr<AudioStream> m_audioStream;
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     VocabularyFilterMethod m_vocabularyFilterMethod;
-    bool m_vocabularyFilterMethodHasBeenSet;
+    bool m_vocabularyFilterMethodHasBeenSet = false;
 
     bool m_showSpeakerLabel;
-    bool m_showSpeakerLabelHasBeenSet;
+    bool m_showSpeakerLabelHasBeenSet = false;
 
     bool m_enableChannelIdentification;
-    bool m_enableChannelIdentificationHasBeenSet;
+    bool m_enableChannelIdentificationHasBeenSet = false;
 
     int m_numberOfChannels;
-    bool m_numberOfChannelsHasBeenSet;
+    bool m_numberOfChannelsHasBeenSet = false;
 
     bool m_enablePartialResultsStabilization;
-    bool m_enablePartialResultsStabilizationHasBeenSet;
+    bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
     PartialResultsStability m_partialResultsStability;
-    bool m_partialResultsStabilityHasBeenSet;
+    bool m_partialResultsStabilityHasBeenSet = false;
 
     ContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
 
     ContentRedactionType m_contentRedactionType;
-    bool m_contentRedactionTypeHasBeenSet;
+    bool m_contentRedactionTypeHasBeenSet = false;
 
     Aws::String m_piiEntityTypes;
-    bool m_piiEntityTypesHasBeenSet;
+    bool m_piiEntityTypesHasBeenSet = false;
 
     Aws::String m_languageModelName;
-    bool m_languageModelNameHasBeenSet;
+    bool m_languageModelNameHasBeenSet = false;
 
     bool m_identifyLanguage;
-    bool m_identifyLanguageHasBeenSet;
+    bool m_identifyLanguageHasBeenSet = false;
 
     Aws::String m_languageOptions;
-    bool m_languageOptionsHasBeenSet;
+    bool m_languageOptionsHasBeenSet = false;
 
     LanguageCode m_preferredLanguage;
-    bool m_preferredLanguageHasBeenSet;
+    bool m_preferredLanguageHasBeenSet = false;
 
     Aws::String m_vocabularyNames;
-    bool m_vocabularyNamesHasBeenSet;
+    bool m_vocabularyNamesHasBeenSet = false;
 
     Aws::String m_vocabularyFilterNames;
-    bool m_vocabularyFilterNamesHasBeenSet;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    bool m_vocabularyFilterNamesHasBeenSet = false;
     StartStreamTranscriptionHandler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder;
 
   };
 

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ActivityMetrics m_activityMetrics;
-    bool m_activityMetricsHasBeenSet;
+    bool m_activityMetricsHasBeenSet = false;
 
     BucketLevel m_bucketLevel;
-    bool m_bucketLevelHasBeenSet;
+    bool m_bucketLevelHasBeenSet = false;
   };
 
 } // namespace Model

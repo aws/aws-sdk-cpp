@@ -80,7 +80,7 @@ SSOClient::~SSOClient()
 
 void SSOClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SSO");
+  AWSClient::SetServiceClientName("SSO");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

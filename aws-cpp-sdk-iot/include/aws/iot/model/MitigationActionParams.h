@@ -274,22 +274,22 @@ namespace Model
   private:
 
     UpdateDeviceCertificateParams m_updateDeviceCertificateParams;
-    bool m_updateDeviceCertificateParamsHasBeenSet;
+    bool m_updateDeviceCertificateParamsHasBeenSet = false;
 
     UpdateCACertificateParams m_updateCACertificateParams;
-    bool m_updateCACertificateParamsHasBeenSet;
+    bool m_updateCACertificateParamsHasBeenSet = false;
 
     AddThingsToThingGroupParams m_addThingsToThingGroupParams;
-    bool m_addThingsToThingGroupParamsHasBeenSet;
+    bool m_addThingsToThingGroupParamsHasBeenSet = false;
 
     ReplaceDefaultPolicyVersionParams m_replaceDefaultPolicyVersionParams;
-    bool m_replaceDefaultPolicyVersionParamsHasBeenSet;
+    bool m_replaceDefaultPolicyVersionParamsHasBeenSet = false;
 
     EnableIoTLoggingParams m_enableIoTLoggingParams;
-    bool m_enableIoTLoggingParamsHasBeenSet;
+    bool m_enableIoTLoggingParamsHasBeenSet = false;
 
     PublishFindingToSnsParams m_publishFindingToSnsParams;
-    bool m_publishFindingToSnsParamsHasBeenSet;
+    bool m_publishFindingToSnsParamsHasBeenSet = false;
   };
 
 } // namespace Model

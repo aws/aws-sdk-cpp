@@ -58,7 +58,7 @@ namespace Model
   private:
 
     InstanceIdFilter m_instanceIdFilter;
-    bool m_instanceIdFilterHasBeenSet;
+    bool m_instanceIdFilterHasBeenSet = false;
   };
 
 } // namespace Model

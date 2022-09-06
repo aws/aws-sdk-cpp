@@ -229,19 +229,19 @@ namespace Model
   private:
 
     int m_cpsLimit;
-    bool m_cpsLimitHasBeenSet;
+    bool m_cpsLimitHasBeenSet = false;
 
     Aws::String m_defaultPhoneNumber;
-    bool m_defaultPhoneNumberHasBeenSet;
+    bool m_defaultPhoneNumberHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_callingRegions;
-    bool m_callingRegionsHasBeenSet;
+    bool m_callingRegionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrAllowedList;
-    bool m_cidrAllowedListHasBeenSet;
+    bool m_cidrAllowedListHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
   };
 
 } // namespace Model

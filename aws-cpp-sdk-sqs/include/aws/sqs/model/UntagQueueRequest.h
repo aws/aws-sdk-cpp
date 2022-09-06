@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

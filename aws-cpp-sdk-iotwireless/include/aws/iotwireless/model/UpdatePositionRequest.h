@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     PositionResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
   };
 
 } // namespace Model

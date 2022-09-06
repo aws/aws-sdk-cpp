@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_submittedBeforeTime;
-    bool m_submittedBeforeTimeHasBeenSet;
+    bool m_submittedBeforeTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submittedAfterTime;
-    bool m_submittedAfterTimeHasBeenSet;
+    bool m_submittedAfterTimeHasBeenSet = false;
   };
 
 } // namespace Model

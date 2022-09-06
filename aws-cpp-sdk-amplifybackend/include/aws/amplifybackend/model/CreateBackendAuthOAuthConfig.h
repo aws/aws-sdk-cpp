@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_domainPrefix;
-    bool m_domainPrefixHasBeenSet;
+    bool m_domainPrefixHasBeenSet = false;
 
     OAuthGrantType m_oAuthGrantType;
-    bool m_oAuthGrantTypeHasBeenSet;
+    bool m_oAuthGrantTypeHasBeenSet = false;
 
     Aws::Vector<OAuthScopesElement> m_oAuthScopes;
-    bool m_oAuthScopesHasBeenSet;
+    bool m_oAuthScopesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_redirectSignInURIs;
-    bool m_redirectSignInURIsHasBeenSet;
+    bool m_redirectSignInURIsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_redirectSignOutURIs;
-    bool m_redirectSignOutURIsHasBeenSet;
+    bool m_redirectSignOutURIsHasBeenSet = false;
 
     SocialProviderSettings m_socialProviderSettings;
-    bool m_socialProviderSettingsHasBeenSet;
+    bool m_socialProviderSettingsHasBeenSet = false;
   };
 
 } // namespace Model

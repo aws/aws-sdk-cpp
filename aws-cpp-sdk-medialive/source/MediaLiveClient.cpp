@@ -135,7 +135,7 @@ MediaLiveClient::~MediaLiveClient()
 
 void MediaLiveClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MediaLive");
+  AWSClient::SetServiceClientName("MediaLive");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

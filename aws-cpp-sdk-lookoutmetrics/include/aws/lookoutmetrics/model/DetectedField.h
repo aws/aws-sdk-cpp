@@ -144,13 +144,13 @@ namespace Model
   private:
 
     AttributeValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Confidence m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagsToDelete;
-    bool m_tagsToDeleteHasBeenSet;
+    bool m_tagsToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

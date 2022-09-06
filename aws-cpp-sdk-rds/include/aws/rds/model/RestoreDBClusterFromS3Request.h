@@ -2034,103 +2034,103 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_characterSetName;
-    bool m_characterSetNameHasBeenSet;
+    bool m_characterSetNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     Aws::String m_sourceEngine;
-    bool m_sourceEngineHasBeenSet;
+    bool m_sourceEngineHasBeenSet = false;
 
     Aws::String m_sourceEngineVersion;
-    bool m_sourceEngineVersionHasBeenSet;
+    bool m_sourceEngineVersionHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     Aws::String m_s3IngestionRoleArn;
-    bool m_s3IngestionRoleArnHasBeenSet;
+    bool m_s3IngestionRoleArnHasBeenSet = false;
 
     long long m_backtrackWindow;
-    bool m_backtrackWindowHasBeenSet;
+    bool m_backtrackWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

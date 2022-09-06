@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
 
     Aws::String m_resourceSetName;
-    bool m_resourceSetNameHasBeenSet;
+    bool m_resourceSetNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

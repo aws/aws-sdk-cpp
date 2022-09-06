@@ -268,22 +268,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_scheduleDefinitions;
-    bool m_scheduleDefinitionsHasBeenSet;
+    bool m_scheduleDefinitionsHasBeenSet = false;
 
     Aws::String m_scheduleIdentifier;
-    bool m_scheduleIdentifierHasBeenSet;
+    bool m_scheduleIdentifierHasBeenSet = false;
 
     Aws::String m_scheduleDescription;
-    bool m_scheduleDescriptionHasBeenSet;
+    bool m_scheduleDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     int m_nextInvocations;
-    bool m_nextInvocationsHasBeenSet;
+    bool m_nextInvocationsHasBeenSet = false;
   };
 
 } // namespace Model

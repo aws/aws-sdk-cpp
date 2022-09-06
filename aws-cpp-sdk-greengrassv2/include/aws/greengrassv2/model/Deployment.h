@@ -310,25 +310,25 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     DeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     bool m_isLatestForTarget;
-    bool m_isLatestForTargetHasBeenSet;
+    bool m_isLatestForTargetHasBeenSet = false;
   };
 
 } // namespace Model

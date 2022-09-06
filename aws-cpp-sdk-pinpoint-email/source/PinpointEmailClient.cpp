@@ -118,7 +118,7 @@ PinpointEmailClient::~PinpointEmailClient()
 
 void PinpointEmailClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Pinpoint Email");
+  AWSClient::SetServiceClientName("Pinpoint Email");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

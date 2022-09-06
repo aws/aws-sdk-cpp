@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_dbName;
-    bool m_dbNameHasBeenSet;
+    bool m_dbNameHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -248,13 +248,13 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     DimensionValueSource m_dimensionValueSource;
-    bool m_dimensionValueSourceHasBeenSet;
+    bool m_dimensionValueSourceHasBeenSet = false;
 
     Aws::String m_defaultDimensionValue;
-    bool m_defaultDimensionValueHasBeenSet;
+    bool m_defaultDimensionValueHasBeenSet = false;
   };
 
 } // namespace Model

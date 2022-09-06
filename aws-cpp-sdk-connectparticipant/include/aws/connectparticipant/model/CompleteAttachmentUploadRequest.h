@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_attachmentIds;
-    bool m_attachmentIdsHasBeenSet;
+    bool m_attachmentIdsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_connectionToken;
-    bool m_connectionTokenHasBeenSet;
+    bool m_connectionTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     int m_days;
-    bool m_daysHasBeenSet;
+    bool m_daysHasBeenSet = false;
 
     TransitionStorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
   };
 
 } // namespace Model

@@ -462,22 +462,22 @@ namespace Model
   private:
 
     Aws::String m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<ExcludedRule> m_excludedRules;
-    bool m_excludedRulesHasBeenSet;
+    bool m_excludedRulesHasBeenSet = false;
 
     std::shared_ptr<Statement> m_scopeDownStatement;
-    bool m_scopeDownStatementHasBeenSet;
+    bool m_scopeDownStatementHasBeenSet = false;
 
     Aws::Vector<ManagedRuleGroupConfig> m_managedRuleGroupConfigs;
-    bool m_managedRuleGroupConfigsHasBeenSet;
+    bool m_managedRuleGroupConfigsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     DocumentationPartLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

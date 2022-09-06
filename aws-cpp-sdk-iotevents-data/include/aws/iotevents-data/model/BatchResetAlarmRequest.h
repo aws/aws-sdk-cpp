@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<ResetAlarmActionRequest> m_resetActionRequests;
-    bool m_resetActionRequestsHasBeenSet;
+    bool m_resetActionRequestsHasBeenSet = false;
   };
 
 } // namespace Model

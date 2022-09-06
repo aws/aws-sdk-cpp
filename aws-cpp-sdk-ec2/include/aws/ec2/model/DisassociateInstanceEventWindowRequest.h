@@ -144,13 +144,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceEventWindowId;
-    bool m_instanceEventWindowIdHasBeenSet;
+    bool m_instanceEventWindowIdHasBeenSet = false;
 
     InstanceEventWindowDisassociationRequest m_associationTarget;
-    bool m_associationTargetHasBeenSet;
+    bool m_associationTargetHasBeenSet = false;
   };
 
 } // namespace Model

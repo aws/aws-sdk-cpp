@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nameServers;
-    bool m_nameServersHasBeenSet;
+    bool m_nameServersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -703,31 +703,31 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::Vector<Statistic> m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_extendedStatistics;
-    bool m_extendedStatisticsHasBeenSet;
+    bool m_extendedStatisticsHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

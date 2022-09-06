@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<TimeSeriesCondition> m_timeSeriesConditions;
-    bool m_timeSeriesConditionsHasBeenSet;
+    bool m_timeSeriesConditionsHasBeenSet = false;
   };
 
 } // namespace Model

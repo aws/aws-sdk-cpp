@@ -404,28 +404,28 @@ namespace Model
   private:
 
     Aws::String m_imageRecipeArn;
-    bool m_imageRecipeArnHasBeenSet;
+    bool m_imageRecipeArnHasBeenSet = false;
 
     Aws::String m_containerRecipeArn;
-    bool m_containerRecipeArnHasBeenSet;
+    bool m_containerRecipeArnHasBeenSet = false;
 
     Aws::String m_distributionConfigurationArn;
-    bool m_distributionConfigurationArnHasBeenSet;
+    bool m_distributionConfigurationArnHasBeenSet = false;
 
     Aws::String m_infrastructureConfigurationArn;
-    bool m_infrastructureConfigurationArnHasBeenSet;
+    bool m_infrastructureConfigurationArnHasBeenSet = false;
 
     ImageTestsConfiguration m_imageTestsConfiguration;
-    bool m_imageTestsConfigurationHasBeenSet;
+    bool m_imageTestsConfigurationHasBeenSet = false;
 
     bool m_enhancedImageMetadataEnabled;
-    bool m_enhancedImageMetadataEnabledHasBeenSet;
+    bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

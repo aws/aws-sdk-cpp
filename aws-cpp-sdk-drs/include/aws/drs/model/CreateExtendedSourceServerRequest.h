@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_sourceServerArn;
-    bool m_sourceServerArnHasBeenSet;
+    bool m_sourceServerArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

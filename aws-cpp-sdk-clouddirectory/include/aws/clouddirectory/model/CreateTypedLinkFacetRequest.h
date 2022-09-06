@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     TypedLinkFacet m_facet;
-    bool m_facetHasBeenSet;
+    bool m_facetHasBeenSet = false;
   };
 
 } // namespace Model

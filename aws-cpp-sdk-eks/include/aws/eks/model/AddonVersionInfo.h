@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_addonVersion;
-    bool m_addonVersionHasBeenSet;
+    bool m_addonVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::Vector<Compatibility> m_compatibilities;
-    bool m_compatibilitiesHasBeenSet;
+    bool m_compatibilitiesHasBeenSet = false;
   };
 
 } // namespace Model

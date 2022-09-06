@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_regionIdentifier;
-    bool m_regionIdentifierHasBeenSet;
+    bool m_regionIdentifierHasBeenSet = false;
 
     double m_latencyInMilliseconds;
-    bool m_latencyInMillisecondsHasBeenSet;
+    bool m_latencyInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

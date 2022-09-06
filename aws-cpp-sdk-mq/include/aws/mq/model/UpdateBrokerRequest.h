@@ -458,34 +458,34 @@ namespace Model
   private:
 
     AuthenticationStrategy m_authenticationStrategy;
-    bool m_authenticationStrategyHasBeenSet;
+    bool m_authenticationStrategyHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_brokerId;
-    bool m_brokerIdHasBeenSet;
+    bool m_brokerIdHasBeenSet = false;
 
     ConfigurationId m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_hostInstanceType;
-    bool m_hostInstanceTypeHasBeenSet;
+    bool m_hostInstanceTypeHasBeenSet = false;
 
     LdapServerMetadataInput m_ldapServerMetadata;
-    bool m_ldapServerMetadataHasBeenSet;
+    bool m_ldapServerMetadataHasBeenSet = false;
 
     Logs m_logs;
-    bool m_logsHasBeenSet;
+    bool m_logsHasBeenSet = false;
 
     WeeklyStartTime m_maintenanceWindowStartTime;
-    bool m_maintenanceWindowStartTimeHasBeenSet;
+    bool m_maintenanceWindowStartTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

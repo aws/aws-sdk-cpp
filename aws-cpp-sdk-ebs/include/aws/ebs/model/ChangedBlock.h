@@ -176,13 +176,13 @@ namespace Model
   private:
 
     int m_blockIndex;
-    bool m_blockIndexHasBeenSet;
+    bool m_blockIndexHasBeenSet = false;
 
     Aws::String m_firstBlockToken;
-    bool m_firstBlockTokenHasBeenSet;
+    bool m_firstBlockTokenHasBeenSet = false;
 
     Aws::String m_secondBlockToken;
-    bool m_secondBlockTokenHasBeenSet;
+    bool m_secondBlockTokenHasBeenSet = false;
   };
 
 } // namespace Model

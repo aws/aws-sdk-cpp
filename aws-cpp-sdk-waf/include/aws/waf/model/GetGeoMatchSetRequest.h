@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_geoMatchSetId;
-    bool m_geoMatchSetIdHasBeenSet;
+    bool m_geoMatchSetIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -93,7 +93,7 @@ SignerClient::~SignerClient()
 
 void SignerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("signer");
+  AWSClient::SetServiceClientName("signer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

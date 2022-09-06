@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_consumerArn;
-    bool m_consumerArnHasBeenSet;
+    bool m_consumerArnHasBeenSet = false;
 
     DataShareStatusForConsumer m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

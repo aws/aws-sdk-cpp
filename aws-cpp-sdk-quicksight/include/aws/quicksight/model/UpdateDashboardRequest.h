@@ -529,28 +529,28 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dashboardId;
-    bool m_dashboardIdHasBeenSet;
+    bool m_dashboardIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DashboardSourceEntity m_sourceEntity;
-    bool m_sourceEntityHasBeenSet;
+    bool m_sourceEntityHasBeenSet = false;
 
     Parameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_versionDescription;
-    bool m_versionDescriptionHasBeenSet;
+    bool m_versionDescriptionHasBeenSet = false;
 
     DashboardPublishOptions m_dashboardPublishOptions;
-    bool m_dashboardPublishOptionsHasBeenSet;
+    bool m_dashboardPublishOptionsHasBeenSet = false;
 
     Aws::String m_themeArn;
-    bool m_themeArnHasBeenSet;
+    bool m_themeArnHasBeenSet = false;
   };
 
 } // namespace Model

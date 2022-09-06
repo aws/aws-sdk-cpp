@@ -87,10 +87,10 @@ namespace Model
   private:
 
     double m_x;
-    bool m_xHasBeenSet;
+    bool m_xHasBeenSet = false;
 
     double m_y;
-    bool m_yHasBeenSet;
+    bool m_yHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     Aws::Vector<SectionModification> m_modifications;
-    bool m_modificationsHasBeenSet;
+    bool m_modificationsHasBeenSet = false;
   };
 
 } // namespace Model

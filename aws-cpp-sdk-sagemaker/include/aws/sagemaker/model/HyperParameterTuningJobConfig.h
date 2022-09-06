@@ -326,22 +326,22 @@ namespace Model
   private:
 
     HyperParameterTuningJobStrategyType m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     HyperParameterTuningJobObjective m_hyperParameterTuningJobObjective;
-    bool m_hyperParameterTuningJobObjectiveHasBeenSet;
+    bool m_hyperParameterTuningJobObjectiveHasBeenSet = false;
 
     ResourceLimits m_resourceLimits;
-    bool m_resourceLimitsHasBeenSet;
+    bool m_resourceLimitsHasBeenSet = false;
 
     ParameterRanges m_parameterRanges;
-    bool m_parameterRangesHasBeenSet;
+    bool m_parameterRangesHasBeenSet = false;
 
     TrainingJobEarlyStoppingType m_trainingJobEarlyStoppingType;
-    bool m_trainingJobEarlyStoppingTypeHasBeenSet;
+    bool m_trainingJobEarlyStoppingTypeHasBeenSet = false;
 
     TuningJobCompletionCriteria m_tuningJobCompletionCriteria;
-    bool m_tuningJobCompletionCriteriaHasBeenSet;
+    bool m_tuningJobCompletionCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

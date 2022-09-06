@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
   };
 
 } // namespace Model

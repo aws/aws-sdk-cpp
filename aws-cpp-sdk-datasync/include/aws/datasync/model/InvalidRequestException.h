@@ -115,13 +115,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_datasyncErrorCode;
-    bool m_datasyncErrorCodeHasBeenSet;
+    bool m_datasyncErrorCodeHasBeenSet = false;
   };
 
 } // namespace Model

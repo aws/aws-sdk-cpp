@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     int m_retryAfterSeconds;
-    bool m_retryAfterSecondsHasBeenSet;
+    bool m_retryAfterSecondsHasBeenSet = false;
   };
 
 } // namespace Model

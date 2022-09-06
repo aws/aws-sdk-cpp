@@ -260,22 +260,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FacetAttributeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TypedAttributeValue m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     bool m_isImmutable;
-    bool m_isImmutableHasBeenSet;
+    bool m_isImmutableHasBeenSet = false;
 
     Aws::Map<Aws::String, Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     RequiredAttributeBehavior m_requiredBehavior;
-    bool m_requiredBehaviorHasBeenSet;
+    bool m_requiredBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

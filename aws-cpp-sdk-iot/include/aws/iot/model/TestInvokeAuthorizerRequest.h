@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::String m_authorizerName;
-    bool m_authorizerNameHasBeenSet;
+    bool m_authorizerNameHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_tokenSignature;
-    bool m_tokenSignatureHasBeenSet;
+    bool m_tokenSignatureHasBeenSet = false;
 
     HttpContext m_httpContext;
-    bool m_httpContextHasBeenSet;
+    bool m_httpContextHasBeenSet = false;
 
     MqttContext m_mqttContext;
-    bool m_mqttContextHasBeenSet;
+    bool m_mqttContextHasBeenSet = false;
 
     TlsContext m_tlsContext;
-    bool m_tlsContextHasBeenSet;
+    bool m_tlsContextHasBeenSet = false;
   };
 
 } // namespace Model

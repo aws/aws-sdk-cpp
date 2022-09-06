@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_configurationRecorderNames;
-    bool m_configurationRecorderNamesHasBeenSet;
+    bool m_configurationRecorderNamesHasBeenSet = false;
   };
 
 } // namespace Model

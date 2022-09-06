@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Progress m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

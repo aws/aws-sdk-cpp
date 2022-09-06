@@ -128,13 +128,13 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     bool m_deleteDataInFileSystem;
-    bool m_deleteDataInFileSystemHasBeenSet;
+    bool m_deleteDataInFileSystemHasBeenSet = false;
   };
 
 } // namespace Model

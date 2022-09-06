@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<SharePrincipal> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     NotificationOptions m_notificationOptions;
-    bool m_notificationOptionsHasBeenSet;
+    bool m_notificationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

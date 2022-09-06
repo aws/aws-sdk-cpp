@@ -183,16 +183,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Consolidation m_consolidation;
-    bool m_consolidationHasBeenSet;
+    bool m_consolidationHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
 
     double m_minAllowedConfidenceScoreForMerging;
-    bool m_minAllowedConfidenceScoreForMergingHasBeenSet;
+    bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_force;
-    bool m_forceHasBeenSet;
+    bool m_forceHasBeenSet = false;
   };
 
 } // namespace Model

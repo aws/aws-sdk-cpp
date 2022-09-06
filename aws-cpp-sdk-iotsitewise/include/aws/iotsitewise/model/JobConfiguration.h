@@ -71,7 +71,7 @@ namespace Model
   private:
 
     FileFormat m_fileFormat;
-    bool m_fileFormatHasBeenSet;
+    bool m_fileFormatHasBeenSet = false;
   };
 
 } // namespace Model

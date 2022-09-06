@@ -274,22 +274,22 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     Aws::String m_transportAttachmentId;
-    bool m_transportAttachmentIdHasBeenSet;
+    bool m_transportAttachmentIdHasBeenSet = false;
 
     ConnectAttachmentOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_onDemandHours;
-    bool m_onDemandHoursHasBeenSet;
+    bool m_onDemandHoursHasBeenSet = false;
 
     Aws::String m_reservedHours;
-    bool m_reservedHoursHasBeenSet;
+    bool m_reservedHoursHasBeenSet = false;
 
     Aws::String m_totalRunningHours;
-    bool m_totalRunningHoursHasBeenSet;
+    bool m_totalRunningHoursHasBeenSet = false;
 
     Aws::String m_coverageHoursPercentage;
-    bool m_coverageHoursPercentageHasBeenSet;
+    bool m_coverageHoursPercentageHasBeenSet = false;
   };
 
 } // namespace Model

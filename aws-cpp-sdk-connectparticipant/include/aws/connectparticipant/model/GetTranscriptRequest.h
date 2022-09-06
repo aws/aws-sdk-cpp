@@ -298,25 +298,25 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ScanDirection m_scanDirection;
-    bool m_scanDirectionHasBeenSet;
+    bool m_scanDirectionHasBeenSet = false;
 
     SortKey m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     StartPosition m_startPosition;
-    bool m_startPositionHasBeenSet;
+    bool m_startPositionHasBeenSet = false;
 
     Aws::String m_connectionToken;
-    bool m_connectionTokenHasBeenSet;
+    bool m_connectionTokenHasBeenSet = false;
   };
 
 } // namespace Model

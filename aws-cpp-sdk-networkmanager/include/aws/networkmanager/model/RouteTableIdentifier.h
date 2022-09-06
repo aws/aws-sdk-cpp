@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableArn;
-    bool m_transitGatewayRouteTableArnHasBeenSet;
+    bool m_transitGatewayRouteTableArnHasBeenSet = false;
 
     CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
-    bool m_coreNetworkSegmentEdgeHasBeenSet;
+    bool m_coreNetworkSegmentEdgeHasBeenSet = false;
   };
 
 } // namespace Model

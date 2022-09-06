@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AggregationType m_aggregationType;
-    bool m_aggregationTypeHasBeenSet;
+    bool m_aggregationTypeHasBeenSet = false;
   };
 
 } // namespace Model

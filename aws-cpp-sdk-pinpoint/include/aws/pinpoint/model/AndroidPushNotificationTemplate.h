@@ -540,31 +540,31 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_imageIconUrl;
-    bool m_imageIconUrlHasBeenSet;
+    bool m_imageIconUrlHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::String m_rawContent;
-    bool m_rawContentHasBeenSet;
+    bool m_rawContentHasBeenSet = false;
 
     Aws::String m_smallImageIconUrl;
-    bool m_smallImageIconUrlHasBeenSet;
+    bool m_smallImageIconUrlHasBeenSet = false;
 
     Aws::String m_sound;
-    bool m_soundHasBeenSet;
+    bool m_soundHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

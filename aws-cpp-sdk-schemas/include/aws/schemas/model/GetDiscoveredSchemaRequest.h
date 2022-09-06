@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

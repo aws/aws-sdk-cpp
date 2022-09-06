@@ -605,34 +605,34 @@ namespace Model
   private:
 
     Aws::String m_containerHostname;
-    bool m_containerHostnameHasBeenSet;
+    bool m_containerHostnameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::String m_modelDataUrl;
-    bool m_modelDataUrlHasBeenSet;
+    bool m_modelDataUrlHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     ModelInput m_modelInput;
-    bool m_modelInputHasBeenSet;
+    bool m_modelInputHasBeenSet = false;
 
     Aws::String m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
-    bool m_frameworkVersionHasBeenSet;
+    bool m_frameworkVersionHasBeenSet = false;
 
     Aws::String m_nearestModelName;
-    bool m_nearestModelNameHasBeenSet;
+    bool m_nearestModelNameHasBeenSet = false;
   };
 
 } // namespace Model

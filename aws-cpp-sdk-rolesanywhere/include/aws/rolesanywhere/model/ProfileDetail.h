@@ -507,40 +507,40 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_managedPolicyArns;
-    bool m_managedPolicyArnsHasBeenSet;
+    bool m_managedPolicyArnsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_profileArn;
-    bool m_profileArnHasBeenSet;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     bool m_requireInstanceProperties;
-    bool m_requireInstancePropertiesHasBeenSet;
+    bool m_requireInstancePropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roleArns;
-    bool m_roleArnsHasBeenSet;
+    bool m_roleArnsHasBeenSet = false;
 
     Aws::String m_sessionPolicy;
-    bool m_sessionPolicyHasBeenSet;
+    bool m_sessionPolicyHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

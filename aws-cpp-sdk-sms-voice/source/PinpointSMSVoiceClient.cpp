@@ -84,7 +84,7 @@ PinpointSMSVoiceClient::~PinpointSMSVoiceClient()
 
 void PinpointSMSVoiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Pinpoint SMS Voice");
+  AWSClient::SetServiceClientName("Pinpoint SMS Voice");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

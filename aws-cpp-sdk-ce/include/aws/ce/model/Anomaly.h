@@ -400,31 +400,31 @@ namespace Model
   private:
 
     Aws::String m_anomalyId;
-    bool m_anomalyIdHasBeenSet;
+    bool m_anomalyIdHasBeenSet = false;
 
     Aws::String m_anomalyStartDate;
-    bool m_anomalyStartDateHasBeenSet;
+    bool m_anomalyStartDateHasBeenSet = false;
 
     Aws::String m_anomalyEndDate;
-    bool m_anomalyEndDateHasBeenSet;
+    bool m_anomalyEndDateHasBeenSet = false;
 
     Aws::String m_dimensionValue;
-    bool m_dimensionValueHasBeenSet;
+    bool m_dimensionValueHasBeenSet = false;
 
     Aws::Vector<RootCause> m_rootCauses;
-    bool m_rootCausesHasBeenSet;
+    bool m_rootCausesHasBeenSet = false;
 
     AnomalyScore m_anomalyScore;
-    bool m_anomalyScoreHasBeenSet;
+    bool m_anomalyScoreHasBeenSet = false;
 
     Impact m_impact;
-    bool m_impactHasBeenSet;
+    bool m_impactHasBeenSet = false;
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     AnomalyFeedbackType m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
   };
 
 } // namespace Model

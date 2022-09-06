@@ -169,10 +169,10 @@ namespace Model
   private:
 
     Aws::String m_targetNodes;
-    bool m_targetNodesHasBeenSet;
+    bool m_targetNodesHasBeenSet = false;
 
     ContainerProperties m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
   };
 
 } // namespace Model

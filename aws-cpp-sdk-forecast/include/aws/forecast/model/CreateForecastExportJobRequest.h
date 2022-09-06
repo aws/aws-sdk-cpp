@@ -416,19 +416,19 @@ namespace Model
   private:
 
     Aws::String m_forecastExportJobName;
-    bool m_forecastExportJobNameHasBeenSet;
+    bool m_forecastExportJobNameHasBeenSet = false;
 
     Aws::String m_forecastArn;
-    bool m_forecastArnHasBeenSet;
+    bool m_forecastArnHasBeenSet = false;
 
     DataDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

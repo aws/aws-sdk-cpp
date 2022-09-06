@@ -143,10 +143,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     SqlInjectionMatchTuple m_sqlInjectionMatchTuple;
-    bool m_sqlInjectionMatchTupleHasBeenSet;
+    bool m_sqlInjectionMatchTupleHasBeenSet = false;
   };
 
 } // namespace Model

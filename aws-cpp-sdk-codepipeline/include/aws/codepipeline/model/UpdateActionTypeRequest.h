@@ -67,7 +67,7 @@ namespace Model
   private:
 
     ActionTypeDeclaration m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
   };
 
 } // namespace Model

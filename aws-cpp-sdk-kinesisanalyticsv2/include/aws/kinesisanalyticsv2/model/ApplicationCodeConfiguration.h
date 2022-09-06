@@ -103,10 +103,10 @@ namespace Model
   private:
 
     CodeContent m_codeContent;
-    bool m_codeContentHasBeenSet;
+    bool m_codeContentHasBeenSet = false;
 
     CodeContentType m_codeContentType;
-    bool m_codeContentTypeHasBeenSet;
+    bool m_codeContentTypeHasBeenSet = false;
   };
 
 } // namespace Model

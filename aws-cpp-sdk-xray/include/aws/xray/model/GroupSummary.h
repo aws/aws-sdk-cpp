@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupARN;
-    bool m_groupARNHasBeenSet;
+    bool m_groupARNHasBeenSet = false;
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     InsightsConfiguration m_insightsConfiguration;
-    bool m_insightsConfigurationHasBeenSet;
+    bool m_insightsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

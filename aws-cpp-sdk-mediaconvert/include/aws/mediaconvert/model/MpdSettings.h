@@ -479,25 +479,25 @@ namespace Model
   private:
 
     MpdAccessibilityCaptionHints m_accessibilityCaptionHints;
-    bool m_accessibilityCaptionHintsHasBeenSet;
+    bool m_accessibilityCaptionHintsHasBeenSet = false;
 
     MpdAudioDuration m_audioDuration;
-    bool m_audioDurationHasBeenSet;
+    bool m_audioDurationHasBeenSet = false;
 
     MpdCaptionContainerType m_captionContainerType;
-    bool m_captionContainerTypeHasBeenSet;
+    bool m_captionContainerTypeHasBeenSet = false;
 
     MpdKlvMetadata m_klvMetadata;
-    bool m_klvMetadataHasBeenSet;
+    bool m_klvMetadataHasBeenSet = false;
 
     MpdScte35Esam m_scte35Esam;
-    bool m_scte35EsamHasBeenSet;
+    bool m_scte35EsamHasBeenSet = false;
 
     MpdScte35Source m_scte35Source;
-    bool m_scte35SourceHasBeenSet;
+    bool m_scte35SourceHasBeenSet = false;
 
     MpdTimedMetadata m_timedMetadata;
-    bool m_timedMetadataHasBeenSet;
+    bool m_timedMetadataHasBeenSet = false;
   };
 
 } // namespace Model

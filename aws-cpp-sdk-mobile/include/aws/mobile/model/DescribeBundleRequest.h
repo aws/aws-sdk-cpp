@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
   };
 
 } // namespace Model

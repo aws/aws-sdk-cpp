@@ -60,7 +60,7 @@ namespace Model
   private:
 
     GroundTruthManifest m_groundTruthManifest;
-    bool m_groundTruthManifestHasBeenSet;
+    bool m_groundTruthManifestHasBeenSet = false;
   };
 
 } // namespace Model

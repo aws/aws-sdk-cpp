@@ -256,22 +256,22 @@ namespace Model
   private:
 
     Aws::String m_backgroundColor;
-    bool m_backgroundColorHasBeenSet;
+    bool m_backgroundColorHasBeenSet = false;
 
     int m_borderRadius;
-    bool m_borderRadiusHasBeenSet;
+    bool m_borderRadiusHasBeenSet = false;
 
     ButtonAction m_buttonAction;
-    bool m_buttonActionHasBeenSet;
+    bool m_buttonActionHasBeenSet = false;
 
     Aws::String m_link;
-    bool m_linkHasBeenSet;
+    bool m_linkHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_textColor;
-    bool m_textColorHasBeenSet;
+    bool m_textColorHasBeenSet = false;
   };
 
 } // namespace Model

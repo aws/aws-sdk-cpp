@@ -372,22 +372,22 @@ namespace Model
   private:
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     StackSetOperationResultStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     AccountGateResult m_accountGateResult;
-    bool m_accountGateResultHasBeenSet;
+    bool m_accountGateResultHasBeenSet = false;
 
     Aws::String m_organizationalUnitId;
-    bool m_organizationalUnitIdHasBeenSet;
+    bool m_organizationalUnitIdHasBeenSet = false;
   };
 
 } // namespace Model

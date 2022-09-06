@@ -246,16 +246,16 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_playbackConfigurationName;
-    bool m_playbackConfigurationNameHasBeenSet;
+    bool m_playbackConfigurationNameHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
   };
 
 } // namespace Model

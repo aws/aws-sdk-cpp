@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
 
     IpRouteStatusMsg m_ipRouteStatusMsg;
-    bool m_ipRouteStatusMsgHasBeenSet;
+    bool m_ipRouteStatusMsgHasBeenSet = false;
 
     Aws::Utils::DateTime m_addedDateTime;
-    bool m_addedDateTimeHasBeenSet;
+    bool m_addedDateTimeHasBeenSet = false;
 
     Aws::String m_ipRouteStatusReason;
-    bool m_ipRouteStatusReasonHasBeenSet;
+    bool m_ipRouteStatusReasonHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

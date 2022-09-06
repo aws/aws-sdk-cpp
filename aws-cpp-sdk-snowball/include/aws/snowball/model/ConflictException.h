@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_conflictResource;
-    bool m_conflictResourceHasBeenSet;
+    bool m_conflictResourceHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

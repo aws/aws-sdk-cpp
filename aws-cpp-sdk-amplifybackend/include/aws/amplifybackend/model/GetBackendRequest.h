@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_backendEnvironmentName;
-    bool m_backendEnvironmentNameHasBeenSet;
+    bool m_backendEnvironmentNameHasBeenSet = false;
   };
 
 } // namespace Model

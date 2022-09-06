@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_textContent;
-    bool m_textContentHasBeenSet;
+    bool m_textContentHasBeenSet = false;
 
     Aws::String m_codeMD5;
-    bool m_codeMD5HasBeenSet;
+    bool m_codeMD5HasBeenSet = false;
 
     long long m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
 
     S3ApplicationCodeLocationDescription m_s3ApplicationCodeLocationDescription;
-    bool m_s3ApplicationCodeLocationDescriptionHasBeenSet;
+    bool m_s3ApplicationCodeLocationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

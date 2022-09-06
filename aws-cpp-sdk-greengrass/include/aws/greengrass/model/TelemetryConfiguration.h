@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ConfigurationSyncStatus m_configurationSyncStatus;
-    bool m_configurationSyncStatusHasBeenSet;
+    bool m_configurationSyncStatusHasBeenSet = false;
 
     Telemetry m_telemetry;
-    bool m_telemetryHasBeenSet;
+    bool m_telemetryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_messageVersion;
-    bool m_messageVersionHasBeenSet;
+    bool m_messageVersionHasBeenSet = false;
   };
 
 } // namespace Model

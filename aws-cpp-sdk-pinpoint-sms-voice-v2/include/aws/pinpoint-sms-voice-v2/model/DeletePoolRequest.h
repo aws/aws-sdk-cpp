@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
   };
 
 } // namespace Model

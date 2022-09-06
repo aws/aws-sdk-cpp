@@ -109,10 +109,10 @@ namespace Model
   private:
 
     ConcatenationSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     MediaCapturePipelineSourceConfiguration m_mediaCapturePipelineSourceConfiguration;
-    bool m_mediaCapturePipelineSourceConfigurationHasBeenSet;
+    bool m_mediaCapturePipelineSourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     LineageType m_lineageType;
-    bool m_lineageTypeHasBeenSet;
+    bool m_lineageTypeHasBeenSet = false;
   };
 
 } // namespace Model

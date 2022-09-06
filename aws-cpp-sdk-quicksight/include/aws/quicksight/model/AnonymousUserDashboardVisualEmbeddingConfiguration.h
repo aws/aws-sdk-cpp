@@ -101,7 +101,7 @@ namespace Model
   private:
 
     DashboardVisualId m_initialDashboardVisualId;
-    bool m_initialDashboardVisualIdHasBeenSet;
+    bool m_initialDashboardVisualIdHasBeenSet = false;
   };
 
 } // namespace Model

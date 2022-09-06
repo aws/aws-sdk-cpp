@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_enrollmentId;
-    bool m_enrollmentIdHasBeenSet;
+    bool m_enrollmentIdHasBeenSet = false;
   };
 
 } // namespace Model

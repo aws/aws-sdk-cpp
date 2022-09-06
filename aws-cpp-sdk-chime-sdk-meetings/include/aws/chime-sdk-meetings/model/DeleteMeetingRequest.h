@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
   };
 
 } // namespace Model

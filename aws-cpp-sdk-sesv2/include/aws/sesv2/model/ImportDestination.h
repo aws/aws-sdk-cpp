@@ -115,10 +115,10 @@ namespace Model
   private:
 
     SuppressionListDestination m_suppressionListDestination;
-    bool m_suppressionListDestinationHasBeenSet;
+    bool m_suppressionListDestinationHasBeenSet = false;
 
     ContactListDestination m_contactListDestination;
-    bool m_contactListDestinationHasBeenSet;
+    bool m_contactListDestinationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::Vector<ServerGroupReplicationConfiguration> m_serverGroupReplicationConfigurations;
-    bool m_serverGroupReplicationConfigurationsHasBeenSet;
+    bool m_serverGroupReplicationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

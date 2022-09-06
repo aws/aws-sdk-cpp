@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     TriggeringDataset m_dataset;
-    bool m_datasetHasBeenSet;
+    bool m_datasetHasBeenSet = false;
   };
 
 } // namespace Model

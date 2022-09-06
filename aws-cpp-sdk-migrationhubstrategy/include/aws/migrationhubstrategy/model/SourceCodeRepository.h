@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_versionControlType;
-    bool m_versionControlTypeHasBeenSet;
+    bool m_versionControlTypeHasBeenSet = false;
   };
 
 } // namespace Model

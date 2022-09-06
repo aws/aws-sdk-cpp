@@ -272,22 +272,22 @@ namespace Model
   private:
 
     SlotDefaultValueSpecification m_defaultValueSpecification;
-    bool m_defaultValueSpecificationHasBeenSet;
+    bool m_defaultValueSpecificationHasBeenSet = false;
 
     SlotConstraint m_slotConstraint;
-    bool m_slotConstraintHasBeenSet;
+    bool m_slotConstraintHasBeenSet = false;
 
     PromptSpecification m_promptSpecification;
-    bool m_promptSpecificationHasBeenSet;
+    bool m_promptSpecificationHasBeenSet = false;
 
     Aws::Vector<SampleUtterance> m_sampleUtterances;
-    bool m_sampleUtterancesHasBeenSet;
+    bool m_sampleUtterancesHasBeenSet = false;
 
     WaitAndContinueSpecification m_waitAndContinueSpecification;
-    bool m_waitAndContinueSpecificationHasBeenSet;
+    bool m_waitAndContinueSpecificationHasBeenSet = false;
 
     SlotCaptureSetting m_slotCaptureSetting;
-    bool m_slotCaptureSettingHasBeenSet;
+    bool m_slotCaptureSettingHasBeenSet = false;
   };
 
 } // namespace Model

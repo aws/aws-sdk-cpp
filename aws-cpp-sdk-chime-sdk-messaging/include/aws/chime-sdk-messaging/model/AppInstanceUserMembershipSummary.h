@@ -159,13 +159,13 @@ namespace Model
   private:
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_readMarkerTimestamp;
-    bool m_readMarkerTimestampHasBeenSet;
+    bool m_readMarkerTimestampHasBeenSet = false;
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

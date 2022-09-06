@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     OutputSchemaVersion m_outputSchemaVersion;
-    bool m_outputSchemaVersionHasBeenSet;
+    bool m_outputSchemaVersionHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     StorageLensDataExportEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

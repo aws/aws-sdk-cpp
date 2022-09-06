@@ -102,10 +102,10 @@ namespace Model
   private:
 
     S3AccessControlList m_accessControlList;
-    bool m_accessControlListHasBeenSet;
+    bool m_accessControlListHasBeenSet = false;
 
     S3CannedAccessControlList m_cannedAccessControlList;
-    bool m_cannedAccessControlListHasBeenSet;
+    bool m_cannedAccessControlListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
 
     FSxWindowsFileServerAuthorizationConfig m_authorizationConfig;
-    bool m_authorizationConfigHasBeenSet;
+    bool m_authorizationConfigHasBeenSet = false;
   };
 
 } // namespace Model

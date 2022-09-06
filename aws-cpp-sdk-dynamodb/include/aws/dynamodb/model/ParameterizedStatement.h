@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

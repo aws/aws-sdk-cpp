@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_clientArn;
-    bool m_clientArnHasBeenSet;
+    bool m_clientArnHasBeenSet = false;
 
     ClientVersion m_clientVersion;
-    bool m_clientVersionHasBeenSet;
+    bool m_clientVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hapgList;
-    bool m_hapgListHasBeenSet;
+    bool m_hapgListHasBeenSet = false;
   };
 
 } // namespace Model

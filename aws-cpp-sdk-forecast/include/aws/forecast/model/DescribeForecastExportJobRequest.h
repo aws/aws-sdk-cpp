@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_forecastExportJobArn;
-    bool m_forecastExportJobArnHasBeenSet;
+    bool m_forecastExportJobArnHasBeenSet = false;
   };
 
 } // namespace Model

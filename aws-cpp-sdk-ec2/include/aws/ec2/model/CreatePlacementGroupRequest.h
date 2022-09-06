@@ -264,22 +264,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     PlacementStrategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     int m_partitionCount;
-    bool m_partitionCountHasBeenSet;
+    bool m_partitionCountHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     SpreadLevel m_spreadLevel;
-    bool m_spreadLevelHasBeenSet;
+    bool m_spreadLevelHasBeenSet = false;
   };
 
 } // namespace Model

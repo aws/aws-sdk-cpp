@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_gSTIN;
-    bool m_gSTINHasBeenSet;
+    bool m_gSTINHasBeenSet = false;
   };
 
 } // namespace Model

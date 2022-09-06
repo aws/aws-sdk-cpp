@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_blobId;
-    bool m_blobIdHasBeenSet;
+    bool m_blobIdHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

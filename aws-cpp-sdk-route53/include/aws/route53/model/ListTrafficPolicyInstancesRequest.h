@@ -440,16 +440,16 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneIdMarker;
-    bool m_hostedZoneIdMarkerHasBeenSet;
+    bool m_hostedZoneIdMarkerHasBeenSet = false;
 
     Aws::String m_trafficPolicyInstanceNameMarker;
-    bool m_trafficPolicyInstanceNameMarkerHasBeenSet;
+    bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
 
     RRType m_trafficPolicyInstanceTypeMarker;
-    bool m_trafficPolicyInstanceTypeMarkerHasBeenSet;
+    bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

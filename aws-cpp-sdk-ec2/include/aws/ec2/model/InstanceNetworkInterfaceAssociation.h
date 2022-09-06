@@ -255,19 +255,19 @@ namespace Model
   private:
 
     Aws::String m_carrierIp;
-    bool m_carrierIpHasBeenSet;
+    bool m_carrierIpHasBeenSet = false;
 
     Aws::String m_customerOwnedIp;
-    bool m_customerOwnedIpHasBeenSet;
+    bool m_customerOwnedIpHasBeenSet = false;
 
     Aws::String m_ipOwnerId;
-    bool m_ipOwnerIdHasBeenSet;
+    bool m_ipOwnerIdHasBeenSet = false;
 
     Aws::String m_publicDnsName;
-    bool m_publicDnsNameHasBeenSet;
+    bool m_publicDnsNameHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
   };
 
 } // namespace Model

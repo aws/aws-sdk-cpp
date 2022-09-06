@@ -58,7 +58,7 @@ namespace Model
   private:
 
     ControlPlaneTagFilter m_tagFilter;
-    bool m_tagFilterHasBeenSet;
+    bool m_tagFilterHasBeenSet = false;
   };
 
 } // namespace Model

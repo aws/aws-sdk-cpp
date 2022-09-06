@@ -121,13 +121,13 @@ namespace Model
   private:
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::String m_questionTitle;
-    bool m_questionTitleHasBeenSet;
+    bool m_questionTitleHasBeenSet = false;
 
     DifferenceStatus m_differenceStatus;
-    bool m_differenceStatusHasBeenSet;
+    bool m_differenceStatusHasBeenSet = false;
   };
 
 } // namespace Model

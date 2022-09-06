@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_suggestion;
-    bool m_suggestionHasBeenSet;
+    bool m_suggestionHasBeenSet = false;
 
     long long m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

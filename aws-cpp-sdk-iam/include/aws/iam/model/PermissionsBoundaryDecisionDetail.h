@@ -94,7 +94,7 @@ namespace Model
   private:
 
     bool m_allowedByPermissionsBoundary;
-    bool m_allowedByPermissionsBoundaryHasBeenSet;
+    bool m_allowedByPermissionsBoundaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,16 +133,16 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_sharedWith;
-    bool m_sharedWithHasBeenSet;
+    bool m_sharedWithHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

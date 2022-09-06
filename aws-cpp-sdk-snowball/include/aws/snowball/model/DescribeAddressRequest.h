@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_addressId;
-    bool m_addressIdHasBeenSet;
+    bool m_addressIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -106,10 +106,10 @@ namespace Model
   private:
 
     RepositoryHeadSourceCodeType m_repositoryHead;
-    bool m_repositoryHeadHasBeenSet;
+    bool m_repositoryHeadHasBeenSet = false;
 
     SourceCodeType m_sourceCodeType;
-    bool m_sourceCodeTypeHasBeenSet;
+    bool m_sourceCodeTypeHasBeenSet = false;
   };
 
 } // namespace Model

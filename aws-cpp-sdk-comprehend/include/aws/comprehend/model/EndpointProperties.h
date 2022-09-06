@@ -489,37 +489,37 @@ namespace Model
   private:
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     EndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_modelArn;
-    bool m_modelArnHasBeenSet;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::String m_desiredModelArn;
-    bool m_desiredModelArnHasBeenSet;
+    bool m_desiredModelArnHasBeenSet = false;
 
     int m_desiredInferenceUnits;
-    bool m_desiredInferenceUnitsHasBeenSet;
+    bool m_desiredInferenceUnitsHasBeenSet = false;
 
     int m_currentInferenceUnits;
-    bool m_currentInferenceUnitsHasBeenSet;
+    bool m_currentInferenceUnitsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_desiredDataAccessRoleArn;
-    bool m_desiredDataAccessRoleArnHasBeenSet;
+    bool m_desiredDataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

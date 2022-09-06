@@ -215,22 +215,22 @@ namespace Model
   private:
 
     int m_totalPartsCount;
-    bool m_totalPartsCountHasBeenSet;
+    bool m_totalPartsCountHasBeenSet = false;
 
     int m_partNumberMarker;
-    bool m_partNumberMarkerHasBeenSet;
+    bool m_partNumberMarkerHasBeenSet = false;
 
     int m_nextPartNumberMarker;
-    bool m_nextPartNumberMarkerHasBeenSet;
+    bool m_nextPartNumberMarkerHasBeenSet = false;
 
     int m_maxParts;
-    bool m_maxPartsHasBeenSet;
+    bool m_maxPartsHasBeenSet = false;
 
     bool m_isTruncated;
-    bool m_isTruncatedHasBeenSet;
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::Vector<ObjectPart> m_parts;
-    bool m_partsHasBeenSet;
+    bool m_partsHasBeenSet = false;
   };
 
 } // namespace Model

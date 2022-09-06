@@ -163,16 +163,16 @@ namespace Model
   private:
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     bool m_hasHeaderRow;
-    bool m_hasHeaderRowHasBeenSet;
+    bool m_hasHeaderRowHasBeenSet = false;
 
     bool m_ignoreEmptyRows;
-    bool m_ignoreEmptyRowsHasBeenSet;
+    bool m_ignoreEmptyRowsHasBeenSet = false;
 
     ImportDataCharacterEncoding m_dataCharacterEncoding;
-    bool m_dataCharacterEncodingHasBeenSet;
+    bool m_dataCharacterEncodingHasBeenSet = false;
   };
 
 } // namespace Model

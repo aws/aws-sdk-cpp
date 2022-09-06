@@ -117,10 +117,10 @@ namespace Model
   private:
 
     bool m_autoAddGroupOwner;
-    bool m_autoAddGroupOwnerHasBeenSet;
+    bool m_autoAddGroupOwnerHasBeenSet = false;
 
     Aws::String m_groupOwner;
-    bool m_groupOwnerHasBeenSet;
+    bool m_groupOwnerHasBeenSet = false;
   };
 
 } // namespace Model

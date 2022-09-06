@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

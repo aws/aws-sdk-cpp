@@ -123,10 +123,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     IPSetDescriptor m_iPSetDescriptor;
-    bool m_iPSetDescriptorHasBeenSet;
+    bool m_iPSetDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

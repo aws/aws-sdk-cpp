@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     RetentionSettings m_retentionSettings;
-    bool m_retentionSettingsHasBeenSet;
+    bool m_retentionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

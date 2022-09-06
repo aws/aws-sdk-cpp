@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_entryCount;
-    bool m_entryCountHasBeenSet;
+    bool m_entryCountHasBeenSet = false;
 
     int m_boundingBoxCount;
-    bool m_boundingBoxCountHasBeenSet;
+    bool m_boundingBoxCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_targetRegion;
-    bool m_targetRegionHasBeenSet;
+    bool m_targetRegionHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_cmkArn;
-    bool m_cmkArnHasBeenSet;
+    bool m_cmkArnHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     CrossRegionCopyRetainRule m_retainRule;
-    bool m_retainRuleHasBeenSet;
+    bool m_retainRuleHasBeenSet = false;
 
     CrossRegionCopyDeprecateRule m_deprecateRule;
-    bool m_deprecateRuleHasBeenSet;
+    bool m_deprecateRuleHasBeenSet = false;
   };
 
 } // namespace Model

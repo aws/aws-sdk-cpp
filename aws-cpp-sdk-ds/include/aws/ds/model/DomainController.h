@@ -422,34 +422,34 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_domainControllerId;
-    bool m_domainControllerIdHasBeenSet;
+    bool m_domainControllerIdHasBeenSet = false;
 
     Aws::String m_dnsIpAddr;
-    bool m_dnsIpAddrHasBeenSet;
+    bool m_dnsIpAddrHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     DomainControllerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_launchTime;
-    bool m_launchTimeHasBeenSet;
+    bool m_launchTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_statusLastUpdatedDateTime;
-    bool m_statusLastUpdatedDateTimeHasBeenSet;
+    bool m_statusLastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

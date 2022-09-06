@@ -630,43 +630,43 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     StudioComponentConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2SecurityGroupIds;
-    bool m_ec2SecurityGroupIdsHasBeenSet;
+    bool m_ec2SecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<StudioComponentInitializationScript> m_initializationScripts;
-    bool m_initializationScriptsHasBeenSet;
+    bool m_initializationScriptsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_runtimeRoleArn;
-    bool m_runtimeRoleArnHasBeenSet;
+    bool m_runtimeRoleArnHasBeenSet = false;
 
     Aws::Vector<ScriptParameterKeyValue> m_scriptParameters;
-    bool m_scriptParametersHasBeenSet;
+    bool m_scriptParametersHasBeenSet = false;
 
     Aws::String m_secureInitializationRoleArn;
-    bool m_secureInitializationRoleArnHasBeenSet;
+    bool m_secureInitializationRoleArnHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     StudioComponentSubtype m_subtype;
-    bool m_subtypeHasBeenSet;
+    bool m_subtypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     StudioComponentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

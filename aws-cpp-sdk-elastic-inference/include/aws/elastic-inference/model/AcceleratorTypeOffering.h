@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_acceleratorType;
-    bool m_acceleratorTypeHasBeenSet;
+    bool m_acceleratorTypeHasBeenSet = false;
 
     LocationType m_locationType;
-    bool m_locationTypeHasBeenSet;
+    bool m_locationTypeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

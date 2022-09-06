@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

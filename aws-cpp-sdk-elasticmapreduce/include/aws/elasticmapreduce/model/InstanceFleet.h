@@ -519,34 +519,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InstanceFleetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     InstanceFleetType m_instanceFleetType;
-    bool m_instanceFleetTypeHasBeenSet;
+    bool m_instanceFleetTypeHasBeenSet = false;
 
     int m_targetOnDemandCapacity;
-    bool m_targetOnDemandCapacityHasBeenSet;
+    bool m_targetOnDemandCapacityHasBeenSet = false;
 
     int m_targetSpotCapacity;
-    bool m_targetSpotCapacityHasBeenSet;
+    bool m_targetSpotCapacityHasBeenSet = false;
 
     int m_provisionedOnDemandCapacity;
-    bool m_provisionedOnDemandCapacityHasBeenSet;
+    bool m_provisionedOnDemandCapacityHasBeenSet = false;
 
     int m_provisionedSpotCapacity;
-    bool m_provisionedSpotCapacityHasBeenSet;
+    bool m_provisionedSpotCapacityHasBeenSet = false;
 
     Aws::Vector<InstanceTypeSpecification> m_instanceTypeSpecifications;
-    bool m_instanceTypeSpecificationsHasBeenSet;
+    bool m_instanceTypeSpecificationsHasBeenSet = false;
 
     InstanceFleetProvisioningSpecifications m_launchSpecifications;
-    bool m_launchSpecificationsHasBeenSet;
+    bool m_launchSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

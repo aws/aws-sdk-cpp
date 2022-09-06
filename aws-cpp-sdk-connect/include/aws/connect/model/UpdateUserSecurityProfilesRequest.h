@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_securityProfileIds;
-    bool m_securityProfileIdsHasBeenSet;
+    bool m_securityProfileIdsHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

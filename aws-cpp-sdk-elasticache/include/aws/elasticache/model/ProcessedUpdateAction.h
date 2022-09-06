@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
 
     UpdateActionStatus m_updateActionStatus;
-    bool m_updateActionStatusHasBeenSet;
+    bool m_updateActionStatusHasBeenSet = false;
   };
 
 } // namespace Model

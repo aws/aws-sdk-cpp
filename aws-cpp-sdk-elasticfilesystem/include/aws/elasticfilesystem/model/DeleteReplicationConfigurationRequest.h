@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_sourceFileSystemId;
-    bool m_sourceFileSystemIdHasBeenSet;
+    bool m_sourceFileSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

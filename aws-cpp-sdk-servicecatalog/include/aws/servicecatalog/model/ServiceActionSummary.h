@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ServiceActionDefinitionType m_definitionType;
-    bool m_definitionTypeHasBeenSet;
+    bool m_definitionTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_clientArn;
-    bool m_clientArnHasBeenSet;
+    bool m_clientArnHasBeenSet = false;
 
     Aws::String m_certificateFingerprint;
-    bool m_certificateFingerprintHasBeenSet;
+    bool m_certificateFingerprintHasBeenSet = false;
   };
 
 } // namespace Model

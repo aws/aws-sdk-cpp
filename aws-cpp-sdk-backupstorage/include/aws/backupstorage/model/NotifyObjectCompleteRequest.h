@@ -331,29 +331,29 @@ namespace Model
   private:
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     Aws::String m_objectChecksum;
-    bool m_objectChecksumHasBeenSet;
+    bool m_objectChecksumHasBeenSet = false;
 
     SummaryChecksumAlgorithm m_objectChecksumAlgorithm;
-    bool m_objectChecksumAlgorithmHasBeenSet;
+    bool m_objectChecksumAlgorithmHasBeenSet = false;
 
     Aws::String m_metadataString;
-    bool m_metadataStringHasBeenSet;
+    bool m_metadataStringHasBeenSet = false;
 
 
     long long m_metadataBlobLength;
-    bool m_metadataBlobLengthHasBeenSet;
+    bool m_metadataBlobLengthHasBeenSet = false;
 
     Aws::String m_metadataBlobChecksum;
-    bool m_metadataBlobChecksumHasBeenSet;
+    bool m_metadataBlobChecksumHasBeenSet = false;
 
     DataChecksumAlgorithm m_metadataBlobChecksumAlgorithm;
-    bool m_metadataBlobChecksumAlgorithmHasBeenSet;
+    bool m_metadataBlobChecksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

@@ -442,34 +442,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_fleetName;
-    bool m_fleetNameHasBeenSet;
+    bool m_fleetNameHasBeenSet = false;
 
     SessionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     SessionConnectionState m_connectionState;
-    bool m_connectionStateHasBeenSet;
+    bool m_connectionStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_maxExpirationTime;
-    bool m_maxExpirationTimeHasBeenSet;
+    bool m_maxExpirationTimeHasBeenSet = false;
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     NetworkAccessConfiguration m_networkAccessConfiguration;
-    bool m_networkAccessConfigurationHasBeenSet;
+    bool m_networkAccessConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

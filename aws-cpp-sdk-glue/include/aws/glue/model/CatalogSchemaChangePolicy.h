@@ -96,10 +96,10 @@ namespace Model
   private:
 
     bool m_enableUpdateCatalog;
-    bool m_enableUpdateCatalogHasBeenSet;
+    bool m_enableUpdateCatalogHasBeenSet = false;
 
     UpdateCatalogBehavior m_updateBehavior;
-    bool m_updateBehaviorHasBeenSet;
+    bool m_updateBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

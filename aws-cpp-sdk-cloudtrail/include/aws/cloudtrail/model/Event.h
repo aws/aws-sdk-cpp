@@ -427,31 +427,31 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventName;
-    bool m_eventNameHasBeenSet;
+    bool m_eventNameHasBeenSet = false;
 
     Aws::String m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_cloudTrailEvent;
-    bool m_cloudTrailEventHasBeenSet;
+    bool m_cloudTrailEventHasBeenSet = false;
   };
 
 } // namespace Model

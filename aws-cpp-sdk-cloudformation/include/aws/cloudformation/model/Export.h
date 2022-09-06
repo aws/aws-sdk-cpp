@@ -205,13 +205,13 @@ namespace Model
   private:
 
     Aws::String m_exportingStackId;
-    bool m_exportingStackIdHasBeenSet;
+    bool m_exportingStackIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

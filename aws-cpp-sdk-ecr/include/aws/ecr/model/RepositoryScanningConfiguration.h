@@ -218,19 +218,19 @@ namespace Model
   private:
 
     Aws::String m_repositoryArn;
-    bool m_repositoryArnHasBeenSet;
+    bool m_repositoryArnHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     bool m_scanOnPush;
-    bool m_scanOnPushHasBeenSet;
+    bool m_scanOnPushHasBeenSet = false;
 
     ScanFrequency m_scanFrequency;
-    bool m_scanFrequencyHasBeenSet;
+    bool m_scanFrequencyHasBeenSet = false;
 
     Aws::Vector<ScanningRepositoryFilter> m_appliedScanFilters;
-    bool m_appliedScanFiltersHasBeenSet;
+    bool m_appliedScanFiltersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
   };
 
 } // namespace Model

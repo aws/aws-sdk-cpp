@@ -320,22 +320,22 @@ namespace Model
   private:
 
     Aws::String m_poolARN;
-    bool m_poolARNHasBeenSet;
+    bool m_poolARNHasBeenSet = false;
 
     Aws::String m_poolName;
-    bool m_poolNameHasBeenSet;
+    bool m_poolNameHasBeenSet = false;
 
     TapeStorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     RetentionLockType m_retentionLockType;
-    bool m_retentionLockTypeHasBeenSet;
+    bool m_retentionLockTypeHasBeenSet = false;
 
     int m_retentionLockTimeInDays;
-    bool m_retentionLockTimeInDaysHasBeenSet;
+    bool m_retentionLockTimeInDaysHasBeenSet = false;
 
     PoolStatus m_poolStatus;
-    bool m_poolStatusHasBeenSet;
+    bool m_poolStatusHasBeenSet = false;
   };
 
 } // namespace Model

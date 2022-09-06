@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     AssociationStatusName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
   };
 
 } // namespace Model

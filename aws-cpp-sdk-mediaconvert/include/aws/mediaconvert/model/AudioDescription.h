@@ -718,37 +718,37 @@ namespace Model
   private:
 
     AudioChannelTaggingSettings m_audioChannelTaggingSettings;
-    bool m_audioChannelTaggingSettingsHasBeenSet;
+    bool m_audioChannelTaggingSettingsHasBeenSet = false;
 
     AudioNormalizationSettings m_audioNormalizationSettings;
-    bool m_audioNormalizationSettingsHasBeenSet;
+    bool m_audioNormalizationSettingsHasBeenSet = false;
 
     Aws::String m_audioSourceName;
-    bool m_audioSourceNameHasBeenSet;
+    bool m_audioSourceNameHasBeenSet = false;
 
     int m_audioType;
-    bool m_audioTypeHasBeenSet;
+    bool m_audioTypeHasBeenSet = false;
 
     AudioTypeControl m_audioTypeControl;
-    bool m_audioTypeControlHasBeenSet;
+    bool m_audioTypeControlHasBeenSet = false;
 
     AudioCodecSettings m_codecSettings;
-    bool m_codecSettingsHasBeenSet;
+    bool m_codecSettingsHasBeenSet = false;
 
     Aws::String m_customLanguageCode;
-    bool m_customLanguageCodeHasBeenSet;
+    bool m_customLanguageCodeHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     AudioLanguageCodeControl m_languageCodeControl;
-    bool m_languageCodeControlHasBeenSet;
+    bool m_languageCodeControlHasBeenSet = false;
 
     RemixSettings m_remixSettings;
-    bool m_remixSettingsHasBeenSet;
+    bool m_remixSettingsHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

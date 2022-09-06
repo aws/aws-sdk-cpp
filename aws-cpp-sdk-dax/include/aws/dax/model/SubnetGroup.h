@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_subnetGroupName;
-    bool m_subnetGroupNameHasBeenSet;
+    bool m_subnetGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Subnet> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
   };
 
 } // namespace Model

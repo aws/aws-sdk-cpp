@@ -331,28 +331,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupARN;
-    bool m_groupARNHasBeenSet;
+    bool m_groupARNHasBeenSet = false;
 
     Aws::String m_entitySelectorExpression;
-    bool m_entitySelectorExpressionHasBeenSet;
+    bool m_entitySelectorExpressionHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     bool m_forecastStatistics;
-    bool m_forecastStatisticsHasBeenSet;
+    bool m_forecastStatisticsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

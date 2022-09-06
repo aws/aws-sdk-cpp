@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<LFTagPair> m_lFTags;
-    bool m_lFTagsHasBeenSet;
+    bool m_lFTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -691,34 +691,34 @@ namespace Model
   private:
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_fromEmailAddressIdentityArn;
-    bool m_fromEmailAddressIdentityArnHasBeenSet;
+    bool m_fromEmailAddressIdentityArnHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replyToAddresses;
-    bool m_replyToAddressesHasBeenSet;
+    bool m_replyToAddressesHasBeenSet = false;
 
     Aws::String m_feedbackForwardingEmailAddress;
-    bool m_feedbackForwardingEmailAddressHasBeenSet;
+    bool m_feedbackForwardingEmailAddressHasBeenSet = false;
 
     Aws::String m_feedbackForwardingEmailAddressIdentityArn;
-    bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet;
+    bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = false;
 
     EmailContent m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_emailTags;
-    bool m_emailTagsHasBeenSet;
+    bool m_emailTagsHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     ListManagementOptions m_listManagementOptions;
-    bool m_listManagementOptionsHasBeenSet;
+    bool m_listManagementOptionsHasBeenSet = false;
   };
 
 } // namespace Model

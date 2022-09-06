@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_commitSpecifier;
-    bool m_commitSpecifierHasBeenSet;
+    bool m_commitSpecifierHasBeenSet = false;
 
     Aws::String m_folderPath;
-    bool m_folderPathHasBeenSet;
+    bool m_folderPathHasBeenSet = false;
   };
 
 } // namespace Model

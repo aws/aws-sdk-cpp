@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_passphrase;
-    bool m_passphraseHasBeenSet;
+    bool m_passphraseHasBeenSet = false;
   };
 
 } // namespace Model

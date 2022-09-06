@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::Vector<CodeGenNodeArg> m_jdbc;
-    bool m_jdbcHasBeenSet;
+    bool m_jdbcHasBeenSet = false;
 
     Aws::Vector<CodeGenNodeArg> m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     Aws::Vector<CodeGenNodeArg> m_dynamoDB;
-    bool m_dynamoDBHasBeenSet;
+    bool m_dynamoDBHasBeenSet = false;
   };
 
 } // namespace Model

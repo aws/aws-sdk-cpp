@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_manifestWindowSeconds;
-    bool m_manifestWindowSecondsHasBeenSet;
+    bool m_manifestWindowSecondsHasBeenSet = false;
   };
 
 } // namespace Model

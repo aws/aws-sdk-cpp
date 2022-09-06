@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
 
     Aws::String m_organizationalUnitDistinguishedName;
-    bool m_organizationalUnitDistinguishedNameHasBeenSet;
+    bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
   };
 
 } // namespace Model

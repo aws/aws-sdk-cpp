@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
   };
 
 } // namespace Model

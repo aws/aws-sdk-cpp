@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_profileProperties;
-    bool m_profilePropertiesHasBeenSet;
+    bool m_profilePropertiesHasBeenSet = false;
 
     OAuth2Properties m_oAuth2Properties;
-    bool m_oAuth2PropertiesHasBeenSet;
+    bool m_oAuth2PropertiesHasBeenSet = false;
   };
 
 } // namespace Model

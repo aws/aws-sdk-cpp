@@ -150,10 +150,10 @@ namespace Model
   private:
 
     bool m_autoGenerateEndpointName;
-    bool m_autoGenerateEndpointNameHasBeenSet;
+    bool m_autoGenerateEndpointNameHasBeenSet = false;
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
   };
 
 } // namespace Model

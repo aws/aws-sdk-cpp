@@ -172,19 +172,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_internalUserDatabaseEnabled;
-    bool m_internalUserDatabaseEnabledHasBeenSet;
+    bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
     MasterUserOptions m_masterUserOptions;
-    bool m_masterUserOptionsHasBeenSet;
+    bool m_masterUserOptionsHasBeenSet = false;
 
     SAMLOptionsInput m_sAMLOptions;
-    bool m_sAMLOptionsHasBeenSet;
+    bool m_sAMLOptionsHasBeenSet = false;
 
     bool m_anonymousAuthEnabled;
-    bool m_anonymousAuthEnabledHasBeenSet;
+    bool m_anonymousAuthEnabledHasBeenSet = false;
   };
 
 } // namespace Model

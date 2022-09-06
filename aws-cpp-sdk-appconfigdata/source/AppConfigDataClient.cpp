@@ -78,7 +78,7 @@ AppConfigDataClient::~AppConfigDataClient()
 
 void AppConfigDataClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AppConfigData");
+  AWSClient::SetServiceClientName("AppConfigData");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

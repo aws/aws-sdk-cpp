@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Vector<StaleIpPermission> m_staleIpPermissions;
-    bool m_staleIpPermissionsHasBeenSet;
+    bool m_staleIpPermissionsHasBeenSet = false;
 
     Aws::Vector<StaleIpPermission> m_staleIpPermissionsEgress;
-    bool m_staleIpPermissionsEgressHasBeenSet;
+    bool m_staleIpPermissionsEgressHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

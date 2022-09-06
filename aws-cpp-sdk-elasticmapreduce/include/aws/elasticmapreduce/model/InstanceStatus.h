@@ -134,13 +134,13 @@ namespace Model
   private:
 
     InstanceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     InstanceStateChangeReason m_stateChangeReason;
-    bool m_stateChangeReasonHasBeenSet;
+    bool m_stateChangeReasonHasBeenSet = false;
 
     InstanceTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
   };
 
 } // namespace Model

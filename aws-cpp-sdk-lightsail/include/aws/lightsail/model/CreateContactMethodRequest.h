@@ -255,10 +255,10 @@ namespace Model
   private:
 
     ContactProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_contactEndpoint;
-    bool m_contactEndpointHasBeenSet;
+    bool m_contactEndpointHasBeenSet = false;
   };
 
 } // namespace Model

@@ -707,34 +707,34 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_aliasId;
-    bool m_aliasIdHasBeenSet;
+    bool m_aliasIdHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
-    bool m_gamePropertiesHasBeenSet;
+    bool m_gamePropertiesHasBeenSet = false;
 
     Aws::String m_creatorId;
-    bool m_creatorIdHasBeenSet;
+    bool m_creatorIdHasBeenSet = false;
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::String m_gameSessionData;
-    bool m_gameSessionDataHasBeenSet;
+    bool m_gameSessionDataHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

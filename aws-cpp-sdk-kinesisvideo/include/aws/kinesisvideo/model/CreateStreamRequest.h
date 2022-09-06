@@ -455,22 +455,22 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_mediaType;
-    bool m_mediaTypeHasBeenSet;
+    bool m_mediaTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     int m_dataRetentionInHours;
-    bool m_dataRetentionInHoursHasBeenSet;
+    bool m_dataRetentionInHoursHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

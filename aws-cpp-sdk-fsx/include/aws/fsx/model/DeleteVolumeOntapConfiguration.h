@@ -91,10 +91,10 @@ namespace Model
   private:
 
     bool m_skipFinalBackup;
-    bool m_skipFinalBackupHasBeenSet;
+    bool m_skipFinalBackupHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;
-    bool m_finalBackupTagsHasBeenSet;
+    bool m_finalBackupTagsHasBeenSet = false;
   };
 
 } // namespace Model

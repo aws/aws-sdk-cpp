@@ -388,28 +388,28 @@ namespace Model
   private:
 
     Aws::String m_localGatewayRouteTableVpcAssociationId;
-    bool m_localGatewayRouteTableVpcAssociationIdHasBeenSet;
+    bool m_localGatewayRouteTableVpcAssociationIdHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableId;
-    bool m_localGatewayRouteTableIdHasBeenSet;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableArn;
-    bool m_localGatewayRouteTableArnHasBeenSet;
+    bool m_localGatewayRouteTableArnHasBeenSet = false;
 
     Aws::String m_localGatewayId;
-    bool m_localGatewayIdHasBeenSet;
+    bool m_localGatewayIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

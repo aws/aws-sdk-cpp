@@ -428,19 +428,19 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     StartReplicationTaskTypeValue m_startReplicationTaskType;
-    bool m_startReplicationTaskTypeHasBeenSet;
+    bool m_startReplicationTaskTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_cdcStartTime;
-    bool m_cdcStartTimeHasBeenSet;
+    bool m_cdcStartTimeHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;
-    bool m_cdcStartPositionHasBeenSet;
+    bool m_cdcStartPositionHasBeenSet = false;
 
     Aws::String m_cdcStopPosition;
-    bool m_cdcStopPositionHasBeenSet;
+    bool m_cdcStopPositionHasBeenSet = false;
   };
 
 } // namespace Model

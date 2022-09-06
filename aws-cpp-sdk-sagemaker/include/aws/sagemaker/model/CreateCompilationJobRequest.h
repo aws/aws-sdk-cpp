@@ -528,28 +528,28 @@ namespace Model
   private:
 
     Aws::String m_compilationJobName;
-    bool m_compilationJobNameHasBeenSet;
+    bool m_compilationJobNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_modelPackageVersionArn;
-    bool m_modelPackageVersionArnHasBeenSet;
+    bool m_modelPackageVersionArnHasBeenSet = false;
 
     InputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
+    bool m_inputConfigHasBeenSet = false;
 
     OutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     NeoVpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     StoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

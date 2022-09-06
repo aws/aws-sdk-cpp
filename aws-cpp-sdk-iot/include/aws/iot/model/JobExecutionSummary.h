@@ -224,22 +224,22 @@ namespace Model
   private:
 
     JobExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_queuedAt;
-    bool m_queuedAtHasBeenSet;
+    bool m_queuedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     long long m_executionNumber;
-    bool m_executionNumberHasBeenSet;
+    bool m_executionNumberHasBeenSet = false;
 
     int m_retryAttempt;
-    bool m_retryAttemptHasBeenSet;
+    bool m_retryAttemptHasBeenSet = false;
   };
 
 } // namespace Model

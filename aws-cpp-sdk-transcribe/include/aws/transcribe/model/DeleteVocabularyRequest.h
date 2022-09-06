@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
   };
 
 } // namespace Model

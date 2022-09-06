@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_appServerPrivateKey;
-    bool m_appServerPrivateKeyHasBeenSet;
+    bool m_appServerPrivateKeyHasBeenSet = false;
   };
 
 } // namespace Model

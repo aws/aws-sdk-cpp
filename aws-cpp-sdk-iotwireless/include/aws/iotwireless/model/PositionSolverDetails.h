@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SemtechGnssDetail m_semtechGnss;
-    bool m_semtechGnssHasBeenSet;
+    bool m_semtechGnssHasBeenSet = false;
   };
 
 } // namespace Model

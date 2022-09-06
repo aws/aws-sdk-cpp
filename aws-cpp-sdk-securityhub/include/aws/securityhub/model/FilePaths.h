@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_hash;
-    bool m_hashHasBeenSet;
+    bool m_hashHasBeenSet = false;
   };
 
 } // namespace Model

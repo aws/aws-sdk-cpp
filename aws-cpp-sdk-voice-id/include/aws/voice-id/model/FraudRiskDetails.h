@@ -109,10 +109,10 @@ namespace Model
   private:
 
     KnownFraudsterRisk m_knownFraudsterRisk;
-    bool m_knownFraudsterRiskHasBeenSet;
+    bool m_knownFraudsterRiskHasBeenSet = false;
 
     VoiceSpoofingRisk m_voiceSpoofingRisk;
-    bool m_voiceSpoofingRiskHasBeenSet;
+    bool m_voiceSpoofingRiskHasBeenSet = false;
   };
 
 } // namespace Model

@@ -181,16 +181,16 @@ namespace Model
   private:
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_activeDate;
-    bool m_activeDateHasBeenSet;
+    bool m_activeDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_inactiveDate;
-    bool m_inactiveDateHasBeenSet;
+    bool m_inactiveDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

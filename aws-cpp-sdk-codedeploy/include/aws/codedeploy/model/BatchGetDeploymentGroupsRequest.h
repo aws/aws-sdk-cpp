@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentGroupNames;
-    bool m_deploymentGroupNamesHasBeenSet;
+    bool m_deploymentGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -370,25 +370,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     SimulationJobBatchStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_failedRequestCount;
-    bool m_failedRequestCountHasBeenSet;
+    bool m_failedRequestCountHasBeenSet = false;
 
     int m_pendingRequestCount;
-    bool m_pendingRequestCountHasBeenSet;
+    bool m_pendingRequestCountHasBeenSet = false;
 
     int m_createdRequestCount;
-    bool m_createdRequestCountHasBeenSet;
+    bool m_createdRequestCountHasBeenSet = false;
   };
 
 } // namespace Model

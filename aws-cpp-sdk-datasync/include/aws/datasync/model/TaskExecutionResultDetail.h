@@ -333,31 +333,31 @@ namespace Model
   private:
 
     long long m_prepareDuration;
-    bool m_prepareDurationHasBeenSet;
+    bool m_prepareDurationHasBeenSet = false;
 
     PhaseStatus m_prepareStatus;
-    bool m_prepareStatusHasBeenSet;
+    bool m_prepareStatusHasBeenSet = false;
 
     long long m_totalDuration;
-    bool m_totalDurationHasBeenSet;
+    bool m_totalDurationHasBeenSet = false;
 
     long long m_transferDuration;
-    bool m_transferDurationHasBeenSet;
+    bool m_transferDurationHasBeenSet = false;
 
     PhaseStatus m_transferStatus;
-    bool m_transferStatusHasBeenSet;
+    bool m_transferStatusHasBeenSet = false;
 
     long long m_verifyDuration;
-    bool m_verifyDurationHasBeenSet;
+    bool m_verifyDurationHasBeenSet = false;
 
     PhaseStatus m_verifyStatus;
-    bool m_verifyStatusHasBeenSet;
+    bool m_verifyStatusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorDetail;
-    bool m_errorDetailHasBeenSet;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

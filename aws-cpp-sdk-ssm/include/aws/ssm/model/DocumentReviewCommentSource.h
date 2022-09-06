@@ -127,10 +127,10 @@ namespace Model
   private:
 
     DocumentReviewCommentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     AggregationFunction m_aggregationFunction;
-    bool m_aggregationFunctionHasBeenSet;
+    bool m_aggregationFunctionHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

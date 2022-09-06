@@ -238,13 +238,13 @@ namespace Model
   private:
 
     BackupPlanInput m_backupPlan;
-    bool m_backupPlanHasBeenSet;
+    bool m_backupPlanHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_backupPlanTags;
-    bool m_backupPlanTagsHasBeenSet;
+    bool m_backupPlanTagsHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

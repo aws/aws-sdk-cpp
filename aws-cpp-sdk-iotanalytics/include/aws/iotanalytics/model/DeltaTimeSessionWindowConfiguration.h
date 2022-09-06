@@ -91,7 +91,7 @@ namespace Model
   private:
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

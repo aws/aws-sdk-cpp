@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_loadBalancerNames;
-    bool m_loadBalancerNamesHasBeenSet;
+    bool m_loadBalancerNamesHasBeenSet = false;
   };
 
 } // namespace Model

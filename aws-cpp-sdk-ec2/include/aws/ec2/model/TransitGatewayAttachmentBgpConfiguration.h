@@ -197,19 +197,19 @@ namespace Model
   private:
 
     long long m_transitGatewayAsn;
-    bool m_transitGatewayAsnHasBeenSet;
+    bool m_transitGatewayAsnHasBeenSet = false;
 
     long long m_peerAsn;
-    bool m_peerAsnHasBeenSet;
+    bool m_peerAsnHasBeenSet = false;
 
     Aws::String m_transitGatewayAddress;
-    bool m_transitGatewayAddressHasBeenSet;
+    bool m_transitGatewayAddressHasBeenSet = false;
 
     Aws::String m_peerAddress;
-    bool m_peerAddressHasBeenSet;
+    bool m_peerAddressHasBeenSet = false;
 
     BgpStatus m_bgpStatus;
-    bool m_bgpStatusHasBeenSet;
+    bool m_bgpStatusHasBeenSet = false;
   };
 
 } // namespace Model

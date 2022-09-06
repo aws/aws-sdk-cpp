@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     OperationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     OperationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submittedDate;
-    bool m_submittedDateHasBeenSet;
+    bool m_submittedDateHasBeenSet = false;
   };
 
 } // namespace Model

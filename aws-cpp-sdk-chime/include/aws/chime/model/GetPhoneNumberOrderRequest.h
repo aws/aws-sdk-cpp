@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberOrderId;
-    bool m_phoneNumberOrderIdHasBeenSet;
+    bool m_phoneNumberOrderIdHasBeenSet = false;
   };
 
 } // namespace Model

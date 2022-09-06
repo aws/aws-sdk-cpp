@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     bool m_ignoreUnsupportedType;
-    bool m_ignoreUnsupportedTypeHasBeenSet;
+    bool m_ignoreUnsupportedTypeHasBeenSet = false;
   };
 
 } // namespace Model

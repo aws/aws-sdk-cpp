@@ -59,7 +59,7 @@ namespace Model
   private:
 
     double m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

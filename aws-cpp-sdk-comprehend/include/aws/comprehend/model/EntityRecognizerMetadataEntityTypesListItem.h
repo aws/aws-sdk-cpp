@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     EntityTypesEvaluationMetrics m_evaluationMetrics;
-    bool m_evaluationMetricsHasBeenSet;
+    bool m_evaluationMetricsHasBeenSet = false;
 
     int m_numberOfTrainMentions;
-    bool m_numberOfTrainMentionsHasBeenSet;
+    bool m_numberOfTrainMentionsHasBeenSet = false;
   };
 
 } // namespace Model

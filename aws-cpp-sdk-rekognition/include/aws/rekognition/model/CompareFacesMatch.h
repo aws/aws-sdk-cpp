@@ -101,10 +101,10 @@ namespace Model
   private:
 
     double m_similarity;
-    bool m_similarityHasBeenSet;
+    bool m_similarityHasBeenSet = false;
 
     ComparedFace m_face;
-    bool m_faceHasBeenSet;
+    bool m_faceHasBeenSet = false;
   };
 
 } // namespace Model

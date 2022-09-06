@@ -333,22 +333,22 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeDimension> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SegmentBehaviors m_behavior;
-    bool m_behaviorHasBeenSet;
+    bool m_behaviorHasBeenSet = false;
 
     SegmentDemographics m_demographic;
-    bool m_demographicHasBeenSet;
+    bool m_demographicHasBeenSet = false;
 
     SegmentLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::Map<Aws::String, MetricDimension> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeDimension> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
   };
 
 } // namespace Model

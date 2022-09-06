@@ -344,16 +344,16 @@ Alternate rendition that the client will not try to play
   private:
 
     Aws::String m_audioGroupId;
-    bool m_audioGroupIdHasBeenSet;
+    bool m_audioGroupIdHasBeenSet = false;
 
     InputLocation m_audioOnlyImage;
-    bool m_audioOnlyImageHasBeenSet;
+    bool m_audioOnlyImageHasBeenSet = false;
 
     AudioOnlyHlsTrackType m_audioTrackType;
-    bool m_audioTrackTypeHasBeenSet;
+    bool m_audioTrackTypeHasBeenSet = false;
 
     AudioOnlyHlsSegmentType m_segmentType;
-    bool m_segmentTypeHasBeenSet;
+    bool m_segmentTypeHasBeenSet = false;
   };
 
 } // namespace Model

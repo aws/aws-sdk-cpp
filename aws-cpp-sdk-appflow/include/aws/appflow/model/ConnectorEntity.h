@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     bool m_hasNestedEntities;
-    bool m_hasNestedEntitiesHasBeenSet;
+    bool m_hasNestedEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

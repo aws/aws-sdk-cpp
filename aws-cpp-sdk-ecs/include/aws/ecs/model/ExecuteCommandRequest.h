@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     Aws::String m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     bool m_interactive;
-    bool m_interactiveHasBeenSet;
+    bool m_interactiveHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_reportId;
-    bool m_reportIdHasBeenSet;
+    bool m_reportIdHasBeenSet = false;
   };
 
 } // namespace Model

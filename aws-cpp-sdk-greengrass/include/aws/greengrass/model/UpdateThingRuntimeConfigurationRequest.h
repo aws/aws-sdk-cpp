@@ -107,10 +107,10 @@ namespace Model
   private:
 
     TelemetryConfigurationUpdate m_telemetryConfiguration;
-    bool m_telemetryConfigurationHasBeenSet;
+    bool m_telemetryConfigurationHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
   };
 
 } // namespace Model

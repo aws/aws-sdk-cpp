@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
   };
 
 } // namespace Model

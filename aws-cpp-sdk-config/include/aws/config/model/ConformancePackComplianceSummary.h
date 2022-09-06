@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     ConformancePackComplianceType m_conformancePackComplianceStatus;
-    bool m_conformancePackComplianceStatusHasBeenSet;
+    bool m_conformancePackComplianceStatusHasBeenSet = false;
   };
 
 } // namespace Model

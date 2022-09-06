@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_botAliasId;
-    bool m_botAliasIdHasBeenSet;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     bool m_skipResourceInUseCheck;
-    bool m_skipResourceInUseCheckHasBeenSet;
+    bool m_skipResourceInUseCheckHasBeenSet = false;
   };
 
 } // namespace Model

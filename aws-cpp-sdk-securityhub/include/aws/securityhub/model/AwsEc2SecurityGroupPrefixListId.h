@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
   };
 
 } // namespace Model

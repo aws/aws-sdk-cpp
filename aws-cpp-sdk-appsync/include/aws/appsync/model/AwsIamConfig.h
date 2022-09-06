@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_signingRegion;
-    bool m_signingRegionHasBeenSet;
+    bool m_signingRegionHasBeenSet = false;
 
     Aws::String m_signingServiceName;
-    bool m_signingServiceNameHasBeenSet;
+    bool m_signingServiceNameHasBeenSet = false;
   };
 
 } // namespace Model

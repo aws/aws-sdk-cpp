@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_redirectUri;
-    bool m_redirectUriHasBeenSet;
+    bool m_redirectUriHasBeenSet = false;
   };
 
 } // namespace Model

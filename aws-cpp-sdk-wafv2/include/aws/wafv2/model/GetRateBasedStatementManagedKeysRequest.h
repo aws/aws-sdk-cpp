@@ -330,19 +330,19 @@ namespace Model
   private:
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_webACLName;
-    bool m_webACLNameHasBeenSet;
+    bool m_webACLNameHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     Aws::String m_ruleGroupRuleName;
-    bool m_ruleGroupRuleNameHasBeenSet;
+    bool m_ruleGroupRuleNameHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
   };
 
 } // namespace Model

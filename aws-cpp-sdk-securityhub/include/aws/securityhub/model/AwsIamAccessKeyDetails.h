@@ -381,28 +381,28 @@ namespace Model
   private:
 
     AwsIamAccessKeyStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principalName;
-    bool m_principalNameHasBeenSet;
+    bool m_principalNameHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     AwsIamAccessKeySessionContext m_sessionContext;
-    bool m_sessionContextHasBeenSet;
+    bool m_sessionContextHasBeenSet = false;
   };
 
 } // namespace Model

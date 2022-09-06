@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_nextAttemptDateTime;
-    bool m_nextAttemptDateTimeHasBeenSet;
+    bool m_nextAttemptDateTimeHasBeenSet = false;
 
     Aws::String m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Vector<DataReplicationInitiationStep> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
   };
 
 } // namespace Model

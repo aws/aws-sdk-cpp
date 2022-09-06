@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ContactDetail m_adminContact;
-    bool m_adminContactHasBeenSet;
+    bool m_adminContactHasBeenSet = false;
 
     ContactDetail m_registrantContact;
-    bool m_registrantContactHasBeenSet;
+    bool m_registrantContactHasBeenSet = false;
 
     ContactDetail m_techContact;
-    bool m_techContactHasBeenSet;
+    bool m_techContactHasBeenSet = false;
   };
 
 } // namespace Model

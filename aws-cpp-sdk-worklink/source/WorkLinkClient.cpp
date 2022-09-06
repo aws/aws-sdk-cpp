@@ -76,7 +76,7 @@ WorkLinkClient::~WorkLinkClient()
 
 void WorkLinkClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("WorkLink");
+  AWSClient::SetServiceClientName("WorkLink");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

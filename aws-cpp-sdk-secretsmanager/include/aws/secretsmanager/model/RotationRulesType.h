@@ -355,13 +355,13 @@ namespace Model
   private:
 
     long long m_automaticallyAfterDays;
-    bool m_automaticallyAfterDaysHasBeenSet;
+    bool m_automaticallyAfterDaysHasBeenSet = false;
 
     Aws::String m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
   };
 
 } // namespace Model

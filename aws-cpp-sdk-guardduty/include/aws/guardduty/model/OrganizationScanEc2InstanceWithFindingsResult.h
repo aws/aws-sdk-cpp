@@ -71,7 +71,7 @@ namespace Model
   private:
 
     OrganizationEbsVolumesResult m_ebsVolumes;
-    bool m_ebsVolumesHasBeenSet;
+    bool m_ebsVolumesHasBeenSet = false;
   };
 
 } // namespace Model

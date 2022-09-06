@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_channelARN;
-    bool m_channelARNHasBeenSet;
+    bool m_channelARNHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
   };
 
 } // namespace Model

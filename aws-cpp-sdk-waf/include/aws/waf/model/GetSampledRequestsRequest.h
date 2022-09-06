@@ -269,16 +269,16 @@ namespace Model
   private:
 
     Aws::String m_webAclId;
-    bool m_webAclIdHasBeenSet;
+    bool m_webAclIdHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     TimeWindow m_timeWindow;
-    bool m_timeWindowHasBeenSet;
+    bool m_timeWindowHasBeenSet = false;
 
     long long m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

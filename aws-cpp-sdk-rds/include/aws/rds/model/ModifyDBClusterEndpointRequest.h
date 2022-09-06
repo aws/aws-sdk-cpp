@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_dBClusterEndpointIdentifier;
-    bool m_dBClusterEndpointIdentifierHasBeenSet;
+    bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
     Aws::String m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_staticMembers;
-    bool m_staticMembersHasBeenSet;
+    bool m_staticMembersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedMembers;
-    bool m_excludedMembersHasBeenSet;
+    bool m_excludedMembersHasBeenSet = false;
   };
 
 } // namespace Model

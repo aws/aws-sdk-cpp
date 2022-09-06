@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_authorArn;
-    bool m_authorArnHasBeenSet;
+    bool m_authorArnHasBeenSet = false;
 
     PullRequestStatusEnum m_pullRequestStatus;
-    bool m_pullRequestStatusHasBeenSet;
+    bool m_pullRequestStatusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

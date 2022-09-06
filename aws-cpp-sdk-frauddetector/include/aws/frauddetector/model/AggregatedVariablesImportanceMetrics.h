@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<AggregatedLogOddsMetric> m_logOddsMetrics;
-    bool m_logOddsMetricsHasBeenSet;
+    bool m_logOddsMetricsHasBeenSet = false;
   };
 
 } // namespace Model

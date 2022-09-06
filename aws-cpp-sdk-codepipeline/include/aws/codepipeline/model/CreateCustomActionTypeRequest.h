@@ -396,28 +396,28 @@ namespace Model
   private:
 
     ActionCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ActionTypeSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     Aws::Vector<ActionConfigurationProperty> m_configurationProperties;
-    bool m_configurationPropertiesHasBeenSet;
+    bool m_configurationPropertiesHasBeenSet = false;
 
     ArtifactDetails m_inputArtifactDetails;
-    bool m_inputArtifactDetailsHasBeenSet;
+    bool m_inputArtifactDetailsHasBeenSet = false;
 
     ArtifactDetails m_outputArtifactDetails;
-    bool m_outputArtifactDetailsHasBeenSet;
+    bool m_outputArtifactDetailsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

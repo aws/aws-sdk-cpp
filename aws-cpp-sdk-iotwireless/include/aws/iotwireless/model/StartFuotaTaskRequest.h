@@ -79,10 +79,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     LoRaWANStartFuotaTask m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

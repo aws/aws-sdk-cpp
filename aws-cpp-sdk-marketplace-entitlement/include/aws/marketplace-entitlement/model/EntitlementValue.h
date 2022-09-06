@@ -164,16 +164,16 @@ namespace Model
   private:
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
   };
 
 } // namespace Model

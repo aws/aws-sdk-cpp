@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

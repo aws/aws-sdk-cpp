@@ -179,16 +179,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
 
     Aws::String m_trafficPolicyId;
-    bool m_trafficPolicyIdHasBeenSet;
+    bool m_trafficPolicyIdHasBeenSet = false;
 
     int m_trafficPolicyVersion;
-    bool m_trafficPolicyVersionHasBeenSet;
+    bool m_trafficPolicyVersionHasBeenSet = false;
   };
 
 } // namespace Model

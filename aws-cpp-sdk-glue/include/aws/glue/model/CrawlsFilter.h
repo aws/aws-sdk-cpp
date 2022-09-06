@@ -211,13 +211,13 @@ namespace Model
   private:
 
     FieldName m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     FilterOperator m_filterOperator;
-    bool m_filterOperatorHasBeenSet;
+    bool m_filterOperatorHasBeenSet = false;
 
     Aws::String m_fieldValue;
-    bool m_fieldValueHasBeenSet;
+    bool m_fieldValueHasBeenSet = false;
   };
 
 } // namespace Model

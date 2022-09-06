@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_alertCode;
-    bool m_alertCodeHasBeenSet;
+    bool m_alertCodeHasBeenSet = false;
 
     Aws::String m_alertMessage;
-    bool m_alertMessageHasBeenSet;
+    bool m_alertMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_relatedResourceArns;
-    bool m_relatedResourceArnsHasBeenSet;
+    bool m_relatedResourceArnsHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

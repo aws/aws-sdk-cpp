@@ -91,10 +91,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_consumedLicenses;
-    bool m_consumedLicensesHasBeenSet;
+    bool m_consumedLicensesHasBeenSet = false;
   };
 
 } // namespace Model

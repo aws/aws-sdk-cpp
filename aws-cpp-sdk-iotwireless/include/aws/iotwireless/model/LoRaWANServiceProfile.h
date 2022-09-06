@@ -100,13 +100,13 @@ namespace Model
   private:
 
     bool m_addGwMetadata;
-    bool m_addGwMetadataHasBeenSet;
+    bool m_addGwMetadataHasBeenSet = false;
 
     int m_drMin;
-    bool m_drMinHasBeenSet;
+    bool m_drMinHasBeenSet = false;
 
     int m_drMax;
-    bool m_drMaxHasBeenSet;
+    bool m_drMaxHasBeenSet = false;
   };
 
 } // namespace Model

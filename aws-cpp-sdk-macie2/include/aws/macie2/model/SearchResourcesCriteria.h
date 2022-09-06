@@ -122,10 +122,10 @@ namespace Model
   private:
 
     SearchResourcesSimpleCriterion m_simpleCriterion;
-    bool m_simpleCriterionHasBeenSet;
+    bool m_simpleCriterionHasBeenSet = false;
 
     SearchResourcesTagCriterion m_tagCriterion;
-    bool m_tagCriterionHasBeenSet;
+    bool m_tagCriterionHasBeenSet = false;
   };
 
 } // namespace Model

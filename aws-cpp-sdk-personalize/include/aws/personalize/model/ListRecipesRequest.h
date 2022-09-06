@@ -182,16 +182,16 @@ namespace Model
   private:
 
     RecipeProvider m_recipeProvider;
-    bool m_recipeProviderHasBeenSet;
+    bool m_recipeProviderHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Domain m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
   };
 
 } // namespace Model

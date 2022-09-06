@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::String m_dataVolumeKMSKeyId;
-    bool m_dataVolumeKMSKeyIdHasBeenSet;
+    bool m_dataVolumeKMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

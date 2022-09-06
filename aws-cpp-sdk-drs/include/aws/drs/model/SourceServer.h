@@ -384,31 +384,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DataReplicationInfo m_dataReplicationInfo;
-    bool m_dataReplicationInfoHasBeenSet;
+    bool m_dataReplicationInfoHasBeenSet = false;
 
     LastLaunchResult m_lastLaunchResult;
-    bool m_lastLaunchResultHasBeenSet;
+    bool m_lastLaunchResultHasBeenSet = false;
 
     LifeCycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::String m_recoveryInstanceId;
-    bool m_recoveryInstanceIdHasBeenSet;
+    bool m_recoveryInstanceIdHasBeenSet = false;
 
     SourceProperties m_sourceProperties;
-    bool m_sourcePropertiesHasBeenSet;
+    bool m_sourcePropertiesHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     StagingArea m_stagingArea;
-    bool m_stagingAreaHasBeenSet;
+    bool m_stagingAreaHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

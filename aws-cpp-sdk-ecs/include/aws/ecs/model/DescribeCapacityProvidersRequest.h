@@ -305,16 +305,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_capacityProviders;
-    bool m_capacityProvidersHasBeenSet;
+    bool m_capacityProvidersHasBeenSet = false;
 
     Aws::Vector<CapacityProviderField> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

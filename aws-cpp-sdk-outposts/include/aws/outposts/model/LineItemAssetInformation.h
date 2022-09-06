@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_macAddressList;
-    bool m_macAddressListHasBeenSet;
+    bool m_macAddressListHasBeenSet = false;
   };
 
 } // namespace Model

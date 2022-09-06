@@ -149,13 +149,13 @@ namespace Model
   private:
 
     int m_maxFiles;
-    bool m_maxFilesHasBeenSet;
+    bool m_maxFilesHasBeenSet = false;
 
     OrderedBy m_orderedBy;
-    bool m_orderedByHasBeenSet;
+    bool m_orderedByHasBeenSet = false;
 
     Order m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

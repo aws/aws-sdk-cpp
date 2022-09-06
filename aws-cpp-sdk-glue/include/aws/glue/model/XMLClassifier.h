@@ -286,22 +286,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_rowTag;
-    bool m_rowTagHasBeenSet;
+    bool m_rowTagHasBeenSet = false;
   };
 
 } // namespace Model

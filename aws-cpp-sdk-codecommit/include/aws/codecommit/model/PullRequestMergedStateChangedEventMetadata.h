@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_destinationReference;
-    bool m_destinationReferenceHasBeenSet;
+    bool m_destinationReferenceHasBeenSet = false;
 
     MergeMetadata m_mergeMetadata;
-    bool m_mergeMetadataHasBeenSet;
+    bool m_mergeMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     Aws::String m_sessionIds;
-    bool m_sessionIdsHasBeenSet;
+    bool m_sessionIdsHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

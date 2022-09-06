@@ -79,7 +79,7 @@ namespace Model
   private:
 
     DynamicRoutingValue m_dynamicRouting;
-    bool m_dynamicRoutingHasBeenSet;
+    bool m_dynamicRoutingHasBeenSet = false;
   };
 
 } // namespace Model

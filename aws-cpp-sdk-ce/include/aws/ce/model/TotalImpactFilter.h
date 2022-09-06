@@ -113,13 +113,13 @@ namespace Model
   private:
 
     NumericOperator m_numericOperator;
-    bool m_numericOperatorHasBeenSet;
+    bool m_numericOperatorHasBeenSet = false;
 
     double m_startValue;
-    bool m_startValueHasBeenSet;
+    bool m_startValueHasBeenSet = false;
 
     double m_endValue;
-    bool m_endValueHasBeenSet;
+    bool m_endValueHasBeenSet = false;
   };
 
 } // namespace Model

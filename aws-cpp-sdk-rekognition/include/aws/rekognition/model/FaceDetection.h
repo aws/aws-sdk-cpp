@@ -96,10 +96,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     FaceDetail m_face;
-    bool m_faceHasBeenSet;
+    bool m_faceHasBeenSet = false;
   };
 
 } // namespace Model

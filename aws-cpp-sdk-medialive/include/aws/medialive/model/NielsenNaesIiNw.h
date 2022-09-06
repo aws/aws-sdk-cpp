@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_checkDigitString;
-    bool m_checkDigitStringHasBeenSet;
+    bool m_checkDigitStringHasBeenSet = false;
 
     double m_sid;
-    bool m_sidHasBeenSet;
+    bool m_sidHasBeenSet = false;
   };
 
 } // namespace Model

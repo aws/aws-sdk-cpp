@@ -446,16 +446,16 @@ namespace Model
   private:
 
     int m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_responsePagePath;
-    bool m_responsePagePathHasBeenSet;
+    bool m_responsePagePathHasBeenSet = false;
 
     Aws::String m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     long long m_errorCachingMinTTL;
-    bool m_errorCachingMinTTLHasBeenSet;
+    bool m_errorCachingMinTTLHasBeenSet = false;
   };
 
 } // namespace Model

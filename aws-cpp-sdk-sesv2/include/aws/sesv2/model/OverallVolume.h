@@ -153,13 +153,13 @@ namespace Model
   private:
 
     VolumeStatistics m_volumeStatistics;
-    bool m_volumeStatisticsHasBeenSet;
+    bool m_volumeStatisticsHasBeenSet = false;
 
     double m_readRatePercent;
-    bool m_readRatePercentHasBeenSet;
+    bool m_readRatePercentHasBeenSet = false;
 
     Aws::Vector<DomainIspPlacement> m_domainIspPlacements;
-    bool m_domainIspPlacementsHasBeenSet;
+    bool m_domainIspPlacementsHasBeenSet = false;
   };
 
 } // namespace Model

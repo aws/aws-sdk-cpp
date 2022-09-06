@@ -248,16 +248,16 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customMetadata;
-    bool m_customMetadataHasBeenSet;
+    bool m_customMetadataHasBeenSet = false;
   };
 
 } // namespace Model

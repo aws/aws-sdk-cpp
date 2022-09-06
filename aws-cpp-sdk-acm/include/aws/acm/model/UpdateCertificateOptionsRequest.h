@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     CertificateOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

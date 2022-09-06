@@ -146,13 +146,13 @@ namespace Model
   private:
 
     BatchState m_currentSpotFleetRequestState;
-    bool m_currentSpotFleetRequestStateHasBeenSet;
+    bool m_currentSpotFleetRequestStateHasBeenSet = false;
 
     BatchState m_previousSpotFleetRequestState;
-    bool m_previousSpotFleetRequestStateHasBeenSet;
+    bool m_previousSpotFleetRequestStateHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
+    bool m_spotFleetRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

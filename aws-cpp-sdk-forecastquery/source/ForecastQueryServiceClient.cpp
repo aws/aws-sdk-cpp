@@ -78,7 +78,7 @@ ForecastQueryServiceClient::~ForecastQueryServiceClient()
 
 void ForecastQueryServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("forecastquery");
+  AWSClient::SetServiceClientName("forecastquery");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

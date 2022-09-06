@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_minimumInstanceMetadataServiceVersion;
-    bool m_minimumInstanceMetadataServiceVersionHasBeenSet;
+    bool m_minimumInstanceMetadataServiceVersionHasBeenSet = false;
   };
 
 } // namespace Model

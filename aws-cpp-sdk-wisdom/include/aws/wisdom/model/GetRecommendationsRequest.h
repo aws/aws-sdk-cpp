@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     int m_waitTimeSeconds;
-    bool m_waitTimeSecondsHasBeenSet;
+    bool m_waitTimeSecondsHasBeenSet = false;
   };
 
 } // namespace Model

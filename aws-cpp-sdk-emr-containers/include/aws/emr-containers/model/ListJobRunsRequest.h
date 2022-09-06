@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::String m_virtualClusterId;
-    bool m_virtualClusterIdHasBeenSet;
+    bool m_virtualClusterIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<JobRunState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

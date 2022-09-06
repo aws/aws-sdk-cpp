@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_workloadArn;
-    bool m_workloadArnHasBeenSet;
+    bool m_workloadArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

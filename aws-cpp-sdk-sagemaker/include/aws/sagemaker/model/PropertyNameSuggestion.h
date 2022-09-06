@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_propertyName;
-    bool m_propertyNameHasBeenSet;
+    bool m_propertyNameHasBeenSet = false;
   };
 
 } // namespace Model

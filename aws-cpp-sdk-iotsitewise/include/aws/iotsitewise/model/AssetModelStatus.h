@@ -106,10 +106,10 @@ namespace Model
   private:
 
     AssetModelState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ErrorDetails m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

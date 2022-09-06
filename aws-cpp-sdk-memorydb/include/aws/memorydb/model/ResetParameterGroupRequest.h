@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     bool m_allParameters;
-    bool m_allParametersHasBeenSet;
+    bool m_allParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parameterNames;
-    bool m_parameterNamesHasBeenSet;
+    bool m_parameterNamesHasBeenSet = false;
   };
 
 } // namespace Model

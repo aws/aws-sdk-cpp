@@ -305,25 +305,25 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     VpnState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     GatewayType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<VpcAttachment> m_vpcAttachments;
-    bool m_vpcAttachmentsHasBeenSet;
+    bool m_vpcAttachmentsHasBeenSet = false;
 
     Aws::String m_vpnGatewayId;
-    bool m_vpnGatewayIdHasBeenSet;
+    bool m_vpnGatewayIdHasBeenSet = false;
 
     long long m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

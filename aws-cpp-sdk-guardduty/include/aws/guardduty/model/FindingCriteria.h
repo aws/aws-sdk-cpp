@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Condition> m_criterion;
-    bool m_criterionHasBeenSet;
+    bool m_criterionHasBeenSet = false;
   };
 
 } // namespace Model

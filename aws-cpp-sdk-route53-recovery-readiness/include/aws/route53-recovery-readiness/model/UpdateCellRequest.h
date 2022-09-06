@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_cellName;
-    bool m_cellNameHasBeenSet;
+    bool m_cellNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
   };
 
 } // namespace Model

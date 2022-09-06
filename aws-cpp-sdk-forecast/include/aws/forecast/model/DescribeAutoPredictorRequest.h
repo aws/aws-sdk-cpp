@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_predictorArn;
-    bool m_predictorArnHasBeenSet;
+    bool m_predictorArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_opsMetadataArn;
-    bool m_opsMetadataArnHasBeenSet;
+    bool m_opsMetadataArnHasBeenSet = false;
 
     Aws::Map<Aws::String, MetadataValue> m_metadataToUpdate;
-    bool m_metadataToUpdateHasBeenSet;
+    bool m_metadataToUpdateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keysToDelete;
-    bool m_keysToDeleteHasBeenSet;
+    bool m_keysToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

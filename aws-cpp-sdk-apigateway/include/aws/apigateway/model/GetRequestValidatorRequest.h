@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_requestValidatorId;
-    bool m_requestValidatorIdHasBeenSet;
+    bool m_requestValidatorIdHasBeenSet = false;
   };
 
 } // namespace Model

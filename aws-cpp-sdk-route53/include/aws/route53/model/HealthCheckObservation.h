@@ -165,13 +165,13 @@ namespace Model
   private:
 
     HealthCheckRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_iPAddress;
-    bool m_iPAddressHasBeenSet;
+    bool m_iPAddressHasBeenSet = false;
 
     StatusReport m_statusReport;
-    bool m_statusReportHasBeenSet;
+    bool m_statusReportHasBeenSet = false;
   };
 
 } // namespace Model

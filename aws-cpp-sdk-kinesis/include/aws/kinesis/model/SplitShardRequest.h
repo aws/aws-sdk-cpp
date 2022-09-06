@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_shardToSplit;
-    bool m_shardToSplitHasBeenSet;
+    bool m_shardToSplitHasBeenSet = false;
 
     Aws::String m_newStartingHashKey;
-    bool m_newStartingHashKeyHasBeenSet;
+    bool m_newStartingHashKeyHasBeenSet = false;
   };
 
 } // namespace Model

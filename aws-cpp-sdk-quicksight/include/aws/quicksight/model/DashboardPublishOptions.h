@@ -134,13 +134,13 @@ namespace Model
   private:
 
     AdHocFilteringOption m_adHocFilteringOption;
-    bool m_adHocFilteringOptionHasBeenSet;
+    bool m_adHocFilteringOptionHasBeenSet = false;
 
     ExportToCSVOption m_exportToCSVOption;
-    bool m_exportToCSVOptionHasBeenSet;
+    bool m_exportToCSVOptionHasBeenSet = false;
 
     SheetControlsOption m_sheetControlsOption;
-    bool m_sheetControlsOptionHasBeenSet;
+    bool m_sheetControlsOptionHasBeenSet = false;
   };
 
 } // namespace Model

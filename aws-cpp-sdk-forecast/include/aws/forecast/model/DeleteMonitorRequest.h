@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
   };
 
 } // namespace Model

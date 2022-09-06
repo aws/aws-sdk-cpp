@@ -749,40 +749,40 @@ namespace Model
   private:
 
     Aws::String m_serverUrl;
-    bool m_serverUrlHasBeenSet;
+    bool m_serverUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     ConfluenceVersion m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ConfluenceSpaceConfiguration m_spaceConfiguration;
-    bool m_spaceConfigurationHasBeenSet;
+    bool m_spaceConfigurationHasBeenSet = false;
 
     ConfluencePageConfiguration m_pageConfiguration;
-    bool m_pageConfigurationHasBeenSet;
+    bool m_pageConfigurationHasBeenSet = false;
 
     ConfluenceBlogConfiguration m_blogConfiguration;
-    bool m_blogConfigurationHasBeenSet;
+    bool m_blogConfigurationHasBeenSet = false;
 
     ConfluenceAttachmentConfiguration m_attachmentConfiguration;
-    bool m_attachmentConfigurationHasBeenSet;
+    bool m_attachmentConfigurationHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     ProxyConfiguration m_proxyConfiguration;
-    bool m_proxyConfigurationHasBeenSet;
+    bool m_proxyConfigurationHasBeenSet = false;
 
     ConfluenceAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
   };
 
 } // namespace Model

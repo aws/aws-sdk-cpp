@@ -1012,58 +1012,58 @@ namespace Model
   private:
 
     Aws::Vector<DashAdditionalManifest> m_additionalManifests;
-    bool m_additionalManifestsHasBeenSet;
+    bool m_additionalManifestsHasBeenSet = false;
 
     DashIsoGroupAudioChannelConfigSchemeIdUri m_audioChannelConfigSchemeIdUri;
-    bool m_audioChannelConfigSchemeIdUriHasBeenSet;
+    bool m_audioChannelConfigSchemeIdUriHasBeenSet = false;
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     DashIsoEncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_fragmentLength;
-    bool m_fragmentLengthHasBeenSet;
+    bool m_fragmentLengthHasBeenSet = false;
 
     DashIsoHbbtvCompliance m_hbbtvCompliance;
-    bool m_hbbtvComplianceHasBeenSet;
+    bool m_hbbtvComplianceHasBeenSet = false;
 
     DashIsoImageBasedTrickPlay m_imageBasedTrickPlay;
-    bool m_imageBasedTrickPlayHasBeenSet;
+    bool m_imageBasedTrickPlayHasBeenSet = false;
 
     DashIsoImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
     int m_minBufferTime;
-    bool m_minBufferTimeHasBeenSet;
+    bool m_minBufferTimeHasBeenSet = false;
 
     double m_minFinalSegmentLength;
-    bool m_minFinalSegmentLengthHasBeenSet;
+    bool m_minFinalSegmentLengthHasBeenSet = false;
 
     DashIsoMpdProfile m_mpdProfile;
-    bool m_mpdProfileHasBeenSet;
+    bool m_mpdProfileHasBeenSet = false;
 
     DashIsoPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames;
-    bool m_ptsOffsetHandlingForBFramesHasBeenSet;
+    bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
 
     DashIsoSegmentControl m_segmentControl;
-    bool m_segmentControlHasBeenSet;
+    bool m_segmentControlHasBeenSet = false;
 
     int m_segmentLength;
-    bool m_segmentLengthHasBeenSet;
+    bool m_segmentLengthHasBeenSet = false;
 
     DashIsoSegmentLengthControl m_segmentLengthControl;
-    bool m_segmentLengthControlHasBeenSet;
+    bool m_segmentLengthControlHasBeenSet = false;
 
     DashIsoWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation;
-    bool m_writeSegmentTimelineInRepresentationHasBeenSet;
+    bool m_writeSegmentTimelineInRepresentationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -90,7 +90,7 @@ IoTDeviceAdvisorClient::~IoTDeviceAdvisorClient()
 
 void IoTDeviceAdvisorClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IotDeviceAdvisor");
+  AWSClient::SetServiceClientName("IotDeviceAdvisor");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

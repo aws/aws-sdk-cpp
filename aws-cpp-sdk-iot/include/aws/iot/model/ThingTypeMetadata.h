@@ -129,13 +129,13 @@ namespace Model
   private:
 
     bool m_deprecated;
-    bool m_deprecatedHasBeenSet;
+    bool m_deprecatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecationDate;
-    bool m_deprecationDateHasBeenSet;
+    bool m_deprecationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

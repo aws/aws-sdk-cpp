@@ -124,13 +124,13 @@ namespace Model
   private:
 
     QueryRuntimeStatisticsTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
 
     QueryRuntimeStatisticsRows m_rows;
-    bool m_rowsHasBeenSet;
+    bool m_rowsHasBeenSet = false;
 
     QueryStage m_outputStage;
-    bool m_outputStageHasBeenSet;
+    bool m_outputStageHasBeenSet = false;
   };
 
 } // namespace Model

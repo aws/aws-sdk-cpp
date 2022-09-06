@@ -105,13 +105,13 @@ namespace Model
   private:
 
     int m_humanLabeled;
-    bool m_humanLabeledHasBeenSet;
+    bool m_humanLabeledHasBeenSet = false;
 
     int m_pendingHuman;
-    bool m_pendingHumanHasBeenSet;
+    bool m_pendingHumanHasBeenSet = false;
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

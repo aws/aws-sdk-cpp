@@ -95,7 +95,7 @@ DataPipelineClient::~DataPipelineClient()
 
 void DataPipelineClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Data Pipeline");
+  AWSClient::SetServiceClientName("Data Pipeline");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

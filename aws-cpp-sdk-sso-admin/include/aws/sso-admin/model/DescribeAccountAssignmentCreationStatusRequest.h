@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_accountAssignmentCreationRequestId;
-    bool m_accountAssignmentCreationRequestIdHasBeenSet;
+    bool m_accountAssignmentCreationRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

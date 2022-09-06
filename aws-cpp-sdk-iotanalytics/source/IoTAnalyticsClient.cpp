@@ -110,7 +110,7 @@ IoTAnalyticsClient::~IoTAnalyticsClient()
 
 void IoTAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoTAnalytics");
+  AWSClient::SetServiceClientName("IoTAnalytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

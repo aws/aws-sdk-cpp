@@ -217,19 +217,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     FastLaunchSnapshotConfiguration m_snapshotConfiguration;
-    bool m_snapshotConfigurationHasBeenSet;
+    bool m_snapshotConfigurationHasBeenSet = false;
 
     int m_maxParallelLaunches;
-    bool m_maxParallelLaunchesHasBeenSet;
+    bool m_maxParallelLaunchesHasBeenSet = false;
 
     FastLaunchLaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
   };
 
 } // namespace Model

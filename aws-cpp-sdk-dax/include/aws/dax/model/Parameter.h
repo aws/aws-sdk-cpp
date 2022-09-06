@@ -451,34 +451,34 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     ParameterType m_parameterType;
-    bool m_parameterTypeHasBeenSet;
+    bool m_parameterTypeHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
 
     Aws::Vector<NodeTypeSpecificValue> m_nodeTypeSpecificValues;
-    bool m_nodeTypeSpecificValuesHasBeenSet;
+    bool m_nodeTypeSpecificValuesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     IsModifiable m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     ChangeType m_changeType;
-    bool m_changeTypeHasBeenSet;
+    bool m_changeTypeHasBeenSet = false;
   };
 
 } // namespace Model

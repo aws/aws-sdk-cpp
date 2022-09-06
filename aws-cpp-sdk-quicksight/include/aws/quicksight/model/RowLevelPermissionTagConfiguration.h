@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<RowLevelPermissionTagRule> m_tagRules;
-    bool m_tagRulesHasBeenSet;
+    bool m_tagRulesHasBeenSet = false;
   };
 
 } // namespace Model

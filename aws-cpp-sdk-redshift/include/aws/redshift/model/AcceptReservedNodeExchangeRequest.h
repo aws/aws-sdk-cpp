@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_reservedNodeId;
-    bool m_reservedNodeIdHasBeenSet;
+    bool m_reservedNodeIdHasBeenSet = false;
 
     Aws::String m_targetReservedNodeOfferingId;
-    bool m_targetReservedNodeOfferingIdHasBeenSet;
+    bool m_targetReservedNodeOfferingIdHasBeenSet = false;
   };
 
 } // namespace Model

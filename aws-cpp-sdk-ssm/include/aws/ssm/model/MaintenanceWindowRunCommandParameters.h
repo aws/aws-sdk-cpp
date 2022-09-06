@@ -562,37 +562,37 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
-    bool m_cloudWatchOutputConfigHasBeenSet;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
 
     Aws::String m_documentHash;
-    bool m_documentHashHasBeenSet;
+    bool m_documentHashHasBeenSet = false;
 
     DocumentHashType m_documentHashType;
-    bool m_documentHashTypeHasBeenSet;
+    bool m_documentHashTypeHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     NotificationConfig m_notificationConfig;
-    bool m_notificationConfigHasBeenSet;
+    bool m_notificationConfigHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
   };
 
 } // namespace Model

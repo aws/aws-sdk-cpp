@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableId;
-    bool m_transitGatewayRouteTableIdHasBeenSet;
+    bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

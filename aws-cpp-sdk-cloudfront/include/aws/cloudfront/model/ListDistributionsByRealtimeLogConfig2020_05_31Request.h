@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_realtimeLogConfigName;
-    bool m_realtimeLogConfigNameHasBeenSet;
+    bool m_realtimeLogConfigNameHasBeenSet = false;
 
     Aws::String m_realtimeLogConfigArn;
-    bool m_realtimeLogConfigArnHasBeenSet;
+    bool m_realtimeLogConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

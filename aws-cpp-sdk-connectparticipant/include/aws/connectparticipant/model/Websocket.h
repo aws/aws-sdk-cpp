@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_connectionExpiry;
-    bool m_connectionExpiryHasBeenSet;
+    bool m_connectionExpiryHasBeenSet = false;
   };
 
 } // namespace Model

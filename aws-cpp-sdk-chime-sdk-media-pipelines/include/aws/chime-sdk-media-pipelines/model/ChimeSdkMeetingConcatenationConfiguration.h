@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ArtifactsConcatenationConfiguration m_artifactsConfiguration;
-    bool m_artifactsConfigurationHasBeenSet;
+    bool m_artifactsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

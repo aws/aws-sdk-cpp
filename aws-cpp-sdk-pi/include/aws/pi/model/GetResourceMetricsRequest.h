@@ -490,28 +490,28 @@ namespace Model
   private:
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::Vector<MetricQuery> m_metricQueries;
-    bool m_metricQueriesHasBeenSet;
+    bool m_metricQueriesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_periodInSeconds;
-    bool m_periodInSecondsHasBeenSet;
+    bool m_periodInSecondsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ReceiptIpFilter m_ipFilter;
-    bool m_ipFilterHasBeenSet;
+    bool m_ipFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -392,22 +392,22 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     ProcessingS3DataType m_s3DataType;
-    bool m_s3DataTypeHasBeenSet;
+    bool m_s3DataTypeHasBeenSet = false;
 
     ProcessingS3InputMode m_s3InputMode;
-    bool m_s3InputModeHasBeenSet;
+    bool m_s3InputModeHasBeenSet = false;
 
     ProcessingS3DataDistributionType m_s3DataDistributionType;
-    bool m_s3DataDistributionTypeHasBeenSet;
+    bool m_s3DataDistributionTypeHasBeenSet = false;
 
     ProcessingS3CompressionType m_s3CompressionType;
-    bool m_s3CompressionTypeHasBeenSet;
+    bool m_s3CompressionTypeHasBeenSet = false;
   };
 
 } // namespace Model

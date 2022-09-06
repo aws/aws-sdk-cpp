@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyArn;
-    bool m_kmsMasterKeyArnHasBeenSet;
+    bool m_kmsMasterKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

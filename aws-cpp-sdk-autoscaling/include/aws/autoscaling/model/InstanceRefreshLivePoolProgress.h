@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_percentageComplete;
-    bool m_percentageCompleteHasBeenSet;
+    bool m_percentageCompleteHasBeenSet = false;
 
     int m_instancesToUpdate;
-    bool m_instancesToUpdateHasBeenSet;
+    bool m_instancesToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_toAddresses;
-    bool m_toAddressesHasBeenSet;
+    bool m_toAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ccAddresses;
-    bool m_ccAddressesHasBeenSet;
+    bool m_ccAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bccAddresses;
-    bool m_bccAddressesHasBeenSet;
+    bool m_bccAddressesHasBeenSet = false;
   };
 
 } // namespace Model

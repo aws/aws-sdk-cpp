@@ -77,7 +77,7 @@ namespace Model
   private:
 
     PackageOriginRestrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
   };
 
 } // namespace Model

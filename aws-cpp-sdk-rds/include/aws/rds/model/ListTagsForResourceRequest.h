@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

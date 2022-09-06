@@ -76,7 +76,7 @@ namespace Model
   private:
 
     KinesisVideoStreamStartSelector m_kVSStreamStartSelector;
-    bool m_kVSStreamStartSelectorHasBeenSet;
+    bool m_kVSStreamStartSelectorHasBeenSet = false;
   };
 
 } // namespace Model

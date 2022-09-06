@@ -274,16 +274,16 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, S3AccessPointConfiguration> m_accessPoints;
-    bool m_accessPointsHasBeenSet;
+    bool m_accessPointsHasBeenSet = false;
 
     Aws::Vector<S3BucketAclGrantConfiguration> m_bucketAclGrants;
-    bool m_bucketAclGrantsHasBeenSet;
+    bool m_bucketAclGrantsHasBeenSet = false;
 
     Aws::String m_bucketPolicy;
-    bool m_bucketPolicyHasBeenSet;
+    bool m_bucketPolicyHasBeenSet = false;
 
     S3PublicAccessBlockConfiguration m_bucketPublicAccessBlock;
-    bool m_bucketPublicAccessBlockHasBeenSet;
+    bool m_bucketPublicAccessBlockHasBeenSet = false;
   };
 
 } // namespace Model

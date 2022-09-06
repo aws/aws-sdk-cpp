@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::DateTime> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

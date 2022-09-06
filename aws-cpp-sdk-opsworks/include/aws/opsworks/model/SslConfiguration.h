@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
 
     Aws::String m_chain;
-    bool m_chainHasBeenSet;
+    bool m_chainHasBeenSet = false;
   };
 
 } // namespace Model

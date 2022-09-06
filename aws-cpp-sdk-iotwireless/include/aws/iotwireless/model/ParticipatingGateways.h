@@ -160,13 +160,13 @@ namespace Model
   private:
 
     DownlinkMode m_downlinkMode;
-    bool m_downlinkModeHasBeenSet;
+    bool m_downlinkModeHasBeenSet = false;
 
     Aws::Vector<GatewayListItem> m_gatewayList;
-    bool m_gatewayListHasBeenSet;
+    bool m_gatewayListHasBeenSet = false;
 
     int m_transmissionInterval;
-    bool m_transmissionIntervalHasBeenSet;
+    bool m_transmissionIntervalHasBeenSet = false;
   };
 
 } // namespace Model

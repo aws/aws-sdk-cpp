@@ -193,16 +193,16 @@ namespace Model
   private:
 
     Aws::String m_launchProfileProtocolVersion;
-    bool m_launchProfileProtocolVersionHasBeenSet;
+    bool m_launchProfileProtocolVersionHasBeenSet = false;
 
     LaunchProfilePlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     StudioComponentInitializationScriptRunContext m_runContext;
-    bool m_runContextHasBeenSet;
+    bool m_runContextHasBeenSet = false;
 
     Aws::String m_script;
-    bool m_scriptHasBeenSet;
+    bool m_scriptHasBeenSet = false;
   };
 
 } // namespace Model

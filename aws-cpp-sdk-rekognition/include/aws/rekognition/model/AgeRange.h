@@ -83,10 +83,10 @@ namespace Model
   private:
 
     int m_low;
-    bool m_lowHasBeenSet;
+    bool m_lowHasBeenSet = false;
 
     int m_high;
-    bool m_highHasBeenSet;
+    bool m_highHasBeenSet = false;
   };
 
 } // namespace Model

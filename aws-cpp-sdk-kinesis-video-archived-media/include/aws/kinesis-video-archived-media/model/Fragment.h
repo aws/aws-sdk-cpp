@@ -198,19 +198,19 @@ namespace Model
   private:
 
     Aws::String m_fragmentNumber;
-    bool m_fragmentNumberHasBeenSet;
+    bool m_fragmentNumberHasBeenSet = false;
 
     long long m_fragmentSizeInBytes;
-    bool m_fragmentSizeInBytesHasBeenSet;
+    bool m_fragmentSizeInBytesHasBeenSet = false;
 
     Aws::Utils::DateTime m_producerTimestamp;
-    bool m_producerTimestampHasBeenSet;
+    bool m_producerTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_serverTimestamp;
-    bool m_serverTimestampHasBeenSet;
+    bool m_serverTimestampHasBeenSet = false;
 
     long long m_fragmentLengthInMilliseconds;
-    bool m_fragmentLengthInMillisecondsHasBeenSet;
+    bool m_fragmentLengthInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

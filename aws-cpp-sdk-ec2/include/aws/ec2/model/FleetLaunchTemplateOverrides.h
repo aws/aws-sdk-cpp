@@ -406,28 +406,28 @@ namespace Model
   private:
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_maxPrice;
-    bool m_maxPriceHasBeenSet;
+    bool m_maxPriceHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     double m_weightedCapacity;
-    bool m_weightedCapacityHasBeenSet;
+    bool m_weightedCapacityHasBeenSet = false;
 
     double m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     PlacementResponse m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     InstanceRequirements m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

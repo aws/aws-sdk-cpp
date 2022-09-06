@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3BucketTranscriptSource m_s3BucketTranscriptSource;
-    bool m_s3BucketTranscriptSourceHasBeenSet;
+    bool m_s3BucketTranscriptSourceHasBeenSet = false;
   };
 
 } // namespace Model

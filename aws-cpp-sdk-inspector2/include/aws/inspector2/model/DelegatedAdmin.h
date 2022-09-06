@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     RelationshipStatus m_relationshipStatus;
-    bool m_relationshipStatusHasBeenSet;
+    bool m_relationshipStatusHasBeenSet = false;
   };
 
 } // namespace Model

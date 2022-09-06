@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -134,13 +134,13 @@ namespace Model
   private:
 
     IamActionDefinition m_iamActionDefinition;
-    bool m_iamActionDefinitionHasBeenSet;
+    bool m_iamActionDefinitionHasBeenSet = false;
 
     ScpActionDefinition m_scpActionDefinition;
-    bool m_scpActionDefinitionHasBeenSet;
+    bool m_scpActionDefinitionHasBeenSet = false;
 
     SsmActionDefinition m_ssmActionDefinition;
-    bool m_ssmActionDefinitionHasBeenSet;
+    bool m_ssmActionDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

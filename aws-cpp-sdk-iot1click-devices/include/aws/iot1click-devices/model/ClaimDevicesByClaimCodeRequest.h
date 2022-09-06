@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_claimCode;
-    bool m_claimCodeHasBeenSet;
+    bool m_claimCodeHasBeenSet = false;
   };
 
 } // namespace Model

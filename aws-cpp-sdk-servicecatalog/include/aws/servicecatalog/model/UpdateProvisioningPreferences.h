@@ -576,25 +576,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_stackSetAccounts;
-    bool m_stackSetAccountsHasBeenSet;
+    bool m_stackSetAccountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stackSetRegions;
-    bool m_stackSetRegionsHasBeenSet;
+    bool m_stackSetRegionsHasBeenSet = false;
 
     int m_stackSetFailureToleranceCount;
-    bool m_stackSetFailureToleranceCountHasBeenSet;
+    bool m_stackSetFailureToleranceCountHasBeenSet = false;
 
     int m_stackSetFailureTolerancePercentage;
-    bool m_stackSetFailureTolerancePercentageHasBeenSet;
+    bool m_stackSetFailureTolerancePercentageHasBeenSet = false;
 
     int m_stackSetMaxConcurrencyCount;
-    bool m_stackSetMaxConcurrencyCountHasBeenSet;
+    bool m_stackSetMaxConcurrencyCountHasBeenSet = false;
 
     int m_stackSetMaxConcurrencyPercentage;
-    bool m_stackSetMaxConcurrencyPercentageHasBeenSet;
+    bool m_stackSetMaxConcurrencyPercentageHasBeenSet = false;
 
     StackSetOperationType m_stackSetOperationType;
-    bool m_stackSetOperationTypeHasBeenSet;
+    bool m_stackSetOperationTypeHasBeenSet = false;
   };
 
 } // namespace Model

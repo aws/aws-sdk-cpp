@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_deploymentArtifacts;
-    bool m_deploymentArtifactsHasBeenSet;
+    bool m_deploymentArtifactsHasBeenSet = false;
   };
 
 } // namespace Model

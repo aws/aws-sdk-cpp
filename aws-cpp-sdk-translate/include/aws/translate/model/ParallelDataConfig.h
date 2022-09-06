@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     ParallelDataFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

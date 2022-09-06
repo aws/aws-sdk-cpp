@@ -235,16 +235,16 @@ namespace Model
   private:
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_creationToken;
-    bool m_creationTokenHasBeenSet;
+    bool m_creationTokenHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

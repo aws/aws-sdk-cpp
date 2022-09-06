@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

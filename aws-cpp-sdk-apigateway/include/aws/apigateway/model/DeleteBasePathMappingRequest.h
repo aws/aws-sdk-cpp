@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_basePath;
-    bool m_basePathHasBeenSet;
+    bool m_basePathHasBeenSet = false;
   };
 
 } // namespace Model

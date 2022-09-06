@@ -147,10 +147,10 @@ namespace Model
   private:
 
     EgressType m_egressType;
-    bool m_egressTypeHasBeenSet;
+    bool m_egressTypeHasBeenSet = false;
 
     Aws::String m_vpcConnectorArn;
-    bool m_vpcConnectorArnHasBeenSet;
+    bool m_vpcConnectorArnHasBeenSet = false;
   };
 
 } // namespace Model

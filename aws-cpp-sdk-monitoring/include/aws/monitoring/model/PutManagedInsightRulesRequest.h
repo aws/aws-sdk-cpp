@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::Vector<ManagedRule> m_managedRules;
-    bool m_managedRulesHasBeenSet;
+    bool m_managedRulesHasBeenSet = false;
   };
 
 } // namespace Model

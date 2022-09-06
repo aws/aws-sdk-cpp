@@ -114,10 +114,10 @@ namespace Model
   private:
 
     AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification m_launchTemplateSpecification;
-    bool m_launchTemplateSpecificationHasBeenSet;
+    bool m_launchTemplateSpecificationHasBeenSet = false;
 
     Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails> m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model

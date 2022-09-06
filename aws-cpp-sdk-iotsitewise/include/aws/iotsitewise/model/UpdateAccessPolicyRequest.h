@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_accessPolicyId;
-    bool m_accessPolicyIdHasBeenSet;
+    bool m_accessPolicyIdHasBeenSet = false;
 
     Identity m_accessPolicyIdentity;
-    bool m_accessPolicyIdentityHasBeenSet;
+    bool m_accessPolicyIdentityHasBeenSet = false;
 
     Resource m_accessPolicyResource;
-    bool m_accessPolicyResourceHasBeenSet;
+    bool m_accessPolicyResourceHasBeenSet = false;
 
     Permission m_accessPolicyPermission;
-    bool m_accessPolicyPermissionHasBeenSet;
+    bool m_accessPolicyPermissionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

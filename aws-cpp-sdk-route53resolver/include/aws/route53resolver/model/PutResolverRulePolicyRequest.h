@@ -214,10 +214,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_resolverRulePolicy;
-    bool m_resolverRulePolicyHasBeenSet;
+    bool m_resolverRulePolicyHasBeenSet = false;
   };
 
 } // namespace Model

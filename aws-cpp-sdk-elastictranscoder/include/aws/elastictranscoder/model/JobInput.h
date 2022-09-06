@@ -876,34 +876,34 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_frameRate;
-    bool m_frameRateHasBeenSet;
+    bool m_frameRateHasBeenSet = false;
 
     Aws::String m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     Aws::String m_aspectRatio;
-    bool m_aspectRatioHasBeenSet;
+    bool m_aspectRatioHasBeenSet = false;
 
     Aws::String m_interlaced;
-    bool m_interlacedHasBeenSet;
+    bool m_interlacedHasBeenSet = false;
 
     Aws::String m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     TimeSpan m_timeSpan;
-    bool m_timeSpanHasBeenSet;
+    bool m_timeSpanHasBeenSet = false;
 
     InputCaptions m_inputCaptions;
-    bool m_inputCaptionsHasBeenSet;
+    bool m_inputCaptionsHasBeenSet = false;
 
     DetectedProperties m_detectedProperties;
-    bool m_detectedPropertiesHasBeenSet;
+    bool m_detectedPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_firewallDomainListId;
-    bool m_firewallDomainListIdHasBeenSet;
+    bool m_firewallDomainListIdHasBeenSet = false;
   };
 
 } // namespace Model

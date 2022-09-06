@@ -107,10 +107,10 @@ namespace Model
   private:
 
     IdentityProvider m_identityProvider;
-    bool m_identityProviderHasBeenSet;
+    bool m_identityProviderHasBeenSet = false;
 
     Aws::String m_product;
-    bool m_productHasBeenSet;
+    bool m_productHasBeenSet = false;
   };
 
 } // namespace Model

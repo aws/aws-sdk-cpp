@@ -270,19 +270,19 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     RIProductDescription m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

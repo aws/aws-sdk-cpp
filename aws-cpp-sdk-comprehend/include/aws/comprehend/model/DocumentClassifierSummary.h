@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_documentClassifierName;
-    bool m_documentClassifierNameHasBeenSet;
+    bool m_documentClassifierNameHasBeenSet = false;
 
     int m_numberOfVersions;
-    bool m_numberOfVersionsHasBeenSet;
+    bool m_numberOfVersionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestVersionCreatedAt;
-    bool m_latestVersionCreatedAtHasBeenSet;
+    bool m_latestVersionCreatedAtHasBeenSet = false;
 
     Aws::String m_latestVersionName;
-    bool m_latestVersionNameHasBeenSet;
+    bool m_latestVersionNameHasBeenSet = false;
 
     ModelStatus m_latestVersionStatus;
-    bool m_latestVersionStatusHasBeenSet;
+    bool m_latestVersionStatusHasBeenSet = false;
   };
 
 } // namespace Model

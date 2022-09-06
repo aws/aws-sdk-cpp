@@ -1620,61 +1620,61 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskIdentifier;
-    bool m_replicationTaskIdentifierHasBeenSet;
+    bool m_replicationTaskIdentifierHasBeenSet = false;
 
     Aws::String m_sourceEndpointArn;
-    bool m_sourceEndpointArnHasBeenSet;
+    bool m_sourceEndpointArnHasBeenSet = false;
 
     Aws::String m_targetEndpointArn;
-    bool m_targetEndpointArnHasBeenSet;
+    bool m_targetEndpointArnHasBeenSet = false;
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     MigrationTypeValue m_migrationType;
-    bool m_migrationTypeHasBeenSet;
+    bool m_migrationTypeHasBeenSet = false;
 
     Aws::String m_tableMappings;
-    bool m_tableMappingsHasBeenSet;
+    bool m_tableMappingsHasBeenSet = false;
 
     Aws::String m_replicationTaskSettings;
-    bool m_replicationTaskSettingsHasBeenSet;
+    bool m_replicationTaskSettingsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
-    bool m_lastFailureMessageHasBeenSet;
+    bool m_lastFailureMessageHasBeenSet = false;
 
     Aws::String m_stopReason;
-    bool m_stopReasonHasBeenSet;
+    bool m_stopReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_replicationTaskCreationDate;
-    bool m_replicationTaskCreationDateHasBeenSet;
+    bool m_replicationTaskCreationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_replicationTaskStartDate;
-    bool m_replicationTaskStartDateHasBeenSet;
+    bool m_replicationTaskStartDateHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;
-    bool m_cdcStartPositionHasBeenSet;
+    bool m_cdcStartPositionHasBeenSet = false;
 
     Aws::String m_cdcStopPosition;
-    bool m_cdcStopPositionHasBeenSet;
+    bool m_cdcStopPositionHasBeenSet = false;
 
     Aws::String m_recoveryCheckpoint;
-    bool m_recoveryCheckpointHasBeenSet;
+    bool m_recoveryCheckpointHasBeenSet = false;
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     ReplicationTaskStats m_replicationTaskStats;
-    bool m_replicationTaskStatsHasBeenSet;
+    bool m_replicationTaskStatsHasBeenSet = false;
 
     Aws::String m_taskData;
-    bool m_taskDataHasBeenSet;
+    bool m_taskDataHasBeenSet = false;
 
     Aws::String m_targetReplicationInstanceArn;
-    bool m_targetReplicationInstanceArnHasBeenSet;
+    bool m_targetReplicationInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model

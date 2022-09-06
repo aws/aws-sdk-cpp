@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_assetModelId;
-    bool m_assetModelIdHasBeenSet;
+    bool m_assetModelIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     DeploymentStatus m_lastDeploymentStatus;
-    bool m_lastDeploymentStatusHasBeenSet;
+    bool m_lastDeploymentStatusHasBeenSet = false;
 
     Aws::String m_lastDeploymentJob;
-    bool m_lastDeploymentJobHasBeenSet;
+    bool m_lastDeploymentJobHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentTime;
-    bool m_lastDeploymentTimeHasBeenSet;
+    bool m_lastDeploymentTimeHasBeenSet = false;
   };
 
 } // namespace Model

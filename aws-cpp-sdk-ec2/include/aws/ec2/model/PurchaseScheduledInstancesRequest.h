@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<PurchaseRequest> m_purchaseRequests;
-    bool m_purchaseRequestsHasBeenSet;
+    bool m_purchaseRequestsHasBeenSet = false;
   };
 
 } // namespace Model

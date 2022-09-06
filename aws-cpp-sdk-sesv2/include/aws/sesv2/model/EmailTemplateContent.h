@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_html;
-    bool m_htmlHasBeenSet;
+    bool m_htmlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_graphArns;
-    bool m_graphArnsHasBeenSet;
+    bool m_graphArnsHasBeenSet = false;
   };
 
 } // namespace Model

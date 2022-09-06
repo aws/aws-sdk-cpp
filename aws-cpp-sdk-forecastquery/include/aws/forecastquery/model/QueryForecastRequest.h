@@ -364,19 +364,19 @@ namespace Model
   private:
 
     Aws::String m_forecastArn;
-    bool m_forecastArnHasBeenSet;
+    bool m_forecastArnHasBeenSet = false;
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

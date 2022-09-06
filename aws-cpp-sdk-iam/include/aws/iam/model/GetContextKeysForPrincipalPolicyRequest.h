@@ -287,10 +287,10 @@ namespace Model
   private:
 
     Aws::String m_policySourceArn;
-    bool m_policySourceArnHasBeenSet;
+    bool m_policySourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyInputList;
-    bool m_policyInputListHasBeenSet;
+    bool m_policyInputListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -109,10 +109,10 @@ namespace Model
   private:
 
     SecurityProfileIdentifier m_securityProfileIdentifier;
-    bool m_securityProfileIdentifierHasBeenSet;
+    bool m_securityProfileIdentifierHasBeenSet = false;
 
     SecurityProfileTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

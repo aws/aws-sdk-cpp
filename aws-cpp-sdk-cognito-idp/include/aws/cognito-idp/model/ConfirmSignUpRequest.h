@@ -659,28 +659,28 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_secretHash;
-    bool m_secretHashHasBeenSet;
+    bool m_secretHashHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_confirmationCode;
-    bool m_confirmationCodeHasBeenSet;
+    bool m_confirmationCodeHasBeenSet = false;
 
     bool m_forceAliasCreation;
-    bool m_forceAliasCreationHasBeenSet;
+    bool m_forceAliasCreationHasBeenSet = false;
 
     AnalyticsMetadataType m_analyticsMetadata;
-    bool m_analyticsMetadataHasBeenSet;
+    bool m_analyticsMetadataHasBeenSet = false;
 
     UserContextDataType m_userContextData;
-    bool m_userContextDataHasBeenSet;
+    bool m_userContextDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
   };
 
 } // namespace Model

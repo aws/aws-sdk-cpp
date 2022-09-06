@@ -268,10 +268,10 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

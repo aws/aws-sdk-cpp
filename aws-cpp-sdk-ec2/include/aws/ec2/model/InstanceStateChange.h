@@ -145,13 +145,13 @@ namespace Model
   private:
 
     InstanceState m_currentState;
-    bool m_currentStateHasBeenSet;
+    bool m_currentStateHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     InstanceState m_previousState;
-    bool m_previousStateHasBeenSet;
+    bool m_previousStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
   };
 
 } // namespace Model

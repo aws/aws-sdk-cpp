@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_sharedDirectoryId;
-    bool m_sharedDirectoryIdHasBeenSet;
+    bool m_sharedDirectoryIdHasBeenSet = false;
   };
 
 } // namespace Model

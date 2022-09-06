@@ -733,34 +733,34 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     UserRole m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_customPermissionsName;
-    bool m_customPermissionsNameHasBeenSet;
+    bool m_customPermissionsNameHasBeenSet = false;
 
     bool m_unapplyCustomPermissions;
-    bool m_unapplyCustomPermissionsHasBeenSet;
+    bool m_unapplyCustomPermissionsHasBeenSet = false;
 
     Aws::String m_externalLoginFederationProviderType;
-    bool m_externalLoginFederationProviderTypeHasBeenSet;
+    bool m_externalLoginFederationProviderTypeHasBeenSet = false;
 
     Aws::String m_customFederationProviderUrl;
-    bool m_customFederationProviderUrlHasBeenSet;
+    bool m_customFederationProviderUrlHasBeenSet = false;
 
     Aws::String m_externalLoginId;
-    bool m_externalLoginIdHasBeenSet;
+    bool m_externalLoginIdHasBeenSet = false;
   };
 
 } // namespace Model

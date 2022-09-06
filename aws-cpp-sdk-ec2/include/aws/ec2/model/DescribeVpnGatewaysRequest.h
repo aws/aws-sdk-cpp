@@ -333,13 +333,13 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpnGatewayIds;
-    bool m_vpnGatewayIdsHasBeenSet;
+    bool m_vpnGatewayIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     bool m_recursiveDeleteOption;
-    bool m_recursiveDeleteOptionHasBeenSet;
+    bool m_recursiveDeleteOptionHasBeenSet = false;
   };
 
 } // namespace Model

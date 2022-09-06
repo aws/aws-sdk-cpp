@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
   };
 
 } // namespace Model

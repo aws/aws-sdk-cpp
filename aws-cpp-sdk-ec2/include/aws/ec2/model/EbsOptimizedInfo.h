@@ -190,22 +190,22 @@ namespace Model
   private:
 
     int m_baselineBandwidthInMbps;
-    bool m_baselineBandwidthInMbpsHasBeenSet;
+    bool m_baselineBandwidthInMbpsHasBeenSet = false;
 
     double m_baselineThroughputInMBps;
-    bool m_baselineThroughputInMBpsHasBeenSet;
+    bool m_baselineThroughputInMBpsHasBeenSet = false;
 
     int m_baselineIops;
-    bool m_baselineIopsHasBeenSet;
+    bool m_baselineIopsHasBeenSet = false;
 
     int m_maximumBandwidthInMbps;
-    bool m_maximumBandwidthInMbpsHasBeenSet;
+    bool m_maximumBandwidthInMbpsHasBeenSet = false;
 
     double m_maximumThroughputInMBps;
-    bool m_maximumThroughputInMBpsHasBeenSet;
+    bool m_maximumThroughputInMBpsHasBeenSet = false;
 
     int m_maximumIops;
-    bool m_maximumIopsHasBeenSet;
+    bool m_maximumIopsHasBeenSet = false;
   };
 
 } // namespace Model

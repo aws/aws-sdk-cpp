@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<DocumentReviewerResponseSource> m_reviewerResponse;
-    bool m_reviewerResponseHasBeenSet;
+    bool m_reviewerResponseHasBeenSet = false;
   };
 
 } // namespace Model

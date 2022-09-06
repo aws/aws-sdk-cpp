@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_activeDirectoryId;
-    bool m_activeDirectoryIdHasBeenSet;
+    bool m_activeDirectoryIdHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
   };
 
 } // namespace Model

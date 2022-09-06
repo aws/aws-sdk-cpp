@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_riskScore;
-    bool m_riskScoreHasBeenSet;
+    bool m_riskScoreHasBeenSet = false;
   };
 
 } // namespace Model

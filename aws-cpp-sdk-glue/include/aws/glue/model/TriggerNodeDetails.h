@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Trigger m_trigger;
-    bool m_triggerHasBeenSet;
+    bool m_triggerHasBeenSet = false;
   };
 
 } // namespace Model

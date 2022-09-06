@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Category> m_categories;
-    bool m_categoriesHasBeenSet;
+    bool m_categoriesHasBeenSet = false;
   };
 
 } // namespace Model

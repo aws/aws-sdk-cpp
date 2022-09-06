@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_discovererIdPrefix;
-    bool m_discovererIdPrefixHasBeenSet;
+    bool m_discovererIdPrefixHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_sourceArnPrefix;
-    bool m_sourceArnPrefixHasBeenSet;
+    bool m_sourceArnPrefixHasBeenSet = false;
   };
 
 } // namespace Model

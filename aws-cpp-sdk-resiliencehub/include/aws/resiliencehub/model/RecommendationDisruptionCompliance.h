@@ -217,19 +217,19 @@ namespace Model
   private:
 
     ComplianceStatus m_expectedComplianceStatus;
-    bool m_expectedComplianceStatusHasBeenSet;
+    bool m_expectedComplianceStatusHasBeenSet = false;
 
     Aws::String m_expectedRpoDescription;
-    bool m_expectedRpoDescriptionHasBeenSet;
+    bool m_expectedRpoDescriptionHasBeenSet = false;
 
     int m_expectedRpoInSecs;
-    bool m_expectedRpoInSecsHasBeenSet;
+    bool m_expectedRpoInSecsHasBeenSet = false;
 
     Aws::String m_expectedRtoDescription;
-    bool m_expectedRtoDescriptionHasBeenSet;
+    bool m_expectedRtoDescriptionHasBeenSet = false;
 
     int m_expectedRtoInSecs;
-    bool m_expectedRtoInSecsHasBeenSet;
+    bool m_expectedRtoInSecsHasBeenSet = false;
   };
 
 } // namespace Model

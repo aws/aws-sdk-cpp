@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Tier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

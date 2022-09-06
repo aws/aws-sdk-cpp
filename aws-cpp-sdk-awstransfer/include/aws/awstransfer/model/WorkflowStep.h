@@ -258,19 +258,19 @@ namespace Model
   private:
 
     WorkflowStepType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CopyStepDetails m_copyStepDetails;
-    bool m_copyStepDetailsHasBeenSet;
+    bool m_copyStepDetailsHasBeenSet = false;
 
     CustomStepDetails m_customStepDetails;
-    bool m_customStepDetailsHasBeenSet;
+    bool m_customStepDetailsHasBeenSet = false;
 
     DeleteStepDetails m_deleteStepDetails;
-    bool m_deleteStepDetailsHasBeenSet;
+    bool m_deleteStepDetailsHasBeenSet = false;
 
     TagStepDetails m_tagStepDetails;
-    bool m_tagStepDetailsHasBeenSet;
+    bool m_tagStepDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,13 +123,13 @@ namespace Model
   private:
 
     double m_numberValue;
-    bool m_numberValueHasBeenSet;
+    bool m_numberValueHasBeenSet = false;
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
   };
 
 } // namespace Model

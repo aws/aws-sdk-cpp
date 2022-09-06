@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     FallbackBehavior m_fallbackBehavior;
-    bool m_fallbackBehaviorHasBeenSet;
+    bool m_fallbackBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

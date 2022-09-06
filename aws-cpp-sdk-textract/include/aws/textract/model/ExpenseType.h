@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

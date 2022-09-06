@@ -132,13 +132,13 @@ namespace Model
   private:
 
     long long m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     FaceDetail m_face;
-    bool m_faceHasBeenSet;
+    bool m_faceHasBeenSet = false;
   };
 
 } // namespace Model

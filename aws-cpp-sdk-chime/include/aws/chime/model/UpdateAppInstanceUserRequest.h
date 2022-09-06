@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_appInstanceUserArn;
-    bool m_appInstanceUserArnHasBeenSet;
+    bool m_appInstanceUserArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

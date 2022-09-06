@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_portalArn;
-    bool m_portalArnHasBeenSet;
+    bool m_portalArnHasBeenSet = false;
 
     Aws::String m_trustStoreArn;
-    bool m_trustStoreArnHasBeenSet;
+    bool m_trustStoreArnHasBeenSet = false;
   };
 
 } // namespace Model

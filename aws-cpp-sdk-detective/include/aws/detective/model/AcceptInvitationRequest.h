@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
   };
 
 } // namespace Model

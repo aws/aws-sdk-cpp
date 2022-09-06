@@ -136,13 +136,13 @@ namespace Model
   private:
 
     int m_numNodes;
-    bool m_numNodesHasBeenSet;
+    bool m_numNodesHasBeenSet = false;
 
     int m_mainNode;
-    bool m_mainNodeHasBeenSet;
+    bool m_mainNodeHasBeenSet = false;
 
     Aws::Vector<NodeRangeProperty> m_nodeRangeProperties;
-    bool m_nodeRangePropertiesHasBeenSet;
+    bool m_nodeRangePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

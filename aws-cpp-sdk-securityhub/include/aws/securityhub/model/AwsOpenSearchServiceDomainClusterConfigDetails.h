@@ -403,34 +403,34 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     bool m_warmEnabled;
-    bool m_warmEnabledHasBeenSet;
+    bool m_warmEnabledHasBeenSet = false;
 
     int m_warmCount;
-    bool m_warmCountHasBeenSet;
+    bool m_warmCountHasBeenSet = false;
 
     bool m_dedicatedMasterEnabled;
-    bool m_dedicatedMasterEnabledHasBeenSet;
+    bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
-    bool m_zoneAwarenessConfigHasBeenSet;
+    bool m_zoneAwarenessConfigHasBeenSet = false;
 
     int m_dedicatedMasterCount;
-    bool m_dedicatedMasterCountHasBeenSet;
+    bool m_dedicatedMasterCountHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_warmType;
-    bool m_warmTypeHasBeenSet;
+    bool m_warmTypeHasBeenSet = false;
 
     bool m_zoneAwarenessEnabled;
-    bool m_zoneAwarenessEnabledHasBeenSet;
+    bool m_zoneAwarenessEnabledHasBeenSet = false;
 
     Aws::String m_dedicatedMasterType;
-    bool m_dedicatedMasterTypeHasBeenSet;
+    bool m_dedicatedMasterTypeHasBeenSet = false;
   };
 
 } // namespace Model

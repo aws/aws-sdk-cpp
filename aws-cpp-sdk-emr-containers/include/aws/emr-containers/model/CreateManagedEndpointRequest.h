@@ -386,28 +386,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_virtualClusterId;
-    bool m_virtualClusterIdHasBeenSet;
+    bool m_virtualClusterIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_releaseLabel;
-    bool m_releaseLabelHasBeenSet;
+    bool m_releaseLabelHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     ConfigurationOverrides m_configurationOverrides;
-    bool m_configurationOverridesHasBeenSet;
+    bool m_configurationOverridesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

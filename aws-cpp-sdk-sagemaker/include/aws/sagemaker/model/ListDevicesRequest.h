@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestHeartbeatAfter;
-    bool m_latestHeartbeatAfterHasBeenSet;
+    bool m_latestHeartbeatAfterHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_deviceFleetName;
-    bool m_deviceFleetNameHasBeenSet;
+    bool m_deviceFleetNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -529,31 +529,31 @@ namespace Model
   private:
 
     Aws::String m_sourceKeyspaceName;
-    bool m_sourceKeyspaceNameHasBeenSet;
+    bool m_sourceKeyspaceNameHasBeenSet = false;
 
     Aws::String m_sourceTableName;
-    bool m_sourceTableNameHasBeenSet;
+    bool m_sourceTableNameHasBeenSet = false;
 
     Aws::String m_targetKeyspaceName;
-    bool m_targetKeyspaceNameHasBeenSet;
+    bool m_targetKeyspaceNameHasBeenSet = false;
 
     Aws::String m_targetTableName;
-    bool m_targetTableNameHasBeenSet;
+    bool m_targetTableNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreTimestamp;
-    bool m_restoreTimestampHasBeenSet;
+    bool m_restoreTimestampHasBeenSet = false;
 
     CapacitySpecification m_capacitySpecificationOverride;
-    bool m_capacitySpecificationOverrideHasBeenSet;
+    bool m_capacitySpecificationOverrideHasBeenSet = false;
 
     EncryptionSpecification m_encryptionSpecificationOverride;
-    bool m_encryptionSpecificationOverrideHasBeenSet;
+    bool m_encryptionSpecificationOverrideHasBeenSet = false;
 
     PointInTimeRecovery m_pointInTimeRecoveryOverride;
-    bool m_pointInTimeRecoveryOverrideHasBeenSet;
+    bool m_pointInTimeRecoveryOverrideHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsOverride;
-    bool m_tagsOverrideHasBeenSet;
+    bool m_tagsOverrideHasBeenSet = false;
   };
 
 } // namespace Model

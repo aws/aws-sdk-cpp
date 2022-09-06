@@ -234,10 +234,10 @@ namespace Model
   private:
 
     Aws::String m_serveSignature;
-    bool m_serveSignatureHasBeenSet;
+    bool m_serveSignatureHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1387,37 +1387,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ParameterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     bool m_overwrite;
-    bool m_overwriteHasBeenSet;
+    bool m_overwriteHasBeenSet = false;
 
     Aws::String m_allowedPattern;
-    bool m_allowedPatternHasBeenSet;
+    bool m_allowedPatternHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ParameterTier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     Aws::String m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
   };
 
 } // namespace Model

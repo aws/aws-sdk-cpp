@@ -122,10 +122,10 @@ namespace Model
   private:
 
     MonthlyTransfer m_monthlyTransfer;
-    bool m_monthlyTransferHasBeenSet;
+    bool m_monthlyTransferHasBeenSet = false;
 
     Aws::Vector<InstancePortInfo> m_ports;
-    bool m_portsHasBeenSet;
+    bool m_portsHasBeenSet = false;
   };
 
 } // namespace Model

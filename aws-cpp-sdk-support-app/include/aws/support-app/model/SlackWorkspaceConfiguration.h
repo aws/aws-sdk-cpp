@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_teamId;
-    bool m_teamIdHasBeenSet;
+    bool m_teamIdHasBeenSet = false;
   };
 
 } // namespace Model

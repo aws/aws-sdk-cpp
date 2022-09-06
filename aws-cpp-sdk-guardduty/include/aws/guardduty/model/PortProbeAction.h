@@ -107,10 +107,10 @@ namespace Model
   private:
 
     bool m_blocked;
-    bool m_blockedHasBeenSet;
+    bool m_blockedHasBeenSet = false;
 
     Aws::Vector<PortProbeDetail> m_portProbeDetails;
-    bool m_portProbeDetailsHasBeenSet;
+    bool m_portProbeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

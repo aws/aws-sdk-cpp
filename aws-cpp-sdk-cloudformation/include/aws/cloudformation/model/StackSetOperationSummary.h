@@ -413,22 +413,22 @@ namespace Model
   private:
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     StackSetOperationAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     StackSetOperationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimestamp;
-    bool m_endTimestampHasBeenSet;
+    bool m_endTimestampHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

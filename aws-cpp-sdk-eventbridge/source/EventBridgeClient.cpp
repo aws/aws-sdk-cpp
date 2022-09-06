@@ -132,7 +132,7 @@ EventBridgeClient::~EventBridgeClient()
 
 void EventBridgeClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EventBridge");
+  AWSClient::SetServiceClientName("EventBridge");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

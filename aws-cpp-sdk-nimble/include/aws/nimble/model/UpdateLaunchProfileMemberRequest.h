@@ -257,19 +257,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     LaunchProfilePersona m_persona;
-    bool m_personaHasBeenSet;
+    bool m_personaHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -239,16 +239,16 @@ namespace Model
   private:
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_communicationBody;
-    bool m_communicationBodyHasBeenSet;
+    bool m_communicationBodyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ccEmailAddresses;
-    bool m_ccEmailAddressesHasBeenSet;
+    bool m_ccEmailAddressesHasBeenSet = false;
 
     Aws::String m_attachmentSetId;
-    bool m_attachmentSetIdHasBeenSet;
+    bool m_attachmentSetIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ManagementPreference m_managementPreference;
-    bool m_managementPreferenceHasBeenSet;
+    bool m_managementPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

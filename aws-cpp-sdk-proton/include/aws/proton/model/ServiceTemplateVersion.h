@@ -596,43 +596,43 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<CompatibleEnvironmentTemplate> m_compatibleEnvironmentTemplates;
-    bool m_compatibleEnvironmentTemplatesHasBeenSet;
+    bool m_compatibleEnvironmentTemplatesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedAt;
-    bool m_lastModifiedAtHasBeenSet;
+    bool m_lastModifiedAtHasBeenSet = false;
 
     Aws::String m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
 
     Aws::String m_minorVersion;
-    bool m_minorVersionHasBeenSet;
+    bool m_minorVersionHasBeenSet = false;
 
     Aws::String m_recommendedMinorVersion;
-    bool m_recommendedMinorVersionHasBeenSet;
+    bool m_recommendedMinorVersionHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     TemplateVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<ServiceTemplateSupportedComponentSourceType> m_supportedComponentSources;
-    bool m_supportedComponentSourcesHasBeenSet;
+    bool m_supportedComponentSourcesHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

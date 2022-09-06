@@ -702,49 +702,49 @@ namespace Model
   private:
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
 
     Aws::String m_solutionArn;
-    bool m_solutionArnHasBeenSet;
+    bool m_solutionArnHasBeenSet = false;
 
     bool m_performHPO;
-    bool m_performHPOHasBeenSet;
+    bool m_performHPOHasBeenSet = false;
 
     bool m_performAutoML;
-    bool m_performAutoMLHasBeenSet;
+    bool m_performAutoMLHasBeenSet = false;
 
     Aws::String m_recipeArn;
-    bool m_recipeArnHasBeenSet;
+    bool m_recipeArnHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     SolutionConfig m_solutionConfig;
-    bool m_solutionConfigHasBeenSet;
+    bool m_solutionConfigHasBeenSet = false;
 
     double m_trainingHours;
-    bool m_trainingHoursHasBeenSet;
+    bool m_trainingHoursHasBeenSet = false;
 
     TrainingMode m_trainingMode;
-    bool m_trainingModeHasBeenSet;
+    bool m_trainingModeHasBeenSet = false;
 
     TunedHPOParams m_tunedHPOParams;
-    bool m_tunedHPOParamsHasBeenSet;
+    bool m_tunedHPOParamsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_expectedManifestBucketOwner;
-    bool m_expectedManifestBucketOwnerHasBeenSet;
+    bool m_expectedManifestBucketOwnerHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_manifestPrefix;
-    bool m_manifestPrefixHasBeenSet;
+    bool m_manifestPrefixHasBeenSet = false;
 
     GeneratedManifestEncryption m_manifestEncryption;
-    bool m_manifestEncryptionHasBeenSet;
+    bool m_manifestEncryptionHasBeenSet = false;
 
     GeneratedManifestFormat m_manifestFormat;
-    bool m_manifestFormatHasBeenSet;
+    bool m_manifestFormatHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TaskTemplateFieldIdentifier m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

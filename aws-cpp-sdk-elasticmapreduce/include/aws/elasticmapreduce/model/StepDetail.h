@@ -103,10 +103,10 @@ namespace Model
   private:
 
     StepConfig m_stepConfig;
-    bool m_stepConfigHasBeenSet;
+    bool m_stepConfigHasBeenSet = false;
 
     StepExecutionStatusDetail m_executionStatusDetail;
-    bool m_executionStatusDetailHasBeenSet;
+    bool m_executionStatusDetailHasBeenSet = false;
   };
 
 } // namespace Model

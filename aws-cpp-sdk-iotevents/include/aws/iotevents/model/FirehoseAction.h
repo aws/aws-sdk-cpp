@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Aws::String m_separator;
-    bool m_separatorHasBeenSet;
+    bool m_separatorHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

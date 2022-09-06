@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastCheckedTimestamp;
-    bool m_lastCheckedTimestampHasBeenSet;
+    bool m_lastCheckedTimestampHasBeenSet = false;
 
     Readiness m_readiness;
-    bool m_readinessHasBeenSet;
+    bool m_readinessHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

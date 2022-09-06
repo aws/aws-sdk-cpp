@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ActiveDirectoryIdentityProvider m_activeDirectoryIdentityProvider;
-    bool m_activeDirectoryIdentityProviderHasBeenSet;
+    bool m_activeDirectoryIdentityProviderHasBeenSet = false;
   };
 
 } // namespace Model

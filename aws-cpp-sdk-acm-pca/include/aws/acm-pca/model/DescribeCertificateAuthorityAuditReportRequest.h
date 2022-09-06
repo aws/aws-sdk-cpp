@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_auditReportId;
-    bool m_auditReportIdHasBeenSet;
+    bool m_auditReportIdHasBeenSet = false;
   };
 
 } // namespace Model

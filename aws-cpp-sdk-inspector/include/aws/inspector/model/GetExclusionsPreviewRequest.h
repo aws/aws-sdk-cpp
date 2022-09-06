@@ -254,19 +254,19 @@ namespace Model
   private:
 
     Aws::String m_assessmentTemplateArn;
-    bool m_assessmentTemplateArnHasBeenSet;
+    bool m_assessmentTemplateArnHasBeenSet = false;
 
     Aws::String m_previewToken;
-    bool m_previewTokenHasBeenSet;
+    bool m_previewTokenHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

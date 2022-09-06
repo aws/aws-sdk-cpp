@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::Vector<ValidationExceptionField> m_fieldList;
-    bool m_fieldListHasBeenSet;
+    bool m_fieldListHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

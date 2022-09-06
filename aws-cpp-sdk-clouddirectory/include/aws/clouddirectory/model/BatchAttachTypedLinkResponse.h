@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TypedLinkSpecifier m_typedLinkSpecifier;
-    bool m_typedLinkSpecifierHasBeenSet;
+    bool m_typedLinkSpecifierHasBeenSet = false;
   };
 
 } // namespace Model

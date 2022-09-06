@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_audioRenditionSets;
-    bool m_audioRenditionSetsHasBeenSet;
+    bool m_audioRenditionSetsHasBeenSet = false;
 
     Fmp4NielsenId3Behavior m_nielsenId3Behavior;
-    bool m_nielsenId3BehaviorHasBeenSet;
+    bool m_nielsenId3BehaviorHasBeenSet = false;
 
     Fmp4TimedMetadataBehavior m_timedMetadataBehavior;
-    bool m_timedMetadataBehaviorHasBeenSet;
+    bool m_timedMetadataBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

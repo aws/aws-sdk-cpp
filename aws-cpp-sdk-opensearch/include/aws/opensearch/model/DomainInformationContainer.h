@@ -53,7 +53,7 @@ namespace Model
   private:
 
     AWSDomainInformation m_aWSDomainInformation;
-    bool m_aWSDomainInformationHasBeenSet;
+    bool m_aWSDomainInformationHasBeenSet = false;
   };
 
 } // namespace Model

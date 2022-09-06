@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_allowedValue;
-    bool m_allowedValueHasBeenSet;
+    bool m_allowedValueHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
-    bool m_minimumEngineVersionHasBeenSet;
+    bool m_minimumEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

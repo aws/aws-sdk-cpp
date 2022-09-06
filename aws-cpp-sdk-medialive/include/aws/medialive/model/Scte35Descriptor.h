@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Scte35DescriptorSettings m_scte35DescriptorSettings;
-    bool m_scte35DescriptorSettingsHasBeenSet;
+    bool m_scte35DescriptorSettingsHasBeenSet = false;
   };
 
 } // namespace Model

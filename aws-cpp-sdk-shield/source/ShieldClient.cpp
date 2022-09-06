@@ -111,7 +111,7 @@ ShieldClient::~ShieldClient()
 
 void ShieldClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Shield");
+  AWSClient::SetServiceClientName("Shield");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

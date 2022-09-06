@@ -93,10 +93,10 @@ namespace Model
   private:
 
     FaceSearchSettings m_faceSearch;
-    bool m_faceSearchHasBeenSet;
+    bool m_faceSearchHasBeenSet = false;
 
     ConnectedHomeSettings m_connectedHome;
-    bool m_connectedHomeHasBeenSet;
+    bool m_connectedHomeHasBeenSet = false;
   };
 
 } // namespace Model

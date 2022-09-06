@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_acceleratorTypeName;
-    bool m_acceleratorTypeNameHasBeenSet;
+    bool m_acceleratorTypeNameHasBeenSet = false;
 
     MemoryInfo m_memoryInfo;
-    bool m_memoryInfoHasBeenSet;
+    bool m_memoryInfoHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_throughputInfo;
-    bool m_throughputInfoHasBeenSet;
+    bool m_throughputInfoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ManifestFileLocation m_manifestFileLocation;
-    bool m_manifestFileLocationHasBeenSet;
+    bool m_manifestFileLocationHasBeenSet = false;
   };
 
 } // namespace Model

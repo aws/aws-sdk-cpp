@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_deleteScheduledAudits;
-    bool m_deleteScheduledAuditsHasBeenSet;
+    bool m_deleteScheduledAuditsHasBeenSet = false;
   };
 
 } // namespace Model

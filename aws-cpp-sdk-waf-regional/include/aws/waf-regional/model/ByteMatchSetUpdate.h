@@ -142,10 +142,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     ByteMatchTuple m_byteMatchTuple;
-    bool m_byteMatchTupleHasBeenSet;
+    bool m_byteMatchTupleHasBeenSet = false;
   };
 
 } // namespace Model

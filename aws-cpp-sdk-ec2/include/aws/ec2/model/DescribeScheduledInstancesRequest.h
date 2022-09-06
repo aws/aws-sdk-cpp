@@ -314,22 +314,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scheduledInstanceIds;
-    bool m_scheduledInstanceIdsHasBeenSet;
+    bool m_scheduledInstanceIdsHasBeenSet = false;
 
     SlotStartTimeRangeRequest m_slotStartTimeRange;
-    bool m_slotStartTimeRangeHasBeenSet;
+    bool m_slotStartTimeRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_certificateIds;
-    bool m_certificateIdsHasBeenSet;
+    bool m_certificateIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_stepId;
-    bool m_stepIdHasBeenSet;
+    bool m_stepIdHasBeenSet = false;
 
     CancelStepsRequestStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -549,37 +549,37 @@ namespace Model
   private:
 
     AvailabilityZoneState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     AvailabilityZoneOptInStatus m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
 
     Aws::Vector<AvailabilityZoneMessage> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::String m_zoneName;
-    bool m_zoneNameHasBeenSet;
+    bool m_zoneNameHasBeenSet = false;
 
     Aws::String m_zoneId;
-    bool m_zoneIdHasBeenSet;
+    bool m_zoneIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     Aws::String m_zoneType;
-    bool m_zoneTypeHasBeenSet;
+    bool m_zoneTypeHasBeenSet = false;
 
     Aws::String m_parentZoneName;
-    bool m_parentZoneNameHasBeenSet;
+    bool m_parentZoneNameHasBeenSet = false;
 
     Aws::String m_parentZoneId;
-    bool m_parentZoneIdHasBeenSet;
+    bool m_parentZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

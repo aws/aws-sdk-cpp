@@ -139,13 +139,13 @@ namespace Model
   private:
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
 
     Aws::String m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

@@ -169,19 +169,19 @@ namespace Model
   private:
 
     int m_maxWorkerCount;
-    bool m_maxWorkerCountHasBeenSet;
+    bool m_maxWorkerCountHasBeenSet = false;
 
     int m_mcuCount;
-    bool m_mcuCountHasBeenSet;
+    bool m_mcuCountHasBeenSet = false;
 
     int m_minWorkerCount;
-    bool m_minWorkerCountHasBeenSet;
+    bool m_minWorkerCountHasBeenSet = false;
 
     ScaleInPolicy m_scaleInPolicy;
-    bool m_scaleInPolicyHasBeenSet;
+    bool m_scaleInPolicyHasBeenSet = false;
 
     ScaleOutPolicy m_scaleOutPolicy;
-    bool m_scaleOutPolicyHasBeenSet;
+    bool m_scaleOutPolicyHasBeenSet = false;
   };
 
 } // namespace Model

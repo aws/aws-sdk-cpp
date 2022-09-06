@@ -104,10 +104,10 @@ namespace Model
   private:
 
     double m_distance;
-    bool m_distanceHasBeenSet;
+    bool m_distanceHasBeenSet = false;
 
     Place m_place;
-    bool m_placeHasBeenSet;
+    bool m_placeHasBeenSet = false;
   };
 
 } // namespace Model

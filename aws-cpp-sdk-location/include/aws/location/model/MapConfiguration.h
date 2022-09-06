@@ -377,7 +377,7 @@ namespace Model
   private:
 
     Aws::String m_style;
-    bool m_styleHasBeenSet;
+    bool m_styleHasBeenSet = false;
   };
 
 } // namespace Model

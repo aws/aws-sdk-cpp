@@ -415,19 +415,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_expirationInDays;
-    bool m_expirationInDaysHasBeenSet;
+    bool m_expirationInDaysHasBeenSet = false;
 
     Aws::String m_customCname;
-    bool m_customCnameHasBeenSet;
+    bool m_customCnameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     S3ObjectAcl m_s3ObjectAcl;
-    bool m_s3ObjectAclHasBeenSet;
+    bool m_s3ObjectAclHasBeenSet = false;
   };
 
 } // namespace Model

@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<BlockerDeclaration> m_blockers;
-    bool m_blockersHasBeenSet;
+    bool m_blockersHasBeenSet = false;
 
     Aws::Vector<ActionDeclaration> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_sourceUpdateToken;
-    bool m_sourceUpdateTokenHasBeenSet;
+    bool m_sourceUpdateTokenHasBeenSet = false;
   };
 
 } // namespace Model

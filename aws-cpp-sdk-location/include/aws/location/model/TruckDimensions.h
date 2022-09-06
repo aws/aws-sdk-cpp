@@ -166,16 +166,16 @@ namespace Model
   private:
 
     double m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     double m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     DimensionUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     double m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

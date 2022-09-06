@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_programId;
-    bool m_programIdHasBeenSet;
+    bool m_programIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,7 +79,7 @@ namespace Model
   private:
 
     int m_noncurrentDays;
-    bool m_noncurrentDaysHasBeenSet;
+    bool m_noncurrentDaysHasBeenSet = false;
   };
 
 } // namespace Model

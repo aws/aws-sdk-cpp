@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_sseKmsKeyId;
-    bool m_sseKmsKeyIdHasBeenSet;
+    bool m_sseKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

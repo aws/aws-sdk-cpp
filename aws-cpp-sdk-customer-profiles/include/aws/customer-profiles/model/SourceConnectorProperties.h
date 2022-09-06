@@ -218,19 +218,19 @@ namespace Model
   private:
 
     MarketoSourceProperties m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     S3SourceProperties m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     SalesforceSourceProperties m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowSourceProperties m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     ZendeskSourceProperties m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
   };
 
 } // namespace Model

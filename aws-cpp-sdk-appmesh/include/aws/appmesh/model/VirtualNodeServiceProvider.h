@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_virtualNodeName;
-    bool m_virtualNodeNameHasBeenSet;
+    bool m_virtualNodeNameHasBeenSet = false;
   };
 
 } // namespace Model

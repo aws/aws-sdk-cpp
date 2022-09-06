@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_layerIds;
-    bool m_layerIdsHasBeenSet;
+    bool m_layerIdsHasBeenSet = false;
   };
 
 } // namespace Model

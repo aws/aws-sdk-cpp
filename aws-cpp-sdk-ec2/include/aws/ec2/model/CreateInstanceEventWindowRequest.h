@@ -350,19 +350,19 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<InstanceEventWindowTimeRangeRequest> m_timeRanges;
-    bool m_timeRangesHasBeenSet;
+    bool m_timeRangesHasBeenSet = false;
 
     Aws::String m_cronExpression;
-    bool m_cronExpressionHasBeenSet;
+    bool m_cronExpressionHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

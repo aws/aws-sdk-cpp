@@ -210,19 +210,19 @@ namespace Model
   private:
 
     DeploymentTargetType m_deploymentTargetType;
-    bool m_deploymentTargetTypeHasBeenSet;
+    bool m_deploymentTargetTypeHasBeenSet = false;
 
     InstanceTarget m_instanceTarget;
-    bool m_instanceTargetHasBeenSet;
+    bool m_instanceTargetHasBeenSet = false;
 
     LambdaTarget m_lambdaTarget;
-    bool m_lambdaTargetHasBeenSet;
+    bool m_lambdaTargetHasBeenSet = false;
 
     ECSTarget m_ecsTarget;
-    bool m_ecsTargetHasBeenSet;
+    bool m_ecsTargetHasBeenSet = false;
 
     CloudFormationTarget m_cloudFormationTarget;
-    bool m_cloudFormationTargetHasBeenSet;
+    bool m_cloudFormationTargetHasBeenSet = false;
   };
 
 } // namespace Model

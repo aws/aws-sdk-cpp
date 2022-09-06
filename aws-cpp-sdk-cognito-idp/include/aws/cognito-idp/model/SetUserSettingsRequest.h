@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::Vector<MFAOptionType> m_mFAOptions;
-    bool m_mFAOptionsHasBeenSet;
+    bool m_mFAOptionsHasBeenSet = false;
   };
 
 } // namespace Model

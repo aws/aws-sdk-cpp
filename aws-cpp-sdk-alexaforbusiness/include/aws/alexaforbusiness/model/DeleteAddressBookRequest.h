@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_addressBookArn;
-    bool m_addressBookArnHasBeenSet;
+    bool m_addressBookArnHasBeenSet = false;
   };
 
 } // namespace Model

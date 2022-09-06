@@ -259,22 +259,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_invocationTime;
-    bool m_invocationTimeHasBeenSet;
+    bool m_invocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_triggerTime;
-    bool m_triggerTimeHasBeenSet;
+    bool m_triggerTimeHasBeenSet = false;
 
     ScheduledQueryRunStatus m_runStatus;
-    bool m_runStatusHasBeenSet;
+    bool m_runStatusHasBeenSet = false;
 
     ExecutionStats m_executionStats;
-    bool m_executionStatsHasBeenSet;
+    bool m_executionStatsHasBeenSet = false;
 
     ErrorReportLocation m_errorReportLocation;
-    bool m_errorReportLocationHasBeenSet;
+    bool m_errorReportLocationHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

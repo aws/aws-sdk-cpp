@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_backupPlanId;
-    bool m_backupPlanIdHasBeenSet;
+    bool m_backupPlanIdHasBeenSet = false;
 
     BackupPlanInput m_backupPlan;
-    bool m_backupPlanHasBeenSet;
+    bool m_backupPlanHasBeenSet = false;
   };
 
 } // namespace Model

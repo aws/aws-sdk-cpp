@@ -584,49 +584,49 @@ namespace Model
   private:
 
     VersionStatus m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     ClusterConfigStatus m_clusterConfig;
-    bool m_clusterConfigHasBeenSet;
+    bool m_clusterConfigHasBeenSet = false;
 
     EBSOptionsStatus m_eBSOptions;
-    bool m_eBSOptionsHasBeenSet;
+    bool m_eBSOptionsHasBeenSet = false;
 
     AccessPoliciesStatus m_accessPolicies;
-    bool m_accessPoliciesHasBeenSet;
+    bool m_accessPoliciesHasBeenSet = false;
 
     SnapshotOptionsStatus m_snapshotOptions;
-    bool m_snapshotOptionsHasBeenSet;
+    bool m_snapshotOptionsHasBeenSet = false;
 
     VPCDerivedInfoStatus m_vPCOptions;
-    bool m_vPCOptionsHasBeenSet;
+    bool m_vPCOptionsHasBeenSet = false;
 
     CognitoOptionsStatus m_cognitoOptions;
-    bool m_cognitoOptionsHasBeenSet;
+    bool m_cognitoOptionsHasBeenSet = false;
 
     EncryptionAtRestOptionsStatus m_encryptionAtRestOptions;
-    bool m_encryptionAtRestOptionsHasBeenSet;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
 
     NodeToNodeEncryptionOptionsStatus m_nodeToNodeEncryptionOptions;
-    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
     AdvancedOptionsStatus m_advancedOptions;
-    bool m_advancedOptionsHasBeenSet;
+    bool m_advancedOptionsHasBeenSet = false;
 
     LogPublishingOptionsStatus m_logPublishingOptions;
-    bool m_logPublishingOptionsHasBeenSet;
+    bool m_logPublishingOptionsHasBeenSet = false;
 
     DomainEndpointOptionsStatus m_domainEndpointOptions;
-    bool m_domainEndpointOptionsHasBeenSet;
+    bool m_domainEndpointOptionsHasBeenSet = false;
 
     AdvancedSecurityOptionsStatus m_advancedSecurityOptions;
-    bool m_advancedSecurityOptionsHasBeenSet;
+    bool m_advancedSecurityOptionsHasBeenSet = false;
 
     AutoTuneOptionsStatus m_autoTuneOptions;
-    bool m_autoTuneOptionsHasBeenSet;
+    bool m_autoTuneOptionsHasBeenSet = false;
 
     ChangeProgressDetails m_changeProgressDetails;
-    bool m_changeProgressDetailsHasBeenSet;
+    bool m_changeProgressDetailsHasBeenSet = false;
   };
 
 } // namespace Model

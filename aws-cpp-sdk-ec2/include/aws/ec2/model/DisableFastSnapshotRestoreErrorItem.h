@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::Vector<DisableFastSnapshotRestoreStateErrorItem> m_fastSnapshotRestoreStateErrors;
-    bool m_fastSnapshotRestoreStateErrorsHasBeenSet;
+    bool m_fastSnapshotRestoreStateErrorsHasBeenSet = false;
   };
 
 } // namespace Model

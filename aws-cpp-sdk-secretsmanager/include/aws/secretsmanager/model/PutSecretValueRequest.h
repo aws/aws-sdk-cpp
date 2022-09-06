@@ -582,19 +582,19 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_secretBinary;
-    bool m_secretBinaryHasBeenSet;
+    bool m_secretBinaryHasBeenSet = false;
 
     Aws::String m_secretString;
-    bool m_secretStringHasBeenSet;
+    bool m_secretStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versionStages;
-    bool m_versionStagesHasBeenSet;
+    bool m_versionStagesHasBeenSet = false;
   };
 
 } // namespace Model

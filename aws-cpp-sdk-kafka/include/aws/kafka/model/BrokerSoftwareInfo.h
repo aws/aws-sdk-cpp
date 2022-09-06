@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_configurationArn;
-    bool m_configurationArnHasBeenSet;
+    bool m_configurationArnHasBeenSet = false;
 
     long long m_configurationRevision;
-    bool m_configurationRevisionHasBeenSet;
+    bool m_configurationRevisionHasBeenSet = false;
 
     Aws::String m_kafkaVersion;
-    bool m_kafkaVersionHasBeenSet;
+    bool m_kafkaVersionHasBeenSet = false;
   };
 
 } // namespace Model

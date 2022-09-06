@@ -463,28 +463,28 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     ContainerDefinition m_primaryContainer;
-    bool m_primaryContainerHasBeenSet;
+    bool m_primaryContainerHasBeenSet = false;
 
     Aws::Vector<ContainerDefinition> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     InferenceExecutionConfig m_inferenceExecutionConfig;
-    bool m_inferenceExecutionConfigHasBeenSet;
+    bool m_inferenceExecutionConfigHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     bool m_enableNetworkIsolation;
-    bool m_enableNetworkIsolationHasBeenSet;
+    bool m_enableNetworkIsolationHasBeenSet = false;
   };
 
 } // namespace Model

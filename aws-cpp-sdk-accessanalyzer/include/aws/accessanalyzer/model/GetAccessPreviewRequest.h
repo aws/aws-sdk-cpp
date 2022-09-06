@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_accessPreviewId;
-    bool m_accessPreviewIdHasBeenSet;
+    bool m_accessPreviewIdHasBeenSet = false;
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
   };
 
 } // namespace Model

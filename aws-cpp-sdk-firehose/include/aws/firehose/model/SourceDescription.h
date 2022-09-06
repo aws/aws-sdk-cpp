@@ -77,7 +77,7 @@ namespace Model
   private:
 
     KinesisStreamSourceDescription m_kinesisStreamSourceDescription;
-    bool m_kinesisStreamSourceDescriptionHasBeenSet;
+    bool m_kinesisStreamSourceDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,7 +116,7 @@ namespace Model
   private:
 
     CustomRequestHandling m_customRequestHandling;
-    bool m_customRequestHandlingHasBeenSet;
+    bool m_customRequestHandlingHasBeenSet = false;
   };
 
 } // namespace Model

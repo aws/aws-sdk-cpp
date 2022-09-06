@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
 
     TimeoutConfig m_timeoutConfig;
-    bool m_timeoutConfigHasBeenSet;
+    bool m_timeoutConfigHasBeenSet = false;
   };
 
 } // namespace Model

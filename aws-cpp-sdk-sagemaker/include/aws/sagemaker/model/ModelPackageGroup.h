@@ -362,25 +362,25 @@ namespace Model
   private:
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupArn;
-    bool m_modelPackageGroupArnHasBeenSet;
+    bool m_modelPackageGroupArnHasBeenSet = false;
 
     Aws::String m_modelPackageGroupDescription;
-    bool m_modelPackageGroupDescriptionHasBeenSet;
+    bool m_modelPackageGroupDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     ModelPackageGroupStatus m_modelPackageGroupStatus;
-    bool m_modelPackageGroupStatusHasBeenSet;
+    bool m_modelPackageGroupStatusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

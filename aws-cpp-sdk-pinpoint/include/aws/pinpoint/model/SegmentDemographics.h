@@ -227,22 +227,22 @@ namespace Model
   private:
 
     SetDimension m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
 
     SetDimension m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     SetDimension m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     SetDimension m_make;
-    bool m_makeHasBeenSet;
+    bool m_makeHasBeenSet = false;
 
     SetDimension m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     SetDimension m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

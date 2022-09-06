@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_buckets;
-    bool m_bucketsHasBeenSet;
+    bool m_bucketsHasBeenSet = false;
   };
 
 } // namespace Model

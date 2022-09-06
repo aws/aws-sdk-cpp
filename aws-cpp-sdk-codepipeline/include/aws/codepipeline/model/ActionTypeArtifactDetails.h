@@ -96,10 +96,10 @@ namespace Model
   private:
 
     int m_minimumCount;
-    bool m_minimumCountHasBeenSet;
+    bool m_minimumCountHasBeenSet = false;
 
     int m_maximumCount;
-    bool m_maximumCountHasBeenSet;
+    bool m_maximumCountHasBeenSet = false;
   };
 
 } // namespace Model

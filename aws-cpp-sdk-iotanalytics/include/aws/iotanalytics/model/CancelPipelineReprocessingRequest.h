@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_reprocessingId;
-    bool m_reprocessingIdHasBeenSet;
+    bool m_reprocessingIdHasBeenSet = false;
   };
 
 } // namespace Model

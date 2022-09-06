@@ -103,10 +103,10 @@ namespace Model
   private:
 
     GutterStyle m_gutter;
-    bool m_gutterHasBeenSet;
+    bool m_gutterHasBeenSet = false;
 
     MarginStyle m_margin;
-    bool m_marginHasBeenSet;
+    bool m_marginHasBeenSet = false;
   };
 
 } // namespace Model

@@ -165,10 +165,10 @@ namespace Model
   private:
 
     ConflictResolvingModel m_conflictResolvingModel;
-    bool m_conflictResolvingModelHasBeenSet;
+    bool m_conflictResolvingModelHasBeenSet = false;
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
   };
 
 } // namespace Model

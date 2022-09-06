@@ -98,16 +98,16 @@ namespace Model
   private:
 
     int m_dlDr;
-    bool m_dlDrHasBeenSet;
+    bool m_dlDrHasBeenSet = false;
 
     int m_dlFreq;
-    bool m_dlFreqHasBeenSet;
+    bool m_dlFreqHasBeenSet = false;
 
     Aws::Utils::DateTime m_sessionStartTime;
-    bool m_sessionStartTimeHasBeenSet;
+    bool m_sessionStartTimeHasBeenSet = false;
 
     int m_sessionTimeout;
-    bool m_sessionTimeoutHasBeenSet;
+    bool m_sessionTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

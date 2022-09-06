@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledOnOrAfter;
-    bool m_scheduledOnOrAfterHasBeenSet;
+    bool m_scheduledOnOrAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledBefore;
-    bool m_scheduledBeforeHasBeenSet;
+    bool m_scheduledBeforeHasBeenSet = false;
   };
 
 } // namespace Model

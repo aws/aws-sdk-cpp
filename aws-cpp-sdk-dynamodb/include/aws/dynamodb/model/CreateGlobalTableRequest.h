@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_globalTableName;
-    bool m_globalTableNameHasBeenSet;
+    bool m_globalTableNameHasBeenSet = false;
 
     Aws::Vector<Replica> m_replicationGroup;
-    bool m_replicationGroupHasBeenSet;
+    bool m_replicationGroupHasBeenSet = false;
   };
 
 } // namespace Model

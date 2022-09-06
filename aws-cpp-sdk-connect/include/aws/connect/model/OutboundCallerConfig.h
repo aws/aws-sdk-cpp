@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_outboundCallerIdName;
-    bool m_outboundCallerIdNameHasBeenSet;
+    bool m_outboundCallerIdNameHasBeenSet = false;
 
     Aws::String m_outboundCallerIdNumberId;
-    bool m_outboundCallerIdNumberIdHasBeenSet;
+    bool m_outboundCallerIdNumberIdHasBeenSet = false;
 
     Aws::String m_outboundFlowId;
-    bool m_outboundFlowIdHasBeenSet;
+    bool m_outboundFlowIdHasBeenSet = false;
   };
 
 } // namespace Model

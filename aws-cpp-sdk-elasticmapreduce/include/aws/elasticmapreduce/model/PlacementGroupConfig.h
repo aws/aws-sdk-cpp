@@ -124,10 +124,10 @@ namespace Model
   private:
 
     InstanceRoleType m_instanceRole;
-    bool m_instanceRoleHasBeenSet;
+    bool m_instanceRoleHasBeenSet = false;
 
     PlacementGroupStrategy m_placementStrategy;
-    bool m_placementStrategyHasBeenSet;
+    bool m_placementStrategyHasBeenSet = false;
   };
 
 } // namespace Model

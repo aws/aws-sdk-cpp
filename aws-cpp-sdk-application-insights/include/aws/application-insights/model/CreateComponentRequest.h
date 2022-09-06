@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceList;
-    bool m_resourceListHasBeenSet;
+    bool m_resourceListHasBeenSet = false;
   };
 
 } // namespace Model

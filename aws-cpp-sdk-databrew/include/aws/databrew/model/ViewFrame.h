@@ -221,22 +221,22 @@ namespace Model
   private:
 
     int m_startColumnIndex;
-    bool m_startColumnIndexHasBeenSet;
+    bool m_startColumnIndexHasBeenSet = false;
 
     int m_columnRange;
-    bool m_columnRangeHasBeenSet;
+    bool m_columnRangeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hiddenColumns;
-    bool m_hiddenColumnsHasBeenSet;
+    bool m_hiddenColumnsHasBeenSet = false;
 
     int m_startRowIndex;
-    bool m_startRowIndexHasBeenSet;
+    bool m_startRowIndexHasBeenSet = false;
 
     int m_rowRange;
-    bool m_rowRangeHasBeenSet;
+    bool m_rowRangeHasBeenSet = false;
 
     AnalyticsMode m_analytics;
-    bool m_analyticsHasBeenSet;
+    bool m_analyticsHasBeenSet = false;
   };
 
 } // namespace Model

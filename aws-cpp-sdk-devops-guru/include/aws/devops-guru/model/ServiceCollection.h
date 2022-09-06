@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<ServiceName> m_serviceNames;
-    bool m_serviceNamesHasBeenSet;
+    bool m_serviceNamesHasBeenSet = false;
   };
 
 } // namespace Model

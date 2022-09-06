@@ -272,22 +272,22 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     InstalledComponentLifecycleState m_lifecycleState;
-    bool m_lifecycleStateHasBeenSet;
+    bool m_lifecycleStateHasBeenSet = false;
 
     Aws::String m_lifecycleStateDetails;
-    bool m_lifecycleStateDetailsHasBeenSet;
+    bool m_lifecycleStateDetailsHasBeenSet = false;
 
     bool m_isRoot;
-    bool m_isRootHasBeenSet;
+    bool m_isRootHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusChangeTimestamp;
-    bool m_lastStatusChangeTimestampHasBeenSet;
+    bool m_lastStatusChangeTimestampHasBeenSet = false;
   };
 
 } // namespace Model

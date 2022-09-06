@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<BasicAuthenticationConfiguration> m_basicAuthentication;
-    bool m_basicAuthenticationHasBeenSet;
+    bool m_basicAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

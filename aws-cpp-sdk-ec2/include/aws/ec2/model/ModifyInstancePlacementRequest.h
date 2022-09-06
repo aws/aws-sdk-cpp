@@ -347,25 +347,25 @@ namespace Model
   private:
 
     Affinity m_affinity;
-    bool m_affinityHasBeenSet;
+    bool m_affinityHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_hostId;
-    bool m_hostIdHasBeenSet;
+    bool m_hostIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     HostTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     int m_partitionNumber;
-    bool m_partitionNumberHasBeenSet;
+    bool m_partitionNumberHasBeenSet = false;
 
     Aws::String m_hostResourceGroupArn;
-    bool m_hostResourceGroupArnHasBeenSet;
+    bool m_hostResourceGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

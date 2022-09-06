@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     int m_publicKeyVersion;
-    bool m_publicKeyVersionHasBeenSet;
+    bool m_publicKeyVersionHasBeenSet = false;
 
     Aws::String m_nonce;
-    bool m_nonceHasBeenSet;
+    bool m_nonceHasBeenSet = false;
   };
 
 } // namespace Model

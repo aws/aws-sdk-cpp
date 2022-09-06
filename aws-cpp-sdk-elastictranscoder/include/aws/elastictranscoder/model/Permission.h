@@ -329,13 +329,13 @@ namespace Model
   private:
 
     Aws::String m_granteeType;
-    bool m_granteeTypeHasBeenSet;
+    bool m_granteeTypeHasBeenSet = false;
 
     Aws::String m_grantee;
-    bool m_granteeHasBeenSet;
+    bool m_granteeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_access;
-    bool m_accessHasBeenSet;
+    bool m_accessHasBeenSet = false;
   };
 
 } // namespace Model

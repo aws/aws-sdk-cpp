@@ -365,19 +365,19 @@ namespace Model
   private:
 
     bool m_crawlPersonalSpaces;
-    bool m_crawlPersonalSpacesHasBeenSet;
+    bool m_crawlPersonalSpacesHasBeenSet = false;
 
     bool m_crawlArchivedSpaces;
-    bool m_crawlArchivedSpacesHasBeenSet;
+    bool m_crawlArchivedSpacesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeSpaces;
-    bool m_includeSpacesHasBeenSet;
+    bool m_includeSpacesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeSpaces;
-    bool m_excludeSpacesHasBeenSet;
+    bool m_excludeSpacesHasBeenSet = false;
 
     Aws::Vector<ConfluenceSpaceToIndexFieldMapping> m_spaceFieldMappings;
-    bool m_spaceFieldMappingsHasBeenSet;
+    bool m_spaceFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

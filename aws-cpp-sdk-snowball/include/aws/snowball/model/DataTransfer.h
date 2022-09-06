@@ -140,16 +140,16 @@ namespace Model
   private:
 
     long long m_bytesTransferred;
-    bool m_bytesTransferredHasBeenSet;
+    bool m_bytesTransferredHasBeenSet = false;
 
     long long m_objectsTransferred;
-    bool m_objectsTransferredHasBeenSet;
+    bool m_objectsTransferredHasBeenSet = false;
 
     long long m_totalBytes;
-    bool m_totalBytesHasBeenSet;
+    bool m_totalBytesHasBeenSet = false;
 
     long long m_totalObjects;
-    bool m_totalObjectsHasBeenSet;
+    bool m_totalObjectsHasBeenSet = false;
   };
 
 } // namespace Model

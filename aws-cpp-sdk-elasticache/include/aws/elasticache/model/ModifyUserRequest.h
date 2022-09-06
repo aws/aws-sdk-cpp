@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_accessString;
-    bool m_accessStringHasBeenSet;
+    bool m_accessStringHasBeenSet = false;
 
     Aws::String m_appendAccessString;
-    bool m_appendAccessStringHasBeenSet;
+    bool m_appendAccessStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_passwords;
-    bool m_passwordsHasBeenSet;
+    bool m_passwordsHasBeenSet = false;
 
     bool m_noPasswordRequired;
-    bool m_noPasswordRequiredHasBeenSet;
+    bool m_noPasswordRequiredHasBeenSet = false;
   };
 
 } // namespace Model

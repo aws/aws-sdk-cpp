@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_ipAddressV4;
-    bool m_ipAddressV4HasBeenSet;
+    bool m_ipAddressV4HasBeenSet = false;
 
     IpCity m_ipCity;
-    bool m_ipCityHasBeenSet;
+    bool m_ipCityHasBeenSet = false;
 
     IpCountry m_ipCountry;
-    bool m_ipCountryHasBeenSet;
+    bool m_ipCountryHasBeenSet = false;
 
     IpGeoLocation m_ipGeoLocation;
-    bool m_ipGeoLocationHasBeenSet;
+    bool m_ipGeoLocationHasBeenSet = false;
 
     IpOwner m_ipOwner;
-    bool m_ipOwnerHasBeenSet;
+    bool m_ipOwnerHasBeenSet = false;
   };
 
 } // namespace Model

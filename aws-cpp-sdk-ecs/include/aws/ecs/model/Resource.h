@@ -269,22 +269,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     long long m_longValue;
-    bool m_longValueHasBeenSet;
+    bool m_longValueHasBeenSet = false;
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringSetValue;
-    bool m_stringSetValueHasBeenSet;
+    bool m_stringSetValueHasBeenSet = false;
   };
 
 } // namespace Model

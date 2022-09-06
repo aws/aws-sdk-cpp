@@ -134,10 +134,10 @@ namespace Model
   private:
 
     bool m_mfaAuthenticated;
-    bool m_mfaAuthenticatedHasBeenSet;
+    bool m_mfaAuthenticatedHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

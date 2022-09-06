@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Field> m_generatedFields;
-    bool m_generatedFieldsHasBeenSet;
+    bool m_generatedFieldsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     RevocationConfiguration m_revocationConfiguration;
-    bool m_revocationConfigurationHasBeenSet;
+    bool m_revocationConfigurationHasBeenSet = false;
 
     CertificateAuthorityStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

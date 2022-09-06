@@ -211,19 +211,19 @@ namespace Model
   private:
 
     DeviceRegistrationStateEventConfiguration m_deviceRegistrationState;
-    bool m_deviceRegistrationStateHasBeenSet;
+    bool m_deviceRegistrationStateHasBeenSet = false;
 
     ProximityEventConfiguration m_proximity;
-    bool m_proximityHasBeenSet;
+    bool m_proximityHasBeenSet = false;
 
     JoinEventConfiguration m_join;
-    bool m_joinHasBeenSet;
+    bool m_joinHasBeenSet = false;
 
     ConnectionStatusEventConfiguration m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
 
     MessageDeliveryStatusEventConfiguration m_messageDeliveryStatus;
-    bool m_messageDeliveryStatusHasBeenSet;
+    bool m_messageDeliveryStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Page m_page;
-    bool m_pageHasBeenSet;
+    bool m_pageHasBeenSet = false;
 
     TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet;
+    bool m_timingInformationHasBeenSet = false;
 
     IOUsage m_consumedIOs;
-    bool m_consumedIOsHasBeenSet;
+    bool m_consumedIOsHasBeenSet = false;
   };
 
 } // namespace Model

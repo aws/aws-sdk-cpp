@@ -80,10 +80,10 @@ namespace Model
   private:
 
     long long m_pollingTime;
-    bool m_pollingTimeHasBeenSet;
+    bool m_pollingTimeHasBeenSet = false;
 
     long long m_recordPollingLimit;
-    bool m_recordPollingLimitHasBeenSet;
+    bool m_recordPollingLimitHasBeenSet = false;
   };
 
 } // namespace Model

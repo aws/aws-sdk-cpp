@@ -318,16 +318,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_inlineRecipe;
-    bool m_inlineRecipeHasBeenSet;
+    bool m_inlineRecipeHasBeenSet = false;
 
     LambdaFunctionRecipeSource m_lambdaFunction;
-    bool m_lambdaFunctionHasBeenSet;
+    bool m_lambdaFunctionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

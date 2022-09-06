@@ -109,13 +109,13 @@ namespace Model
   private:
 
     int m_resultsCount;
-    bool m_resultsCountHasBeenSet;
+    bool m_resultsCountHasBeenSet = false;
 
     int m_totalResultsCount;
-    bool m_totalResultsCountHasBeenSet;
+    bool m_totalResultsCountHasBeenSet = false;
 
     long long m_bytesScanned;
-    bool m_bytesScannedHasBeenSet;
+    bool m_bytesScannedHasBeenSet = false;
   };
 
 } // namespace Model

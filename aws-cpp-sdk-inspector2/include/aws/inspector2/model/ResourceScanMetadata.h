@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Ec2Metadata m_ec2;
-    bool m_ec2HasBeenSet;
+    bool m_ec2HasBeenSet = false;
 
     EcrContainerImageMetadata m_ecrImage;
-    bool m_ecrImageHasBeenSet;
+    bool m_ecrImageHasBeenSet = false;
 
     EcrRepositoryMetadata m_ecrRepository;
-    bool m_ecrRepositoryHasBeenSet;
+    bool m_ecrRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

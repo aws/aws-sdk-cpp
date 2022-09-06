@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_sAMLProviderArn;
-    bool m_sAMLProviderArnHasBeenSet;
+    bool m_sAMLProviderArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

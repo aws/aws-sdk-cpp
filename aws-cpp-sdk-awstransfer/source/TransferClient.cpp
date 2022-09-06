@@ -129,7 +129,7 @@ TransferClient::~TransferClient()
 
 void TransferClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Transfer");
+  AWSClient::SetServiceClientName("Transfer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

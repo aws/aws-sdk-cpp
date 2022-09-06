@@ -177,16 +177,16 @@ namespace Model
   private:
 
     DataQualityMetricType m_metricType;
-    bool m_metricTypeHasBeenSet;
+    bool m_metricTypeHasBeenSet = false;
 
     Aws::String m_metricDescription;
-    bool m_metricDescriptionHasBeenSet;
+    bool m_metricDescriptionHasBeenSet = false;
 
     Aws::String m_relatedColumnName;
-    bool m_relatedColumnNameHasBeenSet;
+    bool m_relatedColumnNameHasBeenSet = false;
 
     double m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
   };
 
 } // namespace Model

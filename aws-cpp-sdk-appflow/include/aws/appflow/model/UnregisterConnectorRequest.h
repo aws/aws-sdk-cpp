@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

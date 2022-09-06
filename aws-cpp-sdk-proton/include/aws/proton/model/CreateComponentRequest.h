@@ -559,31 +559,31 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_manifest;
-    bool m_manifestHasBeenSet;
+    bool m_manifestHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_serviceInstanceName;
-    bool m_serviceInstanceNameHasBeenSet;
+    bool m_serviceInstanceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceSpec;
-    bool m_serviceSpecHasBeenSet;
+    bool m_serviceSpecHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateFile;
-    bool m_templateFileHasBeenSet;
+    bool m_templateFileHasBeenSet = false;
   };
 
 } // namespace Model

@@ -215,13 +215,13 @@ namespace Model
   private:
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     SourceRepository m_sourceRepository;
-    bool m_sourceRepositoryHasBeenSet;
+    bool m_sourceRepositoryHasBeenSet = false;
 
     Aws::String m_sourceLocation;
-    bool m_sourceLocationHasBeenSet;
+    bool m_sourceLocationHasBeenSet = false;
   };
 
 } // namespace Model

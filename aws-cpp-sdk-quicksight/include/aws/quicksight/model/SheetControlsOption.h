@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DashboardUIState m_visibilityState;
-    bool m_visibilityStateHasBeenSet;
+    bool m_visibilityStateHasBeenSet = false;
   };
 
 } // namespace Model

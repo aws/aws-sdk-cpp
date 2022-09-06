@@ -309,28 +309,28 @@ namespace Model
   private:
 
     Aws::String m_cacheNodeId;
-    bool m_cacheNodeIdHasBeenSet;
+    bool m_cacheNodeIdHasBeenSet = false;
 
     NodeUpdateStatus m_nodeUpdateStatus;
-    bool m_nodeUpdateStatusHasBeenSet;
+    bool m_nodeUpdateStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeDeletionDate;
-    bool m_nodeDeletionDateHasBeenSet;
+    bool m_nodeDeletionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateStartDate;
-    bool m_nodeUpdateStartDateHasBeenSet;
+    bool m_nodeUpdateStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateEndDate;
-    bool m_nodeUpdateEndDateHasBeenSet;
+    bool m_nodeUpdateEndDateHasBeenSet = false;
 
     NodeUpdateInitiatedBy m_nodeUpdateInitiatedBy;
-    bool m_nodeUpdateInitiatedByHasBeenSet;
+    bool m_nodeUpdateInitiatedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateInitiatedDate;
-    bool m_nodeUpdateInitiatedDateHasBeenSet;
+    bool m_nodeUpdateInitiatedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateStatusModifiedDate;
-    bool m_nodeUpdateStatusModifiedDateHasBeenSet;
+    bool m_nodeUpdateStatusModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

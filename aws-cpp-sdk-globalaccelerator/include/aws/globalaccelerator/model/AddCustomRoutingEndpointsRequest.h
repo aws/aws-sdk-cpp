@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<CustomRoutingEndpointConfiguration> m_endpointConfigurations;
-    bool m_endpointConfigurationsHasBeenSet;
+    bool m_endpointConfigurationsHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -363,13 +363,13 @@ namespace Model
   private:
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     InstanceHealthState m_instanceHealth;
-    bool m_instanceHealthHasBeenSet;
+    bool m_instanceHealthHasBeenSet = false;
 
     InstanceHealthReason m_instanceHealthReason;
-    bool m_instanceHealthReasonHasBeenSet;
+    bool m_instanceHealthReasonHasBeenSet = false;
   };
 
 } // namespace Model

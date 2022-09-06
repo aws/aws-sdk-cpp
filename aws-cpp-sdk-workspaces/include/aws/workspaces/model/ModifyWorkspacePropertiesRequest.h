@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
 
     WorkspaceProperties m_workspaceProperties;
-    bool m_workspacePropertiesHasBeenSet;
+    bool m_workspacePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

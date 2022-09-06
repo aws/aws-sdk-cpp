@@ -159,10 +159,10 @@ namespace Model
   private:
 
     EndpointItemResponse m_endpointItemResponse;
-    bool m_endpointItemResponseHasBeenSet;
+    bool m_endpointItemResponseHasBeenSet = false;
 
     Aws::Map<Aws::String, EventItemResponse> m_eventsItemResponse;
-    bool m_eventsItemResponseHasBeenSet;
+    bool m_eventsItemResponseHasBeenSet = false;
   };
 
 } // namespace Model

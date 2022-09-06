@@ -465,22 +465,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::String m_checkExpression;
-    bool m_checkExpressionHasBeenSet;
+    bool m_checkExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_substitutionMap;
-    bool m_substitutionMapHasBeenSet;
+    bool m_substitutionMapHasBeenSet = false;
 
     Threshold m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     Aws::Vector<ColumnSelector> m_columnSelectors;
-    bool m_columnSelectorsHasBeenSet;
+    bool m_columnSelectorsHasBeenSet = false;
   };
 
 } // namespace Model

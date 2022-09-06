@@ -122,10 +122,10 @@ namespace Model
   private:
 
     ResponseResourceMetricKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<DataPoint> m_dataPoints;
-    bool m_dataPointsHasBeenSet;
+    bool m_dataPointsHasBeenSet = false;
   };
 
 } // namespace Model

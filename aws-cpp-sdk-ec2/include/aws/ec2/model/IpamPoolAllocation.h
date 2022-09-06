@@ -344,25 +344,25 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     Aws::String m_ipamPoolAllocationId;
-    bool m_ipamPoolAllocationIdHasBeenSet;
+    bool m_ipamPoolAllocationIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     IpamPoolAllocationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceRegion;
-    bool m_resourceRegionHasBeenSet;
+    bool m_resourceRegionHasBeenSet = false;
 
     Aws::String m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
   };
 
 } // namespace Model

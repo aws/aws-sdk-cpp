@@ -655,19 +655,19 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_replyToEmailAddress;
-    bool m_replyToEmailAddressHasBeenSet;
+    bool m_replyToEmailAddressHasBeenSet = false;
 
     EmailSendingAccountType m_emailSendingAccount;
-    bool m_emailSendingAccountHasBeenSet;
+    bool m_emailSendingAccountHasBeenSet = false;
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     Aws::String m_configurationSet;
-    bool m_configurationSetHasBeenSet;
+    bool m_configurationSetHasBeenSet = false;
   };
 
 } // namespace Model

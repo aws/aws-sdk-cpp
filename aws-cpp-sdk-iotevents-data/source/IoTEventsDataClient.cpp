@@ -88,7 +88,7 @@ IoTEventsDataClient::~IoTEventsDataClient()
 
 void IoTEventsDataClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT Events Data");
+  AWSClient::SetServiceClientName("IoT Events Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

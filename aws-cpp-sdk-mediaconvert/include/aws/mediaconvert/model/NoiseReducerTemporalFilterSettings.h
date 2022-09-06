@@ -269,19 +269,19 @@ namespace Model
   private:
 
     int m_aggressiveMode;
-    bool m_aggressiveModeHasBeenSet;
+    bool m_aggressiveModeHasBeenSet = false;
 
     NoiseFilterPostTemporalSharpening m_postTemporalSharpening;
-    bool m_postTemporalSharpeningHasBeenSet;
+    bool m_postTemporalSharpeningHasBeenSet = false;
 
     NoiseFilterPostTemporalSharpeningStrength m_postTemporalSharpeningStrength;
-    bool m_postTemporalSharpeningStrengthHasBeenSet;
+    bool m_postTemporalSharpeningStrengthHasBeenSet = false;
 
     int m_speed;
-    bool m_speedHasBeenSet;
+    bool m_speedHasBeenSet = false;
 
     int m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

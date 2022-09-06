@@ -108,10 +108,10 @@ namespace Model
   private:
 
     bool m_publishClassificationFindings;
-    bool m_publishClassificationFindingsHasBeenSet;
+    bool m_publishClassificationFindingsHasBeenSet = false;
 
     bool m_publishPolicyFindings;
-    bool m_publishPolicyFindingsHasBeenSet;
+    bool m_publishPolicyFindingsHasBeenSet = false;
   };
 
 } // namespace Model

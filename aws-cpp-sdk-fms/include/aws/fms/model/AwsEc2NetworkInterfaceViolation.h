@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_violatingSecurityGroups;
-    bool m_violatingSecurityGroupsHasBeenSet;
+    bool m_violatingSecurityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

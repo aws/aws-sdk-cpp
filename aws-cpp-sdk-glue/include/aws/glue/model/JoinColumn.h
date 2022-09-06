@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
   };
 
 } // namespace Model

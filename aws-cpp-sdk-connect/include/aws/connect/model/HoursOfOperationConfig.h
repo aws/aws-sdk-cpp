@@ -134,13 +134,13 @@ namespace Model
   private:
 
     HoursOfOperationDays m_day;
-    bool m_dayHasBeenSet;
+    bool m_dayHasBeenSet = false;
 
     HoursOfOperationTimeSlice m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     HoursOfOperationTimeSlice m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

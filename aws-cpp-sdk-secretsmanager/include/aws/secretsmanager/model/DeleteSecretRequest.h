@@ -203,13 +203,13 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     long long m_recoveryWindowInDays;
-    bool m_recoveryWindowInDaysHasBeenSet;
+    bool m_recoveryWindowInDaysHasBeenSet = false;
 
     bool m_forceDeleteWithoutRecovery;
-    bool m_forceDeleteWithoutRecoveryHasBeenSet;
+    bool m_forceDeleteWithoutRecoveryHasBeenSet = false;
   };
 
 } // namespace Model

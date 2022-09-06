@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
   };
 
 } // namespace Model

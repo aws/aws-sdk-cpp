@@ -441,31 +441,31 @@ namespace Model
   private:
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     Aws::String m_namePrefix;
-    bool m_namePrefixHasBeenSet;
+    bool m_namePrefixHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inAppStreamNames;
-    bool m_inAppStreamNamesHasBeenSet;
+    bool m_inAppStreamNamesHasBeenSet = false;
 
     InputProcessingConfigurationDescription m_inputProcessingConfigurationDescription;
-    bool m_inputProcessingConfigurationDescriptionHasBeenSet;
+    bool m_inputProcessingConfigurationDescriptionHasBeenSet = false;
 
     KinesisStreamsInputDescription m_kinesisStreamsInputDescription;
-    bool m_kinesisStreamsInputDescriptionHasBeenSet;
+    bool m_kinesisStreamsInputDescriptionHasBeenSet = false;
 
     KinesisFirehoseInputDescription m_kinesisFirehoseInputDescription;
-    bool m_kinesisFirehoseInputDescriptionHasBeenSet;
+    bool m_kinesisFirehoseInputDescriptionHasBeenSet = false;
 
     SourceSchema m_inputSchema;
-    bool m_inputSchemaHasBeenSet;
+    bool m_inputSchemaHasBeenSet = false;
 
     InputParallelism m_inputParallelism;
-    bool m_inputParallelismHasBeenSet;
+    bool m_inputParallelismHasBeenSet = false;
 
     InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
-    bool m_inputStartingPositionConfigurationHasBeenSet;
+    bool m_inputStartingPositionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

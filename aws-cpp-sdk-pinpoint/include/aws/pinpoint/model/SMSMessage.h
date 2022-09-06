@@ -508,31 +508,31 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_keyword;
-    bool m_keywordHasBeenSet;
+    bool m_keywordHasBeenSet = false;
 
     Aws::String m_mediaUrl;
-    bool m_mediaUrlHasBeenSet;
+    bool m_mediaUrlHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::String m_originationNumber;
-    bool m_originationNumberHasBeenSet;
+    bool m_originationNumberHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

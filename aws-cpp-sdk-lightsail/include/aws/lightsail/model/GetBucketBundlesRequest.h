@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_includeInactive;
-    bool m_includeInactiveHasBeenSet;
+    bool m_includeInactiveHasBeenSet = false;
   };
 
 } // namespace Model

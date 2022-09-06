@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     ChannelStorageSummary m_channelStorage;
-    bool m_channelStorageHasBeenSet;
+    bool m_channelStorageHasBeenSet = false;
 
     ChannelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastMessageArrivalTime;
-    bool m_lastMessageArrivalTimeHasBeenSet;
+    bool m_lastMessageArrivalTimeHasBeenSet = false;
   };
 
 } // namespace Model

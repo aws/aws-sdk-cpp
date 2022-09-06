@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_endpointIds;
-    bool m_endpointIdsHasBeenSet;
+    bool m_endpointIdsHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

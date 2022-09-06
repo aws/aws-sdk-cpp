@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_poolCidrs;
-    bool m_poolCidrsHasBeenSet;
+    bool m_poolCidrsHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableId;
-    bool m_localGatewayRouteTableIdHasBeenSet;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_poolArn;
-    bool m_poolArnHasBeenSet;
+    bool m_poolArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_revisionSummary;
-    bool m_revisionSummaryHasBeenSet;
+    bool m_revisionSummaryHasBeenSet = false;
 
     Aws::String m_revisionUrl;
-    bool m_revisionUrlHasBeenSet;
+    bool m_revisionUrlHasBeenSet = false;
   };
 
 } // namespace Model

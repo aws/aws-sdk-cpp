@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     long long m_resourceCount;
-    bool m_resourceCountHasBeenSet;
+    bool m_resourceCountHasBeenSet = false;
   };
 
 } // namespace Model

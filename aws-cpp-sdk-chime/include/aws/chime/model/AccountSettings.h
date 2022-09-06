@@ -101,10 +101,10 @@ namespace Model
   private:
 
     bool m_disableRemoteControl;
-    bool m_disableRemoteControlHasBeenSet;
+    bool m_disableRemoteControlHasBeenSet = false;
 
     bool m_enableDialOut;
-    bool m_enableDialOutHasBeenSet;
+    bool m_enableDialOutHasBeenSet = false;
   };
 
 } // namespace Model

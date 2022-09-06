@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::Vector<AwsCloudMapInstanceAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     IpPreference m_ipPreference;
-    bool m_ipPreferenceHasBeenSet;
+    bool m_ipPreferenceHasBeenSet = false;
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,7 +133,7 @@ namespace Model
   private:
 
     Aws::String m_jsonPath;
-    bool m_jsonPathHasBeenSet;
+    bool m_jsonPathHasBeenSet = false;
   };
 
 } // namespace Model

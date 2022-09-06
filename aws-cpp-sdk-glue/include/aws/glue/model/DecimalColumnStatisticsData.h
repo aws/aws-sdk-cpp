@@ -144,16 +144,16 @@ namespace Model
   private:
 
     DecimalNumber m_minimumValue;
-    bool m_minimumValueHasBeenSet;
+    bool m_minimumValueHasBeenSet = false;
 
     DecimalNumber m_maximumValue;
-    bool m_maximumValueHasBeenSet;
+    bool m_maximumValueHasBeenSet = false;
 
     long long m_numberOfNulls;
-    bool m_numberOfNullsHasBeenSet;
+    bool m_numberOfNullsHasBeenSet = false;
 
     long long m_numberOfDistinctValues;
-    bool m_numberOfDistinctValuesHasBeenSet;
+    bool m_numberOfDistinctValuesHasBeenSet = false;
   };
 
 } // namespace Model

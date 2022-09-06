@@ -397,25 +397,25 @@ namespace Model
   private:
 
     Aws::String m_bearerToken;
-    bool m_bearerTokenHasBeenSet;
+    bool m_bearerTokenHasBeenSet = false;
 
     OperationStatus m_operationStatus;
-    bool m_operationStatusHasBeenSet;
+    bool m_operationStatusHasBeenSet = false;
 
     OperationStatus m_currentOperationStatus;
-    bool m_currentOperationStatusHasBeenSet;
+    bool m_currentOperationStatusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     HandlerErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_resourceModel;
-    bool m_resourceModelHasBeenSet;
+    bool m_resourceModelHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

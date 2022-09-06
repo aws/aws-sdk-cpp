@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ebsSnapshots;
-    bool m_ebsSnapshotsHasBeenSet;
+    bool m_ebsSnapshotsHasBeenSet = false;
 
     Aws::String m_expectedTimestamp;
-    bool m_expectedTimestampHasBeenSet;
+    bool m_expectedTimestampHasBeenSet = false;
 
     Aws::String m_snapshotID;
-    bool m_snapshotIDHasBeenSet;
+    bool m_snapshotIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

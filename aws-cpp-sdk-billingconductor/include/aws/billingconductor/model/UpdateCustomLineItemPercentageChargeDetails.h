@@ -67,7 +67,7 @@ namespace Model
   private:
 
     double m_percentageValue;
-    bool m_percentageValueHasBeenSet;
+    bool m_percentageValueHasBeenSet = false;
   };
 
 } // namespace Model

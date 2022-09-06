@@ -688,25 +688,25 @@ namespace Model
   private:
 
     Aws::String m_jobQueue;
-    bool m_jobQueueHasBeenSet;
+    bool m_jobQueueHasBeenSet = false;
 
     Aws::String m_arrayJobId;
-    bool m_arrayJobIdHasBeenSet;
+    bool m_arrayJobIdHasBeenSet = false;
 
     Aws::String m_multiNodeJobId;
-    bool m_multiNodeJobIdHasBeenSet;
+    bool m_multiNodeJobIdHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<KeyValuesPair> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

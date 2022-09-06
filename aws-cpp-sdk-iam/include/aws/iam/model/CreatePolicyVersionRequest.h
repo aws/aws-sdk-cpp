@@ -333,13 +333,13 @@ namespace Model
   private:
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
 
     bool m_setAsDefault;
-    bool m_setAsDefaultHasBeenSet;
+    bool m_setAsDefaultHasBeenSet = false;
   };
 
 } // namespace Model

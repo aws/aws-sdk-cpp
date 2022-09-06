@@ -680,28 +680,28 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
 
     DeploymentTargets m_deploymentTargets;
-    bool m_deploymentTargetsHasBeenSet;
+    bool m_deploymentTargetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameterOverrides;
-    bool m_parameterOverridesHasBeenSet;
+    bool m_parameterOverridesHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
-    bool m_operationPreferencesHasBeenSet;
+    bool m_operationPreferencesHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

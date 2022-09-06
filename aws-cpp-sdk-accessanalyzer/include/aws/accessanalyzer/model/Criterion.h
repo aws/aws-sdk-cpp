@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_contains;
-    bool m_containsHasBeenSet;
+    bool m_containsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eq;
-    bool m_eqHasBeenSet;
+    bool m_eqHasBeenSet = false;
 
     bool m_exists;
-    bool m_existsHasBeenSet;
+    bool m_existsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_neq;
-    bool m_neqHasBeenSet;
+    bool m_neqHasBeenSet = false;
   };
 
 } // namespace Model

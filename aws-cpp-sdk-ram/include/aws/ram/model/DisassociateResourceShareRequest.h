@@ -478,16 +478,16 @@ namespace Model
   private:
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

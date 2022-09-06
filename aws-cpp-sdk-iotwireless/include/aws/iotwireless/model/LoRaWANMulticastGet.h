@@ -105,16 +105,16 @@ namespace Model
   private:
 
     SupportedRfRegion m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     DlClass m_dlClass;
-    bool m_dlClassHasBeenSet;
+    bool m_dlClassHasBeenSet = false;
 
     int m_numberOfDevicesRequested;
-    bool m_numberOfDevicesRequestedHasBeenSet;
+    bool m_numberOfDevicesRequestedHasBeenSet = false;
 
     int m_numberOfDevicesInGroup;
-    bool m_numberOfDevicesInGroupHasBeenSet;
+    bool m_numberOfDevicesInGroupHasBeenSet = false;
   };
 
 } // namespace Model

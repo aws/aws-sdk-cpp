@@ -316,25 +316,25 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentRemarks;
-    bool m_componentRemarksHasBeenSet;
+    bool m_componentRemarksHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     OsType m_osType;
-    bool m_osTypeHasBeenSet;
+    bool m_osTypeHasBeenSet = false;
 
     Tier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     bool m_monitor;
-    bool m_monitorHasBeenSet;
+    bool m_monitorHasBeenSet = false;
 
     Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>> m_detectedWorkload;
-    bool m_detectedWorkloadHasBeenSet;
+    bool m_detectedWorkloadHasBeenSet = false;
   };
 
 } // namespace Model

@@ -72,7 +72,7 @@ namespace Model
   private:
 
     EbsVolumesResult m_ebsVolumes;
-    bool m_ebsVolumesHasBeenSet;
+    bool m_ebsVolumesHasBeenSet = false;
   };
 
 } // namespace Model

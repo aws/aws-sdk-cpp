@@ -143,16 +143,16 @@ namespace Model
   private:
 
     long long m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     long long m_publiclyReadable;
-    bool m_publiclyReadableHasBeenSet;
+    bool m_publiclyReadableHasBeenSet = false;
 
     long long m_publiclyWritable;
-    bool m_publiclyWritableHasBeenSet;
+    bool m_publiclyWritableHasBeenSet = false;
 
     long long m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
   };
 
 } // namespace Model

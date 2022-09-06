@@ -655,37 +655,37 @@ namespace Model
   private:
 
     Aws::String m_activeOperationArn;
-    bool m_activeOperationArnHasBeenSet;
+    bool m_activeOperationArnHasBeenSet = false;
 
     ClusterType m_clusterType;
-    bool m_clusterTypeHasBeenSet;
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     ClusterState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StateInfo m_stateInfo;
-    bool m_stateInfoHasBeenSet;
+    bool m_stateInfoHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Provisioned m_provisioned;
-    bool m_provisionedHasBeenSet;
+    bool m_provisionedHasBeenSet = false;
 
     Serverless m_serverless;
-    bool m_serverlessHasBeenSet;
+    bool m_serverlessHasBeenSet = false;
   };
 
 } // namespace Model

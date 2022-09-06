@@ -115,7 +115,7 @@ ResilienceHubClient::~ResilienceHubClient()
 
 void ResilienceHubClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("resiliencehub");
+  AWSClient::SetServiceClientName("resiliencehub");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

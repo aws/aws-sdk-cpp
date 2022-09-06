@@ -306,31 +306,31 @@ namespace Model
   private:
 
     BootMode m_bootMode;
-    bool m_bootModeHasBeenSet;
+    bool m_bootModeHasBeenSet = false;
 
     bool m_copyPrivateIp;
-    bool m_copyPrivateIpHasBeenSet;
+    bool m_copyPrivateIpHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     LaunchDisposition m_launchDisposition;
-    bool m_launchDispositionHasBeenSet;
+    bool m_launchDispositionHasBeenSet = false;
 
     Licensing m_licensing;
-    bool m_licensingHasBeenSet;
+    bool m_licensingHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PostLaunchActions m_postLaunchActions;
-    bool m_postLaunchActionsHasBeenSet;
+    bool m_postLaunchActionsHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod;
-    bool m_targetInstanceTypeRightSizingMethodHasBeenSet;
+    bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   };
 
 } // namespace Model

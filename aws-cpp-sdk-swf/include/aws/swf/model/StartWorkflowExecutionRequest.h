@@ -995,37 +995,37 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     TaskList m_taskList;
-    bool m_taskListHasBeenSet;
+    bool m_taskListHasBeenSet = false;
 
     Aws::String m_taskPriority;
-    bool m_taskPriorityHasBeenSet;
+    bool m_taskPriorityHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_executionStartToCloseTimeout;
-    bool m_executionStartToCloseTimeoutHasBeenSet;
+    bool m_executionStartToCloseTimeoutHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
 
     Aws::String m_taskStartToCloseTimeout;
-    bool m_taskStartToCloseTimeoutHasBeenSet;
+    bool m_taskStartToCloseTimeoutHasBeenSet = false;
 
     ChildPolicy m_childPolicy;
-    bool m_childPolicyHasBeenSet;
+    bool m_childPolicyHasBeenSet = false;
 
     Aws::String m_lambdaRole;
-    bool m_lambdaRoleHasBeenSet;
+    bool m_lambdaRoleHasBeenSet = false;
   };
 
 } // namespace Model

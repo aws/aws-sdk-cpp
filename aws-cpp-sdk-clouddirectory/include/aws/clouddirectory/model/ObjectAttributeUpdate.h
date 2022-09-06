@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AttributeKey m_objectAttributeKey;
-    bool m_objectAttributeKeyHasBeenSet;
+    bool m_objectAttributeKeyHasBeenSet = false;
 
     ObjectAttributeAction m_objectAttributeAction;
-    bool m_objectAttributeActionHasBeenSet;
+    bool m_objectAttributeActionHasBeenSet = false;
   };
 
 } // namespace Model

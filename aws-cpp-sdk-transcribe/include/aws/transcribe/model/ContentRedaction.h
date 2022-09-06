@@ -201,13 +201,13 @@ namespace Model
   private:
 
     RedactionType m_redactionType;
-    bool m_redactionTypeHasBeenSet;
+    bool m_redactionTypeHasBeenSet = false;
 
     RedactionOutput m_redactionOutput;
-    bool m_redactionOutputHasBeenSet;
+    bool m_redactionOutputHasBeenSet = false;
 
     Aws::Vector<PiiEntityType> m_piiEntityTypes;
-    bool m_piiEntityTypesHasBeenSet;
+    bool m_piiEntityTypesHasBeenSet = false;
   };
 
 } // namespace Model

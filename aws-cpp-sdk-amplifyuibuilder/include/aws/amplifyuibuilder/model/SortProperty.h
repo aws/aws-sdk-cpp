@@ -113,10 +113,10 @@ namespace Model
   private:
 
     SortDirection m_direction;
-    bool m_directionHasBeenSet;
+    bool m_directionHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
   };
 
 } // namespace Model

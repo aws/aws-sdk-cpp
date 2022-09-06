@@ -372,25 +372,25 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_beforeCommitId;
-    bool m_beforeCommitIdHasBeenSet;
+    bool m_beforeCommitIdHasBeenSet = false;
 
     Aws::String m_afterCommitId;
-    bool m_afterCommitIdHasBeenSet;
+    bool m_afterCommitIdHasBeenSet = false;
 
     Aws::String m_beforeBlobId;
-    bool m_beforeBlobIdHasBeenSet;
+    bool m_beforeBlobIdHasBeenSet = false;
 
     Aws::String m_afterBlobId;
-    bool m_afterBlobIdHasBeenSet;
+    bool m_afterBlobIdHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::Vector<Comment> m_comments;
-    bool m_commentsHasBeenSet;
+    bool m_commentsHasBeenSet = false;
   };
 
 } // namespace Model

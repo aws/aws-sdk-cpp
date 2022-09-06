@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_resolverRuleAssociationId;
-    bool m_resolverRuleAssociationIdHasBeenSet;
+    bool m_resolverRuleAssociationIdHasBeenSet = false;
   };
 
 } // namespace Model

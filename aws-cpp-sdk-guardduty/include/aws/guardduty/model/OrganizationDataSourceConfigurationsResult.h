@@ -141,13 +141,13 @@ namespace Model
   private:
 
     OrganizationS3LogsConfigurationResult m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
 
     OrganizationKubernetesConfigurationResult m_kubernetes;
-    bool m_kubernetesHasBeenSet;
+    bool m_kubernetesHasBeenSet = false;
 
     OrganizationMalwareProtectionConfigurationResult m_malwareProtection;
-    bool m_malwareProtectionHasBeenSet;
+    bool m_malwareProtectionHasBeenSet = false;
   };
 
 } // namespace Model

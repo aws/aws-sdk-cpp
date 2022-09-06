@@ -574,34 +574,34 @@ namespace Model
   private:
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::String m_firewallRuleGroupId;
-    bool m_firewallRuleGroupIdHasBeenSet;
+    bool m_firewallRuleGroupIdHasBeenSet = false;
 
     Aws::String m_firewallDomainListId;
-    bool m_firewallDomainListIdHasBeenSet;
+    bool m_firewallDomainListIdHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     BlockResponse m_blockResponse;
-    bool m_blockResponseHasBeenSet;
+    bool m_blockResponseHasBeenSet = false;
 
     Aws::String m_blockOverrideDomain;
-    bool m_blockOverrideDomainHasBeenSet;
+    bool m_blockOverrideDomainHasBeenSet = false;
 
     BlockOverrideDnsType m_blockOverrideDnsType;
-    bool m_blockOverrideDnsTypeHasBeenSet;
+    bool m_blockOverrideDnsTypeHasBeenSet = false;
 
     int m_blockOverrideTtl;
-    bool m_blockOverrideTtlHasBeenSet;
+    bool m_blockOverrideTtlHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

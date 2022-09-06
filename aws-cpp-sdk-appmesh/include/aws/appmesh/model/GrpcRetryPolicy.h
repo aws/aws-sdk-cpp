@@ -291,19 +291,19 @@ namespace Model
   private:
 
     Aws::Vector<GrpcRetryPolicyEvent> m_grpcRetryEvents;
-    bool m_grpcRetryEventsHasBeenSet;
+    bool m_grpcRetryEventsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_httpRetryEvents;
-    bool m_httpRetryEventsHasBeenSet;
+    bool m_httpRetryEventsHasBeenSet = false;
 
     long long m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     Duration m_perRetryTimeout;
-    bool m_perRetryTimeoutHasBeenSet;
+    bool m_perRetryTimeoutHasBeenSet = false;
 
     Aws::Vector<TcpRetryPolicyEvent> m_tcpRetryEvents;
-    bool m_tcpRetryEventsHasBeenSet;
+    bool m_tcpRetryEventsHasBeenSet = false;
   };
 
 } // namespace Model

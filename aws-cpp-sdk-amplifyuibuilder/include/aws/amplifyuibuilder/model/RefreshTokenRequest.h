@@ -103,10 +103,10 @@ namespace Model
   private:
 
     TokenProviders m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     RefreshTokenRequestBody m_refreshTokenBody;
-    bool m_refreshTokenBodyHasBeenSet;
+    bool m_refreshTokenBodyHasBeenSet = false;
   };
 
 } // namespace Model

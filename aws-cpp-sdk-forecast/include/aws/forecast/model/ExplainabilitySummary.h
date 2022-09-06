@@ -440,28 +440,28 @@ namespace Model
   private:
 
     Aws::String m_explainabilityArn;
-    bool m_explainabilityArnHasBeenSet;
+    bool m_explainabilityArnHasBeenSet = false;
 
     Aws::String m_explainabilityName;
-    bool m_explainabilityNameHasBeenSet;
+    bool m_explainabilityNameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ExplainabilityConfig m_explainabilityConfig;
-    bool m_explainabilityConfigHasBeenSet;
+    bool m_explainabilityConfigHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

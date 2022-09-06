@@ -161,13 +161,13 @@ namespace Model
   private:
 
     UpdateAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Role m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::Vector<User> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
   };
 
 } // namespace Model

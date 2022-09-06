@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagsToRemove;
-    bool m_tagsToRemoveHasBeenSet;
+    bool m_tagsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

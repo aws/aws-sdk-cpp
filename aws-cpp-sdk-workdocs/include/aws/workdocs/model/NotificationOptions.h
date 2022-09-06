@@ -106,10 +106,10 @@ namespace Model
   private:
 
     bool m_sendEmail;
-    bool m_sendEmailHasBeenSet;
+    bool m_sendEmailHasBeenSet = false;
 
     Aws::String m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
   };
 
 } // namespace Model

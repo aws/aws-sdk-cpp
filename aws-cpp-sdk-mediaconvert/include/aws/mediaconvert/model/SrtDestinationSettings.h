@@ -104,7 +104,7 @@ namespace Model
   private:
 
     SrtStylePassthrough m_stylePassthrough;
-    bool m_stylePassthroughHasBeenSet;
+    bool m_stylePassthroughHasBeenSet = false;
   };
 
 } // namespace Model

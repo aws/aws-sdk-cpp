@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_hsmClientCertificateIdentifier;
-    bool m_hsmClientCertificateIdentifierHasBeenSet;
+    bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
     Aws::String m_hsmConfigurationIdentifier;
-    bool m_hsmConfigurationIdentifierHasBeenSet;
+    bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

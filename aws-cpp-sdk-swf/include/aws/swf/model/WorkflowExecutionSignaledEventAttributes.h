@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_signalName;
-    bool m_signalNameHasBeenSet;
+    bool m_signalNameHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     WorkflowExecution m_externalWorkflowExecution;
-    bool m_externalWorkflowExecutionHasBeenSet;
+    bool m_externalWorkflowExecutionHasBeenSet = false;
 
     long long m_externalInitiatedEventId;
-    bool m_externalInitiatedEventIdHasBeenSet;
+    bool m_externalInitiatedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

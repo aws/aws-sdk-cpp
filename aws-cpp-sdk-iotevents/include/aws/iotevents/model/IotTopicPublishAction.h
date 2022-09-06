@@ -143,10 +143,10 @@ namespace Model
   private:
 
     Aws::String m_mqttTopic;
-    bool m_mqttTopicHasBeenSet;
+    bool m_mqttTopicHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

@@ -110,10 +110,10 @@ namespace Model
   private:
 
     NFSOnDeviceServiceConfiguration m_nFSOnDeviceService;
-    bool m_nFSOnDeviceServiceHasBeenSet;
+    bool m_nFSOnDeviceServiceHasBeenSet = false;
 
     TGWOnDeviceServiceConfiguration m_tGWOnDeviceService;
-    bool m_tGWOnDeviceServiceHasBeenSet;
+    bool m_tGWOnDeviceServiceHasBeenSet = false;
   };
 
 } // namespace Model

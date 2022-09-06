@@ -223,10 +223,10 @@ namespace Model
   private:
 
     Aws::Vector<KmsGrantConfiguration> m_grants;
-    bool m_grantsHasBeenSet;
+    bool m_grantsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_keyPolicies;
-    bool m_keyPoliciesHasBeenSet;
+    bool m_keyPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TerminologyDataFormat m_terminologyDataFormat;
-    bool m_terminologyDataFormatHasBeenSet;
+    bool m_terminologyDataFormatHasBeenSet = false;
   };
 
 } // namespace Model

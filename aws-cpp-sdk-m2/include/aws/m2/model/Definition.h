@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

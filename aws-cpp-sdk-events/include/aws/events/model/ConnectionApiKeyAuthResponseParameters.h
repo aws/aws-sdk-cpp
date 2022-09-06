@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_apiKeyName;
-    bool m_apiKeyNameHasBeenSet;
+    bool m_apiKeyNameHasBeenSet = false;
   };
 
 } // namespace Model

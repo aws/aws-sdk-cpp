@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupFamily;
-    bool m_parameterGroupFamilyHasBeenSet;
+    bool m_parameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

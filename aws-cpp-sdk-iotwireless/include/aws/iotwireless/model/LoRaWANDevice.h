@@ -310,28 +310,28 @@ namespace Model
   private:
 
     Aws::String m_devEui;
-    bool m_devEuiHasBeenSet;
+    bool m_devEuiHasBeenSet = false;
 
     Aws::String m_deviceProfileId;
-    bool m_deviceProfileIdHasBeenSet;
+    bool m_deviceProfileIdHasBeenSet = false;
 
     Aws::String m_serviceProfileId;
-    bool m_serviceProfileIdHasBeenSet;
+    bool m_serviceProfileIdHasBeenSet = false;
 
     OtaaV1_1 m_otaaV1_1;
-    bool m_otaaV1_1HasBeenSet;
+    bool m_otaaV1_1HasBeenSet = false;
 
     OtaaV1_0_x m_otaaV1_0_x;
-    bool m_otaaV1_0_xHasBeenSet;
+    bool m_otaaV1_0_xHasBeenSet = false;
 
     AbpV1_1 m_abpV1_1;
-    bool m_abpV1_1HasBeenSet;
+    bool m_abpV1_1HasBeenSet = false;
 
     AbpV1_0_x m_abpV1_0_x;
-    bool m_abpV1_0_xHasBeenSet;
+    bool m_abpV1_0_xHasBeenSet = false;
 
     FPorts m_fPorts;
-    bool m_fPortsHasBeenSet;
+    bool m_fPortsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1368,43 +1368,43 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationArns;
-    bool m_notificationArnsHasBeenSet;
+    bool m_notificationArnsHasBeenSet = false;
 
     Aws::Vector<ParameterValue> m_parameterOverrides;
-    bool m_parameterOverridesHasBeenSet;
+    bool m_parameterOverridesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     RollbackConfiguration m_rollbackConfiguration;
-    bool m_rollbackConfigurationHasBeenSet;
+    bool m_rollbackConfigurationHasBeenSet = false;
 
     Aws::String m_semanticVersion;
-    bool m_semanticVersionHasBeenSet;
+    bool m_semanticVersionHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

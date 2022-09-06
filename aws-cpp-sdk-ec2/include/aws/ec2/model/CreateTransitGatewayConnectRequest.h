@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_transportTransitGatewayAttachmentId;
-    bool m_transportTransitGatewayAttachmentIdHasBeenSet;
+    bool m_transportTransitGatewayAttachmentIdHasBeenSet = false;
 
     CreateTransitGatewayConnectRequestOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

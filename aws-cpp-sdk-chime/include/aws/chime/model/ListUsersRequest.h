@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_userEmail;
-    bool m_userEmailHasBeenSet;
+    bool m_userEmailHasBeenSet = false;
 
     UserType m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

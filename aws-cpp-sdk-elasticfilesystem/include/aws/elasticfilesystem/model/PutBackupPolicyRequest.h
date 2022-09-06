@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     BackupPolicy m_backupPolicy;
-    bool m_backupPolicyHasBeenSet;
+    bool m_backupPolicyHasBeenSet = false;
   };
 
 } // namespace Model

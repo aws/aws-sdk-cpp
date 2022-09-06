@@ -376,28 +376,28 @@ namespace Model
   private:
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_executionMessage;
-    bool m_executionMessageHasBeenSet;
+    bool m_executionMessageHasBeenSet = false;
 
     long long m_recordsProcessed;
-    bool m_recordsProcessedHasBeenSet;
+    bool m_recordsProcessedHasBeenSet = false;
 
     Aws::String m_batchRecordsStartTime;
-    bool m_batchRecordsStartTimeHasBeenSet;
+    bool m_batchRecordsStartTimeHasBeenSet = false;
 
     Aws::String m_batchRecordsEndTime;
-    bool m_batchRecordsEndTimeHasBeenSet;
+    bool m_batchRecordsEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

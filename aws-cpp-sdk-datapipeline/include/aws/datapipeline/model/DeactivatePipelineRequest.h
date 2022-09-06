@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     bool m_cancelActive;
-    bool m_cancelActiveHasBeenSet;
+    bool m_cancelActiveHasBeenSet = false;
   };
 
 } // namespace Model

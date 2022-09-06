@@ -59,7 +59,7 @@ namespace Model
   private:
 
     ObjectOwnership m_objectOwnership;
-    bool m_objectOwnershipHasBeenSet;
+    bool m_objectOwnershipHasBeenSet = false;
   };
 
 } // namespace Model

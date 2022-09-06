@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     Aws::String m_applicationKey;
-    bool m_applicationKeyHasBeenSet;
+    bool m_applicationKeyHasBeenSet = false;
   };
 
 } // namespace Model

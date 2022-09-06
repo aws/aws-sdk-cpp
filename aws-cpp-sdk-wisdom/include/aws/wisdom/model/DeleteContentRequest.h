@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_contentId;
-    bool m_contentIdHasBeenSet;
+    bool m_contentIdHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

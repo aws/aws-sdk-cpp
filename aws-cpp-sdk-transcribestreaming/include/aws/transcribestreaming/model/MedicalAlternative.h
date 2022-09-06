@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Aws::Vector<MedicalItem> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     Aws::Vector<MedicalEntity> m_entities;
-    bool m_entitiesHasBeenSet;
+    bool m_entitiesHasBeenSet = false;
   };
 
 } // namespace Model

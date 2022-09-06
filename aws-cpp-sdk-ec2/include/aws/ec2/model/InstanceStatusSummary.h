@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<InstanceStatusDetails> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     SummaryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

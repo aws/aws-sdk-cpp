@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_analysisSchemeName;
-    bool m_analysisSchemeNameHasBeenSet;
+    bool m_analysisSchemeNameHasBeenSet = false;
   };
 
 } // namespace Model

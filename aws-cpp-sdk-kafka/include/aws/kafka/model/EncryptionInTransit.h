@@ -208,10 +208,10 @@ namespace Model
   private:
 
     ClientBroker m_clientBroker;
-    bool m_clientBrokerHasBeenSet;
+    bool m_clientBrokerHasBeenSet = false;
 
     bool m_inCluster;
-    bool m_inClusterHasBeenSet;
+    bool m_inClusterHasBeenSet = false;
   };
 
 } // namespace Model

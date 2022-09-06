@@ -65,7 +65,7 @@ namespace Model
   private:
 
     SamplingRuleUpdate m_samplingRuleUpdate;
-    bool m_samplingRuleUpdateHasBeenSet;
+    bool m_samplingRuleUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -166,16 +166,16 @@ namespace Model
   private:
 
     ModelQuality m_modelQuality;
-    bool m_modelQualityHasBeenSet;
+    bool m_modelQualityHasBeenSet = false;
 
     ModelDataQuality m_modelDataQuality;
-    bool m_modelDataQualityHasBeenSet;
+    bool m_modelDataQualityHasBeenSet = false;
 
     Bias m_bias;
-    bool m_biasHasBeenSet;
+    bool m_biasHasBeenSet = false;
 
     Explainability m_explainability;
-    bool m_explainabilityHasBeenSet;
+    bool m_explainabilityHasBeenSet = false;
   };
 
 } // namespace Model

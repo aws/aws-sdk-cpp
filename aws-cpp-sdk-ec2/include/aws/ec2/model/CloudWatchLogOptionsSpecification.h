@@ -169,13 +169,13 @@ namespace Model
   private:
 
     bool m_logEnabled;
-    bool m_logEnabledHasBeenSet;
+    bool m_logEnabledHasBeenSet = false;
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
 
     Aws::String m_logOutputFormat;
-    bool m_logOutputFormatHasBeenSet;
+    bool m_logOutputFormatHasBeenSet = false;
   };
 
 } // namespace Model

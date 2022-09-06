@@ -666,37 +666,37 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_changeRequestName;
-    bool m_changeRequestNameHasBeenSet;
+    bool m_changeRequestNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_autoApprove;
-    bool m_autoApproveHasBeenSet;
+    bool m_autoApproveHasBeenSet = false;
 
     Aws::Vector<Runbook> m_runbooks;
-    bool m_runbooksHasBeenSet;
+    bool m_runbooksHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledEndTime;
-    bool m_scheduledEndTimeHasBeenSet;
+    bool m_scheduledEndTimeHasBeenSet = false;
 
     Aws::String m_changeDetails;
-    bool m_changeDetailsHasBeenSet;
+    bool m_changeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

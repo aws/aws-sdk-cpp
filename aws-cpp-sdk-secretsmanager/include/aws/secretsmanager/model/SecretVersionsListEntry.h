@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versionStages;
-    bool m_versionStagesHasBeenSet;
+    bool m_versionStagesHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessedDate;
-    bool m_lastAccessedDateHasBeenSet;
+    bool m_lastAccessedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_kmsKeyIds;
-    bool m_kmsKeyIdsHasBeenSet;
+    bool m_kmsKeyIdsHasBeenSet = false;
   };
 
 } // namespace Model

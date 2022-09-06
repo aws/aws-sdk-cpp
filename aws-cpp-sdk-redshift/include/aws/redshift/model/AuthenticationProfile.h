@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_authenticationProfileName;
-    bool m_authenticationProfileNameHasBeenSet;
+    bool m_authenticationProfileNameHasBeenSet = false;
 
     Aws::String m_authenticationProfileContent;
-    bool m_authenticationProfileContentHasBeenSet;
+    bool m_authenticationProfileContentHasBeenSet = false;
   };
 
 } // namespace Model

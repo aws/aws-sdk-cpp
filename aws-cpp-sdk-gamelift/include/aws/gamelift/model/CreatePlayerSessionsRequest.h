@@ -246,13 +246,13 @@ namespace Model
   private:
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_playerIds;
-    bool m_playerIdsHasBeenSet;
+    bool m_playerIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_playerDataMap;
-    bool m_playerDataMapHasBeenSet;
+    bool m_playerDataMapHasBeenSet = false;
   };
 
 } // namespace Model

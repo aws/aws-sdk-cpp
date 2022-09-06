@@ -53,7 +53,7 @@ namespace Model
   private:
 
     CreateRecommenderConfiguration m_createRecommenderConfiguration;
-    bool m_createRecommenderConfigurationHasBeenSet;
+    bool m_createRecommenderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

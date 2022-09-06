@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_hsmArn;
-    bool m_hsmArnHasBeenSet;
+    bool m_hsmArnHasBeenSet = false;
 
     Aws::String m_hsmSerialNumber;
-    bool m_hsmSerialNumberHasBeenSet;
+    bool m_hsmSerialNumberHasBeenSet = false;
   };
 
 } // namespace Model

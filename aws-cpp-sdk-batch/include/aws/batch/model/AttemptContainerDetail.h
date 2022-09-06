@@ -320,22 +320,22 @@ namespace Model
   private:
 
     Aws::String m_containerInstanceArn;
-    bool m_containerInstanceArnHasBeenSet;
+    bool m_containerInstanceArnHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     int m_exitCode;
-    bool m_exitCodeHasBeenSet;
+    bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
   };
 
 } // namespace Model

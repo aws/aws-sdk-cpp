@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requiredParameters;
-    bool m_requiredParametersHasBeenSet;
+    bool m_requiredParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_mutuallyExclusiveParameters;
-    bool m_mutuallyExclusiveParametersHasBeenSet;
+    bool m_mutuallyExclusiveParametersHasBeenSet = false;
   };
 
 } // namespace Model

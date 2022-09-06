@@ -274,16 +274,16 @@ namespace Model
   private:
 
     Aws::String m_trainingImage;
-    bool m_trainingImageHasBeenSet;
+    bool m_trainingImageHasBeenSet = false;
 
     TrainingInputMode m_trainingInputMode;
-    bool m_trainingInputModeHasBeenSet;
+    bool m_trainingInputModeHasBeenSet = false;
 
     Aws::String m_algorithmName;
-    bool m_algorithmNameHasBeenSet;
+    bool m_algorithmNameHasBeenSet = false;
 
     Aws::Vector<MetricDefinition> m_metricDefinitions;
-    bool m_metricDefinitionsHasBeenSet;
+    bool m_metricDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

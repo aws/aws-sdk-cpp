@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
   };
 
 } // namespace Model

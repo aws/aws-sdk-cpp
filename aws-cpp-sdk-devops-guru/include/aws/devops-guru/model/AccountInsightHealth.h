@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_openProactiveInsights;
-    bool m_openProactiveInsightsHasBeenSet;
+    bool m_openProactiveInsightsHasBeenSet = false;
 
     int m_openReactiveInsights;
-    bool m_openReactiveInsightsHasBeenSet;
+    bool m_openReactiveInsightsHasBeenSet = false;
   };
 
 } // namespace Model

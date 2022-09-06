@@ -208,19 +208,19 @@ namespace Model
   private:
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     HistoryEventExecutionDataDetails m_inputDetails;
-    bool m_inputDetailsHasBeenSet;
+    bool m_inputDetailsHasBeenSet = false;
 
     long long m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     long long m_heartbeatInSeconds;
-    bool m_heartbeatInSecondsHasBeenSet;
+    bool m_heartbeatInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

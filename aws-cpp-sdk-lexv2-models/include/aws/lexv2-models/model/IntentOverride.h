@@ -168,10 +168,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, SlotValueOverride> m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_jobNames;
-    bool m_jobNamesHasBeenSet;
+    bool m_jobNamesHasBeenSet = false;
   };
 
 } // namespace Model

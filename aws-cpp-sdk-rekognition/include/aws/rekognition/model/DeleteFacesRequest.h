@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_faceIds;
-    bool m_faceIdsHasBeenSet;
+    bool m_faceIdsHasBeenSet = false;
   };
 
 } // namespace Model

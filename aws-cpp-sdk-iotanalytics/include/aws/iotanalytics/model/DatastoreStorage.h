@@ -168,13 +168,13 @@ namespace Model
   private:
 
     ServiceManagedDatastoreS3Storage m_serviceManagedS3;
-    bool m_serviceManagedS3HasBeenSet;
+    bool m_serviceManagedS3HasBeenSet = false;
 
     CustomerManagedDatastoreS3Storage m_customerManagedS3;
-    bool m_customerManagedS3HasBeenSet;
+    bool m_customerManagedS3HasBeenSet = false;
 
     DatastoreIotSiteWiseMultiLayerStorage m_iotSiteWiseMultiLayerStorage;
-    bool m_iotSiteWiseMultiLayerStorageHasBeenSet;
+    bool m_iotSiteWiseMultiLayerStorageHasBeenSet = false;
   };
 
 } // namespace Model

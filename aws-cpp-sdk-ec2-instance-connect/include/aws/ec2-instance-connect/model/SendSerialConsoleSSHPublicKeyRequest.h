@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     int m_serialPort;
-    bool m_serialPortHasBeenSet;
+    bool m_serialPortHasBeenSet = false;
 
     Aws::String m_sSHPublicKey;
-    bool m_sSHPublicKeyHasBeenSet;
+    bool m_sSHPublicKeyHasBeenSet = false;
   };
 
 } // namespace Model

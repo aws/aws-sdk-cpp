@@ -70,7 +70,7 @@ namespace Model
   private:
 
     KeyGroup m_keyGroup;
-    bool m_keyGroupHasBeenSet;
+    bool m_keyGroupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -347,25 +347,25 @@ namespace Model
   private:
 
     Aws::String m_licenseManagerReportGeneratorArn;
-    bool m_licenseManagerReportGeneratorArnHasBeenSet;
+    bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
 
     Aws::String m_reportGeneratorName;
-    bool m_reportGeneratorNameHasBeenSet;
+    bool m_reportGeneratorNameHasBeenSet = false;
 
     Aws::Vector<ReportType> m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ReportContext m_reportContext;
-    bool m_reportContextHasBeenSet;
+    bool m_reportContextHasBeenSet = false;
 
     ReportFrequency m_reportFrequency;
-    bool m_reportFrequencyHasBeenSet;
+    bool m_reportFrequencyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

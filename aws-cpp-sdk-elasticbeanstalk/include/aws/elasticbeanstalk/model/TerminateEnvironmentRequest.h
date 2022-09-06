@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     bool m_terminateResources;
-    bool m_terminateResourcesHasBeenSet;
+    bool m_terminateResourcesHasBeenSet = false;
 
     bool m_forceTerminate;
-    bool m_forceTerminateHasBeenSet;
+    bool m_forceTerminateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,13 +153,13 @@ namespace Model
   private:
 
     ListInsightsOngoingStatusFilter m_ongoing;
-    bool m_ongoingHasBeenSet;
+    bool m_ongoingHasBeenSet = false;
 
     ListInsightsClosedStatusFilter m_closed;
-    bool m_closedHasBeenSet;
+    bool m_closedHasBeenSet = false;
 
     ListInsightsAnyStatusFilter m_any;
-    bool m_anyHasBeenSet;
+    bool m_anyHasBeenSet = false;
   };
 
 } // namespace Model

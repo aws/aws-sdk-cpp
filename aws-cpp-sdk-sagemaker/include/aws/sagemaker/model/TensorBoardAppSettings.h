@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

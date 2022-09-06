@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     long long m_filePosition;
-    bool m_filePositionHasBeenSet;
+    bool m_filePositionHasBeenSet = false;
 
     RelativeFileVersionEnum m_relativeFileVersion;
-    bool m_relativeFileVersionHasBeenSet;
+    bool m_relativeFileVersionHasBeenSet = false;
   };
 
 } // namespace Model

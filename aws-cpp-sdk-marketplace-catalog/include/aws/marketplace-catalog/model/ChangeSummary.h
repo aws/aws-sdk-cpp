@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_changeType;
-    bool m_changeTypeHasBeenSet;
+    bool m_changeTypeHasBeenSet = false;
 
     Entity m_entity;
-    bool m_entityHasBeenSet;
+    bool m_entityHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Aws::Vector<ErrorDetail> m_errorDetailList;
-    bool m_errorDetailListHasBeenSet;
+    bool m_errorDetailListHasBeenSet = false;
 
     Aws::String m_changeName;
-    bool m_changeNameHasBeenSet;
+    bool m_changeNameHasBeenSet = false;
   };
 
 } // namespace Model

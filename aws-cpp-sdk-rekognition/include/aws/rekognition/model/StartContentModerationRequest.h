@@ -303,19 +303,19 @@ namespace Model
   private:
 
     Video m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     NotificationChannel m_notificationChannel;
-    bool m_notificationChannelHasBeenSet;
+    bool m_notificationChannelHasBeenSet = false;
 
     Aws::String m_jobTag;
-    bool m_jobTagHasBeenSet;
+    bool m_jobTagHasBeenSet = false;
   };
 
 } // namespace Model

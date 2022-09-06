@@ -67,7 +67,7 @@ namespace Model
   private:
 
     bool m_disabledOnInitialization;
-    bool m_disabledOnInitializationHasBeenSet;
+    bool m_disabledOnInitializationHasBeenSet = false;
   };
 
 } // namespace Model

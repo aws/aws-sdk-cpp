@@ -132,13 +132,13 @@ namespace Model
   private:
 
     Aws::String m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     long long m_dataSize;
-    bool m_dataSizeHasBeenSet;
+    bool m_dataSizeHasBeenSet = false;
   };
 
 } // namespace Model

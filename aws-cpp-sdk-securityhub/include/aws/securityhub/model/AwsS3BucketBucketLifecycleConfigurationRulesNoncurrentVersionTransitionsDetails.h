@@ -114,10 +114,10 @@ namespace Model
   private:
 
     int m_days;
-    bool m_daysHasBeenSet;
+    bool m_daysHasBeenSet = false;
 
     Aws::String m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
   };
 
 } // namespace Model

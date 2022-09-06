@@ -59,7 +59,7 @@ namespace Model
   private:
 
     INDTaxDocuments m_iND;
-    bool m_iNDHasBeenSet;
+    bool m_iNDHasBeenSet = false;
   };
 
 } // namespace Model

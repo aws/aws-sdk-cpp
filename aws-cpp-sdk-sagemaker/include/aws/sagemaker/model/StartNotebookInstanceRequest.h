@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceName;
-    bool m_notebookInstanceNameHasBeenSet;
+    bool m_notebookInstanceNameHasBeenSet = false;
   };
 
 } // namespace Model

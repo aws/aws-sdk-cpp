@@ -82,7 +82,7 @@ namespace Model
   private:
 
     ReconnectEnum m_reconnectEnabled;
-    bool m_reconnectEnabledHasBeenSet;
+    bool m_reconnectEnabledHasBeenSet = false;
   };
 
 } // namespace Model

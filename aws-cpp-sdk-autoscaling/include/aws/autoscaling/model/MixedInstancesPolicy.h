@@ -116,10 +116,10 @@ namespace Model
   private:
 
     LaunchTemplate m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     InstancesDistribution m_instancesDistribution;
-    bool m_instancesDistributionHasBeenSet;
+    bool m_instancesDistributionHasBeenSet = false;
   };
 
 } // namespace Model

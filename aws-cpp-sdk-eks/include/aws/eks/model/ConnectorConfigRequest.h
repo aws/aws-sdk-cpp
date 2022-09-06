@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ConnectorConfigProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

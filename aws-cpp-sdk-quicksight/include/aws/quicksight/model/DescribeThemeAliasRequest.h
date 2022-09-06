@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_themeId;
-    bool m_themeIdHasBeenSet;
+    bool m_themeIdHasBeenSet = false;
 
     Aws::String m_aliasName;
-    bool m_aliasNameHasBeenSet;
+    bool m_aliasNameHasBeenSet = false;
   };
 
 } // namespace Model

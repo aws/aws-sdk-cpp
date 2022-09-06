@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::String m_handshakeId;
-    bool m_handshakeIdHasBeenSet;
+    bool m_handshakeIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -140,13 +140,13 @@ namespace Model
   private:
 
     ClusterState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ClusterStateChangeReason m_stateChangeReason;
-    bool m_stateChangeReasonHasBeenSet;
+    bool m_stateChangeReasonHasBeenSet = false;
 
     ClusterTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
   };
 
 } // namespace Model

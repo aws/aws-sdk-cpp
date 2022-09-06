@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet;
+    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

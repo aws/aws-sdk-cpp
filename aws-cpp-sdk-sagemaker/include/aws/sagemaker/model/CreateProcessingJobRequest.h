@@ -535,37 +535,37 @@ namespace Model
   private:
 
     Aws::Vector<ProcessingInput> m_processingInputs;
-    bool m_processingInputsHasBeenSet;
+    bool m_processingInputsHasBeenSet = false;
 
     ProcessingOutputConfig m_processingOutputConfig;
-    bool m_processingOutputConfigHasBeenSet;
+    bool m_processingOutputConfigHasBeenSet = false;
 
     Aws::String m_processingJobName;
-    bool m_processingJobNameHasBeenSet;
+    bool m_processingJobNameHasBeenSet = false;
 
     ProcessingResources m_processingResources;
-    bool m_processingResourcesHasBeenSet;
+    bool m_processingResourcesHasBeenSet = false;
 
     ProcessingStoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     AppSpecification m_appSpecification;
-    bool m_appSpecificationHasBeenSet;
+    bool m_appSpecificationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     NetworkConfig m_networkConfig;
-    bool m_networkConfigHasBeenSet;
+    bool m_networkConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ExperimentConfig m_experimentConfig;
-    bool m_experimentConfigHasBeenSet;
+    bool m_experimentConfigHasBeenSet = false;
   };
 
 } // namespace Model

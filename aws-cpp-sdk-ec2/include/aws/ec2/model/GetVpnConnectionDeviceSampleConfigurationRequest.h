@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
 
     Aws::String m_vpnConnectionDeviceTypeId;
-    bool m_vpnConnectionDeviceTypeIdHasBeenSet;
+    bool m_vpnConnectionDeviceTypeIdHasBeenSet = false;
 
     Aws::String m_internetKeyExchangeVersion;
-    bool m_internetKeyExchangeVersionHasBeenSet;
+    bool m_internetKeyExchangeVersionHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

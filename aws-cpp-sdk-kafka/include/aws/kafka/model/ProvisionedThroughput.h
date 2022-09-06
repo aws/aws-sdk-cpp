@@ -84,10 +84,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_volumeThroughput;
-    bool m_volumeThroughputHasBeenSet;
+    bool m_volumeThroughputHasBeenSet = false;
   };
 
 } // namespace Model

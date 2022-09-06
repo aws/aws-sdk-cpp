@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
 
     bool m_includeConnectedResources;
-    bool m_includeConnectedResourcesHasBeenSet;
+    bool m_includeConnectedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

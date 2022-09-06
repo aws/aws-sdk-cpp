@@ -281,19 +281,19 @@ namespace Model
   private:
 
     ConnectorOperator m_connectorOperator;
-    bool m_connectorOperatorHasBeenSet;
+    bool m_connectorOperatorHasBeenSet = false;
 
     Aws::String m_destinationField;
-    bool m_destinationFieldHasBeenSet;
+    bool m_destinationFieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceFields;
-    bool m_sourceFieldsHasBeenSet;
+    bool m_sourceFieldsHasBeenSet = false;
 
     Aws::Map<OperatorPropertiesKeys, Aws::String> m_taskProperties;
-    bool m_taskPropertiesHasBeenSet;
+    bool m_taskPropertiesHasBeenSet = false;
 
     TaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
   };
 
 } // namespace Model

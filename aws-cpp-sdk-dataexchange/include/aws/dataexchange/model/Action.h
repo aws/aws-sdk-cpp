@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AutoExportRevisionToS3RequestDetails m_exportRevisionToS3;
-    bool m_exportRevisionToS3HasBeenSet;
+    bool m_exportRevisionToS3HasBeenSet = false;
   };
 
 } // namespace Model

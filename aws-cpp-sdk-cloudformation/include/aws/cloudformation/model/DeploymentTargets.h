@@ -309,16 +309,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
 
     Aws::String m_accountsUrl;
-    bool m_accountsUrlHasBeenSet;
+    bool m_accountsUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
 
     AccountFilterType m_accountFilterType;
-    bool m_accountFilterTypeHasBeenSet;
+    bool m_accountFilterTypeHasBeenSet = false;
   };
 
 } // namespace Model

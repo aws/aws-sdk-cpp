@@ -260,25 +260,25 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_defaultVersionId;
-    bool m_defaultVersionIdHasBeenSet;
+    bool m_defaultVersionIdHasBeenSet = false;
 
     Aws::String m_provisioningRoleArn;
-    bool m_provisioningRoleArnHasBeenSet;
+    bool m_provisioningRoleArnHasBeenSet = false;
 
     ProvisioningHook m_preProvisioningHook;
-    bool m_preProvisioningHookHasBeenSet;
+    bool m_preProvisioningHookHasBeenSet = false;
 
     bool m_removePreProvisioningHook;
-    bool m_removePreProvisioningHookHasBeenSet;
+    bool m_removePreProvisioningHookHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_memberAccountId;
-    bool m_memberAccountIdHasBeenSet;
+    bool m_memberAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

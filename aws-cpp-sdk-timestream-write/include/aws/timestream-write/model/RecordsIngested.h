@@ -101,13 +101,13 @@ namespace Model
   private:
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     int m_memoryStore;
-    bool m_memoryStoreHasBeenSet;
+    bool m_memoryStoreHasBeenSet = false;
 
     int m_magneticStore;
-    bool m_magneticStoreHasBeenSet;
+    bool m_magneticStoreHasBeenSet = false;
   };
 
 } // namespace Model

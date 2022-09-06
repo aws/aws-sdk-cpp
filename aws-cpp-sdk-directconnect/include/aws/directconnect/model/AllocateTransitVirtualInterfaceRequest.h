@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     NewTransitVirtualInterfaceAllocation m_newTransitVirtualInterfaceAllocation;
-    bool m_newTransitVirtualInterfaceAllocationHasBeenSet;
+    bool m_newTransitVirtualInterfaceAllocationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Aws::String m_inputDescription;
-    bool m_inputDescriptionHasBeenSet;
+    bool m_inputDescriptionHasBeenSet = false;
 
     InputDefinition m_inputDefinition;
-    bool m_inputDefinitionHasBeenSet;
+    bool m_inputDefinitionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

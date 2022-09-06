@@ -223,13 +223,13 @@ namespace Model
   private:
 
     Aws::String m_dBClusterSnapshotIdentifier;
-    bool m_dBClusterSnapshotIdentifierHasBeenSet;
+    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

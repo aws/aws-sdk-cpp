@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<Grant> m_grants;
-    bool m_grantsHasBeenSet;
+    bool m_grantsHasBeenSet = false;
 
     Owner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

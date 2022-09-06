@@ -329,25 +329,25 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_passwords;
-    bool m_passwordsHasBeenSet;
+    bool m_passwordsHasBeenSet = false;
 
     Aws::String m_accessString;
-    bool m_accessStringHasBeenSet;
+    bool m_accessStringHasBeenSet = false;
 
     bool m_noPasswordRequired;
-    bool m_noPasswordRequiredHasBeenSet;
+    bool m_noPasswordRequiredHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

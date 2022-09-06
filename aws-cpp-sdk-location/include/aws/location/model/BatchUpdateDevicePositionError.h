@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     BatchItemError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampleTime;
-    bool m_sampleTimeHasBeenSet;
+    bool m_sampleTimeHasBeenSet = false;
   };
 
 } // namespace Model

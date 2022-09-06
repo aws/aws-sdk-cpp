@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<CloudWatchDimensionConfiguration> m_dimensionConfigurations;
-    bool m_dimensionConfigurationsHasBeenSet;
+    bool m_dimensionConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

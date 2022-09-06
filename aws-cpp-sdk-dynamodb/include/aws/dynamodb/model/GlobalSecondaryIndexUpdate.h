@@ -168,13 +168,13 @@ namespace Model
   private:
 
     UpdateGlobalSecondaryIndexAction m_update;
-    bool m_updateHasBeenSet;
+    bool m_updateHasBeenSet = false;
 
     CreateGlobalSecondaryIndexAction m_create;
-    bool m_createHasBeenSet;
+    bool m_createHasBeenSet = false;
 
     DeleteGlobalSecondaryIndexAction m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
   };
 
 } // namespace Model

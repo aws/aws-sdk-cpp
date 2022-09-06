@@ -128,10 +128,10 @@ namespace Model
   private:
 
     HlsInputSettings m_hlsInputSettings;
-    bool m_hlsInputSettingsHasBeenSet;
+    bool m_hlsInputSettingsHasBeenSet = false;
 
     NetworkInputServerValidation m_serverValidation;
-    bool m_serverValidationHasBeenSet;
+    bool m_serverValidationHasBeenSet = false;
   };
 
 } // namespace Model

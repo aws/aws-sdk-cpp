@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_partyName;
-    bool m_partyNameHasBeenSet;
+    bool m_partyNameHasBeenSet = false;
 
     Aws::String m_nameAssigner;
-    bool m_nameAssignerHasBeenSet;
+    bool m_nameAssignerHasBeenSet = false;
   };
 
 } // namespace Model

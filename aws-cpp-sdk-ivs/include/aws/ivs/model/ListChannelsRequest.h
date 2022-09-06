@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_filterByName;
-    bool m_filterByNameHasBeenSet;
+    bool m_filterByNameHasBeenSet = false;
 
     Aws::String m_filterByRecordingConfigurationArn;
-    bool m_filterByRecordingConfigurationArnHasBeenSet;
+    bool m_filterByRecordingConfigurationArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

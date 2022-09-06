@@ -92,10 +92,10 @@ namespace Model
   private:
 
     InterpolationType m_interpolationType;
-    bool m_interpolationTypeHasBeenSet;
+    bool m_interpolationTypeHasBeenSet = false;
 
     long long m_intervalInSeconds;
-    bool m_intervalInSecondsHasBeenSet;
+    bool m_intervalInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

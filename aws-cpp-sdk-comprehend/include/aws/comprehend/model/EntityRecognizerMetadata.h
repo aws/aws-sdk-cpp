@@ -164,16 +164,16 @@ namespace Model
   private:
 
     int m_numberOfTrainedDocuments;
-    bool m_numberOfTrainedDocumentsHasBeenSet;
+    bool m_numberOfTrainedDocumentsHasBeenSet = false;
 
     int m_numberOfTestDocuments;
-    bool m_numberOfTestDocumentsHasBeenSet;
+    bool m_numberOfTestDocumentsHasBeenSet = false;
 
     EntityRecognizerEvaluationMetrics m_evaluationMetrics;
-    bool m_evaluationMetricsHasBeenSet;
+    bool m_evaluationMetricsHasBeenSet = false;
 
     Aws::Vector<EntityRecognizerMetadataEntityTypesListItem> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
   };
 
 } // namespace Model

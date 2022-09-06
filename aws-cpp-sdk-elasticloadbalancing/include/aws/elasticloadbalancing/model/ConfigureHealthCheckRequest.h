@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     HealthCheck m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
   };
 
 } // namespace Model

@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     License m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     UserType m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
 
     AlexaForBusinessMetadata m_alexaForBusinessMetadata;
-    bool m_alexaForBusinessMetadataHasBeenSet;
+    bool m_alexaForBusinessMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_grantName;
-    bool m_grantNameHasBeenSet;
+    bool m_grantNameHasBeenSet = false;
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
-    bool m_allowedOperationsHasBeenSet;
+    bool m_allowedOperationsHasBeenSet = false;
   };
 
 } // namespace Model

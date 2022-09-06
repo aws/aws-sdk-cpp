@@ -548,25 +548,25 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_logo;
-    bool m_logoHasBeenSet;
+    bool m_logoHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_logo2x;
-    bool m_logo2xHasBeenSet;
+    bool m_logo2xHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_logo3x;
-    bool m_logo3xHasBeenSet;
+    bool m_logo3xHasBeenSet = false;
 
     Aws::String m_supportEmail;
-    bool m_supportEmailHasBeenSet;
+    bool m_supportEmailHasBeenSet = false;
 
     Aws::String m_supportLink;
-    bool m_supportLinkHasBeenSet;
+    bool m_supportLinkHasBeenSet = false;
 
     Aws::String m_forgotPasswordLink;
-    bool m_forgotPasswordLinkHasBeenSet;
+    bool m_forgotPasswordLinkHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_loginMessage;
-    bool m_loginMessageHasBeenSet;
+    bool m_loginMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -344,25 +344,25 @@ namespace Model
   private:
 
     Aws::String m_containerRuntime;
-    bool m_containerRuntimeHasBeenSet;
+    bool m_containerRuntimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_launchedAt;
-    bool m_launchedAtHasBeenSet;
+    bool m_launchedAtHasBeenSet = false;
 
     Aws::Vector<VolumeMount> m_volumeMounts;
-    bool m_volumeMountsHasBeenSet;
+    bool m_volumeMountsHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_hostName;
-    bool m_hostNameHasBeenSet;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::String m_hypervisorId;
-    bool m_hypervisorIdHasBeenSet;
+    bool m_hypervisorIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastBackupDate;
-    bool m_lastBackupDateHasBeenSet;
+    bool m_lastBackupDateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

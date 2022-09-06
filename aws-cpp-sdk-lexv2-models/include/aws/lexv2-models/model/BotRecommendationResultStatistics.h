@@ -115,10 +115,10 @@ namespace Model
   private:
 
     IntentStatistics m_intents;
-    bool m_intentsHasBeenSet;
+    bool m_intentsHasBeenSet = false;
 
     SlotTypeStatistics m_slotTypes;
-    bool m_slotTypesHasBeenSet;
+    bool m_slotTypesHasBeenSet = false;
   };
 
 } // namespace Model

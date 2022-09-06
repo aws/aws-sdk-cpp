@@ -461,31 +461,31 @@ namespace Model
   private:
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_gatewayType;
-    bool m_gatewayTypeHasBeenSet;
+    bool m_gatewayTypeHasBeenSet = false;
 
     Aws::String m_gatewayOperationalState;
-    bool m_gatewayOperationalStateHasBeenSet;
+    bool m_gatewayOperationalStateHasBeenSet = false;
 
     Aws::String m_gatewayName;
-    bool m_gatewayNameHasBeenSet;
+    bool m_gatewayNameHasBeenSet = false;
 
     Aws::String m_ec2InstanceId;
-    bool m_ec2InstanceIdHasBeenSet;
+    bool m_ec2InstanceIdHasBeenSet = false;
 
     Aws::String m_ec2InstanceRegion;
-    bool m_ec2InstanceRegionHasBeenSet;
+    bool m_ec2InstanceRegionHasBeenSet = false;
 
     HostEnvironment m_hostEnvironment;
-    bool m_hostEnvironmentHasBeenSet;
+    bool m_hostEnvironmentHasBeenSet = false;
 
     Aws::String m_hostEnvironmentId;
-    bool m_hostEnvironmentIdHasBeenSet;
+    bool m_hostEnvironmentIdHasBeenSet = false;
   };
 
 } // namespace Model

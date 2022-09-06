@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_ec2;
-    bool m_ec2HasBeenSet;
+    bool m_ec2HasBeenSet = false;
 
     bool m_ecr;
-    bool m_ecrHasBeenSet;
+    bool m_ecrHasBeenSet = false;
   };
 
 } // namespace Model

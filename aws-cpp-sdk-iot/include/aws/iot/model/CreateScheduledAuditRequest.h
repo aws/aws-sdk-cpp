@@ -373,22 +373,22 @@ namespace Model
   private:
 
     AuditFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetCheckNames;
-    bool m_targetCheckNamesHasBeenSet;
+    bool m_targetCheckNamesHasBeenSet = false;
 
     Aws::String m_scheduledAuditName;
-    bool m_scheduledAuditNameHasBeenSet;
+    bool m_scheduledAuditNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

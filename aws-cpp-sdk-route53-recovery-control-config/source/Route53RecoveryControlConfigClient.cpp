@@ -99,7 +99,7 @@ Route53RecoveryControlConfigClient::~Route53RecoveryControlConfigClient()
 
 void Route53RecoveryControlConfigClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Route53 Recovery Control Config");
+  AWSClient::SetServiceClientName("Route53 Recovery Control Config");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

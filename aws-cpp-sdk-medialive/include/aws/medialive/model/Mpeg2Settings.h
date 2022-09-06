@@ -799,52 +799,52 @@ GOP_TIMECODE: Include timecode
   private:
 
     Mpeg2AdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     AfdSignaling m_afdSignaling;
-    bool m_afdSignalingHasBeenSet;
+    bool m_afdSignalingHasBeenSet = false;
 
     Mpeg2ColorMetadata m_colorMetadata;
-    bool m_colorMetadataHasBeenSet;
+    bool m_colorMetadataHasBeenSet = false;
 
     Mpeg2ColorSpace m_colorSpace;
-    bool m_colorSpaceHasBeenSet;
+    bool m_colorSpaceHasBeenSet = false;
 
     Mpeg2DisplayRatio m_displayAspectRatio;
-    bool m_displayAspectRatioHasBeenSet;
+    bool m_displayAspectRatioHasBeenSet = false;
 
     Mpeg2FilterSettings m_filterSettings;
-    bool m_filterSettingsHasBeenSet;
+    bool m_filterSettingsHasBeenSet = false;
 
     FixedAfd m_fixedAfd;
-    bool m_fixedAfdHasBeenSet;
+    bool m_fixedAfdHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     int m_gopNumBFrames;
-    bool m_gopNumBFramesHasBeenSet;
+    bool m_gopNumBFramesHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     Mpeg2GopSizeUnits m_gopSizeUnits;
-    bool m_gopSizeUnitsHasBeenSet;
+    bool m_gopSizeUnitsHasBeenSet = false;
 
     Mpeg2ScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
 
     Mpeg2SubGopLength m_subgopLength;
-    bool m_subgopLengthHasBeenSet;
+    bool m_subgopLengthHasBeenSet = false;
 
     Mpeg2TimecodeInsertionBehavior m_timecodeInsertion;
-    bool m_timecodeInsertionHasBeenSet;
+    bool m_timecodeInsertionHasBeenSet = false;
   };
 
 } // namespace Model

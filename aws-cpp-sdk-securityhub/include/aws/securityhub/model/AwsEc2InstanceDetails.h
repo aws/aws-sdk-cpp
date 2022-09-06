@@ -590,40 +590,40 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipV4Addresses;
-    bool m_ipV4AddressesHasBeenSet;
+    bool m_ipV4AddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipV6Addresses;
-    bool m_ipV6AddressesHasBeenSet;
+    bool m_ipV6AddressesHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::String m_iamInstanceProfileArn;
-    bool m_iamInstanceProfileArnHasBeenSet;
+    bool m_iamInstanceProfileArnHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_launchedAt;
-    bool m_launchedAtHasBeenSet;
+    bool m_launchedAtHasBeenSet = false;
 
     Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::String m_virtualizationType;
-    bool m_virtualizationTypeHasBeenSet;
+    bool m_virtualizationTypeHasBeenSet = false;
 
     AwsEc2InstanceMetadataOptions m_metadataOptions;
-    bool m_metadataOptionsHasBeenSet;
+    bool m_metadataOptionsHasBeenSet = false;
   };
 
 } // namespace Model

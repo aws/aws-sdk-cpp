@@ -103,10 +103,10 @@ namespace Model
   private:
 
     LabelingJobDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     LabelingJobDataAttributes m_dataAttributes;
-    bool m_dataAttributesHasBeenSet;
+    bool m_dataAttributesHasBeenSet = false;
   };
 
 } // namespace Model

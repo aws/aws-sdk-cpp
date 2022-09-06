@@ -258,25 +258,25 @@ namespace Model
   private:
 
     AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
 
     bool m_initProcessEnabled;
-    bool m_initProcessEnabledHasBeenSet;
+    bool m_initProcessEnabledHasBeenSet = false;
 
     int m_maxSwap;
-    bool m_maxSwapHasBeenSet;
+    bool m_maxSwapHasBeenSet = false;
 
     int m_sharedMemorySize;
-    bool m_sharedMemorySizeHasBeenSet;
+    bool m_sharedMemorySizeHasBeenSet = false;
 
     int m_swappiness;
-    bool m_swappinessHasBeenSet;
+    bool m_swappinessHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails> m_tmpfs;
-    bool m_tmpfsHasBeenSet;
+    bool m_tmpfsHasBeenSet = false;
   };
 
 } // namespace Model

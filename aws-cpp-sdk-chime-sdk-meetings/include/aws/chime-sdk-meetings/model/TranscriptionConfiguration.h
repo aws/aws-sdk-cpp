@@ -110,10 +110,10 @@ namespace Model
   private:
 
     EngineTranscribeSettings m_engineTranscribeSettings;
-    bool m_engineTranscribeSettingsHasBeenSet;
+    bool m_engineTranscribeSettingsHasBeenSet = false;
 
     EngineTranscribeMedicalSettings m_engineTranscribeMedicalSettings;
-    bool m_engineTranscribeMedicalSettingsHasBeenSet;
+    bool m_engineTranscribeMedicalSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -507,34 +507,34 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     JobResource m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
-    bool m_onDeviceServiceConfigurationHasBeenSet;
+    bool m_onDeviceServiceConfigurationHasBeenSet = false;
 
     Aws::String m_addressId;
-    bool m_addressIdHasBeenSet;
+    bool m_addressIdHasBeenSet = false;
 
     ShippingOption m_shippingOption;
-    bool m_shippingOptionHasBeenSet;
+    bool m_shippingOptionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SnowballCapacity m_snowballCapacityPreference;
-    bool m_snowballCapacityPreferenceHasBeenSet;
+    bool m_snowballCapacityPreferenceHasBeenSet = false;
 
     Aws::String m_forwardingAddressId;
-    bool m_forwardingAddressIdHasBeenSet;
+    bool m_forwardingAddressIdHasBeenSet = false;
   };
 
 } // namespace Model

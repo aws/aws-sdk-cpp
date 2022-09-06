@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     int m_targetNumberOfBrokerNodes;
-    bool m_targetNumberOfBrokerNodesHasBeenSet;
+    bool m_targetNumberOfBrokerNodesHasBeenSet = false;
   };
 
 } // namespace Model

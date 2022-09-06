@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SchemaDefinition m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

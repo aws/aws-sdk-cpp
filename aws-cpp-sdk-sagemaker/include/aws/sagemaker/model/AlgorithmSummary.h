@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_algorithmName;
-    bool m_algorithmNameHasBeenSet;
+    bool m_algorithmNameHasBeenSet = false;
 
     Aws::String m_algorithmArn;
-    bool m_algorithmArnHasBeenSet;
+    bool m_algorithmArnHasBeenSet = false;
 
     Aws::String m_algorithmDescription;
-    bool m_algorithmDescriptionHasBeenSet;
+    bool m_algorithmDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     AlgorithmStatus m_algorithmStatus;
-    bool m_algorithmStatusHasBeenSet;
+    bool m_algorithmStatusHasBeenSet = false;
   };
 
 } // namespace Model

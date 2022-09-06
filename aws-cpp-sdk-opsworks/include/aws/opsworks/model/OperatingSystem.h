@@ -349,25 +349,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<OperatingSystemConfigurationManager> m_configurationManagers;
-    bool m_configurationManagersHasBeenSet;
+    bool m_configurationManagersHasBeenSet = false;
 
     Aws::String m_reportedName;
-    bool m_reportedNameHasBeenSet;
+    bool m_reportedNameHasBeenSet = false;
 
     Aws::String m_reportedVersion;
-    bool m_reportedVersionHasBeenSet;
+    bool m_reportedVersionHasBeenSet = false;
 
     bool m_supported;
-    bool m_supportedHasBeenSet;
+    bool m_supportedHasBeenSet = false;
   };
 
 } // namespace Model

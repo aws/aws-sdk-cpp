@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::String m_policyText;
-    bool m_policyTextHasBeenSet;
+    bool m_policyTextHasBeenSet = false;
   };
 
 } // namespace Model

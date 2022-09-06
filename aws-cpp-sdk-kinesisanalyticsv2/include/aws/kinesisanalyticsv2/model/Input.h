@@ -331,22 +331,22 @@ namespace Model
   private:
 
     Aws::String m_namePrefix;
-    bool m_namePrefixHasBeenSet;
+    bool m_namePrefixHasBeenSet = false;
 
     InputProcessingConfiguration m_inputProcessingConfiguration;
-    bool m_inputProcessingConfigurationHasBeenSet;
+    bool m_inputProcessingConfigurationHasBeenSet = false;
 
     KinesisStreamsInput m_kinesisStreamsInput;
-    bool m_kinesisStreamsInputHasBeenSet;
+    bool m_kinesisStreamsInputHasBeenSet = false;
 
     KinesisFirehoseInput m_kinesisFirehoseInput;
-    bool m_kinesisFirehoseInputHasBeenSet;
+    bool m_kinesisFirehoseInputHasBeenSet = false;
 
     InputParallelism m_inputParallelism;
-    bool m_inputParallelismHasBeenSet;
+    bool m_inputParallelismHasBeenSet = false;
 
     SourceSchema m_inputSchema;
-    bool m_inputSchemaHasBeenSet;
+    bool m_inputSchemaHasBeenSet = false;
   };
 
 } // namespace Model

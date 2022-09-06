@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
 
     Aws::String m_vpnTunnelOutsideIpAddress;
-    bool m_vpnTunnelOutsideIpAddressHasBeenSet;
+    bool m_vpnTunnelOutsideIpAddressHasBeenSet = false;
 
     ModifyVpnTunnelOptionsSpecification m_tunnelOptions;
-    bool m_tunnelOptionsHasBeenSet;
+    bool m_tunnelOptionsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

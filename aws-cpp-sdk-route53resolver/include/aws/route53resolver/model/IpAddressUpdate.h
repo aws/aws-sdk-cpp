@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_ipId;
-    bool m_ipIdHasBeenSet;
+    bool m_ipIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
   };
 
 } // namespace Model

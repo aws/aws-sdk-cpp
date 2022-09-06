@@ -545,34 +545,34 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_zipFile;
-    bool m_zipFileHasBeenSet;
+    bool m_zipFileHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
 
     Aws::String m_s3ObjectVersion;
-    bool m_s3ObjectVersionHasBeenSet;
+    bool m_s3ObjectVersionHasBeenSet = false;
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
 
     bool m_publish;
-    bool m_publishHasBeenSet;
+    bool m_publishHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::Vector<Architecture> m_architectures;
-    bool m_architecturesHasBeenSet;
+    bool m_architecturesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -494,19 +494,19 @@ namespace Model
   private:
 
     Aws::Vector<AllowedRenditionSize> m_allowedRenditions;
-    bool m_allowedRenditionsHasBeenSet;
+    bool m_allowedRenditionsHasBeenSet = false;
 
     Aws::Vector<ForceIncludeRenditionSize> m_forceIncludeRenditions;
-    bool m_forceIncludeRenditionsHasBeenSet;
+    bool m_forceIncludeRenditionsHasBeenSet = false;
 
     MinBottomRenditionSize m_minBottomRenditionSize;
-    bool m_minBottomRenditionSizeHasBeenSet;
+    bool m_minBottomRenditionSizeHasBeenSet = false;
 
     MinTopRenditionSize m_minTopRenditionSize;
-    bool m_minTopRenditionSizeHasBeenSet;
+    bool m_minTopRenditionSizeHasBeenSet = false;
 
     RuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

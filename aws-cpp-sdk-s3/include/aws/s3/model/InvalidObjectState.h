@@ -79,10 +79,10 @@ namespace Model
   private:
 
     StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     IntelligentTieringAccessTier m_accessTier;
-    bool m_accessTierHasBeenSet;
+    bool m_accessTierHasBeenSet = false;
   };
 
 } // namespace Model

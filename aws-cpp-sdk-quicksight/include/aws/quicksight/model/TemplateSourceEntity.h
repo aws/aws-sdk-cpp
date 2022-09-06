@@ -102,10 +102,10 @@ namespace Model
   private:
 
     TemplateSourceAnalysis m_sourceAnalysis;
-    bool m_sourceAnalysisHasBeenSet;
+    bool m_sourceAnalysisHasBeenSet = false;
 
     TemplateSourceTemplate m_sourceTemplate;
-    bool m_sourceTemplateHasBeenSet;
+    bool m_sourceTemplateHasBeenSet = false;
   };
 
 } // namespace Model

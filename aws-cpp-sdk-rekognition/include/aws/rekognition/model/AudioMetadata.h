@@ -145,16 +145,16 @@ namespace Model
   private:
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
 
     long long m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     long long m_numberOfChannels;
-    bool m_numberOfChannelsHasBeenSet;
+    bool m_numberOfChannelsHasBeenSet = false;
   };
 
 } // namespace Model

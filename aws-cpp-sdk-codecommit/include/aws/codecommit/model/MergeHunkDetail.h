@@ -131,13 +131,13 @@ namespace Model
   private:
 
     int m_startLine;
-    bool m_startLineHasBeenSet;
+    bool m_startLineHasBeenSet = false;
 
     int m_endLine;
-    bool m_endLineHasBeenSet;
+    bool m_endLineHasBeenSet = false;
 
     Aws::String m_hunkContent;
-    bool m_hunkContentHasBeenSet;
+    bool m_hunkContentHasBeenSet = false;
   };
 
 } // namespace Model

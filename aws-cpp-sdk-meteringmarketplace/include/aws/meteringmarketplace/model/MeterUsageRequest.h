@@ -323,22 +323,22 @@ namespace Model
   private:
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_usageDimension;
-    bool m_usageDimensionHasBeenSet;
+    bool m_usageDimensionHasBeenSet = false;
 
     int m_usageQuantity;
-    bool m_usageQuantityHasBeenSet;
+    bool m_usageQuantityHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<UsageAllocation> m_usageAllocations;
-    bool m_usageAllocationsHasBeenSet;
+    bool m_usageAllocationsHasBeenSet = false;
   };
 
 } // namespace Model

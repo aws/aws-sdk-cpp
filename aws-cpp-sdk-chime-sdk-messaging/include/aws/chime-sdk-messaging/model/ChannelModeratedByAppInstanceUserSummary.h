@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ChannelSummary m_channelSummary;
-    bool m_channelSummaryHasBeenSet;
+    bool m_channelSummaryHasBeenSet = false;
   };
 
 } // namespace Model

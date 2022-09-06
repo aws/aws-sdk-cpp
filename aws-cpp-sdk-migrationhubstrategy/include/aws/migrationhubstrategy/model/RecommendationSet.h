@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Strategy m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     TargetDestination m_targetDestination;
-    bool m_targetDestinationHasBeenSet;
+    bool m_targetDestinationHasBeenSet = false;
 
     TransformationTool m_transformationTool;
-    bool m_transformationToolHasBeenSet;
+    bool m_transformationToolHasBeenSet = false;
   };
 
 } // namespace Model

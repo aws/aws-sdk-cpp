@@ -398,25 +398,25 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     UserType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     ApiAccess m_apiAccess;
-    bool m_apiAccessHasBeenSet;
+    bool m_apiAccessHasBeenSet = false;
 
     Aws::String m_apiAccessPrincipalArn;
-    bool m_apiAccessPrincipalArnHasBeenSet;
+    bool m_apiAccessPrincipalArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

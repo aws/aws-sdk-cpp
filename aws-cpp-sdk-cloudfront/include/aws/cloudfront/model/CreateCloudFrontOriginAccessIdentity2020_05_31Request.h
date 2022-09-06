@@ -74,7 +74,7 @@ namespace Model
   private:
 
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
-    bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
+    bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet = false;
   };
 
 } // namespace Model

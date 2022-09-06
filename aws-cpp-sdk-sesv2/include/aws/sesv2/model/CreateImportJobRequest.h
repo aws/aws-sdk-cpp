@@ -101,10 +101,10 @@ namespace Model
   private:
 
     ImportDestination m_importDestination;
-    bool m_importDestinationHasBeenSet;
+    bool m_importDestinationHasBeenSet = false;
 
     ImportDataSource m_importDataSource;
-    bool m_importDataSourceHasBeenSet;
+    bool m_importDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

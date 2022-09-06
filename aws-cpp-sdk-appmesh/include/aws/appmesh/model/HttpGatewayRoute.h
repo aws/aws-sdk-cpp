@@ -103,10 +103,10 @@ namespace Model
   private:
 
     HttpGatewayRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     HttpGatewayRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
   };
 
 } // namespace Model

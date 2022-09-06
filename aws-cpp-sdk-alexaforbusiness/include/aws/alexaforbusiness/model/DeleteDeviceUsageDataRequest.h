@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     DeviceUsageType m_deviceUsageType;
-    bool m_deviceUsageTypeHasBeenSet;
+    bool m_deviceUsageTypeHasBeenSet = false;
   };
 
 } // namespace Model

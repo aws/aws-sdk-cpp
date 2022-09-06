@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     LaunchConfig m_launchConfig;
-    bool m_launchConfigHasBeenSet;
+    bool m_launchConfigHasBeenSet = false;
 
     Aws::Vector<UploadConfiguration> m_uploadConfigurations;
-    bool m_uploadConfigurationsHasBeenSet;
+    bool m_uploadConfigurationsHasBeenSet = false;
 
     Aws::Vector<WorldConfig> m_worldConfigs;
-    bool m_worldConfigsHasBeenSet;
+    bool m_worldConfigsHasBeenSet = false;
 
     Aws::Vector<Tool> m_tools;
-    bool m_toolsHasBeenSet;
+    bool m_toolsHasBeenSet = false;
   };
 
 } // namespace Model

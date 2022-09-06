@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_bulkDeploymentArn;
-    bool m_bulkDeploymentArnHasBeenSet;
+    bool m_bulkDeploymentArnHasBeenSet = false;
 
     Aws::String m_bulkDeploymentId;
-    bool m_bulkDeploymentIdHasBeenSet;
+    bool m_bulkDeploymentIdHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -78,7 +78,7 @@ namespace Model
   private:
 
     S3ContentBaseLocationUpdate m_s3ContentLocationUpdate;
-    bool m_s3ContentLocationUpdateHasBeenSet;
+    bool m_s3ContentLocationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

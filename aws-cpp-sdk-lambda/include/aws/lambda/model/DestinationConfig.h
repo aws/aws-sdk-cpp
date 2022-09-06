@@ -103,10 +103,10 @@ namespace Model
   private:
 
     OnSuccess m_onSuccess;
-    bool m_onSuccessHasBeenSet;
+    bool m_onSuccessHasBeenSet = false;
 
     OnFailure m_onFailure;
-    bool m_onFailureHasBeenSet;
+    bool m_onFailureHasBeenSet = false;
   };
 
 } // namespace Model

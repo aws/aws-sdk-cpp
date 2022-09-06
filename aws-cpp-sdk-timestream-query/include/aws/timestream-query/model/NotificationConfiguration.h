@@ -72,7 +72,7 @@ namespace Model
   private:
 
     SnsConfiguration m_snsConfiguration;
-    bool m_snsConfigurationHasBeenSet;
+    bool m_snsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ContactFlowType m_contactFlowType;
-    bool m_contactFlowTypeHasBeenSet;
+    bool m_contactFlowTypeHasBeenSet = false;
 
     ContactFlowState m_contactFlowState;
-    bool m_contactFlowStateHasBeenSet;
+    bool m_contactFlowStateHasBeenSet = false;
   };
 
 } // namespace Model

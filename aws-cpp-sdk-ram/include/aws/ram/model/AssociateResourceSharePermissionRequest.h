@@ -375,19 +375,19 @@ namespace Model
   private:
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::String m_permissionArn;
-    bool m_permissionArnHasBeenSet;
+    bool m_permissionArnHasBeenSet = false;
 
     bool m_replace;
-    bool m_replaceHasBeenSet;
+    bool m_replaceHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     int m_permissionVersion;
-    bool m_permissionVersionHasBeenSet;
+    bool m_permissionVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -392,28 +392,28 @@ namespace Model
   private:
 
     Aws::String m_cognitoUserPoolId;
-    bool m_cognitoUserPoolIdHasBeenSet;
+    bool m_cognitoUserPoolIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     double m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::String m_openIDAuthTTL;
-    bool m_openIDAuthTTLHasBeenSet;
+    bool m_openIDAuthTTLHasBeenSet = false;
 
     Aws::String m_openIDClientId;
-    bool m_openIDClientIdHasBeenSet;
+    bool m_openIDClientIdHasBeenSet = false;
 
     Aws::String m_openIDIatTTL;
-    bool m_openIDIatTTLHasBeenSet;
+    bool m_openIDIatTTLHasBeenSet = false;
 
     Aws::String m_openIDIssueURL;
-    bool m_openIDIssueURLHasBeenSet;
+    bool m_openIDIssueURLHasBeenSet = false;
 
     Aws::String m_openIDProviderName;
-    bool m_openIDProviderNameHasBeenSet;
+    bool m_openIDProviderNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_oldKmsKeyId;
-    bool m_oldKmsKeyIdHasBeenSet;
+    bool m_oldKmsKeyIdHasBeenSet = false;
 
     ServerSideEncryptionUpdateStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
   };
 
 } // namespace Model

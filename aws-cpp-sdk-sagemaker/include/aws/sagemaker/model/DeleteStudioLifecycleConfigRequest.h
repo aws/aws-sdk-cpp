@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_studioLifecycleConfigName;
-    bool m_studioLifecycleConfigNameHasBeenSet;
+    bool m_studioLifecycleConfigNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     bool m_enableInterContainerTrafficEncryption;
-    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

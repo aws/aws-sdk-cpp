@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_liveSourceName;
-    bool m_liveSourceNameHasBeenSet;
+    bool m_liveSourceNameHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
   };
 
 } // namespace Model

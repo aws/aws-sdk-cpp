@@ -239,13 +239,13 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerInstances;
-    bool m_containerInstancesHasBeenSet;
+    bool m_containerInstancesHasBeenSet = false;
 
     Aws::Vector<ContainerInstanceField> m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

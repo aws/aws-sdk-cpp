@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_analysisCompleteTime;
-    bool m_analysisCompleteTimeHasBeenSet;
+    bool m_analysisCompleteTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
   };
 
 } // namespace Model

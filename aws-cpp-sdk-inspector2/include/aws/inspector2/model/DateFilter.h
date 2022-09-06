@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endInclusive;
-    bool m_endInclusiveHasBeenSet;
+    bool m_endInclusiveHasBeenSet = false;
 
     Aws::Utils::DateTime m_startInclusive;
-    bool m_startInclusiveHasBeenSet;
+    bool m_startInclusiveHasBeenSet = false;
   };
 
 } // namespace Model

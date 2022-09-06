@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<SigninDelegateGroup> m_signinDelegateGroups;
-    bool m_signinDelegateGroupsHasBeenSet;
+    bool m_signinDelegateGroupsHasBeenSet = false;
   };
 
 } // namespace Model

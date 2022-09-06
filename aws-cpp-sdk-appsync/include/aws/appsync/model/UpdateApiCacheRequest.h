@@ -264,16 +264,16 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     long long m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     ApiCachingBehavior m_apiCachingBehavior;
-    bool m_apiCachingBehaviorHasBeenSet;
+    bool m_apiCachingBehaviorHasBeenSet = false;
 
     ApiCacheType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

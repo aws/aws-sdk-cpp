@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<AccessControlAttribute> m_accessControlAttributes;
-    bool m_accessControlAttributesHasBeenSet;
+    bool m_accessControlAttributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -159,13 +159,13 @@ namespace Model
   private:
 
     SavingsPlansUtilization m_utilization;
-    bool m_utilizationHasBeenSet;
+    bool m_utilizationHasBeenSet = false;
 
     SavingsPlansSavings m_savings;
-    bool m_savingsHasBeenSet;
+    bool m_savingsHasBeenSet = false;
 
     SavingsPlansAmortizedCommitment m_amortizedCommitment;
-    bool m_amortizedCommitmentHasBeenSet;
+    bool m_amortizedCommitmentHasBeenSet = false;
   };
 
 } // namespace Model

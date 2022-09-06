@@ -932,70 +932,70 @@ namespace Model
   private:
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_accountNumber;
-    bool m_accountNumberHasBeenSet;
+    bool m_accountNumberHasBeenSet = false;
 
     Aws::String m_additionalInformation;
-    bool m_additionalInformationHasBeenSet;
+    bool m_additionalInformationHasBeenSet = false;
 
     PartyType m_partyType;
-    bool m_partyTypeHasBeenSet;
+    bool m_partyTypeHasBeenSet = false;
 
     Aws::String m_businessName;
-    bool m_businessNameHasBeenSet;
+    bool m_businessNameHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_middleName;
-    bool m_middleNameHasBeenSet;
+    bool m_middleNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_birthDate;
-    bool m_birthDateHasBeenSet;
+    bool m_birthDateHasBeenSet = false;
 
     Gender m_gender;
-    bool m_genderHasBeenSet;
+    bool m_genderHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_mobilePhoneNumber;
-    bool m_mobilePhoneNumberHasBeenSet;
+    bool m_mobilePhoneNumberHasBeenSet = false;
 
     Aws::String m_homePhoneNumber;
-    bool m_homePhoneNumberHasBeenSet;
+    bool m_homePhoneNumberHasBeenSet = false;
 
     Aws::String m_businessPhoneNumber;
-    bool m_businessPhoneNumberHasBeenSet;
+    bool m_businessPhoneNumberHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_personalEmailAddress;
-    bool m_personalEmailAddressHasBeenSet;
+    bool m_personalEmailAddressHasBeenSet = false;
 
     Aws::String m_businessEmailAddress;
-    bool m_businessEmailAddressHasBeenSet;
+    bool m_businessEmailAddressHasBeenSet = false;
 
     Address m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Address m_shippingAddress;
-    bool m_shippingAddressHasBeenSet;
+    bool m_shippingAddressHasBeenSet = false;
 
     Address m_mailingAddress;
-    bool m_mailingAddressHasBeenSet;
+    bool m_mailingAddressHasBeenSet = false;
 
     Address m_billingAddress;
-    bool m_billingAddressHasBeenSet;
+    bool m_billingAddressHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

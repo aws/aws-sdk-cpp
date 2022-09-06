@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     StateValue m_stateValue;
-    bool m_stateValueHasBeenSet;
+    bool m_stateValueHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     Aws::String m_stateReasonData;
-    bool m_stateReasonDataHasBeenSet;
+    bool m_stateReasonDataHasBeenSet = false;
   };
 
 } // namespace Model

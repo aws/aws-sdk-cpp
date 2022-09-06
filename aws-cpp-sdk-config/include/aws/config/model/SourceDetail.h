@@ -282,13 +282,13 @@ namespace Model
   private:
 
     EventSource m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

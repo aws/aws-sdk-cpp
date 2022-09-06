@@ -476,25 +476,25 @@ namespace Model
   private:
 
     ResourceShareAssociationType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceShareArns;
-    bool m_resourceShareArnsHasBeenSet;
+    bool m_resourceShareArnsHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     ResourceShareAssociationStatus m_associationStatus;
-    bool m_associationStatusHasBeenSet;
+    bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

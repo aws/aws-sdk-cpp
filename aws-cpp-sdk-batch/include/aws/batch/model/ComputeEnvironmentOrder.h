@@ -124,10 +124,10 @@ namespace Model
   private:
 
     int m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
 
     Aws::String m_computeEnvironment;
-    bool m_computeEnvironmentHasBeenSet;
+    bool m_computeEnvironmentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -107,10 +107,10 @@ namespace Model
   private:
 
     bool m_cwLogEnabled;
-    bool m_cwLogEnabledHasBeenSet;
+    bool m_cwLogEnabledHasBeenSet = false;
 
     Aws::String m_cwLogGroup;
-    bool m_cwLogGroupHasBeenSet;
+    bool m_cwLogGroupHasBeenSet = false;
   };
 
 } // namespace Model

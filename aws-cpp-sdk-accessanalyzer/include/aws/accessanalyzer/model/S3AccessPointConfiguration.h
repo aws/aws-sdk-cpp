@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_accessPointPolicy;
-    bool m_accessPointPolicyHasBeenSet;
+    bool m_accessPointPolicyHasBeenSet = false;
 
     NetworkOriginConfiguration m_networkOrigin;
-    bool m_networkOriginHasBeenSet;
+    bool m_networkOriginHasBeenSet = false;
 
     S3PublicAccessBlockConfiguration m_publicAccessBlock;
-    bool m_publicAccessBlockHasBeenSet;
+    bool m_publicAccessBlockHasBeenSet = false;
   };
 
 } // namespace Model

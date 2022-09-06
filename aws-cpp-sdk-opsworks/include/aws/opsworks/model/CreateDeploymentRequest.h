@@ -403,25 +403,25 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_layerIds;
-    bool m_layerIdsHasBeenSet;
+    bool m_layerIdsHasBeenSet = false;
 
     DeploymentCommand m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_customJson;
-    bool m_customJsonHasBeenSet;
+    bool m_customJsonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -68,7 +68,7 @@ namespace Model
   private:
 
     bool m_reuseOnScaleIn;
-    bool m_reuseOnScaleInHasBeenSet;
+    bool m_reuseOnScaleInHasBeenSet = false;
   };
 
 } // namespace Model

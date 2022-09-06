@@ -299,25 +299,25 @@ namespace Model
   private:
 
     Aws::String m_addedToServiceDateTime;
-    bool m_addedToServiceDateTimeHasBeenSet;
+    bool m_addedToServiceDateTimeHasBeenSet = false;
 
     Aws::String m_elapsedReplicationDuration;
-    bool m_elapsedReplicationDurationHasBeenSet;
+    bool m_elapsedReplicationDurationHasBeenSet = false;
 
     Aws::String m_firstByteDateTime;
-    bool m_firstByteDateTimeHasBeenSet;
+    bool m_firstByteDateTimeHasBeenSet = false;
 
     LifeCycleLastCutover m_lastCutover;
-    bool m_lastCutoverHasBeenSet;
+    bool m_lastCutoverHasBeenSet = false;
 
     Aws::String m_lastSeenByServiceDateTime;
-    bool m_lastSeenByServiceDateTimeHasBeenSet;
+    bool m_lastSeenByServiceDateTimeHasBeenSet = false;
 
     LifeCycleLastTest m_lastTest;
-    bool m_lastTestHasBeenSet;
+    bool m_lastTestHasBeenSet = false;
 
     LifeCycleState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

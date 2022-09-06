@@ -341,22 +341,22 @@ namespace Model
   private:
 
     Aws::String m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_serverSideEncryption;
-    bool m_serverSideEncryptionHasBeenSet;
+    bool m_serverSideEncryptionHasBeenSet = false;
 
     Aws::String m_sSEKMSKeyId;
-    bool m_sSEKMSKeyIdHasBeenSet;
+    bool m_sSEKMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

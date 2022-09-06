@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_patchGroup;
-    bool m_patchGroupHasBeenSet;
+    bool m_patchGroupHasBeenSet = false;
 
     PatchBaselineIdentity m_baselineIdentity;
-    bool m_baselineIdentityHasBeenSet;
+    bool m_baselineIdentityHasBeenSet = false;
   };
 
 } // namespace Model

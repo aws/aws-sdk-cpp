@@ -387,25 +387,25 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_defaultOutboundQueueId;
-    bool m_defaultOutboundQueueIdHasBeenSet;
+    bool m_defaultOutboundQueueIdHasBeenSet = false;
 
     Aws::Vector<RoutingProfileQueueConfig> m_queueConfigs;
-    bool m_queueConfigsHasBeenSet;
+    bool m_queueConfigsHasBeenSet = false;
 
     Aws::Vector<MediaConcurrency> m_mediaConcurrencies;
-    bool m_mediaConcurrenciesHasBeenSet;
+    bool m_mediaConcurrenciesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

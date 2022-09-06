@@ -194,10 +194,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_defaultAttributes;
-    bool m_defaultAttributesHasBeenSet;
+    bool m_defaultAttributesHasBeenSet = false;
 
     Aws::Map<Aws::String, DeviceTemplate> m_deviceTemplates;
-    bool m_deviceTemplatesHasBeenSet;
+    bool m_deviceTemplatesHasBeenSet = false;
   };
 
 } // namespace Model

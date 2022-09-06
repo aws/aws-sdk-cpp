@@ -102,10 +102,10 @@ namespace Model
   private:
 
     SparkSubmit m_sparkSubmit;
-    bool m_sparkSubmitHasBeenSet;
+    bool m_sparkSubmitHasBeenSet = false;
 
     Hive m_hive;
-    bool m_hiveHasBeenSet;
+    bool m_hiveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupFamily;
-    bool m_cacheParameterGroupFamilyHasBeenSet;
+    bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<CacheNodeTypeSpecificParameter> m_cacheNodeTypeSpecificParameters;
-    bool m_cacheNodeTypeSpecificParametersHasBeenSet;
+    bool m_cacheNodeTypeSpecificParametersHasBeenSet = false;
   };
 
 } // namespace Model

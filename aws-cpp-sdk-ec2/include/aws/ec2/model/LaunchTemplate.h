@@ -281,25 +281,25 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     long long m_defaultVersionNumber;
-    bool m_defaultVersionNumberHasBeenSet;
+    bool m_defaultVersionNumberHasBeenSet = false;
 
     long long m_latestVersionNumber;
-    bool m_latestVersionNumberHasBeenSet;
+    bool m_latestVersionNumberHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

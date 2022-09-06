@@ -103,10 +103,10 @@ namespace Model
   private:
 
     FaqStatistics m_faqStatistics;
-    bool m_faqStatisticsHasBeenSet;
+    bool m_faqStatisticsHasBeenSet = false;
 
     TextDocumentStatistics m_textDocumentStatistics;
-    bool m_textDocumentStatisticsHasBeenSet;
+    bool m_textDocumentStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

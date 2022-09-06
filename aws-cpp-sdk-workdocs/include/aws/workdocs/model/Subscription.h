@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_subscriptionId;
-    bool m_subscriptionIdHasBeenSet;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_endPoint;
-    bool m_endPointHasBeenSet;
+    bool m_endPointHasBeenSet = false;
 
     SubscriptionProtocolType m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

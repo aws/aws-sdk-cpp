@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_findingArns;
-    bool m_findingArnsHasBeenSet;
+    bool m_findingArnsHasBeenSet = false;
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

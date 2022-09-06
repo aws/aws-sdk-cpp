@@ -116,7 +116,7 @@ OpenSearchServiceClient::~OpenSearchServiceClient()
 
 void OpenSearchServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("OpenSearch");
+  AWSClient::SetServiceClientName("OpenSearch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

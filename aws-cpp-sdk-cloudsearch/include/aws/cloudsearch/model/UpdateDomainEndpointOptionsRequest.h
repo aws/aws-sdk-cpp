@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     DomainEndpointOptions m_domainEndpointOptions;
-    bool m_domainEndpointOptionsHasBeenSet;
+    bool m_domainEndpointOptionsHasBeenSet = false;
   };
 
 } // namespace Model

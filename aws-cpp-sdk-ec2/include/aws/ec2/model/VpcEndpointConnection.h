@@ -414,31 +414,31 @@ namespace Model
   private:
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_vpcEndpointOwner;
-    bool m_vpcEndpointOwnerHasBeenSet;
+    bool m_vpcEndpointOwnerHasBeenSet = false;
 
     State m_vpcEndpointState;
-    bool m_vpcEndpointStateHasBeenSet;
+    bool m_vpcEndpointStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Vector<DnsEntry> m_dnsEntries;
-    bool m_dnsEntriesHasBeenSet;
+    bool m_dnsEntriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-    bool m_networkLoadBalancerArnsHasBeenSet;
+    bool m_networkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-    bool m_gatewayLoadBalancerArnsHasBeenSet;
+    bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

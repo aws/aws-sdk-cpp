@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_dBClusterSnapshotIdentifier;
-    bool m_dBClusterSnapshotIdentifierHasBeenSet;
+    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::Vector<DBClusterSnapshotAttribute> m_dBClusterSnapshotAttributes;
-    bool m_dBClusterSnapshotAttributesHasBeenSet;
+    bool m_dBClusterSnapshotAttributesHasBeenSet = false;
   };
 
 } // namespace Model

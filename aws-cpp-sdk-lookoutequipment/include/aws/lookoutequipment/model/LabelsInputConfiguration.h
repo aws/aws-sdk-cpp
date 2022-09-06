@@ -119,10 +119,10 @@ namespace Model
   private:
 
     LabelsS3InputConfiguration m_s3InputConfiguration;
-    bool m_s3InputConfigurationHasBeenSet;
+    bool m_s3InputConfigurationHasBeenSet = false;
 
     Aws::String m_labelGroupName;
-    bool m_labelGroupNameHasBeenSet;
+    bool m_labelGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

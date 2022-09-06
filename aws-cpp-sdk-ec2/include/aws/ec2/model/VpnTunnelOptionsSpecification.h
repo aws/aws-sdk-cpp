@@ -1079,61 +1079,61 @@ namespace Model
   private:
 
     Aws::String m_tunnelInsideCidr;
-    bool m_tunnelInsideCidrHasBeenSet;
+    bool m_tunnelInsideCidrHasBeenSet = false;
 
     Aws::String m_tunnelInsideIpv6Cidr;
-    bool m_tunnelInsideIpv6CidrHasBeenSet;
+    bool m_tunnelInsideIpv6CidrHasBeenSet = false;
 
     Aws::String m_preSharedKey;
-    bool m_preSharedKeyHasBeenSet;
+    bool m_preSharedKeyHasBeenSet = false;
 
     int m_phase1LifetimeSeconds;
-    bool m_phase1LifetimeSecondsHasBeenSet;
+    bool m_phase1LifetimeSecondsHasBeenSet = false;
 
     int m_phase2LifetimeSeconds;
-    bool m_phase2LifetimeSecondsHasBeenSet;
+    bool m_phase2LifetimeSecondsHasBeenSet = false;
 
     int m_rekeyMarginTimeSeconds;
-    bool m_rekeyMarginTimeSecondsHasBeenSet;
+    bool m_rekeyMarginTimeSecondsHasBeenSet = false;
 
     int m_rekeyFuzzPercentage;
-    bool m_rekeyFuzzPercentageHasBeenSet;
+    bool m_rekeyFuzzPercentageHasBeenSet = false;
 
     int m_replayWindowSize;
-    bool m_replayWindowSizeHasBeenSet;
+    bool m_replayWindowSizeHasBeenSet = false;
 
     int m_dPDTimeoutSeconds;
-    bool m_dPDTimeoutSecondsHasBeenSet;
+    bool m_dPDTimeoutSecondsHasBeenSet = false;
 
     Aws::String m_dPDTimeoutAction;
-    bool m_dPDTimeoutActionHasBeenSet;
+    bool m_dPDTimeoutActionHasBeenSet = false;
 
     Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue> m_phase1EncryptionAlgorithms;
-    bool m_phase1EncryptionAlgorithmsHasBeenSet;
+    bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
 
     Aws::Vector<Phase2EncryptionAlgorithmsRequestListValue> m_phase2EncryptionAlgorithms;
-    bool m_phase2EncryptionAlgorithmsHasBeenSet;
+    bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
 
     Aws::Vector<Phase1IntegrityAlgorithmsRequestListValue> m_phase1IntegrityAlgorithms;
-    bool m_phase1IntegrityAlgorithmsHasBeenSet;
+    bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
 
     Aws::Vector<Phase2IntegrityAlgorithmsRequestListValue> m_phase2IntegrityAlgorithms;
-    bool m_phase2IntegrityAlgorithmsHasBeenSet;
+    bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
 
     Aws::Vector<Phase1DHGroupNumbersRequestListValue> m_phase1DHGroupNumbers;
-    bool m_phase1DHGroupNumbersHasBeenSet;
+    bool m_phase1DHGroupNumbersHasBeenSet = false;
 
     Aws::Vector<Phase2DHGroupNumbersRequestListValue> m_phase2DHGroupNumbers;
-    bool m_phase2DHGroupNumbersHasBeenSet;
+    bool m_phase2DHGroupNumbersHasBeenSet = false;
 
     Aws::Vector<IKEVersionsRequestListValue> m_iKEVersions;
-    bool m_iKEVersionsHasBeenSet;
+    bool m_iKEVersionsHasBeenSet = false;
 
     Aws::String m_startupAction;
-    bool m_startupActionHasBeenSet;
+    bool m_startupActionHasBeenSet = false;
 
     VpnTunnelLogOptionsSpecification m_logOptions;
-    bool m_logOptionsHasBeenSet;
+    bool m_logOptionsHasBeenSet = false;
   };
 
 } // namespace Model

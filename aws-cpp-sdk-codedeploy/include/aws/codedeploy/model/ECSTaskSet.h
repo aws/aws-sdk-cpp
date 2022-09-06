@@ -362,28 +362,28 @@ namespace Model
   private:
 
     Aws::String m_identifer;
-    bool m_identiferHasBeenSet;
+    bool m_identiferHasBeenSet = false;
 
     long long m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     long long m_pendingCount;
-    bool m_pendingCountHasBeenSet;
+    bool m_pendingCountHasBeenSet = false;
 
     long long m_runningCount;
-    bool m_runningCountHasBeenSet;
+    bool m_runningCountHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     double m_trafficWeight;
-    bool m_trafficWeightHasBeenSet;
+    bool m_trafficWeightHasBeenSet = false;
 
     TargetGroupInfo m_targetGroup;
-    bool m_targetGroupHasBeenSet;
+    bool m_targetGroupHasBeenSet = false;
 
     TargetLabel m_taskSetLabel;
-    bool m_taskSetLabelHasBeenSet;
+    bool m_taskSetLabelHasBeenSet = false;
   };
 
 } // namespace Model

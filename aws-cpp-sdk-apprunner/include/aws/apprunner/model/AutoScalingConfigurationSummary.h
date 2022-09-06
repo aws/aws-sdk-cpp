@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_autoScalingConfigurationArn;
-    bool m_autoScalingConfigurationArnHasBeenSet;
+    bool m_autoScalingConfigurationArnHasBeenSet = false;
 
     Aws::String m_autoScalingConfigurationName;
-    bool m_autoScalingConfigurationNameHasBeenSet;
+    bool m_autoScalingConfigurationNameHasBeenSet = false;
 
     int m_autoScalingConfigurationRevision;
-    bool m_autoScalingConfigurationRevisionHasBeenSet;
+    bool m_autoScalingConfigurationRevisionHasBeenSet = false;
   };
 
 } // namespace Model

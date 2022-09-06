@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_accessPolicyId;
-    bool m_accessPolicyIdHasBeenSet;
+    bool m_accessPolicyIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

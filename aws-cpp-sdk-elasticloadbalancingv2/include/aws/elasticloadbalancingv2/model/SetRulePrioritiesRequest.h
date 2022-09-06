@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::Vector<RulePriorityPair> m_rulePriorities;
-    bool m_rulePrioritiesHasBeenSet;
+    bool m_rulePrioritiesHasBeenSet = false;
   };
 
 } // namespace Model

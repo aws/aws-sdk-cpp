@@ -772,43 +772,43 @@ namespace Model
   private:
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PatchFilterGroup m_globalFilters;
-    bool m_globalFiltersHasBeenSet;
+    bool m_globalFiltersHasBeenSet = false;
 
     PatchRuleGroup m_approvalRules;
-    bool m_approvalRulesHasBeenSet;
+    bool m_approvalRulesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_approvedPatches;
-    bool m_approvedPatchesHasBeenSet;
+    bool m_approvedPatchesHasBeenSet = false;
 
     PatchComplianceLevel m_approvedPatchesComplianceLevel;
-    bool m_approvedPatchesComplianceLevelHasBeenSet;
+    bool m_approvedPatchesComplianceLevelHasBeenSet = false;
 
     bool m_approvedPatchesEnableNonSecurity;
-    bool m_approvedPatchesEnableNonSecurityHasBeenSet;
+    bool m_approvedPatchesEnableNonSecurityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rejectedPatches;
-    bool m_rejectedPatchesHasBeenSet;
+    bool m_rejectedPatchesHasBeenSet = false;
 
     PatchAction m_rejectedPatchesAction;
-    bool m_rejectedPatchesActionHasBeenSet;
+    bool m_rejectedPatchesActionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<PatchSource> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

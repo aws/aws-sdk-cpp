@@ -106,7 +106,7 @@ LookoutMetricsClient::~LookoutMetricsClient()
 
 void LookoutMetricsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("LookoutMetrics");
+  AWSClient::SetServiceClientName("LookoutMetrics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

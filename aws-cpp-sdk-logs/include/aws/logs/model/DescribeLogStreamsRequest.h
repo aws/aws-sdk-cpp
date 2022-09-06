@@ -315,22 +315,22 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logStreamNamePrefix;
-    bool m_logStreamNamePrefixHasBeenSet;
+    bool m_logStreamNamePrefixHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
 
     bool m_descending;
-    bool m_descendingHasBeenSet;
+    bool m_descendingHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

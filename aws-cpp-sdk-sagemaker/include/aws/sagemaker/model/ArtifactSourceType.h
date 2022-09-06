@@ -112,10 +112,10 @@ namespace Model
   private:
 
     ArtifactSourceIdType m_sourceIdType;
-    bool m_sourceIdTypeHasBeenSet;
+    bool m_sourceIdTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

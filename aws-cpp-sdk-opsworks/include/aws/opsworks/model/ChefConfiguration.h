@@ -101,10 +101,10 @@ namespace Model
   private:
 
     bool m_manageBerkshelf;
-    bool m_manageBerkshelfHasBeenSet;
+    bool m_manageBerkshelfHasBeenSet = false;
 
     Aws::String m_berkshelfVersion;
-    bool m_berkshelfVersionHasBeenSet;
+    bool m_berkshelfVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,19 +180,19 @@ namespace Model
   private:
 
     int m_totalSteps;
-    bool m_totalStepsHasBeenSet;
+    bool m_totalStepsHasBeenSet = false;
 
     int m_successSteps;
-    bool m_successStepsHasBeenSet;
+    bool m_successStepsHasBeenSet = false;
 
     int m_failedSteps;
-    bool m_failedStepsHasBeenSet;
+    bool m_failedStepsHasBeenSet = false;
 
     int m_cancelledSteps;
-    bool m_cancelledStepsHasBeenSet;
+    bool m_cancelledStepsHasBeenSet = false;
 
     int m_timedOutSteps;
-    bool m_timedOutStepsHasBeenSet;
+    bool m_timedOutStepsHasBeenSet = false;
   };
 
 } // namespace Model

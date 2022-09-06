@@ -97,7 +97,7 @@ namespace Model
   private:
 
     CodeSigningPolicy m_untrustedArtifactOnDeployment;
-    bool m_untrustedArtifactOnDeploymentHasBeenSet;
+    bool m_untrustedArtifactOnDeploymentHasBeenSet = false;
   };
 
 } // namespace Model

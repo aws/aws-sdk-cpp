@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::String m_virtualGatewayId;
-    bool m_virtualGatewayIdHasBeenSet;
+    bool m_virtualGatewayIdHasBeenSet = false;
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

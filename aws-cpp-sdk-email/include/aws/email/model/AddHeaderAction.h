@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     Aws::String m_headerValue;
-    bool m_headerValueHasBeenSet;
+    bool m_headerValueHasBeenSet = false;
   };
 
 } // namespace Model

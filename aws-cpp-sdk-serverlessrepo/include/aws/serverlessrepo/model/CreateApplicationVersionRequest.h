@@ -296,22 +296,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_semanticVersion;
-    bool m_semanticVersionHasBeenSet;
+    bool m_semanticVersionHasBeenSet = false;
 
     Aws::String m_sourceCodeArchiveUrl;
-    bool m_sourceCodeArchiveUrlHasBeenSet;
+    bool m_sourceCodeArchiveUrlHasBeenSet = false;
 
     Aws::String m_sourceCodeUrl;
-    bool m_sourceCodeUrlHasBeenSet;
+    bool m_sourceCodeUrlHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_templateUrl;
-    bool m_templateUrlHasBeenSet;
+    bool m_templateUrlHasBeenSet = false;
   };
 
 } // namespace Model

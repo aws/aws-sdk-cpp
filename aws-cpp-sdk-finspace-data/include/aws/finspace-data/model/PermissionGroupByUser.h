@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_permissionGroupId;
-    bool m_permissionGroupIdHasBeenSet;
+    bool m_permissionGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PermissionGroupMembershipStatus m_membershipStatus;
-    bool m_membershipStatusHasBeenSet;
+    bool m_membershipStatusHasBeenSet = false;
   };
 
 } // namespace Model

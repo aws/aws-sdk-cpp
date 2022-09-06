@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Total m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -177,16 +177,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     PostFulfillmentStatusSpecification m_postFulfillmentStatusSpecification;
-    bool m_postFulfillmentStatusSpecificationHasBeenSet;
+    bool m_postFulfillmentStatusSpecificationHasBeenSet = false;
 
     FulfillmentUpdatesSpecification m_fulfillmentUpdatesSpecification;
-    bool m_fulfillmentUpdatesSpecificationHasBeenSet;
+    bool m_fulfillmentUpdatesSpecificationHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -242,22 +242,22 @@ namespace Model
   private:
 
     Aws::String m_detectedText;
-    bool m_detectedTextHasBeenSet;
+    bool m_detectedTextHasBeenSet = false;
 
     TextTypes m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Geometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
   };
 
 } // namespace Model

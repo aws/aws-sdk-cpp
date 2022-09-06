@@ -296,28 +296,28 @@ namespace Model
   private:
 
     ColumnStatisticsType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     BooleanColumnStatisticsData m_booleanColumnStatisticsData;
-    bool m_booleanColumnStatisticsDataHasBeenSet;
+    bool m_booleanColumnStatisticsDataHasBeenSet = false;
 
     DateColumnStatisticsData m_dateColumnStatisticsData;
-    bool m_dateColumnStatisticsDataHasBeenSet;
+    bool m_dateColumnStatisticsDataHasBeenSet = false;
 
     DecimalColumnStatisticsData m_decimalColumnStatisticsData;
-    bool m_decimalColumnStatisticsDataHasBeenSet;
+    bool m_decimalColumnStatisticsDataHasBeenSet = false;
 
     DoubleColumnStatisticsData m_doubleColumnStatisticsData;
-    bool m_doubleColumnStatisticsDataHasBeenSet;
+    bool m_doubleColumnStatisticsDataHasBeenSet = false;
 
     LongColumnStatisticsData m_longColumnStatisticsData;
-    bool m_longColumnStatisticsDataHasBeenSet;
+    bool m_longColumnStatisticsDataHasBeenSet = false;
 
     StringColumnStatisticsData m_stringColumnStatisticsData;
-    bool m_stringColumnStatisticsDataHasBeenSet;
+    bool m_stringColumnStatisticsDataHasBeenSet = false;
 
     BinaryColumnStatisticsData m_binaryColumnStatisticsData;
-    bool m_binaryColumnStatisticsDataHasBeenSet;
+    bool m_binaryColumnStatisticsDataHasBeenSet = false;
   };
 
 } // namespace Model

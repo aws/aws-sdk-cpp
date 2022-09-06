@@ -185,19 +185,19 @@ namespace Model
   private:
 
     long long m_available;
-    bool m_availableHasBeenSet;
+    bool m_availableHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     long long m_used;
-    bool m_usedHasBeenSet;
+    bool m_usedHasBeenSet = false;
   };
 
 } // namespace Model

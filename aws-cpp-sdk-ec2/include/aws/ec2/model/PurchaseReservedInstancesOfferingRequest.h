@@ -219,19 +219,19 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_reservedInstancesOfferingId;
-    bool m_reservedInstancesOfferingIdHasBeenSet;
+    bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     ReservedInstanceLimitPrice m_limitPrice;
-    bool m_limitPriceHasBeenSet;
+    bool m_limitPriceHasBeenSet = false;
 
     Aws::Utils::DateTime m_purchaseTime;
-    bool m_purchaseTimeHasBeenSet;
+    bool m_purchaseTimeHasBeenSet = false;
   };
 
 } // namespace Model

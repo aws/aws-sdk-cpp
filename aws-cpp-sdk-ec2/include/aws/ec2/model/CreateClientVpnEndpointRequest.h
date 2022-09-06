@@ -882,58 +882,58 @@ namespace Model
   private:
 
     Aws::String m_clientCidrBlock;
-    bool m_clientCidrBlockHasBeenSet;
+    bool m_clientCidrBlockHasBeenSet = false;
 
     Aws::String m_serverCertificateArn;
-    bool m_serverCertificateArnHasBeenSet;
+    bool m_serverCertificateArnHasBeenSet = false;
 
     Aws::Vector<ClientVpnAuthenticationRequest> m_authenticationOptions;
-    bool m_authenticationOptionsHasBeenSet;
+    bool m_authenticationOptionsHasBeenSet = false;
 
     ConnectionLogOptions m_connectionLogOptions;
-    bool m_connectionLogOptionsHasBeenSet;
+    bool m_connectionLogOptionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsServers;
-    bool m_dnsServersHasBeenSet;
+    bool m_dnsServersHasBeenSet = false;
 
     TransportProtocol m_transportProtocol;
-    bool m_transportProtocolHasBeenSet;
+    bool m_transportProtocolHasBeenSet = false;
 
     int m_vpnPort;
-    bool m_vpnPortHasBeenSet;
+    bool m_vpnPortHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_splitTunnel;
-    bool m_splitTunnelHasBeenSet;
+    bool m_splitTunnelHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     SelfServicePortal m_selfServicePortal;
-    bool m_selfServicePortalHasBeenSet;
+    bool m_selfServicePortalHasBeenSet = false;
 
     ClientConnectOptions m_clientConnectOptions;
-    bool m_clientConnectOptionsHasBeenSet;
+    bool m_clientConnectOptionsHasBeenSet = false;
 
     int m_sessionTimeoutHours;
-    bool m_sessionTimeoutHoursHasBeenSet;
+    bool m_sessionTimeoutHoursHasBeenSet = false;
 
     ClientLoginBannerOptions m_clientLoginBannerOptions;
-    bool m_clientLoginBannerOptionsHasBeenSet;
+    bool m_clientLoginBannerOptionsHasBeenSet = false;
   };
 
 } // namespace Model

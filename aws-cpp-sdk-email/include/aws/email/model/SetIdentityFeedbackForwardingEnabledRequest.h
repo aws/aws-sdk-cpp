@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     bool m_forwardingEnabled;
-    bool m_forwardingEnabledHasBeenSet;
+    bool m_forwardingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

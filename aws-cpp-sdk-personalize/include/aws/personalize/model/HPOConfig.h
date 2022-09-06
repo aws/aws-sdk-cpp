@@ -141,13 +141,13 @@ namespace Model
   private:
 
     HPOObjective m_hpoObjective;
-    bool m_hpoObjectiveHasBeenSet;
+    bool m_hpoObjectiveHasBeenSet = false;
 
     HPOResourceConfig m_hpoResourceConfig;
-    bool m_hpoResourceConfigHasBeenSet;
+    bool m_hpoResourceConfigHasBeenSet = false;
 
     HyperParameterRanges m_algorithmHyperParameterRanges;
-    bool m_algorithmHyperParameterRangesHasBeenSet;
+    bool m_algorithmHyperParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

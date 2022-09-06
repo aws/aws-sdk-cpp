@@ -287,25 +287,25 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     long long m_dataStorage;
-    bool m_dataStorageHasBeenSet;
+    bool m_dataStorageHasBeenSet = false;
 
     long long m_numRecords;
-    bool m_numRecordsHasBeenSet;
+    bool m_numRecordsHasBeenSet = false;
   };
 
 } // namespace Model

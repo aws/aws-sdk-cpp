@@ -125,10 +125,10 @@ namespace Model
   private:
 
     MoveStatus m_moveStatus;
-    bool m_moveStatusHasBeenSet;
+    bool m_moveStatusHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
   };
 
 } // namespace Model

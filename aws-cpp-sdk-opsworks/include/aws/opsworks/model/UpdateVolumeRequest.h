@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_mountPoint;
-    bool m_mountPointHasBeenSet;
+    bool m_mountPointHasBeenSet = false;
   };
 
 } // namespace Model

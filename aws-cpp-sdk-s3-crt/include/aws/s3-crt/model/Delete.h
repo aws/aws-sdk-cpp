@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::Vector<ObjectIdentifier> m_objects;
-    bool m_objectsHasBeenSet;
+    bool m_objectsHasBeenSet = false;
 
     bool m_quiet;
-    bool m_quietHasBeenSet;
+    bool m_quietHasBeenSet = false;
   };
 
 } // namespace Model

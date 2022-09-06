@@ -248,19 +248,19 @@ namespace Model
   private:
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
-    bool m_playerSessionCreationPolicyHasBeenSet;
+    bool m_playerSessionCreationPolicyHasBeenSet = false;
 
     ProtectionPolicy m_protectionPolicy;
-    bool m_protectionPolicyHasBeenSet;
+    bool m_protectionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

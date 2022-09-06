@@ -72,7 +72,7 @@ namespace Model
   private:
 
     CloudWatchLogOptions m_cloudWatchLogOptions;
-    bool m_cloudWatchLogOptionsHasBeenSet;
+    bool m_cloudWatchLogOptionsHasBeenSet = false;
   };
 
 } // namespace Model

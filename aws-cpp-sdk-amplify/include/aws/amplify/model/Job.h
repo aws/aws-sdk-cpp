@@ -113,10 +113,10 @@ namespace Model
   private:
 
     JobSummary m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::Vector<Step> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
   };
 
 } // namespace Model

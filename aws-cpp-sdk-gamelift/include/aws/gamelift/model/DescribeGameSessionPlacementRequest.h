@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_placementId;
-    bool m_placementIdHasBeenSet;
+    bool m_placementIdHasBeenSet = false;
   };
 
 } // namespace Model

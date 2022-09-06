@@ -133,7 +133,7 @@ namespace Model
   private:
 
     Aws::String m_processName;
-    bool m_processNameHasBeenSet;
+    bool m_processNameHasBeenSet = false;
   };
 
 } // namespace Model

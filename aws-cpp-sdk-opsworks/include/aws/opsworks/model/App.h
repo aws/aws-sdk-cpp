@@ -685,46 +685,46 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_shortname;
-    bool m_shortnameHasBeenSet;
+    bool m_shortnameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<DataSource> m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
 
     AppType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Source m_appSource;
-    bool m_appSourceHasBeenSet;
+    bool m_appSourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domains;
-    bool m_domainsHasBeenSet;
+    bool m_domainsHasBeenSet = false;
 
     bool m_enableSsl;
-    bool m_enableSslHasBeenSet;
+    bool m_enableSslHasBeenSet = false;
 
     SslConfiguration m_sslConfiguration;
-    bool m_sslConfigurationHasBeenSet;
+    bool m_sslConfigurationHasBeenSet = false;
 
     Aws::Map<AppAttributesKeys, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<EnvironmentVariable> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
   };
 
 } // namespace Model

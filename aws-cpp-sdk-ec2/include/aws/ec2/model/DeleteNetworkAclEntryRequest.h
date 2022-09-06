@@ -154,16 +154,16 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_egress;
-    bool m_egressHasBeenSet;
+    bool m_egressHasBeenSet = false;
 
     Aws::String m_networkAclId;
-    bool m_networkAclIdHasBeenSet;
+    bool m_networkAclIdHasBeenSet = false;
 
     int m_ruleNumber;
-    bool m_ruleNumberHasBeenSet;
+    bool m_ruleNumberHasBeenSet = false;
   };
 
 } // namespace Model

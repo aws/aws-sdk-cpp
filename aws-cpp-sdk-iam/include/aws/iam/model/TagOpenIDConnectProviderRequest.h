@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_openIDConnectProviderArn;
-    bool m_openIDConnectProviderArnHasBeenSet;
+    bool m_openIDConnectProviderArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

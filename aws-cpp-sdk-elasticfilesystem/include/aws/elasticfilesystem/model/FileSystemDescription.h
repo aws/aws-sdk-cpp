@@ -849,55 +849,55 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_creationToken;
-    bool m_creationTokenHasBeenSet;
+    bool m_creationTokenHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_fileSystemArn;
-    bool m_fileSystemArnHasBeenSet;
+    bool m_fileSystemArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     LifeCycleState m_lifeCycleState;
-    bool m_lifeCycleStateHasBeenSet;
+    bool m_lifeCycleStateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_numberOfMountTargets;
-    bool m_numberOfMountTargetsHasBeenSet;
+    bool m_numberOfMountTargetsHasBeenSet = false;
 
     FileSystemSize m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
 
     PerformanceMode m_performanceMode;
-    bool m_performanceModeHasBeenSet;
+    bool m_performanceModeHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     ThroughputMode m_throughputMode;
-    bool m_throughputModeHasBeenSet;
+    bool m_throughputModeHasBeenSet = false;
 
     double m_provisionedThroughputInMibps;
-    bool m_provisionedThroughputInMibpsHasBeenSet;
+    bool m_provisionedThroughputInMibpsHasBeenSet = false;
 
     Aws::String m_availabilityZoneName;
-    bool m_availabilityZoneNameHasBeenSet;
+    bool m_availabilityZoneNameHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -150,13 +150,13 @@ namespace Model
   private:
 
     bool m_connected;
-    bool m_connectedHasBeenSet;
+    bool m_connectedHasBeenSet = false;
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_disconnectReason;
-    bool m_disconnectReasonHasBeenSet;
+    bool m_disconnectReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -218,13 +218,13 @@ namespace Model
   private:
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_replacementTags;
-    bool m_replacementTagsHasBeenSet;
+    bool m_replacementTagsHasBeenSet = false;
 
     ReplacementEmailContent m_replacementEmailContent;
-    bool m_replacementEmailContentHasBeenSet;
+    bool m_replacementEmailContentHasBeenSet = false;
   };
 
 } // namespace Model

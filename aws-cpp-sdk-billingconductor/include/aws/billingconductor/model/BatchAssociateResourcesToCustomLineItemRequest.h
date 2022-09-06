@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     CustomLineItemBillingPeriodRange m_billingPeriodRange;
-    bool m_billingPeriodRangeHasBeenSet;
+    bool m_billingPeriodRangeHasBeenSet = false;
   };
 
 } // namespace Model

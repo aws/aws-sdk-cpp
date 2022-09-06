@@ -386,31 +386,31 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_nameContains;
-    bool m_nameContainsHasBeenSet;
+    bool m_nameContainsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeBefore;
-    bool m_creationTimeBeforeHasBeenSet;
+    bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeAfter;
-    bool m_creationTimeAfterHasBeenSet;
+    bool m_creationTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTimeBefore;
-    bool m_modifiedTimeBeforeHasBeenSet;
+    bool m_modifiedTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTimeAfter;
-    bool m_modifiedTimeAfterHasBeenSet;
+    bool m_modifiedTimeAfterHasBeenSet = false;
 
     AppImageConfigSortKey m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

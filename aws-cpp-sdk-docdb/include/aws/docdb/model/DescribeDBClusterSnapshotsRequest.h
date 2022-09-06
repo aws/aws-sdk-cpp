@@ -584,28 +584,28 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterSnapshotIdentifier;
-    bool m_dBClusterSnapshotIdentifierHasBeenSet;
+    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotType;
-    bool m_snapshotTypeHasBeenSet;
+    bool m_snapshotTypeHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_includeShared;
-    bool m_includeSharedHasBeenSet;
+    bool m_includeSharedHasBeenSet = false;
 
     bool m_includePublic;
-    bool m_includePublicHasBeenSet;
+    bool m_includePublicHasBeenSet = false;
   };
 
 } // namespace Model

@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_imageIdentifier;
-    bool m_imageIdentifierHasBeenSet;
+    bool m_imageIdentifierHasBeenSet = false;
 
     ImageConfiguration m_imageConfiguration;
-    bool m_imageConfigurationHasBeenSet;
+    bool m_imageConfigurationHasBeenSet = false;
 
     ImageRepositoryType m_imageRepositoryType;
-    bool m_imageRepositoryTypeHasBeenSet;
+    bool m_imageRepositoryTypeHasBeenSet = false;
   };
 
 } // namespace Model

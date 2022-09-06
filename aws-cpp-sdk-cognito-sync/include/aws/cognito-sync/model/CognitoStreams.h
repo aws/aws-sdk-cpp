@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     StreamingStatus m_streamingStatus;
-    bool m_streamingStatusHasBeenSet;
+    bool m_streamingStatusHasBeenSet = false;
   };
 
 } // namespace Model

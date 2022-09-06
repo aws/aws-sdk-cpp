@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<StatelessCustomPublishMetricActionDimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,7 @@ namespace Model
   private:
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

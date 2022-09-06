@@ -412,34 +412,34 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
     Aws::String m_hyperParameterTuningJobArn;
-    bool m_hyperParameterTuningJobArnHasBeenSet;
+    bool m_hyperParameterTuningJobArnHasBeenSet = false;
 
     HyperParameterTuningJobStatus m_hyperParameterTuningJobStatus;
-    bool m_hyperParameterTuningJobStatusHasBeenSet;
+    bool m_hyperParameterTuningJobStatusHasBeenSet = false;
 
     HyperParameterTuningJobStrategyType m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_hyperParameterTuningEndTime;
-    bool m_hyperParameterTuningEndTimeHasBeenSet;
+    bool m_hyperParameterTuningEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     TrainingJobStatusCounters m_trainingJobStatusCounters;
-    bool m_trainingJobStatusCountersHasBeenSet;
+    bool m_trainingJobStatusCountersHasBeenSet = false;
 
     ObjectiveStatusCounters m_objectiveStatusCounters;
-    bool m_objectiveStatusCountersHasBeenSet;
+    bool m_objectiveStatusCountersHasBeenSet = false;
 
     ResourceLimits m_resourceLimits;
-    bool m_resourceLimitsHasBeenSet;
+    bool m_resourceLimitsHasBeenSet = false;
   };
 
 } // namespace Model

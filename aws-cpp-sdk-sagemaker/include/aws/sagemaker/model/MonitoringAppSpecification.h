@@ -288,19 +288,19 @@ namespace Model
   private:
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerEntrypoint;
-    bool m_containerEntrypointHasBeenSet;
+    bool m_containerEntrypointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerArguments;
-    bool m_containerArgumentsHasBeenSet;
+    bool m_containerArgumentsHasBeenSet = false;
 
     Aws::String m_recordPreprocessorSourceUri;
-    bool m_recordPreprocessorSourceUriHasBeenSet;
+    bool m_recordPreprocessorSourceUriHasBeenSet = false;
 
     Aws::String m_postAnalyticsProcessorSourceUri;
-    bool m_postAnalyticsProcessorSourceUriHasBeenSet;
+    bool m_postAnalyticsProcessorSourceUriHasBeenSet = false;
   };
 
 } // namespace Model

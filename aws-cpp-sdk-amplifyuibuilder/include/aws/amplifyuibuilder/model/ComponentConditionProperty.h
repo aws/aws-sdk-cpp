@@ -319,25 +319,25 @@ namespace Model
   private:
 
     std::shared_ptr<ComponentProperty> m_else;
-    bool m_elseHasBeenSet;
+    bool m_elseHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_operand;
-    bool m_operandHasBeenSet;
+    bool m_operandHasBeenSet = false;
 
     Aws::String m_operandType;
-    bool m_operandTypeHasBeenSet;
+    bool m_operandTypeHasBeenSet = false;
 
     Aws::String m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::String m_property;
-    bool m_propertyHasBeenSet;
+    bool m_propertyHasBeenSet = false;
 
     std::shared_ptr<ComponentProperty> m_then;
-    bool m_thenHasBeenSet;
+    bool m_thenHasBeenSet = false;
   };
 
 } // namespace Model

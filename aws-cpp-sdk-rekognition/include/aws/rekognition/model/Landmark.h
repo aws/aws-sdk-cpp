@@ -137,13 +137,13 @@ namespace Model
   private:
 
     LandmarkType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_x;
-    bool m_xHasBeenSet;
+    bool m_xHasBeenSet = false;
 
     double m_y;
-    bool m_yHasBeenSet;
+    bool m_yHasBeenSet = false;
   };
 
 } // namespace Model

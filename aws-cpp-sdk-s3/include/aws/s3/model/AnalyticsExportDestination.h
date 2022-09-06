@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AnalyticsS3BucketDestination m_s3BucketDestination;
-    bool m_s3BucketDestinationHasBeenSet;
+    bool m_s3BucketDestinationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -82,7 +82,7 @@ ElasticInferenceClient::~ElasticInferenceClient()
 
 void ElasticInferenceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Elastic Inference");
+  AWSClient::SetServiceClientName("Elastic Inference");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

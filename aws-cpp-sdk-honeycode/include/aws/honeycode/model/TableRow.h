@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::Vector<Cell> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
   };
 
 } // namespace Model

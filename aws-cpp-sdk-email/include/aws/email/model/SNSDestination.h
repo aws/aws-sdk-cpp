@@ -127,7 +127,7 @@ namespace Model
   private:
 
     Aws::String m_topicARN;
-    bool m_topicARNHasBeenSet;
+    bool m_topicARNHasBeenSet = false;
   };
 
 } // namespace Model

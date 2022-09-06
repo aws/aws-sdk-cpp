@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Partition m_attributePartition;
-    bool m_attributePartitionHasBeenSet;
+    bool m_attributePartitionHasBeenSet = false;
 
     TimestampPartition m_timestampPartition;
-    bool m_timestampPartitionHasBeenSet;
+    bool m_timestampPartitionHasBeenSet = false;
   };
 
 } // namespace Model

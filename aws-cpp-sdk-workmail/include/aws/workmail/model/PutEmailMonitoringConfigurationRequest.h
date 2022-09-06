@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

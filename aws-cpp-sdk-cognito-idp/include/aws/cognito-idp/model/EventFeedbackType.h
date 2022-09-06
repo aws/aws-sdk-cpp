@@ -144,13 +144,13 @@ namespace Model
   private:
 
     FeedbackValueType m_feedbackValue;
-    bool m_feedbackValueHasBeenSet;
+    bool m_feedbackValueHasBeenSet = false;
 
     Aws::String m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     Aws::Utils::DateTime m_feedbackDate;
-    bool m_feedbackDateHasBeenSet;
+    bool m_feedbackDateHasBeenSet = false;
   };
 
 } // namespace Model

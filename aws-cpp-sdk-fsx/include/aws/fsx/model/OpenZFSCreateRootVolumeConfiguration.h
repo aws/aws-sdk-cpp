@@ -339,22 +339,22 @@ namespace Model
   private:
 
     int m_recordSizeKiB;
-    bool m_recordSizeKiBHasBeenSet;
+    bool m_recordSizeKiBHasBeenSet = false;
 
     OpenZFSDataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     Aws::Vector<OpenZFSNfsExport> m_nfsExports;
-    bool m_nfsExportsHasBeenSet;
+    bool m_nfsExportsHasBeenSet = false;
 
     Aws::Vector<OpenZFSUserOrGroupQuota> m_userAndGroupQuotas;
-    bool m_userAndGroupQuotasHasBeenSet;
+    bool m_userAndGroupQuotasHasBeenSet = false;
 
     bool m_copyTagsToSnapshots;
-    bool m_copyTagsToSnapshotsHasBeenSet;
+    bool m_copyTagsToSnapshotsHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
   };
 
 } // namespace Model

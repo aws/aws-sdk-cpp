@@ -265,16 +265,16 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     bool m_skipFinalClusterSnapshot;
-    bool m_skipFinalClusterSnapshotHasBeenSet;
+    bool m_skipFinalClusterSnapshotHasBeenSet = false;
 
     Aws::String m_finalClusterSnapshotIdentifier;
-    bool m_finalClusterSnapshotIdentifierHasBeenSet;
+    bool m_finalClusterSnapshotIdentifierHasBeenSet = false;
 
     int m_finalClusterSnapshotRetentionPeriod;
-    bool m_finalClusterSnapshotRetentionPeriodHasBeenSet;
+    bool m_finalClusterSnapshotRetentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_devAddr;
-    bool m_devAddrHasBeenSet;
+    bool m_devAddrHasBeenSet = false;
 
     SessionKeysAbpV1_1 m_sessionKeys;
-    bool m_sessionKeysHasBeenSet;
+    bool m_sessionKeysHasBeenSet = false;
 
     int m_fCntStart;
-    bool m_fCntStartHasBeenSet;
+    bool m_fCntStartHasBeenSet = false;
   };
 
 } // namespace Model

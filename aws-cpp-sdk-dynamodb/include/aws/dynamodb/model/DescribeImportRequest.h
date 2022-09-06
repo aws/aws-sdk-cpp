@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_importArn;
-    bool m_importArnHasBeenSet;
+    bool m_importArnHasBeenSet = false;
   };
 
 } // namespace Model

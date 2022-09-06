@@ -380,28 +380,28 @@ namespace Model
   private:
 
     Aws::String m_localProfileId;
-    bool m_localProfileIdHasBeenSet;
+    bool m_localProfileIdHasBeenSet = false;
 
     Aws::String m_partnerProfileId;
-    bool m_partnerProfileIdHasBeenSet;
+    bool m_partnerProfileIdHasBeenSet = false;
 
     Aws::String m_messageSubject;
-    bool m_messageSubjectHasBeenSet;
+    bool m_messageSubjectHasBeenSet = false;
 
     CompressionEnum m_compression;
-    bool m_compressionHasBeenSet;
+    bool m_compressionHasBeenSet = false;
 
     EncryptionAlg m_encryptionAlgorithm;
-    bool m_encryptionAlgorithmHasBeenSet;
+    bool m_encryptionAlgorithmHasBeenSet = false;
 
     SigningAlg m_signingAlgorithm;
-    bool m_signingAlgorithmHasBeenSet;
+    bool m_signingAlgorithmHasBeenSet = false;
 
     MdnSigningAlg m_mdnSigningAlgorithm;
-    bool m_mdnSigningAlgorithmHasBeenSet;
+    bool m_mdnSigningAlgorithmHasBeenSet = false;
 
     MdnResponse m_mdnResponse;
-    bool m_mdnResponseHasBeenSet;
+    bool m_mdnResponseHasBeenSet = false;
   };
 
 } // namespace Model

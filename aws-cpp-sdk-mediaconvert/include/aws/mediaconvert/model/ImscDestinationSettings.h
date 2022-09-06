@@ -169,10 +169,10 @@ namespace Model
   private:
 
     ImscAccessibilitySubs m_accessibility;
-    bool m_accessibilityHasBeenSet;
+    bool m_accessibilityHasBeenSet = false;
 
     ImscStylePassthrough m_stylePassthrough;
-    bool m_stylePassthroughHasBeenSet;
+    bool m_stylePassthroughHasBeenSet = false;
   };
 
 } // namespace Model

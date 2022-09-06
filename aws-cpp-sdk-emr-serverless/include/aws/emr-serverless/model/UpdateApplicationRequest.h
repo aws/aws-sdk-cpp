@@ -334,25 +334,25 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, InitialCapacityConfig> m_initialCapacity;
-    bool m_initialCapacityHasBeenSet;
+    bool m_initialCapacityHasBeenSet = false;
 
     MaximumAllowedResources m_maximumCapacity;
-    bool m_maximumCapacityHasBeenSet;
+    bool m_maximumCapacityHasBeenSet = false;
 
     AutoStartConfig m_autoStartConfiguration;
-    bool m_autoStartConfigurationHasBeenSet;
+    bool m_autoStartConfigurationHasBeenSet = false;
 
     AutoStopConfig m_autoStopConfiguration;
-    bool m_autoStopConfigurationHasBeenSet;
+    bool m_autoStopConfigurationHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,7 @@ namespace Model
   private:
 
     int m_maxBuckets;
-    bool m_maxBucketsHasBeenSet;
+    bool m_maxBucketsHasBeenSet = false;
   };
 
 } // namespace Model

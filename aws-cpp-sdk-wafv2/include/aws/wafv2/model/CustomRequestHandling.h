@@ -136,7 +136,7 @@ namespace Model
   private:
 
     Aws::Vector<CustomHTTPHeader> m_insertHeaders;
-    bool m_insertHeadersHasBeenSet;
+    bool m_insertHeadersHasBeenSet = false;
   };
 
 } // namespace Model

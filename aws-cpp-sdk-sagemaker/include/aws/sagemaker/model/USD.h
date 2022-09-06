@@ -101,13 +101,13 @@ namespace Model
   private:
 
     int m_dollars;
-    bool m_dollarsHasBeenSet;
+    bool m_dollarsHasBeenSet = false;
 
     int m_cents;
-    bool m_centsHasBeenSet;
+    bool m_centsHasBeenSet = false;
 
     int m_tenthFractionsOfACent;
-    bool m_tenthFractionsOfACentHasBeenSet;
+    bool m_tenthFractionsOfACentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,10 +114,10 @@ namespace Model
   private:
 
     AwsS3BucketWebsiteConfigurationRoutingRuleCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     AwsS3BucketWebsiteConfigurationRoutingRuleRedirect m_redirect;
-    bool m_redirectHasBeenSet;
+    bool m_redirectHasBeenSet = false;
   };
 
 } // namespace Model

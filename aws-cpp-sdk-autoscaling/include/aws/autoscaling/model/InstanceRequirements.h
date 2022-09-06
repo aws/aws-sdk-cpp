@@ -1356,67 +1356,67 @@ namespace Model
   private:
 
     VCpuCountRequest m_vCpuCount;
-    bool m_vCpuCountHasBeenSet;
+    bool m_vCpuCountHasBeenSet = false;
 
     MemoryMiBRequest m_memoryMiB;
-    bool m_memoryMiBHasBeenSet;
+    bool m_memoryMiBHasBeenSet = false;
 
     Aws::Vector<CpuManufacturer> m_cpuManufacturers;
-    bool m_cpuManufacturersHasBeenSet;
+    bool m_cpuManufacturersHasBeenSet = false;
 
     MemoryGiBPerVCpuRequest m_memoryGiBPerVCpu;
-    bool m_memoryGiBPerVCpuHasBeenSet;
+    bool m_memoryGiBPerVCpuHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedInstanceTypes;
-    bool m_excludedInstanceTypesHasBeenSet;
+    bool m_excludedInstanceTypesHasBeenSet = false;
 
     Aws::Vector<InstanceGeneration> m_instanceGenerations;
-    bool m_instanceGenerationsHasBeenSet;
+    bool m_instanceGenerationsHasBeenSet = false;
 
     int m_spotMaxPricePercentageOverLowestPrice;
-    bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet;
+    bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
     int m_onDemandMaxPricePercentageOverLowestPrice;
-    bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet;
+    bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
     BareMetal m_bareMetal;
-    bool m_bareMetalHasBeenSet;
+    bool m_bareMetalHasBeenSet = false;
 
     BurstablePerformance m_burstablePerformance;
-    bool m_burstablePerformanceHasBeenSet;
+    bool m_burstablePerformanceHasBeenSet = false;
 
     bool m_requireHibernateSupport;
-    bool m_requireHibernateSupportHasBeenSet;
+    bool m_requireHibernateSupportHasBeenSet = false;
 
     NetworkInterfaceCountRequest m_networkInterfaceCount;
-    bool m_networkInterfaceCountHasBeenSet;
+    bool m_networkInterfaceCountHasBeenSet = false;
 
     LocalStorage m_localStorage;
-    bool m_localStorageHasBeenSet;
+    bool m_localStorageHasBeenSet = false;
 
     Aws::Vector<LocalStorageType> m_localStorageTypes;
-    bool m_localStorageTypesHasBeenSet;
+    bool m_localStorageTypesHasBeenSet = false;
 
     TotalLocalStorageGBRequest m_totalLocalStorageGB;
-    bool m_totalLocalStorageGBHasBeenSet;
+    bool m_totalLocalStorageGBHasBeenSet = false;
 
     BaselineEbsBandwidthMbpsRequest m_baselineEbsBandwidthMbps;
-    bool m_baselineEbsBandwidthMbpsHasBeenSet;
+    bool m_baselineEbsBandwidthMbpsHasBeenSet = false;
 
     Aws::Vector<AcceleratorType> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
 
     AcceleratorCountRequest m_acceleratorCount;
-    bool m_acceleratorCountHasBeenSet;
+    bool m_acceleratorCountHasBeenSet = false;
 
     Aws::Vector<AcceleratorManufacturer> m_acceleratorManufacturers;
-    bool m_acceleratorManufacturersHasBeenSet;
+    bool m_acceleratorManufacturersHasBeenSet = false;
 
     Aws::Vector<AcceleratorName> m_acceleratorNames;
-    bool m_acceleratorNamesHasBeenSet;
+    bool m_acceleratorNamesHasBeenSet = false;
 
     AcceleratorTotalMemoryMiBRequest m_acceleratorTotalMemoryMiB;
-    bool m_acceleratorTotalMemoryMiBHasBeenSet;
+    bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
   };
 
 } // namespace Model

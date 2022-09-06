@@ -348,19 +348,19 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_targetName;
-    bool m_targetNameHasBeenSet;
+    bool m_targetNameHasBeenSet = false;
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_diskId;
-    bool m_diskIdHasBeenSet;
+    bool m_diskIdHasBeenSet = false;
   };
 
 } // namespace Model

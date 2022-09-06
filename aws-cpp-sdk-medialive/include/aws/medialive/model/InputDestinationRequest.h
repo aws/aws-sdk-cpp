@@ -96,7 +96,7 @@ to.
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

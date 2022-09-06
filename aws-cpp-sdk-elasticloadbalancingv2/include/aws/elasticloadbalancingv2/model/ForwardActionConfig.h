@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<TargetGroupTuple> m_targetGroups;
-    bool m_targetGroupsHasBeenSet;
+    bool m_targetGroupsHasBeenSet = false;
 
     TargetGroupStickinessConfig m_targetGroupStickinessConfig;
-    bool m_targetGroupStickinessConfigHasBeenSet;
+    bool m_targetGroupStickinessConfigHasBeenSet = false;
   };
 
 } // namespace Model

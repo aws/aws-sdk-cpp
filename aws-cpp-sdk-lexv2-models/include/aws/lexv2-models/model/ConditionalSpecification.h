@@ -171,13 +171,13 @@ namespace Model
   private:
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     Aws::Vector<ConditionalBranch> m_conditionalBranches;
-    bool m_conditionalBranchesHasBeenSet;
+    bool m_conditionalBranchesHasBeenSet = false;
 
     DefaultConditionalBranch m_defaultBranch;
-    bool m_defaultBranchHasBeenSet;
+    bool m_defaultBranchHasBeenSet = false;
   };
 
 } // namespace Model

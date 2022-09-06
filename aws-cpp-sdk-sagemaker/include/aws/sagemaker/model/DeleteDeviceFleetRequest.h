@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_deviceFleetName;
-    bool m_deviceFleetNameHasBeenSet;
+    bool m_deviceFleetNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -186,16 +186,16 @@ namespace Model
   private:
 
     ScalarType m_scalarType;
-    bool m_scalarTypeHasBeenSet;
+    bool m_scalarTypeHasBeenSet = false;
 
     std::shared_ptr<ColumnInfo> m_arrayColumnInfo;
-    bool m_arrayColumnInfoHasBeenSet;
+    bool m_arrayColumnInfoHasBeenSet = false;
 
     std::shared_ptr<ColumnInfo> m_timeSeriesMeasureValueColumnInfo;
-    bool m_timeSeriesMeasureValueColumnInfoHasBeenSet;
+    bool m_timeSeriesMeasureValueColumnInfoHasBeenSet = false;
 
     Aws::Vector<ColumnInfo> m_rowColumnInfo;
-    bool m_rowColumnInfoHasBeenSet;
+    bool m_rowColumnInfoHasBeenSet = false;
   };
 
 } // namespace Model

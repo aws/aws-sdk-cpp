@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_masterRegion;
-    bool m_masterRegionHasBeenSet;
+    bool m_masterRegionHasBeenSet = false;
 
     FunctionVersion m_functionVersion;
-    bool m_functionVersionHasBeenSet;
+    bool m_functionVersionHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

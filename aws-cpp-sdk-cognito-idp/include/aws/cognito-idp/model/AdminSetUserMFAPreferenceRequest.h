@@ -182,16 +182,16 @@ namespace Model
   private:
 
     SMSMfaSettingsType m_sMSMfaSettings;
-    bool m_sMSMfaSettingsHasBeenSet;
+    bool m_sMSMfaSettingsHasBeenSet = false;
 
     SoftwareTokenMfaSettingsType m_softwareTokenMfaSettings;
-    bool m_softwareTokenMfaSettingsHasBeenSet;
+    bool m_softwareTokenMfaSettingsHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_associationArn;
-    bool m_associationArnHasBeenSet;
+    bool m_associationArnHasBeenSet = false;
   };
 
 } // namespace Model

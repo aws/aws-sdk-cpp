@@ -227,13 +227,13 @@ namespace Model
   private:
 
     Aws::String m_taskrunnerId;
-    bool m_taskrunnerIdHasBeenSet;
+    bool m_taskrunnerIdHasBeenSet = false;
 
     Aws::String m_workerGroup;
-    bool m_workerGroupHasBeenSet;
+    bool m_workerGroupHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
   };
 
 } // namespace Model

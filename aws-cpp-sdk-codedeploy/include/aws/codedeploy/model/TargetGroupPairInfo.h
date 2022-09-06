@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::Vector<TargetGroupInfo> m_targetGroups;
-    bool m_targetGroupsHasBeenSet;
+    bool m_targetGroupsHasBeenSet = false;
 
     TrafficRoute m_prodTrafficRoute;
-    bool m_prodTrafficRouteHasBeenSet;
+    bool m_prodTrafficRouteHasBeenSet = false;
 
     TrafficRoute m_testTrafficRoute;
-    bool m_testTrafficRouteHasBeenSet;
+    bool m_testTrafficRouteHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_metadataKey;
-    bool m_metadataKeyHasBeenSet;
+    bool m_metadataKeyHasBeenSet = false;
 
     Aws::String m_metadataValue;
-    bool m_metadataValueHasBeenSet;
+    bool m_metadataValueHasBeenSet = false;
   };
 
 } // namespace Model

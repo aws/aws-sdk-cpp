@@ -277,22 +277,22 @@ namespace Model
   private:
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_registryArn;
-    bool m_registryArnHasBeenSet;
+    bool m_registryArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RegistryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

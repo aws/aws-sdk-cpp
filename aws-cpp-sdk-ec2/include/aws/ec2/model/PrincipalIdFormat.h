@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<IdFormat> m_statuses;
-    bool m_statusesHasBeenSet;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

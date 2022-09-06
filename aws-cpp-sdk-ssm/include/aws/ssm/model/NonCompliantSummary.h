@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_nonCompliantCount;
-    bool m_nonCompliantCountHasBeenSet;
+    bool m_nonCompliantCountHasBeenSet = false;
 
     SeveritySummary m_severitySummary;
-    bool m_severitySummaryHasBeenSet;
+    bool m_severitySummaryHasBeenSet = false;
   };
 
 } // namespace Model

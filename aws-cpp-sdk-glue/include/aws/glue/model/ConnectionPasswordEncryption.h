@@ -171,10 +171,10 @@ namespace Model
   private:
 
     bool m_returnConnectionPasswordEncrypted;
-    bool m_returnConnectionPasswordEncryptedHasBeenSet;
+    bool m_returnConnectionPasswordEncryptedHasBeenSet = false;
 
     Aws::String m_awsKmsKeyId;
-    bool m_awsKmsKeyIdHasBeenSet;
+    bool m_awsKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

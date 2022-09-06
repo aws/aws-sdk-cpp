@@ -118,7 +118,7 @@ AppConfigClient::~AppConfigClient()
 
 void AppConfigClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AppConfig");
+  AWSClient::SetServiceClientName("AppConfig");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_iotThingName;
-    bool m_iotThingNameHasBeenSet;
+    bool m_iotThingNameHasBeenSet = false;
   };
 
 } // namespace Model

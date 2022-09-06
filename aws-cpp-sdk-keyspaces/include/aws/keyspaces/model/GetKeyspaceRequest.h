@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_keyspaceName;
-    bool m_keyspaceNameHasBeenSet;
+    bool m_keyspaceNameHasBeenSet = false;
   };
 
 } // namespace Model

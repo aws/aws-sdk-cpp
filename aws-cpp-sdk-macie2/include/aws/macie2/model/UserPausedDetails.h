@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_jobExpiresAt;
-    bool m_jobExpiresAtHasBeenSet;
+    bool m_jobExpiresAtHasBeenSet = false;
 
     Aws::String m_jobImminentExpirationHealthEventArn;
-    bool m_jobImminentExpirationHealthEventArnHasBeenSet;
+    bool m_jobImminentExpirationHealthEventArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_jobPausedAt;
-    bool m_jobPausedAtHasBeenSet;
+    bool m_jobPausedAtHasBeenSet = false;
   };
 
 } // namespace Model

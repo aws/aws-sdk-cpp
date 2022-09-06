@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

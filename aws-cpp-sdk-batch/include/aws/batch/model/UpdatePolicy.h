@@ -94,10 +94,10 @@ namespace Model
   private:
 
     bool m_terminateJobsOnUpdate;
-    bool m_terminateJobsOnUpdateHasBeenSet;
+    bool m_terminateJobsOnUpdateHasBeenSet = false;
 
     long long m_jobExecutionTimeoutMinutes;
-    bool m_jobExecutionTimeoutMinutesHasBeenSet;
+    bool m_jobExecutionTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

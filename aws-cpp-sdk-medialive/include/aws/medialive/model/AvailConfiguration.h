@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AvailSettings m_availSettings;
-    bool m_availSettingsHasBeenSet;
+    bool m_availSettingsHasBeenSet = false;
   };
 
 } // namespace Model

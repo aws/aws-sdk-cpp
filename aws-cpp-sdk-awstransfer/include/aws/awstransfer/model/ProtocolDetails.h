@@ -490,16 +490,16 @@ namespace Model
   private:
 
     Aws::String m_passiveIp;
-    bool m_passiveIpHasBeenSet;
+    bool m_passiveIpHasBeenSet = false;
 
     TlsSessionResumptionMode m_tlsSessionResumptionMode;
-    bool m_tlsSessionResumptionModeHasBeenSet;
+    bool m_tlsSessionResumptionModeHasBeenSet = false;
 
     SetStatOption m_setStatOption;
-    bool m_setStatOptionHasBeenSet;
+    bool m_setStatOptionHasBeenSet = false;
 
     Aws::Vector<As2Transport> m_as2Transports;
-    bool m_as2TransportsHasBeenSet;
+    bool m_as2TransportsHasBeenSet = false;
   };
 
 } // namespace Model

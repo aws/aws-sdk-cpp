@@ -531,31 +531,31 @@ namespace Model
   private:
 
     Aws::String m_slotTypeName;
-    bool m_slotTypeNameHasBeenSet;
+    bool m_slotTypeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<SlotTypeValue> m_slotTypeValues;
-    bool m_slotTypeValuesHasBeenSet;
+    bool m_slotTypeValuesHasBeenSet = false;
 
     SlotValueSelectionSetting m_valueSelectionSetting;
-    bool m_valueSelectionSettingHasBeenSet;
+    bool m_valueSelectionSettingHasBeenSet = false;
 
     Aws::String m_parentSlotTypeSignature;
-    bool m_parentSlotTypeSignatureHasBeenSet;
+    bool m_parentSlotTypeSignatureHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     ExternalSourceSetting m_externalSourceSetting;
-    bool m_externalSourceSettingHasBeenSet;
+    bool m_externalSourceSettingHasBeenSet = false;
   };
 
 } // namespace Model

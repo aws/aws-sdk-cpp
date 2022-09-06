@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<IntegerHyperParameterRange> m_integerHyperParameterRanges;
-    bool m_integerHyperParameterRangesHasBeenSet;
+    bool m_integerHyperParameterRangesHasBeenSet = false;
 
     Aws::Vector<ContinuousHyperParameterRange> m_continuousHyperParameterRanges;
-    bool m_continuousHyperParameterRangesHasBeenSet;
+    bool m_continuousHyperParameterRangesHasBeenSet = false;
 
     Aws::Vector<CategoricalHyperParameterRange> m_categoricalHyperParameterRanges;
-    bool m_categoricalHyperParameterRangesHasBeenSet;
+    bool m_categoricalHyperParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

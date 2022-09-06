@@ -114,10 +114,10 @@ namespace Model
   private:
 
     CachePolicyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CachePolicy m_cachePolicy;
-    bool m_cachePolicyHasBeenSet;
+    bool m_cachePolicyHasBeenSet = false;
   };
 
 } // namespace Model

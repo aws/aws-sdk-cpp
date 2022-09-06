@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::Vector<IntegerParameterRange> m_integerParameterRanges;
-    bool m_integerParameterRangesHasBeenSet;
+    bool m_integerParameterRangesHasBeenSet = false;
 
     Aws::Vector<ContinuousParameterRange> m_continuousParameterRanges;
-    bool m_continuousParameterRangesHasBeenSet;
+    bool m_continuousParameterRangesHasBeenSet = false;
 
     Aws::Vector<CategoricalParameterRange> m_categoricalParameterRanges;
-    bool m_categoricalParameterRangesHasBeenSet;
+    bool m_categoricalParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

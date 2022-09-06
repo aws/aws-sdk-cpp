@@ -84,10 +84,10 @@ namespace Model
   private:
 
     long long m_timeInSeconds;
-    bool m_timeInSecondsHasBeenSet;
+    bool m_timeInSecondsHasBeenSet = false;
 
     int m_offsetInNanos;
-    bool m_offsetInNanosHasBeenSet;
+    bool m_offsetInNanosHasBeenSet = false;
   };
 
 } // namespace Model

@@ -316,22 +316,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_featureTransformationArn;
-    bool m_featureTransformationArnHasBeenSet;
+    bool m_featureTransformationArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultParameters;
-    bool m_defaultParametersHasBeenSet;
+    bool m_defaultParametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

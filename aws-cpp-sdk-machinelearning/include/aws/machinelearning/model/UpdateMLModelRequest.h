@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::String m_mLModelName;
-    bool m_mLModelNameHasBeenSet;
+    bool m_mLModelNameHasBeenSet = false;
 
     double m_scoreThreshold;
-    bool m_scoreThresholdHasBeenSet;
+    bool m_scoreThresholdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -331,25 +331,25 @@ namespace Model
   private:
 
     Aws::String m_targetTableName;
-    bool m_targetTableNameHasBeenSet;
+    bool m_targetTableNameHasBeenSet = false;
 
     Aws::String m_backupArn;
-    bool m_backupArnHasBeenSet;
+    bool m_backupArnHasBeenSet = false;
 
     BillingMode m_billingModeOverride;
-    bool m_billingModeOverrideHasBeenSet;
+    bool m_billingModeOverrideHasBeenSet = false;
 
     Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexOverride;
-    bool m_globalSecondaryIndexOverrideHasBeenSet;
+    bool m_globalSecondaryIndexOverrideHasBeenSet = false;
 
     Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexOverride;
-    bool m_localSecondaryIndexOverrideHasBeenSet;
+    bool m_localSecondaryIndexOverrideHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
 
     SSESpecification m_sSESpecificationOverride;
-    bool m_sSESpecificationOverrideHasBeenSet;
+    bool m_sSESpecificationOverrideHasBeenSet = false;
   };
 
 } // namespace Model

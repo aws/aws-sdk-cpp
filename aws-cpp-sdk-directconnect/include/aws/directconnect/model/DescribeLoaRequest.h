@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     LoaContentType m_loaContentType;
-    bool m_loaContentTypeHasBeenSet;
+    bool m_loaContentTypeHasBeenSet = false;
   };
 
 } // namespace Model

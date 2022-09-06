@@ -130,10 +130,10 @@ namespace Model
   private:
 
     int m_numberOfBytes;
-    bool m_numberOfBytesHasBeenSet;
+    bool m_numberOfBytesHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
   };
 
 } // namespace Model

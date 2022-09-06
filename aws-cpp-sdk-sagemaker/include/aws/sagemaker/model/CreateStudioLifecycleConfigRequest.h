@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_studioLifecycleConfigName;
-    bool m_studioLifecycleConfigNameHasBeenSet;
+    bool m_studioLifecycleConfigNameHasBeenSet = false;
 
     Aws::String m_studioLifecycleConfigContent;
-    bool m_studioLifecycleConfigContentHasBeenSet;
+    bool m_studioLifecycleConfigContentHasBeenSet = false;
 
     StudioLifecycleConfigAppType m_studioLifecycleConfigAppType;
-    bool m_studioLifecycleConfigAppTypeHasBeenSet;
+    bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

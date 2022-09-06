@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
   };
 
 } // namespace Model

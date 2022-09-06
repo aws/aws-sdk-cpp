@@ -318,22 +318,22 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_metricNamespace;
-    bool m_metricNamespaceHasBeenSet;
+    bool m_metricNamespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
 
     Aws::String m_metricUnit;
-    bool m_metricUnitHasBeenSet;
+    bool m_metricUnitHasBeenSet = false;
 
     Aws::String m_metricTimestamp;
-    bool m_metricTimestampHasBeenSet;
+    bool m_metricTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_skillGroupArn;
-    bool m_skillGroupArnHasBeenSet;
+    bool m_skillGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

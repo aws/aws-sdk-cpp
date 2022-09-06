@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
   };
 
 } // namespace Model

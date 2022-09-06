@@ -209,19 +209,19 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_aggregator;
-    bool m_aggregatorHasBeenSet;
+    bool m_aggregatorHasBeenSet = false;
 
     bool m_subType;
-    bool m_subTypeHasBeenSet;
+    bool m_subTypeHasBeenSet = false;
   };
 
 } // namespace Model

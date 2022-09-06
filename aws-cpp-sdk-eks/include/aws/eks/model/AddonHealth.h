@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<AddonIssue> m_issues;
-    bool m_issuesHasBeenSet;
+    bool m_issuesHasBeenSet = false;
   };
 
 } // namespace Model

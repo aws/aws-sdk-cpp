@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::Vector<DeleteClusterSnapshotMessage> m_identifiers;
-    bool m_identifiersHasBeenSet;
+    bool m_identifiersHasBeenSet = false;
   };
 
 } // namespace Model

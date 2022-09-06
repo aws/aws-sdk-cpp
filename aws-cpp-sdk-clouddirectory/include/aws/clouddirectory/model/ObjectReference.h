@@ -192,7 +192,7 @@ namespace Model
   private:
 
     Aws::String m_selector;
-    bool m_selectorHasBeenSet;
+    bool m_selectorHasBeenSet = false;
   };
 
 } // namespace Model

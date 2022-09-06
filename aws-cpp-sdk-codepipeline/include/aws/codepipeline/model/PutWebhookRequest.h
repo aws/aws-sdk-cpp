@@ -134,10 +134,10 @@ namespace Model
   private:
 
     WebhookDefinition m_webhook;
-    bool m_webhookHasBeenSet;
+    bool m_webhookHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

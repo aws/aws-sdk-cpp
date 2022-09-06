@@ -860,25 +860,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_messageStructure;
-    bool m_messageStructureHasBeenSet;
+    bool m_messageStructureHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
 
     Aws::String m_messageDeduplicationId;
-    bool m_messageDeduplicationIdHasBeenSet;
+    bool m_messageDeduplicationIdHasBeenSet = false;
 
     Aws::String m_messageGroupId;
-    bool m_messageGroupIdHasBeenSet;
+    bool m_messageGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

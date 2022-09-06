@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_fileId;
-    bool m_fileIdHasBeenSet;
+    bool m_fileIdHasBeenSet = false;
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

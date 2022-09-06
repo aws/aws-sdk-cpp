@@ -324,28 +324,28 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     ActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_actionDescription;
-    bool m_actionDescriptionHasBeenSet;
+    bool m_actionDescriptionHasBeenSet = false;
 
     FailureType m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     ActionHistoryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureDescription;
-    bool m_failureDescriptionHasBeenSet;
+    bool m_failureDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_executedTime;
-    bool m_executedTimeHasBeenSet;
+    bool m_executedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_finishedTime;
-    bool m_finishedTimeHasBeenSet;
+    bool m_finishedTimeHasBeenSet = false;
   };
 
 } // namespace Model

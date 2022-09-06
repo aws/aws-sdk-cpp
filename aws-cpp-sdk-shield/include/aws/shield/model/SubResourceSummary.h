@@ -198,16 +198,16 @@ namespace Model
   private:
 
     SubResourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<SummarizedAttackVector> m_attackVectors;
-    bool m_attackVectorsHasBeenSet;
+    bool m_attackVectorsHasBeenSet = false;
 
     Aws::Vector<SummarizedCounter> m_counters;
-    bool m_countersHasBeenSet;
+    bool m_countersHasBeenSet = false;
   };
 
 } // namespace Model

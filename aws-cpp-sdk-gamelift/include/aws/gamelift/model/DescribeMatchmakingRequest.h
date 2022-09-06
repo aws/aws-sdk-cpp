@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ticketIds;
-    bool m_ticketIdsHasBeenSet;
+    bool m_ticketIdsHasBeenSet = false;
   };
 
 } // namespace Model

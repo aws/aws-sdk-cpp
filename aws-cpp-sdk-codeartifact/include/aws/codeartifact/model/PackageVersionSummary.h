@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     PackageVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PackageVersionOrigin m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
   };
 
 } // namespace Model

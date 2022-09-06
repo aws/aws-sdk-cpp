@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_administratorAccountId;
-    bool m_administratorAccountIdHasBeenSet;
+    bool m_administratorAccountIdHasBeenSet = false;
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
 
     Aws::String m_masterAccount;
-    bool m_masterAccountHasBeenSet;
+    bool m_masterAccountHasBeenSet = false;
   };
 
 } // namespace Model

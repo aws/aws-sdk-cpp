@@ -140,16 +140,16 @@ namespace Model
   private:
 
     bool m_ignorePublicAcls;
-    bool m_ignorePublicAclsHasBeenSet;
+    bool m_ignorePublicAclsHasBeenSet = false;
 
     bool m_restrictPublicBuckets;
-    bool m_restrictPublicBucketsHasBeenSet;
+    bool m_restrictPublicBucketsHasBeenSet = false;
 
     bool m_blockPublicAcls;
-    bool m_blockPublicAclsHasBeenSet;
+    bool m_blockPublicAclsHasBeenSet = false;
 
     bool m_blockPublicPolicy;
-    bool m_blockPublicPolicyHasBeenSet;
+    bool m_blockPublicPolicyHasBeenSet = false;
   };
 
 } // namespace Model

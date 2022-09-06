@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::String m_customRedirectDomain;
-    bool m_customRedirectDomainHasBeenSet;
+    bool m_customRedirectDomainHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     PlatformType m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Vector<EnvironmentLanguage> m_languages;
-    bool m_languagesHasBeenSet;
+    bool m_languagesHasBeenSet = false;
   };
 
 } // namespace Model

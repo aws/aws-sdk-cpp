@@ -103,10 +103,10 @@ namespace Model
   private:
 
     RuleGroupVariablesIpSetsDetails m_ipSets;
-    bool m_ipSetsHasBeenSet;
+    bool m_ipSetsHasBeenSet = false;
 
     RuleGroupVariablesPortSetsDetails m_portSets;
-    bool m_portSetsHasBeenSet;
+    bool m_portSetsHasBeenSet = false;
   };
 
 } // namespace Model

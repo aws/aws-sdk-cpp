@@ -147,7 +147,7 @@ namespace Model
   private:
 
     FleetCapacityReservationUsageStrategy m_usageStrategy;
-    bool m_usageStrategyHasBeenSet;
+    bool m_usageStrategyHasBeenSet = false;
   };
 
 } // namespace Model

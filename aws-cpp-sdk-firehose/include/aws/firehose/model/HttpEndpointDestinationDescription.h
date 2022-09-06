@@ -386,31 +386,31 @@ namespace Model
   private:
 
     HttpEndpointDescription m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
 
     HttpEndpointBufferingHints m_bufferingHints;
-    bool m_bufferingHintsHasBeenSet;
+    bool m_bufferingHintsHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
     HttpEndpointRequestConfiguration m_requestConfiguration;
-    bool m_requestConfigurationHasBeenSet;
+    bool m_requestConfigurationHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     HttpEndpointRetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     HttpEndpointS3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationDescription m_s3DestinationDescription;
-    bool m_s3DestinationDescriptionHasBeenSet;
+    bool m_s3DestinationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

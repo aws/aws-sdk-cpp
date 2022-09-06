@@ -266,19 +266,19 @@ namespace Model
   private:
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_approximateArrivalTimestamp;
-    bool m_approximateArrivalTimestampHasBeenSet;
+    bool m_approximateArrivalTimestampHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_partitionKey;
-    bool m_partitionKeyHasBeenSet;
+    bool m_partitionKeyHasBeenSet = false;
 
     EncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
   };
 
 } // namespace Model

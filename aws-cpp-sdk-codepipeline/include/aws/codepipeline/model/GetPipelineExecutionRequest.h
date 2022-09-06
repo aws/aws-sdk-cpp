@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
   };
 
 } // namespace Model

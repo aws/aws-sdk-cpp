@@ -78,7 +78,7 @@ namespace Model
   private:
 
     RecencyDimension m_recency;
-    bool m_recencyHasBeenSet;
+    bool m_recencyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_commitIds;
-    bool m_commitIdsHasBeenSet;
+    bool m_commitIdsHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
   };
 
 } // namespace Model

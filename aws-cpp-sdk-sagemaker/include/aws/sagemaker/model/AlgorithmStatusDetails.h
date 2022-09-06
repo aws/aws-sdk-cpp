@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<AlgorithmStatusItem> m_validationStatuses;
-    bool m_validationStatusesHasBeenSet;
+    bool m_validationStatusesHasBeenSet = false;
 
     Aws::Vector<AlgorithmStatusItem> m_imageScanStatuses;
-    bool m_imageScanStatusesHasBeenSet;
+    bool m_imageScanStatusesHasBeenSet = false;
   };
 
 } // namespace Model

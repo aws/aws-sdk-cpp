@@ -366,40 +366,40 @@ namespace Model
   private:
 
     Aws::String m_networkPerformance;
-    bool m_networkPerformanceHasBeenSet;
+    bool m_networkPerformanceHasBeenSet = false;
 
     int m_maximumNetworkInterfaces;
-    bool m_maximumNetworkInterfacesHasBeenSet;
+    bool m_maximumNetworkInterfacesHasBeenSet = false;
 
     int m_maximumNetworkCards;
-    bool m_maximumNetworkCardsHasBeenSet;
+    bool m_maximumNetworkCardsHasBeenSet = false;
 
     int m_defaultNetworkCardIndex;
-    bool m_defaultNetworkCardIndexHasBeenSet;
+    bool m_defaultNetworkCardIndexHasBeenSet = false;
 
     Aws::Vector<NetworkCardInfo> m_networkCards;
-    bool m_networkCardsHasBeenSet;
+    bool m_networkCardsHasBeenSet = false;
 
     int m_ipv4AddressesPerInterface;
-    bool m_ipv4AddressesPerInterfaceHasBeenSet;
+    bool m_ipv4AddressesPerInterfaceHasBeenSet = false;
 
     int m_ipv6AddressesPerInterface;
-    bool m_ipv6AddressesPerInterfaceHasBeenSet;
+    bool m_ipv6AddressesPerInterfaceHasBeenSet = false;
 
     bool m_ipv6Supported;
-    bool m_ipv6SupportedHasBeenSet;
+    bool m_ipv6SupportedHasBeenSet = false;
 
     EnaSupport m_enaSupport;
-    bool m_enaSupportHasBeenSet;
+    bool m_enaSupportHasBeenSet = false;
 
     bool m_efaSupported;
-    bool m_efaSupportedHasBeenSet;
+    bool m_efaSupportedHasBeenSet = false;
 
     EfaInfo m_efaInfo;
-    bool m_efaInfoHasBeenSet;
+    bool m_efaInfoHasBeenSet = false;
 
     bool m_encryptionInTransitSupported;
-    bool m_encryptionInTransitSupportedHasBeenSet;
+    bool m_encryptionInTransitSupportedHasBeenSet = false;
   };
 
 } // namespace Model

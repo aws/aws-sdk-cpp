@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_parameterKey;
-    bool m_parameterKeyHasBeenSet;
+    bool m_parameterKeyHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
 
     bool m_usePreviousValue;
-    bool m_usePreviousValueHasBeenSet;
+    bool m_usePreviousValueHasBeenSet = false;
 
     Aws::String m_resolvedValue;
-    bool m_resolvedValueHasBeenSet;
+    bool m_resolvedValueHasBeenSet = false;
   };
 
 } // namespace Model

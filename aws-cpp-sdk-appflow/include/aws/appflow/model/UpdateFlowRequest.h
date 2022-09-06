@@ -277,22 +277,22 @@ namespace Model
   private:
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     TriggerConfig m_triggerConfig;
-    bool m_triggerConfigHasBeenSet;
+    bool m_triggerConfigHasBeenSet = false;
 
     SourceFlowConfig m_sourceFlowConfig;
-    bool m_sourceFlowConfigHasBeenSet;
+    bool m_sourceFlowConfigHasBeenSet = false;
 
     Aws::Vector<DestinationFlowConfig> m_destinationFlowConfigList;
-    bool m_destinationFlowConfigListHasBeenSet;
+    bool m_destinationFlowConfigListHasBeenSet = false;
 
     Aws::Vector<Task> m_tasks;
-    bool m_tasksHasBeenSet;
+    bool m_tasksHasBeenSet = false;
   };
 
 } // namespace Model

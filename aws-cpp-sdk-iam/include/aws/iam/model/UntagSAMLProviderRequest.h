@@ -167,10 +167,10 @@ namespace Model
   private:
 
     Aws::String m_sAMLProviderArn;
-    bool m_sAMLProviderArnHasBeenSet;
+    bool m_sAMLProviderArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

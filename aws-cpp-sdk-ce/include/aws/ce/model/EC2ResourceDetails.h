@@ -432,31 +432,31 @@ namespace Model
   private:
 
     Aws::String m_hourlyOnDemandRate;
-    bool m_hourlyOnDemandRateHasBeenSet;
+    bool m_hourlyOnDemandRateHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_sku;
-    bool m_skuHasBeenSet;
+    bool m_skuHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_networkPerformance;
-    bool m_networkPerformanceHasBeenSet;
+    bool m_networkPerformanceHasBeenSet = false;
 
     Aws::String m_storage;
-    bool m_storageHasBeenSet;
+    bool m_storageHasBeenSet = false;
 
     Aws::String m_vcpu;
-    bool m_vcpuHasBeenSet;
+    bool m_vcpuHasBeenSet = false;
   };
 
 } // namespace Model

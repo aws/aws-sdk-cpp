@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::Vector<InAppMessageContent> m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customConfig;
-    bool m_customConfigHasBeenSet;
+    bool m_customConfigHasBeenSet = false;
 
     Layout m_layout;
-    bool m_layoutHasBeenSet;
+    bool m_layoutHasBeenSet = false;
   };
 
 } // namespace Model

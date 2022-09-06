@@ -153,13 +153,13 @@ namespace Model
   private:
 
     S3GranteeTypeIdentifier m_typeIdentifier;
-    bool m_typeIdentifierHasBeenSet;
+    bool m_typeIdentifierHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

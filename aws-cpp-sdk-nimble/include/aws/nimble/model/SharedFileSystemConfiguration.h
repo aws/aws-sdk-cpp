@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_linuxMountPoint;
-    bool m_linuxMountPointHasBeenSet;
+    bool m_linuxMountPointHasBeenSet = false;
 
     Aws::String m_shareName;
-    bool m_shareNameHasBeenSet;
+    bool m_shareNameHasBeenSet = false;
 
     Aws::String m_windowsMountDrive;
-    bool m_windowsMountDriveHasBeenSet;
+    bool m_windowsMountDriveHasBeenSet = false;
   };
 
 } // namespace Model

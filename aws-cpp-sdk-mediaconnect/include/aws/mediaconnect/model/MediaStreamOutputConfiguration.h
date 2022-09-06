@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::Vector<DestinationConfiguration> m_destinationConfigurations;
-    bool m_destinationConfigurationsHasBeenSet;
+    bool m_destinationConfigurationsHasBeenSet = false;
 
     EncodingName m_encodingName;
-    bool m_encodingNameHasBeenSet;
+    bool m_encodingNameHasBeenSet = false;
 
     EncodingParameters m_encodingParameters;
-    bool m_encodingParametersHasBeenSet;
+    bool m_encodingParametersHasBeenSet = false;
 
     Aws::String m_mediaStreamName;
-    bool m_mediaStreamNameHasBeenSet;
+    bool m_mediaStreamNameHasBeenSet = false;
   };
 
 } // namespace Model

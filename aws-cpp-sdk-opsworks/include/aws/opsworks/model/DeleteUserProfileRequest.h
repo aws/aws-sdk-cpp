@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
   };
 
 } // namespace Model

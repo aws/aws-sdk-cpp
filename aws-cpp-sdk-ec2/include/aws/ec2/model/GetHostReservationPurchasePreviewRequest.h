@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_hostIdSet;
-    bool m_hostIdSetHasBeenSet;
+    bool m_hostIdSetHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
   };
 
 } // namespace Model

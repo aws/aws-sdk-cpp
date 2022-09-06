@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_recoveryInstanceIDs;
-    bool m_recoveryInstanceIDsHasBeenSet;
+    bool m_recoveryInstanceIDsHasBeenSet = false;
   };
 
 } // namespace Model

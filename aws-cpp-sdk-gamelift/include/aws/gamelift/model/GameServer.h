@@ -639,37 +639,37 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_gameServerGroupArn;
-    bool m_gameServerGroupArnHasBeenSet;
+    bool m_gameServerGroupArnHasBeenSet = false;
 
     Aws::String m_gameServerId;
-    bool m_gameServerIdHasBeenSet;
+    bool m_gameServerIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_connectionInfo;
-    bool m_connectionInfoHasBeenSet;
+    bool m_connectionInfoHasBeenSet = false;
 
     Aws::String m_gameServerData;
-    bool m_gameServerDataHasBeenSet;
+    bool m_gameServerDataHasBeenSet = false;
 
     GameServerClaimStatus m_claimStatus;
-    bool m_claimStatusHasBeenSet;
+    bool m_claimStatusHasBeenSet = false;
 
     GameServerUtilizationStatus m_utilizationStatus;
-    bool m_utilizationStatusHasBeenSet;
+    bool m_utilizationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_registrationTime;
-    bool m_registrationTimeHasBeenSet;
+    bool m_registrationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastClaimTime;
-    bool m_lastClaimTimeHasBeenSet;
+    bool m_lastClaimTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastHealthCheckTime;
-    bool m_lastHealthCheckTimeHasBeenSet;
+    bool m_lastHealthCheckTimeHasBeenSet = false;
   };
 
 } // namespace Model

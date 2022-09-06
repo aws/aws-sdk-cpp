@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_detailedErrorCode;
-    bool m_detailedErrorCodeHasBeenSet;
+    bool m_detailedErrorCodeHasBeenSet = false;
 
     Aws::String m_detailedErrorMessage;
-    bool m_detailedErrorMessageHasBeenSet;
+    bool m_detailedErrorMessageHasBeenSet = false;
   };
 
 } // namespace Model

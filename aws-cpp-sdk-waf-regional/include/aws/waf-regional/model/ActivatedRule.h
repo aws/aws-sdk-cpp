@@ -733,22 +733,22 @@ namespace Model
   private:
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     WafAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     WafOverrideAction m_overrideAction;
-    bool m_overrideActionHasBeenSet;
+    bool m_overrideActionHasBeenSet = false;
 
     WafRuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<ExcludedRule> m_excludedRules;
-    bool m_excludedRulesHasBeenSet;
+    bool m_excludedRulesHasBeenSet = false;
   };
 
 } // namespace Model

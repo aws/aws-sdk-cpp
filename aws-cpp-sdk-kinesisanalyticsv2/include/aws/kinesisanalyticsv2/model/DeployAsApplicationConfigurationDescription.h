@@ -78,7 +78,7 @@ namespace Model
   private:
 
     S3ContentBaseLocationDescription m_s3ContentLocationDescription;
-    bool m_s3ContentLocationDescriptionHasBeenSet;
+    bool m_s3ContentLocationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

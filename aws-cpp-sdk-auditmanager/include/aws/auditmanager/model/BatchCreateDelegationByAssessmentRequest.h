@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<CreateDelegationRequest> m_createDelegationRequests;
-    bool m_createDelegationRequestsHasBeenSet;
+    bool m_createDelegationRequestsHasBeenSet = false;
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
   };
 
 } // namespace Model

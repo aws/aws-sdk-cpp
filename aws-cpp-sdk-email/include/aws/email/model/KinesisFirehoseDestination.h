@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_iAMRoleARN;
-    bool m_iAMRoleARNHasBeenSet;
+    bool m_iAMRoleARNHasBeenSet = false;
 
     Aws::String m_deliveryStreamARN;
-    bool m_deliveryStreamARNHasBeenSet;
+    bool m_deliveryStreamARNHasBeenSet = false;
   };
 
 } // namespace Model

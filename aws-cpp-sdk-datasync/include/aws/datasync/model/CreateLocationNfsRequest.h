@@ -460,19 +460,19 @@ namespace Model
   private:
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_serverHostname;
-    bool m_serverHostnameHasBeenSet;
+    bool m_serverHostnameHasBeenSet = false;
 
     OnPremConfig m_onPremConfig;
-    bool m_onPremConfigHasBeenSet;
+    bool m_onPremConfigHasBeenSet = false;
 
     NfsMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

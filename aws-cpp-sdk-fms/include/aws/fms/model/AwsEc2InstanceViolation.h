@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::Vector<AwsEc2NetworkInterfaceViolation> m_awsEc2NetworkInterfaceViolations;
-    bool m_awsEc2NetworkInterfaceViolationsHasBeenSet;
+    bool m_awsEc2NetworkInterfaceViolationsHasBeenSet = false;
   };
 
 } // namespace Model

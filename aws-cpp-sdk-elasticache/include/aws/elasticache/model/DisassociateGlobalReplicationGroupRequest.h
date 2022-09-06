@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupRegion;
-    bool m_replicationGroupRegionHasBeenSet;
+    bool m_replicationGroupRegionHasBeenSet = false;
   };
 
 } // namespace Model

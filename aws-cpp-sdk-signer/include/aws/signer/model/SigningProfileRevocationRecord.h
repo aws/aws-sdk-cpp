@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_revocationEffectiveFrom;
-    bool m_revocationEffectiveFromHasBeenSet;
+    bool m_revocationEffectiveFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
 
     Aws::String m_revokedBy;
-    bool m_revokedByHasBeenSet;
+    bool m_revokedByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_id3;
-    bool m_id3HasBeenSet;
+    bool m_id3HasBeenSet = false;
 
     Aws::String m_timecode;
-    bool m_timecodeHasBeenSet;
+    bool m_timecodeHasBeenSet = false;
   };
 
 } // namespace Model

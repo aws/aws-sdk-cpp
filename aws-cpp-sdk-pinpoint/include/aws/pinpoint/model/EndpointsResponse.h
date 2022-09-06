@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<EndpointResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
   };
 
 } // namespace Model

@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_shareNotes;
-    bool m_shareNotesHasBeenSet;
+    bool m_shareNotesHasBeenSet = false;
 
     ShareTarget m_shareTarget;
-    bool m_shareTargetHasBeenSet;
+    bool m_shareTargetHasBeenSet = false;
 
     ShareMethod m_shareMethod;
-    bool m_shareMethodHasBeenSet;
+    bool m_shareMethodHasBeenSet = false;
   };
 
 } // namespace Model

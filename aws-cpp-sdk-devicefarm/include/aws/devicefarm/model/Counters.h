@@ -184,25 +184,25 @@ namespace Model
   private:
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     int m_passed;
-    bool m_passedHasBeenSet;
+    bool m_passedHasBeenSet = false;
 
     int m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     int m_warned;
-    bool m_warnedHasBeenSet;
+    bool m_warnedHasBeenSet = false;
 
     int m_errored;
-    bool m_erroredHasBeenSet;
+    bool m_erroredHasBeenSet = false;
 
     int m_stopped;
-    bool m_stoppedHasBeenSet;
+    bool m_stoppedHasBeenSet = false;
 
     int m_skipped;
-    bool m_skippedHasBeenSet;
+    bool m_skippedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -89,7 +89,7 @@ namespace Model
   private:
 
     WirelessGatewayServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

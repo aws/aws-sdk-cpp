@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_apiMappingId;
-    bool m_apiMappingIdHasBeenSet;
+    bool m_apiMappingIdHasBeenSet = false;
 
     Aws::String m_apiMappingKey;
-    bool m_apiMappingKeyHasBeenSet;
+    bool m_apiMappingKeyHasBeenSet = false;
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

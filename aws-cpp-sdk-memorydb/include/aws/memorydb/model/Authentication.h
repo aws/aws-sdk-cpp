@@ -93,10 +93,10 @@ namespace Model
   private:
 
     AuthenticationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_passwordCount;
-    bool m_passwordCountHasBeenSet;
+    bool m_passwordCountHasBeenSet = false;
   };
 
 } // namespace Model

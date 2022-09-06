@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_portalArn;
-    bool m_portalArnHasBeenSet;
+    bool m_portalArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -138,10 +138,10 @@ namespace Model
   private:
 
     InstanceAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     int m_terminationWaitTimeInMinutes;
-    bool m_terminationWaitTimeInMinutesHasBeenSet;
+    bool m_terminationWaitTimeInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

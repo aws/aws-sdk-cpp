@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_crawlerName;
-    bool m_crawlerNameHasBeenSet;
+    bool m_crawlerNameHasBeenSet = false;
   };
 
 } // namespace Model

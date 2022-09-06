@@ -108,10 +108,10 @@ namespace Model
   private:
 
     long long m_volumeUsageInBytes;
-    bool m_volumeUsageInBytesHasBeenSet;
+    bool m_volumeUsageInBytesHasBeenSet = false;
 
     Aws::Utils::DateTime m_volumeUsageUpdateTime;
-    bool m_volumeUsageUpdateTimeHasBeenSet;
+    bool m_volumeUsageUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

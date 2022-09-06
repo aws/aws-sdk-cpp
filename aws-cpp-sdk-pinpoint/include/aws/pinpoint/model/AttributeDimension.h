@@ -203,10 +203,10 @@ namespace Model
   private:
 
     AttributeType m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

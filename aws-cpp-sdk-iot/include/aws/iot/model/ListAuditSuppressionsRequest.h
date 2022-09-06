@@ -166,19 +166,19 @@ namespace Model
   private:
 
     Aws::String m_checkName;
-    bool m_checkNameHasBeenSet;
+    bool m_checkNameHasBeenSet = false;
 
     ResourceIdentifier m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     bool m_ascendingOrder;
-    bool m_ascendingOrderHasBeenSet;
+    bool m_ascendingOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -591,31 +591,31 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_containerInstance;
-    bool m_containerInstanceHasBeenSet;
+    bool m_containerInstanceHasBeenSet = false;
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     DesiredStatus m_desiredStatus;
-    bool m_desiredStatusHasBeenSet;
+    bool m_desiredStatusHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
   };
 
 } // namespace Model

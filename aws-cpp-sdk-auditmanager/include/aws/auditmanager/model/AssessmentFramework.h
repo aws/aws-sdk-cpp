@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     FrameworkMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::Vector<AssessmentControlSet> m_controlSets;
-    bool m_controlSetsHasBeenSet;
+    bool m_controlSetsHasBeenSet = false;
   };
 
 } // namespace Model

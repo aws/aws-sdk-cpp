@@ -140,10 +140,10 @@ namespace Model
   private:
 
     JmxExporterInfo m_jmxExporter;
-    bool m_jmxExporterHasBeenSet;
+    bool m_jmxExporterHasBeenSet = false;
 
     NodeExporterInfo m_nodeExporter;
-    bool m_nodeExporterHasBeenSet;
+    bool m_nodeExporterHasBeenSet = false;
   };
 
 } // namespace Model

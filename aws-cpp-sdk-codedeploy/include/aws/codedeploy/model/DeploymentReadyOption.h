@@ -148,10 +148,10 @@ namespace Model
   private:
 
     DeploymentReadyAction m_actionOnTimeout;
-    bool m_actionOnTimeoutHasBeenSet;
+    bool m_actionOnTimeoutHasBeenSet = false;
 
     int m_waitTimeInMinutes;
-    bool m_waitTimeInMinutesHasBeenSet;
+    bool m_waitTimeInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

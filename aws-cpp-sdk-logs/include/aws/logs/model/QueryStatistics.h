@@ -102,13 +102,13 @@ namespace Model
   private:
 
     double m_recordsMatched;
-    bool m_recordsMatchedHasBeenSet;
+    bool m_recordsMatchedHasBeenSet = false;
 
     double m_recordsScanned;
-    bool m_recordsScannedHasBeenSet;
+    bool m_recordsScannedHasBeenSet = false;
 
     double m_bytesScanned;
-    bool m_bytesScannedHasBeenSet;
+    bool m_bytesScannedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::String m_oCSPUrl;
-    bool m_oCSPUrlHasBeenSet;
+    bool m_oCSPUrlHasBeenSet = false;
   };
 
 } // namespace Model

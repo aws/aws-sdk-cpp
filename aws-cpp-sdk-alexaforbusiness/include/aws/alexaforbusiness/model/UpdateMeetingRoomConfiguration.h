@@ -192,16 +192,16 @@ namespace Model
   private:
 
     bool m_roomUtilizationMetricsEnabled;
-    bool m_roomUtilizationMetricsEnabledHasBeenSet;
+    bool m_roomUtilizationMetricsEnabledHasBeenSet = false;
 
     UpdateEndOfMeetingReminder m_endOfMeetingReminder;
-    bool m_endOfMeetingReminderHasBeenSet;
+    bool m_endOfMeetingReminderHasBeenSet = false;
 
     UpdateInstantBooking m_instantBooking;
-    bool m_instantBookingHasBeenSet;
+    bool m_instantBookingHasBeenSet = false;
 
     UpdateRequireCheckIn m_requireCheckIn;
-    bool m_requireCheckInHasBeenSet;
+    bool m_requireCheckInHasBeenSet = false;
   };
 
 } // namespace Model

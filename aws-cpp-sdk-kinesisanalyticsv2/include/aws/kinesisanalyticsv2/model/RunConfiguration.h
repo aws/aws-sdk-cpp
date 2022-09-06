@@ -160,13 +160,13 @@ namespace Model
   private:
 
     FlinkRunConfiguration m_flinkRunConfiguration;
-    bool m_flinkRunConfigurationHasBeenSet;
+    bool m_flinkRunConfigurationHasBeenSet = false;
 
     Aws::Vector<SqlRunConfiguration> m_sqlRunConfigurations;
-    bool m_sqlRunConfigurationsHasBeenSet;
+    bool m_sqlRunConfigurationsHasBeenSet = false;
 
     ApplicationRestoreConfiguration m_applicationRestoreConfiguration;
-    bool m_applicationRestoreConfigurationHasBeenSet;
+    bool m_applicationRestoreConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

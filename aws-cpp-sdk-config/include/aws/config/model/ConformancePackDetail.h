@@ -422,31 +422,31 @@ namespace Model
   private:
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     Aws::String m_conformancePackArn;
-    bool m_conformancePackArnHasBeenSet;
+    bool m_conformancePackArnHasBeenSet = false;
 
     Aws::String m_conformancePackId;
-    bool m_conformancePackIdHasBeenSet;
+    bool m_conformancePackIdHasBeenSet = false;
 
     Aws::String m_deliveryS3Bucket;
-    bool m_deliveryS3BucketHasBeenSet;
+    bool m_deliveryS3BucketHasBeenSet = false;
 
     Aws::String m_deliveryS3KeyPrefix;
-    bool m_deliveryS3KeyPrefixHasBeenSet;
+    bool m_deliveryS3KeyPrefixHasBeenSet = false;
 
     Aws::Vector<ConformancePackInputParameter> m_conformancePackInputParameters;
-    bool m_conformancePackInputParametersHasBeenSet;
+    bool m_conformancePackInputParametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateRequestedTime;
-    bool m_lastUpdateRequestedTimeHasBeenSet;
+    bool m_lastUpdateRequestedTimeHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     TemplateSSMDocumentDetails m_templateSSMDocumentDetails;
-    bool m_templateSSMDocumentDetailsHasBeenSet;
+    bool m_templateSSMDocumentDetailsHasBeenSet = false;
   };
 
 } // namespace Model

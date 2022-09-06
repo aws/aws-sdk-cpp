@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_serviceActionId;
-    bool m_serviceActionIdHasBeenSet;
+    bool m_serviceActionIdHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
   };
 
 } // namespace Model

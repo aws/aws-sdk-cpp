@@ -153,16 +153,16 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensNotes;
-    bool m_lensNotesHasBeenSet;
+    bool m_lensNotesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_pillarNotes;
-    bool m_pillarNotesHasBeenSet;
+    bool m_pillarNotesHasBeenSet = false;
   };
 
 } // namespace Model

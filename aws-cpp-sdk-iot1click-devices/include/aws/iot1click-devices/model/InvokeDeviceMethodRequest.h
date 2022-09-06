@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     DeviceMethod m_deviceMethod;
-    bool m_deviceMethodHasBeenSet;
+    bool m_deviceMethodHasBeenSet = false;
 
     Aws::String m_deviceMethodParameters;
-    bool m_deviceMethodParametersHasBeenSet;
+    bool m_deviceMethodParametersHasBeenSet = false;
   };
 
 } // namespace Model

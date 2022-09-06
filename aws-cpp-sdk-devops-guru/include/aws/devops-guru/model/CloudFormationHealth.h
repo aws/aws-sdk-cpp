@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     InsightHealth m_insight;
-    bool m_insightHasBeenSet;
+    bool m_insightHasBeenSet = false;
   };
 
 } // namespace Model

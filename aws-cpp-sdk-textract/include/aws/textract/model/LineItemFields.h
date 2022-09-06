@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<ExpenseField> m_lineItemExpenseFields;
-    bool m_lineItemExpenseFieldsHasBeenSet;
+    bool m_lineItemExpenseFieldsHasBeenSet = false;
   };
 
 } // namespace Model

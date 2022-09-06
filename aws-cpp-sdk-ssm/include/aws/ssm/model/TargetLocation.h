@@ -307,19 +307,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
 
     Aws::String m_targetLocationMaxConcurrency;
-    bool m_targetLocationMaxConcurrencyHasBeenSet;
+    bool m_targetLocationMaxConcurrencyHasBeenSet = false;
 
     Aws::String m_targetLocationMaxErrors;
-    bool m_targetLocationMaxErrorsHasBeenSet;
+    bool m_targetLocationMaxErrorsHasBeenSet = false;
 
     Aws::String m_executionRoleName;
-    bool m_executionRoleNameHasBeenSet;
+    bool m_executionRoleNameHasBeenSet = false;
   };
 
 } // namespace Model

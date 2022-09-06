@@ -1800,55 +1800,55 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_templateURL;
-    bool m_templateURLHasBeenSet;
+    bool m_templateURLHasBeenSet = false;
 
     bool m_usePreviousTemplate;
-    bool m_usePreviousTemplateHasBeenSet;
+    bool m_usePreviousTemplateHasBeenSet = false;
 
     Aws::String m_stackPolicyDuringUpdateBody;
-    bool m_stackPolicyDuringUpdateBodyHasBeenSet;
+    bool m_stackPolicyDuringUpdateBodyHasBeenSet = false;
 
     Aws::String m_stackPolicyDuringUpdateURL;
-    bool m_stackPolicyDuringUpdateURLHasBeenSet;
+    bool m_stackPolicyDuringUpdateURLHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     RollbackConfiguration m_rollbackConfiguration;
-    bool m_rollbackConfigurationHasBeenSet;
+    bool m_rollbackConfigurationHasBeenSet = false;
 
     Aws::String m_stackPolicyBody;
-    bool m_stackPolicyBodyHasBeenSet;
+    bool m_stackPolicyBodyHasBeenSet = false;
 
     Aws::String m_stackPolicyURL;
-    bool m_stackPolicyURLHasBeenSet;
+    bool m_stackPolicyURLHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationARNs;
-    bool m_notificationARNsHasBeenSet;
+    bool m_notificationARNsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_disableRollback;
-    bool m_disableRollbackHasBeenSet;
+    bool m_disableRollbackHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -207,16 +207,16 @@ namespace Model
   private:
 
     RobotDeploymentStep m_currentProgress;
-    bool m_currentProgressHasBeenSet;
+    bool m_currentProgressHasBeenSet = false;
 
     double m_percentDone;
-    bool m_percentDoneHasBeenSet;
+    bool m_percentDoneHasBeenSet = false;
 
     int m_estimatedTimeRemainingSeconds;
-    bool m_estimatedTimeRemainingSecondsHasBeenSet;
+    bool m_estimatedTimeRemainingSecondsHasBeenSet = false;
 
     Aws::String m_targetResource;
-    bool m_targetResourceHasBeenSet;
+    bool m_targetResourceHasBeenSet = false;
   };
 
 } // namespace Model

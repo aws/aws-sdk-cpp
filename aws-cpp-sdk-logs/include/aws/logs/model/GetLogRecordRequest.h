@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::String m_logRecordPointer;
-    bool m_logRecordPointerHasBeenSet;
+    bool m_logRecordPointerHasBeenSet = false;
   };
 
 } // namespace Model

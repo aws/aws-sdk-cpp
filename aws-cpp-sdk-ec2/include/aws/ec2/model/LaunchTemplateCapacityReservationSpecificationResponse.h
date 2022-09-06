@@ -141,10 +141,10 @@ namespace Model
   private:
 
     CapacityReservationPreference m_capacityReservationPreference;
-    bool m_capacityReservationPreferenceHasBeenSet;
+    bool m_capacityReservationPreferenceHasBeenSet = false;
 
     CapacityReservationTargetResponse m_capacityReservationTarget;
-    bool m_capacityReservationTargetHasBeenSet;
+    bool m_capacityReservationTargetHasBeenSet = false;
   };
 
 } // namespace Model

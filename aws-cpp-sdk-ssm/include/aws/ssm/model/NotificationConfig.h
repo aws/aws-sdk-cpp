@@ -227,13 +227,13 @@ namespace Model
   private:
 
     Aws::String m_notificationArn;
-    bool m_notificationArnHasBeenSet;
+    bool m_notificationArnHasBeenSet = false;
 
     Aws::Vector<NotificationEvent> m_notificationEvents;
-    bool m_notificationEventsHasBeenSet;
+    bool m_notificationEventsHasBeenSet = false;
 
     NotificationType m_notificationType;
-    bool m_notificationTypeHasBeenSet;
+    bool m_notificationTypeHasBeenSet = false;
   };
 
 } // namespace Model

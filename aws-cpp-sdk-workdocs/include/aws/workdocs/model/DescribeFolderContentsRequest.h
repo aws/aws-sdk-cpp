@@ -347,28 +347,28 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_folderId;
-    bool m_folderIdHasBeenSet;
+    bool m_folderIdHasBeenSet = false;
 
     ResourceSortType m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
 
     OrderType m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     FolderContentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Observation> m_observationList;
-    bool m_observationListHasBeenSet;
+    bool m_observationListHasBeenSet = false;
   };
 
 } // namespace Model

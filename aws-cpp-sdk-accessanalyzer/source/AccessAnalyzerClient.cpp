@@ -104,7 +104,7 @@ AccessAnalyzerClient::~AccessAnalyzerClient()
 
 void AccessAnalyzerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AccessAnalyzer");
+  AWSClient::SetServiceClientName("AccessAnalyzer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

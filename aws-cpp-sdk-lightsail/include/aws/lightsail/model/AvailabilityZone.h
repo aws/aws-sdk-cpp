@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_zoneName;
-    bool m_zoneNameHasBeenSet;
+    bool m_zoneNameHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -398,31 +398,31 @@ namespace Model
   private:
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::Vector<AwsCodeBuildProjectArtifactsDetails> m_artifacts;
-    bool m_artifactsHasBeenSet;
+    bool m_artifactsHasBeenSet = false;
 
     AwsCodeBuildProjectEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AwsCodeBuildProjectSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     AwsCodeBuildProjectLogsConfigDetails m_logsConfig;
-    bool m_logsConfigHasBeenSet;
+    bool m_logsConfigHasBeenSet = false;
 
     AwsCodeBuildProjectVpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Aws::Vector<AwsCodeBuildProjectArtifactsDetails> m_secondaryArtifacts;
-    bool m_secondaryArtifactsHasBeenSet;
+    bool m_secondaryArtifactsHasBeenSet = false;
   };
 
 } // namespace Model

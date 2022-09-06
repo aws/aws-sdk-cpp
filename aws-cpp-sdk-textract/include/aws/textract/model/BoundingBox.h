@@ -149,16 +149,16 @@ namespace Model
   private:
 
     double m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     double m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     double m_left;
-    bool m_leftHasBeenSet;
+    bool m_leftHasBeenSet = false;
 
     double m_top;
-    bool m_topHasBeenSet;
+    bool m_topHasBeenSet = false;
   };
 
 } // namespace Model

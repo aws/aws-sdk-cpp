@@ -226,19 +226,19 @@ namespace Model
   private:
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupArn;
-    bool m_modelPackageGroupArnHasBeenSet;
+    bool m_modelPackageGroupArnHasBeenSet = false;
 
     Aws::String m_modelPackageGroupDescription;
-    bool m_modelPackageGroupDescriptionHasBeenSet;
+    bool m_modelPackageGroupDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ModelPackageGroupStatus m_modelPackageGroupStatus;
-    bool m_modelPackageGroupStatusHasBeenSet;
+    bool m_modelPackageGroupStatusHasBeenSet = false;
   };
 
 } // namespace Model

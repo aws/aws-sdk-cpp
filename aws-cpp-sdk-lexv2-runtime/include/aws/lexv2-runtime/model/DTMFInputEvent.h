@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_inputCharacter;
-    bool m_inputCharacterHasBeenSet;
+    bool m_inputCharacterHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     long long m_clientTimestampMillis;
-    bool m_clientTimestampMillisHasBeenSet;
+    bool m_clientTimestampMillisHasBeenSet = false;
   };
 
 } // namespace Model

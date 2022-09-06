@@ -244,19 +244,19 @@ namespace Model
   private:
 
     int m_instancePort;
-    bool m_instancePortHasBeenSet;
+    bool m_instancePortHasBeenSet = false;
 
     Aws::String m_instanceProtocol;
-    bool m_instanceProtocolHasBeenSet;
+    bool m_instanceProtocolHasBeenSet = false;
 
     int m_loadBalancerPort;
-    bool m_loadBalancerPortHasBeenSet;
+    bool m_loadBalancerPortHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_sslCertificateId;
-    bool m_sslCertificateIdHasBeenSet;
+    bool m_sslCertificateIdHasBeenSet = false;
   };
 
 } // namespace Model

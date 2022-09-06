@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_displayText;
-    bool m_displayTextHasBeenSet;
+    bool m_displayTextHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

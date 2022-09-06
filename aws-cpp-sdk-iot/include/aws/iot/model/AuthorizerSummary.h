@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_authorizerName;
-    bool m_authorizerNameHasBeenSet;
+    bool m_authorizerNameHasBeenSet = false;
 
     Aws::String m_authorizerArn;
-    bool m_authorizerArnHasBeenSet;
+    bool m_authorizerArnHasBeenSet = false;
   };
 
 } // namespace Model

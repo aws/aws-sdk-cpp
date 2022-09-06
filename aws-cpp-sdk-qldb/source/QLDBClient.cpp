@@ -96,7 +96,7 @@ QLDBClient::~QLDBClient()
 
 void QLDBClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("QLDB");
+  AWSClient::SetServiceClientName("QLDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

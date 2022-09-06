@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PrivateDnsPropertiesMutable m_dnsProperties;
-    bool m_dnsPropertiesHasBeenSet;
+    bool m_dnsPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

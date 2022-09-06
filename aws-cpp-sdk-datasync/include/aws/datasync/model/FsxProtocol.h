@@ -121,10 +121,10 @@ namespace Model
   private:
 
     FsxProtocolNfs m_nFS;
-    bool m_nFSHasBeenSet;
+    bool m_nFSHasBeenSet = false;
 
     FsxProtocolSmb m_sMB;
-    bool m_sMBHasBeenSet;
+    bool m_sMBHasBeenSet = false;
   };
 
 } // namespace Model

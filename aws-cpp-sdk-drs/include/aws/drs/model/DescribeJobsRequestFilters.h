@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_fromDate;
-    bool m_fromDateHasBeenSet;
+    bool m_fromDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jobIDs;
-    bool m_jobIDsHasBeenSet;
+    bool m_jobIDsHasBeenSet = false;
 
     Aws::String m_toDate;
-    bool m_toDateHasBeenSet;
+    bool m_toDateHasBeenSet = false;
   };
 
 } // namespace Model

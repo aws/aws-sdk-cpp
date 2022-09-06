@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::Vector<ImageFormat> m_supportedFormats;
-    bool m_supportedFormatsHasBeenSet;
+    bool m_supportedFormatsHasBeenSet = false;
 
     ImageFormat m_defaultFormat;
-    bool m_defaultFormatHasBeenSet;
+    bool m_defaultFormatHasBeenSet = false;
   };
 
 } // namespace Model

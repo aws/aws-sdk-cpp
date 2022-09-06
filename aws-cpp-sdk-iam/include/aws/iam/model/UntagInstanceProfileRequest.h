@@ -167,10 +167,10 @@ namespace Model
   private:
 
     Aws::String m_instanceProfileName;
-    bool m_instanceProfileNameHasBeenSet;
+    bool m_instanceProfileNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

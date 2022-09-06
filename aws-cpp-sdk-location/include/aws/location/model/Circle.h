@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<double> m_center;
-    bool m_centerHasBeenSet;
+    bool m_centerHasBeenSet = false;
 
     double m_radius;
-    bool m_radiusHasBeenSet;
+    bool m_radiusHasBeenSet = false;
   };
 
 } // namespace Model

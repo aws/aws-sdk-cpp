@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_publishedSchemaArn;
-    bool m_publishedSchemaArnHasBeenSet;
+    bool m_publishedSchemaArnHasBeenSet = false;
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
   };
 
 } // namespace Model

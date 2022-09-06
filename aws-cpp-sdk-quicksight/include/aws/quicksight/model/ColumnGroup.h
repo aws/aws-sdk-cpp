@@ -72,7 +72,7 @@ namespace Model
   private:
 
     GeoSpatialColumnGroup m_geoSpatialColumnGroup;
-    bool m_geoSpatialColumnGroupHasBeenSet;
+    bool m_geoSpatialColumnGroupHasBeenSet = false;
   };
 
 } // namespace Model

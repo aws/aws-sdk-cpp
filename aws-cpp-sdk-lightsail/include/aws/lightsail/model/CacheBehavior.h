@@ -137,7 +137,7 @@ namespace Model
   private:
 
     BehaviorEnum m_behavior;
-    bool m_behaviorHasBeenSet;
+    bool m_behaviorHasBeenSet = false;
   };
 
 } // namespace Model

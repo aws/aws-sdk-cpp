@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_jobFlowIds;
-    bool m_jobFlowIdsHasBeenSet;
+    bool m_jobFlowIdsHasBeenSet = false;
 
     bool m_visibleToAllUsers;
-    bool m_visibleToAllUsersHasBeenSet;
+    bool m_visibleToAllUsersHasBeenSet = false;
   };
 
 } // namespace Model

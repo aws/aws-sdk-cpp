@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_maxConnections;
-    bool m_maxConnectionsHasBeenSet;
+    bool m_maxConnectionsHasBeenSet = false;
   };
 
 } // namespace Model

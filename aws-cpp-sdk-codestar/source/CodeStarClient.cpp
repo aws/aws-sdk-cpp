@@ -94,7 +94,7 @@ CodeStarClient::~CodeStarClient()
 
 void CodeStarClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CodeStar");
+  AWSClient::SetServiceClientName("CodeStar");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_appName;
-    bool m_appNameHasBeenSet;
+    bool m_appNameHasBeenSet = false;
 
     Aws::String m_backendEnvironmentName;
-    bool m_backendEnvironmentNameHasBeenSet;
+    bool m_backendEnvironmentNameHasBeenSet = false;
 
     ResourceConfig m_resourceConfig;
-    bool m_resourceConfigHasBeenSet;
+    bool m_resourceConfigHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model

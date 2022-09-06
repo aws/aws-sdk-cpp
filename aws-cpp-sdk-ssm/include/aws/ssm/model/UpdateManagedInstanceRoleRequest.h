@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
   };
 
 } // namespace Model

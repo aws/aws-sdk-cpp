@@ -155,10 +155,10 @@ namespace Model
   private:
 
     ReviewStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
   };
 
 } // namespace Model

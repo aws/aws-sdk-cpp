@@ -83,7 +83,7 @@ namespace Model
   private:
 
     AwsManagedHumanLoopRequestSource m_awsManagedHumanLoopRequestSource;
-    bool m_awsManagedHumanLoopRequestSourceHasBeenSet;
+    bool m_awsManagedHumanLoopRequestSourceHasBeenSet = false;
   };
 
 } // namespace Model

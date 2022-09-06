@@ -129,13 +129,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     bool m_includeBlueprint;
-    bool m_includeBlueprintHasBeenSet;
+    bool m_includeBlueprintHasBeenSet = false;
 
     bool m_includeParameterSpec;
-    bool m_includeParameterSpecHasBeenSet;
+    bool m_includeParameterSpecHasBeenSet = false;
   };
 
 } // namespace Model

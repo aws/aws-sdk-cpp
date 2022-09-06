@@ -258,19 +258,19 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     PullRequestEventType m_pullRequestEventType;
-    bool m_pullRequestEventTypeHasBeenSet;
+    bool m_pullRequestEventTypeHasBeenSet = false;
 
     Aws::String m_actorArn;
-    bool m_actorArnHasBeenSet;
+    bool m_actorArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_stateName;
-    bool m_stateNameHasBeenSet;
+    bool m_stateNameHasBeenSet = false;
 
     Aws::Vector<Variable> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     Aws::Vector<Timer> m_timers;
-    bool m_timersHasBeenSet;
+    bool m_timersHasBeenSet = false;
   };
 
 } // namespace Model

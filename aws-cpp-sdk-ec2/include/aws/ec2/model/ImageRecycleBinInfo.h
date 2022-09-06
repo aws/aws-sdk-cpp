@@ -234,19 +234,19 @@ namespace Model
   private:
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_recycleBinEnterTime;
-    bool m_recycleBinEnterTimeHasBeenSet;
+    bool m_recycleBinEnterTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_recycleBinExitTime;
-    bool m_recycleBinExitTimeHasBeenSet;
+    bool m_recycleBinExitTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<CampaignResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

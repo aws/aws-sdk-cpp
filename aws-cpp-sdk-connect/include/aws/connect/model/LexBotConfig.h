@@ -91,10 +91,10 @@ namespace Model
   private:
 
     LexBot m_lexBot;
-    bool m_lexBotHasBeenSet;
+    bool m_lexBotHasBeenSet = false;
 
     LexV2Bot m_lexV2Bot;
-    bool m_lexV2BotHasBeenSet;
+    bool m_lexV2BotHasBeenSet = false;
   };
 
 } // namespace Model

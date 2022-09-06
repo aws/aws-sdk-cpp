@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     ModelInputDataFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     bool m_useEventVariables;
-    bool m_useEventVariablesHasBeenSet;
+    bool m_useEventVariablesHasBeenSet = false;
 
     Aws::String m_jsonInputTemplate;
-    bool m_jsonInputTemplateHasBeenSet;
+    bool m_jsonInputTemplateHasBeenSet = false;
 
     Aws::String m_csvInputTemplate;
-    bool m_csvInputTemplateHasBeenSet;
+    bool m_csvInputTemplateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_associatedRuleGroupArn;
-    bool m_associatedRuleGroupArnHasBeenSet;
+    bool m_associatedRuleGroupArnHasBeenSet = false;
 
     int m_forecastedLifetime;
-    bool m_forecastedLifetimeHasBeenSet;
+    bool m_forecastedLifetimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_sshPublicKey;
-    bool m_sshPublicKeyHasBeenSet;
+    bool m_sshPublicKeyHasBeenSet = false;
   };
 
 } // namespace Model

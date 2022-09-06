@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
   };
 
 } // namespace Model

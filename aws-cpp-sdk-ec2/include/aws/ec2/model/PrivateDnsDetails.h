@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
   };
 
 } // namespace Model

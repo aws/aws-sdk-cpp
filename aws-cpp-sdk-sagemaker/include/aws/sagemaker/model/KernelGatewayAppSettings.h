@@ -216,13 +216,13 @@ namespace Model
   private:
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
 
     Aws::Vector<CustomImage> m_customImages;
-    bool m_customImagesHasBeenSet;
+    bool m_customImagesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lifecycleConfigArns;
-    bool m_lifecycleConfigArnsHasBeenSet;
+    bool m_lifecycleConfigArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_consumedValue;
-    bool m_consumedValueHasBeenSet;
+    bool m_consumedValueHasBeenSet = false;
 
     Aws::String m_maxCount;
-    bool m_maxCountHasBeenSet;
+    bool m_maxCountHasBeenSet = false;
 
     EntitlementDataUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

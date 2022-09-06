@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_supportingAccessPoint;
-    bool m_supportingAccessPointHasBeenSet;
+    bool m_supportingAccessPointHasBeenSet = false;
 
     bool m_cloudWatchMetricsEnabled;
-    bool m_cloudWatchMetricsEnabledHasBeenSet;
+    bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
     Aws::Vector<ObjectLambdaAllowedFeature> m_allowedFeatures;
-    bool m_allowedFeaturesHasBeenSet;
+    bool m_allowedFeaturesHasBeenSet = false;
 
     Aws::Vector<ObjectLambdaTransformationConfiguration> m_transformationConfigurations;
-    bool m_transformationConfigurationsHasBeenSet;
+    bool m_transformationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

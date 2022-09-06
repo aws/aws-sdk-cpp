@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_modelEndpoint;
-    bool m_modelEndpointHasBeenSet;
+    bool m_modelEndpointHasBeenSet = false;
 
     ModelSource m_modelSource;
-    bool m_modelSourceHasBeenSet;
+    bool m_modelSourceHasBeenSet = false;
   };
 
 } // namespace Model

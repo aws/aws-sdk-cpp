@@ -483,31 +483,31 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_versionLabel;
-    bool m_versionLabelHasBeenSet;
+    bool m_versionLabelHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SourceBuildInformation m_sourceBuildInformation;
-    bool m_sourceBuildInformationHasBeenSet;
+    bool m_sourceBuildInformationHasBeenSet = false;
 
     S3Location m_sourceBundle;
-    bool m_sourceBundleHasBeenSet;
+    bool m_sourceBundleHasBeenSet = false;
 
     BuildConfiguration m_buildConfiguration;
-    bool m_buildConfigurationHasBeenSet;
+    bool m_buildConfigurationHasBeenSet = false;
 
     bool m_autoCreateApplication;
-    bool m_autoCreateApplicationHasBeenSet;
+    bool m_autoCreateApplicationHasBeenSet = false;
 
     bool m_process;
-    bool m_processHasBeenSet;
+    bool m_processHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

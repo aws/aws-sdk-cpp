@@ -109,10 +109,10 @@ namespace Model
   private:
 
     VolumeSpecification m_volumeSpecification;
-    bool m_volumeSpecificationHasBeenSet;
+    bool m_volumeSpecificationHasBeenSet = false;
 
     int m_volumesPerInstance;
-    bool m_volumesPerInstanceHasBeenSet;
+    bool m_volumesPerInstanceHasBeenSet = false;
   };
 
 } // namespace Model

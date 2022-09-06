@@ -266,19 +266,19 @@ namespace Model
   private:
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_defaultNamespace;
-    bool m_defaultNamespaceHasBeenSet;
+    bool m_defaultNamespaceHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
 
     bool m_publicSharingEnabled;
-    bool m_publicSharingEnabledHasBeenSet;
+    bool m_publicSharingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

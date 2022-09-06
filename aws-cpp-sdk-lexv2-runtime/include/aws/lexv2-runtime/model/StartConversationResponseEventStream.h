@@ -445,46 +445,46 @@ namespace Model
   private:
 
     PlaybackInterruptionEvent m_playbackInterruptionEvent;
-    bool m_playbackInterruptionEventHasBeenSet;
+    bool m_playbackInterruptionEventHasBeenSet = false;
 
     TranscriptEvent m_transcriptEvent;
-    bool m_transcriptEventHasBeenSet;
+    bool m_transcriptEventHasBeenSet = false;
 
     IntentResultEvent m_intentResultEvent;
-    bool m_intentResultEventHasBeenSet;
+    bool m_intentResultEventHasBeenSet = false;
 
     TextResponseEvent m_textResponseEvent;
-    bool m_textResponseEventHasBeenSet;
+    bool m_textResponseEventHasBeenSet = false;
 
     AudioResponseEvent m_audioResponseEvent;
-    bool m_audioResponseEventHasBeenSet;
+    bool m_audioResponseEventHasBeenSet = false;
 
     HeartbeatEvent m_heartbeatEvent;
-    bool m_heartbeatEventHasBeenSet;
+    bool m_heartbeatEventHasBeenSet = false;
 
     AccessDeniedException m_accessDeniedException;
-    bool m_accessDeniedExceptionHasBeenSet;
+    bool m_accessDeniedExceptionHasBeenSet = false;
 
     ResourceNotFoundException m_resourceNotFoundException;
-    bool m_resourceNotFoundExceptionHasBeenSet;
+    bool m_resourceNotFoundExceptionHasBeenSet = false;
 
     ValidationException m_validationException;
-    bool m_validationExceptionHasBeenSet;
+    bool m_validationExceptionHasBeenSet = false;
 
     ThrottlingException m_throttlingException;
-    bool m_throttlingExceptionHasBeenSet;
+    bool m_throttlingExceptionHasBeenSet = false;
 
     InternalServerException m_internalServerException;
-    bool m_internalServerExceptionHasBeenSet;
+    bool m_internalServerExceptionHasBeenSet = false;
 
     ConflictException m_conflictException;
-    bool m_conflictExceptionHasBeenSet;
+    bool m_conflictExceptionHasBeenSet = false;
 
     DependencyFailedException m_dependencyFailedException;
-    bool m_dependencyFailedExceptionHasBeenSet;
+    bool m_dependencyFailedExceptionHasBeenSet = false;
 
     BadGatewayException m_badGatewayException;
-    bool m_badGatewayExceptionHasBeenSet;
+    bool m_badGatewayExceptionHasBeenSet = false;
   };
 
 } // namespace Model

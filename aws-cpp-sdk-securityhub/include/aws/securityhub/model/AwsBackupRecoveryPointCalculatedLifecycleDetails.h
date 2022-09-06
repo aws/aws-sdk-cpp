@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_deleteAt;
-    bool m_deleteAtHasBeenSet;
+    bool m_deleteAtHasBeenSet = false;
 
     Aws::String m_moveToColdStorageAt;
-    bool m_moveToColdStorageAtHasBeenSet;
+    bool m_moveToColdStorageAtHasBeenSet = false;
   };
 
 } // namespace Model

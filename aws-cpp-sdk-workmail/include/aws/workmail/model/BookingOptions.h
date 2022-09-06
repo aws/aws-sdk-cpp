@@ -105,13 +105,13 @@ namespace Model
   private:
 
     bool m_autoAcceptRequests;
-    bool m_autoAcceptRequestsHasBeenSet;
+    bool m_autoAcceptRequestsHasBeenSet = false;
 
     bool m_autoDeclineRecurringRequests;
-    bool m_autoDeclineRecurringRequestsHasBeenSet;
+    bool m_autoDeclineRecurringRequestsHasBeenSet = false;
 
     bool m_autoDeclineConflictingRequests;
-    bool m_autoDeclineConflictingRequestsHasBeenSet;
+    bool m_autoDeclineConflictingRequestsHasBeenSet = false;
   };
 
 } // namespace Model

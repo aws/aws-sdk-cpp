@@ -418,31 +418,31 @@ namespace Model
   private:
 
     AacAudioDescriptionBroadcasterMix m_audioDescriptionBroadcasterMix;
-    bool m_audioDescriptionBroadcasterMixHasBeenSet;
+    bool m_audioDescriptionBroadcasterMixHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     AacCodecProfile m_codecProfile;
-    bool m_codecProfileHasBeenSet;
+    bool m_codecProfileHasBeenSet = false;
 
     AacCodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     AacRateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     AacRawFormat m_rawFormat;
-    bool m_rawFormatHasBeenSet;
+    bool m_rawFormatHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     AacSpecification m_specification;
-    bool m_specificationHasBeenSet;
+    bool m_specificationHasBeenSet = false;
 
     AacVbrQuality m_vbrQuality;
-    bool m_vbrQualityHasBeenSet;
+    bool m_vbrQualityHasBeenSet = false;
   };
 
 } // namespace Model

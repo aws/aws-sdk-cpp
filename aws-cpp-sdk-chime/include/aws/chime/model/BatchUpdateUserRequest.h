@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<UpdateUserRequestItem> m_updateUserRequestItems;
-    bool m_updateUserRequestItemsHasBeenSet;
+    bool m_updateUserRequestItemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Heterogeneous m_heterogeneous;
-    bool m_heterogeneousHasBeenSet;
+    bool m_heterogeneousHasBeenSet = false;
 
     Homogeneous m_homogeneous;
-    bool m_homogeneousHasBeenSet;
+    bool m_homogeneousHasBeenSet = false;
 
     NoDatabaseMigrationPreference m_noPreference;
-    bool m_noPreferenceHasBeenSet;
+    bool m_noPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

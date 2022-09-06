@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     UserProfileSortKey m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     Aws::String m_domainIdEquals;
-    bool m_domainIdEqualsHasBeenSet;
+    bool m_domainIdEqualsHasBeenSet = false;
 
     Aws::String m_userProfileNameContains;
-    bool m_userProfileNameContainsHasBeenSet;
+    bool m_userProfileNameContainsHasBeenSet = false;
   };
 
 } // namespace Model

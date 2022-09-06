@@ -187,16 +187,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_lastChangedBy;
-    bool m_lastChangedByHasBeenSet;
+    bool m_lastChangedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastChangedAt;
-    bool m_lastChangedAtHasBeenSet;
+    bool m_lastChangedAtHasBeenSet = false;
 
     Aws::String m_disabledReason;
-    bool m_disabledReasonHasBeenSet;
+    bool m_disabledReasonHasBeenSet = false;
   };
 
 } // namespace Model

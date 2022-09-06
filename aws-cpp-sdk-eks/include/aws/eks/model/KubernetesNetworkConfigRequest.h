@@ -285,10 +285,10 @@ namespace Model
   private:
 
     Aws::String m_serviceIpv4Cidr;
-    bool m_serviceIpv4CidrHasBeenSet;
+    bool m_serviceIpv4CidrHasBeenSet = false;
 
     IpFamily m_ipFamily;
-    bool m_ipFamilyHasBeenSet;
+    bool m_ipFamilyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_allowsPublicReadAccess;
-    bool m_allowsPublicReadAccessHasBeenSet;
+    bool m_allowsPublicReadAccessHasBeenSet = false;
 
     bool m_allowsPublicWriteAccess;
-    bool m_allowsPublicWriteAccessHasBeenSet;
+    bool m_allowsPublicWriteAccessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -234,19 +234,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_aliasPrefix;
-    bool m_aliasPrefixHasBeenSet;
+    bool m_aliasPrefixHasBeenSet = false;
 
     ListTimeSeriesType m_timeSeriesType;
-    bool m_timeSeriesTypeHasBeenSet;
+    bool m_timeSeriesTypeHasBeenSet = false;
   };
 
 } // namespace Model

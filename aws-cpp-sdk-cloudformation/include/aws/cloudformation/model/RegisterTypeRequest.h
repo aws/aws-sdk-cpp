@@ -594,22 +594,22 @@ namespace Model
   private:
 
     RegistryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_schemaHandlerPackage;
-    bool m_schemaHandlerPackageHasBeenSet;
+    bool m_schemaHandlerPackageHasBeenSet = false;
 
     LoggingConfig m_loggingConfig;
-    bool m_loggingConfigHasBeenSet;
+    bool m_loggingConfigHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

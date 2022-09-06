@@ -105,10 +105,10 @@ namespace Model
   private:
 
     double m_recurringChargeAmount;
-    bool m_recurringChargeAmountHasBeenSet;
+    bool m_recurringChargeAmountHasBeenSet = false;
 
     Aws::String m_recurringChargeFrequency;
-    bool m_recurringChargeFrequencyHasBeenSet;
+    bool m_recurringChargeFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

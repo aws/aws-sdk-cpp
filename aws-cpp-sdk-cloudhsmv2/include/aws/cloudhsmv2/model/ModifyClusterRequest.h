@@ -117,10 +117,10 @@ namespace Model
   private:
 
     BackupRetentionPolicy m_backupRetentionPolicy;
-    bool m_backupRetentionPolicyHasBeenSet;
+    bool m_backupRetentionPolicyHasBeenSet = false;
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
   };
 
 } // namespace Model

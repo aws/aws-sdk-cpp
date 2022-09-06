@@ -86,7 +86,7 @@ TextractClient::~TextractClient()
 
 void TextractClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Textract");
+  AWSClient::SetServiceClientName("Textract");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

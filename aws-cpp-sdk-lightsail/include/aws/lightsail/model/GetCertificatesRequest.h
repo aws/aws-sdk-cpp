@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::Vector<CertificateStatus> m_certificateStatuses;
-    bool m_certificateStatusesHasBeenSet;
+    bool m_certificateStatusesHasBeenSet = false;
 
     bool m_includeCertificateDetails;
-    bool m_includeCertificateDetailsHasBeenSet;
+    bool m_includeCertificateDetailsHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
   };
 
 } // namespace Model

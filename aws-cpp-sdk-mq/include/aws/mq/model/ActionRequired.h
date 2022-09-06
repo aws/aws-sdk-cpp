@@ -178,10 +178,10 @@ namespace Model
   private:
 
     Aws::String m_actionRequiredCode;
-    bool m_actionRequiredCodeHasBeenSet;
+    bool m_actionRequiredCodeHasBeenSet = false;
 
     Aws::String m_actionRequiredInfo;
-    bool m_actionRequiredInfoHasBeenSet;
+    bool m_actionRequiredInfoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -460,34 +460,34 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DataSourceParameters m_dataSourceParameters;
-    bool m_dataSourceParametersHasBeenSet;
+    bool m_dataSourceParametersHasBeenSet = false;
 
     DataSourceCredentials m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     VpcConnectionProperties m_vpcConnectionProperties;
-    bool m_vpcConnectionPropertiesHasBeenSet;
+    bool m_vpcConnectionPropertiesHasBeenSet = false;
 
     SslProperties m_sslProperties;
-    bool m_sslPropertiesHasBeenSet;
+    bool m_sslPropertiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

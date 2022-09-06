@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_vpcInterfaceName;
-    bool m_vpcInterfaceNameHasBeenSet;
+    bool m_vpcInterfaceNameHasBeenSet = false;
   };
 
 } // namespace Model

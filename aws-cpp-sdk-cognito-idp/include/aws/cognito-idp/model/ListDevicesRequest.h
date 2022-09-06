@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_paginationToken;
-    bool m_paginationTokenHasBeenSet;
+    bool m_paginationTokenHasBeenSet = false;
   };
 
 } // namespace Model

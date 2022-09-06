@@ -125,7 +125,7 @@ namespace Model
   private:
 
     QueryIdentifiersEnclosingOption m_queryIdentifiersEnclosingOption;
-    bool m_queryIdentifiersEnclosingOptionHasBeenSet;
+    bool m_queryIdentifiersEnclosingOptionHasBeenSet = false;
   };
 
 } // namespace Model

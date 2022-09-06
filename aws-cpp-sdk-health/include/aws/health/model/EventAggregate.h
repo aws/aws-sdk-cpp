@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_aggregateValue;
-    bool m_aggregateValueHasBeenSet;
+    bool m_aggregateValueHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_serviceIds;
-    bool m_serviceIdsHasBeenSet;
+    bool m_serviceIdsHasBeenSet = false;
   };
 
 } // namespace Model

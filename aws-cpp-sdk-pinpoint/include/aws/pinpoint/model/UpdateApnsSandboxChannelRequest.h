@@ -103,10 +103,10 @@ namespace Model
   private:
 
     APNSSandboxChannelRequest m_aPNSSandboxChannelRequest;
-    bool m_aPNSSandboxChannelRequestHasBeenSet;
+    bool m_aPNSSandboxChannelRequestHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
   };
 
 } // namespace Model

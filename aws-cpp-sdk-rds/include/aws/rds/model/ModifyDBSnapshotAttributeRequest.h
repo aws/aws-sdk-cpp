@@ -374,16 +374,16 @@ namespace Model
   private:
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_valuesToAdd;
-    bool m_valuesToAddHasBeenSet;
+    bool m_valuesToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_valuesToRemove;
-    bool m_valuesToRemoveHasBeenSet;
+    bool m_valuesToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

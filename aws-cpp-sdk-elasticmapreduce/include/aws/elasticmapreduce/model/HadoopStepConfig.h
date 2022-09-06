@@ -267,16 +267,16 @@ namespace Model
   private:
 
     Aws::String m_jar;
-    bool m_jarHasBeenSet;
+    bool m_jarHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::String m_mainClass;
-    bool m_mainClassHasBeenSet;
+    bool m_mainClassHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
   };
 
 } // namespace Model

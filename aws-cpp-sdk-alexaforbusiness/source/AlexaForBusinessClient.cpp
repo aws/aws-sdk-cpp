@@ -169,7 +169,7 @@ AlexaForBusinessClient::~AlexaForBusinessClient()
 
 void AlexaForBusinessClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Alexa For Business");
+  AWSClient::SetServiceClientName("Alexa For Business");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

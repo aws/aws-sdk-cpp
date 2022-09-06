@@ -89,7 +89,7 @@ namespace Model
   private:
 
     S3ContentBaseLocation m_s3ContentLocation;
-    bool m_s3ContentLocationHasBeenSet;
+    bool m_s3ContentLocationHasBeenSet = false;
   };
 
 } // namespace Model

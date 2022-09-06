@@ -125,7 +125,7 @@ namespace Model
   private:
 
     Aws::String m_createAccountRequestId;
-    bool m_createAccountRequestIdHasBeenSet;
+    bool m_createAccountRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

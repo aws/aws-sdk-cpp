@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_vTLDeviceARN;
-    bool m_vTLDeviceARNHasBeenSet;
+    bool m_vTLDeviceARNHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

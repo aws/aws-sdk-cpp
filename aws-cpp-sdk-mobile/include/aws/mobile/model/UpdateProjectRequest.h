@@ -85,7 +85,7 @@ namespace Model
 
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -242,10 +242,10 @@ namespace Model
   private:
 
     Aws::String m_clients;
-    bool m_clientsHasBeenSet;
+    bool m_clientsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

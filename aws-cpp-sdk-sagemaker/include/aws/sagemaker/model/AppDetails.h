@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     AppType m_appType;
-    bool m_appTypeHasBeenSet;
+    bool m_appTypeHasBeenSet = false;
 
     Aws::String m_appName;
-    bool m_appNameHasBeenSet;
+    bool m_appNameHasBeenSet = false;
 
     AppStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

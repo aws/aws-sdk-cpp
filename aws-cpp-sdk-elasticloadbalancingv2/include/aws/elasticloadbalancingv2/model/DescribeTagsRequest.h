@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
   };
 
 } // namespace Model

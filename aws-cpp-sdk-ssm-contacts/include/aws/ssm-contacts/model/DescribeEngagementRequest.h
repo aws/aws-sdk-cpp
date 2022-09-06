@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_engagementId;
-    bool m_engagementIdHasBeenSet;
+    bool m_engagementIdHasBeenSet = false;
   };
 
 } // namespace Model

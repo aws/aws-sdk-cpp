@@ -363,22 +363,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     Aws::String m_meshOwner;
-    bool m_meshOwnerHasBeenSet;
+    bool m_meshOwnerHasBeenSet = false;
 
     VirtualServiceSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::Vector<TagRef> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_virtualServiceName;
-    bool m_virtualServiceNameHasBeenSet;
+    bool m_virtualServiceNameHasBeenSet = false;
   };
 
 } // namespace Model

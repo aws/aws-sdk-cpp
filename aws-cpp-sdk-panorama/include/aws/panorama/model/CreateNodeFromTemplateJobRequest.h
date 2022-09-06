@@ -340,25 +340,25 @@ namespace Model
   private:
 
     Aws::Vector<JobResourceTags> m_jobTags;
-    bool m_jobTagsHasBeenSet;
+    bool m_jobTagsHasBeenSet = false;
 
     Aws::String m_nodeDescription;
-    bool m_nodeDescriptionHasBeenSet;
+    bool m_nodeDescriptionHasBeenSet = false;
 
     Aws::String m_nodeName;
-    bool m_nodeNameHasBeenSet;
+    bool m_nodeNameHasBeenSet = false;
 
     Aws::String m_outputPackageName;
-    bool m_outputPackageNameHasBeenSet;
+    bool m_outputPackageNameHasBeenSet = false;
 
     Aws::String m_outputPackageVersion;
-    bool m_outputPackageVersionHasBeenSet;
+    bool m_outputPackageVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_templateParameters;
-    bool m_templateParametersHasBeenSet;
+    bool m_templateParametersHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

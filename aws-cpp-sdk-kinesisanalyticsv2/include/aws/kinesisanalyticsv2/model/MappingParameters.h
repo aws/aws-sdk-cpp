@@ -118,10 +118,10 @@ namespace Model
   private:
 
     JSONMappingParameters m_jSONMappingParameters;
-    bool m_jSONMappingParametersHasBeenSet;
+    bool m_jSONMappingParametersHasBeenSet = false;
 
     CSVMappingParameters m_cSVMappingParameters;
-    bool m_cSVMappingParametersHasBeenSet;
+    bool m_cSVMappingParametersHasBeenSet = false;
   };
 
 } // namespace Model

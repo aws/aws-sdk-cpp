@@ -257,16 +257,16 @@ This field corresponds to
   private:
 
     double m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     double m_leftOffset;
-    bool m_leftOffsetHasBeenSet;
+    bool m_leftOffsetHasBeenSet = false;
 
     double m_topOffset;
-    bool m_topOffsetHasBeenSet;
+    bool m_topOffsetHasBeenSet = false;
 
     double m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

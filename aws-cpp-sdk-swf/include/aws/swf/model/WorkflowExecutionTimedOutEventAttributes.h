@@ -151,10 +151,10 @@ namespace Model
   private:
 
     WorkflowExecutionTimeoutType m_timeoutType;
-    bool m_timeoutTypeHasBeenSet;
+    bool m_timeoutTypeHasBeenSet = false;
 
     ChildPolicy m_childPolicy;
-    bool m_childPolicyHasBeenSet;
+    bool m_childPolicyHasBeenSet = false;
   };
 
 } // namespace Model

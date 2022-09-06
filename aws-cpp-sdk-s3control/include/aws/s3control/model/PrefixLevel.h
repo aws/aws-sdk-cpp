@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PrefixLevelStorageMetrics m_storageMetrics;
-    bool m_storageMetricsHasBeenSet;
+    bool m_storageMetricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -629,34 +629,34 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::String m_configRuleArn;
-    bool m_configRuleArnHasBeenSet;
+    bool m_configRuleArnHasBeenSet = false;
 
     Aws::String m_configRuleId;
-    bool m_configRuleIdHasBeenSet;
+    bool m_configRuleIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_inputParameters;
-    bool m_inputParametersHasBeenSet;
+    bool m_inputParametersHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     ConfigRuleState m_configRuleState;
-    bool m_configRuleStateHasBeenSet;
+    bool m_configRuleStateHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

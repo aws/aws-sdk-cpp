@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_modelPackageArnList;
-    bool m_modelPackageArnListHasBeenSet;
+    bool m_modelPackageArnListHasBeenSet = false;
   };
 
 } // namespace Model

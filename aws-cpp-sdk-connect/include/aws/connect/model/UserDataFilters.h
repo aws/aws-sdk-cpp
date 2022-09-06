@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_queues;
-    bool m_queuesHasBeenSet;
+    bool m_queuesHasBeenSet = false;
 
     ContactFilter m_contactFilter;
-    bool m_contactFilterHasBeenSet;
+    bool m_contactFilterHasBeenSet = false;
   };
 
 } // namespace Model

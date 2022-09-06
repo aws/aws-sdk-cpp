@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     AdditionalResultAttributeValueType m_valueType;
-    bool m_valueTypeHasBeenSet;
+    bool m_valueTypeHasBeenSet = false;
 
     AdditionalResultAttributeValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

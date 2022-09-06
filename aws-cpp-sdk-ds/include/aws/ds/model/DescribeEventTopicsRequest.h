@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_topicNames;
-    bool m_topicNamesHasBeenSet;
+    bool m_topicNamesHasBeenSet = false;
   };
 
 } // namespace Model

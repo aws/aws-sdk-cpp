@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_notificationTopicArn;
-    bool m_notificationTopicArnHasBeenSet;
+    bool m_notificationTopicArnHasBeenSet = false;
   };
 
 } // namespace Model

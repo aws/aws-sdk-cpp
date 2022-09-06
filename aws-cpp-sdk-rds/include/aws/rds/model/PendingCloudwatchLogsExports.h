@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_logTypesToEnable;
-    bool m_logTypesToEnableHasBeenSet;
+    bool m_logTypesToEnableHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logTypesToDisable;
-    bool m_logTypesToDisableHasBeenSet;
+    bool m_logTypesToDisableHasBeenSet = false;
   };
 
 } // namespace Model

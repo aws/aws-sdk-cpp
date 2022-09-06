@@ -263,16 +263,16 @@ namespace Model
   private:
 
     Aws::String m_sourceDBParameterGroupIdentifier;
-    bool m_sourceDBParameterGroupIdentifierHasBeenSet;
+    bool m_sourceDBParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBParameterGroupIdentifier;
-    bool m_targetDBParameterGroupIdentifierHasBeenSet;
+    bool m_targetDBParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBParameterGroupDescription;
-    bool m_targetDBParameterGroupDescriptionHasBeenSet;
+    bool m_targetDBParameterGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

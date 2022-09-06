@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_layerDigest;
-    bool m_layerDigestHasBeenSet;
+    bool m_layerDigestHasBeenSet = false;
   };
 
 } // namespace Model

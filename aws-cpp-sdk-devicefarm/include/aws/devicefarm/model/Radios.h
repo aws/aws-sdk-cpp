@@ -126,16 +126,16 @@ namespace Model
   private:
 
     bool m_wifi;
-    bool m_wifiHasBeenSet;
+    bool m_wifiHasBeenSet = false;
 
     bool m_bluetooth;
-    bool m_bluetoothHasBeenSet;
+    bool m_bluetoothHasBeenSet = false;
 
     bool m_nfc;
-    bool m_nfcHasBeenSet;
+    bool m_nfcHasBeenSet = false;
 
     bool m_gps;
-    bool m_gpsHasBeenSet;
+    bool m_gpsHasBeenSet = false;
   };
 
 } // namespace Model

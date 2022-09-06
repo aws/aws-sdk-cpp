@@ -127,10 +127,10 @@ namespace Model
   private:
 
     bool m_notify;
-    bool m_notifyHasBeenSet;
+    bool m_notifyHasBeenSet = false;
 
     AccountTakeoverEventActionType m_eventAction;
-    bool m_eventActionHasBeenSet;
+    bool m_eventActionHasBeenSet = false;
   };
 
 } // namespace Model

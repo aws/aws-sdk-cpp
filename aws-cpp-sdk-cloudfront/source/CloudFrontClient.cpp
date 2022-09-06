@@ -175,7 +175,7 @@ CloudFrontClient::~CloudFrontClient()
 
 void CloudFrontClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudFront");
+  AWSClient::SetServiceClientName("CloudFront");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

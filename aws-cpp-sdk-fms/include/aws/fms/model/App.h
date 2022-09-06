@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_appName;
-    bool m_appNameHasBeenSet;
+    bool m_appNameHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     long long m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

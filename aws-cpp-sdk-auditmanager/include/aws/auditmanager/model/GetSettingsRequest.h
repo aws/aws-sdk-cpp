@@ -65,7 +65,7 @@ namespace Model
   private:
 
     SettingAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
   };
 
 } // namespace Model

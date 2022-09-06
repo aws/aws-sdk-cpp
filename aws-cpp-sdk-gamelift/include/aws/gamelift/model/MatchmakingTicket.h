@@ -687,37 +687,37 @@ namespace Model
   private:
 
     Aws::String m_ticketId;
-    bool m_ticketIdHasBeenSet;
+    bool m_ticketIdHasBeenSet = false;
 
     Aws::String m_configurationName;
-    bool m_configurationNameHasBeenSet;
+    bool m_configurationNameHasBeenSet = false;
 
     Aws::String m_configurationArn;
-    bool m_configurationArnHasBeenSet;
+    bool m_configurationArnHasBeenSet = false;
 
     MatchmakingConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<Player> m_players;
-    bool m_playersHasBeenSet;
+    bool m_playersHasBeenSet = false;
 
     GameSessionConnectionInfo m_gameSessionConnectionInfo;
-    bool m_gameSessionConnectionInfoHasBeenSet;
+    bool m_gameSessionConnectionInfoHasBeenSet = false;
 
     int m_estimatedWaitTime;
-    bool m_estimatedWaitTimeHasBeenSet;
+    bool m_estimatedWaitTimeHasBeenSet = false;
   };
 
 } // namespace Model

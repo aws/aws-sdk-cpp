@@ -170,16 +170,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_updated;
-    bool m_updatedHasBeenSet;
+    bool m_updatedHasBeenSet = false;
   };
 
 } // namespace Model

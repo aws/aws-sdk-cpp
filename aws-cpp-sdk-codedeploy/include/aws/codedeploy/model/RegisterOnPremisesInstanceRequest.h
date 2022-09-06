@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::String m_iamSessionArn;
-    bool m_iamSessionArnHasBeenSet;
+    bool m_iamSessionArnHasBeenSet = false;
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,10 +136,10 @@ namespace Model
   private:
 
     double m_maxPixelThreshold;
-    bool m_maxPixelThresholdHasBeenSet;
+    bool m_maxPixelThresholdHasBeenSet = false;
 
     double m_minCoveragePercentage;
-    bool m_minCoveragePercentageHasBeenSet;
+    bool m_minCoveragePercentageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1036,25 +1036,25 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     Aws::Vector<QueueAttributeName> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_messageAttributeNames;
-    bool m_messageAttributeNamesHasBeenSet;
+    bool m_messageAttributeNamesHasBeenSet = false;
 
     int m_maxNumberOfMessages;
-    bool m_maxNumberOfMessagesHasBeenSet;
+    bool m_maxNumberOfMessagesHasBeenSet = false;
 
     int m_visibilityTimeout;
-    bool m_visibilityTimeoutHasBeenSet;
+    bool m_visibilityTimeoutHasBeenSet = false;
 
     int m_waitTimeSeconds;
-    bool m_waitTimeSecondsHasBeenSet;
+    bool m_waitTimeSecondsHasBeenSet = false;
 
     Aws::String m_receiveRequestAttemptId;
-    bool m_receiveRequestAttemptIdHasBeenSet;
+    bool m_receiveRequestAttemptIdHasBeenSet = false;
   };
 
 } // namespace Model

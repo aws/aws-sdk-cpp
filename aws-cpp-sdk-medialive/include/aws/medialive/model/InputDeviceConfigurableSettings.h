@@ -113,10 +113,10 @@ namespace Model
   private:
 
     InputDeviceConfiguredInput m_configuredInput;
-    bool m_configuredInputHasBeenSet;
+    bool m_configuredInputHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
   };
 
 } // namespace Model

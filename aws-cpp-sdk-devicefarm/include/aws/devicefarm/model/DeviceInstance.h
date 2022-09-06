@@ -273,22 +273,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     InstanceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_udid;
-    bool m_udidHasBeenSet;
+    bool m_udidHasBeenSet = false;
 
     InstanceProfile m_instanceProfile;
-    bool m_instanceProfileHasBeenSet;
+    bool m_instanceProfileHasBeenSet = false;
   };
 
 } // namespace Model

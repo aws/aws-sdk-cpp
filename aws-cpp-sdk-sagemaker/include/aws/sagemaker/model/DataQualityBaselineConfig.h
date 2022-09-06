@@ -131,13 +131,13 @@ namespace Model
   private:
 
     Aws::String m_baseliningJobName;
-    bool m_baseliningJobNameHasBeenSet;
+    bool m_baseliningJobNameHasBeenSet = false;
 
     MonitoringConstraintsResource m_constraintsResource;
-    bool m_constraintsResourceHasBeenSet;
+    bool m_constraintsResourceHasBeenSet = false;
 
     MonitoringStatisticsResource m_statisticsResource;
-    bool m_statisticsResourceHasBeenSet;
+    bool m_statisticsResourceHasBeenSet = false;
   };
 
 } // namespace Model

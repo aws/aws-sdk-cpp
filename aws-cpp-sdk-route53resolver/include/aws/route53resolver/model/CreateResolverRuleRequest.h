@@ -467,25 +467,25 @@ namespace Model
   private:
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RuleTypeOption m_ruleType;
-    bool m_ruleTypeHasBeenSet;
+    bool m_ruleTypeHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<TargetAddress> m_targetIps;
-    bool m_targetIpsHasBeenSet;
+    bool m_targetIpsHasBeenSet = false;
 
     Aws::String m_resolverEndpointId;
-    bool m_resolverEndpointIdHasBeenSet;
+    bool m_resolverEndpointIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

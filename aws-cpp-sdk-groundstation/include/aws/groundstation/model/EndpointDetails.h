@@ -102,10 +102,10 @@ namespace Model
   private:
 
     DataflowEndpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     SecurityDetails m_securityDetails;
-    bool m_securityDetailsHasBeenSet;
+    bool m_securityDetailsHasBeenSet = false;
   };
 
 } // namespace Model

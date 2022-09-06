@@ -462,37 +462,37 @@ namespace Model
   private:
 
     Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet;
+    bool m_browserSettingsArnHasBeenSet = false;
 
     BrowserType m_browserType;
-    bool m_browserTypeHasBeenSet;
+    bool m_browserTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet;
+    bool m_networkSettingsArnHasBeenSet = false;
 
     Aws::String m_portalArn;
-    bool m_portalArnHasBeenSet;
+    bool m_portalArnHasBeenSet = false;
 
     Aws::String m_portalEndpoint;
-    bool m_portalEndpointHasBeenSet;
+    bool m_portalEndpointHasBeenSet = false;
 
     PortalStatus m_portalStatus;
-    bool m_portalStatusHasBeenSet;
+    bool m_portalStatusHasBeenSet = false;
 
     RendererType m_rendererType;
-    bool m_rendererTypeHasBeenSet;
+    bool m_rendererTypeHasBeenSet = false;
 
     Aws::String m_trustStoreArn;
-    bool m_trustStoreArnHasBeenSet;
+    bool m_trustStoreArnHasBeenSet = false;
 
     Aws::String m_userSettingsArn;
-    bool m_userSettingsArnHasBeenSet;
+    bool m_userSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

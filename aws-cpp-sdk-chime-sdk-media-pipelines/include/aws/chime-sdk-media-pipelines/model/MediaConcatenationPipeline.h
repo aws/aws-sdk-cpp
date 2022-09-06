@@ -310,25 +310,25 @@ namespace Model
   private:
 
     Aws::String m_mediaPipelineId;
-    bool m_mediaPipelineIdHasBeenSet;
+    bool m_mediaPipelineIdHasBeenSet = false;
 
     Aws::String m_mediaPipelineArn;
-    bool m_mediaPipelineArnHasBeenSet;
+    bool m_mediaPipelineArnHasBeenSet = false;
 
     Aws::Vector<ConcatenationSource> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     Aws::Vector<ConcatenationSink> m_sinks;
-    bool m_sinksHasBeenSet;
+    bool m_sinksHasBeenSet = false;
 
     MediaPipelineStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     bool m_merge;
-    bool m_mergeHasBeenSet;
+    bool m_mergeHasBeenSet = false;
   };
 
 } // namespace Model

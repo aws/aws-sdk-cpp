@@ -330,31 +330,31 @@ namespace Model
   private:
 
     long long m_codeLineCount;
-    bool m_codeLineCountHasBeenSet;
+    bool m_codeLineCountHasBeenSet = false;
 
     long long m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
 
     Aws::String m_complexity;
-    bool m_complexityHasBeenSet;
+    bool m_complexityHasBeenSet = false;
 
     ServerShortInfoResponse m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
 
     DatabaseShortInfoResponse m_databaseInstance;
-    bool m_databaseInstanceHasBeenSet;
+    bool m_databaseInstanceHasBeenSet = false;
 
     Aws::String m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     SchemaShortInfoResponse m_originalSchema;
-    bool m_originalSchemaHasBeenSet;
+    bool m_originalSchemaHasBeenSet = false;
 
     double m_similarity;
-    bool m_similarityHasBeenSet;
+    bool m_similarityHasBeenSet = false;
   };
 
 } // namespace Model

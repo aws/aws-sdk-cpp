@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     TopicRulePayload m_topicRulePayload;
-    bool m_topicRulePayloadHasBeenSet;
+    bool m_topicRulePayloadHasBeenSet = false;
 
     Aws::String m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

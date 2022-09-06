@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_metricSetArn;
-    bool m_metricSetArnHasBeenSet;
+    bool m_metricSetArnHasBeenSet = false;
   };
 
 } // namespace Model

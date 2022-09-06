@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_lambdaARN;
-    bool m_lambdaARNHasBeenSet;
+    bool m_lambdaARNHasBeenSet = false;
 
     Aws::String m_codeHookInterfaceVersion;
-    bool m_codeHookInterfaceVersionHasBeenSet;
+    bool m_codeHookInterfaceVersionHasBeenSet = false;
   };
 
 } // namespace Model

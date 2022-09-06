@@ -391,25 +391,25 @@ namespace Model
   private:
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_defaultSubstitutions;
-    bool m_defaultSubstitutionsHasBeenSet;
+    bool m_defaultSubstitutionsHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

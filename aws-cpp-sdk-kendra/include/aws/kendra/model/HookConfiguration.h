@@ -231,13 +231,13 @@ namespace Model
   private:
 
     DocumentAttributeCondition m_invocationCondition;
-    bool m_invocationConditionHasBeenSet;
+    bool m_invocationConditionHasBeenSet = false;
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
   };
 
 } // namespace Model

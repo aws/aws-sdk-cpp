@@ -170,16 +170,16 @@ namespace Model
   private:
 
     double m_cr;
-    bool m_crHasBeenSet;
+    bool m_crHasBeenSet = false;
 
     double m_adr;
-    bool m_adrHasBeenSet;
+    bool m_adrHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     double m_atodr;
-    bool m_atodrHasBeenSet;
+    bool m_atodrHasBeenSet = false;
   };
 
 } // namespace Model

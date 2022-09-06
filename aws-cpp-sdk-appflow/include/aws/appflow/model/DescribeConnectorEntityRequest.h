@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_connectorEntityName;
-    bool m_connectorEntityNameHasBeenSet;
+    bool m_connectorEntityNameHasBeenSet = false;
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     Aws::String m_apiVersion;
-    bool m_apiVersionHasBeenSet;
+    bool m_apiVersionHasBeenSet = false;
   };
 
 } // namespace Model

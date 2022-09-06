@@ -239,10 +239,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     MemberAccountRuleStatus m_memberAccountRuleStatus;
-    bool m_memberAccountRuleStatusHasBeenSet;
+    bool m_memberAccountRuleStatusHasBeenSet = false;
   };
 
 } // namespace Model

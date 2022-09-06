@@ -465,25 +465,25 @@ namespace Model
   private:
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     UsageLimitFeatureType m_featureType;
-    bool m_featureTypeHasBeenSet;
+    bool m_featureTypeHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagValues;
-    bool m_tagValuesHasBeenSet;
+    bool m_tagValuesHasBeenSet = false;
   };
 
 } // namespace Model

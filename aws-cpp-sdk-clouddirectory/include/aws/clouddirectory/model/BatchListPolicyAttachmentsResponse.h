@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_objectIdentifiers;
-    bool m_objectIdentifiersHasBeenSet;
+    bool m_objectIdentifiersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

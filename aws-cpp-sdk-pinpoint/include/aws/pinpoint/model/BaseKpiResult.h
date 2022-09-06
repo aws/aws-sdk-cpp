@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::Vector<ResultRow> m_rows;
-    bool m_rowsHasBeenSet;
+    bool m_rowsHasBeenSet = false;
   };
 
 } // namespace Model

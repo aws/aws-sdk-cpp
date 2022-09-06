@@ -385,22 +385,22 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     DataPrivacy m_dataPrivacy;
-    bool m_dataPrivacyHasBeenSet;
+    bool m_dataPrivacyHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds;
-    bool m_idleSessionTTLInSecondsHasBeenSet;
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_botTags;
-    bool m_botTagsHasBeenSet;
+    bool m_botTagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_testBotAliasTags;
-    bool m_testBotAliasTagsHasBeenSet;
+    bool m_testBotAliasTagsHasBeenSet = false;
   };
 
 } // namespace Model

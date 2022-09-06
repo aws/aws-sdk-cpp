@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_instanceRoleArn;
-    bool m_instanceRoleArnHasBeenSet;
+    bool m_instanceRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

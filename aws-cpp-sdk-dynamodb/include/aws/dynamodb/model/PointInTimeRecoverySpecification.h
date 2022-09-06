@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_pointInTimeRecoveryEnabled;
-    bool m_pointInTimeRecoveryEnabledHasBeenSet;
+    bool m_pointInTimeRecoveryEnabledHasBeenSet = false;
   };
 
 } // namespace Model

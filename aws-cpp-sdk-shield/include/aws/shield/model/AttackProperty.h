@@ -275,19 +275,19 @@ namespace Model
   private:
 
     AttackLayer m_attackLayer;
-    bool m_attackLayerHasBeenSet;
+    bool m_attackLayerHasBeenSet = false;
 
     AttackPropertyIdentifier m_attackPropertyIdentifier;
-    bool m_attackPropertyIdentifierHasBeenSet;
+    bool m_attackPropertyIdentifierHasBeenSet = false;
 
     Aws::Vector<Contributor> m_topContributors;
-    bool m_topContributorsHasBeenSet;
+    bool m_topContributorsHasBeenSet = false;
 
     Unit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     long long m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -598,22 +598,22 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_exclusiveStartShardId;
-    bool m_exclusiveStartShardIdHasBeenSet;
+    bool m_exclusiveStartShardIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_streamCreationTimestamp;
-    bool m_streamCreationTimestampHasBeenSet;
+    bool m_streamCreationTimestampHasBeenSet = false;
 
     ShardFilter m_shardFilter;
-    bool m_shardFilterHasBeenSet;
+    bool m_shardFilterHasBeenSet = false;
   };
 
 } // namespace Model

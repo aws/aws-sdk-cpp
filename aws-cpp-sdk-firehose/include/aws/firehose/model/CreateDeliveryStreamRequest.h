@@ -524,37 +524,37 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     DeliveryStreamType m_deliveryStreamType;
-    bool m_deliveryStreamTypeHasBeenSet;
+    bool m_deliveryStreamTypeHasBeenSet = false;
 
     KinesisStreamSourceConfiguration m_kinesisStreamSourceConfiguration;
-    bool m_kinesisStreamSourceConfigurationHasBeenSet;
+    bool m_kinesisStreamSourceConfigurationHasBeenSet = false;
 
     DeliveryStreamEncryptionConfigurationInput m_deliveryStreamEncryptionConfigurationInput;
-    bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet;
+    bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet = false;
 
     ExtendedS3DestinationConfiguration m_extendedS3DestinationConfiguration;
-    bool m_extendedS3DestinationConfigurationHasBeenSet;
+    bool m_extendedS3DestinationConfigurationHasBeenSet = false;
 
     RedshiftDestinationConfiguration m_redshiftDestinationConfiguration;
-    bool m_redshiftDestinationConfigurationHasBeenSet;
+    bool m_redshiftDestinationConfigurationHasBeenSet = false;
 
     ElasticsearchDestinationConfiguration m_elasticsearchDestinationConfiguration;
-    bool m_elasticsearchDestinationConfigurationHasBeenSet;
+    bool m_elasticsearchDestinationConfigurationHasBeenSet = false;
 
     AmazonopensearchserviceDestinationConfiguration m_amazonopensearchserviceDestinationConfiguration;
-    bool m_amazonopensearchserviceDestinationConfigurationHasBeenSet;
+    bool m_amazonopensearchserviceDestinationConfigurationHasBeenSet = false;
 
     SplunkDestinationConfiguration m_splunkDestinationConfiguration;
-    bool m_splunkDestinationConfigurationHasBeenSet;
+    bool m_splunkDestinationConfigurationHasBeenSet = false;
 
     HttpEndpointDestinationConfiguration m_httpEndpointDestinationConfiguration;
-    bool m_httpEndpointDestinationConfigurationHasBeenSet;
+    bool m_httpEndpointDestinationConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

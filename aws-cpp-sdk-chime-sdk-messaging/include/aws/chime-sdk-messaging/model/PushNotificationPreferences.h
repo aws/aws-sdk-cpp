@@ -139,10 +139,10 @@ namespace Model
   private:
 
     AllowNotifications m_allowNotifications;
-    bool m_allowNotificationsHasBeenSet;
+    bool m_allowNotificationsHasBeenSet = false;
 
     Aws::String m_filterRule;
-    bool m_filterRuleHasBeenSet;
+    bool m_filterRuleHasBeenSet = false;
   };
 
 } // namespace Model

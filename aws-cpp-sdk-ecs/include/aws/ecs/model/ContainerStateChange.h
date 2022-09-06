@@ -313,25 +313,25 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::String m_runtimeId;
-    bool m_runtimeIdHasBeenSet;
+    bool m_runtimeIdHasBeenSet = false;
 
     int m_exitCode;
-    bool m_exitCodeHasBeenSet;
+    bool m_exitCodeHasBeenSet = false;
 
     Aws::Vector<NetworkBinding> m_networkBindings;
-    bool m_networkBindingsHasBeenSet;
+    bool m_networkBindingsHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

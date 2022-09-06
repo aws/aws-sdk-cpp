@@ -520,28 +520,28 @@ namespace Model
   private:
 
     Aws::String m_keyspaceName;
-    bool m_keyspaceNameHasBeenSet;
+    bool m_keyspaceNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Vector<ColumnDefinition> m_addColumns;
-    bool m_addColumnsHasBeenSet;
+    bool m_addColumnsHasBeenSet = false;
 
     CapacitySpecification m_capacitySpecification;
-    bool m_capacitySpecificationHasBeenSet;
+    bool m_capacitySpecificationHasBeenSet = false;
 
     EncryptionSpecification m_encryptionSpecification;
-    bool m_encryptionSpecificationHasBeenSet;
+    bool m_encryptionSpecificationHasBeenSet = false;
 
     PointInTimeRecovery m_pointInTimeRecovery;
-    bool m_pointInTimeRecoveryHasBeenSet;
+    bool m_pointInTimeRecoveryHasBeenSet = false;
 
     TimeToLive m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     int m_defaultTimeToLive;
-    bool m_defaultTimeToLiveHasBeenSet;
+    bool m_defaultTimeToLiveHasBeenSet = false;
   };
 
 } // namespace Model

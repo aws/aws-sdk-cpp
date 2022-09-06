@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<TagFilter>> m_onPremisesTagSetList;
-    bool m_onPremisesTagSetListHasBeenSet;
+    bool m_onPremisesTagSetListHasBeenSet = false;
   };
 
 } // namespace Model

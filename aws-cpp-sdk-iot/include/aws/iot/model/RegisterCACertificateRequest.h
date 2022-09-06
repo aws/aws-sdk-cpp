@@ -399,25 +399,25 @@ namespace Model
   private:
 
     Aws::String m_caCertificate;
-    bool m_caCertificateHasBeenSet;
+    bool m_caCertificateHasBeenSet = false;
 
     Aws::String m_verificationCertificate;
-    bool m_verificationCertificateHasBeenSet;
+    bool m_verificationCertificateHasBeenSet = false;
 
     bool m_setAsActive;
-    bool m_setAsActiveHasBeenSet;
+    bool m_setAsActiveHasBeenSet = false;
 
     bool m_allowAutoRegistration;
-    bool m_allowAutoRegistrationHasBeenSet;
+    bool m_allowAutoRegistrationHasBeenSet = false;
 
     RegistrationConfig m_registrationConfig;
-    bool m_registrationConfigHasBeenSet;
+    bool m_registrationConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CertificateMode m_certificateMode;
-    bool m_certificateModeHasBeenSet;
+    bool m_certificateModeHasBeenSet = false;
   };
 
 } // namespace Model

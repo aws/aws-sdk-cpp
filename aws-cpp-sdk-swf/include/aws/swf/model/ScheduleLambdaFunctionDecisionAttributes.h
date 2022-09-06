@@ -279,19 +279,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_startToCloseTimeout;
-    bool m_startToCloseTimeoutHasBeenSet;
+    bool m_startToCloseTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

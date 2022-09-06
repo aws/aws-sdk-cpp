@@ -102,10 +102,10 @@ namespace Model
   private:
 
     S3MonitoringConfiguration m_s3MonitoringConfiguration;
-    bool m_s3MonitoringConfigurationHasBeenSet;
+    bool m_s3MonitoringConfigurationHasBeenSet = false;
 
     ManagedPersistenceMonitoringConfiguration m_managedPersistenceMonitoringConfiguration;
-    bool m_managedPersistenceMonitoringConfigurationHasBeenSet;
+    bool m_managedPersistenceMonitoringConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

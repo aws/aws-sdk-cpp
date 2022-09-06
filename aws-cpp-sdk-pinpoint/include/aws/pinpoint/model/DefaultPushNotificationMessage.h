@@ -461,25 +461,25 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     bool m_silentPush;
-    bool m_silentPushHasBeenSet;
+    bool m_silentPushHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

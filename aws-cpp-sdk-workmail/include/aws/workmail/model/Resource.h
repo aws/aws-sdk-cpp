@@ -301,25 +301,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ResourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     EntityState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_enabledDate;
-    bool m_enabledDateHasBeenSet;
+    bool m_enabledDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_disabledDate;
-    bool m_disabledDateHasBeenSet;
+    bool m_disabledDateHasBeenSet = false;
   };
 
 } // namespace Model

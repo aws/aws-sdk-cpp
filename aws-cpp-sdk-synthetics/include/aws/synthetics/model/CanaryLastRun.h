@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_canaryName;
-    bool m_canaryNameHasBeenSet;
+    bool m_canaryNameHasBeenSet = false;
 
     CanaryRun m_lastRun;
-    bool m_lastRunHasBeenSet;
+    bool m_lastRunHasBeenSet = false;
   };
 
 } // namespace Model

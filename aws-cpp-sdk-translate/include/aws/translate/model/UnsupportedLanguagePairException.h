@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::String m_targetLanguageCode;
-    bool m_targetLanguageCodeHasBeenSet;
+    bool m_targetLanguageCodeHasBeenSet = false;
   };
 
 } // namespace Model

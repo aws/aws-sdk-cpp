@@ -225,13 +225,13 @@ namespace Model
   private:
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_compatibleRuntimes;
-    bool m_compatibleRuntimesHasBeenSet;
+    bool m_compatibleRuntimesHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
   };
 
 } // namespace Model

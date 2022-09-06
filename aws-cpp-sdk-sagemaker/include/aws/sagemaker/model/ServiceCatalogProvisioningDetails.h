@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::Vector<ProvisioningParameter> m_provisioningParameters;
-    bool m_provisioningParametersHasBeenSet;
+    bool m_provisioningParametersHasBeenSet = false;
   };
 
 } // namespace Model

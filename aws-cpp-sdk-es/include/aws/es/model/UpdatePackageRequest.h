@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
 
     PackageSource m_packageSource;
-    bool m_packageSourceHasBeenSet;
+    bool m_packageSourceHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
   };
 
 } // namespace Model

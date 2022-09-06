@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<TargetInstance> m_targetInstances;
-    bool m_targetInstancesHasBeenSet;
+    bool m_targetInstancesHasBeenSet = false;
   };
 
 } // namespace Model

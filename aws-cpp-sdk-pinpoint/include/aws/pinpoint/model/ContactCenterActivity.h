@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
   };
 
 } // namespace Model

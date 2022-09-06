@@ -121,10 +121,10 @@ namespace Model
   private:
 
     EventDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_messageActivity;
-    bool m_messageActivityHasBeenSet;
+    bool m_messageActivityHasBeenSet = false;
   };
 
 } // namespace Model

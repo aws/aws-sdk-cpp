@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_customEndpointCertificateArn;
-    bool m_customEndpointCertificateArnHasBeenSet;
+    bool m_customEndpointCertificateArnHasBeenSet = false;
 
     bool m_customEndpointEnabled;
-    bool m_customEndpointEnabledHasBeenSet;
+    bool m_customEndpointEnabledHasBeenSet = false;
 
     bool m_enforceHTTPS;
-    bool m_enforceHTTPSHasBeenSet;
+    bool m_enforceHTTPSHasBeenSet = false;
 
     Aws::String m_customEndpoint;
-    bool m_customEndpointHasBeenSet;
+    bool m_customEndpointHasBeenSet = false;
 
     Aws::String m_tLSSecurityPolicy;
-    bool m_tLSSecurityPolicyHasBeenSet;
+    bool m_tLSSecurityPolicyHasBeenSet = false;
   };
 
 } // namespace Model

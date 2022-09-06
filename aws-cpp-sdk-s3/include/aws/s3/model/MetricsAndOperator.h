@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
   };
 
 } // namespace Model

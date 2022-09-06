@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     LinkedService m_linkedService;
-    bool m_linkedServiceHasBeenSet;
+    bool m_linkedServiceHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
 
     long long m_healthCheckVersion;
-    bool m_healthCheckVersionHasBeenSet;
+    bool m_healthCheckVersionHasBeenSet = false;
 
     CloudWatchAlarmConfiguration m_cloudWatchAlarmConfiguration;
-    bool m_cloudWatchAlarmConfigurationHasBeenSet;
+    bool m_cloudWatchAlarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

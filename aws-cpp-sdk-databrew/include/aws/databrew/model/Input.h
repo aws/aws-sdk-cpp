@@ -167,16 +167,16 @@ namespace Model
   private:
 
     S3Location m_s3InputDefinition;
-    bool m_s3InputDefinitionHasBeenSet;
+    bool m_s3InputDefinitionHasBeenSet = false;
 
     DataCatalogInputDefinition m_dataCatalogInputDefinition;
-    bool m_dataCatalogInputDefinitionHasBeenSet;
+    bool m_dataCatalogInputDefinitionHasBeenSet = false;
 
     DatabaseInputDefinition m_databaseInputDefinition;
-    bool m_databaseInputDefinitionHasBeenSet;
+    bool m_databaseInputDefinitionHasBeenSet = false;
 
     Metadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

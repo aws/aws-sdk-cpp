@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::String m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_objectType;
-    bool m_objectTypeHasBeenSet;
+    bool m_objectTypeHasBeenSet = false;
 
     long long m_numberOfObjects;
-    bool m_numberOfObjectsHasBeenSet;
+    bool m_numberOfObjectsHasBeenSet = false;
 
     long long m_codeLineCount;
-    bool m_codeLineCountHasBeenSet;
+    bool m_codeLineCountHasBeenSet = false;
 
     long long m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
   };
 
 } // namespace Model

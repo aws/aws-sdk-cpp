@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AudioMuxType m_muxType;
-    bool m_muxTypeHasBeenSet;
+    bool m_muxTypeHasBeenSet = false;
   };
 
 } // namespace Model

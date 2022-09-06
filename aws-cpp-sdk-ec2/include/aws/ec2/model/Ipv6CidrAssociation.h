@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_ipv6Cidr;
-    bool m_ipv6CidrHasBeenSet;
+    bool m_ipv6CidrHasBeenSet = false;
 
     Aws::String m_associatedResource;
-    bool m_associatedResourceHasBeenSet;
+    bool m_associatedResourceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
-    bool m_authenticationProvidersHasBeenSet;
+    bool m_authenticationProvidersHasBeenSet = false;
 
     SamlConfiguration m_samlConfiguration;
-    bool m_samlConfigurationHasBeenSet;
+    bool m_samlConfigurationHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

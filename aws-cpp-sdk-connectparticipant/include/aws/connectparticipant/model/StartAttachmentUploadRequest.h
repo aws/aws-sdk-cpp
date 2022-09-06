@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     long long m_attachmentSizeInBytes;
-    bool m_attachmentSizeInBytesHasBeenSet;
+    bool m_attachmentSizeInBytesHasBeenSet = false;
 
     Aws::String m_attachmentName;
-    bool m_attachmentNameHasBeenSet;
+    bool m_attachmentNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_connectionToken;
-    bool m_connectionTokenHasBeenSet;
+    bool m_connectionTokenHasBeenSet = false;
   };
 
 } // namespace Model

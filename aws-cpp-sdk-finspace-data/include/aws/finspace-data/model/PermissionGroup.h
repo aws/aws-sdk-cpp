@@ -453,25 +453,25 @@ namespace Model
   private:
 
     Aws::String m_permissionGroupId;
-    bool m_permissionGroupIdHasBeenSet;
+    bool m_permissionGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ApplicationPermission> m_applicationPermissions;
-    bool m_applicationPermissionsHasBeenSet;
+    bool m_applicationPermissionsHasBeenSet = false;
 
     long long m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     PermissionGroupMembershipStatus m_membershipStatus;
-    bool m_membershipStatusHasBeenSet;
+    bool m_membershipStatusHasBeenSet = false;
   };
 
 } // namespace Model

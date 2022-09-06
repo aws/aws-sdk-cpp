@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     AuditTaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
 
     AuditTaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
   };
 
 } // namespace Model

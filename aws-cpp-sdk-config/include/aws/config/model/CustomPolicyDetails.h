@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_policyRuntime;
-    bool m_policyRuntimeHasBeenSet;
+    bool m_policyRuntimeHasBeenSet = false;
 
     Aws::String m_policyText;
-    bool m_policyTextHasBeenSet;
+    bool m_policyTextHasBeenSet = false;
 
     bool m_enableDebugLogDelivery;
-    bool m_enableDebugLogDeliveryHasBeenSet;
+    bool m_enableDebugLogDeliveryHasBeenSet = false;
   };
 
 } // namespace Model

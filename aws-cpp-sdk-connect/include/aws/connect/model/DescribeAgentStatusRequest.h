@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_agentStatusId;
-    bool m_agentStatusIdHasBeenSet;
+    bool m_agentStatusIdHasBeenSet = false;
   };
 
 } // namespace Model

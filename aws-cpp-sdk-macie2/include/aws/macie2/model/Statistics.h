@@ -84,10 +84,10 @@ namespace Model
   private:
 
     double m_approximateNumberOfObjectsToProcess;
-    bool m_approximateNumberOfObjectsToProcessHasBeenSet;
+    bool m_approximateNumberOfObjectsToProcessHasBeenSet = false;
 
     double m_numberOfRuns;
-    bool m_numberOfRunsHasBeenSet;
+    bool m_numberOfRunsHasBeenSet = false;
   };
 
 } // namespace Model

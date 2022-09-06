@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_scheduledQueryArn;
-    bool m_scheduledQueryArnHasBeenSet;
+    bool m_scheduledQueryArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_invocationTime;
-    bool m_invocationTimeHasBeenSet;
+    bool m_invocationTimeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

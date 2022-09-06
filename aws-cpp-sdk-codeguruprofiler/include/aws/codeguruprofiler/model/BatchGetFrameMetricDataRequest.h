@@ -378,22 +378,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<FrameMetric> m_frameMetrics;
-    bool m_frameMetricsHasBeenSet;
+    bool m_frameMetricsHasBeenSet = false;
 
     Aws::String m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     AggregationPeriod m_targetResolution;
-    bool m_targetResolutionHasBeenSet;
+    bool m_targetResolutionHasBeenSet = false;
   };
 
 } // namespace Model

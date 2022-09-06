@@ -268,22 +268,22 @@ namespace Model
   private:
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
 
     BudgetType m_budgetType;
-    bool m_budgetTypeHasBeenSet;
+    bool m_budgetTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
-    bool m_costFiltersHasBeenSet;
+    bool m_costFiltersHasBeenSet = false;
 
     CostTypes m_costTypes;
-    bool m_costTypesHasBeenSet;
+    bool m_costTypesHasBeenSet = false;
 
     TimeUnit m_timeUnit;
-    bool m_timeUnitHasBeenSet;
+    bool m_timeUnitHasBeenSet = false;
 
     Aws::Vector<BudgetedAndActualAmounts> m_budgetedAndActualAmountsList;
-    bool m_budgetedAndActualAmountsListHasBeenSet;
+    bool m_budgetedAndActualAmountsListHasBeenSet = false;
   };
 
 } // namespace Model

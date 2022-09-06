@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Connector> m_connectors;
-    bool m_connectorsHasBeenSet;
+    bool m_connectorsHasBeenSet = false;
   };
 
 } // namespace Model

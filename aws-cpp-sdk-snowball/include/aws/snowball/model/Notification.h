@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_snsTopicARN;
-    bool m_snsTopicARNHasBeenSet;
+    bool m_snsTopicARNHasBeenSet = false;
 
     Aws::Vector<JobState> m_jobStatesToNotify;
-    bool m_jobStatesToNotifyHasBeenSet;
+    bool m_jobStatesToNotifyHasBeenSet = false;
 
     bool m_notifyAll;
-    bool m_notifyAllHasBeenSet;
+    bool m_notifyAllHasBeenSet = false;
   };
 
 } // namespace Model

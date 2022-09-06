@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_credentialsParameter;
-    bool m_credentialsParameterHasBeenSet;
+    bool m_credentialsParameterHasBeenSet = false;
   };
 
 } // namespace Model

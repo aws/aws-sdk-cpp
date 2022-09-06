@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_accountAlias;
-    bool m_accountAliasHasBeenSet;
+    bool m_accountAliasHasBeenSet = false;
   };
 
 } // namespace Model

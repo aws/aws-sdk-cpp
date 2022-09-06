@@ -109,7 +109,7 @@ GameSparksClient::~GameSparksClient()
 
 void GameSparksClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("GameSparks");
+  AWSClient::SetServiceClientName("GameSparks");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -478,28 +478,28 @@ namespace Model
   private:
 
     Aws::String m_proposalId;
-    bool m_proposalIdHasBeenSet;
+    bool m_proposalIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_proposedByMemberId;
-    bool m_proposedByMemberIdHasBeenSet;
+    bool m_proposedByMemberIdHasBeenSet = false;
 
     Aws::String m_proposedByMemberName;
-    bool m_proposedByMemberNameHasBeenSet;
+    bool m_proposedByMemberNameHasBeenSet = false;
 
     ProposalStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

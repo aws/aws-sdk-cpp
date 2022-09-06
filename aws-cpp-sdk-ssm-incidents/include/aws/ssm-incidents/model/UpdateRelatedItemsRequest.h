@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_incidentRecordArn;
-    bool m_incidentRecordArnHasBeenSet;
+    bool m_incidentRecordArnHasBeenSet = false;
 
     RelatedItemsUpdate m_relatedItemsUpdate;
-    bool m_relatedItemsUpdateHasBeenSet;
+    bool m_relatedItemsUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     Aws::String m_loggerDefinitionId;
-    bool m_loggerDefinitionIdHasBeenSet;
+    bool m_loggerDefinitionIdHasBeenSet = false;
 
     Aws::Vector<Logger> m_loggers;
-    bool m_loggersHasBeenSet;
+    bool m_loggersHasBeenSet = false;
   };
 
 } // namespace Model

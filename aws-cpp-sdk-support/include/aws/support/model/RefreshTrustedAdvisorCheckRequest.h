@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_checkId;
-    bool m_checkIdHasBeenSet;
+    bool m_checkIdHasBeenSet = false;
   };
 
 } // namespace Model

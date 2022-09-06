@@ -107,7 +107,7 @@ SchemasClient::~SchemasClient()
 
 void SchemasClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("schemas");
+  AWSClient::SetServiceClientName("schemas");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

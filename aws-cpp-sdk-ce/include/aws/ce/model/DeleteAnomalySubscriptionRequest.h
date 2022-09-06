@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_subscriptionArn;
-    bool m_subscriptionArnHasBeenSet;
+    bool m_subscriptionArnHasBeenSet = false;
   };
 
 } // namespace Model

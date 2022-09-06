@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     Aws::String m_transitGatewayConnectPeerId;
-    bool m_transitGatewayConnectPeerIdHasBeenSet;
+    bool m_transitGatewayConnectPeerIdHasBeenSet = false;
 
     TransitGatewayConnectPeerState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     TransitGatewayConnectPeerConfiguration m_connectPeerConfiguration;
-    bool m_connectPeerConfigurationHasBeenSet;
+    bool m_connectPeerConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -119,10 +119,10 @@ namespace Model
   private:
 
     EmailTemplateRequest m_emailTemplateRequest;
-    bool m_emailTemplateRequestHasBeenSet;
+    bool m_emailTemplateRequestHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -64,7 +64,7 @@ namespace Model
   private:
 
     long long m_processingTimeMilliseconds;
-    bool m_processingTimeMillisecondsHasBeenSet;
+    bool m_processingTimeMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

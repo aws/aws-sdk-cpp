@@ -445,28 +445,28 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_analysisId;
-    bool m_analysisIdHasBeenSet;
+    bool m_analysisIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Parameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     AnalysisSourceEntity m_sourceEntity;
-    bool m_sourceEntityHasBeenSet;
+    bool m_sourceEntityHasBeenSet = false;
 
     Aws::String m_themeArn;
-    bool m_themeArnHasBeenSet;
+    bool m_themeArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowedAccounts;
-    bool m_allowedAccountsHasBeenSet;
+    bool m_allowedAccountsHasBeenSet = false;
   };
 
 } // namespace Model

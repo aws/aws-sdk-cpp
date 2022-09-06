@@ -390,31 +390,31 @@ namespace Model
   private:
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_datastoreArn;
-    bool m_datastoreArnHasBeenSet;
+    bool m_datastoreArnHasBeenSet = false;
 
     Aws::String m_datastoreName;
-    bool m_datastoreNameHasBeenSet;
+    bool m_datastoreNameHasBeenSet = false;
 
     DatastoreStatus m_datastoreStatus;
-    bool m_datastoreStatusHasBeenSet;
+    bool m_datastoreStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     FHIRVersion m_datastoreTypeVersion;
-    bool m_datastoreTypeVersionHasBeenSet;
+    bool m_datastoreTypeVersionHasBeenSet = false;
 
     Aws::String m_datastoreEndpoint;
-    bool m_datastoreEndpointHasBeenSet;
+    bool m_datastoreEndpointHasBeenSet = false;
 
     SseConfiguration m_sseConfiguration;
-    bool m_sseConfigurationHasBeenSet;
+    bool m_sseConfigurationHasBeenSet = false;
 
     PreloadDataConfig m_preloadDataConfig;
-    bool m_preloadDataConfigHasBeenSet;
+    bool m_preloadDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

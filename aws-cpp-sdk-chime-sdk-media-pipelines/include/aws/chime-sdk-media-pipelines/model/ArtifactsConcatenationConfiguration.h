@@ -263,25 +263,25 @@ namespace Model
   private:
 
     AudioConcatenationConfiguration m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     VideoConcatenationConfiguration m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     ContentConcatenationConfiguration m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     DataChannelConcatenationConfiguration m_dataChannel;
-    bool m_dataChannelHasBeenSet;
+    bool m_dataChannelHasBeenSet = false;
 
     TranscriptionMessagesConcatenationConfiguration m_transcriptionMessages;
-    bool m_transcriptionMessagesHasBeenSet;
+    bool m_transcriptionMessagesHasBeenSet = false;
 
     MeetingEventsConcatenationConfiguration m_meetingEvents;
-    bool m_meetingEventsHasBeenSet;
+    bool m_meetingEventsHasBeenSet = false;
 
     CompositedVideoConcatenationConfiguration m_compositedVideo;
-    bool m_compositedVideoHasBeenSet;
+    bool m_compositedVideoHasBeenSet = false;
   };
 
 } // namespace Model

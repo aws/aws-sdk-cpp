@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ScalingParameters m_scalingParameters;
-    bool m_scalingParametersHasBeenSet;
+    bool m_scalingParametersHasBeenSet = false;
   };
 
 } // namespace Model

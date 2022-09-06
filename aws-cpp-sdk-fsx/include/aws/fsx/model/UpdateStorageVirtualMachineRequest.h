@@ -190,16 +190,16 @@ namespace Model
   private:
 
     UpdateSvmActiveDirectoryConfiguration m_activeDirectoryConfiguration;
-    bool m_activeDirectoryConfigurationHasBeenSet;
+    bool m_activeDirectoryConfigurationHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_storageVirtualMachineId;
-    bool m_storageVirtualMachineIdHasBeenSet;
+    bool m_storageVirtualMachineIdHasBeenSet = false;
 
     Aws::String m_svmAdminPassword;
-    bool m_svmAdminPasswordHasBeenSet;
+    bool m_svmAdminPasswordHasBeenSet = false;
   };
 
 } // namespace Model

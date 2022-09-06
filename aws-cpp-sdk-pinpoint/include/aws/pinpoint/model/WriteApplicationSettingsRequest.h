@@ -329,19 +329,19 @@ namespace Model
   private:
 
     CampaignHook m_campaignHook;
-    bool m_campaignHookHasBeenSet;
+    bool m_campaignHookHasBeenSet = false;
 
     bool m_cloudWatchMetricsEnabled;
-    bool m_cloudWatchMetricsEnabledHasBeenSet;
+    bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
     bool m_eventTaggingEnabled;
-    bool m_eventTaggingEnabledHasBeenSet;
+    bool m_eventTaggingEnabledHasBeenSet = false;
 
     CampaignLimits m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     QuietTime m_quietTime;
-    bool m_quietTimeHasBeenSet;
+    bool m_quietTimeHasBeenSet = false;
   };
 
 } // namespace Model

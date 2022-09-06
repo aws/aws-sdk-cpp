@@ -128,10 +128,10 @@ namespace Model
   private:
 
     int m_percentEnabled;
-    bool m_percentEnabledHasBeenSet;
+    bool m_percentEnabledHasBeenSet = false;
 
     Aws::String m_playbackConfigurationName;
-    bool m_playbackConfigurationNameHasBeenSet;
+    bool m_playbackConfigurationNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,16 +136,16 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     ImportDestination m_importDestination;
-    bool m_importDestinationHasBeenSet;
+    bool m_importDestinationHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

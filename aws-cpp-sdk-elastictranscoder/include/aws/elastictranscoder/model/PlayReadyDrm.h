@@ -449,22 +449,22 @@ namespace Model
   private:
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_keyMd5;
-    bool m_keyMd5HasBeenSet;
+    bool m_keyMd5HasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_initializationVector;
-    bool m_initializationVectorHasBeenSet;
+    bool m_initializationVectorHasBeenSet = false;
 
     Aws::String m_licenseAcquisitionUrl;
-    bool m_licenseAcquisitionUrlHasBeenSet;
+    bool m_licenseAcquisitionUrlHasBeenSet = false;
   };
 
 } // namespace Model

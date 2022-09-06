@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_documentDataFieldName;
-    bool m_documentDataFieldNameHasBeenSet;
+    bool m_documentDataFieldNameHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     Aws::Vector<SalesforceChatterFeedIncludeFilterType> m_includeFilterTypes;
-    bool m_includeFilterTypesHasBeenSet;
+    bool m_includeFilterTypesHasBeenSet = false;
   };
 
 } // namespace Model

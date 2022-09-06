@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<UpdatePhoneNumberRequestItem> m_updatePhoneNumberRequestItems;
-    bool m_updatePhoneNumberRequestItemsHasBeenSet;
+    bool m_updatePhoneNumberRequestItemsHasBeenSet = false;
   };
 
 } // namespace Model

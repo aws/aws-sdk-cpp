@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::Vector<HttpPackageConfiguration> m_httpPackageConfigurations;
-    bool m_httpPackageConfigurationsHasBeenSet;
+    bool m_httpPackageConfigurationsHasBeenSet = false;
 
     Aws::String m_liveSourceName;
-    bool m_liveSourceNameHasBeenSet;
+    bool m_liveSourceNameHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

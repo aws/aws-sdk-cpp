@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     ExternalEvaluation m_externalEvaluation;
-    bool m_externalEvaluationHasBeenSet;
+    bool m_externalEvaluationHasBeenSet = false;
   };
 
 } // namespace Model

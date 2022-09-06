@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::Vector<Topic> m_topics;
-    bool m_topicsHasBeenSet;
+    bool m_topicsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

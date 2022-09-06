@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::String m_serverNameToVerify;
-    bool m_serverNameToVerifyHasBeenSet;
+    bool m_serverNameToVerifyHasBeenSet = false;
   };
 
 } // namespace Model

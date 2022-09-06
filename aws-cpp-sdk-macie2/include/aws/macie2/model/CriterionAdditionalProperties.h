@@ -352,25 +352,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eq;
-    bool m_eqHasBeenSet;
+    bool m_eqHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eqExactMatch;
-    bool m_eqExactMatchHasBeenSet;
+    bool m_eqExactMatchHasBeenSet = false;
 
     long long m_gt;
-    bool m_gtHasBeenSet;
+    bool m_gtHasBeenSet = false;
 
     long long m_gte;
-    bool m_gteHasBeenSet;
+    bool m_gteHasBeenSet = false;
 
     long long m_lt;
-    bool m_ltHasBeenSet;
+    bool m_ltHasBeenSet = false;
 
     long long m_lte;
-    bool m_lteHasBeenSet;
+    bool m_lteHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_neq;
-    bool m_neqHasBeenSet;
+    bool m_neqHasBeenSet = false;
   };
 
 } // namespace Model

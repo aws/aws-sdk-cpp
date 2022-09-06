@@ -269,19 +269,19 @@ namespace Model
   private:
 
     int m_minHealthyPercentage;
-    bool m_minHealthyPercentageHasBeenSet;
+    bool m_minHealthyPercentageHasBeenSet = false;
 
     int m_instanceWarmup;
-    bool m_instanceWarmupHasBeenSet;
+    bool m_instanceWarmupHasBeenSet = false;
 
     Aws::Vector<int> m_checkpointPercentages;
-    bool m_checkpointPercentagesHasBeenSet;
+    bool m_checkpointPercentagesHasBeenSet = false;
 
     int m_checkpointDelay;
-    bool m_checkpointDelayHasBeenSet;
+    bool m_checkpointDelayHasBeenSet = false;
 
     bool m_skipMatching;
-    bool m_skipMatchingHasBeenSet;
+    bool m_skipMatchingHasBeenSet = false;
   };
 
 } // namespace Model

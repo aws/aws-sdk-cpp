@@ -154,13 +154,13 @@ namespace Model
   private:
 
     S3Resource m_failedItem;
-    bool m_failedItemHasBeenSet;
+    bool m_failedItemHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

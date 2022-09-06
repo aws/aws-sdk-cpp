@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_destinationPath;
-    bool m_destinationPathHasBeenSet;
+    bool m_destinationPathHasBeenSet = false;
 
     ResourceDownloadOwnerSetting m_ownerSetting;
-    bool m_ownerSettingHasBeenSet;
+    bool m_ownerSettingHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

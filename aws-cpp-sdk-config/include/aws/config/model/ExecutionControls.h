@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SsmControls m_ssmControls;
-    bool m_ssmControlsHasBeenSet;
+    bool m_ssmControlsHasBeenSet = false;
   };
 
 } // namespace Model

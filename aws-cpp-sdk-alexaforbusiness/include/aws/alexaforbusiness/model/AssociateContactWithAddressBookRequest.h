@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet;
+    bool m_contactArnHasBeenSet = false;
 
     Aws::String m_addressBookArn;
-    bool m_addressBookArnHasBeenSet;
+    bool m_addressBookArnHasBeenSet = false;
   };
 
 } // namespace Model

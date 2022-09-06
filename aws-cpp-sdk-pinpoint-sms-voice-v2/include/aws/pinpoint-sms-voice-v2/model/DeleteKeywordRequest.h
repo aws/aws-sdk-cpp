@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_keyword;
-    bool m_keywordHasBeenSet;
+    bool m_keywordHasBeenSet = false;
   };
 
 } // namespace Model

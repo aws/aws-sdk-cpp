@@ -104,10 +104,10 @@ namespace Model
   private:
 
     HookTargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     ChangeSetHookResourceTargetDetails m_resourceTargetDetails;
-    bool m_resourceTargetDetailsHasBeenSet;
+    bool m_resourceTargetDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::Vector<Taint> m_addOrUpdateTaints;
-    bool m_addOrUpdateTaintsHasBeenSet;
+    bool m_addOrUpdateTaintsHasBeenSet = false;
 
     Aws::Vector<Taint> m_removeTaints;
-    bool m_removeTaintsHasBeenSet;
+    bool m_removeTaintsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
   };
 
 } // namespace Model

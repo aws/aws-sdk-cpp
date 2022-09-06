@@ -302,25 +302,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenAt;
-    bool m_lastSeenAtHasBeenSet;
+    bool m_lastSeenAtHasBeenSet = false;
 
     Aws::String m_subjectArn;
-    bool m_subjectArnHasBeenSet;
+    bool m_subjectArnHasBeenSet = false;
 
     Aws::String m_subjectId;
-    bool m_subjectIdHasBeenSet;
+    bool m_subjectIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_x509Subject;
-    bool m_x509SubjectHasBeenSet;
+    bool m_x509SubjectHasBeenSet = false;
   };
 
 } // namespace Model

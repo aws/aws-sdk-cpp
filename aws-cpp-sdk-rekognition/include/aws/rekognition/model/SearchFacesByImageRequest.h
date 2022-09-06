@@ -285,19 +285,19 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     int m_maxFaces;
-    bool m_maxFacesHasBeenSet;
+    bool m_maxFacesHasBeenSet = false;
 
     double m_faceMatchThreshold;
-    bool m_faceMatchThresholdHasBeenSet;
+    bool m_faceMatchThresholdHasBeenSet = false;
 
     QualityFilter m_qualityFilter;
-    bool m_qualityFilterHasBeenSet;
+    bool m_qualityFilterHasBeenSet = false;
   };
 
 } // namespace Model

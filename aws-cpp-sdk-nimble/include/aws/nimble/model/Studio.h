@@ -755,52 +755,52 @@ namespace Model
   private:
 
     Aws::String m_adminRoleArn;
-    bool m_adminRoleArnHasBeenSet;
+    bool m_adminRoleArnHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     Aws::String m_ssoClientId;
-    bool m_ssoClientIdHasBeenSet;
+    bool m_ssoClientIdHasBeenSet = false;
 
     StudioState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StudioStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     StudioEncryptionConfiguration m_studioEncryptionConfiguration;
-    bool m_studioEncryptionConfigurationHasBeenSet;
+    bool m_studioEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_studioName;
-    bool m_studioNameHasBeenSet;
+    bool m_studioNameHasBeenSet = false;
 
     Aws::String m_studioUrl;
-    bool m_studioUrlHasBeenSet;
+    bool m_studioUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_userRoleArn;
-    bool m_userRoleArnHasBeenSet;
+    bool m_userRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

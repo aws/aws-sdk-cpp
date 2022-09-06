@@ -807,55 +807,55 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     VpcConfigResponse m_resourcesVpcConfig;
-    bool m_resourcesVpcConfigHasBeenSet;
+    bool m_resourcesVpcConfigHasBeenSet = false;
 
     KubernetesNetworkConfigResponse m_kubernetesNetworkConfig;
-    bool m_kubernetesNetworkConfigHasBeenSet;
+    bool m_kubernetesNetworkConfigHasBeenSet = false;
 
     Logging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     Identity m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     ClusterStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Certificate m_certificateAuthority;
-    bool m_certificateAuthorityHasBeenSet;
+    bool m_certificateAuthorityHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<EncryptionConfig> m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
 
     ConnectorConfigResponse m_connectorConfig;
-    bool m_connectorConfigHasBeenSet;
+    bool m_connectorConfigHasBeenSet = false;
   };
 
 } // namespace Model

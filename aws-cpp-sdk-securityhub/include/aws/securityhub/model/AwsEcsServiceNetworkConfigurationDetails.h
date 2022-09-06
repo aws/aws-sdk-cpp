@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails m_awsVpcConfiguration;
-    bool m_awsVpcConfigurationHasBeenSet;
+    bool m_awsVpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

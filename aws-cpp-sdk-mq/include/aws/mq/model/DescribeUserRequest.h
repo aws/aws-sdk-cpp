@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_brokerId;
-    bool m_brokerIdHasBeenSet;
+    bool m_brokerIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

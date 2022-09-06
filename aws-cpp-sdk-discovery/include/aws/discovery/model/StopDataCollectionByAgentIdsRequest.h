@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_agentIds;
-    bool m_agentIdsHasBeenSet;
+    bool m_agentIdsHasBeenSet = false;
   };
 
 } // namespace Model

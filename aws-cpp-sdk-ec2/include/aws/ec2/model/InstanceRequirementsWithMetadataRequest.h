@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::Vector<ArchitectureType> m_architectureTypes;
-    bool m_architectureTypesHasBeenSet;
+    bool m_architectureTypesHasBeenSet = false;
 
     Aws::Vector<VirtualizationType> m_virtualizationTypes;
-    bool m_virtualizationTypesHasBeenSet;
+    bool m_virtualizationTypesHasBeenSet = false;
 
     InstanceRequirementsRequest m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

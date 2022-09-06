@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_expressionNames;
-    bool m_expressionNamesHasBeenSet;
+    bool m_expressionNamesHasBeenSet = false;
 
     bool m_deployed;
-    bool m_deployedHasBeenSet;
+    bool m_deployedHasBeenSet = false;
   };
 
 } // namespace Model

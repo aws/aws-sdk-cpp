@@ -303,16 +303,16 @@ namespace Model
   private:
 
     StartSelectorType m_startSelectorType;
-    bool m_startSelectorTypeHasBeenSet;
+    bool m_startSelectorTypeHasBeenSet = false;
 
     Aws::String m_afterFragmentNumber;
-    bool m_afterFragmentNumberHasBeenSet;
+    bool m_afterFragmentNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     Aws::String m_continuationToken;
-    bool m_continuationTokenHasBeenSet;
+    bool m_continuationTokenHasBeenSet = false;
   };
 
 } // namespace Model

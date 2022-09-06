@@ -273,13 +273,13 @@ namespace Model
   private:
 
     Aws::String m_pathPrefix;
-    bool m_pathPrefixHasBeenSet;
+    bool m_pathPrefixHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

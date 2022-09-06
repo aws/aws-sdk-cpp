@@ -144,10 +144,10 @@ namespace Model
   private:
 
     DashIsoPlaybackDeviceCompatibility m_playbackDeviceCompatibility;
-    bool m_playbackDeviceCompatibilityHasBeenSet;
+    bool m_playbackDeviceCompatibilityHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

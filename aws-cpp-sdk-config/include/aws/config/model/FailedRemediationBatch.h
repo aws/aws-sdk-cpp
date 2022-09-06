@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::Vector<RemediationConfiguration> m_failedItems;
-    bool m_failedItemsHasBeenSet;
+    bool m_failedItemsHasBeenSet = false;
   };
 
 } // namespace Model

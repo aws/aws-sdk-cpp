@@ -138,10 +138,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
   };
 
 } // namespace Model

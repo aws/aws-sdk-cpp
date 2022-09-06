@@ -138,10 +138,10 @@ namespace Model
   private:
 
     EC2InstanceType m_eC2InstanceType;
-    bool m_eC2InstanceTypeHasBeenSet;
+    bool m_eC2InstanceTypeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

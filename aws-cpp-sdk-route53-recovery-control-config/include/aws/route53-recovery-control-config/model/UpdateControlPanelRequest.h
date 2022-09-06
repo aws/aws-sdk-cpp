@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::String m_controlPanelName;
-    bool m_controlPanelNameHasBeenSet;
+    bool m_controlPanelNameHasBeenSet = false;
   };
 
 } // namespace Model

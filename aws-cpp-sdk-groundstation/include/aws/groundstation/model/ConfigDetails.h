@@ -123,13 +123,13 @@ namespace Model
   private:
 
     AntennaDemodDecodeDetails m_antennaDemodDecodeDetails;
-    bool m_antennaDemodDecodeDetailsHasBeenSet;
+    bool m_antennaDemodDecodeDetailsHasBeenSet = false;
 
     EndpointDetails m_endpointDetails;
-    bool m_endpointDetailsHasBeenSet;
+    bool m_endpointDetailsHasBeenSet = false;
 
     S3RecordingDetails m_s3RecordingDetails;
-    bool m_s3RecordingDetailsHasBeenSet;
+    bool m_s3RecordingDetailsHasBeenSet = false;
   };
 
 } // namespace Model

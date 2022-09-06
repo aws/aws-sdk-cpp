@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::Vector<ClickFeedback> m_clickFeedbackItems;
-    bool m_clickFeedbackItemsHasBeenSet;
+    bool m_clickFeedbackItemsHasBeenSet = false;
 
     Aws::Vector<RelevanceFeedback> m_relevanceFeedbackItems;
-    bool m_relevanceFeedbackItemsHasBeenSet;
+    bool m_relevanceFeedbackItemsHasBeenSet = false;
   };
 
 } // namespace Model

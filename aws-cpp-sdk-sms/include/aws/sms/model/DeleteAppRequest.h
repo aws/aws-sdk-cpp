@@ -127,13 +127,13 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     bool m_forceStopAppReplication;
-    bool m_forceStopAppReplicationHasBeenSet;
+    bool m_forceStopAppReplicationHasBeenSet = false;
 
     bool m_forceTerminateApp;
-    bool m_forceTerminateAppHasBeenSet;
+    bool m_forceTerminateAppHasBeenSet = false;
   };
 
 } // namespace Model

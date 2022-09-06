@@ -72,7 +72,7 @@ namespace Model
   private:
 
     ResourceStatementRequest m_resourceStatement;
-    bool m_resourceStatementHasBeenSet;
+    bool m_resourceStatementHasBeenSet = false;
   };
 
 } // namespace Model

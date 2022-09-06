@@ -98,10 +98,10 @@ namespace Model
   private:
 
     Aws::String m_shareInvitationId;
-    bool m_shareInvitationIdHasBeenSet;
+    bool m_shareInvitationIdHasBeenSet = false;
 
     ShareInvitationAction m_shareInvitationAction;
-    bool m_shareInvitationActionHasBeenSet;
+    bool m_shareInvitationActionHasBeenSet = false;
   };
 
 } // namespace Model

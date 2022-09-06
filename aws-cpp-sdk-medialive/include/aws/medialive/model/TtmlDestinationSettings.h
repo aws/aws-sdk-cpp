@@ -76,7 +76,7 @@ namespace Model
   private:
 
     TtmlDestinationStyleControl m_styleControl;
-    bool m_styleControlHasBeenSet;
+    bool m_styleControlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     Aws::String m_ipv6Address;
-    bool m_ipv6AddressHasBeenSet;
+    bool m_ipv6AddressHasBeenSet = false;
 
     Aws::String m_privateIpv4Address;
-    bool m_privateIpv4AddressHasBeenSet;
+    bool m_privateIpv4AddressHasBeenSet = false;
   };
 
 } // namespace Model

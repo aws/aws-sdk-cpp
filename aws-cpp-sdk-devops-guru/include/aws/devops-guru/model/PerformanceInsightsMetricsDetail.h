@@ -351,22 +351,22 @@ namespace Model
   private:
 
     Aws::String m_metricDisplayName;
-    bool m_metricDisplayNameHasBeenSet;
+    bool m_metricDisplayNameHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     PerformanceInsightsMetricQuery m_metricQuery;
-    bool m_metricQueryHasBeenSet;
+    bool m_metricQueryHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsReferenceData> m_referenceData;
-    bool m_referenceDataHasBeenSet;
+    bool m_referenceDataHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsStat> m_statsAtAnomaly;
-    bool m_statsAtAnomalyHasBeenSet;
+    bool m_statsAtAnomalyHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsStat> m_statsAtBaseline;
-    bool m_statsAtBaselineHasBeenSet;
+    bool m_statsAtBaselineHasBeenSet = false;
   };
 
 } // namespace Model

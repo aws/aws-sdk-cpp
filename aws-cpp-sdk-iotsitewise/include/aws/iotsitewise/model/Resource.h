@@ -103,10 +103,10 @@ namespace Model
   private:
 
     PortalResource m_portal;
-    bool m_portalHasBeenSet;
+    bool m_portalHasBeenSet = false;
 
     ProjectResource m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
   };
 
 } // namespace Model

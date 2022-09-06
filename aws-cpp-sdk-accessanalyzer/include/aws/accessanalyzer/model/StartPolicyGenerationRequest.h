@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     CloudTrailDetails m_cloudTrailDetails;
-    bool m_cloudTrailDetailsHasBeenSet;
+    bool m_cloudTrailDetailsHasBeenSet = false;
 
     PolicyGenerationDetails m_policyGenerationDetails;
-    bool m_policyGenerationDetailsHasBeenSet;
+    bool m_policyGenerationDetailsHasBeenSet = false;
   };
 
 } // namespace Model

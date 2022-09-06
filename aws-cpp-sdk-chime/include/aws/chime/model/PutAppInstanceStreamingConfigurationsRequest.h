@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_appInstanceArn;
-    bool m_appInstanceArnHasBeenSet;
+    bool m_appInstanceArnHasBeenSet = false;
 
     Aws::Vector<AppInstanceStreamingConfiguration> m_appInstanceStreamingConfigurations;
-    bool m_appInstanceStreamingConfigurationsHasBeenSet;
+    bool m_appInstanceStreamingConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

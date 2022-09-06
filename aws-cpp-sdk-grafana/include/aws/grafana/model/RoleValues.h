@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_admin;
-    bool m_adminHasBeenSet;
+    bool m_adminHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_editor;
-    bool m_editorHasBeenSet;
+    bool m_editorHasBeenSet = false;
   };
 
 } // namespace Model

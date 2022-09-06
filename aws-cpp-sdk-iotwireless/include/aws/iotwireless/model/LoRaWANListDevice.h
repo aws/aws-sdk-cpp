@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_devEui;
-    bool m_devEuiHasBeenSet;
+    bool m_devEuiHasBeenSet = false;
   };
 
 } // namespace Model

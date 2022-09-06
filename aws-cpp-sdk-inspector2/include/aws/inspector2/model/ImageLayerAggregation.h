@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_layerHashes;
-    bool m_layerHashesHasBeenSet;
+    bool m_layerHashesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_repositories;
-    bool m_repositoriesHasBeenSet;
+    bool m_repositoriesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     ImageLayerSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

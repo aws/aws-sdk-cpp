@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PullRequestStatusEnum m_pullRequestStatus;
-    bool m_pullRequestStatusHasBeenSet;
+    bool m_pullRequestStatusHasBeenSet = false;
   };
 
 } // namespace Model

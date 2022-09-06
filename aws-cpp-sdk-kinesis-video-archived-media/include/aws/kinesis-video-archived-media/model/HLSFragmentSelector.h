@@ -241,10 +241,10 @@ namespace Model
   private:
 
     HLSFragmentSelectorType m_fragmentSelectorType;
-    bool m_fragmentSelectorTypeHasBeenSet;
+    bool m_fragmentSelectorTypeHasBeenSet = false;
 
     HLSTimestampRange m_timestampRange;
-    bool m_timestampRangeHasBeenSet;
+    bool m_timestampRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,7 +58,7 @@ namespace Model
   private:
 
     HtmlMotionGraphicsSettings m_htmlMotionGraphicsSettings;
-    bool m_htmlMotionGraphicsSettingsHasBeenSet;
+    bool m_htmlMotionGraphicsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

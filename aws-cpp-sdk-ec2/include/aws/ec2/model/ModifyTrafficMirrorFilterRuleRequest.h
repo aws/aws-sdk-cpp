@@ -471,40 +471,40 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorFilterRuleId;
-    bool m_trafficMirrorFilterRuleIdHasBeenSet;
+    bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
 
     TrafficDirection m_trafficDirection;
-    bool m_trafficDirectionHasBeenSet;
+    bool m_trafficDirectionHasBeenSet = false;
 
     int m_ruleNumber;
-    bool m_ruleNumberHasBeenSet;
+    bool m_ruleNumberHasBeenSet = false;
 
     TrafficMirrorRuleAction m_ruleAction;
-    bool m_ruleActionHasBeenSet;
+    bool m_ruleActionHasBeenSet = false;
 
     TrafficMirrorPortRangeRequest m_destinationPortRange;
-    bool m_destinationPortRangeHasBeenSet;
+    bool m_destinationPortRangeHasBeenSet = false;
 
     TrafficMirrorPortRangeRequest m_sourcePortRange;
-    bool m_sourcePortRangeHasBeenSet;
+    bool m_sourcePortRangeHasBeenSet = false;
 
     int m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_sourceCidrBlock;
-    bool m_sourceCidrBlockHasBeenSet;
+    bool m_sourceCidrBlockHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<TrafficMirrorFilterRuleField> m_removeFields;
-    bool m_removeFieldsHasBeenSet;
+    bool m_removeFieldsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

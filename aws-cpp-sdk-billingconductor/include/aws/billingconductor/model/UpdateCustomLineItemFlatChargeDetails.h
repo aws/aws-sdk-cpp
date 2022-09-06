@@ -59,7 +59,7 @@ namespace Model
   private:
 
     double m_chargeValue;
-    bool m_chargeValueHasBeenSet;
+    bool m_chargeValueHasBeenSet = false;
   };
 
 } // namespace Model

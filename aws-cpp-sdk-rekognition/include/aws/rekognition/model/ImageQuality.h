@@ -92,10 +92,10 @@ namespace Model
   private:
 
     double m_brightness;
-    bool m_brightnessHasBeenSet;
+    bool m_brightnessHasBeenSet = false;
 
     double m_sharpness;
-    bool m_sharpnessHasBeenSet;
+    bool m_sharpnessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_externalExecutionId;
-    bool m_externalExecutionIdHasBeenSet;
+    bool m_externalExecutionIdHasBeenSet = false;
 
     Aws::String m_externalExecutionSummary;
-    bool m_externalExecutionSummaryHasBeenSet;
+    bool m_externalExecutionSummaryHasBeenSet = false;
 
     Aws::String m_externalExecutionUrl;
-    bool m_externalExecutionUrlHasBeenSet;
+    bool m_externalExecutionUrlHasBeenSet = false;
   };
 
 } // namespace Model

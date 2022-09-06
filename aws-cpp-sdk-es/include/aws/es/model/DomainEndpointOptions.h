@@ -228,19 +228,19 @@ namespace Model
   private:
 
     bool m_enforceHTTPS;
-    bool m_enforceHTTPSHasBeenSet;
+    bool m_enforceHTTPSHasBeenSet = false;
 
     TLSSecurityPolicy m_tLSSecurityPolicy;
-    bool m_tLSSecurityPolicyHasBeenSet;
+    bool m_tLSSecurityPolicyHasBeenSet = false;
 
     bool m_customEndpointEnabled;
-    bool m_customEndpointEnabledHasBeenSet;
+    bool m_customEndpointEnabledHasBeenSet = false;
 
     Aws::String m_customEndpoint;
-    bool m_customEndpointHasBeenSet;
+    bool m_customEndpointHasBeenSet = false;
 
     Aws::String m_customEndpointCertificateArn;
-    bool m_customEndpointCertificateArnHasBeenSet;
+    bool m_customEndpointCertificateArnHasBeenSet = false;
   };
 
 } // namespace Model

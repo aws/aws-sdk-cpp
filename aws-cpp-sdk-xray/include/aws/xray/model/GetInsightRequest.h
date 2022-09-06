@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_insightId;
-    bool m_insightIdHasBeenSet;
+    bool m_insightIdHasBeenSet = false;
   };
 
 } // namespace Model

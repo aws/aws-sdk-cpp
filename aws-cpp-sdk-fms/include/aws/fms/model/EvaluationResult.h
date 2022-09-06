@@ -140,13 +140,13 @@ namespace Model
   private:
 
     PolicyComplianceStatusType m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     long long m_violatorCount;
-    bool m_violatorCountHasBeenSet;
+    bool m_violatorCountHasBeenSet = false;
 
     bool m_evaluationLimitExceeded;
-    bool m_evaluationLimitExceededHasBeenSet;
+    bool m_evaluationLimitExceededHasBeenSet = false;
   };
 
 } // namespace Model

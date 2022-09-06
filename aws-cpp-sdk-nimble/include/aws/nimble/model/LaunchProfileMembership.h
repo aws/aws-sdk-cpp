@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     LaunchProfilePersona m_persona;
-    bool m_personaHasBeenSet;
+    bool m_personaHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_sid;
-    bool m_sidHasBeenSet;
+    bool m_sidHasBeenSet = false;
   };
 
 } // namespace Model

@@ -197,22 +197,22 @@ namespace Model
   private:
 
     long long m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_sourceField;
-    bool m_sourceFieldHasBeenSet;
+    bool m_sourceFieldHasBeenSet = false;
 
     bool m_facetEnabled;
-    bool m_facetEnabledHasBeenSet;
+    bool m_facetEnabledHasBeenSet = false;
 
     bool m_searchEnabled;
-    bool m_searchEnabledHasBeenSet;
+    bool m_searchEnabledHasBeenSet = false;
 
     bool m_returnEnabled;
-    bool m_returnEnabledHasBeenSet;
+    bool m_returnEnabledHasBeenSet = false;
 
     bool m_sortEnabled;
-    bool m_sortEnabledHasBeenSet;
+    bool m_sortEnabledHasBeenSet = false;
   };
 
 } // namespace Model

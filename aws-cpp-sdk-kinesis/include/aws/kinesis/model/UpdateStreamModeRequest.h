@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     StreamModeDetails m_streamModeDetails;
-    bool m_streamModeDetailsHasBeenSet;
+    bool m_streamModeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -418,37 +418,37 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
 
     Aws::String m_trialComponentArn;
-    bool m_trialComponentArnHasBeenSet;
+    bool m_trialComponentArnHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     TrialComponentSource m_trialComponentSource;
-    bool m_trialComponentSourceHasBeenSet;
+    bool m_trialComponentSourceHasBeenSet = false;
 
     TrialComponentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
   };
 
 } // namespace Model

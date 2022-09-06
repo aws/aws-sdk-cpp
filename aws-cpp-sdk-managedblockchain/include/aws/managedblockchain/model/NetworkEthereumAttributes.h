@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::String m_chainId;
-    bool m_chainIdHasBeenSet;
+    bool m_chainIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::String m_totalRecommendationCount;
-    bool m_totalRecommendationCountHasBeenSet;
+    bool m_totalRecommendationCountHasBeenSet = false;
 
     Aws::String m_estimatedTotalMonthlySavingsAmount;
-    bool m_estimatedTotalMonthlySavingsAmountHasBeenSet;
+    bool m_estimatedTotalMonthlySavingsAmountHasBeenSet = false;
 
     Aws::String m_savingsCurrencyCode;
-    bool m_savingsCurrencyCodeHasBeenSet;
+    bool m_savingsCurrencyCodeHasBeenSet = false;
 
     Aws::String m_savingsPercentage;
-    bool m_savingsPercentageHasBeenSet;
+    bool m_savingsPercentageHasBeenSet = false;
   };
 
 } // namespace Model

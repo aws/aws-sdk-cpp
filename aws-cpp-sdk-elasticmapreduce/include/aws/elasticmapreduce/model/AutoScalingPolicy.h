@@ -137,10 +137,10 @@ namespace Model
   private:
 
     ScalingConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     Aws::Vector<ScalingRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

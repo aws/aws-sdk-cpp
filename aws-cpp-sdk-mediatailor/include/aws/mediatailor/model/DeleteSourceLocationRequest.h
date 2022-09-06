@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
   };
 
 } // namespace Model

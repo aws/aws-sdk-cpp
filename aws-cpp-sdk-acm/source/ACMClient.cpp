@@ -90,7 +90,7 @@ ACMClient::~ACMClient()
 
 void ACMClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ACM");
+  AWSClient::SetServiceClientName("ACM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

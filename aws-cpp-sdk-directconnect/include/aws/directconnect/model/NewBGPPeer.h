@@ -227,19 +227,19 @@ namespace Model
   private:
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_authKey;
-    bool m_authKeyHasBeenSet;
+    bool m_authKeyHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     Aws::String m_amazonAddress;
-    bool m_amazonAddressHasBeenSet;
+    bool m_amazonAddressHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
   };
 
 } // namespace Model

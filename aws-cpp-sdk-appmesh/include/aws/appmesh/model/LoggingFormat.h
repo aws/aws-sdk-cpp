@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<JsonFormatRef> m_json;
-    bool m_jsonHasBeenSet;
+    bool m_jsonHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

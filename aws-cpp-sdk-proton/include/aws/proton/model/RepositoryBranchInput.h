@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RepositoryProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

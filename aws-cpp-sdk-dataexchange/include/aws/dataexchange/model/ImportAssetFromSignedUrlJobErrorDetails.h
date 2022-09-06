@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_assetName;
-    bool m_assetNameHasBeenSet;
+    bool m_assetNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -361,16 +361,16 @@ namespace Model
   private:
 
     Aws::String m_workteamName;
-    bool m_workteamNameHasBeenSet;
+    bool m_workteamNameHasBeenSet = false;
 
     Aws::Vector<MemberDefinition> m_memberDefinitions;
-    bool m_memberDefinitionsHasBeenSet;
+    bool m_memberDefinitionsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

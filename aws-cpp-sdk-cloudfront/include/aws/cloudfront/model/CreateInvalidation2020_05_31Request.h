@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_distributionId;
-    bool m_distributionIdHasBeenSet;
+    bool m_distributionIdHasBeenSet = false;
 
     InvalidationBatch m_invalidationBatch;
-    bool m_invalidationBatchHasBeenSet;
+    bool m_invalidationBatchHasBeenSet = false;
   };
 
 } // namespace Model

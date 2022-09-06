@@ -303,19 +303,19 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     long long m_sessionLifetimeInMinutes;
-    bool m_sessionLifetimeInMinutesHasBeenSet;
+    bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     RegisteredUserEmbeddingExperienceConfiguration m_experienceConfiguration;
-    bool m_experienceConfigurationHasBeenSet;
+    bool m_experienceConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedDomains;
-    bool m_allowedDomainsHasBeenSet;
+    bool m_allowedDomainsHasBeenSet = false;
   };
 
 } // namespace Model

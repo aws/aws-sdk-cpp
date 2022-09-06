@@ -266,22 +266,22 @@ namespace Model
   private:
 
     Aws::String m_subscriptionArn;
-    bool m_subscriptionArnHasBeenSet;
+    bool m_subscriptionArnHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     AnomalySubscriptionFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_monitorArnList;
-    bool m_monitorArnListHasBeenSet;
+    bool m_monitorArnListHasBeenSet = false;
 
     Aws::Vector<Subscriber> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
 
     Aws::String m_subscriptionName;
-    bool m_subscriptionNameHasBeenSet;
+    bool m_subscriptionNameHasBeenSet = false;
   };
 
 } // namespace Model

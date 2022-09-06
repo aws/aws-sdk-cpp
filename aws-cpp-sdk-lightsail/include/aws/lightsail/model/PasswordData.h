@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_ciphertext;
-    bool m_ciphertextHasBeenSet;
+    bool m_ciphertextHasBeenSet = false;
 
     Aws::String m_keyPairName;
-    bool m_keyPairNameHasBeenSet;
+    bool m_keyPairNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_sourceColumn;
-    bool m_sourceColumnHasBeenSet;
+    bool m_sourceColumnHasBeenSet = false;
 
     Aws::String m_targetMultiMeasureAttributeName;
-    bool m_targetMultiMeasureAttributeNameHasBeenSet;
+    bool m_targetMultiMeasureAttributeNameHasBeenSet = false;
 
     ScalarMeasureValueType m_measureValueType;
-    bool m_measureValueTypeHasBeenSet;
+    bool m_measureValueTypeHasBeenSet = false;
   };
 
 } // namespace Model

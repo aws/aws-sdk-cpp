@@ -117,10 +117,10 @@ namespace Model
   private:
 
     AgentOrchestrationConfig m_agentOrchestrationConfig;
-    bool m_agentOrchestrationConfigHasBeenSet;
+    bool m_agentOrchestrationConfigHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

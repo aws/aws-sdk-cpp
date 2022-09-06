@@ -154,10 +154,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     SizeConstraint m_sizeConstraint;
-    bool m_sizeConstraintHasBeenSet;
+    bool m_sizeConstraintHasBeenSet = false;
   };
 
 } // namespace Model

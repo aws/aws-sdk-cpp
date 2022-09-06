@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_syncName;
-    bool m_syncNameHasBeenSet;
+    bool m_syncNameHasBeenSet = false;
 
     Aws::String m_syncType;
-    bool m_syncTypeHasBeenSet;
+    bool m_syncTypeHasBeenSet = false;
   };
 
 } // namespace Model

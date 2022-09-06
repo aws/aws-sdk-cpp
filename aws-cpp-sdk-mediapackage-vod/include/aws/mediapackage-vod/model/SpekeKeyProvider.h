@@ -194,13 +194,13 @@ MediaPackage
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_systemIds;
-    bool m_systemIdsHasBeenSet;
+    bool m_systemIdsHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

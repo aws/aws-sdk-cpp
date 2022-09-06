@@ -376,22 +376,22 @@ namespace Model
   private:
 
     Aws::String m_hostUrl;
-    bool m_hostUrlHasBeenSet;
+    bool m_hostUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     ServiceNowBuildVersionType m_serviceNowBuildVersion;
-    bool m_serviceNowBuildVersionHasBeenSet;
+    bool m_serviceNowBuildVersionHasBeenSet = false;
 
     ServiceNowKnowledgeArticleConfiguration m_knowledgeArticleConfiguration;
-    bool m_knowledgeArticleConfigurationHasBeenSet;
+    bool m_knowledgeArticleConfigurationHasBeenSet = false;
 
     ServiceNowServiceCatalogConfiguration m_serviceCatalogConfiguration;
-    bool m_serviceCatalogConfigurationHasBeenSet;
+    bool m_serviceCatalogConfigurationHasBeenSet = false;
 
     ServiceNowAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

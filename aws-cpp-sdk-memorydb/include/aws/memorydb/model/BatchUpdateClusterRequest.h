@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_clusterNames;
-    bool m_clusterNamesHasBeenSet;
+    bool m_clusterNamesHasBeenSet = false;
 
     ServiceUpdateRequest m_serviceUpdate;
-    bool m_serviceUpdateHasBeenSet;
+    bool m_serviceUpdateHasBeenSet = false;
   };
 
 } // namespace Model

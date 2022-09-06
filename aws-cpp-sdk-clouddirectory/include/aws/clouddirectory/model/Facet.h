@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ObjectType m_objectType;
-    bool m_objectTypeHasBeenSet;
+    bool m_objectTypeHasBeenSet = false;
 
     FacetStyle m_facetStyle;
-    bool m_facetStyleHasBeenSet;
+    bool m_facetStyleHasBeenSet = false;
   };
 
 } // namespace Model

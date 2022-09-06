@@ -260,16 +260,16 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     bool m_flowLogsEnabled;
-    bool m_flowLogsEnabledHasBeenSet;
+    bool m_flowLogsEnabledHasBeenSet = false;
 
     Aws::String m_flowLogsS3Bucket;
-    bool m_flowLogsS3BucketHasBeenSet;
+    bool m_flowLogsS3BucketHasBeenSet = false;
 
     Aws::String m_flowLogsS3Prefix;
-    bool m_flowLogsS3PrefixHasBeenSet;
+    bool m_flowLogsS3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

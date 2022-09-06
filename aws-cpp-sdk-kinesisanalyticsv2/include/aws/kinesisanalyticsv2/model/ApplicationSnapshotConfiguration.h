@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_snapshotsEnabled;
-    bool m_snapshotsEnabledHasBeenSet;
+    bool m_snapshotsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

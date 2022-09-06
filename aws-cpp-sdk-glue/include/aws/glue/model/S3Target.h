@@ -331,22 +331,22 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusions;
-    bool m_exclusionsHasBeenSet;
+    bool m_exclusionsHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     int m_sampleSize;
-    bool m_sampleSizeHasBeenSet;
+    bool m_sampleSizeHasBeenSet = false;
 
     Aws::String m_eventQueueArn;
-    bool m_eventQueueArnHasBeenSet;
+    bool m_eventQueueArnHasBeenSet = false;
 
     Aws::String m_dlqEventQueueArn;
-    bool m_dlqEventQueueArnHasBeenSet;
+    bool m_dlqEventQueueArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -176,16 +176,16 @@ namespace Model
   private:
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SchemaFacet m_facetFilter;
-    bool m_facetFilterHasBeenSet;
+    bool m_facetFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,13 +136,13 @@ namespace Model
   private:
 
     DnsSupportValue m_dnsSupport;
-    bool m_dnsSupportHasBeenSet;
+    bool m_dnsSupportHasBeenSet = false;
 
     Ipv6SupportValue m_ipv6Support;
-    bool m_ipv6SupportHasBeenSet;
+    bool m_ipv6SupportHasBeenSet = false;
 
     ApplianceModeSupportValue m_applianceModeSupport;
-    bool m_applianceModeSupportHasBeenSet;
+    bool m_applianceModeSupportHasBeenSet = false;
   };
 
 } // namespace Model

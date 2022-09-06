@@ -486,25 +486,25 @@ namespace Model
   private:
 
     Visibility m_visibility;
-    bool m_visibilityHasBeenSet;
+    bool m_visibilityHasBeenSet = false;
 
     ProvisioningType m_provisioningType;
-    bool m_provisioningTypeHasBeenSet;
+    bool m_provisioningTypeHasBeenSet = false;
 
     DeprecatedStatus m_deprecatedStatus;
-    bool m_deprecatedStatusHasBeenSet;
+    bool m_deprecatedStatusHasBeenSet = false;
 
     RegistryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TypeFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

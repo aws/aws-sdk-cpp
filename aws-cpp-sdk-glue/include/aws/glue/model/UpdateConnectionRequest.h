@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ConnectionInput m_connectionInput;
-    bool m_connectionInputHasBeenSet;
+    bool m_connectionInputHasBeenSet = false;
   };
 
 } // namespace Model

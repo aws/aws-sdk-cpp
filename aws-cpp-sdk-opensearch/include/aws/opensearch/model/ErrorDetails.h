@@ -84,10 +84,10 @@ namespace Model
   private:
 
     Aws::String m_errorType;
-    bool m_errorTypeHasBeenSet;
+    bool m_errorTypeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

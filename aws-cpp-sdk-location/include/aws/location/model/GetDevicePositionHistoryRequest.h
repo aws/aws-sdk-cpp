@@ -329,22 +329,22 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimeExclusive;
-    bool m_endTimeExclusiveHasBeenSet;
+    bool m_endTimeExclusiveHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimeInclusive;
-    bool m_startTimeInclusiveHasBeenSet;
+    bool m_startTimeInclusiveHasBeenSet = false;
 
     Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet;
+    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

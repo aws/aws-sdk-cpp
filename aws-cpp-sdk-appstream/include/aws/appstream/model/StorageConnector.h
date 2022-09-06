@@ -160,13 +160,13 @@ namespace Model
   private:
 
     StorageConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domains;
-    bool m_domainsHasBeenSet;
+    bool m_domainsHasBeenSet = false;
   };
 
 } // namespace Model

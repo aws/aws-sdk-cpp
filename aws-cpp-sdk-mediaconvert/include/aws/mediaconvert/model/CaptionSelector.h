@@ -236,13 +236,13 @@ namespace Model
   private:
 
     Aws::String m_customLanguageCode;
-    bool m_customLanguageCodeHasBeenSet;
+    bool m_customLanguageCodeHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     CaptionSourceSettings m_sourceSettings;
-    bool m_sourceSettingsHasBeenSet;
+    bool m_sourceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

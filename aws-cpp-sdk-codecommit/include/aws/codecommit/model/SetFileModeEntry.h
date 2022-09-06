@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     FileModeTypeEnum m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<DataSourceGroup> m_dataSourceGroups;
-    bool m_dataSourceGroupsHasBeenSet;
+    bool m_dataSourceGroupsHasBeenSet = false;
   };
 
 } // namespace Model

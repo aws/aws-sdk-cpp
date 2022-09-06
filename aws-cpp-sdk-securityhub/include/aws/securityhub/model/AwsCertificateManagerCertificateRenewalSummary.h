@@ -358,16 +358,16 @@ namespace Model
   private:
 
     Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
 
     Aws::String m_renewalStatus;
-    bool m_renewalStatusHasBeenSet;
+    bool m_renewalStatusHasBeenSet = false;
 
     Aws::String m_renewalStatusReason;
-    bool m_renewalStatusReasonHasBeenSet;
+    bool m_renewalStatusReasonHasBeenSet = false;
 
     Aws::String m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

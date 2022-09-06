@@ -320,13 +320,13 @@ namespace Model
   private:
 
     int m_recordIndex;
-    bool m_recordIndexHasBeenSet;
+    bool m_recordIndexHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     long long m_existingVersion;
-    bool m_existingVersionHasBeenSet;
+    bool m_existingVersionHasBeenSet = false;
   };
 
 } // namespace Model

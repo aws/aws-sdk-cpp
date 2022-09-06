@@ -134,16 +134,16 @@ namespace Model
   private:
 
     long long m_inboxRawCount;
-    bool m_inboxRawCountHasBeenSet;
+    bool m_inboxRawCountHasBeenSet = false;
 
     long long m_spamRawCount;
-    bool m_spamRawCountHasBeenSet;
+    bool m_spamRawCountHasBeenSet = false;
 
     long long m_projectedInbox;
-    bool m_projectedInboxHasBeenSet;
+    bool m_projectedInboxHasBeenSet = false;
 
     long long m_projectedSpam;
-    bool m_projectedSpamHasBeenSet;
+    bool m_projectedSpamHasBeenSet = false;
   };
 
 } // namespace Model

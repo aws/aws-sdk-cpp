@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_evidenceFolderId;
-    bool m_evidenceFolderIdHasBeenSet;
+    bool m_evidenceFolderIdHasBeenSet = false;
   };
 
 } // namespace Model

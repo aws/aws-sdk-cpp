@@ -248,13 +248,13 @@ namespace Model
   private:
 
     Aws::String m_solutionArn;
-    bool m_solutionArnHasBeenSet;
+    bool m_solutionArnHasBeenSet = false;
 
     TrainingMode m_trainingMode;
-    bool m_trainingModeHasBeenSet;
+    bool m_trainingModeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

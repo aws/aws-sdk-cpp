@@ -123,10 +123,10 @@ namespace Model
   private:
 
     PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
-    bool m_publicAccessBlockConfigurationHasBeenSet;
+    bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

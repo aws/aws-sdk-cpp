@@ -68,7 +68,7 @@ namespace Model
   private:
 
     int m_automatedSnapshotStartHour;
-    bool m_automatedSnapshotStartHourHasBeenSet;
+    bool m_automatedSnapshotStartHourHasBeenSet = false;
   };
 
 } // namespace Model

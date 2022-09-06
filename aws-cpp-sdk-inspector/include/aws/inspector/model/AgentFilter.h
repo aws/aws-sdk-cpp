@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::Vector<AgentHealth> m_agentHealths;
-    bool m_agentHealthsHasBeenSet;
+    bool m_agentHealthsHasBeenSet = false;
 
     Aws::Vector<AgentHealthCode> m_agentHealthCodes;
-    bool m_agentHealthCodesHasBeenSet;
+    bool m_agentHealthCodesHasBeenSet = false;
   };
 
 } // namespace Model

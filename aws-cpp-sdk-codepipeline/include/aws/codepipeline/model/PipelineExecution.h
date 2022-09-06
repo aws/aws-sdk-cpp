@@ -375,22 +375,22 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     int m_pipelineVersion;
-    bool m_pipelineVersionHasBeenSet;
+    bool m_pipelineVersionHasBeenSet = false;
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
 
     PipelineExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusSummary;
-    bool m_statusSummaryHasBeenSet;
+    bool m_statusSummaryHasBeenSet = false;
 
     Aws::Vector<ArtifactRevision> m_artifactRevisions;
-    bool m_artifactRevisionsHasBeenSet;
+    bool m_artifactRevisionsHasBeenSet = false;
   };
 
 } // namespace Model

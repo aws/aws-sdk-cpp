@@ -379,31 +379,31 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Aws::String m_currentDeliveryStreamVersionId;
-    bool m_currentDeliveryStreamVersionIdHasBeenSet;
+    bool m_currentDeliveryStreamVersionIdHasBeenSet = false;
 
     Aws::String m_destinationId;
-    bool m_destinationIdHasBeenSet;
+    bool m_destinationIdHasBeenSet = false;
 
     ExtendedS3DestinationUpdate m_extendedS3DestinationUpdate;
-    bool m_extendedS3DestinationUpdateHasBeenSet;
+    bool m_extendedS3DestinationUpdateHasBeenSet = false;
 
     RedshiftDestinationUpdate m_redshiftDestinationUpdate;
-    bool m_redshiftDestinationUpdateHasBeenSet;
+    bool m_redshiftDestinationUpdateHasBeenSet = false;
 
     ElasticsearchDestinationUpdate m_elasticsearchDestinationUpdate;
-    bool m_elasticsearchDestinationUpdateHasBeenSet;
+    bool m_elasticsearchDestinationUpdateHasBeenSet = false;
 
     AmazonopensearchserviceDestinationUpdate m_amazonopensearchserviceDestinationUpdate;
-    bool m_amazonopensearchserviceDestinationUpdateHasBeenSet;
+    bool m_amazonopensearchserviceDestinationUpdateHasBeenSet = false;
 
     SplunkDestinationUpdate m_splunkDestinationUpdate;
-    bool m_splunkDestinationUpdateHasBeenSet;
+    bool m_splunkDestinationUpdateHasBeenSet = false;
 
     HttpEndpointDestinationUpdate m_httpEndpointDestinationUpdate;
-    bool m_httpEndpointDestinationUpdateHasBeenSet;
+    bool m_httpEndpointDestinationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

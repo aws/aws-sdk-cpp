@@ -251,13 +251,13 @@ namespace Model
   private:
 
     Aws::String m_dashboardId;
-    bool m_dashboardIdHasBeenSet;
+    bool m_dashboardIdHasBeenSet = false;
 
     Aws::String m_sheetId;
-    bool m_sheetIdHasBeenSet;
+    bool m_sheetIdHasBeenSet = false;
 
     Aws::String m_visualId;
-    bool m_visualIdHasBeenSet;
+    bool m_visualIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -78,10 +78,10 @@ namespace Model
   private:
 
     PredictiveDialerConfig m_predictiveDialerConfig;
-    bool m_predictiveDialerConfigHasBeenSet;
+    bool m_predictiveDialerConfigHasBeenSet = false;
 
     ProgressiveDialerConfig m_progressiveDialerConfig;
-    bool m_progressiveDialerConfigHasBeenSet;
+    bool m_progressiveDialerConfigHasBeenSet = false;
   };
 
 } // namespace Model

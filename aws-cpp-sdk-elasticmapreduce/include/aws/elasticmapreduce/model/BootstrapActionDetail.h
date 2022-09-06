@@ -71,7 +71,7 @@ namespace Model
   private:
 
     BootstrapActionConfig m_bootstrapActionConfig;
-    bool m_bootstrapActionConfigHasBeenSet;
+    bool m_bootstrapActionConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -350,22 +350,22 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     Aws::String m_subjectId;
-    bool m_subjectIdHasBeenSet;
+    bool m_subjectIdHasBeenSet = false;
 
     Aws::String m_subjectType;
-    bool m_subjectTypeHasBeenSet;
+    bool m_subjectTypeHasBeenSet = false;
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_sessionToken;
-    bool m_sessionTokenHasBeenSet;
+    bool m_sessionTokenHasBeenSet = false;
 
     TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet;
+    bool m_timingInformationHasBeenSet = false;
   };
 
 } // namespace Model

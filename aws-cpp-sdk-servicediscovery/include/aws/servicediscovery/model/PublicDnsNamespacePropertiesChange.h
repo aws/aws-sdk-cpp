@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PublicDnsPropertiesMutableChange m_dnsProperties;
-    bool m_dnsPropertiesHasBeenSet;
+    bool m_dnsPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

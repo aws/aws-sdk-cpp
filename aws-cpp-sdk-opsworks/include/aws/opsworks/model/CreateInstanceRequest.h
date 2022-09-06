@@ -1332,58 +1332,58 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_layerIds;
-    bool m_layerIdsHasBeenSet;
+    bool m_layerIdsHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     AutoScalingType m_autoScalingType;
-    bool m_autoScalingTypeHasBeenSet;
+    bool m_autoScalingTypeHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_os;
-    bool m_osHasBeenSet;
+    bool m_osHasBeenSet = false;
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::String m_sshKeyName;
-    bool m_sshKeyNameHasBeenSet;
+    bool m_sshKeyNameHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_virtualizationType;
-    bool m_virtualizationTypeHasBeenSet;
+    bool m_virtualizationTypeHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Architecture m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     RootDeviceType m_rootDeviceType;
-    bool m_rootDeviceTypeHasBeenSet;
+    bool m_rootDeviceTypeHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     bool m_installUpdatesOnBoot;
-    bool m_installUpdatesOnBootHasBeenSet;
+    bool m_installUpdatesOnBootHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet;
+    bool m_agentVersionHasBeenSet = false;
 
     Aws::String m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
   };
 
 } // namespace Model

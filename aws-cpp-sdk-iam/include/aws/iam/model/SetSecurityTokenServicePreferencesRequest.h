@@ -117,7 +117,7 @@ namespace Model
   private:
 
     GlobalEndpointTokenVersion m_globalEndpointTokenVersion;
-    bool m_globalEndpointTokenVersionHasBeenSet;
+    bool m_globalEndpointTokenVersionHasBeenSet = false;
   };
 
 } // namespace Model

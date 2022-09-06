@@ -709,49 +709,49 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_copyJobId;
-    bool m_copyJobIdHasBeenSet;
+    bool m_copyJobIdHasBeenSet = false;
 
     Aws::String m_sourceBackupVaultArn;
-    bool m_sourceBackupVaultArnHasBeenSet;
+    bool m_sourceBackupVaultArnHasBeenSet = false;
 
     Aws::String m_sourceRecoveryPointArn;
-    bool m_sourceRecoveryPointArnHasBeenSet;
+    bool m_sourceRecoveryPointArnHasBeenSet = false;
 
     Aws::String m_destinationBackupVaultArn;
-    bool m_destinationBackupVaultArnHasBeenSet;
+    bool m_destinationBackupVaultArnHasBeenSet = false;
 
     Aws::String m_destinationRecoveryPointArn;
-    bool m_destinationRecoveryPointArnHasBeenSet;
+    bool m_destinationRecoveryPointArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     CopyJobState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     long long m_backupSizeInBytes;
-    bool m_backupSizeInBytesHasBeenSet;
+    bool m_backupSizeInBytesHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     RecoveryPointCreator m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

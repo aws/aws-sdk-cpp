@@ -329,19 +329,19 @@ namespace Model
   private:
 
     AutoPlacement m_autoPlacement;
-    bool m_autoPlacementHasBeenSet;
+    bool m_autoPlacementHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostIds;
-    bool m_hostIdsHasBeenSet;
+    bool m_hostIdsHasBeenSet = false;
 
     HostRecovery m_hostRecovery;
-    bool m_hostRecoveryHasBeenSet;
+    bool m_hostRecoveryHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
   };
 
 } // namespace Model

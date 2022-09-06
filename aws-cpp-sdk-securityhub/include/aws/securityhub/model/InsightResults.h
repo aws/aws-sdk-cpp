@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_insightArn;
-    bool m_insightArnHasBeenSet;
+    bool m_insightArnHasBeenSet = false;
 
     Aws::String m_groupByAttribute;
-    bool m_groupByAttributeHasBeenSet;
+    bool m_groupByAttributeHasBeenSet = false;
 
     Aws::Vector<InsightResultValue> m_resultValues;
-    bool m_resultValuesHasBeenSet;
+    bool m_resultValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -83,7 +83,7 @@ namespace Model
   private:
 
     RetentionType m_homeEfsFileSystem;
-    bool m_homeEfsFileSystemHasBeenSet;
+    bool m_homeEfsFileSystemHasBeenSet = false;
   };
 
 } // namespace Model

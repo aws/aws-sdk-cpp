@@ -400,37 +400,37 @@ namespace Model
   private:
 
     Scte35DeliveryRestrictions m_deliveryRestrictions;
-    bool m_deliveryRestrictionsHasBeenSet;
+    bool m_deliveryRestrictionsHasBeenSet = false;
 
     int m_segmentNum;
-    bool m_segmentNumHasBeenSet;
+    bool m_segmentNumHasBeenSet = false;
 
     Scte35SegmentationCancelIndicator m_segmentationCancelIndicator;
-    bool m_segmentationCancelIndicatorHasBeenSet;
+    bool m_segmentationCancelIndicatorHasBeenSet = false;
 
     long long m_segmentationDuration;
-    bool m_segmentationDurationHasBeenSet;
+    bool m_segmentationDurationHasBeenSet = false;
 
     long long m_segmentationEventId;
-    bool m_segmentationEventIdHasBeenSet;
+    bool m_segmentationEventIdHasBeenSet = false;
 
     int m_segmentationTypeId;
-    bool m_segmentationTypeIdHasBeenSet;
+    bool m_segmentationTypeIdHasBeenSet = false;
 
     Aws::String m_segmentationUpid;
-    bool m_segmentationUpidHasBeenSet;
+    bool m_segmentationUpidHasBeenSet = false;
 
     int m_segmentationUpidType;
-    bool m_segmentationUpidTypeHasBeenSet;
+    bool m_segmentationUpidTypeHasBeenSet = false;
 
     int m_segmentsExpected;
-    bool m_segmentsExpectedHasBeenSet;
+    bool m_segmentsExpectedHasBeenSet = false;
 
     int m_subSegmentNum;
-    bool m_subSegmentNumHasBeenSet;
+    bool m_subSegmentNumHasBeenSet = false;
 
     int m_subSegmentsExpected;
-    bool m_subSegmentsExpectedHasBeenSet;
+    bool m_subSegmentsExpectedHasBeenSet = false;
   };
 
 } // namespace Model

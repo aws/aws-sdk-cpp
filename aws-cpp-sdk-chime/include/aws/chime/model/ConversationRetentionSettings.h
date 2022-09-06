@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_retentionDays;
-    bool m_retentionDaysHasBeenSet;
+    bool m_retentionDaysHasBeenSet = false;
   };
 
 } // namespace Model

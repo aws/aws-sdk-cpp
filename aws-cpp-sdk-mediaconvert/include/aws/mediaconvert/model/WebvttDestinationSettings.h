@@ -199,10 +199,10 @@ namespace Model
   private:
 
     WebvttAccessibilitySubs m_accessibility;
-    bool m_accessibilityHasBeenSet;
+    bool m_accessibilityHasBeenSet = false;
 
     WebvttStylePassthrough m_stylePassthrough;
-    bool m_stylePassthroughHasBeenSet;
+    bool m_stylePassthroughHasBeenSet = false;
   };
 
 } // namespace Model

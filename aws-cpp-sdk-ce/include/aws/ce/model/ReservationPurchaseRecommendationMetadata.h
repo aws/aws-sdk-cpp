@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::String m_generationTimestamp;
-    bool m_generationTimestampHasBeenSet;
+    bool m_generationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -275,16 +275,16 @@ namespace Model
   private:
 
     Image m_sourceImage;
-    bool m_sourceImageHasBeenSet;
+    bool m_sourceImageHasBeenSet = false;
 
     Image m_targetImage;
-    bool m_targetImageHasBeenSet;
+    bool m_targetImageHasBeenSet = false;
 
     double m_similarityThreshold;
-    bool m_similarityThresholdHasBeenSet;
+    bool m_similarityThresholdHasBeenSet = false;
 
     QualityFilter m_qualityFilter;
-    bool m_qualityFilterHasBeenSet;
+    bool m_qualityFilterHasBeenSet = false;
   };
 
 } // namespace Model

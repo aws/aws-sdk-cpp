@@ -113,10 +113,10 @@ namespace Model
   private:
 
     SeverityLabel m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::String m_original;
-    bool m_originalHasBeenSet;
+    bool m_originalHasBeenSet = false;
   };
 
 } // namespace Model

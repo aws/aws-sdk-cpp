@@ -316,25 +316,25 @@ namespace Model
   private:
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskStartTime;
-    bool m_taskStartTimeHasBeenSet;
+    bool m_taskStartTimeHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_s3objectKey;
-    bool m_s3objectKeyHasBeenSet;
+    bool m_s3objectKeyHasBeenSet = false;
 
     int m_progressPercentage;
-    bool m_progressPercentageHasBeenSet;
+    bool m_progressPercentageHasBeenSet = false;
 
     Aws::String m_storeTaskState;
-    bool m_storeTaskStateHasBeenSet;
+    bool m_storeTaskStateHasBeenSet = false;
 
     Aws::String m_storeTaskFailureReason;
-    bool m_storeTaskFailureReasonHasBeenSet;
+    bool m_storeTaskFailureReasonHasBeenSet = false;
   };
 
 } // namespace Model

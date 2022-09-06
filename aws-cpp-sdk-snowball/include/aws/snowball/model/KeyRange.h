@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_beginMarker;
-    bool m_beginMarkerHasBeenSet;
+    bool m_beginMarkerHasBeenSet = false;
 
     Aws::String m_endMarker;
-    bool m_endMarkerHasBeenSet;
+    bool m_endMarkerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::Vector<EventAccountFilter> m_organizationEventDetailFilters;
-    bool m_organizationEventDetailFiltersHasBeenSet;
+    bool m_organizationEventDetailFiltersHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

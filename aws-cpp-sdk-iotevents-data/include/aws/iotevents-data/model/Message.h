@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
 
     TimestampValue m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     MemberConfiguration m_memberConfiguration;
-    bool m_memberConfigurationHasBeenSet;
+    bool m_memberConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -173,13 +173,13 @@ namespace Model
   private:
 
     DialogAction m_dialogAction;
-    bool m_dialogActionHasBeenSet;
+    bool m_dialogActionHasBeenSet = false;
 
     IntentOverride m_intent;
-    bool m_intentHasBeenSet;
+    bool m_intentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-    bool m_sessionAttributesHasBeenSet;
+    bool m_sessionAttributesHasBeenSet = false;
   };
 
 } // namespace Model

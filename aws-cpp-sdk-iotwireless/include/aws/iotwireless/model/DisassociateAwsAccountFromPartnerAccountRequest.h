@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_partnerAccountId;
-    bool m_partnerAccountIdHasBeenSet;
+    bool m_partnerAccountIdHasBeenSet = false;
 
     PartnerType m_partnerType;
-    bool m_partnerTypeHasBeenSet;
+    bool m_partnerTypeHasBeenSet = false;
   };
 
 } // namespace Model

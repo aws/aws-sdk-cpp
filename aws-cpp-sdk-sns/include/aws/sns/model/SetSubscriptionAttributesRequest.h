@@ -364,13 +364,13 @@ namespace Model
   private:
 
     Aws::String m_subscriptionArn;
-    bool m_subscriptionArnHasBeenSet;
+    bool m_subscriptionArnHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
   };
 
 } // namespace Model

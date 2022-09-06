@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_instanceUrl;
-    bool m_instanceUrlHasBeenSet;
+    bool m_instanceUrlHasBeenSet = false;
 
     bool m_isSandboxEnvironment;
-    bool m_isSandboxEnvironmentHasBeenSet;
+    bool m_isSandboxEnvironmentHasBeenSet = false;
   };
 
 } // namespace Model

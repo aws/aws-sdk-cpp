@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     PointInTimeRecoverySpecification m_pointInTimeRecoverySpecification;
-    bool m_pointInTimeRecoverySpecificationHasBeenSet;
+    bool m_pointInTimeRecoverySpecificationHasBeenSet = false;
   };
 
 } // namespace Model

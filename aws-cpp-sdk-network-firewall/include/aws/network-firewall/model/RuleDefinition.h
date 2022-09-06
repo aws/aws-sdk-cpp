@@ -331,10 +331,10 @@ namespace Model
   private:
 
     MatchAttributes m_matchAttributes;
-    bool m_matchAttributesHasBeenSet;
+    bool m_matchAttributesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

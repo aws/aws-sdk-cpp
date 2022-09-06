@@ -658,19 +658,19 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_ciphertextBlob;
-    bool m_ciphertextBlobHasBeenSet;
+    bool m_ciphertextBlobHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
-    bool m_encryptionContextHasBeenSet;
+    bool m_encryptionContextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     EncryptionAlgorithmSpec m_encryptionAlgorithm;
-    bool m_encryptionAlgorithmHasBeenSet;
+    bool m_encryptionAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

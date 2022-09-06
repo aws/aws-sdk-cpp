@@ -584,37 +584,37 @@ namespace Model
   private:
 
     Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
-    bool m_brokerEBSVolumeInfoHasBeenSet;
+    bool m_brokerEBSVolumeInfoHasBeenSet = false;
 
     ConfigurationInfo m_configurationInfo;
-    bool m_configurationInfoHasBeenSet;
+    bool m_configurationInfoHasBeenSet = false;
 
     int m_numberOfBrokerNodes;
-    bool m_numberOfBrokerNodesHasBeenSet;
+    bool m_numberOfBrokerNodesHasBeenSet = false;
 
     EnhancedMonitoring m_enhancedMonitoring;
-    bool m_enhancedMonitoringHasBeenSet;
+    bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoring m_openMonitoring;
-    bool m_openMonitoringHasBeenSet;
+    bool m_openMonitoringHasBeenSet = false;
 
     Aws::String m_kafkaVersion;
-    bool m_kafkaVersionHasBeenSet;
+    bool m_kafkaVersionHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     ClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
 
     EncryptionInfo m_encryptionInfo;
-    bool m_encryptionInfoHasBeenSet;
+    bool m_encryptionInfoHasBeenSet = false;
 
     ConnectivityInfo m_connectivityInfo;
-    bool m_connectivityInfoHasBeenSet;
+    bool m_connectivityInfoHasBeenSet = false;
   };
 
 } // namespace Model

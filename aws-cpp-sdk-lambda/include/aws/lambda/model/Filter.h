@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
   };
 
 } // namespace Model

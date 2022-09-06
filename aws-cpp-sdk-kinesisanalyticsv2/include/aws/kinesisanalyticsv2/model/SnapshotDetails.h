@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     SnapshotStatus m_snapshotStatus;
-    bool m_snapshotStatusHasBeenSet;
+    bool m_snapshotStatusHasBeenSet = false;
 
     long long m_applicationVersionId;
-    bool m_applicationVersionIdHasBeenSet;
+    bool m_applicationVersionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreationTimestamp;
-    bool m_snapshotCreationTimestampHasBeenSet;
+    bool m_snapshotCreationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

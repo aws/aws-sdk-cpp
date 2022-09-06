@@ -689,34 +689,34 @@ namespace Model
   private:
 
     Aws::String m_portalName;
-    bool m_portalNameHasBeenSet;
+    bool m_portalNameHasBeenSet = false;
 
     Aws::String m_portalDescription;
-    bool m_portalDescriptionHasBeenSet;
+    bool m_portalDescriptionHasBeenSet = false;
 
     Aws::String m_portalContactEmail;
-    bool m_portalContactEmailHasBeenSet;
+    bool m_portalContactEmailHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     ImageFile m_portalLogoImageFile;
-    bool m_portalLogoImageFileHasBeenSet;
+    bool m_portalLogoImageFileHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     AuthMode m_portalAuthMode;
-    bool m_portalAuthModeHasBeenSet;
+    bool m_portalAuthModeHasBeenSet = false;
 
     Aws::String m_notificationSenderEmail;
-    bool m_notificationSenderEmailHasBeenSet;
+    bool m_notificationSenderEmailHasBeenSet = false;
 
     Alarms m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -231,19 +231,19 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_ipSetId;
-    bool m_ipSetIdHasBeenSet;
+    bool m_ipSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     bool m_activate;
-    bool m_activateHasBeenSet;
+    bool m_activateHasBeenSet = false;
   };
 
 } // namespace Model

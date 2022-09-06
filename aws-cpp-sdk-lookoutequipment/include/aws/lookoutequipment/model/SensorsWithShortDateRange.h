@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_affectedSensorCount;
-    bool m_affectedSensorCountHasBeenSet;
+    bool m_affectedSensorCountHasBeenSet = false;
   };
 
 } // namespace Model

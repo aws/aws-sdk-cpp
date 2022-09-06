@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     bool m_flatten;
-    bool m_flattenHasBeenSet;
+    bool m_flattenHasBeenSet = false;
   };
 
 } // namespace Model

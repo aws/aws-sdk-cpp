@@ -53,7 +53,7 @@ namespace Model
   private:
 
     NumberValidateRequest m_numberValidateRequest;
-    bool m_numberValidateRequestHasBeenSet;
+    bool m_numberValidateRequestHasBeenSet = false;
   };
 
 } // namespace Model

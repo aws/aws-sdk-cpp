@@ -167,16 +167,16 @@ namespace Model
   private:
 
     AggregationFindingType m_findingType;
-    bool m_findingTypeHasBeenSet;
+    bool m_findingTypeHasBeenSet = false;
 
     AggregationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     AccountSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

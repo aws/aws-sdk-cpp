@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_generatedFraudsterId;
-    bool m_generatedFraudsterIdHasBeenSet;
+    bool m_generatedFraudsterIdHasBeenSet = false;
   };
 
 } // namespace Model

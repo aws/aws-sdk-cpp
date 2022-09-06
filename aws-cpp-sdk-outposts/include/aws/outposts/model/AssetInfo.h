@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_rackId;
-    bool m_rackIdHasBeenSet;
+    bool m_rackIdHasBeenSet = false;
 
     AssetType m_assetType;
-    bool m_assetTypeHasBeenSet;
+    bool m_assetTypeHasBeenSet = false;
 
     ComputeAttributes m_computeAttributes;
-    bool m_computeAttributesHasBeenSet;
+    bool m_computeAttributesHasBeenSet = false;
 
     AssetLocation m_assetLocation;
-    bool m_assetLocationHasBeenSet;
+    bool m_assetLocationHasBeenSet = false;
   };
 
 } // namespace Model

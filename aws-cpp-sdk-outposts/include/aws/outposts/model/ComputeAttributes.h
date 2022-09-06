@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_hostId;
-    bool m_hostIdHasBeenSet;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

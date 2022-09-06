@@ -65,7 +65,7 @@ namespace Model
   private:
 
     int m_reservedConcurrentExecutions;
-    bool m_reservedConcurrentExecutionsHasBeenSet;
+    bool m_reservedConcurrentExecutionsHasBeenSet = false;
   };
 
 } // namespace Model

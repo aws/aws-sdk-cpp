@@ -178,16 +178,16 @@ namespace Model
   private:
 
     AttemptContainerDetail m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     long long m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     long long m_stoppedAt;
-    bool m_stoppedAtHasBeenSet;
+    bool m_stoppedAtHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

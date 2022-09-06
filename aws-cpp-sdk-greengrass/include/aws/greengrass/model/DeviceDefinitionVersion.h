@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Device> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
   };
 
 } // namespace Model

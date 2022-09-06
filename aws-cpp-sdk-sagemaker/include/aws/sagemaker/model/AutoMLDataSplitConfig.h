@@ -73,7 +73,7 @@ namespace Model
   private:
 
     double m_validationFraction;
-    bool m_validationFractionHasBeenSet;
+    bool m_validationFractionHasBeenSet = false;
   };
 
 } // namespace Model

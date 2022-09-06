@@ -77,10 +77,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     int m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

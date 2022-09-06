@@ -287,28 +287,28 @@ namespace Model
   private:
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     int m_dailyCap;
-    bool m_dailyCapHasBeenSet;
+    bool m_dailyCapHasBeenSet = false;
 
     InAppMessage m_inAppMessage;
-    bool m_inAppMessageHasBeenSet;
+    bool m_inAppMessageHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     InAppCampaignSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     int m_sessionCap;
-    bool m_sessionCapHasBeenSet;
+    bool m_sessionCapHasBeenSet = false;
 
     int m_totalCap;
-    bool m_totalCapHasBeenSet;
+    bool m_totalCapHasBeenSet = false;
 
     Aws::String m_treatmentId;
-    bool m_treatmentIdHasBeenSet;
+    bool m_treatmentIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_applicationComponentId;
-    bool m_applicationComponentIdHasBeenSet;
+    bool m_applicationComponentIdHasBeenSet = false;
 
     InclusionStatus m_inclusionStatus;
-    bool m_inclusionStatusHasBeenSet;
+    bool m_inclusionStatusHasBeenSet = false;
 
     Aws::String m_secretsManagerKey;
-    bool m_secretsManagerKeyHasBeenSet;
+    bool m_secretsManagerKeyHasBeenSet = false;
 
     Aws::Vector<SourceCode> m_sourceCodeList;
-    bool m_sourceCodeListHasBeenSet;
+    bool m_sourceCodeListHasBeenSet = false;
 
     StrategyOption m_strategyOption;
-    bool m_strategyOptionHasBeenSet;
+    bool m_strategyOptionHasBeenSet = false;
   };
 
 } // namespace Model

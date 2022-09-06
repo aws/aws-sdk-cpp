@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
   };
 
 } // namespace Model

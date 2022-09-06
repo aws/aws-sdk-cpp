@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_shortDescription;
-    bool m_shortDescriptionHasBeenSet;
+    bool m_shortDescriptionHasBeenSet = false;
 
     Aws::String m_longDescription;
-    bool m_longDescriptionHasBeenSet;
+    bool m_longDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ruleTags;
-    bool m_ruleTagsHasBeenSet;
+    bool m_ruleTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -115,10 +115,10 @@ namespace Model
   private:
 
     StatisticalIssueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Monotonicity m_monotonicity;
-    bool m_monotonicityHasBeenSet;
+    bool m_monotonicityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -73,7 +73,7 @@ namespace Model
   private:
 
     ContactMethodVerificationProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

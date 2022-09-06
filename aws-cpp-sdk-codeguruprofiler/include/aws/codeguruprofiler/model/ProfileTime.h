@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

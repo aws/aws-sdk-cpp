@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_emailIdentity;
-    bool m_emailIdentityHasBeenSet;
+    bool m_emailIdentityHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
   };
 
 } // namespace Model

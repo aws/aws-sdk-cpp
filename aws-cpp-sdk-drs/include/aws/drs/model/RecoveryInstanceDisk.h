@@ -151,13 +151,13 @@ namespace Model
   private:
 
     long long m_bytes;
-    bool m_bytesHasBeenSet;
+    bool m_bytesHasBeenSet = false;
 
     Aws::String m_ebsVolumeID;
-    bool m_ebsVolumeIDHasBeenSet;
+    bool m_ebsVolumeIDHasBeenSet = false;
 
     Aws::String m_internalDeviceName;
-    bool m_internalDeviceNameHasBeenSet;
+    bool m_internalDeviceNameHasBeenSet = false;
   };
 
 } // namespace Model

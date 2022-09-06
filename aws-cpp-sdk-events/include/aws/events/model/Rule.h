@@ -504,31 +504,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_eventPattern;
-    bool m_eventPatternHasBeenSet;
+    bool m_eventPatternHasBeenSet = false;
 
     RuleState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_managedBy;
-    bool m_managedByHasBeenSet;
+    bool m_managedByHasBeenSet = false;
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
   };
 
 } // namespace Model

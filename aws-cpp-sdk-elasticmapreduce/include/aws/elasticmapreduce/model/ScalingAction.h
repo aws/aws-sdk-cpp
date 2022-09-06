@@ -115,10 +115,10 @@ namespace Model
   private:
 
     MarketType m_market;
-    bool m_marketHasBeenSet;
+    bool m_marketHasBeenSet = false;
 
     SimpleScalingPolicyConfiguration m_simpleScalingPolicyConfiguration;
-    bool m_simpleScalingPolicyConfigurationHasBeenSet;
+    bool m_simpleScalingPolicyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

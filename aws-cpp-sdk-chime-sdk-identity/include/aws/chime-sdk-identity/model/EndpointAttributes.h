@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_deviceToken;
-    bool m_deviceTokenHasBeenSet;
+    bool m_deviceTokenHasBeenSet = false;
 
     Aws::String m_voipDeviceToken;
-    bool m_voipDeviceTokenHasBeenSet;
+    bool m_voipDeviceTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -363,28 +363,28 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     JobDriver m_jobDriver;
-    bool m_jobDriverHasBeenSet;
+    bool m_jobDriverHasBeenSet = false;
 
     ConfigurationOverrides m_configurationOverrides;
-    bool m_configurationOverridesHasBeenSet;
+    bool m_configurationOverridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     long long m_executionTimeoutMinutes;
-    bool m_executionTimeoutMinutesHasBeenSet;
+    bool m_executionTimeoutMinutesHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

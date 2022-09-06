@@ -55,7 +55,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -551,46 +551,46 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_quotaName;
-    bool m_quotaNameHasBeenSet;
+    bool m_quotaNameHasBeenSet = false;
 
     double m_desiredValue;
-    bool m_desiredValueHasBeenSet;
+    bool m_desiredValueHasBeenSet = false;
 
     RequestStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_requester;
-    bool m_requesterHasBeenSet;
+    bool m_requesterHasBeenSet = false;
 
     Aws::String m_quotaArn;
-    bool m_quotaArnHasBeenSet;
+    bool m_quotaArnHasBeenSet = false;
 
     bool m_globalQuota;
-    bool m_globalQuotaHasBeenSet;
+    bool m_globalQuotaHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

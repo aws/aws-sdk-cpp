@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     CapacityReservationSpecification m_capacityReservationSpecification;
-    bool m_capacityReservationSpecificationHasBeenSet;
+    bool m_capacityReservationSpecificationHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

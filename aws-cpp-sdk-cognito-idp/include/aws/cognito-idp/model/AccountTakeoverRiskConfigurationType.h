@@ -103,10 +103,10 @@ namespace Model
   private:
 
     NotifyConfigurationType m_notifyConfiguration;
-    bool m_notifyConfigurationHasBeenSet;
+    bool m_notifyConfigurationHasBeenSet = false;
 
     AccountTakeoverActionsType m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

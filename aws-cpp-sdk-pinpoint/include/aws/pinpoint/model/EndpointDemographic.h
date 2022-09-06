@@ -400,28 +400,28 @@ namespace Model
   private:
 
     Aws::String m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_make;
-    bool m_makeHasBeenSet;
+    bool m_makeHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
   };
 
 } // namespace Model

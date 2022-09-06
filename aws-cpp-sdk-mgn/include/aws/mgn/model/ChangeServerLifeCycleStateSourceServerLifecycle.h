@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ChangeServerLifeCycleStateSourceServerLifecycleState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

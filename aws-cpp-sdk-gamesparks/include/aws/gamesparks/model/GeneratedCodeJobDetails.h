@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::String m_generatedCodeJobId;
-    bool m_generatedCodeJobIdHasBeenSet;
+    bool m_generatedCodeJobIdHasBeenSet = false;
 
     Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet;
+    bool m_s3UrlHasBeenSet = false;
 
     GeneratedCodeJobState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

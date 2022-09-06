@@ -69,7 +69,7 @@ namespace Model
   private:
 
     DistributionConfigWithTags m_distributionConfigWithTags;
-    bool m_distributionConfigWithTagsHasBeenSet;
+    bool m_distributionConfigWithTagsHasBeenSet = false;
   };
 
 } // namespace Model

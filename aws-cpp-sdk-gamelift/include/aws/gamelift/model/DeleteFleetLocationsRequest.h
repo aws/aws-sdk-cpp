@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_locations;
-    bool m_locationsHasBeenSet;
+    bool m_locationsHasBeenSet = false;
   };
 
 } // namespace Model

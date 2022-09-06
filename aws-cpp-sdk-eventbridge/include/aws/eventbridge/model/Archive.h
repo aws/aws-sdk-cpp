@@ -302,28 +302,28 @@ namespace Model
   private:
 
     Aws::String m_archiveName;
-    bool m_archiveNameHasBeenSet;
+    bool m_archiveNameHasBeenSet = false;
 
     Aws::String m_eventSourceArn;
-    bool m_eventSourceArnHasBeenSet;
+    bool m_eventSourceArnHasBeenSet = false;
 
     ArchiveState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     int m_retentionDays;
-    bool m_retentionDaysHasBeenSet;
+    bool m_retentionDaysHasBeenSet = false;
 
     long long m_sizeBytes;
-    bool m_sizeBytesHasBeenSet;
+    bool m_sizeBytesHasBeenSet = false;
 
     long long m_eventCount;
-    bool m_eventCountHasBeenSet;
+    bool m_eventCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

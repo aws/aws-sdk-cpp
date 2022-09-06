@@ -256,13 +256,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PositionFiltering m_positionFiltering;
-    bool m_positionFilteringHasBeenSet;
+    bool m_positionFilteringHasBeenSet = false;
 
     Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet;
+    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -101,7 +101,7 @@ namespace Model
   private:
 
     SSEStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -267,25 +267,25 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     int m_run;
-    bool m_runHasBeenSet;
+    bool m_runHasBeenSet = false;
 
     int m_attempt;
-    bool m_attemptHasBeenSet;
+    bool m_attemptHasBeenSet = false;
 
     Aws::String m_previousRunId;
-    bool m_previousRunIdHasBeenSet;
+    bool m_previousRunIdHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     Aws::String m_jobBookmark;
-    bool m_jobBookmarkHasBeenSet;
+    bool m_jobBookmarkHasBeenSet = false;
   };
 
 } // namespace Model

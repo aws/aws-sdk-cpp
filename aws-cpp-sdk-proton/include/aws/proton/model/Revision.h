@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_directory;
-    bool m_directoryHasBeenSet;
+    bool m_directoryHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryProvider m_repositoryProvider;
-    bool m_repositoryProviderHasBeenSet;
+    bool m_repositoryProviderHasBeenSet = false;
 
     Aws::String m_sha;
-    bool m_shaHasBeenSet;
+    bool m_shaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     EcrConfiguration m_ecrConfiguration;
-    bool m_ecrConfigurationHasBeenSet;
+    bool m_ecrConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

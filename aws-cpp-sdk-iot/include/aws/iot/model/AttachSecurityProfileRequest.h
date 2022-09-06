@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     Aws::String m_securityProfileTargetArn;
-    bool m_securityProfileTargetArnHasBeenSet;
+    bool m_securityProfileTargetArnHasBeenSet = false;
   };
 
 } // namespace Model

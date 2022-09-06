@@ -965,61 +965,61 @@ namespace Model
   private:
 
     long long m_backupSizeInBytes;
-    bool m_backupSizeInBytesHasBeenSet;
+    bool m_backupSizeInBytesHasBeenSet = false;
 
     Aws::String m_backupVaultArn;
-    bool m_backupVaultArnHasBeenSet;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     AwsBackupRecoveryPointCalculatedLifecycleDetails m_calculatedLifecycle;
-    bool m_calculatedLifecycleHasBeenSet;
+    bool m_calculatedLifecycleHasBeenSet = false;
 
     Aws::String m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     AwsBackupRecoveryPointCreatedByDetails m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     bool m_isEncrypted;
-    bool m_isEncryptedHasBeenSet;
+    bool m_isEncryptedHasBeenSet = false;
 
     Aws::String m_lastRestoreTime;
-    bool m_lastRestoreTimeHasBeenSet;
+    bool m_lastRestoreTimeHasBeenSet = false;
 
     AwsBackupRecoveryPointLifecycleDetails m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_sourceBackupVaultArn;
-    bool m_sourceBackupVaultArnHasBeenSet;
+    bool m_sourceBackupVaultArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
   };
 
 } // namespace Model

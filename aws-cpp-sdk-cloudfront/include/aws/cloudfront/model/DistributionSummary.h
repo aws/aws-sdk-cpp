@@ -915,64 +915,64 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     Origins m_origins;
-    bool m_originsHasBeenSet;
+    bool m_originsHasBeenSet = false;
 
     OriginGroups m_originGroups;
-    bool m_originGroupsHasBeenSet;
+    bool m_originGroupsHasBeenSet = false;
 
     DefaultCacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     CacheBehaviors m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     CustomErrorResponses m_customErrorResponses;
-    bool m_customErrorResponsesHasBeenSet;
+    bool m_customErrorResponsesHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     ViewerCertificate m_viewerCertificate;
-    bool m_viewerCertificateHasBeenSet;
+    bool m_viewerCertificateHasBeenSet = false;
 
     Restrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     HttpVersion m_httpVersion;
-    bool m_httpVersionHasBeenSet;
+    bool m_httpVersionHasBeenSet = false;
 
     bool m_isIPV6Enabled;
-    bool m_isIPV6EnabledHasBeenSet;
+    bool m_isIPV6EnabledHasBeenSet = false;
 
     Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
-    bool m_aliasICPRecordalsHasBeenSet;
+    bool m_aliasICPRecordalsHasBeenSet = false;
   };
 
 } // namespace Model

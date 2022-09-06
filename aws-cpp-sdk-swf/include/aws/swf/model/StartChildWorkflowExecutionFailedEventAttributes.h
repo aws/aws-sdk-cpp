@@ -322,22 +322,22 @@ namespace Model
   private:
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     StartChildWorkflowExecutionFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     long long m_initiatedEventId;
-    bool m_initiatedEventIdHasBeenSet;
+    bool m_initiatedEventIdHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
   };
 
 } // namespace Model

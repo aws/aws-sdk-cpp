@@ -212,19 +212,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     KinesisStreamsOutput m_kinesisStreamsOutput;
-    bool m_kinesisStreamsOutputHasBeenSet;
+    bool m_kinesisStreamsOutputHasBeenSet = false;
 
     KinesisFirehoseOutput m_kinesisFirehoseOutput;
-    bool m_kinesisFirehoseOutputHasBeenSet;
+    bool m_kinesisFirehoseOutputHasBeenSet = false;
 
     LambdaOutput m_lambdaOutput;
-    bool m_lambdaOutputHasBeenSet;
+    bool m_lambdaOutputHasBeenSet = false;
 
     DestinationSchema m_destinationSchema;
-    bool m_destinationSchemaHasBeenSet;
+    bool m_destinationSchemaHasBeenSet = false;
   };
 
 } // namespace Model

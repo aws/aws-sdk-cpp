@@ -330,19 +330,19 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     LogDestinationType m_logDestinationType;
-    bool m_logDestinationTypeHasBeenSet;
+    bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logExports;
-    bool m_logExportsHasBeenSet;
+    bool m_logExportsHasBeenSet = false;
   };
 
 } // namespace Model

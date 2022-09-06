@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_tunnelId;
-    bool m_tunnelIdHasBeenSet;
+    bool m_tunnelIdHasBeenSet = false;
   };
 
 } // namespace Model

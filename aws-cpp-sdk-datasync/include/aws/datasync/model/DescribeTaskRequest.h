@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
   };
 
 } // namespace Model

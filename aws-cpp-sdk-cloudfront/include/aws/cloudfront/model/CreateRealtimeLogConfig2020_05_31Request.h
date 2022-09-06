@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::Vector<EndPoint> m_endPoints;
-    bool m_endPointsHasBeenSet;
+    bool m_endPointsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
   };
 
 } // namespace Model

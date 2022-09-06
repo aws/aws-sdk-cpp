@@ -128,13 +128,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     LogLevel m_defaultLogLevel;
-    bool m_defaultLogLevelHasBeenSet;
+    bool m_defaultLogLevelHasBeenSet = false;
 
     bool m_disableAllLogs;
-    bool m_disableAllLogsHasBeenSet;
+    bool m_disableAllLogsHasBeenSet = false;
   };
 
 } // namespace Model

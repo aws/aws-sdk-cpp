@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_vPC;
-    bool m_vPCHasBeenSet;
+    bool m_vPCHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_targetViolationReason;
-    bool m_targetViolationReasonHasBeenSet;
+    bool m_targetViolationReasonHasBeenSet = false;
   };
 
 } // namespace Model

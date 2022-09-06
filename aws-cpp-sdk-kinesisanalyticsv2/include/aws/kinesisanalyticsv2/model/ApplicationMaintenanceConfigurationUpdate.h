@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_applicationMaintenanceWindowStartTimeUpdate;
-    bool m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet;
+    bool m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet = false;
   };
 
 } // namespace Model

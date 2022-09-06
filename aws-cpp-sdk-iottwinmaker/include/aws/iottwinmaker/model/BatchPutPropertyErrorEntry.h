@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<BatchPutPropertyError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

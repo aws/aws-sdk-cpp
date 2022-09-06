@@ -63,7 +63,7 @@ namespace Model
   private:
 
     QueryCompileError m_queryCompileError;
-    bool m_queryCompileErrorHasBeenSet;
+    bool m_queryCompileErrorHasBeenSet = false;
   };
 
 } // namespace Model

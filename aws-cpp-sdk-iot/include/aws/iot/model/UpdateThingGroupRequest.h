@@ -132,13 +132,13 @@ namespace Model
   private:
 
     Aws::String m_thingGroupName;
-    bool m_thingGroupNameHasBeenSet;
+    bool m_thingGroupNameHasBeenSet = false;
 
     ThingGroupProperties m_thingGroupProperties;
-    bool m_thingGroupPropertiesHasBeenSet;
+    bool m_thingGroupPropertiesHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
   };
 
 } // namespace Model

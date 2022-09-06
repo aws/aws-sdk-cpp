@@ -386,31 +386,31 @@ namespace Model
   private:
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_commitId;
-    bool m_commitIdHasBeenSet;
+    bool m_commitIdHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_commitTime;
-    bool m_commitTimeHasBeenSet;
+    bool m_commitTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

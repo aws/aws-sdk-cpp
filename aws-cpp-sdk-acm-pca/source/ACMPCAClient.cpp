@@ -99,7 +99,7 @@ ACMPCAClient::~ACMPCAClient()
 
 void ACMPCAClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ACM PCA");
+  AWSClient::SetServiceClientName("ACM PCA");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

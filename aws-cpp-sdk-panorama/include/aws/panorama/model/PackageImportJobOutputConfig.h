@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PackageVersionOutputConfig m_packageVersionOutputConfig;
-    bool m_packageVersionOutputConfigHasBeenSet;
+    bool m_packageVersionOutputConfigHasBeenSet = false;
   };
 
 } // namespace Model

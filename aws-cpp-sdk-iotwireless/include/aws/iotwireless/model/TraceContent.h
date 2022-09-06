@@ -79,10 +79,10 @@ namespace Model
   private:
 
     WirelessDeviceFrameInfo m_wirelessDeviceFrameInfo;
-    bool m_wirelessDeviceFrameInfoHasBeenSet;
+    bool m_wirelessDeviceFrameInfoHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

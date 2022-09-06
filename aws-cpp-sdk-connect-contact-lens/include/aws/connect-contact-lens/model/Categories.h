@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_matchedCategories;
-    bool m_matchedCategoriesHasBeenSet;
+    bool m_matchedCategoriesHasBeenSet = false;
 
     Aws::Map<Aws::String, CategoryDetails> m_matchedDetails;
-    bool m_matchedDetailsHasBeenSet;
+    bool m_matchedDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -273,25 +273,25 @@ namespace Model
   private:
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_filterPattern;
-    bool m_filterPatternHasBeenSet;
+    bool m_filterPatternHasBeenSet = false;
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Distribution m_distribution;
-    bool m_distributionHasBeenSet;
+    bool m_distributionHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

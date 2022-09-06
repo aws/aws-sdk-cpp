@@ -349,25 +349,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_testingInformation;
-    bool m_testingInformationHasBeenSet;
+    bool m_testingInformationHasBeenSet = false;
 
     Aws::String m_actionPlanTitle;
-    bool m_actionPlanTitleHasBeenSet;
+    bool m_actionPlanTitleHasBeenSet = false;
 
     Aws::String m_actionPlanInstructions;
-    bool m_actionPlanInstructionsHasBeenSet;
+    bool m_actionPlanInstructionsHasBeenSet = false;
 
     Aws::Vector<CreateControlMappingSource> m_controlMappingSources;
-    bool m_controlMappingSourcesHasBeenSet;
+    bool m_controlMappingSourcesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

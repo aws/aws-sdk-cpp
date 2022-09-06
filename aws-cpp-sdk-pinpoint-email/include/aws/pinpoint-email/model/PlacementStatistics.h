@@ -163,19 +163,19 @@ namespace Model
   private:
 
     double m_inboxPercentage;
-    bool m_inboxPercentageHasBeenSet;
+    bool m_inboxPercentageHasBeenSet = false;
 
     double m_spamPercentage;
-    bool m_spamPercentageHasBeenSet;
+    bool m_spamPercentageHasBeenSet = false;
 
     double m_missingPercentage;
-    bool m_missingPercentageHasBeenSet;
+    bool m_missingPercentageHasBeenSet = false;
 
     double m_spfPercentage;
-    bool m_spfPercentageHasBeenSet;
+    bool m_spfPercentageHasBeenSet = false;
 
     double m_dkimPercentage;
-    bool m_dkimPercentageHasBeenSet;
+    bool m_dkimPercentageHasBeenSet = false;
   };
 
 } // namespace Model

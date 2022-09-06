@@ -1178,34 +1178,34 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Map<Aws::String, ExpectedAttributeValue> m_expected;
-    bool m_expectedHasBeenSet;
+    bool m_expectedHasBeenSet = false;
 
     ConditionalOperator m_conditionalOperator;
-    bool m_conditionalOperatorHasBeenSet;
+    bool m_conditionalOperatorHasBeenSet = false;
 
     ReturnValue m_returnValues;
-    bool m_returnValuesHasBeenSet;
+    bool m_returnValuesHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
-    bool m_returnItemCollectionMetricsHasBeenSet;
+    bool m_returnItemCollectionMetricsHasBeenSet = false;
 
     Aws::String m_conditionExpression;
-    bool m_conditionExpressionHasBeenSet;
+    bool m_conditionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

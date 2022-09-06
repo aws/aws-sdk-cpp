@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_captureTime;
-    bool m_captureTimeHasBeenSet;
+    bool m_captureTimeHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

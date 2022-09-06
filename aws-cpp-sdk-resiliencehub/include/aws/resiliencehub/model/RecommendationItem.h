@@ -183,16 +183,16 @@ namespace Model
   private:
 
     bool m_alreadyImplemented;
-    bool m_alreadyImplementedHasBeenSet;
+    bool m_alreadyImplementedHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_targetAccountId;
-    bool m_targetAccountIdHasBeenSet;
+    bool m_targetAccountIdHasBeenSet = false;
 
     Aws::String m_targetRegion;
-    bool m_targetRegionHasBeenSet;
+    bool m_targetRegionHasBeenSet = false;
   };
 
 } // namespace Model

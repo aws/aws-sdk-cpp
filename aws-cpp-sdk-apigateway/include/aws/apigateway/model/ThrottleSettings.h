@@ -83,10 +83,10 @@ namespace Model
   private:
 
     int m_burstLimit;
-    bool m_burstLimitHasBeenSet;
+    bool m_burstLimitHasBeenSet = false;
 
     double m_rateLimit;
-    bool m_rateLimitHasBeenSet;
+    bool m_rateLimitHasBeenSet = false;
   };
 
 } // namespace Model

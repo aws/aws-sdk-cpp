@@ -130,7 +130,7 @@ DynamoDBClient::~DynamoDBClient()
 
 void DynamoDBClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DynamoDB");
+  AWSClient::SetServiceClientName("DynamoDB");
   LoadDynamoDBSpecificConfig(config);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())

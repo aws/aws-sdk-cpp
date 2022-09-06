@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     SecurityHubConfiguration m_securityHubConfiguration;
-    bool m_securityHubConfigurationHasBeenSet;
+    bool m_securityHubConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

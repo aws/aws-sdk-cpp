@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_vpcLinkId;
-    bool m_vpcLinkIdHasBeenSet;
+    bool m_vpcLinkIdHasBeenSet = false;
 
     Aws::Vector<PatchOperation> m_patchOperations;
-    bool m_patchOperationsHasBeenSet;
+    bool m_patchOperationsHasBeenSet = false;
   };
 
 } // namespace Model

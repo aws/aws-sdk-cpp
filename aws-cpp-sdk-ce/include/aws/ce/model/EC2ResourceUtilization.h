@@ -284,22 +284,22 @@ namespace Model
   private:
 
     Aws::String m_maxCpuUtilizationPercentage;
-    bool m_maxCpuUtilizationPercentageHasBeenSet;
+    bool m_maxCpuUtilizationPercentageHasBeenSet = false;
 
     Aws::String m_maxMemoryUtilizationPercentage;
-    bool m_maxMemoryUtilizationPercentageHasBeenSet;
+    bool m_maxMemoryUtilizationPercentageHasBeenSet = false;
 
     Aws::String m_maxStorageUtilizationPercentage;
-    bool m_maxStorageUtilizationPercentageHasBeenSet;
+    bool m_maxStorageUtilizationPercentageHasBeenSet = false;
 
     EBSResourceUtilization m_eBSResourceUtilization;
-    bool m_eBSResourceUtilizationHasBeenSet;
+    bool m_eBSResourceUtilizationHasBeenSet = false;
 
     DiskResourceUtilization m_diskResourceUtilization;
-    bool m_diskResourceUtilizationHasBeenSet;
+    bool m_diskResourceUtilizationHasBeenSet = false;
 
     NetworkResourceUtilization m_networkResourceUtilization;
-    bool m_networkResourceUtilizationHasBeenSet;
+    bool m_networkResourceUtilizationHasBeenSet = false;
   };
 
 } // namespace Model

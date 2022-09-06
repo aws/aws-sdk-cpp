@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_usagePlanId;
-    bool m_usagePlanIdHasBeenSet;
+    bool m_usagePlanIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -322,19 +322,19 @@ namespace Model
   private:
 
     int m_maxConnectionsPercent;
-    bool m_maxConnectionsPercentHasBeenSet;
+    bool m_maxConnectionsPercentHasBeenSet = false;
 
     int m_maxIdleConnectionsPercent;
-    bool m_maxIdleConnectionsPercentHasBeenSet;
+    bool m_maxIdleConnectionsPercentHasBeenSet = false;
 
     int m_connectionBorrowTimeout;
-    bool m_connectionBorrowTimeoutHasBeenSet;
+    bool m_connectionBorrowTimeoutHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sessionPinningFilters;
-    bool m_sessionPinningFiltersHasBeenSet;
+    bool m_sessionPinningFiltersHasBeenSet = false;
 
     Aws::String m_initQuery;
-    bool m_initQueryHasBeenSet;
+    bool m_initQueryHasBeenSet = false;
   };
 
 } // namespace Model

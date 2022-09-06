@@ -103,10 +103,10 @@ namespace Model
   private:
 
     long long m_categoryId;
-    bool m_categoryIdHasBeenSet;
+    bool m_categoryIdHasBeenSet = false;
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
   };
 
 } // namespace Model

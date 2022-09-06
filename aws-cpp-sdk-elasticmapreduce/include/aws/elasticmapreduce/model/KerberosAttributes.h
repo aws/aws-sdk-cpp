@@ -296,19 +296,19 @@ namespace Model
   private:
 
     Aws::String m_realm;
-    bool m_realmHasBeenSet;
+    bool m_realmHasBeenSet = false;
 
     Aws::String m_kdcAdminPassword;
-    bool m_kdcAdminPasswordHasBeenSet;
+    bool m_kdcAdminPasswordHasBeenSet = false;
 
     Aws::String m_crossRealmTrustPrincipalPassword;
-    bool m_crossRealmTrustPrincipalPasswordHasBeenSet;
+    bool m_crossRealmTrustPrincipalPasswordHasBeenSet = false;
 
     Aws::String m_aDDomainJoinUser;
-    bool m_aDDomainJoinUserHasBeenSet;
+    bool m_aDDomainJoinUserHasBeenSet = false;
 
     Aws::String m_aDDomainJoinPassword;
-    bool m_aDDomainJoinPasswordHasBeenSet;
+    bool m_aDDomainJoinPasswordHasBeenSet = false;
   };
 
 } // namespace Model

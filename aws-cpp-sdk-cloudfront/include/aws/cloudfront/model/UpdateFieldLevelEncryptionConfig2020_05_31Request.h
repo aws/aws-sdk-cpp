@@ -166,13 +166,13 @@ namespace Model
   private:
 
     FieldLevelEncryptionConfig m_fieldLevelEncryptionConfig;
-    bool m_fieldLevelEncryptionConfigHasBeenSet;
+    bool m_fieldLevelEncryptionConfigHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
   };
 
 } // namespace Model

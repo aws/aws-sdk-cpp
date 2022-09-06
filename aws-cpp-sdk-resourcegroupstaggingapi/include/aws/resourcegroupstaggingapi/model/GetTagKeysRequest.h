@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_paginationToken;
-    bool m_paginationTokenHasBeenSet;
+    bool m_paginationTokenHasBeenSet = false;
   };
 
 } // namespace Model

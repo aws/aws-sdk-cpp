@@ -254,10 +254,10 @@ namespace Model
   private:
 
     Aws::String m_aliasName;
-    bool m_aliasNameHasBeenSet;
+    bool m_aliasNameHasBeenSet = false;
 
     Aws::String m_targetKeyId;
-    bool m_targetKeyIdHasBeenSet;
+    bool m_targetKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

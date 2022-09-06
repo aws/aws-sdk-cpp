@@ -122,10 +122,10 @@ namespace Model
   private:
 
     AllowPublish m_publish;
-    bool m_publishHasBeenSet;
+    bool m_publishHasBeenSet = false;
 
     AllowUpstream m_upstream;
-    bool m_upstreamHasBeenSet;
+    bool m_upstreamHasBeenSet = false;
   };
 
 } // namespace Model

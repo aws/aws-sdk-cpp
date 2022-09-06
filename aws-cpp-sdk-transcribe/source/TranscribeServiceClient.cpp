@@ -115,7 +115,7 @@ TranscribeServiceClient::~TranscribeServiceClient()
 
 void TranscribeServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Transcribe");
+  AWSClient::SetServiceClientName("Transcribe");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

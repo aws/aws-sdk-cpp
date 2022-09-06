@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_zone;
-    bool m_zoneHasBeenSet;
+    bool m_zoneHasBeenSet = false;
 
     Aws::String m_subnetArn;
-    bool m_subnetArnHasBeenSet;
+    bool m_subnetArnHasBeenSet = false;
   };
 
 } // namespace Model

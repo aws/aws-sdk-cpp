@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_automationExecutionId;
-    bool m_automationExecutionIdHasBeenSet;
+    bool m_automationExecutionIdHasBeenSet = false;
   };
 
 } // namespace Model

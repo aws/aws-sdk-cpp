@@ -133,13 +133,13 @@ namespace Model
   private:
 
     int m_totalNumberOfFiles;
-    bool m_totalNumberOfFilesHasBeenSet;
+    bool m_totalNumberOfFilesHasBeenSet = false;
 
     int m_ingestedNumberOfFiles;
-    bool m_ingestedNumberOfFilesHasBeenSet;
+    bool m_ingestedNumberOfFilesHasBeenSet = false;
 
     Aws::Vector<S3Object> m_discardedFiles;
-    bool m_discardedFilesHasBeenSet;
+    bool m_discardedFilesHasBeenSet = false;
   };
 
 } // namespace Model

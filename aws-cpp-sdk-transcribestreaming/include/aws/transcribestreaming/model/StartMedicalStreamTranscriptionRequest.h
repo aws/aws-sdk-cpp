@@ -487,41 +487,41 @@ namespace Model
   private:
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaEncoding m_mediaEncoding;
-    bool m_mediaEncodingHasBeenSet;
+    bool m_mediaEncodingHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     Specialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     bool m_showSpeakerLabel;
-    bool m_showSpeakerLabelHasBeenSet;
+    bool m_showSpeakerLabelHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     std::shared_ptr<AudioStream> m_audioStream;
 
     bool m_enableChannelIdentification;
-    bool m_enableChannelIdentificationHasBeenSet;
+    bool m_enableChannelIdentificationHasBeenSet = false;
 
     int m_numberOfChannels;
-    bool m_numberOfChannelsHasBeenSet;
+    bool m_numberOfChannelsHasBeenSet = false;
 
     MedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    bool m_contentIdentificationTypeHasBeenSet = false;
     StartMedicalStreamTranscriptionHandler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder;
 
   };
 

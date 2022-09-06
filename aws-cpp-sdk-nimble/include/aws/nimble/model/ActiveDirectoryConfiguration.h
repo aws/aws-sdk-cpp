@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::Vector<ActiveDirectoryComputerAttribute> m_computerAttributes;
-    bool m_computerAttributesHasBeenSet;
+    bool m_computerAttributesHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_organizationalUnitDistinguishedName;
-    bool m_organizationalUnitDistinguishedNameHasBeenSet;
+    bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
   };
 
 } // namespace Model

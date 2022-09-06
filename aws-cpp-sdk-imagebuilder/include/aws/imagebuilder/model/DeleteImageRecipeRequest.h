@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_imageRecipeArn;
-    bool m_imageRecipeArnHasBeenSet;
+    bool m_imageRecipeArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalStagingLabelsToDownload;
-    bool m_additionalStagingLabelsToDownloadHasBeenSet;
+    bool m_additionalStagingLabelsToDownloadHasBeenSet = false;
   };
 
 } // namespace Model

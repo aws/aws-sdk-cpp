@@ -373,22 +373,22 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPort;
-    bool m_destinationPortHasBeenSet;
+    bool m_destinationPortHasBeenSet = false;
 
     Aws::String m_direction;
-    bool m_directionHasBeenSet;
+    bool m_directionHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_sourcePort;
-    bool m_sourcePortHasBeenSet;
+    bool m_sourcePortHasBeenSet = false;
   };
 
 } // namespace Model

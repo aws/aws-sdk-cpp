@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_newColumnName;
-    bool m_newColumnNameHasBeenSet;
+    bool m_newColumnNameHasBeenSet = false;
   };
 
 } // namespace Model

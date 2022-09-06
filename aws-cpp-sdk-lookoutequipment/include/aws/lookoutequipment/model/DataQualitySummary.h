@@ -238,19 +238,19 @@ namespace Model
   private:
 
     InsufficientSensorData m_insufficientSensorData;
-    bool m_insufficientSensorDataHasBeenSet;
+    bool m_insufficientSensorDataHasBeenSet = false;
 
     MissingSensorData m_missingSensorData;
-    bool m_missingSensorDataHasBeenSet;
+    bool m_missingSensorDataHasBeenSet = false;
 
     InvalidSensorData m_invalidSensorData;
-    bool m_invalidSensorDataHasBeenSet;
+    bool m_invalidSensorDataHasBeenSet = false;
 
     UnsupportedTimestamps m_unsupportedTimestamps;
-    bool m_unsupportedTimestampsHasBeenSet;
+    bool m_unsupportedTimestampsHasBeenSet = false;
 
     DuplicateTimestamps m_duplicateTimestamps;
-    bool m_duplicateTimestampsHasBeenSet;
+    bool m_duplicateTimestampsHasBeenSet = false;
   };
 
 } // namespace Model

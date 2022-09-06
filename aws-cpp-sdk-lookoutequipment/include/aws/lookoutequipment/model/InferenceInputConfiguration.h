@@ -165,13 +165,13 @@ namespace Model
   private:
 
     InferenceS3InputConfiguration m_s3InputConfiguration;
-    bool m_s3InputConfigurationHasBeenSet;
+    bool m_s3InputConfigurationHasBeenSet = false;
 
     Aws::String m_inputTimeZoneOffset;
-    bool m_inputTimeZoneOffsetHasBeenSet;
+    bool m_inputTimeZoneOffsetHasBeenSet = false;
 
     InferenceInputNameConfiguration m_inferenceInputNameConfiguration;
-    bool m_inferenceInputNameConfigurationHasBeenSet;
+    bool m_inferenceInputNameConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

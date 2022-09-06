@@ -96,10 +96,10 @@ namespace Model
   private:
 
     bool m_ignorePublicAcls;
-    bool m_ignorePublicAclsHasBeenSet;
+    bool m_ignorePublicAclsHasBeenSet = false;
 
     bool m_restrictPublicBuckets;
-    bool m_restrictPublicBucketsHasBeenSet;
+    bool m_restrictPublicBucketsHasBeenSet = false;
   };
 
 } // namespace Model

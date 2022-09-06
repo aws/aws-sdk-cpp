@@ -521,43 +521,43 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Evidence m_evidence;
-    bool m_evidenceHasBeenSet;
+    bool m_evidenceHasBeenSet = false;
 
     bool m_archived;
-    bool m_archivedHasBeenSet;
+    bool m_archivedHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_eventFirstSeen;
-    bool m_eventFirstSeenHasBeenSet;
+    bool m_eventFirstSeenHasBeenSet = false;
 
     Aws::String m_eventLastSeen;
-    bool m_eventLastSeenHasBeenSet;
+    bool m_eventLastSeenHasBeenSet = false;
 
     Aws::String m_resourceRole;
-    bool m_resourceRoleHasBeenSet;
+    bool m_resourceRoleHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_userFeedback;
-    bool m_userFeedbackHasBeenSet;
+    bool m_userFeedbackHasBeenSet = false;
 
     ServiceAdditionalInfo m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
 
     Aws::String m_featureName;
-    bool m_featureNameHasBeenSet;
+    bool m_featureNameHasBeenSet = false;
 
     EbsVolumeScanDetails m_ebsVolumeScanDetails;
-    bool m_ebsVolumeScanDetailsHasBeenSet;
+    bool m_ebsVolumeScanDetailsHasBeenSet = false;
   };
 
 } // namespace Model

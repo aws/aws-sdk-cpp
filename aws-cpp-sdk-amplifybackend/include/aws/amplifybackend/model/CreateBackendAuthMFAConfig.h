@@ -116,10 +116,10 @@ namespace Model
   private:
 
     MFAMode m_mFAMode;
-    bool m_mFAModeHasBeenSet;
+    bool m_mFAModeHasBeenSet = false;
 
     Settings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     bool m_enforceConsumerDeletion;
-    bool m_enforceConsumerDeletionHasBeenSet;
+    bool m_enforceConsumerDeletionHasBeenSet = false;
   };
 
 } // namespace Model

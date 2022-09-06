@@ -358,22 +358,22 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ProtectionPolicy m_newGameSessionProtectionPolicy;
-    bool m_newGameSessionProtectionPolicyHasBeenSet;
+    bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
-    bool m_resourceCreationLimitPolicyHasBeenSet;
+    bool m_resourceCreationLimitPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metricGroups;
-    bool m_metricGroupsHasBeenSet;
+    bool m_metricGroupsHasBeenSet = false;
   };
 
 } // namespace Model

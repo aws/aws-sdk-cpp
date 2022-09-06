@@ -227,13 +227,13 @@ namespace Model
   private:
 
     Aws::String m_deferMaintenanceEndTime;
-    bool m_deferMaintenanceEndTimeHasBeenSet;
+    bool m_deferMaintenanceEndTimeHasBeenSet = false;
 
     Aws::String m_deferMaintenanceIdentifier;
-    bool m_deferMaintenanceIdentifierHasBeenSet;
+    bool m_deferMaintenanceIdentifierHasBeenSet = false;
 
     Aws::String m_deferMaintenanceStartTime;
-    bool m_deferMaintenanceStartTimeHasBeenSet;
+    bool m_deferMaintenanceStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

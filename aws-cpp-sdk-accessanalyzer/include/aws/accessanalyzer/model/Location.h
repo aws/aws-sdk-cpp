@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<PathElement> m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Span m_span;
-    bool m_spanHasBeenSet;
+    bool m_spanHasBeenSet = false;
   };
 
 } // namespace Model

@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_topicARN;
-    bool m_topicARNHasBeenSet;
+    bool m_topicARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationTypes;
-    bool m_notificationTypesHasBeenSet;
+    bool m_notificationTypesHasBeenSet = false;
   };
 
 } // namespace Model

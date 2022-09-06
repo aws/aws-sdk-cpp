@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<IoTJobAbortCriteria> m_criteriaList;
-    bool m_criteriaListHasBeenSet;
+    bool m_criteriaListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -312,16 +312,16 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_secretARN;
-    bool m_secretARNHasBeenSet;
+    bool m_secretARNHasBeenSet = false;
 
     Aws::String m_ckn;
-    bool m_cknHasBeenSet;
+    bool m_cknHasBeenSet = false;
 
     Aws::String m_cak;
-    bool m_cakHasBeenSet;
+    bool m_cakHasBeenSet = false;
   };
 
 } // namespace Model

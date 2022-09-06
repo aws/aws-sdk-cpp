@@ -916,55 +916,55 @@ namespace Model
   private:
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Eac3AtmosBitstreamMode m_bitstreamMode;
-    bool m_bitstreamModeHasBeenSet;
+    bool m_bitstreamModeHasBeenSet = false;
 
     Eac3AtmosCodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     Eac3AtmosDialogueIntelligence m_dialogueIntelligence;
-    bool m_dialogueIntelligenceHasBeenSet;
+    bool m_dialogueIntelligenceHasBeenSet = false;
 
     Eac3AtmosDownmixControl m_downmixControl;
-    bool m_downmixControlHasBeenSet;
+    bool m_downmixControlHasBeenSet = false;
 
     Eac3AtmosDynamicRangeCompressionLine m_dynamicRangeCompressionLine;
-    bool m_dynamicRangeCompressionLineHasBeenSet;
+    bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
     Eac3AtmosDynamicRangeCompressionRf m_dynamicRangeCompressionRf;
-    bool m_dynamicRangeCompressionRfHasBeenSet;
+    bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
     Eac3AtmosDynamicRangeControl m_dynamicRangeControl;
-    bool m_dynamicRangeControlHasBeenSet;
+    bool m_dynamicRangeControlHasBeenSet = false;
 
     double m_loRoCenterMixLevel;
-    bool m_loRoCenterMixLevelHasBeenSet;
+    bool m_loRoCenterMixLevelHasBeenSet = false;
 
     double m_loRoSurroundMixLevel;
-    bool m_loRoSurroundMixLevelHasBeenSet;
+    bool m_loRoSurroundMixLevelHasBeenSet = false;
 
     double m_ltRtCenterMixLevel;
-    bool m_ltRtCenterMixLevelHasBeenSet;
+    bool m_ltRtCenterMixLevelHasBeenSet = false;
 
     double m_ltRtSurroundMixLevel;
-    bool m_ltRtSurroundMixLevelHasBeenSet;
+    bool m_ltRtSurroundMixLevelHasBeenSet = false;
 
     Eac3AtmosMeteringMode m_meteringMode;
-    bool m_meteringModeHasBeenSet;
+    bool m_meteringModeHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     int m_speechThreshold;
-    bool m_speechThresholdHasBeenSet;
+    bool m_speechThresholdHasBeenSet = false;
 
     Eac3AtmosStereoDownmix m_stereoDownmix;
-    bool m_stereoDownmixHasBeenSet;
+    bool m_stereoDownmixHasBeenSet = false;
 
     Eac3AtmosSurroundExMode m_surroundExMode;
-    bool m_surroundExModeHasBeenSet;
+    bool m_surroundExModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_anomalyInstanceId;
-    bool m_anomalyInstanceIdHasBeenSet;
+    bool m_anomalyInstanceIdHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     FeedbackType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

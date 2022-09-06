@@ -203,13 +203,13 @@ namespace Model
   private:
 
     Aws::String m_objectArn;
-    bool m_objectArnHasBeenSet;
+    bool m_objectArnHasBeenSet = false;
 
     Aws::String m_objectVersionId;
-    bool m_objectVersionIdHasBeenSet;
+    bool m_objectVersionIdHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
   };
 
 } // namespace Model

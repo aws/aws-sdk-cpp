@@ -343,16 +343,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupNames;
-    bool m_groupNamesHasBeenSet;
+    bool m_groupNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet;
+    bool m_groupIdsHasBeenSet = false;
   };
 
 } // namespace Model

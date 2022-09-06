@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableId;
-    bool m_localGatewayRouteTableIdHasBeenSet;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_localGatewayVirtualInterfaceGroupId;
-    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet;
+    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

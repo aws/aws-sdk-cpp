@@ -219,10 +219,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_originAccessIdentity;
-    bool m_originAccessIdentityHasBeenSet;
+    bool m_originAccessIdentityHasBeenSet = false;
   };
 
 } // namespace Model

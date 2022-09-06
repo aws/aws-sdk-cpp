@@ -912,28 +912,28 @@ namespace Model
   private:
 
     Aws::String m_exportId;
-    bool m_exportIdHasBeenSet;
+    bool m_exportIdHasBeenSet = false;
 
     ContinuousExportStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetail;
-    bool m_statusDetailHasBeenSet;
+    bool m_statusDetailHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopTime;
-    bool m_stopTimeHasBeenSet;
+    bool m_stopTimeHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_schemaStorageConfig;
-    bool m_schemaStorageConfigHasBeenSet;
+    bool m_schemaStorageConfigHasBeenSet = false;
   };
 
 } // namespace Model

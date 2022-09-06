@@ -172,16 +172,16 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     Aws::String m_faceId;
-    bool m_faceIdHasBeenSet;
+    bool m_faceIdHasBeenSet = false;
 
     int m_maxFaces;
-    bool m_maxFacesHasBeenSet;
+    bool m_maxFacesHasBeenSet = false;
 
     double m_faceMatchThreshold;
-    bool m_faceMatchThresholdHasBeenSet;
+    bool m_faceMatchThresholdHasBeenSet = false;
   };
 
 } // namespace Model

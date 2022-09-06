@@ -210,16 +210,16 @@ namespace Model
   private:
 
     JobComparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<TagValuePair> m_tagValues;
-    bool m_tagValuesHasBeenSet;
+    bool m_tagValuesHasBeenSet = false;
 
     TagTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

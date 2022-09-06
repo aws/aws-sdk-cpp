@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
 
     Aws::String m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
 
     int m_snoozeDuration;
-    bool m_snoozeDurationHasBeenSet;
+    bool m_snoozeDurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -331,25 +331,25 @@ namespace Model
   private:
 
     Aws::String m_attachTime;
-    bool m_attachTimeHasBeenSet;
+    bool m_attachTimeHasBeenSet = false;
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     int m_deviceIndex;
-    bool m_deviceIndexHasBeenSet;
+    bool m_deviceIndexHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceOwnerId;
-    bool m_instanceOwnerIdHasBeenSet;
+    bool m_instanceOwnerIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

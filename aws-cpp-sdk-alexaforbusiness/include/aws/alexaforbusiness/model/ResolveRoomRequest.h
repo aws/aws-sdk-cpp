@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_skillId;
-    bool m_skillIdHasBeenSet;
+    bool m_skillIdHasBeenSet = false;
   };
 
 } // namespace Model

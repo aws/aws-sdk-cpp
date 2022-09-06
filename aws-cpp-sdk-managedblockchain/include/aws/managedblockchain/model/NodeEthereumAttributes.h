@@ -201,10 +201,10 @@ namespace Model
   private:
 
     Aws::String m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     Aws::String m_webSocketEndpoint;
-    bool m_webSocketEndpointHasBeenSet;
+    bool m_webSocketEndpointHasBeenSet = false;
   };
 
 } // namespace Model

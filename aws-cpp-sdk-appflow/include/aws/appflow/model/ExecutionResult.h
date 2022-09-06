@@ -133,16 +133,16 @@ namespace Model
   private:
 
     ErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
 
     long long m_bytesProcessed;
-    bool m_bytesProcessedHasBeenSet;
+    bool m_bytesProcessedHasBeenSet = false;
 
     long long m_bytesWritten;
-    bool m_bytesWrittenHasBeenSet;
+    bool m_bytesWrittenHasBeenSet = false;
 
     long long m_recordsProcessed;
-    bool m_recordsProcessedHasBeenSet;
+    bool m_recordsProcessedHasBeenSet = false;
   };
 
 } // namespace Model

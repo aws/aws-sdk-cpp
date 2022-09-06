@@ -923,43 +923,43 @@ namespace Model
   private:
 
     ProresChromaSampling m_chromaSampling;
-    bool m_chromaSamplingHasBeenSet;
+    bool m_chromaSamplingHasBeenSet = false;
 
     ProresCodecProfile m_codecProfile;
-    bool m_codecProfileHasBeenSet;
+    bool m_codecProfileHasBeenSet = false;
 
     ProresFramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     ProresFramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     ProresInterlaceMode m_interlaceMode;
-    bool m_interlaceModeHasBeenSet;
+    bool m_interlaceModeHasBeenSet = false;
 
     ProresParControl m_parControl;
-    bool m_parControlHasBeenSet;
+    bool m_parControlHasBeenSet = false;
 
     int m_parDenominator;
-    bool m_parDenominatorHasBeenSet;
+    bool m_parDenominatorHasBeenSet = false;
 
     int m_parNumerator;
-    bool m_parNumeratorHasBeenSet;
+    bool m_parNumeratorHasBeenSet = false;
 
     ProresScanTypeConversionMode m_scanTypeConversionMode;
-    bool m_scanTypeConversionModeHasBeenSet;
+    bool m_scanTypeConversionModeHasBeenSet = false;
 
     ProresSlowPal m_slowPal;
-    bool m_slowPalHasBeenSet;
+    bool m_slowPalHasBeenSet = false;
 
     ProresTelecine m_telecine;
-    bool m_telecineHasBeenSet;
+    bool m_telecineHasBeenSet = false;
   };
 
 } // namespace Model

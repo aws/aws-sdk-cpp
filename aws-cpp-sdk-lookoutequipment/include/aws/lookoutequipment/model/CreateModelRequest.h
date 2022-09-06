@@ -665,46 +665,46 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     DatasetSchema m_datasetSchema;
-    bool m_datasetSchemaHasBeenSet;
+    bool m_datasetSchemaHasBeenSet = false;
 
     LabelsInputConfiguration m_labelsInputConfiguration;
-    bool m_labelsInputConfigurationHasBeenSet;
+    bool m_labelsInputConfigurationHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingDataStartTime;
-    bool m_trainingDataStartTimeHasBeenSet;
+    bool m_trainingDataStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingDataEndTime;
-    bool m_trainingDataEndTimeHasBeenSet;
+    bool m_trainingDataEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_evaluationDataStartTime;
-    bool m_evaluationDataStartTimeHasBeenSet;
+    bool m_evaluationDataStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_evaluationDataEndTime;
-    bool m_evaluationDataEndTimeHasBeenSet;
+    bool m_evaluationDataEndTimeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     DataPreProcessingConfiguration m_dataPreProcessingConfiguration;
-    bool m_dataPreProcessingConfigurationHasBeenSet;
+    bool m_dataPreProcessingConfigurationHasBeenSet = false;
 
     Aws::String m_serverSideKmsKeyId;
-    bool m_serverSideKmsKeyIdHasBeenSet;
+    bool m_serverSideKmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_offCondition;
-    bool m_offConditionHasBeenSet;
+    bool m_offConditionHasBeenSet = false;
   };
 
 } // namespace Model

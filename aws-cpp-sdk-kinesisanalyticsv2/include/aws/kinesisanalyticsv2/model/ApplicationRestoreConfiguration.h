@@ -137,10 +137,10 @@ namespace Model
   private:
 
     ApplicationRestoreType m_applicationRestoreType;
-    bool m_applicationRestoreTypeHasBeenSet;
+    bool m_applicationRestoreTypeHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

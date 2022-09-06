@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_syncName;
-    bool m_syncNameHasBeenSet;
+    bool m_syncNameHasBeenSet = false;
 
     Aws::Vector<OpsFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<OpsAggregator> m_aggregators;
-    bool m_aggregatorsHasBeenSet;
+    bool m_aggregatorsHasBeenSet = false;
 
     Aws::Vector<OpsResultAttribute> m_resultAttributes;
-    bool m_resultAttributesHasBeenSet;
+    bool m_resultAttributesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

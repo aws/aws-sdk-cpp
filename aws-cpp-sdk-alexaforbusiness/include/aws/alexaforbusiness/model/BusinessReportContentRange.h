@@ -70,7 +70,7 @@ namespace Model
   private:
 
     BusinessReportInterval m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
   };
 
 } // namespace Model

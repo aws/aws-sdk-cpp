@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_waitingOnIngestion;
-    bool m_waitingOnIngestionHasBeenSet;
+    bool m_waitingOnIngestionHasBeenSet = false;
 
     Aws::String m_queuedIngestion;
-    bool m_queuedIngestionHasBeenSet;
+    bool m_queuedIngestionHasBeenSet = false;
   };
 
 } // namespace Model

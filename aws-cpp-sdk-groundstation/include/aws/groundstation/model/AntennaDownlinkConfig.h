@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SpectrumConfig m_spectrumConfig;
-    bool m_spectrumConfigHasBeenSet;
+    bool m_spectrumConfigHasBeenSet = false;
   };
 
 } // namespace Model

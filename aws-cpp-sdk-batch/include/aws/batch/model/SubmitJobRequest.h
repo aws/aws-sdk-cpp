@@ -968,46 +968,46 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobQueue;
-    bool m_jobQueueHasBeenSet;
+    bool m_jobQueueHasBeenSet = false;
 
     Aws::String m_shareIdentifier;
-    bool m_shareIdentifierHasBeenSet;
+    bool m_shareIdentifierHasBeenSet = false;
 
     int m_schedulingPriorityOverride;
-    bool m_schedulingPriorityOverrideHasBeenSet;
+    bool m_schedulingPriorityOverrideHasBeenSet = false;
 
     ArrayProperties m_arrayProperties;
-    bool m_arrayPropertiesHasBeenSet;
+    bool m_arrayPropertiesHasBeenSet = false;
 
     Aws::Vector<JobDependency> m_dependsOn;
-    bool m_dependsOnHasBeenSet;
+    bool m_dependsOnHasBeenSet = false;
 
     Aws::String m_jobDefinition;
-    bool m_jobDefinitionHasBeenSet;
+    bool m_jobDefinitionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     ContainerOverrides m_containerOverrides;
-    bool m_containerOverridesHasBeenSet;
+    bool m_containerOverridesHasBeenSet = false;
 
     NodeOverrides m_nodeOverrides;
-    bool m_nodeOverridesHasBeenSet;
+    bool m_nodeOverridesHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
 
     bool m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     JobTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

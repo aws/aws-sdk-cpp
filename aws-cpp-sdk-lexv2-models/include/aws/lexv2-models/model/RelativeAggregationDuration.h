@@ -122,10 +122,10 @@ namespace Model
   private:
 
     TimeDimension m_timeDimension;
-    bool m_timeDimensionHasBeenSet;
+    bool m_timeDimensionHasBeenSet = false;
 
     int m_timeValue;
-    bool m_timeValueHasBeenSet;
+    bool m_timeValueHasBeenSet = false;
   };
 
 } // namespace Model

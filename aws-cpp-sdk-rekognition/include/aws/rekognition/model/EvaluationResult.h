@@ -104,10 +104,10 @@ namespace Model
   private:
 
     double m_f1Score;
-    bool m_f1ScoreHasBeenSet;
+    bool m_f1ScoreHasBeenSet = false;
 
     Summary m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
   };
 
 } // namespace Model

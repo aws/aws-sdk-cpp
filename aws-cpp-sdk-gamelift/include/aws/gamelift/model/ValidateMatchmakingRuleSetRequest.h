@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_ruleSetBody;
-    bool m_ruleSetBodyHasBeenSet;
+    bool m_ruleSetBodyHasBeenSet = false;
   };
 
 } // namespace Model

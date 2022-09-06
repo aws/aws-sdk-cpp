@@ -439,19 +439,19 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_zoneNames;
-    bool m_zoneNamesHasBeenSet;
+    bool m_zoneNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_zoneIds;
-    bool m_zoneIdsHasBeenSet;
+    bool m_zoneIdsHasBeenSet = false;
 
     bool m_allAvailabilityZones;
-    bool m_allAvailabilityZonesHasBeenSet;
+    bool m_allAvailabilityZonesHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

@@ -320,16 +320,16 @@ namespace Model
   private:
 
     Aws::String m_sourceDBClusterParameterGroupIdentifier;
-    bool m_sourceDBClusterParameterGroupIdentifierHasBeenSet;
+    bool m_sourceDBClusterParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBClusterParameterGroupIdentifier;
-    bool m_targetDBClusterParameterGroupIdentifierHasBeenSet;
+    bool m_targetDBClusterParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBClusterParameterGroupDescription;
-    bool m_targetDBClusterParameterGroupDescriptionHasBeenSet;
+    bool m_targetDBClusterParameterGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -145,10 +145,10 @@ namespace Model
   private:
 
     FleetLaunchTemplateSpecificationRequest m_launchTemplateSpecification;
-    bool m_launchTemplateSpecificationHasBeenSet;
+    bool m_launchTemplateSpecificationHasBeenSet = false;
 
     Aws::Vector<FleetLaunchTemplateOverridesRequest> m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model

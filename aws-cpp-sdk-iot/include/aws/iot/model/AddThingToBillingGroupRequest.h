@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_billingGroupName;
-    bool m_billingGroupNameHasBeenSet;
+    bool m_billingGroupNameHasBeenSet = false;
 
     Aws::String m_billingGroupArn;
-    bool m_billingGroupArnHasBeenSet;
+    bool m_billingGroupArnHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
   };
 
 } // namespace Model

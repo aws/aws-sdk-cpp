@@ -220,10 +220,10 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::Vector<MetricsName> m_shardLevelMetrics;
-    bool m_shardLevelMetricsHasBeenSet;
+    bool m_shardLevelMetricsHasBeenSet = false;
   };
 
 } // namespace Model

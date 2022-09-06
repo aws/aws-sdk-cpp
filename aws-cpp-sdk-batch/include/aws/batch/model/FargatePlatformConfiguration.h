@@ -138,7 +138,7 @@ namespace Model
   private:
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
   };
 
 } // namespace Model

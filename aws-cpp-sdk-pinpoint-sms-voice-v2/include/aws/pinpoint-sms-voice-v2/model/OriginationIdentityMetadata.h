@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_originationIdentityArn;
-    bool m_originationIdentityArnHasBeenSet;
+    bool m_originationIdentityArnHasBeenSet = false;
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     Aws::Vector<NumberCapability> m_numberCapabilities;
-    bool m_numberCapabilitiesHasBeenSet;
+    bool m_numberCapabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

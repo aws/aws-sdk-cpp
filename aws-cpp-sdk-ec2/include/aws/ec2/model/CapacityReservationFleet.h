@@ -704,40 +704,40 @@ namespace Model
   private:
 
     Aws::String m_capacityReservationFleetId;
-    bool m_capacityReservationFleetIdHasBeenSet;
+    bool m_capacityReservationFleetIdHasBeenSet = false;
 
     Aws::String m_capacityReservationFleetArn;
-    bool m_capacityReservationFleetArnHasBeenSet;
+    bool m_capacityReservationFleetArnHasBeenSet = false;
 
     CapacityReservationFleetState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_totalTargetCapacity;
-    bool m_totalTargetCapacityHasBeenSet;
+    bool m_totalTargetCapacityHasBeenSet = false;
 
     double m_totalFulfilledCapacity;
-    bool m_totalFulfilledCapacityHasBeenSet;
+    bool m_totalFulfilledCapacityHasBeenSet = false;
 
     FleetCapacityReservationTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     FleetInstanceMatchCriteria m_instanceMatchCriteria;
-    bool m_instanceMatchCriteriaHasBeenSet;
+    bool m_instanceMatchCriteriaHasBeenSet = false;
 
     Aws::String m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     Aws::Vector<FleetCapacityReservation> m_instanceTypeSpecifications;
-    bool m_instanceTypeSpecificationsHasBeenSet;
+    bool m_instanceTypeSpecificationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

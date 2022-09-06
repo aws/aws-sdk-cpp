@@ -555,37 +555,37 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_ipamId;
-    bool m_ipamIdHasBeenSet;
+    bool m_ipamIdHasBeenSet = false;
 
     Aws::String m_ipamArn;
-    bool m_ipamArnHasBeenSet;
+    bool m_ipamArnHasBeenSet = false;
 
     Aws::String m_ipamRegion;
-    bool m_ipamRegionHasBeenSet;
+    bool m_ipamRegionHasBeenSet = false;
 
     Aws::String m_publicDefaultScopeId;
-    bool m_publicDefaultScopeIdHasBeenSet;
+    bool m_publicDefaultScopeIdHasBeenSet = false;
 
     Aws::String m_privateDefaultScopeId;
-    bool m_privateDefaultScopeIdHasBeenSet;
+    bool m_privateDefaultScopeIdHasBeenSet = false;
 
     int m_scopeCount;
-    bool m_scopeCountHasBeenSet;
+    bool m_scopeCountHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<IpamOperatingRegion> m_operatingRegions;
-    bool m_operatingRegionsHasBeenSet;
+    bool m_operatingRegionsHasBeenSet = false;
 
     IpamState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

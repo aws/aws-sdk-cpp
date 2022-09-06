@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_multiLine;
-    bool m_multiLineHasBeenSet;
+    bool m_multiLineHasBeenSet = false;
   };
 
 } // namespace Model

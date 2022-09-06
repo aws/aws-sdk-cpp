@@ -343,19 +343,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_codeReviewArn;
-    bool m_codeReviewArnHasBeenSet;
+    bool m_codeReviewArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet;
+    bool m_recommendationIdsHasBeenSet = false;
   };
 
 } // namespace Model

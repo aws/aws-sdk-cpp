@@ -84,7 +84,7 @@ namespace Model
   private:
 
     GlueDataCatalogConfiguration m_glueDataCatalogConfiguration;
-    bool m_glueDataCatalogConfigurationHasBeenSet;
+    bool m_glueDataCatalogConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

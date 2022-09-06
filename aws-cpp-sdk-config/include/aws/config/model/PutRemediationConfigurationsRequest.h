@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<RemediationConfiguration> m_remediationConfigurations;
-    bool m_remediationConfigurationsHasBeenSet;
+    bool m_remediationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_cityName;
-    bool m_cityNameHasBeenSet;
+    bool m_cityNameHasBeenSet = false;
   };
 
 } // namespace Model

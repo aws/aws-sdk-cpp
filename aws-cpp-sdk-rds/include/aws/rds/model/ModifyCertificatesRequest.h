@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_certificateIdentifier;
-    bool m_certificateIdentifierHasBeenSet;
+    bool m_certificateIdentifierHasBeenSet = false;
 
     bool m_removeCustomerOverride;
-    bool m_removeCustomerOverrideHasBeenSet;
+    bool m_removeCustomerOverrideHasBeenSet = false;
   };
 
 } // namespace Model

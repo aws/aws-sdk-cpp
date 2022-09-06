@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_averageExecutionTimeMillis;
-    bool m_averageExecutionTimeMillisHasBeenSet;
+    bool m_averageExecutionTimeMillisHasBeenSet = false;
 
     long long m_dataScannedBytes;
-    bool m_dataScannedBytesHasBeenSet;
+    bool m_dataScannedBytesHasBeenSet = false;
 
     long long m_workUnitsExecutedCount;
-    bool m_workUnitsExecutedCountHasBeenSet;
+    bool m_workUnitsExecutedCountHasBeenSet = false;
   };
 
 } // namespace Model

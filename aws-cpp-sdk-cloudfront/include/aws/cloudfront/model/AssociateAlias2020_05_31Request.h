@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_targetDistributionId;
-    bool m_targetDistributionIdHasBeenSet;
+    bool m_targetDistributionIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
   };
 
 } // namespace Model

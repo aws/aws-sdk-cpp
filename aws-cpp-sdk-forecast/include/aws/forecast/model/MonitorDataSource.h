@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_datasetImportJobArn;
-    bool m_datasetImportJobArnHasBeenSet;
+    bool m_datasetImportJobArnHasBeenSet = false;
 
     Aws::String m_forecastArn;
-    bool m_forecastArnHasBeenSet;
+    bool m_forecastArnHasBeenSet = false;
 
     Aws::String m_predictorArn;
-    bool m_predictorArnHasBeenSet;
+    bool m_predictorArnHasBeenSet = false;
   };
 
 } // namespace Model

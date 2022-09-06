@@ -970,58 +970,58 @@ namespace Model
   private:
 
     Aws::String m_activeOperationArn;
-    bool m_activeOperationArnHasBeenSet;
+    bool m_activeOperationArnHasBeenSet = false;
 
     BrokerNodeGroupInfo m_brokerNodeGroupInfo;
-    bool m_brokerNodeGroupInfoHasBeenSet;
+    bool m_brokerNodeGroupInfoHasBeenSet = false;
 
     ClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     BrokerSoftwareInfo m_currentBrokerSoftwareInfo;
-    bool m_currentBrokerSoftwareInfoHasBeenSet;
+    bool m_currentBrokerSoftwareInfoHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     EncryptionInfo m_encryptionInfo;
-    bool m_encryptionInfoHasBeenSet;
+    bool m_encryptionInfoHasBeenSet = false;
 
     EnhancedMonitoring m_enhancedMonitoring;
-    bool m_enhancedMonitoringHasBeenSet;
+    bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoring m_openMonitoring;
-    bool m_openMonitoringHasBeenSet;
+    bool m_openMonitoringHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
 
     int m_numberOfBrokerNodes;
-    bool m_numberOfBrokerNodesHasBeenSet;
+    bool m_numberOfBrokerNodesHasBeenSet = false;
 
     ClusterState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StateInfo m_stateInfo;
-    bool m_stateInfoHasBeenSet;
+    bool m_stateInfoHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_zookeeperConnectString;
-    bool m_zookeeperConnectStringHasBeenSet;
+    bool m_zookeeperConnectStringHasBeenSet = false;
 
     Aws::String m_zookeeperConnectStringTls;
-    bool m_zookeeperConnectStringTlsHasBeenSet;
+    bool m_zookeeperConnectStringTlsHasBeenSet = false;
   };
 
 } // namespace Model

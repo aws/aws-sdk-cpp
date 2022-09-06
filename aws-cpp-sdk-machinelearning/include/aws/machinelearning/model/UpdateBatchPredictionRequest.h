@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_batchPredictionId;
-    bool m_batchPredictionIdHasBeenSet;
+    bool m_batchPredictionIdHasBeenSet = false;
 
     Aws::String m_batchPredictionName;
-    bool m_batchPredictionNameHasBeenSet;
+    bool m_batchPredictionNameHasBeenSet = false;
   };
 
 } // namespace Model

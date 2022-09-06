@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_createdByArn;
-    bool m_createdByArnHasBeenSet;
+    bool m_createdByArnHasBeenSet = false;
   };
 
 } // namespace Model

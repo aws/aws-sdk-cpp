@@ -58,7 +58,7 @@ namespace Model
   private:
 
     long long m_spliceEventId;
-    bool m_spliceEventIdHasBeenSet;
+    bool m_spliceEventIdHasBeenSet = false;
   };
 
 } // namespace Model

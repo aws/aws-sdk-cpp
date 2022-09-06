@@ -298,19 +298,19 @@ namespace Model
   private:
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_eMAIL;
-    bool m_eMAILHasBeenSet;
+    bool m_eMAILHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_sMS;
-    bool m_sMSHasBeenSet;
+    bool m_sMSHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_pUSH;
-    bool m_pUSHHasBeenSet;
+    bool m_pUSHHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_vOICE;
-    bool m_vOICEHasBeenSet;
+    bool m_vOICEHasBeenSet = false;
 
     Aws::Map<DayOfWeek, Aws::Vector<OpenHoursRule>> m_cUSTOM;
-    bool m_cUSTOMHasBeenSet;
+    bool m_cUSTOMHasBeenSet = false;
   };
 
 } // namespace Model

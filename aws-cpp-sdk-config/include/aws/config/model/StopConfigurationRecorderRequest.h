@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_configurationRecorderName;
-    bool m_configurationRecorderNameHasBeenSet;
+    bool m_configurationRecorderNameHasBeenSet = false;
   };
 
 } // namespace Model

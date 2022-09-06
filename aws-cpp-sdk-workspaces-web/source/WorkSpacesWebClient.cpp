@@ -120,7 +120,7 @@ WorkSpacesWebClient::~WorkSpacesWebClient()
 
 void WorkSpacesWebClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("WorkSpaces Web");
+  AWSClient::SetServiceClientName("WorkSpaces Web");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

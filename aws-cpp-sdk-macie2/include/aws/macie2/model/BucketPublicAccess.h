@@ -133,10 +133,10 @@ namespace Model
   private:
 
     EffectivePermission m_effectivePermission;
-    bool m_effectivePermissionHasBeenSet;
+    bool m_effectivePermissionHasBeenSet = false;
 
     BucketPermissionConfiguration m_permissionConfiguration;
-    bool m_permissionConfigurationHasBeenSet;
+    bool m_permissionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

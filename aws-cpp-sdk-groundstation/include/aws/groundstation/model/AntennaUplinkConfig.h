@@ -124,13 +124,13 @@ namespace Model
   private:
 
     UplinkSpectrumConfig m_spectrumConfig;
-    bool m_spectrumConfigHasBeenSet;
+    bool m_spectrumConfigHasBeenSet = false;
 
     Eirp m_targetEirp;
-    bool m_targetEirpHasBeenSet;
+    bool m_targetEirpHasBeenSet = false;
 
     bool m_transmitDisabled;
-    bool m_transmitDisabledHasBeenSet;
+    bool m_transmitDisabledHasBeenSet = false;
   };
 
 } // namespace Model

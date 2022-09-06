@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_optOutListArn;
-    bool m_optOutListArnHasBeenSet;
+    bool m_optOutListArnHasBeenSet = false;
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -274,13 +274,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     EncryptionStatus m_encryptionStatus;
-    bool m_encryptionStatusHasBeenSet;
+    bool m_encryptionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_inaccessibleKmsKeyDateTime;
-    bool m_inaccessibleKmsKeyDateTimeHasBeenSet;
+    bool m_inaccessibleKmsKeyDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

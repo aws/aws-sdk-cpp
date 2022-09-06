@@ -176,13 +176,13 @@ namespace Model
   private:
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     Aws::String m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

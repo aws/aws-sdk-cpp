@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_passwordParam;
-    bool m_passwordParamHasBeenSet;
+    bool m_passwordParamHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

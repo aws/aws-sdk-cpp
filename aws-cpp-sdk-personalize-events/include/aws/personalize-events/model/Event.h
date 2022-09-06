@@ -478,28 +478,28 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     double m_eventValue;
-    bool m_eventValueHasBeenSet;
+    bool m_eventValueHasBeenSet = false;
 
     Aws::String m_itemId;
-    bool m_itemIdHasBeenSet;
+    bool m_itemIdHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_sentAt;
-    bool m_sentAtHasBeenSet;
+    bool m_sentAtHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_impression;
-    bool m_impressionHasBeenSet;
+    bool m_impressionHasBeenSet = false;
   };
 
 } // namespace Model

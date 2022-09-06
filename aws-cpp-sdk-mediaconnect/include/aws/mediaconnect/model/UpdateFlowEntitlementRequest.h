@@ -329,22 +329,22 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     UpdateEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     EntitlementStatus m_entitlementStatus;
-    bool m_entitlementStatusHasBeenSet;
+    bool m_entitlementStatusHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
   };
 
 } // namespace Model

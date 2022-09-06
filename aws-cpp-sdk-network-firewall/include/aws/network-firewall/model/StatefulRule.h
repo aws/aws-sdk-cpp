@@ -242,13 +242,13 @@ namespace Model
   private:
 
     StatefulAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Header m_header;
-    bool m_headerHasBeenSet;
+    bool m_headerHasBeenSet = false;
 
     Aws::Vector<RuleOption> m_ruleOptions;
-    bool m_ruleOptionsHasBeenSet;
+    bool m_ruleOptionsHasBeenSet = false;
   };
 
 } // namespace Model

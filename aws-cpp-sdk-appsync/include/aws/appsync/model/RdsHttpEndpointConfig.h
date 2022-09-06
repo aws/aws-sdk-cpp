@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_dbClusterIdentifier;
-    bool m_dbClusterIdentifierHasBeenSet;
+    bool m_dbClusterIdentifierHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_awsSecretStoreArn;
-    bool m_awsSecretStoreArnHasBeenSet;
+    bool m_awsSecretStoreArnHasBeenSet = false;
   };
 
 } // namespace Model

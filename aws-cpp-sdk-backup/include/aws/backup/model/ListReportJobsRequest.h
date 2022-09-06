@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_byReportPlanName;
-    bool m_byReportPlanNameHasBeenSet;
+    bool m_byReportPlanNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreationBefore;
-    bool m_byCreationBeforeHasBeenSet;
+    bool m_byCreationBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreationAfter;
-    bool m_byCreationAfterHasBeenSet;
+    bool m_byCreationAfterHasBeenSet = false;
 
     Aws::String m_byStatus;
-    bool m_byStatusHasBeenSet;
+    bool m_byStatusHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

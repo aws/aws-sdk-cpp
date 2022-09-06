@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PreloadDataType m_preloadDataType;
-    bool m_preloadDataTypeHasBeenSet;
+    bool m_preloadDataTypeHasBeenSet = false;
   };
 
 } // namespace Model

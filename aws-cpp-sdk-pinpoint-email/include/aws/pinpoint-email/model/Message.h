@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Content m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Body m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
   };
 
 } // namespace Model

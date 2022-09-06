@@ -59,7 +59,7 @@ namespace Model
   private:
 
     Transferable m_transferable;
-    bool m_transferableHasBeenSet;
+    bool m_transferableHasBeenSet = false;
   };
 
 } // namespace Model

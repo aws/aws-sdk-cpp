@@ -438,31 +438,31 @@ namespace Model
   private:
 
     AppMonitorConfiguration m_appMonitorConfiguration;
-    bool m_appMonitorConfigurationHasBeenSet;
+    bool m_appMonitorConfigurationHasBeenSet = false;
 
     Aws::String m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     DataStorage m_dataStorage;
-    bool m_dataStorageHasBeenSet;
+    bool m_dataStorageHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StateEnum m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

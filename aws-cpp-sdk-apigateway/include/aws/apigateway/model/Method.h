@@ -753,37 +753,37 @@ namespace Model
   private:
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     Aws::String m_authorizerId;
-    bool m_authorizerIdHasBeenSet;
+    bool m_authorizerIdHasBeenSet = false;
 
     bool m_apiKeyRequired;
-    bool m_apiKeyRequiredHasBeenSet;
+    bool m_apiKeyRequiredHasBeenSet = false;
 
     Aws::String m_requestValidatorId;
-    bool m_requestValidatorIdHasBeenSet;
+    bool m_requestValidatorIdHasBeenSet = false;
 
     Aws::String m_operationName;
-    bool m_operationNameHasBeenSet;
+    bool m_operationNameHasBeenSet = false;
 
     Aws::Map<Aws::String, bool> m_requestParameters;
-    bool m_requestParametersHasBeenSet;
+    bool m_requestParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestModels;
-    bool m_requestModelsHasBeenSet;
+    bool m_requestModelsHasBeenSet = false;
 
     Aws::Map<Aws::String, MethodResponse> m_methodResponses;
-    bool m_methodResponsesHasBeenSet;
+    bool m_methodResponsesHasBeenSet = false;
 
     Integration m_methodIntegration;
-    bool m_methodIntegrationHasBeenSet;
+    bool m_methodIntegrationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizationScopes;
-    bool m_authorizationScopesHasBeenSet;
+    bool m_authorizationScopesHasBeenSet = false;
   };
 
 } // namespace Model

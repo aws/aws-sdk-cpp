@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::Vector<AttributeKeyAndValue> m_indexedAttributes;
-    bool m_indexedAttributesHasBeenSet;
+    bool m_indexedAttributesHasBeenSet = false;
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

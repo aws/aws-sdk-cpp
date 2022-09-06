@@ -97,10 +97,10 @@ namespace Model
   private:
 
     SidewalkEventNotificationConfigurations m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
 
     EventNotificationTopicStatus m_wirelessDeviceIdEventTopic;
-    bool m_wirelessDeviceIdEventTopicHasBeenSet;
+    bool m_wirelessDeviceIdEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

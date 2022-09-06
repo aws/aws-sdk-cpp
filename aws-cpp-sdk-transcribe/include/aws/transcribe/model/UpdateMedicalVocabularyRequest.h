@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_vocabularyFileUri;
-    bool m_vocabularyFileUriHasBeenSet;
+    bool m_vocabularyFileUriHasBeenSet = false;
   };
 
 } // namespace Model

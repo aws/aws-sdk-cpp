@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_exclusiveStartTagKey;
-    bool m_exclusiveStartTagKeyHasBeenSet;
+    bool m_exclusiveStartTagKeyHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

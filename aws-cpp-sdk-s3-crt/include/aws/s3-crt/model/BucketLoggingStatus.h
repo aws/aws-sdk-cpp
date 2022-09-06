@@ -58,7 +58,7 @@ namespace Model
   private:
 
     LoggingEnabled m_loggingEnabled;
-    bool m_loggingEnabledHasBeenSet;
+    bool m_loggingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

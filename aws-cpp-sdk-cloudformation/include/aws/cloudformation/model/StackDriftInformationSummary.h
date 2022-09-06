@@ -162,10 +162,10 @@ namespace Model
   private:
 
     StackDriftStatus m_stackDriftStatus;
-    bool m_stackDriftStatusHasBeenSet;
+    bool m_stackDriftStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastCheckTimestamp;
-    bool m_lastCheckTimestampHasBeenSet;
+    bool m_lastCheckTimestampHasBeenSet = false;
   };
 
 } // namespace Model

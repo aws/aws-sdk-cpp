@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PerformanceInsightsMetricQuery m_metricQuery;
-    bool m_metricQueryHasBeenSet;
+    bool m_metricQueryHasBeenSet = false;
   };
 
 } // namespace Model

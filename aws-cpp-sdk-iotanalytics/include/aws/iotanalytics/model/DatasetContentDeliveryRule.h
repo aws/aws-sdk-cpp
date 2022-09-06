@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_entryName;
-    bool m_entryNameHasBeenSet;
+    bool m_entryNameHasBeenSet = false;
 
     DatasetContentDeliveryDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

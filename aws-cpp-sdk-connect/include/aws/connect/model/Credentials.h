@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_accessTokenExpiration;
-    bool m_accessTokenExpirationHasBeenSet;
+    bool m_accessTokenExpirationHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_refreshTokenExpiration;
-    bool m_refreshTokenExpirationHasBeenSet;
+    bool m_refreshTokenExpirationHasBeenSet = false;
   };
 
 } // namespace Model

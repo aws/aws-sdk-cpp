@@ -674,58 +674,58 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_compliantCriticalCount;
-    bool m_compliantCriticalCountHasBeenSet;
+    bool m_compliantCriticalCountHasBeenSet = false;
 
     int m_compliantHighCount;
-    bool m_compliantHighCountHasBeenSet;
+    bool m_compliantHighCountHasBeenSet = false;
 
     int m_compliantMediumCount;
-    bool m_compliantMediumCountHasBeenSet;
+    bool m_compliantMediumCountHasBeenSet = false;
 
     Aws::String m_executionType;
-    bool m_executionTypeHasBeenSet;
+    bool m_executionTypeHasBeenSet = false;
 
     int m_nonCompliantCriticalCount;
-    bool m_nonCompliantCriticalCountHasBeenSet;
+    bool m_nonCompliantCriticalCountHasBeenSet = false;
 
     int m_compliantInformationalCount;
-    bool m_compliantInformationalCountHasBeenSet;
+    bool m_compliantInformationalCountHasBeenSet = false;
 
     int m_nonCompliantInformationalCount;
-    bool m_nonCompliantInformationalCountHasBeenSet;
+    bool m_nonCompliantInformationalCountHasBeenSet = false;
 
     int m_compliantUnspecifiedCount;
-    bool m_compliantUnspecifiedCountHasBeenSet;
+    bool m_compliantUnspecifiedCountHasBeenSet = false;
 
     int m_nonCompliantLowCount;
-    bool m_nonCompliantLowCountHasBeenSet;
+    bool m_nonCompliantLowCountHasBeenSet = false;
 
     int m_nonCompliantHighCount;
-    bool m_nonCompliantHighCountHasBeenSet;
+    bool m_nonCompliantHighCountHasBeenSet = false;
 
     int m_compliantLowCount;
-    bool m_compliantLowCountHasBeenSet;
+    bool m_compliantLowCountHasBeenSet = false;
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_patchBaselineId;
-    bool m_patchBaselineIdHasBeenSet;
+    bool m_patchBaselineIdHasBeenSet = false;
 
     Aws::String m_overallSeverity;
-    bool m_overallSeverityHasBeenSet;
+    bool m_overallSeverityHasBeenSet = false;
 
     int m_nonCompliantMediumCount;
-    bool m_nonCompliantMediumCountHasBeenSet;
+    bool m_nonCompliantMediumCountHasBeenSet = false;
 
     int m_nonCompliantUnspecifiedCount;
-    bool m_nonCompliantUnspecifiedCountHasBeenSet;
+    bool m_nonCompliantUnspecifiedCountHasBeenSet = false;
 
     Aws::String m_patchGroup;
-    bool m_patchGroupHasBeenSet;
+    bool m_patchGroupHasBeenSet = false;
   };
 
 } // namespace Model

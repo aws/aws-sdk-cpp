@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_tagMultiValueDelimiter;
-    bool m_tagMultiValueDelimiterHasBeenSet;
+    bool m_tagMultiValueDelimiterHasBeenSet = false;
 
     Aws::String m_matchAllValue;
-    bool m_matchAllValueHasBeenSet;
+    bool m_matchAllValueHasBeenSet = false;
   };
 
 } // namespace Model

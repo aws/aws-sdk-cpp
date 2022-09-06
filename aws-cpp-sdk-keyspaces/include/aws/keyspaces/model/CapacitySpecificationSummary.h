@@ -205,16 +205,16 @@ namespace Model
   private:
 
     ThroughputMode m_throughputMode;
-    bool m_throughputModeHasBeenSet;
+    bool m_throughputModeHasBeenSet = false;
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     long long m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateToPayPerRequestTimestamp;
-    bool m_lastUpdateToPayPerRequestTimestampHasBeenSet;
+    bool m_lastUpdateToPayPerRequestTimestampHasBeenSet = false;
   };
 
 } // namespace Model

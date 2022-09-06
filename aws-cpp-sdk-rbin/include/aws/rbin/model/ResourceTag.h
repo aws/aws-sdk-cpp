@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_resourceTagKey;
-    bool m_resourceTagKeyHasBeenSet;
+    bool m_resourceTagKeyHasBeenSet = false;
 
     Aws::String m_resourceTagValue;
-    bool m_resourceTagValueHasBeenSet;
+    bool m_resourceTagValueHasBeenSet = false;
   };
 
 } // namespace Model

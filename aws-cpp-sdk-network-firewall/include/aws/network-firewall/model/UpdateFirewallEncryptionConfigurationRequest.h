@@ -275,16 +275,16 @@ namespace Model
   private:
 
     Aws::String m_updateToken;
-    bool m_updateTokenHasBeenSet;
+    bool m_updateTokenHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

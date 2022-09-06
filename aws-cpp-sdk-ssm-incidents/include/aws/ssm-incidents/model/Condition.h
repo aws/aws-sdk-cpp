@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_after;
-    bool m_afterHasBeenSet;
+    bool m_afterHasBeenSet = false;
 
     Aws::Utils::DateTime m_before;
-    bool m_beforeHasBeenSet;
+    bool m_beforeHasBeenSet = false;
 
     AttributeValueList m_equals;
-    bool m_equalsHasBeenSet;
+    bool m_equalsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AutoMLS3DataSource m_s3DataSource;
-    bool m_s3DataSourceHasBeenSet;
+    bool m_s3DataSourceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_agreementName;
-    bool m_agreementNameHasBeenSet;
+    bool m_agreementNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

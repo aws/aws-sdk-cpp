@@ -806,46 +806,46 @@ namespace Model
   private:
 
     Aws::String m_proposalId;
-    bool m_proposalIdHasBeenSet;
+    bool m_proposalIdHasBeenSet = false;
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ProposalActions m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_proposedByMemberId;
-    bool m_proposedByMemberIdHasBeenSet;
+    bool m_proposedByMemberIdHasBeenSet = false;
 
     Aws::String m_proposedByMemberName;
-    bool m_proposedByMemberNameHasBeenSet;
+    bool m_proposedByMemberNameHasBeenSet = false;
 
     ProposalStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
 
     int m_yesVoteCount;
-    bool m_yesVoteCountHasBeenSet;
+    bool m_yesVoteCountHasBeenSet = false;
 
     int m_noVoteCount;
-    bool m_noVoteCountHasBeenSet;
+    bool m_noVoteCountHasBeenSet = false;
 
     int m_outstandingVoteCount;
-    bool m_outstandingVoteCountHasBeenSet;
+    bool m_outstandingVoteCountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

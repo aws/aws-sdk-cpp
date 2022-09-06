@@ -517,37 +517,37 @@ namespace Model
   private:
 
     Aws::String m_solutionStackName;
-    bool m_solutionStackNameHasBeenSet;
+    bool m_solutionStackNameHasBeenSet = false;
 
     Aws::String m_platformArn;
-    bool m_platformArnHasBeenSet;
+    bool m_platformArnHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     ConfigurationDeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateUpdated;
-    bool m_dateUpdatedHasBeenSet;
+    bool m_dateUpdatedHasBeenSet = false;
 
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

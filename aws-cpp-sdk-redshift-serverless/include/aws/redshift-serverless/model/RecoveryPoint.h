@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_recoveryPointCreateTime;
-    bool m_recoveryPointCreateTimeHasBeenSet;
+    bool m_recoveryPointCreateTimeHasBeenSet = false;
 
     Aws::String m_recoveryPointId;
-    bool m_recoveryPointIdHasBeenSet;
+    bool m_recoveryPointIdHasBeenSet = false;
 
     double m_totalSizeInMegaBytes;
-    bool m_totalSizeInMegaBytesHasBeenSet;
+    bool m_totalSizeInMegaBytesHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

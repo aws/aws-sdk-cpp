@@ -580,34 +580,34 @@ namespace Model
   private:
 
     ExperimentBaseStat m_baseStat;
-    bool m_baseStatHasBeenSet;
+    bool m_baseStatHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_experiment;
-    bool m_experimentHasBeenSet;
+    bool m_experimentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metricNames;
-    bool m_metricNamesHasBeenSet;
+    bool m_metricNamesHasBeenSet = false;
 
     long long m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::Vector<ExperimentReportName> m_reportNames;
-    bool m_reportNamesHasBeenSet;
+    bool m_reportNamesHasBeenSet = false;
 
     Aws::Vector<ExperimentResultRequestType> m_resultStats;
-    bool m_resultStatsHasBeenSet;
+    bool m_resultStatsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_treatmentNames;
-    bool m_treatmentNamesHasBeenSet;
+    bool m_treatmentNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
-    bool m_parameterNameValuesHasBeenSet;
+    bool m_parameterNameValuesHasBeenSet = false;
   };
 
 } // namespace Model

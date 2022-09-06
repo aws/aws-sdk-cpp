@@ -119,13 +119,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_includeBlueprint;
-    bool m_includeBlueprintHasBeenSet;
+    bool m_includeBlueprintHasBeenSet = false;
 
     bool m_includeParameterSpec;
-    bool m_includeParameterSpecHasBeenSet;
+    bool m_includeParameterSpecHasBeenSet = false;
   };
 
 } // namespace Model

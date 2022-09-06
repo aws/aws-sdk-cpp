@@ -135,13 +135,13 @@ namespace Model
   private:
 
     PropertyDefinitionRequest m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     PropertyUpdateType m_updateType;
-    bool m_updateTypeHasBeenSet;
+    bool m_updateTypeHasBeenSet = false;
 
     DataValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

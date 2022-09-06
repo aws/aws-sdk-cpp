@@ -426,34 +426,34 @@ namespace Model
   private:
 
     Aws::String m_autoScalingConfigurationArn;
-    bool m_autoScalingConfigurationArnHasBeenSet;
+    bool m_autoScalingConfigurationArnHasBeenSet = false;
 
     Aws::String m_autoScalingConfigurationName;
-    bool m_autoScalingConfigurationNameHasBeenSet;
+    bool m_autoScalingConfigurationNameHasBeenSet = false;
 
     int m_autoScalingConfigurationRevision;
-    bool m_autoScalingConfigurationRevisionHasBeenSet;
+    bool m_autoScalingConfigurationRevisionHasBeenSet = false;
 
     bool m_latest;
-    bool m_latestHasBeenSet;
+    bool m_latestHasBeenSet = false;
 
     AutoScalingConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletedAt;
-    bool m_deletedAtHasBeenSet;
+    bool m_deletedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -127,13 +127,13 @@ namespace Model
   private:
 
     ArchiveCdnSettings m_archiveCdnSettings;
-    bool m_archiveCdnSettingsHasBeenSet;
+    bool m_archiveCdnSettingsHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     int m_rolloverInterval;
-    bool m_rolloverIntervalHasBeenSet;
+    bool m_rolloverIntervalHasBeenSet = false;
   };
 
 } // namespace Model

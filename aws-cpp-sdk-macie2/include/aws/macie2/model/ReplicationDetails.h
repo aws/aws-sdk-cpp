@@ -151,13 +151,13 @@ namespace Model
   private:
 
     bool m_replicated;
-    bool m_replicatedHasBeenSet;
+    bool m_replicatedHasBeenSet = false;
 
     bool m_replicatedExternally;
-    bool m_replicatedExternallyHasBeenSet;
+    bool m_replicatedExternallyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationAccounts;
-    bool m_replicationAccountsHasBeenSet;
+    bool m_replicationAccountsHasBeenSet = false;
   };
 
 } // namespace Model

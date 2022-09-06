@@ -112,10 +112,10 @@ namespace Model
   private:
 
     TrialComponentPrimaryStatus m_primaryStatus;
-    bool m_primaryStatusHasBeenSet;
+    bool m_primaryStatusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionArn;
-    bool m_pipelineExecutionArnHasBeenSet;
+    bool m_pipelineExecutionArnHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     ParallelismConfiguration m_parallelismConfiguration;
-    bool m_parallelismConfigurationHasBeenSet;
+    bool m_parallelismConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

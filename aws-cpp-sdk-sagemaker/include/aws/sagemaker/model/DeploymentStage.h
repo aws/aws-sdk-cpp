@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     DeviceSelectionConfig m_deviceSelectionConfig;
-    bool m_deviceSelectionConfigHasBeenSet;
+    bool m_deviceSelectionConfigHasBeenSet = false;
 
     EdgeDeploymentConfig m_deploymentConfig;
-    bool m_deploymentConfigHasBeenSet;
+    bool m_deploymentConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -951,61 +951,61 @@ namespace Model
   private:
 
     bool m_associatePublicIpAddress;
-    bool m_associatePublicIpAddressHasBeenSet;
+    bool m_associatePublicIpAddressHasBeenSet = false;
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_deviceIndex;
-    bool m_deviceIndexHasBeenSet;
+    bool m_deviceIndexHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     int m_ipv6AddressCount;
-    bool m_ipv6AddressCountHasBeenSet;
+    bool m_ipv6AddressCountHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
-    bool m_privateIpAddressesHasBeenSet;
+    bool m_privateIpAddressesHasBeenSet = false;
 
     int m_secondaryPrivateIpAddressCount;
-    bool m_secondaryPrivateIpAddressCountHasBeenSet;
+    bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     bool m_associateCarrierIpAddress;
-    bool m_associateCarrierIpAddressHasBeenSet;
+    bool m_associateCarrierIpAddressHasBeenSet = false;
 
     Aws::String m_interfaceType;
-    bool m_interfaceTypeHasBeenSet;
+    bool m_interfaceTypeHasBeenSet = false;
 
     int m_networkCardIndex;
-    bool m_networkCardIndexHasBeenSet;
+    bool m_networkCardIndexHasBeenSet = false;
 
     Aws::Vector<Ipv4PrefixSpecificationRequest> m_ipv4Prefixes;
-    bool m_ipv4PrefixesHasBeenSet;
+    bool m_ipv4PrefixesHasBeenSet = false;
 
     int m_ipv4PrefixCount;
-    bool m_ipv4PrefixCountHasBeenSet;
+    bool m_ipv4PrefixCountHasBeenSet = false;
 
     Aws::Vector<Ipv6PrefixSpecificationRequest> m_ipv6Prefixes;
-    bool m_ipv6PrefixesHasBeenSet;
+    bool m_ipv6PrefixesHasBeenSet = false;
 
     int m_ipv6PrefixCount;
-    bool m_ipv6PrefixCountHasBeenSet;
+    bool m_ipv6PrefixCountHasBeenSet = false;
   };
 
 } // namespace Model

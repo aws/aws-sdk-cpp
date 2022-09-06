@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::Vector<DesiredWeightAndCapacity> m_desiredWeightsAndCapacities;
-    bool m_desiredWeightsAndCapacitiesHasBeenSet;
+    bool m_desiredWeightsAndCapacitiesHasBeenSet = false;
   };
 
 } // namespace Model

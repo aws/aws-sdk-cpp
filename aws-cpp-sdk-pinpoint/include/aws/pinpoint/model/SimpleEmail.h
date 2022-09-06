@@ -157,13 +157,13 @@ namespace Model
   private:
 
     SimpleEmailPart m_htmlPart;
-    bool m_htmlPartHasBeenSet;
+    bool m_htmlPartHasBeenSet = false;
 
     SimpleEmailPart m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     SimpleEmailPart m_textPart;
-    bool m_textPartHasBeenSet;
+    bool m_textPartHasBeenSet = false;
   };
 
 } // namespace Model

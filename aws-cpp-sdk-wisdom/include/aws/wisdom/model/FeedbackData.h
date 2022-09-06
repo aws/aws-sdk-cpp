@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Relevance m_relevance;
-    bool m_relevanceHasBeenSet;
+    bool m_relevanceHasBeenSet = false;
   };
 
 } // namespace Model

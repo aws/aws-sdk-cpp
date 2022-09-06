@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_consumerName;
-    bool m_consumerNameHasBeenSet;
+    bool m_consumerNameHasBeenSet = false;
 
     Aws::String m_consumerARN;
-    bool m_consumerARNHasBeenSet;
+    bool m_consumerARNHasBeenSet = false;
   };
 
 } // namespace Model

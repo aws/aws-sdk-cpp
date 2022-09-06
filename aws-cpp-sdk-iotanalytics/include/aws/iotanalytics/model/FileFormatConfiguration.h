@@ -106,10 +106,10 @@ namespace Model
   private:
 
     JsonConfiguration m_jsonConfiguration;
-    bool m_jsonConfigurationHasBeenSet;
+    bool m_jsonConfigurationHasBeenSet = false;
 
     ParquetConfiguration m_parquetConfiguration;
-    bool m_parquetConfigurationHasBeenSet;
+    bool m_parquetConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

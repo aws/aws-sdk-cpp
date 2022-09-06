@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_runProperties;
-    bool m_runPropertiesHasBeenSet;
+    bool m_runPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

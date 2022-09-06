@@ -138,7 +138,7 @@ namespace Model
   private:
 
     Aws::Vector<ConfluencePageToIndexFieldMapping> m_pageFieldMappings;
-    bool m_pageFieldMappingsHasBeenSet;
+    bool m_pageFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

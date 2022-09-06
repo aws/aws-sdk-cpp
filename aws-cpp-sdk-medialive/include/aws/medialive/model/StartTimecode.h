@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_timecode;
-    bool m_timecodeHasBeenSet;
+    bool m_timecodeHasBeenSet = false;
   };
 
 } // namespace Model

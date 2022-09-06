@@ -679,52 +679,52 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_affectedSubnets;
-    bool m_affectedSubnetsHasBeenSet;
+    bool m_affectedSubnetsHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     bool m_isRouteTableUsedInDifferentAZ;
-    bool m_isRouteTableUsedInDifferentAZHasBeenSet;
+    bool m_isRouteTableUsedInDifferentAZHasBeenSet = false;
 
     Route m_violatingRoute;
-    bool m_violatingRouteHasBeenSet;
+    bool m_violatingRouteHasBeenSet = false;
 
     Aws::String m_currentFirewallSubnetRouteTable;
-    bool m_currentFirewallSubnetRouteTableHasBeenSet;
+    bool m_currentFirewallSubnetRouteTableHasBeenSet = false;
 
     Aws::String m_expectedFirewallEndpoint;
-    bool m_expectedFirewallEndpointHasBeenSet;
+    bool m_expectedFirewallEndpointHasBeenSet = false;
 
     Aws::String m_actualFirewallEndpoint;
-    bool m_actualFirewallEndpointHasBeenSet;
+    bool m_actualFirewallEndpointHasBeenSet = false;
 
     Aws::String m_expectedFirewallSubnetId;
-    bool m_expectedFirewallSubnetIdHasBeenSet;
+    bool m_expectedFirewallSubnetIdHasBeenSet = false;
 
     Aws::String m_actualFirewallSubnetId;
-    bool m_actualFirewallSubnetIdHasBeenSet;
+    bool m_actualFirewallSubnetIdHasBeenSet = false;
 
     Aws::Vector<ExpectedRoute> m_expectedFirewallSubnetRoutes;
-    bool m_expectedFirewallSubnetRoutesHasBeenSet;
+    bool m_expectedFirewallSubnetRoutesHasBeenSet = false;
 
     Aws::Vector<Route> m_actualFirewallSubnetRoutes;
-    bool m_actualFirewallSubnetRoutesHasBeenSet;
+    bool m_actualFirewallSubnetRoutesHasBeenSet = false;
 
     Aws::String m_internetGatewayId;
-    bool m_internetGatewayIdHasBeenSet;
+    bool m_internetGatewayIdHasBeenSet = false;
 
     Aws::String m_currentInternetGatewayRouteTable;
-    bool m_currentInternetGatewayRouteTableHasBeenSet;
+    bool m_currentInternetGatewayRouteTableHasBeenSet = false;
 
     Aws::Vector<ExpectedRoute> m_expectedInternetGatewayRoutes;
-    bool m_expectedInternetGatewayRoutesHasBeenSet;
+    bool m_expectedInternetGatewayRoutesHasBeenSet = false;
 
     Aws::Vector<Route> m_actualInternetGatewayRoutes;
-    bool m_actualInternetGatewayRoutesHasBeenSet;
+    bool m_actualInternetGatewayRoutesHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

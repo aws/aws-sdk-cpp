@@ -578,49 +578,49 @@ namespace Model
   private:
 
     Aws::String m_projectVersionArn;
-    bool m_projectVersionArnHasBeenSet;
+    bool m_projectVersionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     int m_minInferenceUnits;
-    bool m_minInferenceUnitsHasBeenSet;
+    bool m_minInferenceUnitsHasBeenSet = false;
 
     ProjectVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     long long m_billableTrainingTimeInSeconds;
-    bool m_billableTrainingTimeInSecondsHasBeenSet;
+    bool m_billableTrainingTimeInSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingEndTimestamp;
-    bool m_trainingEndTimestampHasBeenSet;
+    bool m_trainingEndTimestampHasBeenSet = false;
 
     OutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     TrainingDataResult m_trainingDataResult;
-    bool m_trainingDataResultHasBeenSet;
+    bool m_trainingDataResultHasBeenSet = false;
 
     TestingDataResult m_testingDataResult;
-    bool m_testingDataResultHasBeenSet;
+    bool m_testingDataResultHasBeenSet = false;
 
     EvaluationResult m_evaluationResult;
-    bool m_evaluationResultHasBeenSet;
+    bool m_evaluationResultHasBeenSet = false;
 
     GroundTruthManifest m_manifestSummary;
-    bool m_manifestSummaryHasBeenSet;
+    bool m_manifestSummaryHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     int m_maxInferenceUnits;
-    bool m_maxInferenceUnitsHasBeenSet;
+    bool m_maxInferenceUnitsHasBeenSet = false;
 
     Aws::String m_sourceProjectVersionArn;
-    bool m_sourceProjectVersionArnHasBeenSet;
+    bool m_sourceProjectVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

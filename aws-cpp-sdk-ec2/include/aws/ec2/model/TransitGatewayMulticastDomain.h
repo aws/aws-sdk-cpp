@@ -352,28 +352,28 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayMulticastDomainId;
-    bool m_transitGatewayMulticastDomainIdHasBeenSet;
+    bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_transitGatewayMulticastDomainArn;
-    bool m_transitGatewayMulticastDomainArnHasBeenSet;
+    bool m_transitGatewayMulticastDomainArnHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     TransitGatewayMulticastDomainOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     TransitGatewayMulticastDomainState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

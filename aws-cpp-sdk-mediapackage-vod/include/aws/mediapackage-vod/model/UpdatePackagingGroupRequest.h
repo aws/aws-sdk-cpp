@@ -99,10 +99,10 @@ namespace Model
   private:
 
     Authorization m_authorization;
-    bool m_authorizationHasBeenSet;
+    bool m_authorizationHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

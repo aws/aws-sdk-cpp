@@ -516,37 +516,37 @@ namespace Model
   private:
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::String m_resourceRegion;
-    bool m_resourceRegionHasBeenSet;
+    bool m_resourceRegionHasBeenSet = false;
 
     IpamAddressHistoryResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceCidr;
-    bool m_resourceCidrHasBeenSet;
+    bool m_resourceCidrHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     IpamComplianceStatus m_resourceComplianceStatus;
-    bool m_resourceComplianceStatusHasBeenSet;
+    bool m_resourceComplianceStatusHasBeenSet = false;
 
     IpamOverlapStatus m_resourceOverlapStatus;
-    bool m_resourceOverlapStatusHasBeenSet;
+    bool m_resourceOverlapStatusHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampledStartTime;
-    bool m_sampledStartTimeHasBeenSet;
+    bool m_sampledStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampledEndTime;
-    bool m_sampledEndTimeHasBeenSet;
+    bool m_sampledEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

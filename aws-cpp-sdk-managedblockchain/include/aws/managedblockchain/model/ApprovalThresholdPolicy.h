@@ -173,13 +173,13 @@ namespace Model
   private:
 
     int m_thresholdPercentage;
-    bool m_thresholdPercentageHasBeenSet;
+    bool m_thresholdPercentageHasBeenSet = false;
 
     int m_proposalDurationInHours;
-    bool m_proposalDurationInHoursHasBeenSet;
+    bool m_proposalDurationInHoursHasBeenSet = false;
 
     ThresholdComparator m_thresholdComparator;
-    bool m_thresholdComparatorHasBeenSet;
+    bool m_thresholdComparatorHasBeenSet = false;
   };
 
 } // namespace Model

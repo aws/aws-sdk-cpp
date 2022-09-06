@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_subnetOutpostArn;
-    bool m_subnetOutpostArnHasBeenSet;
+    bool m_subnetOutpostArnHasBeenSet = false;
   };
 
 } // namespace Model

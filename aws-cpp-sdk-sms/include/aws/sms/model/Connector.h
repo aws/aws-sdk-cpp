@@ -424,34 +424,34 @@ namespace Model
   private:
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ConnectorStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<ConnectorCapability> m_capabilityList;
-    bool m_capabilityListHasBeenSet;
+    bool m_capabilityListHasBeenSet = false;
 
     Aws::String m_vmManagerName;
-    bool m_vmManagerNameHasBeenSet;
+    bool m_vmManagerNameHasBeenSet = false;
 
     VmManagerType m_vmManagerType;
-    bool m_vmManagerTypeHasBeenSet;
+    bool m_vmManagerTypeHasBeenSet = false;
 
     Aws::String m_vmManagerId;
-    bool m_vmManagerIdHasBeenSet;
+    bool m_vmManagerIdHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::Utils::DateTime m_associatedOn;
-    bool m_associatedOnHasBeenSet;
+    bool m_associatedOnHasBeenSet = false;
   };
 
 } // namespace Model

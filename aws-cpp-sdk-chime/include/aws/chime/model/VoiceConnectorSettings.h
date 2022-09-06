@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_cdrBucket;
-    bool m_cdrBucketHasBeenSet;
+    bool m_cdrBucketHasBeenSet = false;
   };
 
 } // namespace Model

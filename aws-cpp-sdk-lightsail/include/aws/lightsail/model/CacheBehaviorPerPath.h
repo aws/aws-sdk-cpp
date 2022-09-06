@@ -272,10 +272,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     BehaviorEnum m_behavior;
-    bool m_behaviorHasBeenSet;
+    bool m_behaviorHasBeenSet = false;
   };
 
 } // namespace Model

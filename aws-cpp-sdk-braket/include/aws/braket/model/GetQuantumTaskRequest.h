@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_quantumTaskArn;
-    bool m_quantumTaskArnHasBeenSet;
+    bool m_quantumTaskArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::Vector<ConnectionType> m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_participantToken;
-    bool m_participantTokenHasBeenSet;
+    bool m_participantTokenHasBeenSet = false;
 
     bool m_connectParticipant;
-    bool m_connectParticipantHasBeenSet;
+    bool m_connectParticipantHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1274,73 +1274,73 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_attempt;
-    bool m_attemptHasBeenSet;
+    bool m_attemptHasBeenSet = false;
 
     Aws::String m_previousRunId;
-    bool m_previousRunIdHasBeenSet;
+    bool m_previousRunIdHasBeenSet = false;
 
     Aws::String m_triggerName;
-    bool m_triggerNameHasBeenSet;
+    bool m_triggerNameHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
 
     JobRunState m_jobRunState;
-    bool m_jobRunStateHasBeenSet;
+    bool m_jobRunStateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_arguments;
-    bool m_argumentsHasBeenSet;
+    bool m_argumentsHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Vector<Predecessor> m_predecessorRuns;
-    bool m_predecessorRunsHasBeenSet;
+    bool m_predecessorRunsHasBeenSet = false;
 
     int m_executionTime;
-    bool m_executionTimeHasBeenSet;
+    bool m_executionTimeHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
+    bool m_workerTypeHasBeenSet = false;
 
     int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
+    bool m_numberOfWorkersHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     NotificationProperty m_notificationProperty;
-    bool m_notificationPropertyHasBeenSet;
+    bool m_notificationPropertyHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     double m_dPUSeconds;
-    bool m_dPUSecondsHasBeenSet;
+    bool m_dPUSecondsHasBeenSet = false;
 
     ExecutionClass m_executionClass;
-    bool m_executionClassHasBeenSet;
+    bool m_executionClassHasBeenSet = false;
   };
 
 } // namespace Model

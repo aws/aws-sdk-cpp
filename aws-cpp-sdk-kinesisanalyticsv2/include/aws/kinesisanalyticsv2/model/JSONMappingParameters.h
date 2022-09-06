@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_recordRowPath;
-    bool m_recordRowPathHasBeenSet;
+    bool m_recordRowPathHasBeenSet = false;
   };
 
 } // namespace Model

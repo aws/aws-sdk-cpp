@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<AWSAccount> m_awsAccounts;
-    bool m_awsAccountsHasBeenSet;
+    bool m_awsAccountsHasBeenSet = false;
 
     Aws::Vector<AWSService> m_awsServices;
-    bool m_awsServicesHasBeenSet;
+    bool m_awsServicesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
   };
 
 } // namespace Model

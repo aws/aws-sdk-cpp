@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_usagePlanId;
-    bool m_usagePlanIdHasBeenSet;
+    bool m_usagePlanIdHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Vector<PatchOperation> m_patchOperations;
-    bool m_patchOperationsHasBeenSet;
+    bool m_patchOperationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -653,19 +653,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_changesetId;
-    bool m_changesetIdHasBeenSet;
+    bool m_changesetIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sourceParams;
-    bool m_sourceParamsHasBeenSet;
+    bool m_sourceParamsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_formatParams;
-    bool m_formatParamsHasBeenSet;
+    bool m_formatParamsHasBeenSet = false;
   };
 
 } // namespace Model

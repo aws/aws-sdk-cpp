@@ -539,22 +539,22 @@ namespace Model
   private:
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     Aws::Vector<ProductionVariant> m_productionVariants;
-    bool m_productionVariantsHasBeenSet;
+    bool m_productionVariantsHasBeenSet = false;
 
     DataCaptureConfig m_dataCaptureConfig;
-    bool m_dataCaptureConfigHasBeenSet;
+    bool m_dataCaptureConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     AsyncInferenceConfig m_asyncInferenceConfig;
-    bool m_asyncInferenceConfigHasBeenSet;
+    bool m_asyncInferenceConfigHasBeenSet = false;
   };
 
 } // namespace Model

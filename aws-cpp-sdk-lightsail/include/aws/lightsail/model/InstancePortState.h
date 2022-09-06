@@ -663,25 +663,25 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     NetworkProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     PortState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrs;
-    bool m_cidrsHasBeenSet;
+    bool m_cidrsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv6Cidrs;
-    bool m_ipv6CidrsHasBeenSet;
+    bool m_ipv6CidrsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrListAliases;
-    bool m_cidrListAliasesHasBeenSet;
+    bool m_cidrListAliasesHasBeenSet = false;
   };
 
 } // namespace Model

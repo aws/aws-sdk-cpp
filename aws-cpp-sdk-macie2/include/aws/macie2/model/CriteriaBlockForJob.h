@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::Vector<CriteriaForJob> m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
   };
 
 } // namespace Model

@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_partitionValues;
-    bool m_partitionValuesHasBeenSet;
+    bool m_partitionValuesHasBeenSet = false;
 
     Aws::Vector<TableObject> m_objects;
-    bool m_objectsHasBeenSet;
+    bool m_objectsHasBeenSet = false;
   };
 
 } // namespace Model

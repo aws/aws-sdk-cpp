@@ -302,19 +302,19 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_maximumEventAgeInSeconds;
-    bool m_maximumEventAgeInSecondsHasBeenSet;
+    bool m_maximumEventAgeInSecondsHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
   };
 
 } // namespace Model

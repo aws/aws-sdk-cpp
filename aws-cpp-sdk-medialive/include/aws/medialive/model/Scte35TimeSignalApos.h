@@ -143,13 +143,13 @@ namespace Model
   private:
 
     int m_adAvailOffset;
-    bool m_adAvailOffsetHasBeenSet;
+    bool m_adAvailOffsetHasBeenSet = false;
 
     Scte35AposNoRegionalBlackoutBehavior m_noRegionalBlackoutFlag;
-    bool m_noRegionalBlackoutFlagHasBeenSet;
+    bool m_noRegionalBlackoutFlagHasBeenSet = false;
 
     Scte35AposWebDeliveryAllowedBehavior m_webDeliveryAllowedFlag;
-    bool m_webDeliveryAllowedFlagHasBeenSet;
+    bool m_webDeliveryAllowedFlagHasBeenSet = false;
   };
 
 } // namespace Model

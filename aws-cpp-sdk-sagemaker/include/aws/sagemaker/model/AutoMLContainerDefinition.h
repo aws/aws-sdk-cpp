@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_modelDataUrl;
-    bool m_modelDataUrlHasBeenSet;
+    bool m_modelDataUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
   };
 
 } // namespace Model

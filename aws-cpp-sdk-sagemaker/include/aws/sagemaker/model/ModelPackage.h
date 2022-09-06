@@ -1148,82 +1148,82 @@ namespace Model
   private:
 
     Aws::String m_modelPackageName;
-    bool m_modelPackageNameHasBeenSet;
+    bool m_modelPackageNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     int m_modelPackageVersion;
-    bool m_modelPackageVersionHasBeenSet;
+    bool m_modelPackageVersionHasBeenSet = false;
 
     Aws::String m_modelPackageArn;
-    bool m_modelPackageArnHasBeenSet;
+    bool m_modelPackageArnHasBeenSet = false;
 
     Aws::String m_modelPackageDescription;
-    bool m_modelPackageDescriptionHasBeenSet;
+    bool m_modelPackageDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     InferenceSpecification m_inferenceSpecification;
-    bool m_inferenceSpecificationHasBeenSet;
+    bool m_inferenceSpecificationHasBeenSet = false;
 
     SourceAlgorithmSpecification m_sourceAlgorithmSpecification;
-    bool m_sourceAlgorithmSpecificationHasBeenSet;
+    bool m_sourceAlgorithmSpecificationHasBeenSet = false;
 
     ModelPackageValidationSpecification m_validationSpecification;
-    bool m_validationSpecificationHasBeenSet;
+    bool m_validationSpecificationHasBeenSet = false;
 
     ModelPackageStatus m_modelPackageStatus;
-    bool m_modelPackageStatusHasBeenSet;
+    bool m_modelPackageStatusHasBeenSet = false;
 
     ModelPackageStatusDetails m_modelPackageStatusDetails;
-    bool m_modelPackageStatusDetailsHasBeenSet;
+    bool m_modelPackageStatusDetailsHasBeenSet = false;
 
     bool m_certifyForMarketplace;
-    bool m_certifyForMarketplaceHasBeenSet;
+    bool m_certifyForMarketplaceHasBeenSet = false;
 
     ModelApprovalStatus m_modelApprovalStatus;
-    bool m_modelApprovalStatusHasBeenSet;
+    bool m_modelApprovalStatusHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     MetadataProperties m_metadataProperties;
-    bool m_metadataPropertiesHasBeenSet;
+    bool m_metadataPropertiesHasBeenSet = false;
 
     ModelMetrics m_modelMetrics;
-    bool m_modelMetricsHasBeenSet;
+    bool m_modelMetricsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::String m_approvalDescription;
-    bool m_approvalDescriptionHasBeenSet;
+    bool m_approvalDescriptionHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_samplePayloadUrl;
-    bool m_samplePayloadUrlHasBeenSet;
+    bool m_samplePayloadUrlHasBeenSet = false;
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
-    bool m_additionalInferenceSpecificationsHasBeenSet;
+    bool m_additionalInferenceSpecificationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-    bool m_customerMetadataPropertiesHasBeenSet;
+    bool m_customerMetadataPropertiesHasBeenSet = false;
 
     DriftCheckBaselines m_driftCheckBaselines;
-    bool m_driftCheckBaselinesHasBeenSet;
+    bool m_driftCheckBaselinesHasBeenSet = false;
   };
 
 } // namespace Model

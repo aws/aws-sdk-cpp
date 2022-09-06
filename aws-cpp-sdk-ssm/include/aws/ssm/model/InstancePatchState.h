@@ -961,70 +961,70 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_patchGroup;
-    bool m_patchGroupHasBeenSet;
+    bool m_patchGroupHasBeenSet = false;
 
     Aws::String m_baselineId;
-    bool m_baselineIdHasBeenSet;
+    bool m_baselineIdHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_installOverrideList;
-    bool m_installOverrideListHasBeenSet;
+    bool m_installOverrideListHasBeenSet = false;
 
     Aws::String m_ownerInformation;
-    bool m_ownerInformationHasBeenSet;
+    bool m_ownerInformationHasBeenSet = false;
 
     int m_installedCount;
-    bool m_installedCountHasBeenSet;
+    bool m_installedCountHasBeenSet = false;
 
     int m_installedOtherCount;
-    bool m_installedOtherCountHasBeenSet;
+    bool m_installedOtherCountHasBeenSet = false;
 
     int m_installedPendingRebootCount;
-    bool m_installedPendingRebootCountHasBeenSet;
+    bool m_installedPendingRebootCountHasBeenSet = false;
 
     int m_installedRejectedCount;
-    bool m_installedRejectedCountHasBeenSet;
+    bool m_installedRejectedCountHasBeenSet = false;
 
     int m_missingCount;
-    bool m_missingCountHasBeenSet;
+    bool m_missingCountHasBeenSet = false;
 
     int m_failedCount;
-    bool m_failedCountHasBeenSet;
+    bool m_failedCountHasBeenSet = false;
 
     int m_unreportedNotApplicableCount;
-    bool m_unreportedNotApplicableCountHasBeenSet;
+    bool m_unreportedNotApplicableCountHasBeenSet = false;
 
     int m_notApplicableCount;
-    bool m_notApplicableCountHasBeenSet;
+    bool m_notApplicableCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_operationStartTime;
-    bool m_operationStartTimeHasBeenSet;
+    bool m_operationStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_operationEndTime;
-    bool m_operationEndTimeHasBeenSet;
+    bool m_operationEndTimeHasBeenSet = false;
 
     PatchOperationType m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastNoRebootInstallOperationTime;
-    bool m_lastNoRebootInstallOperationTimeHasBeenSet;
+    bool m_lastNoRebootInstallOperationTimeHasBeenSet = false;
 
     RebootOption m_rebootOption;
-    bool m_rebootOptionHasBeenSet;
+    bool m_rebootOptionHasBeenSet = false;
 
     int m_criticalNonCompliantCount;
-    bool m_criticalNonCompliantCountHasBeenSet;
+    bool m_criticalNonCompliantCountHasBeenSet = false;
 
     int m_securityNonCompliantCount;
-    bool m_securityNonCompliantCountHasBeenSet;
+    bool m_securityNonCompliantCountHasBeenSet = false;
 
     int m_otherNonCompliantCount;
-    bool m_otherNonCompliantCountHasBeenSet;
+    bool m_otherNonCompliantCountHasBeenSet = false;
   };
 
 } // namespace Model

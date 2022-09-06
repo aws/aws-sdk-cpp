@@ -530,25 +530,25 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     Effect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::Vector<Principal> m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::String m_expectedRevisionId;
-    bool m_expectedRevisionIdHasBeenSet;
+    bool m_expectedRevisionIdHasBeenSet = false;
   };
 
 } // namespace Model

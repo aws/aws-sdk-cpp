@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_artifactArn;
-    bool m_artifactArnHasBeenSet;
+    bool m_artifactArnHasBeenSet = false;
 
     Aws::String m_artifactName;
-    bool m_artifactNameHasBeenSet;
+    bool m_artifactNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_propertiesToRemove;
-    bool m_propertiesToRemoveHasBeenSet;
+    bool m_propertiesToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

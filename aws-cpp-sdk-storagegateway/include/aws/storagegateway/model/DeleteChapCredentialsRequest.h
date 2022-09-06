@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_targetARN;
-    bool m_targetARNHasBeenSet;
+    bool m_targetARNHasBeenSet = false;
 
     Aws::String m_initiatorName;
-    bool m_initiatorNameHasBeenSet;
+    bool m_initiatorNameHasBeenSet = false;
   };
 
 } // namespace Model

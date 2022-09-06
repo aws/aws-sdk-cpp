@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::Vector<VolumeStatusAction> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::Vector<VolumeStatusEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     VolumeStatusInfo m_volumeStatus;
-    bool m_volumeStatusHasBeenSet;
+    bool m_volumeStatusHasBeenSet = false;
 
     Aws::Vector<VolumeStatusAttachmentStatus> m_attachmentStatuses;
-    bool m_attachmentStatusesHasBeenSet;
+    bool m_attachmentStatusesHasBeenSet = false;
   };
 
 } // namespace Model

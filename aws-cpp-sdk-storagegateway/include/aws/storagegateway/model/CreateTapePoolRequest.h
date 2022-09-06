@@ -283,19 +283,19 @@ namespace Model
   private:
 
     Aws::String m_poolName;
-    bool m_poolNameHasBeenSet;
+    bool m_poolNameHasBeenSet = false;
 
     TapeStorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     RetentionLockType m_retentionLockType;
-    bool m_retentionLockTypeHasBeenSet;
+    bool m_retentionLockTypeHasBeenSet = false;
 
     int m_retentionLockTimeInDays;
-    bool m_retentionLockTimeInDaysHasBeenSet;
+    bool m_retentionLockTimeInDaysHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

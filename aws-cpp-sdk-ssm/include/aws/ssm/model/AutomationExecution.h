@@ -1381,97 +1381,97 @@ namespace Model
   private:
 
     Aws::String m_automationExecutionId;
-    bool m_automationExecutionIdHasBeenSet;
+    bool m_automationExecutionIdHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionStartTime;
-    bool m_executionStartTimeHasBeenSet;
+    bool m_executionStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionEndTime;
-    bool m_executionEndTimeHasBeenSet;
+    bool m_executionEndTimeHasBeenSet = false;
 
     AutomationExecutionStatus m_automationExecutionStatus;
-    bool m_automationExecutionStatusHasBeenSet;
+    bool m_automationExecutionStatusHasBeenSet = false;
 
     Aws::Vector<StepExecution> m_stepExecutions;
-    bool m_stepExecutionsHasBeenSet;
+    bool m_stepExecutionsHasBeenSet = false;
 
     bool m_stepExecutionsTruncated;
-    bool m_stepExecutionsTruncatedHasBeenSet;
+    bool m_stepExecutionsTruncatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     ExecutionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_parentAutomationExecutionId;
-    bool m_parentAutomationExecutionIdHasBeenSet;
+    bool m_parentAutomationExecutionIdHasBeenSet = false;
 
     Aws::String m_executedBy;
-    bool m_executedByHasBeenSet;
+    bool m_executedByHasBeenSet = false;
 
     Aws::String m_currentStepName;
-    bool m_currentStepNameHasBeenSet;
+    bool m_currentStepNameHasBeenSet = false;
 
     Aws::String m_currentAction;
-    bool m_currentActionHasBeenSet;
+    bool m_currentActionHasBeenSet = false;
 
     Aws::String m_targetParameterName;
-    bool m_targetParameterNameHasBeenSet;
+    bool m_targetParameterNameHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-    bool m_targetMapsHasBeenSet;
+    bool m_targetMapsHasBeenSet = false;
 
     ResolvedTargets m_resolvedTargets;
-    bool m_resolvedTargetsHasBeenSet;
+    bool m_resolvedTargetsHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::Vector<TargetLocation> m_targetLocations;
-    bool m_targetLocationsHasBeenSet;
+    bool m_targetLocationsHasBeenSet = false;
 
     ProgressCounters m_progressCounters;
-    bool m_progressCountersHasBeenSet;
+    bool m_progressCountersHasBeenSet = false;
 
     AutomationSubtype m_automationSubtype;
-    bool m_automationSubtypeHasBeenSet;
+    bool m_automationSubtypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
 
     Aws::Vector<Runbook> m_runbooks;
-    bool m_runbooksHasBeenSet;
+    bool m_runbooksHasBeenSet = false;
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_changeRequestName;
-    bool m_changeRequestNameHasBeenSet;
+    bool m_changeRequestNameHasBeenSet = false;
   };
 
 } // namespace Model

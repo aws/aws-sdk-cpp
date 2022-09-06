@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Readiness m_readiness;
-    bool m_readinessHasBeenSet;
+    bool m_readinessHasBeenSet = false;
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
   };
 
 } // namespace Model

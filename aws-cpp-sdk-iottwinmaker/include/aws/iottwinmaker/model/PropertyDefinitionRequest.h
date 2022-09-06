@@ -289,25 +289,25 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     DataType m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     DataValue m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     bool m_isExternalId;
-    bool m_isExternalIdHasBeenSet;
+    bool m_isExternalIdHasBeenSet = false;
 
     bool m_isRequiredInEntity;
-    bool m_isRequiredInEntityHasBeenSet;
+    bool m_isRequiredInEntityHasBeenSet = false;
 
     bool m_isStoredExternally;
-    bool m_isStoredExternallyHasBeenSet;
+    bool m_isStoredExternallyHasBeenSet = false;
 
     bool m_isTimeSeries;
-    bool m_isTimeSeriesHasBeenSet;
+    bool m_isTimeSeriesHasBeenSet = false;
   };
 
 } // namespace Model

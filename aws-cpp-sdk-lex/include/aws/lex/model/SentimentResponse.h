@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_sentimentLabel;
-    bool m_sentimentLabelHasBeenSet;
+    bool m_sentimentLabelHasBeenSet = false;
 
     Aws::String m_sentimentScore;
-    bool m_sentimentScoreHasBeenSet;
+    bool m_sentimentScoreHasBeenSet = false;
   };
 
 } // namespace Model

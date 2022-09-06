@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<InAppMessageCampaign> m_inAppMessageCampaigns;
-    bool m_inAppMessageCampaignsHasBeenSet;
+    bool m_inAppMessageCampaignsHasBeenSet = false;
   };
 
 } // namespace Model

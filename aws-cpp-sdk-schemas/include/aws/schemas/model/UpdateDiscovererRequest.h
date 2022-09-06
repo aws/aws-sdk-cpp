@@ -141,13 +141,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_discovererId;
-    bool m_discovererIdHasBeenSet;
+    bool m_discovererIdHasBeenSet = false;
 
     bool m_crossAccount;
-    bool m_crossAccountHasBeenSet;
+    bool m_crossAccountHasBeenSet = false;
   };
 
 } // namespace Model

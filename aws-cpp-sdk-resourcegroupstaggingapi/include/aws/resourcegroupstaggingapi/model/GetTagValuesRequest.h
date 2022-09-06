@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_paginationToken;
-    bool m_paginationTokenHasBeenSet;
+    bool m_paginationTokenHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

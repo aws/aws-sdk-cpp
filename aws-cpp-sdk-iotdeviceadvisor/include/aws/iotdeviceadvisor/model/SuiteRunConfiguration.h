@@ -139,13 +139,13 @@ namespace Model
   private:
 
     DeviceUnderTest m_primaryDevice;
-    bool m_primaryDeviceHasBeenSet;
+    bool m_primaryDeviceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedTestList;
-    bool m_selectedTestListHasBeenSet;
+    bool m_selectedTestListHasBeenSet = false;
 
     bool m_parallelRun;
-    bool m_parallelRunHasBeenSet;
+    bool m_parallelRunHasBeenSet = false;
   };
 
 } // namespace Model

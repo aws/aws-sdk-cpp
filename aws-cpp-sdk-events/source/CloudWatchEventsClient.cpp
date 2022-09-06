@@ -127,7 +127,7 @@ CloudWatchEventsClient::~CloudWatchEventsClient()
 
 void CloudWatchEventsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudWatch Events");
+  AWSClient::SetServiceClientName("CloudWatch Events");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

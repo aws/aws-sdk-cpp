@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_adDecisionServerUrl;
-    bool m_adDecisionServerUrlHasBeenSet;
+    bool m_adDecisionServerUrlHasBeenSet = false;
 
     int m_maxDurationSeconds;
-    bool m_maxDurationSecondsHasBeenSet;
+    bool m_maxDurationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

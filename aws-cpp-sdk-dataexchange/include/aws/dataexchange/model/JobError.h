@@ -270,25 +270,25 @@ namespace Model
   private:
 
     Code m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Details m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     JobErrorLimitName m_limitName;
-    bool m_limitNameHasBeenSet;
+    bool m_limitNameHasBeenSet = false;
 
     double m_limitValue;
-    bool m_limitValueHasBeenSet;
+    bool m_limitValueHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     JobErrorResourceTypes m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

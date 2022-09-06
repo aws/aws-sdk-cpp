@@ -130,10 +130,10 @@ namespace Model
   private:
 
     CopyProtectionAction m_copyProtectionAction;
-    bool m_copyProtectionActionHasBeenSet;
+    bool m_copyProtectionActionHasBeenSet = false;
 
     VchipAction m_vchipAction;
-    bool m_vchipActionHasBeenSet;
+    bool m_vchipActionHasBeenSet = false;
   };
 
 } // namespace Model

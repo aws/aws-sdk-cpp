@@ -562,34 +562,34 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
 
     RevisionLocation m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_ignoreApplicationStopFailures;
-    bool m_ignoreApplicationStopFailuresHasBeenSet;
+    bool m_ignoreApplicationStopFailuresHasBeenSet = false;
 
     TargetInstances m_targetInstances;
-    bool m_targetInstancesHasBeenSet;
+    bool m_targetInstancesHasBeenSet = false;
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
 
     bool m_updateOutdatedInstancesOnly;
-    bool m_updateOutdatedInstancesOnlyHasBeenSet;
+    bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
 
     FileExistsBehavior m_fileExistsBehavior;
-    bool m_fileExistsBehaviorHasBeenSet;
+    bool m_fileExistsBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

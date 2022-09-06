@@ -120,7 +120,7 @@ DataSyncClient::~DataSyncClient()
 
 void DataSyncClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DataSync");
+  AWSClient::SetServiceClientName("DataSync");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

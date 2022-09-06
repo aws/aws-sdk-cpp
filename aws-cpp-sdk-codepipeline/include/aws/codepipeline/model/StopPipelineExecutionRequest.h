@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
 
     bool m_abandon;
-    bool m_abandonHasBeenSet;
+    bool m_abandonHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

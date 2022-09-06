@@ -101,13 +101,13 @@ namespace Model
   private:
 
     bool m_isRetrievable;
-    bool m_isRetrievableHasBeenSet;
+    bool m_isRetrievableHasBeenSet = false;
 
     bool m_isQueryable;
-    bool m_isQueryableHasBeenSet;
+    bool m_isQueryableHasBeenSet = false;
 
     bool m_isTimestampFieldForIncrementalQueries;
-    bool m_isTimestampFieldForIncrementalQueriesHasBeenSet;
+    bool m_isTimestampFieldForIncrementalQueriesHasBeenSet = false;
   };
 
 } // namespace Model

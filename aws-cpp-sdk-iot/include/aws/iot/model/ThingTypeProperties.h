@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_thingTypeDescription;
-    bool m_thingTypeDescriptionHasBeenSet;
+    bool m_thingTypeDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_searchableAttributes;
-    bool m_searchableAttributesHasBeenSet;
+    bool m_searchableAttributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_gatewayDisplayName;
-    bool m_gatewayDisplayNameHasBeenSet;
+    bool m_gatewayDisplayNameHasBeenSet = false;
 
     GatewayType m_gatewayType;
-    bool m_gatewayTypeHasBeenSet;
+    bool m_gatewayTypeHasBeenSet = false;
 
     Aws::String m_hypervisorId;
-    bool m_hypervisorIdHasBeenSet;
+    bool m_hypervisorIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenTime;
-    bool m_lastSeenTimeHasBeenSet;
+    bool m_lastSeenTimeHasBeenSet = false;
   };
 
 } // namespace Model

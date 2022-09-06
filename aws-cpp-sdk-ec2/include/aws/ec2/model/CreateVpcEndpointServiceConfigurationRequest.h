@@ -409,28 +409,28 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-    bool m_networkLoadBalancerArnsHasBeenSet;
+    bool m_networkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-    bool m_gatewayLoadBalancerArnsHasBeenSet;
+    bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedIpAddressTypes;
-    bool m_supportedIpAddressTypesHasBeenSet;
+    bool m_supportedIpAddressTypesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

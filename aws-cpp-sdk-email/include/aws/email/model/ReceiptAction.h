@@ -305,25 +305,25 @@ namespace Model
   private:
 
     S3Action m_s3Action;
-    bool m_s3ActionHasBeenSet;
+    bool m_s3ActionHasBeenSet = false;
 
     BounceAction m_bounceAction;
-    bool m_bounceActionHasBeenSet;
+    bool m_bounceActionHasBeenSet = false;
 
     WorkmailAction m_workmailAction;
-    bool m_workmailActionHasBeenSet;
+    bool m_workmailActionHasBeenSet = false;
 
     LambdaAction m_lambdaAction;
-    bool m_lambdaActionHasBeenSet;
+    bool m_lambdaActionHasBeenSet = false;
 
     StopAction m_stopAction;
-    bool m_stopActionHasBeenSet;
+    bool m_stopActionHasBeenSet = false;
 
     AddHeaderAction m_addHeaderAction;
-    bool m_addHeaderActionHasBeenSet;
+    bool m_addHeaderActionHasBeenSet = false;
 
     SNSAction m_sNSAction;
-    bool m_sNSActionHasBeenSet;
+    bool m_sNSActionHasBeenSet = false;
   };
 
 } // namespace Model

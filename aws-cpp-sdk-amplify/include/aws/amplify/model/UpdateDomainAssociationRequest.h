@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_enableAutoSubDomain;
-    bool m_enableAutoSubDomainHasBeenSet;
+    bool m_enableAutoSubDomainHasBeenSet = false;
 
     Aws::Vector<SubDomainSetting> m_subDomainSettings;
-    bool m_subDomainSettingsHasBeenSet;
+    bool m_subDomainSettingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoSubDomainCreationPatterns;
-    bool m_autoSubDomainCreationPatternsHasBeenSet;
+    bool m_autoSubDomainCreationPatternsHasBeenSet = false;
 
     Aws::String m_autoSubDomainIAMRole;
-    bool m_autoSubDomainIAMRoleHasBeenSet;
+    bool m_autoSubDomainIAMRoleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ScoreConfidence m_scoreConfidence;
-    bool m_scoreConfidenceHasBeenSet;
+    bool m_scoreConfidenceHasBeenSet = false;
   };
 
 } // namespace Model

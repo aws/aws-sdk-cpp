@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CvssScoreDetails m_cvss;
-    bool m_cvssHasBeenSet;
+    bool m_cvssHasBeenSet = false;
   };
 
 } // namespace Model

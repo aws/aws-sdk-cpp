@@ -177,7 +177,7 @@ namespace Model
   private:
 
     Aws::String m_manifestS3Uri;
-    bool m_manifestS3UriHasBeenSet;
+    bool m_manifestS3UriHasBeenSet = false;
   };
 
 } // namespace Model

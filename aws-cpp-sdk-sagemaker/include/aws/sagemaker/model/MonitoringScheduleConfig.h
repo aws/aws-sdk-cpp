@@ -177,16 +177,16 @@ namespace Model
   private:
 
     ScheduleConfig m_scheduleConfig;
-    bool m_scheduleConfigHasBeenSet;
+    bool m_scheduleConfigHasBeenSet = false;
 
     MonitoringJobDefinition m_monitoringJobDefinition;
-    bool m_monitoringJobDefinitionHasBeenSet;
+    bool m_monitoringJobDefinitionHasBeenSet = false;
 
     Aws::String m_monitoringJobDefinitionName;
-    bool m_monitoringJobDefinitionNameHasBeenSet;
+    bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
     MonitoringType m_monitoringType;
-    bool m_monitoringTypeHasBeenSet;
+    bool m_monitoringTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -545,31 +545,31 @@ namespace Model
   private:
 
     Aws::Vector<S3BucketDefinitionForJob> m_bucketDefinitions;
-    bool m_bucketDefinitionsHasBeenSet;
+    bool m_bucketDefinitionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     LastRunErrorStatus m_lastRunErrorStatus;
-    bool m_lastRunErrorStatusHasBeenSet;
+    bool m_lastRunErrorStatusHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     UserPausedDetails m_userPausedDetails;
-    bool m_userPausedDetailsHasBeenSet;
+    bool m_userPausedDetailsHasBeenSet = false;
 
     S3BucketCriteriaForJob m_bucketCriteria;
-    bool m_bucketCriteriaHasBeenSet;
+    bool m_bucketCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

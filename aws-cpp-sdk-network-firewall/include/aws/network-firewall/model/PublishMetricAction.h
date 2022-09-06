@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

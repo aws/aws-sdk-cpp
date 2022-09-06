@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_requesterAccountId;
-    bool m_requesterAccountIdHasBeenSet;
+    bool m_requesterAccountIdHasBeenSet = false;
 
     Aws::String m_requesterAwsRegion;
-    bool m_requesterAwsRegionHasBeenSet;
+    bool m_requesterAwsRegionHasBeenSet = false;
   };
 
 } // namespace Model

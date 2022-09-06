@@ -297,19 +297,19 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     EnhancedMonitoring m_enhancedMonitoring;
-    bool m_enhancedMonitoringHasBeenSet;
+    bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoringInfo m_openMonitoring;
-    bool m_openMonitoringHasBeenSet;
+    bool m_openMonitoringHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
   };
 
 } // namespace Model

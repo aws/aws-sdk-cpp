@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_linkId;
-    bool m_linkIdHasBeenSet;
+    bool m_linkIdHasBeenSet = false;
 
     Aws::String m_connectedLinkId;
-    bool m_connectedLinkIdHasBeenSet;
+    bool m_connectedLinkIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

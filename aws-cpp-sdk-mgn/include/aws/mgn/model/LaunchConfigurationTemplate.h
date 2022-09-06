@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_launchConfigurationTemplateID;
-    bool m_launchConfigurationTemplateIDHasBeenSet;
+    bool m_launchConfigurationTemplateIDHasBeenSet = false;
 
     PostLaunchActions m_postLaunchActions;
-    bool m_postLaunchActionsHasBeenSet;
+    bool m_postLaunchActionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

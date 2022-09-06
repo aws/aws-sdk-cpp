@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_deviceIdentifierArn;
-    bool m_deviceIdentifierArnHasBeenSet;
+    bool m_deviceIdentifierArnHasBeenSet = false;
   };
 
 } // namespace Model

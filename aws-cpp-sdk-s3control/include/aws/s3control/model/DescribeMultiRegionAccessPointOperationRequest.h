@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_requestTokenARN;
-    bool m_requestTokenARNHasBeenSet;
+    bool m_requestTokenARNHasBeenSet = false;
   };
 
 } // namespace Model

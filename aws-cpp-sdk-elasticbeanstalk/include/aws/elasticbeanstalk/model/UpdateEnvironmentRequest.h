@@ -715,40 +715,40 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EnvironmentTier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     Aws::String m_versionLabel;
-    bool m_versionLabelHasBeenSet;
+    bool m_versionLabelHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_solutionStackName;
-    bool m_solutionStackNameHasBeenSet;
+    bool m_solutionStackNameHasBeenSet = false;
 
     Aws::String m_platformArn;
-    bool m_platformArnHasBeenSet;
+    bool m_platformArnHasBeenSet = false;
 
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
 
     Aws::Vector<OptionSpecification> m_optionsToRemove;
-    bool m_optionsToRemoveHasBeenSet;
+    bool m_optionsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

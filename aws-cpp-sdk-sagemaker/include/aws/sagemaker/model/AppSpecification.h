@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerEntrypoint;
-    bool m_containerEntrypointHasBeenSet;
+    bool m_containerEntrypointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerArguments;
-    bool m_containerArgumentsHasBeenSet;
+    bool m_containerArgumentsHasBeenSet = false;
   };
 
 } // namespace Model

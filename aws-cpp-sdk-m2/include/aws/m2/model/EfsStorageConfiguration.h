@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_mountPoint;
-    bool m_mountPointHasBeenSet;
+    bool m_mountPointHasBeenSet = false;
   };
 
 } // namespace Model

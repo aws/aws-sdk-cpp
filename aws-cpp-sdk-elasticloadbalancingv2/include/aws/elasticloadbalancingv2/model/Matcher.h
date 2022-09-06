@@ -181,10 +181,10 @@ namespace Model
   private:
 
     Aws::String m_httpCode;
-    bool m_httpCodeHasBeenSet;
+    bool m_httpCodeHasBeenSet = false;
 
     Aws::String m_grpcCode;
-    bool m_grpcCodeHasBeenSet;
+    bool m_grpcCodeHasBeenSet = false;
   };
 
 } // namespace Model

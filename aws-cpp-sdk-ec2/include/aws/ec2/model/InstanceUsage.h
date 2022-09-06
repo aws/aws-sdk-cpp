@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     int m_usedInstanceCount;
-    bool m_usedInstanceCountHasBeenSet;
+    bool m_usedInstanceCountHasBeenSet = false;
   };
 
 } // namespace Model

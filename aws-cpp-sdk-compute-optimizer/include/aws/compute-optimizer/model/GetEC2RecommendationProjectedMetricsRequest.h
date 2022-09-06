@@ -239,22 +239,22 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     MetricStatistic m_stat;
-    bool m_statHasBeenSet;
+    bool m_statHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     RecommendationPreferences m_recommendationPreferences;
-    bool m_recommendationPreferencesHasBeenSet;
+    bool m_recommendationPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

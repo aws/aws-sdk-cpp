@@ -1022,76 +1022,76 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_iamServiceRoleArn;
-    bool m_iamServiceRoleArnHasBeenSet;
+    bool m_iamServiceRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     Aws::String m_defaultDomain;
-    bool m_defaultDomainHasBeenSet;
+    bool m_defaultDomainHasBeenSet = false;
 
     bool m_enableBranchAutoBuild;
-    bool m_enableBranchAutoBuildHasBeenSet;
+    bool m_enableBranchAutoBuildHasBeenSet = false;
 
     bool m_enableBranchAutoDeletion;
-    bool m_enableBranchAutoDeletionHasBeenSet;
+    bool m_enableBranchAutoDeletionHasBeenSet = false;
 
     bool m_enableBasicAuth;
-    bool m_enableBasicAuthHasBeenSet;
+    bool m_enableBasicAuthHasBeenSet = false;
 
     Aws::String m_basicAuthCredentials;
-    bool m_basicAuthCredentialsHasBeenSet;
+    bool m_basicAuthCredentialsHasBeenSet = false;
 
     Aws::Vector<CustomRule> m_customRules;
-    bool m_customRulesHasBeenSet;
+    bool m_customRulesHasBeenSet = false;
 
     ProductionBranch m_productionBranch;
-    bool m_productionBranchHasBeenSet;
+    bool m_productionBranchHasBeenSet = false;
 
     Aws::String m_buildSpec;
-    bool m_buildSpecHasBeenSet;
+    bool m_buildSpecHasBeenSet = false;
 
     Aws::String m_customHeaders;
-    bool m_customHeadersHasBeenSet;
+    bool m_customHeadersHasBeenSet = false;
 
     bool m_enableAutoBranchCreation;
-    bool m_enableAutoBranchCreationHasBeenSet;
+    bool m_enableAutoBranchCreationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoBranchCreationPatterns;
-    bool m_autoBranchCreationPatternsHasBeenSet;
+    bool m_autoBranchCreationPatternsHasBeenSet = false;
 
     AutoBranchCreationConfig m_autoBranchCreationConfig;
-    bool m_autoBranchCreationConfigHasBeenSet;
+    bool m_autoBranchCreationConfigHasBeenSet = false;
 
     RepositoryCloneMethod m_repositoryCloneMethod;
-    bool m_repositoryCloneMethodHasBeenSet;
+    bool m_repositoryCloneMethodHasBeenSet = false;
   };
 
 } // namespace Model

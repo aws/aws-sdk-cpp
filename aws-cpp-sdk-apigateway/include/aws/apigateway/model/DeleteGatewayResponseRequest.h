@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     GatewayResponseType m_responseType;
-    bool m_responseTypeHasBeenSet;
+    bool m_responseTypeHasBeenSet = false;
   };
 
 } // namespace Model

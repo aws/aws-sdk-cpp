@@ -89,10 +89,10 @@ namespace Model
   private:
 
     int m_maxCll;
-    bool m_maxCllHasBeenSet;
+    bool m_maxCllHasBeenSet = false;
 
     int m_maxFall;
-    bool m_maxFallHasBeenSet;
+    bool m_maxFallHasBeenSet = false;
   };
 
 } // namespace Model

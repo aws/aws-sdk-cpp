@@ -172,16 +172,16 @@ namespace Model
   private:
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
 
     long long m_latestCancelRequestedEventId;
-    bool m_latestCancelRequestedEventIdHasBeenSet;
+    bool m_latestCancelRequestedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

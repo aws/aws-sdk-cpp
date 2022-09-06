@@ -70,7 +70,7 @@ namespace Model
   private:
 
     long long m_idleTimeout;
-    bool m_idleTimeoutHasBeenSet;
+    bool m_idleTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

@@ -232,13 +232,13 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     bool m_skipFinalSnapshot;
-    bool m_skipFinalSnapshotHasBeenSet;
+    bool m_skipFinalSnapshotHasBeenSet = false;
 
     Aws::String m_finalDBSnapshotIdentifier;
-    bool m_finalDBSnapshotIdentifierHasBeenSet;
+    bool m_finalDBSnapshotIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

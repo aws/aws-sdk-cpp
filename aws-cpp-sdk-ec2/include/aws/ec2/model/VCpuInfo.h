@@ -184,19 +184,19 @@ namespace Model
   private:
 
     int m_defaultVCpus;
-    bool m_defaultVCpusHasBeenSet;
+    bool m_defaultVCpusHasBeenSet = false;
 
     int m_defaultCores;
-    bool m_defaultCoresHasBeenSet;
+    bool m_defaultCoresHasBeenSet = false;
 
     int m_defaultThreadsPerCore;
-    bool m_defaultThreadsPerCoreHasBeenSet;
+    bool m_defaultThreadsPerCoreHasBeenSet = false;
 
     Aws::Vector<int> m_validCores;
-    bool m_validCoresHasBeenSet;
+    bool m_validCoresHasBeenSet = false;
 
     Aws::Vector<int> m_validThreadsPerCore;
-    bool m_validThreadsPerCoreHasBeenSet;
+    bool m_validThreadsPerCoreHasBeenSet = false;
   };
 
 } // namespace Model

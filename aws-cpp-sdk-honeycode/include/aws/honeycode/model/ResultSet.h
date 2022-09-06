@@ -228,10 +228,10 @@ namespace Model
   private:
 
     Aws::Vector<ColumnMetadata> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     Aws::Vector<ResultRow> m_rows;
-    bool m_rowsHasBeenSet;
+    bool m_rowsHasBeenSet = false;
   };
 
 } // namespace Model

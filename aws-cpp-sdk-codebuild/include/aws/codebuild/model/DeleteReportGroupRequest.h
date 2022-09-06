@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     bool m_deleteReports;
-    bool m_deleteReportsHasBeenSet;
+    bool m_deleteReportsHasBeenSet = false;
   };
 
 } // namespace Model

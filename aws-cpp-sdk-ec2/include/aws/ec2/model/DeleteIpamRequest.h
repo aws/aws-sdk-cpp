@@ -177,13 +177,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamId;
-    bool m_ipamIdHasBeenSet;
+    bool m_ipamIdHasBeenSet = false;
 
     bool m_cascade;
-    bool m_cascadeHasBeenSet;
+    bool m_cascadeHasBeenSet = false;
   };
 
 } // namespace Model

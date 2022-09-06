@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail> m_cloudWatchMetrics;
-    bool m_cloudWatchMetricsHasBeenSet;
+    bool m_cloudWatchMetricsHasBeenSet = false;
   };
 
 } // namespace Model

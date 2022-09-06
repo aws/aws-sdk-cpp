@@ -1072,70 +1072,70 @@ namespace Model
   private:
 
     AccountAccessType m_accountAccessType;
-    bool m_accountAccessTypeHasBeenSet;
+    bool m_accountAccessTypeHasBeenSet = false;
 
     AuthenticationSummary m_authentication;
-    bool m_authenticationHasBeenSet;
+    bool m_authenticationHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Vector<DataSourceType> m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     bool m_freeTrialConsumed;
-    bool m_freeTrialConsumedHasBeenSet;
+    bool m_freeTrialConsumedHasBeenSet = false;
 
     Aws::Utils::DateTime m_freeTrialExpiration;
-    bool m_freeTrialExpirationHasBeenSet;
+    bool m_freeTrialExpirationHasBeenSet = false;
 
     Aws::String m_grafanaVersion;
-    bool m_grafanaVersionHasBeenSet;
+    bool m_grafanaVersionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_licenseExpiration;
-    bool m_licenseExpirationHasBeenSet;
+    bool m_licenseExpirationHasBeenSet = false;
 
     LicenseType m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_modified;
-    bool m_modifiedHasBeenSet;
+    bool m_modifiedHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<NotificationDestinationType> m_notificationDestinations;
-    bool m_notificationDestinationsHasBeenSet;
+    bool m_notificationDestinationsHasBeenSet = false;
 
     Aws::String m_organizationRoleName;
-    bool m_organizationRoleNameHasBeenSet;
+    bool m_organizationRoleNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnits;
-    bool m_organizationalUnitsHasBeenSet;
+    bool m_organizationalUnitsHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     WorkspaceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workspaceRoleArn;
-    bool m_workspaceRoleArnHasBeenSet;
+    bool m_workspaceRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

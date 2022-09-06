@@ -95,10 +95,10 @@ namespace Model
   private:
 
     bool m_isNative;
-    bool m_isNativeHasBeenSet;
+    bool m_isNativeHasBeenSet = false;
 
     LambdaFunction m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

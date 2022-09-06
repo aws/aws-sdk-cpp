@@ -1750,100 +1750,100 @@ namespace Model
   private:
 
     Mpeg2AdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Mpeg2CodecLevel m_codecLevel;
-    bool m_codecLevelHasBeenSet;
+    bool m_codecLevelHasBeenSet = false;
 
     Mpeg2CodecProfile m_codecProfile;
-    bool m_codecProfileHasBeenSet;
+    bool m_codecProfileHasBeenSet = false;
 
     Mpeg2DynamicSubGop m_dynamicSubGop;
-    bool m_dynamicSubGopHasBeenSet;
+    bool m_dynamicSubGopHasBeenSet = false;
 
     Mpeg2FramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     Mpeg2FramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     Mpeg2GopSizeUnits m_gopSizeUnits;
-    bool m_gopSizeUnitsHasBeenSet;
+    bool m_gopSizeUnitsHasBeenSet = false;
 
     int m_hrdBufferInitialFillPercentage;
-    bool m_hrdBufferInitialFillPercentageHasBeenSet;
+    bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
     int m_hrdBufferSize;
-    bool m_hrdBufferSizeHasBeenSet;
+    bool m_hrdBufferSizeHasBeenSet = false;
 
     Mpeg2InterlaceMode m_interlaceMode;
-    bool m_interlaceModeHasBeenSet;
+    bool m_interlaceModeHasBeenSet = false;
 
     Mpeg2IntraDcPrecision m_intraDcPrecision;
-    bool m_intraDcPrecisionHasBeenSet;
+    bool m_intraDcPrecisionHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_minIInterval;
-    bool m_minIIntervalHasBeenSet;
+    bool m_minIIntervalHasBeenSet = false;
 
     int m_numberBFramesBetweenReferenceFrames;
-    bool m_numberBFramesBetweenReferenceFramesHasBeenSet;
+    bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
     Mpeg2ParControl m_parControl;
-    bool m_parControlHasBeenSet;
+    bool m_parControlHasBeenSet = false;
 
     int m_parDenominator;
-    bool m_parDenominatorHasBeenSet;
+    bool m_parDenominatorHasBeenSet = false;
 
     int m_parNumerator;
-    bool m_parNumeratorHasBeenSet;
+    bool m_parNumeratorHasBeenSet = false;
 
     Mpeg2QualityTuningLevel m_qualityTuningLevel;
-    bool m_qualityTuningLevelHasBeenSet;
+    bool m_qualityTuningLevelHasBeenSet = false;
 
     Mpeg2RateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     Mpeg2ScanTypeConversionMode m_scanTypeConversionMode;
-    bool m_scanTypeConversionModeHasBeenSet;
+    bool m_scanTypeConversionModeHasBeenSet = false;
 
     Mpeg2SceneChangeDetect m_sceneChangeDetect;
-    bool m_sceneChangeDetectHasBeenSet;
+    bool m_sceneChangeDetectHasBeenSet = false;
 
     Mpeg2SlowPal m_slowPal;
-    bool m_slowPalHasBeenSet;
+    bool m_slowPalHasBeenSet = false;
 
     int m_softness;
-    bool m_softnessHasBeenSet;
+    bool m_softnessHasBeenSet = false;
 
     Mpeg2SpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
-    bool m_spatialAdaptiveQuantizationHasBeenSet;
+    bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
     Mpeg2Syntax m_syntax;
-    bool m_syntaxHasBeenSet;
+    bool m_syntaxHasBeenSet = false;
 
     Mpeg2Telecine m_telecine;
-    bool m_telecineHasBeenSet;
+    bool m_telecineHasBeenSet = false;
 
     Mpeg2TemporalAdaptiveQuantization m_temporalAdaptiveQuantization;
-    bool m_temporalAdaptiveQuantizationHasBeenSet;
+    bool m_temporalAdaptiveQuantizationHasBeenSet = false;
   };
 
 } // namespace Model

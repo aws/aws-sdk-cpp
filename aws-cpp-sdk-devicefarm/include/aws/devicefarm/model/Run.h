@@ -1235,97 +1235,97 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TestType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DevicePlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ExecutionResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::Utils::DateTime m_started;
-    bool m_startedHasBeenSet;
+    bool m_startedHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopped;
-    bool m_stoppedHasBeenSet;
+    bool m_stoppedHasBeenSet = false;
 
     Counters m_counters;
-    bool m_countersHasBeenSet;
+    bool m_countersHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     int m_totalJobs;
-    bool m_totalJobsHasBeenSet;
+    bool m_totalJobsHasBeenSet = false;
 
     int m_completedJobs;
-    bool m_completedJobsHasBeenSet;
+    bool m_completedJobsHasBeenSet = false;
 
     BillingMethod m_billingMethod;
-    bool m_billingMethodHasBeenSet;
+    bool m_billingMethodHasBeenSet = false;
 
     DeviceMinutes m_deviceMinutes;
-    bool m_deviceMinutesHasBeenSet;
+    bool m_deviceMinutesHasBeenSet = false;
 
     NetworkProfile m_networkProfile;
-    bool m_networkProfileHasBeenSet;
+    bool m_networkProfileHasBeenSet = false;
 
     Aws::String m_parsingResultUrl;
-    bool m_parsingResultUrlHasBeenSet;
+    bool m_parsingResultUrlHasBeenSet = false;
 
     ExecutionResultCode m_resultCode;
-    bool m_resultCodeHasBeenSet;
+    bool m_resultCodeHasBeenSet = false;
 
     int m_seed;
-    bool m_seedHasBeenSet;
+    bool m_seedHasBeenSet = false;
 
     Aws::String m_appUpload;
-    bool m_appUploadHasBeenSet;
+    bool m_appUploadHasBeenSet = false;
 
     int m_eventCount;
-    bool m_eventCountHasBeenSet;
+    bool m_eventCountHasBeenSet = false;
 
     int m_jobTimeoutMinutes;
-    bool m_jobTimeoutMinutesHasBeenSet;
+    bool m_jobTimeoutMinutesHasBeenSet = false;
 
     Aws::String m_devicePoolArn;
-    bool m_devicePoolArnHasBeenSet;
+    bool m_devicePoolArnHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Radios m_radios;
-    bool m_radiosHasBeenSet;
+    bool m_radiosHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     CustomerArtifactPaths m_customerArtifactPaths;
-    bool m_customerArtifactPathsHasBeenSet;
+    bool m_customerArtifactPathsHasBeenSet = false;
 
     Aws::String m_webUrl;
-    bool m_webUrlHasBeenSet;
+    bool m_webUrlHasBeenSet = false;
 
     bool m_skipAppResign;
-    bool m_skipAppResignHasBeenSet;
+    bool m_skipAppResignHasBeenSet = false;
 
     Aws::String m_testSpecArn;
-    bool m_testSpecArnHasBeenSet;
+    bool m_testSpecArnHasBeenSet = false;
 
     DeviceSelectionResult m_deviceSelectionResult;
-    bool m_deviceSelectionResultHasBeenSet;
+    bool m_deviceSelectionResultHasBeenSet = false;
   };
 
 } // namespace Model

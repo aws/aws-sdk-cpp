@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     InstanceStorageResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     InstanceStorageConfig m_storageConfig;
-    bool m_storageConfigHasBeenSet;
+    bool m_storageConfigHasBeenSet = false;
   };
 
 } // namespace Model

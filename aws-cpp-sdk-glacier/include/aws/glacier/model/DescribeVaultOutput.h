@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_vaultARN;
-    bool m_vaultARNHasBeenSet;
+    bool m_vaultARNHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_lastInventoryDate;
-    bool m_lastInventoryDateHasBeenSet;
+    bool m_lastInventoryDateHasBeenSet = false;
 
     long long m_numberOfArchives;
-    bool m_numberOfArchivesHasBeenSet;
+    bool m_numberOfArchivesHasBeenSet = false;
 
     long long m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

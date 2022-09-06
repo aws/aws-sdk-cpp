@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     int m_currentApplicationVersion;
-    bool m_currentApplicationVersionHasBeenSet;
+    bool m_currentApplicationVersionHasBeenSet = false;
 
     Definition m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

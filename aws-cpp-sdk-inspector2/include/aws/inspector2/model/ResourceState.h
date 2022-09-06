@@ -114,10 +114,10 @@ namespace Model
   private:
 
     State m_ec2;
-    bool m_ec2HasBeenSet;
+    bool m_ec2HasBeenSet = false;
 
     State m_ecr;
-    bool m_ecrHasBeenSet;
+    bool m_ecrHasBeenSet = false;
   };
 
 } // namespace Model

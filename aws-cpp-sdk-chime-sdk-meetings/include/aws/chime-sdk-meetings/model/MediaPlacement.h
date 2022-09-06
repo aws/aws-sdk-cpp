@@ -368,28 +368,28 @@ namespace Model
   private:
 
     Aws::String m_audioHostUrl;
-    bool m_audioHostUrlHasBeenSet;
+    bool m_audioHostUrlHasBeenSet = false;
 
     Aws::String m_audioFallbackUrl;
-    bool m_audioFallbackUrlHasBeenSet;
+    bool m_audioFallbackUrlHasBeenSet = false;
 
     Aws::String m_signalingUrl;
-    bool m_signalingUrlHasBeenSet;
+    bool m_signalingUrlHasBeenSet = false;
 
     Aws::String m_turnControlUrl;
-    bool m_turnControlUrlHasBeenSet;
+    bool m_turnControlUrlHasBeenSet = false;
 
     Aws::String m_screenDataUrl;
-    bool m_screenDataUrlHasBeenSet;
+    bool m_screenDataUrlHasBeenSet = false;
 
     Aws::String m_screenViewingUrl;
-    bool m_screenViewingUrlHasBeenSet;
+    bool m_screenViewingUrlHasBeenSet = false;
 
     Aws::String m_screenSharingUrl;
-    bool m_screenSharingUrlHasBeenSet;
+    bool m_screenSharingUrlHasBeenSet = false;
 
     Aws::String m_eventIngestionUrl;
-    bool m_eventIngestionUrlHasBeenSet;
+    bool m_eventIngestionUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -482,34 +482,34 @@ namespace Model
   private:
 
     Aws::String m_autoMLJobName;
-    bool m_autoMLJobNameHasBeenSet;
+    bool m_autoMLJobNameHasBeenSet = false;
 
     Aws::Vector<AutoMLChannel> m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     AutoMLOutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ProblemType m_problemType;
-    bool m_problemTypeHasBeenSet;
+    bool m_problemTypeHasBeenSet = false;
 
     AutoMLJobObjective m_autoMLJobObjective;
-    bool m_autoMLJobObjectiveHasBeenSet;
+    bool m_autoMLJobObjectiveHasBeenSet = false;
 
     AutoMLJobConfig m_autoMLJobConfig;
-    bool m_autoMLJobConfigHasBeenSet;
+    bool m_autoMLJobConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     bool m_generateCandidateDefinitionsOnly;
-    bool m_generateCandidateDefinitionsOnlyHasBeenSet;
+    bool m_generateCandidateDefinitionsOnlyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ModelDeployConfig m_modelDeployConfig;
-    bool m_modelDeployConfigHasBeenSet;
+    bool m_modelDeployConfigHasBeenSet = false;
   };
 
 } // namespace Model

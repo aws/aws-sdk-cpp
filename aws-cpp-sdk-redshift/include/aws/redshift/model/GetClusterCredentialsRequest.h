@@ -576,22 +576,22 @@ namespace Model
   private:
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_dbName;
-    bool m_dbNameHasBeenSet;
+    bool m_dbNameHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     bool m_autoCreate;
-    bool m_autoCreateHasBeenSet;
+    bool m_autoCreateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dbGroups;
-    bool m_dbGroupsHasBeenSet;
+    bool m_dbGroupsHasBeenSet = false;
   };
 
 } // namespace Model

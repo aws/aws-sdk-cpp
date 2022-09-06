@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_secretPolicy;
-    bool m_secretPolicyHasBeenSet;
+    bool m_secretPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -228,13 +228,13 @@ namespace Model
   private:
 
     Aws::String m_ticketId;
-    bool m_ticketIdHasBeenSet;
+    bool m_ticketIdHasBeenSet = false;
 
     Aws::String m_configurationName;
-    bool m_configurationNameHasBeenSet;
+    bool m_configurationNameHasBeenSet = false;
 
     Aws::Vector<Player> m_players;
-    bool m_playersHasBeenSet;
+    bool m_playersHasBeenSet = false;
   };
 
 } // namespace Model

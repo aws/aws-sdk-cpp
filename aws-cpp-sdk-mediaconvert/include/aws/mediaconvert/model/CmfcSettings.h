@@ -874,34 +874,34 @@ namespace Model
   private:
 
     CmfcAudioDuration m_audioDuration;
-    bool m_audioDurationHasBeenSet;
+    bool m_audioDurationHasBeenSet = false;
 
     Aws::String m_audioGroupId;
-    bool m_audioGroupIdHasBeenSet;
+    bool m_audioGroupIdHasBeenSet = false;
 
     Aws::String m_audioRenditionSets;
-    bool m_audioRenditionSetsHasBeenSet;
+    bool m_audioRenditionSetsHasBeenSet = false;
 
     CmfcAudioTrackType m_audioTrackType;
-    bool m_audioTrackTypeHasBeenSet;
+    bool m_audioTrackTypeHasBeenSet = false;
 
     CmfcDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag;
-    bool m_descriptiveVideoServiceFlagHasBeenSet;
+    bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
     CmfcIFrameOnlyManifest m_iFrameOnlyManifest;
-    bool m_iFrameOnlyManifestHasBeenSet;
+    bool m_iFrameOnlyManifestHasBeenSet = false;
 
     CmfcKlvMetadata m_klvMetadata;
-    bool m_klvMetadataHasBeenSet;
+    bool m_klvMetadataHasBeenSet = false;
 
     CmfcScte35Esam m_scte35Esam;
-    bool m_scte35EsamHasBeenSet;
+    bool m_scte35EsamHasBeenSet = false;
 
     CmfcScte35Source m_scte35Source;
-    bool m_scte35SourceHasBeenSet;
+    bool m_scte35SourceHasBeenSet = false;
 
     CmfcTimedMetadata m_timedMetadata;
-    bool m_timedMetadataHasBeenSet;
+    bool m_timedMetadataHasBeenSet = false;
   };
 
 } // namespace Model

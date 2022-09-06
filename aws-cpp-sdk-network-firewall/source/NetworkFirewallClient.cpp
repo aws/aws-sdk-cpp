@@ -107,7 +107,7 @@ NetworkFirewallClient::~NetworkFirewallClient()
 
 void NetworkFirewallClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Network Firewall");
+  AWSClient::SetServiceClientName("Network Firewall");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

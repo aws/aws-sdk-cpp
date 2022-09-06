@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_outputArn;
-    bool m_outputArnHasBeenSet;
+    bool m_outputArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_s3Keys;
-    bool m_s3KeysHasBeenSet;
+    bool m_s3KeysHasBeenSet = false;
   };
 
 } // namespace Model

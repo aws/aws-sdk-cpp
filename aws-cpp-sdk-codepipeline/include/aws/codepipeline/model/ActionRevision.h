@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_revisionChangeId;
-    bool m_revisionChangeIdHasBeenSet;
+    bool m_revisionChangeIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -247,16 +247,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

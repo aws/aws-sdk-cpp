@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     UserSettings m_defaultUserSettings;
-    bool m_defaultUserSettingsHasBeenSet;
+    bool m_defaultUserSettingsHasBeenSet = false;
 
     DomainSettingsForUpdate m_domainSettingsForUpdate;
-    bool m_domainSettingsForUpdateHasBeenSet;
+    bool m_domainSettingsForUpdateHasBeenSet = false;
   };
 
 } // namespace Model

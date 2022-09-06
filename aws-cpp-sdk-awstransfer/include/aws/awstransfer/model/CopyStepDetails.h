@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InputFileLocation m_destinationFileLocation;
-    bool m_destinationFileLocationHasBeenSet;
+    bool m_destinationFileLocationHasBeenSet = false;
 
     OverwriteExisting m_overwriteExisting;
-    bool m_overwriteExistingHasBeenSet;
+    bool m_overwriteExistingHasBeenSet = false;
 
     Aws::String m_sourceFileLocation;
-    bool m_sourceFileLocationHasBeenSet;
+    bool m_sourceFileLocationHasBeenSet = false;
   };
 
 } // namespace Model

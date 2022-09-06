@@ -542,37 +542,37 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_cacheClusterEnabled;
-    bool m_cacheClusterEnabledHasBeenSet;
+    bool m_cacheClusterEnabledHasBeenSet = false;
 
     CacheClusterSize m_cacheClusterSize;
-    bool m_cacheClusterSizeHasBeenSet;
+    bool m_cacheClusterSizeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     Aws::String m_documentationVersion;
-    bool m_documentationVersionHasBeenSet;
+    bool m_documentationVersionHasBeenSet = false;
 
     CanarySettings m_canarySettings;
-    bool m_canarySettingsHasBeenSet;
+    bool m_canarySettingsHasBeenSet = false;
 
     bool m_tracingEnabled;
-    bool m_tracingEnabledHasBeenSet;
+    bool m_tracingEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

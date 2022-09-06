@@ -227,19 +227,19 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Order m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
 
     Aws::String m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

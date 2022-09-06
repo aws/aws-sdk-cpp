@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MitigationActionParams m_actionParams;
-    bool m_actionParamsHasBeenSet;
+    bool m_actionParamsHasBeenSet = false;
   };
 
 } // namespace Model

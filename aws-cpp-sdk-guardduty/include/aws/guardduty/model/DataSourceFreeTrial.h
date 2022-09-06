@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_freeTrialDaysRemaining;
-    bool m_freeTrialDaysRemainingHasBeenSet;
+    bool m_freeTrialDaysRemainingHasBeenSet = false;
   };
 
 } // namespace Model

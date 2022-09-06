@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     bool m_shouldRespectGracePeriod;
-    bool m_shouldRespectGracePeriodHasBeenSet;
+    bool m_shouldRespectGracePeriodHasBeenSet = false;
   };
 
 } // namespace Model

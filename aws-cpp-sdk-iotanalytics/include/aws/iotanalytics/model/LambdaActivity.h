@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_lambdaName;
-    bool m_lambdaNameHasBeenSet;
+    bool m_lambdaNameHasBeenSet = false;
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     Aws::String m_next;
-    bool m_nextHasBeenSet;
+    bool m_nextHasBeenSet = false;
   };
 
 } // namespace Model

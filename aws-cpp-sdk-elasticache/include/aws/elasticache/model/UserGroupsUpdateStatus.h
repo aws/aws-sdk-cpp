@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_userGroupIdsToAdd;
-    bool m_userGroupIdsToAddHasBeenSet;
+    bool m_userGroupIdsToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroupIdsToRemove;
-    bool m_userGroupIdsToRemoveHasBeenSet;
+    bool m_userGroupIdsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

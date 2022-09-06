@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
   };
 
 } // namespace Model

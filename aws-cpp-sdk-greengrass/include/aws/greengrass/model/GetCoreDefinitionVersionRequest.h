@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_coreDefinitionId;
-    bool m_coreDefinitionIdHasBeenSet;
+    bool m_coreDefinitionIdHasBeenSet = false;
 
     Aws::String m_coreDefinitionVersionId;
-    bool m_coreDefinitionVersionIdHasBeenSet;
+    bool m_coreDefinitionVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

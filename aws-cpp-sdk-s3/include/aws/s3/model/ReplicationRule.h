@@ -328,28 +328,28 @@ namespace Model
   private:
 
     Aws::String m_iD;
-    bool m_iDHasBeenSet;
+    bool m_iDHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     ReplicationRuleFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     ReplicationRuleStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     SourceSelectionCriteria m_sourceSelectionCriteria;
-    bool m_sourceSelectionCriteriaHasBeenSet;
+    bool m_sourceSelectionCriteriaHasBeenSet = false;
 
     ExistingObjectReplication m_existingObjectReplication;
-    bool m_existingObjectReplicationHasBeenSet;
+    bool m_existingObjectReplicationHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DeleteMarkerReplication m_deleteMarkerReplication;
-    bool m_deleteMarkerReplicationHasBeenSet;
+    bool m_deleteMarkerReplicationHasBeenSet = false;
   };
 
 } // namespace Model

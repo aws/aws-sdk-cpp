@@ -388,34 +388,34 @@ namespace Model
   private:
 
     ICD10CMAttributeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     double m_relationshipScore;
-    bool m_relationshipScoreHasBeenSet;
+    bool m_relationshipScoreHasBeenSet = false;
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<ICD10CMTrait> m_traits;
-    bool m_traitsHasBeenSet;
+    bool m_traitsHasBeenSet = false;
 
     ICD10CMEntityType m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     ICD10CMRelationshipType m_relationshipType;
-    bool m_relationshipTypeHasBeenSet;
+    bool m_relationshipTypeHasBeenSet = false;
   };
 
 } // namespace Model

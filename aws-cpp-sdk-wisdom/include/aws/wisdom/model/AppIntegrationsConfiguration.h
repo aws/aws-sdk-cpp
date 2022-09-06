@@ -244,10 +244,10 @@ namespace Model
   private:
 
     Aws::String m_appIntegrationArn;
-    bool m_appIntegrationArnHasBeenSet;
+    bool m_appIntegrationArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_objectFields;
-    bool m_objectFieldsHasBeenSet;
+    bool m_objectFieldsHasBeenSet = false;
   };
 
 } // namespace Model

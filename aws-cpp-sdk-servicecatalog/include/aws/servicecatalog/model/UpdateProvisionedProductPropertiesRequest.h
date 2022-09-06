@@ -523,16 +523,16 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_provisionedProductId;
-    bool m_provisionedProductIdHasBeenSet;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::Map<PropertyKey, Aws::String> m_provisionedProductProperties;
-    bool m_provisionedProductPropertiesHasBeenSet;
+    bool m_provisionedProductPropertiesHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

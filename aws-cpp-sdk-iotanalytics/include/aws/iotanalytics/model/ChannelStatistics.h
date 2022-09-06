@@ -70,7 +70,7 @@ namespace Model
   private:
 
     EstimatedResourceSize m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

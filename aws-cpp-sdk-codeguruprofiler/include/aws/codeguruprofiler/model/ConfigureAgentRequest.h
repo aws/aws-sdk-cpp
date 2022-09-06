@@ -387,13 +387,13 @@ namespace Model
   private:
 
     Aws::String m_fleetInstanceId;
-    bool m_fleetInstanceIdHasBeenSet;
+    bool m_fleetInstanceIdHasBeenSet = false;
 
     Aws::Map<MetadataField, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

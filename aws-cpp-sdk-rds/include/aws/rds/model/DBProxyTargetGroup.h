@@ -379,28 +379,28 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_targetGroupName;
-    bool m_targetGroupNameHasBeenSet;
+    bool m_targetGroupNameHasBeenSet = false;
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ConnectionPoolConfigurationInfo m_connectionPoolConfig;
-    bool m_connectionPoolConfigHasBeenSet;
+    bool m_connectionPoolConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedDate;
-    bool m_updatedDateHasBeenSet;
+    bool m_updatedDateHasBeenSet = false;
   };
 
 } // namespace Model

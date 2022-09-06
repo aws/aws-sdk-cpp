@@ -324,16 +324,16 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableId;
-    bool m_transitGatewayRouteTableIdHasBeenSet;
+    bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

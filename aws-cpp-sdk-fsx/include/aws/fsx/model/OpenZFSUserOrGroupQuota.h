@@ -113,13 +113,13 @@ namespace Model
   private:
 
     OpenZFSQuotaType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_storageCapacityQuotaGiB;
-    bool m_storageCapacityQuotaGiBHasBeenSet;
+    bool m_storageCapacityQuotaGiBHasBeenSet = false;
   };
 
 } // namespace Model

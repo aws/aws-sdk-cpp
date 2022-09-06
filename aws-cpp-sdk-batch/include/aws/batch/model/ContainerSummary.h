@@ -110,10 +110,10 @@ namespace Model
   private:
 
     int m_exitCode;
-    bool m_exitCodeHasBeenSet;
+    bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

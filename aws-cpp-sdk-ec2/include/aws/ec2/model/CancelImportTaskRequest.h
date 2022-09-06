@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_cancelReason;
-    bool m_cancelReasonHasBeenSet;
+    bool m_cancelReasonHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_importTaskId;
-    bool m_importTaskIdHasBeenSet;
+    bool m_importTaskIdHasBeenSet = false;
   };
 
 } // namespace Model

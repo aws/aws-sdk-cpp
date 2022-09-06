@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
   };
 
 } // namespace Model

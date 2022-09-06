@@ -81,7 +81,7 @@ namespace Model
   private:
 
     int m_trackNumber;
-    bool m_trackNumberHasBeenSet;
+    bool m_trackNumberHasBeenSet = false;
   };
 
 } // namespace Model

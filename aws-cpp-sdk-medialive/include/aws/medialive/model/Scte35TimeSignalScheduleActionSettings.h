@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Scte35Descriptor> m_scte35Descriptors;
-    bool m_scte35DescriptorsHasBeenSet;
+    bool m_scte35DescriptorsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -138,7 +138,7 @@ namespace Model
   private:
 
     Aws::String m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
   };
 
 } // namespace Model

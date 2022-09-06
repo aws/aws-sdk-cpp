@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::Vector<EvaluationRequest> m_requests;
-    bool m_requestsHasBeenSet;
+    bool m_requestsHasBeenSet = false;
   };
 
 } // namespace Model

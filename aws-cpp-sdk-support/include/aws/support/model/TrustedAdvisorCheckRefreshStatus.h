@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_checkId;
-    bool m_checkIdHasBeenSet;
+    bool m_checkIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_millisUntilNextRefreshable;
-    bool m_millisUntilNextRefreshableHasBeenSet;
+    bool m_millisUntilNextRefreshableHasBeenSet = false;
   };
 
 } // namespace Model

@@ -436,34 +436,34 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Vector<DashboardError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     ResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_sourceEntityArn;
-    bool m_sourceEntityArnHasBeenSet;
+    bool m_sourceEntityArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dataSetArns;
-    bool m_dataSetArnsHasBeenSet;
+    bool m_dataSetArnsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_themeArn;
-    bool m_themeArnHasBeenSet;
+    bool m_themeArnHasBeenSet = false;
 
     Aws::Vector<Sheet> m_sheets;
-    bool m_sheetsHasBeenSet;
+    bool m_sheetsHasBeenSet = false;
   };
 
 } // namespace Model

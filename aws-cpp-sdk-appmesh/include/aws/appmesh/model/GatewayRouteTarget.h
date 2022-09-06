@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     GatewayRouteVirtualService m_virtualService;
-    bool m_virtualServiceHasBeenSet;
+    bool m_virtualServiceHasBeenSet = false;
   };
 
 } // namespace Model

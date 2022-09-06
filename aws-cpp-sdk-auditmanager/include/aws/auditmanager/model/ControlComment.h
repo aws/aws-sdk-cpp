@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_authorName;
-    bool m_authorNameHasBeenSet;
+    bool m_authorNameHasBeenSet = false;
 
     Aws::String m_commentBody;
-    bool m_commentBodyHasBeenSet;
+    bool m_commentBodyHasBeenSet = false;
 
     Aws::Utils::DateTime m_postedDate;
-    bool m_postedDateHasBeenSet;
+    bool m_postedDateHasBeenSet = false;
   };
 
 } // namespace Model

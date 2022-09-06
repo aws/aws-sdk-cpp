@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     Aws::String m_functionPayload;
-    bool m_functionPayloadHasBeenSet;
+    bool m_functionPayloadHasBeenSet = false;
   };
 
 } // namespace Model

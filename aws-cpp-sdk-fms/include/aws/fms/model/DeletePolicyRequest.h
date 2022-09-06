@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     bool m_deleteAllPolicyResources;
-    bool m_deleteAllPolicyResourcesHasBeenSet;
+    bool m_deleteAllPolicyResourcesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -277,22 +277,22 @@ namespace Model
   private:
 
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet;
+    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateConfig> m_launchTemplateConfigs;
-    bool m_launchTemplateConfigsHasBeenSet;
+    bool m_launchTemplateConfigsHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
+    bool m_spotFleetRequestIdHasBeenSet = false;
 
     int m_targetCapacity;
-    bool m_targetCapacityHasBeenSet;
+    bool m_targetCapacityHasBeenSet = false;
 
     int m_onDemandTargetCapacity;
-    bool m_onDemandTargetCapacityHasBeenSet;
+    bool m_onDemandTargetCapacityHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

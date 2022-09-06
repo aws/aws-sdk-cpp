@@ -77,7 +77,7 @@ namespace Model
   private:
 
     PropertyNameQuery m_propertyNameQuery;
-    bool m_propertyNameQueryHasBeenSet;
+    bool m_propertyNameQueryHasBeenSet = false;
   };
 
 } // namespace Model

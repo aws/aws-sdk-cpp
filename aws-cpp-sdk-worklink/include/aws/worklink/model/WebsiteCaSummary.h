@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_websiteCaId;
-    bool m_websiteCaIdHasBeenSet;
+    bool m_websiteCaIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

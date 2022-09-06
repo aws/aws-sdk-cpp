@@ -455,19 +455,19 @@ namespace Model
   private:
 
     Aws::String m_trainingImage;
-    bool m_trainingImageHasBeenSet;
+    bool m_trainingImageHasBeenSet = false;
 
     Aws::String m_algorithmName;
-    bool m_algorithmNameHasBeenSet;
+    bool m_algorithmNameHasBeenSet = false;
 
     TrainingInputMode m_trainingInputMode;
-    bool m_trainingInputModeHasBeenSet;
+    bool m_trainingInputModeHasBeenSet = false;
 
     Aws::Vector<MetricDefinition> m_metricDefinitions;
-    bool m_metricDefinitionsHasBeenSet;
+    bool m_metricDefinitionsHasBeenSet = false;
 
     bool m_enableSageMakerMetricsTimeSeries;
-    bool m_enableSageMakerMetricsTimeSeriesHasBeenSet;
+    bool m_enableSageMakerMetricsTimeSeriesHasBeenSet = false;
   };
 
 } // namespace Model

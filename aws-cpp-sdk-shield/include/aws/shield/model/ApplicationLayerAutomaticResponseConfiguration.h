@@ -142,10 +142,10 @@ namespace Model
   private:
 
     ApplicationLayerAutomaticResponseStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ResponseAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AwsCloudMapServiceDiscovery m_awsCloudMap;
-    bool m_awsCloudMapHasBeenSet;
+    bool m_awsCloudMapHasBeenSet = false;
 
     DnsServiceDiscovery m_dns;
-    bool m_dnsHasBeenSet;
+    bool m_dnsHasBeenSet = false;
   };
 
 } // namespace Model

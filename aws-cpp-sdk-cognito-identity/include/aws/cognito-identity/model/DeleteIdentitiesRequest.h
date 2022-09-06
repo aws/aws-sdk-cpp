@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_identityIdsToDelete;
-    bool m_identityIdsToDeleteHasBeenSet;
+    bool m_identityIdsToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

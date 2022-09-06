@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_softwareVersion;
-    bool m_softwareVersionHasBeenSet;
+    bool m_softwareVersionHasBeenSet = false;
   };
 
 } // namespace Model

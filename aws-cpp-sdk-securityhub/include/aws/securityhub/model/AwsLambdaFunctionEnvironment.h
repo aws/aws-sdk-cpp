@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     AwsLambdaFunctionEnvironmentError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

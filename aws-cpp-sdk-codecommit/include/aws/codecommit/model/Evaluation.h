@@ -179,16 +179,16 @@ namespace Model
   private:
 
     bool m_approved;
-    bool m_approvedHasBeenSet;
+    bool m_approvedHasBeenSet = false;
 
     bool m_overridden;
-    bool m_overriddenHasBeenSet;
+    bool m_overriddenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_approvalRulesSatisfied;
-    bool m_approvalRulesSatisfiedHasBeenSet;
+    bool m_approvalRulesSatisfiedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_approvalRulesNotSatisfied;
-    bool m_approvalRulesNotSatisfiedHasBeenSet;
+    bool m_approvalRulesNotSatisfiedHasBeenSet = false;
   };
 
 } // namespace Model

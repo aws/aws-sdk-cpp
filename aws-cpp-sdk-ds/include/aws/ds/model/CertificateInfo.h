@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::String m_commonName;
-    bool m_commonNameHasBeenSet;
+    bool m_commonNameHasBeenSet = false;
 
     CertificateState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiryDateTime;
-    bool m_expiryDateTimeHasBeenSet;
+    bool m_expiryDateTimeHasBeenSet = false;
 
     CertificateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
   };
 
 } // namespace Model

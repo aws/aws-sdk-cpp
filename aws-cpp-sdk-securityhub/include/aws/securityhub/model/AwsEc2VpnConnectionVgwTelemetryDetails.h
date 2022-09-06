@@ -313,22 +313,22 @@ namespace Model
   private:
 
     int m_acceptedRouteCount;
-    bool m_acceptedRouteCountHasBeenSet;
+    bool m_acceptedRouteCountHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_lastStatusChange;
-    bool m_lastStatusChangeHasBeenSet;
+    bool m_lastStatusChangeHasBeenSet = false;
 
     Aws::String m_outsideIpAddress;
-    bool m_outsideIpAddressHasBeenSet;
+    bool m_outsideIpAddressHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

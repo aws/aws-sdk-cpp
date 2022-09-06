@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<LFTag> m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

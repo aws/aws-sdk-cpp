@@ -273,22 +273,22 @@ namespace Model
   private:
 
     Aws::String m_registeredGatewayArn;
-    bool m_registeredGatewayArnHasBeenSet;
+    bool m_registeredGatewayArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_nameTag;
-    bool m_nameTagHasBeenSet;
+    bool m_nameTagHasBeenSet = false;
 
     bool m_isMiddlebox;
-    bool m_isMiddleboxHasBeenSet;
+    bool m_isMiddleboxHasBeenSet = false;
   };
 
 } // namespace Model

@@ -193,13 +193,13 @@ namespace Model
   private:
 
     DocumentReadAction m_documentReadAction;
-    bool m_documentReadActionHasBeenSet;
+    bool m_documentReadActionHasBeenSet = false;
 
     DocumentReadMode m_documentReadMode;
-    bool m_documentReadModeHasBeenSet;
+    bool m_documentReadModeHasBeenSet = false;
 
     Aws::Vector<DocumentReadFeatureTypes> m_featureTypes;
-    bool m_featureTypesHasBeenSet;
+    bool m_featureTypesHasBeenSet = false;
   };
 
 } // namespace Model

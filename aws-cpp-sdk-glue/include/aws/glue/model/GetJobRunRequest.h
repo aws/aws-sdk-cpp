@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     bool m_predecessorsIncluded;
-    bool m_predecessorsIncludedHasBeenSet;
+    bool m_predecessorsIncludedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_subdivision;
-    bool m_subdivisionHasBeenSet;
+    bool m_subdivisionHasBeenSet = false;
   };
 
 } // namespace Model

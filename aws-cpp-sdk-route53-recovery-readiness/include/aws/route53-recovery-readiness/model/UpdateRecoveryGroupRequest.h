@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
 
     Aws::String m_recoveryGroupName;
-    bool m_recoveryGroupNameHasBeenSet;
+    bool m_recoveryGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -308,10 +308,10 @@ namespace Model
   private:
 
     bool m_failOnWarnings;
-    bool m_failOnWarningsHasBeenSet;
+    bool m_failOnWarningsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
   };
 

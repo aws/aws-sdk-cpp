@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_suiteDefinitionId;
-    bool m_suiteDefinitionIdHasBeenSet;
+    bool m_suiteDefinitionIdHasBeenSet = false;
 
     SuiteDefinitionConfiguration m_suiteDefinitionConfiguration;
-    bool m_suiteDefinitionConfigurationHasBeenSet;
+    bool m_suiteDefinitionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ namespace Model
   private:
 
     ChannelMessageStatus m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_detail;
-    bool m_detailHasBeenSet;
+    bool m_detailHasBeenSet = false;
   };
 
 } // namespace Model

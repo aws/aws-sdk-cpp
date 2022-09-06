@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet;
+    bool m_subChannelIdHasBeenSet = false;
 
     int m_membershipCount;
-    bool m_membershipCountHasBeenSet;
+    bool m_membershipCountHasBeenSet = false;
   };
 
 } // namespace Model

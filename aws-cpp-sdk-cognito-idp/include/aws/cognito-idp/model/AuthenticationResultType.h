@@ -264,22 +264,22 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     int m_expiresIn;
-    bool m_expiresInHasBeenSet;
+    bool m_expiresInHasBeenSet = false;
 
     Aws::String m_tokenType;
-    bool m_tokenTypeHasBeenSet;
+    bool m_tokenTypeHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     Aws::String m_idToken;
-    bool m_idTokenHasBeenSet;
+    bool m_idTokenHasBeenSet = false;
 
     NewDeviceMetadataType m_newDeviceMetadata;
-    bool m_newDeviceMetadataHasBeenSet;
+    bool m_newDeviceMetadataHasBeenSet = false;
   };
 
 } // namespace Model

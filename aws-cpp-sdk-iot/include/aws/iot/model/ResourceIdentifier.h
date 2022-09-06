@@ -359,28 +359,28 @@ namespace Model
   private:
 
     Aws::String m_deviceCertificateId;
-    bool m_deviceCertificateIdHasBeenSet;
+    bool m_deviceCertificateIdHasBeenSet = false;
 
     Aws::String m_caCertificateId;
-    bool m_caCertificateIdHasBeenSet;
+    bool m_caCertificateIdHasBeenSet = false;
 
     Aws::String m_cognitoIdentityPoolId;
-    bool m_cognitoIdentityPoolIdHasBeenSet;
+    bool m_cognitoIdentityPoolIdHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     PolicyVersionIdentifier m_policyVersionIdentifier;
-    bool m_policyVersionIdentifierHasBeenSet;
+    bool m_policyVersionIdentifierHasBeenSet = false;
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_roleAliasArn;
-    bool m_roleAliasArnHasBeenSet;
+    bool m_roleAliasArnHasBeenSet = false;
   };
 
 } // namespace Model

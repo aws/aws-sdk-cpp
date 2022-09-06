@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     WirelessDeviceType m_wirelessDeviceType;
-    bool m_wirelessDeviceTypeHasBeenSet;
+    bool m_wirelessDeviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

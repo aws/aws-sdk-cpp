@@ -1094,67 +1094,67 @@ namespace Model
   private:
 
     Aws::String m_replicationInstanceIdentifier;
-    bool m_replicationInstanceIdentifierHasBeenSet;
+    bool m_replicationInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_replicationInstanceClass;
-    bool m_replicationInstanceClassHasBeenSet;
+    bool m_replicationInstanceClassHasBeenSet = false;
 
     Aws::String m_replicationInstanceStatus;
-    bool m_replicationInstanceStatusHasBeenSet;
+    bool m_replicationInstanceStatusHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::Utils::DateTime m_instanceCreateTime;
-    bool m_instanceCreateTimeHasBeenSet;
+    bool m_instanceCreateTimeHasBeenSet = false;
 
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     ReplicationSubnetGroup m_replicationSubnetGroup;
-    bool m_replicationSubnetGroupHasBeenSet;
+    bool m_replicationSubnetGroupHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     ReplicationPendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationInstancePublicIpAddresses;
-    bool m_replicationInstancePublicIpAddressesHasBeenSet;
+    bool m_replicationInstancePublicIpAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationInstancePrivateIpAddresses;
-    bool m_replicationInstancePrivateIpAddressesHasBeenSet;
+    bool m_replicationInstancePrivateIpAddressesHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::String m_secondaryAvailabilityZone;
-    bool m_secondaryAvailabilityZoneHasBeenSet;
+    bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
     Aws::Utils::DateTime m_freeUntil;
-    bool m_freeUntilHasBeenSet;
+    bool m_freeUntilHasBeenSet = false;
 
     Aws::String m_dnsNameServers;
-    bool m_dnsNameServersHasBeenSet;
+    bool m_dnsNameServersHasBeenSet = false;
   };
 
 } // namespace Model

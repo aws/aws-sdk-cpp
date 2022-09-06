@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_violationTargetDescription;
-    bool m_violationTargetDescriptionHasBeenSet;
+    bool m_violationTargetDescriptionHasBeenSet = false;
 
     int m_numberOfRuleGroupsAlreadyAssociated;
-    bool m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet;
+    bool m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet = false;
   };
 
 } // namespace Model

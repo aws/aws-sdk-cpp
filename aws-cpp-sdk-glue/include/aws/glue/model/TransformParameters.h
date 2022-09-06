@@ -121,10 +121,10 @@ namespace Model
   private:
 
     TransformType m_transformType;
-    bool m_transformTypeHasBeenSet;
+    bool m_transformTypeHasBeenSet = false;
 
     FindMatchesParameters m_findMatchesParameters;
-    bool m_findMatchesParametersHasBeenSet;
+    bool m_findMatchesParametersHasBeenSet = false;
   };
 
 } // namespace Model

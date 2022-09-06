@@ -168,16 +168,16 @@ namespace Model
   private:
 
     ListJobsFilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ListJobsSortCriteria m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

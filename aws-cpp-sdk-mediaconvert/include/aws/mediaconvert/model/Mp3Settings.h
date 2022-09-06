@@ -173,19 +173,19 @@ namespace Model
   private:
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     int m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     Mp3RateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     int m_vbrQuality;
-    bool m_vbrQualityHasBeenSet;
+    bool m_vbrQualityHasBeenSet = false;
   };
 
 } // namespace Model

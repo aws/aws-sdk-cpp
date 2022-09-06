@@ -109,10 +109,10 @@ namespace Model
   private:
 
     StorageClassAnalysisSchemaVersion m_outputSchemaVersion;
-    bool m_outputSchemaVersionHasBeenSet;
+    bool m_outputSchemaVersionHasBeenSet = false;
 
     AnalyticsExportDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

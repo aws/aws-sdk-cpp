@@ -212,19 +212,19 @@ namespace Model
   private:
 
     Aws::String m_skillId;
-    bool m_skillIdHasBeenSet;
+    bool m_skillIdHasBeenSet = false;
 
     Aws::String m_skillName;
-    bool m_skillNameHasBeenSet;
+    bool m_skillNameHasBeenSet = false;
 
     bool m_supportsLinking;
-    bool m_supportsLinkingHasBeenSet;
+    bool m_supportsLinkingHasBeenSet = false;
 
     EnablementType m_enablementType;
-    bool m_enablementTypeHasBeenSet;
+    bool m_enablementTypeHasBeenSet = false;
 
     SkillType m_skillType;
-    bool m_skillTypeHasBeenSet;
+    bool m_skillTypeHasBeenSet = false;
   };
 
 } // namespace Model

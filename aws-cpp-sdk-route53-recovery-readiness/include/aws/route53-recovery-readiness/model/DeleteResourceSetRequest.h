@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_resourceSetName;
-    bool m_resourceSetNameHasBeenSet;
+    bool m_resourceSetNameHasBeenSet = false;
   };
 
 } // namespace Model

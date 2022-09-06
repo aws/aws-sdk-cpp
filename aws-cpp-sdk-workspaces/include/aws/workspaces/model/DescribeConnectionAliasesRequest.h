@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_aliasIds;
-    bool m_aliasIdsHasBeenSet;
+    bool m_aliasIdsHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

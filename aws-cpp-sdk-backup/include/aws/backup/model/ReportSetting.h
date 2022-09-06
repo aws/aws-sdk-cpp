@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_reportTemplate;
-    bool m_reportTemplateHasBeenSet;
+    bool m_reportTemplateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_frameworkArns;
-    bool m_frameworkArnsHasBeenSet;
+    bool m_frameworkArnsHasBeenSet = false;
 
     int m_numberOfFrameworks;
-    bool m_numberOfFrameworksHasBeenSet;
+    bool m_numberOfFrameworksHasBeenSet = false;
   };
 
 } // namespace Model

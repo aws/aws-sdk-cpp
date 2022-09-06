@@ -302,19 +302,19 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     BundleType m_bundleType;
-    bool m_bundleTypeHasBeenSet;
+    bool m_bundleTypeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
   };
 
 } // namespace Model

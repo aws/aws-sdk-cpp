@@ -115,10 +115,10 @@ namespace Model
   private:
 
     InsightType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     EndTimeRange m_endTimeRange;
-    bool m_endTimeRangeHasBeenSet;
+    bool m_endTimeRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_parameterKey;
-    bool m_parameterKeyHasBeenSet;
+    bool m_parameterKeyHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_parameterType;
-    bool m_parameterTypeHasBeenSet;
+    bool m_parameterTypeHasBeenSet = false;
 
     bool m_noEcho;
-    bool m_noEchoHasBeenSet;
+    bool m_noEchoHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ParameterConstraints m_parameterConstraints;
-    bool m_parameterConstraintsHasBeenSet;
+    bool m_parameterConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

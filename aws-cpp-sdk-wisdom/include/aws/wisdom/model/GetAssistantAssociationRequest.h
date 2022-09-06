@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_assistantAssociationId;
-    bool m_assistantAssociationIdHasBeenSet;
+    bool m_assistantAssociationIdHasBeenSet = false;
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
   };
 
 } // namespace Model

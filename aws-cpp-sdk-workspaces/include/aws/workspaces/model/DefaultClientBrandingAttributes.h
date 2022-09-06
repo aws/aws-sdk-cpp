@@ -413,19 +413,19 @@ namespace Model
   private:
 
     Aws::String m_logoUrl;
-    bool m_logoUrlHasBeenSet;
+    bool m_logoUrlHasBeenSet = false;
 
     Aws::String m_supportEmail;
-    bool m_supportEmailHasBeenSet;
+    bool m_supportEmailHasBeenSet = false;
 
     Aws::String m_supportLink;
-    bool m_supportLinkHasBeenSet;
+    bool m_supportLinkHasBeenSet = false;
 
     Aws::String m_forgotPasswordLink;
-    bool m_forgotPasswordLinkHasBeenSet;
+    bool m_forgotPasswordLinkHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_loginMessage;
-    bool m_loginMessageHasBeenSet;
+    bool m_loginMessageHasBeenSet = false;
   };
 
 } // namespace Model

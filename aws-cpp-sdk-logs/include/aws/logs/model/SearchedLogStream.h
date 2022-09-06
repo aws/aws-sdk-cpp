@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     bool m_searchedCompletely;
-    bool m_searchedCompletelyHasBeenSet;
+    bool m_searchedCompletelyHasBeenSet = false;
   };
 
 } // namespace Model

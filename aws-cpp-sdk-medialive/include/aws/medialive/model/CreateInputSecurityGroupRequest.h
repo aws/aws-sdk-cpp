@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<InputWhitelistRuleCidr> m_whitelistRules;
-    bool m_whitelistRulesHasBeenSet;
+    bool m_whitelistRulesHasBeenSet = false;
   };
 
 } // namespace Model

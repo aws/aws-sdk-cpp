@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TriggerUpdate m_triggerUpdate;
-    bool m_triggerUpdateHasBeenSet;
+    bool m_triggerUpdateHasBeenSet = false;
   };
 
 } // namespace Model

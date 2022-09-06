@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_outputName;
-    bool m_outputNameHasBeenSet;
+    bool m_outputNameHasBeenSet = false;
 
     ProcessingS3Output m_s3Output;
-    bool m_s3OutputHasBeenSet;
+    bool m_s3OutputHasBeenSet = false;
 
     ProcessingFeatureStoreOutput m_featureStoreOutput;
-    bool m_featureStoreOutputHasBeenSet;
+    bool m_featureStoreOutputHasBeenSet = false;
 
     bool m_appManaged;
-    bool m_appManagedHasBeenSet;
+    bool m_appManagedHasBeenSet = false;
   };
 
 } // namespace Model

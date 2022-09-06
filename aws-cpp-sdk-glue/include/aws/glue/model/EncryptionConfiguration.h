@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Vector<S3Encryption> m_s3Encryption;
-    bool m_s3EncryptionHasBeenSet;
+    bool m_s3EncryptionHasBeenSet = false;
 
     CloudWatchEncryption m_cloudWatchEncryption;
-    bool m_cloudWatchEncryptionHasBeenSet;
+    bool m_cloudWatchEncryptionHasBeenSet = false;
 
     JobBookmarksEncryption m_jobBookmarksEncryption;
-    bool m_jobBookmarksEncryptionHasBeenSet;
+    bool m_jobBookmarksEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

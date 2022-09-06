@@ -480,37 +480,37 @@ namespace Model
   private:
 
     Aws::String m_apiDescription;
-    bool m_apiDescriptionHasBeenSet;
+    bool m_apiDescriptionHasBeenSet = false;
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     Aws::String m_apiName;
-    bool m_apiNameHasBeenSet;
+    bool m_apiNameHasBeenSet = false;
 
     Aws::String m_apiSpecificationMd5Hash;
-    bool m_apiSpecificationMd5HashHasBeenSet;
+    bool m_apiSpecificationMd5HashHasBeenSet = false;
 
     Aws::String m_apiSpecificationUploadUrl;
-    bool m_apiSpecificationUploadUrlHasBeenSet;
+    bool m_apiSpecificationUploadUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_apiSpecificationUploadUrlExpiresAt;
-    bool m_apiSpecificationUploadUrlExpiresAtHasBeenSet;
+    bool m_apiSpecificationUploadUrlExpiresAtHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     ProtocolType m_protocolType;
-    bool m_protocolTypeHasBeenSet;
+    bool m_protocolTypeHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

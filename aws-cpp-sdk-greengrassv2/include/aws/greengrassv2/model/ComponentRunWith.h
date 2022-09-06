@@ -322,13 +322,13 @@ namespace Model
   private:
 
     Aws::String m_posixUser;
-    bool m_posixUserHasBeenSet;
+    bool m_posixUserHasBeenSet = false;
 
     SystemResourceLimits m_systemResourceLimits;
-    bool m_systemResourceLimitsHasBeenSet;
+    bool m_systemResourceLimitsHasBeenSet = false;
 
     Aws::String m_windowsUser;
-    bool m_windowsUserHasBeenSet;
+    bool m_windowsUserHasBeenSet = false;
   };
 
 } // namespace Model

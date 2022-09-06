@@ -330,22 +330,22 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_imageManifest;
-    bool m_imageManifestHasBeenSet;
+    bool m_imageManifestHasBeenSet = false;
 
     Aws::String m_imageManifestMediaType;
-    bool m_imageManifestMediaTypeHasBeenSet;
+    bool m_imageManifestMediaTypeHasBeenSet = false;
 
     Aws::String m_imageTag;
-    bool m_imageTagHasBeenSet;
+    bool m_imageTagHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
   };
 
 } // namespace Model

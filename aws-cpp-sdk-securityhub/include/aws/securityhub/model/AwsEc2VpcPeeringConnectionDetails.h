@@ -218,19 +218,19 @@ namespace Model
   private:
 
     AwsEc2VpcPeeringConnectionVpcInfoDetails m_accepterVpcInfo;
-    bool m_accepterVpcInfoHasBeenSet;
+    bool m_accepterVpcInfoHasBeenSet = false;
 
     Aws::String m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     AwsEc2VpcPeeringConnectionVpcInfoDetails m_requesterVpcInfo;
-    bool m_requesterVpcInfoHasBeenSet;
+    bool m_requesterVpcInfoHasBeenSet = false;
 
     AwsEc2VpcPeeringConnectionStatusDetails m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -381,25 +381,25 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_userCode;
-    bool m_userCodeHasBeenSet;
+    bool m_userCodeHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_deviceSerialNumber;
-    bool m_deviceSerialNumberHasBeenSet;
+    bool m_deviceSerialNumberHasBeenSet = false;
 
     Aws::String m_amazonId;
-    bool m_amazonIdHasBeenSet;
+    bool m_amazonIdHasBeenSet = false;
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

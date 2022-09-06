@@ -327,34 +327,34 @@ namespace Model
   private:
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
 
     Aws::String m_lensVersion;
-    bool m_lensVersionHasBeenSet;
+    bool m_lensVersionHasBeenSet = false;
 
     Aws::String m_lensName;
-    bool m_lensNameHasBeenSet;
+    bool m_lensNameHasBeenSet = false;
 
     LensStatus m_lensStatus;
-    bool m_lensStatusHasBeenSet;
+    bool m_lensStatusHasBeenSet = false;
 
     Aws::Vector<PillarReviewSummary> m_pillarReviewSummaries;
-    bool m_pillarReviewSummariesHasBeenSet;
+    bool m_pillarReviewSummariesHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     Aws::Map<Risk, int> m_riskCounts;
-    bool m_riskCountsHasBeenSet;
+    bool m_riskCountsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

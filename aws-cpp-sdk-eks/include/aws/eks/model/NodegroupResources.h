@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::String m_remoteAccessSecurityGroup;
-    bool m_remoteAccessSecurityGroupHasBeenSet;
+    bool m_remoteAccessSecurityGroupHasBeenSet = false;
   };
 
 } // namespace Model

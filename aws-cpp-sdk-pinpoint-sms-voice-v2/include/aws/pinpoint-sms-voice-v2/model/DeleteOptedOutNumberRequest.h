@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
 
     Aws::String m_optedOutNumber;
-    bool m_optedOutNumberHasBeenSet;
+    bool m_optedOutNumberHasBeenSet = false;
   };
 
 } // namespace Model

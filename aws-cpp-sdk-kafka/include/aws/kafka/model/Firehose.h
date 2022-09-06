@@ -72,10 +72,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryStream;
-    bool m_deliveryStreamHasBeenSet;
+    bool m_deliveryStreamHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

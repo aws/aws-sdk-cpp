@@ -5324,40 +5324,40 @@ namespace Model
   private:
 
     Aws::String m_workteamArn;
-    bool m_workteamArnHasBeenSet;
+    bool m_workteamArnHasBeenSet = false;
 
     UiConfig m_uiConfig;
-    bool m_uiConfigHasBeenSet;
+    bool m_uiConfigHasBeenSet = false;
 
     Aws::String m_preHumanTaskLambdaArn;
-    bool m_preHumanTaskLambdaArnHasBeenSet;
+    bool m_preHumanTaskLambdaArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_taskKeywords;
-    bool m_taskKeywordsHasBeenSet;
+    bool m_taskKeywordsHasBeenSet = false;
 
     Aws::String m_taskTitle;
-    bool m_taskTitleHasBeenSet;
+    bool m_taskTitleHasBeenSet = false;
 
     Aws::String m_taskDescription;
-    bool m_taskDescriptionHasBeenSet;
+    bool m_taskDescriptionHasBeenSet = false;
 
     int m_numberOfHumanWorkersPerDataObject;
-    bool m_numberOfHumanWorkersPerDataObjectHasBeenSet;
+    bool m_numberOfHumanWorkersPerDataObjectHasBeenSet = false;
 
     int m_taskTimeLimitInSeconds;
-    bool m_taskTimeLimitInSecondsHasBeenSet;
+    bool m_taskTimeLimitInSecondsHasBeenSet = false;
 
     int m_taskAvailabilityLifetimeInSeconds;
-    bool m_taskAvailabilityLifetimeInSecondsHasBeenSet;
+    bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
 
     int m_maxConcurrentTaskCount;
-    bool m_maxConcurrentTaskCountHasBeenSet;
+    bool m_maxConcurrentTaskCountHasBeenSet = false;
 
     AnnotationConsolidationConfig m_annotationConsolidationConfig;
-    bool m_annotationConsolidationConfigHasBeenSet;
+    bool m_annotationConsolidationConfigHasBeenSet = false;
 
     PublicWorkforceTaskPrice m_publicWorkforceTaskPrice;
-    bool m_publicWorkforceTaskPriceHasBeenSet;
+    bool m_publicWorkforceTaskPriceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -243,13 +243,13 @@ namespace Model
   private:
 
     Aws::String m_regexPatternSetId;
-    bool m_regexPatternSetIdHasBeenSet;
+    bool m_regexPatternSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regexPatternStrings;
-    bool m_regexPatternStringsHasBeenSet;
+    bool m_regexPatternStringsHasBeenSet = false;
   };
 
 } // namespace Model

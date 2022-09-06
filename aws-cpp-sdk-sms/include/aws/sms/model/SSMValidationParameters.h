@@ -255,22 +255,22 @@ namespace Model
   private:
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     ScriptType m_scriptType;
-    bool m_scriptTypeHasBeenSet;
+    bool m_scriptTypeHasBeenSet = false;
 
     Aws::String m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     int m_executionTimeoutSeconds;
-    bool m_executionTimeoutSecondsHasBeenSet;
+    bool m_executionTimeoutSecondsHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
   };
 
 } // namespace Model

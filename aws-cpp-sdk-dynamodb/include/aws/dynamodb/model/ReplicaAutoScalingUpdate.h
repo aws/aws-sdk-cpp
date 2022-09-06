@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingUpdate> m_replicaGlobalSecondaryIndexUpdates;
-    bool m_replicaGlobalSecondaryIndexUpdatesHasBeenSet;
+    bool m_replicaGlobalSecondaryIndexUpdatesHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_replicaProvisionedReadCapacityAutoScalingUpdate;
-    bool m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet;
+    bool m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet = false;
   };
 
 } // namespace Model

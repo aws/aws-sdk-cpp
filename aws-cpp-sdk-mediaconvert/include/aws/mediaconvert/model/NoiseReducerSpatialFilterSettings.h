@@ -112,13 +112,13 @@ namespace Model
   private:
 
     int m_postFilterSharpenStrength;
-    bool m_postFilterSharpenStrengthHasBeenSet;
+    bool m_postFilterSharpenStrengthHasBeenSet = false;
 
     int m_speed;
-    bool m_speedHasBeenSet;
+    bool m_speedHasBeenSet = false;
 
     int m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

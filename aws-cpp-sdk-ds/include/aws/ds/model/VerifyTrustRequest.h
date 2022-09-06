@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_trustId;
-    bool m_trustIdHasBeenSet;
+    bool m_trustIdHasBeenSet = false;
   };
 
 } // namespace Model

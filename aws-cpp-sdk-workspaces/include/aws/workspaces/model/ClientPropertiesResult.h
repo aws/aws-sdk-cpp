@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ClientProperties m_clientProperties;
-    bool m_clientPropertiesHasBeenSet;
+    bool m_clientPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

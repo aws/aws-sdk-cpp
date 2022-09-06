@@ -182,10 +182,10 @@ namespace Model
   private:
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     ApplicationVersionLifecycleConfig m_versionLifecycleConfig;
-    bool m_versionLifecycleConfigHasBeenSet;
+    bool m_versionLifecycleConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::String m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
   };
 
 } // namespace Model

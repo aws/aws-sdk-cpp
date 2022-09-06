@@ -101,10 +101,10 @@ namespace Model
   private:
 
     long long m_cores;
-    bool m_coresHasBeenSet;
+    bool m_coresHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
   };
 
 } // namespace Model

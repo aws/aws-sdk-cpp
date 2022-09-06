@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_keyPairName;
-    bool m_keyPairNameHasBeenSet;
+    bool m_keyPairNameHasBeenSet = false;
 
     Aws::String m_expectedFingerprint;
-    bool m_expectedFingerprintHasBeenSet;
+    bool m_expectedFingerprintHasBeenSet = false;
   };
 
 } // namespace Model

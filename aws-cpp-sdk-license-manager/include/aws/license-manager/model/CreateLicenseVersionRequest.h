@@ -521,40 +521,40 @@ namespace Model
   private:
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::String m_licenseName;
-    bool m_licenseNameHasBeenSet;
+    bool m_licenseNameHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Issuer m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     DatetimeRange m_validity;
-    bool m_validityHasBeenSet;
+    bool m_validityHasBeenSet = false;
 
     Aws::Vector<Metadata> m_licenseMetadata;
-    bool m_licenseMetadataHasBeenSet;
+    bool m_licenseMetadataHasBeenSet = false;
 
     Aws::Vector<Entitlement> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     ConsumptionConfiguration m_consumptionConfiguration;
-    bool m_consumptionConfigurationHasBeenSet;
+    bool m_consumptionConfigurationHasBeenSet = false;
 
     LicenseStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
   };
 
 } // namespace Model

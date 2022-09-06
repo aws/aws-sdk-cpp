@@ -526,31 +526,31 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::String m_relationalDatabaseSnapshotName;
-    bool m_relationalDatabaseSnapshotNameHasBeenSet;
+    bool m_relationalDatabaseSnapshotNameHasBeenSet = false;
 
     Aws::String m_relationalDatabaseBundleId;
-    bool m_relationalDatabaseBundleIdHasBeenSet;
+    bool m_relationalDatabaseBundleIdHasBeenSet = false;
 
     Aws::String m_sourceRelationalDatabaseName;
-    bool m_sourceRelationalDatabaseNameHasBeenSet;
+    bool m_sourceRelationalDatabaseNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreTime;
-    bool m_restoreTimeHasBeenSet;
+    bool m_restoreTimeHasBeenSet = false;
 
     bool m_useLatestRestorableTime;
-    bool m_useLatestRestorableTimeHasBeenSet;
+    bool m_useLatestRestorableTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -661,46 +661,46 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     DomainType m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceOwnerId;
-    bool m_networkInterfaceOwnerIdHasBeenSet;
+    bool m_networkInterfaceOwnerIdHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_publicIpv4Pool;
-    bool m_publicIpv4PoolHasBeenSet;
+    bool m_publicIpv4PoolHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     Aws::String m_customerOwnedIp;
-    bool m_customerOwnedIpHasBeenSet;
+    bool m_customerOwnedIpHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;
-    bool m_customerOwnedIpv4PoolHasBeenSet;
+    bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
     Aws::String m_carrierIp;
-    bool m_carrierIpHasBeenSet;
+    bool m_carrierIpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_audioDescriptionNames;
-    bool m_audioDescriptionNamesHasBeenSet;
+    bool m_audioDescriptionNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_captionDescriptionNames;
-    bool m_captionDescriptionNamesHasBeenSet;
+    bool m_captionDescriptionNamesHasBeenSet = false;
 
     Aws::String m_outputName;
-    bool m_outputNameHasBeenSet;
+    bool m_outputNameHasBeenSet = false;
 
     OutputSettings m_outputSettings;
-    bool m_outputSettingsHasBeenSet;
+    bool m_outputSettingsHasBeenSet = false;
 
     Aws::String m_videoDescriptionName;
-    bool m_videoDescriptionNameHasBeenSet;
+    bool m_videoDescriptionNameHasBeenSet = false;
   };
 
 } // namespace Model

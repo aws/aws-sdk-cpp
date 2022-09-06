@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_applicationNames;
-    bool m_applicationNamesHasBeenSet;
+    bool m_applicationNamesHasBeenSet = false;
   };
 
 } // namespace Model

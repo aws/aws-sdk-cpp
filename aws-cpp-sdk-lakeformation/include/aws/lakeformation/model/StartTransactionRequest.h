@@ -77,7 +77,7 @@ namespace Model
   private:
 
     TransactionType m_transactionType;
-    bool m_transactionTypeHasBeenSet;
+    bool m_transactionTypeHasBeenSet = false;
   };
 
 } // namespace Model

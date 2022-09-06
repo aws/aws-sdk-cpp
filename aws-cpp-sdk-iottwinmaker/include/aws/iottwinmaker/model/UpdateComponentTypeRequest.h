@@ -378,25 +378,25 @@ namespace Model
   private:
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_extendsFrom;
-    bool m_extendsFromHasBeenSet;
+    bool m_extendsFromHasBeenSet = false;
 
     Aws::Map<Aws::String, FunctionRequest> m_functions;
-    bool m_functionsHasBeenSet;
+    bool m_functionsHasBeenSet = false;
 
     bool m_isSingleton;
-    bool m_isSingletonHasBeenSet;
+    bool m_isSingletonHasBeenSet = false;
 
     Aws::Map<Aws::String, PropertyDefinitionRequest> m_propertyDefinitions;
-    bool m_propertyDefinitionsHasBeenSet;
+    bool m_propertyDefinitionsHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -166,16 +166,16 @@ namespace Model
   private:
 
     MaintenanceWindowRunCommandParameters m_runCommand;
-    bool m_runCommandHasBeenSet;
+    bool m_runCommandHasBeenSet = false;
 
     MaintenanceWindowAutomationParameters m_automation;
-    bool m_automationHasBeenSet;
+    bool m_automationHasBeenSet = false;
 
     MaintenanceWindowStepFunctionsParameters m_stepFunctions;
-    bool m_stepFunctionsHasBeenSet;
+    bool m_stepFunctionsHasBeenSet = false;
 
     MaintenanceWindowLambdaParameters m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

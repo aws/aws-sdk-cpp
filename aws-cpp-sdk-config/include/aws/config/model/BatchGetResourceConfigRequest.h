@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<ResourceKey> m_resourceKeys;
-    bool m_resourceKeysHasBeenSet;
+    bool m_resourceKeysHasBeenSet = false;
   };
 
 } // namespace Model

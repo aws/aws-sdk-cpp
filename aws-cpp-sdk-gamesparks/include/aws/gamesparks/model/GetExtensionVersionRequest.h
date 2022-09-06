@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_extensionVersion;
-    bool m_extensionVersionHasBeenSet;
+    bool m_extensionVersionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

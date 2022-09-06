@@ -113,13 +113,13 @@ namespace Model
   private:
 
     bool m_isMainNode;
-    bool m_isMainNodeHasBeenSet;
+    bool m_isMainNodeHasBeenSet = false;
 
     int m_numNodes;
-    bool m_numNodesHasBeenSet;
+    bool m_numNodesHasBeenSet = false;
 
     int m_nodeIndex;
-    bool m_nodeIndexHasBeenSet;
+    bool m_nodeIndexHasBeenSet = false;
   };
 
 } // namespace Model

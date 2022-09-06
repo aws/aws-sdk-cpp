@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_startingHashKey;
-    bool m_startingHashKeyHasBeenSet;
+    bool m_startingHashKeyHasBeenSet = false;
 
     Aws::String m_endingHashKey;
-    bool m_endingHashKeyHasBeenSet;
+    bool m_endingHashKeyHasBeenSet = false;
   };
 
 } // namespace Model

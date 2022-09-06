@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsList;
-    bool m_tagsListHasBeenSet;
+    bool m_tagsListHasBeenSet = false;
   };
 
 } // namespace Model

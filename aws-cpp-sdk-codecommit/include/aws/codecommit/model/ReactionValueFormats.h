@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_emoji;
-    bool m_emojiHasBeenSet;
+    bool m_emojiHasBeenSet = false;
 
     Aws::String m_shortCode;
-    bool m_shortCodeHasBeenSet;
+    bool m_shortCodeHasBeenSet = false;
 
     Aws::String m_unicode;
-    bool m_unicodeHasBeenSet;
+    bool m_unicodeHasBeenSet = false;
   };
 
 } // namespace Model

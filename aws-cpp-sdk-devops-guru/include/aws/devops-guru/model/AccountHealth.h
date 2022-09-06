@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     AccountInsightHealth m_insight;
-    bool m_insightHasBeenSet;
+    bool m_insightHasBeenSet = false;
   };
 
 } // namespace Model

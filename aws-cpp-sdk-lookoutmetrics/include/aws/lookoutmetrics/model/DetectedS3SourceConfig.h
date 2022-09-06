@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DetectedFileFormatDescriptor m_fileFormatDescriptor;
-    bool m_fileFormatDescriptorHasBeenSet;
+    bool m_fileFormatDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

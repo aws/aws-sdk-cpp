@@ -69,7 +69,7 @@ namespace Model
   private:
 
     StreamingDistributionConfigWithTags m_streamingDistributionConfigWithTags;
-    bool m_streamingDistributionConfigWithTagsHasBeenSet;
+    bool m_streamingDistributionConfigWithTagsHasBeenSet = false;
   };
 
 } // namespace Model

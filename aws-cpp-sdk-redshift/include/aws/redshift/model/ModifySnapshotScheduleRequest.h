@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_scheduleIdentifier;
-    bool m_scheduleIdentifierHasBeenSet;
+    bool m_scheduleIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scheduleDefinitions;
-    bool m_scheduleDefinitionsHasBeenSet;
+    bool m_scheduleDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

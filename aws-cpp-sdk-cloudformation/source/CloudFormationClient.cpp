@@ -143,7 +143,7 @@ CloudFormationClient::~CloudFormationClient()
 
 void CloudFormationClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudFormation");
+  AWSClient::SetServiceClientName("CloudFormation");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

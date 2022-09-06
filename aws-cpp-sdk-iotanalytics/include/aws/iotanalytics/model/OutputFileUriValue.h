@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
   };
 
 } // namespace Model

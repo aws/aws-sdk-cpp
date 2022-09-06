@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Attachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_vpnConnectionArn;
-    bool m_vpnConnectionArnHasBeenSet;
+    bool m_vpnConnectionArnHasBeenSet = false;
   };
 
 } // namespace Model

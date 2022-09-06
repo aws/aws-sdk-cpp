@@ -422,31 +422,31 @@ namespace Model
   private:
 
     MonitoringBaselineConfig m_baselineConfig;
-    bool m_baselineConfigHasBeenSet;
+    bool m_baselineConfigHasBeenSet = false;
 
     Aws::Vector<MonitoringInput> m_monitoringInputs;
-    bool m_monitoringInputsHasBeenSet;
+    bool m_monitoringInputsHasBeenSet = false;
 
     MonitoringOutputConfig m_monitoringOutputConfig;
-    bool m_monitoringOutputConfigHasBeenSet;
+    bool m_monitoringOutputConfigHasBeenSet = false;
 
     MonitoringResources m_monitoringResources;
-    bool m_monitoringResourcesHasBeenSet;
+    bool m_monitoringResourcesHasBeenSet = false;
 
     MonitoringAppSpecification m_monitoringAppSpecification;
-    bool m_monitoringAppSpecificationHasBeenSet;
+    bool m_monitoringAppSpecificationHasBeenSet = false;
 
     MonitoringStoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     NetworkConfig m_networkConfig;
-    bool m_networkConfigHasBeenSet;
+    bool m_networkConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

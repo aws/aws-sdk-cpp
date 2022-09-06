@@ -593,34 +593,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_semanticVersion;
-    bool m_semanticVersionHasBeenSet;
+    bool m_semanticVersionHasBeenSet = false;
 
     Aws::Vector<ComponentConfiguration> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
 
     Aws::String m_parentImage;
-    bool m_parentImageHasBeenSet;
+    bool m_parentImageHasBeenSet = false;
 
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
-    bool m_additionalInstanceConfigurationHasBeenSet;
+    bool m_additionalInstanceConfigurationHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

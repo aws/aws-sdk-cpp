@@ -476,22 +476,22 @@ namespace Model
   private:
 
     Aws::String m_smsMessage;
-    bool m_smsMessageHasBeenSet;
+    bool m_smsMessageHasBeenSet = false;
 
     Aws::String m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     Aws::String m_emailSubject;
-    bool m_emailSubjectHasBeenSet;
+    bool m_emailSubjectHasBeenSet = false;
 
     Aws::String m_emailMessageByLink;
-    bool m_emailMessageByLinkHasBeenSet;
+    bool m_emailMessageByLinkHasBeenSet = false;
 
     Aws::String m_emailSubjectByLink;
-    bool m_emailSubjectByLinkHasBeenSet;
+    bool m_emailSubjectByLinkHasBeenSet = false;
 
     DefaultEmailOptionType m_defaultEmailOption;
-    bool m_defaultEmailOptionHasBeenSet;
+    bool m_defaultEmailOptionHasBeenSet = false;
   };
 
 } // namespace Model

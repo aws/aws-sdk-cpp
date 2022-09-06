@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     UserFeedback m_userFeedback;
-    bool m_userFeedbackHasBeenSet;
+    bool m_userFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

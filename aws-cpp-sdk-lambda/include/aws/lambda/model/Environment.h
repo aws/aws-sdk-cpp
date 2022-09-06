@@ -135,7 +135,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_alarmArn;
-    bool m_alarmArnHasBeenSet;
+    bool m_alarmArnHasBeenSet = false;
 
     Aws::String m_alarmRoleArn;
-    bool m_alarmRoleArnHasBeenSet;
+    bool m_alarmRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

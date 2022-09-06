@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_bucketARN;
-    bool m_bucketARNHasBeenSet;
+    bool m_bucketARNHasBeenSet = false;
 
     Aws::String m_fileKey;
-    bool m_fileKeyHasBeenSet;
+    bool m_fileKeyHasBeenSet = false;
 
     Aws::String m_referenceRoleARN;
-    bool m_referenceRoleARNHasBeenSet;
+    bool m_referenceRoleARNHasBeenSet = false;
   };
 
 } // namespace Model

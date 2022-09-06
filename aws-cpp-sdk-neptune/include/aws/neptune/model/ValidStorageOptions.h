@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::Vector<Range> m_storageSize;
-    bool m_storageSizeHasBeenSet;
+    bool m_storageSizeHasBeenSet = false;
 
     Aws::Vector<Range> m_provisionedIops;
-    bool m_provisionedIopsHasBeenSet;
+    bool m_provisionedIopsHasBeenSet = false;
 
     Aws::Vector<DoubleRange> m_iopsToStorageRatio;
-    bool m_iopsToStorageRatioHasBeenSet;
+    bool m_iopsToStorageRatioHasBeenSet = false;
   };
 
 } // namespace Model

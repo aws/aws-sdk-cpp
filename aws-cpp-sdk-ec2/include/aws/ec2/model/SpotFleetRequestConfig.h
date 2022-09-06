@@ -283,22 +283,22 @@ namespace Model
   private:
 
     ActivityStatus m_activityStatus;
-    bool m_activityStatusHasBeenSet;
+    bool m_activityStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     SpotFleetRequestConfigData m_spotFleetRequestConfig;
-    bool m_spotFleetRequestConfigHasBeenSet;
+    bool m_spotFleetRequestConfigHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
+    bool m_spotFleetRequestIdHasBeenSet = false;
 
     BatchState m_spotFleetRequestState;
-    bool m_spotFleetRequestStateHasBeenSet;
+    bool m_spotFleetRequestStateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

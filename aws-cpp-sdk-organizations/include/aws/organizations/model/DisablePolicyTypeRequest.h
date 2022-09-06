@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::String m_rootId;
-    bool m_rootIdHasBeenSet;
+    bool m_rootIdHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
   };
 
 } // namespace Model

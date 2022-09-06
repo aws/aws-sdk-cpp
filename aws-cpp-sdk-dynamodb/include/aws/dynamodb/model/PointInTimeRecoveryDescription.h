@@ -158,13 +158,13 @@ namespace Model
   private:
 
     PointInTimeRecoveryStatus m_pointInTimeRecoveryStatus;
-    bool m_pointInTimeRecoveryStatusHasBeenSet;
+    bool m_pointInTimeRecoveryStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_earliestRestorableDateTime;
-    bool m_earliestRestorableDateTimeHasBeenSet;
+    bool m_earliestRestorableDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestRestorableDateTime;
-    bool m_latestRestorableDateTimeHasBeenSet;
+    bool m_latestRestorableDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

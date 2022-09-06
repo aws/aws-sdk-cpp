@@ -226,22 +226,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
 
     int m_updateVersion;
-    bool m_updateVersionHasBeenSet;
+    bool m_updateVersionHasBeenSet = false;
 
     AutoTuneState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     bool m_pendingDeletion;
-    bool m_pendingDeletionHasBeenSet;
+    bool m_pendingDeletionHasBeenSet = false;
   };
 
 } // namespace Model

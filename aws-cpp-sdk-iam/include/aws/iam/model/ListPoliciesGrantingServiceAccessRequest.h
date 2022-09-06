@@ -280,13 +280,13 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_serviceNamespaces;
-    bool m_serviceNamespacesHasBeenSet;
+    bool m_serviceNamespacesHasBeenSet = false;
   };
 
 } // namespace Model

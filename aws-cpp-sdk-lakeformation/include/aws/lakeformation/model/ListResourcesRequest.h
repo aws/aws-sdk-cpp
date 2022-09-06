@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::Vector<FilterCondition> m_filterConditionList;
-    bool m_filterConditionListHasBeenSet;
+    bool m_filterConditionListHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

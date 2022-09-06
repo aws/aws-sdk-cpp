@@ -388,10 +388,10 @@ namespace Model
   private:
 
     Aws::String m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     Aws::String m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
   };
 
 } // namespace Model

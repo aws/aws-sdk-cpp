@@ -96,13 +96,13 @@ namespace Model
   private:
 
     Partition m_partition;
-    bool m_partitionHasBeenSet;
+    bool m_partitionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedColumns;
-    bool m_authorizedColumnsHasBeenSet;
+    bool m_authorizedColumnsHasBeenSet = false;
 
     bool m_isRegisteredWithLakeFormation;
-    bool m_isRegisteredWithLakeFormationHasBeenSet;
+    bool m_isRegisteredWithLakeFormationHasBeenSet = false;
   };
 
 } // namespace Model

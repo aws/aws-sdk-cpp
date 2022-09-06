@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_inclusiveStartBillingPeriod;
-    bool m_inclusiveStartBillingPeriodHasBeenSet;
+    bool m_inclusiveStartBillingPeriodHasBeenSet = false;
 
     Aws::String m_exclusiveEndBillingPeriod;
-    bool m_exclusiveEndBillingPeriodHasBeenSet;
+    bool m_exclusiveEndBillingPeriodHasBeenSet = false;
   };
 
 } // namespace Model

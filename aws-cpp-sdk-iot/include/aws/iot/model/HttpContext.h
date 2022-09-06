@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
   };
 
 } // namespace Model

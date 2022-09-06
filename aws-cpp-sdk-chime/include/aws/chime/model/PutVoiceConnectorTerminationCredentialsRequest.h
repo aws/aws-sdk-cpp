@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::Vector<Credential> m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -101,10 +101,10 @@ namespace Model
   private:
 
     long long m_bytes;
-    bool m_bytesHasBeenSet;
+    bool m_bytesHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
   };
 
 } // namespace Model

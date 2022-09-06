@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_absolutePath;
-    bool m_absolutePathHasBeenSet;
+    bool m_absolutePathHasBeenSet = false;
 
     Aws::String m_blobId;
-    bool m_blobIdHasBeenSet;
+    bool m_blobIdHasBeenSet = false;
 
     FileModeTypeEnum m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
   };
 
 } // namespace Model

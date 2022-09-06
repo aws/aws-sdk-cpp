@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
   };
 
 } // namespace Model

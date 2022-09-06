@@ -281,22 +281,22 @@ namespace Model
   private:
 
     MigrationSortAttribute m_sortByAttribute;
-    bool m_sortByAttributeHasBeenSet;
+    bool m_sortByAttributeHasBeenSet = false;
 
     SortOrder m_sortByOrder;
-    bool m_sortByOrderHasBeenSet;
+    bool m_sortByOrderHasBeenSet = false;
 
     Aws::String m_v1BotNameContains;
-    bool m_v1BotNameContainsHasBeenSet;
+    bool m_v1BotNameContainsHasBeenSet = false;
 
     MigrationStatus m_migrationStatusEquals;
-    bool m_migrationStatusEqualsHasBeenSet;
+    bool m_migrationStatusEqualsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

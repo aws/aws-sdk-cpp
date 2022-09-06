@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::Vector<GameServerGroupAction> m_resumeActions;
-    bool m_resumeActionsHasBeenSet;
+    bool m_resumeActionsHasBeenSet = false;
   };
 
 } // namespace Model

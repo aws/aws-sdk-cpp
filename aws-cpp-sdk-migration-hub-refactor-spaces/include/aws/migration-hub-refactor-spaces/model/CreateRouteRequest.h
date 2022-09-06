@@ -409,28 +409,28 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     DefaultRouteInput m_defaultRoute;
-    bool m_defaultRouteHasBeenSet;
+    bool m_defaultRouteHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     RouteType m_routeType;
-    bool m_routeTypeHasBeenSet;
+    bool m_routeTypeHasBeenSet = false;
 
     Aws::String m_serviceIdentifier;
-    bool m_serviceIdentifierHasBeenSet;
+    bool m_serviceIdentifierHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     UriPathRouteInput m_uriPathRoute;
-    bool m_uriPathRouteHasBeenSet;
+    bool m_uriPathRouteHasBeenSet = false;
   };
 
 } // namespace Model

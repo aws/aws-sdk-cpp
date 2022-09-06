@@ -466,31 +466,31 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_administratorAccountId;
-    bool m_administratorAccountIdHasBeenSet;
+    bool m_administratorAccountIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitedAt;
-    bool m_invitedAtHasBeenSet;
+    bool m_invitedAtHasBeenSet = false;
 
     Aws::String m_masterAccountId;
-    bool m_masterAccountIdHasBeenSet;
+    bool m_masterAccountIdHasBeenSet = false;
 
     RelationshipStatus m_relationshipStatus;
-    bool m_relationshipStatusHasBeenSet;
+    bool m_relationshipStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

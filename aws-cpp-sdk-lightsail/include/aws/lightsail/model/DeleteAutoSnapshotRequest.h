@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
   };
 
 } // namespace Model

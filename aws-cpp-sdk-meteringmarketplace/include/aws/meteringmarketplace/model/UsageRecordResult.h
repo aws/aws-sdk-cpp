@@ -250,13 +250,13 @@ namespace Model
   private:
 
     UsageRecord m_usageRecord;
-    bool m_usageRecordHasBeenSet;
+    bool m_usageRecordHasBeenSet = false;
 
     Aws::String m_meteringRecordId;
-    bool m_meteringRecordIdHasBeenSet;
+    bool m_meteringRecordIdHasBeenSet = false;
 
     UsageRecordResultStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

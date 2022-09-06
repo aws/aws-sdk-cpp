@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<SageMakerPipelineParameter> m_pipelineParameterList;
-    bool m_pipelineParameterListHasBeenSet;
+    bool m_pipelineParameterListHasBeenSet = false;
   };
 
 } // namespace Model

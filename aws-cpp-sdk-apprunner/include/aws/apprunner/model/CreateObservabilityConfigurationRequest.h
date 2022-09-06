@@ -230,13 +230,13 @@ namespace Model
   private:
 
     Aws::String m_observabilityConfigurationName;
-    bool m_observabilityConfigurationNameHasBeenSet;
+    bool m_observabilityConfigurationNameHasBeenSet = false;
 
     TraceConfiguration m_traceConfiguration;
-    bool m_traceConfigurationHasBeenSet;
+    bool m_traceConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

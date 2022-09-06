@@ -293,16 +293,16 @@ namespace Model
   private:
 
     Aws::String m_typeNameAlias;
-    bool m_typeNameAliasHasBeenSet;
+    bool m_typeNameAliasHasBeenSet = false;
 
     Aws::String m_originalTypeName;
-    bool m_originalTypeNameHasBeenSet;
+    bool m_originalTypeNameHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::Vector<int> m_supportedMajorVersions;
-    bool m_supportedMajorVersionsHasBeenSet;
+    bool m_supportedMajorVersionsHasBeenSet = false;
   };
 
 } // namespace Model

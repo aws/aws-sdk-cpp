@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_profileOwner;
-    bool m_profileOwnerHasBeenSet;
+    bool m_profileOwnerHasBeenSet = false;
   };
 
 } // namespace Model

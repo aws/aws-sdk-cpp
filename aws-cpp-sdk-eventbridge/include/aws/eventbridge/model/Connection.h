@@ -320,28 +320,28 @@ namespace Model
   private:
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ConnectionState m_connectionState;
-    bool m_connectionStateHasBeenSet;
+    bool m_connectionStateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     ConnectionAuthorizationType m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAuthorizedTime;
-    bool m_lastAuthorizedTimeHasBeenSet;
+    bool m_lastAuthorizedTimeHasBeenSet = false;
   };
 
 } // namespace Model

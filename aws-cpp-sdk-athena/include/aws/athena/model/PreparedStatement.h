@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     Aws::String m_queryStatement;
-    bool m_queryStatementHasBeenSet;
+    bool m_queryStatementHasBeenSet = false;
 
     Aws::String m_workGroupName;
-    bool m_workGroupNameHasBeenSet;
+    bool m_workGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

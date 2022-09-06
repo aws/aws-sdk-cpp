@@ -121,16 +121,16 @@ namespace Model
   private:
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     int m_labeled;
-    bool m_labeledHasBeenSet;
+    bool m_labeledHasBeenSet = false;
 
     int m_normal;
-    bool m_normalHasBeenSet;
+    bool m_normalHasBeenSet = false;
 
     int m_anomaly;
-    bool m_anomalyHasBeenSet;
+    bool m_anomalyHasBeenSet = false;
   };
 
 } // namespace Model

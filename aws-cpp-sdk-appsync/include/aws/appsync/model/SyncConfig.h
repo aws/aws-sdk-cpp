@@ -196,13 +196,13 @@ namespace Model
   private:
 
     ConflictHandlerType m_conflictHandler;
-    bool m_conflictHandlerHasBeenSet;
+    bool m_conflictHandlerHasBeenSet = false;
 
     ConflictDetectionType m_conflictDetection;
-    bool m_conflictDetectionHasBeenSet;
+    bool m_conflictDetectionHasBeenSet = false;
 
     LambdaConflictHandlerConfig m_lambdaConflictHandlerConfig;
-    bool m_lambdaConflictHandlerConfigHasBeenSet;
+    bool m_lambdaConflictHandlerConfigHasBeenSet = false;
   };
 
 } // namespace Model

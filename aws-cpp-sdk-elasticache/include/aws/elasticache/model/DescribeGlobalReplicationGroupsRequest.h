@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_showMemberInfo;
-    bool m_showMemberInfoHasBeenSet;
+    bool m_showMemberInfoHasBeenSet = false;
   };
 
 } // namespace Model

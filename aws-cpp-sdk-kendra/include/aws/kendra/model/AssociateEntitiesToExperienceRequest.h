@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<EntityConfiguration> m_entityList;
-    bool m_entityListHasBeenSet;
+    bool m_entityListHasBeenSet = false;
   };
 
 } // namespace Model

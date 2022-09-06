@@ -77,7 +77,7 @@ namespace Model
   private:
 
     EventNotificationTopicStatus m_wirelessDeviceEventTopic;
-    bool m_wirelessDeviceEventTopicHasBeenSet;
+    bool m_wirelessDeviceEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

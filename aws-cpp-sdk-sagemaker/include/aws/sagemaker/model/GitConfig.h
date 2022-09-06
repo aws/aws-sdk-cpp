@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryUrl;
-    bool m_repositoryUrlHasBeenSet;
+    bool m_repositoryUrlHasBeenSet = false;
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<EntitlementUsage> m_entitlementUsages;
-    bool m_entitlementUsagesHasBeenSet;
+    bool m_entitlementUsagesHasBeenSet = false;
   };
 
 } // namespace Model

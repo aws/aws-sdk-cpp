@@ -98,10 +98,10 @@ namespace Model
   private:
 
     OpsCenterIntegrationConfig m_opsCenter;
-    bool m_opsCenterHasBeenSet;
+    bool m_opsCenterHasBeenSet = false;
 
     LogsAnomalyDetectionIntegrationConfig m_logsAnomalyDetection;
-    bool m_logsAnomalyDetectionHasBeenSet;
+    bool m_logsAnomalyDetectionHasBeenSet = false;
   };
 
 } // namespace Model

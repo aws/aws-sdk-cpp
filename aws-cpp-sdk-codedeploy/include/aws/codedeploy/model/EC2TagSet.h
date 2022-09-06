@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<EC2TagFilter>> m_ec2TagSetList;
-    bool m_ec2TagSetListHasBeenSet;
+    bool m_ec2TagSetListHasBeenSet = false;
   };
 
 } // namespace Model

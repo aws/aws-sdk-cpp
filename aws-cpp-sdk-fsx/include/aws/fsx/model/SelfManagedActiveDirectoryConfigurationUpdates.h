@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIps;
-    bool m_dnsIpsHasBeenSet;
+    bool m_dnsIpsHasBeenSet = false;
   };
 
 } // namespace Model

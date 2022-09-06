@@ -135,13 +135,13 @@ namespace Model
   private:
 
     FixedModeScheduleActionStartSettings m_fixedModeScheduleActionStartSettings;
-    bool m_fixedModeScheduleActionStartSettingsHasBeenSet;
+    bool m_fixedModeScheduleActionStartSettingsHasBeenSet = false;
 
     FollowModeScheduleActionStartSettings m_followModeScheduleActionStartSettings;
-    bool m_followModeScheduleActionStartSettingsHasBeenSet;
+    bool m_followModeScheduleActionStartSettingsHasBeenSet = false;
 
     ImmediateModeScheduleActionStartSettings m_immediateModeScheduleActionStartSettings;
-    bool m_immediateModeScheduleActionStartSettingsHasBeenSet;
+    bool m_immediateModeScheduleActionStartSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -240,13 +240,13 @@ namespace Model
   private:
 
     FailoverStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_fromDbClusterArn;
-    bool m_fromDbClusterArnHasBeenSet;
+    bool m_fromDbClusterArnHasBeenSet = false;
 
     Aws::String m_toDbClusterArn;
-    bool m_toDbClusterArnHasBeenSet;
+    bool m_toDbClusterArnHasBeenSet = false;
   };
 
 } // namespace Model

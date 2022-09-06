@@ -496,25 +496,25 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentDeploymentSpecification> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
 
     DeploymentIoTJobConfiguration m_iotJobConfiguration;
-    bool m_iotJobConfigurationHasBeenSet;
+    bool m_iotJobConfigurationHasBeenSet = false;
 
     DeploymentPolicies m_deploymentPolicies;
-    bool m_deploymentPoliciesHasBeenSet;
+    bool m_deploymentPoliciesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1114,16 +1114,16 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_dataInputConfig;
-    bool m_dataInputConfigHasBeenSet;
+    bool m_dataInputConfigHasBeenSet = false;
 
     Framework m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
-    bool m_frameworkVersionHasBeenSet;
+    bool m_frameworkVersionHasBeenSet = false;
   };
 
 } // namespace Model

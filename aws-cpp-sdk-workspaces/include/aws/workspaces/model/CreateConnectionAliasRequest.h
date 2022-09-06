@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::String m_connectionString;
-    bool m_connectionStringHasBeenSet;
+    bool m_connectionStringHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

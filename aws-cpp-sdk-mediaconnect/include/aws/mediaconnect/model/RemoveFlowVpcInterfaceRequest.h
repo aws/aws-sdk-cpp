@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_vpcInterfaceName;
-    bool m_vpcInterfaceNameHasBeenSet;
+    bool m_vpcInterfaceNameHasBeenSet = false;
   };
 
 } // namespace Model

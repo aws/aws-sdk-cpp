@@ -185,16 +185,16 @@ namespace Model
   private:
 
     AutoMLJobCompletionCriteria m_completionCriteria;
-    bool m_completionCriteriaHasBeenSet;
+    bool m_completionCriteriaHasBeenSet = false;
 
     AutoMLSecurityConfig m_securityConfig;
-    bool m_securityConfigHasBeenSet;
+    bool m_securityConfigHasBeenSet = false;
 
     AutoMLDataSplitConfig m_dataSplitConfig;
-    bool m_dataSplitConfigHasBeenSet;
+    bool m_dataSplitConfigHasBeenSet = false;
 
     AutoMLCandidateGenerationConfig m_candidateGenerationConfig;
-    bool m_candidateGenerationConfigHasBeenSet;
+    bool m_candidateGenerationConfigHasBeenSet = false;
   };
 
 } // namespace Model

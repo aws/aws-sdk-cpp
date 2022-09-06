@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_clientContext;
-    bool m_clientContextHasBeenSet;
+    bool m_clientContextHasBeenSet = false;
 
     Aws::String m_clientContextEncoding;
-    bool m_clientContextEncodingHasBeenSet;
+    bool m_clientContextEncodingHasBeenSet = false;
   };
 
 } // namespace Model

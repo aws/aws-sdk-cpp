@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_previousPassword;
-    bool m_previousPasswordHasBeenSet;
+    bool m_previousPasswordHasBeenSet = false;
 
     Aws::String m_proposedPassword;
-    bool m_proposedPasswordHasBeenSet;
+    bool m_proposedPasswordHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

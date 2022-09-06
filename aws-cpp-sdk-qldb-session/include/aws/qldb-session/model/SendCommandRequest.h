@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_sessionToken;
-    bool m_sessionTokenHasBeenSet;
+    bool m_sessionTokenHasBeenSet = false;
 
     StartSessionRequest m_startSession;
-    bool m_startSessionHasBeenSet;
+    bool m_startSessionHasBeenSet = false;
 
     StartTransactionRequest m_startTransaction;
-    bool m_startTransactionHasBeenSet;
+    bool m_startTransactionHasBeenSet = false;
 
     EndSessionRequest m_endSession;
-    bool m_endSessionHasBeenSet;
+    bool m_endSessionHasBeenSet = false;
 
     CommitTransactionRequest m_commitTransaction;
-    bool m_commitTransactionHasBeenSet;
+    bool m_commitTransactionHasBeenSet = false;
 
     AbortTransactionRequest m_abortTransaction;
-    bool m_abortTransactionHasBeenSet;
+    bool m_abortTransactionHasBeenSet = false;
 
     ExecuteStatementRequest m_executeStatement;
-    bool m_executeStatementHasBeenSet;
+    bool m_executeStatementHasBeenSet = false;
 
     FetchPageRequest m_fetchPage;
-    bool m_fetchPageHasBeenSet;
+    bool m_fetchPageHasBeenSet = false;
   };
 
 } // namespace Model

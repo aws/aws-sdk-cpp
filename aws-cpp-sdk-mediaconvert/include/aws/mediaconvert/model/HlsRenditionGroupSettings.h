@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_renditionGroupId;
-    bool m_renditionGroupIdHasBeenSet;
+    bool m_renditionGroupIdHasBeenSet = false;
 
     LanguageCode m_renditionLanguageCode;
-    bool m_renditionLanguageCodeHasBeenSet;
+    bool m_renditionLanguageCodeHasBeenSet = false;
 
     Aws::String m_renditionName;
-    bool m_renditionNameHasBeenSet;
+    bool m_renditionNameHasBeenSet = false;
   };
 
 } // namespace Model

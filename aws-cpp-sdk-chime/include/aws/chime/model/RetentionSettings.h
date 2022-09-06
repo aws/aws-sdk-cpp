@@ -104,10 +104,10 @@ namespace Model
   private:
 
     RoomRetentionSettings m_roomRetentionSettings;
-    bool m_roomRetentionSettingsHasBeenSet;
+    bool m_roomRetentionSettingsHasBeenSet = false;
 
     ConversationRetentionSettings m_conversationRetentionSettings;
-    bool m_conversationRetentionSettingsHasBeenSet;
+    bool m_conversationRetentionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

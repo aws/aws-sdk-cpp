@@ -658,34 +658,34 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<MetricGoalConfig> m_metricGoals;
-    bool m_metricGoalsHasBeenSet;
+    bool m_metricGoalsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OnlineAbConfig m_onlineAbConfig;
-    bool m_onlineAbConfigHasBeenSet;
+    bool m_onlineAbConfigHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_randomizationSalt;
-    bool m_randomizationSaltHasBeenSet;
+    bool m_randomizationSaltHasBeenSet = false;
 
     long long m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
 
     Aws::String m_segment;
-    bool m_segmentHasBeenSet;
+    bool m_segmentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<TreatmentConfig> m_treatments;
-    bool m_treatmentsHasBeenSet;
+    bool m_treatmentsHasBeenSet = false;
   };
 
 } // namespace Model

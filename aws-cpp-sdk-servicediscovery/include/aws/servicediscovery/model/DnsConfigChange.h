@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<DnsRecord> m_dnsRecords;
-    bool m_dnsRecordsHasBeenSet;
+    bool m_dnsRecordsHasBeenSet = false;
   };
 
 } // namespace Model

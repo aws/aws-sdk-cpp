@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
 
     int m_visibilityTimeout;
-    bool m_visibilityTimeoutHasBeenSet;
+    bool m_visibilityTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

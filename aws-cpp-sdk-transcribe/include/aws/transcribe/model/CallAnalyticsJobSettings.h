@@ -679,25 +679,25 @@ namespace Model
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     VocabularyFilterMethod m_vocabularyFilterMethod;
-    bool m_vocabularyFilterMethodHasBeenSet;
+    bool m_vocabularyFilterMethodHasBeenSet = false;
 
     Aws::String m_languageModelName;
-    bool m_languageModelNameHasBeenSet;
+    bool m_languageModelNameHasBeenSet = false;
 
     ContentRedaction m_contentRedaction;
-    bool m_contentRedactionHasBeenSet;
+    bool m_contentRedactionHasBeenSet = false;
 
     Aws::Vector<LanguageCode> m_languageOptions;
-    bool m_languageOptionsHasBeenSet;
+    bool m_languageOptionsHasBeenSet = false;
 
     Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
-    bool m_languageIdSettingsHasBeenSet;
+    bool m_languageIdSettingsHasBeenSet = false;
   };
 
 } // namespace Model

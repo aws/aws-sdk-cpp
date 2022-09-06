@@ -300,22 +300,22 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     Aws::String m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

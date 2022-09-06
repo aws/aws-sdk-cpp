@@ -199,13 +199,13 @@ namespace Model
   private:
 
     ActionTypeId m_actionTypeId;
-    bool m_actionTypeIdHasBeenSet;
+    bool m_actionTypeIdHasBeenSet = false;
 
     int m_maxBatchSize;
-    bool m_maxBatchSizeHasBeenSet;
+    bool m_maxBatchSizeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryParam;
-    bool m_queryParamHasBeenSet;
+    bool m_queryParamHasBeenSet = false;
   };
 
 } // namespace Model

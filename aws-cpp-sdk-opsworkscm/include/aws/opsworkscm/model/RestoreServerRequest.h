@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_keyPair;
-    bool m_keyPairHasBeenSet;
+    bool m_keyPairHasBeenSet = false;
   };
 
 } // namespace Model

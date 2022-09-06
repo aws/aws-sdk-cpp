@@ -102,7 +102,7 @@ RolesAnywhereClient::~RolesAnywhereClient()
 
 void RolesAnywhereClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("RolesAnywhere");
+  AWSClient::SetServiceClientName("RolesAnywhere");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

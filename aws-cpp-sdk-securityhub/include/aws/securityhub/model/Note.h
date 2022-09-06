@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_updatedBy;
-    bool m_updatedByHasBeenSet;
+    bool m_updatedByHasBeenSet = false;
 
     Aws::String m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

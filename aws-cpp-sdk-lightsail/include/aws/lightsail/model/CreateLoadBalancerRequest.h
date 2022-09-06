@@ -549,31 +549,31 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     int m_instancePort;
-    bool m_instancePortHasBeenSet;
+    bool m_instancePortHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
-    bool m_healthCheckPathHasBeenSet;
+    bool m_healthCheckPathHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_certificateDomainName;
-    bool m_certificateDomainNameHasBeenSet;
+    bool m_certificateDomainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_certificateAlternativeNames;
-    bool m_certificateAlternativeNamesHasBeenSet;
+    bool m_certificateAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_tlsPolicyName;
-    bool m_tlsPolicyNameHasBeenSet;
+    bool m_tlsPolicyNameHasBeenSet = false;
   };
 
 } // namespace Model

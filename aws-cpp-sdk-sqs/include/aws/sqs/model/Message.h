@@ -595,25 +595,25 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
 
     Aws::String m_mD5OfBody;
-    bool m_mD5OfBodyHasBeenSet;
+    bool m_mD5OfBodyHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<MessageSystemAttributeName, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_mD5OfMessageAttributes;
-    bool m_mD5OfMessageAttributesHasBeenSet;
+    bool m_mD5OfMessageAttributesHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
   };
 
 } // namespace Model

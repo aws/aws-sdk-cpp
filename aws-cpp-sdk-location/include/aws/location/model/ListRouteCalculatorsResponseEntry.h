@@ -302,19 +302,19 @@ namespace Model
   private:
 
     Aws::String m_calculatorName;
-    bool m_calculatorNameHasBeenSet;
+    bool m_calculatorNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

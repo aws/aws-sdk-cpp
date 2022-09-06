@@ -287,25 +287,25 @@ namespace Model
   private:
 
     Aws::String m_reportId;
-    bool m_reportIdHasBeenSet;
+    bool m_reportIdHasBeenSet = false;
 
     Aws::String m_reportDescription;
-    bool m_reportDescriptionHasBeenSet;
+    bool m_reportDescriptionHasBeenSet = false;
 
     ReportFrequency m_reportFrequency;
-    bool m_reportFrequencyHasBeenSet;
+    bool m_reportFrequencyHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     S3Location m_destinationS3Location;
-    bool m_destinationS3LocationHasBeenSet;
+    bool m_destinationS3LocationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

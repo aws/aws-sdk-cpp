@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_reportName;
-    bool m_reportNameHasBeenSet;
+    bool m_reportNameHasBeenSet = false;
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     EmailContent m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

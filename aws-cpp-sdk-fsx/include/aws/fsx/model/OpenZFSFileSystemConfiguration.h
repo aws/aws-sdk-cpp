@@ -323,31 +323,31 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     bool m_copyTagsToVolumes;
-    bool m_copyTagsToVolumesHasBeenSet;
+    bool m_copyTagsToVolumesHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     OpenZFSDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     Aws::String m_rootVolumeId;
-    bool m_rootVolumeIdHasBeenSet;
+    bool m_rootVolumeIdHasBeenSet = false;
   };
 
 } // namespace Model

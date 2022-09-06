@@ -117,7 +117,7 @@ namespace Model
   private:
 
     Aws::String m_baselineId;
-    bool m_baselineIdHasBeenSet;
+    bool m_baselineIdHasBeenSet = false;
   };
 
 } // namespace Model

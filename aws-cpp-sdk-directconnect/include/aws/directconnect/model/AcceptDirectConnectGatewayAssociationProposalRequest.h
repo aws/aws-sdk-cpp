@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::String m_proposalId;
-    bool m_proposalIdHasBeenSet;
+    bool m_proposalIdHasBeenSet = false;
 
     Aws::String m_associatedGatewayOwnerAccount;
-    bool m_associatedGatewayOwnerAccountHasBeenSet;
+    bool m_associatedGatewayOwnerAccountHasBeenSet = false;
 
     Aws::Vector<RouteFilterPrefix> m_overrideAllowedPrefixesToDirectConnectGateway;
-    bool m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet;
+    bool m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
   };
 
 } // namespace Model

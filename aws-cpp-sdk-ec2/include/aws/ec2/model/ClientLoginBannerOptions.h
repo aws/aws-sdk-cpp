@@ -129,10 +129,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_bannerText;
-    bool m_bannerTextHasBeenSet;
+    bool m_bannerTextHasBeenSet = false;
   };
 
 } // namespace Model

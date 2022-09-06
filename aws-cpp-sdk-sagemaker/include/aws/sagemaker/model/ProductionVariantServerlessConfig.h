@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_memorySizeInMB;
-    bool m_memorySizeInMBHasBeenSet;
+    bool m_memorySizeInMBHasBeenSet = false;
 
     int m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
   };
 
 } // namespace Model

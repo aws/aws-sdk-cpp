@@ -264,22 +264,22 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     SchemaVersionNumber m_schemaVersionNumber;
-    bool m_schemaVersionNumberHasBeenSet;
+    bool m_schemaVersionNumberHasBeenSet = false;
 
     Aws::String m_schemaVersionId;
-    bool m_schemaVersionIdHasBeenSet;
+    bool m_schemaVersionIdHasBeenSet = false;
 
     Aws::Vector<MetadataKeyValuePair> m_metadataList;
-    bool m_metadataListHasBeenSet;
+    bool m_metadataListHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

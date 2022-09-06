@@ -269,10 +269,10 @@ namespace Model
   private:
 
     Aws::String m_keyARN;
-    bool m_keyARNHasBeenSet;
+    bool m_keyARNHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
   };
 
 } // namespace Model

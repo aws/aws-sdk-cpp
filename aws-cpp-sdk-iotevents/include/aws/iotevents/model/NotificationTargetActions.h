@@ -61,7 +61,7 @@ namespace Model
   private:
 
     LambdaAction m_lambdaAction;
-    bool m_lambdaActionHasBeenSet;
+    bool m_lambdaActionHasBeenSet = false;
   };
 
 } // namespace Model

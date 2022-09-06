@@ -325,22 +325,22 @@ it will
   private:
 
     AdMarkers m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     int m_programDateTimeIntervalSeconds;
-    bool m_programDateTimeIntervalSecondsHasBeenSet;
+    bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
     bool m_repeatExtXKey;
-    bool m_repeatExtXKeyHasBeenSet;
+    bool m_repeatExtXKeyHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

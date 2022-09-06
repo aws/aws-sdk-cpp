@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_contactNotes;
-    bool m_contactNotesHasBeenSet;
+    bool m_contactNotesHasBeenSet = false;
   };
 
 } // namespace Model

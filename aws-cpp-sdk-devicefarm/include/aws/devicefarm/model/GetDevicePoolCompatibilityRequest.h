@@ -284,19 +284,19 @@ namespace Model
   private:
 
     Aws::String m_devicePoolArn;
-    bool m_devicePoolArnHasBeenSet;
+    bool m_devicePoolArnHasBeenSet = false;
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     TestType m_testType;
-    bool m_testTypeHasBeenSet;
+    bool m_testTypeHasBeenSet = false;
 
     ScheduleRunTest m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     ScheduleRunConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

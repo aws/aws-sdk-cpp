@@ -200,19 +200,19 @@ namespace Model
   private:
 
     int m_bandwidth;
-    bool m_bandwidthHasBeenSet;
+    bool m_bandwidthHasBeenSet = false;
 
     int m_bufferSegments;
-    bool m_bufferSegmentsHasBeenSet;
+    bool m_bufferSegmentsHasBeenSet = false;
 
     int m_retries;
-    bool m_retriesHasBeenSet;
+    bool m_retriesHasBeenSet = false;
 
     int m_retryInterval;
-    bool m_retryIntervalHasBeenSet;
+    bool m_retryIntervalHasBeenSet = false;
 
     HlsScte35SourceType m_scte35Source;
-    bool m_scte35SourceHasBeenSet;
+    bool m_scte35SourceHasBeenSet = false;
   };
 
 } // namespace Model

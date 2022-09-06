@@ -157,10 +157,10 @@ namespace Model
   private:
 
     ActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_parentHandshakeId;
-    bool m_parentHandshakeIdHasBeenSet;
+    bool m_parentHandshakeIdHasBeenSet = false;
   };
 
 } // namespace Model

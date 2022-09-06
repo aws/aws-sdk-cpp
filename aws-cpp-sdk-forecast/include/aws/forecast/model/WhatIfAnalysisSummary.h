@@ -411,25 +411,25 @@ namespace Model
   private:
 
     Aws::String m_whatIfAnalysisArn;
-    bool m_whatIfAnalysisArnHasBeenSet;
+    bool m_whatIfAnalysisArnHasBeenSet = false;
 
     Aws::String m_whatIfAnalysisName;
-    bool m_whatIfAnalysisNameHasBeenSet;
+    bool m_whatIfAnalysisNameHasBeenSet = false;
 
     Aws::String m_forecastArn;
-    bool m_forecastArnHasBeenSet;
+    bool m_forecastArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

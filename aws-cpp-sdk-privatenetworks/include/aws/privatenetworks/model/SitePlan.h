@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<NameValuePair> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<NetworkResourceDefinition> m_resourceDefinitions;
-    bool m_resourceDefinitionsHasBeenSet;
+    bool m_resourceDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

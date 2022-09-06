@@ -227,13 +227,13 @@ namespace Model
   private:
 
     Aws::String m_generatedRulesType;
-    bool m_generatedRulesTypeHasBeenSet;
+    bool m_generatedRulesTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetTypes;
-    bool m_targetTypesHasBeenSet;
+    bool m_targetTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
   };
 
 } // namespace Model

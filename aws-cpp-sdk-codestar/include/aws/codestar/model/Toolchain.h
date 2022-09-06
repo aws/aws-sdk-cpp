@@ -214,13 +214,13 @@ namespace Model
   private:
 
     ToolchainSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stackParameters;
-    bool m_stackParametersHasBeenSet;
+    bool m_stackParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_standardsSubscriptionArns;
-    bool m_standardsSubscriptionArnsHasBeenSet;
+    bool m_standardsSubscriptionArnsHasBeenSet = false;
   };
 
 } // namespace Model

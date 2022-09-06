@@ -257,22 +257,22 @@ namespace Model
   private:
 
     CrawlState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_logGroup;
-    bool m_logGroupHasBeenSet;
+    bool m_logGroupHasBeenSet = false;
 
     Aws::String m_logStream;
-    bool m_logStreamHasBeenSet;
+    bool m_logStreamHasBeenSet = false;
   };
 
 } // namespace Model

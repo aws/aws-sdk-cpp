@@ -127,13 +127,13 @@ namespace Model
   private:
 
     RiskDecisionType m_riskDecision;
-    bool m_riskDecisionHasBeenSet;
+    bool m_riskDecisionHasBeenSet = false;
 
     RiskLevelType m_riskLevel;
-    bool m_riskLevelHasBeenSet;
+    bool m_riskLevelHasBeenSet = false;
 
     bool m_compromisedCredentialsDetected;
-    bool m_compromisedCredentialsDetectedHasBeenSet;
+    bool m_compromisedCredentialsDetectedHasBeenSet = false;
   };
 
 } // namespace Model

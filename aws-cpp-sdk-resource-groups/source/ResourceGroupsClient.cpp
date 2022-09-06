@@ -92,7 +92,7 @@ ResourceGroupsClient::~ResourceGroupsClient()
 
 void ResourceGroupsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Resource Groups");
+  AWSClient::SetServiceClientName("Resource Groups");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

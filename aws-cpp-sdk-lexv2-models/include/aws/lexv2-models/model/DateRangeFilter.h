@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

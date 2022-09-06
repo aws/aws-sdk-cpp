@@ -113,10 +113,10 @@ namespace Model
   private:
 
     CatalogEncryptionMode m_catalogEncryptionMode;
-    bool m_catalogEncryptionModeHasBeenSet;
+    bool m_catalogEncryptionModeHasBeenSet = false;
 
     Aws::String m_sseAwsKmsKeyId;
-    bool m_sseAwsKmsKeyIdHasBeenSet;
+    bool m_sseAwsKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -343,25 +343,25 @@ namespace Model
   private:
 
     Aws::String m_automatedUpdateDate;
-    bool m_automatedUpdateDateHasBeenSet;
+    bool m_automatedUpdateDateHasBeenSet = false;
 
     bool m_cancellable;
-    bool m_cancellableHasBeenSet;
+    bool m_cancellableHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_newVersion;
-    bool m_newVersionHasBeenSet;
+    bool m_newVersionHasBeenSet = false;
 
     bool m_updateAvailable;
-    bool m_updateAvailableHasBeenSet;
+    bool m_updateAvailableHasBeenSet = false;
 
     Aws::String m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_collectorReferencedId;
-    bool m_collectorReferencedIdHasBeenSet;
+    bool m_collectorReferencedIdHasBeenSet = false;
   };
 
 } // namespace Model

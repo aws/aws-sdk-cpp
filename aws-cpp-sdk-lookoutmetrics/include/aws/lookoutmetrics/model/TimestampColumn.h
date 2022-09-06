@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnFormat;
-    bool m_columnFormatHasBeenSet;
+    bool m_columnFormatHasBeenSet = false;
   };
 
 } // namespace Model

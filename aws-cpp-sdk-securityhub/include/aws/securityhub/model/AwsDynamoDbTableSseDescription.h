@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_inaccessibleEncryptionDateTime;
-    bool m_inaccessibleEncryptionDateTimeHasBeenSet;
+    bool m_inaccessibleEncryptionDateTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_sseType;
-    bool m_sseTypeHasBeenSet;
+    bool m_sseTypeHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyArn;
-    bool m_kmsMasterKeyArnHasBeenSet;
+    bool m_kmsMasterKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_exportId;
-    bool m_exportIdHasBeenSet;
+    bool m_exportIdHasBeenSet = false;
   };
 
 } // namespace Model

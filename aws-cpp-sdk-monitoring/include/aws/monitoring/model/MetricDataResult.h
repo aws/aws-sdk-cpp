@@ -345,22 +345,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-    bool m_timestampsHasBeenSet;
+    bool m_timestampsHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     StatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::Vector<MessageData> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
   };
 
 } // namespace Model

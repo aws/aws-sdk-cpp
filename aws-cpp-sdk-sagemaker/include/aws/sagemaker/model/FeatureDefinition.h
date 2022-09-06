@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_featureName;
-    bool m_featureNameHasBeenSet;
+    bool m_featureNameHasBeenSet = false;
 
     FeatureType m_featureType;
-    bool m_featureTypeHasBeenSet;
+    bool m_featureTypeHasBeenSet = false;
   };
 
 } // namespace Model

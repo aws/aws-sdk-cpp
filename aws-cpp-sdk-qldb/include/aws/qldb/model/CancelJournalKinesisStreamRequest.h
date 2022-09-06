@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_ledgerName;
-    bool m_ledgerNameHasBeenSet;
+    bool m_ledgerNameHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
   };
 
 } // namespace Model

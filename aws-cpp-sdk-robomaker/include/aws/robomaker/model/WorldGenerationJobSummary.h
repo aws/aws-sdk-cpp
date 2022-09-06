@@ -313,25 +313,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     WorldGenerationJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     WorldCount m_worldCount;
-    bool m_worldCountHasBeenSet;
+    bool m_worldCountHasBeenSet = false;
 
     int m_succeededWorldCount;
-    bool m_succeededWorldCountHasBeenSet;
+    bool m_succeededWorldCountHasBeenSet = false;
 
     int m_failedWorldCount;
-    bool m_failedWorldCountHasBeenSet;
+    bool m_failedWorldCountHasBeenSet = false;
   };
 
 } // namespace Model

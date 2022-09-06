@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<Text> m_textList;
-    bool m_textListHasBeenSet;
+    bool m_textListHasBeenSet = false;
 
     Aws::Vector<Ssml> m_ssmlList;
-    bool m_ssmlListHasBeenSet;
+    bool m_ssmlListHasBeenSet = false;
 
     Aws::Vector<Audio> m_audioList;
-    bool m_audioListHasBeenSet;
+    bool m_audioListHasBeenSet = false;
   };
 
 } // namespace Model

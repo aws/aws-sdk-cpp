@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Vector<EventSubscription> m_eventSubscriptions;
-    bool m_eventSubscriptionsHasBeenSet;
+    bool m_eventSubscriptionsHasBeenSet = false;
   };
 
 } // namespace Model

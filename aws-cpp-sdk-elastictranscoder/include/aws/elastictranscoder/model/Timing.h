@@ -104,13 +104,13 @@ namespace Model
   private:
 
     long long m_submitTimeMillis;
-    bool m_submitTimeMillisHasBeenSet;
+    bool m_submitTimeMillisHasBeenSet = false;
 
     long long m_startTimeMillis;
-    bool m_startTimeMillisHasBeenSet;
+    bool m_startTimeMillisHasBeenSet = false;
 
     long long m_finishTimeMillis;
-    bool m_finishTimeMillisHasBeenSet;
+    bool m_finishTimeMillisHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_itemId;
-    bool m_itemIdHasBeenSet;
+    bool m_itemIdHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     Aws::String m_promotionName;
-    bool m_promotionNameHasBeenSet;
+    bool m_promotionNameHasBeenSet = false;
   };
 
 } // namespace Model

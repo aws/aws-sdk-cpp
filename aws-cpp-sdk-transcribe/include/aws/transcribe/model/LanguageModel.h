@@ -511,31 +511,31 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     CLMLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     BaseModelName m_baseModelName;
-    bool m_baseModelNameHasBeenSet;
+    bool m_baseModelNameHasBeenSet = false;
 
     ModelStatus m_modelStatus;
-    bool m_modelStatusHasBeenSet;
+    bool m_modelStatusHasBeenSet = false;
 
     bool m_upgradeAvailability;
-    bool m_upgradeAvailabilityHasBeenSet;
+    bool m_upgradeAvailabilityHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -150,13 +150,13 @@ namespace Model
   private:
 
     bool m_failOnFirstDestinationError;
-    bool m_failOnFirstDestinationErrorHasBeenSet;
+    bool m_failOnFirstDestinationErrorHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
   };
 
 } // namespace Model

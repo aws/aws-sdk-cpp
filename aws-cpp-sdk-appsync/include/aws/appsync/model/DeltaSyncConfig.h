@@ -126,13 +126,13 @@ namespace Model
   private:
 
     long long m_baseTableTTL;
-    bool m_baseTableTTLHasBeenSet;
+    bool m_baseTableTTLHasBeenSet = false;
 
     Aws::String m_deltaSyncTableName;
-    bool m_deltaSyncTableNameHasBeenSet;
+    bool m_deltaSyncTableNameHasBeenSet = false;
 
     long long m_deltaSyncTableTTL;
-    bool m_deltaSyncTableTTLHasBeenSet;
+    bool m_deltaSyncTableTTLHasBeenSet = false;
   };
 
 } // namespace Model

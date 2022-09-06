@@ -217,13 +217,13 @@ namespace Model
   private:
 
     Message m_simple;
-    bool m_simpleHasBeenSet;
+    bool m_simpleHasBeenSet = false;
 
     RawMessage m_raw;
-    bool m_rawHasBeenSet;
+    bool m_rawHasBeenSet = false;
 
     Template m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
   };
 
 } // namespace Model

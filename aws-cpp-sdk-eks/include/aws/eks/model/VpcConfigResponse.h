@@ -457,25 +457,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_clusterSecurityGroupId;
-    bool m_clusterSecurityGroupIdHasBeenSet;
+    bool m_clusterSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     bool m_endpointPublicAccess;
-    bool m_endpointPublicAccessHasBeenSet;
+    bool m_endpointPublicAccessHasBeenSet = false;
 
     bool m_endpointPrivateAccess;
-    bool m_endpointPrivateAccessHasBeenSet;
+    bool m_endpointPrivateAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_publicAccessCidrs;
-    bool m_publicAccessCidrsHasBeenSet;
+    bool m_publicAccessCidrsHasBeenSet = false;
   };
 
 } // namespace Model

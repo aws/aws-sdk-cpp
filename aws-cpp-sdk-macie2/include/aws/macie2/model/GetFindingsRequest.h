@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_findingIds;
-    bool m_findingIdsHasBeenSet;
+    bool m_findingIdsHasBeenSet = false;
 
     SortCriteria m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

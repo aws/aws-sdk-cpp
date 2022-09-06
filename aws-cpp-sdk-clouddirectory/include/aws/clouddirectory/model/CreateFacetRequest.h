@@ -293,19 +293,19 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<FacetAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     ObjectType m_objectType;
-    bool m_objectTypeHasBeenSet;
+    bool m_objectTypeHasBeenSet = false;
 
     FacetStyle m_facetStyle;
-    bool m_facetStyleHasBeenSet;
+    bool m_facetStyleHasBeenSet = false;
   };
 
 } // namespace Model

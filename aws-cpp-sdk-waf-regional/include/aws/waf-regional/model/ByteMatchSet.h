@@ -261,13 +261,13 @@ namespace Model
   private:
 
     Aws::String m_byteMatchSetId;
-    bool m_byteMatchSetIdHasBeenSet;
+    bool m_byteMatchSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<ByteMatchTuple> m_byteMatchTuples;
-    bool m_byteMatchTuplesHasBeenSet;
+    bool m_byteMatchTuplesHasBeenSet = false;
   };
 
 } // namespace Model

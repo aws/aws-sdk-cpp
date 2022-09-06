@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::Vector<WeightedQuantileLoss> m_weightedQuantileLosses;
-    bool m_weightedQuantileLossesHasBeenSet;
+    bool m_weightedQuantileLossesHasBeenSet = false;
 
     Aws::Vector<ErrorMetric> m_errorMetrics;
-    bool m_errorMetricsHasBeenSet;
+    bool m_errorMetricsHasBeenSet = false;
 
     double m_averageWeightedQuantileLoss;
-    bool m_averageWeightedQuantileLossHasBeenSet;
+    bool m_averageWeightedQuantileLossHasBeenSet = false;
   };
 
 } // namespace Model

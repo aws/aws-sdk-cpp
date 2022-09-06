@@ -231,10 +231,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     RecommendationJobCompiledOutputConfig m_compiledOutputConfig;
-    bool m_compiledOutputConfigHasBeenSet;
+    bool m_compiledOutputConfigHasBeenSet = false;
   };
 
 } // namespace Model

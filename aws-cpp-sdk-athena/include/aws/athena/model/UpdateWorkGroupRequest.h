@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     WorkGroupConfigurationUpdates m_configurationUpdates;
-    bool m_configurationUpdatesHasBeenSet;
+    bool m_configurationUpdatesHasBeenSet = false;
 
     WorkGroupState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

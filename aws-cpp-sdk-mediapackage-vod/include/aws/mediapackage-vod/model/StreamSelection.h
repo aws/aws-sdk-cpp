@@ -112,13 +112,13 @@ namespace Model
   private:
 
     int m_maxVideoBitsPerSecond;
-    bool m_maxVideoBitsPerSecondHasBeenSet;
+    bool m_maxVideoBitsPerSecondHasBeenSet = false;
 
     int m_minVideoBitsPerSecond;
-    bool m_minVideoBitsPerSecondHasBeenSet;
+    bool m_minVideoBitsPerSecondHasBeenSet = false;
 
     StreamOrder m_streamOrder;
-    bool m_streamOrderHasBeenSet;
+    bool m_streamOrderHasBeenSet = false;
   };
 
 } // namespace Model

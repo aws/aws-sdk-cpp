@@ -232,13 +232,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Tagging m_tagging;
-    bool m_taggingHasBeenSet;
+    bool m_taggingHasBeenSet = false;
   };
 
 } // namespace Model

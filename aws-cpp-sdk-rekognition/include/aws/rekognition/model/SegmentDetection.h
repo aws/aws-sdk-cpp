@@ -461,40 +461,40 @@ namespace Model
   private:
 
     SegmentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_startTimestampMillis;
-    bool m_startTimestampMillisHasBeenSet;
+    bool m_startTimestampMillisHasBeenSet = false;
 
     long long m_endTimestampMillis;
-    bool m_endTimestampMillisHasBeenSet;
+    bool m_endTimestampMillisHasBeenSet = false;
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
 
     Aws::String m_startTimecodeSMPTE;
-    bool m_startTimecodeSMPTEHasBeenSet;
+    bool m_startTimecodeSMPTEHasBeenSet = false;
 
     Aws::String m_endTimecodeSMPTE;
-    bool m_endTimecodeSMPTEHasBeenSet;
+    bool m_endTimecodeSMPTEHasBeenSet = false;
 
     Aws::String m_durationSMPTE;
-    bool m_durationSMPTEHasBeenSet;
+    bool m_durationSMPTEHasBeenSet = false;
 
     TechnicalCueSegment m_technicalCueSegment;
-    bool m_technicalCueSegmentHasBeenSet;
+    bool m_technicalCueSegmentHasBeenSet = false;
 
     ShotSegment m_shotSegment;
-    bool m_shotSegmentHasBeenSet;
+    bool m_shotSegmentHasBeenSet = false;
 
     long long m_startFrameNumber;
-    bool m_startFrameNumberHasBeenSet;
+    bool m_startFrameNumberHasBeenSet = false;
 
     long long m_endFrameNumber;
-    bool m_endFrameNumberHasBeenSet;
+    bool m_endFrameNumberHasBeenSet = false;
 
     long long m_durationFrames;
-    bool m_durationFramesHasBeenSet;
+    bool m_durationFramesHasBeenSet = false;
   };
 
 } // namespace Model

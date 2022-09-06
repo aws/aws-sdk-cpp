@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_beginOffsetMillis;
-    bool m_beginOffsetMillisHasBeenSet;
+    bool m_beginOffsetMillisHasBeenSet = false;
 
     int m_endOffsetMillis;
-    bool m_endOffsetMillisHasBeenSet;
+    bool m_endOffsetMillisHasBeenSet = false;
   };
 
 } // namespace Model

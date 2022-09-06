@@ -85,7 +85,7 @@ namespace Model
   private:
 
     PrometheusInfo m_prometheus;
-    bool m_prometheusHasBeenSet;
+    bool m_prometheusHasBeenSet = false;
   };
 
 } // namespace Model

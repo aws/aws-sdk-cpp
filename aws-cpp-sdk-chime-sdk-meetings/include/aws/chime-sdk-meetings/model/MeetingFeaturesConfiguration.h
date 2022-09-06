@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AudioFeatures m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
   };
 
 } // namespace Model

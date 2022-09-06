@@ -167,13 +167,13 @@ namespace Model
   private:
 
     EventInformation m_eventInformation;
-    bool m_eventInformationHasBeenSet;
+    bool m_eventInformationHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

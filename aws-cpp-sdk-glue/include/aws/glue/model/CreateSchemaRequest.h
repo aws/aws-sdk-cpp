@@ -584,25 +584,25 @@ namespace Model
   private:
 
     RegistryId m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     DataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     Compatibility m_compatibility;
-    bool m_compatibilityHasBeenSet;
+    bool m_compatibilityHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

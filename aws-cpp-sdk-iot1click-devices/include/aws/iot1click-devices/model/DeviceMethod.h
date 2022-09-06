@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::String m_methodName;
-    bool m_methodNameHasBeenSet;
+    bool m_methodNameHasBeenSet = false;
   };
 
 } // namespace Model

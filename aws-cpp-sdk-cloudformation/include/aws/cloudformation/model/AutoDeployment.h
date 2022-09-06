@@ -111,10 +111,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_retainStacksOnAccountRemoval;
-    bool m_retainStacksOnAccountRemovalHasBeenSet;
+    bool m_retainStacksOnAccountRemovalHasBeenSet = false;
   };
 
 } // namespace Model

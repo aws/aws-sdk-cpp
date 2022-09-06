@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_retainUntilDate;
-    bool m_retainUntilDateHasBeenSet;
+    bool m_retainUntilDateHasBeenSet = false;
 
     S3ObjectLockRetentionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

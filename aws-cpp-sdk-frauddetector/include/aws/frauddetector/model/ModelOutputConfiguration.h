@@ -231,13 +231,13 @@ namespace Model
   private:
 
     ModelOutputDataFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_jsonKeyToVariableMap;
-    bool m_jsonKeyToVariableMapHasBeenSet;
+    bool m_jsonKeyToVariableMapHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_csvIndexToVariableMap;
-    bool m_csvIndexToVariableMapHasBeenSet;
+    bool m_csvIndexToVariableMapHasBeenSet = false;
   };
 
 } // namespace Model

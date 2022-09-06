@@ -90,7 +90,7 @@ EMRServerlessClient::~EMRServerlessClient()
 
 void EMRServerlessClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EMR Serverless");
+  AWSClient::SetServiceClientName("EMR Serverless");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

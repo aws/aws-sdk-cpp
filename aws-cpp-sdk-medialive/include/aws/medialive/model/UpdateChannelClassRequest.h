@@ -153,13 +153,13 @@ namespace Model
   private:
 
     ChannelClass m_channelClass;
-    bool m_channelClassHasBeenSet;
+    bool m_channelClassHasBeenSet = false;
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::Vector<OutputDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
   };
 
 } // namespace Model

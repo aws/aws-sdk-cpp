@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_modelPackageName;
-    bool m_modelPackageNameHasBeenSet;
+    bool m_modelPackageNameHasBeenSet = false;
   };
 
 } // namespace Model

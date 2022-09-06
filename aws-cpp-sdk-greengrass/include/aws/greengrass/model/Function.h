@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     FunctionConfiguration m_functionConfiguration;
-    bool m_functionConfigurationHasBeenSet;
+    bool m_functionConfigurationHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

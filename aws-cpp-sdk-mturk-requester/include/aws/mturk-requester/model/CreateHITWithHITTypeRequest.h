@@ -623,34 +623,34 @@ namespace Model
   private:
 
     Aws::String m_hITTypeId;
-    bool m_hITTypeIdHasBeenSet;
+    bool m_hITTypeIdHasBeenSet = false;
 
     int m_maxAssignments;
-    bool m_maxAssignmentsHasBeenSet;
+    bool m_maxAssignmentsHasBeenSet = false;
 
     long long m_lifetimeInSeconds;
-    bool m_lifetimeInSecondsHasBeenSet;
+    bool m_lifetimeInSecondsHasBeenSet = false;
 
     Aws::String m_question;
-    bool m_questionHasBeenSet;
+    bool m_questionHasBeenSet = false;
 
     Aws::String m_requesterAnnotation;
-    bool m_requesterAnnotationHasBeenSet;
+    bool m_requesterAnnotationHasBeenSet = false;
 
     Aws::String m_uniqueRequestToken;
-    bool m_uniqueRequestTokenHasBeenSet;
+    bool m_uniqueRequestTokenHasBeenSet = false;
 
     ReviewPolicy m_assignmentReviewPolicy;
-    bool m_assignmentReviewPolicyHasBeenSet;
+    bool m_assignmentReviewPolicyHasBeenSet = false;
 
     ReviewPolicy m_hITReviewPolicy;
-    bool m_hITReviewPolicyHasBeenSet;
+    bool m_hITReviewPolicyHasBeenSet = false;
 
     Aws::String m_hITLayoutId;
-    bool m_hITLayoutIdHasBeenSet;
+    bool m_hITLayoutIdHasBeenSet = false;
 
     Aws::Vector<HITLayoutParameter> m_hITLayoutParameters;
-    bool m_hITLayoutParametersHasBeenSet;
+    bool m_hITLayoutParametersHasBeenSet = false;
   };
 
 } // namespace Model

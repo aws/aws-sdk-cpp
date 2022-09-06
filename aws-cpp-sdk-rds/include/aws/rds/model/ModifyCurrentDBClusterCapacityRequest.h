@@ -262,16 +262,16 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     int m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     int m_secondsBeforeTimeout;
-    bool m_secondsBeforeTimeoutHasBeenSet;
+    bool m_secondsBeforeTimeoutHasBeenSet = false;
 
     Aws::String m_timeoutAction;
-    bool m_timeoutActionHasBeenSet;
+    bool m_timeoutActionHasBeenSet = false;
   };
 
 } // namespace Model

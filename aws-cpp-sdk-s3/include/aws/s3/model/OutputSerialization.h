@@ -103,10 +103,10 @@ namespace Model
   private:
 
     CSVOutput m_cSV;
-    bool m_cSVHasBeenSet;
+    bool m_cSVHasBeenSet = false;
 
     JSONOutput m_jSON;
-    bool m_jSONHasBeenSet;
+    bool m_jSONHasBeenSet = false;
   };
 
 } // namespace Model

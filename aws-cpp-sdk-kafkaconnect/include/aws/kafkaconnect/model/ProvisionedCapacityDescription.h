@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_mcuCount;
-    bool m_mcuCountHasBeenSet;
+    bool m_mcuCountHasBeenSet = false;
 
     int m_workerCount;
-    bool m_workerCountHasBeenSet;
+    bool m_workerCountHasBeenSet = false;
   };
 
 } // namespace Model

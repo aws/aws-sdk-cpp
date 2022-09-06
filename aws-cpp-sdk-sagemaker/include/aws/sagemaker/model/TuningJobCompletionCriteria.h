@@ -58,7 +58,7 @@ namespace Model
   private:
 
     double m_targetObjectiveMetricValue;
-    bool m_targetObjectiveMetricValueHasBeenSet;
+    bool m_targetObjectiveMetricValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ namespace Model
   private:
 
     LogTargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetName;
-    bool m_targetNameHasBeenSet;
+    bool m_targetNameHasBeenSet = false;
   };
 
 } // namespace Model

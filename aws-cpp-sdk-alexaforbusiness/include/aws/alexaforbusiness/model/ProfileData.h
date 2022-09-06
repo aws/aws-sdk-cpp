@@ -369,31 +369,31 @@ namespace Model
   private:
 
     Aws::String m_profileArn;
-    bool m_profileArnHasBeenSet;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     TemperatureUnit m_temperatureUnit;
-    bool m_temperatureUnitHasBeenSet;
+    bool m_temperatureUnitHasBeenSet = false;
 
     WakeWord m_wakeWord;
-    bool m_wakeWordHasBeenSet;
+    bool m_wakeWordHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

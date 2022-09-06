@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_idpIdentifier;
-    bool m_idpIdentifierHasBeenSet;
+    bool m_idpIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -239,13 +239,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versionLabels;
-    bool m_versionLabelsHasBeenSet;
+    bool m_versionLabelsHasBeenSet = false;
   };
 
 } // namespace Model

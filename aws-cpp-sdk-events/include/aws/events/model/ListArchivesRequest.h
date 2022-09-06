@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::String m_namePrefix;
-    bool m_namePrefixHasBeenSet;
+    bool m_namePrefixHasBeenSet = false;
 
     Aws::String m_eventSourceArn;
-    bool m_eventSourceArnHasBeenSet;
+    bool m_eventSourceArnHasBeenSet = false;
 
     ArchiveState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

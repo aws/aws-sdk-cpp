@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::Vector<GrpcRouteMetadata> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_methodName;
-    bool m_methodNameHasBeenSet;
+    bool m_methodNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

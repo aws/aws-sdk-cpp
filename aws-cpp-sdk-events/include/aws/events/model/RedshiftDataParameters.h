@@ -303,22 +303,22 @@ namespace Model
   private:
 
     Aws::String m_secretManagerArn;
-    bool m_secretManagerArnHasBeenSet;
+    bool m_secretManagerArnHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_sql;
-    bool m_sqlHasBeenSet;
+    bool m_sqlHasBeenSet = false;
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     bool m_withEvent;
-    bool m_withEventHasBeenSet;
+    bool m_withEventHasBeenSet = false;
   };
 
 } // namespace Model

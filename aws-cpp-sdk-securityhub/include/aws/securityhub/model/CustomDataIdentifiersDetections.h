@@ -183,16 +183,16 @@ namespace Model
   private:
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Occurrences m_occurrences;
-    bool m_occurrencesHasBeenSet;
+    bool m_occurrencesHasBeenSet = false;
   };
 
 } // namespace Model

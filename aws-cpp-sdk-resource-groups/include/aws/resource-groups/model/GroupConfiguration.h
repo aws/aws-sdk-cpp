@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::Vector<GroupConfigurationItem> m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<GroupConfigurationItem> m_proposedConfiguration;
-    bool m_proposedConfigurationHasBeenSet;
+    bool m_proposedConfigurationHasBeenSet = false;
 
     GroupConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

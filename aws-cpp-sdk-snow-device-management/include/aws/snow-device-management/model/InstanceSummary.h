@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Instance m_instance;
-    bool m_instanceHasBeenSet;
+    bool m_instanceHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

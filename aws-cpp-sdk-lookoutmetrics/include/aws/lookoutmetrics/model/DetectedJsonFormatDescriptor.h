@@ -101,10 +101,10 @@ namespace Model
   private:
 
     DetectedField m_fileCompression;
-    bool m_fileCompressionHasBeenSet;
+    bool m_fileCompressionHasBeenSet = false;
 
     DetectedField m_charset;
-    bool m_charsetHasBeenSet;
+    bool m_charsetHasBeenSet = false;
   };
 
 } // namespace Model

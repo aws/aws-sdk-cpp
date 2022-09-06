@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_isWifiEnabled;
-    bool m_isWifiEnabledHasBeenSet;
+    bool m_isWifiEnabledHasBeenSet = false;
   };
 
 } // namespace Model

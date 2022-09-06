@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Vector<AccountAttributeValue> m_attributeValues;
-    bool m_attributeValuesHasBeenSet;
+    bool m_attributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     BatchJobIdentifier m_batchJobIdentifier;
-    bool m_batchJobIdentifierHasBeenSet;
+    bool m_batchJobIdentifierHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_jobParams;
-    bool m_jobParamsHasBeenSet;
+    bool m_jobParamsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_lifecyclePolicyText;
-    bool m_lifecyclePolicyTextHasBeenSet;
+    bool m_lifecyclePolicyTextHasBeenSet = false;
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
   };
 
 } // namespace Model

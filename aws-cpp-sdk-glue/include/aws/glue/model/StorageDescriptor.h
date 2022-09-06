@@ -641,46 +641,46 @@ namespace Model
   private:
 
     Aws::Vector<Column> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalLocations;
-    bool m_additionalLocationsHasBeenSet;
+    bool m_additionalLocationsHasBeenSet = false;
 
     Aws::String m_inputFormat;
-    bool m_inputFormatHasBeenSet;
+    bool m_inputFormatHasBeenSet = false;
 
     Aws::String m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     bool m_compressed;
-    bool m_compressedHasBeenSet;
+    bool m_compressedHasBeenSet = false;
 
     int m_numberOfBuckets;
-    bool m_numberOfBucketsHasBeenSet;
+    bool m_numberOfBucketsHasBeenSet = false;
 
     SerDeInfo m_serdeInfo;
-    bool m_serdeInfoHasBeenSet;
+    bool m_serdeInfoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bucketColumns;
-    bool m_bucketColumnsHasBeenSet;
+    bool m_bucketColumnsHasBeenSet = false;
 
     Aws::Vector<Order> m_sortColumns;
-    bool m_sortColumnsHasBeenSet;
+    bool m_sortColumnsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     SkewedInfo m_skewedInfo;
-    bool m_skewedInfoHasBeenSet;
+    bool m_skewedInfoHasBeenSet = false;
 
     bool m_storedAsSubDirectories;
-    bool m_storedAsSubDirectoriesHasBeenSet;
+    bool m_storedAsSubDirectoriesHasBeenSet = false;
 
     SchemaReference m_schemaReference;
-    bool m_schemaReferenceHasBeenSet;
+    bool m_schemaReferenceHasBeenSet = false;
   };
 
 } // namespace Model

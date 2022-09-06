@@ -250,22 +250,22 @@ namespace Model
   private:
 
     DeliveryStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::String m_lastErrorCode;
-    bool m_lastErrorCodeHasBeenSet;
+    bool m_lastErrorCodeHasBeenSet = false;
 
     Aws::String m_lastErrorMessage;
-    bool m_lastErrorMessageHasBeenSet;
+    bool m_lastErrorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAttemptTime;
-    bool m_lastAttemptTimeHasBeenSet;
+    bool m_lastAttemptTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSuccessfulTime;
-    bool m_lastSuccessfulTimeHasBeenSet;
+    bool m_lastSuccessfulTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextDeliveryTime;
-    bool m_nextDeliveryTimeHasBeenSet;
+    bool m_nextDeliveryTimeHasBeenSet = false;
   };
 
 } // namespace Model

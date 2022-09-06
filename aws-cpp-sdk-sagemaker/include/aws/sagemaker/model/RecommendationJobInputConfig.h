@@ -446,25 +446,25 @@ namespace Model
   private:
 
     Aws::String m_modelPackageVersionArn;
-    bool m_modelPackageVersionArnHasBeenSet;
+    bool m_modelPackageVersionArnHasBeenSet = false;
 
     int m_jobDurationInSeconds;
-    bool m_jobDurationInSecondsHasBeenSet;
+    bool m_jobDurationInSecondsHasBeenSet = false;
 
     TrafficPattern m_trafficPattern;
-    bool m_trafficPatternHasBeenSet;
+    bool m_trafficPatternHasBeenSet = false;
 
     RecommendationJobResourceLimit m_resourceLimit;
-    bool m_resourceLimitHasBeenSet;
+    bool m_resourceLimitHasBeenSet = false;
 
     Aws::Vector<EndpointInputConfiguration> m_endpointConfigurations;
-    bool m_endpointConfigurationsHasBeenSet;
+    bool m_endpointConfigurationsHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     RecommendationJobContainerConfig m_containerConfig;
-    bool m_containerConfigHasBeenSet;
+    bool m_containerConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -188,13 +188,13 @@ namespace Model
   private:
 
     TimeUnitsType m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     TimeUnitsType m_idToken;
-    bool m_idTokenHasBeenSet;
+    bool m_idTokenHasBeenSet = false;
 
     TimeUnitsType m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
   };
 
 } // namespace Model

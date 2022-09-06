@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_agentId;
-    bool m_agentIdHasBeenSet;
+    bool m_agentIdHasBeenSet = false;
 
     bool m_operationSucceeded;
-    bool m_operationSucceededHasBeenSet;
+    bool m_operationSucceededHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

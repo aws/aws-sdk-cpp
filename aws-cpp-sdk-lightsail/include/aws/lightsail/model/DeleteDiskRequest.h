@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_diskName;
-    bool m_diskNameHasBeenSet;
+    bool m_diskNameHasBeenSet = false;
 
     bool m_forceDeleteAddOns;
-    bool m_forceDeleteAddOnsHasBeenSet;
+    bool m_forceDeleteAddOnsHasBeenSet = false;
   };
 
 } // namespace Model

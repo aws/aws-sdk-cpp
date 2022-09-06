@@ -67,7 +67,7 @@ namespace Model
   private:
 
     bool m_configured;
-    bool m_configuredHasBeenSet;
+    bool m_configuredHasBeenSet = false;
   };
 
 } // namespace Model

@@ -641,34 +641,34 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_hosts;
-    bool m_hostsHasBeenSet;
+    bool m_hostsHasBeenSet = false;
 
     Aws::String m_roleBase;
-    bool m_roleBaseHasBeenSet;
+    bool m_roleBaseHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_roleSearchMatching;
-    bool m_roleSearchMatchingHasBeenSet;
+    bool m_roleSearchMatchingHasBeenSet = false;
 
     bool m_roleSearchSubtree;
-    bool m_roleSearchSubtreeHasBeenSet;
+    bool m_roleSearchSubtreeHasBeenSet = false;
 
     Aws::String m_serviceAccountUsername;
-    bool m_serviceAccountUsernameHasBeenSet;
+    bool m_serviceAccountUsernameHasBeenSet = false;
 
     Aws::String m_userBase;
-    bool m_userBaseHasBeenSet;
+    bool m_userBaseHasBeenSet = false;
 
     Aws::String m_userRoleName;
-    bool m_userRoleNameHasBeenSet;
+    bool m_userRoleNameHasBeenSet = false;
 
     Aws::String m_userSearchMatching;
-    bool m_userSearchMatchingHasBeenSet;
+    bool m_userSearchMatchingHasBeenSet = false;
 
     bool m_userSearchSubtree;
-    bool m_userSearchSubtreeHasBeenSet;
+    bool m_userSearchSubtreeHasBeenSet = false;
   };
 
 } // namespace Model

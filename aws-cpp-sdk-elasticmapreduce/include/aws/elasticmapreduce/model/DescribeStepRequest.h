@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_stepId;
-    bool m_stepIdHasBeenSet;
+    bool m_stepIdHasBeenSet = false;
   };
 
 } // namespace Model

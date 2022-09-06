@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OptInStatus m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
   };
 
 } // namespace Model

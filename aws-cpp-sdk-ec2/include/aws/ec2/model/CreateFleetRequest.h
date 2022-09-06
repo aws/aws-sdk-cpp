@@ -741,46 +741,46 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     SpotOptionsRequest m_spotOptions;
-    bool m_spotOptionsHasBeenSet;
+    bool m_spotOptionsHasBeenSet = false;
 
     OnDemandOptionsRequest m_onDemandOptions;
-    bool m_onDemandOptionsHasBeenSet;
+    bool m_onDemandOptionsHasBeenSet = false;
 
     FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet;
+    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
     Aws::Vector<FleetLaunchTemplateConfigRequest> m_launchTemplateConfigs;
-    bool m_launchTemplateConfigsHasBeenSet;
+    bool m_launchTemplateConfigsHasBeenSet = false;
 
     TargetCapacitySpecificationRequest m_targetCapacitySpecification;
-    bool m_targetCapacitySpecificationHasBeenSet;
+    bool m_targetCapacitySpecificationHasBeenSet = false;
 
     bool m_terminateInstancesWithExpiration;
-    bool m_terminateInstancesWithExpirationHasBeenSet;
+    bool m_terminateInstancesWithExpirationHasBeenSet = false;
 
     FleetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     bool m_replaceUnhealthyInstances;
-    bool m_replaceUnhealthyInstancesHasBeenSet;
+    bool m_replaceUnhealthyInstancesHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

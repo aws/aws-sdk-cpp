@@ -288,16 +288,16 @@ namespace Model
   private:
 
     Aws::String m_registryArn;
-    bool m_registryArnHasBeenSet;
+    bool m_registryArnHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     int m_containerPort;
-    bool m_containerPortHasBeenSet;
+    bool m_containerPortHasBeenSet = false;
   };
 
 } // namespace Model

@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartStreamArn;
-    bool m_exclusiveStartStreamArnHasBeenSet;
+    bool m_exclusiveStartStreamArnHasBeenSet = false;
   };
 
 } // namespace Model

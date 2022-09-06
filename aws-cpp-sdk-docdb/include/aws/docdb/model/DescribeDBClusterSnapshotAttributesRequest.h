@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_dBClusterSnapshotIdentifier;
-    bool m_dBClusterSnapshotIdentifierHasBeenSet;
+    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

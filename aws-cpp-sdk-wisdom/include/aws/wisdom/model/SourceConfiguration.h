@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AppIntegrationsConfiguration m_appIntegrations;
-    bool m_appIntegrationsHasBeenSet;
+    bool m_appIntegrationsHasBeenSet = false;
   };
 
 } // namespace Model

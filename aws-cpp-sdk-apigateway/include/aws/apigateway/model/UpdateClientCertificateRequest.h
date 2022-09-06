@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::Vector<PatchOperation> m_patchOperations;
-    bool m_patchOperationsHasBeenSet;
+    bool m_patchOperationsHasBeenSet = false;
   };
 
 } // namespace Model

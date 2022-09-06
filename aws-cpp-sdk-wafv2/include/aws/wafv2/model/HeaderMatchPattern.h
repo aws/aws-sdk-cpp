@@ -186,13 +186,13 @@ namespace Model
   private:
 
     All m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includedHeaders;
-    bool m_includedHeadersHasBeenSet;
+    bool m_includedHeadersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedHeaders;
-    bool m_excludedHeadersHasBeenSet;
+    bool m_excludedHeadersHasBeenSet = false;
   };
 
 } // namespace Model

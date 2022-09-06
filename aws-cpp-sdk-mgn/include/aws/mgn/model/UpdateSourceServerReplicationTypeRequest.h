@@ -107,10 +107,10 @@ namespace Model
   private:
 
     ReplicationType m_replicationType;
-    bool m_replicationTypeHasBeenSet;
+    bool m_replicationTypeHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

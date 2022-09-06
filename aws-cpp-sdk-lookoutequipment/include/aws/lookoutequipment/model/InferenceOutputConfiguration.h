@@ -120,10 +120,10 @@ namespace Model
   private:
 
     InferenceS3OutputConfiguration m_s3OutputConfiguration;
-    bool m_s3OutputConfigurationHasBeenSet;
+    bool m_s3OutputConfigurationHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

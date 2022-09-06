@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_keyArn;
-    bool m_keyArnHasBeenSet;
+    bool m_keyArnHasBeenSet = false;
 
     StreamingImageEncryptionConfigurationKeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
   };
 
 } // namespace Model

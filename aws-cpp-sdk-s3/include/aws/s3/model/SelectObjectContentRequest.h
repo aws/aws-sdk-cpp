@@ -746,45 +746,45 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     ExpressionType m_expressionType;
-    bool m_expressionTypeHasBeenSet;
+    bool m_expressionTypeHasBeenSet = false;
 
     RequestProgress m_requestProgress;
-    bool m_requestProgressHasBeenSet;
+    bool m_requestProgressHasBeenSet = false;
 
     InputSerialization m_inputSerialization;
-    bool m_inputSerializationHasBeenSet;
+    bool m_inputSerializationHasBeenSet = false;
 
     OutputSerialization m_outputSerialization;
-    bool m_outputSerializationHasBeenSet;
+    bool m_outputSerializationHasBeenSet = false;
 
     ScanRange m_scanRange;
-    bool m_scanRangeHasBeenSet;
+    bool m_scanRangeHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    bool m_customizedAccessLogTagHasBeenSet = false;
     SelectObjectContentHandler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder;
 
   };
 

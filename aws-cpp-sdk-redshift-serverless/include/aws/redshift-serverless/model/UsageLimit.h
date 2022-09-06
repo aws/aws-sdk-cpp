@@ -315,25 +315,25 @@ namespace Model
   private:
 
     long long m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     UsageLimitBreachAction m_breachAction;
-    bool m_breachActionHasBeenSet;
+    bool m_breachActionHasBeenSet = false;
 
     UsageLimitPeriod m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_usageLimitArn;
-    bool m_usageLimitArnHasBeenSet;
+    bool m_usageLimitArnHasBeenSet = false;
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
 
     UsageLimitUsageType m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

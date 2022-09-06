@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_dateImported;
-    bool m_dateImportedHasBeenSet;
+    bool m_dateImportedHasBeenSet = false;
 
     Aws::String m_sshPublicKeyBody;
-    bool m_sshPublicKeyBodyHasBeenSet;
+    bool m_sshPublicKeyBodyHasBeenSet = false;
 
     Aws::String m_sshPublicKeyId;
-    bool m_sshPublicKeyIdHasBeenSet;
+    bool m_sshPublicKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

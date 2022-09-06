@@ -103,10 +103,10 @@ namespace Model
   private:
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     VehicleWeightUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

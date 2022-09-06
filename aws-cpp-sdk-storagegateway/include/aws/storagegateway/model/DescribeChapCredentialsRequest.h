@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_targetARN;
-    bool m_targetARNHasBeenSet;
+    bool m_targetARNHasBeenSet = false;
   };
 
 } // namespace Model

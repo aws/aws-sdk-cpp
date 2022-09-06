@@ -225,16 +225,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     AssociationStatus m_associationStatus;
-    bool m_associationStatusHasBeenSet;
+    bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_deploymentDetail;
-    bool m_deploymentDetailHasBeenSet;
+    bool m_deploymentDetailHasBeenSet = false;
   };
 
 } // namespace Model

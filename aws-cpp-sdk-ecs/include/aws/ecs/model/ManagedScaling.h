@@ -199,19 +199,19 @@ namespace Model
   private:
 
     ManagedScalingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_targetCapacity;
-    bool m_targetCapacityHasBeenSet;
+    bool m_targetCapacityHasBeenSet = false;
 
     int m_minimumScalingStepSize;
-    bool m_minimumScalingStepSizeHasBeenSet;
+    bool m_minimumScalingStepSizeHasBeenSet = false;
 
     int m_maximumScalingStepSize;
-    bool m_maximumScalingStepSizeHasBeenSet;
+    bool m_maximumScalingStepSizeHasBeenSet = false;
 
     int m_instanceWarmupPeriod;
-    bool m_instanceWarmupPeriodHasBeenSet;
+    bool m_instanceWarmupPeriodHasBeenSet = false;
   };
 
 } // namespace Model

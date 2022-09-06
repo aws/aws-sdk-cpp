@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_ipv6Prefix;
-    bool m_ipv6PrefixHasBeenSet;
+    bool m_ipv6PrefixHasBeenSet = false;
   };
 
 } // namespace Model

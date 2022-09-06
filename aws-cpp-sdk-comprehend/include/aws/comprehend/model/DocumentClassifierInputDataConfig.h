@@ -451,19 +451,19 @@ namespace Model
   private:
 
     DocumentClassifierDataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_testS3Uri;
-    bool m_testS3UriHasBeenSet;
+    bool m_testS3UriHasBeenSet = false;
 
     Aws::String m_labelDelimiter;
-    bool m_labelDelimiterHasBeenSet;
+    bool m_labelDelimiterHasBeenSet = false;
 
     Aws::Vector<AugmentedManifestsListItem> m_augmentedManifests;
-    bool m_augmentedManifestsHasBeenSet;
+    bool m_augmentedManifestsHasBeenSet = false;
   };
 
 } // namespace Model

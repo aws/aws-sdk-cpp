@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CloudWatchLogGroupLogDestination m_cloudWatch;
-    bool m_cloudWatchHasBeenSet;
+    bool m_cloudWatchHasBeenSet = false;
   };
 
 } // namespace Model

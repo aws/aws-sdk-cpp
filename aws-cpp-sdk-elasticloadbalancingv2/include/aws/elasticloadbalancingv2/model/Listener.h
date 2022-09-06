@@ -365,28 +365,28 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::String m_loadBalancerArn;
-    bool m_loadBalancerArnHasBeenSet;
+    bool m_loadBalancerArnHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     ProtocolEnum m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<Certificate> m_certificates;
-    bool m_certificatesHasBeenSet;
+    bool m_certificatesHasBeenSet = false;
 
     Aws::String m_sslPolicy;
-    bool m_sslPolicyHasBeenSet;
+    bool m_sslPolicyHasBeenSet = false;
 
     Aws::Vector<Action> m_defaultActions;
-    bool m_defaultActionsHasBeenSet;
+    bool m_defaultActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alpnPolicy;
-    bool m_alpnPolicyHasBeenSet;
+    bool m_alpnPolicyHasBeenSet = false;
   };
 
 } // namespace Model

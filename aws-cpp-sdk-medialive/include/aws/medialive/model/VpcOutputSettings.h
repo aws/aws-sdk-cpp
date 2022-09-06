@@ -281,13 +281,13 @@ If STANDARD channel, subnet IDs must
   private:
 
     Aws::Vector<Aws::String> m_publicAddressAllocationIds;
-    bool m_publicAddressAllocationIdsHasBeenSet;
+    bool m_publicAddressAllocationIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

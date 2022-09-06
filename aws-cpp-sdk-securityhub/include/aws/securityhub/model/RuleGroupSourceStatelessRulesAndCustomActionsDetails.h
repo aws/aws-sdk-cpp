@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<RuleGroupSourceCustomActionsDetails> m_customActions;
-    bool m_customActionsHasBeenSet;
+    bool m_customActionsHasBeenSet = false;
 
     Aws::Vector<RuleGroupSourceStatelessRulesDetails> m_statelessRules;
-    bool m_statelessRulesHasBeenSet;
+    bool m_statelessRulesHasBeenSet = false;
   };
 
 } // namespace Model

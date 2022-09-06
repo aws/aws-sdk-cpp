@@ -858,46 +858,46 @@ namespace Model
   private:
 
     Aws::String m_teamId;
-    bool m_teamIdHasBeenSet;
+    bool m_teamIdHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<SlackEntity> m_slackEntityList;
-    bool m_slackEntityListHasBeenSet;
+    bool m_slackEntityListHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     bool m_crawlBotMessage;
-    bool m_crawlBotMessageHasBeenSet;
+    bool m_crawlBotMessageHasBeenSet = false;
 
     bool m_excludeArchived;
-    bool m_excludeArchivedHasBeenSet;
+    bool m_excludeArchivedHasBeenSet = false;
 
     Aws::String m_sinceCrawlDate;
-    bool m_sinceCrawlDateHasBeenSet;
+    bool m_sinceCrawlDateHasBeenSet = false;
 
     int m_lookBackPeriod;
-    bool m_lookBackPeriodHasBeenSet;
+    bool m_lookBackPeriodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_privateChannelFilter;
-    bool m_privateChannelFilterHasBeenSet;
+    bool m_privateChannelFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_publicChannelFilter;
-    bool m_publicChannelFilterHasBeenSet;
+    bool m_publicChannelFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

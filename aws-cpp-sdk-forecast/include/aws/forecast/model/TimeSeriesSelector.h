@@ -81,7 +81,7 @@ namespace Model
   private:
 
     TimeSeriesIdentifiers m_timeSeriesIdentifiers;
-    bool m_timeSeriesIdentifiersHasBeenSet;
+    bool m_timeSeriesIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

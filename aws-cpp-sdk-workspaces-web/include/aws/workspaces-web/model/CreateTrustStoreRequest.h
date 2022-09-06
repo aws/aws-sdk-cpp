@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_certificateList;
-    bool m_certificateListHasBeenSet;
+    bool m_certificateListHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_fQDN;
-    bool m_fQDNHasBeenSet;
+    bool m_fQDNHasBeenSet = false;
 
     Aws::String m_iAMRoleName;
-    bool m_iAMRoleNameHasBeenSet;
+    bool m_iAMRoleNameHasBeenSet = false;
   };
 
 } // namespace Model

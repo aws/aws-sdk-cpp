@@ -126,10 +126,10 @@ namespace Model
   private:
 
     EvaluationResultQualifier m_evaluationResultQualifier;
-    bool m_evaluationResultQualifierHasBeenSet;
+    bool m_evaluationResultQualifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_orderingTimestamp;
-    bool m_orderingTimestampHasBeenSet;
+    bool m_orderingTimestampHasBeenSet = false;
   };
 
 } // namespace Model

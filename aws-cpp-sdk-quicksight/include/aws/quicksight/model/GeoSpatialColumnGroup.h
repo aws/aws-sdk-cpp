@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     GeoSpatialCountryCode m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

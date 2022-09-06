@@ -814,58 +814,58 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_componentRoleArn;
-    bool m_componentRoleArnHasBeenSet;
+    bool m_componentRoleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     DeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_deploymentStatusMessage;
-    bool m_deploymentStatusMessageHasBeenSet;
+    bool m_deploymentStatusMessageHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_environmentAccountConnectionId;
-    bool m_environmentAccountConnectionIdHasBeenSet;
+    bool m_environmentAccountConnectionIdHasBeenSet = false;
 
     Aws::String m_environmentAccountId;
-    bool m_environmentAccountIdHasBeenSet;
+    bool m_environmentAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentAttemptedAt;
-    bool m_lastDeploymentAttemptedAtHasBeenSet;
+    bool m_lastDeploymentAttemptedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentSucceededAt;
-    bool m_lastDeploymentSucceededAtHasBeenSet;
+    bool m_lastDeploymentSucceededAtHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_protonServiceRoleArn;
-    bool m_protonServiceRoleArnHasBeenSet;
+    bool m_protonServiceRoleArnHasBeenSet = false;
 
     Provisioning m_provisioning;
-    bool m_provisioningHasBeenSet;
+    bool m_provisioningHasBeenSet = false;
 
     RepositoryBranch m_provisioningRepository;
-    bool m_provisioningRepositoryHasBeenSet;
+    bool m_provisioningRepositoryHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

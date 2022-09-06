@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_pages;
-    bool m_pagesHasBeenSet;
+    bool m_pagesHasBeenSet = false;
   };
 
 } // namespace Model

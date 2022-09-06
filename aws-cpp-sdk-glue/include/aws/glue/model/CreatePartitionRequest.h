@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     PartitionInput m_partitionInput;
-    bool m_partitionInputHasBeenSet;
+    bool m_partitionInputHasBeenSet = false;
   };
 
 } // namespace Model

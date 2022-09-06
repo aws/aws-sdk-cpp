@@ -527,31 +527,31 @@ namespace Model
   private:
 
     XavcHdProfileBitrateClass m_bitrateClass;
-    bool m_bitrateClassHasBeenSet;
+    bool m_bitrateClassHasBeenSet = false;
 
     XavcFlickerAdaptiveQuantization m_flickerAdaptiveQuantization;
-    bool m_flickerAdaptiveQuantizationHasBeenSet;
+    bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
     XavcGopBReference m_gopBReference;
-    bool m_gopBReferenceHasBeenSet;
+    bool m_gopBReferenceHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     int m_hrdBufferSize;
-    bool m_hrdBufferSizeHasBeenSet;
+    bool m_hrdBufferSizeHasBeenSet = false;
 
     XavcInterlaceMode m_interlaceMode;
-    bool m_interlaceModeHasBeenSet;
+    bool m_interlaceModeHasBeenSet = false;
 
     XavcHdProfileQualityTuningLevel m_qualityTuningLevel;
-    bool m_qualityTuningLevelHasBeenSet;
+    bool m_qualityTuningLevelHasBeenSet = false;
 
     int m_slices;
-    bool m_slicesHasBeenSet;
+    bool m_slicesHasBeenSet = false;
 
     XavcHdProfileTelecine m_telecine;
-    bool m_telecineHasBeenSet;
+    bool m_telecineHasBeenSet = false;
   };
 
 } // namespace Model

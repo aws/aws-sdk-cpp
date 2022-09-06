@@ -228,16 +228,16 @@ namespace Model
   private:
 
     OutputSdt m_outputSdt;
-    bool m_outputSdtHasBeenSet;
+    bool m_outputSdtHasBeenSet = false;
 
     int m_sdtInterval;
-    bool m_sdtIntervalHasBeenSet;
+    bool m_sdtIntervalHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceProviderName;
-    bool m_serviceProviderNameHasBeenSet;
+    bool m_serviceProviderNameHasBeenSet = false;
   };
 
 } // namespace Model

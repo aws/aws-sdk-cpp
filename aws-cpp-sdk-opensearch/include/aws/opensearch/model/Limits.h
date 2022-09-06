@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::Vector<StorageType> m_storageTypes;
-    bool m_storageTypesHasBeenSet;
+    bool m_storageTypesHasBeenSet = false;
 
     InstanceLimits m_instanceLimits;
-    bool m_instanceLimitsHasBeenSet;
+    bool m_instanceLimitsHasBeenSet = false;
 
     Aws::Vector<AdditionalLimit> m_additionalLimits;
-    bool m_additionalLimitsHasBeenSet;
+    bool m_additionalLimitsHasBeenSet = false;
   };
 
 } // namespace Model

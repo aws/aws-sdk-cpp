@@ -137,7 +137,7 @@ AuditManagerClient::~AuditManagerClient()
 
 void AuditManagerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AuditManager");
+  AWSClient::SetServiceClientName("AuditManager");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

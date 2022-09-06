@@ -258,19 +258,19 @@ namespace Model
   private:
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_resourcePrefix;
-    bool m_resourcePrefixHasBeenSet;
+    bool m_resourcePrefixHasBeenSet = false;
   };
 
 } // namespace Model

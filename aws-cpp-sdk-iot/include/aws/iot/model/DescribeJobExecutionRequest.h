@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     long long m_executionNumber;
-    bool m_executionNumberHasBeenSet;
+    bool m_executionNumberHasBeenSet = false;
   };
 
 } // namespace Model

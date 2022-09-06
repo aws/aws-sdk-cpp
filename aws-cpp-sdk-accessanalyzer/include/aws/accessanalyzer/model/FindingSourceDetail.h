@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
   };
 
 } // namespace Model

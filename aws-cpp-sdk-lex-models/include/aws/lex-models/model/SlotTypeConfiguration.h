@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SlotTypeRegexConfiguration m_regexConfiguration;
-    bool m_regexConfigurationHasBeenSet;
+    bool m_regexConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

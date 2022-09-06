@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     PhoneNumberProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     Aws::String m_callingName;
-    bool m_callingNameHasBeenSet;
+    bool m_callingNameHasBeenSet = false;
   };
 
 } // namespace Model

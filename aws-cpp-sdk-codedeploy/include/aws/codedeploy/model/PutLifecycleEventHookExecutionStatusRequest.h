@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_lifecycleEventHookExecutionId;
-    bool m_lifecycleEventHookExecutionIdHasBeenSet;
+    bool m_lifecycleEventHookExecutionIdHasBeenSet = false;
 
     LifecycleEventStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

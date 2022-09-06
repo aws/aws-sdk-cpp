@@ -352,22 +352,22 @@ namespace Model
   private:
 
     Aws::String m_ec2ImageId;
-    bool m_ec2ImageIdHasBeenSet;
+    bool m_ec2ImageIdHasBeenSet = false;
 
     WorkspaceImageIngestionProcess m_ingestionProcess;
-    bool m_ingestionProcessHasBeenSet;
+    bool m_ingestionProcessHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_imageDescription;
-    bool m_imageDescriptionHasBeenSet;
+    bool m_imageDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Application> m_applications;
-    bool m_applicationsHasBeenSet;
+    bool m_applicationsHasBeenSet = false;
   };
 
 } // namespace Model

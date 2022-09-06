@@ -160,13 +160,13 @@ namespace Model
   private:
 
     EsamManifestConfirmConditionNotification m_manifestConfirmConditionNotification;
-    bool m_manifestConfirmConditionNotificationHasBeenSet;
+    bool m_manifestConfirmConditionNotificationHasBeenSet = false;
 
     int m_responseSignalPreroll;
-    bool m_responseSignalPrerollHasBeenSet;
+    bool m_responseSignalPrerollHasBeenSet = false;
 
     EsamSignalProcessingNotification m_signalProcessingNotification;
-    bool m_signalProcessingNotificationHasBeenSet;
+    bool m_signalProcessingNotificationHasBeenSet = false;
   };
 
 } // namespace Model

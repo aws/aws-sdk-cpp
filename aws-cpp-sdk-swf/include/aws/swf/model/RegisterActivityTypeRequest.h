@@ -775,34 +775,34 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_defaultTaskStartToCloseTimeout;
-    bool m_defaultTaskStartToCloseTimeoutHasBeenSet;
+    bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
 
     Aws::String m_defaultTaskHeartbeatTimeout;
-    bool m_defaultTaskHeartbeatTimeoutHasBeenSet;
+    bool m_defaultTaskHeartbeatTimeoutHasBeenSet = false;
 
     TaskList m_defaultTaskList;
-    bool m_defaultTaskListHasBeenSet;
+    bool m_defaultTaskListHasBeenSet = false;
 
     Aws::String m_defaultTaskPriority;
-    bool m_defaultTaskPriorityHasBeenSet;
+    bool m_defaultTaskPriorityHasBeenSet = false;
 
     Aws::String m_defaultTaskScheduleToStartTimeout;
-    bool m_defaultTaskScheduleToStartTimeoutHasBeenSet;
+    bool m_defaultTaskScheduleToStartTimeoutHasBeenSet = false;
 
     Aws::String m_defaultTaskScheduleToCloseTimeout;
-    bool m_defaultTaskScheduleToCloseTimeoutHasBeenSet;
+    bool m_defaultTaskScheduleToCloseTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

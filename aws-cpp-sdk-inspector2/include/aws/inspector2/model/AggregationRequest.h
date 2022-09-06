@@ -380,31 +380,31 @@ namespace Model
   private:
 
     AccountAggregation m_accountAggregation;
-    bool m_accountAggregationHasBeenSet;
+    bool m_accountAggregationHasBeenSet = false;
 
     AmiAggregation m_amiAggregation;
-    bool m_amiAggregationHasBeenSet;
+    bool m_amiAggregationHasBeenSet = false;
 
     AwsEcrContainerAggregation m_awsEcrContainerAggregation;
-    bool m_awsEcrContainerAggregationHasBeenSet;
+    bool m_awsEcrContainerAggregationHasBeenSet = false;
 
     Ec2InstanceAggregation m_ec2InstanceAggregation;
-    bool m_ec2InstanceAggregationHasBeenSet;
+    bool m_ec2InstanceAggregationHasBeenSet = false;
 
     FindingTypeAggregation m_findingTypeAggregation;
-    bool m_findingTypeAggregationHasBeenSet;
+    bool m_findingTypeAggregationHasBeenSet = false;
 
     ImageLayerAggregation m_imageLayerAggregation;
-    bool m_imageLayerAggregationHasBeenSet;
+    bool m_imageLayerAggregationHasBeenSet = false;
 
     PackageAggregation m_packageAggregation;
-    bool m_packageAggregationHasBeenSet;
+    bool m_packageAggregationHasBeenSet = false;
 
     RepositoryAggregation m_repositoryAggregation;
-    bool m_repositoryAggregationHasBeenSet;
+    bool m_repositoryAggregationHasBeenSet = false;
 
     TitleAggregation m_titleAggregation;
-    bool m_titleAggregationHasBeenSet;
+    bool m_titleAggregationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_entityPath;
-    bool m_entityPathHasBeenSet;
+    bool m_entityPathHasBeenSet = false;
 
     Aws::String m_organizationsPolicyId;
-    bool m_organizationsPolicyIdHasBeenSet;
+    bool m_organizationsPolicyIdHasBeenSet = false;
   };
 
 } // namespace Model

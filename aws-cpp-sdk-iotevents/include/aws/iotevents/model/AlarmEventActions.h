@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<AlarmAction> m_alarmActions;
-    bool m_alarmActionsHasBeenSet;
+    bool m_alarmActionsHasBeenSet = false;
   };
 
 } // namespace Model

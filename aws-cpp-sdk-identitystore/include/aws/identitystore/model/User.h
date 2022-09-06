@@ -780,52 +780,52 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::Vector<ExternalId> m_externalIds;
-    bool m_externalIdsHasBeenSet;
+    bool m_externalIdsHasBeenSet = false;
 
     Name m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_nickName;
-    bool m_nickNameHasBeenSet;
+    bool m_nickNameHasBeenSet = false;
 
     Aws::String m_profileUrl;
-    bool m_profileUrlHasBeenSet;
+    bool m_profileUrlHasBeenSet = false;
 
     Aws::Vector<Email> m_emails;
-    bool m_emailsHasBeenSet;
+    bool m_emailsHasBeenSet = false;
 
     Aws::Vector<Address> m_addresses;
-    bool m_addressesHasBeenSet;
+    bool m_addressesHasBeenSet = false;
 
     Aws::Vector<PhoneNumber> m_phoneNumbers;
-    bool m_phoneNumbersHasBeenSet;
+    bool m_phoneNumbersHasBeenSet = false;
 
     Aws::String m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_preferredLanguage;
-    bool m_preferredLanguageHasBeenSet;
+    bool m_preferredLanguageHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
   };
 
 } // namespace Model

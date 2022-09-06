@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::Vector<CustomDataIdentifiersDetections> m_detections;
-    bool m_detectionsHasBeenSet;
+    bool m_detectionsHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
   };
 
 } // namespace Model

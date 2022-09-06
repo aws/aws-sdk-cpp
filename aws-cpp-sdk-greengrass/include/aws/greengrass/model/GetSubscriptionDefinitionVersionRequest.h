@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_subscriptionDefinitionId;
-    bool m_subscriptionDefinitionIdHasBeenSet;
+    bool m_subscriptionDefinitionIdHasBeenSet = false;
 
     Aws::String m_subscriptionDefinitionVersionId;
-    bool m_subscriptionDefinitionVersionIdHasBeenSet;
+    bool m_subscriptionDefinitionVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

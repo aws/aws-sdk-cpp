@@ -125,7 +125,7 @@ OrganizationsClient::~OrganizationsClient()
 
 void OrganizationsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Organizations");
+  AWSClient::SetServiceClientName("Organizations");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

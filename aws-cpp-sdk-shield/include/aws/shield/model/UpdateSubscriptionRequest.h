@@ -103,7 +103,7 @@ namespace Model
   private:
 
     AutoRenew m_autoRenew;
-    bool m_autoRenewHasBeenSet;
+    bool m_autoRenewHasBeenSet = false;
   };
 
 } // namespace Model

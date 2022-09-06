@@ -104,13 +104,13 @@ namespace Model
   private:
 
     int m_jobPort;
-    bool m_jobPortHasBeenSet;
+    bool m_jobPortHasBeenSet = false;
 
     int m_applicationPort;
-    bool m_applicationPortHasBeenSet;
+    bool m_applicationPortHasBeenSet = false;
 
     bool m_enableOnPublicIp;
-    bool m_enableOnPublicIpHasBeenSet;
+    bool m_enableOnPublicIpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -98,10 +98,10 @@ namespace Model
   private:
 
     long long m_maxProtectionGroups;
-    bool m_maxProtectionGroupsHasBeenSet;
+    bool m_maxProtectionGroupsHasBeenSet = false;
 
     ProtectionGroupPatternTypeLimits m_patternTypeLimits;
-    bool m_patternTypeLimitsHasBeenSet;
+    bool m_patternTypeLimitsHasBeenSet = false;
   };
 
 } // namespace Model

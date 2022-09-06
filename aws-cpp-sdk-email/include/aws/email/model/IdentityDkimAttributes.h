@@ -239,13 +239,13 @@ namespace Model
   private:
 
     bool m_dkimEnabled;
-    bool m_dkimEnabledHasBeenSet;
+    bool m_dkimEnabledHasBeenSet = false;
 
     VerificationStatus m_dkimVerificationStatus;
-    bool m_dkimVerificationStatusHasBeenSet;
+    bool m_dkimVerificationStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dkimTokens;
-    bool m_dkimTokensHasBeenSet;
+    bool m_dkimTokensHasBeenSet = false;
   };
 
 } // namespace Model

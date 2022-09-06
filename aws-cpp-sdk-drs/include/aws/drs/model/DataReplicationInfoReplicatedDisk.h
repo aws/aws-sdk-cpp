@@ -164,19 +164,19 @@ namespace Model
   private:
 
     long long m_backloggedStorageBytes;
-    bool m_backloggedStorageBytesHasBeenSet;
+    bool m_backloggedStorageBytesHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     long long m_replicatedStorageBytes;
-    bool m_replicatedStorageBytesHasBeenSet;
+    bool m_replicatedStorageBytesHasBeenSet = false;
 
     long long m_rescannedStorageBytes;
-    bool m_rescannedStorageBytesHasBeenSet;
+    bool m_rescannedStorageBytesHasBeenSet = false;
 
     long long m_totalStorageBytes;
-    bool m_totalStorageBytesHasBeenSet;
+    bool m_totalStorageBytesHasBeenSet = false;
   };
 
 } // namespace Model

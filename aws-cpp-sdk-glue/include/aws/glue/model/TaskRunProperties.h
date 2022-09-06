@@ -198,19 +198,19 @@ namespace Model
   private:
 
     TaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
 
     ImportLabelsTaskRunProperties m_importLabelsTaskRunProperties;
-    bool m_importLabelsTaskRunPropertiesHasBeenSet;
+    bool m_importLabelsTaskRunPropertiesHasBeenSet = false;
 
     ExportLabelsTaskRunProperties m_exportLabelsTaskRunProperties;
-    bool m_exportLabelsTaskRunPropertiesHasBeenSet;
+    bool m_exportLabelsTaskRunPropertiesHasBeenSet = false;
 
     LabelingSetGenerationTaskRunProperties m_labelingSetGenerationTaskRunProperties;
-    bool m_labelingSetGenerationTaskRunPropertiesHasBeenSet;
+    bool m_labelingSetGenerationTaskRunPropertiesHasBeenSet = false;
 
     FindMatchesTaskRunProperties m_findMatchesTaskRunProperties;
-    bool m_findMatchesTaskRunPropertiesHasBeenSet;
+    bool m_findMatchesTaskRunPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

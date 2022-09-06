@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_kmsEncryptionKeyArn;
-    bool m_kmsEncryptionKeyArnHasBeenSet;
+    bool m_kmsEncryptionKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

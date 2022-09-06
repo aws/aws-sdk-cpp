@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     long long m_bytesConverted;
-    bool m_bytesConvertedHasBeenSet;
+    bool m_bytesConvertedHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DiskImageDescription m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     DiskImageVolumeDescription m_volume;
-    bool m_volumeHasBeenSet;
+    bool m_volumeHasBeenSet = false;
   };
 
 } // namespace Model

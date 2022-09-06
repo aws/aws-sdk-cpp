@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     int m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

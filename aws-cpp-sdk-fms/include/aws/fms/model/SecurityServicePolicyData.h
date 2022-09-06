@@ -1133,13 +1133,13 @@ namespace Model
   private:
 
     SecurityServiceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_managedServiceData;
-    bool m_managedServiceDataHasBeenSet;
+    bool m_managedServiceDataHasBeenSet = false;
 
     PolicyOption m_policyOption;
-    bool m_policyOptionHasBeenSet;
+    bool m_policyOptionHasBeenSet = false;
   };
 
 } // namespace Model

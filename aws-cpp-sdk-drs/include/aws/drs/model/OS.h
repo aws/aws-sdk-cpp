@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_fullString;
-    bool m_fullStringHasBeenSet;
+    bool m_fullStringHasBeenSet = false;
   };
 
 } // namespace Model

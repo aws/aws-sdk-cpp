@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_eulaId;
-    bool m_eulaIdHasBeenSet;
+    bool m_eulaIdHasBeenSet = false;
   };
 
 } // namespace Model

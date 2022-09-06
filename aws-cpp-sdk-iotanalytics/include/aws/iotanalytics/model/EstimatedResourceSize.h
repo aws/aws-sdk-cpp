@@ -91,10 +91,10 @@ namespace Model
   private:
 
     double m_estimatedSizeInBytes;
-    bool m_estimatedSizeInBytesHasBeenSet;
+    bool m_estimatedSizeInBytesHasBeenSet = false;
 
     Aws::Utils::DateTime m_estimatedOn;
-    bool m_estimatedOnHasBeenSet;
+    bool m_estimatedOnHasBeenSet = false;
   };
 
 } // namespace Model

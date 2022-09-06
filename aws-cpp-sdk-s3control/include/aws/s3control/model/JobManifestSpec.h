@@ -131,10 +131,10 @@ namespace Model
   private:
 
     JobManifestFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<JobManifestFieldName> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

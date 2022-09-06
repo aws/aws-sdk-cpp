@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     bool m_sendingEnabled;
-    bool m_sendingEnabledHasBeenSet;
+    bool m_sendingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

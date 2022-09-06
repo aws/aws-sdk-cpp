@@ -295,22 +295,22 @@ namespace Model
   private:
 
     Aws::String m_sourceCidrBlock;
-    bool m_sourceCidrBlockHasBeenSet;
+    bool m_sourceCidrBlockHasBeenSet = false;
 
     Aws::String m_sourcePortRange;
-    bool m_sourcePortRangeHasBeenSet;
+    bool m_sourcePortRangeHasBeenSet = false;
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_destinationPortRange;
-    bool m_destinationPortRangeHasBeenSet;
+    bool m_destinationPortRangeHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     TransitGatewayPolicyRuleMetaData m_metaData;
-    bool m_metaDataHasBeenSet;
+    bool m_metaDataHasBeenSet = false;
   };
 
 } // namespace Model

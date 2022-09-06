@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

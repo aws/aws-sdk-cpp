@@ -145,13 +145,13 @@ namespace Model
   private:
 
     DataSetTaskLifecycle m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     DataSetImportSummary m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
   };
 
 } // namespace Model

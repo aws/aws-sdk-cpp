@@ -343,22 +343,22 @@ namespace Model
   private:
 
     HookInvocationPoint m_invocationPoint;
-    bool m_invocationPointHasBeenSet;
+    bool m_invocationPointHasBeenSet = false;
 
     HookFailureMode m_failureMode;
-    bool m_failureModeHasBeenSet;
+    bool m_failureModeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_typeVersionId;
-    bool m_typeVersionIdHasBeenSet;
+    bool m_typeVersionIdHasBeenSet = false;
 
     Aws::String m_typeConfigurationVersionId;
-    bool m_typeConfigurationVersionIdHasBeenSet;
+    bool m_typeConfigurationVersionIdHasBeenSet = false;
 
     ChangeSetHookTargetDetails m_targetDetails;
-    bool m_targetDetailsHasBeenSet;
+    bool m_targetDetailsHasBeenSet = false;
   };
 
 } // namespace Model

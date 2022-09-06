@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::Vector<GpuDeviceInfo> m_gpus;
-    bool m_gpusHasBeenSet;
+    bool m_gpusHasBeenSet = false;
 
     int m_totalGpuMemoryInMiB;
-    bool m_totalGpuMemoryInMiBHasBeenSet;
+    bool m_totalGpuMemoryInMiBHasBeenSet = false;
   };
 
 } // namespace Model

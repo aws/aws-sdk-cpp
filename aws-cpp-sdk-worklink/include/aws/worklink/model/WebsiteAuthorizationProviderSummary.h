@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_authorizationProviderId;
-    bool m_authorizationProviderIdHasBeenSet;
+    bool m_authorizationProviderIdHasBeenSet = false;
 
     AuthorizationProviderType m_authorizationProviderType;
-    bool m_authorizationProviderTypeHasBeenSet;
+    bool m_authorizationProviderTypeHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

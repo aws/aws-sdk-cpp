@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_pillarId;
-    bool m_pillarIdHasBeenSet;
+    bool m_pillarIdHasBeenSet = false;
 
     Aws::String m_pillarName;
-    bool m_pillarNameHasBeenSet;
+    bool m_pillarNameHasBeenSet = false;
 
     DifferenceStatus m_differenceStatus;
-    bool m_differenceStatusHasBeenSet;
+    bool m_differenceStatusHasBeenSet = false;
 
     Aws::Vector<QuestionDifference> m_questionDifferences;
-    bool m_questionDifferencesHasBeenSet;
+    bool m_questionDifferencesHasBeenSet = false;
   };
 
 } // namespace Model

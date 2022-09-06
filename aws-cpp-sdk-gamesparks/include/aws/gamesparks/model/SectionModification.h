@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Operation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_section;
-    bool m_sectionHasBeenSet;
+    bool m_sectionHasBeenSet = false;
 
     Aws::Utils::Document m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

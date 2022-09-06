@@ -70,7 +70,7 @@ namespace Model
   private:
 
     NielsenWatermarksSettings m_nielsenWatermarksSettings;
-    bool m_nielsenWatermarksSettingsHasBeenSet;
+    bool m_nielsenWatermarksSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -175,10 +175,10 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     MetricPolicy m_metricPolicy;
-    bool m_metricPolicyHasBeenSet;
+    bool m_metricPolicyHasBeenSet = false;
   };
 
 } // namespace Model

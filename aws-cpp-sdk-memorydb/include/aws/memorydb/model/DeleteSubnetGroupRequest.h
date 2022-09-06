@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_subnetGroupName;
-    bool m_subnetGroupNameHasBeenSet;
+    bool m_subnetGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

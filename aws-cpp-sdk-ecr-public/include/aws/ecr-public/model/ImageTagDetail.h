@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_imageTag;
-    bool m_imageTagHasBeenSet;
+    bool m_imageTagHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ReferencedImageDetail m_imageDetail;
-    bool m_imageDetailHasBeenSet;
+    bool m_imageDetailHasBeenSet = false;
   };
 
 } // namespace Model

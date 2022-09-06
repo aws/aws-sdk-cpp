@@ -149,10 +149,10 @@ namespace Model
   private:
 
     DimensionType m_dimensionType;
-    bool m_dimensionTypeHasBeenSet;
+    bool m_dimensionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_dBParameterGroupName;
-    bool m_dBParameterGroupNameHasBeenSet;
+    bool m_dBParameterGroupNameHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
-    bool m_dBParameterGroupFamilyHasBeenSet;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_dBParameterGroupArn;
-    bool m_dBParameterGroupArnHasBeenSet;
+    bool m_dBParameterGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

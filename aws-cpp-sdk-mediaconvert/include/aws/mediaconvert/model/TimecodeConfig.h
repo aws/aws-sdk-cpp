@@ -401,16 +401,16 @@ namespace Model
   private:
 
     Aws::String m_anchor;
-    bool m_anchorHasBeenSet;
+    bool m_anchorHasBeenSet = false;
 
     TimecodeSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_timestampOffset;
-    bool m_timestampOffsetHasBeenSet;
+    bool m_timestampOffsetHasBeenSet = false;
   };
 
 } // namespace Model

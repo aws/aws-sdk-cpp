@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ShardConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreationTime;
-    bool m_snapshotCreationTimeHasBeenSet;
+    bool m_snapshotCreationTimeHasBeenSet = false;
   };
 
 } // namespace Model

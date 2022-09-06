@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_vmManagerId;
-    bool m_vmManagerIdHasBeenSet;
+    bool m_vmManagerIdHasBeenSet = false;
 
     Aws::String m_vmId;
-    bool m_vmIdHasBeenSet;
+    bool m_vmIdHasBeenSet = false;
   };
 
 } // namespace Model

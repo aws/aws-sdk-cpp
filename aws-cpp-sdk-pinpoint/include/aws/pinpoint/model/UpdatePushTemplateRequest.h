@@ -323,16 +323,16 @@ namespace Model
   private:
 
     bool m_createNewVersion;
-    bool m_createNewVersionHasBeenSet;
+    bool m_createNewVersionHasBeenSet = false;
 
     PushNotificationTemplateRequest m_pushNotificationTemplateRequest;
-    bool m_pushNotificationTemplateRequestHasBeenSet;
+    bool m_pushNotificationTemplateRequestHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

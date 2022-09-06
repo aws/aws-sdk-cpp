@@ -290,19 +290,19 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     AppAssessmentScheduleType m_assessmentSchedule;
-    bool m_assessmentScheduleHasBeenSet;
+    bool m_assessmentScheduleHasBeenSet = false;
 
     bool m_clearResiliencyPolicyArn;
-    bool m_clearResiliencyPolicyArnHasBeenSet;
+    bool m_clearResiliencyPolicyArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
   };
 
 } // namespace Model

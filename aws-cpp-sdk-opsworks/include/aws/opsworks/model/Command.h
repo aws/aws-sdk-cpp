@@ -493,34 +493,34 @@ namespace Model
   private:
 
     Aws::String m_commandId;
-    bool m_commandIdHasBeenSet;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_acknowledgedAt;
-    bool m_acknowledgedAtHasBeenSet;
+    bool m_acknowledgedAtHasBeenSet = false;
 
     Aws::String m_completedAt;
-    bool m_completedAtHasBeenSet;
+    bool m_completedAtHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_exitCode;
-    bool m_exitCodeHasBeenSet;
+    bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_logUrl;
-    bool m_logUrlHasBeenSet;
+    bool m_logUrlHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

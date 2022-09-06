@@ -375,22 +375,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostIdSet;
-    bool m_hostIdSetHasBeenSet;
+    bool m_hostIdSetHasBeenSet = false;
 
     Aws::String m_limitPrice;
-    bool m_limitPriceHasBeenSet;
+    bool m_limitPriceHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,7 +92,7 @@ FISClient::~FISClient()
 
 void FISClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("fis");
+  AWSClient::SetServiceClientName("fis");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

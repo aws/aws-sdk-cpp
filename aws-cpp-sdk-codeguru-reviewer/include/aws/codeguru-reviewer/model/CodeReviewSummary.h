@@ -546,40 +546,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_codeReviewArn;
-    bool m_codeReviewArnHasBeenSet;
+    bool m_codeReviewArnHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     ProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     JobState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimeStamp;
-    bool m_createdTimeStampHasBeenSet;
+    bool m_createdTimeStampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimeStamp;
-    bool m_lastUpdatedTimeStampHasBeenSet;
+    bool m_lastUpdatedTimeStampHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     MetricsSummary m_metricsSummary;
-    bool m_metricsSummaryHasBeenSet;
+    bool m_metricsSummaryHasBeenSet = false;
 
     SourceCodeType m_sourceCodeType;
-    bool m_sourceCodeTypeHasBeenSet;
+    bool m_sourceCodeTypeHasBeenSet = false;
   };
 
 } // namespace Model

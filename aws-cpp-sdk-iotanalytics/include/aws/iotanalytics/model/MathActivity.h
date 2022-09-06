@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_math;
-    bool m_mathHasBeenSet;
+    bool m_mathHasBeenSet = false;
 
     Aws::String m_next;
-    bool m_nextHasBeenSet;
+    bool m_nextHasBeenSet = false;
   };
 
 } // namespace Model

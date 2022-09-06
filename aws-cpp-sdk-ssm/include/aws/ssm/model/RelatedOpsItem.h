@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
   };
 
 } // namespace Model

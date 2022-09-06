@@ -108,7 +108,7 @@ Inspector2Client::~Inspector2Client()
 
 void Inspector2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Inspector2");
+  AWSClient::SetServiceClientName("Inspector2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

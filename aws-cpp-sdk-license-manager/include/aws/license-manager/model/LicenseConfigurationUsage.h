@@ -254,22 +254,22 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceStatus;
-    bool m_resourceStatusHasBeenSet;
+    bool m_resourceStatusHasBeenSet = false;
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_associationTime;
-    bool m_associationTimeHasBeenSet;
+    bool m_associationTimeHasBeenSet = false;
 
     long long m_consumedLicenses;
-    bool m_consumedLicensesHasBeenSet;
+    bool m_consumedLicensesHasBeenSet = false;
   };
 
 } // namespace Model

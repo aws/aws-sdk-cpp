@@ -1248,103 +1248,103 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_autoScalingGroupARN;
-    bool m_autoScalingGroupARNHasBeenSet;
+    bool m_autoScalingGroupARNHasBeenSet = false;
 
     Aws::String m_launchConfigurationName;
-    bool m_launchConfigurationNameHasBeenSet;
+    bool m_launchConfigurationNameHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     MixedInstancesPolicy m_mixedInstancesPolicy;
-    bool m_mixedInstancesPolicyHasBeenSet;
+    bool m_mixedInstancesPolicyHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     int m_predictedCapacity;
-    bool m_predictedCapacityHasBeenSet;
+    bool m_predictedCapacityHasBeenSet = false;
 
     int m_defaultCooldown;
-    bool m_defaultCooldownHasBeenSet;
+    bool m_defaultCooldownHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_loadBalancerNames;
-    bool m_loadBalancerNamesHasBeenSet;
+    bool m_loadBalancerNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetGroupARNs;
-    bool m_targetGroupARNsHasBeenSet;
+    bool m_targetGroupARNsHasBeenSet = false;
 
     Aws::String m_healthCheckType;
-    bool m_healthCheckTypeHasBeenSet;
+    bool m_healthCheckTypeHasBeenSet = false;
 
     int m_healthCheckGracePeriod;
-    bool m_healthCheckGracePeriodHasBeenSet;
+    bool m_healthCheckGracePeriodHasBeenSet = false;
 
     Aws::Vector<Instance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Vector<SuspendedProcess> m_suspendedProcesses;
-    bool m_suspendedProcessesHasBeenSet;
+    bool m_suspendedProcessesHasBeenSet = false;
 
     Aws::String m_placementGroup;
-    bool m_placementGroupHasBeenSet;
+    bool m_placementGroupHasBeenSet = false;
 
     Aws::String m_vPCZoneIdentifier;
-    bool m_vPCZoneIdentifierHasBeenSet;
+    bool m_vPCZoneIdentifierHasBeenSet = false;
 
     Aws::Vector<EnabledMetric> m_enabledMetrics;
-    bool m_enabledMetricsHasBeenSet;
+    bool m_enabledMetricsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<TagDescription> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminationPolicies;
-    bool m_terminationPoliciesHasBeenSet;
+    bool m_terminationPoliciesHasBeenSet = false;
 
     bool m_newInstancesProtectedFromScaleIn;
-    bool m_newInstancesProtectedFromScaleInHasBeenSet;
+    bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
 
     Aws::String m_serviceLinkedRoleARN;
-    bool m_serviceLinkedRoleARNHasBeenSet;
+    bool m_serviceLinkedRoleARNHasBeenSet = false;
 
     int m_maxInstanceLifetime;
-    bool m_maxInstanceLifetimeHasBeenSet;
+    bool m_maxInstanceLifetimeHasBeenSet = false;
 
     bool m_capacityRebalance;
-    bool m_capacityRebalanceHasBeenSet;
+    bool m_capacityRebalanceHasBeenSet = false;
 
     WarmPoolConfiguration m_warmPoolConfiguration;
-    bool m_warmPoolConfigurationHasBeenSet;
+    bool m_warmPoolConfigurationHasBeenSet = false;
 
     int m_warmPoolSize;
-    bool m_warmPoolSizeHasBeenSet;
+    bool m_warmPoolSizeHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_desiredCapacityType;
-    bool m_desiredCapacityTypeHasBeenSet;
+    bool m_desiredCapacityTypeHasBeenSet = false;
 
     int m_defaultInstanceWarmup;
-    bool m_defaultInstanceWarmupHasBeenSet;
+    bool m_defaultInstanceWarmupHasBeenSet = false;
   };
 
 } // namespace Model

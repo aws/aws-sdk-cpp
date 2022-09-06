@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
 
     Aws::String m_skillId;
-    bool m_skillIdHasBeenSet;
+    bool m_skillIdHasBeenSet = false;
 
     Aws::String m_parameterKey;
-    bool m_parameterKeyHasBeenSet;
+    bool m_parameterKeyHasBeenSet = false;
   };
 
 } // namespace Model

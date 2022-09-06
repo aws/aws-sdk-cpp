@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Aws::String m_humanLoopName;
-    bool m_humanLoopNameHasBeenSet;
+    bool m_humanLoopNameHasBeenSet = false;
 
     HumanLoopStatus m_humanLoopStatus;
-    bool m_humanLoopStatusHasBeenSet;
+    bool m_humanLoopStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_flowDefinitionArn;
-    bool m_flowDefinitionArnHasBeenSet;
+    bool m_flowDefinitionArnHasBeenSet = false;
   };
 
 } // namespace Model

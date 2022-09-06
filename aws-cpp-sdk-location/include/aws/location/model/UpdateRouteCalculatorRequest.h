@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_calculatorName;
-    bool m_calculatorNameHasBeenSet;
+    bool m_calculatorNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -254,16 +254,16 @@ namespace Model
   private:
 
     Aws::String m_licenseConfigurationArn;
-    bool m_licenseConfigurationArnHasBeenSet;
+    bool m_licenseConfigurationArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

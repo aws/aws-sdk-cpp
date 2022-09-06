@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_fromBundleId;
-    bool m_fromBundleIdHasBeenSet;
+    bool m_fromBundleIdHasBeenSet = false;
 
     Aws::String m_fromBlueprintId;
-    bool m_fromBlueprintIdHasBeenSet;
+    bool m_fromBlueprintIdHasBeenSet = false;
 
     Aws::Vector<DiskInfo> m_fromDiskInfo;
-    bool m_fromDiskInfoHasBeenSet;
+    bool m_fromDiskInfoHasBeenSet = false;
   };
 
 } // namespace Model

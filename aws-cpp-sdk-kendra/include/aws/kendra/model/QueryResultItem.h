@@ -520,34 +520,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     QueryResultType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<AdditionalResultAttribute> m_additionalAttributes;
-    bool m_additionalAttributesHasBeenSet;
+    bool m_additionalAttributesHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     TextWithHighlights m_documentTitle;
-    bool m_documentTitleHasBeenSet;
+    bool m_documentTitleHasBeenSet = false;
 
     TextWithHighlights m_documentExcerpt;
-    bool m_documentExcerptHasBeenSet;
+    bool m_documentExcerptHasBeenSet = false;
 
     Aws::String m_documentURI;
-    bool m_documentURIHasBeenSet;
+    bool m_documentURIHasBeenSet = false;
 
     Aws::Vector<DocumentAttribute> m_documentAttributes;
-    bool m_documentAttributesHasBeenSet;
+    bool m_documentAttributesHasBeenSet = false;
 
     ScoreAttributes m_scoreAttributes;
-    bool m_scoreAttributesHasBeenSet;
+    bool m_scoreAttributesHasBeenSet = false;
 
     Aws::String m_feedbackToken;
-    bool m_feedbackTokenHasBeenSet;
+    bool m_feedbackTokenHasBeenSet = false;
   };
 
 } // namespace Model

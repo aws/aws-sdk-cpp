@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::Vector<ClusterParameterStatus> m_clusterParameterStatusList;
-    bool m_clusterParameterStatusListHasBeenSet;
+    bool m_clusterParameterStatusListHasBeenSet = false;
   };
 
 } // namespace Model

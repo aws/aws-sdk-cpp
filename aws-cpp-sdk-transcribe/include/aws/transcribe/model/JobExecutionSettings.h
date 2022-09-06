@@ -202,10 +202,10 @@ namespace Model
   private:
 
     bool m_allowDeferredExecution;
-    bool m_allowDeferredExecutionHasBeenSet;
+    bool m_allowDeferredExecutionHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

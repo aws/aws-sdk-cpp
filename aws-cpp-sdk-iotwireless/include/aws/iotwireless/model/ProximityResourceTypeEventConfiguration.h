@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SidewalkResourceTypeEventConfiguration m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
   };
 
 } // namespace Model

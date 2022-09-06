@@ -514,43 +514,43 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_primaryEmail;
-    bool m_primaryEmailHasBeenSet;
+    bool m_primaryEmailHasBeenSet = false;
 
     Aws::String m_primaryProvisionedNumber;
-    bool m_primaryProvisionedNumberHasBeenSet;
+    bool m_primaryProvisionedNumberHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     License m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     UserType m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
 
     RegistrationStatus m_userRegistrationStatus;
-    bool m_userRegistrationStatusHasBeenSet;
+    bool m_userRegistrationStatusHasBeenSet = false;
 
     InviteStatus m_userInvitationStatus;
-    bool m_userInvitationStatusHasBeenSet;
+    bool m_userInvitationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_registeredOn;
-    bool m_registeredOnHasBeenSet;
+    bool m_registeredOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitedOn;
-    bool m_invitedOnHasBeenSet;
+    bool m_invitedOnHasBeenSet = false;
 
     AlexaForBusinessMetadata m_alexaForBusinessMetadata;
-    bool m_alexaForBusinessMetadataHasBeenSet;
+    bool m_alexaForBusinessMetadataHasBeenSet = false;
 
     Aws::String m_personalPIN;
-    bool m_personalPINHasBeenSet;
+    bool m_personalPINHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,10 +84,10 @@ namespace Model
   private:
 
     double m_maxScore;
-    bool m_maxScoreHasBeenSet;
+    bool m_maxScoreHasBeenSet = false;
 
     double m_currentScore;
-    bool m_currentScoreHasBeenSet;
+    bool m_currentScoreHasBeenSet = false;
   };
 
 } // namespace Model

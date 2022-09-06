@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
   };
 
 } // namespace Model

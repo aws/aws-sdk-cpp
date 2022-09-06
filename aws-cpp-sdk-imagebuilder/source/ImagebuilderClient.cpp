@@ -126,7 +126,7 @@ ImagebuilderClient::~ImagebuilderClient()
 
 void ImagebuilderClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("imagebuilder");
+  AWSClient::SetServiceClientName("imagebuilder");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

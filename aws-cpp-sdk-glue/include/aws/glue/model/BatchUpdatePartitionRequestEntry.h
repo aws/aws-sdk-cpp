@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_partitionValueList;
-    bool m_partitionValueListHasBeenSet;
+    bool m_partitionValueListHasBeenSet = false;
 
     PartitionInput m_partitionInput;
-    bool m_partitionInputHasBeenSet;
+    bool m_partitionInputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_totalEstimatedMonthlySavingsAmount;
-    bool m_totalEstimatedMonthlySavingsAmountHasBeenSet;
+    bool m_totalEstimatedMonthlySavingsAmountHasBeenSet = false;
 
     Aws::String m_totalEstimatedMonthlySavingsPercentage;
-    bool m_totalEstimatedMonthlySavingsPercentageHasBeenSet;
+    bool m_totalEstimatedMonthlySavingsPercentageHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

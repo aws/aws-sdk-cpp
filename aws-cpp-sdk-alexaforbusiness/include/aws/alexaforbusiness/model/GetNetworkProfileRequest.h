@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
   };
 
 } // namespace Model

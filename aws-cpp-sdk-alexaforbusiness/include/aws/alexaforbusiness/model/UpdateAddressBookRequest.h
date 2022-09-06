@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_addressBookArn;
-    bool m_addressBookArnHasBeenSet;
+    bool m_addressBookArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ControlSetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Role> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::Vector<AssessmentControl> m_controls;
-    bool m_controlsHasBeenSet;
+    bool m_controlsHasBeenSet = false;
 
     Aws::Vector<Delegation> m_delegations;
-    bool m_delegationsHasBeenSet;
+    bool m_delegationsHasBeenSet = false;
 
     int m_systemEvidenceCount;
-    bool m_systemEvidenceCountHasBeenSet;
+    bool m_systemEvidenceCountHasBeenSet = false;
 
     int m_manualEvidenceCount;
-    bool m_manualEvidenceCountHasBeenSet;
+    bool m_manualEvidenceCountHasBeenSet = false;
   };
 
 } // namespace Model

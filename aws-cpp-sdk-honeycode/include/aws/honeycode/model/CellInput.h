@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_fact;
-    bool m_factHasBeenSet;
+    bool m_factHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_facts;
-    bool m_factsHasBeenSet;
+    bool m_factsHasBeenSet = false;
   };
 
 } // namespace Model

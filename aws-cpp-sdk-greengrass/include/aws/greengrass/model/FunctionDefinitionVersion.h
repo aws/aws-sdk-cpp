@@ -119,10 +119,10 @@ namespace Model
   private:
 
     FunctionDefaultConfig m_defaultConfig;
-    bool m_defaultConfigHasBeenSet;
+    bool m_defaultConfigHasBeenSet = false;
 
     Aws::Vector<Function> m_functions;
-    bool m_functionsHasBeenSet;
+    bool m_functionsHasBeenSet = false;
   };
 
 } // namespace Model

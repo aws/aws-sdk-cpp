@@ -351,16 +351,16 @@ namespace Model
   private:
 
     Aws::Vector<TransactWriteItem> m_transactItems;
-    bool m_transactItemsHasBeenSet;
+    bool m_transactItemsHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
-    bool m_returnItemCollectionMetricsHasBeenSet;
+    bool m_returnItemCollectionMetricsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

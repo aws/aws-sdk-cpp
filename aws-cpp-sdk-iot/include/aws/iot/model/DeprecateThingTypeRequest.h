@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     bool m_undoDeprecate;
-    bool m_undoDeprecateHasBeenSet;
+    bool m_undoDeprecateHasBeenSet = false;
   };
 
 } // namespace Model

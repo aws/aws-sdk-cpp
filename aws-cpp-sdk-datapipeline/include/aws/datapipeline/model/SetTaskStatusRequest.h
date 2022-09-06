@@ -321,19 +321,19 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     TaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
 
     Aws::String m_errorId;
-    bool m_errorIdHasBeenSet;
+    bool m_errorIdHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_errorStackTrace;
-    bool m_errorStackTraceHasBeenSet;
+    bool m_errorStackTraceHasBeenSet = false;
   };
 
 } // namespace Model

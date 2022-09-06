@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::String m_queueArn;
-    bool m_queueArnHasBeenSet;
+    bool m_queueArnHasBeenSet = false;
 
     Aws::String m_queueName;
-    bool m_queueNameHasBeenSet;
+    bool m_queueNameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     int m_delay;
-    bool m_delayHasBeenSet;
+    bool m_delayHasBeenSet = false;
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
   };
 
 } // namespace Model

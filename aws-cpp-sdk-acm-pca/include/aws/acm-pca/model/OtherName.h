@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_typeId;
-    bool m_typeIdHasBeenSet;
+    bool m_typeIdHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     RefreshSchemasStatusTypeValue m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRefreshDate;
-    bool m_lastRefreshDateHasBeenSet;
+    bool m_lastRefreshDateHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
-    bool m_lastFailureMessageHasBeenSet;
+    bool m_lastFailureMessageHasBeenSet = false;
   };
 
 } // namespace Model

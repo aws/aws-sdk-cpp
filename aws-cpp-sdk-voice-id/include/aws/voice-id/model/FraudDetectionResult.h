@@ -370,25 +370,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_audioAggregationEndedAt;
-    bool m_audioAggregationEndedAtHasBeenSet;
+    bool m_audioAggregationEndedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_audioAggregationStartedAt;
-    bool m_audioAggregationStartedAtHasBeenSet;
+    bool m_audioAggregationStartedAtHasBeenSet = false;
 
     FraudDetectionConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     FraudDetectionDecision m_decision;
-    bool m_decisionHasBeenSet;
+    bool m_decisionHasBeenSet = false;
 
     Aws::String m_fraudDetectionResultId;
-    bool m_fraudDetectionResultIdHasBeenSet;
+    bool m_fraudDetectionResultIdHasBeenSet = false;
 
     Aws::Vector<FraudDetectionReason> m_reasons;
-    bool m_reasonsHasBeenSet;
+    bool m_reasonsHasBeenSet = false;
 
     FraudRiskDetails m_riskDetails;
-    bool m_riskDetailsHasBeenSet;
+    bool m_riskDetailsHasBeenSet = false;
   };
 
 } // namespace Model

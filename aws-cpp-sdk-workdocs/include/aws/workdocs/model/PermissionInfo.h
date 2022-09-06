@@ -102,10 +102,10 @@ namespace Model
   private:
 
     RoleType m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     RolePermissionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,7 +84,7 @@ IoTFleetHubClient::~IoTFleetHubClient()
 
 void IoTFleetHubClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoTFleetHub");
+  AWSClient::SetServiceClientName("IoTFleetHub");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

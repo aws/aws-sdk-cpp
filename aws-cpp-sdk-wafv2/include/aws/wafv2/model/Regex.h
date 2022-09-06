@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_regexString;
-    bool m_regexStringHasBeenSet;
+    bool m_regexStringHasBeenSet = false;
   };
 
 } // namespace Model

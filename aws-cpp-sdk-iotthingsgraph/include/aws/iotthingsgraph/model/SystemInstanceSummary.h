@@ -380,31 +380,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     SystemInstanceDeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     DeploymentTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_greengrassGroupName;
-    bool m_greengrassGroupNameHasBeenSet;
+    bool m_greengrassGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_greengrassGroupId;
-    bool m_greengrassGroupIdHasBeenSet;
+    bool m_greengrassGroupIdHasBeenSet = false;
 
     Aws::String m_greengrassGroupVersionId;
-    bool m_greengrassGroupVersionIdHasBeenSet;
+    bool m_greengrassGroupVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

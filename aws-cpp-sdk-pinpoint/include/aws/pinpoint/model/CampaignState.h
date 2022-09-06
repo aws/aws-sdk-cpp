@@ -95,7 +95,7 @@ namespace Model
   private:
 
     CampaignStatus m_campaignStatus;
-    bool m_campaignStatusHasBeenSet;
+    bool m_campaignStatusHasBeenSet = false;
   };
 
 } // namespace Model

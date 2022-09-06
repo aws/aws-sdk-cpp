@@ -520,40 +520,40 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     RecoveryInstanceDataReplicationInfo m_dataReplicationInfo;
-    bool m_dataReplicationInfoHasBeenSet;
+    bool m_dataReplicationInfoHasBeenSet = false;
 
     Aws::String m_ec2InstanceID;
-    bool m_ec2InstanceIDHasBeenSet;
+    bool m_ec2InstanceIDHasBeenSet = false;
 
     EC2InstanceState m_ec2InstanceState;
-    bool m_ec2InstanceStateHasBeenSet;
+    bool m_ec2InstanceStateHasBeenSet = false;
 
     RecoveryInstanceFailback m_failback;
-    bool m_failbackHasBeenSet;
+    bool m_failbackHasBeenSet = false;
 
     bool m_isDrill;
-    bool m_isDrillHasBeenSet;
+    bool m_isDrillHasBeenSet = false;
 
     Aws::String m_jobID;
-    bool m_jobIDHasBeenSet;
+    bool m_jobIDHasBeenSet = false;
 
     Aws::String m_pointInTimeSnapshotDateTime;
-    bool m_pointInTimeSnapshotDateTimeHasBeenSet;
+    bool m_pointInTimeSnapshotDateTimeHasBeenSet = false;
 
     Aws::String m_recoveryInstanceID;
-    bool m_recoveryInstanceIDHasBeenSet;
+    bool m_recoveryInstanceIDHasBeenSet = false;
 
     RecoveryInstanceProperties m_recoveryInstanceProperties;
-    bool m_recoveryInstancePropertiesHasBeenSet;
+    bool m_recoveryInstancePropertiesHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

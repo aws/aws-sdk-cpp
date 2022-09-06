@@ -191,16 +191,16 @@ namespace Model
   private:
 
     bool m_isArchived;
-    bool m_isArchivedHasBeenSet;
+    bool m_isArchivedHasBeenSet = false;
 
     Aws::Vector<LifeCycleState> m_lifeCycleStates;
-    bool m_lifeCycleStatesHasBeenSet;
+    bool m_lifeCycleStatesHasBeenSet = false;
 
     Aws::Vector<ReplicationType> m_replicationTypes;
-    bool m_replicationTypesHasBeenSet;
+    bool m_replicationTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceServerIDs;
-    bool m_sourceServerIDsHasBeenSet;
+    bool m_sourceServerIDsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_currentDatabaseRevision;
-    bool m_currentDatabaseRevisionHasBeenSet;
+    bool m_currentDatabaseRevisionHasBeenSet = false;
 
     Aws::Utils::DateTime m_databaseRevisionReleaseDate;
-    bool m_databaseRevisionReleaseDateHasBeenSet;
+    bool m_databaseRevisionReleaseDateHasBeenSet = false;
 
     Aws::Vector<RevisionTarget> m_revisionTargets;
-    bool m_revisionTargetsHasBeenSet;
+    bool m_revisionTargetsHasBeenSet = false;
   };
 
 } // namespace Model

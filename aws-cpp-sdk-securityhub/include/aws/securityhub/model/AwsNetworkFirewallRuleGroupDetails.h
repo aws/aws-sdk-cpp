@@ -301,25 +301,25 @@ namespace Model
   private:
 
     int m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RuleGroupDetails m_ruleGroup;
-    bool m_ruleGroupHasBeenSet;
+    bool m_ruleGroupHasBeenSet = false;
 
     Aws::String m_ruleGroupArn;
-    bool m_ruleGroupArnHasBeenSet;
+    bool m_ruleGroupArnHasBeenSet = false;
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::String m_ruleGroupName;
-    bool m_ruleGroupNameHasBeenSet;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

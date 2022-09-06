@@ -140,10 +140,10 @@ namespace Model
   private:
 
     PermissionsBoundaryAttachmentType m_permissionsBoundaryType;
-    bool m_permissionsBoundaryTypeHasBeenSet;
+    bool m_permissionsBoundaryTypeHasBeenSet = false;
 
     Aws::String m_permissionsBoundaryArn;
-    bool m_permissionsBoundaryArnHasBeenSet;
+    bool m_permissionsBoundaryArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DeliveryMediumType m_deliveryMedium;
-    bool m_deliveryMediumHasBeenSet;
+    bool m_deliveryMediumHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
   };
 
 } // namespace Model

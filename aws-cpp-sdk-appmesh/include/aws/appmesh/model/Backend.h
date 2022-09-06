@@ -71,7 +71,7 @@ namespace Model
   private:
 
     VirtualServiceBackend m_virtualService;
-    bool m_virtualServiceHasBeenSet;
+    bool m_virtualServiceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -196,10 +196,10 @@ namespace Model
   private:
 
     Aws::String m_owningAccount;
-    bool m_owningAccountHasBeenSet;
+    bool m_owningAccountHasBeenSet = false;
 
     Aws::String m_owningService;
-    bool m_owningServiceHasBeenSet;
+    bool m_owningServiceHasBeenSet = false;
   };
 
 } // namespace Model

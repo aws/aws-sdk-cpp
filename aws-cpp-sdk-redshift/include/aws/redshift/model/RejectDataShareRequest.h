@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_dataShareArn;
-    bool m_dataShareArnHasBeenSet;
+    bool m_dataShareArnHasBeenSet = false;
   };
 
 } // namespace Model

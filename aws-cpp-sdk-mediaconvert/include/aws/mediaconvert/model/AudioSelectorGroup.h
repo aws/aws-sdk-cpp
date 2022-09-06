@@ -117,7 +117,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_audioSelectorNames;
-    bool m_audioSelectorNamesHasBeenSet;
+    bool m_audioSelectorNamesHasBeenSet = false;
   };
 
 } // namespace Model

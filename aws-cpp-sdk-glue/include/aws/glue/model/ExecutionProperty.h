@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_maxConcurrentRuns;
-    bool m_maxConcurrentRunsHasBeenSet;
+    bool m_maxConcurrentRunsHasBeenSet = false;
   };
 
 } // namespace Model

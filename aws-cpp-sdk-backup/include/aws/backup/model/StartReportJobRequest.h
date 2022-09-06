@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_reportPlanName;
-    bool m_reportPlanNameHasBeenSet;
+    bool m_reportPlanNameHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

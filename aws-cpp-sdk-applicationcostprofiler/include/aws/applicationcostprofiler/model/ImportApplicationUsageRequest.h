@@ -65,7 +65,7 @@ namespace Model
   private:
 
     SourceS3Location m_sourceS3Location;
-    bool m_sourceS3LocationHasBeenSet;
+    bool m_sourceS3LocationHasBeenSet = false;
   };
 
 } // namespace Model

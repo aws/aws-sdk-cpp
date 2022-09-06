@@ -217,19 +217,19 @@ namespace Model
   private:
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     BasicAuthCredentials m_basic;
-    bool m_basicHasBeenSet;
+    bool m_basicHasBeenSet = false;
 
     OAuth2Credentials m_oauth2;
-    bool m_oauth2HasBeenSet;
+    bool m_oauth2HasBeenSet = false;
 
     ApiKeyCredentials m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     CustomAuthCredentials m_custom;
-    bool m_customHasBeenSet;
+    bool m_customHasBeenSet = false;
   };
 
 } // namespace Model

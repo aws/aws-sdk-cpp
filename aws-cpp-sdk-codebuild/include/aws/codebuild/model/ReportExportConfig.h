@@ -127,10 +127,10 @@ namespace Model
   private:
 
     ReportExportConfigType m_exportConfigType;
-    bool m_exportConfigTypeHasBeenSet;
+    bool m_exportConfigTypeHasBeenSet = false;
 
     S3ReportExportConfig m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

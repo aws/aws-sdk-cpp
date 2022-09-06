@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_hsmClientCertificateIdentifier;
-    bool m_hsmClientCertificateIdentifierHasBeenSet;
+    bool m_hsmClientCertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_edgeDeploymentPlanName;
-    bool m_edgeDeploymentPlanNameHasBeenSet;
+    bool m_edgeDeploymentPlanNameHasBeenSet = false;
   };
 
 } // namespace Model

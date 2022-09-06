@@ -598,49 +598,49 @@ namespace Model
   private:
 
     Aws::String m_fpgaImageId;
-    bool m_fpgaImageIdHasBeenSet;
+    bool m_fpgaImageIdHasBeenSet = false;
 
     Aws::String m_fpgaImageGlobalId;
-    bool m_fpgaImageGlobalIdHasBeenSet;
+    bool m_fpgaImageGlobalIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_shellVersion;
-    bool m_shellVersionHasBeenSet;
+    bool m_shellVersionHasBeenSet = false;
 
     PciId m_pciId;
-    bool m_pciIdHasBeenSet;
+    bool m_pciIdHasBeenSet = false;
 
     FpgaImageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_ownerAlias;
-    bool m_ownerAliasHasBeenSet;
+    bool m_ownerAliasHasBeenSet = false;
 
     Aws::Vector<ProductCode> m_productCodes;
-    bool m_productCodesHasBeenSet;
+    bool m_productCodesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_public;
-    bool m_publicHasBeenSet;
+    bool m_publicHasBeenSet = false;
 
     bool m_dataRetentionSupport;
-    bool m_dataRetentionSupportHasBeenSet;
+    bool m_dataRetentionSupportHasBeenSet = false;
   };
 
 } // namespace Model

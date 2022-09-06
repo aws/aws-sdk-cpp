@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyId;
-    bool m_kMSMasterKeyIdHasBeenSet;
+    bool m_kMSMasterKeyIdHasBeenSet = false;
 
     ProvisionedThroughputOverride m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndex> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     TableClass m_tableClassOverride;
-    bool m_tableClassOverrideHasBeenSet;
+    bool m_tableClassOverrideHasBeenSet = false;
   };
 
 } // namespace Model

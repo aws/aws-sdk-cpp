@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     TemplateLocation m_templateLocation;
-    bool m_templateLocationHasBeenSet;
+    bool m_templateLocationHasBeenSet = false;
   };
 
 } // namespace Model

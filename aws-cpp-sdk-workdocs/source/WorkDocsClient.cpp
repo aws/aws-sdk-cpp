@@ -117,7 +117,7 @@ WorkDocsClient::~WorkDocsClient()
 
 void WorkDocsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("WorkDocs");
+  AWSClient::SetServiceClientName("WorkDocs");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -341,25 +341,25 @@ namespace Model
   private:
 
     Aws::String m_alertName;
-    bool m_alertNameHasBeenSet;
+    bool m_alertNameHasBeenSet = false;
 
     int m_alertSensitivityThreshold;
-    bool m_alertSensitivityThresholdHasBeenSet;
+    bool m_alertSensitivityThresholdHasBeenSet = false;
 
     Aws::String m_alertDescription;
-    bool m_alertDescriptionHasBeenSet;
+    bool m_alertDescriptionHasBeenSet = false;
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     AlertFilters m_alertFilters;
-    bool m_alertFiltersHasBeenSet;
+    bool m_alertFiltersHasBeenSet = false;
   };
 
 } // namespace Model

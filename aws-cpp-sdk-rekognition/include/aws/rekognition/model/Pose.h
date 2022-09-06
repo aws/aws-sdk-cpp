@@ -101,13 +101,13 @@ namespace Model
   private:
 
     double m_roll;
-    bool m_rollHasBeenSet;
+    bool m_rollHasBeenSet = false;
 
     double m_yaw;
-    bool m_yawHasBeenSet;
+    bool m_yawHasBeenSet = false;
 
     double m_pitch;
-    bool m_pitchHasBeenSet;
+    bool m_pitchHasBeenSet = false;
   };
 
 } // namespace Model

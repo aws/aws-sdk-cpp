@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_contactChannelId;
-    bool m_contactChannelIdHasBeenSet;
+    bool m_contactChannelIdHasBeenSet = false;
 
     Aws::String m_activationCode;
-    bool m_activationCodeHasBeenSet;
+    bool m_activationCodeHasBeenSet = false;
   };
 
 } // namespace Model

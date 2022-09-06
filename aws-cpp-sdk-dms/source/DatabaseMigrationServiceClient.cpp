@@ -140,7 +140,7 @@ DatabaseMigrationServiceClient::~DatabaseMigrationServiceClient()
 
 void DatabaseMigrationServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Database Migration Service");
+  AWSClient::SetServiceClientName("Database Migration Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

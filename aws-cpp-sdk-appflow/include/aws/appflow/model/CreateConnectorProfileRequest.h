@@ -313,22 +313,22 @@ namespace Model
   private:
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     Aws::String m_kmsArn;
-    bool m_kmsArnHasBeenSet;
+    bool m_kmsArnHasBeenSet = false;
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     ConnectionMode m_connectionMode;
-    bool m_connectionModeHasBeenSet;
+    bool m_connectionModeHasBeenSet = false;
 
     ConnectorProfileConfig m_connectorProfileConfig;
-    bool m_connectorProfileConfigHasBeenSet;
+    bool m_connectorProfileConfigHasBeenSet = false;
   };
 
 } // namespace Model

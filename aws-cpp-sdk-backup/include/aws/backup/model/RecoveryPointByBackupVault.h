@@ -945,58 +945,58 @@ namespace Model
   private:
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_backupVaultArn;
-    bool m_backupVaultArnHasBeenSet;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_sourceBackupVaultArn;
-    bool m_sourceBackupVaultArnHasBeenSet;
+    bool m_sourceBackupVaultArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     RecoveryPointCreator m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     RecoveryPointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     long long m_backupSizeInBytes;
-    bool m_backupSizeInBytesHasBeenSet;
+    bool m_backupSizeInBytesHasBeenSet = false;
 
     CalculatedLifecycle m_calculatedLifecycle;
-    bool m_calculatedLifecycleHasBeenSet;
+    bool m_calculatedLifecycleHasBeenSet = false;
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     bool m_isEncrypted;
-    bool m_isEncryptedHasBeenSet;
+    bool m_isEncryptedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRestoreTime;
-    bool m_lastRestoreTimeHasBeenSet;
+    bool m_lastRestoreTimeHasBeenSet = false;
   };
 
 } // namespace Model

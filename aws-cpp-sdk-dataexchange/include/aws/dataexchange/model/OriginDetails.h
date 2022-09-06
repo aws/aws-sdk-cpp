@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
   };
 
 } // namespace Model

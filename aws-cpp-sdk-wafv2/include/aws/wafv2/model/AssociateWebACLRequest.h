@@ -206,10 +206,10 @@ namespace Model
   private:
 
     Aws::String m_webACLArn;
-    bool m_webACLArnHasBeenSet;
+    bool m_webACLArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

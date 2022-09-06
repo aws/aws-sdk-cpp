@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_optedOutNumbers;
-    bool m_optedOutNumbersHasBeenSet;
+    bool m_optedOutNumbersHasBeenSet = false;
 
     Aws::Vector<OptedOutFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

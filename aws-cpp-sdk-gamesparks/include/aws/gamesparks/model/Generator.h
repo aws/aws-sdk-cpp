@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_gameSdkVersion;
-    bool m_gameSdkVersionHasBeenSet;
+    bool m_gameSdkVersionHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_targetPlatform;
-    bool m_targetPlatformHasBeenSet;
+    bool m_targetPlatformHasBeenSet = false;
   };
 
 } // namespace Model

@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SchemaFacet m_schemaFacet;
-    bool m_schemaFacetHasBeenSet;
+    bool m_schemaFacetHasBeenSet = false;
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -257,13 +257,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_pathParameterValues;
-    bool m_pathParameterValuesHasBeenSet;
+    bool m_pathParameterValuesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_headerParameters;
-    bool m_headerParametersHasBeenSet;
+    bool m_headerParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryStringParameters;
-    bool m_queryStringParametersHasBeenSet;
+    bool m_queryStringParametersHasBeenSet = false;
   };
 
 } // namespace Model

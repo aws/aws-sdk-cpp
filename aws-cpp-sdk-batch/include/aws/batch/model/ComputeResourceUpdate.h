@@ -2060,55 +2060,55 @@ namespace Model
   private:
 
     int m_minvCpus;
-    bool m_minvCpusHasBeenSet;
+    bool m_minvCpusHasBeenSet = false;
 
     int m_maxvCpus;
-    bool m_maxvCpusHasBeenSet;
+    bool m_maxvCpusHasBeenSet = false;
 
     int m_desiredvCpus;
-    bool m_desiredvCpusHasBeenSet;
+    bool m_desiredvCpusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     CRUpdateAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTypes;
-    bool m_instanceTypesHasBeenSet;
+    bool m_instanceTypesHasBeenSet = false;
 
     Aws::String m_ec2KeyPair;
-    bool m_ec2KeyPairHasBeenSet;
+    bool m_ec2KeyPairHasBeenSet = false;
 
     Aws::String m_instanceRole;
-    bool m_instanceRoleHasBeenSet;
+    bool m_instanceRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_placementGroup;
-    bool m_placementGroupHasBeenSet;
+    bool m_placementGroupHasBeenSet = false;
 
     int m_bidPercentage;
-    bool m_bidPercentageHasBeenSet;
+    bool m_bidPercentageHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     Aws::Vector<Ec2Configuration> m_ec2Configuration;
-    bool m_ec2ConfigurationHasBeenSet;
+    bool m_ec2ConfigurationHasBeenSet = false;
 
     bool m_updateToLatestImageVersion;
-    bool m_updateToLatestImageVersionHasBeenSet;
+    bool m_updateToLatestImageVersionHasBeenSet = false;
 
     CRType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
   };
 
 } // namespace Model

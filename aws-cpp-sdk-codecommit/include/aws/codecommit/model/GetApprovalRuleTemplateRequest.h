@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_approvalRuleTemplateName;
-    bool m_approvalRuleTemplateNameHasBeenSet;
+    bool m_approvalRuleTemplateNameHasBeenSet = false;
   };
 
 } // namespace Model

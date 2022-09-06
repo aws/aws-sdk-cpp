@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Aws::Vector<DeleteDetectorRequest> m_detectors;
-    bool m_detectorsHasBeenSet;
+    bool m_detectorsHasBeenSet = false;
   };
 
 } // namespace Model

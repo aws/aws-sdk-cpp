@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_vocabularyId;
-    bool m_vocabularyIdHasBeenSet;
+    bool m_vocabularyIdHasBeenSet = false;
   };
 
 } // namespace Model

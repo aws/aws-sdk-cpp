@@ -426,31 +426,31 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_pipelineDisplayName;
-    bool m_pipelineDisplayNameHasBeenSet;
+    bool m_pipelineDisplayNameHasBeenSet = false;
 
     Aws::String m_pipelineDefinition;
-    bool m_pipelineDefinitionHasBeenSet;
+    bool m_pipelineDefinitionHasBeenSet = false;
 
     PipelineDefinitionS3Location m_pipelineDefinitionS3Location;
-    bool m_pipelineDefinitionS3LocationHasBeenSet;
+    bool m_pipelineDefinitionS3LocationHasBeenSet = false;
 
     Aws::String m_pipelineDescription;
-    bool m_pipelineDescriptionHasBeenSet;
+    bool m_pipelineDescriptionHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ParallelismConfiguration m_parallelismConfiguration;
-    bool m_parallelismConfigurationHasBeenSet;
+    bool m_parallelismConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

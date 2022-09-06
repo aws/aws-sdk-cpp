@@ -156,13 +156,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     PayerResponsibility m_payerResponsibility;
-    bool m_payerResponsibilityHasBeenSet;
+    bool m_payerResponsibilityHasBeenSet = false;
   };
 
 } // namespace Model

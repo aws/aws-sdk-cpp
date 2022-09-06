@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStarted;
-    bool m_lastStartedHasBeenSet;
+    bool m_lastStartedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStopped;
-    bool m_lastStoppedHasBeenSet;
+    bool m_lastStoppedHasBeenSet = false;
   };
 
 } // namespace Model

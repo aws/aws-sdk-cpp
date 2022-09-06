@@ -102,10 +102,10 @@ namespace Model
   private:
 
     IotEventsInputIdentifier m_iotEventsInputIdentifier;
-    bool m_iotEventsInputIdentifierHasBeenSet;
+    bool m_iotEventsInputIdentifierHasBeenSet = false;
 
     IotSiteWiseInputIdentifier m_iotSiteWiseInputIdentifier;
-    bool m_iotSiteWiseInputIdentifierHasBeenSet;
+    bool m_iotSiteWiseInputIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

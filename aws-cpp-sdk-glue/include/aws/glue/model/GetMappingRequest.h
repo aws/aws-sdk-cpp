@@ -141,13 +141,13 @@ namespace Model
   private:
 
     CatalogEntry m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<CatalogEntry> m_sinks;
-    bool m_sinksHasBeenSet;
+    bool m_sinksHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

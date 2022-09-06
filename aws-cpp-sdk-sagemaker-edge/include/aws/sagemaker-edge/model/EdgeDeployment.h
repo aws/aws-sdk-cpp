@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     DeploymentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     FailureHandlingPolicy m_failureHandlingPolicy;
-    bool m_failureHandlingPolicyHasBeenSet;
+    bool m_failureHandlingPolicyHasBeenSet = false;
 
     Aws::Vector<Definition> m_definitions;
-    bool m_definitionsHasBeenSet;
+    bool m_definitionsHasBeenSet = false;
   };
 
 } // namespace Model

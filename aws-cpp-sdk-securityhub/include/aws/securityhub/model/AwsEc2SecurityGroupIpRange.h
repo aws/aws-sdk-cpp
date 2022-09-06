@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
   };
 
 } // namespace Model

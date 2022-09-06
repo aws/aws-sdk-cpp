@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logStreamNamePrefix;
-    bool m_logStreamNamePrefixHasBeenSet;
+    bool m_logStreamNamePrefixHasBeenSet = false;
   };
 
 } // namespace Model

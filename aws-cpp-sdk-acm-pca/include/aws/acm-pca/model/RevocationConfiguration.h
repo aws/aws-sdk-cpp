@@ -145,10 +145,10 @@ namespace Model
   private:
 
     CrlConfiguration m_crlConfiguration;
-    bool m_crlConfigurationHasBeenSet;
+    bool m_crlConfigurationHasBeenSet = false;
 
     OcspConfiguration m_ocspConfiguration;
-    bool m_ocspConfigurationHasBeenSet;
+    bool m_ocspConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

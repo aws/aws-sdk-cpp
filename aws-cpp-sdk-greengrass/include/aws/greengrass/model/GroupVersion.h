@@ -326,25 +326,25 @@ namespace Model
   private:
 
     Aws::String m_connectorDefinitionVersionArn;
-    bool m_connectorDefinitionVersionArnHasBeenSet;
+    bool m_connectorDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_coreDefinitionVersionArn;
-    bool m_coreDefinitionVersionArnHasBeenSet;
+    bool m_coreDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_deviceDefinitionVersionArn;
-    bool m_deviceDefinitionVersionArnHasBeenSet;
+    bool m_deviceDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_functionDefinitionVersionArn;
-    bool m_functionDefinitionVersionArnHasBeenSet;
+    bool m_functionDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_loggerDefinitionVersionArn;
-    bool m_loggerDefinitionVersionArnHasBeenSet;
+    bool m_loggerDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_resourceDefinitionVersionArn;
-    bool m_resourceDefinitionVersionArnHasBeenSet;
+    bool m_resourceDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_subscriptionDefinitionVersionArn;
-    bool m_subscriptionDefinitionVersionArnHasBeenSet;
+    bool m_subscriptionDefinitionVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

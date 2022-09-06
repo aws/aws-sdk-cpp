@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     ApprovalState m_approvalStatus;
-    bool m_approvalStatusHasBeenSet;
+    bool m_approvalStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     RegionName m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     OriginProtocolPolicyEnum m_protocolPolicy;
-    bool m_protocolPolicyHasBeenSet;
+    bool m_protocolPolicyHasBeenSet = false;
   };
 
 } // namespace Model

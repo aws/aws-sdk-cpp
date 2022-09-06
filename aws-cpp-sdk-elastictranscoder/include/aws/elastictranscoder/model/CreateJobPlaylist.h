@@ -558,19 +558,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outputKeys;
-    bool m_outputKeysHasBeenSet;
+    bool m_outputKeysHasBeenSet = false;
 
     HlsContentProtection m_hlsContentProtection;
-    bool m_hlsContentProtectionHasBeenSet;
+    bool m_hlsContentProtectionHasBeenSet = false;
 
     PlayReadyDrm m_playReadyDrm;
-    bool m_playReadyDrmHasBeenSet;
+    bool m_playReadyDrmHasBeenSet = false;
   };
 
 } // namespace Model

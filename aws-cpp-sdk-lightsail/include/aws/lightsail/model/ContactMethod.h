@@ -432,31 +432,31 @@ namespace Model
   private:
 
     Aws::String m_contactEndpoint;
-    bool m_contactEndpointHasBeenSet;
+    bool m_contactEndpointHasBeenSet = false;
 
     ContactMethodStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ContactProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
   };
 
 } // namespace Model

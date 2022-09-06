@@ -784,46 +784,46 @@ namespace Model
   private:
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsDetails> m_containerDefinitions;
-    bool m_containerDefinitionsHasBeenSet;
+    bool m_containerDefinitionsHasBeenSet = false;
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionInferenceAcceleratorsDetails> m_inferenceAccelerators;
-    bool m_inferenceAcceleratorsHasBeenSet;
+    bool m_inferenceAcceleratorsHasBeenSet = false;
 
     Aws::String m_ipcMode;
-    bool m_ipcModeHasBeenSet;
+    bool m_ipcModeHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_networkMode;
-    bool m_networkModeHasBeenSet;
+    bool m_networkModeHasBeenSet = false;
 
     Aws::String m_pidMode;
-    bool m_pidModeHasBeenSet;
+    bool m_pidModeHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionPlacementConstraintsDetails> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     AwsEcsTaskDefinitionProxyConfigurationDetails m_proxyConfiguration;
-    bool m_proxyConfigurationHasBeenSet;
+    bool m_proxyConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requiresCompatibilities;
-    bool m_requiresCompatibilitiesHasBeenSet;
+    bool m_requiresCompatibilitiesHasBeenSet = false;
 
     Aws::String m_taskRoleArn;
-    bool m_taskRoleArnHasBeenSet;
+    bool m_taskRoleArnHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionVolumesDetails> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
   };
 
 } // namespace Model

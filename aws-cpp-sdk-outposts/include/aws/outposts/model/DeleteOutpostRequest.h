@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
   };
 
 } // namespace Model

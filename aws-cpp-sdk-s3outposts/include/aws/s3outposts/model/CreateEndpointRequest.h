@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_securityGroupId;
-    bool m_securityGroupIdHasBeenSet;
+    bool m_securityGroupIdHasBeenSet = false;
 
     EndpointAccessType m_accessType;
-    bool m_accessTypeHasBeenSet;
+    bool m_accessTypeHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;
-    bool m_customerOwnedIpv4PoolHasBeenSet;
+    bool m_customerOwnedIpv4PoolHasBeenSet = false;
   };
 
 } // namespace Model

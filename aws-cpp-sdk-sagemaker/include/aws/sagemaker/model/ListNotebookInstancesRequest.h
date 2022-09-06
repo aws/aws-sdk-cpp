@@ -603,43 +603,43 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     NotebookInstanceSortKey m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     NotebookInstanceSortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nameContains;
-    bool m_nameContainsHasBeenSet;
+    bool m_nameContainsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeBefore;
-    bool m_creationTimeBeforeHasBeenSet;
+    bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeAfter;
-    bool m_creationTimeAfterHasBeenSet;
+    bool m_creationTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTimeBefore;
-    bool m_lastModifiedTimeBeforeHasBeenSet;
+    bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTimeAfter;
-    bool m_lastModifiedTimeAfterHasBeenSet;
+    bool m_lastModifiedTimeAfterHasBeenSet = false;
 
     NotebookInstanceStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet;
+    bool m_statusEqualsHasBeenSet = false;
 
     Aws::String m_notebookInstanceLifecycleConfigNameContains;
-    bool m_notebookInstanceLifecycleConfigNameContainsHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigNameContainsHasBeenSet = false;
 
     Aws::String m_defaultCodeRepositoryContains;
-    bool m_defaultCodeRepositoryContainsHasBeenSet;
+    bool m_defaultCodeRepositoryContainsHasBeenSet = false;
 
     Aws::String m_additionalCodeRepositoryEquals;
-    bool m_additionalCodeRepositoryEqualsHasBeenSet;
+    bool m_additionalCodeRepositoryEqualsHasBeenSet = false;
   };
 
 } // namespace Model

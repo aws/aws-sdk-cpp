@@ -100,10 +100,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     PersonDetail m_person;
-    bool m_personHasBeenSet;
+    bool m_personHasBeenSet = false;
   };
 
 } // namespace Model

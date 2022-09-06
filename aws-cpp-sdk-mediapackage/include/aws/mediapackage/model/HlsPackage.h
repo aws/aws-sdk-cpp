@@ -527,40 +527,40 @@ rounded to the
   private:
 
     AdMarkers m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
-    bool m_adTriggersHasBeenSet;
+    bool m_adTriggersHasBeenSet = false;
 
     AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
-    bool m_adsOnDeliveryRestrictionsHasBeenSet;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
     HlsEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     bool m_includeDvbSubtitles;
-    bool m_includeDvbSubtitlesHasBeenSet;
+    bool m_includeDvbSubtitlesHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     PlaylistType m_playlistType;
-    bool m_playlistTypeHasBeenSet;
+    bool m_playlistTypeHasBeenSet = false;
 
     int m_playlistWindowSeconds;
-    bool m_playlistWindowSecondsHasBeenSet;
+    bool m_playlistWindowSecondsHasBeenSet = false;
 
     int m_programDateTimeIntervalSeconds;
-    bool m_programDateTimeIntervalSecondsHasBeenSet;
+    bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
 
     bool m_useAudioRenditionGroup;
-    bool m_useAudioRenditionGroupHasBeenSet;
+    bool m_useAudioRenditionGroupHasBeenSet = false;
   };
 
 } // namespace Model

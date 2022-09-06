@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_reasonCode;
-    bool m_reasonCodeHasBeenSet;
+    bool m_reasonCodeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -175,16 +175,16 @@ namespace Model
   private:
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     long long m_offsetMillis;
-    bool m_offsetMillisHasBeenSet;
+    bool m_offsetMillisHasBeenSet = false;
 
     SlateSource m_slate;
-    bool m_slateHasBeenSet;
+    bool m_slateHasBeenSet = false;
 
     SpliceInsertMessage m_spliceInsertMessage;
-    bool m_spliceInsertMessageHasBeenSet;
+    bool m_spliceInsertMessageHasBeenSet = false;
   };
 
 } // namespace Model

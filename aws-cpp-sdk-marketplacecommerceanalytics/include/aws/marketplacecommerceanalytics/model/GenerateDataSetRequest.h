@@ -777,25 +777,25 @@ namespace Model
   private:
 
     DataSetType m_dataSetType;
-    bool m_dataSetTypeHasBeenSet;
+    bool m_dataSetTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataSetPublicationDate;
-    bool m_dataSetPublicationDateHasBeenSet;
+    bool m_dataSetPublicationDateHasBeenSet = false;
 
     Aws::String m_roleNameArn;
-    bool m_roleNameArnHasBeenSet;
+    bool m_roleNameArnHasBeenSet = false;
 
     Aws::String m_destinationS3BucketName;
-    bool m_destinationS3BucketNameHasBeenSet;
+    bool m_destinationS3BucketNameHasBeenSet = false;
 
     Aws::String m_destinationS3Prefix;
-    bool m_destinationS3PrefixHasBeenSet;
+    bool m_destinationS3PrefixHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customerDefinedValues;
-    bool m_customerDefinedValuesHasBeenSet;
+    bool m_customerDefinedValuesHasBeenSet = false;
   };
 
 } // namespace Model

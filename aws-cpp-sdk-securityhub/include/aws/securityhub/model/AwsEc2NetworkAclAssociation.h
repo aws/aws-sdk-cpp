@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_networkAclAssociationId;
-    bool m_networkAclAssociationIdHasBeenSet;
+    bool m_networkAclAssociationIdHasBeenSet = false;
 
     Aws::String m_networkAclId;
-    bool m_networkAclIdHasBeenSet;
+    bool m_networkAclIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
   };
 
 } // namespace Model

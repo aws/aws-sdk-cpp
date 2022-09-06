@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
   };
 
 } // namespace Model

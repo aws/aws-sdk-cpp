@@ -163,10 +163,10 @@ namespace Model
   private:
 
     Aws::String m_documentAttributeKey;
-    bool m_documentAttributeKeyHasBeenSet;
+    bool m_documentAttributeKeyHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

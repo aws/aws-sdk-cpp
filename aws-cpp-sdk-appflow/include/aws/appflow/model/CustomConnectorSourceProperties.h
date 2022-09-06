@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
-    bool m_customPropertiesHasBeenSet;
+    bool m_customPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

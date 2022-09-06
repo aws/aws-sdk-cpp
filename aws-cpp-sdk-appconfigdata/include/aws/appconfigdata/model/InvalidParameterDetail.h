@@ -70,7 +70,7 @@ namespace Model
   private:
 
     InvalidParameterProblem m_problem;
-    bool m_problemHasBeenSet;
+    bool m_problemHasBeenSet = false;
   };
 
 } // namespace Model

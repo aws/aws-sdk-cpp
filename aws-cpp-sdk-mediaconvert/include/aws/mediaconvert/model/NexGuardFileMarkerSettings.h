@@ -264,16 +264,16 @@ namespace Model
   private:
 
     Aws::String m_license;
-    bool m_licenseHasBeenSet;
+    bool m_licenseHasBeenSet = false;
 
     int m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_preset;
-    bool m_presetHasBeenSet;
+    bool m_presetHasBeenSet = false;
 
     WatermarkingStrength m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ModificationResourceEnum m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     ModificationStateEnum m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

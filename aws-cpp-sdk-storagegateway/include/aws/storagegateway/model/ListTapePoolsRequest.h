@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_poolARNs;
-    bool m_poolARNsHasBeenSet;
+    bool m_poolARNsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

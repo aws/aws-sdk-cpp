@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_scalingPlanNames;
-    bool m_scalingPlanNamesHasBeenSet;
+    bool m_scalingPlanNamesHasBeenSet = false;
 
     long long m_scalingPlanVersion;
-    bool m_scalingPlanVersionHasBeenSet;
+    bool m_scalingPlanVersionHasBeenSet = false;
 
     Aws::Vector<ApplicationSource> m_applicationSources;
-    bool m_applicationSourcesHasBeenSet;
+    bool m_applicationSourcesHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

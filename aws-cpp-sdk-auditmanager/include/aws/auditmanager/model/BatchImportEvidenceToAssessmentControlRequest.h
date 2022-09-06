@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_controlSetId;
-    bool m_controlSetIdHasBeenSet;
+    bool m_controlSetIdHasBeenSet = false;
 
     Aws::String m_controlId;
-    bool m_controlIdHasBeenSet;
+    bool m_controlIdHasBeenSet = false;
 
     Aws::Vector<ManualEvidence> m_manualEvidence;
-    bool m_manualEvidenceHasBeenSet;
+    bool m_manualEvidenceHasBeenSet = false;
   };
 
 } // namespace Model

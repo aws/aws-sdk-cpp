@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<PutRecordsRequestEntry> m_records;
-    bool m_recordsHasBeenSet;
+    bool m_recordsHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::Vector<AudioDescription> m_audioDescriptions;
-    bool m_audioDescriptionsHasBeenSet;
+    bool m_audioDescriptionsHasBeenSet = false;
 
     Aws::Vector<CaptionDescriptionPreset> m_captionDescriptions;
-    bool m_captionDescriptionsHasBeenSet;
+    bool m_captionDescriptionsHasBeenSet = false;
 
     ContainerSettings m_containerSettings;
-    bool m_containerSettingsHasBeenSet;
+    bool m_containerSettingsHasBeenSet = false;
 
     VideoDescription m_videoDescription;
-    bool m_videoDescriptionHasBeenSet;
+    bool m_videoDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

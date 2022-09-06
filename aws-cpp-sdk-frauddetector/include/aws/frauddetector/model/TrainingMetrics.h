@@ -114,10 +114,10 @@ namespace Model
   private:
 
     double m_auc;
-    bool m_aucHasBeenSet;
+    bool m_aucHasBeenSet = false;
 
     Aws::Vector<MetricDataPoint> m_metricDataPoints;
-    bool m_metricDataPointsHasBeenSet;
+    bool m_metricDataPointsHasBeenSet = false;
   };
 
 } // namespace Model

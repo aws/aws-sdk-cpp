@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_federatedUserId;
-    bool m_federatedUserIdHasBeenSet;
+    bool m_federatedUserIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

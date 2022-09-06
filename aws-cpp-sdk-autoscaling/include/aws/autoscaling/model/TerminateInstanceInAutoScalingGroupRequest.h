@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     bool m_shouldDecrementDesiredCapacity;
-    bool m_shouldDecrementDesiredCapacityHasBeenSet;
+    bool m_shouldDecrementDesiredCapacityHasBeenSet = false;
   };
 
 } // namespace Model

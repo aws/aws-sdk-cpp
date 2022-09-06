@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     bool m_removeAllPermissions;
-    bool m_removeAllPermissionsHasBeenSet;
+    bool m_removeAllPermissionsHasBeenSet = false;
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
   };
 
 } // namespace Model

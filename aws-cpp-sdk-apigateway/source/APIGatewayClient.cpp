@@ -196,7 +196,7 @@ APIGatewayClient::~APIGatewayClient()
 
 void APIGatewayClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("API Gateway");
+  AWSClient::SetServiceClientName("API Gateway");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

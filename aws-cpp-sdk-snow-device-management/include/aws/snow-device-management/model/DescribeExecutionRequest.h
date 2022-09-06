@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_managedDeviceId;
-    bool m_managedDeviceIdHasBeenSet;
+    bool m_managedDeviceIdHasBeenSet = false;
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
   };
 
 } // namespace Model

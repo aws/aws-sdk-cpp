@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ConfigExportDeliveryInfo m_configSnapshotDeliveryInfo;
-    bool m_configSnapshotDeliveryInfoHasBeenSet;
+    bool m_configSnapshotDeliveryInfoHasBeenSet = false;
 
     ConfigExportDeliveryInfo m_configHistoryDeliveryInfo;
-    bool m_configHistoryDeliveryInfoHasBeenSet;
+    bool m_configHistoryDeliveryInfoHasBeenSet = false;
 
     ConfigStreamDeliveryInfo m_configStreamDeliveryInfo;
-    bool m_configStreamDeliveryInfoHasBeenSet;
+    bool m_configStreamDeliveryInfoHasBeenSet = false;
   };
 
 } // namespace Model

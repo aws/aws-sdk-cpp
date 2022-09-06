@@ -183,13 +183,13 @@ namespace Model
   private:
 
     CheckpointConfiguration m_checkpointConfiguration;
-    bool m_checkpointConfigurationHasBeenSet;
+    bool m_checkpointConfigurationHasBeenSet = false;
 
     MonitoringConfiguration m_monitoringConfiguration;
-    bool m_monitoringConfigurationHasBeenSet;
+    bool m_monitoringConfigurationHasBeenSet = false;
 
     ParallelismConfiguration m_parallelismConfiguration;
-    bool m_parallelismConfigurationHasBeenSet;
+    bool m_parallelismConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

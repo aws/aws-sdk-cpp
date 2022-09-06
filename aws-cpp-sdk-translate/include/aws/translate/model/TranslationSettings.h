@@ -222,10 +222,10 @@ namespace Model
   private:
 
     Formality m_formality;
-    bool m_formalityHasBeenSet;
+    bool m_formalityHasBeenSet = false;
 
     Profanity m_profanity;
-    bool m_profanityHasBeenSet;
+    bool m_profanityHasBeenSet = false;
   };
 
 } // namespace Model

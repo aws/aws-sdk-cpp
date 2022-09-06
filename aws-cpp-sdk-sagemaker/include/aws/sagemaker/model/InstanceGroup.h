@@ -136,13 +136,13 @@ namespace Model
   private:
 
     TrainingInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_instanceGroupName;
-    bool m_instanceGroupNameHasBeenSet;
+    bool m_instanceGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

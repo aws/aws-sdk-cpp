@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

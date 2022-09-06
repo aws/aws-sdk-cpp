@@ -2016,70 +2016,70 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     Aws::String m_alarmDescription;
-    bool m_alarmDescriptionHasBeenSet;
+    bool m_alarmDescriptionHasBeenSet = false;
 
     bool m_actionsEnabled;
-    bool m_actionsEnabledHasBeenSet;
+    bool m_actionsEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_oKActions;
-    bool m_oKActionsHasBeenSet;
+    bool m_oKActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alarmActions;
-    bool m_alarmActionsHasBeenSet;
+    bool m_alarmActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insufficientDataActions;
-    bool m_insufficientDataActionsHasBeenSet;
+    bool m_insufficientDataActionsHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Statistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     Aws::String m_extendedStatistic;
-    bool m_extendedStatisticHasBeenSet;
+    bool m_extendedStatisticHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     int m_evaluationPeriods;
-    bool m_evaluationPeriodsHasBeenSet;
+    bool m_evaluationPeriodsHasBeenSet = false;
 
     int m_datapointsToAlarm;
-    bool m_datapointsToAlarmHasBeenSet;
+    bool m_datapointsToAlarmHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::String m_treatMissingData;
-    bool m_treatMissingDataHasBeenSet;
+    bool m_treatMissingDataHasBeenSet = false;
 
     Aws::String m_evaluateLowSampleCountPercentile;
-    bool m_evaluateLowSampleCountPercentileHasBeenSet;
+    bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
 
     Aws::Vector<MetricDataQuery> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_thresholdMetricId;
-    bool m_thresholdMetricIdHasBeenSet;
+    bool m_thresholdMetricIdHasBeenSet = false;
   };
 
 } // namespace Model

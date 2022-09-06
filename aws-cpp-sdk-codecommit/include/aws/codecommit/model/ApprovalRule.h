@@ -353,28 +353,28 @@ namespace Model
   private:
 
     Aws::String m_approvalRuleId;
-    bool m_approvalRuleIdHasBeenSet;
+    bool m_approvalRuleIdHasBeenSet = false;
 
     Aws::String m_approvalRuleName;
-    bool m_approvalRuleNameHasBeenSet;
+    bool m_approvalRuleNameHasBeenSet = false;
 
     Aws::String m_approvalRuleContent;
-    bool m_approvalRuleContentHasBeenSet;
+    bool m_approvalRuleContentHasBeenSet = false;
 
     Aws::String m_ruleContentSha256;
-    bool m_ruleContentSha256HasBeenSet;
+    bool m_ruleContentSha256HasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_lastModifiedUser;
-    bool m_lastModifiedUserHasBeenSet;
+    bool m_lastModifiedUserHasBeenSet = false;
 
     OriginApprovalRuleTemplate m_originApprovalRuleTemplate;
-    bool m_originApprovalRuleTemplateHasBeenSet;
+    bool m_originApprovalRuleTemplateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_frameworkName;
-    bool m_frameworkNameHasBeenSet;
+    bool m_frameworkNameHasBeenSet = false;
   };
 
 } // namespace Model

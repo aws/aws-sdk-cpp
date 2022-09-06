@@ -656,40 +656,40 @@ namespace Model
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     DataRepositoryConfiguration m_dataRepositoryConfiguration;
-    bool m_dataRepositoryConfigurationHasBeenSet;
+    bool m_dataRepositoryConfigurationHasBeenSet = false;
 
     LustreDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     int m_perUnitStorageThroughput;
-    bool m_perUnitStorageThroughputHasBeenSet;
+    bool m_perUnitStorageThroughputHasBeenSet = false;
 
     Aws::String m_mountName;
-    bool m_mountNameHasBeenSet;
+    bool m_mountNameHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     DriveCacheType m_driveCacheType;
-    bool m_driveCacheTypeHasBeenSet;
+    bool m_driveCacheTypeHasBeenSet = false;
 
     DataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     LustreLogConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     LustreRootSquashConfiguration m_rootSquashConfiguration;
-    bool m_rootSquashConfigurationHasBeenSet;
+    bool m_rootSquashConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

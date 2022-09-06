@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_customerIdentifier;
-    bool m_customerIdentifierHasBeenSet;
+    bool m_customerIdentifierHasBeenSet = false;
 
     Aws::String m_dimension;
-    bool m_dimensionHasBeenSet;
+    bool m_dimensionHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<UsageAllocation> m_usageAllocations;
-    bool m_usageAllocationsHasBeenSet;
+    bool m_usageAllocationsHasBeenSet = false;
   };
 
 } // namespace Model

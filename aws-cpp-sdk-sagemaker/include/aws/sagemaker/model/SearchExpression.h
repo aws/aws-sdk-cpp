@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<NestedFilters> m_nestedFilters;
-    bool m_nestedFiltersHasBeenSet;
+    bool m_nestedFiltersHasBeenSet = false;
 
     Aws::Vector<SearchExpression> m_subExpressions;
-    bool m_subExpressionsHasBeenSet;
+    bool m_subExpressionsHasBeenSet = false;
 
     BooleanOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

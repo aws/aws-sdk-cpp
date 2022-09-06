@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     PublicKeyConfig m_publicKeyConfig;
-    bool m_publicKeyConfigHasBeenSet;
+    bool m_publicKeyConfigHasBeenSet = false;
   };
 
 } // namespace Model

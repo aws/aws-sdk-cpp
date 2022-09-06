@@ -299,22 +299,22 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipRanges;
-    bool m_ipRangesHasBeenSet;
+    bool m_ipRangesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_prefixListIds;
-    bool m_prefixListIdsHasBeenSet;
+    bool m_prefixListIdsHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
-    bool m_userIdGroupPairsHasBeenSet;
+    bool m_userIdGroupPairsHasBeenSet = false;
   };
 
 } // namespace Model

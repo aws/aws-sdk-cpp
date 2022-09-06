@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_rowsIngested;
-    bool m_rowsIngestedHasBeenSet;
+    bool m_rowsIngestedHasBeenSet = false;
 
     long long m_rowsDropped;
-    bool m_rowsDroppedHasBeenSet;
+    bool m_rowsDroppedHasBeenSet = false;
 
     long long m_totalRowsInDataset;
-    bool m_totalRowsInDatasetHasBeenSet;
+    bool m_totalRowsInDatasetHasBeenSet = false;
   };
 
 } // namespace Model

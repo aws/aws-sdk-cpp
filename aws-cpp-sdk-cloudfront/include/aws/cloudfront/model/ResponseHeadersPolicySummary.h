@@ -114,10 +114,10 @@ namespace Model
   private:
 
     ResponseHeadersPolicyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ResponseHeadersPolicy m_responseHeadersPolicy;
-    bool m_responseHeadersPolicyHasBeenSet;
+    bool m_responseHeadersPolicyHasBeenSet = false;
   };
 
 } // namespace Model

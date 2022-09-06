@@ -86,7 +86,7 @@ LicenseManagerUserSubscriptionsClient::~LicenseManagerUserSubscriptionsClient()
 
 void LicenseManagerUserSubscriptionsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("License Manager User Subscriptions");
+  AWSClient::SetServiceClientName("License Manager User Subscriptions");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

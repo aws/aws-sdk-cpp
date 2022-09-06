@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_sqsQueueArn;
-    bool m_sqsQueueArnHasBeenSet;
+    bool m_sqsQueueArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logDestinationConfigs;
-    bool m_logDestinationConfigsHasBeenSet;
+    bool m_logDestinationConfigsHasBeenSet = false;
 
     Aws::Vector<FieldToMatch> m_redactedFields;
-    bool m_redactedFieldsHasBeenSet;
+    bool m_redactedFieldsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ManagedCredentialsAction m_managedCredentialsAction;
-    bool m_managedCredentialsActionHasBeenSet;
+    bool m_managedCredentialsActionHasBeenSet = false;
   };
 
 } // namespace Model

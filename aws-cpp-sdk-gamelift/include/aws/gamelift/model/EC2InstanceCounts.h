@@ -200,25 +200,25 @@ namespace Model
   private:
 
     int m_dESIRED;
-    bool m_dESIREDHasBeenSet;
+    bool m_dESIREDHasBeenSet = false;
 
     int m_mINIMUM;
-    bool m_mINIMUMHasBeenSet;
+    bool m_mINIMUMHasBeenSet = false;
 
     int m_mAXIMUM;
-    bool m_mAXIMUMHasBeenSet;
+    bool m_mAXIMUMHasBeenSet = false;
 
     int m_pENDING;
-    bool m_pENDINGHasBeenSet;
+    bool m_pENDINGHasBeenSet = false;
 
     int m_aCTIVE;
-    bool m_aCTIVEHasBeenSet;
+    bool m_aCTIVEHasBeenSet = false;
 
     int m_iDLE;
-    bool m_iDLEHasBeenSet;
+    bool m_iDLEHasBeenSet = false;
 
     int m_tERMINATING;
-    bool m_tERMINATINGHasBeenSet;
+    bool m_tERMINATINGHasBeenSet = false;
   };
 
 } // namespace Model

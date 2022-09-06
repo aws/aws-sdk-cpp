@@ -151,13 +151,13 @@ namespace Model
   private:
 
     MediaCapabilities m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     MediaCapabilities m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     MediaCapabilities m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

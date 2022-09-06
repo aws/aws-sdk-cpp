@@ -106,10 +106,10 @@ namespace Model
   private:
 
     PutRequest m_putRequest;
-    bool m_putRequestHasBeenSet;
+    bool m_putRequestHasBeenSet = false;
 
     DeleteRequest m_deleteRequest;
-    bool m_deleteRequestHasBeenSet;
+    bool m_deleteRequestHasBeenSet = false;
   };
 
 } // namespace Model

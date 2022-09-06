@@ -58,7 +58,7 @@ namespace Model
   private:
 
     FrameCaptureS3Settings m_frameCaptureS3Settings;
-    bool m_frameCaptureS3SettingsHasBeenSet;
+    bool m_frameCaptureS3SettingsHasBeenSet = false;
   };
 
 } // namespace Model

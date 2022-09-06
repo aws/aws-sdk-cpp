@@ -100,13 +100,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     EncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_keyArn;
-    bool m_keyArnHasBeenSet;
+    bool m_keyArnHasBeenSet = false;
   };
 
 } // namespace Model

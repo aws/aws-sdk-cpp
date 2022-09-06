@@ -66,7 +66,7 @@ namespace Model
   private:
 
     bool m_isPublic;
-    bool m_isPublicHasBeenSet;
+    bool m_isPublicHasBeenSet = false;
   };
 
 } // namespace Model

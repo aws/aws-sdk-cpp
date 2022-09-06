@@ -308,22 +308,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_sessionDuration;
-    bool m_sessionDurationHasBeenSet;
+    bool m_sessionDurationHasBeenSet = false;
 
     Aws::String m_relayState;
-    bool m_relayStateHasBeenSet;
+    bool m_relayStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_webhookArn;
-    bool m_webhookArnHasBeenSet;
+    bool m_webhookArnHasBeenSet = false;
 
     Aws::String m_webhookId;
-    bool m_webhookIdHasBeenSet;
+    bool m_webhookIdHasBeenSet = false;
 
     Aws::String m_webhookUrl;
-    bool m_webhookUrlHasBeenSet;
+    bool m_webhookUrlHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Grantee m_grantee;
-    bool m_granteeHasBeenSet;
+    bool m_granteeHasBeenSet = false;
 
     BucketLogsPermission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
   };
 
 } // namespace Model

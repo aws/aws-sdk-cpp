@@ -104,10 +104,10 @@ namespace Model
   private:
 
     int m_maxNumberOfDomains;
-    bool m_maxNumberOfDomainsHasBeenSet;
+    bool m_maxNumberOfDomainsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

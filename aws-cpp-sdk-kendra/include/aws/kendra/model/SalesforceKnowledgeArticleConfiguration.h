@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<SalesforceKnowledgeArticleState> m_includedStates;
-    bool m_includedStatesHasBeenSet;
+    bool m_includedStatesHasBeenSet = false;
 
     SalesforceStandardKnowledgeArticleTypeConfiguration m_standardKnowledgeArticleTypeConfiguration;
-    bool m_standardKnowledgeArticleTypeConfigurationHasBeenSet;
+    bool m_standardKnowledgeArticleTypeConfigurationHasBeenSet = false;
 
     Aws::Vector<SalesforceCustomKnowledgeArticleTypeConfiguration> m_customKnowledgeArticleTypeConfigurations;
-    bool m_customKnowledgeArticleTypeConfigurationsHasBeenSet;
+    bool m_customKnowledgeArticleTypeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

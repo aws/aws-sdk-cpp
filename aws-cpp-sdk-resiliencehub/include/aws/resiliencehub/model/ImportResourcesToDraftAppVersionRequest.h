@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceArns;
-    bool m_sourceArnsHasBeenSet;
+    bool m_sourceArnsHasBeenSet = false;
 
     Aws::Vector<TerraformSource> m_terraformSources;
-    bool m_terraformSourcesHasBeenSet;
+    bool m_terraformSourcesHasBeenSet = false;
   };
 
 } // namespace Model

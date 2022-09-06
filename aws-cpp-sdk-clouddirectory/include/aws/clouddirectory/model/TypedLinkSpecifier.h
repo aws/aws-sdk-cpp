@@ -182,16 +182,16 @@ namespace Model
   private:
 
     TypedLinkSchemaAndFacetName m_typedLinkFacet;
-    bool m_typedLinkFacetHasBeenSet;
+    bool m_typedLinkFacetHasBeenSet = false;
 
     ObjectReference m_sourceObjectReference;
-    bool m_sourceObjectReferenceHasBeenSet;
+    bool m_sourceObjectReferenceHasBeenSet = false;
 
     ObjectReference m_targetObjectReference;
-    bool m_targetObjectReferenceHasBeenSet;
+    bool m_targetObjectReferenceHasBeenSet = false;
 
     Aws::Vector<AttributeNameAndValue> m_identityAttributeValues;
-    bool m_identityAttributeValuesHasBeenSet;
+    bool m_identityAttributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

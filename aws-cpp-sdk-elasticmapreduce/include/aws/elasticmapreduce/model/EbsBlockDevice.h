@@ -125,10 +125,10 @@ namespace Model
   private:
 
     VolumeSpecification m_volumeSpecification;
-    bool m_volumeSpecificationHasBeenSet;
+    bool m_volumeSpecificationHasBeenSet = false;
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
   };
 
 } // namespace Model

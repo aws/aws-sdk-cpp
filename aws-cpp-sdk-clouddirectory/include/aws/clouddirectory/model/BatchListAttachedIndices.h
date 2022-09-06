@@ -135,13 +135,13 @@ namespace Model
   private:
 
     ObjectReference m_targetReference;
-    bool m_targetReferenceHasBeenSet;
+    bool m_targetReferenceHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

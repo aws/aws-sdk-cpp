@@ -216,10 +216,10 @@ namespace Model
   private:
 
     Aws::String m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::Vector<PolicyGrantingServiceAccess> m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
   };
 
 } // namespace Model

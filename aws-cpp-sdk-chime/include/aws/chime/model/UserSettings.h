@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TelephonySettings m_telephony;
-    bool m_telephonyHasBeenSet;
+    bool m_telephonyHasBeenSet = false;
   };
 
 } // namespace Model

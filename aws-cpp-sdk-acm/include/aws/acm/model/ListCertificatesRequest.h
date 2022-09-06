@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::Vector<CertificateStatus> m_certificateStatuses;
-    bool m_certificateStatusesHasBeenSet;
+    bool m_certificateStatusesHasBeenSet = false;
 
     Filters m_includes;
-    bool m_includesHasBeenSet;
+    bool m_includesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

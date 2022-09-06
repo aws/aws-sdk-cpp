@@ -202,13 +202,13 @@ namespace Model
   private:
 
     ColumnDataType m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnDescription;
-    bool m_columnDescriptionHasBeenSet;
+    bool m_columnDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

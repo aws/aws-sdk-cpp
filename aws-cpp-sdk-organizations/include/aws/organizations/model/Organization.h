@@ -494,25 +494,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     OrganizationFeatureSet m_featureSet;
-    bool m_featureSetHasBeenSet;
+    bool m_featureSetHasBeenSet = false;
 
     Aws::String m_masterAccountArn;
-    bool m_masterAccountArnHasBeenSet;
+    bool m_masterAccountArnHasBeenSet = false;
 
     Aws::String m_masterAccountId;
-    bool m_masterAccountIdHasBeenSet;
+    bool m_masterAccountIdHasBeenSet = false;
 
     Aws::String m_masterAccountEmail;
-    bool m_masterAccountEmailHasBeenSet;
+    bool m_masterAccountEmailHasBeenSet = false;
 
     Aws::Vector<PolicyTypeSummary> m_availablePolicyTypes;
-    bool m_availablePolicyTypesHasBeenSet;
+    bool m_availablePolicyTypesHasBeenSet = false;
   };
 
 } // namespace Model

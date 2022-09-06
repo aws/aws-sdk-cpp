@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_catalogItemId;
-    bool m_catalogItemIdHasBeenSet;
+    bool m_catalogItemIdHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
   };
 
 } // namespace Model

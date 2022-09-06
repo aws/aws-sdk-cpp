@@ -80,10 +80,10 @@ namespace Model
   private:
 
     long long m_billedMemoryUsedInMB;
-    bool m_billedMemoryUsedInMBHasBeenSet;
+    bool m_billedMemoryUsedInMBHasBeenSet = false;
 
     long long m_billedDurationInMilliseconds;
-    bool m_billedDurationInMillisecondsHasBeenSet;
+    bool m_billedDurationInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

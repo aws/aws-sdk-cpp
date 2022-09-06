@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_campaignArn;
-    bool m_campaignArnHasBeenSet;
+    bool m_campaignArnHasBeenSet = false;
   };
 
 } // namespace Model

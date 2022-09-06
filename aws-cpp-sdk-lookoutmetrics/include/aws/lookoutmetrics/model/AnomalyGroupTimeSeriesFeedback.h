@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_anomalyGroupId;
-    bool m_anomalyGroupIdHasBeenSet;
+    bool m_anomalyGroupIdHasBeenSet = false;
 
     Aws::String m_timeSeriesId;
-    bool m_timeSeriesIdHasBeenSet;
+    bool m_timeSeriesIdHasBeenSet = false;
 
     bool m_isAnomaly;
-    bool m_isAnomalyHasBeenSet;
+    bool m_isAnomalyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     LogConfiguration m_cloudwatch;
-    bool m_cloudwatchHasBeenSet;
+    bool m_cloudwatchHasBeenSet = false;
   };
 
 } // namespace Model

@@ -492,43 +492,43 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     AnomalySeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     AnomalyStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
 
     AnomalyTimeRange m_anomalyTimeRange;
-    bool m_anomalyTimeRangeHasBeenSet;
+    bool m_anomalyTimeRangeHasBeenSet = false;
 
     AnomalyReportedTimeRange m_anomalyReportedTimeRange;
-    bool m_anomalyReportedTimeRangeHasBeenSet;
+    bool m_anomalyReportedTimeRangeHasBeenSet = false;
 
     PredictionTimeRange m_predictionTimeRange;
-    bool m_predictionTimeRangeHasBeenSet;
+    bool m_predictionTimeRangeHasBeenSet = false;
 
     AnomalySourceDetails m_sourceDetails;
-    bool m_sourceDetailsHasBeenSet;
+    bool m_sourceDetailsHasBeenSet = false;
 
     Aws::String m_associatedInsightId;
-    bool m_associatedInsightIdHasBeenSet;
+    bool m_associatedInsightIdHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     double m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     AnomalySourceMetadata m_sourceMetadata;
-    bool m_sourceMetadataHasBeenSet;
+    bool m_sourceMetadataHasBeenSet = false;
 
     Aws::Vector<AnomalyResource> m_anomalyResources;
-    bool m_anomalyResourcesHasBeenSet;
+    bool m_anomalyResourcesHasBeenSet = false;
   };
 
 } // namespace Model

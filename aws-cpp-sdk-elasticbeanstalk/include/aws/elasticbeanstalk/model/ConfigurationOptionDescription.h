@@ -570,37 +570,37 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_changeSeverity;
-    bool m_changeSeverityHasBeenSet;
+    bool m_changeSeverityHasBeenSet = false;
 
     bool m_userDefined;
-    bool m_userDefinedHasBeenSet;
+    bool m_userDefinedHasBeenSet = false;
 
     ConfigurationOptionValueType m_valueType;
-    bool m_valueTypeHasBeenSet;
+    bool m_valueTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_valueOptions;
-    bool m_valueOptionsHasBeenSet;
+    bool m_valueOptionsHasBeenSet = false;
 
     int m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     int m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
 
     int m_maxLength;
-    bool m_maxLengthHasBeenSet;
+    bool m_maxLengthHasBeenSet = false;
 
     OptionRestrictionRegex m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
   };
 
 } // namespace Model

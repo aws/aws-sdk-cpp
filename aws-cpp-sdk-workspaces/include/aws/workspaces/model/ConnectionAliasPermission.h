@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_sharedAccountId;
-    bool m_sharedAccountIdHasBeenSet;
+    bool m_sharedAccountIdHasBeenSet = false;
 
     bool m_allowAssociation;
-    bool m_allowAssociationHasBeenSet;
+    bool m_allowAssociationHasBeenSet = false;
   };
 
 } // namespace Model

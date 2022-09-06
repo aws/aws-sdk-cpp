@@ -1563,31 +1563,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_matchCriteria;
-    bool m_matchCriteriaHasBeenSet;
+    bool m_matchCriteriaHasBeenSet = false;
 
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
-    bool m_connectionPropertiesHasBeenSet;
+    bool m_connectionPropertiesHasBeenSet = false;
 
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
-    bool m_physicalConnectionRequirementsHasBeenSet;
+    bool m_physicalConnectionRequirementsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_lastUpdatedBy;
-    bool m_lastUpdatedByHasBeenSet;
+    bool m_lastUpdatedByHasBeenSet = false;
   };
 
 } // namespace Model

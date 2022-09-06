@@ -266,22 +266,22 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStream;
-    bool m_progressUpdateStreamHasBeenSet;
+    bool m_progressUpdateStreamHasBeenSet = false;
 
     Aws::String m_migrationTaskName;
-    bool m_migrationTaskNameHasBeenSet;
+    bool m_migrationTaskNameHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
 
     Aws::String m_statusDetail;
-    bool m_statusDetailHasBeenSet;
+    bool m_statusDetailHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet;
+    bool m_updateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

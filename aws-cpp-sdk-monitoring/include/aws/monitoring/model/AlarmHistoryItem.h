@@ -260,22 +260,22 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     AlarmType m_alarmType;
-    bool m_alarmTypeHasBeenSet;
+    bool m_alarmTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     HistoryItemType m_historyItemType;
-    bool m_historyItemTypeHasBeenSet;
+    bool m_historyItemTypeHasBeenSet = false;
 
     Aws::String m_historySummary;
-    bool m_historySummaryHasBeenSet;
+    bool m_historySummaryHasBeenSet = false;
 
     Aws::String m_historyData;
-    bool m_historyDataHasBeenSet;
+    bool m_historyDataHasBeenSet = false;
   };
 
 } // namespace Model

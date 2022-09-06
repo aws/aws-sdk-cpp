@@ -123,7 +123,7 @@ ChimeSDKMessagingClient::~ChimeSDKMessagingClient()
 
 void ChimeSDKMessagingClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Chime SDK Messaging");
+  AWSClient::SetServiceClientName("Chime SDK Messaging");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

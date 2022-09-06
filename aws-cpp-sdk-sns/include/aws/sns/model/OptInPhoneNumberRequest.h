@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

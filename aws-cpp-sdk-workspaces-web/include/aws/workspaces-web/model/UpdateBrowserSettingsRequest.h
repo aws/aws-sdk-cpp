@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_browserPolicy;
-    bool m_browserPolicyHasBeenSet;
+    bool m_browserPolicyHasBeenSet = false;
 
     Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet;
+    bool m_browserSettingsArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

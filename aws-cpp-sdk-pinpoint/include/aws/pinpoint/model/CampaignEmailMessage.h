@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     Aws::String m_htmlBody;
-    bool m_htmlBodyHasBeenSet;
+    bool m_htmlBodyHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

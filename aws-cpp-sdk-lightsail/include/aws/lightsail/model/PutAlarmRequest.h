@@ -837,37 +837,37 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     MetricName m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_monitoredResourceName;
-    bool m_monitoredResourceNameHasBeenSet;
+    bool m_monitoredResourceNameHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     int m_evaluationPeriods;
-    bool m_evaluationPeriodsHasBeenSet;
+    bool m_evaluationPeriodsHasBeenSet = false;
 
     int m_datapointsToAlarm;
-    bool m_datapointsToAlarmHasBeenSet;
+    bool m_datapointsToAlarmHasBeenSet = false;
 
     TreatMissingData m_treatMissingData;
-    bool m_treatMissingDataHasBeenSet;
+    bool m_treatMissingDataHasBeenSet = false;
 
     Aws::Vector<ContactProtocol> m_contactProtocols;
-    bool m_contactProtocolsHasBeenSet;
+    bool m_contactProtocolsHasBeenSet = false;
 
     Aws::Vector<AlarmState> m_notificationTriggers;
-    bool m_notificationTriggersHasBeenSet;
+    bool m_notificationTriggersHasBeenSet = false;
 
     bool m_notificationEnabled;
-    bool m_notificationEnabledHasBeenSet;
+    bool m_notificationEnabledHasBeenSet = false;
   };
 
 } // namespace Model

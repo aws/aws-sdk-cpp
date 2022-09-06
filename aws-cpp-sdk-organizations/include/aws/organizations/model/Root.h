@@ -320,16 +320,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<PolicyTypeSummary> m_policyTypes;
-    bool m_policyTypesHasBeenSet;
+    bool m_policyTypesHasBeenSet = false;
   };
 
 } // namespace Model

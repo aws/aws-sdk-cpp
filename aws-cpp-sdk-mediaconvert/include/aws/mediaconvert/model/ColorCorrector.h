@@ -368,25 +368,25 @@ namespace Model
   private:
 
     int m_brightness;
-    bool m_brightnessHasBeenSet;
+    bool m_brightnessHasBeenSet = false;
 
     ColorSpaceConversion m_colorSpaceConversion;
-    bool m_colorSpaceConversionHasBeenSet;
+    bool m_colorSpaceConversionHasBeenSet = false;
 
     int m_contrast;
-    bool m_contrastHasBeenSet;
+    bool m_contrastHasBeenSet = false;
 
     Hdr10Metadata m_hdr10Metadata;
-    bool m_hdr10MetadataHasBeenSet;
+    bool m_hdr10MetadataHasBeenSet = false;
 
     int m_hue;
-    bool m_hueHasBeenSet;
+    bool m_hueHasBeenSet = false;
 
     SampleRangeConversion m_sampleRangeConversion;
-    bool m_sampleRangeConversionHasBeenSet;
+    bool m_sampleRangeConversionHasBeenSet = false;
 
     int m_saturation;
-    bool m_saturationHasBeenSet;
+    bool m_saturationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<Channel> m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
   };
 
 } // namespace Model

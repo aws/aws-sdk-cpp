@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<Alarm> m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
   };
 
 } // namespace Model

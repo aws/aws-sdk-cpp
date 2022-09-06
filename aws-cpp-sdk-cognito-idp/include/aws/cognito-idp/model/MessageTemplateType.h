@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_sMSMessage;
-    bool m_sMSMessageHasBeenSet;
+    bool m_sMSMessageHasBeenSet = false;
 
     Aws::String m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     Aws::String m_emailSubject;
-    bool m_emailSubjectHasBeenSet;
+    bool m_emailSubjectHasBeenSet = false;
   };
 
 } // namespace Model

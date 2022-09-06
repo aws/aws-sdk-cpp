@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_backupPlanId;
-    bool m_backupPlanIdHasBeenSet;
+    bool m_backupPlanIdHasBeenSet = false;
 
     BackupSelection m_backupSelection;
-    bool m_backupSelectionHasBeenSet;
+    bool m_backupSelectionHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -251,16 +251,16 @@ namespace Model
   private:
 
     Aws::String m_metricNamespace;
-    bool m_metricNamespaceHasBeenSet;
+    bool m_metricNamespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metricDimensions;
-    bool m_metricDimensionsHasBeenSet;
+    bool m_metricDimensionsHasBeenSet = false;
 
     Aws::String m_metricStatisticRecommendation;
-    bool m_metricStatisticRecommendationHasBeenSet;
+    bool m_metricStatisticRecommendationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -463,22 +463,22 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_entityPath;
-    bool m_entityPathHasBeenSet;
+    bool m_entityPathHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAuthenticatedTime;
-    bool m_lastAuthenticatedTimeHasBeenSet;
+    bool m_lastAuthenticatedTimeHasBeenSet = false;
 
     int m_totalAuthenticatedEntities;
-    bool m_totalAuthenticatedEntitiesHasBeenSet;
+    bool m_totalAuthenticatedEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

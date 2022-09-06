@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Vector<CloudWatchMetricsDetail> m_cloudWatchMetrics;
-    bool m_cloudWatchMetricsHasBeenSet;
+    bool m_cloudWatchMetricsHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsMetricsDetail> m_performanceInsightsMetrics;
-    bool m_performanceInsightsMetricsHasBeenSet;
+    bool m_performanceInsightsMetricsHasBeenSet = false;
   };
 
 } // namespace Model

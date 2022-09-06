@@ -174,16 +174,16 @@ namespace Model
   private:
 
     GrokClassifier m_grokClassifier;
-    bool m_grokClassifierHasBeenSet;
+    bool m_grokClassifierHasBeenSet = false;
 
     XMLClassifier m_xMLClassifier;
-    bool m_xMLClassifierHasBeenSet;
+    bool m_xMLClassifierHasBeenSet = false;
 
     JsonClassifier m_jsonClassifier;
-    bool m_jsonClassifierHasBeenSet;
+    bool m_jsonClassifierHasBeenSet = false;
 
     CsvClassifier m_csvClassifier;
-    bool m_csvClassifierHasBeenSet;
+    bool m_csvClassifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -162,13 +162,13 @@ namespace Model
   private:
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
 
     Aws::String m_timeOfDay;
-    bool m_timeOfDayHasBeenSet;
+    bool m_timeOfDayHasBeenSet = false;
 
     Aws::String m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
   };
 
 } // namespace Model

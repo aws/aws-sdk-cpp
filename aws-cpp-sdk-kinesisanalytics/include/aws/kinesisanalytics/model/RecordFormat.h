@@ -121,10 +121,10 @@ namespace Model
   private:
 
     RecordFormatType m_recordFormatType;
-    bool m_recordFormatTypeHasBeenSet;
+    bool m_recordFormatTypeHasBeenSet = false;
 
     MappingParameters m_mappingParameters;
-    bool m_mappingParametersHasBeenSet;
+    bool m_mappingParametersHasBeenSet = false;
   };
 
 } // namespace Model

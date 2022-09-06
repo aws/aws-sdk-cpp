@@ -144,10 +144,10 @@ namespace Model
   private:
 
     LogConfigurations m_chaincodeLogs;
-    bool m_chaincodeLogsHasBeenSet;
+    bool m_chaincodeLogsHasBeenSet = false;
 
     LogConfigurations m_peerLogs;
-    bool m_peerLogsHasBeenSet;
+    bool m_peerLogsHasBeenSet = false;
   };
 
 } // namespace Model

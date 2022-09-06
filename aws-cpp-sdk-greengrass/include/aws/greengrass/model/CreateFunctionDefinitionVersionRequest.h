@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     FunctionDefaultConfig m_defaultConfig;
-    bool m_defaultConfigHasBeenSet;
+    bool m_defaultConfigHasBeenSet = false;
 
     Aws::String m_functionDefinitionId;
-    bool m_functionDefinitionIdHasBeenSet;
+    bool m_functionDefinitionIdHasBeenSet = false;
 
     Aws::Vector<Function> m_functions;
-    bool m_functionsHasBeenSet;
+    bool m_functionsHasBeenSet = false;
   };
 
 } // namespace Model

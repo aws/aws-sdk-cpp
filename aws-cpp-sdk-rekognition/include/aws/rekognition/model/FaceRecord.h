@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Face m_face;
-    bool m_faceHasBeenSet;
+    bool m_faceHasBeenSet = false;
 
     FaceDetail m_faceDetail;
-    bool m_faceDetailHasBeenSet;
+    bool m_faceDetailHasBeenSet = false;
   };
 
 } // namespace Model

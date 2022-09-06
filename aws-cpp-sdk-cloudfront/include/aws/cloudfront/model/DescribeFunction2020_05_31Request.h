@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FunctionStage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Permission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
   };
 
 } // namespace Model

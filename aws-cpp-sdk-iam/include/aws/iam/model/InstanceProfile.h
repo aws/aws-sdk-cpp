@@ -414,25 +414,25 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_instanceProfileName;
-    bool m_instanceProfileNameHasBeenSet;
+    bool m_instanceProfileNameHasBeenSet = false;
 
     Aws::String m_instanceProfileId;
-    bool m_instanceProfileIdHasBeenSet;
+    bool m_instanceProfileIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<Role> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -193,16 +193,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     LoggingLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<DetectorDebugOption> m_detectorDebugOptions;
-    bool m_detectorDebugOptionsHasBeenSet;
+    bool m_detectorDebugOptionsHasBeenSet = false;
   };
 
 } // namespace Model

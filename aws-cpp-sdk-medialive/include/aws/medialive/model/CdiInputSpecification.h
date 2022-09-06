@@ -70,7 +70,7 @@ namespace Model
   private:
 
     CdiInputResolution m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
   };
 
 } // namespace Model

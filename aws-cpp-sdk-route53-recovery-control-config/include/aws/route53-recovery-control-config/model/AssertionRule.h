@@ -378,25 +378,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_assertedControls;
-    bool m_assertedControlsHasBeenSet;
+    bool m_assertedControlsHasBeenSet = false;
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RuleConfig m_ruleConfig;
-    bool m_ruleConfigHasBeenSet;
+    bool m_ruleConfigHasBeenSet = false;
 
     Aws::String m_safetyRuleArn;
-    bool m_safetyRuleArnHasBeenSet;
+    bool m_safetyRuleArnHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_waitPeriodMs;
-    bool m_waitPeriodMsHasBeenSet;
+    bool m_waitPeriodMsHasBeenSet = false;
   };
 
 } // namespace Model

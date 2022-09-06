@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_hsmConfigurationIdentifier;
-    bool m_hsmConfigurationIdentifierHasBeenSet;
+    bool m_hsmConfigurationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

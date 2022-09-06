@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OidcIdentityProviderConfig m_oidc;
-    bool m_oidcHasBeenSet;
+    bool m_oidcHasBeenSet = false;
   };
 
 } // namespace Model

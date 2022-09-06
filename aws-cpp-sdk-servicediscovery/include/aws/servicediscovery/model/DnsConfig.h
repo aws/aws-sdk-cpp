@@ -303,10 +303,10 @@ namespace Model
   private:
 
     RoutingPolicy m_routingPolicy;
-    bool m_routingPolicyHasBeenSet;
+    bool m_routingPolicyHasBeenSet = false;
 
     Aws::Vector<DnsRecord> m_dnsRecords;
-    bool m_dnsRecordsHasBeenSet;
+    bool m_dnsRecordsHasBeenSet = false;
   };
 
 } // namespace Model

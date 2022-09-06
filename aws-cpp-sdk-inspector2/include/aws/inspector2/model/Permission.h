@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Operation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Service m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
   };
 
 } // namespace Model

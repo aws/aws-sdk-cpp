@@ -166,13 +166,13 @@ namespace Model
   private:
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_parentName;
-    bool m_parentNameHasBeenSet;
+    bool m_parentNameHasBeenSet = false;
   };
 
 } // namespace Model

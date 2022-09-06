@@ -143,7 +143,7 @@ FraudDetectorClient::~FraudDetectorClient()
 
 void FraudDetectorClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("FraudDetector");
+  AWSClient::SetServiceClientName("FraudDetector");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

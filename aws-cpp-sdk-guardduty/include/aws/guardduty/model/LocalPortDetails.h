@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_portName;
-    bool m_portNameHasBeenSet;
+    bool m_portNameHasBeenSet = false;
   };
 
 } // namespace Model

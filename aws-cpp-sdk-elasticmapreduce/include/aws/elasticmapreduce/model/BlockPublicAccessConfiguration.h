@@ -184,10 +184,10 @@ namespace Model
   private:
 
     bool m_blockPublicSecurityGroupRules;
-    bool m_blockPublicSecurityGroupRulesHasBeenSet;
+    bool m_blockPublicSecurityGroupRulesHasBeenSet = false;
 
     Aws::Vector<PortRange> m_permittedPublicSecurityGroupRuleRanges;
-    bool m_permittedPublicSecurityGroupRuleRangesHasBeenSet;
+    bool m_permittedPublicSecurityGroupRuleRangesHasBeenSet = false;
   };
 
 } // namespace Model

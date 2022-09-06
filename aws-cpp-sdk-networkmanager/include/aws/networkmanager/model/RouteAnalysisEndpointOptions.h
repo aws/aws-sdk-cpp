@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayAttachmentArn;
-    bool m_transitGatewayAttachmentArnHasBeenSet;
+    bool m_transitGatewayAttachmentArnHasBeenSet = false;
 
     Aws::String m_transitGatewayArn;
-    bool m_transitGatewayArnHasBeenSet;
+    bool m_transitGatewayArnHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
   };
 
 } // namespace Model

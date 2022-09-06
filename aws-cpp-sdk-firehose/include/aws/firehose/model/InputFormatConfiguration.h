@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Deserializer m_deserializer;
-    bool m_deserializerHasBeenSet;
+    bool m_deserializerHasBeenSet = false;
   };
 
 } // namespace Model

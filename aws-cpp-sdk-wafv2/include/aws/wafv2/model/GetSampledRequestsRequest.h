@@ -313,19 +313,19 @@ namespace Model
   private:
 
     Aws::String m_webAclArn;
-    bool m_webAclArnHasBeenSet;
+    bool m_webAclArnHasBeenSet = false;
 
     Aws::String m_ruleMetricName;
-    bool m_ruleMetricNameHasBeenSet;
+    bool m_ruleMetricNameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     TimeWindow m_timeWindow;
-    bool m_timeWindowHasBeenSet;
+    bool m_timeWindowHasBeenSet = false;
 
     long long m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -109,13 +109,13 @@ namespace Model
   private:
 
     long long m_throttleCount;
-    bool m_throttleCountHasBeenSet;
+    bool m_throttleCountHasBeenSet = false;
 
     long long m_otherCount;
-    bool m_otherCountHasBeenSet;
+    bool m_otherCountHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
   };
 
 } // namespace Model

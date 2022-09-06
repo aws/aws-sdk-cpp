@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
   };
 
 } // namespace Model

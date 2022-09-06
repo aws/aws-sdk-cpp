@@ -130,7 +130,7 @@ namespace Model
   private:
 
     Aws::String m_humanLoopActivationConditions;
-    bool m_humanLoopActivationConditionsHasBeenSet;
+    bool m_humanLoopActivationConditionsHasBeenSet = false;
   };
 
 } // namespace Model

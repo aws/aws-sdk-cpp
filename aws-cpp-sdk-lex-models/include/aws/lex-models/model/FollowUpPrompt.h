@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Prompt m_prompt;
-    bool m_promptHasBeenSet;
+    bool m_promptHasBeenSet = false;
 
     Statement m_rejectionStatement;
-    bool m_rejectionStatementHasBeenSet;
+    bool m_rejectionStatementHasBeenSet = false;
   };
 
 } // namespace Model

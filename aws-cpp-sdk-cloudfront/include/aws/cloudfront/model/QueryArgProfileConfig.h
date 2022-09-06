@@ -106,10 +106,10 @@ namespace Model
   private:
 
     bool m_forwardWhenQueryArgProfileIsUnknown;
-    bool m_forwardWhenQueryArgProfileIsUnknownHasBeenSet;
+    bool m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = false;
 
     QueryArgProfiles m_queryArgProfiles;
-    bool m_queryArgProfilesHasBeenSet;
+    bool m_queryArgProfilesHasBeenSet = false;
   };
 
 } // namespace Model

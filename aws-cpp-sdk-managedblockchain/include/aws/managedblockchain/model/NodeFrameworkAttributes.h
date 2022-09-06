@@ -115,10 +115,10 @@ namespace Model
   private:
 
     NodeFabricAttributes m_fabric;
-    bool m_fabricHasBeenSet;
+    bool m_fabricHasBeenSet = false;
 
     NodeEthereumAttributes m_ethereum;
-    bool m_ethereumHasBeenSet;
+    bool m_ethereumHasBeenSet = false;
   };
 
 } // namespace Model

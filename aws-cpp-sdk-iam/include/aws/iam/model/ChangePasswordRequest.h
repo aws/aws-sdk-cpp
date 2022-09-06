@@ -200,10 +200,10 @@ namespace Model
   private:
 
     Aws::String m_oldPassword;
-    bool m_oldPasswordHasBeenSet;
+    bool m_oldPasswordHasBeenSet = false;
 
     Aws::String m_newPassword;
-    bool m_newPasswordHasBeenSet;
+    bool m_newPasswordHasBeenSet = false;
   };
 
 } // namespace Model

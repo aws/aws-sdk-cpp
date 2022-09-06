@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::String m_attackId;
-    bool m_attackIdHasBeenSet;
+    bool m_attackIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<AttackVectorDescription> m_attackVectors;
-    bool m_attackVectorsHasBeenSet;
+    bool m_attackVectorsHasBeenSet = false;
   };
 
 } // namespace Model

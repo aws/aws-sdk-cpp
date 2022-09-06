@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     ProtectiveEquipmentSummarizationAttributes m_summarizationAttributes;
-    bool m_summarizationAttributesHasBeenSet;
+    bool m_summarizationAttributesHasBeenSet = false;
   };
 
 } // namespace Model

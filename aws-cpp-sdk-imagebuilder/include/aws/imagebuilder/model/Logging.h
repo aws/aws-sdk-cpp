@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3Logs m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
   };
 
 } // namespace Model

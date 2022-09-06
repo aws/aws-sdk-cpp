@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     MetricDimension m_metricDimension;
-    bool m_metricDimensionHasBeenSet;
+    bool m_metricDimensionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -303,19 +303,19 @@ namespace Model
   private:
 
     bool m_autoprovision;
-    bool m_autoprovisionHasBeenSet;
+    bool m_autoprovisionHasBeenSet = false;
 
     Aws::String m_driver;
-    bool m_driverHasBeenSet;
+    bool m_driverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_driverOpts;
-    bool m_driverOptsHasBeenSet;
+    bool m_driverOptsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

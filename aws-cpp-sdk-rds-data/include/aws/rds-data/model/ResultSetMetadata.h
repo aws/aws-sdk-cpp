@@ -103,10 +103,10 @@ namespace Model
   private:
 
     long long m_columnCount;
-    bool m_columnCountHasBeenSet;
+    bool m_columnCountHasBeenSet = false;
 
     Aws::Vector<ColumnMetadata> m_columnMetadata;
-    bool m_columnMetadataHasBeenSet;
+    bool m_columnMetadataHasBeenSet = false;
   };
 
 } // namespace Model

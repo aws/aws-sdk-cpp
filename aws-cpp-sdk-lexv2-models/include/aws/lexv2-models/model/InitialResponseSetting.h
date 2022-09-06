@@ -131,16 +131,16 @@ namespace Model
   private:
 
     ResponseSpecification m_initialResponse;
-    bool m_initialResponseHasBeenSet;
+    bool m_initialResponseHasBeenSet = false;
 
     DialogState m_nextStep;
-    bool m_nextStepHasBeenSet;
+    bool m_nextStepHasBeenSet = false;
 
     ConditionalSpecification m_conditional;
-    bool m_conditionalHasBeenSet;
+    bool m_conditionalHasBeenSet = false;
 
     DialogCodeHookInvocationSetting m_codeHook;
-    bool m_codeHookHasBeenSet;
+    bool m_codeHookHasBeenSet = false;
   };
 
 } // namespace Model

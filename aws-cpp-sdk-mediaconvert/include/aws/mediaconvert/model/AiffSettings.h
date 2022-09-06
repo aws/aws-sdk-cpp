@@ -109,13 +109,13 @@ namespace Model
   private:
 
     int m_bitDepth;
-    bool m_bitDepthHasBeenSet;
+    bool m_bitDepthHasBeenSet = false;
 
     int m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AudioRecognitionStrategy m_audioRecognitionStrategy;
-    bool m_audioRecognitionStrategyHasBeenSet;
+    bool m_audioRecognitionStrategyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_parameterVersion;
-    bool m_parameterVersionHasBeenSet;
+    bool m_parameterVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
   };
 
 } // namespace Model

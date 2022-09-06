@@ -303,13 +303,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<AuditNotificationType, AuditNotificationTarget> m_auditNotificationTargetConfigurations;
-    bool m_auditNotificationTargetConfigurationsHasBeenSet;
+    bool m_auditNotificationTargetConfigurationsHasBeenSet = false;
 
     Aws::Map<Aws::String, AuditCheckConfiguration> m_auditCheckConfigurations;
-    bool m_auditCheckConfigurationsHasBeenSet;
+    bool m_auditCheckConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -176,16 +176,16 @@ namespace Model
   private:
 
     bool m_isMerged;
-    bool m_isMergedHasBeenSet;
+    bool m_isMergedHasBeenSet = false;
 
     Aws::String m_mergedBy;
-    bool m_mergedByHasBeenSet;
+    bool m_mergedByHasBeenSet = false;
 
     Aws::String m_mergeCommitId;
-    bool m_mergeCommitIdHasBeenSet;
+    bool m_mergeCommitIdHasBeenSet = false;
 
     MergeOptionTypeEnum m_mergeOption;
-    bool m_mergeOptionHasBeenSet;
+    bool m_mergeOptionHasBeenSet = false;
   };
 
 } // namespace Model

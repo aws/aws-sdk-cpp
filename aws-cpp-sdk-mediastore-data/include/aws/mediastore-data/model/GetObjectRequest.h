@@ -294,10 +294,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_range;
-    bool m_rangeHasBeenSet;
+    bool m_rangeHasBeenSet = false;
   };
 
 } // namespace Model

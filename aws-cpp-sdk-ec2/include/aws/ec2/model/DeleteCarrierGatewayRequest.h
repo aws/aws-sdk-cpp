@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_carrierGatewayId;
-    bool m_carrierGatewayIdHasBeenSet;
+    bool m_carrierGatewayIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

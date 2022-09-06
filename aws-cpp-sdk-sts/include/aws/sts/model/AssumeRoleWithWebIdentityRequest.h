@@ -823,25 +823,25 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_roleSessionName;
-    bool m_roleSessionNameHasBeenSet;
+    bool m_roleSessionNameHasBeenSet = false;
 
     Aws::String m_webIdentityToken;
-    bool m_webIdentityTokenHasBeenSet;
+    bool m_webIdentityTokenHasBeenSet = false;
 
     Aws::String m_providerId;
-    bool m_providerIdHasBeenSet;
+    bool m_providerIdHasBeenSet = false;
 
     Aws::Vector<PolicyDescriptorType> m_policyArns;
-    bool m_policyArnsHasBeenSet;
+    bool m_policyArnsHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

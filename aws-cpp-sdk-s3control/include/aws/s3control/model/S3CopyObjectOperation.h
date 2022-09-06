@@ -768,58 +768,58 @@ namespace Model
   private:
 
     Aws::String m_targetResource;
-    bool m_targetResourceHasBeenSet;
+    bool m_targetResourceHasBeenSet = false;
 
     S3CannedAccessControlList m_cannedAccessControlList;
-    bool m_cannedAccessControlListHasBeenSet;
+    bool m_cannedAccessControlListHasBeenSet = false;
 
     Aws::Vector<S3Grant> m_accessControlGrants;
-    bool m_accessControlGrantsHasBeenSet;
+    bool m_accessControlGrantsHasBeenSet = false;
 
     S3MetadataDirective m_metadataDirective;
-    bool m_metadataDirectiveHasBeenSet;
+    bool m_metadataDirectiveHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedSinceConstraint;
-    bool m_modifiedSinceConstraintHasBeenSet;
+    bool m_modifiedSinceConstraintHasBeenSet = false;
 
     S3ObjectMetadata m_newObjectMetadata;
-    bool m_newObjectMetadataHasBeenSet;
+    bool m_newObjectMetadataHasBeenSet = false;
 
     Aws::Vector<S3Tag> m_newObjectTagging;
-    bool m_newObjectTaggingHasBeenSet;
+    bool m_newObjectTaggingHasBeenSet = false;
 
     Aws::String m_redirectLocation;
-    bool m_redirectLocationHasBeenSet;
+    bool m_redirectLocationHasBeenSet = false;
 
     bool m_requesterPays;
-    bool m_requesterPaysHasBeenSet;
+    bool m_requesterPaysHasBeenSet = false;
 
     S3StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     Aws::Utils::DateTime m_unModifiedSinceConstraint;
-    bool m_unModifiedSinceConstraintHasBeenSet;
+    bool m_unModifiedSinceConstraintHasBeenSet = false;
 
     Aws::String m_sSEAwsKmsKeyId;
-    bool m_sSEAwsKmsKeyIdHasBeenSet;
+    bool m_sSEAwsKmsKeyIdHasBeenSet = false;
 
     Aws::String m_targetKeyPrefix;
-    bool m_targetKeyPrefixHasBeenSet;
+    bool m_targetKeyPrefixHasBeenSet = false;
 
     S3ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
-    bool m_objectLockLegalHoldStatusHasBeenSet;
+    bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
     S3ObjectLockMode m_objectLockMode;
-    bool m_objectLockModeHasBeenSet;
+    bool m_objectLockModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_objectLockRetainUntilDate;
-    bool m_objectLockRetainUntilDateHasBeenSet;
+    bool m_objectLockRetainUntilDateHasBeenSet = false;
 
     bool m_bucketKeyEnabled;
-    bool m_bucketKeyEnabledHasBeenSet;
+    bool m_bucketKeyEnabledHasBeenSet = false;
 
     S3ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_customVerificationEmailTemplateName;
-    bool m_customVerificationEmailTemplateNameHasBeenSet;
+    bool m_customVerificationEmailTemplateNameHasBeenSet = false;
   };
 
 } // namespace Model

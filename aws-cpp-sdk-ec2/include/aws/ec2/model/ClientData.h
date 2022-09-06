@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadEnd;
-    bool m_uploadEndHasBeenSet;
+    bool m_uploadEndHasBeenSet = false;
 
     double m_uploadSize;
-    bool m_uploadSizeHasBeenSet;
+    bool m_uploadSizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadStart;
-    bool m_uploadStartHasBeenSet;
+    bool m_uploadStartHasBeenSet = false;
   };
 
 } // namespace Model

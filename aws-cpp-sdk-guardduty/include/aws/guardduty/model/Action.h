@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     AwsApiCallAction m_awsApiCallAction;
-    bool m_awsApiCallActionHasBeenSet;
+    bool m_awsApiCallActionHasBeenSet = false;
 
     DnsRequestAction m_dnsRequestAction;
-    bool m_dnsRequestActionHasBeenSet;
+    bool m_dnsRequestActionHasBeenSet = false;
 
     NetworkConnectionAction m_networkConnectionAction;
-    bool m_networkConnectionActionHasBeenSet;
+    bool m_networkConnectionActionHasBeenSet = false;
 
     PortProbeAction m_portProbeAction;
-    bool m_portProbeActionHasBeenSet;
+    bool m_portProbeActionHasBeenSet = false;
 
     KubernetesApiCallAction m_kubernetesApiCallAction;
-    bool m_kubernetesApiCallActionHasBeenSet;
+    bool m_kubernetesApiCallActionHasBeenSet = false;
   };
 
 } // namespace Model

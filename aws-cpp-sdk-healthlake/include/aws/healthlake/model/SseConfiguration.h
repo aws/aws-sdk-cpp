@@ -77,7 +77,7 @@ namespace Model
   private:
 
     KmsEncryptionConfig m_kmsEncryptionConfig;
-    bool m_kmsEncryptionConfigHasBeenSet;
+    bool m_kmsEncryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

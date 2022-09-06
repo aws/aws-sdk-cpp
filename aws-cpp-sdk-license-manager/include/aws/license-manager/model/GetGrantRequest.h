@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_grantArn;
-    bool m_grantArnHasBeenSet;
+    bool m_grantArnHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

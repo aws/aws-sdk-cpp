@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     MultiplexProgramSettings m_multiplexProgramSettings;
-    bool m_multiplexProgramSettingsHasBeenSet;
+    bool m_multiplexProgramSettingsHasBeenSet = false;
 
     MultiplexProgramPacketIdentifiersMap m_packetIdentifiersMap;
-    bool m_packetIdentifiersMapHasBeenSet;
+    bool m_packetIdentifiersMapHasBeenSet = false;
 
     Aws::Vector<MultiplexProgramPipelineDetail> m_pipelineDetails;
-    bool m_pipelineDetailsHasBeenSet;
+    bool m_pipelineDetailsHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
   };
 
 } // namespace Model

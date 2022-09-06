@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_outputSourceId;
-    bool m_outputSourceIdHasBeenSet;
+    bool m_outputSourceIdHasBeenSet = false;
 
     Aws::String m_outputSourceType;
-    bool m_outputSourceTypeHasBeenSet;
+    bool m_outputSourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

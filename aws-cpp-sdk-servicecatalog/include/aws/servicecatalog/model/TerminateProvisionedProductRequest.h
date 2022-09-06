@@ -319,22 +319,22 @@ namespace Model
   private:
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     Aws::String m_provisionedProductId;
-    bool m_provisionedProductIdHasBeenSet;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::String m_terminateToken;
-    bool m_terminateTokenHasBeenSet;
+    bool m_terminateTokenHasBeenSet = false;
 
     bool m_ignoreErrors;
-    bool m_ignoreErrorsHasBeenSet;
+    bool m_ignoreErrorsHasBeenSet = false;
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     bool m_retainPhysicalResources;
-    bool m_retainPhysicalResourcesHasBeenSet;
+    bool m_retainPhysicalResourcesHasBeenSet = false;
   };
 
 } // namespace Model

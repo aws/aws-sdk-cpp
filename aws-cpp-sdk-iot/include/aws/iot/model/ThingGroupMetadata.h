@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_parentGroupName;
-    bool m_parentGroupNameHasBeenSet;
+    bool m_parentGroupNameHasBeenSet = false;
 
     Aws::Vector<GroupNameAndArn> m_rootToParentThingGroups;
-    bool m_rootToParentThingGroupsHasBeenSet;
+    bool m_rootToParentThingGroupsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

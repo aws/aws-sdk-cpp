@@ -394,28 +394,28 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelArn;
-    bool m_modelArnHasBeenSet;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerArn;
-    bool m_inferenceSchedulerArnHasBeenSet;
+    bool m_inferenceSchedulerArnHasBeenSet = false;
 
     InferenceSchedulerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_dataDelayOffsetInMinutes;
-    bool m_dataDelayOffsetInMinutesHasBeenSet;
+    bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
     DataUploadFrequency m_dataUploadFrequency;
-    bool m_dataUploadFrequencyHasBeenSet;
+    bool m_dataUploadFrequencyHasBeenSet = false;
 
     LatestInferenceResult m_latestInferenceResult;
-    bool m_latestInferenceResultHasBeenSet;
+    bool m_latestInferenceResultHasBeenSet = false;
   };
 
 } // namespace Model

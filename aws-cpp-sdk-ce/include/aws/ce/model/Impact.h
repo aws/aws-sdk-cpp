@@ -79,10 +79,10 @@ namespace Model
   private:
 
     double m_maxImpact;
-    bool m_maxImpactHasBeenSet;
+    bool m_maxImpactHasBeenSet = false;
 
     double m_totalImpact;
-    bool m_totalImpactHasBeenSet;
+    bool m_totalImpactHasBeenSet = false;
   };
 
 } // namespace Model

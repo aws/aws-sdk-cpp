@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::Vector<UsageRecord> m_usageRecords;
-    bool m_usageRecordsHasBeenSet;
+    bool m_usageRecordsHasBeenSet = false;
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
   };
 
 } // namespace Model

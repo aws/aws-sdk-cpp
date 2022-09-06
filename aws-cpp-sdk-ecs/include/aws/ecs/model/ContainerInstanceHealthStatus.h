@@ -128,10 +128,10 @@ namespace Model
   private:
 
     InstanceHealthCheckState m_overallStatus;
-    bool m_overallStatusHasBeenSet;
+    bool m_overallStatusHasBeenSet = false;
 
     Aws::Vector<InstanceHealthCheckResult> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

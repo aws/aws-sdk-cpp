@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     StringComparisonType m_comparisonType;
-    bool m_comparisonTypeHasBeenSet;
+    bool m_comparisonTypeHasBeenSet = false;
   };
 
 } // namespace Model

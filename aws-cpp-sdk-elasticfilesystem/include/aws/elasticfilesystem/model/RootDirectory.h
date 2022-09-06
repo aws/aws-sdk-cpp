@@ -189,10 +189,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     CreationInfo m_creationInfo;
-    bool m_creationInfoHasBeenSet;
+    bool m_creationInfoHasBeenSet = false;
   };
 
 } // namespace Model

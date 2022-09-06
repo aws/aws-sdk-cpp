@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_storageJobId;
-    bool m_storageJobIdHasBeenSet;
+    bool m_storageJobIdHasBeenSet = false;
 
     Aws::String m_chunkToken;
-    bool m_chunkTokenHasBeenSet;
+    bool m_chunkTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Aws::String m_inputDescription;
-    bool m_inputDescriptionHasBeenSet;
+    bool m_inputDescriptionHasBeenSet = false;
 
     Aws::String m_inputArn;
-    bool m_inputArnHasBeenSet;
+    bool m_inputArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     InputStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ namespace Model
   private:
 
     ServerlessSasl m_sasl;
-    bool m_saslHasBeenSet;
+    bool m_saslHasBeenSet = false;
   };
 
 } // namespace Model

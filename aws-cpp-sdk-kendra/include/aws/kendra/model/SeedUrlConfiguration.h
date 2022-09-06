@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_seedUrls;
-    bool m_seedUrlsHasBeenSet;
+    bool m_seedUrlsHasBeenSet = false;
 
     WebCrawlerMode m_webCrawlerMode;
-    bool m_webCrawlerModeHasBeenSet;
+    bool m_webCrawlerModeHasBeenSet = false;
   };
 
 } // namespace Model

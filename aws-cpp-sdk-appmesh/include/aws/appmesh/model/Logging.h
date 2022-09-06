@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AccessLog m_accessLog;
-    bool m_accessLogHasBeenSet;
+    bool m_accessLogHasBeenSet = false;
   };
 
 } // namespace Model

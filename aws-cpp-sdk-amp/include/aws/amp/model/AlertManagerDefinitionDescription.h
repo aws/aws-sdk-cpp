@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet;
+    bool m_modifiedAtHasBeenSet = false;
 
     AlertManagerDefinitionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -210,13 +210,13 @@ namespace Model
   private:
 
     Aws::String m_vpcConfigurationId;
-    bool m_vpcConfigurationIdHasBeenSet;
+    bool m_vpcConfigurationIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIdUpdates;
-    bool m_subnetIdUpdatesHasBeenSet;
+    bool m_subnetIdUpdatesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIdUpdates;
-    bool m_securityGroupIdUpdatesHasBeenSet;
+    bool m_securityGroupIdUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

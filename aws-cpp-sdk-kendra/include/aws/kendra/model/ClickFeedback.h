@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_resultId;
-    bool m_resultIdHasBeenSet;
+    bool m_resultIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_clickTime;
-    bool m_clickTimeHasBeenSet;
+    bool m_clickTimeHasBeenSet = false;
   };
 
 } // namespace Model

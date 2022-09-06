@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_eventDataStore;
-    bool m_eventDataStoreHasBeenSet;
+    bool m_eventDataStoreHasBeenSet = false;
   };
 
 } // namespace Model

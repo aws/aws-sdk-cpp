@@ -219,19 +219,19 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     AutoScalingSettingsDescription m_replicaProvisionedReadCapacityAutoScalingSettings;
-    bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet;
+    bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
 
     AutoScalingSettingsDescription m_replicaProvisionedWriteCapacityAutoScalingSettings;
-    bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet;
+    bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
 
     ReplicaStatus m_replicaStatus;
-    bool m_replicaStatusHasBeenSet;
+    bool m_replicaStatusHasBeenSet = false;
   };
 
 } // namespace Model

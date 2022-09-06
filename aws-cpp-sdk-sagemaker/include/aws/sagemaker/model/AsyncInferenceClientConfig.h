@@ -67,7 +67,7 @@ namespace Model
   private:
 
     int m_maxConcurrentInvocationsPerInstance;
-    bool m_maxConcurrentInvocationsPerInstanceHasBeenSet;
+    bool m_maxConcurrentInvocationsPerInstanceHasBeenSet = false;
   };
 
 } // namespace Model

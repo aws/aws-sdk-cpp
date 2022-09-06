@@ -130,10 +130,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_settingsGroup;
-    bool m_settingsGroupHasBeenSet;
+    bool m_settingsGroupHasBeenSet = false;
   };
 
 } // namespace Model

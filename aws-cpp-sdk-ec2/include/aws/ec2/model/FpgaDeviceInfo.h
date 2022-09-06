@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_manufacturer;
-    bool m_manufacturerHasBeenSet;
+    bool m_manufacturerHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     FpgaDeviceMemoryInfo m_memoryInfo;
-    bool m_memoryInfoHasBeenSet;
+    bool m_memoryInfoHasBeenSet = false;
   };
 
 } // namespace Model

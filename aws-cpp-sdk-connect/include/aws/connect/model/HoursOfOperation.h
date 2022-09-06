@@ -367,25 +367,25 @@ namespace Model
   private:
 
     Aws::String m_hoursOfOperationId;
-    bool m_hoursOfOperationIdHasBeenSet;
+    bool m_hoursOfOperationIdHasBeenSet = false;
 
     Aws::String m_hoursOfOperationArn;
-    bool m_hoursOfOperationArnHasBeenSet;
+    bool m_hoursOfOperationArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
 
     Aws::Vector<HoursOfOperationConfig> m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

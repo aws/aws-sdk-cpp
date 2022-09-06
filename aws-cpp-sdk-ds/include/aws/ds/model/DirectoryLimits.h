@@ -231,31 +231,31 @@ namespace Model
   private:
 
     int m_cloudOnlyDirectoriesLimit;
-    bool m_cloudOnlyDirectoriesLimitHasBeenSet;
+    bool m_cloudOnlyDirectoriesLimitHasBeenSet = false;
 
     int m_cloudOnlyDirectoriesCurrentCount;
-    bool m_cloudOnlyDirectoriesCurrentCountHasBeenSet;
+    bool m_cloudOnlyDirectoriesCurrentCountHasBeenSet = false;
 
     bool m_cloudOnlyDirectoriesLimitReached;
-    bool m_cloudOnlyDirectoriesLimitReachedHasBeenSet;
+    bool m_cloudOnlyDirectoriesLimitReachedHasBeenSet = false;
 
     int m_cloudOnlyMicrosoftADLimit;
-    bool m_cloudOnlyMicrosoftADLimitHasBeenSet;
+    bool m_cloudOnlyMicrosoftADLimitHasBeenSet = false;
 
     int m_cloudOnlyMicrosoftADCurrentCount;
-    bool m_cloudOnlyMicrosoftADCurrentCountHasBeenSet;
+    bool m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = false;
 
     bool m_cloudOnlyMicrosoftADLimitReached;
-    bool m_cloudOnlyMicrosoftADLimitReachedHasBeenSet;
+    bool m_cloudOnlyMicrosoftADLimitReachedHasBeenSet = false;
 
     int m_connectedDirectoriesLimit;
-    bool m_connectedDirectoriesLimitHasBeenSet;
+    bool m_connectedDirectoriesLimitHasBeenSet = false;
 
     int m_connectedDirectoriesCurrentCount;
-    bool m_connectedDirectoriesCurrentCountHasBeenSet;
+    bool m_connectedDirectoriesCurrentCountHasBeenSet = false;
 
     bool m_connectedDirectoriesLimitReached;
-    bool m_connectedDirectoriesLimitReachedHasBeenSet;
+    bool m_connectedDirectoriesLimitReachedHasBeenSet = false;
   };
 
 } // namespace Model

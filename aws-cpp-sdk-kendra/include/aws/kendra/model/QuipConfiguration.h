@@ -797,40 +797,40 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_crawlFileComments;
-    bool m_crawlFileCommentsHasBeenSet;
+    bool m_crawlFileCommentsHasBeenSet = false;
 
     bool m_crawlChatRooms;
-    bool m_crawlChatRoomsHasBeenSet;
+    bool m_crawlChatRoomsHasBeenSet = false;
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_folderIds;
-    bool m_folderIdsHasBeenSet;
+    bool m_folderIdsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_threadFieldMappings;
-    bool m_threadFieldMappingsHasBeenSet;
+    bool m_threadFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_messageFieldMappings;
-    bool m_messageFieldMappingsHasBeenSet;
+    bool m_messageFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_attachmentFieldMappings;
-    bool m_attachmentFieldMappingsHasBeenSet;
+    bool m_attachmentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

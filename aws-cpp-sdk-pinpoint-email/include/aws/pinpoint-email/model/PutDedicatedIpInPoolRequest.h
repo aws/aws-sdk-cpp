@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
 
     Aws::String m_destinationPoolName;
-    bool m_destinationPoolNameHasBeenSet;
+    bool m_destinationPoolNameHasBeenSet = false;
   };
 
 } // namespace Model

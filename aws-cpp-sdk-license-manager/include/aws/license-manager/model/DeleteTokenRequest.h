@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_tokenId;
-    bool m_tokenIdHasBeenSet;
+    bool m_tokenIdHasBeenSet = false;
   };
 
 } // namespace Model

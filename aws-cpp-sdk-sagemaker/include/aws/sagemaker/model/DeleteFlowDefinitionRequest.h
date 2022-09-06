@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_flowDefinitionName;
-    bool m_flowDefinitionNameHasBeenSet;
+    bool m_flowDefinitionNameHasBeenSet = false;
   };
 
 } // namespace Model

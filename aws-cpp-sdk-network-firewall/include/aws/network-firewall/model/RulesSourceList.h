@@ -255,13 +255,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Vector<TargetType> m_targetTypes;
-    bool m_targetTypesHasBeenSet;
+    bool m_targetTypesHasBeenSet = false;
 
     GeneratedRulesType m_generatedRulesType;
-    bool m_generatedRulesTypeHasBeenSet;
+    bool m_generatedRulesTypeHasBeenSet = false;
   };
 
 } // namespace Model

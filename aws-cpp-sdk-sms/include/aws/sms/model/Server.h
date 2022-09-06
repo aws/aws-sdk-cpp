@@ -206,19 +206,19 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     ServerType m_serverType;
-    bool m_serverTypeHasBeenSet;
+    bool m_serverTypeHasBeenSet = false;
 
     VmServer m_vmServer;
-    bool m_vmServerHasBeenSet;
+    bool m_vmServerHasBeenSet = false;
 
     Aws::String m_replicationJobId;
-    bool m_replicationJobIdHasBeenSet;
+    bool m_replicationJobIdHasBeenSet = false;
 
     bool m_replicationJobTerminated;
-    bool m_replicationJobTerminatedHasBeenSet;
+    bool m_replicationJobTerminatedHasBeenSet = false;
   };
 
 } // namespace Model

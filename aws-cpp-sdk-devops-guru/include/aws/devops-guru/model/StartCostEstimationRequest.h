@@ -114,10 +114,10 @@ namespace Model
   private:
 
     CostEstimationResourceCollectionFilter m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

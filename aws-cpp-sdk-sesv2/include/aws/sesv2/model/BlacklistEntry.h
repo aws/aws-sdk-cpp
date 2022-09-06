@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_rblName;
-    bool m_rblNameHasBeenSet;
+    bool m_rblNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_listingTime;
-    bool m_listingTimeHasBeenSet;
+    bool m_listingTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

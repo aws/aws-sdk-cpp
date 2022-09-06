@@ -107,7 +107,7 @@ namespace Model
   private:
 
     RuleOrder m_ruleOrder;
-    bool m_ruleOrderHasBeenSet;
+    bool m_ruleOrderHasBeenSet = false;
   };
 
 } // namespace Model

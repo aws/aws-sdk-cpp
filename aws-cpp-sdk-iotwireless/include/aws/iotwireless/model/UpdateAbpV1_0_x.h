@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_fCntStart;
-    bool m_fCntStartHasBeenSet;
+    bool m_fCntStartHasBeenSet = false;
   };
 
 } // namespace Model

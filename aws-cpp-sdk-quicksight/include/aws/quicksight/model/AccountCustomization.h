@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_defaultTheme;
-    bool m_defaultThemeHasBeenSet;
+    bool m_defaultThemeHasBeenSet = false;
 
     Aws::String m_defaultEmailCustomizationTemplate;
-    bool m_defaultEmailCustomizationTemplateHasBeenSet;
+    bool m_defaultEmailCustomizationTemplateHasBeenSet = false;
   };
 
 } // namespace Model

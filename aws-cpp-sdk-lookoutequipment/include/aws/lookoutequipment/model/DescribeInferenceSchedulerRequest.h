@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
   };
 
 } // namespace Model

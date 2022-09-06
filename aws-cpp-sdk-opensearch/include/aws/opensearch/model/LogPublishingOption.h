@@ -88,10 +88,10 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

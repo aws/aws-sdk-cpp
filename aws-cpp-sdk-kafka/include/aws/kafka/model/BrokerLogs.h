@@ -93,13 +93,13 @@ namespace Model
   private:
 
     CloudWatchLogs m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     Firehose m_firehose;
-    bool m_firehoseHasBeenSet;
+    bool m_firehoseHasBeenSet = false;
 
     S3 m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

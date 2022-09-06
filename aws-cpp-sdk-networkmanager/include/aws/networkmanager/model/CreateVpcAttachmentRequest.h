@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_vpcArn;
-    bool m_vpcArnHasBeenSet;
+    bool m_vpcArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetArns;
-    bool m_subnetArnsHasBeenSet;
+    bool m_subnetArnsHasBeenSet = false;
 
     VpcOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

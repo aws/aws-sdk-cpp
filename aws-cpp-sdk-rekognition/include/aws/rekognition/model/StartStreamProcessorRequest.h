@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StreamProcessingStartSelector m_startSelector;
-    bool m_startSelectorHasBeenSet;
+    bool m_startSelectorHasBeenSet = false;
 
     StreamProcessingStopSelector m_stopSelector;
-    bool m_stopSelectorHasBeenSet;
+    bool m_stopSelectorHasBeenSet = false;
   };
 
 } // namespace Model

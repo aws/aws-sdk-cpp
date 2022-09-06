@@ -102,7 +102,7 @@ namespace Model
   private:
 
     AvcIntraUhdQualityTuningLevel m_qualityTuningLevel;
-    bool m_qualityTuningLevelHasBeenSet;
+    bool m_qualityTuningLevelHasBeenSet = false;
   };
 
 } // namespace Model

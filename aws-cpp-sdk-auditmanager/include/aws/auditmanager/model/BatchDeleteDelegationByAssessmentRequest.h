@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_delegationIds;
-    bool m_delegationIdsHasBeenSet;
+    bool m_delegationIdsHasBeenSet = false;
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
   };
 
 } // namespace Model

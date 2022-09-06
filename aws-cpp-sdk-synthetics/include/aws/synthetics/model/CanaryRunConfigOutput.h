@@ -105,13 +105,13 @@ namespace Model
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     int m_memoryInMB;
-    bool m_memoryInMBHasBeenSet;
+    bool m_memoryInMBHasBeenSet = false;
 
     bool m_activeTracing;
-    bool m_activeTracingHasBeenSet;
+    bool m_activeTracingHasBeenSet = false;
   };
 
 } // namespace Model

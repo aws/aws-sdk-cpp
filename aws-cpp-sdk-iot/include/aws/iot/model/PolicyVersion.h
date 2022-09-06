@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     bool m_isDefaultVersion;
-    bool m_isDefaultVersionHasBeenSet;
+    bool m_isDefaultVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
   };
 
 } // namespace Model

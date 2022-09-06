@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_inputPropertyValue;
-    bool m_inputPropertyValueHasBeenSet;
+    bool m_inputPropertyValueHasBeenSet = false;
 
     ComparisonOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::String m_thresholdValue;
-    bool m_thresholdValueHasBeenSet;
+    bool m_thresholdValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -738,31 +738,31 @@ namespace Model
   private:
 
     Aws::String m_creationToken;
-    bool m_creationTokenHasBeenSet;
+    bool m_creationTokenHasBeenSet = false;
 
     PerformanceMode m_performanceMode;
-    bool m_performanceModeHasBeenSet;
+    bool m_performanceModeHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     ThroughputMode m_throughputMode;
-    bool m_throughputModeHasBeenSet;
+    bool m_throughputModeHasBeenSet = false;
 
     double m_provisionedThroughputInMibps;
-    bool m_provisionedThroughputInMibpsHasBeenSet;
+    bool m_provisionedThroughputInMibpsHasBeenSet = false;
 
     Aws::String m_availabilityZoneName;
-    bool m_availabilityZoneNameHasBeenSet;
+    bool m_availabilityZoneNameHasBeenSet = false;
 
     bool m_backup;
-    bool m_backupHasBeenSet;
+    bool m_backupHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

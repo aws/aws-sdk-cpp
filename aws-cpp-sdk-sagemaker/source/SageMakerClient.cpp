@@ -339,7 +339,7 @@ SageMakerClient::~SageMakerClient()
 
 void SageMakerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SageMaker");
+  AWSClient::SetServiceClientName("SageMaker");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

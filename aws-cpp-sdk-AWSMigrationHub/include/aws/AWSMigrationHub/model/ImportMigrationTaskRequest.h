@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStream;
-    bool m_progressUpdateStreamHasBeenSet;
+    bool m_progressUpdateStreamHasBeenSet = false;
 
     Aws::String m_migrationTaskName;
-    bool m_migrationTaskNameHasBeenSet;
+    bool m_migrationTaskNameHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DataSourceParameters m_dataSourceParameters;
-    bool m_dataSourceParametersHasBeenSet;
+    bool m_dataSourceParametersHasBeenSet = false;
 
     DataSourceCredentials m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
 
     VpcConnectionProperties m_vpcConnectionProperties;
-    bool m_vpcConnectionPropertiesHasBeenSet;
+    bool m_vpcConnectionPropertiesHasBeenSet = false;
 
     SslProperties m_sslProperties;
-    bool m_sslPropertiesHasBeenSet;
+    bool m_sslPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

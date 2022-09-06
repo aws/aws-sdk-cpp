@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_geofenceIds;
-    bool m_geofenceIdsHasBeenSet;
+    bool m_geofenceIdsHasBeenSet = false;
   };
 
 } // namespace Model

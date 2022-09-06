@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     LateDataRuleConfiguration m_ruleConfiguration;
-    bool m_ruleConfigurationHasBeenSet;
+    bool m_ruleConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

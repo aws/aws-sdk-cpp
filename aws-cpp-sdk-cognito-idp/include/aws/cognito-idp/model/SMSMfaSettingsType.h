@@ -97,10 +97,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_preferredMfa;
-    bool m_preferredMfaHasBeenSet;
+    bool m_preferredMfaHasBeenSet = false;
   };
 
 } // namespace Model

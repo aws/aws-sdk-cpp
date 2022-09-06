@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_ipRestrictionRuleMap;
-    bool m_ipRestrictionRuleMapHasBeenSet;
+    bool m_ipRestrictionRuleMapHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

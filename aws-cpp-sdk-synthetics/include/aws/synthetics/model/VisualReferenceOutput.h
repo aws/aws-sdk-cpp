@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::Vector<BaseScreenshot> m_baseScreenshots;
-    bool m_baseScreenshotsHasBeenSet;
+    bool m_baseScreenshotsHasBeenSet = false;
 
     Aws::String m_baseCanaryRunId;
-    bool m_baseCanaryRunIdHasBeenSet;
+    bool m_baseCanaryRunIdHasBeenSet = false;
   };
 
 } // namespace Model

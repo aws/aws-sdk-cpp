@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_authenticateOnUnsubscribe;
-    bool m_authenticateOnUnsubscribeHasBeenSet;
+    bool m_authenticateOnUnsubscribeHasBeenSet = false;
   };
 
 } // namespace Model

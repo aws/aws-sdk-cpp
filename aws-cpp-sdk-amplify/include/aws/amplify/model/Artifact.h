@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_artifactFileName;
-    bool m_artifactFileNameHasBeenSet;
+    bool m_artifactFileNameHasBeenSet = false;
 
     Aws::String m_artifactId;
-    bool m_artifactIdHasBeenSet;
+    bool m_artifactIdHasBeenSet = false;
   };
 
 } // namespace Model

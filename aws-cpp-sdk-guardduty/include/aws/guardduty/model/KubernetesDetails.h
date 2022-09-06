@@ -103,10 +103,10 @@ namespace Model
   private:
 
     KubernetesUserDetails m_kubernetesUserDetails;
-    bool m_kubernetesUserDetailsHasBeenSet;
+    bool m_kubernetesUserDetailsHasBeenSet = false;
 
     KubernetesWorkloadDetails m_kubernetesWorkloadDetails;
-    bool m_kubernetesWorkloadDetailsHasBeenSet;
+    bool m_kubernetesWorkloadDetailsHasBeenSet = false;
   };
 
 } // namespace Model

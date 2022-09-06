@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::String m_granteeId;
-    bool m_granteeIdHasBeenSet;
+    bool m_granteeIdHasBeenSet = false;
 
     MemberType m_granteeType;
-    bool m_granteeTypeHasBeenSet;
+    bool m_granteeTypeHasBeenSet = false;
 
     Aws::Vector<PermissionType> m_permissionValues;
-    bool m_permissionValuesHasBeenSet;
+    bool m_permissionValuesHasBeenSet = false;
   };
 
 } // namespace Model

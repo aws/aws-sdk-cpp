@@ -199,13 +199,13 @@ namespace Model
   private:
 
     FieldLogLevel m_fieldLogLevel;
-    bool m_fieldLogLevelHasBeenSet;
+    bool m_fieldLogLevelHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
-    bool m_cloudWatchLogsRoleArnHasBeenSet;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
     bool m_excludeVerboseContent;
-    bool m_excludeVerboseContentHasBeenSet;
+    bool m_excludeVerboseContentHasBeenSet = false;
   };
 
 } // namespace Model

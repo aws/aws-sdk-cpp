@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_samplePayloadUrl;
-    bool m_samplePayloadUrlHasBeenSet;
+    bool m_samplePayloadUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedContentTypes;
-    bool m_supportedContentTypesHasBeenSet;
+    bool m_supportedContentTypesHasBeenSet = false;
   };
 
 } // namespace Model

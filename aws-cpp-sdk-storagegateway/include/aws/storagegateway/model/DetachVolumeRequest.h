@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
 
     bool m_forceDetach;
-    bool m_forceDetachHasBeenSet;
+    bool m_forceDetachHasBeenSet = false;
   };
 
 } // namespace Model

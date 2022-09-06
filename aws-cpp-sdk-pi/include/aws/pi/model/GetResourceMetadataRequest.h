@@ -139,10 +139,10 @@ namespace Model
   private:
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

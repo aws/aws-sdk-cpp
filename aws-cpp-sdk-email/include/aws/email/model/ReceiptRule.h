@@ -328,22 +328,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     TlsPolicy m_tlsPolicy;
-    bool m_tlsPolicyHasBeenSet;
+    bool m_tlsPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recipients;
-    bool m_recipientsHasBeenSet;
+    bool m_recipientsHasBeenSet = false;
 
     Aws::Vector<ReceiptAction> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     bool m_scanEnabled;
-    bool m_scanEnabledHasBeenSet;
+    bool m_scanEnabledHasBeenSet = false;
   };
 
 } // namespace Model

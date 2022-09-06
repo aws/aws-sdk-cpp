@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_scheduledQueryArn;
-    bool m_scheduledQueryArnHasBeenSet;
+    bool m_scheduledQueryArnHasBeenSet = false;
 
     ScheduledQueryState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

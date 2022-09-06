@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_virtualizationType;
-    bool m_virtualizationTypeHasBeenSet;
+    bool m_virtualizationTypeHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
   };
 
 } // namespace Model

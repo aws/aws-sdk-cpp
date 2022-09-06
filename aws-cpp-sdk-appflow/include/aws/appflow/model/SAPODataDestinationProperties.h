@@ -200,19 +200,19 @@ namespace Model
   private:
 
     Aws::String m_objectPath;
-    bool m_objectPathHasBeenSet;
+    bool m_objectPathHasBeenSet = false;
 
     SuccessResponseHandlingConfig m_successResponseHandlingConfig;
-    bool m_successResponseHandlingConfigHasBeenSet;
+    bool m_successResponseHandlingConfigHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_idFieldNames;
-    bool m_idFieldNamesHasBeenSet;
+    bool m_idFieldNamesHasBeenSet = false;
 
     ErrorHandlingConfig m_errorHandlingConfig;
-    bool m_errorHandlingConfigHasBeenSet;
+    bool m_errorHandlingConfigHasBeenSet = false;
 
     WriteOperationType m_writeOperationType;
-    bool m_writeOperationTypeHasBeenSet;
+    bool m_writeOperationTypeHasBeenSet = false;
   };
 
 } // namespace Model

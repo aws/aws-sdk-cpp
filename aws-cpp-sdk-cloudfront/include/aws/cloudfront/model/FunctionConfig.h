@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     FunctionRuntime m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
   };
 
 } // namespace Model

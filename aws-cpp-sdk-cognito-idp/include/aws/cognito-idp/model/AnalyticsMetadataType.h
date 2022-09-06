@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_analyticsEndpointId;
-    bool m_analyticsEndpointIdHasBeenSet;
+    bool m_analyticsEndpointIdHasBeenSet = false;
   };
 
 } // namespace Model

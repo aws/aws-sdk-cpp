@@ -1656,97 +1656,97 @@ namespace Model
   private:
 
     ObjectCannedACL m_aCL;
-    bool m_aCLHasBeenSet;
+    bool m_aCLHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_cacheControl;
-    bool m_cacheControlHasBeenSet;
+    bool m_cacheControlHasBeenSet = false;
 
     Aws::String m_contentDisposition;
-    bool m_contentDispositionHasBeenSet;
+    bool m_contentDispositionHasBeenSet = false;
 
     Aws::String m_contentEncoding;
-    bool m_contentEncodingHasBeenSet;
+    bool m_contentEncodingHasBeenSet = false;
 
     Aws::String m_contentLanguage;
-    bool m_contentLanguageHasBeenSet;
+    bool m_contentLanguageHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_expires;
-    bool m_expiresHasBeenSet;
+    bool m_expiresHasBeenSet = false;
 
     Aws::String m_grantFullControl;
-    bool m_grantFullControlHasBeenSet;
+    bool m_grantFullControlHasBeenSet = false;
 
     Aws::String m_grantRead;
-    bool m_grantReadHasBeenSet;
+    bool m_grantReadHasBeenSet = false;
 
     Aws::String m_grantReadACP;
-    bool m_grantReadACPHasBeenSet;
+    bool m_grantReadACPHasBeenSet = false;
 
     Aws::String m_grantWriteACP;
-    bool m_grantWriteACPHasBeenSet;
+    bool m_grantWriteACPHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     ServerSideEncryption m_serverSideEncryption;
-    bool m_serverSideEncryptionHasBeenSet;
+    bool m_serverSideEncryptionHasBeenSet = false;
 
     StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     Aws::String m_websiteRedirectLocation;
-    bool m_websiteRedirectLocationHasBeenSet;
+    bool m_websiteRedirectLocationHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     Aws::String m_sSEKMSKeyId;
-    bool m_sSEKMSKeyIdHasBeenSet;
+    bool m_sSEKMSKeyIdHasBeenSet = false;
 
     Aws::String m_sSEKMSEncryptionContext;
-    bool m_sSEKMSEncryptionContextHasBeenSet;
+    bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
     bool m_bucketKeyEnabled;
-    bool m_bucketKeyEnabledHasBeenSet;
+    bool m_bucketKeyEnabledHasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_tagging;
-    bool m_taggingHasBeenSet;
+    bool m_taggingHasBeenSet = false;
 
     ObjectLockMode m_objectLockMode;
-    bool m_objectLockModeHasBeenSet;
+    bool m_objectLockModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_objectLockRetainUntilDate;
-    bool m_objectLockRetainUntilDateHasBeenSet;
+    bool m_objectLockRetainUntilDateHasBeenSet = false;
 
     ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
-    bool m_objectLockLegalHoldStatusHasBeenSet;
+    bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

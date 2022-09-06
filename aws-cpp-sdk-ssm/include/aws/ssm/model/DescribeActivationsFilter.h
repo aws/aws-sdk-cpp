@@ -118,10 +118,10 @@ namespace Model
   private:
 
     DescribeActivationsFilterKeys m_filterKey;
-    bool m_filterKeyHasBeenSet;
+    bool m_filterKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterValues;
-    bool m_filterValuesHasBeenSet;
+    bool m_filterValuesHasBeenSet = false;
   };
 
 } // namespace Model

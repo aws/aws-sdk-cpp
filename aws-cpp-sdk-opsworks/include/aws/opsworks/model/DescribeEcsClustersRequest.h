@@ -258,16 +258,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ecsClusterArns;
-    bool m_ecsClusterArnsHasBeenSet;
+    bool m_ecsClusterArnsHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

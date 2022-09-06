@@ -178,16 +178,16 @@ namespace Model
   private:
 
     DataValidationMetrics m_dataValidationMetrics;
-    bool m_dataValidationMetricsHasBeenSet;
+    bool m_dataValidationMetricsHasBeenSet = false;
 
     TrainingMetricsV2 m_trainingMetricsV2;
-    bool m_trainingMetricsV2HasBeenSet;
+    bool m_trainingMetricsV2HasBeenSet = false;
 
     VariableImportanceMetrics m_variableImportanceMetrics;
-    bool m_variableImportanceMetricsHasBeenSet;
+    bool m_variableImportanceMetricsHasBeenSet = false;
 
     AggregatedVariablesImportanceMetrics m_aggregatedVariablesImportanceMetrics;
-    bool m_aggregatedVariablesImportanceMetricsHasBeenSet;
+    bool m_aggregatedVariablesImportanceMetricsHasBeenSet = false;
   };
 
 } // namespace Model

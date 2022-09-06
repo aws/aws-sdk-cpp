@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_messageBody;
-    bool m_messageBodyHasBeenSet;
+    bool m_messageBodyHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

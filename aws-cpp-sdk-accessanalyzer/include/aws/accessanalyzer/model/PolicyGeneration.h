@@ -257,19 +257,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

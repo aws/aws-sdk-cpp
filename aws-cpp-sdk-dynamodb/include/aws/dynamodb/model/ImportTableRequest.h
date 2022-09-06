@@ -314,22 +314,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     S3BucketSource m_s3BucketSource;
-    bool m_s3BucketSourceHasBeenSet;
+    bool m_s3BucketSourceHasBeenSet = false;
 
     InputFormat m_inputFormat;
-    bool m_inputFormatHasBeenSet;
+    bool m_inputFormatHasBeenSet = false;
 
     InputFormatOptions m_inputFormatOptions;
-    bool m_inputFormatOptionsHasBeenSet;
+    bool m_inputFormatOptionsHasBeenSet = false;
 
     InputCompressionType m_inputCompressionType;
-    bool m_inputCompressionTypeHasBeenSet;
+    bool m_inputCompressionTypeHasBeenSet = false;
 
     TableCreationParameters m_tableCreationParameters;
-    bool m_tableCreationParametersHasBeenSet;
+    bool m_tableCreationParametersHasBeenSet = false;
   };
 
 } // namespace Model

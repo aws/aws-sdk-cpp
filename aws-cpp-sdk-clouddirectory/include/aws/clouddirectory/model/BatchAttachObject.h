@@ -144,13 +144,13 @@ namespace Model
   private:
 
     ObjectReference m_parentReference;
-    bool m_parentReferenceHasBeenSet;
+    bool m_parentReferenceHasBeenSet = false;
 
     ObjectReference m_childReference;
-    bool m_childReferenceHasBeenSet;
+    bool m_childReferenceHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
   };
 
 } // namespace Model

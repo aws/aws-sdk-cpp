@@ -127,7 +127,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cidrs;
-    bool m_cidrsHasBeenSet;
+    bool m_cidrsHasBeenSet = false;
   };
 
 } // namespace Model

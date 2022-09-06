@@ -265,7 +265,7 @@ ChimeClient::~ChimeClient()
 
 void ChimeClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Chime");
+  AWSClient::SetServiceClientName("Chime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   if (config.endpointOverride.empty())

@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_modelHandle;
-    bool m_modelHandleHasBeenSet;
+    bool m_modelHandleHasBeenSet = false;
 
     Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet;
+    bool m_s3UrlHasBeenSet = false;
 
     Checksum m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     ModelState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

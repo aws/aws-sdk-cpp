@@ -173,16 +173,16 @@ namespace Model
   private:
 
     bool m_enableCodeHookInvocation;
-    bool m_enableCodeHookInvocationHasBeenSet;
+    bool m_enableCodeHookInvocationHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     Aws::String m_invocationLabel;
-    bool m_invocationLabelHasBeenSet;
+    bool m_invocationLabelHasBeenSet = false;
 
     PostDialogCodeHookInvocationSpecification m_postCodeHookSpecification;
-    bool m_postCodeHookSpecificationHasBeenSet;
+    bool m_postCodeHookSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

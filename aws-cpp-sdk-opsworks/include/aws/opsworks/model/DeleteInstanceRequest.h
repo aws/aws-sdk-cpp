@@ -119,13 +119,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     bool m_deleteElasticIp;
-    bool m_deleteElasticIpHasBeenSet;
+    bool m_deleteElasticIpHasBeenSet = false;
 
     bool m_deleteVolumes;
-    bool m_deleteVolumesHasBeenSet;
+    bool m_deleteVolumesHasBeenSet = false;
   };
 
 } // namespace Model

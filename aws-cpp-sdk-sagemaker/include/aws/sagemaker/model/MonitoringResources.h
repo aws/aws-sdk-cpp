@@ -77,7 +77,7 @@ namespace Model
   private:
 
     MonitoringClusterConfig m_clusterConfig;
-    bool m_clusterConfigHasBeenSet;
+    bool m_clusterConfigHasBeenSet = false;
   };
 
 } // namespace Model

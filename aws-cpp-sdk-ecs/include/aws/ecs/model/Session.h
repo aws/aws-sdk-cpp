@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_streamUrl;
-    bool m_streamUrlHasBeenSet;
+    bool m_streamUrlHasBeenSet = false;
 
     Aws::String m_tokenValue;
-    bool m_tokenValueHasBeenSet;
+    bool m_tokenValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -295,22 +295,22 @@ namespace Model
   private:
 
     bool m_allowReassignment;
-    bool m_allowReassignmentHasBeenSet;
+    bool m_allowReassignmentHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_privateIpAddresses;
-    bool m_privateIpAddressesHasBeenSet;
+    bool m_privateIpAddressesHasBeenSet = false;
 
     int m_secondaryPrivateIpAddressCount;
-    bool m_secondaryPrivateIpAddressCountHasBeenSet;
+    bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv4Prefixes;
-    bool m_ipv4PrefixesHasBeenSet;
+    bool m_ipv4PrefixesHasBeenSet = false;
 
     int m_ipv4PrefixCount;
-    bool m_ipv4PrefixCountHasBeenSet;
+    bool m_ipv4PrefixCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ SelectObjectContentRequest::SelectObjectContentRequest() :
     m_scanRangeHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false),
-    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
+    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
 

@@ -322,22 +322,22 @@ namespace Model
   private:
 
     NetworkInterfaceAttachmentChanges m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     AttributeValue m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     AttributeBooleanValue m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
+    bool m_sourceDestCheckHasBeenSet = false;
   };
 
 } // namespace Model

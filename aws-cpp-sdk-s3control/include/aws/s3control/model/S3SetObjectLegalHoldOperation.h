@@ -81,7 +81,7 @@ namespace Model
   private:
 
     S3ObjectLockLegalHold m_legalHold;
-    bool m_legalHoldHasBeenSet;
+    bool m_legalHoldHasBeenSet = false;
   };
 
 } // namespace Model

@@ -345,25 +345,25 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_remoteDomainName;
-    bool m_remoteDomainNameHasBeenSet;
+    bool m_remoteDomainNameHasBeenSet = false;
 
     Aws::String m_trustPassword;
-    bool m_trustPasswordHasBeenSet;
+    bool m_trustPasswordHasBeenSet = false;
 
     TrustDirection m_trustDirection;
-    bool m_trustDirectionHasBeenSet;
+    bool m_trustDirectionHasBeenSet = false;
 
     TrustType m_trustType;
-    bool m_trustTypeHasBeenSet;
+    bool m_trustTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_conditionalForwarderIpAddrs;
-    bool m_conditionalForwarderIpAddrsHasBeenSet;
+    bool m_conditionalForwarderIpAddrsHasBeenSet = false;
 
     SelectiveAuth m_selectiveAuth;
-    bool m_selectiveAuthHasBeenSet;
+    bool m_selectiveAuthHasBeenSet = false;
   };
 
 } // namespace Model

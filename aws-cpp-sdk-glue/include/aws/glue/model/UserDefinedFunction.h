@@ -352,28 +352,28 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_className;
-    bool m_classNameHasBeenSet;
+    bool m_classNameHasBeenSet = false;
 
     Aws::String m_ownerName;
-    bool m_ownerNameHasBeenSet;
+    bool m_ownerNameHasBeenSet = false;
 
     PrincipalType m_ownerType;
-    bool m_ownerTypeHasBeenSet;
+    bool m_ownerTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Vector<ResourceUri> m_resourceUris;
-    bool m_resourceUrisHasBeenSet;
+    bool m_resourceUrisHasBeenSet = false;
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
   };
 
 } // namespace Model

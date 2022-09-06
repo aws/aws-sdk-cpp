@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_callbackId;
-    bool m_callbackIdHasBeenSet;
+    bool m_callbackIdHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     bool m_deleteResource;
-    bool m_deleteResourceHasBeenSet;
+    bool m_deleteResourceHasBeenSet = false;
 
     ChannelMessageCallback m_channelMessage;
-    bool m_channelMessageHasBeenSet;
+    bool m_channelMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

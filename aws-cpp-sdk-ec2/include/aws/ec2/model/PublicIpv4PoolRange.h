@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_firstAddress;
-    bool m_firstAddressHasBeenSet;
+    bool m_firstAddressHasBeenSet = false;
 
     Aws::String m_lastAddress;
-    bool m_lastAddressHasBeenSet;
+    bool m_lastAddressHasBeenSet = false;
 
     int m_addressCount;
-    bool m_addressCountHasBeenSet;
+    bool m_addressCountHasBeenSet = false;
 
     int m_availableAddressCount;
-    bool m_availableAddressCountHasBeenSet;
+    bool m_availableAddressCountHasBeenSet = false;
   };
 
 } // namespace Model

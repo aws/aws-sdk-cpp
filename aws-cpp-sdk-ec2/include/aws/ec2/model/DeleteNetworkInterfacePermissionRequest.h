@@ -141,13 +141,13 @@ namespace Model
   private:
 
     Aws::String m_networkInterfacePermissionId;
-    bool m_networkInterfacePermissionIdHasBeenSet;
+    bool m_networkInterfacePermissionIdHasBeenSet = false;
 
     bool m_force;
-    bool m_forceHasBeenSet;
+    bool m_forceHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

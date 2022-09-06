@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_replicationJobId;
-    bool m_replicationJobIdHasBeenSet;
+    bool m_replicationJobIdHasBeenSet = false;
   };
 
 } // namespace Model

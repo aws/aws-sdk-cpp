@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_deviceFleetName;
-    bool m_deviceFleetNameHasBeenSet;
+    bool m_deviceFleetNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceNames;
-    bool m_deviceNamesHasBeenSet;
+    bool m_deviceNamesHasBeenSet = false;
   };
 
 } // namespace Model

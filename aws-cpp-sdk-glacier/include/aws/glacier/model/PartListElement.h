@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_rangeInBytes;
-    bool m_rangeInBytesHasBeenSet;
+    bool m_rangeInBytesHasBeenSet = false;
 
     Aws::String m_sHA256TreeHash;
-    bool m_sHA256TreeHashHasBeenSet;
+    bool m_sHA256TreeHashHasBeenSet = false;
   };
 
 } // namespace Model

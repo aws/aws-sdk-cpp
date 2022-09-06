@@ -118,10 +118,10 @@ namespace Model
   private:
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_activityId;
-    bool m_activityIdHasBeenSet;
+    bool m_activityIdHasBeenSet = false;
   };
 
 } // namespace Model

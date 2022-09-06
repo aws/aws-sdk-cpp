@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_configurationProfileId;
-    bool m_configurationProfileIdHasBeenSet;
+    bool m_configurationProfileIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_retrievalRoleArn;
-    bool m_retrievalRoleArnHasBeenSet;
+    bool m_retrievalRoleArnHasBeenSet = false;
 
     Aws::Vector<Validator> m_validators;
-    bool m_validatorsHasBeenSet;
+    bool m_validatorsHasBeenSet = false;
   };
 
 } // namespace Model

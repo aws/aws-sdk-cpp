@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobRoleArn;
-    bool m_jobRoleArnHasBeenSet;
+    bool m_jobRoleArnHasBeenSet = false;
 
     Aws::Vector<File> m_files;
-    bool m_filesHasBeenSet;
+    bool m_filesHasBeenSet = false;
 
     ErrorReportLocation m_errorReportLocation;
-    bool m_errorReportLocationHasBeenSet;
+    bool m_errorReportLocationHasBeenSet = false;
 
     JobConfiguration m_jobConfiguration;
-    bool m_jobConfigurationHasBeenSet;
+    bool m_jobConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

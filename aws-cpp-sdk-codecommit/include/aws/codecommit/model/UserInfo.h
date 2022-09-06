@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
   };
 
 } // namespace Model

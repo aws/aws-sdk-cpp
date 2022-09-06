@@ -190,13 +190,13 @@ namespace Model
   private:
 
     RegistrationStatus m_registrationStatus;
-    bool m_registrationStatusHasBeenSet;
+    bool m_registrationStatusHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_tagFilters;
-    bool m_tagFiltersHasBeenSet;
+    bool m_tagFiltersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

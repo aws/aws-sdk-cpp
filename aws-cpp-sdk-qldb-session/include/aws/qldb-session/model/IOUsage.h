@@ -80,10 +80,10 @@ namespace Model
   private:
 
     long long m_readIOs;
-    bool m_readIOsHasBeenSet;
+    bool m_readIOsHasBeenSet = false;
 
     long long m_writeIOs;
-    bool m_writeIOsHasBeenSet;
+    bool m_writeIOsHasBeenSet = false;
   };
 
 } // namespace Model

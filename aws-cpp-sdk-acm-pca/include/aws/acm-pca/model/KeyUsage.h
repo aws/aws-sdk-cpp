@@ -227,31 +227,31 @@ namespace Model
   private:
 
     bool m_digitalSignature;
-    bool m_digitalSignatureHasBeenSet;
+    bool m_digitalSignatureHasBeenSet = false;
 
     bool m_nonRepudiation;
-    bool m_nonRepudiationHasBeenSet;
+    bool m_nonRepudiationHasBeenSet = false;
 
     bool m_keyEncipherment;
-    bool m_keyEnciphermentHasBeenSet;
+    bool m_keyEnciphermentHasBeenSet = false;
 
     bool m_dataEncipherment;
-    bool m_dataEnciphermentHasBeenSet;
+    bool m_dataEnciphermentHasBeenSet = false;
 
     bool m_keyAgreement;
-    bool m_keyAgreementHasBeenSet;
+    bool m_keyAgreementHasBeenSet = false;
 
     bool m_keyCertSign;
-    bool m_keyCertSignHasBeenSet;
+    bool m_keyCertSignHasBeenSet = false;
 
     bool m_cRLSign;
-    bool m_cRLSignHasBeenSet;
+    bool m_cRLSignHasBeenSet = false;
 
     bool m_encipherOnly;
-    bool m_encipherOnlyHasBeenSet;
+    bool m_encipherOnlyHasBeenSet = false;
 
     bool m_decipherOnly;
-    bool m_decipherOnlyHasBeenSet;
+    bool m_decipherOnlyHasBeenSet = false;
   };
 
 } // namespace Model

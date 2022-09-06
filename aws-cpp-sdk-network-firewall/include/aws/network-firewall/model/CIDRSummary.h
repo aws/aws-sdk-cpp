@@ -150,13 +150,13 @@ namespace Model
   private:
 
     int m_availableCIDRCount;
-    bool m_availableCIDRCountHasBeenSet;
+    bool m_availableCIDRCountHasBeenSet = false;
 
     int m_utilizedCIDRCount;
-    bool m_utilizedCIDRCountHasBeenSet;
+    bool m_utilizedCIDRCountHasBeenSet = false;
 
     Aws::Map<Aws::String, IPSetMetadata> m_iPSetReferences;
-    bool m_iPSetReferencesHasBeenSet;
+    bool m_iPSetReferencesHasBeenSet = false;
   };
 
 } // namespace Model

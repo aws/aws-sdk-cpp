@@ -121,10 +121,10 @@ namespace Model
   private:
 
     double m_compressionFactor;
-    bool m_compressionFactorHasBeenSet;
+    bool m_compressionFactorHasBeenSet = false;
 
     EncoderProfile m_encoderProfile;
-    bool m_encoderProfileHasBeenSet;
+    bool m_encoderProfileHasBeenSet = false;
   };
 
 } // namespace Model

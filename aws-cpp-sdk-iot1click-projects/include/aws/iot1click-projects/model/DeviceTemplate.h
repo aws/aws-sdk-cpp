@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_callbackOverrides;
-    bool m_callbackOverridesHasBeenSet;
+    bool m_callbackOverridesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -703,43 +703,43 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventArns;
-    bool m_eventArnsHasBeenSet;
+    bool m_eventArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventTypeCodes;
-    bool m_eventTypeCodesHasBeenSet;
+    bool m_eventTypeCodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<DateTimeRange> m_startTimes;
-    bool m_startTimesHasBeenSet;
+    bool m_startTimesHasBeenSet = false;
 
     Aws::Vector<DateTimeRange> m_endTimes;
-    bool m_endTimesHasBeenSet;
+    bool m_endTimesHasBeenSet = false;
 
     Aws::Vector<DateTimeRange> m_lastUpdatedTimes;
-    bool m_lastUpdatedTimesHasBeenSet;
+    bool m_lastUpdatedTimesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityArns;
-    bool m_entityArnsHasBeenSet;
+    bool m_entityArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityValues;
-    bool m_entityValuesHasBeenSet;
+    bool m_entityValuesHasBeenSet = false;
 
     Aws::Vector<EventTypeCategory> m_eventTypeCategories;
-    bool m_eventTypeCategoriesHasBeenSet;
+    bool m_eventTypeCategoriesHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<EventStatusCode> m_eventStatusCodes;
-    bool m_eventStatusCodesHasBeenSet;
+    bool m_eventStatusCodesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     SsmParameterStoreParameterType m_parameterType;
-    bool m_parameterTypeHasBeenSet;
+    bool m_parameterTypeHasBeenSet = false;
   };
 
 } // namespace Model

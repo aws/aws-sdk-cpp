@@ -850,40 +850,40 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recommendationProviderIdType;
-    bool m_recommendationProviderIdTypeHasBeenSet;
+    bool m_recommendationProviderIdTypeHasBeenSet = false;
 
     Aws::String m_recommendationProviderRoleArn;
-    bool m_recommendationProviderRoleArnHasBeenSet;
+    bool m_recommendationProviderRoleArnHasBeenSet = false;
 
     Aws::String m_recommendationProviderUri;
-    bool m_recommendationProviderUriHasBeenSet;
+    bool m_recommendationProviderUriHasBeenSet = false;
 
     Aws::String m_recommendationTransformerUri;
-    bool m_recommendationTransformerUriHasBeenSet;
+    bool m_recommendationTransformerUriHasBeenSet = false;
 
     Aws::String m_recommendationsDisplayName;
-    bool m_recommendationsDisplayNameHasBeenSet;
+    bool m_recommendationsDisplayNameHasBeenSet = false;
 
     int m_recommendationsPerMessage;
-    bool m_recommendationsPerMessageHasBeenSet;
+    bool m_recommendationsPerMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -171,10 +171,10 @@ namespace Model
   private:
 
     Aws::Vector<EndpointType> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcEndpointIds;
-    bool m_vpcEndpointIdsHasBeenSet;
+    bool m_vpcEndpointIdsHasBeenSet = false;
   };
 
 } // namespace Model

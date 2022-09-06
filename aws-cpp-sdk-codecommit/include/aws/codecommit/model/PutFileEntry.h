@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     FileModeTypeEnum m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_fileContent;
-    bool m_fileContentHasBeenSet;
+    bool m_fileContentHasBeenSet = false;
 
     SourceFileSpecifier m_sourceFile;
-    bool m_sourceFileHasBeenSet;
+    bool m_sourceFileHasBeenSet = false;
   };
 
 } // namespace Model

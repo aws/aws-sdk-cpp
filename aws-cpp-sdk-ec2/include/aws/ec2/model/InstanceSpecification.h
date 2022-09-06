@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     bool m_excludeBootVolume;
-    bool m_excludeBootVolumeHasBeenSet;
+    bool m_excludeBootVolumeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeDataVolumeIds;
-    bool m_excludeDataVolumeIdsHasBeenSet;
+    bool m_excludeDataVolumeIdsHasBeenSet = false;
   };
 
 } // namespace Model

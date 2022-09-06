@@ -303,22 +303,22 @@ namespace Model
   private:
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
 
     Aws::String m_cpiSecretKey;
-    bool m_cpiSecretKeyHasBeenSet;
+    bool m_cpiSecretKeyHasBeenSet = false;
 
     Aws::String m_cpiUserId;
-    bool m_cpiUserIdHasBeenSet;
+    bool m_cpiUserIdHasBeenSet = false;
 
     Aws::String m_cpiUserPassword;
-    bool m_cpiUserPasswordHasBeenSet;
+    bool m_cpiUserPasswordHasBeenSet = false;
 
     Aws::String m_cpiUsername;
-    bool m_cpiUsernameHasBeenSet;
+    bool m_cpiUsernameHasBeenSet = false;
 
     Position m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
   };
 
 } // namespace Model

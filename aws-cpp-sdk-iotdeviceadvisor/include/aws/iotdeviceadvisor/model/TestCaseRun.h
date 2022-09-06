@@ -477,34 +477,34 @@ namespace Model
   private:
 
     Aws::String m_testCaseRunId;
-    bool m_testCaseRunIdHasBeenSet;
+    bool m_testCaseRunIdHasBeenSet = false;
 
     Aws::String m_testCaseDefinitionId;
-    bool m_testCaseDefinitionIdHasBeenSet;
+    bool m_testCaseDefinitionIdHasBeenSet = false;
 
     Aws::String m_testCaseDefinitionName;
-    bool m_testCaseDefinitionNameHasBeenSet;
+    bool m_testCaseDefinitionNameHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_logUrl;
-    bool m_logUrlHasBeenSet;
+    bool m_logUrlHasBeenSet = false;
 
     Aws::String m_warnings;
-    bool m_warningsHasBeenSet;
+    bool m_warningsHasBeenSet = false;
 
     Aws::String m_failure;
-    bool m_failureHasBeenSet;
+    bool m_failureHasBeenSet = false;
 
     Aws::Vector<TestCaseScenario> m_testScenarios;
-    bool m_testScenariosHasBeenSet;
+    bool m_testScenariosHasBeenSet = false;
   };
 
 } // namespace Model

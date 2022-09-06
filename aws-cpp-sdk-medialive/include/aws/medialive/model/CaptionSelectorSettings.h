@@ -178,25 +178,25 @@ namespace Model
   private:
 
     AncillarySourceSettings m_ancillarySourceSettings;
-    bool m_ancillarySourceSettingsHasBeenSet;
+    bool m_ancillarySourceSettingsHasBeenSet = false;
 
     AribSourceSettings m_aribSourceSettings;
-    bool m_aribSourceSettingsHasBeenSet;
+    bool m_aribSourceSettingsHasBeenSet = false;
 
     DvbSubSourceSettings m_dvbSubSourceSettings;
-    bool m_dvbSubSourceSettingsHasBeenSet;
+    bool m_dvbSubSourceSettingsHasBeenSet = false;
 
     EmbeddedSourceSettings m_embeddedSourceSettings;
-    bool m_embeddedSourceSettingsHasBeenSet;
+    bool m_embeddedSourceSettingsHasBeenSet = false;
 
     Scte20SourceSettings m_scte20SourceSettings;
-    bool m_scte20SourceSettingsHasBeenSet;
+    bool m_scte20SourceSettingsHasBeenSet = false;
 
     Scte27SourceSettings m_scte27SourceSettings;
-    bool m_scte27SourceSettingsHasBeenSet;
+    bool m_scte27SourceSettingsHasBeenSet = false;
 
     TeletextSourceSettings m_teletextSourceSettings;
-    bool m_teletextSourceSettingsHasBeenSet;
+    bool m_teletextSourceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

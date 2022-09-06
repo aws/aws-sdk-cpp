@@ -176,10 +176,10 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_sSHPublicKeyId;
-    bool m_sSHPublicKeyIdHasBeenSet;
+    bool m_sSHPublicKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

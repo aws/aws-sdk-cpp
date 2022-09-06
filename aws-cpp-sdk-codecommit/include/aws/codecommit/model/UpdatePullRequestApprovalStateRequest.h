@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     ApprovalState m_approvalState;
-    bool m_approvalStateHasBeenSet;
+    bool m_approvalStateHasBeenSet = false;
   };
 
 } // namespace Model

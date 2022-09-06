@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_samlProviderArn;
-    bool m_samlProviderArnHasBeenSet;
+    bool m_samlProviderArnHasBeenSet = false;
 
     Aws::String m_selfServiceSamlProviderArn;
-    bool m_selfServiceSamlProviderArnHasBeenSet;
+    bool m_selfServiceSamlProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

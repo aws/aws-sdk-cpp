@@ -339,25 +339,25 @@ namespace Model
   private:
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::String m_orderId;
-    bool m_orderIdHasBeenSet;
+    bool m_orderIdHasBeenSet = false;
 
     OrderStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<LineItem> m_lineItems;
-    bool m_lineItemsHasBeenSet;
+    bool m_lineItemsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_orderSubmissionDate;
-    bool m_orderSubmissionDateHasBeenSet;
+    bool m_orderSubmissionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_orderFulfilledDate;
-    bool m_orderFulfilledDateHasBeenSet;
+    bool m_orderFulfilledDateHasBeenSet = false;
   };
 
 } // namespace Model

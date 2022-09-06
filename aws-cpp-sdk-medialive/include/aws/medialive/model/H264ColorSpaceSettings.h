@@ -98,13 +98,13 @@ namespace Model
   private:
 
     ColorSpacePassthroughSettings m_colorSpacePassthroughSettings;
-    bool m_colorSpacePassthroughSettingsHasBeenSet;
+    bool m_colorSpacePassthroughSettingsHasBeenSet = false;
 
     Rec601Settings m_rec601Settings;
-    bool m_rec601SettingsHasBeenSet;
+    bool m_rec601SettingsHasBeenSet = false;
 
     Rec709Settings m_rec709Settings;
-    bool m_rec709SettingsHasBeenSet;
+    bool m_rec709SettingsHasBeenSet = false;
   };
 
 } // namespace Model

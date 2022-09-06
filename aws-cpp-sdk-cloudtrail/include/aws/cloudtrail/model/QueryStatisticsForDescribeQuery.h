@@ -164,19 +164,19 @@ namespace Model
   private:
 
     long long m_eventsMatched;
-    bool m_eventsMatchedHasBeenSet;
+    bool m_eventsMatchedHasBeenSet = false;
 
     long long m_eventsScanned;
-    bool m_eventsScannedHasBeenSet;
+    bool m_eventsScannedHasBeenSet = false;
 
     long long m_bytesScanned;
-    bool m_bytesScannedHasBeenSet;
+    bool m_bytesScannedHasBeenSet = false;
 
     int m_executionTimeInMillis;
-    bool m_executionTimeInMillisHasBeenSet;
+    bool m_executionTimeInMillisHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

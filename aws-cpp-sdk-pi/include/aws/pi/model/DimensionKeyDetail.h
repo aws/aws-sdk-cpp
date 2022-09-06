@@ -252,13 +252,13 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_dimension;
-    bool m_dimensionHasBeenSet;
+    bool m_dimensionHasBeenSet = false;
 
     DetailStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

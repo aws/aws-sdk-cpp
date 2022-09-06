@@ -138,13 +138,13 @@ namespace Model
   private:
 
     ObjectLockRetentionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     int m_days;
-    bool m_daysHasBeenSet;
+    bool m_daysHasBeenSet = false;
 
     int m_years;
-    bool m_yearsHasBeenSet;
+    bool m_yearsHasBeenSet = false;
   };
 
 } // namespace Model

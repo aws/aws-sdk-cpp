@@ -430,31 +430,31 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_sourceDatabaseName;
-    bool m_sourceDatabaseNameHasBeenSet;
+    bool m_sourceDatabaseNameHasBeenSet = false;
 
     Aws::String m_sourceSchemaName;
-    bool m_sourceSchemaNameHasBeenSet;
+    bool m_sourceSchemaNameHasBeenSet = false;
 
     Aws::String m_sourceTableName;
-    bool m_sourceTableNameHasBeenSet;
+    bool m_sourceTableNameHasBeenSet = false;
 
     Aws::String m_targetDatabaseName;
-    bool m_targetDatabaseNameHasBeenSet;
+    bool m_targetDatabaseNameHasBeenSet = false;
 
     Aws::String m_targetSchemaName;
-    bool m_targetSchemaNameHasBeenSet;
+    bool m_targetSchemaNameHasBeenSet = false;
 
     Aws::String m_newTableName;
-    bool m_newTableNameHasBeenSet;
+    bool m_newTableNameHasBeenSet = false;
 
     bool m_enableCaseSensitiveIdentifier;
-    bool m_enableCaseSensitiveIdentifierHasBeenSet;
+    bool m_enableCaseSensitiveIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

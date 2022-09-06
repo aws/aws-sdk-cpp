@@ -1018,61 +1018,61 @@ namespace Model
   private:
 
     Aws::String m_afterConnectScript;
-    bool m_afterConnectScriptHasBeenSet;
+    bool m_afterConnectScriptHasBeenSet = false;
 
     bool m_captureDdls;
-    bool m_captureDdlsHasBeenSet;
+    bool m_captureDdlsHasBeenSet = false;
 
     int m_maxFileSize;
-    bool m_maxFileSizeHasBeenSet;
+    bool m_maxFileSizeHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_ddlArtifactsSchema;
-    bool m_ddlArtifactsSchemaHasBeenSet;
+    bool m_ddlArtifactsSchemaHasBeenSet = false;
 
     int m_executeTimeout;
-    bool m_executeTimeoutHasBeenSet;
+    bool m_executeTimeoutHasBeenSet = false;
 
     bool m_failTasksOnLobTruncation;
-    bool m_failTasksOnLobTruncationHasBeenSet;
+    bool m_failTasksOnLobTruncationHasBeenSet = false;
 
     bool m_heartbeatEnable;
-    bool m_heartbeatEnableHasBeenSet;
+    bool m_heartbeatEnableHasBeenSet = false;
 
     Aws::String m_heartbeatSchema;
-    bool m_heartbeatSchemaHasBeenSet;
+    bool m_heartbeatSchemaHasBeenSet = false;
 
     int m_heartbeatFrequency;
-    bool m_heartbeatFrequencyHasBeenSet;
+    bool m_heartbeatFrequencyHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_slotName;
-    bool m_slotNameHasBeenSet;
+    bool m_slotNameHasBeenSet = false;
 
     PluginNameValue m_pluginName;
-    bool m_pluginNameHasBeenSet;
+    bool m_pluginNameHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
 
     bool m_trimSpaceInChar;
-    bool m_trimSpaceInCharHasBeenSet;
+    bool m_trimSpaceInCharHasBeenSet = false;
   };
 
 } // namespace Model

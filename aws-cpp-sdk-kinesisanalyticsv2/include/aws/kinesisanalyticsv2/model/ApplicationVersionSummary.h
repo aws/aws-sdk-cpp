@@ -95,10 +95,10 @@ namespace Model
   private:
 
     long long m_applicationVersionId;
-    bool m_applicationVersionIdHasBeenSet;
+    bool m_applicationVersionIdHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
-    bool m_applicationStatusHasBeenSet;
+    bool m_applicationStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     int m_newReplicationFactor;
-    bool m_newReplicationFactorHasBeenSet;
+    bool m_newReplicationFactorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

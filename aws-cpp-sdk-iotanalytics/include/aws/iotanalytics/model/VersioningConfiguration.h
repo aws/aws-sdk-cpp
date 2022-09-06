@@ -84,10 +84,10 @@ namespace Model
   private:
 
     bool m_unlimited;
-    bool m_unlimitedHasBeenSet;
+    bool m_unlimitedHasBeenSet = false;
 
     int m_maxVersions;
-    bool m_maxVersionsHasBeenSet;
+    bool m_maxVersionsHasBeenSet = false;
   };
 
 } // namespace Model

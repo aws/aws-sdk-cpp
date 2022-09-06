@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<Message> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
   };
 
 } // namespace Model

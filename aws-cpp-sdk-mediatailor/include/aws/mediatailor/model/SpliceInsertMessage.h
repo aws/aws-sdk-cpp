@@ -149,16 +149,16 @@ namespace Model
   private:
 
     int m_availNum;
-    bool m_availNumHasBeenSet;
+    bool m_availNumHasBeenSet = false;
 
     int m_availsExpected;
-    bool m_availsExpectedHasBeenSet;
+    bool m_availsExpectedHasBeenSet = false;
 
     int m_spliceEventId;
-    bool m_spliceEventIdHasBeenSet;
+    bool m_spliceEventIdHasBeenSet = false;
 
     int m_uniqueProgramId;
-    bool m_uniqueProgramIdHasBeenSet;
+    bool m_uniqueProgramIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -128,13 +128,13 @@ namespace Model
   private:
 
     int m_simulationUnitLimit;
-    bool m_simulationUnitLimitHasBeenSet;
+    bool m_simulationUnitLimitHasBeenSet = false;
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
 
     int m_gpuUnitLimit;
-    bool m_gpuUnitLimitHasBeenSet;
+    bool m_gpuUnitLimitHasBeenSet = false;
   };
 
 } // namespace Model

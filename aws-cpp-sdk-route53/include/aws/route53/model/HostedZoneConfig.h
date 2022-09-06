@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     bool m_privateZone;
-    bool m_privateZoneHasBeenSet;
+    bool m_privateZoneHasBeenSet = false;
   };
 
 } // namespace Model

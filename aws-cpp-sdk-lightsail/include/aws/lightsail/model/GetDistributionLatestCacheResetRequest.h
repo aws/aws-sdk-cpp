@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::String m_distributionName;
-    bool m_distributionNameHasBeenSet;
+    bool m_distributionNameHasBeenSet = false;
   };
 
 } // namespace Model

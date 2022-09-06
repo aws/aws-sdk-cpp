@@ -103,7 +103,7 @@ namespace Model
   private:
 
     bool m_allowNonRestoredState;
-    bool m_allowNonRestoredStateHasBeenSet;
+    bool m_allowNonRestoredStateHasBeenSet = false;
   };
 
 } // namespace Model

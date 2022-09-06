@@ -1664,13 +1664,13 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     bool m_evaluateTargetHealth;
-    bool m_evaluateTargetHealthHasBeenSet;
+    bool m_evaluateTargetHealthHasBeenSet = false;
   };
 
 } // namespace Model

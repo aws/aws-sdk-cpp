@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::Vector<RouteFilterPrefix> m_addAllowedPrefixesToDirectConnectGateway;
-    bool m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet;
+    bool m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 
     Aws::Vector<RouteFilterPrefix> m_removeAllowedPrefixesToDirectConnectGateway;
-    bool m_removeAllowedPrefixesToDirectConnectGatewayHasBeenSet;
+    bool m_removeAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
   };
 
 } // namespace Model

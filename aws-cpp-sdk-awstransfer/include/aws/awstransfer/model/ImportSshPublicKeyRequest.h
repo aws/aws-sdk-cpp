@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_sshPublicKeyBody;
-    bool m_sshPublicKeyBodyHasBeenSet;
+    bool m_sshPublicKeyBodyHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
   };
 
 } // namespace Model

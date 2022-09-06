@@ -187,19 +187,19 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     double m_fixedRate;
-    bool m_fixedRateHasBeenSet;
+    bool m_fixedRateHasBeenSet = false;
 
     int m_reservoirQuota;
-    bool m_reservoirQuotaHasBeenSet;
+    bool m_reservoirQuotaHasBeenSet = false;
 
     Aws::Utils::DateTime m_reservoirQuotaTTL;
-    bool m_reservoirQuotaTTLHasBeenSet;
+    bool m_reservoirQuotaTTLHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
   };
 
 } // namespace Model

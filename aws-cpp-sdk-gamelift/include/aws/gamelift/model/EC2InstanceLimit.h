@@ -180,16 +180,16 @@ namespace Model
   private:
 
     EC2InstanceType m_eC2InstanceType;
-    bool m_eC2InstanceTypeHasBeenSet;
+    bool m_eC2InstanceTypeHasBeenSet = false;
 
     int m_currentInstances;
-    bool m_currentInstancesHasBeenSet;
+    bool m_currentInstancesHasBeenSet = false;
 
     int m_instanceLimit;
-    bool m_instanceLimitHasBeenSet;
+    bool m_instanceLimitHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

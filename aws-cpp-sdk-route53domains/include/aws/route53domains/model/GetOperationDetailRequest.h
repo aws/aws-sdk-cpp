@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
   };
 
 } // namespace Model

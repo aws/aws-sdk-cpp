@@ -112,7 +112,7 @@ namespace Model
   private:
 
     Aws::String m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
   };
 
 } // namespace Model

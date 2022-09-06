@@ -85,10 +85,10 @@ namespace Model
   private:
 
     EventFilter m_eventFilter;
-    bool m_eventFilterHasBeenSet;
+    bool m_eventFilterHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
   };
 
 } // namespace Model

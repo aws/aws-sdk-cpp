@@ -320,13 +320,13 @@ namespace Model
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     Aws::String m_languageModelName;
-    bool m_languageModelNameHasBeenSet;
+    bool m_languageModelNameHasBeenSet = false;
   };
 
 } // namespace Model

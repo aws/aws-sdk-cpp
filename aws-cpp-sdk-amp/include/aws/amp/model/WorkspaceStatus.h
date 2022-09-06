@@ -70,7 +70,7 @@ namespace Model
   private:
 
     WorkspaceStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
   };
 
 } // namespace Model

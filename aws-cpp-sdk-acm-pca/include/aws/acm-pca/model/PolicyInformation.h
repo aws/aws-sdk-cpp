@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_certPolicyId;
-    bool m_certPolicyIdHasBeenSet;
+    bool m_certPolicyIdHasBeenSet = false;
 
     Aws::Vector<PolicyQualifierInfo> m_policyQualifiers;
-    bool m_policyQualifiersHasBeenSet;
+    bool m_policyQualifiersHasBeenSet = false;
   };
 
 } // namespace Model

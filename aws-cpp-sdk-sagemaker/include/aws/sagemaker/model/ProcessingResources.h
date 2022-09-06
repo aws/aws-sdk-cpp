@@ -78,7 +78,7 @@ namespace Model
   private:
 
     ProcessingClusterConfig m_clusterConfig;
-    bool m_clusterConfigHasBeenSet;
+    bool m_clusterConfigHasBeenSet = false;
   };
 
 } // namespace Model

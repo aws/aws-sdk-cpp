@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_appImageConfigName;
-    bool m_appImageConfigNameHasBeenSet;
+    bool m_appImageConfigNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     KernelGatewayImageConfig m_kernelGatewayImageConfig;
-    bool m_kernelGatewayImageConfigHasBeenSet;
+    bool m_kernelGatewayImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -159,10 +159,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventArns;
-    bool m_eventArnsHasBeenSet;
+    bool m_eventArnsHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

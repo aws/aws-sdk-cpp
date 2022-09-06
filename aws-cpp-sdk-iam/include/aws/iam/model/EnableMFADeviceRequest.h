@@ -402,16 +402,16 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_authenticationCode1;
-    bool m_authenticationCode1HasBeenSet;
+    bool m_authenticationCode1HasBeenSet = false;
 
     Aws::String m_authenticationCode2;
-    bool m_authenticationCode2HasBeenSet;
+    bool m_authenticationCode2HasBeenSet = false;
   };
 
 } // namespace Model

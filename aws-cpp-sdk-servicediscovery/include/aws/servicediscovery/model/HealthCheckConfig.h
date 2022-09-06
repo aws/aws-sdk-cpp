@@ -347,13 +347,13 @@ namespace Model
   private:
 
     HealthCheckType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_resourcePath;
-    bool m_resourcePathHasBeenSet;
+    bool m_resourcePathHasBeenSet = false;
 
     int m_failureThreshold;
-    bool m_failureThresholdHasBeenSet;
+    bool m_failureThresholdHasBeenSet = false;
   };
 
 } // namespace Model

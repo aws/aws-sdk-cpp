@@ -389,34 +389,34 @@ namespace Model
   private:
 
     Aws::String m_jobDefinitionName;
-    bool m_jobDefinitionNameHasBeenSet;
+    bool m_jobDefinitionNameHasBeenSet = false;
 
     ModelBiasBaselineConfig m_modelBiasBaselineConfig;
-    bool m_modelBiasBaselineConfigHasBeenSet;
+    bool m_modelBiasBaselineConfigHasBeenSet = false;
 
     ModelBiasAppSpecification m_modelBiasAppSpecification;
-    bool m_modelBiasAppSpecificationHasBeenSet;
+    bool m_modelBiasAppSpecificationHasBeenSet = false;
 
     ModelBiasJobInput m_modelBiasJobInput;
-    bool m_modelBiasJobInputHasBeenSet;
+    bool m_modelBiasJobInputHasBeenSet = false;
 
     MonitoringOutputConfig m_modelBiasJobOutputConfig;
-    bool m_modelBiasJobOutputConfigHasBeenSet;
+    bool m_modelBiasJobOutputConfigHasBeenSet = false;
 
     MonitoringResources m_jobResources;
-    bool m_jobResourcesHasBeenSet;
+    bool m_jobResourcesHasBeenSet = false;
 
     MonitoringNetworkConfig m_networkConfig;
-    bool m_networkConfigHasBeenSet;
+    bool m_networkConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MonitoringStoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

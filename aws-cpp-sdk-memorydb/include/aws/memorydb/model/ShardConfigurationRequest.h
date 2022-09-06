@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_shardCount;
-    bool m_shardCountHasBeenSet;
+    bool m_shardCountHasBeenSet = false;
   };
 
 } // namespace Model

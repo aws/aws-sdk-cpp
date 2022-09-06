@@ -181,16 +181,16 @@ namespace Model
   private:
 
     DeviceSubsetType m_deviceSubsetType;
-    bool m_deviceSubsetTypeHasBeenSet;
+    bool m_deviceSubsetTypeHasBeenSet = false;
 
     int m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceNames;
-    bool m_deviceNamesHasBeenSet;
+    bool m_deviceNamesHasBeenSet = false;
 
     Aws::String m_deviceNameContains;
-    bool m_deviceNameContainsHasBeenSet;
+    bool m_deviceNameContainsHasBeenSet = false;
   };
 
 } // namespace Model

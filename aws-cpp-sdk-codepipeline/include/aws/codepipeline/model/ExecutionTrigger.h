@@ -135,10 +135,10 @@ namespace Model
   private:
 
     TriggerType m_triggerType;
-    bool m_triggerTypeHasBeenSet;
+    bool m_triggerTypeHasBeenSet = false;
 
     Aws::String m_triggerDetail;
-    bool m_triggerDetailHasBeenSet;
+    bool m_triggerDetailHasBeenSet = false;
   };
 
 } // namespace Model

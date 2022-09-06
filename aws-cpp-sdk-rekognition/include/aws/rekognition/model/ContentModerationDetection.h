@@ -96,10 +96,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     ModerationLabel m_moderationLabel;
-    bool m_moderationLabelHasBeenSet;
+    bool m_moderationLabelHasBeenSet = false;
   };
 
 } // namespace Model

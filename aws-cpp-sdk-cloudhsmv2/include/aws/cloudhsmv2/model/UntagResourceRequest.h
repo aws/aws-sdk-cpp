@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeyList;
-    bool m_tagKeyListHasBeenSet;
+    bool m_tagKeyListHasBeenSet = false;
   };
 
 } // namespace Model

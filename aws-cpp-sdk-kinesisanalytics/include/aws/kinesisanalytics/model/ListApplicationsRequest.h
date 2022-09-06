@@ -125,10 +125,10 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartApplicationName;
-    bool m_exclusiveStartApplicationNameHasBeenSet;
+    bool m_exclusiveStartApplicationNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_standardsArn;
-    bool m_standardsArnHasBeenSet;
+    bool m_standardsArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabledByDefault;
-    bool m_enabledByDefaultHasBeenSet;
+    bool m_enabledByDefaultHasBeenSet = false;
   };
 
 } // namespace Model

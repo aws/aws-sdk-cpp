@@ -379,25 +379,25 @@ namespace Model
   private:
 
     Aws::String m_acmCertificateArn;
-    bool m_acmCertificateArnHasBeenSet;
+    bool m_acmCertificateArnHasBeenSet = false;
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_certificateSource;
-    bool m_certificateSourceHasBeenSet;
+    bool m_certificateSourceHasBeenSet = false;
 
     bool m_cloudFrontDefaultCertificate;
-    bool m_cloudFrontDefaultCertificateHasBeenSet;
+    bool m_cloudFrontDefaultCertificateHasBeenSet = false;
 
     Aws::String m_iamCertificateId;
-    bool m_iamCertificateIdHasBeenSet;
+    bool m_iamCertificateIdHasBeenSet = false;
 
     Aws::String m_minimumProtocolVersion;
-    bool m_minimumProtocolVersionHasBeenSet;
+    bool m_minimumProtocolVersionHasBeenSet = false;
 
     Aws::String m_sslSupportMethod;
-    bool m_sslSupportMethodHasBeenSet;
+    bool m_sslSupportMethodHasBeenSet = false;
   };
 
 } // namespace Model

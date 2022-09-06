@@ -207,19 +207,19 @@ namespace Model
   private:
 
     int m_deviceIndex;
-    bool m_deviceIndexHasBeenSet;
+    bool m_deviceIndexHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     int m_networkCardIndex;
-    bool m_networkCardIndexHasBeenSet;
+    bool m_networkCardIndexHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<EnableAlarmActionRequest> m_enableActionRequests;
-    bool m_enableActionRequestsHasBeenSet;
+    bool m_enableActionRequestsHasBeenSet = false;
   };
 
 } // namespace Model

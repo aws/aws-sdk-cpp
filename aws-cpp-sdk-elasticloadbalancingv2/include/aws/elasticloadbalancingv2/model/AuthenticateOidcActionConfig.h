@@ -628,40 +628,40 @@ namespace Model
   private:
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_authorizationEndpoint;
-    bool m_authorizationEndpointHasBeenSet;
+    bool m_authorizationEndpointHasBeenSet = false;
 
     Aws::String m_tokenEndpoint;
-    bool m_tokenEndpointHasBeenSet;
+    bool m_tokenEndpointHasBeenSet = false;
 
     Aws::String m_userInfoEndpoint;
-    bool m_userInfoEndpointHasBeenSet;
+    bool m_userInfoEndpointHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_sessionCookieName;
-    bool m_sessionCookieNameHasBeenSet;
+    bool m_sessionCookieNameHasBeenSet = false;
 
     Aws::String m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     long long m_sessionTimeout;
-    bool m_sessionTimeoutHasBeenSet;
+    bool m_sessionTimeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_authenticationRequestExtraParams;
-    bool m_authenticationRequestExtraParamsHasBeenSet;
+    bool m_authenticationRequestExtraParamsHasBeenSet = false;
 
     AuthenticateOidcActionConditionalBehaviorEnum m_onUnauthenticatedRequest;
-    bool m_onUnauthenticatedRequestHasBeenSet;
+    bool m_onUnauthenticatedRequestHasBeenSet = false;
 
     bool m_useExistingClientSecret;
-    bool m_useExistingClientSecretHasBeenSet;
+    bool m_useExistingClientSecretHasBeenSet = false;
   };
 
 } // namespace Model

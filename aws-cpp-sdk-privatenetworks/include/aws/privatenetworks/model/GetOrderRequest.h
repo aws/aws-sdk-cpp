@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_orderArn;
-    bool m_orderArnHasBeenSet;
+    bool m_orderArnHasBeenSet = false;
   };
 
 } // namespace Model

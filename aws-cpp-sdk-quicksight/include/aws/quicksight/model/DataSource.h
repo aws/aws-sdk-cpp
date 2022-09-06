@@ -581,40 +581,40 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     DataSourceParameters m_dataSourceParameters;
-    bool m_dataSourceParametersHasBeenSet;
+    bool m_dataSourceParametersHasBeenSet = false;
 
     Aws::Vector<DataSourceParameters> m_alternateDataSourceParameters;
-    bool m_alternateDataSourceParametersHasBeenSet;
+    bool m_alternateDataSourceParametersHasBeenSet = false;
 
     VpcConnectionProperties m_vpcConnectionProperties;
-    bool m_vpcConnectionPropertiesHasBeenSet;
+    bool m_vpcConnectionPropertiesHasBeenSet = false;
 
     SslProperties m_sslProperties;
-    bool m_sslPropertiesHasBeenSet;
+    bool m_sslPropertiesHasBeenSet = false;
 
     DataSourceErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
   };
 
 } // namespace Model

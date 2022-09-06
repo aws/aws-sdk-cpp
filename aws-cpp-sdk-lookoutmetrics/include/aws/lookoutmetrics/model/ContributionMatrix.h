@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<DimensionContribution> m_dimensionContributionList;
-    bool m_dimensionContributionListHasBeenSet;
+    bool m_dimensionContributionListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_buildId;
-    bool m_buildIdHasBeenSet;
+    bool m_buildIdHasBeenSet = false;
 
     Aws::String m_scriptId;
-    bool m_scriptIdHasBeenSet;
+    bool m_scriptIdHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

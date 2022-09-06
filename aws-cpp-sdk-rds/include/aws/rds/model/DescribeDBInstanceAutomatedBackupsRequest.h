@@ -466,22 +466,22 @@ namespace Model
   private:
 
     Aws::String m_dbiResourceId;
-    bool m_dbiResourceIdHasBeenSet;
+    bool m_dbiResourceIdHasBeenSet = false;
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_dBInstanceAutomatedBackupsArn;
-    bool m_dBInstanceAutomatedBackupsArnHasBeenSet;
+    bool m_dBInstanceAutomatedBackupsArnHasBeenSet = false;
   };
 
 } // namespace Model

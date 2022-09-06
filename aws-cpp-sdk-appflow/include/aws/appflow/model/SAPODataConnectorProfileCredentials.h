@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BasicAuthCredentials m_basicAuthCredentials;
-    bool m_basicAuthCredentialsHasBeenSet;
+    bool m_basicAuthCredentialsHasBeenSet = false;
 
     OAuthCredentials m_oAuthCredentials;
-    bool m_oAuthCredentialsHasBeenSet;
+    bool m_oAuthCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

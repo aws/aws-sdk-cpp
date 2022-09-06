@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_cIDRIP;
-    bool m_cIDRIPHasBeenSet;
+    bool m_cIDRIPHasBeenSet = false;
   };
 
 } // namespace Model

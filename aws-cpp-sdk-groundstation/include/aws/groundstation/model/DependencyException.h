@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
   };
 
 } // namespace Model

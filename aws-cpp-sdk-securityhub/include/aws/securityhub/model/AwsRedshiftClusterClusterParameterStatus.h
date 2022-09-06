@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::String m_parameterApplyErrorDescription;
-    bool m_parameterApplyErrorDescriptionHasBeenSet;
+    bool m_parameterApplyErrorDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

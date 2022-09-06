@@ -102,10 +102,10 @@ namespace Model
   private:
 
     LogTarget m_logTarget;
-    bool m_logTargetHasBeenSet;
+    bool m_logTargetHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

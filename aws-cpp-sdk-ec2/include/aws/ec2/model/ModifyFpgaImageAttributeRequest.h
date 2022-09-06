@@ -465,34 +465,34 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_fpgaImageId;
-    bool m_fpgaImageIdHasBeenSet;
+    bool m_fpgaImageIdHasBeenSet = false;
 
     FpgaImageAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     OperationType m_operationType;
-    bool m_operationTypeHasBeenSet;
+    bool m_operationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroups;
-    bool m_userGroupsHasBeenSet;
+    bool m_userGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_productCodes;
-    bool m_productCodesHasBeenSet;
+    bool m_productCodesHasBeenSet = false;
 
     LoadPermissionModifications m_loadPermission;
-    bool m_loadPermissionHasBeenSet;
+    bool m_loadPermissionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

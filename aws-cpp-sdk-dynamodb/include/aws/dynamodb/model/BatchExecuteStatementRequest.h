@@ -98,10 +98,10 @@ namespace Model
   private:
 
     Aws::Vector<BatchStatementRequest> m_statements;
-    bool m_statementsHasBeenSet;
+    bool m_statementsHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

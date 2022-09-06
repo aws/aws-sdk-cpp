@@ -188,10 +188,10 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_valuesMap;
-    bool m_valuesMapHasBeenSet;
+    bool m_valuesMapHasBeenSet = false;
   };
 
 } // namespace Model

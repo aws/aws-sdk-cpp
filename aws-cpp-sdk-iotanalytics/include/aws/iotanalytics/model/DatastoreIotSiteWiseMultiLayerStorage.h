@@ -78,7 +78,7 @@ namespace Model
   private:
 
     IotSiteWiseCustomerManagedDatastoreS3Storage m_customerManagedS3Storage;
-    bool m_customerManagedS3StorageHasBeenSet;
+    bool m_customerManagedS3StorageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -133,13 +133,13 @@ namespace Model
   private:
 
     AwsOpenSearchServiceDomainLogPublishingOption m_indexSlowLogs;
-    bool m_indexSlowLogsHasBeenSet;
+    bool m_indexSlowLogsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainLogPublishingOption m_searchSlowLogs;
-    bool m_searchSlowLogsHasBeenSet;
+    bool m_searchSlowLogsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainLogPublishingOption m_auditLogs;
-    bool m_auditLogsHasBeenSet;
+    bool m_auditLogsHasBeenSet = false;
   };
 
 } // namespace Model

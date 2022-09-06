@@ -439,31 +439,31 @@ namespace Model
   private:
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     Aws::String m_ownerDirectoryId;
-    bool m_ownerDirectoryIdHasBeenSet;
+    bool m_ownerDirectoryIdHasBeenSet = false;
 
     ShareMethod m_shareMethod;
-    bool m_shareMethodHasBeenSet;
+    bool m_shareMethodHasBeenSet = false;
 
     Aws::String m_sharedAccountId;
-    bool m_sharedAccountIdHasBeenSet;
+    bool m_sharedAccountIdHasBeenSet = false;
 
     Aws::String m_sharedDirectoryId;
-    bool m_sharedDirectoryIdHasBeenSet;
+    bool m_sharedDirectoryIdHasBeenSet = false;
 
     ShareStatus m_shareStatus;
-    bool m_shareStatusHasBeenSet;
+    bool m_shareStatusHasBeenSet = false;
 
     Aws::String m_shareNotes;
-    bool m_shareNotesHasBeenSet;
+    bool m_shareNotesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDateTime;
-    bool m_createdDateTimeHasBeenSet;
+    bool m_createdDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

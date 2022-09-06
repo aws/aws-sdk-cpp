@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_originalTextCharacters;
-    bool m_originalTextCharactersHasBeenSet;
+    bool m_originalTextCharactersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DefaultGatewayRouteRewrite m_defaultTargetHostname;
-    bool m_defaultTargetHostnameHasBeenSet;
+    bool m_defaultTargetHostnameHasBeenSet = false;
   };
 
 } // namespace Model

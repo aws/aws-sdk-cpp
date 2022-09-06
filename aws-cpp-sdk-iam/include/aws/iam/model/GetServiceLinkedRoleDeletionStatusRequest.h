@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::String m_deletionTaskId;
-    bool m_deletionTaskIdHasBeenSet;
+    bool m_deletionTaskIdHasBeenSet = false;
   };
 
 } // namespace Model

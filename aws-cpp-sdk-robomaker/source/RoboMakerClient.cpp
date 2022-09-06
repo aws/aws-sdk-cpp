@@ -118,7 +118,7 @@ RoboMakerClient::~RoboMakerClient()
 
 void RoboMakerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("RoboMaker");
+  AWSClient::SetServiceClientName("RoboMaker");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

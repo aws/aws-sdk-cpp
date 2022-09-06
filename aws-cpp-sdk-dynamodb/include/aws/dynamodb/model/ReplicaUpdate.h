@@ -111,10 +111,10 @@ namespace Model
   private:
 
     CreateReplicaAction m_create;
-    bool m_createHasBeenSet;
+    bool m_createHasBeenSet = false;
 
     DeleteReplicaAction m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
   };
 
 } // namespace Model

@@ -209,13 +209,13 @@ namespace Model
   private:
 
     Aws::String m_dBProxyEndpointName;
-    bool m_dBProxyEndpointNameHasBeenSet;
+    bool m_dBProxyEndpointNameHasBeenSet = false;
 
     Aws::String m_newDBProxyEndpointName;
-    bool m_newDBProxyEndpointNameHasBeenSet;
+    bool m_newDBProxyEndpointNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

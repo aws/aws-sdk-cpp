@@ -685,37 +685,37 @@ namespace Model
   private:
 
     DataSourceFilterVariable m_filterVariable;
-    bool m_filterVariableHasBeenSet;
+    bool m_filterVariableHasBeenSet = false;
 
     Aws::String m_eQ;
-    bool m_eQHasBeenSet;
+    bool m_eQHasBeenSet = false;
 
     Aws::String m_gT;
-    bool m_gTHasBeenSet;
+    bool m_gTHasBeenSet = false;
 
     Aws::String m_lT;
-    bool m_lTHasBeenSet;
+    bool m_lTHasBeenSet = false;
 
     Aws::String m_gE;
-    bool m_gEHasBeenSet;
+    bool m_gEHasBeenSet = false;
 
     Aws::String m_lE;
-    bool m_lEHasBeenSet;
+    bool m_lEHasBeenSet = false;
 
     Aws::String m_nE;
-    bool m_nEHasBeenSet;
+    bool m_nEHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

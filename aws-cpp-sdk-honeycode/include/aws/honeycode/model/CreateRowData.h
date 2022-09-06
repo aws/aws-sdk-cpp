@@ -200,10 +200,10 @@ namespace Model
   private:
 
     Aws::String m_batchItemId;
-    bool m_batchItemIdHasBeenSet;
+    bool m_batchItemIdHasBeenSet = false;
 
     Aws::Map<Aws::String, CellInput> m_cellsToCreate;
-    bool m_cellsToCreateHasBeenSet;
+    bool m_cellsToCreateHasBeenSet = false;
   };
 
 } // namespace Model

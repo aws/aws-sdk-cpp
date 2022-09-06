@@ -149,10 +149,10 @@ namespace Model
   private:
 
     ExpiryEventsConfiguration m_expiryEvents;
-    bool m_expiryEventsHasBeenSet;
+    bool m_expiryEventsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

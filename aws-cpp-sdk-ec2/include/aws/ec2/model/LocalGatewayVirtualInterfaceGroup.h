@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_localGatewayVirtualInterfaceGroupId;
-    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet;
+    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_localGatewayVirtualInterfaceIds;
-    bool m_localGatewayVirtualInterfaceIdsHasBeenSet;
+    bool m_localGatewayVirtualInterfaceIdsHasBeenSet = false;
 
     Aws::String m_localGatewayId;
-    bool m_localGatewayIdHasBeenSet;
+    bool m_localGatewayIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

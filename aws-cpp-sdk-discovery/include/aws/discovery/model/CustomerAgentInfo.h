@@ -184,25 +184,25 @@ namespace Model
   private:
 
     int m_activeAgents;
-    bool m_activeAgentsHasBeenSet;
+    bool m_activeAgentsHasBeenSet = false;
 
     int m_healthyAgents;
-    bool m_healthyAgentsHasBeenSet;
+    bool m_healthyAgentsHasBeenSet = false;
 
     int m_blackListedAgents;
-    bool m_blackListedAgentsHasBeenSet;
+    bool m_blackListedAgentsHasBeenSet = false;
 
     int m_shutdownAgents;
-    bool m_shutdownAgentsHasBeenSet;
+    bool m_shutdownAgentsHasBeenSet = false;
 
     int m_unhealthyAgents;
-    bool m_unhealthyAgentsHasBeenSet;
+    bool m_unhealthyAgentsHasBeenSet = false;
 
     int m_totalAgents;
-    bool m_totalAgentsHasBeenSet;
+    bool m_totalAgentsHasBeenSet = false;
 
     int m_unknownAgents;
-    bool m_unknownAgentsHasBeenSet;
+    bool m_unknownAgentsHasBeenSet = false;
   };
 
 } // namespace Model

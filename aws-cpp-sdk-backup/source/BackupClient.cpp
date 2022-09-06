@@ -141,7 +141,7 @@ BackupClient::~BackupClient()
 
 void BackupClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Backup");
+  AWSClient::SetServiceClientName("Backup");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

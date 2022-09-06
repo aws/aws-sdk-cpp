@@ -160,13 +160,13 @@ namespace Model
   private:
 
     ActionSubType m_actionSubType;
-    bool m_actionSubTypeHasBeenSet;
+    bool m_actionSubTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
   };
 
 } // namespace Model

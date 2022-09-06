@@ -335,16 +335,16 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Vector<Predicate> m_predicates;
-    bool m_predicatesHasBeenSet;
+    bool m_predicatesHasBeenSet = false;
   };
 
 } // namespace Model

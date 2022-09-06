@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_coreDeviceThingName;
-    bool m_coreDeviceThingNameHasBeenSet;
+    bool m_coreDeviceThingNameHasBeenSet = false;
 
     CoreDeviceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusUpdateTimestamp;
-    bool m_lastStatusUpdateTimestampHasBeenSet;
+    bool m_lastStatusUpdateTimestampHasBeenSet = false;
   };
 
 } // namespace Model

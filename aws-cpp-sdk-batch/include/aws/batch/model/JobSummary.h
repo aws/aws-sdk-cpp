@@ -489,40 +489,40 @@ namespace Model
   private:
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     long long m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     long long m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     long long m_stoppedAt;
-    bool m_stoppedAtHasBeenSet;
+    bool m_stoppedAtHasBeenSet = false;
 
     ContainerSummary m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     ArrayPropertiesSummary m_arrayProperties;
-    bool m_arrayPropertiesHasBeenSet;
+    bool m_arrayPropertiesHasBeenSet = false;
 
     NodePropertiesSummary m_nodeProperties;
-    bool m_nodePropertiesHasBeenSet;
+    bool m_nodePropertiesHasBeenSet = false;
 
     Aws::String m_jobDefinition;
-    bool m_jobDefinitionHasBeenSet;
+    bool m_jobDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

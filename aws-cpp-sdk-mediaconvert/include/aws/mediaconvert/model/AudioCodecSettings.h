@@ -541,37 +541,37 @@ namespace Model
   private:
 
     AacSettings m_aacSettings;
-    bool m_aacSettingsHasBeenSet;
+    bool m_aacSettingsHasBeenSet = false;
 
     Ac3Settings m_ac3Settings;
-    bool m_ac3SettingsHasBeenSet;
+    bool m_ac3SettingsHasBeenSet = false;
 
     AiffSettings m_aiffSettings;
-    bool m_aiffSettingsHasBeenSet;
+    bool m_aiffSettingsHasBeenSet = false;
 
     AudioCodec m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     Eac3AtmosSettings m_eac3AtmosSettings;
-    bool m_eac3AtmosSettingsHasBeenSet;
+    bool m_eac3AtmosSettingsHasBeenSet = false;
 
     Eac3Settings m_eac3Settings;
-    bool m_eac3SettingsHasBeenSet;
+    bool m_eac3SettingsHasBeenSet = false;
 
     Mp2Settings m_mp2Settings;
-    bool m_mp2SettingsHasBeenSet;
+    bool m_mp2SettingsHasBeenSet = false;
 
     Mp3Settings m_mp3Settings;
-    bool m_mp3SettingsHasBeenSet;
+    bool m_mp3SettingsHasBeenSet = false;
 
     OpusSettings m_opusSettings;
-    bool m_opusSettingsHasBeenSet;
+    bool m_opusSettingsHasBeenSet = false;
 
     VorbisSettings m_vorbisSettings;
-    bool m_vorbisSettingsHasBeenSet;
+    bool m_vorbisSettingsHasBeenSet = false;
 
     WavSettings m_wavSettings;
-    bool m_wavSettingsHasBeenSet;
+    bool m_wavSettingsHasBeenSet = false;
   };
 
 } // namespace Model

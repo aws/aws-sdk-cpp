@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_textContentUpdate;
-    bool m_textContentUpdateHasBeenSet;
+    bool m_textContentUpdateHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_zipFileContentUpdate;
-    bool m_zipFileContentUpdateHasBeenSet;
+    bool m_zipFileContentUpdateHasBeenSet = false;
 
     S3ContentLocationUpdate m_s3ContentLocationUpdate;
-    bool m_s3ContentLocationUpdateHasBeenSet;
+    bool m_s3ContentLocationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

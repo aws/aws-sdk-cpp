@@ -232,10 +232,10 @@ namespace Model
   private:
 
     Aws::String m_typeHierarchy;
-    bool m_typeHierarchyHasBeenSet;
+    bool m_typeHierarchyHasBeenSet = false;
 
     Aws::String m_logicalIdHierarchy;
-    bool m_logicalIdHierarchyHasBeenSet;
+    bool m_logicalIdHierarchyHasBeenSet = false;
   };
 
 } // namespace Model

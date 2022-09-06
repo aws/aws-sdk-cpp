@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_transformId;
-    bool m_transformIdHasBeenSet;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     TaskRunFilterCriteria m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     TaskRunSortCriteria m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
   };
 
 } // namespace Model

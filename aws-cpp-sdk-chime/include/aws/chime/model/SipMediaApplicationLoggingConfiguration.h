@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enableSipMediaApplicationMessageLogs;
-    bool m_enableSipMediaApplicationMessageLogsHasBeenSet;
+    bool m_enableSipMediaApplicationMessageLogsHasBeenSet = false;
   };
 
 } // namespace Model

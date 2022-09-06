@@ -114,10 +114,10 @@ namespace Model
   private:
 
     PolicySummary m_policySummary;
-    bool m_policySummaryHasBeenSet;
+    bool m_policySummaryHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

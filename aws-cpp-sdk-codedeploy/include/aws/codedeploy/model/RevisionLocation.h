@@ -247,19 +247,19 @@ namespace Model
   private:
 
     RevisionLocationType m_revisionType;
-    bool m_revisionTypeHasBeenSet;
+    bool m_revisionTypeHasBeenSet = false;
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
 
     GitHubLocation m_gitHubLocation;
-    bool m_gitHubLocationHasBeenSet;
+    bool m_gitHubLocationHasBeenSet = false;
 
     RawString m_string;
-    bool m_stringHasBeenSet;
+    bool m_stringHasBeenSet = false;
 
     AppSpecContent m_appSpecContent;
-    bool m_appSpecContentHasBeenSet;
+    bool m_appSpecContentHasBeenSet = false;
   };
 
 } // namespace Model

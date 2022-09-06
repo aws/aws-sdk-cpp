@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_certificatePathOnDevice;
-    bool m_certificatePathOnDeviceHasBeenSet;
+    bool m_certificatePathOnDeviceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     DescribePortfolioShareType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     bool m_accepted;
-    bool m_acceptedHasBeenSet;
+    bool m_acceptedHasBeenSet = false;
 
     bool m_shareTagOptions;
-    bool m_shareTagOptionsHasBeenSet;
+    bool m_shareTagOptionsHasBeenSet = false;
   };
 
 } // namespace Model

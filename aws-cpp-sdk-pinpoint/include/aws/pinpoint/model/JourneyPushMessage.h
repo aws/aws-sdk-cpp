@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_timeToLive;
-    bool m_timeToLiveHasBeenSet;
+    bool m_timeToLiveHasBeenSet = false;
   };
 
 } // namespace Model

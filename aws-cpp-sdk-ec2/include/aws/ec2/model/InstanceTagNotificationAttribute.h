@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceTagKeys;
-    bool m_instanceTagKeysHasBeenSet;
+    bool m_instanceTagKeysHasBeenSet = false;
 
     bool m_includeAllTagsOfInstance;
-    bool m_includeAllTagsOfInstanceHasBeenSet;
+    bool m_includeAllTagsOfInstanceHasBeenSet = false;
   };
 
 } // namespace Model

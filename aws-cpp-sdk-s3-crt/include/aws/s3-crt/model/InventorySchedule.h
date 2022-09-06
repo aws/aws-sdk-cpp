@@ -71,7 +71,7 @@ namespace Model
   private:
 
     InventoryFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -108,10 +108,10 @@ namespace Model
   private:
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     StateChangeConfiguration m_stateChangeConfiguration;
-    bool m_stateChangeConfigurationHasBeenSet;
+    bool m_stateChangeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

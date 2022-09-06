@@ -130,7 +130,7 @@ namespace Model
   private:
 
     WafActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

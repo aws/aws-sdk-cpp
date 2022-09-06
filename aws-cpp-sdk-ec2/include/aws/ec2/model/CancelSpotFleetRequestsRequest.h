@@ -147,13 +147,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_spotFleetRequestIds;
-    bool m_spotFleetRequestIdsHasBeenSet;
+    bool m_spotFleetRequestIdsHasBeenSet = false;
 
     bool m_terminateInstances;
-    bool m_terminateInstancesHasBeenSet;
+    bool m_terminateInstancesHasBeenSet = false;
   };
 
 } // namespace Model

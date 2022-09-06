@@ -83,7 +83,7 @@ namespace Model
   private:
 
     GeoRestriction m_geoRestriction;
-    bool m_geoRestrictionHasBeenSet;
+    bool m_geoRestrictionHasBeenSet = false;
   };
 
 } // namespace Model

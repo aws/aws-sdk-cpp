@@ -193,13 +193,13 @@ namespace Model
   private:
 
     bool m_sendingEnabled;
-    bool m_sendingEnabledHasBeenSet;
+    bool m_sendingEnabledHasBeenSet = false;
 
     bool m_reputationMetricsEnabled;
-    bool m_reputationMetricsEnabledHasBeenSet;
+    bool m_reputationMetricsEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastFreshStart;
-    bool m_lastFreshStartHasBeenSet;
+    bool m_lastFreshStartHasBeenSet = false;
   };
 
 } // namespace Model

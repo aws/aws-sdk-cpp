@@ -704,37 +704,37 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_sourceAccount;
-    bool m_sourceAccountHasBeenSet;
+    bool m_sourceAccountHasBeenSet = false;
 
     Aws::String m_eventSourceToken;
-    bool m_eventSourceTokenHasBeenSet;
+    bool m_eventSourceTokenHasBeenSet = false;
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_principalOrgID;
-    bool m_principalOrgIDHasBeenSet;
+    bool m_principalOrgIDHasBeenSet = false;
 
     FunctionUrlAuthType m_functionUrlAuthType;
-    bool m_functionUrlAuthTypeHasBeenSet;
+    bool m_functionUrlAuthTypeHasBeenSet = false;
   };
 
 } // namespace Model

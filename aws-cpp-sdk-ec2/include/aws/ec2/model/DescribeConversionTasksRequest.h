@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_conversionTaskIds;
-    bool m_conversionTaskIdsHasBeenSet;
+    bool m_conversionTaskIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

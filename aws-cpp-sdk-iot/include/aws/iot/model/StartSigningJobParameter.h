@@ -144,13 +144,13 @@ namespace Model
   private:
 
     SigningProfileParameter m_signingProfileParameter;
-    bool m_signingProfileParameterHasBeenSet;
+    bool m_signingProfileParameterHasBeenSet = false;
 
     Aws::String m_signingProfileName;
-    bool m_signingProfileNameHasBeenSet;
+    bool m_signingProfileNameHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

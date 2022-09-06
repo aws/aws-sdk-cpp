@@ -329,25 +329,25 @@ namespace Model
   private:
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_bandwidth;
-    bool m_bandwidthHasBeenSet;
+    bool m_bandwidthHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_lagId;
-    bool m_lagIdHasBeenSet;
+    bool m_lagIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     bool m_requestMACSec;
-    bool m_requestMACSecHasBeenSet;
+    bool m_requestMACSecHasBeenSet = false;
   };
 
 } // namespace Model

@@ -156,10 +156,10 @@ namespace Model
   private:
 
     int m_budgetAdjustmentPeriod;
-    bool m_budgetAdjustmentPeriodHasBeenSet;
+    bool m_budgetAdjustmentPeriodHasBeenSet = false;
 
     int m_lookBackAvailablePeriods;
-    bool m_lookBackAvailablePeriodsHasBeenSet;
+    bool m_lookBackAvailablePeriodsHasBeenSet = false;
   };
 
 } // namespace Model

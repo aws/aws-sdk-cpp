@@ -287,25 +287,25 @@ namespace Model
   private:
 
     ProblemDetail m_run;
-    bool m_runHasBeenSet;
+    bool m_runHasBeenSet = false;
 
     ProblemDetail m_job;
-    bool m_jobHasBeenSet;
+    bool m_jobHasBeenSet = false;
 
     ProblemDetail m_suite;
-    bool m_suiteHasBeenSet;
+    bool m_suiteHasBeenSet = false;
 
     ProblemDetail m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     Device m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     ExecutionResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

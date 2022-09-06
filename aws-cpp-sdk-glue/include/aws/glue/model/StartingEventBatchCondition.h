@@ -82,10 +82,10 @@ namespace Model
   private:
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     int m_batchWindow;
-    bool m_batchWindowHasBeenSet;
+    bool m_batchWindowHasBeenSet = false;
   };
 
 } // namespace Model

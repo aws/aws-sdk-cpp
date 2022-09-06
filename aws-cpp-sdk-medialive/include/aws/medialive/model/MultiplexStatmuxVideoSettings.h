@@ -116,13 +116,13 @@ namespace Model
   private:
 
     int m_maximumBitrate;
-    bool m_maximumBitrateHasBeenSet;
+    bool m_maximumBitrateHasBeenSet = false;
 
     int m_minimumBitrate;
-    bool m_minimumBitrateHasBeenSet;
+    bool m_minimumBitrateHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
   };
 
 } // namespace Model

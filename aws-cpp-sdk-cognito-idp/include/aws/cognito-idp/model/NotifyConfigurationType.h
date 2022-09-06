@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     Aws::String m_replyTo;
-    bool m_replyToHasBeenSet;
+    bool m_replyToHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     NotifyEmailType m_blockEmail;
-    bool m_blockEmailHasBeenSet;
+    bool m_blockEmailHasBeenSet = false;
 
     NotifyEmailType m_noActionEmail;
-    bool m_noActionEmailHasBeenSet;
+    bool m_noActionEmailHasBeenSet = false;
 
     NotifyEmailType m_mfaEmail;
-    bool m_mfaEmailHasBeenSet;
+    bool m_mfaEmailHasBeenSet = false;
   };
 
 } // namespace Model

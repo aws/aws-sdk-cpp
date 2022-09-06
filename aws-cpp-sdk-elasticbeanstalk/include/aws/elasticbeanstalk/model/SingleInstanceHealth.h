@@ -479,34 +479,34 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     Aws::String m_color;
-    bool m_colorHasBeenSet;
+    bool m_colorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_causes;
-    bool m_causesHasBeenSet;
+    bool m_causesHasBeenSet = false;
 
     Aws::Utils::DateTime m_launchedAt;
-    bool m_launchedAtHasBeenSet;
+    bool m_launchedAtHasBeenSet = false;
 
     ApplicationMetrics m_applicationMetrics;
-    bool m_applicationMetricsHasBeenSet;
+    bool m_applicationMetricsHasBeenSet = false;
 
     SystemStatus m_system;
-    bool m_systemHasBeenSet;
+    bool m_systemHasBeenSet = false;
 
     Deployment m_deployment;
-    bool m_deploymentHasBeenSet;
+    bool m_deploymentHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
   };
 
 } // namespace Model

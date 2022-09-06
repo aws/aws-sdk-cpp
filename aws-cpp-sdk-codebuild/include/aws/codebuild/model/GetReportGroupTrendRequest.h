@@ -234,13 +234,13 @@ namespace Model
   private:
 
     Aws::String m_reportGroupArn;
-    bool m_reportGroupArnHasBeenSet;
+    bool m_reportGroupArnHasBeenSet = false;
 
     int m_numOfReports;
-    bool m_numOfReportsHasBeenSet;
+    bool m_numOfReportsHasBeenSet = false;
 
     ReportGroupTrendFieldType m_trendField;
-    bool m_trendFieldHasBeenSet;
+    bool m_trendFieldHasBeenSet = false;
   };
 
 } // namespace Model

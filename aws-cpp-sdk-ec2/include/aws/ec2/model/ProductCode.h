@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_productCodeId;
-    bool m_productCodeIdHasBeenSet;
+    bool m_productCodeIdHasBeenSet = false;
 
     ProductCodeValues m_productCodeType;
-    bool m_productCodeTypeHasBeenSet;
+    bool m_productCodeTypeHasBeenSet = false;
   };
 
 } // namespace Model

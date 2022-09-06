@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<ObjectLambdaTransformationConfigurationAction> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     ObjectLambdaContentTransformation m_contentTransformation;
-    bool m_contentTransformationHasBeenSet;
+    bool m_contentTransformationHasBeenSet = false;
   };
 
 } // namespace Model

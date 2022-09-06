@@ -441,31 +441,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<DocumentMetadataConfiguration> m_documentMetadataConfigurationUpdates;
-    bool m_documentMetadataConfigurationUpdatesHasBeenSet;
+    bool m_documentMetadataConfigurationUpdatesHasBeenSet = false;
 
     CapacityUnitsConfiguration m_capacityUnits;
-    bool m_capacityUnitsHasBeenSet;
+    bool m_capacityUnitsHasBeenSet = false;
 
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
-    bool m_userTokenConfigurationsHasBeenSet;
+    bool m_userTokenConfigurationsHasBeenSet = false;
 
     UserContextPolicy m_userContextPolicy;
-    bool m_userContextPolicyHasBeenSet;
+    bool m_userContextPolicyHasBeenSet = false;
 
     UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
-    bool m_userGroupResolutionConfigurationHasBeenSet;
+    bool m_userGroupResolutionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

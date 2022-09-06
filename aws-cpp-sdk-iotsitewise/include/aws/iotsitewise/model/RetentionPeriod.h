@@ -96,10 +96,10 @@ namespace Model
   private:
 
     int m_numberOfDays;
-    bool m_numberOfDaysHasBeenSet;
+    bool m_numberOfDaysHasBeenSet = false;
 
     bool m_unlimited;
-    bool m_unlimitedHasBeenSet;
+    bool m_unlimitedHasBeenSet = false;
   };
 
 } // namespace Model

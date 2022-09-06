@@ -450,25 +450,25 @@ namespace Model
 
 
     Aws::Map<Aws::String, Aws::String> m_queryStringParameters;
-    bool m_queryStringParametersHasBeenSet;
+    bool m_queryStringParametersHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
-    bool m_requestHeadersHasBeenSet;
+    bool m_requestHeadersHasBeenSet = false;
 
     Aws::String m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

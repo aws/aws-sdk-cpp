@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     bool m_setAsDefault;
-    bool m_setAsDefaultHasBeenSet;
+    bool m_setAsDefaultHasBeenSet = false;
   };
 
 } // namespace Model

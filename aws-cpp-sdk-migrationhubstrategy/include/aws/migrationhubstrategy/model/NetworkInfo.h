@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_interfaceName;
-    bool m_interfaceNameHasBeenSet;
+    bool m_interfaceNameHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_netMask;
-    bool m_netMaskHasBeenSet;
+    bool m_netMaskHasBeenSet = false;
   };
 
 } // namespace Model

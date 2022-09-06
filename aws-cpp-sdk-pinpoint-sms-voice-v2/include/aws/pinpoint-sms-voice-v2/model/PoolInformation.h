@@ -454,37 +454,37 @@ namespace Model
   private:
 
     Aws::String m_poolArn;
-    bool m_poolArnHasBeenSet;
+    bool m_poolArnHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     PoolStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     bool m_twoWayEnabled;
-    bool m_twoWayEnabledHasBeenSet;
+    bool m_twoWayEnabledHasBeenSet = false;
 
     Aws::String m_twoWayChannelArn;
-    bool m_twoWayChannelArnHasBeenSet;
+    bool m_twoWayChannelArnHasBeenSet = false;
 
     bool m_selfManagedOptOutsEnabled;
-    bool m_selfManagedOptOutsEnabledHasBeenSet;
+    bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
 
     bool m_sharedRoutesEnabled;
-    bool m_sharedRoutesEnabledHasBeenSet;
+    bool m_sharedRoutesEnabledHasBeenSet = false;
 
     bool m_deletionProtectionEnabled;
-    bool m_deletionProtectionEnabledHasBeenSet;
+    bool m_deletionProtectionEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

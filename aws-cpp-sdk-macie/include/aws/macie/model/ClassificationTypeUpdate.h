@@ -129,10 +129,10 @@ namespace Model
   private:
 
     S3OneTimeClassificationType m_oneTime;
-    bool m_oneTimeHasBeenSet;
+    bool m_oneTimeHasBeenSet = false;
 
     S3ContinuousClassificationType m_continuous;
-    bool m_continuousHasBeenSet;
+    bool m_continuousHasBeenSet = false;
   };
 
 } // namespace Model

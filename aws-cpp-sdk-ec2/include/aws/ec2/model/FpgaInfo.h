@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::Vector<FpgaDeviceInfo> m_fpgas;
-    bool m_fpgasHasBeenSet;
+    bool m_fpgasHasBeenSet = false;
 
     int m_totalFpgaMemoryInMiB;
-    bool m_totalFpgaMemoryInMiBHasBeenSet;
+    bool m_totalFpgaMemoryInMiBHasBeenSet = false;
   };
 
 } // namespace Model

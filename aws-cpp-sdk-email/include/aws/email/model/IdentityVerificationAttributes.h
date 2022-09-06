@@ -129,10 +129,10 @@ namespace Model
   private:
 
     VerificationStatus m_verificationStatus;
-    bool m_verificationStatusHasBeenSet;
+    bool m_verificationStatusHasBeenSet = false;
 
     Aws::String m_verificationToken;
-    bool m_verificationTokenHasBeenSet;
+    bool m_verificationTokenHasBeenSet = false;
   };
 
 } // namespace Model

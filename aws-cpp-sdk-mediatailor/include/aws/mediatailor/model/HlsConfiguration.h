@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_manifestEndpointPrefix;
-    bool m_manifestEndpointPrefixHasBeenSet;
+    bool m_manifestEndpointPrefixHasBeenSet = false;
   };
 
 } // namespace Model

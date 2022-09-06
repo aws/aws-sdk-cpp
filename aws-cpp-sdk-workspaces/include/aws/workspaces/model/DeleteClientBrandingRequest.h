@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<ClientDeviceType> m_platforms;
-    bool m_platformsHasBeenSet;
+    bool m_platformsHasBeenSet = false;
   };
 
 } // namespace Model

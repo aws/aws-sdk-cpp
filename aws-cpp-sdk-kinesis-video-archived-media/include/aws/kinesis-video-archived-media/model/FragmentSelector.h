@@ -110,10 +110,10 @@ namespace Model
   private:
 
     FragmentSelectorType m_fragmentSelectorType;
-    bool m_fragmentSelectorTypeHasBeenSet;
+    bool m_fragmentSelectorTypeHasBeenSet = false;
 
     TimestampRange m_timestampRange;
-    bool m_timestampRangeHasBeenSet;
+    bool m_timestampRangeHasBeenSet = false;
   };
 
 } // namespace Model

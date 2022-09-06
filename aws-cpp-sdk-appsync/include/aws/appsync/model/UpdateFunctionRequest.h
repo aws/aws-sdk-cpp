@@ -419,34 +419,34 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_functionId;
-    bool m_functionIdHasBeenSet;
+    bool m_functionIdHasBeenSet = false;
 
     Aws::String m_dataSourceName;
-    bool m_dataSourceNameHasBeenSet;
+    bool m_dataSourceNameHasBeenSet = false;
 
     Aws::String m_requestMappingTemplate;
-    bool m_requestMappingTemplateHasBeenSet;
+    bool m_requestMappingTemplateHasBeenSet = false;
 
     Aws::String m_responseMappingTemplate;
-    bool m_responseMappingTemplateHasBeenSet;
+    bool m_responseMappingTemplateHasBeenSet = false;
 
     Aws::String m_functionVersion;
-    bool m_functionVersionHasBeenSet;
+    bool m_functionVersionHasBeenSet = false;
 
     SyncConfig m_syncConfig;
-    bool m_syncConfigHasBeenSet;
+    bool m_syncConfigHasBeenSet = false;
 
     int m_maxBatchSize;
-    bool m_maxBatchSizeHasBeenSet;
+    bool m_maxBatchSizeHasBeenSet = false;
   };
 
 } // namespace Model

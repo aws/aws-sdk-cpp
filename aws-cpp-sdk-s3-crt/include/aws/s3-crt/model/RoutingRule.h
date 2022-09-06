@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Condition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Redirect m_redirect;
-    bool m_redirectHasBeenSet;
+    bool m_redirectHasBeenSet = false;
   };
 
 } // namespace Model

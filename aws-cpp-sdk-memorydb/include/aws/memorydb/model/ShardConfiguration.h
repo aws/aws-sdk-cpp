@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     int m_replicaCount;
-    bool m_replicaCountHasBeenSet;
+    bool m_replicaCountHasBeenSet = false;
   };
 
 } // namespace Model

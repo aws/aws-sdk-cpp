@@ -153,7 +153,7 @@ namespace Model
   private:
 
     Aws::String m_initialPath;
-    bool m_initialPathHasBeenSet;
+    bool m_initialPathHasBeenSet = false;
   };
 
 } // namespace Model

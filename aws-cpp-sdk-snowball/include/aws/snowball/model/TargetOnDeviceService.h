@@ -117,10 +117,10 @@ namespace Model
   private:
 
     DeviceServiceName m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     TransferOption m_transferOption;
-    bool m_transferOptionHasBeenSet;
+    bool m_transferOptionHasBeenSet = false;
   };
 
 } // namespace Model

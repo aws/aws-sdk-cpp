@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_consoleURL;
-    bool m_consoleURLHasBeenSet;
+    bool m_consoleURLHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
   };
 
 } // namespace Model

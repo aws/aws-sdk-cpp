@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_poolARN;
-    bool m_poolARNHasBeenSet;
+    bool m_poolARNHasBeenSet = false;
   };
 
 } // namespace Model

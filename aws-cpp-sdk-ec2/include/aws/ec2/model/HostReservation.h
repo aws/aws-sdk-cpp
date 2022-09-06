@@ -577,46 +577,46 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::Utils::DateTime m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostIdSet;
-    bool m_hostIdSetHasBeenSet;
+    bool m_hostIdSetHasBeenSet = false;
 
     Aws::String m_hostReservationId;
-    bool m_hostReservationIdHasBeenSet;
+    bool m_hostReservationIdHasBeenSet = false;
 
     Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
+    bool m_hourlyPriceHasBeenSet = false;
 
     Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     ReservationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_upfrontPrice;
-    bool m_upfrontPriceHasBeenSet;
+    bool m_upfrontPriceHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

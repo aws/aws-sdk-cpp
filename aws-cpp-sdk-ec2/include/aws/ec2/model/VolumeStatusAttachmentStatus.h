@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_ioPerformance;
-    bool m_ioPerformanceHasBeenSet;
+    bool m_ioPerformanceHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

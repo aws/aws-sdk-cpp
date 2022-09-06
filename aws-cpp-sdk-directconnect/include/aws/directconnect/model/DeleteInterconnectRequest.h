@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_interconnectId;
-    bool m_interconnectIdHasBeenSet;
+    bool m_interconnectIdHasBeenSet = false;
   };
 
 } // namespace Model

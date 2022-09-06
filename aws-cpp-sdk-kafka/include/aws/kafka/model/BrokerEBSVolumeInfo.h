@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_kafkaBrokerNodeId;
-    bool m_kafkaBrokerNodeIdHasBeenSet;
+    bool m_kafkaBrokerNodeIdHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
 
     int m_volumeSizeGB;
-    bool m_volumeSizeGBHasBeenSet;
+    bool m_volumeSizeGBHasBeenSet = false;
   };
 
 } // namespace Model

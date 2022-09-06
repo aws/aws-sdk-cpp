@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::String m_interpretedValue;
-    bool m_interpretedValueHasBeenSet;
+    bool m_interpretedValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastRunTime;
-    bool m_lastRunTimeHasBeenSet;
+    bool m_lastRunTimeHasBeenSet = false;
   };
 
 } // namespace Model

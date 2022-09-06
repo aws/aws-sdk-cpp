@@ -136,13 +136,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     UrlType m_urlType;
-    bool m_urlTypeHasBeenSet;
+    bool m_urlTypeHasBeenSet = false;
 
     long long m_sessionExpirationDurationInSeconds;
-    bool m_sessionExpirationDurationInSecondsHasBeenSet;
+    bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

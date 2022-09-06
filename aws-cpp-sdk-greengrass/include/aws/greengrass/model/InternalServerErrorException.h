@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<ErrorDetail> m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

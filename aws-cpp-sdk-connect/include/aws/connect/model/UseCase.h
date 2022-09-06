@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_useCaseId;
-    bool m_useCaseIdHasBeenSet;
+    bool m_useCaseIdHasBeenSet = false;
 
     Aws::String m_useCaseArn;
-    bool m_useCaseArnHasBeenSet;
+    bool m_useCaseArnHasBeenSet = false;
 
     UseCaseType m_useCaseType;
-    bool m_useCaseTypeHasBeenSet;
+    bool m_useCaseTypeHasBeenSet = false;
   };
 
 } // namespace Model

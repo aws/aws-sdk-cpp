@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
   };
 
 } // namespace Model

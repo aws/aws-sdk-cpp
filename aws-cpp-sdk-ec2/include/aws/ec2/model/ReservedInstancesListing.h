@@ -459,34 +459,34 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<InstanceCount> m_instanceCounts;
-    bool m_instanceCountsHasBeenSet;
+    bool m_instanceCountsHasBeenSet = false;
 
     Aws::Vector<PriceSchedule> m_priceSchedules;
-    bool m_priceSchedulesHasBeenSet;
+    bool m_priceSchedulesHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
 
     Aws::String m_reservedInstancesListingId;
-    bool m_reservedInstancesListingIdHasBeenSet;
+    bool m_reservedInstancesListingIdHasBeenSet = false;
 
     ListingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -171,16 +171,16 @@ namespace Model
   private:
 
     Aws::String m_projectVersionArn;
-    bool m_projectVersionArnHasBeenSet;
+    bool m_projectVersionArnHasBeenSet = false;
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
   };
 
 } // namespace Model

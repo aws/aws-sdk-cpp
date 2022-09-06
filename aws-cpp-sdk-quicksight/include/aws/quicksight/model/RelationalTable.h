@@ -255,19 +255,19 @@ namespace Model
   private:
 
     Aws::String m_dataSourceArn;
-    bool m_dataSourceArnHasBeenSet;
+    bool m_dataSourceArnHasBeenSet = false;
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<InputColumn> m_inputColumns;
-    bool m_inputColumnsHasBeenSet;
+    bool m_inputColumnsHasBeenSet = false;
   };
 
 } // namespace Model

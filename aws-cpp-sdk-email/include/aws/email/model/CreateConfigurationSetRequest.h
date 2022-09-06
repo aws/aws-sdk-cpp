@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ConfigurationSet m_configurationSet;
-    bool m_configurationSetHasBeenSet;
+    bool m_configurationSetHasBeenSet = false;
   };
 
 } // namespace Model

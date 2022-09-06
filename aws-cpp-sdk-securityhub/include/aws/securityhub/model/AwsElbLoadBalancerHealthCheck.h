@@ -245,19 +245,19 @@ namespace Model
   private:
 
     int m_healthyThreshold;
-    bool m_healthyThresholdHasBeenSet;
+    bool m_healthyThresholdHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_unhealthyThreshold;
-    bool m_unhealthyThresholdHasBeenSet;
+    bool m_unhealthyThresholdHasBeenSet = false;
   };
 
 } // namespace Model

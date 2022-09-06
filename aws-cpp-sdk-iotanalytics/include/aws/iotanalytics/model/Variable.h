@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     DatasetContentVersionValue m_datasetContentVersionValue;
-    bool m_datasetContentVersionValueHasBeenSet;
+    bool m_datasetContentVersionValueHasBeenSet = false;
 
     OutputFileUriValue m_outputFileUriValue;
-    bool m_outputFileUriValueHasBeenSet;
+    bool m_outputFileUriValueHasBeenSet = false;
   };
 
 } // namespace Model

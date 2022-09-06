@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_software;
-    bool m_softwareHasBeenSet;
+    bool m_softwareHasBeenSet = false;
 
     Aws::String m_xsltTemplateName;
-    bool m_xsltTemplateNameHasBeenSet;
+    bool m_xsltTemplateNameHasBeenSet = false;
 
     Aws::String m_xsltTemplateNameForMacSec;
-    bool m_xsltTemplateNameForMacSecHasBeenSet;
+    bool m_xsltTemplateNameForMacSecHasBeenSet = false;
 
     Aws::String m_routerTypeIdentifier;
-    bool m_routerTypeIdentifierHasBeenSet;
+    bool m_routerTypeIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

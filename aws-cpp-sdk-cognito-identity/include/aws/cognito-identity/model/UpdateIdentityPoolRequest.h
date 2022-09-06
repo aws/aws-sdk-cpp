@@ -524,34 +524,34 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityPoolName;
-    bool m_identityPoolNameHasBeenSet;
+    bool m_identityPoolNameHasBeenSet = false;
 
     bool m_allowUnauthenticatedIdentities;
-    bool m_allowUnauthenticatedIdentitiesHasBeenSet;
+    bool m_allowUnauthenticatedIdentitiesHasBeenSet = false;
 
     bool m_allowClassicFlow;
-    bool m_allowClassicFlowHasBeenSet;
+    bool m_allowClassicFlowHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
-    bool m_supportedLoginProvidersHasBeenSet;
+    bool m_supportedLoginProvidersHasBeenSet = false;
 
     Aws::String m_developerProviderName;
-    bool m_developerProviderNameHasBeenSet;
+    bool m_developerProviderNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_openIdConnectProviderARNs;
-    bool m_openIdConnectProviderARNsHasBeenSet;
+    bool m_openIdConnectProviderARNsHasBeenSet = false;
 
     Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
-    bool m_cognitoIdentityProvidersHasBeenSet;
+    bool m_cognitoIdentityProvidersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_samlProviderARNs;
-    bool m_samlProviderARNsHasBeenSet;
+    bool m_samlProviderARNsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
-    bool m_identityPoolTagsHasBeenSet;
+    bool m_identityPoolTagsHasBeenSet = false;
   };
 
 } // namespace Model

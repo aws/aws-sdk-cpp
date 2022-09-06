@@ -135,13 +135,13 @@ namespace Model
   private:
 
     GatewayRouteHostnameRewrite m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     HttpGatewayRoutePathRewrite m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     HttpGatewayRoutePrefixRewrite m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -309,22 +309,22 @@ namespace Model
   private:
 
     Aws::String m_contextName;
-    bool m_contextNameHasBeenSet;
+    bool m_contextNameHasBeenSet = false;
 
     ContextSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_contextType;
-    bool m_contextTypeHasBeenSet;
+    bool m_contextTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,10 +80,10 @@ namespace Model
   private:
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     double m_remaining;
-    bool m_remainingHasBeenSet;
+    bool m_remainingHasBeenSet = false;
   };
 
 } // namespace Model

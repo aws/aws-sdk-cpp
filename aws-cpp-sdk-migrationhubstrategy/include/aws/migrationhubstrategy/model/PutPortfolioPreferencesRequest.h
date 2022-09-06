@@ -129,13 +129,13 @@ namespace Model
   private:
 
     ApplicationPreferences m_applicationPreferences;
-    bool m_applicationPreferencesHasBeenSet;
+    bool m_applicationPreferencesHasBeenSet = false;
 
     DatabasePreferences m_databasePreferences;
-    bool m_databasePreferencesHasBeenSet;
+    bool m_databasePreferencesHasBeenSet = false;
 
     PrioritizeBusinessGoals m_prioritizeBusinessGoals;
-    bool m_prioritizeBusinessGoalsHasBeenSet;
+    bool m_prioritizeBusinessGoalsHasBeenSet = false;
   };
 
 } // namespace Model

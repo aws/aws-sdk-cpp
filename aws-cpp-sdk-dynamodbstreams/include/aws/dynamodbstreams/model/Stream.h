@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_streamLabel;
-    bool m_streamLabelHasBeenSet;
+    bool m_streamLabelHasBeenSet = false;
   };
 
 } // namespace Model

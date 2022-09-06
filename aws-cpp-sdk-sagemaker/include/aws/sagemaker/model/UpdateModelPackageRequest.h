@@ -355,22 +355,22 @@ namespace Model
   private:
 
     Aws::String m_modelPackageArn;
-    bool m_modelPackageArnHasBeenSet;
+    bool m_modelPackageArnHasBeenSet = false;
 
     ModelApprovalStatus m_modelApprovalStatus;
-    bool m_modelApprovalStatusHasBeenSet;
+    bool m_modelApprovalStatusHasBeenSet = false;
 
     Aws::String m_approvalDescription;
-    bool m_approvalDescriptionHasBeenSet;
+    bool m_approvalDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-    bool m_customerMetadataPropertiesHasBeenSet;
+    bool m_customerMetadataPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customerMetadataPropertiesToRemove;
-    bool m_customerMetadataPropertiesToRemoveHasBeenSet;
+    bool m_customerMetadataPropertiesToRemoveHasBeenSet = false;
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecificationsToAdd;
-    bool m_additionalInferenceSpecificationsToAddHasBeenSet;
+    bool m_additionalInferenceSpecificationsToAddHasBeenSet = false;
   };
 
 } // namespace Model

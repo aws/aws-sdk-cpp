@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_markerName;
-    bool m_markerNameHasBeenSet;
+    bool m_markerNameHasBeenSet = false;
 
     RecordMarkerFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

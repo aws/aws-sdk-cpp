@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

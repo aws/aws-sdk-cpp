@@ -420,25 +420,25 @@ namespace Model
   private:
 
     Aws::String m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::Utils::DateTime m_witnessedAt;
-    bool m_witnessedAtHasBeenSet;
+    bool m_witnessedAtHasBeenSet = false;
 
     Aws::String m_fingerprintSHA1;
-    bool m_fingerprintSHA1HasBeenSet;
+    bool m_fingerprintSHA1HasBeenSet = false;
 
     Aws::String m_fingerprintSHA256;
-    bool m_fingerprintSHA256HasBeenSet;
+    bool m_fingerprintSHA256HasBeenSet = false;
 
     Aws::Utils::DateTime m_notValidBefore;
-    bool m_notValidBeforeHasBeenSet;
+    bool m_notValidBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notValidAfter;
-    bool m_notValidAfterHasBeenSet;
+    bool m_notValidAfterHasBeenSet = false;
   };
 
 } // namespace Model

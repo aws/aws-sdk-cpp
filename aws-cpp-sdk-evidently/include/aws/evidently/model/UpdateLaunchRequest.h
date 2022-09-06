@@ -377,25 +377,25 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<LaunchGroupConfig> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_launch;
-    bool m_launchHasBeenSet;
+    bool m_launchHasBeenSet = false;
 
     Aws::Vector<MetricMonitorConfig> m_metricMonitors;
-    bool m_metricMonitorsHasBeenSet;
+    bool m_metricMonitorsHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_randomizationSalt;
-    bool m_randomizationSaltHasBeenSet;
+    bool m_randomizationSaltHasBeenSet = false;
 
     ScheduledSplitsLaunchConfig m_scheduledSplitsConfig;
-    bool m_scheduledSplitsConfigHasBeenSet;
+    bool m_scheduledSplitsConfigHasBeenSet = false;
   };
 
 } // namespace Model

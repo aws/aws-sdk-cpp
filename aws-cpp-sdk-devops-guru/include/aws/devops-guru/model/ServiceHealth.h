@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ServiceName m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     ServiceInsightHealth m_insight;
-    bool m_insightHasBeenSet;
+    bool m_insightHasBeenSet = false;
   };
 
 } // namespace Model

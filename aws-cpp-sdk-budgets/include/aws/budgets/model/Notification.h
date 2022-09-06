@@ -269,19 +269,19 @@ namespace Model
   private:
 
     NotificationType m_notificationType;
-    bool m_notificationTypeHasBeenSet;
+    bool m_notificationTypeHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     ThresholdType m_thresholdType;
-    bool m_thresholdTypeHasBeenSet;
+    bool m_thresholdTypeHasBeenSet = false;
 
     NotificationState m_notificationState;
-    bool m_notificationStateHasBeenSet;
+    bool m_notificationStateHasBeenSet = false;
   };
 
 } // namespace Model

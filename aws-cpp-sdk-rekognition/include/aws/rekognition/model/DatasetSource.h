@@ -116,10 +116,10 @@ namespace Model
   private:
 
     GroundTruthManifest m_groundTruthManifest;
-    bool m_groundTruthManifestHasBeenSet;
+    bool m_groundTruthManifestHasBeenSet = false;
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
   };
 
 } // namespace Model

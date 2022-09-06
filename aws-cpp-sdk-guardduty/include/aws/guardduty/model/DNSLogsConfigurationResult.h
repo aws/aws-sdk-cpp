@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DataSourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -140,10 +140,10 @@ namespace Model
   private:
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -307,22 +307,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     NotificationRuleStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventTypeIds;
-    bool m_eventTypeIdsHasBeenSet;
+    bool m_eventTypeIdsHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     DetailType m_detailType;
-    bool m_detailTypeHasBeenSet;
+    bool m_detailTypeHasBeenSet = false;
   };
 
 } // namespace Model

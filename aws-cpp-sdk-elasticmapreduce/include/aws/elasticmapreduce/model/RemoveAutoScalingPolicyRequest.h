@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_instanceGroupId;
-    bool m_instanceGroupIdHasBeenSet;
+    bool m_instanceGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

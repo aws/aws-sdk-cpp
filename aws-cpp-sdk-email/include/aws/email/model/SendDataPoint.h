@@ -158,19 +158,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     long long m_deliveryAttempts;
-    bool m_deliveryAttemptsHasBeenSet;
+    bool m_deliveryAttemptsHasBeenSet = false;
 
     long long m_bounces;
-    bool m_bouncesHasBeenSet;
+    bool m_bouncesHasBeenSet = false;
 
     long long m_complaints;
-    bool m_complaintsHasBeenSet;
+    bool m_complaintsHasBeenSet = false;
 
     long long m_rejects;
-    bool m_rejectsHasBeenSet;
+    bool m_rejectsHasBeenSet = false;
   };
 
 } // namespace Model

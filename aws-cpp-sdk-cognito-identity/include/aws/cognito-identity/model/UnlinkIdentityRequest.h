@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_logins;
-    bool m_loginsHasBeenSet;
+    bool m_loginsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_loginsToRemove;
-    bool m_loginsToRemoveHasBeenSet;
+    bool m_loginsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

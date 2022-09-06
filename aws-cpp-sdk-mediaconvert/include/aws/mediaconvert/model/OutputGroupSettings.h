@@ -362,22 +362,22 @@ namespace Model
   private:
 
     CmafGroupSettings m_cmafGroupSettings;
-    bool m_cmafGroupSettingsHasBeenSet;
+    bool m_cmafGroupSettingsHasBeenSet = false;
 
     DashIsoGroupSettings m_dashIsoGroupSettings;
-    bool m_dashIsoGroupSettingsHasBeenSet;
+    bool m_dashIsoGroupSettingsHasBeenSet = false;
 
     FileGroupSettings m_fileGroupSettings;
-    bool m_fileGroupSettingsHasBeenSet;
+    bool m_fileGroupSettingsHasBeenSet = false;
 
     HlsGroupSettings m_hlsGroupSettings;
-    bool m_hlsGroupSettingsHasBeenSet;
+    bool m_hlsGroupSettingsHasBeenSet = false;
 
     MsSmoothGroupSettings m_msSmoothGroupSettings;
-    bool m_msSmoothGroupSettingsHasBeenSet;
+    bool m_msSmoothGroupSettingsHasBeenSet = false;
 
     OutputGroupType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

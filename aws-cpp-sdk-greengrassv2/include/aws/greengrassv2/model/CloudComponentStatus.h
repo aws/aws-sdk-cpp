@@ -370,19 +370,19 @@ namespace Model
   private:
 
     CloudComponentState m_componentState;
-    bool m_componentStateHasBeenSet;
+    bool m_componentStateHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
 
     VendorGuidance m_vendorGuidance;
-    bool m_vendorGuidanceHasBeenSet;
+    bool m_vendorGuidanceHasBeenSet = false;
 
     Aws::String m_vendorGuidanceMessage;
-    bool m_vendorGuidanceMessageHasBeenSet;
+    bool m_vendorGuidanceMessageHasBeenSet = false;
   };
 
 } // namespace Model

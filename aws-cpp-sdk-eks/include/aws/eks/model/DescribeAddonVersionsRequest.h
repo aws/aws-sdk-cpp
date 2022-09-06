@@ -248,16 +248,16 @@ namespace Model
   private:
 
     Aws::String m_kubernetesVersion;
-    bool m_kubernetesVersionHasBeenSet;
+    bool m_kubernetesVersionHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
   };
 
 } // namespace Model

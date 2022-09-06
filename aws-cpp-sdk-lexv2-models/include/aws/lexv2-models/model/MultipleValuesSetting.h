@@ -83,7 +83,7 @@ namespace Model
   private:
 
     bool m_allowMultipleValues;
-    bool m_allowMultipleValuesHasBeenSet;
+    bool m_allowMultipleValuesHasBeenSet = false;
   };
 
 } // namespace Model

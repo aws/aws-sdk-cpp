@@ -172,10 +172,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_ocspCustomCname;
-    bool m_ocspCustomCnameHasBeenSet;
+    bool m_ocspCustomCnameHasBeenSet = false;
   };
 
 } // namespace Model

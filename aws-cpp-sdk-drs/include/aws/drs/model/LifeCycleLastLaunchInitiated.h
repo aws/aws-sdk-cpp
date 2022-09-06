@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_apiCallDateTime;
-    bool m_apiCallDateTimeHasBeenSet;
+    bool m_apiCallDateTimeHasBeenSet = false;
 
     Aws::String m_jobID;
-    bool m_jobIDHasBeenSet;
+    bool m_jobIDHasBeenSet = false;
 
     LastLaunchType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

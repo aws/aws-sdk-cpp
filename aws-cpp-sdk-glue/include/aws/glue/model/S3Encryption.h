@@ -121,10 +121,10 @@ namespace Model
   private:
 
     S3EncryptionMode m_s3EncryptionMode;
-    bool m_s3EncryptionModeHasBeenSet;
+    bool m_s3EncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

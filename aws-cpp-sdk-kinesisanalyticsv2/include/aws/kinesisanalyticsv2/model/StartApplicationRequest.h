@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     RunConfiguration m_runConfiguration;
-    bool m_runConfigurationHasBeenSet;
+    bool m_runConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

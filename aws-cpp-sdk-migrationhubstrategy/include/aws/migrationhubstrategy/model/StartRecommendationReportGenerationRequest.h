@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<Group> m_groupIdFilter;
-    bool m_groupIdFilterHasBeenSet;
+    bool m_groupIdFilterHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
   };
 
 } // namespace Model

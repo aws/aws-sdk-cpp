@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     Aws::String m_locationName;
-    bool m_locationNameHasBeenSet;
+    bool m_locationNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_appComponentName;
-    bool m_appComponentNameHasBeenSet;
+    bool m_appComponentNameHasBeenSet = false;
 
     Aws::Vector<ConfigRecommendation> m_configRecommendations;
-    bool m_configRecommendationsHasBeenSet;
+    bool m_configRecommendationsHasBeenSet = false;
 
     RecommendationComplianceStatus m_recommendationStatus;
-    bool m_recommendationStatusHasBeenSet;
+    bool m_recommendationStatusHasBeenSet = false;
   };
 
 } // namespace Model

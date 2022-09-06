@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_hostArn;
-    bool m_hostArnHasBeenSet;
+    bool m_hostArnHasBeenSet = false;
   };
 
 } // namespace Model

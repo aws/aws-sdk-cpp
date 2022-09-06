@@ -162,10 +162,10 @@ namespace Model
   private:
 
     int m_maxRuntimeInSeconds;
-    bool m_maxRuntimeInSecondsHasBeenSet;
+    bool m_maxRuntimeInSecondsHasBeenSet = false;
 
     int m_maxWaitTimeInSeconds;
-    bool m_maxWaitTimeInSecondsHasBeenSet;
+    bool m_maxWaitTimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

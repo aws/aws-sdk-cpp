@@ -160,16 +160,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     ActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     ActionHistoryDetails m_actionHistoryDetails;
-    bool m_actionHistoryDetailsHasBeenSet;
+    bool m_actionHistoryDetailsHasBeenSet = false;
   };
 
 } // namespace Model

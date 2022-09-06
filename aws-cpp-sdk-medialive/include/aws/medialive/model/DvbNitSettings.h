@@ -134,13 +134,13 @@ namespace Model
   private:
 
     int m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_networkName;
-    bool m_networkNameHasBeenSet;
+    bool m_networkNameHasBeenSet = false;
 
     int m_repInterval;
-    bool m_repIntervalHasBeenSet;
+    bool m_repIntervalHasBeenSet = false;
   };
 
 } // namespace Model

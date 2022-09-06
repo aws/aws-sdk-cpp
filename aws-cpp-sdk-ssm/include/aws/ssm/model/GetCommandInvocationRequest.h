@@ -255,13 +255,13 @@ namespace Model
   private:
 
     Aws::String m_commandId;
-    bool m_commandIdHasBeenSet;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_pluginName;
-    bool m_pluginNameHasBeenSet;
+    bool m_pluginNameHasBeenSet = false;
   };
 
 } // namespace Model

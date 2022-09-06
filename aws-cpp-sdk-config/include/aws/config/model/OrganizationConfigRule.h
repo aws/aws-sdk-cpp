@@ -336,25 +336,25 @@ namespace Model
   private:
 
     Aws::String m_organizationConfigRuleName;
-    bool m_organizationConfigRuleNameHasBeenSet;
+    bool m_organizationConfigRuleNameHasBeenSet = false;
 
     Aws::String m_organizationConfigRuleArn;
-    bool m_organizationConfigRuleArnHasBeenSet;
+    bool m_organizationConfigRuleArnHasBeenSet = false;
 
     OrganizationManagedRuleMetadata m_organizationManagedRuleMetadata;
-    bool m_organizationManagedRuleMetadataHasBeenSet;
+    bool m_organizationManagedRuleMetadataHasBeenSet = false;
 
     OrganizationCustomRuleMetadata m_organizationCustomRuleMetadata;
-    bool m_organizationCustomRuleMetadataHasBeenSet;
+    bool m_organizationCustomRuleMetadataHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedAccounts;
-    bool m_excludedAccountsHasBeenSet;
+    bool m_excludedAccountsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     OrganizationCustomPolicyRuleMetadataNoPolicy m_organizationCustomPolicyRuleMetadata;
-    bool m_organizationCustomPolicyRuleMetadataHasBeenSet;
+    bool m_organizationCustomPolicyRuleMetadataHasBeenSet = false;
   };
 
 } // namespace Model

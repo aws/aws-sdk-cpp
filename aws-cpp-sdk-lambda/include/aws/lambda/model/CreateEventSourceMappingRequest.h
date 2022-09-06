@@ -951,67 +951,67 @@ namespace Model
   private:
 
     Aws::String m_eventSourceArn;
-    bool m_eventSourceArnHasBeenSet;
+    bool m_eventSourceArnHasBeenSet = false;
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     int m_maximumBatchingWindowInSeconds;
-    bool m_maximumBatchingWindowInSecondsHasBeenSet;
+    bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
     int m_parallelizationFactor;
-    bool m_parallelizationFactorHasBeenSet;
+    bool m_parallelizationFactorHasBeenSet = false;
 
     EventSourcePosition m_startingPosition;
-    bool m_startingPositionHasBeenSet;
+    bool m_startingPositionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startingPositionTimestamp;
-    bool m_startingPositionTimestampHasBeenSet;
+    bool m_startingPositionTimestampHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
 
     int m_maximumRecordAgeInSeconds;
-    bool m_maximumRecordAgeInSecondsHasBeenSet;
+    bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
     bool m_bisectBatchOnFunctionError;
-    bool m_bisectBatchOnFunctionErrorHasBeenSet;
+    bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_tumblingWindowInSeconds;
-    bool m_tumblingWindowInSecondsHasBeenSet;
+    bool m_tumblingWindowInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_topics;
-    bool m_topicsHasBeenSet;
+    bool m_topicsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_queues;
-    bool m_queuesHasBeenSet;
+    bool m_queuesHasBeenSet = false;
 
     Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
-    bool m_sourceAccessConfigurationsHasBeenSet;
+    bool m_sourceAccessConfigurationsHasBeenSet = false;
 
     SelfManagedEventSource m_selfManagedEventSource;
-    bool m_selfManagedEventSourceHasBeenSet;
+    bool m_selfManagedEventSourceHasBeenSet = false;
 
     Aws::Vector<FunctionResponseType> m_functionResponseTypes;
-    bool m_functionResponseTypesHasBeenSet;
+    bool m_functionResponseTypesHasBeenSet = false;
 
     AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
-    bool m_amazonManagedKafkaEventSourceConfigHasBeenSet;
+    bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
 
     SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
-    bool m_selfManagedKafkaEventSourceConfigHasBeenSet;
+    bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

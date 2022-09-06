@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ActivityMetrics m_activityMetrics;
-    bool m_activityMetricsHasBeenSet;
+    bool m_activityMetricsHasBeenSet = false;
 
     PrefixLevel m_prefixLevel;
-    bool m_prefixLevelHasBeenSet;
+    bool m_prefixLevelHasBeenSet = false;
   };
 
 } // namespace Model

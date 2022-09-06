@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetVersions;
-    bool m_targetVersionsHasBeenSet;
+    bool m_targetVersionsHasBeenSet = false;
   };
 
 } // namespace Model

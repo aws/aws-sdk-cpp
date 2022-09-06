@@ -383,22 +383,22 @@ namespace Model
   private:
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
 
     PredefinedMetricSpecification m_predefinedMetricSpecification;
-    bool m_predefinedMetricSpecificationHasBeenSet;
+    bool m_predefinedMetricSpecificationHasBeenSet = false;
 
     CustomizedMetricSpecification m_customizedMetricSpecification;
-    bool m_customizedMetricSpecificationHasBeenSet;
+    bool m_customizedMetricSpecificationHasBeenSet = false;
 
     int m_scaleOutCooldown;
-    bool m_scaleOutCooldownHasBeenSet;
+    bool m_scaleOutCooldownHasBeenSet = false;
 
     int m_scaleInCooldown;
-    bool m_scaleInCooldownHasBeenSet;
+    bool m_scaleInCooldownHasBeenSet = false;
 
     bool m_disableScaleIn;
-    bool m_disableScaleInHasBeenSet;
+    bool m_disableScaleInHasBeenSet = false;
   };
 
 } // namespace Model

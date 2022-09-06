@@ -555,31 +555,31 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     Aws::String m_streamLabel;
-    bool m_streamLabelHasBeenSet;
+    bool m_streamLabelHasBeenSet = false;
 
     StreamStatus m_streamStatus;
-    bool m_streamStatusHasBeenSet;
+    bool m_streamStatusHasBeenSet = false;
 
     StreamViewType m_streamViewType;
-    bool m_streamViewTypeHasBeenSet;
+    bool m_streamViewTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationRequestDateTime;
-    bool m_creationRequestDateTimeHasBeenSet;
+    bool m_creationRequestDateTimeHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     Aws::Vector<Shard> m_shards;
-    bool m_shardsHasBeenSet;
+    bool m_shardsHasBeenSet = false;
 
     Aws::String m_lastEvaluatedShardId;
-    bool m_lastEvaluatedShardIdHasBeenSet;
+    bool m_lastEvaluatedShardIdHasBeenSet = false;
   };
 
 } // namespace Model

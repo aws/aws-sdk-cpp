@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, BucketCriteriaAdditionalProperties> m_criteria;
-    bool m_criteriaHasBeenSet;
+    bool m_criteriaHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     BucketSortCriteria m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_billingGroups;
-    bool m_billingGroupsHasBeenSet;
+    bool m_billingGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_arns;
-    bool m_arnsHasBeenSet;
+    bool m_arnsHasBeenSet = false;
   };
 
 } // namespace Model

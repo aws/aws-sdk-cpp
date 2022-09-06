@@ -2474,46 +2474,46 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RRType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_setIdentifier;
-    bool m_setIdentifierHasBeenSet;
+    bool m_setIdentifierHasBeenSet = false;
 
     long long m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
 
     ResourceRecordSetRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     GeoLocation m_geoLocation;
-    bool m_geoLocationHasBeenSet;
+    bool m_geoLocationHasBeenSet = false;
 
     ResourceRecordSetFailover m_failover;
-    bool m_failoverHasBeenSet;
+    bool m_failoverHasBeenSet = false;
 
     bool m_multiValueAnswer;
-    bool m_multiValueAnswerHasBeenSet;
+    bool m_multiValueAnswerHasBeenSet = false;
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
 
     Aws::Vector<ResourceRecord> m_resourceRecords;
-    bool m_resourceRecordsHasBeenSet;
+    bool m_resourceRecordsHasBeenSet = false;
 
     AliasTarget m_aliasTarget;
-    bool m_aliasTargetHasBeenSet;
+    bool m_aliasTargetHasBeenSet = false;
 
     Aws::String m_healthCheckId;
-    bool m_healthCheckIdHasBeenSet;
+    bool m_healthCheckIdHasBeenSet = false;
 
     Aws::String m_trafficPolicyInstanceId;
-    bool m_trafficPolicyInstanceIdHasBeenSet;
+    bool m_trafficPolicyInstanceIdHasBeenSet = false;
 
     CidrRoutingConfig m_cidrRoutingConfig;
-    bool m_cidrRoutingConfigHasBeenSet;
+    bool m_cidrRoutingConfigHasBeenSet = false;
   };
 
 } // namespace Model

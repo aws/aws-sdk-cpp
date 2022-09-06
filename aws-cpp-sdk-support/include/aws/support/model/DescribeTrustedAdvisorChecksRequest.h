@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

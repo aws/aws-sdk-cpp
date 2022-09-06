@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ModelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_modelNameBeginsWith;
-    bool m_modelNameBeginsWithHasBeenSet;
+    bool m_modelNameBeginsWithHasBeenSet = false;
 
     Aws::String m_datasetNameBeginsWith;
-    bool m_datasetNameBeginsWithHasBeenSet;
+    bool m_datasetNameBeginsWithHasBeenSet = false;
   };
 
 } // namespace Model

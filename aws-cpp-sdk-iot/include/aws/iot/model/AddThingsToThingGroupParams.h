@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_thingGroupNames;
-    bool m_thingGroupNamesHasBeenSet;
+    bool m_thingGroupNamesHasBeenSet = false;
 
     bool m_overrideDynamicGroups;
-    bool m_overrideDynamicGroupsHasBeenSet;
+    bool m_overrideDynamicGroupsHasBeenSet = false;
   };
 
 } // namespace Model

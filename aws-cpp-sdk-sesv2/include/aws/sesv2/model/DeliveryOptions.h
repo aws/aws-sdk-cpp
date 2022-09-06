@@ -145,10 +145,10 @@ namespace Model
   private:
 
     TlsPolicy m_tlsPolicy;
-    bool m_tlsPolicyHasBeenSet;
+    bool m_tlsPolicyHasBeenSet = false;
 
     Aws::String m_sendingPoolName;
-    bool m_sendingPoolNameHasBeenSet;
+    bool m_sendingPoolNameHasBeenSet = false;
   };
 
 } // namespace Model

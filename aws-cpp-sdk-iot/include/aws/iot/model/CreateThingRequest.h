@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     AttributePayload m_attributePayload;
-    bool m_attributePayloadHasBeenSet;
+    bool m_attributePayloadHasBeenSet = false;
 
     Aws::String m_billingGroupName;
-    bool m_billingGroupNameHasBeenSet;
+    bool m_billingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

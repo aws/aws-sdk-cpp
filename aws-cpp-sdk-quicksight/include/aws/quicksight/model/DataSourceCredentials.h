@@ -150,10 +150,10 @@ namespace Model
   private:
 
     CredentialPair m_credentialPair;
-    bool m_credentialPairHasBeenSet;
+    bool m_credentialPairHasBeenSet = false;
 
     Aws::String m_copySourceArn;
-    bool m_copySourceArnHasBeenSet;
+    bool m_copySourceArnHasBeenSet = false;
   };
 
 } // namespace Model

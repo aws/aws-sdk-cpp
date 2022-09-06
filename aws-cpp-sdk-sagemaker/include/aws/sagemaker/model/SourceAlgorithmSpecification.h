@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<SourceAlgorithm> m_sourceAlgorithms;
-    bool m_sourceAlgorithmsHasBeenSet;
+    bool m_sourceAlgorithmsHasBeenSet = false;
   };
 
 } // namespace Model

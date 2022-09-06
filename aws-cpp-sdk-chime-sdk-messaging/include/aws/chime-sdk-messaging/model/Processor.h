@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProcessorConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     int m_executionOrder;
-    bool m_executionOrderHasBeenSet;
+    bool m_executionOrderHasBeenSet = false;
 
     FallbackAction m_fallbackAction;
-    bool m_fallbackActionHasBeenSet;
+    bool m_fallbackActionHasBeenSet = false;
   };
 
 } // namespace Model

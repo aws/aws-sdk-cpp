@@ -59,7 +59,7 @@ namespace Model
   private:
 
     Aws::String m_configurationName;
-    bool m_configurationNameHasBeenSet;
+    bool m_configurationNameHasBeenSet = false;
   };
 
 } // namespace Model

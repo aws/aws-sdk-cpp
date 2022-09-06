@@ -369,25 +369,25 @@ namespace Model
   private:
 
     Aws::String m_proposalId;
-    bool m_proposalIdHasBeenSet;
+    bool m_proposalIdHasBeenSet = false;
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::String m_directConnectGatewayOwnerAccount;
-    bool m_directConnectGatewayOwnerAccountHasBeenSet;
+    bool m_directConnectGatewayOwnerAccountHasBeenSet = false;
 
     DirectConnectGatewayAssociationProposalState m_proposalState;
-    bool m_proposalStateHasBeenSet;
+    bool m_proposalStateHasBeenSet = false;
 
     AssociatedGateway m_associatedGateway;
-    bool m_associatedGatewayHasBeenSet;
+    bool m_associatedGatewayHasBeenSet = false;
 
     Aws::Vector<RouteFilterPrefix> m_existingAllowedPrefixesToDirectConnectGateway;
-    bool m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet;
+    bool m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 
     Aws::Vector<RouteFilterPrefix> m_requestedAllowedPrefixesToDirectConnectGateway;
-    bool m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet;
+    bool m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
   };
 
 } // namespace Model

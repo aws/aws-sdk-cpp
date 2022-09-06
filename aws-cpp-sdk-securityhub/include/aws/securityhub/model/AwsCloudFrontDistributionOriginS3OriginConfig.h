@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_originAccessIdentity;
-    bool m_originAccessIdentityHasBeenSet;
+    bool m_originAccessIdentityHasBeenSet = false;
   };
 
 } // namespace Model

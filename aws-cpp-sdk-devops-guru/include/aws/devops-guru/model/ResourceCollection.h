@@ -339,10 +339,10 @@ namespace Model
   private:
 
     CloudFormationCollection m_cloudFormation;
-    bool m_cloudFormationHasBeenSet;
+    bool m_cloudFormationHasBeenSet = false;
 
     Aws::Vector<TagCollection> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -139,10 +139,10 @@ namespace Model
   private:
 
     ExternalModelSummary m_externalModel;
-    bool m_externalModelHasBeenSet;
+    bool m_externalModelHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_files;
-    bool m_filesHasBeenSet;
+    bool m_filesHasBeenSet = false;
   };
 
 } // namespace Model

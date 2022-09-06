@@ -287,22 +287,22 @@ namespace Model
   private:
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     Aws::String m_entityType;
-    bool m_entityTypeHasBeenSet;
+    bool m_entityTypeHasBeenSet = false;
 
     Aws::Vector<Filter> m_filterList;
-    bool m_filterListHasBeenSet;
+    bool m_filterListHasBeenSet = false;
 
     Sort m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -401,22 +401,22 @@ namespace Model
   private:
 
     Aws::String m_protectionGroupId;
-    bool m_protectionGroupIdHasBeenSet;
+    bool m_protectionGroupIdHasBeenSet = false;
 
     ProtectionGroupAggregation m_aggregation;
-    bool m_aggregationHasBeenSet;
+    bool m_aggregationHasBeenSet = false;
 
     ProtectionGroupPattern m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     ProtectedResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_elementPath;
-    bool m_elementPathHasBeenSet;
+    bool m_elementPathHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_planName;
-    bool m_planNameHasBeenSet;
+    bool m_planNameHasBeenSet = false;
 
     Aws::String m_planId;
-    bool m_planIdHasBeenSet;
+    bool m_planIdHasBeenSet = false;
 
     Aws::String m_provisionProductId;
-    bool m_provisionProductIdHasBeenSet;
+    bool m_provisionProductIdHasBeenSet = false;
 
     Aws::String m_provisionProductName;
-    bool m_provisionProductNameHasBeenSet;
+    bool m_provisionProductNameHasBeenSet = false;
 
     ProvisionedProductPlanType m_planType;
-    bool m_planTypeHasBeenSet;
+    bool m_planTypeHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
   };
 
 } // namespace Model

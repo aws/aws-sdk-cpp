@@ -64,7 +64,7 @@ namespace Model
   private:
 
     int m_attempts;
-    bool m_attemptsHasBeenSet;
+    bool m_attemptsHasBeenSet = false;
   };
 
 } // namespace Model

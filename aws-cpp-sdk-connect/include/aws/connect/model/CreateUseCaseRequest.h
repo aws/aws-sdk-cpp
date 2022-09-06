@@ -242,16 +242,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_integrationAssociationId;
-    bool m_integrationAssociationIdHasBeenSet;
+    bool m_integrationAssociationIdHasBeenSet = false;
 
     UseCaseType m_useCaseType;
-    bool m_useCaseTypeHasBeenSet;
+    bool m_useCaseTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

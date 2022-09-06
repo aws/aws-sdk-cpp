@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_directory;
-    bool m_directoryHasBeenSet;
+    bool m_directoryHasBeenSet = false;
 
     Aws::String m_parent;
-    bool m_parentHasBeenSet;
+    bool m_parentHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

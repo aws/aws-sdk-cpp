@@ -124,7 +124,7 @@ WAFV2Client::~WAFV2Client()
 
 void WAFV2Client::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("WAFV2");
+  AWSClient::SetServiceClientName("WAFV2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

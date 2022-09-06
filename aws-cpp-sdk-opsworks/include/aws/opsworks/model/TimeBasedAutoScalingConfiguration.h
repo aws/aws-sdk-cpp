@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     WeeklyAutoScalingSchedule m_autoScalingSchedule;
-    bool m_autoScalingScheduleHasBeenSet;
+    bool m_autoScalingScheduleHasBeenSet = false;
   };
 
 } // namespace Model

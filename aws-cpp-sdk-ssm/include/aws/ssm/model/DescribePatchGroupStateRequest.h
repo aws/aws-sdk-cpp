@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_patchGroup;
-    bool m_patchGroupHasBeenSet;
+    bool m_patchGroupHasBeenSet = false;
   };
 
 } // namespace Model

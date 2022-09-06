@@ -218,19 +218,19 @@ namespace Model
   private:
 
     OfferingStatus m_offeringStatus;
-    bool m_offeringStatusHasBeenSet;
+    bool m_offeringStatusHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::String m_offeringPromotionId;
-    bool m_offeringPromotionIdHasBeenSet;
+    bool m_offeringPromotionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     MonetaryAmount m_cost;
-    bool m_costHasBeenSet;
+    bool m_costHasBeenSet = false;
   };
 
 } // namespace Model

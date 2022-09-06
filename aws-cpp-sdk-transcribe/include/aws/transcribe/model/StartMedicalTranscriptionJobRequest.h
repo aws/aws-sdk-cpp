@@ -1311,46 +1311,46 @@ namespace Model
   private:
 
     Aws::String m_medicalTranscriptionJobName;
-    bool m_medicalTranscriptionJobNameHasBeenSet;
+    bool m_medicalTranscriptionJobNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaFormat m_mediaFormat;
-    bool m_mediaFormatHasBeenSet;
+    bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     Aws::String m_outputBucketName;
-    bool m_outputBucketNameHasBeenSet;
+    bool m_outputBucketNameHasBeenSet = false;
 
     Aws::String m_outputKey;
-    bool m_outputKeyHasBeenSet;
+    bool m_outputKeyHasBeenSet = false;
 
     Aws::String m_outputEncryptionKMSKeyId;
-    bool m_outputEncryptionKMSKeyIdHasBeenSet;
+    bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_kMSEncryptionContext;
-    bool m_kMSEncryptionContextHasBeenSet;
+    bool m_kMSEncryptionContextHasBeenSet = false;
 
     MedicalTranscriptionSetting m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     MedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
 
     Specialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

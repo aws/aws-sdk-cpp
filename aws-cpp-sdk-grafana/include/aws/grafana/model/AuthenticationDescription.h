@@ -180,13 +180,13 @@ namespace Model
   private:
 
     AwsSsoAuthentication m_awsSso;
-    bool m_awsSsoHasBeenSet;
+    bool m_awsSsoHasBeenSet = false;
 
     Aws::Vector<AuthenticationProviderTypes> m_providers;
-    bool m_providersHasBeenSet;
+    bool m_providersHasBeenSet = false;
 
     SamlAuthentication m_saml;
-    bool m_samlHasBeenSet;
+    bool m_samlHasBeenSet = false;
   };
 
 } // namespace Model

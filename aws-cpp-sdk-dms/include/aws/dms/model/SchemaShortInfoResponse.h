@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_databaseId;
-    bool m_databaseIdHasBeenSet;
+    bool m_databaseIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_databaseIpAddress;
-    bool m_databaseIpAddressHasBeenSet;
+    bool m_databaseIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

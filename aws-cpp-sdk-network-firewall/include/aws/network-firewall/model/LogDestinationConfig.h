@@ -383,13 +383,13 @@ namespace Model
   private:
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     LogDestinationType m_logDestinationType;
-    bool m_logDestinationTypeHasBeenSet;
+    bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_logDestination;
-    bool m_logDestinationHasBeenSet;
+    bool m_logDestinationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -95,10 +95,10 @@ namespace Model
   private:
 
     FailedItemErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     bool m_retryable;
-    bool m_retryableHasBeenSet;
+    bool m_retryableHasBeenSet = false;
   };
 
 } // namespace Model

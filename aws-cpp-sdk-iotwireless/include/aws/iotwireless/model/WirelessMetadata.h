@@ -102,10 +102,10 @@ namespace Model
   private:
 
     LoRaWANSendDataToDevice m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
 
     SidewalkSendDataToDevice m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
   };
 
 } // namespace Model

@@ -473,43 +473,43 @@ namespace Model
   private:
 
     Aws::String m_pipelineArn;
-    bool m_pipelineArnHasBeenSet;
+    bool m_pipelineArnHasBeenSet = false;
 
     Aws::String m_pipelineExecutionArn;
-    bool m_pipelineExecutionArnHasBeenSet;
+    bool m_pipelineExecutionArnHasBeenSet = false;
 
     Aws::String m_pipelineExecutionDisplayName;
-    bool m_pipelineExecutionDisplayNameHasBeenSet;
+    bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
     PipelineExecutionStatus m_pipelineExecutionStatus;
-    bool m_pipelineExecutionStatusHasBeenSet;
+    bool m_pipelineExecutionStatusHasBeenSet = false;
 
     Aws::String m_pipelineExecutionDescription;
-    bool m_pipelineExecutionDescriptionHasBeenSet;
+    bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
     PipelineExperimentConfig m_pipelineExperimentConfig;
-    bool m_pipelineExperimentConfigHasBeenSet;
+    bool m_pipelineExperimentConfigHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     ParallelismConfiguration m_parallelismConfiguration;
-    bool m_parallelismConfigurationHasBeenSet;
+    bool m_parallelismConfigurationHasBeenSet = false;
 
     Aws::Vector<Parameter> m_pipelineParameters;
-    bool m_pipelineParametersHasBeenSet;
+    bool m_pipelineParametersHasBeenSet = false;
   };
 
 } // namespace Model

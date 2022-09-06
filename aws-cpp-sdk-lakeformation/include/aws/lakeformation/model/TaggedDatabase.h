@@ -114,10 +114,10 @@ namespace Model
   private:
 
     DatabaseResource m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::Vector<LFTagPair> m_lFTags;
-    bool m_lFTagsHasBeenSet;
+    bool m_lFTagsHasBeenSet = false;
   };
 
 } // namespace Model

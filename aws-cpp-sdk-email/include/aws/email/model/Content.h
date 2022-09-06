@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_charset;
-    bool m_charsetHasBeenSet;
+    bool m_charsetHasBeenSet = false;
   };
 
 } // namespace Model

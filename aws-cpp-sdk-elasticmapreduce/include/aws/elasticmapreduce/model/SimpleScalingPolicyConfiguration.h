@@ -223,13 +223,13 @@ namespace Model
   private:
 
     AdjustmentType m_adjustmentType;
-    bool m_adjustmentTypeHasBeenSet;
+    bool m_adjustmentTypeHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
 
     int m_coolDown;
-    bool m_coolDownHasBeenSet;
+    bool m_coolDownHasBeenSet = false;
   };
 
 } // namespace Model

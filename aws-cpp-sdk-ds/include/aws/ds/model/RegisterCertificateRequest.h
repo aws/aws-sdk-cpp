@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_certificateData;
-    bool m_certificateDataHasBeenSet;
+    bool m_certificateDataHasBeenSet = false;
 
     CertificateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ClientCertAuthSettings m_clientCertAuthSettings;
-    bool m_clientCertAuthSettingsHasBeenSet;
+    bool m_clientCertAuthSettingsHasBeenSet = false;
   };
 
 } // namespace Model

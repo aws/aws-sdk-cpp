@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     SortByEnum m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     OrderEnum m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

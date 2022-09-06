@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupVersionId;
-    bool m_groupVersionIdHasBeenSet;
+    bool m_groupVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

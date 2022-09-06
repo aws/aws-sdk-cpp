@@ -106,7 +106,7 @@ FMSClient::~FMSClient()
 
 void FMSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("FMS");
+  AWSClient::SetServiceClientName("FMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

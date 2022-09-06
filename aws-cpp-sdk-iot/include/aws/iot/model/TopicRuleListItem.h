@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_ruleArn;
-    bool m_ruleArnHasBeenSet;
+    bool m_ruleArnHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_topicPattern;
-    bool m_topicPatternHasBeenSet;
+    bool m_topicPatternHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     bool m_ruleDisabled;
-    bool m_ruleDisabledHasBeenSet;
+    bool m_ruleDisabledHasBeenSet = false;
   };
 
 } // namespace Model

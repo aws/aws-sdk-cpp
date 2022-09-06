@@ -920,43 +920,43 @@ namespace Model
   private:
 
     Aws::String m_enterpriseId;
-    bool m_enterpriseIdHasBeenSet;
+    bool m_enterpriseIdHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     bool m_crawlComments;
-    bool m_crawlCommentsHasBeenSet;
+    bool m_crawlCommentsHasBeenSet = false;
 
     bool m_crawlTasks;
-    bool m_crawlTasksHasBeenSet;
+    bool m_crawlTasksHasBeenSet = false;
 
     bool m_crawlWebLinks;
-    bool m_crawlWebLinksHasBeenSet;
+    bool m_crawlWebLinksHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fileFieldMappings;
-    bool m_fileFieldMappingsHasBeenSet;
+    bool m_fileFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_taskFieldMappings;
-    bool m_taskFieldMappingsHasBeenSet;
+    bool m_taskFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_commentFieldMappings;
-    bool m_commentFieldMappingsHasBeenSet;
+    bool m_commentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_webLinkFieldMappings;
-    bool m_webLinkFieldMappingsHasBeenSet;
+    bool m_webLinkFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -120,10 +120,10 @@ namespace Model
   private:
 
     RuleGroupVariables m_ruleVariables;
-    bool m_ruleVariablesHasBeenSet;
+    bool m_ruleVariablesHasBeenSet = false;
 
     RuleGroupSource m_rulesSource;
-    bool m_rulesSourceHasBeenSet;
+    bool m_rulesSourceHasBeenSet = false;
   };
 
 } // namespace Model

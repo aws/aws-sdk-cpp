@@ -1272,76 +1272,76 @@ namespace Model
   private:
 
     Aws::Vector<CmafAdditionalManifest> m_additionalManifests;
-    bool m_additionalManifestsHasBeenSet;
+    bool m_additionalManifestsHasBeenSet = false;
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
 
     CmafClientCache m_clientCache;
-    bool m_clientCacheHasBeenSet;
+    bool m_clientCacheHasBeenSet = false;
 
     CmafCodecSpecification m_codecSpecification;
-    bool m_codecSpecificationHasBeenSet;
+    bool m_codecSpecificationHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     CmafEncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_fragmentLength;
-    bool m_fragmentLengthHasBeenSet;
+    bool m_fragmentLengthHasBeenSet = false;
 
     CmafImageBasedTrickPlay m_imageBasedTrickPlay;
-    bool m_imageBasedTrickPlayHasBeenSet;
+    bool m_imageBasedTrickPlayHasBeenSet = false;
 
     CmafImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
     CmafManifestCompression m_manifestCompression;
-    bool m_manifestCompressionHasBeenSet;
+    bool m_manifestCompressionHasBeenSet = false;
 
     CmafManifestDurationFormat m_manifestDurationFormat;
-    bool m_manifestDurationFormatHasBeenSet;
+    bool m_manifestDurationFormatHasBeenSet = false;
 
     int m_minBufferTime;
-    bool m_minBufferTimeHasBeenSet;
+    bool m_minBufferTimeHasBeenSet = false;
 
     double m_minFinalSegmentLength;
-    bool m_minFinalSegmentLengthHasBeenSet;
+    bool m_minFinalSegmentLengthHasBeenSet = false;
 
     CmafMpdProfile m_mpdProfile;
-    bool m_mpdProfileHasBeenSet;
+    bool m_mpdProfileHasBeenSet = false;
 
     CmafPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames;
-    bool m_ptsOffsetHandlingForBFramesHasBeenSet;
+    bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
 
     CmafSegmentControl m_segmentControl;
-    bool m_segmentControlHasBeenSet;
+    bool m_segmentControlHasBeenSet = false;
 
     int m_segmentLength;
-    bool m_segmentLengthHasBeenSet;
+    bool m_segmentLengthHasBeenSet = false;
 
     CmafSegmentLengthControl m_segmentLengthControl;
-    bool m_segmentLengthControlHasBeenSet;
+    bool m_segmentLengthControlHasBeenSet = false;
 
     CmafStreamInfResolution m_streamInfResolution;
-    bool m_streamInfResolutionHasBeenSet;
+    bool m_streamInfResolutionHasBeenSet = false;
 
     CmafTargetDurationCompatibilityMode m_targetDurationCompatibilityMode;
-    bool m_targetDurationCompatibilityModeHasBeenSet;
+    bool m_targetDurationCompatibilityModeHasBeenSet = false;
 
     CmafWriteDASHManifest m_writeDashManifest;
-    bool m_writeDashManifestHasBeenSet;
+    bool m_writeDashManifestHasBeenSet = false;
 
     CmafWriteHLSManifest m_writeHlsManifest;
-    bool m_writeHlsManifestHasBeenSet;
+    bool m_writeHlsManifestHasBeenSet = false;
 
     CmafWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation;
-    bool m_writeSegmentTimelineInRepresentationHasBeenSet;
+    bool m_writeSegmentTimelineInRepresentationHasBeenSet = false;
   };
 
 } // namespace Model

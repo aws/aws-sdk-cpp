@@ -144,10 +144,10 @@ namespace Model
   private:
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     FrameCaptureCdnSettings m_frameCaptureCdnSettings;
-    bool m_frameCaptureCdnSettingsHasBeenSet;
+    bool m_frameCaptureCdnSettingsHasBeenSet = false;
   };
 
 } // namespace Model

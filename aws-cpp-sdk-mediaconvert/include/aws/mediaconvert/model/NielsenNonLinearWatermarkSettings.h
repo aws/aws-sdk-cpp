@@ -686,37 +686,37 @@ namespace Model
   private:
 
     NielsenActiveWatermarkProcessType m_activeWatermarkProcess;
-    bool m_activeWatermarkProcessHasBeenSet;
+    bool m_activeWatermarkProcessHasBeenSet = false;
 
     Aws::String m_adiFilename;
-    bool m_adiFilenameHasBeenSet;
+    bool m_adiFilenameHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_assetName;
-    bool m_assetNameHasBeenSet;
+    bool m_assetNameHasBeenSet = false;
 
     Aws::String m_cbetSourceId;
-    bool m_cbetSourceIdHasBeenSet;
+    bool m_cbetSourceIdHasBeenSet = false;
 
     Aws::String m_episodeId;
-    bool m_episodeIdHasBeenSet;
+    bool m_episodeIdHasBeenSet = false;
 
     Aws::String m_metadataDestination;
-    bool m_metadataDestinationHasBeenSet;
+    bool m_metadataDestinationHasBeenSet = false;
 
     int m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     NielsenSourceWatermarkStatusType m_sourceWatermarkStatus;
-    bool m_sourceWatermarkStatusHasBeenSet;
+    bool m_sourceWatermarkStatusHasBeenSet = false;
 
     Aws::String m_ticServerUrl;
-    bool m_ticServerUrlHasBeenSet;
+    bool m_ticServerUrlHasBeenSet = false;
 
     NielsenUniqueTicPerAudioTrackType m_uniqueTicPerAudioTrack;
-    bool m_uniqueTicPerAudioTrackHasBeenSet;
+    bool m_uniqueTicPerAudioTrackHasBeenSet = false;
   };
 
 } // namespace Model

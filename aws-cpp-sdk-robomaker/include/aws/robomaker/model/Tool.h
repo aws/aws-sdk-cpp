@@ -232,19 +232,19 @@ namespace Model
   private:
 
     bool m_streamUI;
-    bool m_streamUIHasBeenSet;
+    bool m_streamUIHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     bool m_streamOutputToCloudWatch;
-    bool m_streamOutputToCloudWatchHasBeenSet;
+    bool m_streamOutputToCloudWatchHasBeenSet = false;
 
     ExitBehavior m_exitBehavior;
-    bool m_exitBehaviorHasBeenSet;
+    bool m_exitBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

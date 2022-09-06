@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_bindingEvent;
-    bool m_bindingEventHasBeenSet;
+    bool m_bindingEventHasBeenSet = false;
 
     ActionParameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<StartRequest> m_startWorkspaceRequests;
-    bool m_startWorkspaceRequestsHasBeenSet;
+    bool m_startWorkspaceRequestsHasBeenSet = false;
   };
 
 } // namespace Model

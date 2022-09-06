@@ -686,55 +686,55 @@ namespace Model
   private:
 
     UpdateEncryption m_decryption;
-    bool m_decryptionHasBeenSet;
+    bool m_decryptionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     int m_ingestPort;
-    bool m_ingestPortHasBeenSet;
+    bool m_ingestPortHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_maxLatency;
-    bool m_maxLatencyHasBeenSet;
+    bool m_maxLatencyHasBeenSet = false;
 
     int m_maxSyncBuffer;
-    bool m_maxSyncBufferHasBeenSet;
+    bool m_maxSyncBufferHasBeenSet = false;
 
     Aws::Vector<MediaStreamSourceConfigurationRequest> m_mediaStreamSourceConfigurations;
-    bool m_mediaStreamSourceConfigurationsHasBeenSet;
+    bool m_mediaStreamSourceConfigurationsHasBeenSet = false;
 
     int m_minLatency;
-    bool m_minLatencyHasBeenSet;
+    bool m_minLatencyHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     int m_senderControlPort;
-    bool m_senderControlPortHasBeenSet;
+    bool m_senderControlPortHasBeenSet = false;
 
     Aws::String m_senderIpAddress;
-    bool m_senderIpAddressHasBeenSet;
+    bool m_senderIpAddressHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::String m_vpcInterfaceName;
-    bool m_vpcInterfaceNameHasBeenSet;
+    bool m_vpcInterfaceNameHasBeenSet = false;
 
     Aws::String m_whitelistCidr;
-    bool m_whitelistCidrHasBeenSet;
+    bool m_whitelistCidrHasBeenSet = false;
   };
 
 } // namespace Model

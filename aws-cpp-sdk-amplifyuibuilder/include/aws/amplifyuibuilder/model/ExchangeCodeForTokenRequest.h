@@ -103,10 +103,10 @@ namespace Model
   private:
 
     TokenProviders m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     ExchangeCodeForTokenRequestBody m_request;
-    bool m_requestHasBeenSet;
+    bool m_requestHasBeenSet = false;
   };
 
 } // namespace Model

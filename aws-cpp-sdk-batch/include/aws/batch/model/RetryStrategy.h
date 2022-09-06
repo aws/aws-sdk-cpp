@@ -132,10 +132,10 @@ namespace Model
   private:
 
     int m_attempts;
-    bool m_attemptsHasBeenSet;
+    bool m_attemptsHasBeenSet = false;
 
     Aws::Vector<EvaluateOnExit> m_evaluateOnExit;
-    bool m_evaluateOnExitHasBeenSet;
+    bool m_evaluateOnExitHasBeenSet = false;
   };
 
 } // namespace Model

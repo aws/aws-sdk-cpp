@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_minSeconds;
-    bool m_minSecondsHasBeenSet;
+    bool m_minSecondsHasBeenSet = false;
 
     int m_maxSeconds;
-    bool m_maxSecondsHasBeenSet;
+    bool m_maxSecondsHasBeenSet = false;
   };
 
 } // namespace Model

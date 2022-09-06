@@ -82,7 +82,7 @@ ApplicationCostProfilerClient::~ApplicationCostProfilerClient()
 
 void ApplicationCostProfilerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ApplicationCostProfiler");
+  AWSClient::SetServiceClientName("ApplicationCostProfiler");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

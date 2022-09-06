@@ -110,7 +110,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventArns;
-    bool m_eventArnsHasBeenSet;
+    bool m_eventArnsHasBeenSet = false;
   };
 
 } // namespace Model

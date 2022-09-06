@@ -71,7 +71,7 @@ namespace Model
   private:
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
   };
 
 } // namespace Model

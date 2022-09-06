@@ -320,22 +320,22 @@ namespace Model
   private:
 
     StreamingClipboardMode m_clipboardMode;
-    bool m_clipboardModeHasBeenSet;
+    bool m_clipboardModeHasBeenSet = false;
 
     Aws::Vector<StreamingInstanceType> m_ec2InstanceTypes;
-    bool m_ec2InstanceTypesHasBeenSet;
+    bool m_ec2InstanceTypesHasBeenSet = false;
 
     int m_maxSessionLengthInMinutes;
-    bool m_maxSessionLengthInMinutesHasBeenSet;
+    bool m_maxSessionLengthInMinutesHasBeenSet = false;
 
     int m_maxStoppedSessionLengthInMinutes;
-    bool m_maxStoppedSessionLengthInMinutesHasBeenSet;
+    bool m_maxStoppedSessionLengthInMinutesHasBeenSet = false;
 
     StreamConfigurationSessionStorage m_sessionStorage;
-    bool m_sessionStorageHasBeenSet;
+    bool m_sessionStorageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_streamingImageIds;
-    bool m_streamingImageIdsHasBeenSet;
+    bool m_streamingImageIdsHasBeenSet = false;
   };
 
 } // namespace Model

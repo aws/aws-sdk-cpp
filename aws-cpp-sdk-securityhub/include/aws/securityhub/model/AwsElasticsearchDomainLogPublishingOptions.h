@@ -121,13 +121,13 @@ namespace Model
   private:
 
     AwsElasticsearchDomainLogPublishingOptionsLogConfig m_indexSlowLogs;
-    bool m_indexSlowLogsHasBeenSet;
+    bool m_indexSlowLogsHasBeenSet = false;
 
     AwsElasticsearchDomainLogPublishingOptionsLogConfig m_searchSlowLogs;
-    bool m_searchSlowLogsHasBeenSet;
+    bool m_searchSlowLogsHasBeenSet = false;
 
     AwsElasticsearchDomainLogPublishingOptionsLogConfig m_auditLogs;
-    bool m_auditLogsHasBeenSet;
+    bool m_auditLogsHasBeenSet = false;
   };
 
 } // namespace Model

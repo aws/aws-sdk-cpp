@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_streamingEndpointArn;
-    bool m_streamingEndpointArnHasBeenSet;
+    bool m_streamingEndpointArnHasBeenSet = false;
   };
 
 } // namespace Model

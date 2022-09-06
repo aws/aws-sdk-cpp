@@ -71,7 +71,7 @@ namespace Model
   private:
 
     IotSiteWiseAssetModelPropertyIdentifier m_iotSiteWiseAssetModelPropertyIdentifier;
-    bool m_iotSiteWiseAssetModelPropertyIdentifierHasBeenSet;
+    bool m_iotSiteWiseAssetModelPropertyIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

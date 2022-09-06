@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_customAuthenticationType;
-    bool m_customAuthenticationTypeHasBeenSet;
+    bool m_customAuthenticationTypeHasBeenSet = false;
 
     Aws::Vector<AuthParameter> m_authParameters;
-    bool m_authParametersHasBeenSet;
+    bool m_authParametersHasBeenSet = false;
   };
 
 } // namespace Model

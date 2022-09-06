@@ -224,16 +224,16 @@ namespace Model
   private:
 
     ExecutorConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     ExecutorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_policyStatementsTemplate;
-    bool m_policyStatementsTemplateHasBeenSet;
+    bool m_policyStatementsTemplateHasBeenSet = false;
 
     int m_jobTimeout;
-    bool m_jobTimeoutHasBeenSet;
+    bool m_jobTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

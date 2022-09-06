@@ -140,13 +140,13 @@ namespace Model
   private:
 
     Aws::String m_optedOutNumber;
-    bool m_optedOutNumberHasBeenSet;
+    bool m_optedOutNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_optedOutTimestamp;
-    bool m_optedOutTimestampHasBeenSet;
+    bool m_optedOutTimestampHasBeenSet = false;
 
     bool m_endUserOptedOut;
-    bool m_endUserOptedOutHasBeenSet;
+    bool m_endUserOptedOutHasBeenSet = false;
   };
 
 } // namespace Model

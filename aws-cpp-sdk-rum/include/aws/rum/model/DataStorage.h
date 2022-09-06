@@ -84,7 +84,7 @@ namespace Model
   private:
 
     CwLog m_cwLog;
-    bool m_cwLogHasBeenSet;
+    bool m_cwLogHasBeenSet = false;
   };
 
 } // namespace Model

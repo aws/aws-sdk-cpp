@@ -365,19 +365,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_retries;
-    bool m_retriesHasBeenSet;
+    bool m_retriesHasBeenSet = false;
 
     int m_startPeriod;
-    bool m_startPeriodHasBeenSet;
+    bool m_startPeriodHasBeenSet = false;
   };
 
 } // namespace Model

@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_multipartUploadId;
-    bool m_multipartUploadIdHasBeenSet;
+    bool m_multipartUploadIdHasBeenSet = false;
 
     Aws::String m_vaultARN;
-    bool m_vaultARNHasBeenSet;
+    bool m_vaultARNHasBeenSet = false;
 
     Aws::String m_archiveDescription;
-    bool m_archiveDescriptionHasBeenSet;
+    bool m_archiveDescriptionHasBeenSet = false;
 
     long long m_partSizeInBytes;
-    bool m_partSizeInBytesHasBeenSet;
+    bool m_partSizeInBytesHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

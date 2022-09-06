@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_distributionId;
-    bool m_distributionIdHasBeenSet;
+    bool m_distributionIdHasBeenSet = false;
   };
 
 } // namespace Model

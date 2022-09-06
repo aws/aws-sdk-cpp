@@ -241,19 +241,19 @@ namespace Model
   private:
 
     LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;
-    bool m_launchTemplateAndOverridesHasBeenSet;
+    bool m_launchTemplateAndOverridesHasBeenSet = false;
 
     InstanceLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     PlatformValues m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

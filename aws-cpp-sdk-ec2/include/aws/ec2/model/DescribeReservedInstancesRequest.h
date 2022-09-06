@@ -545,19 +545,19 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     OfferingClassType m_offeringClass;
-    bool m_offeringClassHasBeenSet;
+    bool m_offeringClassHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reservedInstancesIds;
-    bool m_reservedInstancesIdsHasBeenSet;
+    bool m_reservedInstancesIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     OfferingTypeValues m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
   };
 
 } // namespace Model

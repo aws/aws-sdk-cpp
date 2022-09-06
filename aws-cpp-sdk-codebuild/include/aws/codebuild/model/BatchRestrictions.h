@@ -143,10 +143,10 @@ namespace Model
   private:
 
     int m_maximumBuildsAllowed;
-    bool m_maximumBuildsAllowedHasBeenSet;
+    bool m_maximumBuildsAllowedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_computeTypesAllowed;
-    bool m_computeTypesAllowedHasBeenSet;
+    bool m_computeTypesAllowedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_securityGroupIdentifier;
-    bool m_securityGroupIdentifierHasBeenSet;
+    bool m_securityGroupIdentifierHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

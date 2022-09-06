@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_audioRenditionSets;
-    bool m_audioRenditionSetsHasBeenSet;
+    bool m_audioRenditionSetsHasBeenSet = false;
 
     M3u8Settings m_m3u8Settings;
-    bool m_m3u8SettingsHasBeenSet;
+    bool m_m3u8SettingsHasBeenSet = false;
   };
 
 } // namespace Model

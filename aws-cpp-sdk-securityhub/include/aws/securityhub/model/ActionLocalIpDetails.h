@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_ipAddressV4;
-    bool m_ipAddressV4HasBeenSet;
+    bool m_ipAddressV4HasBeenSet = false;
   };
 
 } // namespace Model

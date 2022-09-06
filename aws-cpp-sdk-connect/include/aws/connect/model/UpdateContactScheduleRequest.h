@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
   };
 
 } // namespace Model

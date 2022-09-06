@@ -318,34 +318,34 @@ namespace Model
   private:
 
     bool m_isNull;
-    bool m_isNullHasBeenSet;
+    bool m_isNullHasBeenSet = false;
 
     bool m_bitValue;
-    bool m_bitValueHasBeenSet;
+    bool m_bitValueHasBeenSet = false;
 
     long long m_bigIntValue;
-    bool m_bigIntValueHasBeenSet;
+    bool m_bigIntValueHasBeenSet = false;
 
     int m_intValue;
-    bool m_intValueHasBeenSet;
+    bool m_intValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     double m_realValue;
-    bool m_realValueHasBeenSet;
+    bool m_realValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_blobValue;
-    bool m_blobValueHasBeenSet;
+    bool m_blobValueHasBeenSet = false;
 
     Aws::Vector<Value> m_arrayValues;
-    bool m_arrayValuesHasBeenSet;
+    bool m_arrayValuesHasBeenSet = false;
 
     std::shared_ptr<StructValue> m_structValue;
-    bool m_structValueHasBeenSet;
+    bool m_structValueHasBeenSet = false;
   };
 
 } // namespace Model

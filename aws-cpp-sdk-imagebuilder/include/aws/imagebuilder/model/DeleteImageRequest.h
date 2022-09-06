@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_imageBuildVersionArn;
-    bool m_imageBuildVersionArnHasBeenSet;
+    bool m_imageBuildVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

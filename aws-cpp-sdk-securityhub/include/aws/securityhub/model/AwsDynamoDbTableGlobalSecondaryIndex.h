@@ -349,31 +349,31 @@ namespace Model
   private:
 
     bool m_backfilling;
-    bool m_backfillingHasBeenSet;
+    bool m_backfillingHasBeenSet = false;
 
     Aws::String m_indexArn;
-    bool m_indexArnHasBeenSet;
+    bool m_indexArnHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     long long m_indexSizeBytes;
-    bool m_indexSizeBytesHasBeenSet;
+    bool m_indexSizeBytesHasBeenSet = false;
 
     Aws::String m_indexStatus;
-    bool m_indexStatusHasBeenSet;
+    bool m_indexStatusHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::Vector<AwsDynamoDbTableKeySchema> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     AwsDynamoDbTableProjection m_projection;
-    bool m_projectionHasBeenSet;
+    bool m_projectionHasBeenSet = false;
 
     AwsDynamoDbTableProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
   };
 
 } // namespace Model

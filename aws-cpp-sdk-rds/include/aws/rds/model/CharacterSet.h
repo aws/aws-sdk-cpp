@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_characterSetName;
-    bool m_characterSetNameHasBeenSet;
+    bool m_characterSetNameHasBeenSet = false;
 
     Aws::String m_characterSetDescription;
-    bool m_characterSetDescriptionHasBeenSet;
+    bool m_characterSetDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -490,40 +490,40 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     SnapshotState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     StorageTier m_storageTier;
-    bool m_storageTierHasBeenSet;
+    bool m_storageTierHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastTieringStartTime;
-    bool m_lastTieringStartTimeHasBeenSet;
+    bool m_lastTieringStartTimeHasBeenSet = false;
 
     int m_lastTieringProgress;
-    bool m_lastTieringProgressHasBeenSet;
+    bool m_lastTieringProgressHasBeenSet = false;
 
     TieringOperationStatus m_lastTieringOperationStatus;
-    bool m_lastTieringOperationStatusHasBeenSet;
+    bool m_lastTieringOperationStatusHasBeenSet = false;
 
     Aws::String m_lastTieringOperationStatusDetail;
-    bool m_lastTieringOperationStatusDetailHasBeenSet;
+    bool m_lastTieringOperationStatusDetailHasBeenSet = false;
 
     Aws::Utils::DateTime m_archivalCompleteTime;
-    bool m_archivalCompleteTimeHasBeenSet;
+    bool m_archivalCompleteTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreExpiryTime;
-    bool m_restoreExpiryTimeHasBeenSet;
+    bool m_restoreExpiryTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_virtualGatewayId;
-    bool m_virtualGatewayIdHasBeenSet;
+    bool m_virtualGatewayIdHasBeenSet = false;
 
     Aws::String m_virtualGatewayState;
-    bool m_virtualGatewayStateHasBeenSet;
+    bool m_virtualGatewayStateHasBeenSet = false;
   };
 
 } // namespace Model

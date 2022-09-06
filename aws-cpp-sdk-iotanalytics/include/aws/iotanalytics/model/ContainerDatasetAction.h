@@ -275,16 +275,16 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     ResourceConfiguration m_resourceConfiguration;
-    bool m_resourceConfigurationHasBeenSet;
+    bool m_resourceConfigurationHasBeenSet = false;
 
     Aws::Vector<Variable> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

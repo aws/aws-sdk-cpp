@@ -214,10 +214,10 @@ namespace Model
   private:
 
     Aws::String m_ec2SshKey;
-    bool m_ec2SshKeyHasBeenSet;
+    bool m_ec2SshKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceSecurityGroups;
-    bool m_sourceSecurityGroupsHasBeenSet;
+    bool m_sourceSecurityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

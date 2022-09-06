@@ -119,13 +119,13 @@ namespace Model
   private:
 
     bool m_enableInterContainerTrafficEncryption;
-    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
     bool m_enableNetworkIsolation;
-    bool m_enableNetworkIsolationHasBeenSet;
+    bool m_enableNetworkIsolationHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

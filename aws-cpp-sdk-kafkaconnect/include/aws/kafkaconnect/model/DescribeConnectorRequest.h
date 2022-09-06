@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_connectorArn;
-    bool m_connectorArnHasBeenSet;
+    bool m_connectorArnHasBeenSet = false;
   };
 
 } // namespace Model

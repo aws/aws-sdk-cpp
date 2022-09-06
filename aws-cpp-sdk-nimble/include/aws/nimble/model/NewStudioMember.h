@@ -112,10 +112,10 @@ namespace Model
   private:
 
     StudioPersona m_persona;
-    bool m_personaHasBeenSet;
+    bool m_personaHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
   };
 
 } // namespace Model

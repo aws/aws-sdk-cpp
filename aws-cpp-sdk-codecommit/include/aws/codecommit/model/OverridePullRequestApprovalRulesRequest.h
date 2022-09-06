@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     OverrideStatus m_overrideStatus;
-    bool m_overrideStatusHasBeenSet;
+    bool m_overrideStatusHasBeenSet = false;
   };
 
 } // namespace Model

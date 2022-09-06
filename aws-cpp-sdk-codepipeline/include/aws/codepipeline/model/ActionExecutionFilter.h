@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
   };
 
 } // namespace Model

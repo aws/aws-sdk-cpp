@@ -174,16 +174,16 @@ namespace Model
   private:
 
     AutoMLMetricEnum m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     MetricSetSource m_set;
-    bool m_setHasBeenSet;
+    bool m_setHasBeenSet = false;
 
     AutoMLMetricExtendedEnum m_standardMetricName;
-    bool m_standardMetricNameHasBeenSet;
+    bool m_standardMetricNameHasBeenSet = false;
   };
 
 } // namespace Model

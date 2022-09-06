@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_keyword;
-    bool m_keywordHasBeenSet;
+    bool m_keywordHasBeenSet = false;
 
     Aws::String m_keywordMessage;
-    bool m_keywordMessageHasBeenSet;
+    bool m_keywordMessageHasBeenSet = false;
 
     KeywordAction m_keywordAction;
-    bool m_keywordActionHasBeenSet;
+    bool m_keywordActionHasBeenSet = false;
   };
 
 } // namespace Model

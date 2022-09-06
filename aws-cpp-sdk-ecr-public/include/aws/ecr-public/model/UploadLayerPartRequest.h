@@ -265,22 +265,22 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     long long m_partFirstByte;
-    bool m_partFirstByteHasBeenSet;
+    bool m_partFirstByteHasBeenSet = false;
 
     long long m_partLastByte;
-    bool m_partLastByteHasBeenSet;
+    bool m_partLastByteHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_layerPartBlob;
-    bool m_layerPartBlobHasBeenSet;
+    bool m_layerPartBlobHasBeenSet = false;
   };
 
 } // namespace Model

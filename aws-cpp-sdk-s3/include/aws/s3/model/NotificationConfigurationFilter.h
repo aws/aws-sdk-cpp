@@ -62,7 +62,7 @@ namespace Model
   private:
 
     S3KeyFilter m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

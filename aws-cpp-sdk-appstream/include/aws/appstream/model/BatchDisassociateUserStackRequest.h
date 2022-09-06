@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<UserStackAssociation> m_userStackAssociations;
-    bool m_userStackAssociationsHasBeenSet;
+    bool m_userStackAssociationsHasBeenSet = false;
   };
 
 } // namespace Model

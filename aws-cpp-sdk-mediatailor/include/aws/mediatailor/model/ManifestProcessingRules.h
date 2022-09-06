@@ -96,7 +96,7 @@ namespace Model
   private:
 
     AdMarkerPassthrough m_adMarkerPassthrough;
-    bool m_adMarkerPassthroughHasBeenSet;
+    bool m_adMarkerPassthroughHasBeenSet = false;
   };
 
 } // namespace Model

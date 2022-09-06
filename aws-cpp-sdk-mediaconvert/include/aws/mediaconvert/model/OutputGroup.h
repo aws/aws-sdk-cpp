@@ -258,19 +258,19 @@ namespace Model
   private:
 
     AutomatedEncodingSettings m_automatedEncodingSettings;
-    bool m_automatedEncodingSettingsHasBeenSet;
+    bool m_automatedEncodingSettingsHasBeenSet = false;
 
     Aws::String m_customName;
-    bool m_customNameHasBeenSet;
+    bool m_customNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OutputGroupSettings m_outputGroupSettings;
-    bool m_outputGroupSettingsHasBeenSet;
+    bool m_outputGroupSettingsHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

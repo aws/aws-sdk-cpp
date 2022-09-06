@@ -61,7 +61,7 @@ namespace Model
   private:
 
     int m_maximumEfaInterfaces;
-    bool m_maximumEfaInterfacesHasBeenSet;
+    bool m_maximumEfaInterfacesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::Vector<CreateAttendeeRequestItem> m_attendees;
-    bool m_attendeesHasBeenSet;
+    bool m_attendeesHasBeenSet = false;
   };
 
 } // namespace Model

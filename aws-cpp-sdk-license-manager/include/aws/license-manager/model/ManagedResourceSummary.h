@@ -91,10 +91,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_associationCount;
-    bool m_associationCountHasBeenSet;
+    bool m_associationCountHasBeenSet = false;
   };
 
 } // namespace Model

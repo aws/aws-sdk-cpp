@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     DimensionValueOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

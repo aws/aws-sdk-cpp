@@ -183,16 +183,16 @@ namespace Model
   private:
 
     SimulationJobRequest m_request;
-    bool m_requestHasBeenSet;
+    bool m_requestHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     SimulationJobErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_failedAt;
-    bool m_failedAtHasBeenSet;
+    bool m_failedAtHasBeenSet = false;
   };
 
 } // namespace Model

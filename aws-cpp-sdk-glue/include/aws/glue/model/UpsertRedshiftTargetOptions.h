@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_tableLocation;
-    bool m_tableLocationHasBeenSet;
+    bool m_tableLocationHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_upsertKeys;
-    bool m_upsertKeysHasBeenSet;
+    bool m_upsertKeysHasBeenSet = false;
   };
 
 } // namespace Model

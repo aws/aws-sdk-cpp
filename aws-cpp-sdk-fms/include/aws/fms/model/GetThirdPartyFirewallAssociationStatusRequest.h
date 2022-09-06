@@ -67,7 +67,7 @@ namespace Model
   private:
 
     ThirdPartyFirewall m_thirdPartyFirewall;
-    bool m_thirdPartyFirewallHasBeenSet;
+    bool m_thirdPartyFirewallHasBeenSet = false;
   };
 
 } // namespace Model

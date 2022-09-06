@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_updateDataSource;
-    bool m_updateDataSourceHasBeenSet;
+    bool m_updateDataSourceHasBeenSet = false;
 
     Aws::String m_updateDataRole;
-    bool m_updateDataRoleHasBeenSet;
+    bool m_updateDataRoleHasBeenSet = false;
 
     LoRaWANUpdateGatewayTaskCreate m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

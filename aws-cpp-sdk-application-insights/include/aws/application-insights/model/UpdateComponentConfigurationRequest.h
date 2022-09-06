@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     bool m_monitor;
-    bool m_monitorHasBeenSet;
+    bool m_monitorHasBeenSet = false;
 
     Tier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     Aws::String m_componentConfiguration;
-    bool m_componentConfigurationHasBeenSet;
+    bool m_componentConfigurationHasBeenSet = false;
 
     bool m_autoConfigEnabled;
-    bool m_autoConfigEnabledHasBeenSet;
+    bool m_autoConfigEnabledHasBeenSet = false;
   };
 
 } // namespace Model

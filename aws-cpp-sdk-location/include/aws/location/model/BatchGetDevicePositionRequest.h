@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_deviceIds;
-    bool m_deviceIdsHasBeenSet;
+    bool m_deviceIdsHasBeenSet = false;
 
     Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet;
+    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

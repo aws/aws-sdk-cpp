@@ -187,16 +187,16 @@ namespace Model
   private:
 
     EbsOptimizedSupport m_ebsOptimizedSupport;
-    bool m_ebsOptimizedSupportHasBeenSet;
+    bool m_ebsOptimizedSupportHasBeenSet = false;
 
     EbsEncryptionSupport m_encryptionSupport;
-    bool m_encryptionSupportHasBeenSet;
+    bool m_encryptionSupportHasBeenSet = false;
 
     EbsOptimizedInfo m_ebsOptimizedInfo;
-    bool m_ebsOptimizedInfoHasBeenSet;
+    bool m_ebsOptimizedInfoHasBeenSet = false;
 
     EbsNvmeSupport m_nvmeSupport;
-    bool m_nvmeSupportHasBeenSet;
+    bool m_nvmeSupportHasBeenSet = false;
   };
 
 } // namespace Model

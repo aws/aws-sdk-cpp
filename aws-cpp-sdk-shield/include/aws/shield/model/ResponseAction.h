@@ -132,10 +132,10 @@ namespace Model
   private:
 
     BlockAction m_block;
-    bool m_blockHasBeenSet;
+    bool m_blockHasBeenSet = false;
 
     CountAction m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

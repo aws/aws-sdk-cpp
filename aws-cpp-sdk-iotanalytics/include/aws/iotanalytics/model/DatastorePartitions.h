@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<DatastorePartition> m_partitions;
-    bool m_partitionsHasBeenSet;
+    bool m_partitionsHasBeenSet = false;
   };
 
 } // namespace Model

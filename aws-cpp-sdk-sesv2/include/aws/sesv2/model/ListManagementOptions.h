@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
   };
 
 } // namespace Model

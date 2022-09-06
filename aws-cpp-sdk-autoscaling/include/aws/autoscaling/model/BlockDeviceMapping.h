@@ -264,16 +264,16 @@ namespace Model
   private:
 
     Aws::String m_virtualName;
-    bool m_virtualNameHasBeenSet;
+    bool m_virtualNameHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Ebs m_ebs;
-    bool m_ebsHasBeenSet;
+    bool m_ebsHasBeenSet = false;
 
     bool m_noDevice;
-    bool m_noDeviceHasBeenSet;
+    bool m_noDeviceHasBeenSet = false;
   };
 
 } // namespace Model

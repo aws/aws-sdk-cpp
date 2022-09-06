@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_aCLName;
-    bool m_aCLNameHasBeenSet;
+    bool m_aCLNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userNames;
-    bool m_userNamesHasBeenSet;
+    bool m_userNamesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

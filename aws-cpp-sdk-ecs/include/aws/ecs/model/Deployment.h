@@ -829,52 +829,52 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     int m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     int m_pendingCount;
-    bool m_pendingCountHasBeenSet;
+    bool m_pendingCountHasBeenSet = false;
 
     int m_runningCount;
-    bool m_runningCountHasBeenSet;
+    bool m_runningCountHasBeenSet = false;
 
     int m_failedTasks;
-    bool m_failedTasksHasBeenSet;
+    bool m_failedTasksHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_platformFamily;
-    bool m_platformFamilyHasBeenSet;
+    bool m_platformFamilyHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     DeploymentRolloutState m_rolloutState;
-    bool m_rolloutStateHasBeenSet;
+    bool m_rolloutStateHasBeenSet = false;
 
     Aws::String m_rolloutStateReason;
-    bool m_rolloutStateReasonHasBeenSet;
+    bool m_rolloutStateReasonHasBeenSet = false;
   };
 
 } // namespace Model

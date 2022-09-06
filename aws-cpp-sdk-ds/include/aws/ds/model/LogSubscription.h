@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_subscriptionCreatedDateTime;
-    bool m_subscriptionCreatedDateTimeHasBeenSet;
+    bool m_subscriptionCreatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

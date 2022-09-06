@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_violationTargetDescription;
-    bool m_violationTargetDescriptionHasBeenSet;
+    bool m_violationTargetDescriptionHasBeenSet = false;
 
     Aws::Vector<PartialMatch> m_partialMatches;
-    bool m_partialMatchesHasBeenSet;
+    bool m_partialMatchesHasBeenSet = false;
 
     Aws::Vector<SecurityGroupRemediationAction> m_possibleSecurityGroupRemediationActions;
-    bool m_possibleSecurityGroupRemediationActionsHasBeenSet;
+    bool m_possibleSecurityGroupRemediationActionsHasBeenSet = false;
   };
 
 } // namespace Model

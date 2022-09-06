@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_station;
-    bool m_stationHasBeenSet;
+    bool m_stationHasBeenSet = false;
   };
 
 } // namespace Model

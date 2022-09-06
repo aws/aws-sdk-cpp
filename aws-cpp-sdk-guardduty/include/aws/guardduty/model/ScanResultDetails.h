@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ScanResult m_scanResult;
-    bool m_scanResultHasBeenSet;
+    bool m_scanResultHasBeenSet = false;
   };
 
 } // namespace Model

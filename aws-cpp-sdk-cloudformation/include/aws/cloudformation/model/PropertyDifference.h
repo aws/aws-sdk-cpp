@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_propertyPath;
-    bool m_propertyPathHasBeenSet;
+    bool m_propertyPathHasBeenSet = false;
 
     Aws::String m_expectedValue;
-    bool m_expectedValueHasBeenSet;
+    bool m_expectedValueHasBeenSet = false;
 
     Aws::String m_actualValue;
-    bool m_actualValueHasBeenSet;
+    bool m_actualValueHasBeenSet = false;
 
     DifferenceType m_differenceType;
-    bool m_differenceTypeHasBeenSet;
+    bool m_differenceTypeHasBeenSet = false;
   };
 
 } // namespace Model

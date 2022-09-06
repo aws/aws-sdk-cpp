@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Transition m_transition;
-    bool m_transitionHasBeenSet;
+    bool m_transitionHasBeenSet = false;
   };
 
 } // namespace Model

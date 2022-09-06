@@ -85,7 +85,7 @@ namespace Model
   private:
 
     S3Reference m_s3Reference;
-    bool m_s3ReferenceHasBeenSet;
+    bool m_s3ReferenceHasBeenSet = false;
   };
 
 } // namespace Model

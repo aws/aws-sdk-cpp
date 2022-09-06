@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outcomes;
-    bool m_outcomesHasBeenSet;
+    bool m_outcomesHasBeenSet = false;
   };
 
 } // namespace Model

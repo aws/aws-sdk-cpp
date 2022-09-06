@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
 
     FunctionStage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_eventObject;
-    bool m_eventObjectHasBeenSet;
+    bool m_eventObjectHasBeenSet = false;
   };
 
 } // namespace Model

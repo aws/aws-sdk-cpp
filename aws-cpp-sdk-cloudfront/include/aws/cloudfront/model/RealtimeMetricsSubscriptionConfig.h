@@ -77,7 +77,7 @@ namespace Model
   private:
 
     RealtimeMetricsSubscriptionStatus m_realtimeMetricsSubscriptionStatus;
-    bool m_realtimeMetricsSubscriptionStatusHasBeenSet;
+    bool m_realtimeMetricsSubscriptionStatusHasBeenSet = false;
   };
 
 } // namespace Model

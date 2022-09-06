@@ -252,10 +252,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

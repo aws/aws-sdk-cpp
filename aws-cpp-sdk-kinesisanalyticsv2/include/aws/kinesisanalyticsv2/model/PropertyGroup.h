@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_propertyGroupId;
-    bool m_propertyGroupIdHasBeenSet;
+    bool m_propertyGroupIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_propertyMap;
-    bool m_propertyMapHasBeenSet;
+    bool m_propertyMapHasBeenSet = false;
   };
 
 } // namespace Model

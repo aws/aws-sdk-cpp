@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
 
     ReportFileFormat m_reportFileFormat;
-    bool m_reportFileFormatHasBeenSet;
+    bool m_reportFileFormatHasBeenSet = false;
 
     ReportType m_reportType;
-    bool m_reportTypeHasBeenSet;
+    bool m_reportTypeHasBeenSet = false;
   };
 
 } // namespace Model

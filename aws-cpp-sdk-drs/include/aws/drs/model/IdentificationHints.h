@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_awsInstanceID;
-    bool m_awsInstanceIDHasBeenSet;
+    bool m_awsInstanceIDHasBeenSet = false;
 
     Aws::String m_fqdn;
-    bool m_fqdnHasBeenSet;
+    bool m_fqdnHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_vmWareUuid;
-    bool m_vmWareUuidHasBeenSet;
+    bool m_vmWareUuidHasBeenSet = false;
   };
 
 } // namespace Model

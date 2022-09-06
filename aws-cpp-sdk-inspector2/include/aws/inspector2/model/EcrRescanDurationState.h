@@ -165,13 +165,13 @@ namespace Model
   private:
 
     EcrRescanDuration m_rescanDuration;
-    bool m_rescanDurationHasBeenSet;
+    bool m_rescanDurationHasBeenSet = false;
 
     EcrRescanDurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<DomainNameConfiguration> m_domainNameConfigurations;
-    bool m_domainNameConfigurationsHasBeenSet;
+    bool m_domainNameConfigurationsHasBeenSet = false;
 
     MutualTlsAuthenticationInput m_mutualTlsAuthentication;
-    bool m_mutualTlsAuthenticationHasBeenSet;
+    bool m_mutualTlsAuthenticationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

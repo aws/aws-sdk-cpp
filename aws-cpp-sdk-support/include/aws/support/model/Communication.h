@@ -305,19 +305,19 @@ namespace Model
   private:
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_submittedBy;
-    bool m_submittedByHasBeenSet;
+    bool m_submittedByHasBeenSet = false;
 
     Aws::String m_timeCreated;
-    bool m_timeCreatedHasBeenSet;
+    bool m_timeCreatedHasBeenSet = false;
 
     Aws::Vector<AttachmentDetails> m_attachmentSet;
-    bool m_attachmentSetHasBeenSet;
+    bool m_attachmentSetHasBeenSet = false;
   };
 
 } // namespace Model

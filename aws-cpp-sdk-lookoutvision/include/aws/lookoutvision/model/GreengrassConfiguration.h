@@ -419,28 +419,28 @@ namespace Model
   private:
 
     Aws::String m_compilerOptions;
-    bool m_compilerOptionsHasBeenSet;
+    bool m_compilerOptionsHasBeenSet = false;
 
     TargetDevice m_targetDevice;
-    bool m_targetDeviceHasBeenSet;
+    bool m_targetDeviceHasBeenSet = false;
 
     TargetPlatform m_targetPlatform;
-    bool m_targetPlatformHasBeenSet;
+    bool m_targetPlatformHasBeenSet = false;
 
     S3Location m_s3OutputLocation;
-    bool m_s3OutputLocationHasBeenSet;
+    bool m_s3OutputLocationHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::String m_componentDescription;
-    bool m_componentDescriptionHasBeenSet;
+    bool m_componentDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_treeId;
-    bool m_treeIdHasBeenSet;
+    bool m_treeIdHasBeenSet = false;
 
     Aws::String m_absolutePath;
-    bool m_absolutePathHasBeenSet;
+    bool m_absolutePathHasBeenSet = false;
 
     Aws::String m_relativePath;
-    bool m_relativePathHasBeenSet;
+    bool m_relativePathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -165,10 +165,10 @@ namespace Model
   private:
 
     AggregationPeriod m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

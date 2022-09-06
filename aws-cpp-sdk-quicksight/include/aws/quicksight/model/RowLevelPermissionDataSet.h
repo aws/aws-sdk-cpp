@@ -294,19 +294,19 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     RowLevelPermissionPolicy m_permissionPolicy;
-    bool m_permissionPolicyHasBeenSet;
+    bool m_permissionPolicyHasBeenSet = false;
 
     RowLevelPermissionFormatVersion m_formatVersion;
-    bool m_formatVersionHasBeenSet;
+    bool m_formatVersionHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_clientPublicKey;
-    bool m_clientPublicKeyHasBeenSet;
+    bool m_clientPublicKeyHasBeenSet = false;
 
     Aws::String m_serverPublicKey;
-    bool m_serverPublicKeyHasBeenSet;
+    bool m_serverPublicKeyHasBeenSet = false;
 
     Aws::String m_serverEndpoint;
-    bool m_serverEndpointHasBeenSet;
+    bool m_serverEndpointHasBeenSet = false;
 
     Aws::String m_clientTunnelAddress;
-    bool m_clientTunnelAddressHasBeenSet;
+    bool m_clientTunnelAddressHasBeenSet = false;
 
     Aws::String m_serverTunnelAddress;
-    bool m_serverTunnelAddressHasBeenSet;
+    bool m_serverTunnelAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedIps;
-    bool m_allowedIpsHasBeenSet;
+    bool m_allowedIpsHasBeenSet = false;
   };
 
 } // namespace Model

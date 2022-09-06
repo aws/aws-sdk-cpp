@@ -83,7 +83,7 @@ ImportExportClient::~ImportExportClient()
 
 void ImportExportClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("importexport");
+  AWSClient::SetServiceClientName("importexport");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::Vector<ReplicaRegionType> m_addReplicaRegions;
-    bool m_addReplicaRegionsHasBeenSet;
+    bool m_addReplicaRegionsHasBeenSet = false;
 
     bool m_forceOverwriteReplicaSecret;
-    bool m_forceOverwriteReplicaSecretHasBeenSet;
+    bool m_forceOverwriteReplicaSecretHasBeenSet = false;
   };
 
 } // namespace Model

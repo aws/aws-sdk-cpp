@@ -353,28 +353,28 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     Aws::Vector<AlarmType> m_alarmTypes;
-    bool m_alarmTypesHasBeenSet;
+    bool m_alarmTypesHasBeenSet = false;
 
     HistoryItemType m_historyItemType;
-    bool m_historyItemTypeHasBeenSet;
+    bool m_historyItemTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ScanBy m_scanBy;
-    bool m_scanByHasBeenSet;
+    bool m_scanByHasBeenSet = false;
   };
 
 } // namespace Model

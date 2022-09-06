@@ -269,19 +269,19 @@ namespace Model
   private:
 
     AwsElbLoadBalancerAccessLog m_accessLog;
-    bool m_accessLogHasBeenSet;
+    bool m_accessLogHasBeenSet = false;
 
     AwsElbLoadBalancerConnectionDraining m_connectionDraining;
-    bool m_connectionDrainingHasBeenSet;
+    bool m_connectionDrainingHasBeenSet = false;
 
     AwsElbLoadBalancerConnectionSettings m_connectionSettings;
-    bool m_connectionSettingsHasBeenSet;
+    bool m_connectionSettingsHasBeenSet = false;
 
     AwsElbLoadBalancerCrossZoneLoadBalancing m_crossZoneLoadBalancing;
-    bool m_crossZoneLoadBalancingHasBeenSet;
+    bool m_crossZoneLoadBalancingHasBeenSet = false;
 
     Aws::Vector<AwsElbLoadBalancerAdditionalAttribute> m_additionalAttributes;
-    bool m_additionalAttributesHasBeenSet;
+    bool m_additionalAttributesHasBeenSet = false;
   };
 
 } // namespace Model

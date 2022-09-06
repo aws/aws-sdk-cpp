@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     AuditMitigationActionsTaskTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_auditCheckToActionsMapping;
-    bool m_auditCheckToActionsMappingHasBeenSet;
+    bool m_auditCheckToActionsMappingHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

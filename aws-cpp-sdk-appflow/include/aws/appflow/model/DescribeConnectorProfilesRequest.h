@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_connectorProfileNames;
-    bool m_connectorProfileNamesHasBeenSet;
+    bool m_connectorProfileNamesHasBeenSet = false;
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

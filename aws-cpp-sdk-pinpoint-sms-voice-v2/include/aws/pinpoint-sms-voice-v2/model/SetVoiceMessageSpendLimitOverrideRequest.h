@@ -55,7 +55,7 @@ namespace Model
   private:
 
     long long m_monthlyLimit;
-    bool m_monthlyLimitHasBeenSet;
+    bool m_monthlyLimitHasBeenSet = false;
   };
 
 } // namespace Model

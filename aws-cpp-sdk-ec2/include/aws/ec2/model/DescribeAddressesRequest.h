@@ -399,16 +399,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_publicIps;
-    bool m_publicIpsHasBeenSet;
+    bool m_publicIpsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allocationIds;
-    bool m_allocationIdsHasBeenSet;
+    bool m_allocationIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

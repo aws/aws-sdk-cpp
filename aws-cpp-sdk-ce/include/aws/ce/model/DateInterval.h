@@ -177,10 +177,10 @@ namespace Model
   private:
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

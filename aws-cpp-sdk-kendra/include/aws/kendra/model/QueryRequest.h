@@ -704,43 +704,43 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_queryText;
-    bool m_queryTextHasBeenSet;
+    bool m_queryTextHasBeenSet = false;
 
     AttributeFilter m_attributeFilter;
-    bool m_attributeFilterHasBeenSet;
+    bool m_attributeFilterHasBeenSet = false;
 
     Aws::Vector<Facet> m_facets;
-    bool m_facetsHasBeenSet;
+    bool m_facetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedDocumentAttributes;
-    bool m_requestedDocumentAttributesHasBeenSet;
+    bool m_requestedDocumentAttributesHasBeenSet = false;
 
     QueryResultType m_queryResultTypeFilter;
-    bool m_queryResultTypeFilterHasBeenSet;
+    bool m_queryResultTypeFilterHasBeenSet = false;
 
     Aws::Vector<DocumentRelevanceConfiguration> m_documentRelevanceOverrideConfigurations;
-    bool m_documentRelevanceOverrideConfigurationsHasBeenSet;
+    bool m_documentRelevanceOverrideConfigurationsHasBeenSet = false;
 
     int m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     SortingConfiguration m_sortingConfiguration;
-    bool m_sortingConfigurationHasBeenSet;
+    bool m_sortingConfigurationHasBeenSet = false;
 
     UserContext m_userContext;
-    bool m_userContextHasBeenSet;
+    bool m_userContextHasBeenSet = false;
 
     Aws::String m_visitorId;
-    bool m_visitorIdHasBeenSet;
+    bool m_visitorIdHasBeenSet = false;
 
     SpellCorrectionConfiguration m_spellCorrectionConfiguration;
-    bool m_spellCorrectionConfigurationHasBeenSet;
+    bool m_spellCorrectionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

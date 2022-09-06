@@ -346,25 +346,25 @@ namespace Model
   private:
 
     Aws::String m_metricSetArn;
-    bool m_metricSetArnHasBeenSet;
+    bool m_metricSetArnHasBeenSet = false;
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_metricSetDescription;
-    bool m_metricSetDescriptionHasBeenSet;
+    bool m_metricSetDescriptionHasBeenSet = false;
 
     Aws::String m_metricSetName;
-    bool m_metricSetNameHasBeenSet;
+    bool m_metricSetNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

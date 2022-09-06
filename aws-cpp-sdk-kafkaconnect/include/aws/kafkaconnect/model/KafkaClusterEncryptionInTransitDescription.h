@@ -71,7 +71,7 @@ namespace Model
   private:
 
     KafkaClusterEncryptionInTransitType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
   };
 
 } // namespace Model

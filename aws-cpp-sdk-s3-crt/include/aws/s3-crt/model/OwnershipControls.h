@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<OwnershipControlsRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

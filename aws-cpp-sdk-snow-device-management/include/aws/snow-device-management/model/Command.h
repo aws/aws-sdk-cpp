@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Reboot m_reboot;
-    bool m_rebootHasBeenSet;
+    bool m_rebootHasBeenSet = false;
 
     Unlock m_unlock;
-    bool m_unlockHasBeenSet;
+    bool m_unlockHasBeenSet = false;
   };
 
 } // namespace Model

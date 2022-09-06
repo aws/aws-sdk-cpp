@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_clusterNames;
-    bool m_clusterNamesHasBeenSet;
+    bool m_clusterNamesHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,7 @@ namespace Model
   private:
 
     long long m_sizeInMiB;
-    bool m_sizeInMiBHasBeenSet;
+    bool m_sizeInMiBHasBeenSet = false;
   };
 
 } // namespace Model

@@ -362,25 +362,25 @@ namespace Model
   private:
 
     Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet;
+    bool m_serviceArnHasBeenSet = false;
 
     SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet;
+    bool m_sourceConfigurationHasBeenSet = false;
 
     InstanceConfiguration m_instanceConfiguration;
-    bool m_instanceConfigurationHasBeenSet;
+    bool m_instanceConfigurationHasBeenSet = false;
 
     Aws::String m_autoScalingConfigurationArn;
-    bool m_autoScalingConfigurationArnHasBeenSet;
+    bool m_autoScalingConfigurationArnHasBeenSet = false;
 
     HealthCheckConfiguration m_healthCheckConfiguration;
-    bool m_healthCheckConfigurationHasBeenSet;
+    bool m_healthCheckConfigurationHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     ServiceObservabilityConfiguration m_observabilityConfiguration;
-    bool m_observabilityConfigurationHasBeenSet;
+    bool m_observabilityConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

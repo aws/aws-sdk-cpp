@@ -155,19 +155,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_retentionDuration;
-    bool m_retentionDurationHasBeenSet;
+    bool m_retentionDurationHasBeenSet = false;
 
     long long m_ruleID;
-    bool m_ruleIDHasBeenSet;
+    bool m_ruleIDHasBeenSet = false;
 
     PITPolicyRuleUnits m_units;
-    bool m_unitsHasBeenSet;
+    bool m_unitsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_sipRuleId;
-    bool m_sipRuleIdHasBeenSet;
+    bool m_sipRuleIdHasBeenSet = false;
   };
 
 } // namespace Model

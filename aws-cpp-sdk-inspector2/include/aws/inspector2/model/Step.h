@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::String m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
   };
 
 } // namespace Model

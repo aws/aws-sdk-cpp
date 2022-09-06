@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sshUsername;
-    bool m_sshUsernameHasBeenSet;
+    bool m_sshUsernameHasBeenSet = false;
 
     Aws::String m_sshPublicKey;
-    bool m_sshPublicKeyHasBeenSet;
+    bool m_sshPublicKeyHasBeenSet = false;
   };
 
 } // namespace Model

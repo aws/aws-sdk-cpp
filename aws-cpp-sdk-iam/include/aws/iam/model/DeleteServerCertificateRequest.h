@@ -111,7 +111,7 @@ namespace Model
   private:
 
     Aws::String m_serverCertificateName;
-    bool m_serverCertificateNameHasBeenSet;
+    bool m_serverCertificateNameHasBeenSet = false;
   };
 
 } // namespace Model

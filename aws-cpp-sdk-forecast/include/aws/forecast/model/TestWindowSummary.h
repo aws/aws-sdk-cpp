@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_testWindowStart;
-    bool m_testWindowStartHasBeenSet;
+    bool m_testWindowStartHasBeenSet = false;
 
     Aws::Utils::DateTime m_testWindowEnd;
-    bool m_testWindowEndHasBeenSet;
+    bool m_testWindowEndHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

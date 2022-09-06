@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::Vector<FindingStatisticType> m_findingStatisticTypes;
-    bool m_findingStatisticTypesHasBeenSet;
+    bool m_findingStatisticTypesHasBeenSet = false;
 
     FindingCriteria m_findingCriteria;
-    bool m_findingCriteriaHasBeenSet;
+    bool m_findingCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

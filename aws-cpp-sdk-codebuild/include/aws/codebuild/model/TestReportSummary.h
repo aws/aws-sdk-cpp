@@ -145,13 +145,13 @@ namespace Model
   private:
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_statusCounts;
-    bool m_statusCountsHasBeenSet;
+    bool m_statusCountsHasBeenSet = false;
 
     long long m_durationInNanoSeconds;
-    bool m_durationInNanoSecondsHasBeenSet;
+    bool m_durationInNanoSecondsHasBeenSet = false;
   };
 
 } // namespace Model

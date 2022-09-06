@@ -92,10 +92,10 @@ namespace Model
   private:
 
     ActionTypeId m_actionTypeId;
-    bool m_actionTypeIdHasBeenSet;
+    bool m_actionTypeIdHasBeenSet = false;
 
     int m_maxBatchSize;
-    bool m_maxBatchSizeHasBeenSet;
+    bool m_maxBatchSizeHasBeenSet = false;
   };
 
 } // namespace Model

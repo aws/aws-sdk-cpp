@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
   };
 
 } // namespace Model

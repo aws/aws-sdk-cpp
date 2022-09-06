@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     Aws::String m_datakey;
-    bool m_datakeyHasBeenSet;
+    bool m_datakeyHasBeenSet = false;
   };
 
 } // namespace Model

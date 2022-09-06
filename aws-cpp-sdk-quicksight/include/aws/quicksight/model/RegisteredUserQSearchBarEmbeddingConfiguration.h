@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_initialTopicId;
-    bool m_initialTopicIdHasBeenSet;
+    bool m_initialTopicIdHasBeenSet = false;
   };
 
 } // namespace Model

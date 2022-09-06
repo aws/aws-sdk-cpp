@@ -134,13 +134,13 @@ namespace Model
   private:
 
     TcpRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     TcpRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     TcpTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

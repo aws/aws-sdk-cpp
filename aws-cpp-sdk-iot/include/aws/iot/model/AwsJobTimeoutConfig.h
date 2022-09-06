@@ -82,7 +82,7 @@ namespace Model
   private:
 
     long long m_inProgressTimeoutInMinutes;
-    bool m_inProgressTimeoutInMinutesHasBeenSet;
+    bool m_inProgressTimeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

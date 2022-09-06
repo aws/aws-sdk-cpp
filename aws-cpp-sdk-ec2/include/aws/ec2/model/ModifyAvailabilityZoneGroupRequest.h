@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     ModifyAvailabilityZoneOptInStatus m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

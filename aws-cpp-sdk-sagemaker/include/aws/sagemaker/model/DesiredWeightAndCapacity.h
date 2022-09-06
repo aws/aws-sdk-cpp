@@ -123,13 +123,13 @@ namespace Model
   private:
 
     Aws::String m_variantName;
-    bool m_variantNameHasBeenSet;
+    bool m_variantNameHasBeenSet = false;
 
     double m_desiredWeight;
-    bool m_desiredWeightHasBeenSet;
+    bool m_desiredWeightHasBeenSet = false;
 
     int m_desiredInstanceCount;
-    bool m_desiredInstanceCountHasBeenSet;
+    bool m_desiredInstanceCountHasBeenSet = false;
   };
 
 } // namespace Model

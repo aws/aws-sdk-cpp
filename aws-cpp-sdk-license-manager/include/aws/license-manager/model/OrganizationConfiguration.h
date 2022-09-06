@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_enableIntegration;
-    bool m_enableIntegrationHasBeenSet;
+    bool m_enableIntegrationHasBeenSet = false;
   };
 
 } // namespace Model

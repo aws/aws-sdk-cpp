@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_organizationSourceType;
-    bool m_organizationSourceTypeHasBeenSet;
+    bool m_organizationSourceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceDataSyncOrganizationalUnit> m_organizationalUnits;
-    bool m_organizationalUnitsHasBeenSet;
+    bool m_organizationalUnitsHasBeenSet = false;
   };
 
 } // namespace Model

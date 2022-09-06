@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
   };
 
 } // namespace Model

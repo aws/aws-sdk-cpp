@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     Aws::Vector<Subscriber> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
   };
 
 } // namespace Model

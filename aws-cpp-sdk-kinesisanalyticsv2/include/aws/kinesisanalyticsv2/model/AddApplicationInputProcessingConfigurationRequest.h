@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     InputProcessingConfiguration m_inputProcessingConfiguration;
-    bool m_inputProcessingConfigurationHasBeenSet;
+    bool m_inputProcessingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

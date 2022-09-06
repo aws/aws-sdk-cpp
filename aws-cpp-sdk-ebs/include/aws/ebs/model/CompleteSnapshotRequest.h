@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_changedBlocksCount;
-    bool m_changedBlocksCountHasBeenSet;
+    bool m_changedBlocksCountHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     ChecksumAggregationMethod m_checksumAggregationMethod;
-    bool m_checksumAggregationMethodHasBeenSet;
+    bool m_checksumAggregationMethodHasBeenSet = false;
   };
 
 } // namespace Model

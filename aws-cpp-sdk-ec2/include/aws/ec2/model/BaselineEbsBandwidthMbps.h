@@ -93,10 +93,10 @@ namespace Model
   private:
 
     int m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     int m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

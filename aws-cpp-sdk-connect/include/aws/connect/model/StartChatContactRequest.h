@@ -490,28 +490,28 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_contactFlowId;
-    bool m_contactFlowIdHasBeenSet;
+    bool m_contactFlowIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     ParticipantDetails m_participantDetails;
-    bool m_participantDetailsHasBeenSet;
+    bool m_participantDetailsHasBeenSet = false;
 
     ChatMessage m_initialMessage;
-    bool m_initialMessageHasBeenSet;
+    bool m_initialMessageHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     int m_chatDurationInMinutes;
-    bool m_chatDurationInMinutesHasBeenSet;
+    bool m_chatDurationInMinutesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
-    bool m_supportedMessagingContentTypesHasBeenSet;
+    bool m_supportedMessagingContentTypesHasBeenSet = false;
   };
 
 } // namespace Model

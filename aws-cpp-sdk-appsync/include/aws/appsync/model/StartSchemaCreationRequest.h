@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

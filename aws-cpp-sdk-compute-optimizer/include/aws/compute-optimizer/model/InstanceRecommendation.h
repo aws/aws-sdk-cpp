@@ -1606,46 +1606,46 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::String m_currentInstanceType;
-    bool m_currentInstanceTypeHasBeenSet;
+    bool m_currentInstanceTypeHasBeenSet = false;
 
     Finding m_finding;
-    bool m_findingHasBeenSet;
+    bool m_findingHasBeenSet = false;
 
     Aws::Vector<InstanceRecommendationFindingReasonCode> m_findingReasonCodes;
-    bool m_findingReasonCodesHasBeenSet;
+    bool m_findingReasonCodesHasBeenSet = false;
 
     Aws::Vector<UtilizationMetric> m_utilizationMetrics;
-    bool m_utilizationMetricsHasBeenSet;
+    bool m_utilizationMetricsHasBeenSet = false;
 
     double m_lookBackPeriodInDays;
-    bool m_lookBackPeriodInDaysHasBeenSet;
+    bool m_lookBackPeriodInDaysHasBeenSet = false;
 
     Aws::Vector<InstanceRecommendationOption> m_recommendationOptions;
-    bool m_recommendationOptionsHasBeenSet;
+    bool m_recommendationOptionsHasBeenSet = false;
 
     Aws::Vector<RecommendationSource> m_recommendationSources;
-    bool m_recommendationSourcesHasBeenSet;
+    bool m_recommendationSourcesHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
-    bool m_lastRefreshTimestampHasBeenSet;
+    bool m_lastRefreshTimestampHasBeenSet = false;
 
     CurrentPerformanceRisk m_currentPerformanceRisk;
-    bool m_currentPerformanceRiskHasBeenSet;
+    bool m_currentPerformanceRiskHasBeenSet = false;
 
     EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-    bool m_effectiveRecommendationPreferencesHasBeenSet;
+    bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
     Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
-    bool m_inferredWorkloadTypesHasBeenSet;
+    bool m_inferredWorkloadTypesHasBeenSet = false;
   };
 
 } // namespace Model

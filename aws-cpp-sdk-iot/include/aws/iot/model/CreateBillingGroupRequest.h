@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_billingGroupName;
-    bool m_billingGroupNameHasBeenSet;
+    bool m_billingGroupNameHasBeenSet = false;
 
     BillingGroupProperties m_billingGroupProperties;
-    bool m_billingGroupPropertiesHasBeenSet;
+    bool m_billingGroupPropertiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

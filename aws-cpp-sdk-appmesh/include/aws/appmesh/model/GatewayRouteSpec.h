@@ -155,16 +155,16 @@ namespace Model
   private:
 
     GrpcGatewayRoute m_grpcRoute;
-    bool m_grpcRouteHasBeenSet;
+    bool m_grpcRouteHasBeenSet = false;
 
     HttpGatewayRoute m_http2Route;
-    bool m_http2RouteHasBeenSet;
+    bool m_http2RouteHasBeenSet = false;
 
     HttpGatewayRoute m_httpRoute;
-    bool m_httpRouteHasBeenSet;
+    bool m_httpRouteHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     EntityPropertyReference m_entityPropertyReference;
-    bool m_entityPropertyReferenceHasBeenSet;
+    bool m_entityPropertyReferenceHasBeenSet = false;
 
     Aws::Vector<PropertyValue> m_propertyValues;
-    bool m_propertyValuesHasBeenSet;
+    bool m_propertyValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_stackNames;
-    bool m_stackNamesHasBeenSet;
+    bool m_stackNamesHasBeenSet = false;
   };
 
 } // namespace Model

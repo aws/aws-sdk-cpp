@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Condition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     WaitTime m_evaluationWaitTime;
-    bool m_evaluationWaitTimeHasBeenSet;
+    bool m_evaluationWaitTimeHasBeenSet = false;
 
     Aws::String m_falseActivity;
-    bool m_falseActivityHasBeenSet;
+    bool m_falseActivityHasBeenSet = false;
 
     Aws::String m_trueActivity;
-    bool m_trueActivityHasBeenSet;
+    bool m_trueActivityHasBeenSet = false;
   };
 
 } // namespace Model

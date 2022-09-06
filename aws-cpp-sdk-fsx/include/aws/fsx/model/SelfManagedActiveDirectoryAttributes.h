@@ -293,19 +293,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_organizationalUnitDistinguishedName;
-    bool m_organizationalUnitDistinguishedNameHasBeenSet;
+    bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
 
     Aws::String m_fileSystemAdministratorsGroup;
-    bool m_fileSystemAdministratorsGroupHasBeenSet;
+    bool m_fileSystemAdministratorsGroupHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIps;
-    bool m_dnsIpsHasBeenSet;
+    bool m_dnsIpsHasBeenSet = false;
   };
 
 } // namespace Model

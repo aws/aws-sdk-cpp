@@ -86,10 +86,10 @@ namespace Model
   private:
 
     int m_durationInMinutes;
-    bool m_durationInMinutesHasBeenSet;
+    bool m_durationInMinutesHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

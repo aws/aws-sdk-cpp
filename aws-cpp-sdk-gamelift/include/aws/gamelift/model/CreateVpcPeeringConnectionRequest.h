@@ -226,13 +226,13 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_peerVpcAwsAccountId;
-    bool m_peerVpcAwsAccountIdHasBeenSet;
+    bool m_peerVpcAwsAccountIdHasBeenSet = false;
 
     Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet;
+    bool m_peerVpcIdHasBeenSet = false;
   };
 
 } // namespace Model

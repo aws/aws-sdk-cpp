@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupRegion;
-    bool m_replicationGroupRegionHasBeenSet;
+    bool m_replicationGroupRegionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     AutomaticFailoverStatus m_automaticFailover;
-    bool m_automaticFailoverHasBeenSet;
+    bool m_automaticFailoverHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

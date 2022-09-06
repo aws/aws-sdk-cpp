@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<TagCondition>> m_orConditions;
-    bool m_orConditionsHasBeenSet;
+    bool m_orConditionsHasBeenSet = false;
 
     Aws::Vector<TagCondition> m_andConditions;
-    bool m_andConditionsHasBeenSet;
+    bool m_andConditionsHasBeenSet = false;
 
     TagCondition m_tagCondition;
-    bool m_tagConditionHasBeenSet;
+    bool m_tagConditionHasBeenSet = false;
   };
 
 } // namespace Model

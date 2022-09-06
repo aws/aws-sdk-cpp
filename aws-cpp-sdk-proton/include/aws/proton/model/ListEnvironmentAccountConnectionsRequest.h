@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     EnvironmentAccountConnectionRequesterAccountType m_requestedBy;
-    bool m_requestedByHasBeenSet;
+    bool m_requestedByHasBeenSet = false;
 
     Aws::Vector<EnvironmentAccountConnectionStatus> m_statuses;
-    bool m_statusesHasBeenSet;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

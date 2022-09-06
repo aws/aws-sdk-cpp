@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_segmentNumber;
-    bool m_segmentNumberHasBeenSet;
+    bool m_segmentNumberHasBeenSet = false;
 
     int m_totalSegments;
-    bool m_totalSegmentsHasBeenSet;
+    bool m_totalSegmentsHasBeenSet = false;
   };
 
 } // namespace Model

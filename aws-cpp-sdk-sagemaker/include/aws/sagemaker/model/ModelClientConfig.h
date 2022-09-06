@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_invocationsTimeoutInSeconds;
-    bool m_invocationsTimeoutInSecondsHasBeenSet;
+    bool m_invocationsTimeoutInSecondsHasBeenSet = false;
 
     int m_invocationsMaxRetries;
-    bool m_invocationsMaxRetriesHasBeenSet;
+    bool m_invocationsMaxRetriesHasBeenSet = false;
   };
 
 } // namespace Model

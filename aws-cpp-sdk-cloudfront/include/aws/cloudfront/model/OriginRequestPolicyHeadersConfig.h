@@ -164,10 +164,10 @@ namespace Model
   private:
 
     OriginRequestPolicyHeaderBehavior m_headerBehavior;
-    bool m_headerBehaviorHasBeenSet;
+    bool m_headerBehaviorHasBeenSet = false;
 
     Headers m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

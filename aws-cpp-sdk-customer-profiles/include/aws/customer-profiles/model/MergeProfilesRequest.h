@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_mainProfileId;
-    bool m_mainProfileIdHasBeenSet;
+    bool m_mainProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_profileIdsToBeMerged;
-    bool m_profileIdsToBeMergedHasBeenSet;
+    bool m_profileIdsToBeMergedHasBeenSet = false;
 
     FieldSourceProfileIds m_fieldSourceProfileIds;
-    bool m_fieldSourceProfileIdsHasBeenSet;
+    bool m_fieldSourceProfileIdsHasBeenSet = false;
   };
 
 } // namespace Model

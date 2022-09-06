@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_destinationRefId;
-    bool m_destinationRefIdHasBeenSet;
+    bool m_destinationRefIdHasBeenSet = false;
   };
 
 } // namespace Model

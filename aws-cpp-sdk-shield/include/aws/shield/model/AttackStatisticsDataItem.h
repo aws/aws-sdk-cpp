@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AttackVolume m_attackVolume;
-    bool m_attackVolumeHasBeenSet;
+    bool m_attackVolumeHasBeenSet = false;
 
     long long m_attackCount;
-    bool m_attackCountHasBeenSet;
+    bool m_attackCountHasBeenSet = false;
   };
 
 } // namespace Model

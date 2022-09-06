@@ -607,34 +607,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     ScheduleConfiguration m_scheduleConfiguration;
-    bool m_scheduleConfigurationHasBeenSet;
+    bool m_scheduleConfigurationHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
 
     TargetConfiguration m_targetConfiguration;
-    bool m_targetConfigurationHasBeenSet;
+    bool m_targetConfigurationHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_scheduledQueryExecutionRoleArn;
-    bool m_scheduledQueryExecutionRoleArnHasBeenSet;
+    bool m_scheduledQueryExecutionRoleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     ErrorReportConfiguration m_errorReportConfiguration;
-    bool m_errorReportConfigurationHasBeenSet;
+    bool m_errorReportConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -212,28 +212,28 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     double m_sumOfSquares;
-    bool m_sumOfSquaresHasBeenSet;
+    bool m_sumOfSquaresHasBeenSet = false;
 
     double m_variance;
-    bool m_varianceHasBeenSet;
+    bool m_varianceHasBeenSet = false;
 
     double m_stdDeviation;
-    bool m_stdDeviationHasBeenSet;
+    bool m_stdDeviationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -70,7 +70,7 @@ namespace Model
   private:
 
     HlsSettings m_hlsSettings;
-    bool m_hlsSettingsHasBeenSet;
+    bool m_hlsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

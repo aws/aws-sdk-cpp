@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_ruleArn;
-    bool m_ruleArnHasBeenSet;
+    bool m_ruleArnHasBeenSet = false;
   };
 
 } // namespace Model

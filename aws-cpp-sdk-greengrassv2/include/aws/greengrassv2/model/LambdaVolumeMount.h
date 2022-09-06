@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
 
     Aws::String m_destinationPath;
-    bool m_destinationPathHasBeenSet;
+    bool m_destinationPathHasBeenSet = false;
 
     LambdaFilesystemPermission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     bool m_addGroupOwner;
-    bool m_addGroupOwnerHasBeenSet;
+    bool m_addGroupOwnerHasBeenSet = false;
   };
 
 } // namespace Model

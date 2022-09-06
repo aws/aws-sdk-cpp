@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::Vector<MetricDatum> m_metricData;
-    bool m_metricDataHasBeenSet;
+    bool m_metricDataHasBeenSet = false;
   };
 
 } // namespace Model

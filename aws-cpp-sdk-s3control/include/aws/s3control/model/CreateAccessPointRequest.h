@@ -335,19 +335,19 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
-    bool m_publicAccessBlockConfigurationHasBeenSet;
+    bool m_publicAccessBlockConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

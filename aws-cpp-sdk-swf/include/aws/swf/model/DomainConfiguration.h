@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_workflowExecutionRetentionPeriodInDays;
-    bool m_workflowExecutionRetentionPeriodInDaysHasBeenSet;
+    bool m_workflowExecutionRetentionPeriodInDaysHasBeenSet = false;
   };
 
 } // namespace Model

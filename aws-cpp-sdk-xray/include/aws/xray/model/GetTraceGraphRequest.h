@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_traceIds;
-    bool m_traceIdsHasBeenSet;
+    bool m_traceIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

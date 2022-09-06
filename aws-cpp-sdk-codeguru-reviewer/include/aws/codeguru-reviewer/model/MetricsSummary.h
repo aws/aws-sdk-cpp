@@ -196,13 +196,13 @@ namespace Model
   private:
 
     long long m_meteredLinesOfCodeCount;
-    bool m_meteredLinesOfCodeCountHasBeenSet;
+    bool m_meteredLinesOfCodeCountHasBeenSet = false;
 
     long long m_suppressedLinesOfCodeCount;
-    bool m_suppressedLinesOfCodeCountHasBeenSet;
+    bool m_suppressedLinesOfCodeCountHasBeenSet = false;
 
     long long m_findingsCount;
-    bool m_findingsCountHasBeenSet;
+    bool m_findingsCountHasBeenSet = false;
   };
 
 } // namespace Model

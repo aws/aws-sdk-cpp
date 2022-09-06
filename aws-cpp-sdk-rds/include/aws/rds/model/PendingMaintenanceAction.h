@@ -349,22 +349,22 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Utils::DateTime m_autoAppliedAfterDate;
-    bool m_autoAppliedAfterDateHasBeenSet;
+    bool m_autoAppliedAfterDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_forcedApplyDate;
-    bool m_forcedApplyDateHasBeenSet;
+    bool m_forcedApplyDateHasBeenSet = false;
 
     Aws::String m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_currentApplyDate;
-    bool m_currentApplyDateHasBeenSet;
+    bool m_currentApplyDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

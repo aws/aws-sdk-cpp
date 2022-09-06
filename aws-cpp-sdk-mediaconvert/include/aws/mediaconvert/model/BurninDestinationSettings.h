@@ -987,67 +987,67 @@ namespace Model
   private:
 
     BurninSubtitleAlignment m_alignment;
-    bool m_alignmentHasBeenSet;
+    bool m_alignmentHasBeenSet = false;
 
     BurninSubtitleApplyFontColor m_applyFontColor;
-    bool m_applyFontColorHasBeenSet;
+    bool m_applyFontColorHasBeenSet = false;
 
     BurninSubtitleBackgroundColor m_backgroundColor;
-    bool m_backgroundColorHasBeenSet;
+    bool m_backgroundColorHasBeenSet = false;
 
     int m_backgroundOpacity;
-    bool m_backgroundOpacityHasBeenSet;
+    bool m_backgroundOpacityHasBeenSet = false;
 
     BurninSubtitleFallbackFont m_fallbackFont;
-    bool m_fallbackFontHasBeenSet;
+    bool m_fallbackFontHasBeenSet = false;
 
     BurninSubtitleFontColor m_fontColor;
-    bool m_fontColorHasBeenSet;
+    bool m_fontColorHasBeenSet = false;
 
     int m_fontOpacity;
-    bool m_fontOpacityHasBeenSet;
+    bool m_fontOpacityHasBeenSet = false;
 
     int m_fontResolution;
-    bool m_fontResolutionHasBeenSet;
+    bool m_fontResolutionHasBeenSet = false;
 
     FontScript m_fontScript;
-    bool m_fontScriptHasBeenSet;
+    bool m_fontScriptHasBeenSet = false;
 
     int m_fontSize;
-    bool m_fontSizeHasBeenSet;
+    bool m_fontSizeHasBeenSet = false;
 
     Aws::String m_hexFontColor;
-    bool m_hexFontColorHasBeenSet;
+    bool m_hexFontColorHasBeenSet = false;
 
     BurninSubtitleOutlineColor m_outlineColor;
-    bool m_outlineColorHasBeenSet;
+    bool m_outlineColorHasBeenSet = false;
 
     int m_outlineSize;
-    bool m_outlineSizeHasBeenSet;
+    bool m_outlineSizeHasBeenSet = false;
 
     BurninSubtitleShadowColor m_shadowColor;
-    bool m_shadowColorHasBeenSet;
+    bool m_shadowColorHasBeenSet = false;
 
     int m_shadowOpacity;
-    bool m_shadowOpacityHasBeenSet;
+    bool m_shadowOpacityHasBeenSet = false;
 
     int m_shadowXOffset;
-    bool m_shadowXOffsetHasBeenSet;
+    bool m_shadowXOffsetHasBeenSet = false;
 
     int m_shadowYOffset;
-    bool m_shadowYOffsetHasBeenSet;
+    bool m_shadowYOffsetHasBeenSet = false;
 
     BurnInSubtitleStylePassthrough m_stylePassthrough;
-    bool m_stylePassthroughHasBeenSet;
+    bool m_stylePassthroughHasBeenSet = false;
 
     BurninSubtitleTeletextSpacing m_teletextSpacing;
-    bool m_teletextSpacingHasBeenSet;
+    bool m_teletextSpacingHasBeenSet = false;
 
     int m_xPosition;
-    bool m_xPositionHasBeenSet;
+    bool m_xPositionHasBeenSet = false;
 
     int m_yPosition;
-    bool m_yPositionHasBeenSet;
+    bool m_yPositionHasBeenSet = false;
   };
 
 } // namespace Model

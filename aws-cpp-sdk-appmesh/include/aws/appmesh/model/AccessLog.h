@@ -71,7 +71,7 @@ namespace Model
   private:
 
     FileAccessLog m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
   };
 
 } // namespace Model

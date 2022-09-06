@@ -396,25 +396,25 @@ namespace Model
   private:
 
     Aws::String m_domainConfigurationName;
-    bool m_domainConfigurationNameHasBeenSet;
+    bool m_domainConfigurationNameHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_serverCertificateArns;
-    bool m_serverCertificateArnsHasBeenSet;
+    bool m_serverCertificateArnsHasBeenSet = false;
 
     Aws::String m_validationCertificateArn;
-    bool m_validationCertificateArnHasBeenSet;
+    bool m_validationCertificateArnHasBeenSet = false;
 
     AuthorizerConfig m_authorizerConfig;
-    bool m_authorizerConfigHasBeenSet;
+    bool m_authorizerConfigHasBeenSet = false;
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

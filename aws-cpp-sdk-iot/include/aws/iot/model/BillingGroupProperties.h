@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_billingGroupDescription;
-    bool m_billingGroupDescriptionHasBeenSet;
+    bool m_billingGroupDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

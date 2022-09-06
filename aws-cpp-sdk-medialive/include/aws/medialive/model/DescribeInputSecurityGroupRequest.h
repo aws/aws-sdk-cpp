@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_inputSecurityGroupId;
-    bool m_inputSecurityGroupIdHasBeenSet;
+    bool m_inputSecurityGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

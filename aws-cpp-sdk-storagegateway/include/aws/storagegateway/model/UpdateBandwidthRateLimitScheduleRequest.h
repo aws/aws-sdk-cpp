@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
-    bool m_bandwidthRateLimitIntervalsHasBeenSet;
+    bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
   };
 
 } // namespace Model

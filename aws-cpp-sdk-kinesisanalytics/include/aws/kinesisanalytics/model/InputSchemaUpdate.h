@@ -180,13 +180,13 @@ namespace Model
   private:
 
     RecordFormat m_recordFormatUpdate;
-    bool m_recordFormatUpdateHasBeenSet;
+    bool m_recordFormatUpdateHasBeenSet = false;
 
     Aws::String m_recordEncodingUpdate;
-    bool m_recordEncodingUpdateHasBeenSet;
+    bool m_recordEncodingUpdateHasBeenSet = false;
 
     Aws::Vector<RecordColumn> m_recordColumnUpdates;
-    bool m_recordColumnUpdatesHasBeenSet;
+    bool m_recordColumnUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

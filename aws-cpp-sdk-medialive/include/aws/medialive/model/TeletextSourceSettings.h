@@ -128,10 +128,10 @@ namespace Model
   private:
 
     CaptionRectangle m_outputRectangle;
-    bool m_outputRectangleHasBeenSet;
+    bool m_outputRectangleHasBeenSet = false;
 
     Aws::String m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -464,34 +464,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_directoryUserId;
-    bool m_directoryUserIdHasBeenSet;
+    bool m_directoryUserIdHasBeenSet = false;
 
     Aws::String m_hierarchyGroupId;
-    bool m_hierarchyGroupIdHasBeenSet;
+    bool m_hierarchyGroupIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     UserIdentityInfoLite m_identityInfo;
-    bool m_identityInfoHasBeenSet;
+    bool m_identityInfoHasBeenSet = false;
 
     UserPhoneConfig m_phoneConfig;
-    bool m_phoneConfigHasBeenSet;
+    bool m_phoneConfigHasBeenSet = false;
 
     Aws::String m_routingProfileId;
-    bool m_routingProfileIdHasBeenSet;
+    bool m_routingProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityProfileIds;
-    bool m_securityProfileIdsHasBeenSet;
+    bool m_securityProfileIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

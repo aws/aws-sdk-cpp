@@ -125,13 +125,13 @@ namespace Model
   private:
 
     int m_networkCardIndex;
-    bool m_networkCardIndexHasBeenSet;
+    bool m_networkCardIndexHasBeenSet = false;
 
     Aws::String m_networkPerformance;
-    bool m_networkPerformanceHasBeenSet;
+    bool m_networkPerformanceHasBeenSet = false;
 
     int m_maximumNetworkInterfaces;
-    bool m_maximumNetworkInterfacesHasBeenSet;
+    bool m_maximumNetworkInterfacesHasBeenSet = false;
   };
 
 } // namespace Model

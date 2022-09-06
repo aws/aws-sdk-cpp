@@ -330,10 +330,10 @@ namespace Model
   private:
 
     Aws::String m_destinationS3Uri;
-    bool m_destinationS3UriHasBeenSet;
+    bool m_destinationS3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

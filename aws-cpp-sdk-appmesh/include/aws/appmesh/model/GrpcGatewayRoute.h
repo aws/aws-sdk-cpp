@@ -102,10 +102,10 @@ namespace Model
   private:
 
     GrpcGatewayRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     GrpcGatewayRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
   };
 
 } // namespace Model

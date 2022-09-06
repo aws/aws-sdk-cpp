@@ -152,13 +152,13 @@ namespace Model
   private:
 
     BlobMetadata m_beforeBlob;
-    bool m_beforeBlobHasBeenSet;
+    bool m_beforeBlobHasBeenSet = false;
 
     BlobMetadata m_afterBlob;
-    bool m_afterBlobHasBeenSet;
+    bool m_afterBlobHasBeenSet = false;
 
     ChangeTypeEnum m_changeType;
-    bool m_changeTypeHasBeenSet;
+    bool m_changeTypeHasBeenSet = false;
   };
 
 } // namespace Model

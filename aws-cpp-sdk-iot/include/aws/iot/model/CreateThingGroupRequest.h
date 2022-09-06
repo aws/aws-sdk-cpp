@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_thingGroupName;
-    bool m_thingGroupNameHasBeenSet;
+    bool m_thingGroupNameHasBeenSet = false;
 
     Aws::String m_parentGroupName;
-    bool m_parentGroupNameHasBeenSet;
+    bool m_parentGroupNameHasBeenSet = false;
 
     ThingGroupProperties m_thingGroupProperties;
-    bool m_thingGroupPropertiesHasBeenSet;
+    bool m_thingGroupPropertiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

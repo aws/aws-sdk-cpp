@@ -89,7 +89,7 @@ namespace Model
   private:
 
     SmbVersion m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -251,16 +251,16 @@ namespace Model
   private:
 
     CheckpointConfigurationDescription m_checkpointConfigurationDescription;
-    bool m_checkpointConfigurationDescriptionHasBeenSet;
+    bool m_checkpointConfigurationDescriptionHasBeenSet = false;
 
     MonitoringConfigurationDescription m_monitoringConfigurationDescription;
-    bool m_monitoringConfigurationDescriptionHasBeenSet;
+    bool m_monitoringConfigurationDescriptionHasBeenSet = false;
 
     ParallelismConfigurationDescription m_parallelismConfigurationDescription;
-    bool m_parallelismConfigurationDescriptionHasBeenSet;
+    bool m_parallelismConfigurationDescriptionHasBeenSet = false;
 
     Aws::String m_jobPlanDescription;
-    bool m_jobPlanDescriptionHasBeenSet;
+    bool m_jobPlanDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

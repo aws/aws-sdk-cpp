@@ -786,28 +786,28 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     DASHPlaybackMode m_playbackMode;
-    bool m_playbackModeHasBeenSet;
+    bool m_playbackModeHasBeenSet = false;
 
     DASHDisplayFragmentTimestamp m_displayFragmentTimestamp;
-    bool m_displayFragmentTimestampHasBeenSet;
+    bool m_displayFragmentTimestampHasBeenSet = false;
 
     DASHDisplayFragmentNumber m_displayFragmentNumber;
-    bool m_displayFragmentNumberHasBeenSet;
+    bool m_displayFragmentNumberHasBeenSet = false;
 
     DASHFragmentSelector m_dASHFragmentSelector;
-    bool m_dASHFragmentSelectorHasBeenSet;
+    bool m_dASHFragmentSelectorHasBeenSet = false;
 
     int m_expires;
-    bool m_expiresHasBeenSet;
+    bool m_expiresHasBeenSet = false;
 
     long long m_maxManifestFragmentResults;
-    bool m_maxManifestFragmentResultsHasBeenSet;
+    bool m_maxManifestFragmentResultsHasBeenSet = false;
   };
 
 } // namespace Model

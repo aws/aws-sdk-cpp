@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnType;
-    bool m_columnTypeHasBeenSet;
+    bool m_columnTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_analyzedTime;
-    bool m_analyzedTimeHasBeenSet;
+    bool m_analyzedTimeHasBeenSet = false;
 
     ColumnStatisticsData m_statisticsData;
-    bool m_statisticsDataHasBeenSet;
+    bool m_statisticsDataHasBeenSet = false;
   };
 
 } // namespace Model

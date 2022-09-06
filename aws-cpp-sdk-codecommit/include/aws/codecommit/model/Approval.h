@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     ApprovalState m_approvalState;
-    bool m_approvalStateHasBeenSet;
+    bool m_approvalStateHasBeenSet = false;
   };
 
 } // namespace Model

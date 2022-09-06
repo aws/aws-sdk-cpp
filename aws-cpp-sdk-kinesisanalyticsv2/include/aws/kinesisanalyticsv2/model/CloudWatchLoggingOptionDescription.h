@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLoggingOptionId;
-    bool m_cloudWatchLoggingOptionIdHasBeenSet;
+    bool m_cloudWatchLoggingOptionIdHasBeenSet = false;
 
     Aws::String m_logStreamARN;
-    bool m_logStreamARNHasBeenSet;
+    bool m_logStreamARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
   };
 
 } // namespace Model

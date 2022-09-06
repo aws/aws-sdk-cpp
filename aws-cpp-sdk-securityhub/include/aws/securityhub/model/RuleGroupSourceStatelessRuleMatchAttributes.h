@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts> m_destinationPorts;
-    bool m_destinationPortsHasBeenSet;
+    bool m_destinationPortsHasBeenSet = false;
 
     Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<int> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts> m_sourcePorts;
-    bool m_sourcePortsHasBeenSet;
+    bool m_sourcePortsHasBeenSet = false;
 
     Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags> m_tcpFlags;
-    bool m_tcpFlagsHasBeenSet;
+    bool m_tcpFlagsHasBeenSet = false;
   };
 
 } // namespace Model

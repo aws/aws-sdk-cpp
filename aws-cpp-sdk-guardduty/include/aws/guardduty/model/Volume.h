@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     HostPath m_hostPath;
-    bool m_hostPathHasBeenSet;
+    bool m_hostPathHasBeenSet = false;
   };
 
 } // namespace Model

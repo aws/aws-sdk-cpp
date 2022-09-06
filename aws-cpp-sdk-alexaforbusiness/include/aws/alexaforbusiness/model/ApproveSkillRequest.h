@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_skillId;
-    bool m_skillIdHasBeenSet;
+    bool m_skillIdHasBeenSet = false;
   };
 
 } // namespace Model

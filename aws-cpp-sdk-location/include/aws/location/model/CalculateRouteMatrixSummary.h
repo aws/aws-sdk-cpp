@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     int m_errorCount;
-    bool m_errorCountHasBeenSet;
+    bool m_errorCountHasBeenSet = false;
 
     int m_routeCount;
-    bool m_routeCountHasBeenSet;
+    bool m_routeCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -234,22 +234,22 @@ namespace Model
   private:
 
     DataSourceFreeTrial m_cloudTrail;
-    bool m_cloudTrailHasBeenSet;
+    bool m_cloudTrailHasBeenSet = false;
 
     DataSourceFreeTrial m_dnsLogs;
-    bool m_dnsLogsHasBeenSet;
+    bool m_dnsLogsHasBeenSet = false;
 
     DataSourceFreeTrial m_flowLogs;
-    bool m_flowLogsHasBeenSet;
+    bool m_flowLogsHasBeenSet = false;
 
     DataSourceFreeTrial m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
 
     KubernetesDataSourceFreeTrial m_kubernetes;
-    bool m_kubernetesHasBeenSet;
+    bool m_kubernetesHasBeenSet = false;
 
     MalwareProtectionDataSourceFreeTrial m_malwareProtection;
-    bool m_malwareProtectionHasBeenSet;
+    bool m_malwareProtectionHasBeenSet = false;
   };
 
 } // namespace Model

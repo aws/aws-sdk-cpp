@@ -283,16 +283,16 @@ namespace Model
   private:
 
     long long m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     RateBasedStatementAggregateKeyType m_aggregateKeyType;
-    bool m_aggregateKeyTypeHasBeenSet;
+    bool m_aggregateKeyTypeHasBeenSet = false;
 
     std::shared_ptr<Statement> m_scopeDownStatement;
-    bool m_scopeDownStatementHasBeenSet;
+    bool m_scopeDownStatementHasBeenSet = false;
 
     ForwardedIPConfig m_forwardedIPConfig;
-    bool m_forwardedIPConfigHasBeenSet;
+    bool m_forwardedIPConfigHasBeenSet = false;
   };
 
 } // namespace Model

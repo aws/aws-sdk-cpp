@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_documentationVersion;
-    bool m_documentationVersionHasBeenSet;
+    bool m_documentationVersionHasBeenSet = false;
   };
 
 } // namespace Model

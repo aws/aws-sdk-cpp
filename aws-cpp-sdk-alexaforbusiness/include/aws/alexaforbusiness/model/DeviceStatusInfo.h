@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::Vector<DeviceStatusDetail> m_deviceStatusDetails;
-    bool m_deviceStatusDetailsHasBeenSet;
+    bool m_deviceStatusDetailsHasBeenSet = false;
 
     ConnectionStatus m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectionStatusUpdatedTime;
-    bool m_connectionStatusUpdatedTimeHasBeenSet;
+    bool m_connectionStatusUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

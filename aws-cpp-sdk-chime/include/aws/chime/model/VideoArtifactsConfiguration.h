@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ArtifactsState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     VideoMuxType m_muxType;
-    bool m_muxTypeHasBeenSet;
+    bool m_muxTypeHasBeenSet = false;
   };
 
 } // namespace Model

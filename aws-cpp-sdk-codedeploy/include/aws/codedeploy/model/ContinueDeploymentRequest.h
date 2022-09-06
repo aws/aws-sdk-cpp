@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     DeploymentWaitType m_deploymentWaitType;
-    bool m_deploymentWaitTypeHasBeenSet;
+    bool m_deploymentWaitTypeHasBeenSet = false;
   };
 
 } // namespace Model

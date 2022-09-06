@@ -224,19 +224,19 @@ namespace Model
   private:
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_anomalyGroupId;
-    bool m_anomalyGroupIdHasBeenSet;
+    bool m_anomalyGroupIdHasBeenSet = false;
 
     double m_anomalyGroupScore;
-    bool m_anomalyGroupScoreHasBeenSet;
+    bool m_anomalyGroupScoreHasBeenSet = false;
 
     Aws::String m_primaryMetricName;
-    bool m_primaryMetricNameHasBeenSet;
+    bool m_primaryMetricNameHasBeenSet = false;
   };
 
 } // namespace Model

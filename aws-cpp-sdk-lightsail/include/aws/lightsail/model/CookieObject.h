@@ -140,10 +140,10 @@ namespace Model
   private:
 
     ForwardValues m_option;
-    bool m_optionHasBeenSet;
+    bool m_optionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cookiesAllowList;
-    bool m_cookiesAllowListHasBeenSet;
+    bool m_cookiesAllowListHasBeenSet = false;
   };
 
 } // namespace Model

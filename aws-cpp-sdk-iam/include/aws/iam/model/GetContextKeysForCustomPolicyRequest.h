@@ -175,7 +175,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_policyInputList;
-    bool m_policyInputListHasBeenSet;
+    bool m_policyInputListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -426,37 +426,37 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cidrAllowList;
-    bool m_cidrAllowListHasBeenSet;
+    bool m_cidrAllowListHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_maxLatency;
-    bool m_maxLatencyHasBeenSet;
+    bool m_maxLatencyHasBeenSet = false;
 
     int m_maxSyncBuffer;
-    bool m_maxSyncBufferHasBeenSet;
+    bool m_maxSyncBufferHasBeenSet = false;
 
     int m_minLatency;
-    bool m_minLatencyHasBeenSet;
+    bool m_minLatencyHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_remoteId;
-    bool m_remoteIdHasBeenSet;
+    bool m_remoteIdHasBeenSet = false;
 
     int m_senderControlPort;
-    bool m_senderControlPortHasBeenSet;
+    bool m_senderControlPortHasBeenSet = false;
 
     Aws::String m_senderIpAddress;
-    bool m_senderIpAddressHasBeenSet;
+    bool m_senderIpAddressHasBeenSet = false;
 
     int m_smoothingLatency;
-    bool m_smoothingLatencyHasBeenSet;
+    bool m_smoothingLatencyHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
   };
 
 } // namespace Model

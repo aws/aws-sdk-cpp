@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_exportTaskIds;
-    bool m_exportTaskIdsHasBeenSet;
+    bool m_exportTaskIdsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

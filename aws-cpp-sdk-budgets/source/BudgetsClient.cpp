@@ -99,7 +99,7 @@ BudgetsClient::~BudgetsClient()
 
 void BudgetsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Budgets");
+  AWSClient::SetServiceClientName("Budgets");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

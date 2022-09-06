@@ -319,25 +319,25 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_localGatewayVirtualInterfaceGroupId;
-    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet;
+    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
     LocalGatewayRouteType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     LocalGatewayRouteState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableId;
-    bool m_localGatewayRouteTableIdHasBeenSet;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableArn;
-    bool m_localGatewayRouteTableArnHasBeenSet;
+    bool m_localGatewayRouteTableArnHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
   };
 
 } // namespace Model

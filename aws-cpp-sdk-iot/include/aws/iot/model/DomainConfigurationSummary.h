@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_domainConfigurationName;
-    bool m_domainConfigurationNameHasBeenSet;
+    bool m_domainConfigurationNameHasBeenSet = false;
 
     Aws::String m_domainConfigurationArn;
-    bool m_domainConfigurationArnHasBeenSet;
+    bool m_domainConfigurationArnHasBeenSet = false;
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

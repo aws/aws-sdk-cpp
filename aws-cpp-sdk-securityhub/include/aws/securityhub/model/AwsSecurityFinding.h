@@ -2092,127 +2092,127 @@ namespace Model
   private:
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_productArn;
-    bool m_productArnHasBeenSet;
+    bool m_productArnHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Aws::String m_companyName;
-    bool m_companyNameHasBeenSet;
+    bool m_companyNameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_generatorId;
-    bool m_generatorIdHasBeenSet;
+    bool m_generatorIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     Aws::String m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
 
     Aws::String m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Severity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     int m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     int m_criticality;
-    bool m_criticalityHasBeenSet;
+    bool m_criticalityHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Remediation m_remediation;
-    bool m_remediationHasBeenSet;
+    bool m_remediationHasBeenSet = false;
 
     Aws::String m_sourceUrl;
-    bool m_sourceUrlHasBeenSet;
+    bool m_sourceUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_productFields;
-    bool m_productFieldsHasBeenSet;
+    bool m_productFieldsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_userDefinedFields;
-    bool m_userDefinedFieldsHasBeenSet;
+    bool m_userDefinedFieldsHasBeenSet = false;
 
     Aws::Vector<Malware> m_malware;
-    bool m_malwareHasBeenSet;
+    bool m_malwareHasBeenSet = false;
 
     Network m_network;
-    bool m_networkHasBeenSet;
+    bool m_networkHasBeenSet = false;
 
     Aws::Vector<NetworkPathComponent> m_networkPath;
-    bool m_networkPathHasBeenSet;
+    bool m_networkPathHasBeenSet = false;
 
     ProcessDetails m_process;
-    bool m_processHasBeenSet;
+    bool m_processHasBeenSet = false;
 
     Aws::Vector<Threat> m_threats;
-    bool m_threatsHasBeenSet;
+    bool m_threatsHasBeenSet = false;
 
     Aws::Vector<ThreatIntelIndicator> m_threatIntelIndicators;
-    bool m_threatIntelIndicatorsHasBeenSet;
+    bool m_threatIntelIndicatorsHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Compliance m_compliance;
-    bool m_complianceHasBeenSet;
+    bool m_complianceHasBeenSet = false;
 
     VerificationState m_verificationState;
-    bool m_verificationStateHasBeenSet;
+    bool m_verificationStateHasBeenSet = false;
 
     WorkflowState m_workflowState;
-    bool m_workflowStateHasBeenSet;
+    bool m_workflowStateHasBeenSet = false;
 
     Workflow m_workflow;
-    bool m_workflowHasBeenSet;
+    bool m_workflowHasBeenSet = false;
 
     RecordState m_recordState;
-    bool m_recordStateHasBeenSet;
+    bool m_recordStateHasBeenSet = false;
 
     Aws::Vector<RelatedFinding> m_relatedFindings;
-    bool m_relatedFindingsHasBeenSet;
+    bool m_relatedFindingsHasBeenSet = false;
 
     Note m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
 
     Aws::Vector<Vulnerability> m_vulnerabilities;
-    bool m_vulnerabilitiesHasBeenSet;
+    bool m_vulnerabilitiesHasBeenSet = false;
 
     PatchSummary m_patchSummary;
-    bool m_patchSummaryHasBeenSet;
+    bool m_patchSummaryHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     FindingProviderFields m_findingProviderFields;
-    bool m_findingProviderFieldsHasBeenSet;
+    bool m_findingProviderFieldsHasBeenSet = false;
 
     bool m_sample;
-    bool m_sampleHasBeenSet;
+    bool m_sampleHasBeenSet = false;
   };
 
 } // namespace Model

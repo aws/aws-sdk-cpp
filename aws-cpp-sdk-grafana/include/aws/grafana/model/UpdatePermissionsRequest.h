@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<UpdateInstruction> m_updateInstructionBatch;
-    bool m_updateInstructionBatchHasBeenSet;
+    bool m_updateInstructionBatchHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

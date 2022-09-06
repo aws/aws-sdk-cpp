@@ -84,7 +84,7 @@ namespace Model
   private:
 
     CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference;
-    bool m_certificateTransparencyLoggingPreferenceHasBeenSet;
+    bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

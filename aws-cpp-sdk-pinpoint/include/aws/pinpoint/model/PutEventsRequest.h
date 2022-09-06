@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     EventsRequest m_eventsRequest;
-    bool m_eventsRequestHasBeenSet;
+    bool m_eventsRequestHasBeenSet = false;
   };
 
 } // namespace Model

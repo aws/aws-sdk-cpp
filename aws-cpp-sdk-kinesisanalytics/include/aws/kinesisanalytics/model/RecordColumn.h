@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_mapping;
-    bool m_mappingHasBeenSet;
+    bool m_mappingHasBeenSet = false;
 
     Aws::String m_sqlType;
-    bool m_sqlTypeHasBeenSet;
+    bool m_sqlTypeHasBeenSet = false;
   };
 
 } // namespace Model

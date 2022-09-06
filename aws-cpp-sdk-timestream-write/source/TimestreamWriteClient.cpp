@@ -92,7 +92,7 @@ TimestreamWriteClient::~TimestreamWriteClient()
 
 void TimestreamWriteClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Timestream Write");
+  AWSClient::SetServiceClientName("Timestream Write");
   LoadTimestreamWriteSpecificConfig(config);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())

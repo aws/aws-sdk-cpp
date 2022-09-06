@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_repositoryNames;
-    bool m_repositoryNamesHasBeenSet;
+    bool m_repositoryNamesHasBeenSet = false;
   };
 
 } // namespace Model

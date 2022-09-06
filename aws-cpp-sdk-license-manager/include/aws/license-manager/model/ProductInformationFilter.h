@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_productInformationFilterName;
-    bool m_productInformationFilterNameHasBeenSet;
+    bool m_productInformationFilterNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_productInformationFilterValue;
-    bool m_productInformationFilterValueHasBeenSet;
+    bool m_productInformationFilterValueHasBeenSet = false;
 
     Aws::String m_productInformationFilterComparator;
-    bool m_productInformationFilterComparatorHasBeenSet;
+    bool m_productInformationFilterComparatorHasBeenSet = false;
   };
 
 } // namespace Model

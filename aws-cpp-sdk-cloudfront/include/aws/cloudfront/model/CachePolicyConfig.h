@@ -347,22 +347,22 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_defaultTTL;
-    bool m_defaultTTLHasBeenSet;
+    bool m_defaultTTLHasBeenSet = false;
 
     long long m_maxTTL;
-    bool m_maxTTLHasBeenSet;
+    bool m_maxTTLHasBeenSet = false;
 
     long long m_minTTL;
-    bool m_minTTLHasBeenSet;
+    bool m_minTTLHasBeenSet = false;
 
     ParametersInCacheKeyAndForwardedToOrigin m_parametersInCacheKeyAndForwardedToOrigin;
-    bool m_parametersInCacheKeyAndForwardedToOriginHasBeenSet;
+    bool m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = false;
   };
 
 } // namespace Model
