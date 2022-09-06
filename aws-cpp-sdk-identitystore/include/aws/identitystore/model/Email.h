@@ -120,26 +120,26 @@ namespace Model
 
 
     /**
-     * <p>A boolean representing whether this is the primary email for the associated
-     * resource.</p>
+     * <p>A Boolean value representing whether this is the primary email address for
+     * the associated resource.</p>
      */
     inline bool GetPrimary() const{ return m_primary; }
 
     /**
-     * <p>A boolean representing whether this is the primary email for the associated
-     * resource.</p>
+     * <p>A Boolean value representing whether this is the primary email address for
+     * the associated resource.</p>
      */
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
 
     /**
-     * <p>A boolean representing whether this is the primary email for the associated
-     * resource.</p>
+     * <p>A Boolean value representing whether this is the primary email address for
+     * the associated resource.</p>
      */
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
 
     /**
-     * <p>A boolean representing whether this is the primary email for the associated
-     * resource.</p>
+     * <p>A Boolean value representing whether this is the primary email address for
+     * the associated resource.</p>
      */
     inline Email& WithPrimary(bool value) { SetPrimary(value); return *this;}
 

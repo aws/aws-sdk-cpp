@@ -118,33 +118,29 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
-     * specify how many results to return in one page. The length limit is 50
-     * characters.</p>
+     * used in all <code>List</code> requests to specify how many results to return in
+     * one page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
-     * specify how many results to return in one page. The length limit is 50
-     * characters.</p>
+     * used in all <code>List</code> requests to specify how many results to return in
+     * one page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
-     * specify how many results to return in one page. The length limit is 50
-     * characters.</p>
+     * used in all <code>List</code> requests to specify how many results to return in
+     * one page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
-     * specify how many results to return in one page. The length limit is 50
-     * characters.</p>
+     * used in all <code>List</code> requests to specify how many results to return in
+     * one page.</p>
      */
     inline ListGroupMembershipsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

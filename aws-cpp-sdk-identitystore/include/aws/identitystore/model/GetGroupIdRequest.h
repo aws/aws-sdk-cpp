@@ -77,7 +77,7 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the group value that is not the group's primary
+     * <p>A unique identifier for an identity resource that is not the primary
      * identifier. This value can be an identifier from an external identity provider
      * (IdP) that is associated with the group or a unique attribute. For example, a
      * unique <code>GroupDisplayName</code>.</p>
@@ -85,7 +85,7 @@ namespace Model
     inline const AlternateIdentifier& GetAlternateIdentifier() const{ return m_alternateIdentifier; }
 
     /**
-     * <p>A unique identifier for the group value that is not the group's primary
+     * <p>A unique identifier for an identity resource that is not the primary
      * identifier. This value can be an identifier from an external identity provider
      * (IdP) that is associated with the group or a unique attribute. For example, a
      * unique <code>GroupDisplayName</code>.</p>
@@ -93,7 +93,7 @@ namespace Model
     inline bool AlternateIdentifierHasBeenSet() const { return m_alternateIdentifierHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the group value that is not the group's primary
+     * <p>A unique identifier for an identity resource that is not the primary
      * identifier. This value can be an identifier from an external identity provider
      * (IdP) that is associated with the group or a unique attribute. For example, a
      * unique <code>GroupDisplayName</code>.</p>
@@ -101,7 +101,7 @@ namespace Model
     inline void SetAlternateIdentifier(const AlternateIdentifier& value) { m_alternateIdentifierHasBeenSet = true; m_alternateIdentifier = value; }
 
     /**
-     * <p>A unique identifier for the group value that is not the group's primary
+     * <p>A unique identifier for an identity resource that is not the primary
      * identifier. This value can be an identifier from an external identity provider
      * (IdP) that is associated with the group or a unique attribute. For example, a
      * unique <code>GroupDisplayName</code>.</p>
@@ -109,7 +109,7 @@ namespace Model
     inline void SetAlternateIdentifier(AlternateIdentifier&& value) { m_alternateIdentifierHasBeenSet = true; m_alternateIdentifier = std::move(value); }
 
     /**
-     * <p>A unique identifier for the group value that is not the group's primary
+     * <p>A unique identifier for an identity resource that is not the primary
      * identifier. This value can be an identifier from an external identity provider
      * (IdP) that is associated with the group or a unique attribute. For example, a
      * unique <code>GroupDisplayName</code>.</p>
@@ -117,7 +117,7 @@ namespace Model
     inline GetGroupIdRequest& WithAlternateIdentifier(const AlternateIdentifier& value) { SetAlternateIdentifier(value); return *this;}
 
     /**
-     * <p>A unique identifier for the group value that is not the group's primary
+     * <p>A unique identifier for an identity resource that is not the primary
      * identifier. This value can be an identifier from an external identity provider
      * (IdP) that is associated with the group or a unique attribute. For example, a
      * unique <code>GroupDisplayName</code>.</p>

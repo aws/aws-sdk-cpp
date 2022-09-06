@@ -32,6 +32,7 @@ namespace Aws
         static const int FeatureGroup_HASH = HashingUtils::HashString("FeatureGroup");
         static const int Project_HASH = HashingUtils::HashString("Project");
         static const int FeatureMetadata_HASH = HashingUtils::HashString("FeatureMetadata");
+        static const int HyperParameterTuningJob_HASH = HashingUtils::HashString("HyperParameterTuningJob");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return ResourceType::FeatureMetadata;
           }
+          else if (hashCode == HyperParameterTuningJob_HASH)
+          {
+            return ResourceType::HyperParameterTuningJob;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +128,8 @@ namespace Aws
             return "Project";
           case ResourceType::FeatureMetadata:
             return "FeatureMetadata";
+          case ResourceType::HyperParameterTuningJob:
+            return "HyperParameterTuningJob";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

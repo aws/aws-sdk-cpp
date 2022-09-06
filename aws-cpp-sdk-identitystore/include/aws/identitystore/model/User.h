@@ -45,74 +45,66 @@ namespace Model
 
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline User& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline User& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The user’s user name value. The length limit is 128 characters. This value
-     * can consist of letters, accented characters, symbols, numbers, and punctuation.
-     * The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at
-     * the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>A unique string used to identify the user. The length limit is 128
+     * characters. This value can consist of letters, accented characters, symbols,
+     * numbers, and punctuation. This value is specified at the time the user is
+     * created and stored as an attribute of the user object in the identity store.</p>
      */
     inline User& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -567,49 +559,49 @@ namespace Model
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline User& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline User& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified</p>
+     * customer's specific needs, so they are left unspecified.</p>
      */
     inline User& WithTitle(const char* value) { SetTitle(value); return *this;}
 

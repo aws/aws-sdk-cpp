@@ -17,6 +17,7 @@
 #include <aws/sagemaker/model/FeatureGroup.h>
 #include <aws/sagemaker/model/Project.h>
 #include <aws/sagemaker/model/FeatureMetadata.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobSearchEntity.h>
 #include <utility>
 
 namespace Aws
@@ -348,6 +349,37 @@ namespace Model
      */
     inline SearchRecord& WithFeatureMetadata(FeatureMetadata&& value) { SetFeatureMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The properties of a hyperparameter tuning job.</p>
+     */
+    inline const HyperParameterTuningJobSearchEntity& GetHyperParameterTuningJob() const{ return m_hyperParameterTuningJob; }
+
+    /**
+     * <p>The properties of a hyperparameter tuning job.</p>
+     */
+    inline bool HyperParameterTuningJobHasBeenSet() const { return m_hyperParameterTuningJobHasBeenSet; }
+
+    /**
+     * <p>The properties of a hyperparameter tuning job.</p>
+     */
+    inline void SetHyperParameterTuningJob(const HyperParameterTuningJobSearchEntity& value) { m_hyperParameterTuningJobHasBeenSet = true; m_hyperParameterTuningJob = value; }
+
+    /**
+     * <p>The properties of a hyperparameter tuning job.</p>
+     */
+    inline void SetHyperParameterTuningJob(HyperParameterTuningJobSearchEntity&& value) { m_hyperParameterTuningJobHasBeenSet = true; m_hyperParameterTuningJob = std::move(value); }
+
+    /**
+     * <p>The properties of a hyperparameter tuning job.</p>
+     */
+    inline SearchRecord& WithHyperParameterTuningJob(const HyperParameterTuningJobSearchEntity& value) { SetHyperParameterTuningJob(value); return *this;}
+
+    /**
+     * <p>The properties of a hyperparameter tuning job.</p>
+     */
+    inline SearchRecord& WithHyperParameterTuningJob(HyperParameterTuningJobSearchEntity&& value) { SetHyperParameterTuningJob(std::move(value)); return *this;}
+
   private:
 
     TrainingJob m_trainingJob;
@@ -385,6 +417,9 @@ namespace Model
 
     FeatureMetadata m_featureMetadata;
     bool m_featureMetadataHasBeenSet;
+
+    HyperParameterTuningJobSearchEntity m_hyperParameterTuningJob;
+    bool m_hyperParameterTuningJobHasBeenSet;
   };
 
 } // namespace Model

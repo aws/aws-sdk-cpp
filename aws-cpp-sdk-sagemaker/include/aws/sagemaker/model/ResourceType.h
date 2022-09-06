@@ -27,7 +27,8 @@ namespace Model
     PipelineExecution,
     FeatureGroup,
     Project,
-    FeatureMetadata
+    FeatureMetadata,
+    HyperParameterTuningJob
   };
 
 namespace ResourceTypeMapper
