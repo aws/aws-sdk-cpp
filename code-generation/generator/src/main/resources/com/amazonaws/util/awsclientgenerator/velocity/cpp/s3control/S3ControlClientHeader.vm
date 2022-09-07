@@ -119,8 +119,6 @@ namespace Aws
          */
         ComputeEndpointOutcome ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const;
 
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
-
         Aws::String m_baseUri;
         Aws::String m_scheme;
         bool m_enableHostPrefixInjection;
