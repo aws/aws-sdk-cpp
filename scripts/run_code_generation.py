@@ -65,7 +65,7 @@ class ServiceModel(object):
 
 def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str, c2j_model_filename) -> ServiceModel:
     """Return a ServiceModel containing paths to the Service models: C2J model and endpoints (rules and tests).
-    H-U-U-U-U-G-E thanks to our legacy and backward compatibility!
+    Thanks to our legacy and backward compatibility, a more complicated logic to match c2j models and smithy endpoints are required.
 
     :param models_dir (str): filepath (absolute or relative) to the dir with c2j models
     :param endpoint_rules_dir (str): filepath (absolute or relative) to the dir with dirs of endpoints
@@ -146,14 +146,20 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
             if key == "s3":
                 service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
         except Exception as exc:
-            print(f"C2J model does not have a corresponding endpoints ruleset: {exc}")
+            # TODO: re-enable with endpoints introduction
+            # print(f"C2J model does not have a corresponding endpoints ruleset: {exc}")
             missing.add(model_file_date[0])
             service_name_to_model_filename[key] = ServiceModel(service_id=key,
                                                                c2j_model=model_file_date[0],
                                                                endpoint_rule_set=None,
                                                                endpoint_tests=None)
     if missing:
-        print(f"Missing endpoints for services: {missing}")
+        # TODO: re-enable with endpoints introduction
+        # print(f"Missing endpoints for services: {missing}")
+        pass
+
+    if service_name_to_model_filename.get("s3") and "s3-crt" not in service_name_to_model_filename:
+        service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
 
     return service_name_to_model_filename
 
@@ -392,7 +398,7 @@ def parse_arguments() -> dict:
             if args[cli_argument] is not None and args[cli_argument] != "":
                 raise RuntimeError(f"Provided {cli_argument} does not exist!")
             models_location = str(Path(sys.path[0] + "/../" + default_value).absolute())
-            if not os.path.exists(models_location):
+            if not os.path.exists(models_location) and cli_argument != "path_to_endpoint_rules":
                 raise RuntimeError("Could not find api definitions location!")
         arg_map[cli_argument] = models_location
 

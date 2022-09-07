@@ -62,7 +62,8 @@ namespace Aws
             // A grab bag property map of endpoint attributes. The values here are considered unstable.
             Aws::UnorderedMap<Aws::String, Aws::UniquePtr<AWSEndpointAttribute> > m_attributes;
 
-            // A map of additional headers to be when calling the endpoint. Note: the values in these maps are Lists to support multi-value headers.
+            // A map of additional headers to be set when calling the endpoint.
+            // Note: the values in these maps are Lists to support multi-value headers.
             Aws::UnorderedMap<Aws::String, Aws::String> m_headers;
         };
     }
