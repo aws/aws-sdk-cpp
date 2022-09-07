@@ -35,10 +35,10 @@
 #if($memberIsWholePayload)
   ${spaces}${memberVarName} = jsonValue;
 #else
-#if($member.shape.getName() == $shape.getName())
+#if($member.shape.getName() == $shape.getName() && $member.shape.list)
   ${spaces}${memberVarName}.resize(1);
   ${spaces}${memberVarName}[0] = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
-#elseif($member.shape.isMutuallyReferencedWith($shape))
+#elseif($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
   ${spaces}${memberVarName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.shape)>("${typeInfo.className}", jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}"));
 #else
   ${spaces}${memberVarName} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
