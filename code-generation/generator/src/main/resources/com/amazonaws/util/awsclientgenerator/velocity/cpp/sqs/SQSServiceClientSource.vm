@@ -55,12 +55,10 @@ ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const $
 
 void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->${operation.name}AsyncHelper(request, handler, context); } );
-}
-
-void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ${operation.name}(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ${operation.name}(request), context);
+    } );
 }
 
 #end

@@ -106,7 +106,6 @@ namespace Model
 #if($metadata.hasEndpointDiscoveryTrait)
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
 #end
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
 #if($metadata.hasEndpointTrait)
         Aws::String m_baseUri;
