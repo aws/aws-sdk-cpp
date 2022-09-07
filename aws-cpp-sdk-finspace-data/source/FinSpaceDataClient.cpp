@@ -161,12 +161,10 @@ AssociateUserToPermissionGroupOutcomeCallable FinSpaceDataClient::AssociateUserT
 
 void FinSpaceDataClient::AssociateUserToPermissionGroupAsync(const AssociateUserToPermissionGroupRequest& request, const AssociateUserToPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateUserToPermissionGroupAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::AssociateUserToPermissionGroupAsyncHelper(const AssociateUserToPermissionGroupRequest& request, const AssociateUserToPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateUserToPermissionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateUserToPermissionGroup(request), context);
+    } );
 }
 
 CreateChangesetOutcome FinSpaceDataClient::CreateChangeset(const CreateChangesetRequest& request) const
@@ -193,12 +191,10 @@ CreateChangesetOutcomeCallable FinSpaceDataClient::CreateChangesetCallable(const
 
 void FinSpaceDataClient::CreateChangesetAsync(const CreateChangesetRequest& request, const CreateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChangesetAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::CreateChangesetAsyncHelper(const CreateChangesetRequest& request, const CreateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChangeset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChangeset(request), context);
+    } );
 }
 
 CreateDataViewOutcome FinSpaceDataClient::CreateDataView(const CreateDataViewRequest& request) const
@@ -225,12 +221,10 @@ CreateDataViewOutcomeCallable FinSpaceDataClient::CreateDataViewCallable(const C
 
 void FinSpaceDataClient::CreateDataViewAsync(const CreateDataViewRequest& request, const CreateDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataViewAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::CreateDataViewAsyncHelper(const CreateDataViewRequest& request, const CreateDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataView(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataView(request), context);
+    } );
 }
 
 CreateDatasetOutcome FinSpaceDataClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -250,12 +244,10 @@ CreateDatasetOutcomeCallable FinSpaceDataClient::CreateDatasetCallable(const Cre
 
 void FinSpaceDataClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataset(request), context);
+    } );
 }
 
 CreatePermissionGroupOutcome FinSpaceDataClient::CreatePermissionGroup(const CreatePermissionGroupRequest& request) const
@@ -275,12 +267,10 @@ CreatePermissionGroupOutcomeCallable FinSpaceDataClient::CreatePermissionGroupCa
 
 void FinSpaceDataClient::CreatePermissionGroupAsync(const CreatePermissionGroupRequest& request, const CreatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePermissionGroupAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::CreatePermissionGroupAsyncHelper(const CreatePermissionGroupRequest& request, const CreatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePermissionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePermissionGroup(request), context);
+    } );
 }
 
 CreateUserOutcome FinSpaceDataClient::CreateUser(const CreateUserRequest& request) const
@@ -300,12 +290,10 @@ CreateUserOutcomeCallable FinSpaceDataClient::CreateUserCallable(const CreateUse
 
 void FinSpaceDataClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUser(request), context);
+    } );
 }
 
 DeleteDatasetOutcome FinSpaceDataClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -331,12 +319,10 @@ DeleteDatasetOutcomeCallable FinSpaceDataClient::DeleteDatasetCallable(const Del
 
 void FinSpaceDataClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDataset(request), context);
+    } );
 }
 
 DeletePermissionGroupOutcome FinSpaceDataClient::DeletePermissionGroup(const DeletePermissionGroupRequest& request) const
@@ -362,12 +348,10 @@ DeletePermissionGroupOutcomeCallable FinSpaceDataClient::DeletePermissionGroupCa
 
 void FinSpaceDataClient::DeletePermissionGroupAsync(const DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionGroupAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::DeletePermissionGroupAsyncHelper(const DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePermissionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePermissionGroup(request), context);
+    } );
 }
 
 DisableUserOutcome FinSpaceDataClient::DisableUser(const DisableUserRequest& request) const
@@ -394,12 +378,10 @@ DisableUserOutcomeCallable FinSpaceDataClient::DisableUserCallable(const Disable
 
 void FinSpaceDataClient::DisableUserAsync(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableUserAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::DisableUserAsyncHelper(const DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableUser(request), context);
+    } );
 }
 
 DisassociateUserFromPermissionGroupOutcome FinSpaceDataClient::DisassociateUserFromPermissionGroup(const DisassociateUserFromPermissionGroupRequest& request) const
@@ -432,12 +414,10 @@ DisassociateUserFromPermissionGroupOutcomeCallable FinSpaceDataClient::Disassoci
 
 void FinSpaceDataClient::DisassociateUserFromPermissionGroupAsync(const DisassociateUserFromPermissionGroupRequest& request, const DisassociateUserFromPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateUserFromPermissionGroupAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::DisassociateUserFromPermissionGroupAsyncHelper(const DisassociateUserFromPermissionGroupRequest& request, const DisassociateUserFromPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateUserFromPermissionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateUserFromPermissionGroup(request), context);
+    } );
 }
 
 EnableUserOutcome FinSpaceDataClient::EnableUser(const EnableUserRequest& request) const
@@ -464,12 +444,10 @@ EnableUserOutcomeCallable FinSpaceDataClient::EnableUserCallable(const EnableUse
 
 void FinSpaceDataClient::EnableUserAsync(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableUserAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::EnableUserAsyncHelper(const EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableUser(request), context);
+    } );
 }
 
 GetChangesetOutcome FinSpaceDataClient::GetChangeset(const GetChangesetRequest& request) const
@@ -502,12 +480,10 @@ GetChangesetOutcomeCallable FinSpaceDataClient::GetChangesetCallable(const GetCh
 
 void FinSpaceDataClient::GetChangesetAsync(const GetChangesetRequest& request, const GetChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChangesetAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetChangesetAsyncHelper(const GetChangesetRequest& request, const GetChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChangeset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChangeset(request), context);
+    } );
 }
 
 GetDataViewOutcome FinSpaceDataClient::GetDataView(const GetDataViewRequest& request) const
@@ -540,12 +516,10 @@ GetDataViewOutcomeCallable FinSpaceDataClient::GetDataViewCallable(const GetData
 
 void FinSpaceDataClient::GetDataViewAsync(const GetDataViewRequest& request, const GetDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataViewAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetDataViewAsyncHelper(const GetDataViewRequest& request, const GetDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDataView(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataView(request), context);
+    } );
 }
 
 GetDatasetOutcome FinSpaceDataClient::GetDataset(const GetDatasetRequest& request) const
@@ -571,12 +545,10 @@ GetDatasetOutcomeCallable FinSpaceDataClient::GetDatasetCallable(const GetDatase
 
 void FinSpaceDataClient::GetDatasetAsync(const GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetDatasetAsyncHelper(const GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataset(request), context);
+    } );
 }
 
 GetExternalDataViewAccessDetailsOutcome FinSpaceDataClient::GetExternalDataViewAccessDetails(const GetExternalDataViewAccessDetailsRequest& request) const
@@ -610,12 +582,10 @@ GetExternalDataViewAccessDetailsOutcomeCallable FinSpaceDataClient::GetExternalD
 
 void FinSpaceDataClient::GetExternalDataViewAccessDetailsAsync(const GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExternalDataViewAccessDetailsAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetExternalDataViewAccessDetailsAsyncHelper(const GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetExternalDataViewAccessDetails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetExternalDataViewAccessDetails(request), context);
+    } );
 }
 
 GetPermissionGroupOutcome FinSpaceDataClient::GetPermissionGroup(const GetPermissionGroupRequest& request) const
@@ -641,12 +611,10 @@ GetPermissionGroupOutcomeCallable FinSpaceDataClient::GetPermissionGroupCallable
 
 void FinSpaceDataClient::GetPermissionGroupAsync(const GetPermissionGroupRequest& request, const GetPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionGroupAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetPermissionGroupAsyncHelper(const GetPermissionGroupRequest& request, const GetPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPermissionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPermissionGroup(request), context);
+    } );
 }
 
 GetProgrammaticAccessCredentialsOutcome FinSpaceDataClient::GetProgrammaticAccessCredentials(const GetProgrammaticAccessCredentialsRequest& request) const
@@ -671,12 +639,10 @@ GetProgrammaticAccessCredentialsOutcomeCallable FinSpaceDataClient::GetProgramma
 
 void FinSpaceDataClient::GetProgrammaticAccessCredentialsAsync(const GetProgrammaticAccessCredentialsRequest& request, const GetProgrammaticAccessCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetProgrammaticAccessCredentialsAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetProgrammaticAccessCredentialsAsyncHelper(const GetProgrammaticAccessCredentialsRequest& request, const GetProgrammaticAccessCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetProgrammaticAccessCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetProgrammaticAccessCredentials(request), context);
+    } );
 }
 
 GetUserOutcome FinSpaceDataClient::GetUser(const GetUserRequest& request) const
@@ -702,12 +668,10 @@ GetUserOutcomeCallable FinSpaceDataClient::GetUserCallable(const GetUserRequest&
 
 void FinSpaceDataClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetUserAsyncHelper(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetUser(request), context);
+    } );
 }
 
 GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkingLocationRequest& request) const
@@ -727,12 +691,10 @@ GetWorkingLocationOutcomeCallable FinSpaceDataClient::GetWorkingLocationCallable
 
 void FinSpaceDataClient::GetWorkingLocationAsync(const GetWorkingLocationRequest& request, const GetWorkingLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkingLocationAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::GetWorkingLocationAsyncHelper(const GetWorkingLocationRequest& request, const GetWorkingLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWorkingLocation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWorkingLocation(request), context);
+    } );
 }
 
 ListChangesetsOutcome FinSpaceDataClient::ListChangesets(const ListChangesetsRequest& request) const
@@ -759,12 +721,10 @@ ListChangesetsOutcomeCallable FinSpaceDataClient::ListChangesetsCallable(const L
 
 void FinSpaceDataClient::ListChangesetsAsync(const ListChangesetsRequest& request, const ListChangesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChangesetsAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ListChangesetsAsyncHelper(const ListChangesetsRequest& request, const ListChangesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChangesets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChangesets(request), context);
+    } );
 }
 
 ListDataViewsOutcome FinSpaceDataClient::ListDataViews(const ListDataViewsRequest& request) const
@@ -791,12 +751,10 @@ ListDataViewsOutcomeCallable FinSpaceDataClient::ListDataViewsCallable(const Lis
 
 void FinSpaceDataClient::ListDataViewsAsync(const ListDataViewsRequest& request, const ListDataViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataViewsAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ListDataViewsAsyncHelper(const ListDataViewsRequest& request, const ListDataViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDataViews(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataViews(request), context);
+    } );
 }
 
 ListDatasetsOutcome FinSpaceDataClient::ListDatasets(const ListDatasetsRequest& request) const
@@ -816,12 +774,10 @@ ListDatasetsOutcomeCallable FinSpaceDataClient::ListDatasetsCallable(const ListD
 
 void FinSpaceDataClient::ListDatasetsAsync(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetsAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDatasets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDatasets(request), context);
+    } );
 }
 
 ListPermissionGroupsOutcome FinSpaceDataClient::ListPermissionGroups(const ListPermissionGroupsRequest& request) const
@@ -846,12 +802,10 @@ ListPermissionGroupsOutcomeCallable FinSpaceDataClient::ListPermissionGroupsCall
 
 void FinSpaceDataClient::ListPermissionGroupsAsync(const ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ListPermissionGroupsAsyncHelper(const ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPermissionGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPermissionGroups(request), context);
+    } );
 }
 
 ListPermissionGroupsByUserOutcome FinSpaceDataClient::ListPermissionGroupsByUser(const ListPermissionGroupsByUserRequest& request) const
@@ -883,12 +837,10 @@ ListPermissionGroupsByUserOutcomeCallable FinSpaceDataClient::ListPermissionGrou
 
 void FinSpaceDataClient::ListPermissionGroupsByUserAsync(const ListPermissionGroupsByUserRequest& request, const ListPermissionGroupsByUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionGroupsByUserAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ListPermissionGroupsByUserAsyncHelper(const ListPermissionGroupsByUserRequest& request, const ListPermissionGroupsByUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPermissionGroupsByUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPermissionGroupsByUser(request), context);
+    } );
 }
 
 ListUsersOutcome FinSpaceDataClient::ListUsers(const ListUsersRequest& request) const
@@ -913,12 +865,10 @@ ListUsersOutcomeCallable FinSpaceDataClient::ListUsersCallable(const ListUsersRe
 
 void FinSpaceDataClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUsers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUsers(request), context);
+    } );
 }
 
 ListUsersByPermissionGroupOutcome FinSpaceDataClient::ListUsersByPermissionGroup(const ListUsersByPermissionGroupRequest& request) const
@@ -950,12 +900,10 @@ ListUsersByPermissionGroupOutcomeCallable FinSpaceDataClient::ListUsersByPermiss
 
 void FinSpaceDataClient::ListUsersByPermissionGroupAsync(const ListUsersByPermissionGroupRequest& request, const ListUsersByPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUsersByPermissionGroupAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ListUsersByPermissionGroupAsyncHelper(const ListUsersByPermissionGroupRequest& request, const ListUsersByPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUsersByPermissionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUsersByPermissionGroup(request), context);
+    } );
 }
 
 ResetUserPasswordOutcome FinSpaceDataClient::ResetUserPassword(const ResetUserPasswordRequest& request) const
@@ -982,12 +930,10 @@ ResetUserPasswordOutcomeCallable FinSpaceDataClient::ResetUserPasswordCallable(c
 
 void FinSpaceDataClient::ResetUserPasswordAsync(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetUserPasswordAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::ResetUserPasswordAsyncHelper(const ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResetUserPassword(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResetUserPassword(request), context);
+    } );
 }
 
 UpdateChangesetOutcome FinSpaceDataClient::UpdateChangeset(const UpdateChangesetRequest& request) const
@@ -1020,12 +966,10 @@ UpdateChangesetOutcomeCallable FinSpaceDataClient::UpdateChangesetCallable(const
 
 void FinSpaceDataClient::UpdateChangesetAsync(const UpdateChangesetRequest& request, const UpdateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChangesetAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::UpdateChangesetAsyncHelper(const UpdateChangesetRequest& request, const UpdateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateChangeset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateChangeset(request), context);
+    } );
 }
 
 UpdateDatasetOutcome FinSpaceDataClient::UpdateDataset(const UpdateDatasetRequest& request) const
@@ -1051,12 +995,10 @@ UpdateDatasetOutcomeCallable FinSpaceDataClient::UpdateDatasetCallable(const Upd
 
 void FinSpaceDataClient::UpdateDatasetAsync(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::UpdateDatasetAsyncHelper(const UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDataset(request), context);
+    } );
 }
 
 UpdatePermissionGroupOutcome FinSpaceDataClient::UpdatePermissionGroup(const UpdatePermissionGroupRequest& request) const
@@ -1082,12 +1024,10 @@ UpdatePermissionGroupOutcomeCallable FinSpaceDataClient::UpdatePermissionGroupCa
 
 void FinSpaceDataClient::UpdatePermissionGroupAsync(const UpdatePermissionGroupRequest& request, const UpdatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePermissionGroupAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::UpdatePermissionGroupAsyncHelper(const UpdatePermissionGroupRequest& request, const UpdatePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePermissionGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePermissionGroup(request), context);
+    } );
 }
 
 UpdateUserOutcome FinSpaceDataClient::UpdateUser(const UpdateUserRequest& request) const
@@ -1113,11 +1053,9 @@ UpdateUserOutcomeCallable FinSpaceDataClient::UpdateUserCallable(const UpdateUse
 
 void FinSpaceDataClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
-}
-
-void FinSpaceDataClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUser(request), context);
+    } );
 }
 

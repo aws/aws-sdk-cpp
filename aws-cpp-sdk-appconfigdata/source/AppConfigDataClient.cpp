@@ -124,12 +124,10 @@ GetLatestConfigurationOutcomeCallable AppConfigDataClient::GetLatestConfiguratio
 
 void AppConfigDataClient::GetLatestConfigurationAsync(const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLatestConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigDataClient::GetLatestConfigurationAsyncHelper(const GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLatestConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLatestConfiguration(request), context);
+    } );
 }
 
 StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(const StartConfigurationSessionRequest& request) const
@@ -149,11 +147,9 @@ StartConfigurationSessionOutcomeCallable AppConfigDataClient::StartConfiguration
 
 void AppConfigDataClient::StartConfigurationSessionAsync(const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartConfigurationSessionAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigDataClient::StartConfigurationSessionAsyncHelper(const StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartConfigurationSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartConfigurationSession(request), context);
+    } );
 }
 

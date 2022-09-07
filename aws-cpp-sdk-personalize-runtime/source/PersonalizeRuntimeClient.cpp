@@ -119,12 +119,10 @@ GetPersonalizedRankingOutcomeCallable PersonalizeRuntimeClient::GetPersonalizedR
 
 void PersonalizeRuntimeClient::GetPersonalizedRankingAsync(const GetPersonalizedRankingRequest& request, const GetPersonalizedRankingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPersonalizedRankingAsyncHelper( request, handler, context ); } );
-}
-
-void PersonalizeRuntimeClient::GetPersonalizedRankingAsyncHelper(const GetPersonalizedRankingRequest& request, const GetPersonalizedRankingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPersonalizedRanking(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPersonalizedRanking(request), context);
+    } );
 }
 
 GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const GetRecommendationsRequest& request) const
@@ -144,11 +142,9 @@ GetRecommendationsOutcomeCallable PersonalizeRuntimeClient::GetRecommendationsCa
 
 void PersonalizeRuntimeClient::GetRecommendationsAsync(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRecommendationsAsyncHelper( request, handler, context ); } );
-}
-
-void PersonalizeRuntimeClient::GetRecommendationsAsyncHelper(const GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRecommendations(request), context);
+    } );
 }
 

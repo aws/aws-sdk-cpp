@@ -179,12 +179,10 @@ AssociateConnectionAliasOutcomeCallable WorkSpacesClient::AssociateConnectionAli
 
 void WorkSpacesClient::AssociateConnectionAliasAsync(const AssociateConnectionAliasRequest& request, const AssociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateConnectionAliasAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::AssociateConnectionAliasAsyncHelper(const AssociateConnectionAliasRequest& request, const AssociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateConnectionAlias(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateConnectionAlias(request), context);
+    } );
 }
 
 AssociateIpGroupsOutcome WorkSpacesClient::AssociateIpGroups(const AssociateIpGroupsRequest& request) const
@@ -203,12 +201,10 @@ AssociateIpGroupsOutcomeCallable WorkSpacesClient::AssociateIpGroupsCallable(con
 
 void WorkSpacesClient::AssociateIpGroupsAsync(const AssociateIpGroupsRequest& request, const AssociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateIpGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::AssociateIpGroupsAsyncHelper(const AssociateIpGroupsRequest& request, const AssociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateIpGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateIpGroups(request), context);
+    } );
 }
 
 AuthorizeIpRulesOutcome WorkSpacesClient::AuthorizeIpRules(const AuthorizeIpRulesRequest& request) const
@@ -227,12 +223,10 @@ AuthorizeIpRulesOutcomeCallable WorkSpacesClient::AuthorizeIpRulesCallable(const
 
 void WorkSpacesClient::AuthorizeIpRulesAsync(const AuthorizeIpRulesRequest& request, const AuthorizeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeIpRulesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::AuthorizeIpRulesAsyncHelper(const AuthorizeIpRulesRequest& request, const AuthorizeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AuthorizeIpRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AuthorizeIpRules(request), context);
+    } );
 }
 
 CopyWorkspaceImageOutcome WorkSpacesClient::CopyWorkspaceImage(const CopyWorkspaceImageRequest& request) const
@@ -251,12 +245,10 @@ CopyWorkspaceImageOutcomeCallable WorkSpacesClient::CopyWorkspaceImageCallable(c
 
 void WorkSpacesClient::CopyWorkspaceImageAsync(const CopyWorkspaceImageRequest& request, const CopyWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CopyWorkspaceImageAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CopyWorkspaceImageAsyncHelper(const CopyWorkspaceImageRequest& request, const CopyWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CopyWorkspaceImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CopyWorkspaceImage(request), context);
+    } );
 }
 
 CreateConnectClientAddInOutcome WorkSpacesClient::CreateConnectClientAddIn(const CreateConnectClientAddInRequest& request) const
@@ -275,12 +267,10 @@ CreateConnectClientAddInOutcomeCallable WorkSpacesClient::CreateConnectClientAdd
 
 void WorkSpacesClient::CreateConnectClientAddInAsync(const CreateConnectClientAddInRequest& request, const CreateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectClientAddInAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateConnectClientAddInAsyncHelper(const CreateConnectClientAddInRequest& request, const CreateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConnectClientAddIn(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConnectClientAddIn(request), context);
+    } );
 }
 
 CreateConnectionAliasOutcome WorkSpacesClient::CreateConnectionAlias(const CreateConnectionAliasRequest& request) const
@@ -299,12 +289,10 @@ CreateConnectionAliasOutcomeCallable WorkSpacesClient::CreateConnectionAliasCall
 
 void WorkSpacesClient::CreateConnectionAliasAsync(const CreateConnectionAliasRequest& request, const CreateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectionAliasAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateConnectionAliasAsyncHelper(const CreateConnectionAliasRequest& request, const CreateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConnectionAlias(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConnectionAlias(request), context);
+    } );
 }
 
 CreateIpGroupOutcome WorkSpacesClient::CreateIpGroup(const CreateIpGroupRequest& request) const
@@ -323,12 +311,10 @@ CreateIpGroupOutcomeCallable WorkSpacesClient::CreateIpGroupCallable(const Creat
 
 void WorkSpacesClient::CreateIpGroupAsync(const CreateIpGroupRequest& request, const CreateIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIpGroupAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateIpGroupAsyncHelper(const CreateIpGroupRequest& request, const CreateIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateIpGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateIpGroup(request), context);
+    } );
 }
 
 CreateTagsOutcome WorkSpacesClient::CreateTags(const CreateTagsRequest& request) const
@@ -347,12 +333,10 @@ CreateTagsOutcomeCallable WorkSpacesClient::CreateTagsCallable(const CreateTagsR
 
 void WorkSpacesClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTagsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTags(request), context);
+    } );
 }
 
 CreateUpdatedWorkspaceImageOutcome WorkSpacesClient::CreateUpdatedWorkspaceImage(const CreateUpdatedWorkspaceImageRequest& request) const
@@ -371,12 +355,10 @@ CreateUpdatedWorkspaceImageOutcomeCallable WorkSpacesClient::CreateUpdatedWorksp
 
 void WorkSpacesClient::CreateUpdatedWorkspaceImageAsync(const CreateUpdatedWorkspaceImageRequest& request, const CreateUpdatedWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUpdatedWorkspaceImageAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateUpdatedWorkspaceImageAsyncHelper(const CreateUpdatedWorkspaceImageRequest& request, const CreateUpdatedWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUpdatedWorkspaceImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUpdatedWorkspaceImage(request), context);
+    } );
 }
 
 CreateWorkspaceBundleOutcome WorkSpacesClient::CreateWorkspaceBundle(const CreateWorkspaceBundleRequest& request) const
@@ -395,12 +377,10 @@ CreateWorkspaceBundleOutcomeCallable WorkSpacesClient::CreateWorkspaceBundleCall
 
 void WorkSpacesClient::CreateWorkspaceBundleAsync(const CreateWorkspaceBundleRequest& request, const CreateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkspaceBundleAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateWorkspaceBundleAsyncHelper(const CreateWorkspaceBundleRequest& request, const CreateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWorkspaceBundle(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWorkspaceBundle(request), context);
+    } );
 }
 
 CreateWorkspaceImageOutcome WorkSpacesClient::CreateWorkspaceImage(const CreateWorkspaceImageRequest& request) const
@@ -419,12 +399,10 @@ CreateWorkspaceImageOutcomeCallable WorkSpacesClient::CreateWorkspaceImageCallab
 
 void WorkSpacesClient::CreateWorkspaceImageAsync(const CreateWorkspaceImageRequest& request, const CreateWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkspaceImageAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateWorkspaceImageAsyncHelper(const CreateWorkspaceImageRequest& request, const CreateWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWorkspaceImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWorkspaceImage(request), context);
+    } );
 }
 
 CreateWorkspacesOutcome WorkSpacesClient::CreateWorkspaces(const CreateWorkspacesRequest& request) const
@@ -443,12 +421,10 @@ CreateWorkspacesOutcomeCallable WorkSpacesClient::CreateWorkspacesCallable(const
 
 void WorkSpacesClient::CreateWorkspacesAsync(const CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::CreateWorkspacesAsyncHelper(const CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWorkspaces(request), context);
+    } );
 }
 
 DeleteClientBrandingOutcome WorkSpacesClient::DeleteClientBranding(const DeleteClientBrandingRequest& request) const
@@ -467,12 +443,10 @@ DeleteClientBrandingOutcomeCallable WorkSpacesClient::DeleteClientBrandingCallab
 
 void WorkSpacesClient::DeleteClientBrandingAsync(const DeleteClientBrandingRequest& request, const DeleteClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClientBrandingAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeleteClientBrandingAsyncHelper(const DeleteClientBrandingRequest& request, const DeleteClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteClientBranding(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteClientBranding(request), context);
+    } );
 }
 
 DeleteConnectClientAddInOutcome WorkSpacesClient::DeleteConnectClientAddIn(const DeleteConnectClientAddInRequest& request) const
@@ -491,12 +465,10 @@ DeleteConnectClientAddInOutcomeCallable WorkSpacesClient::DeleteConnectClientAdd
 
 void WorkSpacesClient::DeleteConnectClientAddInAsync(const DeleteConnectClientAddInRequest& request, const DeleteConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectClientAddInAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeleteConnectClientAddInAsyncHelper(const DeleteConnectClientAddInRequest& request, const DeleteConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConnectClientAddIn(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConnectClientAddIn(request), context);
+    } );
 }
 
 DeleteConnectionAliasOutcome WorkSpacesClient::DeleteConnectionAlias(const DeleteConnectionAliasRequest& request) const
@@ -515,12 +487,10 @@ DeleteConnectionAliasOutcomeCallable WorkSpacesClient::DeleteConnectionAliasCall
 
 void WorkSpacesClient::DeleteConnectionAliasAsync(const DeleteConnectionAliasRequest& request, const DeleteConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAliasAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeleteConnectionAliasAsyncHelper(const DeleteConnectionAliasRequest& request, const DeleteConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConnectionAlias(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConnectionAlias(request), context);
+    } );
 }
 
 DeleteIpGroupOutcome WorkSpacesClient::DeleteIpGroup(const DeleteIpGroupRequest& request) const
@@ -539,12 +509,10 @@ DeleteIpGroupOutcomeCallable WorkSpacesClient::DeleteIpGroupCallable(const Delet
 
 void WorkSpacesClient::DeleteIpGroupAsync(const DeleteIpGroupRequest& request, const DeleteIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIpGroupAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeleteIpGroupAsyncHelper(const DeleteIpGroupRequest& request, const DeleteIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteIpGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteIpGroup(request), context);
+    } );
 }
 
 DeleteTagsOutcome WorkSpacesClient::DeleteTags(const DeleteTagsRequest& request) const
@@ -563,12 +531,10 @@ DeleteTagsOutcomeCallable WorkSpacesClient::DeleteTagsCallable(const DeleteTagsR
 
 void WorkSpacesClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTags(request), context);
+    } );
 }
 
 DeleteWorkspaceBundleOutcome WorkSpacesClient::DeleteWorkspaceBundle(const DeleteWorkspaceBundleRequest& request) const
@@ -587,12 +553,10 @@ DeleteWorkspaceBundleOutcomeCallable WorkSpacesClient::DeleteWorkspaceBundleCall
 
 void WorkSpacesClient::DeleteWorkspaceBundleAsync(const DeleteWorkspaceBundleRequest& request, const DeleteWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkspaceBundleAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeleteWorkspaceBundleAsyncHelper(const DeleteWorkspaceBundleRequest& request, const DeleteWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWorkspaceBundle(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWorkspaceBundle(request), context);
+    } );
 }
 
 DeleteWorkspaceImageOutcome WorkSpacesClient::DeleteWorkspaceImage(const DeleteWorkspaceImageRequest& request) const
@@ -611,12 +575,10 @@ DeleteWorkspaceImageOutcomeCallable WorkSpacesClient::DeleteWorkspaceImageCallab
 
 void WorkSpacesClient::DeleteWorkspaceImageAsync(const DeleteWorkspaceImageRequest& request, const DeleteWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkspaceImageAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeleteWorkspaceImageAsyncHelper(const DeleteWorkspaceImageRequest& request, const DeleteWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWorkspaceImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWorkspaceImage(request), context);
+    } );
 }
 
 DeregisterWorkspaceDirectoryOutcome WorkSpacesClient::DeregisterWorkspaceDirectory(const DeregisterWorkspaceDirectoryRequest& request) const
@@ -635,12 +597,10 @@ DeregisterWorkspaceDirectoryOutcomeCallable WorkSpacesClient::DeregisterWorkspac
 
 void WorkSpacesClient::DeregisterWorkspaceDirectoryAsync(const DeregisterWorkspaceDirectoryRequest& request, const DeregisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterWorkspaceDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DeregisterWorkspaceDirectoryAsyncHelper(const DeregisterWorkspaceDirectoryRequest& request, const DeregisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterWorkspaceDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterWorkspaceDirectory(request), context);
+    } );
 }
 
 DescribeAccountOutcome WorkSpacesClient::DescribeAccount(const DescribeAccountRequest& request) const
@@ -659,12 +619,10 @@ DescribeAccountOutcomeCallable WorkSpacesClient::DescribeAccountCallable(const D
 
 void WorkSpacesClient::DescribeAccountAsync(const DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeAccountAsyncHelper(const DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccount(request), context);
+    } );
 }
 
 DescribeAccountModificationsOutcome WorkSpacesClient::DescribeAccountModifications(const DescribeAccountModificationsRequest& request) const
@@ -683,12 +641,10 @@ DescribeAccountModificationsOutcomeCallable WorkSpacesClient::DescribeAccountMod
 
 void WorkSpacesClient::DescribeAccountModificationsAsync(const DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountModificationsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeAccountModificationsAsyncHelper(const DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccountModifications(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccountModifications(request), context);
+    } );
 }
 
 DescribeClientBrandingOutcome WorkSpacesClient::DescribeClientBranding(const DescribeClientBrandingRequest& request) const
@@ -707,12 +663,10 @@ DescribeClientBrandingOutcomeCallable WorkSpacesClient::DescribeClientBrandingCa
 
 void WorkSpacesClient::DescribeClientBrandingAsync(const DescribeClientBrandingRequest& request, const DescribeClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientBrandingAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeClientBrandingAsyncHelper(const DescribeClientBrandingRequest& request, const DescribeClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeClientBranding(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeClientBranding(request), context);
+    } );
 }
 
 DescribeClientPropertiesOutcome WorkSpacesClient::DescribeClientProperties(const DescribeClientPropertiesRequest& request) const
@@ -731,12 +685,10 @@ DescribeClientPropertiesOutcomeCallable WorkSpacesClient::DescribeClientProperti
 
 void WorkSpacesClient::DescribeClientPropertiesAsync(const DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientPropertiesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeClientPropertiesAsyncHelper(const DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeClientProperties(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeClientProperties(request), context);
+    } );
 }
 
 DescribeConnectClientAddInsOutcome WorkSpacesClient::DescribeConnectClientAddIns(const DescribeConnectClientAddInsRequest& request) const
@@ -755,12 +707,10 @@ DescribeConnectClientAddInsOutcomeCallable WorkSpacesClient::DescribeConnectClie
 
 void WorkSpacesClient::DescribeConnectClientAddInsAsync(const DescribeConnectClientAddInsRequest& request, const DescribeConnectClientAddInsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectClientAddInsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeConnectClientAddInsAsyncHelper(const DescribeConnectClientAddInsRequest& request, const DescribeConnectClientAddInsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectClientAddIns(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnectClientAddIns(request), context);
+    } );
 }
 
 DescribeConnectionAliasPermissionsOutcome WorkSpacesClient::DescribeConnectionAliasPermissions(const DescribeConnectionAliasPermissionsRequest& request) const
@@ -779,12 +729,10 @@ DescribeConnectionAliasPermissionsOutcomeCallable WorkSpacesClient::DescribeConn
 
 void WorkSpacesClient::DescribeConnectionAliasPermissionsAsync(const DescribeConnectionAliasPermissionsRequest& request, const DescribeConnectionAliasPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionAliasPermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeConnectionAliasPermissionsAsyncHelper(const DescribeConnectionAliasPermissionsRequest& request, const DescribeConnectionAliasPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectionAliasPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnectionAliasPermissions(request), context);
+    } );
 }
 
 DescribeConnectionAliasesOutcome WorkSpacesClient::DescribeConnectionAliases(const DescribeConnectionAliasesRequest& request) const
@@ -803,12 +751,10 @@ DescribeConnectionAliasesOutcomeCallable WorkSpacesClient::DescribeConnectionAli
 
 void WorkSpacesClient::DescribeConnectionAliasesAsync(const DescribeConnectionAliasesRequest& request, const DescribeConnectionAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionAliasesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeConnectionAliasesAsyncHelper(const DescribeConnectionAliasesRequest& request, const DescribeConnectionAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectionAliases(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConnectionAliases(request), context);
+    } );
 }
 
 DescribeIpGroupsOutcome WorkSpacesClient::DescribeIpGroups(const DescribeIpGroupsRequest& request) const
@@ -827,12 +773,10 @@ DescribeIpGroupsOutcomeCallable WorkSpacesClient::DescribeIpGroupsCallable(const
 
 void WorkSpacesClient::DescribeIpGroupsAsync(const DescribeIpGroupsRequest& request, const DescribeIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeIpGroupsAsyncHelper(const DescribeIpGroupsRequest& request, const DescribeIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeIpGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeIpGroups(request), context);
+    } );
 }
 
 DescribeTagsOutcome WorkSpacesClient::DescribeTags(const DescribeTagsRequest& request) const
@@ -851,12 +795,10 @@ DescribeTagsOutcomeCallable WorkSpacesClient::DescribeTagsCallable(const Describ
 
 void WorkSpacesClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTags(request), context);
+    } );
 }
 
 DescribeWorkspaceBundlesOutcome WorkSpacesClient::DescribeWorkspaceBundles(const DescribeWorkspaceBundlesRequest& request) const
@@ -875,12 +817,10 @@ DescribeWorkspaceBundlesOutcomeCallable WorkSpacesClient::DescribeWorkspaceBundl
 
 void WorkSpacesClient::DescribeWorkspaceBundlesAsync(const DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceBundlesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeWorkspaceBundlesAsyncHelper(const DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkspaceBundles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspaceBundles(request), context);
+    } );
 }
 
 DescribeWorkspaceDirectoriesOutcome WorkSpacesClient::DescribeWorkspaceDirectories(const DescribeWorkspaceDirectoriesRequest& request) const
@@ -899,12 +839,10 @@ DescribeWorkspaceDirectoriesOutcomeCallable WorkSpacesClient::DescribeWorkspaceD
 
 void WorkSpacesClient::DescribeWorkspaceDirectoriesAsync(const DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceDirectoriesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeWorkspaceDirectoriesAsyncHelper(const DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkspaceDirectories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspaceDirectories(request), context);
+    } );
 }
 
 DescribeWorkspaceImagePermissionsOutcome WorkSpacesClient::DescribeWorkspaceImagePermissions(const DescribeWorkspaceImagePermissionsRequest& request) const
@@ -923,12 +861,10 @@ DescribeWorkspaceImagePermissionsOutcomeCallable WorkSpacesClient::DescribeWorks
 
 void WorkSpacesClient::DescribeWorkspaceImagePermissionsAsync(const DescribeWorkspaceImagePermissionsRequest& request, const DescribeWorkspaceImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceImagePermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeWorkspaceImagePermissionsAsyncHelper(const DescribeWorkspaceImagePermissionsRequest& request, const DescribeWorkspaceImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkspaceImagePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspaceImagePermissions(request), context);
+    } );
 }
 
 DescribeWorkspaceImagesOutcome WorkSpacesClient::DescribeWorkspaceImages(const DescribeWorkspaceImagesRequest& request) const
@@ -947,12 +883,10 @@ DescribeWorkspaceImagesOutcomeCallable WorkSpacesClient::DescribeWorkspaceImages
 
 void WorkSpacesClient::DescribeWorkspaceImagesAsync(const DescribeWorkspaceImagesRequest& request, const DescribeWorkspaceImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceImagesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeWorkspaceImagesAsyncHelper(const DescribeWorkspaceImagesRequest& request, const DescribeWorkspaceImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkspaceImages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspaceImages(request), context);
+    } );
 }
 
 DescribeWorkspaceSnapshotsOutcome WorkSpacesClient::DescribeWorkspaceSnapshots(const DescribeWorkspaceSnapshotsRequest& request) const
@@ -971,12 +905,10 @@ DescribeWorkspaceSnapshotsOutcomeCallable WorkSpacesClient::DescribeWorkspaceSna
 
 void WorkSpacesClient::DescribeWorkspaceSnapshotsAsync(const DescribeWorkspaceSnapshotsRequest& request, const DescribeWorkspaceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceSnapshotsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeWorkspaceSnapshotsAsyncHelper(const DescribeWorkspaceSnapshotsRequest& request, const DescribeWorkspaceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkspaceSnapshots(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspaceSnapshots(request), context);
+    } );
 }
 
 DescribeWorkspacesOutcome WorkSpacesClient::DescribeWorkspaces(const DescribeWorkspacesRequest& request) const
@@ -995,12 +927,10 @@ DescribeWorkspacesOutcomeCallable WorkSpacesClient::DescribeWorkspacesCallable(c
 
 void WorkSpacesClient::DescribeWorkspacesAsync(const DescribeWorkspacesRequest& request, const DescribeWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeWorkspacesAsyncHelper(const DescribeWorkspacesRequest& request, const DescribeWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspaces(request), context);
+    } );
 }
 
 DescribeWorkspacesConnectionStatusOutcome WorkSpacesClient::DescribeWorkspacesConnectionStatus(const DescribeWorkspacesConnectionStatusRequest& request) const
@@ -1019,12 +949,10 @@ DescribeWorkspacesConnectionStatusOutcomeCallable WorkSpacesClient::DescribeWork
 
 void WorkSpacesClient::DescribeWorkspacesConnectionStatusAsync(const DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspacesConnectionStatusAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DescribeWorkspacesConnectionStatusAsyncHelper(const DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkspacesConnectionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspacesConnectionStatus(request), context);
+    } );
 }
 
 DisassociateConnectionAliasOutcome WorkSpacesClient::DisassociateConnectionAlias(const DisassociateConnectionAliasRequest& request) const
@@ -1043,12 +971,10 @@ DisassociateConnectionAliasOutcomeCallable WorkSpacesClient::DisassociateConnect
 
 void WorkSpacesClient::DisassociateConnectionAliasAsync(const DisassociateConnectionAliasRequest& request, const DisassociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateConnectionAliasAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DisassociateConnectionAliasAsyncHelper(const DisassociateConnectionAliasRequest& request, const DisassociateConnectionAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateConnectionAlias(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateConnectionAlias(request), context);
+    } );
 }
 
 DisassociateIpGroupsOutcome WorkSpacesClient::DisassociateIpGroups(const DisassociateIpGroupsRequest& request) const
@@ -1067,12 +993,10 @@ DisassociateIpGroupsOutcomeCallable WorkSpacesClient::DisassociateIpGroupsCallab
 
 void WorkSpacesClient::DisassociateIpGroupsAsync(const DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateIpGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::DisassociateIpGroupsAsyncHelper(const DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateIpGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateIpGroups(request), context);
+    } );
 }
 
 ImportClientBrandingOutcome WorkSpacesClient::ImportClientBranding(const ImportClientBrandingRequest& request) const
@@ -1091,12 +1015,10 @@ ImportClientBrandingOutcomeCallable WorkSpacesClient::ImportClientBrandingCallab
 
 void WorkSpacesClient::ImportClientBrandingAsync(const ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportClientBrandingAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ImportClientBrandingAsyncHelper(const ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportClientBranding(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportClientBranding(request), context);
+    } );
 }
 
 ImportWorkspaceImageOutcome WorkSpacesClient::ImportWorkspaceImage(const ImportWorkspaceImageRequest& request) const
@@ -1115,12 +1037,10 @@ ImportWorkspaceImageOutcomeCallable WorkSpacesClient::ImportWorkspaceImageCallab
 
 void WorkSpacesClient::ImportWorkspaceImageAsync(const ImportWorkspaceImageRequest& request, const ImportWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportWorkspaceImageAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ImportWorkspaceImageAsyncHelper(const ImportWorkspaceImageRequest& request, const ImportWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportWorkspaceImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportWorkspaceImage(request), context);
+    } );
 }
 
 ListAvailableManagementCidrRangesOutcome WorkSpacesClient::ListAvailableManagementCidrRanges(const ListAvailableManagementCidrRangesRequest& request) const
@@ -1139,12 +1059,10 @@ ListAvailableManagementCidrRangesOutcomeCallable WorkSpacesClient::ListAvailable
 
 void WorkSpacesClient::ListAvailableManagementCidrRangesAsync(const ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableManagementCidrRangesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ListAvailableManagementCidrRangesAsyncHelper(const ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAvailableManagementCidrRanges(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAvailableManagementCidrRanges(request), context);
+    } );
 }
 
 MigrateWorkspaceOutcome WorkSpacesClient::MigrateWorkspace(const MigrateWorkspaceRequest& request) const
@@ -1163,12 +1081,10 @@ MigrateWorkspaceOutcomeCallable WorkSpacesClient::MigrateWorkspaceCallable(const
 
 void WorkSpacesClient::MigrateWorkspaceAsync(const MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MigrateWorkspaceAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::MigrateWorkspaceAsyncHelper(const MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MigrateWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MigrateWorkspace(request), context);
+    } );
 }
 
 ModifyAccountOutcome WorkSpacesClient::ModifyAccount(const ModifyAccountRequest& request) const
@@ -1187,12 +1103,10 @@ ModifyAccountOutcomeCallable WorkSpacesClient::ModifyAccountCallable(const Modif
 
 void WorkSpacesClient::ModifyAccountAsync(const ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyAccountAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifyAccountAsyncHelper(const ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyAccount(request), context);
+    } );
 }
 
 ModifyClientPropertiesOutcome WorkSpacesClient::ModifyClientProperties(const ModifyClientPropertiesRequest& request) const
@@ -1211,12 +1125,10 @@ ModifyClientPropertiesOutcomeCallable WorkSpacesClient::ModifyClientPropertiesCa
 
 void WorkSpacesClient::ModifyClientPropertiesAsync(const ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyClientPropertiesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifyClientPropertiesAsyncHelper(const ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyClientProperties(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyClientProperties(request), context);
+    } );
 }
 
 ModifySamlPropertiesOutcome WorkSpacesClient::ModifySamlProperties(const ModifySamlPropertiesRequest& request) const
@@ -1235,12 +1147,10 @@ ModifySamlPropertiesOutcomeCallable WorkSpacesClient::ModifySamlPropertiesCallab
 
 void WorkSpacesClient::ModifySamlPropertiesAsync(const ModifySamlPropertiesRequest& request, const ModifySamlPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifySamlPropertiesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifySamlPropertiesAsyncHelper(const ModifySamlPropertiesRequest& request, const ModifySamlPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifySamlProperties(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifySamlProperties(request), context);
+    } );
 }
 
 ModifySelfservicePermissionsOutcome WorkSpacesClient::ModifySelfservicePermissions(const ModifySelfservicePermissionsRequest& request) const
@@ -1259,12 +1169,10 @@ ModifySelfservicePermissionsOutcomeCallable WorkSpacesClient::ModifySelfserviceP
 
 void WorkSpacesClient::ModifySelfservicePermissionsAsync(const ModifySelfservicePermissionsRequest& request, const ModifySelfservicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifySelfservicePermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifySelfservicePermissionsAsyncHelper(const ModifySelfservicePermissionsRequest& request, const ModifySelfservicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifySelfservicePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifySelfservicePermissions(request), context);
+    } );
 }
 
 ModifyWorkspaceAccessPropertiesOutcome WorkSpacesClient::ModifyWorkspaceAccessProperties(const ModifyWorkspaceAccessPropertiesRequest& request) const
@@ -1283,12 +1191,10 @@ ModifyWorkspaceAccessPropertiesOutcomeCallable WorkSpacesClient::ModifyWorkspace
 
 void WorkSpacesClient::ModifyWorkspaceAccessPropertiesAsync(const ModifyWorkspaceAccessPropertiesRequest& request, const ModifyWorkspaceAccessPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyWorkspaceAccessPropertiesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifyWorkspaceAccessPropertiesAsyncHelper(const ModifyWorkspaceAccessPropertiesRequest& request, const ModifyWorkspaceAccessPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyWorkspaceAccessProperties(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyWorkspaceAccessProperties(request), context);
+    } );
 }
 
 ModifyWorkspaceCreationPropertiesOutcome WorkSpacesClient::ModifyWorkspaceCreationProperties(const ModifyWorkspaceCreationPropertiesRequest& request) const
@@ -1307,12 +1213,10 @@ ModifyWorkspaceCreationPropertiesOutcomeCallable WorkSpacesClient::ModifyWorkspa
 
 void WorkSpacesClient::ModifyWorkspaceCreationPropertiesAsync(const ModifyWorkspaceCreationPropertiesRequest& request, const ModifyWorkspaceCreationPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyWorkspaceCreationPropertiesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifyWorkspaceCreationPropertiesAsyncHelper(const ModifyWorkspaceCreationPropertiesRequest& request, const ModifyWorkspaceCreationPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyWorkspaceCreationProperties(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyWorkspaceCreationProperties(request), context);
+    } );
 }
 
 ModifyWorkspacePropertiesOutcome WorkSpacesClient::ModifyWorkspaceProperties(const ModifyWorkspacePropertiesRequest& request) const
@@ -1331,12 +1235,10 @@ ModifyWorkspacePropertiesOutcomeCallable WorkSpacesClient::ModifyWorkspaceProper
 
 void WorkSpacesClient::ModifyWorkspacePropertiesAsync(const ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyWorkspacePropertiesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifyWorkspacePropertiesAsyncHelper(const ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyWorkspaceProperties(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyWorkspaceProperties(request), context);
+    } );
 }
 
 ModifyWorkspaceStateOutcome WorkSpacesClient::ModifyWorkspaceState(const ModifyWorkspaceStateRequest& request) const
@@ -1355,12 +1257,10 @@ ModifyWorkspaceStateOutcomeCallable WorkSpacesClient::ModifyWorkspaceStateCallab
 
 void WorkSpacesClient::ModifyWorkspaceStateAsync(const ModifyWorkspaceStateRequest& request, const ModifyWorkspaceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyWorkspaceStateAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::ModifyWorkspaceStateAsyncHelper(const ModifyWorkspaceStateRequest& request, const ModifyWorkspaceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyWorkspaceState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyWorkspaceState(request), context);
+    } );
 }
 
 RebootWorkspacesOutcome WorkSpacesClient::RebootWorkspaces(const RebootWorkspacesRequest& request) const
@@ -1379,12 +1279,10 @@ RebootWorkspacesOutcomeCallable WorkSpacesClient::RebootWorkspacesCallable(const
 
 void WorkSpacesClient::RebootWorkspacesAsync(const RebootWorkspacesRequest& request, const RebootWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::RebootWorkspacesAsyncHelper(const RebootWorkspacesRequest& request, const RebootWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RebootWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RebootWorkspaces(request), context);
+    } );
 }
 
 RebuildWorkspacesOutcome WorkSpacesClient::RebuildWorkspaces(const RebuildWorkspacesRequest& request) const
@@ -1403,12 +1301,10 @@ RebuildWorkspacesOutcomeCallable WorkSpacesClient::RebuildWorkspacesCallable(con
 
 void WorkSpacesClient::RebuildWorkspacesAsync(const RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebuildWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::RebuildWorkspacesAsyncHelper(const RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RebuildWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RebuildWorkspaces(request), context);
+    } );
 }
 
 RegisterWorkspaceDirectoryOutcome WorkSpacesClient::RegisterWorkspaceDirectory(const RegisterWorkspaceDirectoryRequest& request) const
@@ -1427,12 +1323,10 @@ RegisterWorkspaceDirectoryOutcomeCallable WorkSpacesClient::RegisterWorkspaceDir
 
 void WorkSpacesClient::RegisterWorkspaceDirectoryAsync(const RegisterWorkspaceDirectoryRequest& request, const RegisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterWorkspaceDirectoryAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::RegisterWorkspaceDirectoryAsyncHelper(const RegisterWorkspaceDirectoryRequest& request, const RegisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterWorkspaceDirectory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterWorkspaceDirectory(request), context);
+    } );
 }
 
 RestoreWorkspaceOutcome WorkSpacesClient::RestoreWorkspace(const RestoreWorkspaceRequest& request) const
@@ -1451,12 +1345,10 @@ RestoreWorkspaceOutcomeCallable WorkSpacesClient::RestoreWorkspaceCallable(const
 
 void WorkSpacesClient::RestoreWorkspaceAsync(const RestoreWorkspaceRequest& request, const RestoreWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreWorkspaceAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::RestoreWorkspaceAsyncHelper(const RestoreWorkspaceRequest& request, const RestoreWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RestoreWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreWorkspace(request), context);
+    } );
 }
 
 RevokeIpRulesOutcome WorkSpacesClient::RevokeIpRules(const RevokeIpRulesRequest& request) const
@@ -1475,12 +1367,10 @@ RevokeIpRulesOutcomeCallable WorkSpacesClient::RevokeIpRulesCallable(const Revok
 
 void WorkSpacesClient::RevokeIpRulesAsync(const RevokeIpRulesRequest& request, const RevokeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeIpRulesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::RevokeIpRulesAsyncHelper(const RevokeIpRulesRequest& request, const RevokeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RevokeIpRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RevokeIpRules(request), context);
+    } );
 }
 
 StartWorkspacesOutcome WorkSpacesClient::StartWorkspaces(const StartWorkspacesRequest& request) const
@@ -1499,12 +1389,10 @@ StartWorkspacesOutcomeCallable WorkSpacesClient::StartWorkspacesCallable(const S
 
 void WorkSpacesClient::StartWorkspacesAsync(const StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::StartWorkspacesAsyncHelper(const StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartWorkspaces(request), context);
+    } );
 }
 
 StopWorkspacesOutcome WorkSpacesClient::StopWorkspaces(const StopWorkspacesRequest& request) const
@@ -1523,12 +1411,10 @@ StopWorkspacesOutcomeCallable WorkSpacesClient::StopWorkspacesCallable(const Sto
 
 void WorkSpacesClient::StopWorkspacesAsync(const StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::StopWorkspacesAsyncHelper(const StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopWorkspaces(request), context);
+    } );
 }
 
 TerminateWorkspacesOutcome WorkSpacesClient::TerminateWorkspaces(const TerminateWorkspacesRequest& request) const
@@ -1547,12 +1433,10 @@ TerminateWorkspacesOutcomeCallable WorkSpacesClient::TerminateWorkspacesCallable
 
 void WorkSpacesClient::TerminateWorkspacesAsync(const TerminateWorkspacesRequest& request, const TerminateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::TerminateWorkspacesAsyncHelper(const TerminateWorkspacesRequest& request, const TerminateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TerminateWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TerminateWorkspaces(request), context);
+    } );
 }
 
 UpdateConnectClientAddInOutcome WorkSpacesClient::UpdateConnectClientAddIn(const UpdateConnectClientAddInRequest& request) const
@@ -1571,12 +1455,10 @@ UpdateConnectClientAddInOutcomeCallable WorkSpacesClient::UpdateConnectClientAdd
 
 void WorkSpacesClient::UpdateConnectClientAddInAsync(const UpdateConnectClientAddInRequest& request, const UpdateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectClientAddInAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::UpdateConnectClientAddInAsyncHelper(const UpdateConnectClientAddInRequest& request, const UpdateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConnectClientAddIn(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConnectClientAddIn(request), context);
+    } );
 }
 
 UpdateConnectionAliasPermissionOutcome WorkSpacesClient::UpdateConnectionAliasPermission(const UpdateConnectionAliasPermissionRequest& request) const
@@ -1595,12 +1477,10 @@ UpdateConnectionAliasPermissionOutcomeCallable WorkSpacesClient::UpdateConnectio
 
 void WorkSpacesClient::UpdateConnectionAliasPermissionAsync(const UpdateConnectionAliasPermissionRequest& request, const UpdateConnectionAliasPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectionAliasPermissionAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::UpdateConnectionAliasPermissionAsyncHelper(const UpdateConnectionAliasPermissionRequest& request, const UpdateConnectionAliasPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConnectionAliasPermission(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConnectionAliasPermission(request), context);
+    } );
 }
 
 UpdateRulesOfIpGroupOutcome WorkSpacesClient::UpdateRulesOfIpGroup(const UpdateRulesOfIpGroupRequest& request) const
@@ -1619,12 +1499,10 @@ UpdateRulesOfIpGroupOutcomeCallable WorkSpacesClient::UpdateRulesOfIpGroupCallab
 
 void WorkSpacesClient::UpdateRulesOfIpGroupAsync(const UpdateRulesOfIpGroupRequest& request, const UpdateRulesOfIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRulesOfIpGroupAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::UpdateRulesOfIpGroupAsyncHelper(const UpdateRulesOfIpGroupRequest& request, const UpdateRulesOfIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRulesOfIpGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRulesOfIpGroup(request), context);
+    } );
 }
 
 UpdateWorkspaceBundleOutcome WorkSpacesClient::UpdateWorkspaceBundle(const UpdateWorkspaceBundleRequest& request) const
@@ -1643,12 +1521,10 @@ UpdateWorkspaceBundleOutcomeCallable WorkSpacesClient::UpdateWorkspaceBundleCall
 
 void WorkSpacesClient::UpdateWorkspaceBundleAsync(const UpdateWorkspaceBundleRequest& request, const UpdateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkspaceBundleAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::UpdateWorkspaceBundleAsyncHelper(const UpdateWorkspaceBundleRequest& request, const UpdateWorkspaceBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateWorkspaceBundle(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateWorkspaceBundle(request), context);
+    } );
 }
 
 UpdateWorkspaceImagePermissionOutcome WorkSpacesClient::UpdateWorkspaceImagePermission(const UpdateWorkspaceImagePermissionRequest& request) const
@@ -1667,11 +1543,9 @@ UpdateWorkspaceImagePermissionOutcomeCallable WorkSpacesClient::UpdateWorkspaceI
 
 void WorkSpacesClient::UpdateWorkspaceImagePermissionAsync(const UpdateWorkspaceImagePermissionRequest& request, const UpdateWorkspaceImagePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkspaceImagePermissionAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesClient::UpdateWorkspaceImagePermissionAsyncHelper(const UpdateWorkspaceImagePermissionRequest& request, const UpdateWorkspaceImagePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateWorkspaceImagePermission(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateWorkspaceImagePermission(request), context);
+    } );
 }
 

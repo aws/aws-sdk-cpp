@@ -183,12 +183,10 @@ AcceptInvitationOutcomeCallable Macie2Client::AcceptInvitationCallable(const Acc
 
 void Macie2Client::AcceptInvitationAsync(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptInvitationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::AcceptInvitationAsyncHelper(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcceptInvitation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcceptInvitation(request), context);
+    } );
 }
 
 BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers(const BatchGetCustomDataIdentifiersRequest& request) const
@@ -208,12 +206,10 @@ BatchGetCustomDataIdentifiersOutcomeCallable Macie2Client::BatchGetCustomDataIde
 
 void Macie2Client::BatchGetCustomDataIdentifiersAsync(const BatchGetCustomDataIdentifiersRequest& request, const BatchGetCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetCustomDataIdentifiersAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::BatchGetCustomDataIdentifiersAsyncHelper(const BatchGetCustomDataIdentifiersRequest& request, const BatchGetCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetCustomDataIdentifiers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetCustomDataIdentifiers(request), context);
+    } );
 }
 
 CreateAllowListOutcome Macie2Client::CreateAllowList(const CreateAllowListRequest& request) const
@@ -233,12 +229,10 @@ CreateAllowListOutcomeCallable Macie2Client::CreateAllowListCallable(const Creat
 
 void Macie2Client::CreateAllowListAsync(const CreateAllowListRequest& request, const CreateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAllowListAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::CreateAllowListAsyncHelper(const CreateAllowListRequest& request, const CreateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAllowList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAllowList(request), context);
+    } );
 }
 
 CreateClassificationJobOutcome Macie2Client::CreateClassificationJob(const CreateClassificationJobRequest& request) const
@@ -258,12 +252,10 @@ CreateClassificationJobOutcomeCallable Macie2Client::CreateClassificationJobCall
 
 void Macie2Client::CreateClassificationJobAsync(const CreateClassificationJobRequest& request, const CreateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClassificationJobAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::CreateClassificationJobAsyncHelper(const CreateClassificationJobRequest& request, const CreateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateClassificationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateClassificationJob(request), context);
+    } );
 }
 
 CreateCustomDataIdentifierOutcome Macie2Client::CreateCustomDataIdentifier(const CreateCustomDataIdentifierRequest& request) const
@@ -283,12 +275,10 @@ CreateCustomDataIdentifierOutcomeCallable Macie2Client::CreateCustomDataIdentifi
 
 void Macie2Client::CreateCustomDataIdentifierAsync(const CreateCustomDataIdentifierRequest& request, const CreateCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomDataIdentifierAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::CreateCustomDataIdentifierAsyncHelper(const CreateCustomDataIdentifierRequest& request, const CreateCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCustomDataIdentifier(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCustomDataIdentifier(request), context);
+    } );
 }
 
 CreateFindingsFilterOutcome Macie2Client::CreateFindingsFilter(const CreateFindingsFilterRequest& request) const
@@ -308,12 +298,10 @@ CreateFindingsFilterOutcomeCallable Macie2Client::CreateFindingsFilterCallable(c
 
 void Macie2Client::CreateFindingsFilterAsync(const CreateFindingsFilterRequest& request, const CreateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFindingsFilterAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::CreateFindingsFilterAsyncHelper(const CreateFindingsFilterRequest& request, const CreateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFindingsFilter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFindingsFilter(request), context);
+    } );
 }
 
 CreateInvitationsOutcome Macie2Client::CreateInvitations(const CreateInvitationsRequest& request) const
@@ -333,12 +321,10 @@ CreateInvitationsOutcomeCallable Macie2Client::CreateInvitationsCallable(const C
 
 void Macie2Client::CreateInvitationsAsync(const CreateInvitationsRequest& request, const CreateInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::CreateInvitationsAsyncHelper(const CreateInvitationsRequest& request, const CreateInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateInvitations(request), context);
+    } );
 }
 
 CreateMemberOutcome Macie2Client::CreateMember(const CreateMemberRequest& request) const
@@ -358,12 +344,10 @@ CreateMemberOutcomeCallable Macie2Client::CreateMemberCallable(const CreateMembe
 
 void Macie2Client::CreateMemberAsync(const CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMemberAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::CreateMemberAsyncHelper(const CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMember(request), context);
+    } );
 }
 
 CreateSampleFindingsOutcome Macie2Client::CreateSampleFindings(const CreateSampleFindingsRequest& request) const
@@ -383,12 +367,10 @@ CreateSampleFindingsOutcomeCallable Macie2Client::CreateSampleFindingsCallable(c
 
 void Macie2Client::CreateSampleFindingsAsync(const CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSampleFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::CreateSampleFindingsAsyncHelper(const CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSampleFindings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSampleFindings(request), context);
+    } );
 }
 
 DeclineInvitationsOutcome Macie2Client::DeclineInvitations(const DeclineInvitationsRequest& request) const
@@ -408,12 +390,10 @@ DeclineInvitationsOutcomeCallable Macie2Client::DeclineInvitationsCallable(const
 
 void Macie2Client::DeclineInvitationsAsync(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeclineInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DeclineInvitationsAsyncHelper(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeclineInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeclineInvitations(request), context);
+    } );
 }
 
 DeleteAllowListOutcome Macie2Client::DeleteAllowList(const DeleteAllowListRequest& request) const
@@ -439,12 +419,10 @@ DeleteAllowListOutcomeCallable Macie2Client::DeleteAllowListCallable(const Delet
 
 void Macie2Client::DeleteAllowListAsync(const DeleteAllowListRequest& request, const DeleteAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAllowListAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DeleteAllowListAsyncHelper(const DeleteAllowListRequest& request, const DeleteAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAllowList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAllowList(request), context);
+    } );
 }
 
 DeleteCustomDataIdentifierOutcome Macie2Client::DeleteCustomDataIdentifier(const DeleteCustomDataIdentifierRequest& request) const
@@ -470,12 +448,10 @@ DeleteCustomDataIdentifierOutcomeCallable Macie2Client::DeleteCustomDataIdentifi
 
 void Macie2Client::DeleteCustomDataIdentifierAsync(const DeleteCustomDataIdentifierRequest& request, const DeleteCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomDataIdentifierAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DeleteCustomDataIdentifierAsyncHelper(const DeleteCustomDataIdentifierRequest& request, const DeleteCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCustomDataIdentifier(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCustomDataIdentifier(request), context);
+    } );
 }
 
 DeleteFindingsFilterOutcome Macie2Client::DeleteFindingsFilter(const DeleteFindingsFilterRequest& request) const
@@ -501,12 +477,10 @@ DeleteFindingsFilterOutcomeCallable Macie2Client::DeleteFindingsFilterCallable(c
 
 void Macie2Client::DeleteFindingsFilterAsync(const DeleteFindingsFilterRequest& request, const DeleteFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFindingsFilterAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DeleteFindingsFilterAsyncHelper(const DeleteFindingsFilterRequest& request, const DeleteFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFindingsFilter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFindingsFilter(request), context);
+    } );
 }
 
 DeleteInvitationsOutcome Macie2Client::DeleteInvitations(const DeleteInvitationsRequest& request) const
@@ -526,12 +500,10 @@ DeleteInvitationsOutcomeCallable Macie2Client::DeleteInvitationsCallable(const D
 
 void Macie2Client::DeleteInvitationsAsync(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DeleteInvitationsAsyncHelper(const DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInvitations(request), context);
+    } );
 }
 
 DeleteMemberOutcome Macie2Client::DeleteMember(const DeleteMemberRequest& request) const
@@ -557,12 +529,10 @@ DeleteMemberOutcomeCallable Macie2Client::DeleteMemberCallable(const DeleteMembe
 
 void Macie2Client::DeleteMemberAsync(const DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMemberAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DeleteMemberAsyncHelper(const DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMember(request), context);
+    } );
 }
 
 DescribeBucketsOutcome Macie2Client::DescribeBuckets(const DescribeBucketsRequest& request) const
@@ -582,12 +552,10 @@ DescribeBucketsOutcomeCallable Macie2Client::DescribeBucketsCallable(const Descr
 
 void Macie2Client::DescribeBucketsAsync(const DescribeBucketsRequest& request, const DescribeBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBucketsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DescribeBucketsAsyncHelper(const DescribeBucketsRequest& request, const DescribeBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBuckets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBuckets(request), context);
+    } );
 }
 
 DescribeClassificationJobOutcome Macie2Client::DescribeClassificationJob(const DescribeClassificationJobRequest& request) const
@@ -613,12 +581,10 @@ DescribeClassificationJobOutcomeCallable Macie2Client::DescribeClassificationJob
 
 void Macie2Client::DescribeClassificationJobAsync(const DescribeClassificationJobRequest& request, const DescribeClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClassificationJobAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DescribeClassificationJobAsyncHelper(const DescribeClassificationJobRequest& request, const DescribeClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeClassificationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeClassificationJob(request), context);
+    } );
 }
 
 DescribeOrganizationConfigurationOutcome Macie2Client::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
@@ -638,12 +604,10 @@ DescribeOrganizationConfigurationOutcomeCallable Macie2Client::DescribeOrganizat
 
 void Macie2Client::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DescribeOrganizationConfigurationAsyncHelper(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationConfiguration(request), context);
+    } );
 }
 
 DisableMacieOutcome Macie2Client::DisableMacie(const DisableMacieRequest& request) const
@@ -663,12 +627,10 @@ DisableMacieOutcomeCallable Macie2Client::DisableMacieCallable(const DisableMaci
 
 void Macie2Client::DisableMacieAsync(const DisableMacieRequest& request, const DisableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableMacieAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DisableMacieAsyncHelper(const DisableMacieRequest& request, const DisableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableMacie(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableMacie(request), context);
+    } );
 }
 
 DisableOrganizationAdminAccountOutcome Macie2Client::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
@@ -693,12 +655,10 @@ DisableOrganizationAdminAccountOutcomeCallable Macie2Client::DisableOrganization
 
 void Macie2Client::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableOrganizationAdminAccount(request), context);
+    } );
 }
 
 DisassociateFromAdministratorAccountOutcome Macie2Client::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
@@ -718,12 +678,10 @@ DisassociateFromAdministratorAccountOutcomeCallable Macie2Client::DisassociateFr
 
 void Macie2Client::DisassociateFromAdministratorAccountAsync(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFromAdministratorAccountAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DisassociateFromAdministratorAccountAsyncHelper(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateFromAdministratorAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateFromAdministratorAccount(request), context);
+    } );
 }
 
 DisassociateFromMasterAccountOutcome Macie2Client::DisassociateFromMasterAccount(const DisassociateFromMasterAccountRequest& request) const
@@ -743,12 +701,10 @@ DisassociateFromMasterAccountOutcomeCallable Macie2Client::DisassociateFromMaste
 
 void Macie2Client::DisassociateFromMasterAccountAsync(const DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFromMasterAccountAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DisassociateFromMasterAccountAsyncHelper(const DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateFromMasterAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateFromMasterAccount(request), context);
+    } );
 }
 
 DisassociateMemberOutcome Macie2Client::DisassociateMember(const DisassociateMemberRequest& request) const
@@ -774,12 +730,10 @@ DisassociateMemberOutcomeCallable Macie2Client::DisassociateMemberCallable(const
 
 void Macie2Client::DisassociateMemberAsync(const DisassociateMemberRequest& request, const DisassociateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMemberAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::DisassociateMemberAsyncHelper(const DisassociateMemberRequest& request, const DisassociateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateMember(request), context);
+    } );
 }
 
 EnableMacieOutcome Macie2Client::EnableMacie(const EnableMacieRequest& request) const
@@ -799,12 +753,10 @@ EnableMacieOutcomeCallable Macie2Client::EnableMacieCallable(const EnableMacieRe
 
 void Macie2Client::EnableMacieAsync(const EnableMacieRequest& request, const EnableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableMacieAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::EnableMacieAsyncHelper(const EnableMacieRequest& request, const EnableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableMacie(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableMacie(request), context);
+    } );
 }
 
 EnableOrganizationAdminAccountOutcome Macie2Client::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
@@ -824,12 +776,10 @@ EnableOrganizationAdminAccountOutcomeCallable Macie2Client::EnableOrganizationAd
 
 void Macie2Client::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableOrganizationAdminAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableOrganizationAdminAccount(request), context);
+    } );
 }
 
 GetAdministratorAccountOutcome Macie2Client::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
@@ -849,12 +799,10 @@ GetAdministratorAccountOutcomeCallable Macie2Client::GetAdministratorAccountCall
 
 void Macie2Client::GetAdministratorAccountAsync(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAdministratorAccountAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetAdministratorAccountAsyncHelper(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAdministratorAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAdministratorAccount(request), context);
+    } );
 }
 
 GetAllowListOutcome Macie2Client::GetAllowList(const GetAllowListRequest& request) const
@@ -880,12 +828,10 @@ GetAllowListOutcomeCallable Macie2Client::GetAllowListCallable(const GetAllowLis
 
 void Macie2Client::GetAllowListAsync(const GetAllowListRequest& request, const GetAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAllowListAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetAllowListAsyncHelper(const GetAllowListRequest& request, const GetAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAllowList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAllowList(request), context);
+    } );
 }
 
 GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStatisticsRequest& request) const
@@ -905,12 +851,10 @@ GetBucketStatisticsOutcomeCallable Macie2Client::GetBucketStatisticsCallable(con
 
 void Macie2Client::GetBucketStatisticsAsync(const GetBucketStatisticsRequest& request, const GetBucketStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketStatisticsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetBucketStatisticsAsyncHelper(const GetBucketStatisticsRequest& request, const GetBucketStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBucketStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBucketStatistics(request), context);
+    } );
 }
 
 GetClassificationExportConfigurationOutcome Macie2Client::GetClassificationExportConfiguration(const GetClassificationExportConfigurationRequest& request) const
@@ -930,12 +874,10 @@ GetClassificationExportConfigurationOutcomeCallable Macie2Client::GetClassificat
 
 void Macie2Client::GetClassificationExportConfigurationAsync(const GetClassificationExportConfigurationRequest& request, const GetClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetClassificationExportConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetClassificationExportConfigurationAsyncHelper(const GetClassificationExportConfigurationRequest& request, const GetClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetClassificationExportConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetClassificationExportConfiguration(request), context);
+    } );
 }
 
 GetCustomDataIdentifierOutcome Macie2Client::GetCustomDataIdentifier(const GetCustomDataIdentifierRequest& request) const
@@ -961,12 +903,10 @@ GetCustomDataIdentifierOutcomeCallable Macie2Client::GetCustomDataIdentifierCall
 
 void Macie2Client::GetCustomDataIdentifierAsync(const GetCustomDataIdentifierRequest& request, const GetCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCustomDataIdentifierAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetCustomDataIdentifierAsyncHelper(const GetCustomDataIdentifierRequest& request, const GetCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCustomDataIdentifier(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCustomDataIdentifier(request), context);
+    } );
 }
 
 GetFindingStatisticsOutcome Macie2Client::GetFindingStatistics(const GetFindingStatisticsRequest& request) const
@@ -986,12 +926,10 @@ GetFindingStatisticsOutcomeCallable Macie2Client::GetFindingStatisticsCallable(c
 
 void Macie2Client::GetFindingStatisticsAsync(const GetFindingStatisticsRequest& request, const GetFindingStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingStatisticsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetFindingStatisticsAsyncHelper(const GetFindingStatisticsRequest& request, const GetFindingStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFindingStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFindingStatistics(request), context);
+    } );
 }
 
 GetFindingsOutcome Macie2Client::GetFindings(const GetFindingsRequest& request) const
@@ -1011,12 +949,10 @@ GetFindingsOutcomeCallable Macie2Client::GetFindingsCallable(const GetFindingsRe
 
 void Macie2Client::GetFindingsAsync(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetFindingsAsyncHelper(const GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFindings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFindings(request), context);
+    } );
 }
 
 GetFindingsFilterOutcome Macie2Client::GetFindingsFilter(const GetFindingsFilterRequest& request) const
@@ -1042,12 +978,10 @@ GetFindingsFilterOutcomeCallable Macie2Client::GetFindingsFilterCallable(const G
 
 void Macie2Client::GetFindingsFilterAsync(const GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsFilterAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetFindingsFilterAsyncHelper(const GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFindingsFilter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFindingsFilter(request), context);
+    } );
 }
 
 GetFindingsPublicationConfigurationOutcome Macie2Client::GetFindingsPublicationConfiguration(const GetFindingsPublicationConfigurationRequest& request) const
@@ -1067,12 +1001,10 @@ GetFindingsPublicationConfigurationOutcomeCallable Macie2Client::GetFindingsPubl
 
 void Macie2Client::GetFindingsPublicationConfigurationAsync(const GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFindingsPublicationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetFindingsPublicationConfigurationAsyncHelper(const GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFindingsPublicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFindingsPublicationConfiguration(request), context);
+    } );
 }
 
 GetInvitationsCountOutcome Macie2Client::GetInvitationsCount(const GetInvitationsCountRequest& request) const
@@ -1092,12 +1024,10 @@ GetInvitationsCountOutcomeCallable Macie2Client::GetInvitationsCountCallable(con
 
 void Macie2Client::GetInvitationsCountAsync(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInvitationsCountAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetInvitationsCountAsyncHelper(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetInvitationsCount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetInvitationsCount(request), context);
+    } );
 }
 
 GetMacieSessionOutcome Macie2Client::GetMacieSession(const GetMacieSessionRequest& request) const
@@ -1117,12 +1047,10 @@ GetMacieSessionOutcomeCallable Macie2Client::GetMacieSessionCallable(const GetMa
 
 void Macie2Client::GetMacieSessionAsync(const GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMacieSessionAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetMacieSessionAsyncHelper(const GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMacieSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMacieSession(request), context);
+    } );
 }
 
 GetMasterAccountOutcome Macie2Client::GetMasterAccount(const GetMasterAccountRequest& request) const
@@ -1142,12 +1070,10 @@ GetMasterAccountOutcomeCallable Macie2Client::GetMasterAccountCallable(const Get
 
 void Macie2Client::GetMasterAccountAsync(const GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMasterAccountAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetMasterAccountAsyncHelper(const GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMasterAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMasterAccount(request), context);
+    } );
 }
 
 GetMemberOutcome Macie2Client::GetMember(const GetMemberRequest& request) const
@@ -1173,12 +1099,10 @@ GetMemberOutcomeCallable Macie2Client::GetMemberCallable(const GetMemberRequest&
 
 void Macie2Client::GetMemberAsync(const GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMemberAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetMemberAsyncHelper(const GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMember(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMember(request), context);
+    } );
 }
 
 GetRevealConfigurationOutcome Macie2Client::GetRevealConfiguration(const GetRevealConfigurationRequest& request) const
@@ -1198,12 +1122,10 @@ GetRevealConfigurationOutcomeCallable Macie2Client::GetRevealConfigurationCallab
 
 void Macie2Client::GetRevealConfigurationAsync(const GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRevealConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetRevealConfigurationAsyncHelper(const GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRevealConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRevealConfiguration(request), context);
+    } );
 }
 
 GetSensitiveDataOccurrencesOutcome Macie2Client::GetSensitiveDataOccurrences(const GetSensitiveDataOccurrencesRequest& request) const
@@ -1230,12 +1152,10 @@ GetSensitiveDataOccurrencesOutcomeCallable Macie2Client::GetSensitiveDataOccurre
 
 void Macie2Client::GetSensitiveDataOccurrencesAsync(const GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSensitiveDataOccurrencesAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetSensitiveDataOccurrencesAsyncHelper(const GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSensitiveDataOccurrences(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSensitiveDataOccurrences(request), context);
+    } );
 }
 
 GetSensitiveDataOccurrencesAvailabilityOutcome Macie2Client::GetSensitiveDataOccurrencesAvailability(const GetSensitiveDataOccurrencesAvailabilityRequest& request) const
@@ -1262,12 +1182,10 @@ GetSensitiveDataOccurrencesAvailabilityOutcomeCallable Macie2Client::GetSensitiv
 
 void Macie2Client::GetSensitiveDataOccurrencesAvailabilityAsync(const GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSensitiveDataOccurrencesAvailabilityAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetSensitiveDataOccurrencesAvailabilityAsyncHelper(const GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSensitiveDataOccurrencesAvailability(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSensitiveDataOccurrencesAvailability(request), context);
+    } );
 }
 
 GetUsageStatisticsOutcome Macie2Client::GetUsageStatistics(const GetUsageStatisticsRequest& request) const
@@ -1287,12 +1205,10 @@ GetUsageStatisticsOutcomeCallable Macie2Client::GetUsageStatisticsCallable(const
 
 void Macie2Client::GetUsageStatisticsAsync(const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUsageStatisticsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetUsageStatisticsAsyncHelper(const GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetUsageStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetUsageStatistics(request), context);
+    } );
 }
 
 GetUsageTotalsOutcome Macie2Client::GetUsageTotals(const GetUsageTotalsRequest& request) const
@@ -1312,12 +1228,10 @@ GetUsageTotalsOutcomeCallable Macie2Client::GetUsageTotalsCallable(const GetUsag
 
 void Macie2Client::GetUsageTotalsAsync(const GetUsageTotalsRequest& request, const GetUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUsageTotalsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::GetUsageTotalsAsyncHelper(const GetUsageTotalsRequest& request, const GetUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetUsageTotals(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetUsageTotals(request), context);
+    } );
 }
 
 ListAllowListsOutcome Macie2Client::ListAllowLists(const ListAllowListsRequest& request) const
@@ -1337,12 +1251,10 @@ ListAllowListsOutcomeCallable Macie2Client::ListAllowListsCallable(const ListAll
 
 void Macie2Client::ListAllowListsAsync(const ListAllowListsRequest& request, const ListAllowListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAllowListsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListAllowListsAsyncHelper(const ListAllowListsRequest& request, const ListAllowListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAllowLists(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAllowLists(request), context);
+    } );
 }
 
 ListClassificationJobsOutcome Macie2Client::ListClassificationJobs(const ListClassificationJobsRequest& request) const
@@ -1362,12 +1274,10 @@ ListClassificationJobsOutcomeCallable Macie2Client::ListClassificationJobsCallab
 
 void Macie2Client::ListClassificationJobsAsync(const ListClassificationJobsRequest& request, const ListClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClassificationJobsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListClassificationJobsAsyncHelper(const ListClassificationJobsRequest& request, const ListClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListClassificationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClassificationJobs(request), context);
+    } );
 }
 
 ListCustomDataIdentifiersOutcome Macie2Client::ListCustomDataIdentifiers(const ListCustomDataIdentifiersRequest& request) const
@@ -1387,12 +1297,10 @@ ListCustomDataIdentifiersOutcomeCallable Macie2Client::ListCustomDataIdentifiers
 
 void Macie2Client::ListCustomDataIdentifiersAsync(const ListCustomDataIdentifiersRequest& request, const ListCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCustomDataIdentifiersAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListCustomDataIdentifiersAsyncHelper(const ListCustomDataIdentifiersRequest& request, const ListCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCustomDataIdentifiers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCustomDataIdentifiers(request), context);
+    } );
 }
 
 ListFindingsOutcome Macie2Client::ListFindings(const ListFindingsRequest& request) const
@@ -1412,12 +1320,10 @@ ListFindingsOutcomeCallable Macie2Client::ListFindingsCallable(const ListFinding
 
 void Macie2Client::ListFindingsAsync(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListFindingsAsyncHelper(const ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFindings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFindings(request), context);
+    } );
 }
 
 ListFindingsFiltersOutcome Macie2Client::ListFindingsFilters(const ListFindingsFiltersRequest& request) const
@@ -1437,12 +1343,10 @@ ListFindingsFiltersOutcomeCallable Macie2Client::ListFindingsFiltersCallable(con
 
 void Macie2Client::ListFindingsFiltersAsync(const ListFindingsFiltersRequest& request, const ListFindingsFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFindingsFiltersAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListFindingsFiltersAsyncHelper(const ListFindingsFiltersRequest& request, const ListFindingsFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFindingsFilters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFindingsFilters(request), context);
+    } );
 }
 
 ListInvitationsOutcome Macie2Client::ListInvitations(const ListInvitationsRequest& request) const
@@ -1462,12 +1366,10 @@ ListInvitationsOutcomeCallable Macie2Client::ListInvitationsCallable(const ListI
 
 void Macie2Client::ListInvitationsAsync(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInvitationsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListInvitationsAsyncHelper(const ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInvitations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInvitations(request), context);
+    } );
 }
 
 ListManagedDataIdentifiersOutcome Macie2Client::ListManagedDataIdentifiers(const ListManagedDataIdentifiersRequest& request) const
@@ -1487,12 +1389,10 @@ ListManagedDataIdentifiersOutcomeCallable Macie2Client::ListManagedDataIdentifie
 
 void Macie2Client::ListManagedDataIdentifiersAsync(const ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListManagedDataIdentifiersAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListManagedDataIdentifiersAsyncHelper(const ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListManagedDataIdentifiers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListManagedDataIdentifiers(request), context);
+    } );
 }
 
 ListMembersOutcome Macie2Client::ListMembers(const ListMembersRequest& request) const
@@ -1512,12 +1412,10 @@ ListMembersOutcomeCallable Macie2Client::ListMembersCallable(const ListMembersRe
 
 void Macie2Client::ListMembersAsync(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMembersAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListMembersAsyncHelper(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMembers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMembers(request), context);
+    } );
 }
 
 ListOrganizationAdminAccountsOutcome Macie2Client::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
@@ -1537,12 +1435,10 @@ ListOrganizationAdminAccountsOutcomeCallable Macie2Client::ListOrganizationAdmin
 
 void Macie2Client::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationAdminAccountsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListOrganizationAdminAccountsAsyncHelper(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOrganizationAdminAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOrganizationAdminAccounts(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome Macie2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1568,12 +1464,10 @@ ListTagsForResourceOutcomeCallable Macie2Client::ListTagsForResourceCallable(con
 
 void Macie2Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutClassificationExportConfigurationOutcome Macie2Client::PutClassificationExportConfiguration(const PutClassificationExportConfigurationRequest& request) const
@@ -1593,12 +1487,10 @@ PutClassificationExportConfigurationOutcomeCallable Macie2Client::PutClassificat
 
 void Macie2Client::PutClassificationExportConfigurationAsync(const PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutClassificationExportConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::PutClassificationExportConfigurationAsyncHelper(const PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutClassificationExportConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutClassificationExportConfiguration(request), context);
+    } );
 }
 
 PutFindingsPublicationConfigurationOutcome Macie2Client::PutFindingsPublicationConfiguration(const PutFindingsPublicationConfigurationRequest& request) const
@@ -1618,12 +1510,10 @@ PutFindingsPublicationConfigurationOutcomeCallable Macie2Client::PutFindingsPubl
 
 void Macie2Client::PutFindingsPublicationConfigurationAsync(const PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutFindingsPublicationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::PutFindingsPublicationConfigurationAsyncHelper(const PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutFindingsPublicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutFindingsPublicationConfiguration(request), context);
+    } );
 }
 
 SearchResourcesOutcome Macie2Client::SearchResources(const SearchResourcesRequest& request) const
@@ -1643,12 +1533,10 @@ SearchResourcesOutcomeCallable Macie2Client::SearchResourcesCallable(const Searc
 
 void Macie2Client::SearchResourcesAsync(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::SearchResourcesAsyncHelper(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchResources(request), context);
+    } );
 }
 
 TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) const
@@ -1674,12 +1562,10 @@ TagResourceOutcomeCallable Macie2Client::TagResourceCallable(const TagResourceRe
 
 void Macie2Client::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 TestCustomDataIdentifierOutcome Macie2Client::TestCustomDataIdentifier(const TestCustomDataIdentifierRequest& request) const
@@ -1699,12 +1585,10 @@ TestCustomDataIdentifierOutcomeCallable Macie2Client::TestCustomDataIdentifierCa
 
 void Macie2Client::TestCustomDataIdentifierAsync(const TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestCustomDataIdentifierAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::TestCustomDataIdentifierAsyncHelper(const TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TestCustomDataIdentifier(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TestCustomDataIdentifier(request), context);
+    } );
 }
 
 UntagResourceOutcome Macie2Client::UntagResource(const UntagResourceRequest& request) const
@@ -1735,12 +1619,10 @@ UntagResourceOutcomeCallable Macie2Client::UntagResourceCallable(const UntagReso
 
 void Macie2Client::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAllowListOutcome Macie2Client::UpdateAllowList(const UpdateAllowListRequest& request) const
@@ -1766,12 +1648,10 @@ UpdateAllowListOutcomeCallable Macie2Client::UpdateAllowListCallable(const Updat
 
 void Macie2Client::UpdateAllowListAsync(const UpdateAllowListRequest& request, const UpdateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAllowListAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UpdateAllowListAsyncHelper(const UpdateAllowListRequest& request, const UpdateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAllowList(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAllowList(request), context);
+    } );
 }
 
 UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const UpdateClassificationJobRequest& request) const
@@ -1797,12 +1677,10 @@ UpdateClassificationJobOutcomeCallable Macie2Client::UpdateClassificationJobCall
 
 void Macie2Client::UpdateClassificationJobAsync(const UpdateClassificationJobRequest& request, const UpdateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClassificationJobAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UpdateClassificationJobAsyncHelper(const UpdateClassificationJobRequest& request, const UpdateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateClassificationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateClassificationJob(request), context);
+    } );
 }
 
 UpdateFindingsFilterOutcome Macie2Client::UpdateFindingsFilter(const UpdateFindingsFilterRequest& request) const
@@ -1828,12 +1706,10 @@ UpdateFindingsFilterOutcomeCallable Macie2Client::UpdateFindingsFilterCallable(c
 
 void Macie2Client::UpdateFindingsFilterAsync(const UpdateFindingsFilterRequest& request, const UpdateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFindingsFilterAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UpdateFindingsFilterAsyncHelper(const UpdateFindingsFilterRequest& request, const UpdateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFindingsFilter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFindingsFilter(request), context);
+    } );
 }
 
 UpdateMacieSessionOutcome Macie2Client::UpdateMacieSession(const UpdateMacieSessionRequest& request) const
@@ -1853,12 +1729,10 @@ UpdateMacieSessionOutcomeCallable Macie2Client::UpdateMacieSessionCallable(const
 
 void Macie2Client::UpdateMacieSessionAsync(const UpdateMacieSessionRequest& request, const UpdateMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMacieSessionAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UpdateMacieSessionAsyncHelper(const UpdateMacieSessionRequest& request, const UpdateMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMacieSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMacieSession(request), context);
+    } );
 }
 
 UpdateMemberSessionOutcome Macie2Client::UpdateMemberSession(const UpdateMemberSessionRequest& request) const
@@ -1884,12 +1758,10 @@ UpdateMemberSessionOutcomeCallable Macie2Client::UpdateMemberSessionCallable(con
 
 void Macie2Client::UpdateMemberSessionAsync(const UpdateMemberSessionRequest& request, const UpdateMemberSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMemberSessionAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UpdateMemberSessionAsyncHelper(const UpdateMemberSessionRequest& request, const UpdateMemberSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMemberSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMemberSession(request), context);
+    } );
 }
 
 UpdateOrganizationConfigurationOutcome Macie2Client::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
@@ -1909,12 +1781,10 @@ UpdateOrganizationConfigurationOutcomeCallable Macie2Client::UpdateOrganizationC
 
 void Macie2Client::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateOrganizationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateOrganizationConfiguration(request), context);
+    } );
 }
 
 UpdateRevealConfigurationOutcome Macie2Client::UpdateRevealConfiguration(const UpdateRevealConfigurationRequest& request) const
@@ -1934,11 +1804,9 @@ UpdateRevealConfigurationOutcomeCallable Macie2Client::UpdateRevealConfiguration
 
 void Macie2Client::UpdateRevealConfigurationAsync(const UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRevealConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UpdateRevealConfigurationAsyncHelper(const UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRevealConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRevealConfiguration(request), context);
+    } );
 }
 

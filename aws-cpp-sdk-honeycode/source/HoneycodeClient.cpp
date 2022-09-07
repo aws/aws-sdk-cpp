@@ -146,12 +146,10 @@ BatchCreateTableRowsOutcomeCallable HoneycodeClient::BatchCreateTableRowsCallabl
 
 void HoneycodeClient::BatchCreateTableRowsAsync(const BatchCreateTableRowsRequest& request, const BatchCreateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchCreateTableRowsAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::BatchCreateTableRowsAsyncHelper(const BatchCreateTableRowsRequest& request, const BatchCreateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchCreateTableRows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchCreateTableRows(request), context);
+    } );
 }
 
 BatchDeleteTableRowsOutcome HoneycodeClient::BatchDeleteTableRows(const BatchDeleteTableRowsRequest& request) const
@@ -185,12 +183,10 @@ BatchDeleteTableRowsOutcomeCallable HoneycodeClient::BatchDeleteTableRowsCallabl
 
 void HoneycodeClient::BatchDeleteTableRowsAsync(const BatchDeleteTableRowsRequest& request, const BatchDeleteTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteTableRowsAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::BatchDeleteTableRowsAsyncHelper(const BatchDeleteTableRowsRequest& request, const BatchDeleteTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDeleteTableRows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDeleteTableRows(request), context);
+    } );
 }
 
 BatchUpdateTableRowsOutcome HoneycodeClient::BatchUpdateTableRows(const BatchUpdateTableRowsRequest& request) const
@@ -224,12 +220,10 @@ BatchUpdateTableRowsOutcomeCallable HoneycodeClient::BatchUpdateTableRowsCallabl
 
 void HoneycodeClient::BatchUpdateTableRowsAsync(const BatchUpdateTableRowsRequest& request, const BatchUpdateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateTableRowsAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::BatchUpdateTableRowsAsyncHelper(const BatchUpdateTableRowsRequest& request, const BatchUpdateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchUpdateTableRows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchUpdateTableRows(request), context);
+    } );
 }
 
 BatchUpsertTableRowsOutcome HoneycodeClient::BatchUpsertTableRows(const BatchUpsertTableRowsRequest& request) const
@@ -263,12 +257,10 @@ BatchUpsertTableRowsOutcomeCallable HoneycodeClient::BatchUpsertTableRowsCallabl
 
 void HoneycodeClient::BatchUpsertTableRowsAsync(const BatchUpsertTableRowsRequest& request, const BatchUpsertTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchUpsertTableRowsAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::BatchUpsertTableRowsAsyncHelper(const BatchUpsertTableRowsRequest& request, const BatchUpsertTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchUpsertTableRows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchUpsertTableRows(request), context);
+    } );
 }
 
 DescribeTableDataImportJobOutcome HoneycodeClient::DescribeTableDataImportJob(const DescribeTableDataImportJobRequest& request) const
@@ -308,12 +300,10 @@ DescribeTableDataImportJobOutcomeCallable HoneycodeClient::DescribeTableDataImpo
 
 void HoneycodeClient::DescribeTableDataImportJobAsync(const DescribeTableDataImportJobRequest& request, const DescribeTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableDataImportJobAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::DescribeTableDataImportJobAsyncHelper(const DescribeTableDataImportJobRequest& request, const DescribeTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTableDataImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTableDataImportJob(request), context);
+    } );
 }
 
 GetScreenDataOutcome HoneycodeClient::GetScreenData(const GetScreenDataRequest& request) const
@@ -333,12 +323,10 @@ GetScreenDataOutcomeCallable HoneycodeClient::GetScreenDataCallable(const GetScr
 
 void HoneycodeClient::GetScreenDataAsync(const GetScreenDataRequest& request, const GetScreenDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetScreenDataAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::GetScreenDataAsyncHelper(const GetScreenDataRequest& request, const GetScreenDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetScreenData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetScreenData(request), context);
+    } );
 }
 
 InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const InvokeScreenAutomationRequest& request) const
@@ -385,12 +373,10 @@ InvokeScreenAutomationOutcomeCallable HoneycodeClient::InvokeScreenAutomationCal
 
 void HoneycodeClient::InvokeScreenAutomationAsync(const InvokeScreenAutomationRequest& request, const InvokeScreenAutomationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InvokeScreenAutomationAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::InvokeScreenAutomationAsyncHelper(const InvokeScreenAutomationRequest& request, const InvokeScreenAutomationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InvokeScreenAutomation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InvokeScreenAutomation(request), context);
+    } );
 }
 
 ListTableColumnsOutcome HoneycodeClient::ListTableColumns(const ListTableColumnsRequest& request) const
@@ -424,12 +410,10 @@ ListTableColumnsOutcomeCallable HoneycodeClient::ListTableColumnsCallable(const 
 
 void HoneycodeClient::ListTableColumnsAsync(const ListTableColumnsRequest& request, const ListTableColumnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTableColumnsAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::ListTableColumnsAsyncHelper(const ListTableColumnsRequest& request, const ListTableColumnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTableColumns(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTableColumns(request), context);
+    } );
 }
 
 ListTableRowsOutcome HoneycodeClient::ListTableRows(const ListTableRowsRequest& request) const
@@ -463,12 +447,10 @@ ListTableRowsOutcomeCallable HoneycodeClient::ListTableRowsCallable(const ListTa
 
 void HoneycodeClient::ListTableRowsAsync(const ListTableRowsRequest& request, const ListTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTableRowsAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::ListTableRowsAsyncHelper(const ListTableRowsRequest& request, const ListTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTableRows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTableRows(request), context);
+    } );
 }
 
 ListTablesOutcome HoneycodeClient::ListTables(const ListTablesRequest& request) const
@@ -495,12 +477,10 @@ ListTablesOutcomeCallable HoneycodeClient::ListTablesCallable(const ListTablesRe
 
 void HoneycodeClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTablesAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::ListTablesAsyncHelper(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTables(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTables(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome HoneycodeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -526,12 +506,10 @@ ListTagsForResourceOutcomeCallable HoneycodeClient::ListTagsForResourceCallable(
 
 void HoneycodeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 QueryTableRowsOutcome HoneycodeClient::QueryTableRows(const QueryTableRowsRequest& request) const
@@ -565,12 +543,10 @@ QueryTableRowsOutcomeCallable HoneycodeClient::QueryTableRowsCallable(const Quer
 
 void HoneycodeClient::QueryTableRowsAsync(const QueryTableRowsRequest& request, const QueryTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryTableRowsAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::QueryTableRowsAsyncHelper(const QueryTableRowsRequest& request, const QueryTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, QueryTableRows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, QueryTableRows(request), context);
+    } );
 }
 
 StartTableDataImportJobOutcome HoneycodeClient::StartTableDataImportJob(const StartTableDataImportJobRequest& request) const
@@ -604,12 +580,10 @@ StartTableDataImportJobOutcomeCallable HoneycodeClient::StartTableDataImportJobC
 
 void HoneycodeClient::StartTableDataImportJobAsync(const StartTableDataImportJobRequest& request, const StartTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTableDataImportJobAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::StartTableDataImportJobAsyncHelper(const StartTableDataImportJobRequest& request, const StartTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartTableDataImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartTableDataImportJob(request), context);
+    } );
 }
 
 TagResourceOutcome HoneycodeClient::TagResource(const TagResourceRequest& request) const
@@ -635,12 +609,10 @@ TagResourceOutcomeCallable HoneycodeClient::TagResourceCallable(const TagResourc
 
 void HoneycodeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome HoneycodeClient::UntagResource(const UntagResourceRequest& request) const
@@ -671,11 +643,9 @@ UntagResourceOutcomeCallable HoneycodeClient::UntagResourceCallable(const UntagR
 
 void HoneycodeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void HoneycodeClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

@@ -143,12 +143,10 @@ AcceptPageOutcomeCallable SSMContactsClient::AcceptPageCallable(const AcceptPage
 
 void SSMContactsClient::AcceptPageAsync(const AcceptPageRequest& request, const AcceptPageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptPageAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::AcceptPageAsyncHelper(const AcceptPageRequest& request, const AcceptPageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AcceptPage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcceptPage(request), context);
+    } );
 }
 
 ActivateContactChannelOutcome SSMContactsClient::ActivateContactChannel(const ActivateContactChannelRequest& request) const
@@ -167,12 +165,10 @@ ActivateContactChannelOutcomeCallable SSMContactsClient::ActivateContactChannelC
 
 void SSMContactsClient::ActivateContactChannelAsync(const ActivateContactChannelRequest& request, const ActivateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ActivateContactChannelAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ActivateContactChannelAsyncHelper(const ActivateContactChannelRequest& request, const ActivateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ActivateContactChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ActivateContactChannel(request), context);
+    } );
 }
 
 CreateContactOutcome SSMContactsClient::CreateContact(const CreateContactRequest& request) const
@@ -191,12 +187,10 @@ CreateContactOutcomeCallable SSMContactsClient::CreateContactCallable(const Crea
 
 void SSMContactsClient::CreateContactAsync(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::CreateContactAsyncHelper(const CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateContact(request), context);
+    } );
 }
 
 CreateContactChannelOutcome SSMContactsClient::CreateContactChannel(const CreateContactChannelRequest& request) const
@@ -215,12 +209,10 @@ CreateContactChannelOutcomeCallable SSMContactsClient::CreateContactChannelCalla
 
 void SSMContactsClient::CreateContactChannelAsync(const CreateContactChannelRequest& request, const CreateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateContactChannelAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::CreateContactChannelAsyncHelper(const CreateContactChannelRequest& request, const CreateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateContactChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateContactChannel(request), context);
+    } );
 }
 
 DeactivateContactChannelOutcome SSMContactsClient::DeactivateContactChannel(const DeactivateContactChannelRequest& request) const
@@ -239,12 +231,10 @@ DeactivateContactChannelOutcomeCallable SSMContactsClient::DeactivateContactChan
 
 void SSMContactsClient::DeactivateContactChannelAsync(const DeactivateContactChannelRequest& request, const DeactivateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeactivateContactChannelAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::DeactivateContactChannelAsyncHelper(const DeactivateContactChannelRequest& request, const DeactivateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeactivateContactChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeactivateContactChannel(request), context);
+    } );
 }
 
 DeleteContactOutcome SSMContactsClient::DeleteContact(const DeleteContactRequest& request) const
@@ -263,12 +253,10 @@ DeleteContactOutcomeCallable SSMContactsClient::DeleteContactCallable(const Dele
 
 void SSMContactsClient::DeleteContactAsync(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::DeleteContactAsyncHelper(const DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteContact(request), context);
+    } );
 }
 
 DeleteContactChannelOutcome SSMContactsClient::DeleteContactChannel(const DeleteContactChannelRequest& request) const
@@ -287,12 +275,10 @@ DeleteContactChannelOutcomeCallable SSMContactsClient::DeleteContactChannelCalla
 
 void SSMContactsClient::DeleteContactChannelAsync(const DeleteContactChannelRequest& request, const DeleteContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactChannelAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::DeleteContactChannelAsyncHelper(const DeleteContactChannelRequest& request, const DeleteContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteContactChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteContactChannel(request), context);
+    } );
 }
 
 DescribeEngagementOutcome SSMContactsClient::DescribeEngagement(const DescribeEngagementRequest& request) const
@@ -311,12 +297,10 @@ DescribeEngagementOutcomeCallable SSMContactsClient::DescribeEngagementCallable(
 
 void SSMContactsClient::DescribeEngagementAsync(const DescribeEngagementRequest& request, const DescribeEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEngagementAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::DescribeEngagementAsyncHelper(const DescribeEngagementRequest& request, const DescribeEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEngagement(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEngagement(request), context);
+    } );
 }
 
 DescribePageOutcome SSMContactsClient::DescribePage(const DescribePageRequest& request) const
@@ -335,12 +319,10 @@ DescribePageOutcomeCallable SSMContactsClient::DescribePageCallable(const Descri
 
 void SSMContactsClient::DescribePageAsync(const DescribePageRequest& request, const DescribePageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePageAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::DescribePageAsyncHelper(const DescribePageRequest& request, const DescribePageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePage(request), context);
+    } );
 }
 
 GetContactOutcome SSMContactsClient::GetContact(const GetContactRequest& request) const
@@ -359,12 +341,10 @@ GetContactOutcomeCallable SSMContactsClient::GetContactCallable(const GetContact
 
 void SSMContactsClient::GetContactAsync(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::GetContactAsyncHelper(const GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContact(request), context);
+    } );
 }
 
 GetContactChannelOutcome SSMContactsClient::GetContactChannel(const GetContactChannelRequest& request) const
@@ -383,12 +363,10 @@ GetContactChannelOutcomeCallable SSMContactsClient::GetContactChannelCallable(co
 
 void SSMContactsClient::GetContactChannelAsync(const GetContactChannelRequest& request, const GetContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactChannelAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::GetContactChannelAsyncHelper(const GetContactChannelRequest& request, const GetContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetContactChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContactChannel(request), context);
+    } );
 }
 
 GetContactPolicyOutcome SSMContactsClient::GetContactPolicy(const GetContactPolicyRequest& request) const
@@ -407,12 +385,10 @@ GetContactPolicyOutcomeCallable SSMContactsClient::GetContactPolicyCallable(cons
 
 void SSMContactsClient::GetContactPolicyAsync(const GetContactPolicyRequest& request, const GetContactPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContactPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::GetContactPolicyAsyncHelper(const GetContactPolicyRequest& request, const GetContactPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetContactPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContactPolicy(request), context);
+    } );
 }
 
 ListContactChannelsOutcome SSMContactsClient::ListContactChannels(const ListContactChannelsRequest& request) const
@@ -431,12 +407,10 @@ ListContactChannelsOutcomeCallable SSMContactsClient::ListContactChannelsCallabl
 
 void SSMContactsClient::ListContactChannelsAsync(const ListContactChannelsRequest& request, const ListContactChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactChannelsAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ListContactChannelsAsyncHelper(const ListContactChannelsRequest& request, const ListContactChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContactChannels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContactChannels(request), context);
+    } );
 }
 
 ListContactsOutcome SSMContactsClient::ListContacts(const ListContactsRequest& request) const
@@ -455,12 +429,10 @@ ListContactsOutcomeCallable SSMContactsClient::ListContactsCallable(const ListCo
 
 void SSMContactsClient::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactsAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ListContactsAsyncHelper(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContacts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContacts(request), context);
+    } );
 }
 
 ListEngagementsOutcome SSMContactsClient::ListEngagements(const ListEngagementsRequest& request) const
@@ -479,12 +451,10 @@ ListEngagementsOutcomeCallable SSMContactsClient::ListEngagementsCallable(const 
 
 void SSMContactsClient::ListEngagementsAsync(const ListEngagementsRequest& request, const ListEngagementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEngagementsAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ListEngagementsAsyncHelper(const ListEngagementsRequest& request, const ListEngagementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEngagements(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEngagements(request), context);
+    } );
 }
 
 ListPageReceiptsOutcome SSMContactsClient::ListPageReceipts(const ListPageReceiptsRequest& request) const
@@ -503,12 +473,10 @@ ListPageReceiptsOutcomeCallable SSMContactsClient::ListPageReceiptsCallable(cons
 
 void SSMContactsClient::ListPageReceiptsAsync(const ListPageReceiptsRequest& request, const ListPageReceiptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPageReceiptsAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ListPageReceiptsAsyncHelper(const ListPageReceiptsRequest& request, const ListPageReceiptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPageReceipts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPageReceipts(request), context);
+    } );
 }
 
 ListPagesByContactOutcome SSMContactsClient::ListPagesByContact(const ListPagesByContactRequest& request) const
@@ -527,12 +495,10 @@ ListPagesByContactOutcomeCallable SSMContactsClient::ListPagesByContactCallable(
 
 void SSMContactsClient::ListPagesByContactAsync(const ListPagesByContactRequest& request, const ListPagesByContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPagesByContactAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ListPagesByContactAsyncHelper(const ListPagesByContactRequest& request, const ListPagesByContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPagesByContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPagesByContact(request), context);
+    } );
 }
 
 ListPagesByEngagementOutcome SSMContactsClient::ListPagesByEngagement(const ListPagesByEngagementRequest& request) const
@@ -551,12 +517,10 @@ ListPagesByEngagementOutcomeCallable SSMContactsClient::ListPagesByEngagementCal
 
 void SSMContactsClient::ListPagesByEngagementAsync(const ListPagesByEngagementRequest& request, const ListPagesByEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPagesByEngagementAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ListPagesByEngagementAsyncHelper(const ListPagesByEngagementRequest& request, const ListPagesByEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPagesByEngagement(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPagesByEngagement(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome SSMContactsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -575,12 +539,10 @@ ListTagsForResourceOutcomeCallable SSMContactsClient::ListTagsForResourceCallabl
 
 void SSMContactsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutContactPolicyOutcome SSMContactsClient::PutContactPolicy(const PutContactPolicyRequest& request) const
@@ -599,12 +561,10 @@ PutContactPolicyOutcomeCallable SSMContactsClient::PutContactPolicyCallable(cons
 
 void SSMContactsClient::PutContactPolicyAsync(const PutContactPolicyRequest& request, const PutContactPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutContactPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::PutContactPolicyAsyncHelper(const PutContactPolicyRequest& request, const PutContactPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutContactPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutContactPolicy(request), context);
+    } );
 }
 
 SendActivationCodeOutcome SSMContactsClient::SendActivationCode(const SendActivationCodeRequest& request) const
@@ -623,12 +583,10 @@ SendActivationCodeOutcomeCallable SSMContactsClient::SendActivationCodeCallable(
 
 void SSMContactsClient::SendActivationCodeAsync(const SendActivationCodeRequest& request, const SendActivationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendActivationCodeAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::SendActivationCodeAsyncHelper(const SendActivationCodeRequest& request, const SendActivationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendActivationCode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendActivationCode(request), context);
+    } );
 }
 
 StartEngagementOutcome SSMContactsClient::StartEngagement(const StartEngagementRequest& request) const
@@ -647,12 +605,10 @@ StartEngagementOutcomeCallable SSMContactsClient::StartEngagementCallable(const 
 
 void SSMContactsClient::StartEngagementAsync(const StartEngagementRequest& request, const StartEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartEngagementAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::StartEngagementAsyncHelper(const StartEngagementRequest& request, const StartEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartEngagement(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartEngagement(request), context);
+    } );
 }
 
 StopEngagementOutcome SSMContactsClient::StopEngagement(const StopEngagementRequest& request) const
@@ -671,12 +627,10 @@ StopEngagementOutcomeCallable SSMContactsClient::StopEngagementCallable(const St
 
 void SSMContactsClient::StopEngagementAsync(const StopEngagementRequest& request, const StopEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopEngagementAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::StopEngagementAsyncHelper(const StopEngagementRequest& request, const StopEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopEngagement(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopEngagement(request), context);
+    } );
 }
 
 TagResourceOutcome SSMContactsClient::TagResource(const TagResourceRequest& request) const
@@ -695,12 +649,10 @@ TagResourceOutcomeCallable SSMContactsClient::TagResourceCallable(const TagResou
 
 void SSMContactsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome SSMContactsClient::UntagResource(const UntagResourceRequest& request) const
@@ -719,12 +671,10 @@ UntagResourceOutcomeCallable SSMContactsClient::UntagResourceCallable(const Unta
 
 void SSMContactsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateContactOutcome SSMContactsClient::UpdateContact(const UpdateContactRequest& request) const
@@ -743,12 +693,10 @@ UpdateContactOutcomeCallable SSMContactsClient::UpdateContactCallable(const Upda
 
 void SSMContactsClient::UpdateContactAsync(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::UpdateContactAsyncHelper(const UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContact(request), context);
+    } );
 }
 
 UpdateContactChannelOutcome SSMContactsClient::UpdateContactChannel(const UpdateContactChannelRequest& request) const
@@ -767,11 +715,9 @@ UpdateContactChannelOutcomeCallable SSMContactsClient::UpdateContactChannelCalla
 
 void SSMContactsClient::UpdateContactChannelAsync(const UpdateContactChannelRequest& request, const UpdateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactChannelAsyncHelper( request, handler, context ); } );
-}
-
-void SSMContactsClient::UpdateContactChannelAsyncHelper(const UpdateContactChannelRequest& request, const UpdateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContactChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContactChannel(request), context);
+    } );
 }
 

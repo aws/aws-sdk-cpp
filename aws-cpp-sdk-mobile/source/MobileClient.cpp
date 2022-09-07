@@ -126,12 +126,10 @@ CreateProjectOutcomeCallable MobileClient::CreateProjectCallable(const CreatePro
 
 void MobileClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProject(request), context);
+    } );
 }
 
 DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -157,12 +155,10 @@ DeleteProjectOutcomeCallable MobileClient::DeleteProjectCallable(const DeletePro
 
 void MobileClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteProject(request), context);
+    } );
 }
 
 DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& request) const
@@ -188,12 +184,10 @@ DescribeBundleOutcomeCallable MobileClient::DescribeBundleCallable(const Describ
 
 void MobileClient::DescribeBundleAsync(const DescribeBundleRequest& request, const DescribeBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBundleAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::DescribeBundleAsyncHelper(const DescribeBundleRequest& request, const DescribeBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBundle(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBundle(request), context);
+    } );
 }
 
 DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -218,12 +212,10 @@ DescribeProjectOutcomeCallable MobileClient::DescribeProjectCallable(const Descr
 
 void MobileClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeProject(request), context);
+    } );
 }
 
 ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& request) const
@@ -249,12 +241,10 @@ ExportBundleOutcomeCallable MobileClient::ExportBundleCallable(const ExportBundl
 
 void MobileClient::ExportBundleAsync(const ExportBundleRequest& request, const ExportBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportBundleAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::ExportBundleAsyncHelper(const ExportBundleRequest& request, const ExportBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExportBundle(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportBundle(request), context);
+    } );
 }
 
 ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& request) const
@@ -280,12 +270,10 @@ ExportProjectOutcomeCallable MobileClient::ExportProjectCallable(const ExportPro
 
 void MobileClient::ExportProjectAsync(const ExportProjectRequest& request, const ExportProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportProjectAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::ExportProjectAsyncHelper(const ExportProjectRequest& request, const ExportProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExportProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportProject(request), context);
+    } );
 }
 
 ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) const
@@ -305,12 +293,10 @@ ListBundlesOutcomeCallable MobileClient::ListBundlesCallable(const ListBundlesRe
 
 void MobileClient::ListBundlesAsync(const ListBundlesRequest& request, const ListBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBundlesAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::ListBundlesAsyncHelper(const ListBundlesRequest& request, const ListBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBundles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBundles(request), context);
+    } );
 }
 
 ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& request) const
@@ -330,12 +316,10 @@ ListProjectsOutcomeCallable MobileClient::ListProjectsCallable(const ListProject
 
 void MobileClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProjects(request), context);
+    } );
 }
 
 UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -360,11 +344,9 @@ UpdateProjectOutcomeCallable MobileClient::UpdateProjectCallable(const UpdatePro
 
 void MobileClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
-}
-
-void MobileClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateProject(request), context);
+    } );
 }
 

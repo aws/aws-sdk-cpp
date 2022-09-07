@@ -213,12 +213,10 @@ AssociateAssetsOutcomeCallable IoTSiteWiseClient::AssociateAssetsCallable(const 
 
 void IoTSiteWiseClient::AssociateAssetsAsync(const AssociateAssetsRequest& request, const AssociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::AssociateAssetsAsyncHelper(const AssociateAssetsRequest& request, const AssociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateAssets(request), context);
+    } );
 }
 
 AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeriesToAssetProperty(const AssociateTimeSeriesToAssetPropertyRequest& request) const
@@ -262,12 +260,10 @@ AssociateTimeSeriesToAssetPropertyOutcomeCallable IoTSiteWiseClient::AssociateTi
 
 void IoTSiteWiseClient::AssociateTimeSeriesToAssetPropertyAsync(const AssociateTimeSeriesToAssetPropertyRequest& request, const AssociateTimeSeriesToAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTimeSeriesToAssetPropertyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::AssociateTimeSeriesToAssetPropertyAsyncHelper(const AssociateTimeSeriesToAssetPropertyRequest& request, const AssociateTimeSeriesToAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateTimeSeriesToAssetProperty(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateTimeSeriesToAssetProperty(request), context);
+    } );
 }
 
 BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAssets(const BatchAssociateProjectAssetsRequest& request) const
@@ -303,12 +299,10 @@ BatchAssociateProjectAssetsOutcomeCallable IoTSiteWiseClient::BatchAssociateProj
 
 void IoTSiteWiseClient::BatchAssociateProjectAssetsAsync(const BatchAssociateProjectAssetsRequest& request, const BatchAssociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateProjectAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::BatchAssociateProjectAssetsAsyncHelper(const BatchAssociateProjectAssetsRequest& request, const BatchAssociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchAssociateProjectAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchAssociateProjectAssets(request), context);
+    } );
 }
 
 BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjectAssets(const BatchDisassociateProjectAssetsRequest& request) const
@@ -344,12 +338,10 @@ BatchDisassociateProjectAssetsOutcomeCallable IoTSiteWiseClient::BatchDisassocia
 
 void IoTSiteWiseClient::BatchDisassociateProjectAssetsAsync(const BatchDisassociateProjectAssetsRequest& request, const BatchDisassociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateProjectAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::BatchDisassociateProjectAssetsAsyncHelper(const BatchDisassociateProjectAssetsRequest& request, const BatchDisassociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDisassociateProjectAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDisassociateProjectAssets(request), context);
+    } );
 }
 
 BatchGetAssetPropertyAggregatesOutcome IoTSiteWiseClient::BatchGetAssetPropertyAggregates(const BatchGetAssetPropertyAggregatesRequest& request) const
@@ -378,12 +370,10 @@ BatchGetAssetPropertyAggregatesOutcomeCallable IoTSiteWiseClient::BatchGetAssetP
 
 void IoTSiteWiseClient::BatchGetAssetPropertyAggregatesAsync(const BatchGetAssetPropertyAggregatesRequest& request, const BatchGetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetAssetPropertyAggregatesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::BatchGetAssetPropertyAggregatesAsyncHelper(const BatchGetAssetPropertyAggregatesRequest& request, const BatchGetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetAssetPropertyAggregates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetAssetPropertyAggregates(request), context);
+    } );
 }
 
 BatchGetAssetPropertyValueOutcome IoTSiteWiseClient::BatchGetAssetPropertyValue(const BatchGetAssetPropertyValueRequest& request) const
@@ -412,12 +402,10 @@ BatchGetAssetPropertyValueOutcomeCallable IoTSiteWiseClient::BatchGetAssetProper
 
 void IoTSiteWiseClient::BatchGetAssetPropertyValueAsync(const BatchGetAssetPropertyValueRequest& request, const BatchGetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetAssetPropertyValueAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::BatchGetAssetPropertyValueAsyncHelper(const BatchGetAssetPropertyValueRequest& request, const BatchGetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetAssetPropertyValue(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetAssetPropertyValue(request), context);
+    } );
 }
 
 BatchGetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::BatchGetAssetPropertyValueHistory(const BatchGetAssetPropertyValueHistoryRequest& request) const
@@ -446,12 +434,10 @@ BatchGetAssetPropertyValueHistoryOutcomeCallable IoTSiteWiseClient::BatchGetAsse
 
 void IoTSiteWiseClient::BatchGetAssetPropertyValueHistoryAsync(const BatchGetAssetPropertyValueHistoryRequest& request, const BatchGetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetAssetPropertyValueHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::BatchGetAssetPropertyValueHistoryAsyncHelper(const BatchGetAssetPropertyValueHistoryRequest& request, const BatchGetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetAssetPropertyValueHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetAssetPropertyValueHistory(request), context);
+    } );
 }
 
 BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(const BatchPutAssetPropertyValueRequest& request) const
@@ -480,12 +466,10 @@ BatchPutAssetPropertyValueOutcomeCallable IoTSiteWiseClient::BatchPutAssetProper
 
 void IoTSiteWiseClient::BatchPutAssetPropertyValueAsync(const BatchPutAssetPropertyValueRequest& request, const BatchPutAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchPutAssetPropertyValueAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::BatchPutAssetPropertyValueAsyncHelper(const BatchPutAssetPropertyValueRequest& request, const BatchPutAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchPutAssetPropertyValue(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchPutAssetPropertyValue(request), context);
+    } );
 }
 
 CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAccessPolicyRequest& request) const
@@ -514,12 +498,10 @@ CreateAccessPolicyOutcomeCallable IoTSiteWiseClient::CreateAccessPolicyCallable(
 
 void IoTSiteWiseClient::CreateAccessPolicyAsync(const CreateAccessPolicyRequest& request, const CreateAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreateAccessPolicyAsyncHelper(const CreateAccessPolicyRequest& request, const CreateAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAccessPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAccessPolicy(request), context);
+    } );
 }
 
 CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& request) const
@@ -548,12 +530,10 @@ CreateAssetOutcomeCallable IoTSiteWiseClient::CreateAssetCallable(const CreateAs
 
 void IoTSiteWiseClient::CreateAssetAsync(const CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssetAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreateAssetAsyncHelper(const CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAsset(request), context);
+    } );
 }
 
 CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetModelRequest& request) const
@@ -582,12 +562,10 @@ CreateAssetModelOutcomeCallable IoTSiteWiseClient::CreateAssetModelCallable(cons
 
 void IoTSiteWiseClient::CreateAssetModelAsync(const CreateAssetModelRequest& request, const CreateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssetModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreateAssetModelAsyncHelper(const CreateAssetModelRequest& request, const CreateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAssetModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAssetModel(request), context);
+    } );
 }
 
 CreateBulkImportJobOutcome IoTSiteWiseClient::CreateBulkImportJob(const CreateBulkImportJobRequest& request) const
@@ -616,12 +594,10 @@ CreateBulkImportJobOutcomeCallable IoTSiteWiseClient::CreateBulkImportJobCallabl
 
 void IoTSiteWiseClient::CreateBulkImportJobAsync(const CreateBulkImportJobRequest& request, const CreateBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBulkImportJobAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreateBulkImportJobAsyncHelper(const CreateBulkImportJobRequest& request, const CreateBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBulkImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBulkImportJob(request), context);
+    } );
 }
 
 CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardRequest& request) const
@@ -650,12 +626,10 @@ CreateDashboardOutcomeCallable IoTSiteWiseClient::CreateDashboardCallable(const 
 
 void IoTSiteWiseClient::CreateDashboardAsync(const CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDashboardAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreateDashboardAsyncHelper(const CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDashboard(request), context);
+    } );
 }
 
 CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest& request) const
@@ -684,12 +658,10 @@ CreateGatewayOutcomeCallable IoTSiteWiseClient::CreateGatewayCallable(const Crea
 
 void IoTSiteWiseClient::CreateGatewayAsync(const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreateGatewayAsyncHelper(const CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateGateway(request), context);
+    } );
 }
 
 CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& request) const
@@ -718,12 +690,10 @@ CreatePortalOutcomeCallable IoTSiteWiseClient::CreatePortalCallable(const Create
 
 void IoTSiteWiseClient::CreatePortalAsync(const CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePortalAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreatePortalAsyncHelper(const CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePortal(request), context);
+    } );
 }
 
 CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest& request) const
@@ -752,12 +722,10 @@ CreateProjectOutcomeCallable IoTSiteWiseClient::CreateProjectCallable(const Crea
 
 void IoTSiteWiseClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProject(request), context);
+    } );
 }
 
 DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAccessPolicyRequest& request) const
@@ -792,12 +760,10 @@ DeleteAccessPolicyOutcomeCallable IoTSiteWiseClient::DeleteAccessPolicyCallable(
 
 void IoTSiteWiseClient::DeleteAccessPolicyAsync(const DeleteAccessPolicyRequest& request, const DeleteAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeleteAccessPolicyAsyncHelper(const DeleteAccessPolicyRequest& request, const DeleteAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAccessPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccessPolicy(request), context);
+    } );
 }
 
 DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& request) const
@@ -832,12 +798,10 @@ DeleteAssetOutcomeCallable IoTSiteWiseClient::DeleteAssetCallable(const DeleteAs
 
 void IoTSiteWiseClient::DeleteAssetAsync(const DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssetAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeleteAssetAsyncHelper(const DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAsset(request), context);
+    } );
 }
 
 DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetModelRequest& request) const
@@ -872,12 +836,10 @@ DeleteAssetModelOutcomeCallable IoTSiteWiseClient::DeleteAssetModelCallable(cons
 
 void IoTSiteWiseClient::DeleteAssetModelAsync(const DeleteAssetModelRequest& request, const DeleteAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssetModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeleteAssetModelAsyncHelper(const DeleteAssetModelRequest& request, const DeleteAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAssetModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAssetModel(request), context);
+    } );
 }
 
 DeleteDashboardOutcome IoTSiteWiseClient::DeleteDashboard(const DeleteDashboardRequest& request) const
@@ -912,12 +874,10 @@ DeleteDashboardOutcomeCallable IoTSiteWiseClient::DeleteDashboardCallable(const 
 
 void IoTSiteWiseClient::DeleteDashboardAsync(const DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDashboardAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeleteDashboardAsyncHelper(const DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDashboard(request), context);
+    } );
 }
 
 DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest& request) const
@@ -952,12 +912,10 @@ DeleteGatewayOutcomeCallable IoTSiteWiseClient::DeleteGatewayCallable(const Dele
 
 void IoTSiteWiseClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeleteGatewayAsyncHelper(const DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGateway(request), context);
+    } );
 }
 
 DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& request) const
@@ -992,12 +950,10 @@ DeletePortalOutcomeCallable IoTSiteWiseClient::DeletePortalCallable(const Delete
 
 void IoTSiteWiseClient::DeletePortalAsync(const DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePortalAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeletePortalAsyncHelper(const DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePortal(request), context);
+    } );
 }
 
 DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -1032,12 +988,10 @@ DeleteProjectOutcomeCallable IoTSiteWiseClient::DeleteProjectCallable(const Dele
 
 void IoTSiteWiseClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteProject(request), context);
+    } );
 }
 
 DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeriesRequest& request) const
@@ -1066,12 +1020,10 @@ DeleteTimeSeriesOutcomeCallable IoTSiteWiseClient::DeleteTimeSeriesCallable(cons
 
 void IoTSiteWiseClient::DeleteTimeSeriesAsync(const DeleteTimeSeriesRequest& request, const DeleteTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTimeSeriesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DeleteTimeSeriesAsyncHelper(const DeleteTimeSeriesRequest& request, const DeleteTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTimeSeries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTimeSeries(request), context);
+    } );
 }
 
 DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const DescribeAccessPolicyRequest& request) const
@@ -1106,12 +1058,10 @@ DescribeAccessPolicyOutcomeCallable IoTSiteWiseClient::DescribeAccessPolicyCalla
 
 void IoTSiteWiseClient::DescribeAccessPolicyAsync(const DescribeAccessPolicyRequest& request, const DescribeAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccessPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeAccessPolicyAsyncHelper(const DescribeAccessPolicyRequest& request, const DescribeAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccessPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccessPolicy(request), context);
+    } );
 }
 
 DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest& request) const
@@ -1146,12 +1096,10 @@ DescribeAssetOutcomeCallable IoTSiteWiseClient::DescribeAssetCallable(const Desc
 
 void IoTSiteWiseClient::DescribeAssetAsync(const DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssetAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeAssetAsyncHelper(const DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAsset(request), context);
+    } );
 }
 
 DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAssetModelRequest& request) const
@@ -1186,12 +1134,10 @@ DescribeAssetModelOutcomeCallable IoTSiteWiseClient::DescribeAssetModelCallable(
 
 void IoTSiteWiseClient::DescribeAssetModelAsync(const DescribeAssetModelRequest& request, const DescribeAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssetModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeAssetModelAsyncHelper(const DescribeAssetModelRequest& request, const DescribeAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAssetModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAssetModel(request), context);
+    } );
 }
 
 DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const DescribeAssetPropertyRequest& request) const
@@ -1233,12 +1179,10 @@ DescribeAssetPropertyOutcomeCallable IoTSiteWiseClient::DescribeAssetPropertyCal
 
 void IoTSiteWiseClient::DescribeAssetPropertyAsync(const DescribeAssetPropertyRequest& request, const DescribeAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssetPropertyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeAssetPropertyAsyncHelper(const DescribeAssetPropertyRequest& request, const DescribeAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAssetProperty(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAssetProperty(request), context);
+    } );
 }
 
 DescribeBulkImportJobOutcome IoTSiteWiseClient::DescribeBulkImportJob(const DescribeBulkImportJobRequest& request) const
@@ -1273,12 +1217,10 @@ DescribeBulkImportJobOutcomeCallable IoTSiteWiseClient::DescribeBulkImportJobCal
 
 void IoTSiteWiseClient::DescribeBulkImportJobAsync(const DescribeBulkImportJobRequest& request, const DescribeBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeBulkImportJobAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeBulkImportJobAsyncHelper(const DescribeBulkImportJobRequest& request, const DescribeBulkImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeBulkImportJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBulkImportJob(request), context);
+    } );
 }
 
 DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDashboardRequest& request) const
@@ -1313,12 +1255,10 @@ DescribeDashboardOutcomeCallable IoTSiteWiseClient::DescribeDashboardCallable(co
 
 void IoTSiteWiseClient::DescribeDashboardAsync(const DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDashboardAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeDashboardAsyncHelper(const DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDashboard(request), context);
+    } );
 }
 
 DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefaultEncryptionConfiguration(const DescribeDefaultEncryptionConfigurationRequest& request) const
@@ -1347,12 +1287,10 @@ DescribeDefaultEncryptionConfigurationOutcomeCallable IoTSiteWiseClient::Describ
 
 void IoTSiteWiseClient::DescribeDefaultEncryptionConfigurationAsync(const DescribeDefaultEncryptionConfigurationRequest& request, const DescribeDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDefaultEncryptionConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeDefaultEncryptionConfigurationAsyncHelper(const DescribeDefaultEncryptionConfigurationRequest& request, const DescribeDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDefaultEncryptionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDefaultEncryptionConfiguration(request), context);
+    } );
 }
 
 DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayRequest& request) const
@@ -1387,12 +1325,10 @@ DescribeGatewayOutcomeCallable IoTSiteWiseClient::DescribeGatewayCallable(const 
 
 void IoTSiteWiseClient::DescribeGatewayAsync(const DescribeGatewayRequest& request, const DescribeGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeGatewayAsyncHelper(const DescribeGatewayRequest& request, const DescribeGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeGateway(request), context);
+    } );
 }
 
 DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGatewayCapabilityConfiguration(const DescribeGatewayCapabilityConfigurationRequest& request) const
@@ -1434,12 +1370,10 @@ DescribeGatewayCapabilityConfigurationOutcomeCallable IoTSiteWiseClient::Describ
 
 void IoTSiteWiseClient::DescribeGatewayCapabilityConfigurationAsync(const DescribeGatewayCapabilityConfigurationRequest& request, const DescribeGatewayCapabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGatewayCapabilityConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeGatewayCapabilityConfigurationAsyncHelper(const DescribeGatewayCapabilityConfigurationRequest& request, const DescribeGatewayCapabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeGatewayCapabilityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeGatewayCapabilityConfiguration(request), context);
+    } );
 }
 
 DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
@@ -1468,12 +1402,10 @@ DescribeLoggingOptionsOutcomeCallable IoTSiteWiseClient::DescribeLoggingOptionsC
 
 void IoTSiteWiseClient::DescribeLoggingOptionsAsync(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoggingOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeLoggingOptionsAsyncHelper(const DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLoggingOptions(request), context);
+    } );
 }
 
 DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequest& request) const
@@ -1508,12 +1440,10 @@ DescribePortalOutcomeCallable IoTSiteWiseClient::DescribePortalCallable(const De
 
 void IoTSiteWiseClient::DescribePortalAsync(const DescribePortalRequest& request, const DescribePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePortalAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribePortalAsyncHelper(const DescribePortalRequest& request, const DescribePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePortal(request), context);
+    } );
 }
 
 DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectRequest& request) const
@@ -1548,12 +1478,10 @@ DescribeProjectOutcomeCallable IoTSiteWiseClient::DescribeProjectCallable(const 
 
 void IoTSiteWiseClient::DescribeProjectAsync(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeProject(request), context);
+    } );
 }
 
 DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfiguration(const DescribeStorageConfigurationRequest& request) const
@@ -1582,12 +1510,10 @@ DescribeStorageConfigurationOutcomeCallable IoTSiteWiseClient::DescribeStorageCo
 
 void IoTSiteWiseClient::DescribeStorageConfigurationAsync(const DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStorageConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeStorageConfigurationAsyncHelper(const DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStorageConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStorageConfiguration(request), context);
+    } );
 }
 
 DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTimeSeriesRequest& request) const
@@ -1616,12 +1542,10 @@ DescribeTimeSeriesOutcomeCallable IoTSiteWiseClient::DescribeTimeSeriesCallable(
 
 void IoTSiteWiseClient::DescribeTimeSeriesAsync(const DescribeTimeSeriesRequest& request, const DescribeTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTimeSeriesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DescribeTimeSeriesAsyncHelper(const DescribeTimeSeriesRequest& request, const DescribeTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTimeSeries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTimeSeries(request), context);
+    } );
 }
 
 DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const DisassociateAssetsRequest& request) const
@@ -1657,12 +1581,10 @@ DisassociateAssetsOutcomeCallable IoTSiteWiseClient::DisassociateAssetsCallable(
 
 void IoTSiteWiseClient::DisassociateAssetsAsync(const DisassociateAssetsRequest& request, const DisassociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DisassociateAssetsAsyncHelper(const DisassociateAssetsRequest& request, const DisassociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateAssets(request), context);
+    } );
 }
 
 DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTimeSeriesFromAssetProperty(const DisassociateTimeSeriesFromAssetPropertyRequest& request) const
@@ -1706,12 +1628,10 @@ DisassociateTimeSeriesFromAssetPropertyOutcomeCallable IoTSiteWiseClient::Disass
 
 void IoTSiteWiseClient::DisassociateTimeSeriesFromAssetPropertyAsync(const DisassociateTimeSeriesFromAssetPropertyRequest& request, const DisassociateTimeSeriesFromAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTimeSeriesFromAssetPropertyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::DisassociateTimeSeriesFromAssetPropertyAsyncHelper(const DisassociateTimeSeriesFromAssetPropertyRequest& request, const DisassociateTimeSeriesFromAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateTimeSeriesFromAssetProperty(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateTimeSeriesFromAssetProperty(request), context);
+    } );
 }
 
 GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(const GetAssetPropertyAggregatesRequest& request) const
@@ -1760,12 +1680,10 @@ GetAssetPropertyAggregatesOutcomeCallable IoTSiteWiseClient::GetAssetPropertyAgg
 
 void IoTSiteWiseClient::GetAssetPropertyAggregatesAsync(const GetAssetPropertyAggregatesRequest& request, const GetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssetPropertyAggregatesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::GetAssetPropertyAggregatesAsyncHelper(const GetAssetPropertyAggregatesRequest& request, const GetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAssetPropertyAggregates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAssetPropertyAggregates(request), context);
+    } );
 }
 
 GetAssetPropertyValueOutcome IoTSiteWiseClient::GetAssetPropertyValue(const GetAssetPropertyValueRequest& request) const
@@ -1794,12 +1712,10 @@ GetAssetPropertyValueOutcomeCallable IoTSiteWiseClient::GetAssetPropertyValueCal
 
 void IoTSiteWiseClient::GetAssetPropertyValueAsync(const GetAssetPropertyValueRequest& request, const GetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssetPropertyValueAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::GetAssetPropertyValueAsyncHelper(const GetAssetPropertyValueRequest& request, const GetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAssetPropertyValue(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAssetPropertyValue(request), context);
+    } );
 }
 
 GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHistory(const GetAssetPropertyValueHistoryRequest& request) const
@@ -1828,12 +1744,10 @@ GetAssetPropertyValueHistoryOutcomeCallable IoTSiteWiseClient::GetAssetPropertyV
 
 void IoTSiteWiseClient::GetAssetPropertyValueHistoryAsync(const GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssetPropertyValueHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::GetAssetPropertyValueHistoryAsyncHelper(const GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAssetPropertyValueHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAssetPropertyValueHistory(request), context);
+    } );
 }
 
 GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAssetPropertyValues(const GetInterpolatedAssetPropertyValuesRequest& request) const
@@ -1887,12 +1801,10 @@ GetInterpolatedAssetPropertyValuesOutcomeCallable IoTSiteWiseClient::GetInterpol
 
 void IoTSiteWiseClient::GetInterpolatedAssetPropertyValuesAsync(const GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInterpolatedAssetPropertyValuesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::GetInterpolatedAssetPropertyValuesAsyncHelper(const GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetInterpolatedAssetPropertyValues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetInterpolatedAssetPropertyValues(request), context);
+    } );
 }
 
 ListAccessPoliciesOutcome IoTSiteWiseClient::ListAccessPolicies(const ListAccessPoliciesRequest& request) const
@@ -1921,12 +1833,10 @@ ListAccessPoliciesOutcomeCallable IoTSiteWiseClient::ListAccessPoliciesCallable(
 
 void IoTSiteWiseClient::ListAccessPoliciesAsync(const ListAccessPoliciesRequest& request, const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPoliciesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListAccessPoliciesAsyncHelper(const ListAccessPoliciesRequest& request, const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAccessPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAccessPolicies(request), context);
+    } );
 }
 
 ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsRequest& request) const
@@ -1955,12 +1865,10 @@ ListAssetModelsOutcomeCallable IoTSiteWiseClient::ListAssetModelsCallable(const 
 
 void IoTSiteWiseClient::ListAssetModelsAsync(const ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssetModelsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListAssetModelsAsyncHelper(const ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssetModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssetModels(request), context);
+    } );
 }
 
 ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const ListAssetRelationshipsRequest& request) const
@@ -2001,12 +1909,10 @@ ListAssetRelationshipsOutcomeCallable IoTSiteWiseClient::ListAssetRelationshipsC
 
 void IoTSiteWiseClient::ListAssetRelationshipsAsync(const ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssetRelationshipsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListAssetRelationshipsAsyncHelper(const ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssetRelationships(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssetRelationships(request), context);
+    } );
 }
 
 ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request) const
@@ -2035,12 +1941,10 @@ ListAssetsOutcomeCallable IoTSiteWiseClient::ListAssetsCallable(const ListAssets
 
 void IoTSiteWiseClient::ListAssetsAsync(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListAssetsAsyncHelper(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssets(request), context);
+    } );
 }
 
 ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAssociatedAssetsRequest& request) const
@@ -2076,12 +1980,10 @@ ListAssociatedAssetsOutcomeCallable IoTSiteWiseClient::ListAssociatedAssetsCalla
 
 void IoTSiteWiseClient::ListAssociatedAssetsAsync(const ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListAssociatedAssetsAsyncHelper(const ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssociatedAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssociatedAssets(request), context);
+    } );
 }
 
 ListBulkImportJobsOutcome IoTSiteWiseClient::ListBulkImportJobs(const ListBulkImportJobsRequest& request) const
@@ -2110,12 +2012,10 @@ ListBulkImportJobsOutcomeCallable IoTSiteWiseClient::ListBulkImportJobsCallable(
 
 void IoTSiteWiseClient::ListBulkImportJobsAsync(const ListBulkImportJobsRequest& request, const ListBulkImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBulkImportJobsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListBulkImportJobsAsyncHelper(const ListBulkImportJobsRequest& request, const ListBulkImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBulkImportJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBulkImportJobs(request), context);
+    } );
 }
 
 ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequest& request) const
@@ -2149,12 +2049,10 @@ ListDashboardsOutcomeCallable IoTSiteWiseClient::ListDashboardsCallable(const Li
 
 void IoTSiteWiseClient::ListDashboardsAsync(const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDashboardsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListDashboardsAsyncHelper(const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDashboards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDashboards(request), context);
+    } );
 }
 
 ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& request) const
@@ -2183,12 +2081,10 @@ ListGatewaysOutcomeCallable IoTSiteWiseClient::ListGatewaysCallable(const ListGa
 
 void IoTSiteWiseClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGatewaysAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListGatewaysAsyncHelper(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGateways(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGateways(request), context);
+    } );
 }
 
 ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& request) const
@@ -2217,12 +2113,10 @@ ListPortalsOutcomeCallable IoTSiteWiseClient::ListPortalsCallable(const ListPort
 
 void IoTSiteWiseClient::ListPortalsAsync(const ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPortalsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListPortalsAsyncHelper(const ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPortals(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPortals(request), context);
+    } );
 }
 
 ListProjectAssetsOutcome IoTSiteWiseClient::ListProjectAssets(const ListProjectAssetsRequest& request) const
@@ -2258,12 +2152,10 @@ ListProjectAssetsOutcomeCallable IoTSiteWiseClient::ListProjectAssetsCallable(co
 
 void IoTSiteWiseClient::ListProjectAssetsAsync(const ListProjectAssetsRequest& request, const ListProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListProjectAssetsAsyncHelper(const ListProjectAssetsRequest& request, const ListProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListProjectAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProjectAssets(request), context);
+    } );
 }
 
 ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& request) const
@@ -2297,12 +2189,10 @@ ListProjectsOutcomeCallable IoTSiteWiseClient::ListProjectsCallable(const ListPr
 
 void IoTSiteWiseClient::ListProjectsAsync(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProjectsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListProjects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProjects(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -2336,12 +2226,10 @@ ListTagsForResourceOutcomeCallable IoTSiteWiseClient::ListTagsForResourceCallabl
 
 void IoTSiteWiseClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequest& request) const
@@ -2370,12 +2258,10 @@ ListTimeSeriesOutcomeCallable IoTSiteWiseClient::ListTimeSeriesCallable(const Li
 
 void IoTSiteWiseClient::ListTimeSeriesAsync(const ListTimeSeriesRequest& request, const ListTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTimeSeriesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::ListTimeSeriesAsyncHelper(const ListTimeSeriesRequest& request, const ListTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTimeSeries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTimeSeries(request), context);
+    } );
 }
 
 PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryptionConfiguration(const PutDefaultEncryptionConfigurationRequest& request) const
@@ -2404,12 +2290,10 @@ PutDefaultEncryptionConfigurationOutcomeCallable IoTSiteWiseClient::PutDefaultEn
 
 void IoTSiteWiseClient::PutDefaultEncryptionConfigurationAsync(const PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDefaultEncryptionConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::PutDefaultEncryptionConfigurationAsyncHelper(const PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDefaultEncryptionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDefaultEncryptionConfiguration(request), context);
+    } );
 }
 
 PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
@@ -2438,12 +2322,10 @@ PutLoggingOptionsOutcomeCallable IoTSiteWiseClient::PutLoggingOptionsCallable(co
 
 void IoTSiteWiseClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutLoggingOptionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::PutLoggingOptionsAsyncHelper(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutLoggingOptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutLoggingOptions(request), context);
+    } );
 }
 
 PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const PutStorageConfigurationRequest& request) const
@@ -2472,12 +2354,10 @@ PutStorageConfigurationOutcomeCallable IoTSiteWiseClient::PutStorageConfiguratio
 
 void IoTSiteWiseClient::PutStorageConfigurationAsync(const PutStorageConfigurationRequest& request, const PutStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutStorageConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::PutStorageConfigurationAsyncHelper(const PutStorageConfigurationRequest& request, const PutStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutStorageConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutStorageConfiguration(request), context);
+    } );
 }
 
 TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& request) const
@@ -2511,12 +2391,10 @@ TagResourceOutcomeCallable IoTSiteWiseClient::TagResourceCallable(const TagResou
 
 void IoTSiteWiseClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest& request) const
@@ -2555,12 +2433,10 @@ UntagResourceOutcomeCallable IoTSiteWiseClient::UntagResourceCallable(const Unta
 
 void IoTSiteWiseClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAccessPolicyOutcome IoTSiteWiseClient::UpdateAccessPolicy(const UpdateAccessPolicyRequest& request) const
@@ -2595,12 +2471,10 @@ UpdateAccessPolicyOutcomeCallable IoTSiteWiseClient::UpdateAccessPolicyCallable(
 
 void IoTSiteWiseClient::UpdateAccessPolicyAsync(const UpdateAccessPolicyRequest& request, const UpdateAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccessPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateAccessPolicyAsyncHelper(const UpdateAccessPolicyRequest& request, const UpdateAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAccessPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAccessPolicy(request), context);
+    } );
 }
 
 UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& request) const
@@ -2635,12 +2509,10 @@ UpdateAssetOutcomeCallable IoTSiteWiseClient::UpdateAssetCallable(const UpdateAs
 
 void IoTSiteWiseClient::UpdateAssetAsync(const UpdateAssetRequest& request, const UpdateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssetAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateAssetAsyncHelper(const UpdateAssetRequest& request, const UpdateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAsset(request), context);
+    } );
 }
 
 UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetModelRequest& request) const
@@ -2675,12 +2547,10 @@ UpdateAssetModelOutcomeCallable IoTSiteWiseClient::UpdateAssetModelCallable(cons
 
 void IoTSiteWiseClient::UpdateAssetModelAsync(const UpdateAssetModelRequest& request, const UpdateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssetModelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateAssetModelAsyncHelper(const UpdateAssetModelRequest& request, const UpdateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAssetModel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAssetModel(request), context);
+    } );
 }
 
 UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAssetPropertyRequest& request) const
@@ -2722,12 +2592,10 @@ UpdateAssetPropertyOutcomeCallable IoTSiteWiseClient::UpdateAssetPropertyCallabl
 
 void IoTSiteWiseClient::UpdateAssetPropertyAsync(const UpdateAssetPropertyRequest& request, const UpdateAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssetPropertyAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateAssetPropertyAsyncHelper(const UpdateAssetPropertyRequest& request, const UpdateAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAssetProperty(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAssetProperty(request), context);
+    } );
 }
 
 UpdateDashboardOutcome IoTSiteWiseClient::UpdateDashboard(const UpdateDashboardRequest& request) const
@@ -2762,12 +2630,10 @@ UpdateDashboardOutcomeCallable IoTSiteWiseClient::UpdateDashboardCallable(const 
 
 void IoTSiteWiseClient::UpdateDashboardAsync(const UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDashboardAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateDashboardAsyncHelper(const UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDashboard(request), context);
+    } );
 }
 
 UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest& request) const
@@ -2802,12 +2668,10 @@ UpdateGatewayOutcomeCallable IoTSiteWiseClient::UpdateGatewayCallable(const Upda
 
 void IoTSiteWiseClient::UpdateGatewayAsync(const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateGatewayAsyncHelper(const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateGateway(request), context);
+    } );
 }
 
 UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapabilityConfiguration(const UpdateGatewayCapabilityConfigurationRequest& request) const
@@ -2843,12 +2707,10 @@ UpdateGatewayCapabilityConfigurationOutcomeCallable IoTSiteWiseClient::UpdateGat
 
 void IoTSiteWiseClient::UpdateGatewayCapabilityConfigurationAsync(const UpdateGatewayCapabilityConfigurationRequest& request, const UpdateGatewayCapabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayCapabilityConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateGatewayCapabilityConfigurationAsyncHelper(const UpdateGatewayCapabilityConfigurationRequest& request, const UpdateGatewayCapabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateGatewayCapabilityConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateGatewayCapabilityConfiguration(request), context);
+    } );
 }
 
 UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& request) const
@@ -2883,12 +2745,10 @@ UpdatePortalOutcomeCallable IoTSiteWiseClient::UpdatePortalCallable(const Update
 
 void IoTSiteWiseClient::UpdatePortalAsync(const UpdatePortalRequest& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePortalAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdatePortalAsyncHelper(const UpdatePortalRequest& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePortal(request), context);
+    } );
 }
 
 UpdateProjectOutcome IoTSiteWiseClient::UpdateProject(const UpdateProjectRequest& request) const
@@ -2923,11 +2783,9 @@ UpdateProjectOutcomeCallable IoTSiteWiseClient::UpdateProjectCallable(const Upda
 
 void IoTSiteWiseClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectAsyncHelper( request, handler, context ); } );
-}
-
-void IoTSiteWiseClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateProject(request), context);
+    } );
 }
 

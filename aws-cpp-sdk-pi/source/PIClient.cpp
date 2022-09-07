@@ -122,12 +122,10 @@ DescribeDimensionKeysOutcomeCallable PIClient::DescribeDimensionKeysCallable(con
 
 void PIClient::DescribeDimensionKeysAsync(const DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDimensionKeysAsyncHelper( request, handler, context ); } );
-}
-
-void PIClient::DescribeDimensionKeysAsyncHelper(const DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDimensionKeys(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDimensionKeys(request), context);
+    } );
 }
 
 GetDimensionKeyDetailsOutcome PIClient::GetDimensionKeyDetails(const GetDimensionKeyDetailsRequest& request) const
@@ -146,12 +144,10 @@ GetDimensionKeyDetailsOutcomeCallable PIClient::GetDimensionKeyDetailsCallable(c
 
 void PIClient::GetDimensionKeyDetailsAsync(const GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDimensionKeyDetailsAsyncHelper( request, handler, context ); } );
-}
-
-void PIClient::GetDimensionKeyDetailsAsyncHelper(const GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDimensionKeyDetails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDimensionKeyDetails(request), context);
+    } );
 }
 
 GetResourceMetadataOutcome PIClient::GetResourceMetadata(const GetResourceMetadataRequest& request) const
@@ -170,12 +166,10 @@ GetResourceMetadataOutcomeCallable PIClient::GetResourceMetadataCallable(const G
 
 void PIClient::GetResourceMetadataAsync(const GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceMetadataAsyncHelper( request, handler, context ); } );
-}
-
-void PIClient::GetResourceMetadataAsyncHelper(const GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceMetadata(request), context);
+    } );
 }
 
 GetResourceMetricsOutcome PIClient::GetResourceMetrics(const GetResourceMetricsRequest& request) const
@@ -194,12 +188,10 @@ GetResourceMetricsOutcomeCallable PIClient::GetResourceMetricsCallable(const Get
 
 void PIClient::GetResourceMetricsAsync(const GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceMetricsAsyncHelper( request, handler, context ); } );
-}
-
-void PIClient::GetResourceMetricsAsyncHelper(const GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceMetrics(request), context);
+    } );
 }
 
 ListAvailableResourceDimensionsOutcome PIClient::ListAvailableResourceDimensions(const ListAvailableResourceDimensionsRequest& request) const
@@ -218,12 +210,10 @@ ListAvailableResourceDimensionsOutcomeCallable PIClient::ListAvailableResourceDi
 
 void PIClient::ListAvailableResourceDimensionsAsync(const ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableResourceDimensionsAsyncHelper( request, handler, context ); } );
-}
-
-void PIClient::ListAvailableResourceDimensionsAsyncHelper(const ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAvailableResourceDimensions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAvailableResourceDimensions(request), context);
+    } );
 }
 
 ListAvailableResourceMetricsOutcome PIClient::ListAvailableResourceMetrics(const ListAvailableResourceMetricsRequest& request) const
@@ -242,11 +232,9 @@ ListAvailableResourceMetricsOutcomeCallable PIClient::ListAvailableResourceMetri
 
 void PIClient::ListAvailableResourceMetricsAsync(const ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableResourceMetricsAsyncHelper( request, handler, context ); } );
-}
-
-void PIClient::ListAvailableResourceMetricsAsyncHelper(const ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAvailableResourceMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAvailableResourceMetrics(request), context);
+    } );
 }
 

@@ -168,12 +168,10 @@ CreateCapacityProviderOutcomeCallable ECSClient::CreateCapacityProviderCallable(
 
 void ECSClient::CreateCapacityProviderAsync(const CreateCapacityProviderRequest& request, const CreateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCapacityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::CreateCapacityProviderAsyncHelper(const CreateCapacityProviderRequest& request, const CreateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCapacityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCapacityProvider(request), context);
+    } );
 }
 
 CreateClusterOutcome ECSClient::CreateCluster(const CreateClusterRequest& request) const
@@ -192,12 +190,10 @@ CreateClusterOutcomeCallable ECSClient::CreateClusterCallable(const CreateCluste
 
 void ECSClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCluster(request), context);
+    } );
 }
 
 CreateServiceOutcome ECSClient::CreateService(const CreateServiceRequest& request) const
@@ -216,12 +212,10 @@ CreateServiceOutcomeCallable ECSClient::CreateServiceCallable(const CreateServic
 
 void ECSClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateService(request), context);
+    } );
 }
 
 CreateTaskSetOutcome ECSClient::CreateTaskSet(const CreateTaskSetRequest& request) const
@@ -240,12 +234,10 @@ CreateTaskSetOutcomeCallable ECSClient::CreateTaskSetCallable(const CreateTaskSe
 
 void ECSClient::CreateTaskSetAsync(const CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTaskSetAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::CreateTaskSetAsyncHelper(const CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTaskSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTaskSet(request), context);
+    } );
 }
 
 DeleteAccountSettingOutcome ECSClient::DeleteAccountSetting(const DeleteAccountSettingRequest& request) const
@@ -264,12 +256,10 @@ DeleteAccountSettingOutcomeCallable ECSClient::DeleteAccountSettingCallable(cons
 
 void ECSClient::DeleteAccountSettingAsync(const DeleteAccountSettingRequest& request, const DeleteAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountSettingAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeleteAccountSettingAsyncHelper(const DeleteAccountSettingRequest& request, const DeleteAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAccountSetting(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccountSetting(request), context);
+    } );
 }
 
 DeleteAttributesOutcome ECSClient::DeleteAttributes(const DeleteAttributesRequest& request) const
@@ -288,12 +278,10 @@ DeleteAttributesOutcomeCallable ECSClient::DeleteAttributesCallable(const Delete
 
 void ECSClient::DeleteAttributesAsync(const DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAttributes(request), context);
+    } );
 }
 
 DeleteCapacityProviderOutcome ECSClient::DeleteCapacityProvider(const DeleteCapacityProviderRequest& request) const
@@ -312,12 +300,10 @@ DeleteCapacityProviderOutcomeCallable ECSClient::DeleteCapacityProviderCallable(
 
 void ECSClient::DeleteCapacityProviderAsync(const DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCapacityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeleteCapacityProviderAsyncHelper(const DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCapacityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCapacityProvider(request), context);
+    } );
 }
 
 DeleteClusterOutcome ECSClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -336,12 +322,10 @@ DeleteClusterOutcomeCallable ECSClient::DeleteClusterCallable(const DeleteCluste
 
 void ECSClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCluster(request), context);
+    } );
 }
 
 DeleteServiceOutcome ECSClient::DeleteService(const DeleteServiceRequest& request) const
@@ -360,12 +344,10 @@ DeleteServiceOutcomeCallable ECSClient::DeleteServiceCallable(const DeleteServic
 
 void ECSClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteService(request), context);
+    } );
 }
 
 DeleteTaskSetOutcome ECSClient::DeleteTaskSet(const DeleteTaskSetRequest& request) const
@@ -384,12 +366,10 @@ DeleteTaskSetOutcomeCallable ECSClient::DeleteTaskSetCallable(const DeleteTaskSe
 
 void ECSClient::DeleteTaskSetAsync(const DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTaskSetAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeleteTaskSetAsyncHelper(const DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTaskSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTaskSet(request), context);
+    } );
 }
 
 DeregisterContainerInstanceOutcome ECSClient::DeregisterContainerInstance(const DeregisterContainerInstanceRequest& request) const
@@ -408,12 +388,10 @@ DeregisterContainerInstanceOutcomeCallable ECSClient::DeregisterContainerInstanc
 
 void ECSClient::DeregisterContainerInstanceAsync(const DeregisterContainerInstanceRequest& request, const DeregisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterContainerInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeregisterContainerInstanceAsyncHelper(const DeregisterContainerInstanceRequest& request, const DeregisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterContainerInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterContainerInstance(request), context);
+    } );
 }
 
 DeregisterTaskDefinitionOutcome ECSClient::DeregisterTaskDefinition(const DeregisterTaskDefinitionRequest& request) const
@@ -432,12 +410,10 @@ DeregisterTaskDefinitionOutcomeCallable ECSClient::DeregisterTaskDefinitionCalla
 
 void ECSClient::DeregisterTaskDefinitionAsync(const DeregisterTaskDefinitionRequest& request, const DeregisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTaskDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DeregisterTaskDefinitionAsyncHelper(const DeregisterTaskDefinitionRequest& request, const DeregisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterTaskDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterTaskDefinition(request), context);
+    } );
 }
 
 DescribeCapacityProvidersOutcome ECSClient::DescribeCapacityProviders(const DescribeCapacityProvidersRequest& request) const
@@ -456,12 +432,10 @@ DescribeCapacityProvidersOutcomeCallable ECSClient::DescribeCapacityProvidersCal
 
 void ECSClient::DescribeCapacityProvidersAsync(const DescribeCapacityProvidersRequest& request, const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCapacityProvidersAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DescribeCapacityProvidersAsyncHelper(const DescribeCapacityProvidersRequest& request, const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCapacityProviders(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCapacityProviders(request), context);
+    } );
 }
 
 DescribeClustersOutcome ECSClient::DescribeClusters(const DescribeClustersRequest& request) const
@@ -480,12 +454,10 @@ DescribeClustersOutcomeCallable ECSClient::DescribeClustersCallable(const Descri
 
 void ECSClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClustersAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DescribeClustersAsyncHelper(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeClusters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeClusters(request), context);
+    } );
 }
 
 DescribeContainerInstancesOutcome ECSClient::DescribeContainerInstances(const DescribeContainerInstancesRequest& request) const
@@ -504,12 +476,10 @@ DescribeContainerInstancesOutcomeCallable ECSClient::DescribeContainerInstancesC
 
 void ECSClient::DescribeContainerInstancesAsync(const DescribeContainerInstancesRequest& request, const DescribeContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContainerInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DescribeContainerInstancesAsyncHelper(const DescribeContainerInstancesRequest& request, const DescribeContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeContainerInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeContainerInstances(request), context);
+    } );
 }
 
 DescribeServicesOutcome ECSClient::DescribeServices(const DescribeServicesRequest& request) const
@@ -528,12 +498,10 @@ DescribeServicesOutcomeCallable ECSClient::DescribeServicesCallable(const Descri
 
 void ECSClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServicesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DescribeServicesAsyncHelper(const DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeServices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeServices(request), context);
+    } );
 }
 
 DescribeTaskDefinitionOutcome ECSClient::DescribeTaskDefinition(const DescribeTaskDefinitionRequest& request) const
@@ -552,12 +520,10 @@ DescribeTaskDefinitionOutcomeCallable ECSClient::DescribeTaskDefinitionCallable(
 
 void ECSClient::DescribeTaskDefinitionAsync(const DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTaskDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DescribeTaskDefinitionAsyncHelper(const DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTaskDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTaskDefinition(request), context);
+    } );
 }
 
 DescribeTaskSetsOutcome ECSClient::DescribeTaskSets(const DescribeTaskSetsRequest& request) const
@@ -576,12 +542,10 @@ DescribeTaskSetsOutcomeCallable ECSClient::DescribeTaskSetsCallable(const Descri
 
 void ECSClient::DescribeTaskSetsAsync(const DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTaskSetsAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DescribeTaskSetsAsyncHelper(const DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTaskSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTaskSets(request), context);
+    } );
 }
 
 DescribeTasksOutcome ECSClient::DescribeTasks(const DescribeTasksRequest& request) const
@@ -600,12 +564,10 @@ DescribeTasksOutcomeCallable ECSClient::DescribeTasksCallable(const DescribeTask
 
 void ECSClient::DescribeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTasksAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DescribeTasksAsyncHelper(const DescribeTasksRequest& request, const DescribeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTasks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTasks(request), context);
+    } );
 }
 
 DiscoverPollEndpointOutcome ECSClient::DiscoverPollEndpoint(const DiscoverPollEndpointRequest& request) const
@@ -624,12 +586,10 @@ DiscoverPollEndpointOutcomeCallable ECSClient::DiscoverPollEndpointCallable(cons
 
 void ECSClient::DiscoverPollEndpointAsync(const DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DiscoverPollEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::DiscoverPollEndpointAsyncHelper(const DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DiscoverPollEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DiscoverPollEndpoint(request), context);
+    } );
 }
 
 ExecuteCommandOutcome ECSClient::ExecuteCommand(const ExecuteCommandRequest& request) const
@@ -648,12 +608,10 @@ ExecuteCommandOutcomeCallable ECSClient::ExecuteCommandCallable(const ExecuteCom
 
 void ECSClient::ExecuteCommandAsync(const ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteCommandAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ExecuteCommandAsyncHelper(const ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExecuteCommand(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExecuteCommand(request), context);
+    } );
 }
 
 ListAccountSettingsOutcome ECSClient::ListAccountSettings(const ListAccountSettingsRequest& request) const
@@ -672,12 +630,10 @@ ListAccountSettingsOutcomeCallable ECSClient::ListAccountSettingsCallable(const 
 
 void ECSClient::ListAccountSettingsAsync(const ListAccountSettingsRequest& request, const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListAccountSettingsAsyncHelper(const ListAccountSettingsRequest& request, const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAccountSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAccountSettings(request), context);
+    } );
 }
 
 ListAttributesOutcome ECSClient::ListAttributes(const ListAttributesRequest& request) const
@@ -696,12 +652,10 @@ ListAttributesOutcomeCallable ECSClient::ListAttributesCallable(const ListAttrib
 
 void ECSClient::ListAttributesAsync(const ListAttributesRequest& request, const ListAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListAttributesAsyncHelper(const ListAttributesRequest& request, const ListAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAttributes(request), context);
+    } );
 }
 
 ListClustersOutcome ECSClient::ListClusters(const ListClustersRequest& request) const
@@ -720,12 +674,10 @@ ListClustersOutcomeCallable ECSClient::ListClustersCallable(const ListClustersRe
 
 void ECSClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClustersAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListClusters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClusters(request), context);
+    } );
 }
 
 ListContainerInstancesOutcome ECSClient::ListContainerInstances(const ListContainerInstancesRequest& request) const
@@ -744,12 +696,10 @@ ListContainerInstancesOutcomeCallable ECSClient::ListContainerInstancesCallable(
 
 void ECSClient::ListContainerInstancesAsync(const ListContainerInstancesRequest& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContainerInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListContainerInstancesAsyncHelper(const ListContainerInstancesRequest& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContainerInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContainerInstances(request), context);
+    } );
 }
 
 ListServicesOutcome ECSClient::ListServices(const ListServicesRequest& request) const
@@ -768,12 +718,10 @@ ListServicesOutcomeCallable ECSClient::ListServicesCallable(const ListServicesRe
 
 void ECSClient::ListServicesAsync(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServicesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListServicesAsyncHelper(const ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListServices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListServices(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ECSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -792,12 +740,10 @@ ListTagsForResourceOutcomeCallable ECSClient::ListTagsForResourceCallable(const 
 
 void ECSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTaskDefinitionFamiliesOutcome ECSClient::ListTaskDefinitionFamilies(const ListTaskDefinitionFamiliesRequest& request) const
@@ -816,12 +762,10 @@ ListTaskDefinitionFamiliesOutcomeCallable ECSClient::ListTaskDefinitionFamiliesC
 
 void ECSClient::ListTaskDefinitionFamiliesAsync(const ListTaskDefinitionFamiliesRequest& request, const ListTaskDefinitionFamiliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTaskDefinitionFamiliesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListTaskDefinitionFamiliesAsyncHelper(const ListTaskDefinitionFamiliesRequest& request, const ListTaskDefinitionFamiliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTaskDefinitionFamilies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTaskDefinitionFamilies(request), context);
+    } );
 }
 
 ListTaskDefinitionsOutcome ECSClient::ListTaskDefinitions(const ListTaskDefinitionsRequest& request) const
@@ -840,12 +784,10 @@ ListTaskDefinitionsOutcomeCallable ECSClient::ListTaskDefinitionsCallable(const 
 
 void ECSClient::ListTaskDefinitionsAsync(const ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTaskDefinitionsAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListTaskDefinitionsAsyncHelper(const ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTaskDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTaskDefinitions(request), context);
+    } );
 }
 
 ListTasksOutcome ECSClient::ListTasks(const ListTasksRequest& request) const
@@ -864,12 +806,10 @@ ListTasksOutcomeCallable ECSClient::ListTasksCallable(const ListTasksRequest& re
 
 void ECSClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTasksAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::ListTasksAsyncHelper(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTasks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTasks(request), context);
+    } );
 }
 
 PutAccountSettingOutcome ECSClient::PutAccountSetting(const PutAccountSettingRequest& request) const
@@ -888,12 +828,10 @@ PutAccountSettingOutcomeCallable ECSClient::PutAccountSettingCallable(const PutA
 
 void ECSClient::PutAccountSettingAsync(const PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountSettingAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::PutAccountSettingAsyncHelper(const PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAccountSetting(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccountSetting(request), context);
+    } );
 }
 
 PutAccountSettingDefaultOutcome ECSClient::PutAccountSettingDefault(const PutAccountSettingDefaultRequest& request) const
@@ -912,12 +850,10 @@ PutAccountSettingDefaultOutcomeCallable ECSClient::PutAccountSettingDefaultCalla
 
 void ECSClient::PutAccountSettingDefaultAsync(const PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccountSettingDefaultAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::PutAccountSettingDefaultAsyncHelper(const PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAccountSettingDefault(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccountSettingDefault(request), context);
+    } );
 }
 
 PutAttributesOutcome ECSClient::PutAttributes(const PutAttributesRequest& request) const
@@ -936,12 +872,10 @@ PutAttributesOutcomeCallable ECSClient::PutAttributesCallable(const PutAttribute
 
 void ECSClient::PutAttributesAsync(const PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAttributesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::PutAttributesAsyncHelper(const PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAttributes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAttributes(request), context);
+    } );
 }
 
 PutClusterCapacityProvidersOutcome ECSClient::PutClusterCapacityProviders(const PutClusterCapacityProvidersRequest& request) const
@@ -960,12 +894,10 @@ PutClusterCapacityProvidersOutcomeCallable ECSClient::PutClusterCapacityProvider
 
 void ECSClient::PutClusterCapacityProvidersAsync(const PutClusterCapacityProvidersRequest& request, const PutClusterCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutClusterCapacityProvidersAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::PutClusterCapacityProvidersAsyncHelper(const PutClusterCapacityProvidersRequest& request, const PutClusterCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutClusterCapacityProviders(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutClusterCapacityProviders(request), context);
+    } );
 }
 
 RegisterContainerInstanceOutcome ECSClient::RegisterContainerInstance(const RegisterContainerInstanceRequest& request) const
@@ -984,12 +916,10 @@ RegisterContainerInstanceOutcomeCallable ECSClient::RegisterContainerInstanceCal
 
 void ECSClient::RegisterContainerInstanceAsync(const RegisterContainerInstanceRequest& request, const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterContainerInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::RegisterContainerInstanceAsyncHelper(const RegisterContainerInstanceRequest& request, const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterContainerInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterContainerInstance(request), context);
+    } );
 }
 
 RegisterTaskDefinitionOutcome ECSClient::RegisterTaskDefinition(const RegisterTaskDefinitionRequest& request) const
@@ -1008,12 +938,10 @@ RegisterTaskDefinitionOutcomeCallable ECSClient::RegisterTaskDefinitionCallable(
 
 void ECSClient::RegisterTaskDefinitionAsync(const RegisterTaskDefinitionRequest& request, const RegisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterTaskDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::RegisterTaskDefinitionAsyncHelper(const RegisterTaskDefinitionRequest& request, const RegisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterTaskDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterTaskDefinition(request), context);
+    } );
 }
 
 RunTaskOutcome ECSClient::RunTask(const RunTaskRequest& request) const
@@ -1032,12 +960,10 @@ RunTaskOutcomeCallable ECSClient::RunTaskCallable(const RunTaskRequest& request)
 
 void ECSClient::RunTaskAsync(const RunTaskRequest& request, const RunTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RunTaskAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::RunTaskAsyncHelper(const RunTaskRequest& request, const RunTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RunTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RunTask(request), context);
+    } );
 }
 
 StartTaskOutcome ECSClient::StartTask(const StartTaskRequest& request) const
@@ -1056,12 +982,10 @@ StartTaskOutcomeCallable ECSClient::StartTaskCallable(const StartTaskRequest& re
 
 void ECSClient::StartTaskAsync(const StartTaskRequest& request, const StartTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTaskAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::StartTaskAsyncHelper(const StartTaskRequest& request, const StartTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartTask(request), context);
+    } );
 }
 
 StopTaskOutcome ECSClient::StopTask(const StopTaskRequest& request) const
@@ -1080,12 +1004,10 @@ StopTaskOutcomeCallable ECSClient::StopTaskCallable(const StopTaskRequest& reque
 
 void ECSClient::StopTaskAsync(const StopTaskRequest& request, const StopTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTaskAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::StopTaskAsyncHelper(const StopTaskRequest& request, const StopTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopTask(request), context);
+    } );
 }
 
 SubmitAttachmentStateChangesOutcome ECSClient::SubmitAttachmentStateChanges(const SubmitAttachmentStateChangesRequest& request) const
@@ -1104,12 +1026,10 @@ SubmitAttachmentStateChangesOutcomeCallable ECSClient::SubmitAttachmentStateChan
 
 void ECSClient::SubmitAttachmentStateChangesAsync(const SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubmitAttachmentStateChangesAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::SubmitAttachmentStateChangesAsyncHelper(const SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SubmitAttachmentStateChanges(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SubmitAttachmentStateChanges(request), context);
+    } );
 }
 
 SubmitContainerStateChangeOutcome ECSClient::SubmitContainerStateChange(const SubmitContainerStateChangeRequest& request) const
@@ -1128,12 +1048,10 @@ SubmitContainerStateChangeOutcomeCallable ECSClient::SubmitContainerStateChangeC
 
 void ECSClient::SubmitContainerStateChangeAsync(const SubmitContainerStateChangeRequest& request, const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubmitContainerStateChangeAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::SubmitContainerStateChangeAsyncHelper(const SubmitContainerStateChangeRequest& request, const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SubmitContainerStateChange(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SubmitContainerStateChange(request), context);
+    } );
 }
 
 SubmitTaskStateChangeOutcome ECSClient::SubmitTaskStateChange(const SubmitTaskStateChangeRequest& request) const
@@ -1152,12 +1070,10 @@ SubmitTaskStateChangeOutcomeCallable ECSClient::SubmitTaskStateChangeCallable(co
 
 void ECSClient::SubmitTaskStateChangeAsync(const SubmitTaskStateChangeRequest& request, const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubmitTaskStateChangeAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::SubmitTaskStateChangeAsyncHelper(const SubmitTaskStateChangeRequest& request, const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SubmitTaskStateChange(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SubmitTaskStateChange(request), context);
+    } );
 }
 
 TagResourceOutcome ECSClient::TagResource(const TagResourceRequest& request) const
@@ -1176,12 +1092,10 @@ TagResourceOutcomeCallable ECSClient::TagResourceCallable(const TagResourceReque
 
 void ECSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ECSClient::UntagResource(const UntagResourceRequest& request) const
@@ -1200,12 +1114,10 @@ UntagResourceOutcomeCallable ECSClient::UntagResourceCallable(const UntagResourc
 
 void ECSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateCapacityProviderOutcome ECSClient::UpdateCapacityProvider(const UpdateCapacityProviderRequest& request) const
@@ -1224,12 +1136,10 @@ UpdateCapacityProviderOutcomeCallable ECSClient::UpdateCapacityProviderCallable(
 
 void ECSClient::UpdateCapacityProviderAsync(const UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCapacityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateCapacityProviderAsyncHelper(const UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateCapacityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateCapacityProvider(request), context);
+    } );
 }
 
 UpdateClusterOutcome ECSClient::UpdateCluster(const UpdateClusterRequest& request) const
@@ -1248,12 +1158,10 @@ UpdateClusterOutcomeCallable ECSClient::UpdateClusterCallable(const UpdateCluste
 
 void ECSClient::UpdateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateClusterAsyncHelper(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateCluster(request), context);
+    } );
 }
 
 UpdateClusterSettingsOutcome ECSClient::UpdateClusterSettings(const UpdateClusterSettingsRequest& request) const
@@ -1272,12 +1180,10 @@ UpdateClusterSettingsOutcomeCallable ECSClient::UpdateClusterSettingsCallable(co
 
 void ECSClient::UpdateClusterSettingsAsync(const UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateClusterSettingsAsyncHelper(const UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateClusterSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateClusterSettings(request), context);
+    } );
 }
 
 UpdateContainerAgentOutcome ECSClient::UpdateContainerAgent(const UpdateContainerAgentRequest& request) const
@@ -1296,12 +1202,10 @@ UpdateContainerAgentOutcomeCallable ECSClient::UpdateContainerAgentCallable(cons
 
 void ECSClient::UpdateContainerAgentAsync(const UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContainerAgentAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateContainerAgentAsyncHelper(const UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContainerAgent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContainerAgent(request), context);
+    } );
 }
 
 UpdateContainerInstancesStateOutcome ECSClient::UpdateContainerInstancesState(const UpdateContainerInstancesStateRequest& request) const
@@ -1320,12 +1224,10 @@ UpdateContainerInstancesStateOutcomeCallable ECSClient::UpdateContainerInstances
 
 void ECSClient::UpdateContainerInstancesStateAsync(const UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateContainerInstancesStateAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateContainerInstancesStateAsyncHelper(const UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateContainerInstancesState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateContainerInstancesState(request), context);
+    } );
 }
 
 UpdateServiceOutcome ECSClient::UpdateService(const UpdateServiceRequest& request) const
@@ -1344,12 +1246,10 @@ UpdateServiceOutcomeCallable ECSClient::UpdateServiceCallable(const UpdateServic
 
 void ECSClient::UpdateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateServiceAsyncHelper(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateService(request), context);
+    } );
 }
 
 UpdateServicePrimaryTaskSetOutcome ECSClient::UpdateServicePrimaryTaskSet(const UpdateServicePrimaryTaskSetRequest& request) const
@@ -1368,12 +1268,10 @@ UpdateServicePrimaryTaskSetOutcomeCallable ECSClient::UpdateServicePrimaryTaskSe
 
 void ECSClient::UpdateServicePrimaryTaskSetAsync(const UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateServicePrimaryTaskSetAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateServicePrimaryTaskSetAsyncHelper(const UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateServicePrimaryTaskSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateServicePrimaryTaskSet(request), context);
+    } );
 }
 
 UpdateTaskSetOutcome ECSClient::UpdateTaskSet(const UpdateTaskSetRequest& request) const
@@ -1392,11 +1290,9 @@ UpdateTaskSetOutcomeCallable ECSClient::UpdateTaskSetCallable(const UpdateTaskSe
 
 void ECSClient::UpdateTaskSetAsync(const UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTaskSetAsyncHelper( request, handler, context ); } );
-}
-
-void ECSClient::UpdateTaskSetAsyncHelper(const UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTaskSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTaskSet(request), context);
+    } );
 }
 

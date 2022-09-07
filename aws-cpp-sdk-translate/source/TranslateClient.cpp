@@ -131,12 +131,10 @@ CreateParallelDataOutcomeCallable TranslateClient::CreateParallelDataCallable(co
 
 void TranslateClient::CreateParallelDataAsync(const CreateParallelDataRequest& request, const CreateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateParallelDataAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::CreateParallelDataAsyncHelper(const CreateParallelDataRequest& request, const CreateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateParallelData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateParallelData(request), context);
+    } );
 }
 
 DeleteParallelDataOutcome TranslateClient::DeleteParallelData(const DeleteParallelDataRequest& request) const
@@ -155,12 +153,10 @@ DeleteParallelDataOutcomeCallable TranslateClient::DeleteParallelDataCallable(co
 
 void TranslateClient::DeleteParallelDataAsync(const DeleteParallelDataRequest& request, const DeleteParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteParallelDataAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::DeleteParallelDataAsyncHelper(const DeleteParallelDataRequest& request, const DeleteParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteParallelData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteParallelData(request), context);
+    } );
 }
 
 DeleteTerminologyOutcome TranslateClient::DeleteTerminology(const DeleteTerminologyRequest& request) const
@@ -179,12 +175,10 @@ DeleteTerminologyOutcomeCallable TranslateClient::DeleteTerminologyCallable(cons
 
 void TranslateClient::DeleteTerminologyAsync(const DeleteTerminologyRequest& request, const DeleteTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTerminologyAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::DeleteTerminologyAsyncHelper(const DeleteTerminologyRequest& request, const DeleteTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTerminology(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTerminology(request), context);
+    } );
 }
 
 DescribeTextTranslationJobOutcome TranslateClient::DescribeTextTranslationJob(const DescribeTextTranslationJobRequest& request) const
@@ -203,12 +197,10 @@ DescribeTextTranslationJobOutcomeCallable TranslateClient::DescribeTextTranslati
 
 void TranslateClient::DescribeTextTranslationJobAsync(const DescribeTextTranslationJobRequest& request, const DescribeTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTextTranslationJobAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::DescribeTextTranslationJobAsyncHelper(const DescribeTextTranslationJobRequest& request, const DescribeTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTextTranslationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTextTranslationJob(request), context);
+    } );
 }
 
 GetParallelDataOutcome TranslateClient::GetParallelData(const GetParallelDataRequest& request) const
@@ -227,12 +219,10 @@ GetParallelDataOutcomeCallable TranslateClient::GetParallelDataCallable(const Ge
 
 void TranslateClient::GetParallelDataAsync(const GetParallelDataRequest& request, const GetParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetParallelDataAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::GetParallelDataAsyncHelper(const GetParallelDataRequest& request, const GetParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetParallelData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetParallelData(request), context);
+    } );
 }
 
 GetTerminologyOutcome TranslateClient::GetTerminology(const GetTerminologyRequest& request) const
@@ -251,12 +241,10 @@ GetTerminologyOutcomeCallable TranslateClient::GetTerminologyCallable(const GetT
 
 void TranslateClient::GetTerminologyAsync(const GetTerminologyRequest& request, const GetTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTerminologyAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::GetTerminologyAsyncHelper(const GetTerminologyRequest& request, const GetTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTerminology(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTerminology(request), context);
+    } );
 }
 
 ImportTerminologyOutcome TranslateClient::ImportTerminology(const ImportTerminologyRequest& request) const
@@ -275,12 +263,10 @@ ImportTerminologyOutcomeCallable TranslateClient::ImportTerminologyCallable(cons
 
 void TranslateClient::ImportTerminologyAsync(const ImportTerminologyRequest& request, const ImportTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportTerminologyAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::ImportTerminologyAsyncHelper(const ImportTerminologyRequest& request, const ImportTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportTerminology(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportTerminology(request), context);
+    } );
 }
 
 ListLanguagesOutcome TranslateClient::ListLanguages(const ListLanguagesRequest& request) const
@@ -299,12 +285,10 @@ ListLanguagesOutcomeCallable TranslateClient::ListLanguagesCallable(const ListLa
 
 void TranslateClient::ListLanguagesAsync(const ListLanguagesRequest& request, const ListLanguagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLanguagesAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::ListLanguagesAsyncHelper(const ListLanguagesRequest& request, const ListLanguagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLanguages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLanguages(request), context);
+    } );
 }
 
 ListParallelDataOutcome TranslateClient::ListParallelData(const ListParallelDataRequest& request) const
@@ -323,12 +307,10 @@ ListParallelDataOutcomeCallable TranslateClient::ListParallelDataCallable(const 
 
 void TranslateClient::ListParallelDataAsync(const ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListParallelDataAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::ListParallelDataAsyncHelper(const ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListParallelData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListParallelData(request), context);
+    } );
 }
 
 ListTerminologiesOutcome TranslateClient::ListTerminologies(const ListTerminologiesRequest& request) const
@@ -347,12 +329,10 @@ ListTerminologiesOutcomeCallable TranslateClient::ListTerminologiesCallable(cons
 
 void TranslateClient::ListTerminologiesAsync(const ListTerminologiesRequest& request, const ListTerminologiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTerminologiesAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::ListTerminologiesAsyncHelper(const ListTerminologiesRequest& request, const ListTerminologiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTerminologies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTerminologies(request), context);
+    } );
 }
 
 ListTextTranslationJobsOutcome TranslateClient::ListTextTranslationJobs(const ListTextTranslationJobsRequest& request) const
@@ -371,12 +351,10 @@ ListTextTranslationJobsOutcomeCallable TranslateClient::ListTextTranslationJobsC
 
 void TranslateClient::ListTextTranslationJobsAsync(const ListTextTranslationJobsRequest& request, const ListTextTranslationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTextTranslationJobsAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::ListTextTranslationJobsAsyncHelper(const ListTextTranslationJobsRequest& request, const ListTextTranslationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTextTranslationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTextTranslationJobs(request), context);
+    } );
 }
 
 StartTextTranslationJobOutcome TranslateClient::StartTextTranslationJob(const StartTextTranslationJobRequest& request) const
@@ -395,12 +373,10 @@ StartTextTranslationJobOutcomeCallable TranslateClient::StartTextTranslationJobC
 
 void TranslateClient::StartTextTranslationJobAsync(const StartTextTranslationJobRequest& request, const StartTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTextTranslationJobAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::StartTextTranslationJobAsyncHelper(const StartTextTranslationJobRequest& request, const StartTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartTextTranslationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartTextTranslationJob(request), context);
+    } );
 }
 
 StopTextTranslationJobOutcome TranslateClient::StopTextTranslationJob(const StopTextTranslationJobRequest& request) const
@@ -419,12 +395,10 @@ StopTextTranslationJobOutcomeCallable TranslateClient::StopTextTranslationJobCal
 
 void TranslateClient::StopTextTranslationJobAsync(const StopTextTranslationJobRequest& request, const StopTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopTextTranslationJobAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::StopTextTranslationJobAsyncHelper(const StopTextTranslationJobRequest& request, const StopTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopTextTranslationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopTextTranslationJob(request), context);
+    } );
 }
 
 TranslateTextOutcome TranslateClient::TranslateText(const TranslateTextRequest& request) const
@@ -443,12 +417,10 @@ TranslateTextOutcomeCallable TranslateClient::TranslateTextCallable(const Transl
 
 void TranslateClient::TranslateTextAsync(const TranslateTextRequest& request, const TranslateTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TranslateTextAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::TranslateTextAsyncHelper(const TranslateTextRequest& request, const TranslateTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TranslateText(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TranslateText(request), context);
+    } );
 }
 
 UpdateParallelDataOutcome TranslateClient::UpdateParallelData(const UpdateParallelDataRequest& request) const
@@ -467,11 +439,9 @@ UpdateParallelDataOutcomeCallable TranslateClient::UpdateParallelDataCallable(co
 
 void TranslateClient::UpdateParallelDataAsync(const UpdateParallelDataRequest& request, const UpdateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateParallelDataAsyncHelper( request, handler, context ); } );
-}
-
-void TranslateClient::UpdateParallelDataAsyncHelper(const UpdateParallelDataRequest& request, const UpdateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateParallelData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateParallelData(request), context);
+    } );
 }
 

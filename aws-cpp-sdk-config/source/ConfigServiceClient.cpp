@@ -204,12 +204,10 @@ BatchGetAggregateResourceConfigOutcomeCallable ConfigServiceClient::BatchGetAggr
 
 void ConfigServiceClient::BatchGetAggregateResourceConfigAsync(const BatchGetAggregateResourceConfigRequest& request, const BatchGetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetAggregateResourceConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::BatchGetAggregateResourceConfigAsyncHelper(const BatchGetAggregateResourceConfigRequest& request, const BatchGetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetAggregateResourceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetAggregateResourceConfig(request), context);
+    } );
 }
 
 BatchGetResourceConfigOutcome ConfigServiceClient::BatchGetResourceConfig(const BatchGetResourceConfigRequest& request) const
@@ -228,12 +226,10 @@ BatchGetResourceConfigOutcomeCallable ConfigServiceClient::BatchGetResourceConfi
 
 void ConfigServiceClient::BatchGetResourceConfigAsync(const BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetResourceConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::BatchGetResourceConfigAsyncHelper(const BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchGetResourceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetResourceConfig(request), context);
+    } );
 }
 
 DeleteAggregationAuthorizationOutcome ConfigServiceClient::DeleteAggregationAuthorization(const DeleteAggregationAuthorizationRequest& request) const
@@ -252,12 +248,10 @@ DeleteAggregationAuthorizationOutcomeCallable ConfigServiceClient::DeleteAggrega
 
 void ConfigServiceClient::DeleteAggregationAuthorizationAsync(const DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAggregationAuthorizationAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteAggregationAuthorizationAsyncHelper(const DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAggregationAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAggregationAuthorization(request), context);
+    } );
 }
 
 DeleteConfigRuleOutcome ConfigServiceClient::DeleteConfigRule(const DeleteConfigRuleRequest& request) const
@@ -276,12 +270,10 @@ DeleteConfigRuleOutcomeCallable ConfigServiceClient::DeleteConfigRuleCallable(co
 
 void ConfigServiceClient::DeleteConfigRuleAsync(const DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigRuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteConfigRuleAsyncHelper(const DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfigRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfigRule(request), context);
+    } );
 }
 
 DeleteConfigurationAggregatorOutcome ConfigServiceClient::DeleteConfigurationAggregator(const DeleteConfigurationAggregatorRequest& request) const
@@ -300,12 +292,10 @@ DeleteConfigurationAggregatorOutcomeCallable ConfigServiceClient::DeleteConfigur
 
 void ConfigServiceClient::DeleteConfigurationAggregatorAsync(const DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationAggregatorAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteConfigurationAggregatorAsyncHelper(const DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfigurationAggregator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfigurationAggregator(request), context);
+    } );
 }
 
 DeleteConfigurationRecorderOutcome ConfigServiceClient::DeleteConfigurationRecorder(const DeleteConfigurationRecorderRequest& request) const
@@ -324,12 +314,10 @@ DeleteConfigurationRecorderOutcomeCallable ConfigServiceClient::DeleteConfigurat
 
 void ConfigServiceClient::DeleteConfigurationRecorderAsync(const DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationRecorderAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteConfigurationRecorderAsyncHelper(const DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfigurationRecorder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfigurationRecorder(request), context);
+    } );
 }
 
 DeleteConformancePackOutcome ConfigServiceClient::DeleteConformancePack(const DeleteConformancePackRequest& request) const
@@ -348,12 +336,10 @@ DeleteConformancePackOutcomeCallable ConfigServiceClient::DeleteConformancePackC
 
 void ConfigServiceClient::DeleteConformancePackAsync(const DeleteConformancePackRequest& request, const DeleteConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConformancePackAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteConformancePackAsyncHelper(const DeleteConformancePackRequest& request, const DeleteConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConformancePack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConformancePack(request), context);
+    } );
 }
 
 DeleteDeliveryChannelOutcome ConfigServiceClient::DeleteDeliveryChannel(const DeleteDeliveryChannelRequest& request) const
@@ -372,12 +358,10 @@ DeleteDeliveryChannelOutcomeCallable ConfigServiceClient::DeleteDeliveryChannelC
 
 void ConfigServiceClient::DeleteDeliveryChannelAsync(const DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeliveryChannelAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteDeliveryChannelAsyncHelper(const DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDeliveryChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDeliveryChannel(request), context);
+    } );
 }
 
 DeleteEvaluationResultsOutcome ConfigServiceClient::DeleteEvaluationResults(const DeleteEvaluationResultsRequest& request) const
@@ -396,12 +380,10 @@ DeleteEvaluationResultsOutcomeCallable ConfigServiceClient::DeleteEvaluationResu
 
 void ConfigServiceClient::DeleteEvaluationResultsAsync(const DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEvaluationResultsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteEvaluationResultsAsyncHelper(const DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEvaluationResults(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEvaluationResults(request), context);
+    } );
 }
 
 DeleteOrganizationConfigRuleOutcome ConfigServiceClient::DeleteOrganizationConfigRule(const DeleteOrganizationConfigRuleRequest& request) const
@@ -420,12 +402,10 @@ DeleteOrganizationConfigRuleOutcomeCallable ConfigServiceClient::DeleteOrganizat
 
 void ConfigServiceClient::DeleteOrganizationConfigRuleAsync(const DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOrganizationConfigRuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteOrganizationConfigRuleAsyncHelper(const DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteOrganizationConfigRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteOrganizationConfigRule(request), context);
+    } );
 }
 
 DeleteOrganizationConformancePackOutcome ConfigServiceClient::DeleteOrganizationConformancePack(const DeleteOrganizationConformancePackRequest& request) const
@@ -444,12 +424,10 @@ DeleteOrganizationConformancePackOutcomeCallable ConfigServiceClient::DeleteOrga
 
 void ConfigServiceClient::DeleteOrganizationConformancePackAsync(const DeleteOrganizationConformancePackRequest& request, const DeleteOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteOrganizationConformancePackAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteOrganizationConformancePackAsyncHelper(const DeleteOrganizationConformancePackRequest& request, const DeleteOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteOrganizationConformancePack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteOrganizationConformancePack(request), context);
+    } );
 }
 
 DeletePendingAggregationRequestOutcome ConfigServiceClient::DeletePendingAggregationRequest(const DeletePendingAggregationRequestRequest& request) const
@@ -468,12 +446,10 @@ DeletePendingAggregationRequestOutcomeCallable ConfigServiceClient::DeletePendin
 
 void ConfigServiceClient::DeletePendingAggregationRequestAsync(const DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePendingAggregationRequestAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeletePendingAggregationRequestAsyncHelper(const DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePendingAggregationRequest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePendingAggregationRequest(request), context);
+    } );
 }
 
 DeleteRemediationConfigurationOutcome ConfigServiceClient::DeleteRemediationConfiguration(const DeleteRemediationConfigurationRequest& request) const
@@ -492,12 +468,10 @@ DeleteRemediationConfigurationOutcomeCallable ConfigServiceClient::DeleteRemedia
 
 void ConfigServiceClient::DeleteRemediationConfigurationAsync(const DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRemediationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteRemediationConfigurationAsyncHelper(const DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRemediationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRemediationConfiguration(request), context);
+    } );
 }
 
 DeleteRemediationExceptionsOutcome ConfigServiceClient::DeleteRemediationExceptions(const DeleteRemediationExceptionsRequest& request) const
@@ -516,12 +490,10 @@ DeleteRemediationExceptionsOutcomeCallable ConfigServiceClient::DeleteRemediatio
 
 void ConfigServiceClient::DeleteRemediationExceptionsAsync(const DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRemediationExceptionsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteRemediationExceptionsAsyncHelper(const DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRemediationExceptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRemediationExceptions(request), context);
+    } );
 }
 
 DeleteResourceConfigOutcome ConfigServiceClient::DeleteResourceConfig(const DeleteResourceConfigRequest& request) const
@@ -540,12 +512,10 @@ DeleteResourceConfigOutcomeCallable ConfigServiceClient::DeleteResourceConfigCal
 
 void ConfigServiceClient::DeleteResourceConfigAsync(const DeleteResourceConfigRequest& request, const DeleteResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteResourceConfigAsyncHelper(const DeleteResourceConfigRequest& request, const DeleteResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResourceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResourceConfig(request), context);
+    } );
 }
 
 DeleteRetentionConfigurationOutcome ConfigServiceClient::DeleteRetentionConfiguration(const DeleteRetentionConfigurationRequest& request) const
@@ -564,12 +534,10 @@ DeleteRetentionConfigurationOutcomeCallable ConfigServiceClient::DeleteRetention
 
 void ConfigServiceClient::DeleteRetentionConfigurationAsync(const DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRetentionConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteRetentionConfigurationAsyncHelper(const DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRetentionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRetentionConfiguration(request), context);
+    } );
 }
 
 DeleteStoredQueryOutcome ConfigServiceClient::DeleteStoredQuery(const DeleteStoredQueryRequest& request) const
@@ -588,12 +556,10 @@ DeleteStoredQueryOutcomeCallable ConfigServiceClient::DeleteStoredQueryCallable(
 
 void ConfigServiceClient::DeleteStoredQueryAsync(const DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStoredQueryAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeleteStoredQueryAsyncHelper(const DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStoredQuery(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStoredQuery(request), context);
+    } );
 }
 
 DeliverConfigSnapshotOutcome ConfigServiceClient::DeliverConfigSnapshot(const DeliverConfigSnapshotRequest& request) const
@@ -612,12 +578,10 @@ DeliverConfigSnapshotOutcomeCallable ConfigServiceClient::DeliverConfigSnapshotC
 
 void ConfigServiceClient::DeliverConfigSnapshotAsync(const DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeliverConfigSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DeliverConfigSnapshotAsyncHelper(const DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeliverConfigSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeliverConfigSnapshot(request), context);
+    } );
 }
 
 DescribeAggregateComplianceByConfigRulesOutcome ConfigServiceClient::DescribeAggregateComplianceByConfigRules(const DescribeAggregateComplianceByConfigRulesRequest& request) const
@@ -636,12 +600,10 @@ DescribeAggregateComplianceByConfigRulesOutcomeCallable ConfigServiceClient::Des
 
 void ConfigServiceClient::DescribeAggregateComplianceByConfigRulesAsync(const DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregateComplianceByConfigRulesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeAggregateComplianceByConfigRulesAsyncHelper(const DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAggregateComplianceByConfigRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAggregateComplianceByConfigRules(request), context);
+    } );
 }
 
 DescribeAggregateComplianceByConformancePacksOutcome ConfigServiceClient::DescribeAggregateComplianceByConformancePacks(const DescribeAggregateComplianceByConformancePacksRequest& request) const
@@ -660,12 +622,10 @@ DescribeAggregateComplianceByConformancePacksOutcomeCallable ConfigServiceClient
 
 void ConfigServiceClient::DescribeAggregateComplianceByConformancePacksAsync(const DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregateComplianceByConformancePacksAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeAggregateComplianceByConformancePacksAsyncHelper(const DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAggregateComplianceByConformancePacks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAggregateComplianceByConformancePacks(request), context);
+    } );
 }
 
 DescribeAggregationAuthorizationsOutcome ConfigServiceClient::DescribeAggregationAuthorizations(const DescribeAggregationAuthorizationsRequest& request) const
@@ -684,12 +644,10 @@ DescribeAggregationAuthorizationsOutcomeCallable ConfigServiceClient::DescribeAg
 
 void ConfigServiceClient::DescribeAggregationAuthorizationsAsync(const DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAggregationAuthorizationsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeAggregationAuthorizationsAsyncHelper(const DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAggregationAuthorizations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAggregationAuthorizations(request), context);
+    } );
 }
 
 DescribeComplianceByConfigRuleOutcome ConfigServiceClient::DescribeComplianceByConfigRule(const DescribeComplianceByConfigRuleRequest& request) const
@@ -708,12 +666,10 @@ DescribeComplianceByConfigRuleOutcomeCallable ConfigServiceClient::DescribeCompl
 
 void ConfigServiceClient::DescribeComplianceByConfigRuleAsync(const DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeComplianceByConfigRuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeComplianceByConfigRuleAsyncHelper(const DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeComplianceByConfigRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeComplianceByConfigRule(request), context);
+    } );
 }
 
 DescribeComplianceByResourceOutcome ConfigServiceClient::DescribeComplianceByResource(const DescribeComplianceByResourceRequest& request) const
@@ -732,12 +688,10 @@ DescribeComplianceByResourceOutcomeCallable ConfigServiceClient::DescribeComplia
 
 void ConfigServiceClient::DescribeComplianceByResourceAsync(const DescribeComplianceByResourceRequest& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeComplianceByResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeComplianceByResourceAsyncHelper(const DescribeComplianceByResourceRequest& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeComplianceByResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeComplianceByResource(request), context);
+    } );
 }
 
 DescribeConfigRuleEvaluationStatusOutcome ConfigServiceClient::DescribeConfigRuleEvaluationStatus(const DescribeConfigRuleEvaluationStatusRequest& request) const
@@ -756,12 +710,10 @@ DescribeConfigRuleEvaluationStatusOutcomeCallable ConfigServiceClient::DescribeC
 
 void ConfigServiceClient::DescribeConfigRuleEvaluationStatusAsync(const DescribeConfigRuleEvaluationStatusRequest& request, const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigRuleEvaluationStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConfigRuleEvaluationStatusAsyncHelper(const DescribeConfigRuleEvaluationStatusRequest& request, const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConfigRuleEvaluationStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConfigRuleEvaluationStatus(request), context);
+    } );
 }
 
 DescribeConfigRulesOutcome ConfigServiceClient::DescribeConfigRules(const DescribeConfigRulesRequest& request) const
@@ -780,12 +732,10 @@ DescribeConfigRulesOutcomeCallable ConfigServiceClient::DescribeConfigRulesCalla
 
 void ConfigServiceClient::DescribeConfigRulesAsync(const DescribeConfigRulesRequest& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigRulesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConfigRulesAsyncHelper(const DescribeConfigRulesRequest& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConfigRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConfigRules(request), context);
+    } );
 }
 
 DescribeConfigurationAggregatorSourcesStatusOutcome ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatus(const DescribeConfigurationAggregatorSourcesStatusRequest& request) const
@@ -804,12 +754,10 @@ DescribeConfigurationAggregatorSourcesStatusOutcomeCallable ConfigServiceClient:
 
 void ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatusAsync(const DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationAggregatorSourcesStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConfigurationAggregatorSourcesStatusAsyncHelper(const DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConfigurationAggregatorSourcesStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConfigurationAggregatorSourcesStatus(request), context);
+    } );
 }
 
 DescribeConfigurationAggregatorsOutcome ConfigServiceClient::DescribeConfigurationAggregators(const DescribeConfigurationAggregatorsRequest& request) const
@@ -828,12 +776,10 @@ DescribeConfigurationAggregatorsOutcomeCallable ConfigServiceClient::DescribeCon
 
 void ConfigServiceClient::DescribeConfigurationAggregatorsAsync(const DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationAggregatorsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConfigurationAggregatorsAsyncHelper(const DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConfigurationAggregators(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConfigurationAggregators(request), context);
+    } );
 }
 
 DescribeConfigurationRecorderStatusOutcome ConfigServiceClient::DescribeConfigurationRecorderStatus(const DescribeConfigurationRecorderStatusRequest& request) const
@@ -852,12 +798,10 @@ DescribeConfigurationRecorderStatusOutcomeCallable ConfigServiceClient::Describe
 
 void ConfigServiceClient::DescribeConfigurationRecorderStatusAsync(const DescribeConfigurationRecorderStatusRequest& request, const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationRecorderStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConfigurationRecorderStatusAsyncHelper(const DescribeConfigurationRecorderStatusRequest& request, const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConfigurationRecorderStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConfigurationRecorderStatus(request), context);
+    } );
 }
 
 DescribeConfigurationRecordersOutcome ConfigServiceClient::DescribeConfigurationRecorders(const DescribeConfigurationRecordersRequest& request) const
@@ -876,12 +820,10 @@ DescribeConfigurationRecordersOutcomeCallable ConfigServiceClient::DescribeConfi
 
 void ConfigServiceClient::DescribeConfigurationRecordersAsync(const DescribeConfigurationRecordersRequest& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationRecordersAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConfigurationRecordersAsyncHelper(const DescribeConfigurationRecordersRequest& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConfigurationRecorders(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConfigurationRecorders(request), context);
+    } );
 }
 
 DescribeConformancePackComplianceOutcome ConfigServiceClient::DescribeConformancePackCompliance(const DescribeConformancePackComplianceRequest& request) const
@@ -900,12 +842,10 @@ DescribeConformancePackComplianceOutcomeCallable ConfigServiceClient::DescribeCo
 
 void ConfigServiceClient::DescribeConformancePackComplianceAsync(const DescribeConformancePackComplianceRequest& request, const DescribeConformancePackComplianceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConformancePackComplianceAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConformancePackComplianceAsyncHelper(const DescribeConformancePackComplianceRequest& request, const DescribeConformancePackComplianceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConformancePackCompliance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConformancePackCompliance(request), context);
+    } );
 }
 
 DescribeConformancePackStatusOutcome ConfigServiceClient::DescribeConformancePackStatus(const DescribeConformancePackStatusRequest& request) const
@@ -924,12 +864,10 @@ DescribeConformancePackStatusOutcomeCallable ConfigServiceClient::DescribeConfor
 
 void ConfigServiceClient::DescribeConformancePackStatusAsync(const DescribeConformancePackStatusRequest& request, const DescribeConformancePackStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConformancePackStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConformancePackStatusAsyncHelper(const DescribeConformancePackStatusRequest& request, const DescribeConformancePackStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConformancePackStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConformancePackStatus(request), context);
+    } );
 }
 
 DescribeConformancePacksOutcome ConfigServiceClient::DescribeConformancePacks(const DescribeConformancePacksRequest& request) const
@@ -948,12 +886,10 @@ DescribeConformancePacksOutcomeCallable ConfigServiceClient::DescribeConformance
 
 void ConfigServiceClient::DescribeConformancePacksAsync(const DescribeConformancePacksRequest& request, const DescribeConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConformancePacksAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeConformancePacksAsyncHelper(const DescribeConformancePacksRequest& request, const DescribeConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConformancePacks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeConformancePacks(request), context);
+    } );
 }
 
 DescribeDeliveryChannelStatusOutcome ConfigServiceClient::DescribeDeliveryChannelStatus(const DescribeDeliveryChannelStatusRequest& request) const
@@ -972,12 +908,10 @@ DescribeDeliveryChannelStatusOutcomeCallable ConfigServiceClient::DescribeDelive
 
 void ConfigServiceClient::DescribeDeliveryChannelStatusAsync(const DescribeDeliveryChannelStatusRequest& request, const DescribeDeliveryChannelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeliveryChannelStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeDeliveryChannelStatusAsyncHelper(const DescribeDeliveryChannelStatusRequest& request, const DescribeDeliveryChannelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDeliveryChannelStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDeliveryChannelStatus(request), context);
+    } );
 }
 
 DescribeDeliveryChannelsOutcome ConfigServiceClient::DescribeDeliveryChannels(const DescribeDeliveryChannelsRequest& request) const
@@ -996,12 +930,10 @@ DescribeDeliveryChannelsOutcomeCallable ConfigServiceClient::DescribeDeliveryCha
 
 void ConfigServiceClient::DescribeDeliveryChannelsAsync(const DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeliveryChannelsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeDeliveryChannelsAsyncHelper(const DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDeliveryChannels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDeliveryChannels(request), context);
+    } );
 }
 
 DescribeOrganizationConfigRuleStatusesOutcome ConfigServiceClient::DescribeOrganizationConfigRuleStatuses(const DescribeOrganizationConfigRuleStatusesRequest& request) const
@@ -1020,12 +952,10 @@ DescribeOrganizationConfigRuleStatusesOutcomeCallable ConfigServiceClient::Descr
 
 void ConfigServiceClient::DescribeOrganizationConfigRuleStatusesAsync(const DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigRuleStatusesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeOrganizationConfigRuleStatusesAsyncHelper(const DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationConfigRuleStatuses(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationConfigRuleStatuses(request), context);
+    } );
 }
 
 DescribeOrganizationConfigRulesOutcome ConfigServiceClient::DescribeOrganizationConfigRules(const DescribeOrganizationConfigRulesRequest& request) const
@@ -1044,12 +974,10 @@ DescribeOrganizationConfigRulesOutcomeCallable ConfigServiceClient::DescribeOrga
 
 void ConfigServiceClient::DescribeOrganizationConfigRulesAsync(const DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigRulesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeOrganizationConfigRulesAsyncHelper(const DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationConfigRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationConfigRules(request), context);
+    } );
 }
 
 DescribeOrganizationConformancePackStatusesOutcome ConfigServiceClient::DescribeOrganizationConformancePackStatuses(const DescribeOrganizationConformancePackStatusesRequest& request) const
@@ -1068,12 +996,10 @@ DescribeOrganizationConformancePackStatusesOutcomeCallable ConfigServiceClient::
 
 void ConfigServiceClient::DescribeOrganizationConformancePackStatusesAsync(const DescribeOrganizationConformancePackStatusesRequest& request, const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConformancePackStatusesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeOrganizationConformancePackStatusesAsyncHelper(const DescribeOrganizationConformancePackStatusesRequest& request, const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationConformancePackStatuses(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationConformancePackStatuses(request), context);
+    } );
 }
 
 DescribeOrganizationConformancePacksOutcome ConfigServiceClient::DescribeOrganizationConformancePacks(const DescribeOrganizationConformancePacksRequest& request) const
@@ -1092,12 +1018,10 @@ DescribeOrganizationConformancePacksOutcomeCallable ConfigServiceClient::Describ
 
 void ConfigServiceClient::DescribeOrganizationConformancePacksAsync(const DescribeOrganizationConformancePacksRequest& request, const DescribeOrganizationConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConformancePacksAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeOrganizationConformancePacksAsyncHelper(const DescribeOrganizationConformancePacksRequest& request, const DescribeOrganizationConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOrganizationConformancePacks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOrganizationConformancePacks(request), context);
+    } );
 }
 
 DescribePendingAggregationRequestsOutcome ConfigServiceClient::DescribePendingAggregationRequests(const DescribePendingAggregationRequestsRequest& request) const
@@ -1116,12 +1040,10 @@ DescribePendingAggregationRequestsOutcomeCallable ConfigServiceClient::DescribeP
 
 void ConfigServiceClient::DescribePendingAggregationRequestsAsync(const DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePendingAggregationRequestsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribePendingAggregationRequestsAsyncHelper(const DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePendingAggregationRequests(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePendingAggregationRequests(request), context);
+    } );
 }
 
 DescribeRemediationConfigurationsOutcome ConfigServiceClient::DescribeRemediationConfigurations(const DescribeRemediationConfigurationsRequest& request) const
@@ -1140,12 +1062,10 @@ DescribeRemediationConfigurationsOutcomeCallable ConfigServiceClient::DescribeRe
 
 void ConfigServiceClient::DescribeRemediationConfigurationsAsync(const DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRemediationConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeRemediationConfigurationsAsyncHelper(const DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRemediationConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRemediationConfigurations(request), context);
+    } );
 }
 
 DescribeRemediationExceptionsOutcome ConfigServiceClient::DescribeRemediationExceptions(const DescribeRemediationExceptionsRequest& request) const
@@ -1164,12 +1084,10 @@ DescribeRemediationExceptionsOutcomeCallable ConfigServiceClient::DescribeRemedi
 
 void ConfigServiceClient::DescribeRemediationExceptionsAsync(const DescribeRemediationExceptionsRequest& request, const DescribeRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRemediationExceptionsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeRemediationExceptionsAsyncHelper(const DescribeRemediationExceptionsRequest& request, const DescribeRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRemediationExceptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRemediationExceptions(request), context);
+    } );
 }
 
 DescribeRemediationExecutionStatusOutcome ConfigServiceClient::DescribeRemediationExecutionStatus(const DescribeRemediationExecutionStatusRequest& request) const
@@ -1188,12 +1106,10 @@ DescribeRemediationExecutionStatusOutcomeCallable ConfigServiceClient::DescribeR
 
 void ConfigServiceClient::DescribeRemediationExecutionStatusAsync(const DescribeRemediationExecutionStatusRequest& request, const DescribeRemediationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRemediationExecutionStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeRemediationExecutionStatusAsyncHelper(const DescribeRemediationExecutionStatusRequest& request, const DescribeRemediationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRemediationExecutionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRemediationExecutionStatus(request), context);
+    } );
 }
 
 DescribeRetentionConfigurationsOutcome ConfigServiceClient::DescribeRetentionConfigurations(const DescribeRetentionConfigurationsRequest& request) const
@@ -1212,12 +1128,10 @@ DescribeRetentionConfigurationsOutcomeCallable ConfigServiceClient::DescribeRete
 
 void ConfigServiceClient::DescribeRetentionConfigurationsAsync(const DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRetentionConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::DescribeRetentionConfigurationsAsyncHelper(const DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRetentionConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRetentionConfigurations(request), context);
+    } );
 }
 
 GetAggregateComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetAggregateComplianceDetailsByConfigRule(const GetAggregateComplianceDetailsByConfigRuleRequest& request) const
@@ -1236,12 +1150,10 @@ GetAggregateComplianceDetailsByConfigRuleOutcomeCallable ConfigServiceClient::Ge
 
 void ConfigServiceClient::GetAggregateComplianceDetailsByConfigRuleAsync(const GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateComplianceDetailsByConfigRuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetAggregateComplianceDetailsByConfigRuleAsyncHelper(const GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAggregateComplianceDetailsByConfigRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAggregateComplianceDetailsByConfigRule(request), context);
+    } );
 }
 
 GetAggregateConfigRuleComplianceSummaryOutcome ConfigServiceClient::GetAggregateConfigRuleComplianceSummary(const GetAggregateConfigRuleComplianceSummaryRequest& request) const
@@ -1260,12 +1172,10 @@ GetAggregateConfigRuleComplianceSummaryOutcomeCallable ConfigServiceClient::GetA
 
 void ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryAsync(const GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateConfigRuleComplianceSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetAggregateConfigRuleComplianceSummaryAsyncHelper(const GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAggregateConfigRuleComplianceSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAggregateConfigRuleComplianceSummary(request), context);
+    } );
 }
 
 GetAggregateConformancePackComplianceSummaryOutcome ConfigServiceClient::GetAggregateConformancePackComplianceSummary(const GetAggregateConformancePackComplianceSummaryRequest& request) const
@@ -1284,12 +1194,10 @@ GetAggregateConformancePackComplianceSummaryOutcomeCallable ConfigServiceClient:
 
 void ConfigServiceClient::GetAggregateConformancePackComplianceSummaryAsync(const GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateConformancePackComplianceSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetAggregateConformancePackComplianceSummaryAsyncHelper(const GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAggregateConformancePackComplianceSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAggregateConformancePackComplianceSummary(request), context);
+    } );
 }
 
 GetAggregateDiscoveredResourceCountsOutcome ConfigServiceClient::GetAggregateDiscoveredResourceCounts(const GetAggregateDiscoveredResourceCountsRequest& request) const
@@ -1308,12 +1216,10 @@ GetAggregateDiscoveredResourceCountsOutcomeCallable ConfigServiceClient::GetAggr
 
 void ConfigServiceClient::GetAggregateDiscoveredResourceCountsAsync(const GetAggregateDiscoveredResourceCountsRequest& request, const GetAggregateDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateDiscoveredResourceCountsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetAggregateDiscoveredResourceCountsAsyncHelper(const GetAggregateDiscoveredResourceCountsRequest& request, const GetAggregateDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAggregateDiscoveredResourceCounts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAggregateDiscoveredResourceCounts(request), context);
+    } );
 }
 
 GetAggregateResourceConfigOutcome ConfigServiceClient::GetAggregateResourceConfig(const GetAggregateResourceConfigRequest& request) const
@@ -1332,12 +1238,10 @@ GetAggregateResourceConfigOutcomeCallable ConfigServiceClient::GetAggregateResou
 
 void ConfigServiceClient::GetAggregateResourceConfigAsync(const GetAggregateResourceConfigRequest& request, const GetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAggregateResourceConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetAggregateResourceConfigAsyncHelper(const GetAggregateResourceConfigRequest& request, const GetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAggregateResourceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAggregateResourceConfig(request), context);
+    } );
 }
 
 GetComplianceDetailsByConfigRuleOutcome ConfigServiceClient::GetComplianceDetailsByConfigRule(const GetComplianceDetailsByConfigRuleRequest& request) const
@@ -1356,12 +1260,10 @@ GetComplianceDetailsByConfigRuleOutcomeCallable ConfigServiceClient::GetComplian
 
 void ConfigServiceClient::GetComplianceDetailsByConfigRuleAsync(const GetComplianceDetailsByConfigRuleRequest& request, const GetComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComplianceDetailsByConfigRuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetComplianceDetailsByConfigRuleAsyncHelper(const GetComplianceDetailsByConfigRuleRequest& request, const GetComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComplianceDetailsByConfigRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComplianceDetailsByConfigRule(request), context);
+    } );
 }
 
 GetComplianceDetailsByResourceOutcome ConfigServiceClient::GetComplianceDetailsByResource(const GetComplianceDetailsByResourceRequest& request) const
@@ -1380,12 +1282,10 @@ GetComplianceDetailsByResourceOutcomeCallable ConfigServiceClient::GetCompliance
 
 void ConfigServiceClient::GetComplianceDetailsByResourceAsync(const GetComplianceDetailsByResourceRequest& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComplianceDetailsByResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetComplianceDetailsByResourceAsyncHelper(const GetComplianceDetailsByResourceRequest& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComplianceDetailsByResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComplianceDetailsByResource(request), context);
+    } );
 }
 
 GetComplianceSummaryByConfigRuleOutcome ConfigServiceClient::GetComplianceSummaryByConfigRule() const
@@ -1405,12 +1305,10 @@ GetComplianceSummaryByConfigRuleOutcomeCallable ConfigServiceClient::GetComplian
 
 void ConfigServiceClient::GetComplianceSummaryByConfigRuleAsync(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, handler, context](){ this->GetComplianceSummaryByConfigRuleAsyncHelper( handler, context ); } );
-}
-
-void ConfigServiceClient::GetComplianceSummaryByConfigRuleAsyncHelper(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, GetComplianceSummaryByConfigRule(), context);
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, GetComplianceSummaryByConfigRule(), context);
+    } );
 }
 
 GetComplianceSummaryByResourceTypeOutcome ConfigServiceClient::GetComplianceSummaryByResourceType(const GetComplianceSummaryByResourceTypeRequest& request) const
@@ -1429,12 +1327,10 @@ GetComplianceSummaryByResourceTypeOutcomeCallable ConfigServiceClient::GetCompli
 
 void ConfigServiceClient::GetComplianceSummaryByResourceTypeAsync(const GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComplianceSummaryByResourceTypeAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetComplianceSummaryByResourceTypeAsyncHelper(const GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComplianceSummaryByResourceType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComplianceSummaryByResourceType(request), context);
+    } );
 }
 
 GetConformancePackComplianceDetailsOutcome ConfigServiceClient::GetConformancePackComplianceDetails(const GetConformancePackComplianceDetailsRequest& request) const
@@ -1453,12 +1349,10 @@ GetConformancePackComplianceDetailsOutcomeCallable ConfigServiceClient::GetConfo
 
 void ConfigServiceClient::GetConformancePackComplianceDetailsAsync(const GetConformancePackComplianceDetailsRequest& request, const GetConformancePackComplianceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConformancePackComplianceDetailsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetConformancePackComplianceDetailsAsyncHelper(const GetConformancePackComplianceDetailsRequest& request, const GetConformancePackComplianceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConformancePackComplianceDetails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConformancePackComplianceDetails(request), context);
+    } );
 }
 
 GetConformancePackComplianceSummaryOutcome ConfigServiceClient::GetConformancePackComplianceSummary(const GetConformancePackComplianceSummaryRequest& request) const
@@ -1477,12 +1371,10 @@ GetConformancePackComplianceSummaryOutcomeCallable ConfigServiceClient::GetConfo
 
 void ConfigServiceClient::GetConformancePackComplianceSummaryAsync(const GetConformancePackComplianceSummaryRequest& request, const GetConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConformancePackComplianceSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetConformancePackComplianceSummaryAsyncHelper(const GetConformancePackComplianceSummaryRequest& request, const GetConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConformancePackComplianceSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConformancePackComplianceSummary(request), context);
+    } );
 }
 
 GetCustomRulePolicyOutcome ConfigServiceClient::GetCustomRulePolicy(const GetCustomRulePolicyRequest& request) const
@@ -1501,12 +1393,10 @@ GetCustomRulePolicyOutcomeCallable ConfigServiceClient::GetCustomRulePolicyCalla
 
 void ConfigServiceClient::GetCustomRulePolicyAsync(const GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCustomRulePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetCustomRulePolicyAsyncHelper(const GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCustomRulePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCustomRulePolicy(request), context);
+    } );
 }
 
 GetDiscoveredResourceCountsOutcome ConfigServiceClient::GetDiscoveredResourceCounts(const GetDiscoveredResourceCountsRequest& request) const
@@ -1525,12 +1415,10 @@ GetDiscoveredResourceCountsOutcomeCallable ConfigServiceClient::GetDiscoveredRes
 
 void ConfigServiceClient::GetDiscoveredResourceCountsAsync(const GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDiscoveredResourceCountsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetDiscoveredResourceCountsAsyncHelper(const GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDiscoveredResourceCounts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDiscoveredResourceCounts(request), context);
+    } );
 }
 
 GetOrganizationConfigRuleDetailedStatusOutcome ConfigServiceClient::GetOrganizationConfigRuleDetailedStatus(const GetOrganizationConfigRuleDetailedStatusRequest& request) const
@@ -1549,12 +1437,10 @@ GetOrganizationConfigRuleDetailedStatusOutcomeCallable ConfigServiceClient::GetO
 
 void ConfigServiceClient::GetOrganizationConfigRuleDetailedStatusAsync(const GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOrganizationConfigRuleDetailedStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetOrganizationConfigRuleDetailedStatusAsyncHelper(const GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOrganizationConfigRuleDetailedStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOrganizationConfigRuleDetailedStatus(request), context);
+    } );
 }
 
 GetOrganizationConformancePackDetailedStatusOutcome ConfigServiceClient::GetOrganizationConformancePackDetailedStatus(const GetOrganizationConformancePackDetailedStatusRequest& request) const
@@ -1573,12 +1459,10 @@ GetOrganizationConformancePackDetailedStatusOutcomeCallable ConfigServiceClient:
 
 void ConfigServiceClient::GetOrganizationConformancePackDetailedStatusAsync(const GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOrganizationConformancePackDetailedStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetOrganizationConformancePackDetailedStatusAsyncHelper(const GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOrganizationConformancePackDetailedStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOrganizationConformancePackDetailedStatus(request), context);
+    } );
 }
 
 GetOrganizationCustomRulePolicyOutcome ConfigServiceClient::GetOrganizationCustomRulePolicy(const GetOrganizationCustomRulePolicyRequest& request) const
@@ -1597,12 +1481,10 @@ GetOrganizationCustomRulePolicyOutcomeCallable ConfigServiceClient::GetOrganizat
 
 void ConfigServiceClient::GetOrganizationCustomRulePolicyAsync(const GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOrganizationCustomRulePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetOrganizationCustomRulePolicyAsyncHelper(const GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOrganizationCustomRulePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOrganizationCustomRulePolicy(request), context);
+    } );
 }
 
 GetResourceConfigHistoryOutcome ConfigServiceClient::GetResourceConfigHistory(const GetResourceConfigHistoryRequest& request) const
@@ -1621,12 +1503,10 @@ GetResourceConfigHistoryOutcomeCallable ConfigServiceClient::GetResourceConfigHi
 
 void ConfigServiceClient::GetResourceConfigHistoryAsync(const GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceConfigHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetResourceConfigHistoryAsyncHelper(const GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceConfigHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceConfigHistory(request), context);
+    } );
 }
 
 GetStoredQueryOutcome ConfigServiceClient::GetStoredQuery(const GetStoredQueryRequest& request) const
@@ -1645,12 +1525,10 @@ GetStoredQueryOutcomeCallable ConfigServiceClient::GetStoredQueryCallable(const 
 
 void ConfigServiceClient::GetStoredQueryAsync(const GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStoredQueryAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::GetStoredQueryAsyncHelper(const GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStoredQuery(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStoredQuery(request), context);
+    } );
 }
 
 ListAggregateDiscoveredResourcesOutcome ConfigServiceClient::ListAggregateDiscoveredResources(const ListAggregateDiscoveredResourcesRequest& request) const
@@ -1669,12 +1547,10 @@ ListAggregateDiscoveredResourcesOutcomeCallable ConfigServiceClient::ListAggrega
 
 void ConfigServiceClient::ListAggregateDiscoveredResourcesAsync(const ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAggregateDiscoveredResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::ListAggregateDiscoveredResourcesAsyncHelper(const ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAggregateDiscoveredResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAggregateDiscoveredResources(request), context);
+    } );
 }
 
 ListConformancePackComplianceScoresOutcome ConfigServiceClient::ListConformancePackComplianceScores(const ListConformancePackComplianceScoresRequest& request) const
@@ -1693,12 +1569,10 @@ ListConformancePackComplianceScoresOutcomeCallable ConfigServiceClient::ListConf
 
 void ConfigServiceClient::ListConformancePackComplianceScoresAsync(const ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConformancePackComplianceScoresAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::ListConformancePackComplianceScoresAsyncHelper(const ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListConformancePackComplianceScores(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListConformancePackComplianceScores(request), context);
+    } );
 }
 
 ListDiscoveredResourcesOutcome ConfigServiceClient::ListDiscoveredResources(const ListDiscoveredResourcesRequest& request) const
@@ -1717,12 +1591,10 @@ ListDiscoveredResourcesOutcomeCallable ConfigServiceClient::ListDiscoveredResour
 
 void ConfigServiceClient::ListDiscoveredResourcesAsync(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDiscoveredResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::ListDiscoveredResourcesAsyncHelper(const ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDiscoveredResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDiscoveredResources(request), context);
+    } );
 }
 
 ListStoredQueriesOutcome ConfigServiceClient::ListStoredQueries(const ListStoredQueriesRequest& request) const
@@ -1741,12 +1613,10 @@ ListStoredQueriesOutcomeCallable ConfigServiceClient::ListStoredQueriesCallable(
 
 void ConfigServiceClient::ListStoredQueriesAsync(const ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStoredQueriesAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::ListStoredQueriesAsyncHelper(const ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStoredQueries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStoredQueries(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ConfigServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1765,12 +1635,10 @@ ListTagsForResourceOutcomeCallable ConfigServiceClient::ListTagsForResourceCalla
 
 void ConfigServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutAggregationAuthorizationOutcome ConfigServiceClient::PutAggregationAuthorization(const PutAggregationAuthorizationRequest& request) const
@@ -1789,12 +1657,10 @@ PutAggregationAuthorizationOutcomeCallable ConfigServiceClient::PutAggregationAu
 
 void ConfigServiceClient::PutAggregationAuthorizationAsync(const PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAggregationAuthorizationAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutAggregationAuthorizationAsyncHelper(const PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAggregationAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAggregationAuthorization(request), context);
+    } );
 }
 
 PutConfigRuleOutcome ConfigServiceClient::PutConfigRule(const PutConfigRuleRequest& request) const
@@ -1813,12 +1679,10 @@ PutConfigRuleOutcomeCallable ConfigServiceClient::PutConfigRuleCallable(const Pu
 
 void ConfigServiceClient::PutConfigRuleAsync(const PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigRuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutConfigRuleAsyncHelper(const PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConfigRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigRule(request), context);
+    } );
 }
 
 PutConfigurationAggregatorOutcome ConfigServiceClient::PutConfigurationAggregator(const PutConfigurationAggregatorRequest& request) const
@@ -1837,12 +1701,10 @@ PutConfigurationAggregatorOutcomeCallable ConfigServiceClient::PutConfigurationA
 
 void ConfigServiceClient::PutConfigurationAggregatorAsync(const PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationAggregatorAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutConfigurationAggregatorAsyncHelper(const PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConfigurationAggregator(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigurationAggregator(request), context);
+    } );
 }
 
 PutConfigurationRecorderOutcome ConfigServiceClient::PutConfigurationRecorder(const PutConfigurationRecorderRequest& request) const
@@ -1861,12 +1723,10 @@ PutConfigurationRecorderOutcomeCallable ConfigServiceClient::PutConfigurationRec
 
 void ConfigServiceClient::PutConfigurationRecorderAsync(const PutConfigurationRecorderRequest& request, const PutConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationRecorderAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutConfigurationRecorderAsyncHelper(const PutConfigurationRecorderRequest& request, const PutConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConfigurationRecorder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigurationRecorder(request), context);
+    } );
 }
 
 PutConformancePackOutcome ConfigServiceClient::PutConformancePack(const PutConformancePackRequest& request) const
@@ -1885,12 +1745,10 @@ PutConformancePackOutcomeCallable ConfigServiceClient::PutConformancePackCallabl
 
 void ConfigServiceClient::PutConformancePackAsync(const PutConformancePackRequest& request, const PutConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutConformancePackAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutConformancePackAsyncHelper(const PutConformancePackRequest& request, const PutConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutConformancePack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConformancePack(request), context);
+    } );
 }
 
 PutDeliveryChannelOutcome ConfigServiceClient::PutDeliveryChannel(const PutDeliveryChannelRequest& request) const
@@ -1909,12 +1767,10 @@ PutDeliveryChannelOutcomeCallable ConfigServiceClient::PutDeliveryChannelCallabl
 
 void ConfigServiceClient::PutDeliveryChannelAsync(const PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDeliveryChannelAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutDeliveryChannelAsyncHelper(const PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDeliveryChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDeliveryChannel(request), context);
+    } );
 }
 
 PutEvaluationsOutcome ConfigServiceClient::PutEvaluations(const PutEvaluationsRequest& request) const
@@ -1933,12 +1789,10 @@ PutEvaluationsOutcomeCallable ConfigServiceClient::PutEvaluationsCallable(const 
 
 void ConfigServiceClient::PutEvaluationsAsync(const PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEvaluationsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutEvaluationsAsyncHelper(const PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutEvaluations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutEvaluations(request), context);
+    } );
 }
 
 PutExternalEvaluationOutcome ConfigServiceClient::PutExternalEvaluation(const PutExternalEvaluationRequest& request) const
@@ -1957,12 +1811,10 @@ PutExternalEvaluationOutcomeCallable ConfigServiceClient::PutExternalEvaluationC
 
 void ConfigServiceClient::PutExternalEvaluationAsync(const PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutExternalEvaluationAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutExternalEvaluationAsyncHelper(const PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutExternalEvaluation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutExternalEvaluation(request), context);
+    } );
 }
 
 PutOrganizationConfigRuleOutcome ConfigServiceClient::PutOrganizationConfigRule(const PutOrganizationConfigRuleRequest& request) const
@@ -1981,12 +1833,10 @@ PutOrganizationConfigRuleOutcomeCallable ConfigServiceClient::PutOrganizationCon
 
 void ConfigServiceClient::PutOrganizationConfigRuleAsync(const PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutOrganizationConfigRuleAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutOrganizationConfigRuleAsyncHelper(const PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutOrganizationConfigRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutOrganizationConfigRule(request), context);
+    } );
 }
 
 PutOrganizationConformancePackOutcome ConfigServiceClient::PutOrganizationConformancePack(const PutOrganizationConformancePackRequest& request) const
@@ -2005,12 +1855,10 @@ PutOrganizationConformancePackOutcomeCallable ConfigServiceClient::PutOrganizati
 
 void ConfigServiceClient::PutOrganizationConformancePackAsync(const PutOrganizationConformancePackRequest& request, const PutOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutOrganizationConformancePackAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutOrganizationConformancePackAsyncHelper(const PutOrganizationConformancePackRequest& request, const PutOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutOrganizationConformancePack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutOrganizationConformancePack(request), context);
+    } );
 }
 
 PutRemediationConfigurationsOutcome ConfigServiceClient::PutRemediationConfigurations(const PutRemediationConfigurationsRequest& request) const
@@ -2029,12 +1877,10 @@ PutRemediationConfigurationsOutcomeCallable ConfigServiceClient::PutRemediationC
 
 void ConfigServiceClient::PutRemediationConfigurationsAsync(const PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRemediationConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutRemediationConfigurationsAsyncHelper(const PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRemediationConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRemediationConfigurations(request), context);
+    } );
 }
 
 PutRemediationExceptionsOutcome ConfigServiceClient::PutRemediationExceptions(const PutRemediationExceptionsRequest& request) const
@@ -2053,12 +1899,10 @@ PutRemediationExceptionsOutcomeCallable ConfigServiceClient::PutRemediationExcep
 
 void ConfigServiceClient::PutRemediationExceptionsAsync(const PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRemediationExceptionsAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutRemediationExceptionsAsyncHelper(const PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRemediationExceptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRemediationExceptions(request), context);
+    } );
 }
 
 PutResourceConfigOutcome ConfigServiceClient::PutResourceConfig(const PutResourceConfigRequest& request) const
@@ -2077,12 +1921,10 @@ PutResourceConfigOutcomeCallable ConfigServiceClient::PutResourceConfigCallable(
 
 void ConfigServiceClient::PutResourceConfigAsync(const PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourceConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutResourceConfigAsyncHelper(const PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutResourceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResourceConfig(request), context);
+    } );
 }
 
 PutRetentionConfigurationOutcome ConfigServiceClient::PutRetentionConfiguration(const PutRetentionConfigurationRequest& request) const
@@ -2101,12 +1943,10 @@ PutRetentionConfigurationOutcomeCallable ConfigServiceClient::PutRetentionConfig
 
 void ConfigServiceClient::PutRetentionConfigurationAsync(const PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRetentionConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutRetentionConfigurationAsyncHelper(const PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRetentionConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRetentionConfiguration(request), context);
+    } );
 }
 
 PutStoredQueryOutcome ConfigServiceClient::PutStoredQuery(const PutStoredQueryRequest& request) const
@@ -2125,12 +1965,10 @@ PutStoredQueryOutcomeCallable ConfigServiceClient::PutStoredQueryCallable(const 
 
 void ConfigServiceClient::PutStoredQueryAsync(const PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutStoredQueryAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::PutStoredQueryAsyncHelper(const PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutStoredQuery(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutStoredQuery(request), context);
+    } );
 }
 
 SelectAggregateResourceConfigOutcome ConfigServiceClient::SelectAggregateResourceConfig(const SelectAggregateResourceConfigRequest& request) const
@@ -2149,12 +1987,10 @@ SelectAggregateResourceConfigOutcomeCallable ConfigServiceClient::SelectAggregat
 
 void ConfigServiceClient::SelectAggregateResourceConfigAsync(const SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SelectAggregateResourceConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::SelectAggregateResourceConfigAsyncHelper(const SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SelectAggregateResourceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SelectAggregateResourceConfig(request), context);
+    } );
 }
 
 SelectResourceConfigOutcome ConfigServiceClient::SelectResourceConfig(const SelectResourceConfigRequest& request) const
@@ -2173,12 +2009,10 @@ SelectResourceConfigOutcomeCallable ConfigServiceClient::SelectResourceConfigCal
 
 void ConfigServiceClient::SelectResourceConfigAsync(const SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SelectResourceConfigAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::SelectResourceConfigAsyncHelper(const SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SelectResourceConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SelectResourceConfig(request), context);
+    } );
 }
 
 StartConfigRulesEvaluationOutcome ConfigServiceClient::StartConfigRulesEvaluation(const StartConfigRulesEvaluationRequest& request) const
@@ -2197,12 +2031,10 @@ StartConfigRulesEvaluationOutcomeCallable ConfigServiceClient::StartConfigRulesE
 
 void ConfigServiceClient::StartConfigRulesEvaluationAsync(const StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartConfigRulesEvaluationAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::StartConfigRulesEvaluationAsyncHelper(const StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartConfigRulesEvaluation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartConfigRulesEvaluation(request), context);
+    } );
 }
 
 StartConfigurationRecorderOutcome ConfigServiceClient::StartConfigurationRecorder(const StartConfigurationRecorderRequest& request) const
@@ -2221,12 +2053,10 @@ StartConfigurationRecorderOutcomeCallable ConfigServiceClient::StartConfiguratio
 
 void ConfigServiceClient::StartConfigurationRecorderAsync(const StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartConfigurationRecorderAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::StartConfigurationRecorderAsyncHelper(const StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartConfigurationRecorder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartConfigurationRecorder(request), context);
+    } );
 }
 
 StartRemediationExecutionOutcome ConfigServiceClient::StartRemediationExecution(const StartRemediationExecutionRequest& request) const
@@ -2245,12 +2075,10 @@ StartRemediationExecutionOutcomeCallable ConfigServiceClient::StartRemediationEx
 
 void ConfigServiceClient::StartRemediationExecutionAsync(const StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartRemediationExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::StartRemediationExecutionAsyncHelper(const StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartRemediationExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartRemediationExecution(request), context);
+    } );
 }
 
 StopConfigurationRecorderOutcome ConfigServiceClient::StopConfigurationRecorder(const StopConfigurationRecorderRequest& request) const
@@ -2269,12 +2097,10 @@ StopConfigurationRecorderOutcomeCallable ConfigServiceClient::StopConfigurationR
 
 void ConfigServiceClient::StopConfigurationRecorderAsync(const StopConfigurationRecorderRequest& request, const StopConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopConfigurationRecorderAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::StopConfigurationRecorderAsyncHelper(const StopConfigurationRecorderRequest& request, const StopConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopConfigurationRecorder(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopConfigurationRecorder(request), context);
+    } );
 }
 
 TagResourceOutcome ConfigServiceClient::TagResource(const TagResourceRequest& request) const
@@ -2293,12 +2119,10 @@ TagResourceOutcomeCallable ConfigServiceClient::TagResourceCallable(const TagRes
 
 void ConfigServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ConfigServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -2317,11 +2141,9 @@ UntagResourceOutcomeCallable ConfigServiceClient::UntagResourceCallable(const Un
 
 void ConfigServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ConfigServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

@@ -201,12 +201,10 @@ ActivateKeySigningKeyOutcomeCallable Route53Client::ActivateKeySigningKeyCallabl
 
 void Route53Client::ActivateKeySigningKeyAsync(const ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ActivateKeySigningKeyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ActivateKeySigningKeyAsyncHelper(const ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ActivateKeySigningKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ActivateKeySigningKey(request), context);
+    } );
 }
 
 AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(const AssociateVPCWithHostedZoneRequest& request) const
@@ -233,12 +231,10 @@ AssociateVPCWithHostedZoneOutcomeCallable Route53Client::AssociateVPCWithHostedZ
 
 void Route53Client::AssociateVPCWithHostedZoneAsync(const AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateVPCWithHostedZoneAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::AssociateVPCWithHostedZoneAsyncHelper(const AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateVPCWithHostedZone(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateVPCWithHostedZone(request), context);
+    } );
 }
 
 ChangeCidrCollectionOutcome Route53Client::ChangeCidrCollection(const ChangeCidrCollectionRequest& request) const
@@ -264,12 +260,10 @@ ChangeCidrCollectionOutcomeCallable Route53Client::ChangeCidrCollectionCallable(
 
 void Route53Client::ChangeCidrCollectionAsync(const ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ChangeCidrCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ChangeCidrCollectionAsyncHelper(const ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ChangeCidrCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ChangeCidrCollection(request), context);
+    } );
 }
 
 ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const ChangeResourceRecordSetsRequest& request) const
@@ -296,12 +290,10 @@ ChangeResourceRecordSetsOutcomeCallable Route53Client::ChangeResourceRecordSetsC
 
 void Route53Client::ChangeResourceRecordSetsAsync(const ChangeResourceRecordSetsRequest& request, const ChangeResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ChangeResourceRecordSetsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ChangeResourceRecordSetsAsyncHelper(const ChangeResourceRecordSetsRequest& request, const ChangeResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ChangeResourceRecordSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ChangeResourceRecordSets(request), context);
+    } );
 }
 
 ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTagsForResourceRequest& request) const
@@ -333,12 +325,10 @@ ChangeTagsForResourceOutcomeCallable Route53Client::ChangeTagsForResourceCallabl
 
 void Route53Client::ChangeTagsForResourceAsync(const ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ChangeTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ChangeTagsForResourceAsyncHelper(const ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ChangeTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ChangeTagsForResource(request), context);
+    } );
 }
 
 CreateCidrCollectionOutcome Route53Client::CreateCidrCollection(const CreateCidrCollectionRequest& request) const
@@ -358,12 +348,10 @@ CreateCidrCollectionOutcomeCallable Route53Client::CreateCidrCollectionCallable(
 
 void Route53Client::CreateCidrCollectionAsync(const CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCidrCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateCidrCollectionAsyncHelper(const CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCidrCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCidrCollection(request), context);
+    } );
 }
 
 CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthCheckRequest& request) const
@@ -383,12 +371,10 @@ CreateHealthCheckOutcomeCallable Route53Client::CreateHealthCheckCallable(const 
 
 void Route53Client::CreateHealthCheckAsync(const CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHealthCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateHealthCheckAsyncHelper(const CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHealthCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHealthCheck(request), context);
+    } );
 }
 
 CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRequest& request) const
@@ -408,12 +394,10 @@ CreateHostedZoneOutcomeCallable Route53Client::CreateHostedZoneCallable(const Cr
 
 void Route53Client::CreateHostedZoneAsync(const CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHostedZoneAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateHostedZoneAsyncHelper(const CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHostedZone(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHostedZone(request), context);
+    } );
 }
 
 CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySigningKeyRequest& request) const
@@ -433,12 +417,10 @@ CreateKeySigningKeyOutcomeCallable Route53Client::CreateKeySigningKeyCallable(co
 
 void Route53Client::CreateKeySigningKeyAsync(const CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateKeySigningKeyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateKeySigningKeyAsyncHelper(const CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateKeySigningKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateKeySigningKey(request), context);
+    } );
 }
 
 CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const CreateQueryLoggingConfigRequest& request) const
@@ -458,12 +440,10 @@ CreateQueryLoggingConfigOutcomeCallable Route53Client::CreateQueryLoggingConfigC
 
 void Route53Client::CreateQueryLoggingConfigAsync(const CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateQueryLoggingConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateQueryLoggingConfigAsyncHelper(const CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateQueryLoggingConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateQueryLoggingConfig(request), context);
+    } );
 }
 
 CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(const CreateReusableDelegationSetRequest& request) const
@@ -483,12 +463,10 @@ CreateReusableDelegationSetOutcomeCallable Route53Client::CreateReusableDelegati
 
 void Route53Client::CreateReusableDelegationSetAsync(const CreateReusableDelegationSetRequest& request, const CreateReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReusableDelegationSetAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateReusableDelegationSetAsyncHelper(const CreateReusableDelegationSetRequest& request, const CreateReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateReusableDelegationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateReusableDelegationSet(request), context);
+    } );
 }
 
 CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTrafficPolicyRequest& request) const
@@ -508,12 +486,10 @@ CreateTrafficPolicyOutcomeCallable Route53Client::CreateTrafficPolicyCallable(co
 
 void Route53Client::CreateTrafficPolicyAsync(const CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrafficPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateTrafficPolicyAsyncHelper(const CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTrafficPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTrafficPolicy(request), context);
+    } );
 }
 
 CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(const CreateTrafficPolicyInstanceRequest& request) const
@@ -533,12 +509,10 @@ CreateTrafficPolicyInstanceOutcomeCallable Route53Client::CreateTrafficPolicyIns
 
 void Route53Client::CreateTrafficPolicyInstanceAsync(const CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrafficPolicyInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateTrafficPolicyInstanceAsyncHelper(const CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTrafficPolicyInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTrafficPolicyInstance(request), context);
+    } );
 }
 
 CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(const CreateTrafficPolicyVersionRequest& request) const
@@ -564,12 +538,10 @@ CreateTrafficPolicyVersionOutcomeCallable Route53Client::CreateTrafficPolicyVers
 
 void Route53Client::CreateTrafficPolicyVersionAsync(const CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrafficPolicyVersionAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateTrafficPolicyVersionAsyncHelper(const CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTrafficPolicyVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTrafficPolicyVersion(request), context);
+    } );
 }
 
 CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuthorization(const CreateVPCAssociationAuthorizationRequest& request) const
@@ -596,12 +568,10 @@ CreateVPCAssociationAuthorizationOutcomeCallable Route53Client::CreateVPCAssocia
 
 void Route53Client::CreateVPCAssociationAuthorizationAsync(const CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVPCAssociationAuthorizationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::CreateVPCAssociationAuthorizationAsyncHelper(const CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVPCAssociationAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVPCAssociationAuthorization(request), context);
+    } );
 }
 
 DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const DeactivateKeySigningKeyRequest& request) const
@@ -634,12 +604,10 @@ DeactivateKeySigningKeyOutcomeCallable Route53Client::DeactivateKeySigningKeyCal
 
 void Route53Client::DeactivateKeySigningKeyAsync(const DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeactivateKeySigningKeyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeactivateKeySigningKeyAsyncHelper(const DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeactivateKeySigningKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeactivateKeySigningKey(request), context);
+    } );
 }
 
 DeleteCidrCollectionOutcome Route53Client::DeleteCidrCollection(const DeleteCidrCollectionRequest& request) const
@@ -665,12 +633,10 @@ DeleteCidrCollectionOutcomeCallable Route53Client::DeleteCidrCollectionCallable(
 
 void Route53Client::DeleteCidrCollectionAsync(const DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCidrCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteCidrCollectionAsyncHelper(const DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCidrCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCidrCollection(request), context);
+    } );
 }
 
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const
@@ -696,12 +662,10 @@ DeleteHealthCheckOutcomeCallable Route53Client::DeleteHealthCheckCallable(const 
 
 void Route53Client::DeleteHealthCheckAsync(const DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHealthCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteHealthCheckAsyncHelper(const DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteHealthCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHealthCheck(request), context);
+    } );
 }
 
 DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRequest& request) const
@@ -727,12 +691,10 @@ DeleteHostedZoneOutcomeCallable Route53Client::DeleteHostedZoneCallable(const De
 
 void Route53Client::DeleteHostedZoneAsync(const DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHostedZoneAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteHostedZoneAsyncHelper(const DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteHostedZone(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHostedZone(request), context);
+    } );
 }
 
 DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySigningKeyRequest& request) const
@@ -764,12 +726,10 @@ DeleteKeySigningKeyOutcomeCallable Route53Client::DeleteKeySigningKeyCallable(co
 
 void Route53Client::DeleteKeySigningKeyAsync(const DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteKeySigningKeyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteKeySigningKeyAsyncHelper(const DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteKeySigningKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteKeySigningKey(request), context);
+    } );
 }
 
 DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const DeleteQueryLoggingConfigRequest& request) const
@@ -795,12 +755,10 @@ DeleteQueryLoggingConfigOutcomeCallable Route53Client::DeleteQueryLoggingConfigC
 
 void Route53Client::DeleteQueryLoggingConfigAsync(const DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueryLoggingConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteQueryLoggingConfigAsyncHelper(const DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteQueryLoggingConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteQueryLoggingConfig(request), context);
+    } );
 }
 
 DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(const DeleteReusableDelegationSetRequest& request) const
@@ -826,12 +784,10 @@ DeleteReusableDelegationSetOutcomeCallable Route53Client::DeleteReusableDelegati
 
 void Route53Client::DeleteReusableDelegationSetAsync(const DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReusableDelegationSetAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteReusableDelegationSetAsyncHelper(const DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteReusableDelegationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteReusableDelegationSet(request), context);
+    } );
 }
 
 DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTrafficPolicyRequest& request) const
@@ -863,12 +819,10 @@ DeleteTrafficPolicyOutcomeCallable Route53Client::DeleteTrafficPolicyCallable(co
 
 void Route53Client::DeleteTrafficPolicyAsync(const DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrafficPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteTrafficPolicyAsyncHelper(const DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTrafficPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTrafficPolicy(request), context);
+    } );
 }
 
 DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(const DeleteTrafficPolicyInstanceRequest& request) const
@@ -894,12 +848,10 @@ DeleteTrafficPolicyInstanceOutcomeCallable Route53Client::DeleteTrafficPolicyIns
 
 void Route53Client::DeleteTrafficPolicyInstanceAsync(const DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrafficPolicyInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteTrafficPolicyInstanceAsyncHelper(const DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTrafficPolicyInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTrafficPolicyInstance(request), context);
+    } );
 }
 
 DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuthorization(const DeleteVPCAssociationAuthorizationRequest& request) const
@@ -926,12 +878,10 @@ DeleteVPCAssociationAuthorizationOutcomeCallable Route53Client::DeleteVPCAssocia
 
 void Route53Client::DeleteVPCAssociationAuthorizationAsync(const DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVPCAssociationAuthorizationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DeleteVPCAssociationAuthorizationAsyncHelper(const DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVPCAssociationAuthorization(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVPCAssociationAuthorization(request), context);
+    } );
 }
 
 DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const DisableHostedZoneDNSSECRequest& request) const
@@ -958,12 +908,10 @@ DisableHostedZoneDNSSECOutcomeCallable Route53Client::DisableHostedZoneDNSSECCal
 
 void Route53Client::DisableHostedZoneDNSSECAsync(const DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableHostedZoneDNSSECAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DisableHostedZoneDNSSECAsyncHelper(const DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableHostedZoneDNSSEC(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableHostedZoneDNSSEC(request), context);
+    } );
 }
 
 DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZone(const DisassociateVPCFromHostedZoneRequest& request) const
@@ -990,12 +938,10 @@ DisassociateVPCFromHostedZoneOutcomeCallable Route53Client::DisassociateVPCFromH
 
 void Route53Client::DisassociateVPCFromHostedZoneAsync(const DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateVPCFromHostedZoneAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::DisassociateVPCFromHostedZoneAsyncHelper(const DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateVPCFromHostedZone(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateVPCFromHostedZone(request), context);
+    } );
 }
 
 EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const EnableHostedZoneDNSSECRequest& request) const
@@ -1022,12 +968,10 @@ EnableHostedZoneDNSSECOutcomeCallable Route53Client::EnableHostedZoneDNSSECCalla
 
 void Route53Client::EnableHostedZoneDNSSECAsync(const EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableHostedZoneDNSSECAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::EnableHostedZoneDNSSECAsyncHelper(const EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableHostedZoneDNSSEC(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableHostedZoneDNSSEC(request), context);
+    } );
 }
 
 GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitRequest& request) const
@@ -1053,12 +997,10 @@ GetAccountLimitOutcomeCallable Route53Client::GetAccountLimitCallable(const GetA
 
 void Route53Client::GetAccountLimitAsync(const GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccountLimitAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetAccountLimitAsyncHelper(const GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccountLimit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccountLimit(request), context);
+    } );
 }
 
 GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
@@ -1084,12 +1026,10 @@ GetChangeOutcomeCallable Route53Client::GetChangeCallable(const GetChangeRequest
 
 void Route53Client::GetChangeAsync(const GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChangeAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetChangeAsyncHelper(const GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChange(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChange(request), context);
+    } );
 }
 
 GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRangesRequest& request) const
@@ -1109,12 +1049,10 @@ GetCheckerIpRangesOutcomeCallable Route53Client::GetCheckerIpRangesCallable(cons
 
 void Route53Client::GetCheckerIpRangesAsync(const GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCheckerIpRangesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetCheckerIpRangesAsyncHelper(const GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCheckerIpRanges(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCheckerIpRanges(request), context);
+    } );
 }
 
 GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const
@@ -1141,12 +1079,10 @@ GetDNSSECOutcomeCallable Route53Client::GetDNSSECCallable(const GetDNSSECRequest
 
 void Route53Client::GetDNSSECAsync(const GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDNSSECAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetDNSSECAsyncHelper(const GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDNSSEC(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDNSSEC(request), context);
+    } );
 }
 
 GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest& request) const
@@ -1166,12 +1102,10 @@ GetGeoLocationOutcomeCallable Route53Client::GetGeoLocationCallable(const GetGeo
 
 void Route53Client::GetGeoLocationAsync(const GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetGeoLocationAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetGeoLocationAsyncHelper(const GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetGeoLocation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetGeoLocation(request), context);
+    } );
 }
 
 GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest& request) const
@@ -1197,12 +1131,10 @@ GetHealthCheckOutcomeCallable Route53Client::GetHealthCheckCallable(const GetHea
 
 void Route53Client::GetHealthCheckAsync(const GetHealthCheckRequest& request, const GetHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHealthCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetHealthCheckAsyncHelper(const GetHealthCheckRequest& request, const GetHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHealthCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHealthCheck(request), context);
+    } );
 }
 
 GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthCheckCountRequest& request) const
@@ -1222,12 +1154,10 @@ GetHealthCheckCountOutcomeCallable Route53Client::GetHealthCheckCountCallable(co
 
 void Route53Client::GetHealthCheckCountAsync(const GetHealthCheckCountRequest& request, const GetHealthCheckCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHealthCheckCountAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetHealthCheckCountAsyncHelper(const GetHealthCheckCountRequest& request, const GetHealthCheckCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHealthCheckCount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHealthCheckCount(request), context);
+    } );
 }
 
 GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureReason(const GetHealthCheckLastFailureReasonRequest& request) const
@@ -1254,12 +1184,10 @@ GetHealthCheckLastFailureReasonOutcomeCallable Route53Client::GetHealthCheckLast
 
 void Route53Client::GetHealthCheckLastFailureReasonAsync(const GetHealthCheckLastFailureReasonRequest& request, const GetHealthCheckLastFailureReasonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHealthCheckLastFailureReasonAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetHealthCheckLastFailureReasonAsyncHelper(const GetHealthCheckLastFailureReasonRequest& request, const GetHealthCheckLastFailureReasonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHealthCheckLastFailureReason(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHealthCheckLastFailureReason(request), context);
+    } );
 }
 
 GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthCheckStatusRequest& request) const
@@ -1286,12 +1214,10 @@ GetHealthCheckStatusOutcomeCallable Route53Client::GetHealthCheckStatusCallable(
 
 void Route53Client::GetHealthCheckStatusAsync(const GetHealthCheckStatusRequest& request, const GetHealthCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHealthCheckStatusAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetHealthCheckStatusAsyncHelper(const GetHealthCheckStatusRequest& request, const GetHealthCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHealthCheckStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHealthCheckStatus(request), context);
+    } );
 }
 
 GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& request) const
@@ -1317,12 +1243,10 @@ GetHostedZoneOutcomeCallable Route53Client::GetHostedZoneCallable(const GetHoste
 
 void Route53Client::GetHostedZoneAsync(const GetHostedZoneRequest& request, const GetHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostedZoneAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetHostedZoneAsyncHelper(const GetHostedZoneRequest& request, const GetHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHostedZone(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHostedZone(request), context);
+    } );
 }
 
 GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneCountRequest& request) const
@@ -1342,12 +1266,10 @@ GetHostedZoneCountOutcomeCallable Route53Client::GetHostedZoneCountCallable(cons
 
 void Route53Client::GetHostedZoneCountAsync(const GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostedZoneCountAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetHostedZoneCountAsyncHelper(const GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHostedZoneCount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHostedZoneCount(request), context);
+    } );
 }
 
 GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneLimitRequest& request) const
@@ -1379,12 +1301,10 @@ GetHostedZoneLimitOutcomeCallable Route53Client::GetHostedZoneLimitCallable(cons
 
 void Route53Client::GetHostedZoneLimitAsync(const GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostedZoneLimitAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetHostedZoneLimitAsyncHelper(const GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHostedZoneLimit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHostedZoneLimit(request), context);
+    } );
 }
 
 GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQueryLoggingConfigRequest& request) const
@@ -1410,12 +1330,10 @@ GetQueryLoggingConfigOutcomeCallable Route53Client::GetQueryLoggingConfigCallabl
 
 void Route53Client::GetQueryLoggingConfigAsync(const GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryLoggingConfigAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetQueryLoggingConfigAsyncHelper(const GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetQueryLoggingConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetQueryLoggingConfig(request), context);
+    } );
 }
 
 GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const GetReusableDelegationSetRequest& request) const
@@ -1441,12 +1359,10 @@ GetReusableDelegationSetOutcomeCallable Route53Client::GetReusableDelegationSetC
 
 void Route53Client::GetReusableDelegationSetAsync(const GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReusableDelegationSetAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetReusableDelegationSetAsyncHelper(const GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReusableDelegationSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReusableDelegationSet(request), context);
+    } );
 }
 
 GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimit(const GetReusableDelegationSetLimitRequest& request) const
@@ -1478,12 +1394,10 @@ GetReusableDelegationSetLimitOutcomeCallable Route53Client::GetReusableDelegatio
 
 void Route53Client::GetReusableDelegationSetLimitAsync(const GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReusableDelegationSetLimitAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetReusableDelegationSetLimitAsyncHelper(const GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReusableDelegationSetLimit(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReusableDelegationSetLimit(request), context);
+    } );
 }
 
 GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRequest& request) const
@@ -1515,12 +1429,10 @@ GetTrafficPolicyOutcomeCallable Route53Client::GetTrafficPolicyCallable(const Ge
 
 void Route53Client::GetTrafficPolicyAsync(const GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrafficPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetTrafficPolicyAsyncHelper(const GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTrafficPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrafficPolicy(request), context);
+    } );
 }
 
 GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const GetTrafficPolicyInstanceRequest& request) const
@@ -1546,12 +1458,10 @@ GetTrafficPolicyInstanceOutcomeCallable Route53Client::GetTrafficPolicyInstanceC
 
 void Route53Client::GetTrafficPolicyInstanceAsync(const GetTrafficPolicyInstanceRequest& request, const GetTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrafficPolicyInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetTrafficPolicyInstanceAsyncHelper(const GetTrafficPolicyInstanceRequest& request, const GetTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTrafficPolicyInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrafficPolicyInstance(request), context);
+    } );
 }
 
 GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCount(const GetTrafficPolicyInstanceCountRequest& request) const
@@ -1571,12 +1481,10 @@ GetTrafficPolicyInstanceCountOutcomeCallable Route53Client::GetTrafficPolicyInst
 
 void Route53Client::GetTrafficPolicyInstanceCountAsync(const GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrafficPolicyInstanceCountAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::GetTrafficPolicyInstanceCountAsyncHelper(const GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTrafficPolicyInstanceCount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrafficPolicyInstanceCount(request), context);
+    } );
 }
 
 ListCidrBlocksOutcome Route53Client::ListCidrBlocks(const ListCidrBlocksRequest& request) const
@@ -1603,12 +1511,10 @@ ListCidrBlocksOutcomeCallable Route53Client::ListCidrBlocksCallable(const ListCi
 
 void Route53Client::ListCidrBlocksAsync(const ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCidrBlocksAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListCidrBlocksAsyncHelper(const ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCidrBlocks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCidrBlocks(request), context);
+    } );
 }
 
 ListCidrCollectionsOutcome Route53Client::ListCidrCollections(const ListCidrCollectionsRequest& request) const
@@ -1628,12 +1534,10 @@ ListCidrCollectionsOutcomeCallable Route53Client::ListCidrCollectionsCallable(co
 
 void Route53Client::ListCidrCollectionsAsync(const ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCidrCollectionsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListCidrCollectionsAsyncHelper(const ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCidrCollections(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCidrCollections(request), context);
+    } );
 }
 
 ListCidrLocationsOutcome Route53Client::ListCidrLocations(const ListCidrLocationsRequest& request) const
@@ -1659,12 +1563,10 @@ ListCidrLocationsOutcomeCallable Route53Client::ListCidrLocationsCallable(const 
 
 void Route53Client::ListCidrLocationsAsync(const ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCidrLocationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListCidrLocationsAsyncHelper(const ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCidrLocations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCidrLocations(request), context);
+    } );
 }
 
 ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRequest& request) const
@@ -1684,12 +1586,10 @@ ListGeoLocationsOutcomeCallable Route53Client::ListGeoLocationsCallable(const Li
 
 void Route53Client::ListGeoLocationsAsync(const ListGeoLocationsRequest& request, const ListGeoLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGeoLocationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListGeoLocationsAsyncHelper(const ListGeoLocationsRequest& request, const ListGeoLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGeoLocations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGeoLocations(request), context);
+    } );
 }
 
 ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRequest& request) const
@@ -1709,12 +1609,10 @@ ListHealthChecksOutcomeCallable Route53Client::ListHealthChecksCallable(const Li
 
 void Route53Client::ListHealthChecksAsync(const ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHealthChecksAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListHealthChecksAsyncHelper(const ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHealthChecks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHealthChecks(request), context);
+    } );
 }
 
 ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesRequest& request) const
@@ -1734,12 +1632,10 @@ ListHostedZonesOutcomeCallable Route53Client::ListHostedZonesCallable(const List
 
 void Route53Client::ListHostedZonesAsync(const ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHostedZonesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListHostedZonesAsyncHelper(const ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHostedZones(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHostedZones(request), context);
+    } );
 }
 
 ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHostedZonesByNameRequest& request) const
@@ -1759,12 +1655,10 @@ ListHostedZonesByNameOutcomeCallable Route53Client::ListHostedZonesByNameCallabl
 
 void Route53Client::ListHostedZonesByNameAsync(const ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHostedZonesByNameAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListHostedZonesByNameAsyncHelper(const ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHostedZonesByName(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHostedZonesByName(request), context);
+    } );
 }
 
 ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHostedZonesByVPCRequest& request) const
@@ -1794,12 +1688,10 @@ ListHostedZonesByVPCOutcomeCallable Route53Client::ListHostedZonesByVPCCallable(
 
 void Route53Client::ListHostedZonesByVPCAsync(const ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHostedZonesByVPCAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListHostedZonesByVPCAsyncHelper(const ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHostedZonesByVPC(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHostedZonesByVPC(request), context);
+    } );
 }
 
 ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const ListQueryLoggingConfigsRequest& request) const
@@ -1819,12 +1711,10 @@ ListQueryLoggingConfigsOutcomeCallable Route53Client::ListQueryLoggingConfigsCal
 
 void Route53Client::ListQueryLoggingConfigsAsync(const ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQueryLoggingConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListQueryLoggingConfigsAsyncHelper(const ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQueryLoggingConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQueryLoggingConfigs(request), context);
+    } );
 }
 
 ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListResourceRecordSetsRequest& request) const
@@ -1851,12 +1741,10 @@ ListResourceRecordSetsOutcomeCallable Route53Client::ListResourceRecordSetsCalla
 
 void Route53Client::ListResourceRecordSetsAsync(const ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResourceRecordSetsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListResourceRecordSetsAsyncHelper(const ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResourceRecordSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourceRecordSets(request), context);
+    } );
 }
 
 ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(const ListReusableDelegationSetsRequest& request) const
@@ -1876,12 +1764,10 @@ ListReusableDelegationSetsOutcomeCallable Route53Client::ListReusableDelegationS
 
 void Route53Client::ListReusableDelegationSetsAsync(const ListReusableDelegationSetsRequest& request, const ListReusableDelegationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReusableDelegationSetsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListReusableDelegationSetsAsyncHelper(const ListReusableDelegationSetsRequest& request, const ListReusableDelegationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListReusableDelegationSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListReusableDelegationSets(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1913,12 +1799,10 @@ ListTagsForResourceOutcomeCallable Route53Client::ListTagsForResourceCallable(co
 
 void Route53Client::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsForResourcesRequest& request) const
@@ -1944,12 +1828,10 @@ ListTagsForResourcesOutcomeCallable Route53Client::ListTagsForResourcesCallable(
 
 void Route53Client::ListTagsForResourcesAsync(const ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListTagsForResourcesAsyncHelper(const ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResources(request), context);
+    } );
 }
 
 ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficPoliciesRequest& request) const
@@ -1969,12 +1851,10 @@ ListTrafficPoliciesOutcomeCallable Route53Client::ListTrafficPoliciesCallable(co
 
 void Route53Client::ListTrafficPoliciesAsync(const ListTrafficPoliciesRequest& request, const ListTrafficPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrafficPoliciesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListTrafficPoliciesAsyncHelper(const ListTrafficPoliciesRequest& request, const ListTrafficPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrafficPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrafficPolicies(request), context);
+    } );
 }
 
 ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(const ListTrafficPolicyInstancesRequest& request) const
@@ -1994,12 +1874,10 @@ ListTrafficPolicyInstancesOutcomeCallable Route53Client::ListTrafficPolicyInstan
 
 void Route53Client::ListTrafficPolicyInstancesAsync(const ListTrafficPolicyInstancesRequest& request, const ListTrafficPolicyInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrafficPolicyInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListTrafficPolicyInstancesAsyncHelper(const ListTrafficPolicyInstancesRequest& request, const ListTrafficPolicyInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrafficPolicyInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrafficPolicyInstances(request), context);
+    } );
 }
 
 ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyInstancesByHostedZone(const ListTrafficPolicyInstancesByHostedZoneRequest& request) const
@@ -2024,12 +1902,10 @@ ListTrafficPolicyInstancesByHostedZoneOutcomeCallable Route53Client::ListTraffic
 
 void Route53Client::ListTrafficPolicyInstancesByHostedZoneAsync(const ListTrafficPolicyInstancesByHostedZoneRequest& request, const ListTrafficPolicyInstancesByHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrafficPolicyInstancesByHostedZoneAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListTrafficPolicyInstancesByHostedZoneAsyncHelper(const ListTrafficPolicyInstancesByHostedZoneRequest& request, const ListTrafficPolicyInstancesByHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrafficPolicyInstancesByHostedZone(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrafficPolicyInstancesByHostedZone(request), context);
+    } );
 }
 
 ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstancesByPolicy(const ListTrafficPolicyInstancesByPolicyRequest& request) const
@@ -2059,12 +1935,10 @@ ListTrafficPolicyInstancesByPolicyOutcomeCallable Route53Client::ListTrafficPoli
 
 void Route53Client::ListTrafficPolicyInstancesByPolicyAsync(const ListTrafficPolicyInstancesByPolicyRequest& request, const ListTrafficPolicyInstancesByPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrafficPolicyInstancesByPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListTrafficPolicyInstancesByPolicyAsyncHelper(const ListTrafficPolicyInstancesByPolicyRequest& request, const ListTrafficPolicyInstancesByPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrafficPolicyInstancesByPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrafficPolicyInstancesByPolicy(request), context);
+    } );
 }
 
 ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const ListTrafficPolicyVersionsRequest& request) const
@@ -2091,12 +1965,10 @@ ListTrafficPolicyVersionsOutcomeCallable Route53Client::ListTrafficPolicyVersion
 
 void Route53Client::ListTrafficPolicyVersionsAsync(const ListTrafficPolicyVersionsRequest& request, const ListTrafficPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrafficPolicyVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListTrafficPolicyVersionsAsyncHelper(const ListTrafficPolicyVersionsRequest& request, const ListTrafficPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrafficPolicyVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrafficPolicyVersions(request), context);
+    } );
 }
 
 ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthorizations(const ListVPCAssociationAuthorizationsRequest& request) const
@@ -2123,12 +1995,10 @@ ListVPCAssociationAuthorizationsOutcomeCallable Route53Client::ListVPCAssociatio
 
 void Route53Client::ListVPCAssociationAuthorizationsAsync(const ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVPCAssociationAuthorizationsAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::ListVPCAssociationAuthorizationsAsyncHelper(const ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListVPCAssociationAuthorizations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVPCAssociationAuthorizations(request), context);
+    } );
 }
 
 TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& request) const
@@ -2163,12 +2033,10 @@ TestDNSAnswerOutcomeCallable Route53Client::TestDNSAnswerCallable(const TestDNSA
 
 void Route53Client::TestDNSAnswerAsync(const TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestDNSAnswerAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::TestDNSAnswerAsyncHelper(const TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TestDNSAnswer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TestDNSAnswer(request), context);
+    } );
 }
 
 UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthCheckRequest& request) const
@@ -2194,12 +2062,10 @@ UpdateHealthCheckOutcomeCallable Route53Client::UpdateHealthCheckCallable(const 
 
 void Route53Client::UpdateHealthCheckAsync(const UpdateHealthCheckRequest& request, const UpdateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHealthCheckAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::UpdateHealthCheckAsyncHelper(const UpdateHealthCheckRequest& request, const UpdateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateHealthCheck(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateHealthCheck(request), context);
+    } );
 }
 
 UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const UpdateHostedZoneCommentRequest& request) const
@@ -2225,12 +2091,10 @@ UpdateHostedZoneCommentOutcomeCallable Route53Client::UpdateHostedZoneCommentCal
 
 void Route53Client::UpdateHostedZoneCommentAsync(const UpdateHostedZoneCommentRequest& request, const UpdateHostedZoneCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateHostedZoneCommentAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::UpdateHostedZoneCommentAsyncHelper(const UpdateHostedZoneCommentRequest& request, const UpdateHostedZoneCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateHostedZoneComment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateHostedZoneComment(request), context);
+    } );
 }
 
 UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(const UpdateTrafficPolicyCommentRequest& request) const
@@ -2262,12 +2126,10 @@ UpdateTrafficPolicyCommentOutcomeCallable Route53Client::UpdateTrafficPolicyComm
 
 void Route53Client::UpdateTrafficPolicyCommentAsync(const UpdateTrafficPolicyCommentRequest& request, const UpdateTrafficPolicyCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrafficPolicyCommentAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::UpdateTrafficPolicyCommentAsyncHelper(const UpdateTrafficPolicyCommentRequest& request, const UpdateTrafficPolicyCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTrafficPolicyComment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTrafficPolicyComment(request), context);
+    } );
 }
 
 UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(const UpdateTrafficPolicyInstanceRequest& request) const
@@ -2293,11 +2155,9 @@ UpdateTrafficPolicyInstanceOutcomeCallable Route53Client::UpdateTrafficPolicyIns
 
 void Route53Client::UpdateTrafficPolicyInstanceAsync(const UpdateTrafficPolicyInstanceRequest& request, const UpdateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrafficPolicyInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void Route53Client::UpdateTrafficPolicyInstanceAsyncHelper(const UpdateTrafficPolicyInstanceRequest& request, const UpdateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTrafficPolicyInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTrafficPolicyInstance(request), context);
+    } );
 }
 

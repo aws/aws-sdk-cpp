@@ -148,12 +148,10 @@ CancelContactOutcomeCallable GroundStationClient::CancelContactCallable(const Ca
 
 void GroundStationClient::CancelContactAsync(const CancelContactRequest& request, const CancelContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelContactAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::CancelContactAsyncHelper(const CancelContactRequest& request, const CancelContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelContact(request), context);
+    } );
 }
 
 CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest& request) const
@@ -173,12 +171,10 @@ CreateConfigOutcomeCallable GroundStationClient::CreateConfigCallable(const Crea
 
 void GroundStationClient::CreateConfigAsync(const CreateConfigRequest& request, const CreateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::CreateConfigAsyncHelper(const CreateConfigRequest& request, const CreateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConfig(request), context);
+    } );
 }
 
 CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGroup(const CreateDataflowEndpointGroupRequest& request) const
@@ -198,12 +194,10 @@ CreateDataflowEndpointGroupOutcomeCallable GroundStationClient::CreateDataflowEn
 
 void GroundStationClient::CreateDataflowEndpointGroupAsync(const CreateDataflowEndpointGroupRequest& request, const CreateDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataflowEndpointGroupAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::CreateDataflowEndpointGroupAsyncHelper(const CreateDataflowEndpointGroupRequest& request, const CreateDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataflowEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataflowEndpointGroup(request), context);
+    } );
 }
 
 CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const CreateMissionProfileRequest& request) const
@@ -223,12 +217,10 @@ CreateMissionProfileOutcomeCallable GroundStationClient::CreateMissionProfileCal
 
 void GroundStationClient::CreateMissionProfileAsync(const CreateMissionProfileRequest& request, const CreateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMissionProfileAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::CreateMissionProfileAsyncHelper(const CreateMissionProfileRequest& request, const CreateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMissionProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMissionProfile(request), context);
+    } );
 }
 
 DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest& request) const
@@ -260,12 +252,10 @@ DeleteConfigOutcomeCallable GroundStationClient::DeleteConfigCallable(const Dele
 
 void GroundStationClient::DeleteConfigAsync(const DeleteConfigRequest& request, const DeleteConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::DeleteConfigAsyncHelper(const DeleteConfigRequest& request, const DeleteConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfig(request), context);
+    } );
 }
 
 DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGroup(const DeleteDataflowEndpointGroupRequest& request) const
@@ -291,12 +281,10 @@ DeleteDataflowEndpointGroupOutcomeCallable GroundStationClient::DeleteDataflowEn
 
 void GroundStationClient::DeleteDataflowEndpointGroupAsync(const DeleteDataflowEndpointGroupRequest& request, const DeleteDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataflowEndpointGroupAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::DeleteDataflowEndpointGroupAsyncHelper(const DeleteDataflowEndpointGroupRequest& request, const DeleteDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDataflowEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDataflowEndpointGroup(request), context);
+    } );
 }
 
 DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const DeleteMissionProfileRequest& request) const
@@ -322,12 +310,10 @@ DeleteMissionProfileOutcomeCallable GroundStationClient::DeleteMissionProfileCal
 
 void GroundStationClient::DeleteMissionProfileAsync(const DeleteMissionProfileRequest& request, const DeleteMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMissionProfileAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::DeleteMissionProfileAsyncHelper(const DeleteMissionProfileRequest& request, const DeleteMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMissionProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMissionProfile(request), context);
+    } );
 }
 
 DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContactRequest& request) const
@@ -353,12 +339,10 @@ DescribeContactOutcomeCallable GroundStationClient::DescribeContactCallable(cons
 
 void GroundStationClient::DescribeContactAsync(const DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeContactAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::DescribeContactAsyncHelper(const DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeContact(request), context);
+    } );
 }
 
 GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request) const
@@ -390,12 +374,10 @@ GetConfigOutcomeCallable GroundStationClient::GetConfigCallable(const GetConfigR
 
 void GroundStationClient::GetConfigAsync(const GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::GetConfigAsyncHelper(const GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConfig(request), context);
+    } );
 }
 
 GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(const GetDataflowEndpointGroupRequest& request) const
@@ -421,12 +403,10 @@ GetDataflowEndpointGroupOutcomeCallable GroundStationClient::GetDataflowEndpoint
 
 void GroundStationClient::GetDataflowEndpointGroupAsync(const GetDataflowEndpointGroupRequest& request, const GetDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataflowEndpointGroupAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::GetDataflowEndpointGroupAsyncHelper(const GetDataflowEndpointGroupRequest& request, const GetDataflowEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDataflowEndpointGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataflowEndpointGroup(request), context);
+    } );
 }
 
 GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRequest& request) const
@@ -446,12 +426,10 @@ GetMinuteUsageOutcomeCallable GroundStationClient::GetMinuteUsageCallable(const 
 
 void GroundStationClient::GetMinuteUsageAsync(const GetMinuteUsageRequest& request, const GetMinuteUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMinuteUsageAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::GetMinuteUsageAsyncHelper(const GetMinuteUsageRequest& request, const GetMinuteUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMinuteUsage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMinuteUsage(request), context);
+    } );
 }
 
 GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMissionProfileRequest& request) const
@@ -477,12 +455,10 @@ GetMissionProfileOutcomeCallable GroundStationClient::GetMissionProfileCallable(
 
 void GroundStationClient::GetMissionProfileAsync(const GetMissionProfileRequest& request, const GetMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMissionProfileAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::GetMissionProfileAsyncHelper(const GetMissionProfileRequest& request, const GetMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMissionProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMissionProfile(request), context);
+    } );
 }
 
 GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest& request) const
@@ -508,12 +484,10 @@ GetSatelliteOutcomeCallable GroundStationClient::GetSatelliteCallable(const GetS
 
 void GroundStationClient::GetSatelliteAsync(const GetSatelliteRequest& request, const GetSatelliteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSatelliteAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::GetSatelliteAsyncHelper(const GetSatelliteRequest& request, const GetSatelliteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSatellite(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSatellite(request), context);
+    } );
 }
 
 ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& request) const
@@ -533,12 +507,10 @@ ListConfigsOutcomeCallable GroundStationClient::ListConfigsCallable(const ListCo
 
 void GroundStationClient::ListConfigsAsync(const ListConfigsRequest& request, const ListConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ListConfigsAsyncHelper(const ListConfigsRequest& request, const ListConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListConfigs(request), context);
+    } );
 }
 
 ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest& request) const
@@ -558,12 +530,10 @@ ListContactsOutcomeCallable GroundStationClient::ListContactsCallable(const List
 
 void GroundStationClient::ListContactsAsync(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListContactsAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ListContactsAsyncHelper(const ListContactsRequest& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListContacts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListContacts(request), context);
+    } );
 }
 
 ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroups(const ListDataflowEndpointGroupsRequest& request) const
@@ -583,12 +553,10 @@ ListDataflowEndpointGroupsOutcomeCallable GroundStationClient::ListDataflowEndpo
 
 void GroundStationClient::ListDataflowEndpointGroupsAsync(const ListDataflowEndpointGroupsRequest& request, const ListDataflowEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataflowEndpointGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ListDataflowEndpointGroupsAsyncHelper(const ListDataflowEndpointGroupsRequest& request, const ListDataflowEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDataflowEndpointGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataflowEndpointGroups(request), context);
+    } );
 }
 
 ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGroundStationsRequest& request) const
@@ -608,12 +576,10 @@ ListGroundStationsOutcomeCallable GroundStationClient::ListGroundStationsCallabl
 
 void GroundStationClient::ListGroundStationsAsync(const ListGroundStationsRequest& request, const ListGroundStationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGroundStationsAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ListGroundStationsAsyncHelper(const ListGroundStationsRequest& request, const ListGroundStationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGroundStations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGroundStations(request), context);
+    } );
 }
 
 ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMissionProfilesRequest& request) const
@@ -633,12 +599,10 @@ ListMissionProfilesOutcomeCallable GroundStationClient::ListMissionProfilesCalla
 
 void GroundStationClient::ListMissionProfilesAsync(const ListMissionProfilesRequest& request, const ListMissionProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMissionProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ListMissionProfilesAsyncHelper(const ListMissionProfilesRequest& request, const ListMissionProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMissionProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMissionProfiles(request), context);
+    } );
 }
 
 ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRequest& request) const
@@ -658,12 +622,10 @@ ListSatellitesOutcomeCallable GroundStationClient::ListSatellitesCallable(const 
 
 void GroundStationClient::ListSatellitesAsync(const ListSatellitesRequest& request, const ListSatellitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSatellitesAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ListSatellitesAsyncHelper(const ListSatellitesRequest& request, const ListSatellitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSatellites(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSatellites(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -689,12 +651,10 @@ ListTagsForResourceOutcomeCallable GroundStationClient::ListTagsForResourceCalla
 
 void GroundStationClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRequest& request) const
@@ -714,12 +674,10 @@ ReserveContactOutcomeCallable GroundStationClient::ReserveContactCallable(const 
 
 void GroundStationClient::ReserveContactAsync(const ReserveContactRequest& request, const ReserveContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ReserveContactAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::ReserveContactAsyncHelper(const ReserveContactRequest& request, const ReserveContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ReserveContact(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ReserveContact(request), context);
+    } );
 }
 
 TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& request) const
@@ -745,12 +703,10 @@ TagResourceOutcomeCallable GroundStationClient::TagResourceCallable(const TagRes
 
 void GroundStationClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceRequest& request) const
@@ -781,12 +737,10 @@ UntagResourceOutcomeCallable GroundStationClient::UntagResourceCallable(const Un
 
 void GroundStationClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest& request) const
@@ -818,12 +772,10 @@ UpdateConfigOutcomeCallable GroundStationClient::UpdateConfigCallable(const Upda
 
 void GroundStationClient::UpdateConfigAsync(const UpdateConfigRequest& request, const UpdateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::UpdateConfigAsyncHelper(const UpdateConfigRequest& request, const UpdateConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConfig(request), context);
+    } );
 }
 
 UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const UpdateMissionProfileRequest& request) const
@@ -849,11 +801,9 @@ UpdateMissionProfileOutcomeCallable GroundStationClient::UpdateMissionProfileCal
 
 void GroundStationClient::UpdateMissionProfileAsync(const UpdateMissionProfileRequest& request, const UpdateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMissionProfileAsyncHelper( request, handler, context ); } );
-}
-
-void GroundStationClient::UpdateMissionProfileAsyncHelper(const UpdateMissionProfileRequest& request, const UpdateMissionProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMissionProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMissionProfile(request), context);
+    } );
 }
 

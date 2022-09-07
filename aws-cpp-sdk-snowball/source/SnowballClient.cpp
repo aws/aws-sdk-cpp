@@ -141,12 +141,10 @@ CancelClusterOutcomeCallable SnowballClient::CancelClusterCallable(const CancelC
 
 void SnowballClient::CancelClusterAsync(const CancelClusterRequest& request, const CancelClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelClusterAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::CancelClusterAsyncHelper(const CancelClusterRequest& request, const CancelClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelCluster(request), context);
+    } );
 }
 
 CancelJobOutcome SnowballClient::CancelJob(const CancelJobRequest& request) const
@@ -165,12 +163,10 @@ CancelJobOutcomeCallable SnowballClient::CancelJobCallable(const CancelJobReques
 
 void SnowballClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelJob(request), context);
+    } );
 }
 
 CreateAddressOutcome SnowballClient::CreateAddress(const CreateAddressRequest& request) const
@@ -189,12 +185,10 @@ CreateAddressOutcomeCallable SnowballClient::CreateAddressCallable(const CreateA
 
 void SnowballClient::CreateAddressAsync(const CreateAddressRequest& request, const CreateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAddressAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::CreateAddressAsyncHelper(const CreateAddressRequest& request, const CreateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAddress(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAddress(request), context);
+    } );
 }
 
 CreateClusterOutcome SnowballClient::CreateCluster(const CreateClusterRequest& request) const
@@ -213,12 +207,10 @@ CreateClusterOutcomeCallable SnowballClient::CreateClusterCallable(const CreateC
 
 void SnowballClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCluster(request), context);
+    } );
 }
 
 CreateJobOutcome SnowballClient::CreateJob(const CreateJobRequest& request) const
@@ -237,12 +229,10 @@ CreateJobOutcomeCallable SnowballClient::CreateJobCallable(const CreateJobReques
 
 void SnowballClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateJob(request), context);
+    } );
 }
 
 CreateLongTermPricingOutcome SnowballClient::CreateLongTermPricing(const CreateLongTermPricingRequest& request) const
@@ -261,12 +251,10 @@ CreateLongTermPricingOutcomeCallable SnowballClient::CreateLongTermPricingCallab
 
 void SnowballClient::CreateLongTermPricingAsync(const CreateLongTermPricingRequest& request, const CreateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLongTermPricingAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::CreateLongTermPricingAsyncHelper(const CreateLongTermPricingRequest& request, const CreateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateLongTermPricing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLongTermPricing(request), context);
+    } );
 }
 
 CreateReturnShippingLabelOutcome SnowballClient::CreateReturnShippingLabel(const CreateReturnShippingLabelRequest& request) const
@@ -285,12 +273,10 @@ CreateReturnShippingLabelOutcomeCallable SnowballClient::CreateReturnShippingLab
 
 void SnowballClient::CreateReturnShippingLabelAsync(const CreateReturnShippingLabelRequest& request, const CreateReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReturnShippingLabelAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::CreateReturnShippingLabelAsyncHelper(const CreateReturnShippingLabelRequest& request, const CreateReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateReturnShippingLabel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateReturnShippingLabel(request), context);
+    } );
 }
 
 DescribeAddressOutcome SnowballClient::DescribeAddress(const DescribeAddressRequest& request) const
@@ -309,12 +295,10 @@ DescribeAddressOutcomeCallable SnowballClient::DescribeAddressCallable(const Des
 
 void SnowballClient::DescribeAddressAsync(const DescribeAddressRequest& request, const DescribeAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddressAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::DescribeAddressAsyncHelper(const DescribeAddressRequest& request, const DescribeAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAddress(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAddress(request), context);
+    } );
 }
 
 DescribeAddressesOutcome SnowballClient::DescribeAddresses(const DescribeAddressesRequest& request) const
@@ -333,12 +317,10 @@ DescribeAddressesOutcomeCallable SnowballClient::DescribeAddressesCallable(const
 
 void SnowballClient::DescribeAddressesAsync(const DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddressesAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::DescribeAddressesAsyncHelper(const DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAddresses(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAddresses(request), context);
+    } );
 }
 
 DescribeClusterOutcome SnowballClient::DescribeCluster(const DescribeClusterRequest& request) const
@@ -357,12 +339,10 @@ DescribeClusterOutcomeCallable SnowballClient::DescribeClusterCallable(const Des
 
 void SnowballClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCluster(request), context);
+    } );
 }
 
 DescribeJobOutcome SnowballClient::DescribeJob(const DescribeJobRequest& request) const
@@ -381,12 +361,10 @@ DescribeJobOutcomeCallable SnowballClient::DescribeJobCallable(const DescribeJob
 
 void SnowballClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJob(request), context);
+    } );
 }
 
 DescribeReturnShippingLabelOutcome SnowballClient::DescribeReturnShippingLabel(const DescribeReturnShippingLabelRequest& request) const
@@ -405,12 +383,10 @@ DescribeReturnShippingLabelOutcomeCallable SnowballClient::DescribeReturnShippin
 
 void SnowballClient::DescribeReturnShippingLabelAsync(const DescribeReturnShippingLabelRequest& request, const DescribeReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReturnShippingLabelAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::DescribeReturnShippingLabelAsyncHelper(const DescribeReturnShippingLabelRequest& request, const DescribeReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeReturnShippingLabel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeReturnShippingLabel(request), context);
+    } );
 }
 
 GetJobManifestOutcome SnowballClient::GetJobManifest(const GetJobManifestRequest& request) const
@@ -429,12 +405,10 @@ GetJobManifestOutcomeCallable SnowballClient::GetJobManifestCallable(const GetJo
 
 void SnowballClient::GetJobManifestAsync(const GetJobManifestRequest& request, const GetJobManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobManifestAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::GetJobManifestAsyncHelper(const GetJobManifestRequest& request, const GetJobManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetJobManifest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetJobManifest(request), context);
+    } );
 }
 
 GetJobUnlockCodeOutcome SnowballClient::GetJobUnlockCode(const GetJobUnlockCodeRequest& request) const
@@ -453,12 +427,10 @@ GetJobUnlockCodeOutcomeCallable SnowballClient::GetJobUnlockCodeCallable(const G
 
 void SnowballClient::GetJobUnlockCodeAsync(const GetJobUnlockCodeRequest& request, const GetJobUnlockCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobUnlockCodeAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::GetJobUnlockCodeAsyncHelper(const GetJobUnlockCodeRequest& request, const GetJobUnlockCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetJobUnlockCode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetJobUnlockCode(request), context);
+    } );
 }
 
 GetSnowballUsageOutcome SnowballClient::GetSnowballUsage(const GetSnowballUsageRequest& request) const
@@ -477,12 +449,10 @@ GetSnowballUsageOutcomeCallable SnowballClient::GetSnowballUsageCallable(const G
 
 void SnowballClient::GetSnowballUsageAsync(const GetSnowballUsageRequest& request, const GetSnowballUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSnowballUsageAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::GetSnowballUsageAsyncHelper(const GetSnowballUsageRequest& request, const GetSnowballUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSnowballUsage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSnowballUsage(request), context);
+    } );
 }
 
 GetSoftwareUpdatesOutcome SnowballClient::GetSoftwareUpdates(const GetSoftwareUpdatesRequest& request) const
@@ -501,12 +471,10 @@ GetSoftwareUpdatesOutcomeCallable SnowballClient::GetSoftwareUpdatesCallable(con
 
 void SnowballClient::GetSoftwareUpdatesAsync(const GetSoftwareUpdatesRequest& request, const GetSoftwareUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSoftwareUpdatesAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::GetSoftwareUpdatesAsyncHelper(const GetSoftwareUpdatesRequest& request, const GetSoftwareUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSoftwareUpdates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSoftwareUpdates(request), context);
+    } );
 }
 
 ListClusterJobsOutcome SnowballClient::ListClusterJobs(const ListClusterJobsRequest& request) const
@@ -525,12 +493,10 @@ ListClusterJobsOutcomeCallable SnowballClient::ListClusterJobsCallable(const Lis
 
 void SnowballClient::ListClusterJobsAsync(const ListClusterJobsRequest& request, const ListClusterJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClusterJobsAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::ListClusterJobsAsyncHelper(const ListClusterJobsRequest& request, const ListClusterJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListClusterJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClusterJobs(request), context);
+    } );
 }
 
 ListClustersOutcome SnowballClient::ListClusters(const ListClustersRequest& request) const
@@ -549,12 +515,10 @@ ListClustersOutcomeCallable SnowballClient::ListClustersCallable(const ListClust
 
 void SnowballClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClustersAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListClusters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClusters(request), context);
+    } );
 }
 
 ListCompatibleImagesOutcome SnowballClient::ListCompatibleImages(const ListCompatibleImagesRequest& request) const
@@ -573,12 +537,10 @@ ListCompatibleImagesOutcomeCallable SnowballClient::ListCompatibleImagesCallable
 
 void SnowballClient::ListCompatibleImagesAsync(const ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCompatibleImagesAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::ListCompatibleImagesAsyncHelper(const ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCompatibleImages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCompatibleImages(request), context);
+    } );
 }
 
 ListJobsOutcome SnowballClient::ListJobs(const ListJobsRequest& request) const
@@ -597,12 +559,10 @@ ListJobsOutcomeCallable SnowballClient::ListJobsCallable(const ListJobsRequest& 
 
 void SnowballClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListJobs(request), context);
+    } );
 }
 
 ListLongTermPricingOutcome SnowballClient::ListLongTermPricing(const ListLongTermPricingRequest& request) const
@@ -621,12 +581,10 @@ ListLongTermPricingOutcomeCallable SnowballClient::ListLongTermPricingCallable(c
 
 void SnowballClient::ListLongTermPricingAsync(const ListLongTermPricingRequest& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLongTermPricingAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::ListLongTermPricingAsyncHelper(const ListLongTermPricingRequest& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLongTermPricing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLongTermPricing(request), context);
+    } );
 }
 
 UpdateClusterOutcome SnowballClient::UpdateCluster(const UpdateClusterRequest& request) const
@@ -645,12 +603,10 @@ UpdateClusterOutcomeCallable SnowballClient::UpdateClusterCallable(const UpdateC
 
 void SnowballClient::UpdateClusterAsync(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::UpdateClusterAsyncHelper(const UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateCluster(request), context);
+    } );
 }
 
 UpdateJobOutcome SnowballClient::UpdateJob(const UpdateJobRequest& request) const
@@ -669,12 +625,10 @@ UpdateJobOutcomeCallable SnowballClient::UpdateJobCallable(const UpdateJobReques
 
 void SnowballClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateJob(request), context);
+    } );
 }
 
 UpdateJobShipmentStateOutcome SnowballClient::UpdateJobShipmentState(const UpdateJobShipmentStateRequest& request) const
@@ -693,12 +647,10 @@ UpdateJobShipmentStateOutcomeCallable SnowballClient::UpdateJobShipmentStateCall
 
 void SnowballClient::UpdateJobShipmentStateAsync(const UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobShipmentStateAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::UpdateJobShipmentStateAsyncHelper(const UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateJobShipmentState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateJobShipmentState(request), context);
+    } );
 }
 
 UpdateLongTermPricingOutcome SnowballClient::UpdateLongTermPricing(const UpdateLongTermPricingRequest& request) const
@@ -717,11 +669,9 @@ UpdateLongTermPricingOutcomeCallable SnowballClient::UpdateLongTermPricingCallab
 
 void SnowballClient::UpdateLongTermPricingAsync(const UpdateLongTermPricingRequest& request, const UpdateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLongTermPricingAsyncHelper( request, handler, context ); } );
-}
-
-void SnowballClient::UpdateLongTermPricingAsyncHelper(const UpdateLongTermPricingRequest& request, const UpdateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLongTermPricing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLongTermPricing(request), context);
+    } );
 }
 

@@ -125,12 +125,10 @@ GetRawMessageContentOutcomeCallable WorkMailMessageFlowClient::GetRawMessageCont
 
 void WorkMailMessageFlowClient::GetRawMessageContentAsync(const GetRawMessageContentRequest& request, const GetRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRawMessageContentAsyncHelper( request, handler, context ); } );
-}
-
-void WorkMailMessageFlowClient::GetRawMessageContentAsyncHelper(const GetRawMessageContentRequest& request, const GetRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRawMessageContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRawMessageContent(request), context);
+    } );
 }
 
 PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(const PutRawMessageContentRequest& request) const
@@ -156,11 +154,9 @@ PutRawMessageContentOutcomeCallable WorkMailMessageFlowClient::PutRawMessageCont
 
 void WorkMailMessageFlowClient::PutRawMessageContentAsync(const PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRawMessageContentAsyncHelper( request, handler, context ); } );
-}
-
-void WorkMailMessageFlowClient::PutRawMessageContentAsyncHelper(const PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRawMessageContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRawMessageContent(request), context);
+    } );
 }
 

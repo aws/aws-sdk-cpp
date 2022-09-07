@@ -136,12 +136,10 @@ ClaimDevicesByClaimCodeOutcomeCallable IoT1ClickDevicesServiceClient::ClaimDevic
 
 void IoT1ClickDevicesServiceClient::ClaimDevicesByClaimCodeAsync(const ClaimDevicesByClaimCodeRequest& request, const ClaimDevicesByClaimCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ClaimDevicesByClaimCodeAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::ClaimDevicesByClaimCodeAsyncHelper(const ClaimDevicesByClaimCodeRequest& request, const ClaimDevicesByClaimCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ClaimDevicesByClaimCode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ClaimDevicesByClaimCode(request), context);
+    } );
 }
 
 DescribeDeviceOutcome IoT1ClickDevicesServiceClient::DescribeDevice(const DescribeDeviceRequest& request) const
@@ -167,12 +165,10 @@ DescribeDeviceOutcomeCallable IoT1ClickDevicesServiceClient::DescribeDeviceCalla
 
 void IoT1ClickDevicesServiceClient::DescribeDeviceAsync(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::DescribeDeviceAsyncHelper(const DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDevice(request), context);
+    } );
 }
 
 FinalizeDeviceClaimOutcome IoT1ClickDevicesServiceClient::FinalizeDeviceClaim(const FinalizeDeviceClaimRequest& request) const
@@ -199,12 +195,10 @@ FinalizeDeviceClaimOutcomeCallable IoT1ClickDevicesServiceClient::FinalizeDevice
 
 void IoT1ClickDevicesServiceClient::FinalizeDeviceClaimAsync(const FinalizeDeviceClaimRequest& request, const FinalizeDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->FinalizeDeviceClaimAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::FinalizeDeviceClaimAsyncHelper(const FinalizeDeviceClaimRequest& request, const FinalizeDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, FinalizeDeviceClaim(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, FinalizeDeviceClaim(request), context);
+    } );
 }
 
 GetDeviceMethodsOutcome IoT1ClickDevicesServiceClient::GetDeviceMethods(const GetDeviceMethodsRequest& request) const
@@ -231,12 +225,10 @@ GetDeviceMethodsOutcomeCallable IoT1ClickDevicesServiceClient::GetDeviceMethodsC
 
 void IoT1ClickDevicesServiceClient::GetDeviceMethodsAsync(const GetDeviceMethodsRequest& request, const GetDeviceMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceMethodsAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::GetDeviceMethodsAsyncHelper(const GetDeviceMethodsRequest& request, const GetDeviceMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeviceMethods(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeviceMethods(request), context);
+    } );
 }
 
 InitiateDeviceClaimOutcome IoT1ClickDevicesServiceClient::InitiateDeviceClaim(const InitiateDeviceClaimRequest& request) const
@@ -263,12 +255,10 @@ InitiateDeviceClaimOutcomeCallable IoT1ClickDevicesServiceClient::InitiateDevice
 
 void IoT1ClickDevicesServiceClient::InitiateDeviceClaimAsync(const InitiateDeviceClaimRequest& request, const InitiateDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InitiateDeviceClaimAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::InitiateDeviceClaimAsyncHelper(const InitiateDeviceClaimRequest& request, const InitiateDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InitiateDeviceClaim(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InitiateDeviceClaim(request), context);
+    } );
 }
 
 InvokeDeviceMethodOutcome IoT1ClickDevicesServiceClient::InvokeDeviceMethod(const InvokeDeviceMethodRequest& request) const
@@ -295,12 +285,10 @@ InvokeDeviceMethodOutcomeCallable IoT1ClickDevicesServiceClient::InvokeDeviceMet
 
 void IoT1ClickDevicesServiceClient::InvokeDeviceMethodAsync(const InvokeDeviceMethodRequest& request, const InvokeDeviceMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InvokeDeviceMethodAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::InvokeDeviceMethodAsyncHelper(const InvokeDeviceMethodRequest& request, const InvokeDeviceMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InvokeDeviceMethod(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InvokeDeviceMethod(request), context);
+    } );
 }
 
 ListDeviceEventsOutcome IoT1ClickDevicesServiceClient::ListDeviceEvents(const ListDeviceEventsRequest& request) const
@@ -337,12 +325,10 @@ ListDeviceEventsOutcomeCallable IoT1ClickDevicesServiceClient::ListDeviceEventsC
 
 void IoT1ClickDevicesServiceClient::ListDeviceEventsAsync(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceEventsAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::ListDeviceEventsAsyncHelper(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeviceEvents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeviceEvents(request), context);
+    } );
 }
 
 ListDevicesOutcome IoT1ClickDevicesServiceClient::ListDevices(const ListDevicesRequest& request) const
@@ -362,12 +348,10 @@ ListDevicesOutcomeCallable IoT1ClickDevicesServiceClient::ListDevicesCallable(co
 
 void IoT1ClickDevicesServiceClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDevicesAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDevices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDevices(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome IoT1ClickDevicesServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -393,12 +377,10 @@ ListTagsForResourceOutcomeCallable IoT1ClickDevicesServiceClient::ListTagsForRes
 
 void IoT1ClickDevicesServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome IoT1ClickDevicesServiceClient::TagResource(const TagResourceRequest& request) const
@@ -424,12 +406,10 @@ TagResourceOutcomeCallable IoT1ClickDevicesServiceClient::TagResourceCallable(co
 
 void IoT1ClickDevicesServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UnclaimDeviceOutcome IoT1ClickDevicesServiceClient::UnclaimDevice(const UnclaimDeviceRequest& request) const
@@ -456,12 +436,10 @@ UnclaimDeviceOutcomeCallable IoT1ClickDevicesServiceClient::UnclaimDeviceCallabl
 
 void IoT1ClickDevicesServiceClient::UnclaimDeviceAsync(const UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnclaimDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::UnclaimDeviceAsyncHelper(const UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnclaimDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnclaimDevice(request), context);
+    } );
 }
 
 UntagResourceOutcome IoT1ClickDevicesServiceClient::UntagResource(const UntagResourceRequest& request) const
@@ -492,12 +470,10 @@ UntagResourceOutcomeCallable IoT1ClickDevicesServiceClient::UntagResourceCallabl
 
 void IoT1ClickDevicesServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateDeviceStateOutcome IoT1ClickDevicesServiceClient::UpdateDeviceState(const UpdateDeviceStateRequest& request) const
@@ -524,11 +500,9 @@ UpdateDeviceStateOutcomeCallable IoT1ClickDevicesServiceClient::UpdateDeviceStat
 
 void IoT1ClickDevicesServiceClient::UpdateDeviceStateAsync(const UpdateDeviceStateRequest& request, const UpdateDeviceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeviceStateAsyncHelper( request, handler, context ); } );
-}
-
-void IoT1ClickDevicesServiceClient::UpdateDeviceStateAsyncHelper(const UpdateDeviceStateRequest& request, const UpdateDeviceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDeviceState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDeviceState(request), context);
+    } );
 }
 

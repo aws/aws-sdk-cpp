@@ -165,12 +165,10 @@ DeleteAlarmsOutcomeCallable CloudWatchClient::DeleteAlarmsCallable(const DeleteA
 
 void CloudWatchClient::DeleteAlarmsAsync(const DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlarmsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DeleteAlarmsAsyncHelper(const DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAlarms(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAlarms(request), context);
+    } );
 }
 
 DeleteAnomalyDetectorOutcome CloudWatchClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const
@@ -189,12 +187,10 @@ DeleteAnomalyDetectorOutcomeCallable CloudWatchClient::DeleteAnomalyDetectorCall
 
 void CloudWatchClient::DeleteAnomalyDetectorAsync(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnomalyDetectorAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DeleteAnomalyDetectorAsyncHelper(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAnomalyDetector(request), context);
+    } );
 }
 
 DeleteDashboardsOutcome CloudWatchClient::DeleteDashboards(const DeleteDashboardsRequest& request) const
@@ -213,12 +209,10 @@ DeleteDashboardsOutcomeCallable CloudWatchClient::DeleteDashboardsCallable(const
 
 void CloudWatchClient::DeleteDashboardsAsync(const DeleteDashboardsRequest& request, const DeleteDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDashboardsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DeleteDashboardsAsyncHelper(const DeleteDashboardsRequest& request, const DeleteDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDashboards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDashboards(request), context);
+    } );
 }
 
 DeleteInsightRulesOutcome CloudWatchClient::DeleteInsightRules(const DeleteInsightRulesRequest& request) const
@@ -237,12 +231,10 @@ DeleteInsightRulesOutcomeCallable CloudWatchClient::DeleteInsightRulesCallable(c
 
 void CloudWatchClient::DeleteInsightRulesAsync(const DeleteInsightRulesRequest& request, const DeleteInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInsightRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DeleteInsightRulesAsyncHelper(const DeleteInsightRulesRequest& request, const DeleteInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInsightRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInsightRules(request), context);
+    } );
 }
 
 DeleteMetricStreamOutcome CloudWatchClient::DeleteMetricStream(const DeleteMetricStreamRequest& request) const
@@ -261,12 +253,10 @@ DeleteMetricStreamOutcomeCallable CloudWatchClient::DeleteMetricStreamCallable(c
 
 void CloudWatchClient::DeleteMetricStreamAsync(const DeleteMetricStreamRequest& request, const DeleteMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMetricStreamAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DeleteMetricStreamAsyncHelper(const DeleteMetricStreamRequest& request, const DeleteMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMetricStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMetricStream(request), context);
+    } );
 }
 
 DescribeAlarmHistoryOutcome CloudWatchClient::DescribeAlarmHistory(const DescribeAlarmHistoryRequest& request) const
@@ -285,12 +275,10 @@ DescribeAlarmHistoryOutcomeCallable CloudWatchClient::DescribeAlarmHistoryCallab
 
 void CloudWatchClient::DescribeAlarmHistoryAsync(const DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlarmHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DescribeAlarmHistoryAsyncHelper(const DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAlarmHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAlarmHistory(request), context);
+    } );
 }
 
 DescribeAlarmsOutcome CloudWatchClient::DescribeAlarms(const DescribeAlarmsRequest& request) const
@@ -309,12 +297,10 @@ DescribeAlarmsOutcomeCallable CloudWatchClient::DescribeAlarmsCallable(const Des
 
 void CloudWatchClient::DescribeAlarmsAsync(const DescribeAlarmsRequest& request, const DescribeAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlarmsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DescribeAlarmsAsyncHelper(const DescribeAlarmsRequest& request, const DescribeAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAlarms(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAlarms(request), context);
+    } );
 }
 
 DescribeAlarmsForMetricOutcome CloudWatchClient::DescribeAlarmsForMetric(const DescribeAlarmsForMetricRequest& request) const
@@ -333,12 +319,10 @@ DescribeAlarmsForMetricOutcomeCallable CloudWatchClient::DescribeAlarmsForMetric
 
 void CloudWatchClient::DescribeAlarmsForMetricAsync(const DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlarmsForMetricAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DescribeAlarmsForMetricAsyncHelper(const DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAlarmsForMetric(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAlarmsForMetric(request), context);
+    } );
 }
 
 DescribeAnomalyDetectorsOutcome CloudWatchClient::DescribeAnomalyDetectors(const DescribeAnomalyDetectorsRequest& request) const
@@ -357,12 +341,10 @@ DescribeAnomalyDetectorsOutcomeCallable CloudWatchClient::DescribeAnomalyDetecto
 
 void CloudWatchClient::DescribeAnomalyDetectorsAsync(const DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnomalyDetectorsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DescribeAnomalyDetectorsAsyncHelper(const DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAnomalyDetectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAnomalyDetectors(request), context);
+    } );
 }
 
 DescribeInsightRulesOutcome CloudWatchClient::DescribeInsightRules(const DescribeInsightRulesRequest& request) const
@@ -381,12 +363,10 @@ DescribeInsightRulesOutcomeCallable CloudWatchClient::DescribeInsightRulesCallab
 
 void CloudWatchClient::DescribeInsightRulesAsync(const DescribeInsightRulesRequest& request, const DescribeInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInsightRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DescribeInsightRulesAsyncHelper(const DescribeInsightRulesRequest& request, const DescribeInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInsightRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInsightRules(request), context);
+    } );
 }
 
 DisableAlarmActionsOutcome CloudWatchClient::DisableAlarmActions(const DisableAlarmActionsRequest& request) const
@@ -405,12 +385,10 @@ DisableAlarmActionsOutcomeCallable CloudWatchClient::DisableAlarmActionsCallable
 
 void CloudWatchClient::DisableAlarmActionsAsync(const DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableAlarmActionsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DisableAlarmActionsAsyncHelper(const DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableAlarmActions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableAlarmActions(request), context);
+    } );
 }
 
 DisableInsightRulesOutcome CloudWatchClient::DisableInsightRules(const DisableInsightRulesRequest& request) const
@@ -429,12 +407,10 @@ DisableInsightRulesOutcomeCallable CloudWatchClient::DisableInsightRulesCallable
 
 void CloudWatchClient::DisableInsightRulesAsync(const DisableInsightRulesRequest& request, const DisableInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisableInsightRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::DisableInsightRulesAsyncHelper(const DisableInsightRulesRequest& request, const DisableInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisableInsightRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableInsightRules(request), context);
+    } );
 }
 
 EnableAlarmActionsOutcome CloudWatchClient::EnableAlarmActions(const EnableAlarmActionsRequest& request) const
@@ -453,12 +429,10 @@ EnableAlarmActionsOutcomeCallable CloudWatchClient::EnableAlarmActionsCallable(c
 
 void CloudWatchClient::EnableAlarmActionsAsync(const EnableAlarmActionsRequest& request, const EnableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableAlarmActionsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::EnableAlarmActionsAsyncHelper(const EnableAlarmActionsRequest& request, const EnableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableAlarmActions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableAlarmActions(request), context);
+    } );
 }
 
 EnableInsightRulesOutcome CloudWatchClient::EnableInsightRules(const EnableInsightRulesRequest& request) const
@@ -477,12 +451,10 @@ EnableInsightRulesOutcomeCallable CloudWatchClient::EnableInsightRulesCallable(c
 
 void CloudWatchClient::EnableInsightRulesAsync(const EnableInsightRulesRequest& request, const EnableInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->EnableInsightRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::EnableInsightRulesAsyncHelper(const EnableInsightRulesRequest& request, const EnableInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, EnableInsightRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableInsightRules(request), context);
+    } );
 }
 
 GetDashboardOutcome CloudWatchClient::GetDashboard(const GetDashboardRequest& request) const
@@ -501,12 +473,10 @@ GetDashboardOutcomeCallable CloudWatchClient::GetDashboardCallable(const GetDash
 
 void CloudWatchClient::GetDashboardAsync(const GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDashboardAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::GetDashboardAsyncHelper(const GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDashboard(request), context);
+    } );
 }
 
 GetInsightRuleReportOutcome CloudWatchClient::GetInsightRuleReport(const GetInsightRuleReportRequest& request) const
@@ -525,12 +495,10 @@ GetInsightRuleReportOutcomeCallable CloudWatchClient::GetInsightRuleReportCallab
 
 void CloudWatchClient::GetInsightRuleReportAsync(const GetInsightRuleReportRequest& request, const GetInsightRuleReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightRuleReportAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::GetInsightRuleReportAsyncHelper(const GetInsightRuleReportRequest& request, const GetInsightRuleReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetInsightRuleReport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetInsightRuleReport(request), context);
+    } );
 }
 
 GetMetricDataOutcome CloudWatchClient::GetMetricData(const GetMetricDataRequest& request) const
@@ -549,12 +517,10 @@ GetMetricDataOutcomeCallable CloudWatchClient::GetMetricDataCallable(const GetMe
 
 void CloudWatchClient::GetMetricDataAsync(const GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMetricDataAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::GetMetricDataAsyncHelper(const GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetricData(request), context);
+    } );
 }
 
 GetMetricStatisticsOutcome CloudWatchClient::GetMetricStatistics(const GetMetricStatisticsRequest& request) const
@@ -573,12 +539,10 @@ GetMetricStatisticsOutcomeCallable CloudWatchClient::GetMetricStatisticsCallable
 
 void CloudWatchClient::GetMetricStatisticsAsync(const GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMetricStatisticsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::GetMetricStatisticsAsyncHelper(const GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMetricStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetricStatistics(request), context);
+    } );
 }
 
 GetMetricStreamOutcome CloudWatchClient::GetMetricStream(const GetMetricStreamRequest& request) const
@@ -597,12 +561,10 @@ GetMetricStreamOutcomeCallable CloudWatchClient::GetMetricStreamCallable(const G
 
 void CloudWatchClient::GetMetricStreamAsync(const GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMetricStreamAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::GetMetricStreamAsyncHelper(const GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMetricStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetricStream(request), context);
+    } );
 }
 
 GetMetricWidgetImageOutcome CloudWatchClient::GetMetricWidgetImage(const GetMetricWidgetImageRequest& request) const
@@ -621,12 +583,10 @@ GetMetricWidgetImageOutcomeCallable CloudWatchClient::GetMetricWidgetImageCallab
 
 void CloudWatchClient::GetMetricWidgetImageAsync(const GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMetricWidgetImageAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::GetMetricWidgetImageAsyncHelper(const GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMetricWidgetImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetricWidgetImage(request), context);
+    } );
 }
 
 ListDashboardsOutcome CloudWatchClient::ListDashboards(const ListDashboardsRequest& request) const
@@ -645,12 +605,10 @@ ListDashboardsOutcomeCallable CloudWatchClient::ListDashboardsCallable(const Lis
 
 void CloudWatchClient::ListDashboardsAsync(const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDashboardsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::ListDashboardsAsyncHelper(const ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDashboards(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDashboards(request), context);
+    } );
 }
 
 ListManagedInsightRulesOutcome CloudWatchClient::ListManagedInsightRules(const ListManagedInsightRulesRequest& request) const
@@ -669,12 +627,10 @@ ListManagedInsightRulesOutcomeCallable CloudWatchClient::ListManagedInsightRules
 
 void CloudWatchClient::ListManagedInsightRulesAsync(const ListManagedInsightRulesRequest& request, const ListManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListManagedInsightRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::ListManagedInsightRulesAsyncHelper(const ListManagedInsightRulesRequest& request, const ListManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListManagedInsightRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListManagedInsightRules(request), context);
+    } );
 }
 
 ListMetricStreamsOutcome CloudWatchClient::ListMetricStreams(const ListMetricStreamsRequest& request) const
@@ -693,12 +649,10 @@ ListMetricStreamsOutcomeCallable CloudWatchClient::ListMetricStreamsCallable(con
 
 void CloudWatchClient::ListMetricStreamsAsync(const ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMetricStreamsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::ListMetricStreamsAsyncHelper(const ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMetricStreams(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMetricStreams(request), context);
+    } );
 }
 
 ListMetricsOutcome CloudWatchClient::ListMetrics(const ListMetricsRequest& request) const
@@ -717,12 +671,10 @@ ListMetricsOutcomeCallable CloudWatchClient::ListMetricsCallable(const ListMetri
 
 void CloudWatchClient::ListMetricsAsync(const ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMetricsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::ListMetricsAsyncHelper(const ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMetrics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMetrics(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome CloudWatchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -741,12 +693,10 @@ ListTagsForResourceOutcomeCallable CloudWatchClient::ListTagsForResourceCallable
 
 void CloudWatchClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutAnomalyDetectorOutcome CloudWatchClient::PutAnomalyDetector(const PutAnomalyDetectorRequest& request) const
@@ -765,12 +715,10 @@ PutAnomalyDetectorOutcomeCallable CloudWatchClient::PutAnomalyDetectorCallable(c
 
 void CloudWatchClient::PutAnomalyDetectorAsync(const PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAnomalyDetectorAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutAnomalyDetectorAsyncHelper(const PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAnomalyDetector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAnomalyDetector(request), context);
+    } );
 }
 
 PutCompositeAlarmOutcome CloudWatchClient::PutCompositeAlarm(const PutCompositeAlarmRequest& request) const
@@ -789,12 +737,10 @@ PutCompositeAlarmOutcomeCallable CloudWatchClient::PutCompositeAlarmCallable(con
 
 void CloudWatchClient::PutCompositeAlarmAsync(const PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutCompositeAlarmAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutCompositeAlarmAsyncHelper(const PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutCompositeAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutCompositeAlarm(request), context);
+    } );
 }
 
 PutDashboardOutcome CloudWatchClient::PutDashboard(const PutDashboardRequest& request) const
@@ -813,12 +759,10 @@ PutDashboardOutcomeCallable CloudWatchClient::PutDashboardCallable(const PutDash
 
 void CloudWatchClient::PutDashboardAsync(const PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDashboardAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutDashboardAsyncHelper(const PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDashboard(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDashboard(request), context);
+    } );
 }
 
 PutInsightRuleOutcome CloudWatchClient::PutInsightRule(const PutInsightRuleRequest& request) const
@@ -837,12 +781,10 @@ PutInsightRuleOutcomeCallable CloudWatchClient::PutInsightRuleCallable(const Put
 
 void CloudWatchClient::PutInsightRuleAsync(const PutInsightRuleRequest& request, const PutInsightRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutInsightRuleAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutInsightRuleAsyncHelper(const PutInsightRuleRequest& request, const PutInsightRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutInsightRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutInsightRule(request), context);
+    } );
 }
 
 PutManagedInsightRulesOutcome CloudWatchClient::PutManagedInsightRules(const PutManagedInsightRulesRequest& request) const
@@ -861,12 +803,10 @@ PutManagedInsightRulesOutcomeCallable CloudWatchClient::PutManagedInsightRulesCa
 
 void CloudWatchClient::PutManagedInsightRulesAsync(const PutManagedInsightRulesRequest& request, const PutManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutManagedInsightRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutManagedInsightRulesAsyncHelper(const PutManagedInsightRulesRequest& request, const PutManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutManagedInsightRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutManagedInsightRules(request), context);
+    } );
 }
 
 PutMetricAlarmOutcome CloudWatchClient::PutMetricAlarm(const PutMetricAlarmRequest& request) const
@@ -885,12 +825,10 @@ PutMetricAlarmOutcomeCallable CloudWatchClient::PutMetricAlarmCallable(const Put
 
 void CloudWatchClient::PutMetricAlarmAsync(const PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMetricAlarmAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutMetricAlarmAsyncHelper(const PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutMetricAlarm(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutMetricAlarm(request), context);
+    } );
 }
 
 PutMetricDataOutcome CloudWatchClient::PutMetricData(const PutMetricDataRequest& request) const
@@ -909,12 +847,10 @@ PutMetricDataOutcomeCallable CloudWatchClient::PutMetricDataCallable(const PutMe
 
 void CloudWatchClient::PutMetricDataAsync(const PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMetricDataAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutMetricDataAsyncHelper(const PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutMetricData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutMetricData(request), context);
+    } );
 }
 
 PutMetricStreamOutcome CloudWatchClient::PutMetricStream(const PutMetricStreamRequest& request) const
@@ -933,12 +869,10 @@ PutMetricStreamOutcomeCallable CloudWatchClient::PutMetricStreamCallable(const P
 
 void CloudWatchClient::PutMetricStreamAsync(const PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMetricStreamAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::PutMetricStreamAsyncHelper(const PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutMetricStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutMetricStream(request), context);
+    } );
 }
 
 SetAlarmStateOutcome CloudWatchClient::SetAlarmState(const SetAlarmStateRequest& request) const
@@ -957,12 +891,10 @@ SetAlarmStateOutcomeCallable CloudWatchClient::SetAlarmStateCallable(const SetAl
 
 void CloudWatchClient::SetAlarmStateAsync(const SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetAlarmStateAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::SetAlarmStateAsyncHelper(const SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetAlarmState(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetAlarmState(request), context);
+    } );
 }
 
 StartMetricStreamsOutcome CloudWatchClient::StartMetricStreams(const StartMetricStreamsRequest& request) const
@@ -981,12 +913,10 @@ StartMetricStreamsOutcomeCallable CloudWatchClient::StartMetricStreamsCallable(c
 
 void CloudWatchClient::StartMetricStreamsAsync(const StartMetricStreamsRequest& request, const StartMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMetricStreamsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::StartMetricStreamsAsyncHelper(const StartMetricStreamsRequest& request, const StartMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartMetricStreams(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartMetricStreams(request), context);
+    } );
 }
 
 StopMetricStreamsOutcome CloudWatchClient::StopMetricStreams(const StopMetricStreamsRequest& request) const
@@ -1005,12 +935,10 @@ StopMetricStreamsOutcomeCallable CloudWatchClient::StopMetricStreamsCallable(con
 
 void CloudWatchClient::StopMetricStreamsAsync(const StopMetricStreamsRequest& request, const StopMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopMetricStreamsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::StopMetricStreamsAsyncHelper(const StopMetricStreamsRequest& request, const StopMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopMetricStreams(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopMetricStreams(request), context);
+    } );
 }
 
 TagResourceOutcome CloudWatchClient::TagResource(const TagResourceRequest& request) const
@@ -1029,12 +957,10 @@ TagResourceOutcomeCallable CloudWatchClient::TagResourceCallable(const TagResour
 
 void CloudWatchClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome CloudWatchClient::UntagResource(const UntagResourceRequest& request) const
@@ -1053,11 +979,9 @@ UntagResourceOutcomeCallable CloudWatchClient::UntagResourceCallable(const Untag
 
 void CloudWatchClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudWatchClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

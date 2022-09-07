@@ -128,12 +128,10 @@ SearchOutcomeCallable CloudSearchDomainClient::SearchCallable(const SearchReques
 
 void CloudSearchDomainClient::SearchAsync(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchAsyncHelper( request, handler, context ); } );
-}
-
-void CloudSearchDomainClient::SearchAsyncHelper(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, Search(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, Search(request), context);
+    } );
 }
 
 SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) const
@@ -166,12 +164,10 @@ SuggestOutcomeCallable CloudSearchDomainClient::SuggestCallable(const SuggestReq
 
 void CloudSearchDomainClient::SuggestAsync(const SuggestRequest& request, const SuggestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SuggestAsyncHelper( request, handler, context ); } );
-}
-
-void CloudSearchDomainClient::SuggestAsyncHelper(const SuggestRequest& request, const SuggestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, Suggest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, Suggest(request), context);
+    } );
 }
 
 UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocumentsRequest& request) const
@@ -194,11 +190,9 @@ UploadDocumentsOutcomeCallable CloudSearchDomainClient::UploadDocumentsCallable(
 
 void CloudSearchDomainClient::UploadDocumentsAsync(const UploadDocumentsRequest& request, const UploadDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UploadDocumentsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudSearchDomainClient::UploadDocumentsAsyncHelper(const UploadDocumentsRequest& request, const UploadDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UploadDocuments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UploadDocuments(request), context);
+    } );
 }
 

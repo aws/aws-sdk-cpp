@@ -127,12 +127,10 @@ AssociateUserOutcomeCallable LicenseManagerUserSubscriptionsClient::AssociateUse
 
 void LicenseManagerUserSubscriptionsClient::AssociateUserAsync(const AssociateUserRequest& request, const AssociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateUserAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::AssociateUserAsyncHelper(const AssociateUserRequest& request, const AssociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateUser(request), context);
+    } );
 }
 
 DeregisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::DeregisterIdentityProvider(const DeregisterIdentityProviderRequest& request) const
@@ -152,12 +150,10 @@ DeregisterIdentityProviderOutcomeCallable LicenseManagerUserSubscriptionsClient:
 
 void LicenseManagerUserSubscriptionsClient::DeregisterIdentityProviderAsync(const DeregisterIdentityProviderRequest& request, const DeregisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterIdentityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::DeregisterIdentityProviderAsyncHelper(const DeregisterIdentityProviderRequest& request, const DeregisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterIdentityProvider(request), context);
+    } );
 }
 
 DisassociateUserOutcome LicenseManagerUserSubscriptionsClient::DisassociateUser(const DisassociateUserRequest& request) const
@@ -177,12 +173,10 @@ DisassociateUserOutcomeCallable LicenseManagerUserSubscriptionsClient::Disassoci
 
 void LicenseManagerUserSubscriptionsClient::DisassociateUserAsync(const DisassociateUserRequest& request, const DisassociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateUserAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::DisassociateUserAsyncHelper(const DisassociateUserRequest& request, const DisassociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateUser(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateUser(request), context);
+    } );
 }
 
 ListIdentityProvidersOutcome LicenseManagerUserSubscriptionsClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const
@@ -202,12 +196,10 @@ ListIdentityProvidersOutcomeCallable LicenseManagerUserSubscriptionsClient::List
 
 void LicenseManagerUserSubscriptionsClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityProvidersAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::ListIdentityProvidersAsyncHelper(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListIdentityProviders(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListIdentityProviders(request), context);
+    } );
 }
 
 ListInstancesOutcome LicenseManagerUserSubscriptionsClient::ListInstances(const ListInstancesRequest& request) const
@@ -227,12 +219,10 @@ ListInstancesOutcomeCallable LicenseManagerUserSubscriptionsClient::ListInstance
 
 void LicenseManagerUserSubscriptionsClient::ListInstancesAsync(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInstances(request), context);
+    } );
 }
 
 ListProductSubscriptionsOutcome LicenseManagerUserSubscriptionsClient::ListProductSubscriptions(const ListProductSubscriptionsRequest& request) const
@@ -252,12 +242,10 @@ ListProductSubscriptionsOutcomeCallable LicenseManagerUserSubscriptionsClient::L
 
 void LicenseManagerUserSubscriptionsClient::ListProductSubscriptionsAsync(const ListProductSubscriptionsRequest& request, const ListProductSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProductSubscriptionsAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::ListProductSubscriptionsAsyncHelper(const ListProductSubscriptionsRequest& request, const ListProductSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListProductSubscriptions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProductSubscriptions(request), context);
+    } );
 }
 
 ListUserAssociationsOutcome LicenseManagerUserSubscriptionsClient::ListUserAssociations(const ListUserAssociationsRequest& request) const
@@ -277,12 +265,10 @@ ListUserAssociationsOutcomeCallable LicenseManagerUserSubscriptionsClient::ListU
 
 void LicenseManagerUserSubscriptionsClient::ListUserAssociationsAsync(const ListUserAssociationsRequest& request, const ListUserAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserAssociationsAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::ListUserAssociationsAsyncHelper(const ListUserAssociationsRequest& request, const ListUserAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUserAssociations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUserAssociations(request), context);
+    } );
 }
 
 RegisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::RegisterIdentityProvider(const RegisterIdentityProviderRequest& request) const
@@ -302,12 +288,10 @@ RegisterIdentityProviderOutcomeCallable LicenseManagerUserSubscriptionsClient::R
 
 void LicenseManagerUserSubscriptionsClient::RegisterIdentityProviderAsync(const RegisterIdentityProviderRequest& request, const RegisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterIdentityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::RegisterIdentityProviderAsyncHelper(const RegisterIdentityProviderRequest& request, const RegisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterIdentityProvider(request), context);
+    } );
 }
 
 StartProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StartProductSubscription(const StartProductSubscriptionRequest& request) const
@@ -327,12 +311,10 @@ StartProductSubscriptionOutcomeCallable LicenseManagerUserSubscriptionsClient::S
 
 void LicenseManagerUserSubscriptionsClient::StartProductSubscriptionAsync(const StartProductSubscriptionRequest& request, const StartProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartProductSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::StartProductSubscriptionAsyncHelper(const StartProductSubscriptionRequest& request, const StartProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartProductSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartProductSubscription(request), context);
+    } );
 }
 
 StopProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StopProductSubscription(const StopProductSubscriptionRequest& request) const
@@ -352,11 +334,9 @@ StopProductSubscriptionOutcomeCallable LicenseManagerUserSubscriptionsClient::St
 
 void LicenseManagerUserSubscriptionsClient::StopProductSubscriptionAsync(const StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopProductSubscriptionAsyncHelper( request, handler, context ); } );
-}
-
-void LicenseManagerUserSubscriptionsClient::StopProductSubscriptionAsyncHelper(const StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopProductSubscription(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopProductSubscription(request), context);
+    } );
 }
 

@@ -131,12 +131,10 @@ DeleteThingShadowOutcomeCallable IoTDataPlaneClient::DeleteThingShadowCallable(c
 
 void IoTDataPlaneClient::DeleteThingShadowAsync(const DeleteThingShadowRequest& request, const DeleteThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThingShadowAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDataPlaneClient::DeleteThingShadowAsyncHelper(const DeleteThingShadowRequest& request, const DeleteThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteThingShadow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteThingShadow(request), context);
+    } );
 }
 
 GetRetainedMessageOutcome IoTDataPlaneClient::GetRetainedMessage(const GetRetainedMessageRequest& request) const
@@ -162,12 +160,10 @@ GetRetainedMessageOutcomeCallable IoTDataPlaneClient::GetRetainedMessageCallable
 
 void IoTDataPlaneClient::GetRetainedMessageAsync(const GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRetainedMessageAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDataPlaneClient::GetRetainedMessageAsyncHelper(const GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRetainedMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRetainedMessage(request), context);
+    } );
 }
 
 GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowRequest& request) const
@@ -194,12 +190,10 @@ GetThingShadowOutcomeCallable IoTDataPlaneClient::GetThingShadowCallable(const G
 
 void IoTDataPlaneClient::GetThingShadowAsync(const GetThingShadowRequest& request, const GetThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetThingShadowAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDataPlaneClient::GetThingShadowAsyncHelper(const GetThingShadowRequest& request, const GetThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetThingShadow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetThingShadow(request), context);
+    } );
 }
 
 ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(const ListNamedShadowsForThingRequest& request) const
@@ -225,12 +219,10 @@ ListNamedShadowsForThingOutcomeCallable IoTDataPlaneClient::ListNamedShadowsForT
 
 void IoTDataPlaneClient::ListNamedShadowsForThingAsync(const ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNamedShadowsForThingAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDataPlaneClient::ListNamedShadowsForThingAsyncHelper(const ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNamedShadowsForThing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNamedShadowsForThing(request), context);
+    } );
 }
 
 ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListRetainedMessagesRequest& request) const
@@ -250,12 +242,10 @@ ListRetainedMessagesOutcomeCallable IoTDataPlaneClient::ListRetainedMessagesCall
 
 void IoTDataPlaneClient::ListRetainedMessagesAsync(const ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRetainedMessagesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDataPlaneClient::ListRetainedMessagesAsyncHelper(const ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRetainedMessages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRetainedMessages(request), context);
+    } );
 }
 
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
@@ -281,12 +271,10 @@ PublishOutcomeCallable IoTDataPlaneClient::PublishCallable(const PublishRequest&
 
 void IoTDataPlaneClient::PublishAsync(const PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PublishAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDataPlaneClient::PublishAsyncHelper(const PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, Publish(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, Publish(request), context);
+    } );
 }
 
 UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThingShadowRequest& request) const
@@ -313,11 +301,9 @@ UpdateThingShadowOutcomeCallable IoTDataPlaneClient::UpdateThingShadowCallable(c
 
 void IoTDataPlaneClient::UpdateThingShadowAsync(const UpdateThingShadowRequest& request, const UpdateThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThingShadowAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDataPlaneClient::UpdateThingShadowAsyncHelper(const UpdateThingShadowRequest& request, const UpdateThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateThingShadow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateThingShadow(request), context);
+    } );
 }
 

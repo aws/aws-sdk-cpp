@@ -130,12 +130,10 @@ CreateNotificationRuleOutcomeCallable CodeStarNotificationsClient::CreateNotific
 
 void CodeStarNotificationsClient::CreateNotificationRuleAsync(const CreateNotificationRuleRequest& request, const CreateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNotificationRuleAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::CreateNotificationRuleAsyncHelper(const CreateNotificationRuleRequest& request, const CreateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateNotificationRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNotificationRule(request), context);
+    } );
 }
 
 DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRule(const DeleteNotificationRuleRequest& request) const
@@ -155,12 +153,10 @@ DeleteNotificationRuleOutcomeCallable CodeStarNotificationsClient::DeleteNotific
 
 void CodeStarNotificationsClient::DeleteNotificationRuleAsync(const DeleteNotificationRuleRequest& request, const DeleteNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotificationRuleAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::DeleteNotificationRuleAsyncHelper(const DeleteNotificationRuleRequest& request, const DeleteNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteNotificationRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteNotificationRule(request), context);
+    } );
 }
 
 DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTargetRequest& request) const
@@ -180,12 +176,10 @@ DeleteTargetOutcomeCallable CodeStarNotificationsClient::DeleteTargetCallable(co
 
 void CodeStarNotificationsClient::DeleteTargetAsync(const DeleteTargetRequest& request, const DeleteTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTargetAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::DeleteTargetAsyncHelper(const DeleteTargetRequest& request, const DeleteTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTarget(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTarget(request), context);
+    } );
 }
 
 DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificationRule(const DescribeNotificationRuleRequest& request) const
@@ -205,12 +199,10 @@ DescribeNotificationRuleOutcomeCallable CodeStarNotificationsClient::DescribeNot
 
 void CodeStarNotificationsClient::DescribeNotificationRuleAsync(const DescribeNotificationRuleRequest& request, const DescribeNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotificationRuleAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::DescribeNotificationRuleAsyncHelper(const DescribeNotificationRuleRequest& request, const DescribeNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeNotificationRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeNotificationRule(request), context);
+    } );
 }
 
 ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEventTypesRequest& request) const
@@ -230,12 +222,10 @@ ListEventTypesOutcomeCallable CodeStarNotificationsClient::ListEventTypesCallabl
 
 void CodeStarNotificationsClient::ListEventTypesAsync(const ListEventTypesRequest& request, const ListEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventTypesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::ListEventTypesAsyncHelper(const ListEventTypesRequest& request, const ListEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEventTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEventTypes(request), context);
+    } );
 }
 
 ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(const ListNotificationRulesRequest& request) const
@@ -255,12 +245,10 @@ ListNotificationRulesOutcomeCallable CodeStarNotificationsClient::ListNotificati
 
 void CodeStarNotificationsClient::ListNotificationRulesAsync(const ListNotificationRulesRequest& request, const ListNotificationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNotificationRulesAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::ListNotificationRulesAsyncHelper(const ListNotificationRulesRequest& request, const ListNotificationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNotificationRules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNotificationRules(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -280,12 +268,10 @@ ListTagsForResourceOutcomeCallable CodeStarNotificationsClient::ListTagsForResou
 
 void CodeStarNotificationsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsRequest& request) const
@@ -305,12 +291,10 @@ ListTargetsOutcomeCallable CodeStarNotificationsClient::ListTargetsCallable(cons
 
 void CodeStarNotificationsClient::ListTargetsAsync(const ListTargetsRequest& request, const ListTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTargetsAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::ListTargetsAsyncHelper(const ListTargetsRequest& request, const ListTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTargets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTargets(request), context);
+    } );
 }
 
 SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& request) const
@@ -330,12 +314,10 @@ SubscribeOutcomeCallable CodeStarNotificationsClient::SubscribeCallable(const Su
 
 void CodeStarNotificationsClient::SubscribeAsync(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SubscribeAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::SubscribeAsyncHelper(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, Subscribe(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, Subscribe(request), context);
+    } );
 }
 
 TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceRequest& request) const
@@ -355,12 +337,10 @@ TagResourceOutcomeCallable CodeStarNotificationsClient::TagResourceCallable(cons
 
 void CodeStarNotificationsClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeRequest& request) const
@@ -380,12 +360,10 @@ UnsubscribeOutcomeCallable CodeStarNotificationsClient::UnsubscribeCallable(cons
 
 void CodeStarNotificationsClient::UnsubscribeAsync(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnsubscribeAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::UnsubscribeAsyncHelper(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, Unsubscribe(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, Unsubscribe(request), context);
+    } );
 }
 
 UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResourceRequest& request) const
@@ -405,12 +383,10 @@ UntagResourceOutcomeCallable CodeStarNotificationsClient::UntagResourceCallable(
 
 void CodeStarNotificationsClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRule(const UpdateNotificationRuleRequest& request) const
@@ -430,11 +406,9 @@ UpdateNotificationRuleOutcomeCallable CodeStarNotificationsClient::UpdateNotific
 
 void CodeStarNotificationsClient::UpdateNotificationRuleAsync(const UpdateNotificationRuleRequest& request, const UpdateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNotificationRuleAsyncHelper( request, handler, context ); } );
-}
-
-void CodeStarNotificationsClient::UpdateNotificationRuleAsyncHelper(const UpdateNotificationRuleRequest& request, const UpdateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNotificationRule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNotificationRule(request), context);
+    } );
 }
 
